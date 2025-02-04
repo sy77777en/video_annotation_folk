@@ -26,8 +26,7 @@ class VideoData:
     @property
     def cam_setup(self):
         if self._cam_setup is None:
-            # Return a default CameraSetupData instance instead of raising an error
-            self._cam_setup = CameraSetupData()
+            raise AttributeError("cam_setup has not been set")
         return self._cam_setup
 
     @cam_setup.setter
