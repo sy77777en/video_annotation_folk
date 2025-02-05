@@ -87,6 +87,8 @@ Does the lighting on the subject have a high contrast ratio, where lit areas are
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
+- Is it a low-key lighting on the subject with a high contrast ratio?
+
 </details>
 
 <details>
@@ -159,6 +161,8 @@ Is there a flat lighting on the subject with minimal contrast, where lit and sha
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Is it a high-key lighting on the subject with minimal contrast?
 
 </details>
 
@@ -289,5 +293,155 @@ Does the lighting on the subject have a normal contrast ratio, where lit and sha
 
 <h4>🔴 Negative:</h4>
 <code>self.lighting_setup.subject_contrast_ratio not in ['normal_contrast', 'unknown', 'complex_changing']</code>
+
+</details>
+
+<details>
+<summary><h2>High-Key Lighting</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>high_key_lighting</code>
+
+
+<h3>📖 Definition:</h3>
+Is the lighting on the subject high-key, featuring minimal contrast where lit and shadowed areas appear nearly the same (1:1 to 1:2)?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Does the subject’s lighting create a bright, evenly illuminated appearance with little to no shadow?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the subject’s lighting feature soft, minimal shadows?
+
+- Is the subject evenly illuminated with a bright, balanced light?
+
+- Does the lighting on the subject create a soft, diffused look with little contrast?
+
+- Is the separation between lit and shadowed areas barely noticeable?
+
+- Does the lighting minimize harsh shadows, creating a bright and airy appearance?
+
+- Is the subject shaped by smooth, even lighting with minimal contrast?
+
+- Does the video feature high-key lighting, reducing shadow depth?
+
+- Is the subject’s visibility defined by soft, evenly distributed illumination?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video features high-key lighting, where the subject is brightly lit with minimal contrast (1:1 to 1:2), reducing shadows and creating a soft, even illumination.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the subject is lit with high-key lighting, appearing bright and evenly illuminated.
+
+- A scene where the subject’s lighting lacks strong shadows, creating a soft effect.
+
+- A shot where the lighting on the subject results in an even, well-distributed brightness.
+
+- A video using high-key lighting to minimize contrast and shadow depth.
+
+- A sequence where the subject appears clearly defined with smooth, diffused lighting.
+
+- A shot featuring a subject with little to no noticeable shadowing.
+
+- A video where even lighting ensures a bright and soft visual tone.
+
+- A scene emphasizing a bright, clear aesthetic with minimal contrast.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.subject_contrast_ratio == 'minimal_contrast'</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.subject_contrast_ratio not in ['minimal_contrast', 'unknown', 'complex_changing']</code>
+
+</details>
+
+<details>
+<summary><h2>Low-Key Lighting</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>low_key_lighting</code>
+
+
+<h3>📖 Definition:</h3>
+Is the lighting on the subject low-key, featuring a high contrast ratio where lit areas are significantly brighter than shadowed areas (1:8 or above)?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Does the subject’s lighting create a dramatic, high-contrast effect with deep shadows?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is the subject illuminated in a way that produces a strong contrast between highlights and shadows?
+
+- Does the lighting create deep shadows and strong highlights on the subject?
+
+- Is the separation between lit and shadowed areas very pronounced?
+
+- Does the subject appear shaped by intense, directional lighting with stark contrasts?
+
+- Is the scene visually defined by dramatic lighting with bold shadows?
+
+- Does the video feature low-key lighting, emphasizing shadow and depth?
+
+- Does the subject’s visibility depend on strong contrast lighting effects?
+
+- Does the scene use strong directional lighting that enhances the subject’s form with shadows?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video features low-key lighting, creating a high contrast ratio (1:8 or above) with deep shadows and dramatic separation between highlights and dark areas.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the subject is lit with low-key lighting, featuring dramatic shadows and strong highlights.
+
+- A scene where the subject’s lighting creates high contrast with bold, directional light.
+
+- A shot where the lighting produces deep, well-defined shadows on the subject.
+
+- A video emphasizing the subject’s form through strong contrast lighting.
+
+- A sequence that enhances the subject’s depth with intense shadows and directional light.
+
+- A shot where bright highlights and dark shadows define the subject’s visual impact.
+
+- A video utilizing low-key lighting to create a moody, dramatic effect.
+
+- A scene that relies on stark lighting contrast for strong visual storytelling.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.subject_contrast_ratio == 'high_contrast'</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.subject_contrast_ratio not in ['high_contrast', 'unknown', 'complex_changing']</code>
 
 </details>
