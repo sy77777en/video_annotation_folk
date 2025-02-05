@@ -136,8 +136,6 @@ class LightingSetupData:
         self._set_special_lighting_attributes()
         self._set_volumetric_lighting_attributes()
         self._set_shadow_pattern_attributes()
-        self._set_lighting_dynamics_attributes()
-        self._set_dynamic_effects_attributes()
     
     def _set_color_grading_attributes(self):
         self.is_color_grading_complex = any([
@@ -159,8 +157,10 @@ class LightingSetupData:
         self.lens_flares = self.lens_flares_regular or self.lens_flares_anamorphic
         
     def _set_volumetric_lighting_attributes(self):
-        self.is_volumetric_lighting_present = self.volumetric_beam_light or self.volumetric_spot_light or self.god_rays or self.light_through_medium or self.volumetric_light_others
-        
+        self.has_volumetric_lighting = self.volumetric_beam_light or self.volumetric_spot_light or self.god_rays or self.light_through_medium or self.volumetric_light_others
+    
+    def _set_shadow_pattern_attributes(self):
+        self.has_shadow_patterns = self.venetian_blinds or self.subject_shape or self.window_frames or self.foliage or self.shadow_patterns_gobo_others
         
     def set_shot_transition(self, shot_transition):
         if isinstance(shot_transition, bool):
