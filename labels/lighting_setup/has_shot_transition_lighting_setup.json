@@ -1,6 +1,6 @@
 {
     "label": "Shot transition",
-    "label_name": "has_shot_transition_cam_motion",
+    "label_name": "has_shot_transition_lighting_setup",
     "def_question": [
       "Does the video include shot transitions?",
       "Does the video include one or more shot transitions?",
@@ -44,9 +44,9 @@
       "A video with hard cuts, soft transitions, or both.",
       "A video where shots change with a transition."
     ],
-    "pos_rule_str": "self.cam_motion.shot_transition",
-    "neg_rule_str": "not self.cam_motion.shot_transition",
+    "pos_rule_str": "self.lighting_setup.shot_transition",
+    "neg_rule_str": "not self.lighting_setup.shot_transition",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
-  }
+}
   
