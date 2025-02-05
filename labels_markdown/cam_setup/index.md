@@ -68,10 +68,10 @@ Does the shot contain on-screen overlays, such as watermarks, or titles, or subt
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.has_overlays is True</code>
+<code>self.cam_setup.has_overlays is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.has_overlays is False</code>
+<code>self.cam_setup.has_overlays is False</code>
 
 </details>
 
@@ -84,10 +84,12 @@ Does the shot contain on-screen overlays, such as watermarks, or titles, or subt
 
 
 <h3>📖 Definition:</h3>
-Does the video include one or more shot transitions?
+Does the video include shot transitions?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the video include one or more shot transitions?
 
 - Does the video contain hard cuts or soft transitions, or a combination of both?
 
@@ -118,6 +120,8 @@ Does the video include one or more shot transitions?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- A video that includes shot transitions.
 
 - A video showing one or more shot transitions.
 

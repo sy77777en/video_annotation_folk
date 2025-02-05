@@ -66,10 +66,10 @@ Does the camera angle decrease noticeably relative to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_change_from_high_to_low is True</code>
+<code>self.cam_setup.camera_angle_change_from_high_to_low is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_change_from_high_to_low is False</code>
+<code>self.cam_setup.camera_angle_change_from_high_to_low is False</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the camera angle increase noticeably relative to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_change_from_low_to_high is True</code>
+<code>self.cam_setup.camera_angle_change_from_low_to_high is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_change_from_low_to_high is False</code>
+<code>self.cam_setup.camera_angle_change_from_low_to_high is False</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Is camera angle classification possible for this video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_camera_angle_applicable is True</code>
+<code>self.cam_setup.is_camera_angle_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_camera_angle_applicable is False</code>
+<code>self.cam_setup.is_camera_angle_applicable is False</code>
 
 </details>
 
@@ -285,10 +285,10 @@ Is an obvious Dutch (Canted) angle (of more than 15 degrees) present in the vide
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_dutch_angle is True</code>
+<code>self.cam_setup.is_dutch_angle is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_dutch_angle is False</code>
+<code>self.cam_setup.is_dutch_angle is False</code>
 
 </details>
 
@@ -358,10 +358,10 @@ Does the Dutch angle remain the same throughout the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_dutch_angle_fixed is True</code>
+<code>self.cam_setup.is_dutch_angle_fixed is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_dutch_angle_fixed is False</code>
+<code>self.cam_setup.is_dutch_angle_fixed is False</code>
 
 </details>
 
@@ -431,10 +431,10 @@ Does the degree of the Dutch angle shift throughout the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_dutch_angle_varying is True</code>
+<code>self.cam_setup.is_dutch_angle_varying is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_dutch_angle_varying is False</code>
+<code>self.cam_setup.is_dutch_angle_varying is False</code>
 
 </details>
 

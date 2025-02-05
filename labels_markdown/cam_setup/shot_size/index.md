@@ -54,10 +54,10 @@ Is shot size classification possible for this video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>is_shot_size_applicable is True</code>
+<code>self.cam_setup.is_shot_size_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>is_shot_size_applicable is False</code>
+<code>self.cam_setup.is_shot_size_applicable is False</code>
 
 </details>
 
@@ -115,10 +115,10 @@ Does the shot size change throughout the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_change is True</code>
+<code>self.cam_setup.shot_size_change is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_change is False</code>
+<code>self.cam_setup.shot_size_change is False</code>
 
 </details>
 
@@ -194,10 +194,10 @@ Does the shot size change from large to small?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_change_from_large_to_small is True</code>
+<code>self.cam_setup.shot_size_change_from_large_to_small is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_change_from_large_to_small is False</code>
+<code>self.cam_setup.shot_size_change_from_large_to_small is False</code>
 
 </details>
 
@@ -273,10 +273,10 @@ Does the shot size change from small to large?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_change_from_small_to_large is True</code>
+<code>self.cam_setup.shot_size_change_from_small_to_large is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_change_from_small_to_large is False</code>
+<code>self.cam_setup.shot_size_change_from_small_to_large is False</code>
 
 </details>
 
@@ -338,10 +338,10 @@ Does the main subject disappear from the frame?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.subject_disappearing is True</code>
+<code>self.cam_setup.subject_disappearing is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.subject_disappearing is False</code>
+<code>self.cam_setup.subject_disappearing is False</code>
 
 </details>
 
@@ -399,10 +399,10 @@ Does the video include a revealing shot where a subject appears?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.subject_revealing is True</code>
+<code>self.cam_setup.subject_revealing is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.subject_revealing is False</code>
+<code>self.cam_setup.subject_revealing is False</code>
 
 </details>
 
@@ -460,10 +460,10 @@ Does the main subject change to another subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.subject_switching is True</code>
+<code>self.cam_setup.subject_switching is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.subject_switching is False</code>
+<code>self.cam_setup.subject_switching is False</code>
 
 </details>
 

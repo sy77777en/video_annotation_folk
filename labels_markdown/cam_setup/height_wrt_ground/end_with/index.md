@@ -66,10 +66,10 @@ Does the video end with the camera positioned high at an aerial level?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'aerial_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'aerial_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video end with the camera at eye level, roughly at a person's eye heigh
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'eye_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'eye_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['eye_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['eye_level', 'unknown']</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the video end with the camera at ground level, positioned close to the grou
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'ground_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'ground_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['ground_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['ground_level', 'unknown']</code>
 
 </details>
 
@@ -285,10 +285,10 @@ Does the video end with the camera at hip level, roughly between knee and waist 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'hip_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'hip_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['hip_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['hip_level', 'unknown']</code>
 
 </details>
 
@@ -358,10 +358,10 @@ Does the video end with the camera at an overhead level, above human height but 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'overhead_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'overhead_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']</code>
 
 </details>
 
@@ -431,10 +431,10 @@ Does the video end with the camera fully submerged underwater, capturing scenes 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'underwater_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'underwater_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['underwater_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['underwater_level', 'unknown']</code>
 
 </details>
 
@@ -504,9 +504,9 @@ Does the video end with the camera positioned at water level, where the waterlin
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['end'] == 'water_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] == 'water_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['end'] not in ['water_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['end'] not in ['water_level', 'unknown']</code>
 
 </details>

@@ -66,10 +66,10 @@ Is the video consistently focused on the background using a shallow depth of fie
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'background' and self.focus_info['end'] == 'background'</code>
+<code>self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'background'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.focus_info['start'] in ['background', 'unknown'] and self.focus_info['end'] in ['background', 'unknown'])</code>
+<code>not (self.cam_setup.focus_info['start'] in ['background', 'unknown'] and self.cam_setup.focus_info['end'] in ['background', 'unknown'])</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Is the video consistently focused on the foreground using a shallow depth of fie
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'foreground' and self.focus_info['end'] == 'foreground'</code>
+<code>self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'foreground'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.focus_info['start'] in ['foreground', 'unknown'] and self.focus_info['end'] in ['foreground', 'unknown'])</code>
+<code>not (self.cam_setup.focus_info['start'] in ['foreground', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'unknown'])</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Is the video consistently focused on the middle ground, keeping the foreground a
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'middle_ground' and self.focus_info['end'] == 'middle_ground'</code>
+<code>self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'middle_ground'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.focus_info['start'] in ['middle_ground', 'unknown'] and self.focus_info['end'] in ['middle_ground', 'unknown'])</code>
+<code>not (self.cam_setup.focus_info['start'] in ['middle_ground', 'unknown'] and self.cam_setup.focus_info['end'] in ['middle_ground', 'unknown'])</code>
 
 </details>
 
@@ -285,9 +285,9 @@ Is the video consistently out of focus throughout?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'out_of_focus' and self.focus_info['end'] == 'out_of_focus'</code>
+<code>self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] == 'out_of_focus'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.focus_info['start'] in ['out_of_focus', 'unknown'] and self.focus_info['end'] in ['out_of_focus', 'unknown'])</code>
+<code>not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])</code>
 
 </details>

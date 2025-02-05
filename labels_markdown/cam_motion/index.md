@@ -185,11 +185,13 @@ Does the video include shot transitions?
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
+- Does the video include one or more shot transitions?
+
 - Does the video contain hard cuts or soft transitions, or a combination of both?
 
 - Are there any shot transitions in the video?
 
-- Does this footage feature cuts or soft transitions?
+- Does this footage feature one or more cuts or soft transitions?
 
 </details>
 
@@ -214,6 +216,8 @@ Does the video include shot transitions?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- A video that includes shot transitions.
 
 - A video showing one or more shot transitions.
 

@@ -74,10 +74,10 @@ Does the video start with a close-up shot that highlights a distinct part of the
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'close_up'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'close_up'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['close_up', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['close_up', 'unknown']</code>
 
 </details>
 
@@ -155,10 +155,10 @@ Does the video start with an extreme close-up shot that isolates a very small de
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'extreme_close_up'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'extreme_close_up'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['extreme_close_up', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['extreme_close_up', 'unknown']</code>
 
 </details>
 
@@ -238,10 +238,10 @@ Does the video start with an extreme wide shot that emphasizes the setting over 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'extreme_wide'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'extreme_wide'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['extreme_wide', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['extreme_wide', 'unknown']</code>
 
 </details>
 
@@ -319,10 +319,10 @@ Does the video start with a full shot that frames the entire body of the subject
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'full'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'full'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['full', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['full', 'unknown']</code>
 
 </details>
 
@@ -400,10 +400,10 @@ Does the video start with a medium shot that frames about half of the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'medium'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'medium'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['medium', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['medium', 'unknown']</code>
 
 </details>
 
@@ -481,10 +481,10 @@ Does the video start with a medium close-up shot that frames the human subject f
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'medium_close_up'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'medium_close_up'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['medium_close_up', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['medium_close_up', 'unknown']</code>
 
 </details>
 
@@ -562,10 +562,10 @@ Does the video start with a medium-full shot that frames the human subject from 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'medium_full'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'medium_full'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['medium_full', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['medium_full', 'unknown']</code>
 
 </details>
 
@@ -643,9 +643,9 @@ Does the video start with a wide shot of scenery, or a wide shot that frames the
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['start'] == 'wide'</code>
+<code>self.cam_setup.shot_size_info['start'] == 'wide'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['start'] not in ['wide', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['start'] not in ['wide', 'unknown']</code>
 
 </details>

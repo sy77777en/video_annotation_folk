@@ -66,10 +66,10 @@ Does the video end with the background in focus, using a shallow depth of field?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['end'] == 'background'</code>
+<code>self.cam_setup.focus_info['end'] == 'background'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['end'] not in ['background', 'unknown']</code>
+<code>self.cam_setup.focus_info['end'] not in ['background', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video end with the foreground in focus, using a shallow depth of field?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['end'] == 'foreground'</code>
+<code>self.cam_setup.focus_info['end'] == 'foreground'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['end'] not in ['foreground', 'unknown']</code>
+<code>self.cam_setup.focus_info['end'] not in ['foreground', 'unknown']</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the video end with the middle ground in focus while the foreground and back
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['end'] == 'middle_ground'</code>
+<code>self.cam_setup.focus_info['end'] == 'middle_ground'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['end'] not in ['middle_ground', 'unknown']</code>
+<code>self.cam_setup.focus_info['end'] not in ['middle_ground', 'unknown']</code>
 
 </details>
 
@@ -285,9 +285,9 @@ Does the video end completely out of focus?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['end'] == 'out_of_focus'</code>
+<code>self.cam_setup.focus_info['end'] == 'out_of_focus'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['end'] not in ['out_of_focus', 'unknown']</code>
+<code>self.cam_setup.focus_info['end'] not in ['out_of_focus', 'unknown']</code>
 
 </details>

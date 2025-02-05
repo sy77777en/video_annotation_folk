@@ -66,10 +66,10 @@ Is the shot focused on human subjects?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_human_shot is True</code>
+<code>self.cam_setup.is_human_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_human_shot is False</code>
+<code>self.cam_setup.is_human_shot is False</code>
 
 </details>
 
@@ -121,10 +121,10 @@ Does the video have a clear subject with back-and-forth changes in shot size?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_back_and_forth_change_shot is True</code>
+<code>self.cam_setup.is_just_back_and_forth_change_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_back_and_forth_change_shot is False</code>
+<code>self.cam_setup.is_just_back_and_forth_change_shot is False</code>
 
 </details>
 
@@ -190,10 +190,10 @@ The video includes a subject change, where a subject appears, disappears, or tra
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_change_of_subject_shot is True</code>
+<code>self.cam_setup.is_just_change_of_subject_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_change_of_subject_shot is False</code>
+<code>self.cam_setup.is_just_change_of_subject_shot is False</code>
 
 </details>
 
@@ -263,10 +263,10 @@ Is there a clear subject in the video, but its anatomy looks unnatural or exagge
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_clear_subject_atypical_shot is True</code>
+<code>self.cam_setup.is_just_clear_subject_atypical_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_clear_subject_atypical_shot is False</code>
+<code>self.cam_setup.is_just_clear_subject_atypical_shot is False</code>
 
 </details>
 
@@ -332,10 +332,10 @@ Does the video feature a clear subject, but changes in framing make shot size cl
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_clear_subject_dynamic_size_shot is True</code>
+<code>self.cam_setup.is_just_clear_subject_dynamic_size_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_clear_subject_dynamic_size_shot is False</code>
+<code>self.cam_setup.is_just_clear_subject_dynamic_size_shot is False</code>
 
 </details>
 
@@ -381,10 +381,10 @@ Does the video feature different subjects, varying in type or size, making shot 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_different_subject_in_focus_shot is True</code>
+<code>self.cam_setup.is_just_different_subject_in_focus_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_different_subject_in_focus_shot is False</code>
+<code>self.cam_setup.is_just_different_subject_in_focus_shot is False</code>
 
 </details>
 
@@ -454,10 +454,10 @@ Does the video consistently feature one dominant human subject or a single group
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_human_shot is True</code>
+<code>self.cam_setup.is_just_human_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_human_shot is False</code>
+<code>self.cam_setup.is_just_human_shot is False</code>
 
 </details>
 
@@ -517,10 +517,10 @@ Does the video feature multiple subjects with no clear focus on any one subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_many_subject_no_focus_shot is True</code>
+<code>self.cam_setup.is_just_many_subject_no_focus_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_many_subject_no_focus_shot is False</code>
+<code>self.cam_setup.is_just_many_subject_no_focus_shot is False</code>
 
 </details>
 
@@ -586,10 +586,10 @@ Does the video feature multiple subjects, but one clearly stands out as the main
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_many_subject_one_focus_shot is True</code>
+<code>self.cam_setup.is_just_many_subject_one_focus_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_many_subject_one_focus_shot is False</code>
+<code>self.cam_setup.is_just_many_subject_one_focus_shot is False</code>
 
 </details>
 
@@ -659,10 +659,10 @@ Does the video consistently feature one dominant non-human subject or a single g
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_non_human_shot is True</code>
+<code>self.cam_setup.is_just_non_human_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_non_human_shot is False</code>
+<code>self.cam_setup.is_just_non_human_shot is False</code>
 
 </details>
 
@@ -730,10 +730,10 @@ Does the video focus on scenery or environment without emphasis on any subjects?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_scenery_shot is True</code>
+<code>self.cam_setup.is_just_scenery_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_scenery_shot is False</code>
+<code>self.cam_setup.is_just_scenery_shot is False</code>
 
 </details>
 
@@ -783,10 +783,10 @@ Does the video feature a subject and scene that do not match, making it difficul
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_just_subject_scene_mismatch_shot is True</code>
+<code>self.cam_setup.is_just_subject_scene_mismatch_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_just_subject_scene_mismatch_shot is False</code>
+<code>self.cam_setup.is_just_subject_scene_mismatch_shot is False</code>
 
 </details>
 
@@ -856,9 +856,9 @@ Is the shot focused on non-human subjects?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_non_human_shot is True</code>
+<code>self.cam_setup.is_non_human_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_non_human_shot is False</code>
+<code>self.cam_setup.is_non_human_shot is False</code>
 
 </details>

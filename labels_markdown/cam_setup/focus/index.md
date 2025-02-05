@@ -66,10 +66,10 @@ Does the focal plane transition from distant to close?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_change_from_far_to_near is True</code>
+<code>self.cam_setup.focus_change_from_far_to_near is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_change_from_far_to_near is False</code>
+<code>self.cam_setup.focus_change_from_far_to_near is False</code>
 
 </details>
 
@@ -137,10 +137,10 @@ Does the focal plane transition from close to distant?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_change_from_near_to_far is True</code>
+<code>self.cam_setup.focus_change_from_near_to_far is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_change_from_near_to_far is False</code>
+<code>self.cam_setup.focus_change_from_near_to_far is False</code>
 
 </details>
 
@@ -210,10 +210,10 @@ Does the video have a deep depth of field, ensuring distant details remain sharp
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_deep_focus is True</code>
+<code>self.cam_setup.is_deep_focus is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_deep_focus is False</code>
+<code>self.cam_setup.is_deep_focus is False</code>
 
 </details>
 
@@ -281,10 +281,10 @@ Is it possible to determine the camera focus properties?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_focus_applicable is True</code>
+<code>self.cam_setup.is_focus_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_focus_applicable is False</code>
+<code>self.cam_setup.is_focus_applicable is False</code>
 
 </details>
 
@@ -354,10 +354,10 @@ Is there focus tracking on a moving subject in the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_focus_tracking is True</code>
+<code>self.cam_setup.is_focus_tracking is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_focus_tracking is False</code>
+<code>self.cam_setup.is_focus_tracking is False</code>
 
 </details>
 
@@ -427,10 +427,10 @@ Is rack focus or pull focus used in the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_rack_pull_focus is True</code>
+<code>self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_rack_pull_focus is False</code>
+<code>self.cam_setup.is_rack_pull_focus is False</code>
 
 </details>
 
@@ -500,10 +500,10 @@ Is the camera using a shallow depth of field with limited focus range?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_shallow_focus is True</code>
+<code>self.cam_setup.is_shallow_focus is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_shallow_focus is False</code>
+<code>self.cam_setup.is_shallow_focus is False</code>
 
 </details>
 
@@ -573,10 +573,10 @@ Does the video have an extremely shallow depth of field?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_ultra_shallow_focus is True</code>
+<code>self.cam_setup.is_ultra_shallow_focus is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_ultra_shallow_focus is False</code>
+<code>self.cam_setup.is_ultra_shallow_focus is False</code>
 
 </details>
 
