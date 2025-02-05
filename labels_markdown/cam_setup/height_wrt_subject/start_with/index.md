@@ -66,10 +66,10 @@ Does the video start with the camera positioned noticeably higher than the subje
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['start'] == 'above_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] == 'above_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_info['start'] not in ['above_subject', 'unknown']</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] not in ['above_subject', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video start with the camera positioned at the same height as the subjec
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['start'] == 'at_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] == 'at_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_info['start'] not in ['at_subject', 'unknown']</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] not in ['at_subject', 'unknown']</code>
 
 </details>
 
@@ -212,9 +212,9 @@ Does the video start with the camera positioned below the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['start'] == 'below_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] == 'below_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_info['start'] not in ['below_subject', 'unknown']</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] not in ['below_subject', 'unknown']</code>
 
 </details>

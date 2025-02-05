@@ -66,10 +66,10 @@ Does the camera height decrease noticeably in relation to the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_change_from_high_to_low is True</code>
+<code>self.cam_setup.height_wrt_subject_change_from_high_to_low is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_change_from_high_to_low is False</code>
+<code>self.cam_setup.height_wrt_subject_change_from_high_to_low is False</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the camera height increase noticeably in relation to the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_change_from_low_to_high is True</code>
+<code>self.cam_setup.height_wrt_subject_change_from_low_to_high is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_change_from_low_to_high is False</code>
+<code>self.cam_setup.height_wrt_subject_change_from_low_to_high is False</code>
 
 </details>
 
@@ -210,10 +210,10 @@ Can the camera height relative to subject be classified?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_height_wrt_subject_applicable is True</code>
+<code>self.cam_setup.is_height_wrt_subject_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_height_wrt_subject_applicable is False</code>
+<code>self.cam_setup.is_height_wrt_subject_applicable is False</code>
 
 </details>
 

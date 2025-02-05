@@ -66,10 +66,10 @@ Does the video start with the background in focus, using a shallow depth of fiel
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'background'</code>
+<code>self.cam_setup.focus_info['start'] == 'background'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['start'] not in ['background', 'unknown']</code>
+<code>self.cam_setup.focus_info['start'] not in ['background', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video start with a focus on the foreground, using a shallow depth of fi
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'foreground'</code>
+<code>self.cam_setup.focus_info['start'] == 'foreground'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['start'] not in ['foreground', 'unknown']</code>
+<code>self.cam_setup.focus_info['start'] not in ['foreground', 'unknown']</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the video start with a focus on the middle ground, using a shallow depth of
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'middle_ground'</code>
+<code>self.cam_setup.focus_info['start'] == 'middle_ground'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['start'] not in ['middle_ground', 'unknown']</code>
+<code>self.cam_setup.focus_info['start'] not in ['middle_ground', 'unknown']</code>
 
 </details>
 
@@ -285,9 +285,9 @@ Does the video start completely out of focus?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.focus_info['start'] == 'out_of_focus'</code>
+<code>self.cam_setup.focus_info['start'] == 'out_of_focus'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.focus_info['start'] not in ['out_of_focus', 'unknown']</code>
+<code>self.cam_setup.focus_info['start'] not in ['out_of_focus', 'unknown']</code>
 
 </details>

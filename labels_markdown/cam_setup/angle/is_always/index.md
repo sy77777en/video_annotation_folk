@@ -64,10 +64,10 @@ Is the camera positioned at a bird’s eye angle throughout the video, looking d
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['start'] == 'bird_eye_angle' and self.camera_angle_info['end'] == 'bird_eye_angle'</code>
+<code>self.cam_setup.camera_angle_info['start'] == 'bird_eye_angle' and self.cam_setup.camera_angle_info['end'] == 'bird_eye_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.camera_angle_info['start'] in ['bird_eye_angle', 'unknown'] and self.camera_angle_info['end'] in ['bird_eye_angle', 'unknown'])</code>
+<code>not (self.cam_setup.camera_angle_info['start'] in ['bird_eye_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['bird_eye_angle', 'unknown'])</code>
 
 </details>
 
@@ -135,10 +135,10 @@ Is the camera positioned at a high angle throughout the video, looking down at t
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['start'] == 'high_angle' and self.camera_angle_info['end'] == 'high_angle'</code>
+<code>self.cam_setup.camera_angle_info['start'] == 'high_angle' and self.cam_setup.camera_angle_info['end'] == 'high_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.camera_angle_info['start'] in ['high_angle', 'unknown'] and self.camera_angle_info['end'] in ['high_angle', 'unknown'])</code>
+<code>not (self.cam_setup.camera_angle_info['start'] in ['high_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['high_angle', 'unknown'])</code>
 
 </details>
 
@@ -206,10 +206,10 @@ Is the camera positioned at a level angle throughout the video, parallel to the 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['start'] == 'level_angle' and self.camera_angle_info['end'] == 'level_angle'</code>
+<code>self.cam_setup.camera_angle_info['start'] == 'level_angle' and self.cam_setup.camera_angle_info['end'] == 'level_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.camera_angle_info['start'] in ['level_angle', 'unknown'] and self.camera_angle_info['end'] in ['level_angle', 'unknown'])</code>
+<code>not (self.cam_setup.camera_angle_info['start'] in ['level_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['level_angle', 'unknown'])</code>
 
 </details>
 
@@ -277,10 +277,10 @@ Is the camera positioned at a low angle throughout the video, looking upward fro
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['start'] == 'low_angle' and self.camera_angle_info['end'] == 'low_angle'</code>
+<code>self.cam_setup.camera_angle_info['start'] == 'low_angle' and self.cam_setup.camera_angle_info['end'] == 'low_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.camera_angle_info['start'] in ['low_angle', 'unknown'] and self.camera_angle_info['end'] in ['low_angle', 'unknown'])</code>
+<code>not (self.cam_setup.camera_angle_info['start'] in ['low_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['low_angle', 'unknown'])</code>
 
 </details>
 
@@ -348,9 +348,9 @@ Is the camera positioned at a worm’s eye angle throughout the video, looking s
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['start'] == 'worm_eye_angle' and self.camera_angle_info['end'] == 'worm_eye_angle'</code>
+<code>self.cam_setup.camera_angle_info['start'] == 'worm_eye_angle' and self.cam_setup.camera_angle_info['end'] == 'worm_eye_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.camera_angle_info['start'] in ['worm_eye_angle', 'unknown'] and self.camera_angle_info['end'] in ['worm_eye_angle', 'unknown'])</code>
+<code>not (self.cam_setup.camera_angle_info['start'] in ['worm_eye_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['worm_eye_angle', 'unknown'])</code>
 
 </details>

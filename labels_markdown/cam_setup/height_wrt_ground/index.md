@@ -66,10 +66,10 @@ Does the camera transition from above water to underwater?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.above_water_to_underwater is True</code>
+<code>self.cam_setup.above_water_to_underwater is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.above_water_to_underwater is False</code>
+<code>self.cam_setup.above_water_to_underwater is False</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the camera height decrease noticeably in relation to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_change_from_high_to_low is True</code>
+<code>self.cam_setup.height_wrt_ground_change_from_high_to_low is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_change_from_high_to_low is False</code>
+<code>self.cam_setup.height_wrt_ground_change_from_high_to_low is False</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the camera height increase noticeably in relation to the ground?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_change_from_low_to_high is True</code>
+<code>self.cam_setup.height_wrt_ground_change_from_low_to_high is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_change_from_low_to_high is False</code>
+<code>self.cam_setup.height_wrt_ground_change_from_low_to_high is False</code>
 
 </details>
 
@@ -283,10 +283,10 @@ Can the camera height relative to ground be classified?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_height_wrt_ground_applicable is True</code>
+<code>self.cam_setup.is_height_wrt_ground_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_height_wrt_ground_applicable is False</code>
+<code>self.cam_setup.is_height_wrt_ground_applicable is False</code>
 
 </details>
 
@@ -356,10 +356,10 @@ Does the camera transition from underwater to above water?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.underwater_to_above_water is True</code>
+<code>self.cam_setup.underwater_to_above_water is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.underwater_to_above_water is False</code>
+<code>self.cam_setup.underwater_to_above_water is False</code>
 
 </details>
 

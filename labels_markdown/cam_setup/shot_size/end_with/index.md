@@ -74,10 +74,10 @@ Does the video end with a close-up shot that highlights a distinct part of the s
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'close_up'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'close_up'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['close_up', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['close_up', 'unknown']</code>
 
 </details>
 
@@ -155,10 +155,10 @@ Does the video end with an extreme close-up shot that isolates a very small deta
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'extreme_close_up'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'extreme_close_up'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['extreme_close_up', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['extreme_close_up', 'unknown']</code>
 
 </details>
 
@@ -216,10 +216,10 @@ Does the video end with a wide shot?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'extreme_wide'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'extreme_wide'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['extreme_wide', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['extreme_wide', 'unknown']</code>
 
 </details>
 
@@ -297,10 +297,10 @@ Does the video end with a full shot that frames the entire body of the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'full'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'full'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['full', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['full', 'unknown']</code>
 
 </details>
 
@@ -378,10 +378,10 @@ Does the video end with a medium shot that frames about half of the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'medium'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'medium'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['medium', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['medium', 'unknown']</code>
 
 </details>
 
@@ -459,10 +459,10 @@ Does the video end with a medium close-up shot that frames the human subject fro
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'medium_close_up'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'medium_close_up'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['medium_close_up', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['medium_close_up', 'unknown']</code>
 
 </details>
 
@@ -540,10 +540,10 @@ Does the video end with a medium full shot that frames the human subject from th
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'medium_full'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'medium_full'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['medium_full', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['medium_full', 'unknown']</code>
 
 </details>
 
@@ -621,9 +621,9 @@ Does the video end with a wide shot of scenery, or a wide shot that frames the s
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.shot_size_info['end'] == 'wide'</code>
+<code>self.cam_setup.shot_size_info['end'] == 'wide'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.shot_size_info['end'] not in ['wide', 'unknown']</code>
+<code>self.cam_setup.shot_size_info['end'] not in ['wide', 'unknown']</code>
 
 </details>

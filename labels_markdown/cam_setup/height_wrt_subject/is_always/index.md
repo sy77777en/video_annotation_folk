@@ -66,10 +66,10 @@ Is the camera positioned noticeably higher than the subject throughout the video
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['start'] == 'above_subject' and self.height_wrt_subject_info['end'] == 'above_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] == 'above_subject' and self.cam_setup.height_wrt_subject_info['end'] == 'above_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.height_wrt_subject_info['start'] in ['above_subject', 'unknown'] and self.height_wrt_subject_info['end'] in ['above_subject', 'unknown'])</code>
+<code>not (self.cam_setup.height_wrt_subject_info['start'] in ['above_subject', 'unknown'] and self.cam_setup.height_wrt_subject_info['end'] in ['above_subject', 'unknown'])</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Is the camera positioned at the same height as the subject throughout the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['start'] == 'at_subject' and self.height_wrt_subject_info['end'] == 'at_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] == 'at_subject' and self.cam_setup.height_wrt_subject_info['end'] == 'at_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.height_wrt_subject_info['start'] in ['at_subject', 'unknown'] and self.height_wrt_subject_info['end'] in ['at_subject', 'unknown'])</code>
+<code>not (self.cam_setup.height_wrt_subject_info['start'] in ['at_subject', 'unknown'] and self.cam_setup.height_wrt_subject_info['end'] in ['at_subject', 'unknown'])</code>
 
 </details>
 
@@ -212,9 +212,9 @@ Is the camera positioned below the subject throughout the video?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['start'] == 'below_subject' and self.height_wrt_subject_info['end'] == 'below_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['start'] == 'below_subject' and self.cam_setup.height_wrt_subject_info['end'] == 'below_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.height_wrt_subject_info['start'] in ['below_subject', 'unknown'] and self.height_wrt_subject_info['end'] in ['below_subject', 'unknown'])</code>
+<code>not (self.cam_setup.height_wrt_subject_info['start'] in ['below_subject', 'unknown'] and self.cam_setup.height_wrt_subject_info['end'] in ['below_subject', 'unknown'])</code>
 
 </details>

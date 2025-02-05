@@ -66,10 +66,10 @@ Does the video contain multiple subjects or multiple groups of subjects?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.has_many_subjects is True</code>
+<code>self.cam_setup.has_many_subjects is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.has_many_subjects is False</code>
+<code>self.cam_setup.has_many_subjects is False</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Is there a single dominant subject or group of subjects in the frame throughout 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.has_single_dominant_subject is True</code>
+<code>self.cam_setup.has_single_dominant_subject is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.has_single_dominant_subject is False</code>
+<code>self.cam_setup.has_single_dominant_subject is False</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the subject change in the video, such as in a revealing shot where a subjec
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.has_subject_change is True</code>
+<code>self.cam_setup.has_subject_change is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.has_subject_change is False</code>
+<code>self.cam_setup.has_subject_change is False</code>
 
 </details>
 
@@ -285,9 +285,9 @@ Does the video include one or more subjects in the frame at any point, instead o
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.is_framing_subject is True</code>
+<code>self.cam_setup.is_framing_subject is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.is_framing_subject is False</code>
+<code>self.cam_setup.is_framing_subject is False</code>
 
 </details>

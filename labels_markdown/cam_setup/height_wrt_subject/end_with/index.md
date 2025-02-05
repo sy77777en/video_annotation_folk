@@ -66,10 +66,10 @@ Does the video end with the camera positioned above the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['end'] == 'above_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['end'] == 'above_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_info['end'] not in ['above_subject', 'unknown']</code>
+<code>self.cam_setup.height_wrt_subject_info['end'] not in ['above_subject', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video end with the camera positioned at the same height as the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['end'] == 'at_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['end'] == 'at_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']</code>
+<code>self.cam_setup.height_wrt_subject_info['end'] not in ['at_subject', 'unknown']</code>
 
 </details>
 
@@ -212,9 +212,9 @@ Does the video end with the camera positioned below the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_subject_info['end'] == 'below_subject'</code>
+<code>self.cam_setup.height_wrt_subject_info['end'] == 'below_subject'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_subject_info['end'] not in ['below_subject', 'unknown']</code>
+<code>self.cam_setup.height_wrt_subject_info['end'] not in ['below_subject', 'unknown']</code>
 
 </details>

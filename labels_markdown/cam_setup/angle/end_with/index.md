@@ -66,10 +66,10 @@ Does the video end with the camera positioned at a bird’s eye angle, looking d
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['end'] == 'bird_eye_angle'</code>
+<code>self.cam_setup.camera_angle_info['end'] == 'bird_eye_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_info['end'] not in ['bird_eye_angle', 'unknown']</code>
+<code>self.cam_setup.camera_angle_info['end'] not in ['bird_eye_angle', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video end with the camera positioned at a high angle, tilted downward c
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['end'] == 'high_angle'</code>
+<code>self.cam_setup.camera_angle_info['end'] == 'high_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_info['end'] not in ['high_angle', 'unknown']</code>
+<code>self.cam_setup.camera_angle_info['end'] not in ['high_angle', 'unknown']</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the video end with the camera positioned at a level angle, parallel to the 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['end'] == 'level_angle'</code>
+<code>self.cam_setup.camera_angle_info['end'] == 'level_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_info['end'] not in ['level_angle', 'unknown']</code>
+<code>self.cam_setup.camera_angle_info['end'] not in ['level_angle', 'unknown']</code>
 
 </details>
 
@@ -285,10 +285,10 @@ Does the video end with the camera positioned at a low angle, angled upward rela
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['end'] == 'low_angle'</code>
+<code>self.cam_setup.camera_angle_info['end'] == 'low_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_info['end'] not in ['low_angle', 'unknown']</code>
+<code>self.cam_setup.camera_angle_info['end'] not in ['low_angle', 'unknown']</code>
 
 </details>
 
@@ -358,9 +358,9 @@ Does the video end with the camera positioned at a worm’s eye angle, looking s
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.camera_angle_info['end'] == 'worm_eye_angle'</code>
+<code>self.cam_setup.camera_angle_info['end'] == 'worm_eye_angle'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.camera_angle_info['end'] not in ['worm_eye_angle', 'unknown']</code>
+<code>self.cam_setup.camera_angle_info['end'] not in ['worm_eye_angle', 'unknown']</code>
 
 </details>

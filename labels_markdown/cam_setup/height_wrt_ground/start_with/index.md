@@ -66,10 +66,10 @@ Does the video start with the camera positioned high at an aerial level?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'aerial_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'aerial_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['aerial_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['aerial_level', 'unknown']</code>
 
 </details>
 
@@ -139,10 +139,10 @@ Does the video start with the camera at eye level, roughly at a person's eye hei
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'eye_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'eye_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['eye_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['eye_level', 'unknown']</code>
 
 </details>
 
@@ -212,10 +212,10 @@ Does the video start with the camera at ground level, positioned close to the gr
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'ground_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'ground_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['ground_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['ground_level', 'unknown']</code>
 
 </details>
 
@@ -285,10 +285,10 @@ Does the video start with the camera at hip level, roughly between knee and wais
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'hip_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'hip_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['hip_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['hip_level', 'unknown']</code>
 
 </details>
 
@@ -352,10 +352,10 @@ Does the video start with the camera at an overhead level, above human height bu
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'overhead_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'overhead_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['overhead_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['overhead_level', 'unknown']</code>
 
 </details>
 
@@ -425,10 +425,10 @@ Does the video start with the camera fully submerged underwater, capturing scene
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'underwater_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'underwater_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['underwater_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['underwater_level', 'unknown']</code>
 
 </details>
 
@@ -498,9 +498,9 @@ Does the video start with the camera positioned at water level, where the waterl
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.height_wrt_ground_info['start'] == 'water_level'</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] == 'water_level'</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.height_wrt_ground_info['start'] not in ['water_level', 'unknown']</code>
+<code>self.cam_setup.height_wrt_ground_info['start'] not in ['water_level', 'unknown']</code>
 
 </details>
