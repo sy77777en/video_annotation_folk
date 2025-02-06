@@ -1,6 +1,79 @@
 # Focus Overview
 
 <details>
+<summary><h2>Focus Changes from In Focus to Out of Focus</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>focus_change_from_in_to_out_of_focus</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video start with a sharp focus on a subject or area and then become out of focus?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the shot begin with a clear, in-focus subject and then become blurry?
+
+- Is there a focus shift where a sharp subject gradually turns out of focus?
+
+- Does the video transition from a well-defined focal point to a blurred frame?
+
+- Is the initial shot crisp but then loses focus over time?
+
+- Does the sequence start with a clear subject before it becomes blurred?
+
+- Is the focus deliberately pulled away, making the subject indistinct?
+
+- Does the shot start sharp but gradually lose focus?
+
+- Is there a gradual shift where the scene moves from clarity to a soft blur?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video starts with a sharp focus and then becomes out of focus.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the subject starts in focus but fades into a blur.
+
+- A scene that begins with a well-defined focal point and then loses clarity.
+
+- A shot where a crisp subject gradually becomes out of focus.
+
+- A video where the depth of field softens as the focal area becomes blurry.
+
+- A sequence where the focus moves away, making the subject indistinct.
+
+- A shot where an initially sharp subject transitions into a blurred frame.
+
+- A video where a clear scene progressively becomes unfocused.
+
+- A scene where the focus starts sharp but gradually blurs over time.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.focus_info['end'] == 'out_of_focus' and self.cam_setup.is_rack_pull_focus</code>
+
+<h4>🔴 Negative:</h4>
+<code>not (self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])</code>
+
+</details>
+
+<details>
 <summary><h2>Focus Change From Far To Near</h2></summary>
 
 
@@ -141,6 +214,79 @@ Does the focal plane transition from close to distant?
 
 <h4>🔴 Negative:</h4>
 <code>self.cam_setup.focus_change_from_near_to_far is False</code>
+
+</details>
+
+<details>
+<summary><h2>Focus Changes from Out of Focus to In Focus</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>focus_change_from_out_to_in_focus</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video start out of focus and then become in focus?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the shot begin blurry and then become in focus?
+
+- Is there a focus shift where an unfocused scene becomes in focus?
+
+- Does the video transition from an indistinct blur to being in focus?
+
+- Is the initial shot lacking clarity but then becomes in focus?
+
+- Does the sequence open with a blurred frame that gradually comes into focus?
+
+- Is the focus deliberately adjusted to bring a subject into focus?
+
+- Does the shot start out of focus but then become in focus?
+
+- Is there a gradual shift where the scene moves from a soft blur to being in focus?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video starts out of focus and then becomes in focus.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the scene begins blurry but gradually becomes in focus.
+
+- A sequence that starts out of focus and transitions into in focus.
+
+- A shot where an indistinct, blurred frame sharpens into in focus.
+
+- A video where the depth of field shifts, making the subject in focus over time.
+
+- A sequence where the focus moves from an out-of-focus blur into in focus.
+
+- A shot where the scene starts unfocused and becomes in focus.
+
+- A video where an initially unclear scene gradually resolves into in focus.
+
+- A scene where the focus shifts from an out-of-focus blur to a subject in focus.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.is_rack_pull_focus</code>
+
+<h4>🔴 Negative:</h4>
+<code>not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background', 'unknown'])</code>
 
 </details>
 
@@ -584,5 +730,6 @@ Does the video have an extremely shallow depth of field?
 ## Subcategories
 
 - [End_with](./end_with/index.md)
+- [From_to](./from_to/index.md)
 - [Is_always](./is_always/index.md)
 - [Start_with](./start_with/index.md)
