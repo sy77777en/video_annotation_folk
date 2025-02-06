@@ -52,23 +52,23 @@ labels:
   # - cam_motion/dolly_zoom_movement/has_dolly_in_zoom_out
   # - cam_motion/dolly_zoom_movement/has_dolly_out_zoom_in
 
-  # # Ground-Centric Movements
-  # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
-  # - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
-  # - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
-  # - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
-  # - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
-  # - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
-  # - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
-  # - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
-  # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
-  # - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
+  # Ground-Centric Movements
+  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground
+  - cam_motion/ground_centric_movement/backward/has_backward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground
+  - cam_motion/ground_centric_movement/backward/only_backward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground
+  - cam_motion/ground_centric_movement/downward/has_downward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground
+  - cam_motion/ground_centric_movement/downward/only_downward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground
+  - cam_motion/ground_centric_movement/forward/has_forward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground
+  - cam_motion/ground_centric_movement/forward/only_forward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground
+  - cam_motion/ground_centric_movement/upward/has_upward_wrt_ground_birds_worms_included
+  - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground
+  - cam_motion/ground_centric_movement/upward/only_upward_wrt_ground_birds_worms_included
 
   # # Object-Centric Movements
   # # Tracking Shots
