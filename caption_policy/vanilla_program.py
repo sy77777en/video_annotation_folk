@@ -139,15 +139,16 @@ class VanillaScenePolicy(SocraticProgram):
         }
         return policy
 
-    def get_description(self, data: VideoData) -> Dict[str, str]:
+    def get_description(self, data: VideoData, pov_dir="labels/cam_setup/point_of_view") -> Dict[str, str]:
         if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
-        if data.cam_setup.is_framing_subject is False:
-            # This much be a Scenery shot
-            return read_text_file("policy/scene_composition_dynamics/scenery.txt")
+        pov_info = ""
+        true_pov_attributes = data.cam_setup.true_pov_attributes
+        if len(true_pov_names) == 0:
+            
         
-        policy = read_text_file("policy/scene_composition_dynamics/policy.txt")
+        policy = read_text_file("policy/scene_composition_dynamics/policy.txt").format(pov_info)
         if data.cam_setup.is_framing_subject is None:
             # Including complex shot with description others, or multiple subject without a clear focus
             # If is others description, then prompt to use this description to complement the subject description

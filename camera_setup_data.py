@@ -111,11 +111,24 @@ class CameraSetupData:
         self.third_person_over_shoulder_pov = self.cam_setup.camera_pov == 'third_person_over_shoulder'
         self.third_person_side_view_game_pov = self.cam_setup.camera_pov == 'third_person_side_view'
         self.third_person_top_down_game_pov = self.cam_setup.camera_pov == 'third_person_top_down'
-        self.objective_pov = None # Unknown
-        if self.broadcast_pov or self.third_person_full_body_game_pov or self.third_person_isometric_game_pov or self.third_person_side_view_game_pov or self.third_person_top_down_game_pov:
+        self.objective_pov = None # None meaning not sure
+        if self.camera_pov == "unknown": # if N/A label, then objective POV
+            self.objective_pov = True
+        elif self.broadcast_pov or self.drone_pov or self.third_person_full_body_game_pov \
+            or self.third_person_isometric_game_pov or self.third_person_side_view_game_pov or self.third_person_top_down_game_pov:
             self.objective_pov = True
         elif self.first_person_pov or self.dashcam_pov:
             self.objective_pov = False
+        # get a list of names for all the pov attributes, but must be in this function
+        self.pov_attributes = ["broadcast_pov", "dashcam_pov", "drone_pov", "first_person_pov", "locked_on_pov", "overhead_pov", "screen_recording_pov", "selfie_pov", "third_person_full_body_game_pov", "third_person_isometric_game_pov", "third_person_over_hip_pov", "third_person_over_shoulder_pov", "third_person_side_view_game_pov", "third_person_top_down_game_pov", "objective_pov"]
+        assert all(hasattr(self, attr) for attr in self.pov_attributes)
+        
+        self.true_pov_attributes = [attr for attr in self.pov_attributes if getattr(self, attr) is True]
+        # Verify that the number of true pov attributes is between 1 and 2
+        if self.camera_pov != "unknown" and self.objective_pov is True:
+            assert len(self.true_pov_attributes) == 2
+        else:
+            assert len(self.true_pov_attributes) == 1
     
     def _set_framing_subject_attributes(self):
         self.is_framing_subject = None # "Does the video include subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
