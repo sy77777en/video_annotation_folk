@@ -120,15 +120,19 @@ class CameraSetupData:
         elif self.first_person_pov or self.dashcam_pov:
             self.objective_pov = False
         # get a list of names for all the pov attributes, but must be in this function
-        self.pov_attributes = ["broadcast_pov", "dashcam_pov", "drone_pov", "first_person_pov", "locked_on_pov", "overhead_pov", "screen_recording_pov", "selfie_pov", "third_person_full_body_game_pov", "third_person_isometric_game_pov", "third_person_over_hip_pov", "third_person_over_shoulder_pov", "third_person_side_view_game_pov", "third_person_top_down_game_pov", "objective_pov"]
+        self.pov_attributes = ["broadcast_pov", "dashcam_pov", "drone_pov", "first_person_pov", "locked_on_pov", "overhead_pov", 
+                               "screen_recording_pov", "selfie_pov", "third_person_full_body_game_pov", "third_person_isometric_game_pov", 
+                               "third_person_over_hip_pov", "third_person_over_shoulder_pov", "third_person_side_view_game_pov", 
+                               "third_person_top_down_game_pov", "objective_pov"]
         assert all(hasattr(self, attr) for attr in self.pov_attributes)
         
         self.true_pov_attributes = [attr for attr in self.pov_attributes if getattr(self, attr) is True]
-        # Verify that the number of true pov attributes is between 1 and 2
-        if self.camera_pov != "unknown" and self.objective_pov is True:
-            assert len(self.true_pov_attributes) == 2
-        else:
-            assert len(self.true_pov_attributes) == 1
+        if "objective_pov" in self.true_pov_attributes and len(self.true_pov_attributes) > 1:
+            # Remove objective POV which is less specific
+            self.true_pov_attributes.remove("objective_pov")
+            
+        assert len(self.true_pov_attributes) == 1
+        self.true_pov_attribute = self.true_pov_attributes[0]
     
     def _set_framing_subject_attributes(self):
         self.is_framing_subject = None # "Does the video include subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
@@ -200,7 +204,7 @@ class CameraSetupData:
     
     def _set_shot_size_attributes(self):
         self.shot_size_info = {'start': self.shot_size_start, 'end': self.shot_size_end}
-        self.is_shot_size_applicable = self.complex_shot_type != "unknown" or (self.complex_shot_type == "description" and self.shot_size_description_type != "others") # "Is shot size classification possible for this video?"
+        self.is_shot_size_applicable = not (self.complex_shot_type == "unknown" or (self.complex_shot_type == "description" and self.shot_size_description_type == "others")) # "Is shot size classification possible for this video?"
         
         self.subject_revealing = False # "Does the video include a revealing shot where a subject appears?"
         self.subject_disappearing = False # "Does the main subject disappear from the shot?"
@@ -256,6 +260,7 @@ class CameraSetupData:
                         self.height_wrt_subject_change_from_high_to_low = True
                     else:
                         self.height_wrt_subject_change_from_low_to_high = True
+        self.height_wrt_subject_change = self.height_wrt_subject_change_from_high_to_low or self.height_wrt_subject_change_from_low_to_high
         
     def _set_height_relative_to_ground_attributes(self):
         self.height_wrt_ground_info = {'start': self.overall_height_start, 'end': self.overall_height_end}
@@ -619,8 +624,8 @@ class CameraSetupData:
                 raise ValueError("Subject height should be 'unknown' if shot size is 'unknown' for shot type 'change_of_subject'")
         elif self.shot_type in ['human', 'non_human'] or self.complex_shot_type in ["many_subject_one_focus", "clear_subject_dynamic_size", "clear_subject_atypical"]:
             # starting subject height should not be "unknown"
-            if self.subject_height_start == "unknown":
-                raise ValueError("Subject height start should not be 'unknown' for shot types 'human', 'non_human', 'many_subject_one_focus', 'clear_subject_dynamic_size', 'clear_subject_atypical'")
+            if self.subject_height_start == "unknown" and self.subject_height_description == "":
+                raise ValueError("Subject height start should not be 'unknown' without a description for shot types 'human', 'non_human', 'many_subject_one_focus', 'clear_subject_dynamic_size', 'clear_subject_atypical'")
         elif self.complex_shot_type in ["different_subject_in_focus"]:
             # if starting subject height is "unknown", must have a description
             if self.subject_height_start == "unknown" and self.subject_height_description == "":
