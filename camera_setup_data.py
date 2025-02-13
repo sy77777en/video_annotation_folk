@@ -87,6 +87,7 @@ class CameraSetupData:
         self.camera_focus_description = ""
     
     def set_camera_setup_attributes(self):
+        self._set_point_of_view()
         self._set_framing_subject_attributes()
         self._set_shot_type_attributes()
         self._set_shot_size_attributes()
@@ -94,9 +95,30 @@ class CameraSetupData:
         self._set_height_relative_to_ground_attributes()
         self._set_camera_angle_attributes()
         self._set_focus_attributes()
+        
+    def _set_point_of_view(self):
+        self.broadcast_pov = self.cam_setup.camera_pov == 'broadcast_pov'
+        self.dashcam_pov = self.cam_setup.camera_pov == 'dashcam_pov'
+        self.drone_pov = self.cam_setup.camera_pov == 'drone_pov'
+        self.first_person_pov = self.cam_setup.camera_pov == 'first_person'
+        self.locked_on_pov = self.cam_setup.camera_pov == 'locked_on_pov'
+        self.overhead_pov = self.cam_setup.camera_pov == 'overhead_pov'
+        self.screen_recording_pov = self.cam_setup.camera_pov == 'screen_recording'
+        self.selfie_pov = self.cam_setup.camera_pov == 'selfie_pov'
+        self.third_person_full_body_game_pov = self.cam_setup.camera_pov == 'third_person_full_body'
+        self.third_person_isometric_game_pov = self.cam_setup.camera_pov == 'third_person_isometric'
+        self.third_person_over_hip_pov = self.cam_setup.camera_pov == 'third_person_over_hip'
+        self.third_person_over_shoulder_pov = self.cam_setup.camera_pov == 'third_person_over_shoulder'
+        self.third_person_side_view_game_pov = self.cam_setup.camera_pov == 'third_person_side_view'
+        self.third_person_top_down_game_pov = self.cam_setup.camera_pov == 'third_person_top_down'
+        self.objective_pov = None # Unknown
+        if self.broadcast_pov or self.third_person_full_body_game_pov or self.third_person_isometric_game_pov or self.third_person_side_view_game_pov or self.third_person_top_down_game_pov:
+            self.objective_pov = True
+        elif self.first_person_pov or self.dashcam_pov:
+            self.objective_pov = False
     
     def _set_framing_subject_attributes(self):
-        self.is_framing_subject = None # "Does the video include one or more subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
+        self.is_framing_subject = None # "Does the video include subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
         if self.shot_type in ["human", "non_human", "change_of_subject"]:
             self.is_framing_subject = True
         elif self.shot_type in ["scenery"]:
