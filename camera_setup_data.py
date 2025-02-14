@@ -97,20 +97,20 @@ class CameraSetupData:
         self._set_focus_attributes()
         
     def _set_point_of_view(self):
-        self.broadcast_pov = self.cam_setup.camera_pov == 'broadcast_pov'
-        self.dashcam_pov = self.cam_setup.camera_pov == 'dashcam_pov'
-        self.drone_pov = self.cam_setup.camera_pov == 'drone_pov'
-        self.first_person_pov = self.cam_setup.camera_pov == 'first_person'
-        self.locked_on_pov = self.cam_setup.camera_pov == 'locked_on_pov'
-        self.overhead_pov = self.cam_setup.camera_pov == 'overhead_pov'
-        self.screen_recording_pov = self.cam_setup.camera_pov == 'screen_recording'
-        self.selfie_pov = self.cam_setup.camera_pov == 'selfie_pov'
-        self.third_person_full_body_game_pov = self.cam_setup.camera_pov == 'third_person_full_body'
-        self.third_person_isometric_game_pov = self.cam_setup.camera_pov == 'third_person_isometric'
-        self.third_person_over_hip_pov = self.cam_setup.camera_pov == 'third_person_over_hip'
-        self.third_person_over_shoulder_pov = self.cam_setup.camera_pov == 'third_person_over_shoulder'
-        self.third_person_side_view_game_pov = self.cam_setup.camera_pov == 'third_person_side_view'
-        self.third_person_top_down_game_pov = self.cam_setup.camera_pov == 'third_person_top_down'
+        self.broadcast_pov = self.camera_pov == 'broadcast_pov'
+        self.dashcam_pov = self.camera_pov == 'dashcam_pov'
+        self.drone_pov = self.camera_pov == 'drone_pov'
+        self.first_person_pov = self.camera_pov == 'first_person'
+        self.locked_on_pov = self.camera_pov == 'locked_on_pov'
+        self.overhead_pov = self.camera_pov == 'overhead_pov'
+        self.screen_recording_pov = self.camera_pov == 'screen_recording'
+        self.selfie_pov = self.camera_pov == 'selfie_pov'
+        self.third_person_full_body_game_pov = self.camera_pov == 'third_person_full_body'
+        self.third_person_isometric_game_pov = self.camera_pov == 'third_person_isometric'
+        self.third_person_over_hip_pov = self.camera_pov == 'third_person_over_hip'
+        self.third_person_over_shoulder_pov = self.camera_pov == 'third_person_over_shoulder'
+        self.third_person_side_view_game_pov = self.camera_pov == 'third_person_side_view'
+        self.third_person_top_down_game_pov = self.camera_pov == 'third_person_top_down'
         self.objective_pov = None # None meaning not sure
         if self.camera_pov == "unknown": # if N/A label, then objective POV
             self.objective_pov = True
