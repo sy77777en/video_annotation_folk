@@ -381,6 +381,8 @@ class VanillaSpatialPolicy(SocraticProgram):
                     )
                 else:
                     policy += "\n Camera Height Relative to Subjects: The camera is positioned {}.".format(self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']))
+            elif data.cam_setup.height_wrt_subject_description != "":
+                policy += f"\n Camera Height Relative to Subjects: {data.cam_setup.height_wrt_subject_description}"
         elif subject_status == None or subject_status == "no_subject":
             if shot_size_change:
                 policy += "\n Shot Size Information: The video begins with {} of the scenery. It then changes to {}.".format(
@@ -409,6 +411,75 @@ class VanillaCameraPolicy(SocraticProgram):
         return {
             "camera_framing_dynamics": self.get_description(data)
         }
+        
+    def format_playback_speed(self, speed: str, speed_dir="labels/cam_setup/video_speed/") -> str:
+        # Options: "time_lapse", "fast_motion", "regular", "slow_motion", 
+        # "stop_motion", "speed_ramp", "time_reversed"
+        speed_info = {
+            "time_lapse": "time_lapse",
+            "fast_motion": "fast_motion_without_time_lapse",
+            "regular": "regular_speed",
+            "slow_motion": "slow_motion",
+            "stop_motion": "stop_motion",
+            "speed_ramp": "speed_ramp",
+            "time_reversed": "time_reversed"
+        }
+        speed = speed_info[speed]
+        speed_str = read_json_file(os.path.join(speed_dir, f"{speed}.json"))['def_prompt'][0]
+        if speed == "regular_speed":
+            speed_str += " (no need to mention)."
+        return speed_str
+    
+    def format_lens_distortion(self, lens_distortion: str) -> str:
+        # Options: "regular", "barrel", "fisheye"
+        if lens_distortion == "regular":
+            return "No lens distortion (no need to mention)."
+        elif lens_distortion == "barrel":
+            return "The video features mild barrel distortion causing straight lines near the edges to bow outward."
+        elif lens_distortion == "fisheye":
+            return "The video features noticable fisheye distortion causing straight lines to curve outward."
+        raise ValueError("Invalid lens distortion type.")
+    
+    def format_camera_height(self, height: str) -> str:
+        # Options: "unknown", "aerial_level", "overhead_level", "eye_level", 
+        # "hip_level", "ground_level", "water_level", "underwater_level"
+        height_info = {
+            "aerial_level": "at an aerial level",
+            "overhead_level": "at an overhead level (around second floor height)",
+            "eye_level": "at eye level (above the waist)",
+            "hip_level": "at hip level (below the waist and above the knees)",
+            "ground_level": "at ground level",
+            "water_level": "above water",
+            "underwater_level": "underwater"
+        }
+        if height == "unknown":
+            raise ValueError("Camera height cannot be unknown.")
+        return height_info[height]
     
     def get_description(self, data: VideoData) -> Dict[str, str]:
-        raise NotImplementedError("Camera Framing and Dynamics Description is not yet implemented.")
+        if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+            raise ValueError("Shot transitions are not supported in this policy.")
+        
+        policy = ""
+        policy += read_text_file("policy/camera_framing_dynamics/policy.txt")
+        
+        policy += "\n Crucially, instead of inferring these attributes from the video, we have already provided human-labeled ground truth for some of the elements specified above. You should directly use this information in your description and should not infer any details that are not already provided. Your description should be brief, and if anything is normal or unremarkable, you do not need to include it (e.g., if the video is at regular playback speed, there is no need to mention it)."
+
+        # Add playback speed information
+        policy += "\n Playback Speed: {}".format(self.format_playback_speed(data.cam_setup.video_speed))
+        
+        # Add lens distortion information
+        policy += "\n Lens Distortion: {}".format(self.format_lens_distortion(data.cam_setup.lens_distortion))
+        
+        # Add camera height information
+        if data.cam_setup.is_height_wrt_ground_applicable:
+            if data.cam_setup.height_wrt_ground_change:
+                policy += "\n Camera Height: The camera is initially positioned {} and then changes to {}.".format(
+                    self.format_camera_height(data.cam_setup.height_wrt_ground_info['start']),
+                    self.format_camera_height(data.cam_setup.height_wrt_ground_info['end'])
+                )
+            else:
+                policy += "\n Camera Height: The camera is positioned {}.".format(self.format_camera_height((data.cam_setup.height_wrt_ground_info['start']))
+        else:
+            policy += "\n Camera Height: The camera height is unclear or not significant enough to mention (no need to mention)."
+        

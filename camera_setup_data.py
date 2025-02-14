@@ -287,6 +287,7 @@ class CameraSetupData:
                         self.height_wrt_ground_change_from_high_to_low = True
                     else:
                         self.height_wrt_ground_change_from_low_to_high = True
+        self.height_wrt_ground_change = self.height_wrt_ground_change_from_high_to_low or self.height_wrt_ground_change_from_low_to_high or self.above_water_to_underwater or self.underwater_to_above_water
         
     def _set_camera_angle_attributes(self):
         self.camera_angle_info = {'start': self.camera_angle_start, 'end': self.camera_angle_end}
