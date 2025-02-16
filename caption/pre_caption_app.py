@@ -7,6 +7,7 @@ import torch
 import json
 from datetime import datetime
 from pathlib import Path
+from utils import extract_frame, extract_middle_frame
 from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy
 
 caption_programs = {
@@ -282,6 +283,22 @@ def main():
     
     # Display video
     st.video(selected_video)
+    
+    # Display first and last frames
+    first_frame = extract_frame(selected_video, 0)
+    mid_frame = extract_middle_frame(selected_video)
+    last_frame = extract_frame(selected_video, -1)
+    # Expandable section
+    with st.expander("Frames (Click to Expand/Collapse)", expanded=False):
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.image(first_frame, caption="First Frame", use_column_width=True)
+        with col2:
+            st.image(mid_frame, caption="Mid Frame", use_column_width=True)
+        with col3:
+            st.image(last_frame, caption="Last Frame", use_column_width=True)
+
+    
     
     # Check for existing feedback and get current caption
     existing_feedback = load_feedback_data(video_id, output_dir=FOLDER / output_dir)
