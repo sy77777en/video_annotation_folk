@@ -138,6 +138,12 @@ class LightingSetupData:
         self._set_shadow_pattern_attributes()
     
     def _set_color_grading_attributes(self):
+        attributes = ["is_color_grading_complex", "is_black_white", "is_brighter_than_normal", "is_darker_than_normal"]
+        if self.shot_transition:
+            for attr in attributes:
+                setattr(self, attr, None)
+            return
+        
         self.is_color_grading_complex = any([
             self.color_temperature in ["complex_changing", "complex_contrasting", "complex_others"], \
             self.color_saturation in ["complex_changing", "complex_contrasting", "complex_others"], \
@@ -148,18 +154,33 @@ class LightingSetupData:
         self.is_darker_than_normal = self.brightness in ["dark", "very_dark"]
     
     def _set_lighting_setup_attributes(self):
+        if self.shot_transition:
+            self.is_lighting_setup_complex = None
+            return
         self.is_lighting_quality_complex = self.light_quality in ["complex_changing", "complex_contrasting", "complex_others"]
     
     def _set_subject_lighting_attributes(self):
+        if self.shot_transition:
+            self.is_subject_lighting_applicable = None
+            return
         self.is_subject_lighting_applicable = self.subject_contrast_ratio == "unknown"
     
     def _set_special_lighting_attributes(self):
+        if self.shot_transition:
+            self.lens_flares = None
+            return
         self.lens_flares = self.lens_flares_regular or self.lens_flares_anamorphic
         
     def _set_volumetric_lighting_attributes(self):
+        if self.shot_transition:
+            self.has_volumetric_lighting = None
+            return
         self.has_volumetric_lighting = self.volumetric_beam_light or self.volumetric_spot_light or self.god_rays or self.light_through_medium or self.volumetric_light_others
     
     def _set_shadow_pattern_attributes(self):
+        if self.shot_transition:
+            self.has_shadow_patterns = None
+            return
         self.has_shadow_patterns = self.venetian_blinds or self.subject_shape or self.window_frames or self.foliage or self.shadow_patterns_gobo_others
         
     def set_shot_transition(self, shot_transition):
