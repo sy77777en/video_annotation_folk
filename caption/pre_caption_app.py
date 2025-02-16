@@ -35,7 +35,7 @@ def parse_args():
     return parser.parse_args()
 
 def load_video_data(video_data_file):
-    res = torch.load(video_data_file) # TODO: Change to json.load
+    res = torch.load(video_data_file, weights_only=False) # TODO: Change to json.load
     video_data_dict = {}
     for video_data in res:
         # check if cam_setup is set

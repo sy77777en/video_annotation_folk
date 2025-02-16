@@ -658,10 +658,18 @@ class CameraSetupData:
         # Overall height start and end should not be the same unless for "unknown"
         if self.overall_height_start == self.overall_height_end and self.overall_height_start != "unknown":
             raise ValueError("Overall height start and end should not be the same")
+        
+        # Overall height start should not be "unknown" if overall height end is not "unknown"
+        if self.overall_height_end != "unknown" and self.overall_height_start == "unknown":
+            raise ValueError("Overall height start should not be 'unknown' if overall height end is not 'unknown'")
 
         # Camera angle start and end should not be the same unless for "unknown"
         if self.camera_angle_start == self.camera_angle_end and self.camera_angle_start != "unknown":
             raise ValueError("Camera angle start and end should not be the same")
+        
+        # Camera angle start should not be "unknown" if camera angle end is not "unknown"
+        if self.camera_angle_end != "unknown" and self.camera_angle_start == "unknown":
+            raise ValueError("Camera angle start should not be 'unknown' if camera angle end is not 'unknown'")
 
         # Focus plane start and end should not be the same unless for "unknown"
         if self.focus_plane_start == self.focus_plane_end and self.focus_plane_start != "unknown":
