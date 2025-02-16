@@ -1,4 +1,3 @@
-from socratic_program import SocraticProgram
 from video_data import VideoData
 from typing import List, Dict
 import json
@@ -13,6 +12,19 @@ def read_json_file(file_path: str) -> Dict:
     """Reads and returns the content of a JSON file as a dictionary."""
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
+    
+class SocraticProgram:
+    def __init__(self, name: str, info: str, caption_fields: List[str]):
+        self.name = name
+        self.info = info
+        self.caption_fields = caption_fields
+    
+    def __str__(self):
+        return f"{self.name}: {self.info} \n Caption Fields: {self.caption_fields}"
+
+    def __call__(self, data: VideoData) -> Dict[str, str]:
+        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
+        raise NotImplementedError("Subclasses must implement this method")
 
 # class VanillaPolicy(SocraticProgram):
 #     def __init__(self):
@@ -30,7 +42,7 @@ def read_json_file(file_path: str) -> Dict:
     
 #     def __call__(self, data: VideoData) -> Dict[str, str]:
 #         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
-#         if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+#         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
 #             raise ValueError("Shot transitions are not supported in this policy.")
 
 #         subject_description_policy = self.get_subject_description_policy(data)
@@ -75,7 +87,7 @@ class VanillaSubjectPolicy(SocraticProgram):
         }
     
     def get_description(self, data: VideoData) -> str:
-        if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
         if data.cam_setup.is_framing_subject is False:
@@ -86,7 +98,7 @@ class VanillaSubjectPolicy(SocraticProgram):
                     "or scale rather than a specific object. If relevant, describe the shot's purpose, whether it is an "
                     "establishing shot setting the scene or providing context, or a FPV shot that creates an immersive experience.")
         
-        policy = read_text_file("policy/subject_description/policy.txt")
+        policy = read_text_file("caption_policy/policy/subject_description/policy.txt")
         if data.cam_setup.is_framing_subject is None:
             # Including complex shot with description others, or multiple subject without a clear focus
             # If is others description, then prompt to use this description to complement the subject description
@@ -122,9 +134,10 @@ class VanillaSubjectPolicy(SocraticProgram):
             policy += "\n Please note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
         else:
             assert data.cam_setup.shot_size_description != ""
-            policy += "\n" + read_text_file("policy/subject_description/has_shot_size_description.txt").format(shot_size_description=data.cam_setup.shot_size_description)
+            policy += "\n" + read_text_file("caption_policy/policy/subject_description/has_shot_size_description.txt").format(shot_size_description=data.cam_setup.shot_size_description)
         return policy
-    
+
+
 class VanillaScenePolicy(SocraticProgram):
     def __init__(self):
         name = "Vanilla Scene Description"
@@ -140,14 +153,15 @@ class VanillaScenePolicy(SocraticProgram):
         return policy
 
     def get_description(self, data: VideoData) -> str:
-        if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
         true_pov_attribute = data.cam_setup.true_pov_attribute
-        pov_info = read_text_file(os.path.join("labels/cam_setup/point_of_view", f"{true_pov_attribute}.txt"))
+        pov_info = read_json_file(os.path.join("labels/cam_setup/point_of_view", f"{true_pov_attribute}.json"))['def_prompt'][0]
         
-        policy = read_text_file("policy/scene_composition_dynamics/policy.txt").format(pov_description=pov_info)
+        policy = read_text_file("caption_policy/policy/scene_composition_dynamics/policy.txt").format(pov_description=pov_info)
         return policy
+
 
 class VanillaSubjectMotionPolicy(SocraticProgram):
     def __init__(self):
@@ -163,15 +177,15 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
         }
     
     def get_description(self, data: VideoData) -> str:
-        if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
         if data.cam_setup.is_framing_subject is False:
             # This much be a Scenery shot
-            return read_text_file("policy/subject_motion_dynamics/scenery.txt")
+            return ("The video is a scenery shot. You do not need to describe the subject motion. ")
         
         
-        policy = read_text_file("policy/subject_motion_dynamics/policy.txt")
+        policy = read_text_file("caption_policy/policy/subject_motion_dynamics/policy.txt")
         if data.cam_setup.is_framing_subject is None:
             # Including complex shot with description others, or multiple subject without a clear focus
             # If is others description, then prompt to use this description to complement the subject description
@@ -210,7 +224,7 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
             pass
                 
         assert data.cam_setup.subject_description != "", "Subject description must be provided before subject motion and dynamics description."
-        policy += "\n" + read_text_file("policy/subject_motion_dynamics/has_subject_description.txt").format(subject_description=data.cam_setup.subject_description)
+        policy += "\n" + read_text_file("caption_policy/policy/subject_motion_dynamics/has_subject_description.txt").format(subject_description=data.cam_setup.subject_description)
         return policy
 
 
@@ -254,18 +268,18 @@ class VanillaSpatialPolicy(SocraticProgram):
         return height_info[height]
     
     def get_description(self, data: VideoData) -> str:
-        if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
         policy = ""
-        policy += read_text_file("policy/spatial_framing_dynamics/framing_subject.txt")
-        policy += "\n" + read_text_file("policy/spatial_framing_dynamics/framing_scene.txt")
-        policy += "\n" + read_text_file("policy/spatial_framing_dynamics/movement.txt")
+        policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_subject.txt")
+        policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
+        policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/movement.txt")
         # if data.cam_setup.is_framing_subject is False:
         #     # This much be a Scenery shot
-        #     policy += read_text_file("policy/spatial_framing_dynamics/framing_scene.txt")
+        #     policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
         # else:
-        #     policy += read_text_file("policy/spatial_framing_dynamics/framing_subject.txt")
+        #     policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_subject.txt")
         
         
         # if data.cam_setup.is_framing_subject is None:
@@ -275,14 +289,14 @@ class VanillaSpatialPolicy(SocraticProgram):
         #     if data.cam_setup.shot_size_description_type == "others":
         #         pass # Do nothing
         #     elif data.cam_setup.is_just_many_subject_no_focus_shot:
-        #         policy += "\n" + read_text_file("policy/spatial_framing_dynamics/framing_scenery.txt")
+        #         policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scenery.txt")
         #         policy += "\n Please note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
         #     else:
         #         raise ValueError("When framing subject is None, the shot size description must be others or many_subject_no_focus.")
             
         assert data.cam_setup.subject_description != "", "Subject description must be provided before subject motion and dynamics description."
         assert data.cam_setup.scene_description != "", "Scene description must be provided before subject motion and dynamics description."
-        policy += "\n" + read_text_file("policy/spatial_framing_dynamics/has_subject_scene_description.txt").format(
+        policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/has_subject_scene_description.txt").format(
             subject_description=data.cam_setup.subject_description,
             scene_description=data.cam_setup.scene_description
         )
@@ -360,8 +374,8 @@ class VanillaSpatialPolicy(SocraticProgram):
                     policy += "\n Camera Height Relative to Subjects: The camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start'])
                     )
-            elif data.cam_setup.height_wrt_subject_description != "":
-                policy += f"\n Camera Height Relative to Subjects: {data.cam_setup.height_wrt_subject_description}"
+            elif data.cam_setup.subject_height_description != "":
+                policy += f"\n Camera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
                 
         
         if subject_status == "has_subject":
@@ -381,8 +395,8 @@ class VanillaSpatialPolicy(SocraticProgram):
                     )
                 else:
                     policy += "\n Camera Height Relative to Subjects: The camera is positioned {}.".format(self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']))
-            elif data.cam_setup.height_wrt_subject_description != "":
-                policy += f"\n Camera Height Relative to Subjects: {data.cam_setup.height_wrt_subject_description}"
+            elif data.cam_setup.subject_height_description != "":
+                policy += f"\n Camera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
         elif subject_status == None or subject_status == "no_subject":
             if shot_size_change:
                 policy += "\n Shot Size Information: The video begins with {} of the scenery. It then changes to {}.".format(
@@ -551,7 +565,7 @@ class VanillaCameraPolicy(SocraticProgram):
             # "forward_cam": "moving the camera forward",
             # "backward_cam": "moving the camera backward",
         }
-        true_movement = [key for key in movement_info.keys() if data.cam_motion.getattr(key) is True]
+        true_movement = [key for key in movement_info.keys() if getattr(data.cam_motion, key) is True]
         if len(true_movement) == 0:
             return "The camera shows no clear or intentional movement."
         else:
@@ -684,11 +698,11 @@ class VanillaCameraPolicy(SocraticProgram):
         return description
             
     def get_description(self, data: VideoData) -> str:
-        if data.cam_motion.has_shot_transition or data.cam_motion.has_transition:
+        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
         policy = ""
-        policy += read_text_file("policy/camera_framing_dynamics/policy.txt")
+        policy += read_text_file("caption_policy/policy/camera_framing_dynamics/policy.txt")
         
         policy += "\n Crucially, instead of inferring these attributes from the video, we have already provided human-labeled ground truth for some of the elements specified above. You should directly use this information in your description and should not infer any details that are not already provided. Your description should be brief, and if anything is normal or unremarkable, you do not need to include it (e.g., if the video is at regular playback speed, there is no need to mention it)."
 
@@ -706,9 +720,12 @@ class VanillaCameraPolicy(SocraticProgram):
                     self.format_camera_height_end(data.cam_setup.height_wrt_ground_info['end'])
                 )
             else:
-                policy += "\n **Camera Height:** The camera is {}.".format(
-                    self.format_camera_height_start((data.cam_setup.height_wrt_ground_info['start']))
-                )
+                try:
+                    policy += "\n **Camera Height:** The camera is {}.".format(
+                        self.format_camera_height_start((data.cam_setup.height_wrt_ground_info['start']))
+                    )
+                except:
+                    import pdb; pdb.set_trace()
         elif data.cam_setup.overall_height_description != "":
             policy += "\n **Camera Height:** {}".format(data.cam_setup.overall_height_description)
         else:
@@ -779,16 +796,16 @@ class VanillaCameraPolicy(SocraticProgram):
         else:
             
             if data.cam_motion.camera_movement == "major_complex":
-                policy += "\n **Camera Motion:** {}".format(data.cam_motion.camera_movement_description)
+                policy += "\n **Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
             else:
-                camera_movement_description = self.get_movement_description(data)
+                complex_motion_description = self.get_movement_description(data)
                 if data.cam_motion.camera_movement == "minor":
                     policy += "\n **Camera Motion:** The camera shows some minor movement."
                 elif data.cam_motion.camera_movement == "major_simple":
                     policy += "\n **Camera Motion:** The camera shows a clear movement pattern."
                 else:
                     raise ValueError("Invalid camera movement type.")
-                policy += " " + camera_movement_description
+                policy += " " + complex_motion_description
             
             # if tracking
             if data.cam_motion.is_tracking:

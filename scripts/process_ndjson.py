@@ -589,22 +589,22 @@ def process_ndjson_files(ndjson_dir: str, issues_dir: str, yaml_paths: Optional[
         
         video_data = video_data_dict[video_name]
 
-        # logging.info(f"\nVideo: {video_name}")
-        # logging.info("Annotations:")
-        # for i, annotations in enumerate(annotations_list, 1):
-        #     logging.info(f"  Annotation set {i}:")
-        #     logging.info(f"    {json.dumps(annotations, indent=4)}")
+        logging.info(f"\nVideo: {video_name}")
+        logging.info("Annotations:")
+        for i, annotations in enumerate(annotations_list, 1):
+            logging.info(f"  Annotation set {i}:")
+            logging.info(f"    {json.dumps(annotations, indent=4)}")
         
-        # logging.info("Processed Data:")
-        # if all_camera_motion:
-        #     logging.info("  Camera Motion:")
-        #     logging.info(f"    {json.dumps(all_camera_motion, indent=4)}")
-        # if all_camera_setup:
-        #     logging.info("  Camera Setup:")
-        #     logging.info(f"    {json.dumps(all_camera_setup, indent=4)}")
-        # if all_lighting_setup:
-        #     logging.info("  Lighting Setup:")
-        #     logging.info(f"    {json.dumps(all_lighting_setup, indent=4)}")
+        logging.info("Processed Data:")
+        if all_camera_motion:
+            logging.info("  Camera Motion:")
+            logging.info(f"    {json.dumps(all_camera_motion, indent=4)}")
+        if all_camera_setup:
+            logging.info("  Camera Setup:")
+            logging.info(f"    {json.dumps(all_camera_setup, indent=4)}")
+        if all_lighting_setup:
+            logging.info("  Lighting Setup:")
+            logging.info(f"    {json.dumps(all_lighting_setup, indent=4)}")
 
         try:
             # Only set data from annotations if this is not an issue video

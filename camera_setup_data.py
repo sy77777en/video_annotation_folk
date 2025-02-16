@@ -313,6 +313,8 @@ class CameraSetupData:
             self.is_dutch_angle = self.dutch_angle in ["yes", "varying"]
             self.is_dutch_angle_varying = self.dutch_angle == "varying"
             self.is_dutch_angle_fixed = self.dutch_angle == "yes"
+            
+        self.camera_angle_change = self.camera_angle_change_from_high_to_low or self.camera_angle_change_from_low_to_high
     
     def _set_focus_attributes(self):
         self.focus_info = {'start': self.focus_plane_start, 'end': self.focus_plane_end}
@@ -639,6 +641,12 @@ class CameraSetupData:
             # if starting subject height is "unknown", must have a description
             if self.subject_height_start == "unknown" and self.subject_height_description == "":
                 raise ValueError("Subject height start should not be 'unknown' without a description for complex shot type 'different_subject_in_focus'")
+        else:
+            # For other complex shot types, subject height, if ending height is not "unknown", starting height should not be "unknown"
+            if self.subject_height_end != "unknown" and self.subject_height_start == "unknown":
+                raise ValueError("Subject height start should not be 'unknown' if subject height end is not 'unknown'")
+            if self.subject_height_start != "unknown" and self.subject_height_start == self.subject_height_end:
+                raise ValueError("Subject height start and end should not be the same")
             
             
             
@@ -670,13 +678,13 @@ class CameraSetupData:
         if self.camera_focus in ["shallow_focus", "ultra_shallow_focus"]:
             if self.focus_plane_start == "unknown":
                 raise ValueError("Focus plane start should not be 'unknown' for shallow focus")
-            if self.focus_plane_start != self.focus_plane_end:
-                if self.focus_change_reason == "no_change":
-                    raise ValueError("Focus change reason should not be 'no_change' for focus plane change")
             if self.focus_plane_end == "unknown":
                 # meaning there should be no focus plane change except for middleground
                 if self.focus_change_reason != "no_change" and self.focus_plane_start not in ["middle_ground", "out_of_focus"]:
                     raise ValueError("Focus plane must not change except for middle ground")
+            elif self.focus_plane_start != self.focus_plane_end:
+                if self.focus_change_reason == "no_change":
+                    raise ValueError("Focus change reason should not be 'no_change' for focus plane change")
 
 
 camera_setup_params_demo = {
