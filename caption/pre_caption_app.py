@@ -28,6 +28,7 @@ if 'api_key' not in st.session_state:
 def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="test_configs.json", help="Path to the JSON config file")
+    parser.add_argument("--video_urls_file", type=str, default="test_urls.json", help="Path to the test URLs file")
     parser.add_argument("--output", type=str, default="outputs", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
@@ -45,13 +46,13 @@ def load_video_data(video_data_file):
             print(f"cam_setup is not set for {video_data.workflows[0].video_name}")
             pass
         
-        if video_data.workflows[0].video_name == 'nb69sgB5mG0.2.2.mp4':
-            video_data.cam_setup.overall_height_start = "water_level"
-        
         video_data.cam_setup.update()
         video_data.cam_motion.update()
-        video_data.cam_setup.subject_description = "{NO DESCRIPTION FOR SUBJECTS YET}"
-        video_data.cam_setup.scene_description = "{NO DESCRIPTION FOR SCENE YET}"
+        video_data.cam_setup.subject_description = "**{NO DESCRIPTION FOR SUBJECTS YET}**"
+        video_data.cam_setup.scene_description = "**{NO DESCRIPTION FOR SCENE YET}**"
+        video_data.cam_setup.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
+        video_data.cam_setup.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
+        video_data.cam_setup.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
         video_data_dict[video_data.workflows[0].video_name] = video_data
     return video_data_dict
 
@@ -226,8 +227,7 @@ def main():
 
     config = config_dict[selected_config]
     st.title(config.get("name", "Pre-Caption System"))
-    captions = load_json(FOLDER / config["captions_file"])
-    video_urls = load_json(FOLDER / config["video_urls_file"])
+    video_urls = load_json(FOLDER / args.video_urls_file)
     output_dir = os.path.join(FOLDER, args.output, config["output_name"])
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)

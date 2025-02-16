@@ -85,6 +85,13 @@ class CameraSetupData:
         self.focus_change_reason = "no_change"
         
         self.camera_focus_description = ""
+        
+        self.subject_description = "**{NO DESCRIPTION FOR SUBJECTS YET}**"
+        self.scene_description = "**{NO DESCRIPTION FOR SCENE YET}**"
+        self.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
+        self.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
+        self.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
+        
     
     def set_camera_setup_attributes(self):
         self._set_point_of_view()

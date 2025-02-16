@@ -18,6 +18,7 @@ if 'api_key' not in st.session_state:
 def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="all_test_configs.json", help="Path to the JSON config file")
+    parser.add_argument("--video_urls_file", type=str, default="test_urls.json", help="Path to the test URLs file")
     parser.add_argument("--output", type=str, default="outputs", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
@@ -190,8 +191,8 @@ def main():
 
     config = config_dict[selected_config]
     st.title(config.get("name", "Video Caption Feedback System"))
-    captions = load_json(FOLDER / config["captions_file"])
-    video_urls = load_json(FOLDER / config["video_urls_file"])
+    captions = load_json(FOLDER / config["captions_file"]) # TODO: Bug
+    video_urls = load_json(FOLDER / args.video_urls_file)
     output_dir = os.path.join(FOLDER, args.output, config["output_name"])
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
