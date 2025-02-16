@@ -158,8 +158,8 @@ class VanillaScenePolicy(SocraticProgram):
         
         true_pov_attribute = data.cam_setup.true_pov_attribute
         pov_info = read_json_file(os.path.join("labels/cam_setup/point_of_view", f"{true_pov_attribute}.json"))['def_prompt'][0]
-        
-        policy = read_text_file("caption_policy/policy/scene_composition_dynamics/policy.txt").format(pov_description=pov_info)
+        policy = read_text_file("caption_policy/policy/scene_composition_dynamics/policy.txt")
+        policy += "\n" + pov_info
         return policy
 
 
