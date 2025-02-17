@@ -2,7 +2,7 @@
     "label": "Light Contrast Ratio on Subject Is Complex",
     "label_name": "contrast_is_complex",
     "def_question": [
-        "Is the light contrast ratio on the subject complex, due to significant lighting changes, camera movement, or subject changes?"
+        "Is the light contrast ratio on the subject complex, due to significant lighting changes, camera movement, subject changes, or multiple subjects in different lighting conditions?"
     ],
     "alt_question": [
         "Does the subject’s lighting contrast vary significantly due to lighting shifts or movement?",
@@ -15,7 +15,7 @@
         "Does the shot include multiple contrast conditions across different frames?"
     ],
     "def_prompt": [
-        "The light contrast ratio on the subject is complex, varying due to lighting changes, camera motion, or subject changes."
+        "The light contrast ratio on the subject is complex, varying due to lighting changes, camera motion, subject changes, or multiple subjects in different lighting conditions."
     ],
     "alt_prompt": [
         "A video where the subject’s contrast changes because of lighting adjustments or scene shifts.",
