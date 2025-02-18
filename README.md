@@ -1,6 +1,27 @@
 ## **VideoData: A Structured Representation for Video Metadata**
 
-This repository contains `video_data.py`, which provides a structured way to handle video-related metadata, including **camera motion**, **camera setup**, and **lighting setup**. It ensures proper initialization, verification, and prevents direct instantiation of dependent objects.
+This repository contains tools for video annotation and metadata handling, including LLM-based video captioning and structured metadata for **camera motion**, **camera setup**, and **lighting setup**.
+
+### **📥 Installation**
+
+To install all dependencies, run:
+
+```bash
+python3 -m pip install -e .
+```
+
+This will install all required packages including:
+- Streamlit for web applications
+- OpenAI and Google AI libraries for LLM support
+- Image and video processing libraries
+- Other utility packages
+
+### **📝 Overview**
+
+The core functionality includes:
+- Structured video metadata handling through `video_data.py`
+- LLM-based video captioning (in `llm/` and `caption/` directories)
+- Web interface for annotation and visualization
 
 ---
 
