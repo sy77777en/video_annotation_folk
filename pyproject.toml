@@ -20,7 +20,10 @@ dependencies = [
     "streamlit-feedback",
     "opencv-python-headless",
     "numpy",
-    "google-genai"
+    "google-genai",
+    "google-auth",
+    "google-auth-oauthlib",
+    "google-auth-httplib2"
 ]
 
 
