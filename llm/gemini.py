@@ -34,6 +34,7 @@ class Gemini(LLM):
                  images: List[str] = [],
                  video: str = "",
                  extracted_frames: List[int] = [],
+                 temperature: float = 0.0,
                  **kwargs) -> str:
         """Generate text from a prompt. Optionally provide images or video."""
         if len(images) > 0 and len(video) > 0:
@@ -60,6 +61,7 @@ class Gemini(LLM):
             model=self.model,
             contents=contents,
             config=types.GenerateContentConfig(
+                temperature=temperature,
                 **kwargs
             )
         )
