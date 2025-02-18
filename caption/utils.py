@@ -1,17 +1,38 @@
 import cv2
 import numpy as np
+from typing import List
+import json
+import os
 
-def extract_frame(video_path: str, frame_number: int) -> np.ndarray:
+# Load text data from a given file
+def load_text(file_path):
+    with open(file_path, "r") as f:
+        return f.read().strip()
+
+# Load configuration from a JSON file
+def load_config(config_path):
+    with open(config_path, "r") as f:
+        return json.load(f)
+
+# Load JSON data from a given file
+def load_json(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, "r") as f:
+            return json.load(f)
+    return {}
+
+
+def extract_frames(video_path: str, frame_numbers: List[int]) -> List[np.ndarray]:
     """
     Extracts a specific frame from a video using OpenCV and converts it to RGB format.
 
     Parameters:
         video_path (str): Path or URL to the video file.
-        frame_number (int): The frame index to extract. Supports negative indices:
+        frame_number (List[int]): The frame indices to extract. Supports negative indices:
                             -1 refers to the last frame, -2 to the second last, etc.
 
     Returns:
-        np.ndarray: The extracted frame in RGB format.
+        List[np.ndarray]: The extracted frame in RGB format.
     
     Raises:
         ValueError: If the video cannot be opened or the frame number is out of range.
@@ -23,36 +44,43 @@ def extract_frame(video_path: str, frame_number: int) -> np.ndarray:
         raise ValueError(f"Error: Unable to open video {video_path}")
 
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-
-    # Convert negative indices to positive (e.g., -1 -> last frame)
-    if frame_number < 0:
-        frame_number = total_frames + frame_number  # Adjust for negatives
-
-    if frame_number < 0 or frame_number >= total_frames:
-        raise ValueError(f"Error: Frame number {frame_number} is out of range (0 to {total_frames - 1})")
-
-    # Set the frame position
-    cap.set(cv2.CAP_PROP_POS_FRAMES, frame_number)
     
-    # Read the frame
-    ret, frame = cap.read()
+    frames = []
+    
+    for frame_number in frame_numbers:
+
+        # Convert negative indices to positive (e.g., -1 -> last frame)
+        if frame_number < 0:
+            frame_number = total_frames + frame_number  # Adjust for negatives
+
+        if frame_number < 0 or frame_number >= total_frames:
+            raise ValueError(f"Error: Frame number {frame_number} is out of range (0 to {total_frames - 1})")
+
+        # Set the frame position
+        cap.set(cv2.CAP_PROP_POS_FRAMES, frame_number)
+    
+        # Read the frame
+        ret, frame = cap.read()
+
+        if not ret:
+            raise RuntimeError(f"Error: Unable to extract frame {frame_number} from {video_path}")
+
+        # Convert BGR to RGB for easier visualization
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frames.append(frame)
+
     cap.release()
+    return frames
 
-    if not ret:
-        raise RuntimeError(f"Error: Unable to extract frame {frame_number} from {video_path}")
-
-    # Convert BGR to RGB for easier visualization
-    return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-def extract_middle_frame(video_path: str) -> np.ndarray:
+def get_middle_frame_index(video_path: str) -> int:
     """
-    Extracts the middle frame of a video using OpenCV.
+    Get the index of middle frame of a video using OpenCV.
 
     Parameters:
         video_path (str): Path or URL to the video file.
 
     Returns:
-        np.ndarray: The extracted middle frame in RGB format.
+        frame_index (int): The middle frame index.
     
     Raises:
         ValueError: If the video cannot be opened.
@@ -68,7 +96,7 @@ def extract_middle_frame(video_path: str) -> np.ndarray:
 
     cap.release()
 
-    return extract_frame(video_path, middle_frame_index)
+    return middle_frame_index
 
 
 if __name__ == "__main__":

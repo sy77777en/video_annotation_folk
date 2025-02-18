@@ -15,7 +15,10 @@ This is a **Streamlit-based web app** for **evaluating and improving video capti
 ### **1️⃣ Install Required Packages**
 Ensure **Python 3.8+** is installed, then install the necessary dependencies:
 ```bash
-pip install streamlit openai streamlit-feedback
+python3 -m pip install streamlit openai streamlit-feedback
+python3 -m pip install torch torchvision torchaudio
+python3 -m pip install opencv-python-headless numpy
+python3 -m pip install -q -U google-genai
 ```
 
 ### **2️⃣ Clone and Run the Streamlit App**

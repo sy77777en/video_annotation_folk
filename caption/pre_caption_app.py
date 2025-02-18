@@ -7,7 +7,7 @@ import torch
 import json
 from datetime import datetime
 from pathlib import Path
-from utils import extract_frame, extract_middle_frame
+from utils import extract_frames, get_middle_frame_index, load_config, load_json
 from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy
 
 caption_programs = {
@@ -34,6 +34,7 @@ def parse_args():
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     parser.add_argument("--video_data", type=str, default="temp.pt", help="Path to the video data file (TODO: change to a json file)")
+    # parser.add_argument("--video_data", type=str, default="video_data/20250217_1714/videos.json", help="Path to the video data file")
     return parser.parse_args()
 
 def load_video_data(video_data_file):
@@ -57,18 +58,6 @@ def load_video_data(video_data_file):
         video_data_dict[video_data.workflows[0].video_name] = video_data
     return video_data_dict
 
-
-# Load configuration from a JSON file
-def load_config(config_path):
-    with open(config_path, "r") as f:
-        return json.load(f)
-
-# Load JSON data from a given file
-def load_json(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, "r") as f:
-            return json.load(f)
-    return {}
 
 def emoji_to_score(emoji):
     """Convert emoji rating to 1-5 Likert scale"""
@@ -284,19 +273,18 @@ def main():
     # Display video
     st.video(selected_video)
     
-    # Display first and last frames
-    first_frame = extract_frame(selected_video, 0)
-    mid_frame = extract_middle_frame(selected_video)
-    last_frame = extract_frame(selected_video, -1)
+    # Display first, middle, last frames
+    mid_frame_index = get_middle_frame_index(selected_video)
+    extracted_frames = extract_frames(selected_video, [0, mid_frame_index, -1])
     # Expandable section
     with st.expander("Frames (Click to Expand/Collapse)", expanded=False):
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.image(first_frame, caption="First Frame", use_column_width=True)
+            st.image(extracted_frames[0], caption="First Frame", use_column_width=True)
         with col2:
-            st.image(mid_frame, caption="Mid Frame", use_column_width=True)
+            st.image(extracted_frames[1], caption="Mid Frame", use_column_width=True)
         with col3:
-            st.image(last_frame, caption="Last Frame", use_column_width=True)
+            st.image(extracted_frames[2], caption="Last Frame", use_column_width=True)
 
     
     
