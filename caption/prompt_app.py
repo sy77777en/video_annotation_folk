@@ -9,6 +9,7 @@ from pathlib import Path
 from utils import extract_frames, load_config, load_json
 from llm import get_llm, get_all_llms, get_supported_mode
 from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy
+from process_json import json_to_video_data
 
 caption_programs = {
     "subject_description": VanillaSubjectPolicy(),
@@ -27,20 +28,12 @@ def parse_args():
     parser.add_argument("--configs", type=str, default="test_configs.json", help="Path to the JSON config file")
     parser.add_argument("--video_urls_file", type=str, default="test_urls.json", help="Path to the test URLs file")
     parser.add_argument("--output", type=str, default="output_prompts", help="Path to the output directory")
-    parser.add_argument("--video_data", type=str, default="temp.pt", help="Path to the video data file (TODO: change to a json file)")
+    parser.add_argument("--video_data", type=str, default="video_data/20250218_0211/videos.json", help="Path to the video data file")
     return parser.parse_args()
 
 def load_video_data(video_data_file):
-    res = torch.load(video_data_file, weights_only=False) # TODO: Change to json.load
-    video_data_dict = {}
-    for video_data in res:
-        # check if cam_setup is set
-        try:
-            cam_setup = video_data.cam_setup
-        except:
-            print(f"cam_setup is not set for {video_data.workflows[0].video_name}")
-            pass
-        
+    video_data_dict = json_to_video_data(video_data_file)
+    for video_data in video_data_dict.values():
         video_data.cam_setup.update()
         video_data.cam_motion.update()
         video_data.cam_setup.subject_description = "**{NO DESCRIPTION FOR SUBJECTS YET}**"
@@ -48,7 +41,6 @@ def load_video_data(video_data_file):
         video_data.cam_setup.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
         video_data.cam_setup.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
         video_data.cam_setup.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
-        video_data_dict[video_data.workflows[0].video_name] = video_data
     return video_data_dict
 
 
