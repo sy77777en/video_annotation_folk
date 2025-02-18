@@ -103,7 +103,7 @@ class VanillaSubjectPolicy(SocraticProgram):
             # Including complex shot with description others, or multiple subject without a clear focus
             # If is others description, then prompt to use this description to complement the subject description
             # Note that there may not be a subject in focus. 
-            if data.cam_setup.shot_size_description_type == "others":
+            if data.cam_setup.shot_size_description_type == "others" or data.cam_setup.complex_shot_type == "unknown":
                 pass # Do nothing
             elif data.cam_setup.is_just_many_subject_no_focus_shot:
                 policy += "\n Please note that this video contains **multiple subjects without a clear main focus**. Briefly describe the salient subjects while providing a concise overview of secondary subjects, or describe all subjects collectively as a group if that is more appropriate."
@@ -132,6 +132,8 @@ class VanillaSubjectPolicy(SocraticProgram):
             policy += "\n Please note that the video features **multiple subjects with a clear main focus**, so the description should focus on the main subject while providing a concise overview of secondary subjects."
         elif data.cam_setup.is_just_different_subject_in_focus_shot:
             policy += "\n Please note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
+        elif data.cam_setup.complex_shot_type == "unknown":
+            policy += "\n Please note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the main subjects or objects in the video."
         else:
             assert data.cam_setup.shot_size_description != ""
             policy += "\n" + read_text_file("caption_policy/policy/subject_description/has_shot_size_description.txt").format(shot_size_description=data.cam_setup.shot_size_description)
@@ -190,7 +192,7 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
             # Including complex shot with description others, or multiple subject without a clear focus
             # If is others description, then prompt to use this description to complement the subject description
             # Note that there may not be a subject in focus. 
-            if data.cam_setup.shot_size_description_type == "others":
+            if data.cam_setup.shot_size_description_type == "others" or data.cam_setup.complex_shot_type == "unknown":
                 pass # Do nothing
             elif data.cam_setup.is_just_many_subject_no_focus_shot:
                 policy += "\n Please note that this video contains **multiple subjects without a clear main focus**. Briefly describe the salient motions and dynamics of the primary subjects while providing a concise overview of secondary movements, or describe all subjects' collective motion if that is more appropriate."
@@ -362,6 +364,9 @@ class VanillaSpatialPolicy(SocraticProgram):
         elif data.cam_setup.is_just_scenery_shot:
             policy += "\n Please note that the video is a **scenery shot**. You do not need to describe the subjects."
             subject_status = "no_subject"
+        elif data.cam_setup.complex_shot_type == "unknown":
+            policy += "\n Please note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video."
+            subject_status = None
         else:
             # pass for complex shot with description
             subject_status = "has_description"
@@ -400,7 +405,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                     policy += "\n Camera Height Relative to Subjects: The camera is positioned {}.".format(self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']))
             elif data.cam_setup.subject_height_description != "":
                 policy += f"\n Camera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
-        elif subject_status == None or subject_status == "no_subject":
+        elif subject_status == "no_subject":
             if shot_size_change:
                 policy += "\n Shot Size Information: The video begins with {} of the scenery. It then changes to {}.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start']),
@@ -411,6 +416,11 @@ class VanillaSpatialPolicy(SocraticProgram):
                 
             if is_height_wrt_subject_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is no subject.")
+        elif subject_status == None:
+            # Shot size does not apply to complex shots
+            policy += "\n Shot Size Information: The video features a complex scenario with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video. Do not use shot size to describe the spatial framing."
+            if is_height_wrt_subject_applicable:
+                raise ValueError("Height relative to subject is not applicable when there is unknown subject.")
         
         return policy
 
