@@ -26,7 +26,7 @@ dependencies = [
 
 [tool.setuptools]
 include-package-data = true
-packages = ["video_annotation", "video_annotation.llm", "video_annotation.caption_policy", "video_annotation.caption"]
+packages = ["llm", "caption_policy", "caption"]
 
 [tool.setuptools.package-data]
 't2v_metrics' = ['**/*.json', '**/*.yaml', '**/*.py']
