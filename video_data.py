@@ -26,16 +26,16 @@ class VideoData:
         else:
             raise TypeError("workflow_data must be a WorkflowData instance or a dictionary of parameters")
         
-        # Check if we already have a workflow for this project
-        for existing_workflow in self._workflows:
-            if existing_workflow.project_name == workflow.project_name:
-                # If new workflow has more recent approval time, replace the old one
-                if (workflow.approval_time and 
-                    (not existing_workflow.approval_time or 
-                     workflow.approval_time > existing_workflow.approval_time)):
-                    self._workflows.remove(existing_workflow)
-                    self._workflows.append(workflow)
-                return
+        # # Check if we already have a workflow for this project
+        # for existing_workflow in self._workflows:
+        #     if existing_workflow.project_name == workflow.project_name:
+        #         # If new workflow has more recent approval time, replace the old one
+        #         if (workflow.approval_time and 
+        #             (not existing_workflow.approval_time or 
+        #              workflow.approval_time > existing_workflow.approval_time)):
+        #             self._workflows.remove(existing_workflow)
+        #             self._workflows.append(workflow)
+        #         return
         
         # If no existing workflow for this project, add the new one
         self._workflows.append(workflow)
