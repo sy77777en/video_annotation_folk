@@ -1,6 +1,9 @@
+from utils import load_text
 from google import genai
 import google.genai.types as types
 from google.genai.types import Part
+import google.auth
+from google.oauth2 import service_account
 from llm import LLM
 from typing import List
 import os
@@ -8,13 +11,24 @@ import PIL.Image
 from utils import extract_frames_to_pil
 
 PROJECT_ID = "gen-lang-client-0141537462"
+SERVICE_ACCOUNT_FILE = "llm/gemini_key.json"
 
 class Gemini(LLM):
     def __init__(self, model="gemini-2.0-flash-001"):
         # If extracted_frames is [], then use the entire video
         assert model in ["gemini-2.0-flash-001", "gemini-2.0-flash-lite-preview-02-05", "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"]
+        self.api_key = load_text("llm/gemini_key.txt")
         os.environ["GOOGLE_CLOUD_PROJECT"] = PROJECT_ID
-        self.client = genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
+        # self.client = genai.Client(api_key=self.api_key, http_options=HttpOptions(api_version="v1"))
+        # self.client = genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
+        # Define the required OAuth scopes for Vertex AI
+        SCOPES = ["https://www.googleapis.com/auth/cloud-platform"]
+
+        # Load credentials with explicit scopes
+        credentials = service_account.Credentials.from_service_account_file(
+            SERVICE_ACCOUNT_FILE, scopes=SCOPES
+        )
+        self.client = genai.Client(vertexai=True, credentials=credentials, project=PROJECT_ID, location="us-central1")
         self.model = model
     
     def generate(self,
@@ -57,6 +71,17 @@ if __name__ == "__main__":
     gemini = Gemini(
         model="gemini-2.0-flash-001",
     )
+    
+    if not gemini.client._api_client.vertexai:
+        print(f"Using Gemini Developer API.")
+    elif gemini.client._api_client.project:
+        print(
+            f"Using Vertex AI with project: {gemini.client._api_client.project} in location: {gemini.client._api_client.location}"
+        )
+    elif gemini.client._api_client.api_key:
+        print(
+            f"Using Vertex AI in express mode with API key: {gemini.client._api_client.api_key[:5]}...{gemini.client._api_client.api_key[-5:]}"
+        )
     print(gemini.generate(
         prompt="Describe this video in a concise and fluent manner.",
         video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/OCBYMQzG44U.30.11.mp4",
