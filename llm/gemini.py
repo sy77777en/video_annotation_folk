@@ -1,4 +1,3 @@
-from utils import load_text
 from google import genai
 import google.genai.types as types
 from google.genai.types import Part
@@ -14,9 +13,7 @@ class Gemini(LLM):
     def __init__(self, model="gemini-2.0-flash-001"):
         # If extracted_frames is [], then use the entire video
         assert model in ["gemini-2.0-flash-001", "gemini-2.0-flash-lite-preview-02-05", "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"]
-        self.api_key = load_text("llm/gemini_key.txt")
         os.environ["GOOGLE_CLOUD_PROJECT"] = PROJECT_ID
-        # self.client = genai.Client(api_key=self.api_key, http_options=HttpOptions(api_version="v1"))
         self.client = genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
         self.model = model
     
