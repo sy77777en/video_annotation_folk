@@ -12,9 +12,9 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 class ChatGPT(LLM):
-    def __init__(self, model="gpt-4o-2024-08-06"):
+    def __init__(self, model="gpt-4o-2024-08-06", api_key=None):
         assert model in ["gpt-4o-2024-08-06", "gpt-4o-mini-2024-07-18", "o1-2024-12-17"]
-        self.api_key = load_text("llm/openai_key.txt")
+        self.api_key = api_key
         os.environ["OPENAI_API_KEY"] = self.api_key
         self.client = OpenAI()
         self.model = model

@@ -273,7 +273,14 @@ def main():
     if st.button("Generate a Caption"):
         imagery_kwargs = get_imagery_kwargs(selected_mode, selected_video)
         st.write("Be patient, this may take a while...")
-        new_caption = get_llm(selected_llm).generate(new_prompt, **imagery_kwargs)
+        
+        new_caption = get_llm(
+            model=selected_llm,
+            secrets=st.secrets,
+        ).generate(
+            new_prompt,
+            **imagery_kwargs
+        )
         # Initialize feedback data
         st.session_state.feedback_data = {
             "video_id": video_id,

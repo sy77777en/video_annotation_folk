@@ -9,11 +9,13 @@ ALL_MODELS = {
     "ChatGPT": ["gpt-4o-2024-08-06", "gpt-4o-mini-2024-07-18", "o1-2024-12-17"],
 }
 
-def get_llm(model="gpt-4o-2024-08-06"):
+def get_llm(model="gpt-4o-2024-08-06", secrets=None):
     if model in ALL_MODELS["ChatGPT"]:
-        return ChatGPT(model=model)
+        api_key = secrets["openai_key"]
+        return ChatGPT(model=model, api_key=api_key)
     elif model in ALL_MODELS["Gemini"]:
-        return Gemini(model=model)
+        api_key = secrets["gemini_key"]
+        return Gemini(model=model, api_key=api_key)
     # elif model == "deepseek":
     #     return DeepSeek()
     else:
@@ -30,5 +32,13 @@ def get_supported_mode(model="gpt-4o-2024-08-06"):
         return ["Image (First-and-Last-Frame)", "Text Only"]
     elif model in ALL_MODELS["Gemini"]:
         return ["Video", "Image (First-and-Last-Frame)", "Text Only"]
+    else:
+        raise ValueError(f"Error: Invalid LLM model '{model}'")
+
+def api_from_secrets(model="gpt-4o-2024-08-06", secrets=None):
+    if model in ALL_MODELS["ChatGPT"]:
+        return secrets["openai_key"]
+    elif model in ALL_MODELS["Gemini"]:
+        return secrets["gemini_key"]
     else:
         raise ValueError(f"Error: Invalid LLM model '{model}'")

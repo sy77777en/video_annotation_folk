@@ -6,14 +6,15 @@ from google.oauth2 import service_account
 from llm.base import LLM
 from typing import List
 import os
+import json
 import PIL.Image
 from llm.utils import extract_frames_to_pil
 
 PROJECT_ID = "gen-lang-client-0141537462"
-SERVICE_ACCOUNT_FILE = "llm/gemini_key.json"
+# SERVICE_ACCOUNT_FILE = "llm/gemini_key.json"
 
 class Gemini(LLM):
-    def __init__(self, model="gemini-2.0-flash-001"):
+    def __init__(self, model="gemini-2.0-flash-001", api_key=None):
         # If extracted_frames is [], then use the entire video
         assert model in ["gemini-2.0-flash-001", "gemini-2.0-flash-lite-preview-02-05", "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"]
         os.environ["GOOGLE_CLOUD_PROJECT"] = PROJECT_ID
@@ -23,8 +24,8 @@ class Gemini(LLM):
         SCOPES = ["https://www.googleapis.com/auth/cloud-platform"]
 
         # Load credentials with explicit scopes
-        credentials = service_account.Credentials.from_service_account_file(
-            SERVICE_ACCOUNT_FILE, scopes=SCOPES
+        credentials = service_account.Credentials.from_service_account_info(
+            api_key, scopes=SCOPES
         )
         self.client = genai.Client(vertexai=True, credentials=credentials, project=PROJECT_ID, location="us-central1")
         self.model = model
