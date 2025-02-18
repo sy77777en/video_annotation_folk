@@ -359,6 +359,9 @@ class VanillaSpatialPolicy(SocraticProgram):
         elif data.cam_setup.is_just_many_subject_no_focus_shot:
             policy += "\n Please note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
             subject_status = "no_subject"
+        elif data.cam_setup.is_just_scenery_shot:
+            policy += "\n Please note that the video is a **scenery shot**. You do not need to describe the subjects."
+            subject_status = "no_subject"
         else:
             # pass for complex shot with description
             subject_status = "has_description"

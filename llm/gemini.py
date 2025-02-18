@@ -1,14 +1,13 @@
-from utils import load_text
 from google import genai
 import google.genai.types as types
 from google.genai.types import Part
 import google.auth
 from google.oauth2 import service_account
-from llm import LLM
+from llm.base import LLM
 from typing import List
 import os
 import PIL.Image
-from utils import extract_frames_to_pil
+from llm.utils import extract_frames_to_pil
 
 PROJECT_ID = "gen-lang-client-0141537462"
 SERVICE_ACCOUNT_FILE = "llm/gemini_key.json"

@@ -1,10 +1,9 @@
-from utils import load_text
 from openai import OpenAI
-from llm import LLM
+from llm.base import LLM
 from typing import List
 import os
 import base64
-from utils import extract_frames_to_base64
+from llm.utils import extract_frames_to_base64, load_text
 
 
 # Function to encode the image

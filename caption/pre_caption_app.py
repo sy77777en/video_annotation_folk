@@ -227,7 +227,7 @@ def main():
     selected_video = st.selectbox("Select a video:", video_urls, format_func=get_video_format_func(output_dir))
     video_id = get_video_id(selected_video)
     caption_program = caption_programs[config["task"]]
-    currect_prompt = caption_program(video_data_dict[video_id])[config["task"]]
+    current_prompt = caption_program(video_data_dict[video_id])[config["task"]]
     
     # Track video changes to reset state
     if 'last_video_id' not in st.session_state:
@@ -302,7 +302,7 @@ def main():
         current_caption = existing_feedback["final_caption"]
         st.info("Using previously approved caption")
     else:
-        current_caption = currect_prompt
+        current_caption = current_prompt
     st.write(current_caption.replace("\n", "\n\n"))
     
     # Display conversation history
