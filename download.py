@@ -1,8 +1,9 @@
 # python download.py --json_path video_data/20250218_1042/videos.json --label_collections cam_motion cam_setup
 # python download.py --json_path video_data/20250219_0338/videos.json --label_collections cam_motion
-# from download import get_labels_to_videos
-# labels_to_videos = get_labels_to_videos("video_labels/cam_motion-cam_setup-20250218_1042/label_names_subset.json")
-# labels_to_videos = get_labels_to_videos("video_labels/cam_motion-20250219_0338/label_names_subset.json")
+# from download import get_labels
+# shotcomp_labels = get_labels("video_labels/cam_motion-cam_setup-20250218_1042/label_names_subset.json")
+# motion_labels = get_labels("video_labels/cam_motion-20250219_0338/label_names_subset.json")
+# print(f"{shotcomp_labels['cam_setup.focus.is_rack_pull_focus']['definition']} has {len(shotcomp_labels['cam_setup.focus.is_rack_pull_focus']['pos'])} positive examples")
 import os
 from tqdm import tqdm
 from label import Label, extract_labels_dict
@@ -122,7 +123,7 @@ def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_set
     )
     return label_to_videos
 
-def get_labels_to_videos(selected_json_path):
+def get_labels(selected_json_path):
     selected_label_names = load_from_json(selected_json_path)
     label_dir = os.path.dirname(selected_json_path)
     all_labels = load_from_json(os.path.join(label_dir, "all_labels.json"))
