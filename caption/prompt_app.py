@@ -28,7 +28,7 @@ def parse_args():
     parser.add_argument("--configs", type=str, default="test_configs.json", help="Path to the JSON config file")
     parser.add_argument("--video_urls_file", type=str, default="test_urls_2.json", help="Path to the test URLs file")
     parser.add_argument("--output", type=str, default="output_prompts", helgit p="Path to the output directory")
-    parser.add_argument("--video_data", type=str, default="video_data/20250218_0211/videos.json", help="Path to the video data file")
+    parser.add_argument("--video_data", type=str, default="video_data/20250218_1042/videos.json", help="Path to the video data file")
     return parser.parse_args()
 
 def load_video_data(video_data_file):
