@@ -28,7 +28,10 @@ def main():
     
     video_data_dict = json_to_video_data(args.json_path)
     print(f"Loaded {len(video_data_dict)} video data entries.")
-
+    for key, value in video_data_dict.items():
+        if value.cam_motion.camera_movement == 'major_simple' and value.cam_motion.arc_cw:
+            print(value.workflows[0].video_name)
+            print(value.workflows[0].video_url)
 
 if __name__ == '__main__':
     main()
