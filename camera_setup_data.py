@@ -705,7 +705,11 @@ class CameraSetupData:
             subject_height_info = [self.subject_height_start != "unknown", self.subject_height_end != "unknown"]
             # For change of subject, subject_height_info must follow the shot_size_info
             if shot_size_info != subject_height_info:
-                raise ValueError("Subject height should be 'unknown' if shot size is 'unknown' for shot type 'change_of_subject'")
+                if all([self.subject_height_start == "unknown", self.subject_height_end == "unknown"]):
+                    if self.subject_height_description == "":
+                        raise ValueError("Subject height should not be 'unknown' for both start and end without a description for shot type 'change_of_subject'")
+                else:
+                    raise ValueError("Subject height should be 'unknown' if shot size is 'unknown' for shot type 'change_of_subject'")
         # elif self.shot_type in ['human', 'non_human'] or self.complex_shot_type in ["many_subject_one_focus", "clear_subject_dynamic_size", "clear_subject_atypical"]:
             # # starting subject height should not be "unknown"
             # if self.subject_height_start == "unknown" and self.subject_height_description == "":
