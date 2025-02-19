@@ -10,7 +10,7 @@ This is a **Streamlit-based web app** for **evaluating and improving video capti
 
 ---
 
-## 🛠 Installation Guide
+<!-- ## 🛠 Installation Guide
 
 ### **1️⃣ Install Required Packages**
 Ensure **Python 3.8+** is installed, then install the necessary dependencies:
@@ -19,15 +19,19 @@ python3 -m pip install streamlit openai streamlit-feedback
 python3 -m pip install torch torchvision torchaudio
 python3 -m pip install opencv-python-headless numpy
 python3 -m pip install -q -U google-genai
-```
+``` -->
 
 ### **2️⃣ Clone and Run the Streamlit App**
 ```bash
-git clone https://github.com/linzhiqiu/video_captioning.git
-cd video_captioning
-streamlit run app_all.py --server.port 51912 --server.address 0.0.0.0
+python3 -m streamlit run caption/prompt_app.py --server.port 5191 --server.address 0.0.0.0
 ```
 The Streamlit app should now be running and accessible in your browser! 🎉
+
+### **(Optional) Deploy on Ngrok**
+```bash
+ngrok config add-authtoken your_token # find your_token on https://dashboard.ngrok.com/get-started/setup/
+ngrok http 5191
+```
 
 ---
 

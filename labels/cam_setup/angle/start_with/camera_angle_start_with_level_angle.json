@@ -2,30 +2,30 @@
     "label": "Camera Angle Start With Level Angle",
     "label_name": "camera_angle_start_with_level_angle",
     "def_question": [
-        "Does the video start with level angle?"
+        "Does the video start with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle?"
     ],
     "alt_question": [
-        "Does the shot start with level angle?",
-        "Is the starting frame showing level angle?",
-        "Does the video start using level angle?",
-        "Is the initial shot at level angle?",
-        "Does the sequence start with level angle?",
-        "Is the first shot at level angle?",
-        "Does the video open with level angle?",
-        "Is the starting frame at level angle?"
+        "Does the shot start with the camera aligned parallel to the ground?",
+        "Is the starting frame positioned at a neutral level angle?",
+        "Does the video begin with a shot that is neither tilted upward nor downward?",
+        "Is the initial shot taken from a level perspective, without an angled tilt?",
+        "Does the sequence open with a camera angle parallel to the ground?",
+        "Is the first shot framed at a natural, level viewing angle?",
+        "Does the video open with a shot that has no vertical inclination?",
+        "Is the starting frame recorded with the camera at a neutral level position?"
     ],
     "def_prompt": [
-        "A video that starts with level angle."
+        "The video starts with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle."
     ],
     "alt_prompt": [
-        "A shot starting with level angle.",
-        "A video starting at level angle.",
-        "A sequence beginning with level angle.",
-        "A shot initially at level angle.",
-        "A video opening with level angle.",
-        "A shot starting at level angle.",
-        "A video beginning with level angle.",
-        "A sequence starting at level angle."
+        "A shot starting at a neutral level angle, parallel to the ground.",
+        "A video beginning with a level perspective, without tilt.",
+        "A sequence that starts with a camera positioned at a straight-on angle.",
+        "A shot showing a level camera position with no upward or downward tilt.",
+        "A video opening with a natural, eye-level viewpoint, parallel to the ground.",
+        "A shot where the camera remains level without angling up or down.",
+        "A video that starts with a neutral, parallel-to-ground perspective.",
+        "A scene that opens with the camera set at a balanced level angle."
     ],
     "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'level_angle'",
     "neg_rule_str": "self.cam_setup.camera_angle_info['start'] not in ['level_angle', 'unknown']",
