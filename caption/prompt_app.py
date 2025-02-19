@@ -27,7 +27,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="test_configs.json", help="Path to the JSON config file")
     parser.add_argument("--video_urls_file", type=str, default="test_urls_2.json", help="Path to the test URLs file")
-    parser.add_argument("--output", type=str, default="output_prompts", help="Path to the output directory")
+    parser.add_argument("--output", type=str, default="output_prompts", helgit p="Path to the output directory")
     parser.add_argument("--video_data", type=str, default="video_data/20250218_0211/videos.json", help="Path to the video data file")
     return parser.parse_args()
 
@@ -239,9 +239,9 @@ def main():
     with st.expander("Frames (Click to Expand/Collapse)", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
-            st.image(extracted_frames[0], caption="First Frame", use_column_width=True)
+            st.image(extracted_frames[0], caption="First Frame", use_container_width=True)
         with col2:
-            st.image(extracted_frames[1], caption="Last Frame", use_column_width=True)
+            st.image(extracted_frames[1], caption="Last Frame", use_container_width=True)
 
     
     st.write("##### 目前仅支持Gemini-2和ChatGPT. 可以选用（text-only) (first-last-frame) (video)的模式")
