@@ -161,6 +161,8 @@ class VanillaScenePolicy(SocraticProgram):
         true_pov_attribute = data.cam_setup.true_pov_attribute
         policy = read_text_file("caption_policy/policy/scene_composition_dynamics/policy.txt")
         pov_info = read_json_file(os.path.join("labels/cam_setup/point_of_view", f"{true_pov_attribute}.json"))['def_prompt'][0]
+        if data.cam_setup.has_overlays is True:
+            policy += "\n Please note that the video includes overlay elements, such as text or visuals like titles, subtitles, captions, icons, watermarks, heads-up displays (HUD), or framing elements. In your description, specify that these are overlays (not part of the scene) and describe their content and placement."
         policy += "\n" + read_text_file("caption_policy/policy/scene_composition_dynamics/has_pov_info.txt").format(pov_description=pov_info)
         return policy
 
