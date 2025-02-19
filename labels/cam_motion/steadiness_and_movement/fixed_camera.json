@@ -56,7 +56,7 @@
   "pos_rule_str": "self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']",
   "neg_rule_str": "self.cam_motion.steadiness not in ['static']",
   "easy_neg_rule_str": {
-    "not_fixed_camera": "self.cam_motion.camera_movement not in ['no']"
+    "not_fixed_camera": "self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement not in ['no']"
   },
   "hard_neg_rule_str": {
     "fixed_but_slightly_shaky": "self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']"

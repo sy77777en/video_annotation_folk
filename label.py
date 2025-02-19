@@ -37,6 +37,24 @@ class LabelCollection:
             for key, value in self._labels.items()
         )
 
+def extract_labels_dict(collection: LabelCollection, prefix: str = "") -> Dict[str, Label]:
+    """Recursively extract all Label instances from a LabelCollection as a dictionary.
+    
+    Args:
+        collection: The LabelCollection to extract from.
+        prefix: The current path prefix (used for hierarchical keys).
+
+    Returns:
+        A dictionary with keys as hierarchical label names and values as Label objects.
+    """
+    labels_dict = {}
+    for key, value in collection._labels.items():
+        full_key = f"{prefix}.{key}" if prefix else key  # Construct hierarchical key
+        if isinstance(value, Label):
+            labels_dict[full_key] = value
+        elif isinstance(value, LabelCollection):
+            labels_dict.update(extract_labels_dict(value, full_key))  # Recursively extract
+    return labels_dict
 
 class Rule:
     def __init__(self, rule: str):

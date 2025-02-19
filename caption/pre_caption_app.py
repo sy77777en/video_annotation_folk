@@ -36,10 +36,11 @@ def parse_args():
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     # parser.add_argument("--video_data", type=str, default="temp.pt", help="Path to the video data file (TODO: change to a json file)")
     parser.add_argument("--video_data", type=str, default="video_data/20250218_0211/videos.json", help="Path to the video data file")
+    parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data file")
     return parser.parse_args()
 
-def load_video_data(video_data_file):
-    video_data_dict = json_to_video_data(video_data_file)
+def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
+    video_data_dict = json_to_video_data(video_data_file, label_collections=label_collections)
     for video_data in video_data_dict.values():
         video_data.cam_setup.update()
         video_data.cam_motion.update()
@@ -145,7 +146,7 @@ def main():
     args = parse_args()
     
     # Load video data
-    video_data_dict = load_video_data(args.video_data)
+    video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
     
     
     # Hide sidebar by default

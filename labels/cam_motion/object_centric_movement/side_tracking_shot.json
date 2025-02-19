@@ -41,6 +41,6 @@
     },
     "hard_neg_rule_str": {
         "other_tracking_shots": "self.cam_motion.is_tracking and not 'side' in self.cam_motion.tracking_shot_types",
-        "pan_tracking_shot": "'pan' in self.cam_motion.tracking_shot_types"
+        "pan_tracking_shot": "'pan' in self.cam_motion.tracking_shot_types and not 'side' in self.cam_motion.tracking_shot_types"
     }
 }

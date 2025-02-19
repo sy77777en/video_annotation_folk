@@ -37,9 +37,6 @@
       "A scene where there is no dynamic motion within the frame."
     ],
     "pos_rule_str": "self.cam_motion.scene_movement in ['static']",
-    "neg_rule_str": "self.cam_motion.scene_movement not in ['mostly_static', 'dynamic']",
-    "easy_neg_rule_str": {
-      "dynamic_scene": "self.cam_motion.scene_movement not in ['dynamic']"
-    }
+    "neg_rule_str": "self.cam_motion.scene_movement in ['mostly_static', 'dynamic']"
   }
   
