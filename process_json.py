@@ -21,7 +21,7 @@ def json_to_video_data(json_path):
 def main():
     parser = argparse.ArgumentParser(description="Process video data from a JSON file.")
     parser.add_argument("--json_path", type=str,
-                        default="video_data/20250217_2351/videos.json",
+                        default="video_data/20250218_1042/videos.json",
                         help="Path to the JSON file containing video data.")
 
     args = parser.parse_args()
