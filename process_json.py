@@ -11,8 +11,10 @@ def json_to_video_data(json_path):
     video_data_dict = {}
     for video in loaded_data:
         tmp_data = VideoData()
-        tmp_data.cam_motion = video['cam_motion'] # will be converted to CameraMotionData automatically using setter()
-        tmp_data.cam_setup =video['cam_setup']
+        if 'cam_motion' in video:
+            tmp_data.cam_motion = video['cam_motion'] # will be converted to CameraMotionData automatically using setter()
+        if 'cam_setup' in video:
+            tmp_data.cam_setup = video['cam_setup']
         for key, value in video["workflows"].items():
             tmp_data.add_workflow(value)
         video_data_dict[tmp_data.workflows[0].video_name] = tmp_data
@@ -28,10 +30,11 @@ def main():
     
     video_data_dict = json_to_video_data(args.json_path)
     print(f"Loaded {len(video_data_dict)} video data entries.")
-    for key, value in video_data_dict.items():
-        if value.cam_motion.camera_movement == 'major_simple' and value.cam_motion.arc_cw:
-            print(value.workflows[0].video_name)
-            print(value.workflows[0].video_url)
+    # for key, value in video_data_dict.items():
+    #     if value.cam_motion.camera_movement == 'major_simple' and value.cam_motion.pan_right and value.cam_motion.check_if_no_motion(["pan_right"]):
+    #         print(value.workflows[0].video_name)
+    #         print(value.workflows[0].video_url)
+
 
 if __name__ == '__main__':
     main()
