@@ -1,15 +1,17 @@
 # python download.py --json_path video_data/20250218_1042/videos.json --label_collections cam_motion cam_setup
 # python download.py --json_path video_data/20250219_0338/videos.json --label_collections cam_motion
 # from download import get_labels
-# shotcomp_labels = get_labels("video_labels/cam_motion-cam_setup-20250218_1042/label_names_subset.json")
 # motion_labels = get_labels("video_labels/cam_motion-20250219_0338/label_names_subset.json")
-# print(f"{shotcomp_labels['cam_setup.focus.is_rack_pull_focus']['definition']} has {len(shotcomp_labels['cam_setup.focus.is_rack_pull_focus']['pos'])} positive examples")
+# shotcomp_labels = get_labels("video_labels/cam_motion-cam_setup-20250218_1042/label_names_subset.json")
+# shot_size_change_label = shotcomp_labels["cam_setup.shot_size.shot_size_change"]
+# print(f"'{shot_size_change_label['definition']}' has {len(shot_size_change_label['pos'])} positive examples")
 import os
 from tqdm import tqdm
 from label import Label, extract_labels_dict
 import argparse
 import json
 from process_json import json_to_video_data
+import subprocess
 
 HF_PREFIX = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/"
 
@@ -26,12 +28,33 @@ def download_videos(video_data_dict, video_dir="videos"):
         os.makedirs(video_dir)
 
     print(f"Downloading {len(video_data_dict)} videos to {video_dir}")
+    failed_videos = []
+
     for video_name, video_data in tqdm(video_data_dict.items()):
         path = os.path.join(video_dir, video_name)
-        if os.path.exists(path):
+        if os.path.exists(path) and os.path.getsize(path) > 0:
             continue
+
         url = HF_PREFIX + video_name
-        os.system(f"wget {url} -O {path} -q")
+        result = subprocess.run(
+            ["wget", url, "-O", path, "-q"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
+
+        if result.returncode != 0:
+            print(f"Failed to download {video_name}. Removing from dictionary.")
+            if os.path.exists(path):
+                os.remove(path)
+            failed_videos.append(video_name)
+
+    # Remove failed videos from the dictionary
+    for video in failed_videos:
+        del video_data_dict[video]
+    print(f"Successfully downloaded {len(video_data_dict)} videos")
+    print(f"Failed to download {len(failed_videos)} videos, saving them to failed_videos.json")
+    save_to_json(failed_videos, os.path.join(video_dir, "failed_videos.json"))
+    return video_data_dict
 
 def get_valid_labels_dict(video_data_dict, label_collections=["cam_motion", "cam_setup"]):
     video_data_list = list(video_data_dict.values())
@@ -111,8 +134,7 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
 def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", video_dir="videos"):
     video_data_dict = json_to_video_data(json_path, label_collections=label_collections)
     valid_labels_dict = get_valid_labels_dict(video_data_dict, label_collections=label_collections)
-    
-    download_videos(video_data_dict, video_dir=video_dir)
+    video_data_dict = download_videos(video_data_dict, video_dir=video_dir)
     
     label_to_videos = label_video_mapping(
         video_data_dict,
