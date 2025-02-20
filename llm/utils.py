@@ -121,11 +121,12 @@ def extract_frames_to_base64(video_path: str, frame_numbers: List[int]) -> List[
             print(f"Warning: Unable to extract frame {frame_number}. Skipping...")
             continue
 
-        # Convert BGR to RGB
-        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        # # Convert BGR to RGB
+        # frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         # Encode as JPEG and convert to base64
-        _, buffer = cv2.imencode(".jpg", frame_rgb)
+        # _, buffer = cv2.imencode(".jpg", frame_rgb)
+        _, buffer = cv2.imencode(".jpg", frame)
         base64_image = base64.b64encode(buffer).decode("utf-8")
         base64_images.append(base64_image)
 
