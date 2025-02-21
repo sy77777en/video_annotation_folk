@@ -306,8 +306,10 @@ class CameraSetupData:
                     assert self.height_wrt_subject_info['start'] != self.height_wrt_subject_info['end']
                     if HEIGHT_RELATIVE_TO_SUBJECT.index(self.height_wrt_subject_info['end']) < HEIGHT_RELATIVE_TO_SUBJECT.index(self.height_wrt_subject_info['start']):
                         self.height_wrt_subject_change_from_high_to_low = True
+                        self.height_wrt_subject_change_from_low_to_high = False
                     else:
                         self.height_wrt_subject_change_from_low_to_high = True
+                        self.height_wrt_subject_change_from_high_to_low = False
         self.height_wrt_subject_change = self.height_wrt_subject_change_from_high_to_low or self.height_wrt_subject_change_from_low_to_high
         
     def _set_height_relative_to_ground_attributes(self):
