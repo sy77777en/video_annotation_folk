@@ -129,7 +129,7 @@ class VanillaSubjectPolicy(SocraticProgram):
         elif data.cam_setup.is_just_clear_subject_atypical_shot:
             policy += "\n Please note that the main subjects in this video exhibit **atypical posture or anatomy**, so the description should reflect this."
         elif data.cam_setup.is_just_many_subject_one_focus_shot:
-            policy += "\n Please note that the video features **multiple subjects with a clear main focus**, so the description should focus on the main subject while providing a concise overview of secondary subjects."
+            policy += "\n Please note that the video features **multiple subjects with one clear main focus**, so you need to clarify who the main subject is. The description should focus on the details of the main subject while concisely summarizing secondary subjects and describing their relationship to the main subject if clear."
         elif data.cam_setup.is_just_different_subject_in_focus_shot:
             policy += "\n Please note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
         elif data.cam_setup.complex_shot_type == "unknown":
