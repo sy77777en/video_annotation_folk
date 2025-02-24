@@ -158,11 +158,12 @@ def print_rare_labels(label_to_videos, rare_threshold=30, save_dir="video_labels
     with open(save_path, "w") as f:
         f.write("# Rare Labels\n")
         f.write(f"Labels with less than {rare_threshold} positive examples\n")
-        f.write("| Label Name | Definition | Positive Examples | Negative Examples |\n")
+        f.write("| Definition | Positive Examples | Negative Examples | Label Name |\n")
         f.write("| --- | --- | --- | --- |\n")
-        for label_name, label_to_videos in label_to_videos.items():
-            if len(label_to_videos["pos"]) < rare_threshold:
-                f.write(f"| {label_name} | {label_to_videos['definition']} | {len(label_to_videos['pos'])} | {len(label_to_videos['neg'])} |\n")
+        for label_name, label_data in label_to_videos.items():
+            if len(label_data["pos"]) < rare_threshold:
+                definition = label_data['definition'].split("\n")[0]  # Ensure single-line definition
+                f.write(f"| {definition} | {len(label_data['pos'])} | {len(label_data['neg'])} | {label_name} |\n")
     print(f"Saved rare labels to {save_path}")
     
 
