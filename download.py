@@ -143,6 +143,7 @@ def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_set
         label_collections=label_collections,
         video_labels_dir=video_labels_dir
     )
+    print_rare_labels(video_data_dict, valid_labels_dict, save_dir=get_video_labels_dir(json_path, label_collections, video_labels_dir))
     return label_to_videos
 
 def get_labels(selected_json_path):
@@ -152,15 +153,30 @@ def get_labels(selected_json_path):
     selected_labels = {name: all_labels[name] for name in selected_label_names}
     return selected_labels
 
-def print_rare_labels(label_to_videos, rare_threshold=30, save_dir="video_labels"):
+def print_rare_labels(video_data_dict, valid_labels_dict, rare_threshold=30, save_dir="video_labels"):
     # print all rare labels in markdown format
     save_path = os.path.join(save_dir, f"rare_labels_under_{rare_threshold}.md")
+    video_data_list = list(video_data_dict.values())
+    label_to_videos_dict = {}
+    for label_name, label in valid_labels_dict.items():
+        label_to_videos = {
+            "label": label_name,
+            "label_name": label.label,
+            "definition": label.def_question[0],
+            "pos": [data.workflows[0].video_name for data in label.pos(video_data_list)],
+            "neg": [data.workflows[0].video_name for data in label.neg(video_data_list)]
+        }
+        label_to_videos_dict[label_name] = label_to_videos
+    
+    # Sort labels by number of positive examples
+    sorted_labels = sorted(label_to_videos_dict.items(), key=lambda x: len(x[1]["pos"]), reverse=True)
+    sorted_labels = {label_name: label_to_videos for label_name, label_to_videos in sorted_labels}
     with open(save_path, "w") as f:
         f.write("# Rare Labels\n")
         f.write(f"Labels with less than {rare_threshold} positive examples\n")
         f.write("| Definition | Positive Examples | Negative Examples | Label Name |\n")
         f.write("| --- | --- | --- | --- |\n")
-        for label_name, label_data in label_to_videos.items():
+        for label_name, label_data in sorted_labels.items():
             if len(label_data["pos"]) < rare_threshold:
                 definition = label_data['definition'].split("\n")[0]  # Ensure single-line definition
                 f.write(f"| {definition} | {len(label_data['pos'])} | {len(label_data['neg'])} | {label_name} |\n")
@@ -192,9 +208,6 @@ def main():
         video_labels_dir=args.video_labels_dir,
         video_dir=args.video_dir
     )
-    
-    print_rare_labels(label_to_videos, rare_threshold=args.rare_threshold, save_dir=get_video_labels_dir(args.json_path, args.label_collections, args.video_labels_dir))
-    
     
 
 if __name__ == "__main__":

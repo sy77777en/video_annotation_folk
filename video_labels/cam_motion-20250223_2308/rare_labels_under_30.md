@@ -31,3 +31,5 @@ Labels with less than 30 positive examples
 | Does the camera only roll counterclockwise in the scene? | 2 | 2185 | cam_motion.camera_centric_movement.roll_counterclockwise.only_roll_counterclockwise |
 | Does the camera only roll clockwise in the scene? | 2 | 2185 | cam_motion.camera_centric_movement.roll_clockwise.only_roll_clockwise |
 | Is the camera performing a crane down movement? | 2 | 2145 | cam_motion.arc_crane_movement.crane_down.has_crane_down |
+| Does the video include shot transitions? | 0 | 2187 | cam_motion.has_shot_transition_cam_motion |
+| Does the camera only move downward (not tilting down) with respect to the initial frame? | 0 | 2187 | cam_motion.camera_centric_movement.downward.only_downward_wrt_camera |

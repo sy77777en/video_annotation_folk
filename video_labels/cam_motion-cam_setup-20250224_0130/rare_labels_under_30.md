@@ -97,3 +97,17 @@ Labels with less than 30 positive examples
 | Does the camera start below the subject and move up to a position above them? | 1 | 1013 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject |
 | Does the camera transition from above water to underwater? | 1 | 1146 | cam_setup.height_wrt_ground.above_water_to_underwater |
 | Does the video start with the middle ground in focus and then shift to the background? | 1 | 524 | cam_setup.focus.from_to.focus_from_middle_ground_to_background |
+| Does the video include shot transitions? | 0 | 2384 | cam_motion.has_shot_transition_cam_motion |
+| Is the scene in the video dynamic? | 0 | 0 | cam_motion.scene_movement.dynamic_scene |
+| Is the scene in the video mostly static with minimal movement? | 0 | 0 | cam_motion.scene_movement.mostly_static_scene |
+| Is the scene in the video completely static? | 0 | 0 | cam_motion.scene_movement.static_scene |
+| Does the camera move downward (not tilting down) with respect to the initial frame? | 0 | 950 | cam_motion.camera_centric_movement.downward.has_downward_wrt_camera |
+| Does the camera only move downward (not tilting down) with respect to the initial frame? | 0 | 2384 | cam_motion.camera_centric_movement.downward.only_downward_wrt_camera |
+| Does the camera move backward (not zooming out) with respect to the initial frame? | 0 | 950 | cam_motion.camera_centric_movement.backward.has_backward_wrt_camera |
+| Does the camera move only backward (not zooming out) with respect to the initial frame? | 0 | 2384 | cam_motion.camera_centric_movement.backward.only_backward_wrt_camera |
+| Does the camera move upward (not tilting up) with respect to the initial frame? | 0 | 950 | cam_motion.camera_centric_movement.upward.has_upward_wrt_camera |
+| Does the camera only move upward (not tilting up) with respect to the initial frame? | 0 | 2384 | cam_motion.camera_centric_movement.upward.only_upward_wrt_camera |
+| Does the camera move forward (not zooming in) with respect to the initial frame? | 0 | 950 | cam_motion.camera_centric_movement.forward.has_forward_wrt_camera |
+| Does the camera move only forward (not zooming in) with respect to the initial frame? | 0 | 2384 | cam_motion.camera_centric_movement.forward.only_forward_wrt_camera |
+| Does the video include shot transitions? | 0 | 2384 | cam_setup.has_shot_transition_cam_setup |
+| Does the camera transition from underwater to above water? | 0 | 1147 | cam_setup.height_wrt_ground.underwater_to_above_water |
