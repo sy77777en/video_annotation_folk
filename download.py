@@ -152,6 +152,20 @@ def get_labels(selected_json_path):
     selected_labels = {name: all_labels[name] for name in selected_label_names}
     return selected_labels
 
+def print_rare_labels(label_to_videos, rare_threshold=30, save_dir="video_labels"):
+    # print all rare labels in markdown format
+    save_path = os.path.join(save_dir, f"rare_labels_under_{rare_threshold}.md")
+    with open(save_path, "w") as f:
+        f.write("# Rare Labels\n")
+        f.write(f"Labels with less than {rare_threshold} positive examples\n")
+        f.write("| Label Name | Definition | Positive Examples | Negative Examples |\n")
+        f.write("| --- | --- | --- | --- |\n")
+        for label_name, label_to_videos in label_to_videos.items():
+            if len(label_to_videos["pos"]) < rare_threshold:
+                f.write(f"| {label_name} | {label_to_videos['definition']} | {len(label_to_videos['pos'])} | {len(label_to_videos['neg'])} |\n")
+    print(f"Saved rare labels to {save_path}")
+    
+
 def main():
     parser = argparse.ArgumentParser(description="Get labels and video data.")
     parser.add_argument("--json_path", type=str,
@@ -166,14 +180,19 @@ def main():
     parser.add_argument("--video_labels_dir", type=str,
                         default="video_labels",
                         help="Output directory to save the video labels JSON files.")
+    parser.add_argument("--rare_threshold", type=int,
+                        default=30,
+                        help="Threshold for rare labels.")
     args = parser.parse_args()
     
-    get_label_video_mapping(
+    label_to_videos = get_label_video_mapping(
         args.json_path,
         label_collections=args.label_collections,
         video_labels_dir=args.video_labels_dir,
         video_dir=args.video_dir
     )
+    
+    print_rare_labels(label_to_videos, rare_threshold=args.rare_threshold, save_dir=get_video_labels_dir(args.json_path, args.label_collections, args.video_labels_dir))
     
     
 
