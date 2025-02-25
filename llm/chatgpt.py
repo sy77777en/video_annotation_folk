@@ -25,6 +25,7 @@ class ChatGPT(LLM):
                  video: str = "",
                  extracted_frames: List[int] = [],
                  detail: str = "low",
+                 temperature: float = 0.0,
                  **kwargs) -> str:
         """Generate text from a prompt. Optionally provide images or video."""
         if len(images) > 0 and len(video) > 0:
@@ -61,6 +62,7 @@ class ChatGPT(LLM):
         response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
+            temperature=temperature,
             **kwargs
         )
         return response.choices[0].message.content.strip()
