@@ -118,16 +118,16 @@ class VanillaSubjectPolicy(SocraticProgram):
         elif data.cam_setup.is_just_change_of_subject_shot:
             if data.cam_setup.subject_revealing:
                 policy += "\nPlease note that the video is a **revealing shot of the subject**, so the description should reflect this by explaining how the subject is revealed through either subject movement or camera movement."
-            elif data.cam_setup.subject_hiding:
+            elif data.cam_setup.subject_disappearing:
                 policy += "\nPlease note that the video features the main subjects **disappearing from the frame**, so the description should reflect this by explaining how they exit, whether through subject movement or camera movement."
             elif data.cam_setup.subject_switching:
                 policy += "\nPlease note that the video features the main subjects **switching from one to another**, so the description should reflect this by explaining how the transition occurs, whether through subject movement or camera movement."
             else:
-                raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_hiding, or subject_switching must be True.")
+                raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_disappearing, or subject_switching must be True.")
         elif data.cam_setup.is_just_clear_subject_dynamic_size_shot:
-            policy += "\nPlease note that the **main subject’s framing is not stable** throughout the video, so the description should reflect this."
+            policy += "\nPlease note that the video has a **main subject with dynamic size**, so the description should focus on them. Don't mention the background scene and other motion."
         elif data.cam_setup.is_just_clear_subject_atypical_shot:
-            policy += "\nPlease note that the main subjects in this video exhibit **atypical posture or anatomy**, so the description should reflect this."
+            policy += "\nFocus on describing the **atypical appearance** of the main subjects in the video. Avoid mentioning the background or subject movements."
         elif data.cam_setup.is_just_many_subject_one_focus_shot:
             policy += "\nPlease note that the video features **multiple subjects with one clear main focus**, so you need to clarify who the main subject is. The description should focus on the details of the main subject while concisely summarizing secondary subjects and describing their relationship to the main subject if clear."
         elif data.cam_setup.is_just_different_subject_in_focus_shot:
@@ -209,12 +209,12 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
         elif data.cam_setup.is_just_change_of_subject_shot:
             if data.cam_setup.subject_revealing:
                 policy += "\nPlease note that the video is a **revealing shot of the subject**, so the description should reflect this by explaining how the subject is revealed through either subject movement or camera movement."
-            elif data.cam_setup.subject_hiding:
+            elif data.cam_setup.subject_disappearing:
                 policy += "\nPlease note that the video features the main subjects **disappearing from the frame**, so the description should reflect this by explaining how they exit, whether through subject movement or camera movement."
             elif data.cam_setup.subject_switching:
                 policy += "\nPlease note that the video features the main subjects **switching from one to another**, so the description should first describe the first subject’s motion and dynamics, followed by the second’s."
             else:
-                raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_hiding, or subject_switching must be True.")
+                raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_disappearing, or subject_switching must be True.")
         elif data.cam_setup.is_just_clear_subject_dynamic_size_shot:
             policy += "\nPlease note that the **main subject’s framing is not stable** throughout the video, so the description should reflect how their motion and dynamics contribute to this instability."
         elif data.cam_setup.is_just_clear_subject_atypical_shot:
@@ -326,7 +326,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                     policy += "\nWhen the subject is revealed, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
-            elif data.cam_setup.subject_hiding:
+            elif data.cam_setup.subject_disappearing:
                 policy += "\nPlease note that the video features **main subjects disappearing from the frame**."
                 policy += "\nShot Size Information: The video begins with {} of the subject. Then the subject disappears.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start'])
@@ -347,7 +347,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
             else:
-                raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_hiding, or subject_switching must be True.")
+                raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_disappearing, or subject_switching must be True.")
         elif data.cam_setup.is_just_clear_subject_dynamic_size_shot:
             policy += "\nPlease note that the **main subject’s framing (shot size) is not stable** throughout the video, so the description should emphasize this."
             subject_status = "has_subject"

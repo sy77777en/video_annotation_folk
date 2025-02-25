@@ -69,6 +69,11 @@ def save_feedback_data(video_id, data, output_dir="outputs"):
     
     return filename
 
+def exist_feedback_data(video_id, output_dir="outputs"):
+    """Check if feedback data already exists"""
+    filename = os.path.join(output_dir, f'{video_id}.json')
+    return os.path.exists(filename)
+
 def load_feedback_data(video_id, output_dir="outputs"):
     """Load existing feedback data for a video if it exists"""
     filename = os.path.join(output_dir, f'{video_id}.json')
@@ -185,7 +190,9 @@ def main():
     
     
     # Select video
-    selected_video = st.selectbox("Select a video:", video_urls, format_func=get_video_format_func(output_dir))
+    selected_video = st.selectbox("Select a video:", video_urls, format_func=get_video_format_func(output_dir), index=video_urls.index(st.session_state.get('last_selected_video', video_urls[0])))
+    # selected_video = st.selectbox("Select a video:", video_urls, format_func=get_video_format_func(output_dir))
+    # print(f"Selected video: {selected_video}")
     video_id = get_video_id(selected_video)
     caption_program = caption_programs[config["task"]]
     current_prompt = caption_program(video_data_dict[video_id])[config["task"]]
@@ -193,6 +200,7 @@ def main():
     # Track video changes to reset state
     if 'last_video_id' not in st.session_state:
         st.session_state.last_video_id = video_id
+        st.session_state.last_selected_video = selected_video
     elif st.session_state.last_video_id != video_id:
         # Video changed, reset all state variables
         # First, collect all keys to remove
@@ -208,6 +216,8 @@ def main():
         
         # Set the new video id
         st.session_state.last_video_id = video_id
+        st.session_state.last_selected_video = selected_video
+        # print(f"Resetting state for new video: {video_id}")
         
         # Also clear any feedback component states
         if 'feedback_submitted_initial_caption_faces' in st.session_state:
@@ -290,27 +300,29 @@ def main():
             "final_option": new_option
         }
         filename = save_feedback_data(video_id, st.session_state.feedback_data, output_dir=FOLDER / output_dir)
-        st.success("Finished generation caption!")
-        # st.json(st.session_state.feedback_data)
-        st.write(f"**Option**: {new_option}")
-        st.write(f"**Generated Caption**: {new_caption}")
+        st.rerun()  # Force a rerun to ensure clean state
     
     # Check for existing feedback and get current caption
     existing_feedback = load_feedback_data(video_id, output_dir=FOLDER / output_dir)
     
     # Show existing feedback if available
     if existing_feedback:
-        st.info("Previous prompt and caption and options found for this video")
-        st.subheader("Most Recent Prompt/Option/Caption")
+        st.success("Finished generating caption!")
+        # st.json(st.session_state.feedback_data)
+        st.write(f"**Option**: {existing_feedback['final_option']}")
+        st.write(f"**Generated Caption**: {existing_feedback['final_caption']}")
+        
+        st.info("Previous prompt was recorded.")
+        # st.subheader("Most Recent Prompt/Option/Caption")
         current_prompt = existing_feedback["final_prompt"]
-        current_caption = existing_feedback["final_caption"]
-        current_option = existing_feedback["final_option"]
+        # current_caption = existing_feedback["final_caption"]
+        # current_option = existing_feedback["final_option"]
         
         st.write(f"**Prompt**:")
         st.write(current_prompt.replace('\n', '\n\n'))
         
-        st.write(f"\n**Option**: {current_option}")
-        st.write(f"**Caption**: {current_caption}")
+        # st.write(f"\n**Option**: {current_option}")
+        # st.write(f"**Caption**: {current_caption}")
 
 
 if __name__ == "__main__":
