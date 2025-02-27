@@ -11,27 +11,16 @@ from llm import get_llm, get_all_llms, get_supported_mode
 from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy, VanillaCameraMotionPolicy
 from process_json import json_to_video_data
 
-caption_programs = {
-    "subject_description": VanillaSubjectPolicy(),
-    "scene_composition_dynamics": VanillaScenePolicy(),
-    "subject_motion_dynamics": VanillaSubjectMotionPolicy(),
-    "spatial_framing_dynamics": VanillaSpatialPolicy(),
-    "camera_framing_dynamics": VanillaCameraPolicy(),
-    "camera_motion": VanillaCameraMotionPolicy(),
-}
+from feedback_app import caption_programs, PRECAPTION_FILE_POSTFIX, FEEDBACK_FILE_POSTFIX, SUBJECT_CAPTION_NAME, SCENE_CAPTION_NAME, PROMPT_HEIGHT
+from feedback_app import load_video_data, emoji_to_score, get_filename, save_data, load_data, load_precaption, load_feedback, data_is_saved, get_video_id, load_txt, load_prompt, generate_save_and_return_pre_caption, get_video_format_func, get_imagery_kwargs, file_check, load_pre_caption_prompt
 
-PRECAPTION_FILE_POSTFIX = "_precaption.json"
-FEEDBACK_FILE_POSTFIX = "_feedback.json"
-SUBJECT_CAPTION_NAME = "Subject Description Caption"
-SCENE_CAPTION_NAME = "Scene Composition and Dynamics Caption"
-PROMPT_HEIGHT = 225
 # Get the directory where this script is located
 FOLDER = Path(__file__).parent
 
 # Argument parsing
 def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
-    parser.add_argument("--configs", type=str, default="all_configs.json", help="Path to the JSON config file")
+    parser.add_argument("--configs", type=str, default="camera_motion_config.json", help="Path to the JSON config file")
     # parser.add_argument("--video_urls_file", type=str, default="test_urls_all.json", help="Path to the test URLs file")
     parser.add_argument("--video_urls_file", type=str, default="test_urls_selected.json", help="Path to the test URLs file")
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the output directory")
@@ -41,208 +30,6 @@ def parse_args():
     parser.add_argument("--video_data", type=str, default="video_data/20250224_0130/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
     return parser.parse_args()
-
-def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
-    video_data_dict = json_to_video_data(video_data_file, label_collections=label_collections)
-    for video_data in video_data_dict.values():
-        video_data.cam_setup.update()
-        video_data.cam_motion.update()
-        if getattr(video_data.cam_setup, "subject_description", None) is None:
-            video_data.cam_setup.subject_description = "**{NO DESCRIPTION FOR SUBJECTS YET}**"
-        if getattr(video_data.cam_setup, "scene_description", None) is None:
-            video_data.cam_setup.scene_description = "**{NO DESCRIPTION FOR SCENE YET}**"
-        if getattr(video_data.cam_setup, "motion_description", None) is None:
-            video_data.cam_setup.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
-        if getattr(video_data.cam_setup, "spatial_description", None) is None:
-            video_data.cam_setup.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
-        if getattr(video_data.cam_setup, "camera_description", None) is None:
-            video_data.cam_setup.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
-    return video_data_dict
-
-
-def emoji_to_score(emoji):
-    """Convert emoji rating to 1-5 Likert scale"""
-    emoji_map = {
-        "😞": 1,  # Very unhappy
-        "🙁": 2,  # Unhappy
-        "😐": 3,  # Neutral
-        "🙂": 4,  # Happy
-        "😀": 5   # Very happy
-    }
-    # If not found, raise an error
-    if emoji not in emoji_map:
-        raise ValueError("Invalid emoji rating provided.")
-    return emoji_map.get(emoji, None)  # Default to neutral if emoji not found
-
-def get_filename(video_id, output_dir="outputs", file_postfix=".json"):
-    """Get the filename for saving feedback data"""
-    return os.path.join(output_dir, f'{video_id}{file_postfix}')
-
-def save_data(video_id, data, output_dir="outputs", file_postfix=".json"):
-    """Save feedback data to a JSON file"""
-    os.makedirs(output_dir, exist_ok=True)
-    filename = get_filename(video_id, output_dir, file_postfix)
-    
-    with open(filename, 'w') as f:
-        json.dump(data, f, indent=4)
-    print(f"Data saved to: {filename}")
-    return filename
-
-def load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, output):
-    """Generate a pre-caption for the video"""
-    # Get the caption prompt for the video
-    config = config_dict[selected_config]
-    task = config["task"]
-    
-    if task in ["subject_motion_dynamics"]:
-        # Need to update the "subject_description" if exists
-        subject_output_name = config_dict[SUBJECT_CAPTION_NAME]["output_name"]
-        existing_subject_feedback = load_data(video_id, output_dir=FOLDER / output / subject_output_name, file_postfix=FEEDBACK_FILE_POSTFIX)
-        if existing_subject_feedback:
-            st.success("Loading previously generated subject caption...")
-            subject_caption = existing_subject_feedback["final_caption"]
-            video_data_dict[video_id].cam_setup.subject_description = subject_caption
-        else:
-            st.info("No subject caption found. Please generate the subject caption first.")
-            st.rerun()
-            raise ValueError("This line will not be run because rerun will be called.")
-    elif task in ["spatial_framing_dynamics"]:
-        # Need to update both "subject_description" and "scene_composition_dynamics" if exists
-        subject_output_name = config_dict[SUBJECT_CAPTION_NAME]["output_name"]
-        scene_output_name = config_dict[SCENE_CAPTION_NAME]["output_name"]
-        existing_subject_feedback = load_data(video_id, output_dir=FOLDER / output / subject_output_name, file_postfix=FEEDBACK_FILE_POSTFIX)
-        existing_scene_feedback = load_data(video_id, output_dir=FOLDER / output / scene_output_name, file_postfix=FEEDBACK_FILE_POSTFIX)
-        if existing_subject_feedback and existing_scene_feedback:
-            st.success("Loading previously generated subject and scene captions...")
-            subject_caption = existing_subject_feedback["final_caption"]
-            scene_caption = existing_scene_feedback["final_caption"]
-            video_data_dict[video_id].cam_setup.subject_description = subject_caption
-            video_data_dict[video_id].cam_setup.scene_description = scene_caption
-        else:
-            st.info("No subject and scene captions found. Please generate the subject and scene captions first.")
-            st.rerun()
-            raise ValueError("This line will not be run because rerun will be called.")
-    
-    # Generate the new prompt and caption
-    pre_caption_prompt = caption_program(video_data_dict[video_id])[task]
-        
-    return pre_caption_prompt
-
-def load_precaption(video_id, output_dir, file_postfix=PRECAPTION_FILE_POSTFIX):
-    """Load pre-caption for video. If not exist, generate a new one."""
-    # Check for existing feedback and get current caption
-    existing_precaption = load_data(video_id, output_dir=output_dir, file_postfix=file_postfix)
-    
-    # Show existing feedback if available
-    if existing_precaption:
-        # st.success("Loading previously generated pre-caption...")
-        # print(f"Pre-caption found for video: {video_id}")
-        return existing_precaption
-    else:
-        st.info("No pre-caption found. Generating a new pre-caption.")
-        # print(f"No pre-caption found for video: {video_id}")
-        return {}
-    
-def load_feedback(video_id, output_dir, file_postfix=FEEDBACK_FILE_POSTFIX):
-    """Load feedback for video. If not exist, generate a new one."""
-    # Check for existing feedback and get current caption
-    existing_feedback = load_data(video_id, output_dir=output_dir, file_postfix=file_postfix)
-    
-    # Show existing feedback if available
-    if existing_feedback:
-        st.success("This video has already been completed. The final caption is:")
-        st.write(existing_feedback["final_caption"])
-        return existing_feedback
-    else:
-        st.info("No pre-caption found. Generating a new pre-caption.")
-        # print(f"No pre-caption found for video: {video_id}")
-        return {}
-
-def data_is_saved(video_id, output_dir="outputs", file_postfix=".json"):
-    """Check if data already exists"""
-    filename = os.path.join(output_dir, f'{video_id}{file_postfix}')
-    return os.path.exists(filename)
-
-def load_data(video_id, output_dir="outputs", file_postfix=".json"):
-    """Load existing feedback data for a video if it exists"""
-    filename = os.path.join(output_dir, f'{video_id}{file_postfix}')
-    if os.path.exists(filename):
-        with open(filename, 'r') as f:
-            return json.load(f)
-    return None
-
-
-# Get video ID from URL
-def get_video_id(url):
-    return url.split('/')[-1]
-
-# Load instructions from file
-def load_txt(txt_file):
-    with open(txt_file, "r") as f:
-        return f.read()
-
-# Load prompt template
-def load_prompt(filename, **kwargs):
-    with open(filename, "r") as f:
-        prompt = f.read()
-    return prompt.format(**kwargs)
-
-def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_llm, selected_mode, selected_video, file_postfix=PRECAPTION_FILE_POSTFIX):
-    print(f"Generating pre-caption for video: {video_id}")
-    imagery_kwargs = get_imagery_kwargs(selected_mode, selected_video)
-    pre_caption = get_llm(
-        model=selected_llm,
-        secrets=st.secrets,
-    ).generate(
-        prompt,
-        **imagery_kwargs
-    )
-    pre_caption_data = {
-        "video_id": video_id,
-        "pre_caption_prompt": prompt,
-        "pre_caption": pre_caption,
-        "pre_caption_llm": selected_llm,
-        "pre_caption_mode": selected_mode,
-    }
-    save_data(video_id, pre_caption_data, output_dir=output_dir, file_postfix=file_postfix)
-    return pre_caption
-    
-
-def get_video_format_func(output_dir, file_postfix=".json"):
-    def video_format_func(video_url):
-        # if already exists, then return f"✅ {video_url}"
-        video_id = get_video_id(video_url)
-        # Check for existing feedback and get current caption
-        existing_data = load_data(video_id, output_dir=output_dir, file_postfix=file_postfix)
-        
-        # Show existing feedback if available
-        if existing_data:
-            return f"✅ {video_url}"
-        return f"{video_url}"
-    return video_format_func
-
-def get_imagery_kwargs(selected_mode, selected_video):
-    if selected_mode == "Text Only":
-        return {}
-    
-    imagery_kwargs = {"video": selected_video}
-    if selected_mode == "Image (First-and-Last-Frame)":
-        imagery_kwargs.update({"extracted_frames": [0, -1]})
-    elif selected_mode == "Video":
-        pass
-    return imagery_kwargs
-
-def file_check(args, video_data_dict):
-    video_urls = load_json(FOLDER / args.video_urls_file)
-    video_ids = [get_video_id(video_url) for video_url in video_urls]
-    missing_video = False
-    for video_id in video_ids:
-        if video_id not in video_data_dict:
-            st.error(f"Video ID {video_id} not found in the video data file.")
-            print(f"Video ID not found: {video_id}")
-            missing_video = True
-    if missing_video:
-        return
 
 def main():
     # Load configuration
@@ -402,7 +189,7 @@ def main():
         selected_mode = st.selectbox(
             "Select a Mode:",
             supported_modes, 
-            index=supported_modes.index(existing_precaption.get("pre_caption_mode", supported_modes[0])),
+            index=supported_modes.index(existing_precaption.get("pre_caption_mode", "Text Only")),
             key="selected_mode"
         )
         
@@ -411,7 +198,7 @@ def main():
         else:
             pre_caption_prompt = existing_precaption.get("pre_caption_prompt", load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, args.output))
         
-        line_height = 6  # Approximate height per line in pixels
+        line_height = 12  # Approximate height per line in pixels
         num_lines = max(30, len(pre_caption_prompt) // 120)  # Assuming ~120 characters per line
         estimated_height = num_lines * line_height
         
