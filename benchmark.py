@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path("/data3/zhiqiul/video_annotation")
 VIDEO_ROOT = Path("/data3/zhiqiul/video_annotation/videos")
+VIDEO_LABELS_DIR = Path("/data3/zhiqiul/video_annotation/video_labels")
 VIDEO_LABEL_FILE = "video_labels/cam_motion-20250223_2308/label_names_selected.json"
 
 def labels_as_dict(root=ROOT, video_root=VIDEO_ROOT, video_label_file=VIDEO_LABEL_FILE):
@@ -73,7 +74,8 @@ class BinaryTask(Dataset):
         # Calculate the Average Precision for each prompt
         print(f"Evaluating for task {self.label_name}")
         assert type(scores) == np.ndarray, "Scores must be a numpy array"
-        assert scores.shape == len(self.videos), f"Scores shape {scores.shape} does not match number of videos {len(self.videos)}"
+        assert len(scores.shape) == 1, "Scores must be a 1D array"
+        assert scores.shape[0] == len(self.videos), f"Scores shape {scores.shape} does not match number of videos {len(self.videos)}"
         y_true = self.labels
         results = {}
         # Replace NaNs with -inf
@@ -105,6 +107,7 @@ class BinaryTask(Dataset):
             "optimal_f1": float(optimal_f1),
             "optimal_threshold": float(optimal_threshold)
         }
+        print(f"AP: {ap:.4f}, ROC-AUC: {roc_auc:.4f}, Optimal F1: {optimal_f1:.4f} @ Threshold: {optimal_threshold:.2f}")
         if plot_path:
             print(f"Plotting to {plot_path}")
             best_idx = np.argmax(f1_scores)
@@ -128,4 +131,3 @@ class BinaryTask(Dataset):
             plt.savefig(plot_path, bbox_inches="tight", dpi=300)
             plt.close()
         return results
-

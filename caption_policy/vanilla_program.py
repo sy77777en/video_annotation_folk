@@ -1047,42 +1047,42 @@ class VanillaCameraMotionPolicy(SocraticProgram):
         policy = ""
         policy += read_text_file("caption_policy/policy/camera_motion/policy.txt")
         
-        policy += "\nUse the provided human-labeled ground truth directly in your description without inferring any additional details. Include all given information, but keep the description concise."
+        policy += "\n\nUse the provided human-labeled ground truth directly in your description without inferring any additional details. Include all given information, but keep the description concise."
 
         # Add camera motion information
         if data.cam_motion.camera_movement == "no":
             if data.cam_motion.steadiness == "static":
-                policy += "\n**Camera Motion:** The camera is completely static, with no movement or shaking."
+                policy += "\n\n**Camera Motion:** The camera is completely static, with no movement or shaking."
             elif data.cam_motion.steadiness in ['smooth', 'unsteady']:
-                policy += "\n**Camera Motion:** The camera is fixed but slightly unsteady, with no intentional movement."
+                policy += "\n\n**Camera Motion:** The camera is fixed but slightly unsteady, with no intentional movement."
             elif data.cam_motion.steadiness in ['very_unsteady']:
-                policy += "\n**Camera Motion:** The camera is quite shaky but doesn’t move in a clear pattern."
+                policy += "\n\n**Camera Motion:** The camera is quite shaky but doesn’t move in a clear pattern."
         else:
             
             if data.cam_motion.camera_movement == "major_complex":
-                policy += "\n**Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
+                policy += "\n\n**Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
             else:
                 complex_motion_description = self.get_movement_description(data)
                 if data.cam_motion.camera_movement == "minor":
-                    policy += "\n**Camera Motion:** The camera shows some minor movement."
+                    policy += "\n\n**Camera Motion:** The camera shows some minor movement."
                 elif data.cam_motion.camera_movement == "major_simple":
-                    policy += "\n**Camera Motion:** The camera shows a clear movement pattern."
+                    policy += "\n\n**Camera Motion:** The camera shows a clear movement pattern."
                 else:
                     raise ValueError("Invalid camera movement type.")
                 policy += " " + complex_motion_description
             
             # if tracking
             if data.cam_motion.is_tracking:
-                policy += "\n**Subject Tracking:** {}.".format(
+                policy += "\n\n**Subject Tracking:** {}.".format(
                     self.get_tracking_description(data)
                 )
                 
-            policy += "\n**Camera Steadiness:** The camera movement is {}".format(
+            policy += "\n\n**Camera Steadiness:** The camera movement is {}".format(
                 self.format_camera_steadiness(data.cam_motion.steadiness)
             )
             
             if data.cam_motion.camera_motion_speed != "regular":
-                policy += " \n**Camera Motion Speed**: The camera is {}".format(
+                policy += " \n\n**Camera Motion Speed**: The camera is {}".format(
                     self.format_camera_motion_speed(data.cam_motion.camera_motion_speed)
                 )
         return policy    

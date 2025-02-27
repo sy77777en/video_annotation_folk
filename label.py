@@ -203,7 +203,7 @@ class Label:
         for file_path in json_files:
             process_json_file(file_path)
         
-        print(f"\nSuccessfully loaded {success_count} label files")
+        # print(f"\nSuccessfully loaded {success_count} label files")
         return collection
     
     
