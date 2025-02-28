@@ -856,10 +856,10 @@ has_arc_crane_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_arc_counterclockwise",
-        "pos_question": "Does the camera move in a counterclockwise arc around a subject?",
-        "neg_question": "Is the camera free from any counterclockwise arc movement around a subject?",
-        "pos_prompt": "A video where the camera moves in a counterclockwise arc around a subject.",
-        "neg_prompt": "A video where the camera does not move in a counterclockwise arc around a subject.",
+        "pos_question": "Does the camera move in a counterclockwise arc?",
+        "neg_question": "Is the camera free from any counterclockwise arc movement?",
+        "pos_prompt": "The camera moves in a counterclockwise arc.",
+        "neg_prompt": "The camera is free from any counterclockwise arc movement.",
         "pos": {
             "label": "cam_motion.arc_crane_movement.arc_counterclockwise.has_arc_counterclockwise",
             "type": "pos"
@@ -872,10 +872,10 @@ has_arc_crane_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_crane_up",
-        "pos_question": "Does the camera move upward in a crane shot?",
-        "neg_question": "Is the camera free from any upward crane movement?",
-        "pos_prompt": "A video where the camera moves upward in a crane shot.",
-        "neg_prompt": "A video where the camera does not move upward in a crane shot.",
+        "pos_question": "Does the camera crane upward in an arc?",
+        "neg_question": "Is the camera not craning upward in an arc?",
+        "pos_prompt": "The camera cranes upward in an arc.",
+        "neg_prompt": "The camera is not craning upward in an arc.",
         "pos": {
             "label": "cam_motion.arc_crane_movement.crane_up.has_crane_up",
             "type": "pos"
@@ -888,10 +888,10 @@ has_arc_crane_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_crane_down",
-        "pos_question": "Does the camera move downward in a crane shot?",
-        "neg_question": "Is the camera free from any downward crane movement?",
-        "pos_prompt": "A video where the camera moves downward in a crane shot.",
-        "neg_prompt": "A video where the camera does not move downward in a crane shot.",
+        "pos_question": "Does the camera crane downward in an arc?",
+        "neg_question": "Is the camera not craning downward in an arc?",
+        "pos_prompt": "The camera cranes downward in an arc.",
+        "neg_prompt": "The camera is not craning downward in an arc.",
         "pos": {
             "label": "cam_motion.arc_crane_movement.crane_down.has_crane_down",
             "type": "pos"
@@ -903,15 +903,14 @@ has_arc_crane_tasks = [
     }
 ]
 
-# 2. Tracking Perspective Tasks (8 tasks)
 tracking_perspective_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_aerial_tracking",
-        "pos_question": "Does the camera track a subject from an aerial perspective?",
-        "neg_question": "Is the camera free from any aerial tracking movement?",
-        "pos_prompt": "A video where the camera tracks a subject from an aerial perspective.",
-        "neg_prompt": "A video where the camera does not track a subject from an aerial perspective.",
+        "pos_question": "Does the camera track the subject from an aerial perspective?",
+        "neg_question": "Is the video not a tracking shot from an aerial perspective?",
+        "pos_prompt": "The camera tracks the subject from an aerial perspective.",
+        "neg_prompt": "The camera is not tracking the subject from an aerial perspective.",
         "pos": {
             "label": "cam_motion.object_centric_movement.aerial_tracking_shot",
             "type": "pos"
@@ -924,10 +923,10 @@ tracking_perspective_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_arc_tracking",
-        "pos_question": "Does the camera track a subject while moving in an arc around them?",
-        "neg_question": "Is the camera free from any arc tracking movement?",
-        "pos_prompt": "A video where the camera tracks a subject while moving in an arc around them.",
-        "neg_prompt": "A video where the camera does not track a subject in an arc.",
+        "pos_question": "Does the camera follow the subject while moving in an arc?",
+        "neg_question": "Is the video not a tracking shot with arc movement?",
+        "pos_prompt": "The camera follows the subject while moving in an arc.",
+        "neg_prompt": "The camera is not following the subject while moving in an arc.",
         "pos": {
             "label": "cam_motion.object_centric_movement.arc_tracking_shot",
             "type": "pos"
