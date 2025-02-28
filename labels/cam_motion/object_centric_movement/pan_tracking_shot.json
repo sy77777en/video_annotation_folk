@@ -2,6 +2,7 @@
     "label": "Pan Tracking Shot",
     "label_name": "pan_tracking_shot",
     "def_question": [
+        "Does the camera pan to track the subjects as they move?",
         "Does the camera pan to track the subjects?",
         "Does the camera pan to follow the subjects?",
         "Is this a pan-tracking shot?",
@@ -20,6 +21,7 @@
         "Is the camera fixed in position while rotating to follow the action?"
     ],
     "def_prompt": [
+        "A tracking shot where the camera pans to follow the subjects as they move.",
         "A tracking shot where the camera pans to follow the subjects.",
         "A pan-tracking shot.",
         "A shot where the camera pans left or right to track subject's motion.",

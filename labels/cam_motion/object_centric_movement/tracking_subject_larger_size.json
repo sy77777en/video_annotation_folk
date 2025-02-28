@@ -2,6 +2,7 @@
     "label": "Tracking Shot: Subject Larger",
     "label_name": "tracking_subject_larger_size",
     "def_question": [
+        "Does the subject appear larger during the tracking shot?",
         "Does the subject look larger during the tracking shot?",
         "Does the subject appear to grow larger in the frame during the tracking shot?",
         "Does the subject take up more of the frame during the tracking shot?",
@@ -21,6 +22,7 @@
         "Is the subject framed to increase in size as the camera moves?"
     ],
     "def_prompt": [
+        "The subject looks larger during the tracking shot.",
         "A tracking shot where the subject looks larger as the camera moves.",
         "A shot where the subject grows in size within the frame while tracking.",
         "A video where the camera moves closer to the subject or zooms in during the tracking motion.",

@@ -2,6 +2,7 @@
     "label": "Only Counterclockwise Roll Movement",
     "label_name": "only_roll_counterclockwise",
     "def_question": [
+        "Does the camera only roll counterclockwise without any other camera movements?",
         "Does the camera only roll counterclockwise in the scene?",
         "Does the camera only rotate counterclockwise around its optical axis?",
         "Is there only a counterclockwise Dutch roll in the shot?",
@@ -25,6 +26,7 @@
         "Is the camera performing exclusively counterclockwise rotational movement?"
     ],
     "def_prompt": [
+        "The camera only rolls counterclockwise without any other camera movements.",
         "A shot where the camera only rolls counterclockwise.",
         "A shot featuring only a counterclockwise Dutch roll.",
         "A scene with only counterclockwise camera rotation around its optical axis.",

@@ -106,37 +106,37 @@ class VanillaSubjectPolicy(SocraticProgram):
             if data.cam_setup.shot_size_description_type == "others" or data.cam_setup.complex_shot_type == "unknown":
                 pass # Do nothing
             elif data.cam_setup.is_just_many_subject_no_focus_shot:
-                policy += "\nPlease note that this video contains **multiple subjects with no clear main focus**. Because it does not emphasize any specific subject, please briefly describe the types of subjects without going into too much detail. You may also describe the subjects collectively as a group."
+                policy += "\n\nPlease note that this video contains **multiple subjects with no clear main focus**. Because it does not emphasize any specific subject, please briefly describe the types of subjects without going into too much detail. You may also describe the subjects collectively as a group."
                 return policy
             else:
                 raise ValueError("When framing subject is None, the shot size description must be others or many_subject_no_focus.")
             
         if data.cam_setup.is_just_human_shot:
-            policy += "\nPlease note that the video features salient **human** subjects, so the description should focus on them."
+            policy += "\n\nPlease note that the video features salient **human** subjects, so the description should focus on them."
         elif data.cam_setup.is_just_non_human_shot:
-            policy += "\nPlease note that the video features salient **non-human** subjects, so the description should focus on them."
+            policy += "\n\nPlease note that the video features salient **non-human** subjects, so the description should focus on them."
         elif data.cam_setup.is_just_change_of_subject_shot:
             if data.cam_setup.subject_revealing:
-                policy += "\nPlease note that the video is a **revealing shot of the subject**, so the description should reflect this by explaining how the subject is revealed through either subject movement or camera movement."
+                policy += "\n\nPlease note that the video is a **revealing shot of the subject**, so the description should reflect this by explaining how the subject is revealed through either subject movement or camera movement."
             elif data.cam_setup.subject_disappearing:
-                policy += "\nPlease note that the video features the main subjects **disappearing from the frame**, so the description should reflect this by explaining how they exit, whether through subject movement or camera movement."
+                policy += "\n\nPlease note that the video features the main subjects **disappearing from the frame**, so the description should reflect this by explaining how they exit, whether through subject movement or camera movement."
             elif data.cam_setup.subject_switching:
-                policy += "\nPlease note that the video features the main subjects **switching from one to another**, so the description should reflect this by explaining how the transition occurs, whether through subject movement or camera movement."
+                policy += "\n\nPlease note that the video features the main subjects **switching from one to another**, so the description should reflect this by explaining how the transition occurs, whether through subject movement or camera movement."
             else:
                 raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_disappearing, or subject_switching must be True.")
         elif data.cam_setup.is_just_clear_subject_dynamic_size_shot:
-            policy += "\nPlease note that the video has a **main subject with dynamic size**, so the description should focus on them. Don't mention the background scene and other motion."
+            policy += "\n\nPlease note that the video has a **main subject with dynamic size**, so the description should focus on them. Don't mention the background scene and other motion."
         elif data.cam_setup.is_just_clear_subject_atypical_shot:
-            policy += "\nFocus on describing the **atypical appearance** of the main subjects in the video. Avoid mentioning the background or subject movements."
+            policy += "\n\nFocus on describing the **atypical appearance** of the main subjects in the video. Avoid mentioning the background or subject movements."
         elif data.cam_setup.is_just_many_subject_one_focus_shot:
-            policy += "\nPlease note that the video features **multiple subjects with one clear main focus**, so you need to clarify who the main subject is. The description should focus on the details of the main subject while concisely summarizing secondary subjects and describing their relationship to the main subject if clear."
+            policy += "\n\nPlease note that the video features **multiple subjects with one clear main focus**, so you need to clarify who the main subject is. The description should focus on the details of the main subject while concisely summarizing secondary subjects and describing their relationship to the main subject if clear."
         elif data.cam_setup.is_just_different_subject_in_focus_shot:
-            policy += "\nPlease note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
+            policy += "\n\nPlease note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
         elif data.cam_setup.complex_shot_type == "unknown":
-            policy += "\nPlease note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the main subjects or objects in the video."
+            policy += "\n\nPlease note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the main subjects or objects in the video."
         else:
             assert data.cam_setup.shot_size_description != ""
-            policy += "\n" + read_text_file("caption_policy/policy/subject_description/has_shot_size_description.txt").format(shot_size_description=data.cam_setup.shot_size_description)
+            policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/has_shot_size_description.txt").format(shot_size_description=data.cam_setup.shot_size_description)
         return policy
 
 
@@ -164,8 +164,8 @@ class VanillaScenePolicy(SocraticProgram):
         if true_pov_attribute == "objective_pov":
             pov_info += " (no need to mention)."
         if data.cam_setup.has_overlays is True:
-            policy += "\nPlease note that the video includes overlay elements, such as text or visuals like titles, subtitles, captions, icons, watermarks, heads-up displays (HUD), or framing elements. In your description, specify that these are overlays (not part of the scene) and describe their content and placement."
-        policy += "\n" + read_text_file("caption_policy/policy/scene_composition_dynamics/has_pov_info.txt").format(pov_description=pov_info)
+            policy += "\n\nPlease note that the video includes overlay elements, such as text or visuals like titles, subtitles, captions, icons, watermarks, heads-up displays (HUD), or framing elements. In your description, specify that these are overlays (not part of the scene) and describe their content and placement."
+        policy += "\n\n" + read_text_file("caption_policy/policy/scene_composition_dynamics/has_pov_info.txt").format(pov_description=pov_info)
         return policy
 
 
@@ -199,38 +199,38 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
             if data.cam_setup.shot_size_description_type == "others" or data.cam_setup.complex_shot_type == "unknown":
                 pass # Do nothing
             elif data.cam_setup.is_just_many_subject_no_focus_shot:
-                policy += "\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the salient motions and dynamics of the primary subjects while providing a concise overview of secondary movements, or describe all subjects' collective motion if that is more appropriate."
+                policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the salient motions and dynamics of the primary subjects while providing a concise overview of secondary movements, or describe all subjects' collective motion if that is more appropriate."
                 return policy
             else:
                 raise ValueError("When framing subject is None, the shot size description must be others or many_subject_no_focus.")
             
         if data.cam_setup.is_just_human_shot:
-            policy += "\nPlease note that the video features salient **human** subjects, so the description should focus on their motion and dynamics."
+            policy += "\n\nPlease note that the video features salient **human** subjects, so the description should focus on their motion and dynamics."
         elif data.cam_setup.is_just_non_human_shot:
-            policy += "\nPlease note that the video features salient **non-human** subjects, so the description should focus on their motion and dynamics."
+            policy += "\n\nPlease note that the video features salient **non-human** subjects, so the description should focus on their motion and dynamics."
         elif data.cam_setup.is_just_change_of_subject_shot:
             if data.cam_setup.subject_revealing:
-                policy += "\nPlease note that the video is a **revealing shot of the subject**, so the description should reflect this by explaining how the subject is revealed through either subject movement or camera movement."
+                policy += "\n\nPlease note that the video is a **revealing shot of the subject**, so the description should reflect this by explaining how the subject is revealed through either subject movement or camera movement."
             elif data.cam_setup.subject_disappearing:
-                policy += "\nPlease note that the video features the main subjects **disappearing from the frame**, so the description should reflect this by explaining how they exit, whether through subject movement or camera movement."
+                policy += "\n\nPlease note that the video features the main subjects **disappearing from the frame**, so the description should reflect this by explaining how they exit, whether through subject movement or camera movement."
             elif data.cam_setup.subject_switching:
-                policy += "\nPlease note that the video features the main subjects **switching from one to another**, so the description should first describe the first subject’s motion and dynamics, followed by the second’s."
+                policy += "\n\nPlease note that the video features the main subjects **switching from one to another**, so the description should first describe the first subject’s motion and dynamics, followed by the second’s."
             else:
                 raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_disappearing, or subject_switching must be True.")
         elif data.cam_setup.is_just_clear_subject_dynamic_size_shot:
-            policy += "\nPlease note that the **main subject’s framing is not stable** throughout the video, so the description should reflect how their motion and dynamics contribute to this instability."
+            policy += "\n\nPlease note that the **main subject’s framing is not stable** throughout the video, so the description should reflect how their motion and dynamics contribute to this instability."
         elif data.cam_setup.is_just_clear_subject_atypical_shot:
-            policy += "\nPlease note that the main subjects in this video exhibit **atypical motion, posture, or anatomy**, so the description should reflect this."
+            policy += "\n\nPlease note that the main subjects in this video exhibit **atypical motion, posture, or anatomy**, so the description should reflect this."
         elif data.cam_setup.is_just_many_subject_one_focus_shot:
-            policy += "\nPlease note that the video features **multiple subjects with a clear main focus**, so the description should focus on the motion and dynamics of the main subject while providing a concise overview of secondary subjects' movements."
+            policy += "\n\nPlease note that the video features **multiple subjects with a clear main focus**, so the description should focus on the motion and dynamics of the main subject while providing a concise overview of secondary subjects' movements."
         elif data.cam_setup.is_just_different_subject_in_focus_shot:
-            policy += "\nPlease note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types, movement patterns, and interactions."
+            policy += "\n\nPlease note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types, movement patterns, and interactions."
         else:
             # pass for complex shot with description
             pass
                 
         assert data.cam_setup.subject_description != "", "Subject description must be provided before subject motion and dynamics description."
-        policy += "\n" + read_text_file("caption_policy/policy/subject_motion_dynamics/has_subject_description.txt").format(subject_description=data.cam_setup.subject_description)
+        policy += "\n\n" + read_text_file("caption_policy/policy/subject_motion_dynamics/has_subject_description.txt").format(subject_description=data.cam_setup.subject_description)
         return policy
 
 
@@ -279,8 +279,8 @@ class VanillaSpatialPolicy(SocraticProgram):
         
         policy = ""
         policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_subject.txt")
-        policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
-        policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/movement.txt")
+        policy += "\n\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
+        policy += "\n\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/movement.txt")
         # if data.cam_setup.is_framing_subject is False:
         #     # This much be a Scenery shot
         #     policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
@@ -295,14 +295,14 @@ class VanillaSpatialPolicy(SocraticProgram):
         #     if data.cam_setup.shot_size_description_type == "others":
         #         pass # Do nothing
         #     elif data.cam_setup.is_just_many_subject_no_focus_shot:
-        #         policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scenery.txt")
-        #         policy += "\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
+        #         policy += "\n\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scenery.txt")
+        #         policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
         #     else:
         #         raise ValueError("When framing subject is None, the shot size description must be others or many_subject_no_focus.")
             
         assert data.cam_setup.subject_description != "", "Subject description must be provided before subject motion and dynamics description."
         assert data.cam_setup.scene_description != "", "Scene description must be provided before subject motion and dynamics description."
-        policy += "\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/has_subject_scene_description.txt").format(
+        policy += "\n\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/has_subject_scene_description.txt").format(
             subject_description=data.cam_setup.subject_description,
             scene_description=data.cam_setup.scene_description
         )
@@ -312,117 +312,117 @@ class VanillaSpatialPolicy(SocraticProgram):
         is_height_wrt_subject_applicable = data.cam_setup.is_height_wrt_subject_applicable
         
         if data.cam_setup.is_just_human_shot:
-            policy += "\nPlease note that the video features **salient human subjects**, so you should focus on describing the spatial framing and movements of them."
+            policy += "\n\nPlease note that the video features **salient human subjects**, so you should focus on describing the spatial framing and movements of them."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_non_human_shot:
-            policy += "\nPlease note that the video features **salient non-human subjects**, so you should focus on describing the spatial framing and movements of them."
+            policy += "\n\nPlease note that the video features **salient non-human subjects**, so you should focus on describing the spatial framing and movements of them."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_change_of_subject_shot:
             subject_status = "change_of_subject"
             if data.cam_setup.subject_revealing:
-                policy += "\nPlease note that the video is a **revealing shot of the subject**."
-                policy += "\nShot Size Information: The video begins with no subject. It then becomes {} of the subject.".format(
+                policy += "\n\nPlease note that the video is a **revealing shot of the subject**."
+                policy += "\n\nShot Size Information: The video begins with no subject. It then becomes {} of the subject.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
                 if is_height_wrt_subject_applicable:
-                    policy += "\nWhen the subject is revealed, the camera is positioned {}.".format(
+                    policy += "\n\nWhen the subject is revealed, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
             elif data.cam_setup.subject_disappearing:
-                policy += "\nPlease note that the video features **main subjects disappearing from the frame**."
-                policy += "\nShot Size Information: The video begins with {} of the subject. Then the subject disappears.".format(
+                policy += "\n\nPlease note that the video features **main subjects disappearing from the frame**."
+                policy += "\n\nShot Size Information: The video begins with {} of the subject. Then the subject disappears.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start'])
                 )
                 if is_height_wrt_subject_applicable:
-                    policy += "\nBefore the subject disappears, the camera is positioned {}.".format(
+                    policy += "\n\nBefore the subject disappears, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start'])
                     )
             elif data.cam_setup.subject_switching:
-                policy += "\nPlease note that the video features **main subjects switching from one to another**."
-                policy += "\nShot Size Information: The video begins with {} of the first subject. Then it becomes {} of the second subject.".format(
+                policy += "\n\nPlease note that the video features **main subjects switching from one to another**."
+                policy += "\n\nShot Size Information: The video begins with {} of the first subject. Then it becomes {} of the second subject.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start']),
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
                 if is_height_wrt_subject_applicable:
-                    policy += "\nThe camera is positioned {} when the first subject is in focus, and {} when the second subject is in focus.".format(
+                    policy += "\n\nThe camera is positioned {} when the first subject is in focus, and {} when the second subject is in focus.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
             else:
                 raise ValueError("When is_just_change_of_subject_shot is True, either subject_revealing, subject_disappearing, or subject_switching must be True.")
         elif data.cam_setup.is_just_clear_subject_dynamic_size_shot:
-            policy += "\nPlease note that the **main subject’s framing (shot size) is not stable** throughout the video, so the description should emphasize this."
+            policy += "\n\nPlease note that the **main subject’s framing (shot size) is not stable** throughout the video, so the description should emphasize this."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_clear_subject_atypical_shot:
-            policy += "\nPlease note that the **main subjects exhibit atypical posture or anatomy**, so the description should reflect this."
+            policy += "\n\nPlease note that the **main subjects exhibit atypical posture or anatomy**, so the description should reflect this."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_many_subject_one_focus_shot:
-            policy += "\nPlease note that the video features **multiple subjects with a clear main focus**, so the description should focus on the main subject."
+            policy += "\n\nPlease note that the video features **multiple subjects with a clear main focus**, so the description should focus on the main subject."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_different_subject_in_focus_shot:
-            policy += "\nPlease note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
+            policy += "\n\nPlease note that the video features **multiple different subjects in focus**, so the description should clearly distinguish their types and relationships."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_many_subject_no_focus_shot:
-            policy += "\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
+            policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
             subject_status = "no_subject"
         elif data.cam_setup.is_just_scenery_shot:
-            policy += "\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects."
+            policy += "\n\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects."
             subject_status = "no_subject"
         elif data.cam_setup.complex_shot_type == "unknown":
-            policy += "\nPlease note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video."
+            policy += "\n\nPlease note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video."
             subject_status = None
         else:
             # pass for complex shot with description
             subject_status = "has_description"
-            policy += "\nThe description below already mentions the spatial framing information about the subjects or scenery in this video. Use this caption as a reference to draft the spatial framing and dynamics description. Simply expand on it to fully capture other spatial positions and movements. Do not infer the any spatial framing information already mentioned below."
+            policy += "\n\nThe description below already mentions the spatial framing information about the subjects or scenery in this video. Use this caption as a reference to draft the spatial framing and dynamics description. Simply expand on it to fully capture other spatial positions and movements. Do not infer the any spatial framing information already mentioned below."
             policy += f"\n\nShot Size Information: {data.cam_setup.shot_size_description}"
             if is_height_wrt_subject_applicable:
                 if data.cam_setup.height_wrt_subject_change:
-                    policy += "\nCamera Height Relative to Subjects: The camera is initially positioned {} and then changes to {}.".format(
+                    policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {} and then changes to {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
                 else:
-                    policy += "\nCamera Height Relative to Subjects: The camera is positioned {}.".format(
+                    policy += "\n\nCamera Height Relative to Subjects: The camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start'])
                     )
             elif data.cam_setup.subject_height_description != "":
-                policy += f"\nCamera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
+                policy += f"\n\nCamera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
                 
         
         if subject_status == "has_subject":
             if shot_size_change:
-                policy += "\nShot Size Information: The video begins with {} of the subjects. It then changes to {}.".format(
+                policy += "\n\nShot Size Information: The video begins with {} of the subjects. It then changes to {}.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start']),
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
             else:
-                policy += "\nShot Size Information: The video shows {} of the subjects.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
+                policy += "\n\nShot Size Information: The video shows {} of the subjects.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
                 
             if is_height_wrt_subject_applicable:
                 if data.cam_setup.height_wrt_subject_change:
-                    policy += "\nCamera Height Relative to Subjects: The camera is initially positioned {}. It then changes to {}.".format(
+                    policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {}. It then changes to {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
                 else:
-                    policy += "\nCamera Height Relative to Subjects: The camera is positioned {}.".format(self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']))
+                    policy += "\n\nCamera Height Relative to Subjects: The camera is positioned {}.".format(self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']))
             elif data.cam_setup.subject_height_description != "":
-                policy += f"\nCamera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
+                policy += f"\n\nCamera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
         elif subject_status == "no_subject":
             if shot_size_change:
-                policy += "\nShot Size Information: The video begins with {} of the scenery. It then changes to {}.".format(
+                policy += "\n\nShot Size Information: The video begins with {} of the scenery. It then changes to {}.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start']),
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
             else:
-                policy += "\nShot Size Information: The video shows {} of the scenery.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
+                policy += "\n\nShot Size Information: The video shows {} of the scenery.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
                 
             if is_height_wrt_subject_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is no subject.")
         elif subject_status == None:
             # Shot size does not apply to complex shots
-            policy += "\nShot Size Information: The video features a complex scenario with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video. Do not use shot size to describe the spatial framing."
+            policy += "\n\nShot Size Information: The video features a complex scenario with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video. Do not use shot size to describe the spatial framing."
             if is_height_wrt_subject_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is unknown subject.")
         

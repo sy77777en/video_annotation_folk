@@ -2,8 +2,8 @@
     "label": "Only Tilt Down Movement",
     "label_name": "only_tilt_down",
     "def_question": [
+        "Does the camera only tilt downward without any other camera movements?",
         "Does the camera only tilt down in the scene?",
-        "Does the camera only tilt downward in the scene, without any other camera movements?",
         "Does the camera only tilt downward?",
         "Is this a downward tilting shot?",
         "Is the camera only tilting downward?",
@@ -26,6 +26,7 @@
         "Does the camera only move vertically from top to bottom?"
     ],
     "def_prompt": [
+        "The camera only tilts downward without any other camera movements.",
         "A shot where the camera only tilts down.",
         "A shot where the camera only tilts downward.",
         "A shot where the camera only tilts from top to bottom.",

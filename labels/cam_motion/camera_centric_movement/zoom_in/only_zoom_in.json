@@ -2,6 +2,7 @@
     "label": "Only Zoom In (Relative to Camera)",
     "label_name": "only_zoom_in",
     "def_question": [
+        "Does the camera only zoom in with no other movement?",
         "Is zooming in the only motion in this shot, without other camera movement?",
         "Does the camera zoom in without any dolly, pan, or tilt movement?",
         "Is zooming the sole method of changing the frame composition?",
@@ -22,6 +23,7 @@
         "Does the camera adjust focus using only zoom rather than movement?"
     ],
     "def_prompt": [
+        "The camera only zooms in without any other movement.",
         "A video where zooming in is the only motion, with no additional camera movement."
     ],
     "alt_prompt": [

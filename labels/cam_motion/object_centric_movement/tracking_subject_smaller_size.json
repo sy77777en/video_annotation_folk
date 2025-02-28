@@ -2,6 +2,7 @@
     "label": "Tracking Shot: Subject Smaller",
     "label_name": "tracking_subject_smaller_size",
     "def_question": [
+        "Does the subject appear smaller during the tracking shot?",
         "Does the subject look smaller during the tracking shot?",
         "Does the subject appear to shrink in the frame during the tracking shot?",
         "Does the subject take up less of the frame as the tracking progresses?",
@@ -20,6 +21,7 @@
         "Is the subject framed to reduce in size as the camera moves?"
     ],
     "def_prompt": [
+        "The subject looks smaller during the tracking shot.",
         "A tracking shot where the subject looks smaller as the camera moves.",
         "A shot where the subject shrinks in size within the frame while tracking.",
         "A video where the camera moves away from the subject or zooms out during the tracking motion.",

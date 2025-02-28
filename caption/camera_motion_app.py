@@ -8,7 +8,6 @@ from datetime import datetime
 from pathlib import Path
 from utils import extract_frames, load_config, load_json
 from llm import get_llm, get_all_llms, get_supported_mode
-from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy, VanillaCameraMotionPolicy
 from process_json import json_to_video_data
 
 from feedback_app import caption_programs, PRECAPTION_FILE_POSTFIX, FEEDBACK_FILE_POSTFIX, SUBJECT_CAPTION_NAME, SCENE_CAPTION_NAME, PROMPT_HEIGHT

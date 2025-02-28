@@ -20,6 +20,7 @@
         "Is the camera moving back without any vertical or lateral adjustments?"
     ],
     "def_prompt": [
+        "The camera only moves backward (not zooming out) relative to the ground.",
         "A video where the camera only moves backward (not zooming out) relative to the ground.",
         "A shot where the camera moves straight back with respect to the ground without any other motion.",
         "A video where the camera exclusively moves backward relative to the ground plane, creating a noticeable parallax effect.",

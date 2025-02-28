@@ -2,6 +2,7 @@
     "label": "Tracking Shot",
     "label_name": "tracking_shot",
     "def_question": [
+      "Does the camera track the subject as they move?",
       "Is it a tracking shot?",
       "Does the camera move to follow the subjects in the scene?",
       "Is this a shot where the camera follows the movement of subjects?",
@@ -18,6 +19,7 @@
       "Is the perspective shifting to maintain framing of a moving subject?"
     ],
     "def_prompt": [
+      "The camera tracks the subject as they move.",
       "A video where the camera moves to follow the subjects in the scene.",
       "A shot where the camera tracks a moving subject throughout the frame.",
       "The camera tracks the subjects as they move in the scene.",

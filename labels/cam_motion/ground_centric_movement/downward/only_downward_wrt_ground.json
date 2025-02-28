@@ -20,6 +20,7 @@
         "Is the camera moving down without any horizontal or rotational adjustments?"
     ],
     "def_prompt": [
+        "The camera only moves downward (not tilting down) relative to the ground.",
         "A video where the camera only moves downward (not tilting down) relative to the ground.",
         "A shot where the camera moves straight down with respect to the ground without any other motion.",
         "A video where the camera exclusively moves downward relative to the ground plane, creating a noticeable vertical parallax effect.",

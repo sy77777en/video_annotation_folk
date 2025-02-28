@@ -2,9 +2,9 @@
     "label": "Only Pan Left Movement",
     "label_name": "only_pan_left",
     "def_question": [
+        "Does the camera only pan leftward without any other camera movements?",
         "Does the camera only pan from right to left?",
         "Does the camera only pan left in the scene, without any other camera movements?",
-        "Does the camera only pan leftward, without any other camera movements?",
         "Does the camera only pan leftward?",
         "Is this a leftward panning shot?",
         "Is this a panning shot from right to left?",
@@ -27,6 +27,7 @@
         "Does the camera only move horizontally from right to left?"
     ],
     "def_prompt": [
+        "The camera only pans leftward without any other camera movements.",
         "A shot where the camera only pans left.",
         "A shot where the camera only pans leftward.",
         "A shot where the camera only pans from right to left.",
