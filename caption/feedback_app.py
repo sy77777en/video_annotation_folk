@@ -45,18 +45,19 @@ def parse_args():
 def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
     video_data_dict = json_to_video_data(video_data_file, label_collections=label_collections)
     for video_data in video_data_dict.values():
-        video_data.cam_setup.update()
         video_data.cam_motion.update()
-        if getattr(video_data.cam_setup, "subject_description", None) is None:
-            video_data.cam_setup.subject_description = "**{NO DESCRIPTION FOR SUBJECTS YET}**"
-        if getattr(video_data.cam_setup, "scene_description", None) is None:
-            video_data.cam_setup.scene_description = "**{NO DESCRIPTION FOR SCENE YET}**"
-        if getattr(video_data.cam_setup, "motion_description", None) is None:
-            video_data.cam_setup.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
-        if getattr(video_data.cam_setup, "spatial_description", None) is None:
-            video_data.cam_setup.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
-        if getattr(video_data.cam_setup, "camera_description", None) is None:
-            video_data.cam_setup.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
+        if hasattr(video_data, "cam_setup"):
+            video_data.cam_setup.update()
+            if getattr(video_data.cam_setup, "subject_description", None) is None:
+                video_data.cam_setup.subject_description = "**{NO DESCRIPTION FOR SUBJECTS YET}**"
+            if getattr(video_data.cam_setup, "scene_description", None) is None:
+                video_data.cam_setup.scene_description = "**{NO DESCRIPTION FOR SCENE YET}**"
+            if getattr(video_data.cam_setup, "motion_description", None) is None:
+                video_data.cam_setup.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
+            if getattr(video_data.cam_setup, "spatial_description", None) is None:
+                video_data.cam_setup.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
+            if getattr(video_data.cam_setup, "camera_description", None) is None:
+                video_data.cam_setup.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
     return video_data_dict
 
 

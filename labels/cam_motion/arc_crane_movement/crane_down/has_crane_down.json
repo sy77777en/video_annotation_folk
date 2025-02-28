@@ -2,14 +2,15 @@
     "label": "Has Crane Down Movement",
     "label_name": "has_crane_down",
     "def_question": [
-        "Is the camera performing a crane down movement?",
+        "Is the camera craning downward in an arc?",
         "Does the camera move downward in an arcing motion?",
         "Is there a vertical orbiting motion where the camera moves downward?",
         "Does the camera descend while maintaining a circular path?",
-        "Is the camera executing a downward crane motion?",
         "Does the camera lower in a smooth arcing movement?"
     ],
     "alt_question": [
+        "Is the camera performing a crane down movement?",
+        "Is the camera executing a downward crane motion?",
         "Is the camera descending while maintaining focus on the subject?",
         "Does the shot feature a controlled vertical drop of the camera?",
         "Is the camera moving down while keeping a curved trajectory?",
@@ -20,15 +21,16 @@
         "Does the camera descend while subtly rotating around the subject?"
     ],
     "def_prompt": [
-        "A scene featuring a crane down movement.",
+        "The camera cranes downward in an arc.",
         "A shot where the camera lowers in a vertical arcing motion.",
         "The camera moves downward while maintaining an orbit around something.",
-        "A shot demonstrating a downward crane motion.",
         "A video where the camera lowers in an arcing trajectory.",
-        "The camera descends in a smooth, controlled crane movement.",
         "A downward arcing shot moving along a vertical path."
     ],
     "alt_prompt": [
+        "A scene featuring a crane down movement.",
+        "A shot demonstrating a downward crane motion.",
+        "The camera descends in a smooth, controlled crane movement.",
         "The camera descends while maintaining visual focus on a subject.",
         "A scene where the camera moves downward in an orbit-like motion.",
         "A video featuring a smooth vertical drop with a curved trajectory.",

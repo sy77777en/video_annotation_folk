@@ -2,14 +2,15 @@
     "label": "Has Crane Up Movement",
     "label_name": "has_crane_up",
     "def_question": [
-        "Is the camera performing a crane up movement?",
+        "Is the camera craning upward in an arc?",
         "Does the camera move upward in an arcing motion?",
         "Is there a vertical orbiting motion where the camera moves upward?",
         "Does the camera elevate while maintaining an circular path?",
-        "Is the camera executing an upward crane motion?",
         "Does the camera rise in a smooth arcing movement?"
     ],
     "alt_question": [
+        "Is the camera performing a crane up movement?",
+        "Is the camera executing an upward crane motion?",
         "Is the camera lifting while maintaining focus on the subject?",
         "Does the shot feature a controlled vertical rise of the camera?",
         "Is the camera moving up while keeping a curved trajectory?",
@@ -20,15 +21,17 @@
         "Does the camera ascend while subtly rotating around the subject?"
     ],
     "def_prompt": [
-        "A scene featuring a crane up movement.",
+        "The camera cranes upward in an arc.",
         "A shot where the camera rises in a vertical arcing motion.",
         "The camera moves upward while maintaining an orbit around something.",
-        "A shot demonstrating an upward crane motion.",
         "A video where the camera lifts in an arcing trajectory.",
-        "The camera elevates in a smooth, controlled crane movement.",
         "An upward arcing shot moving along a vertical path."
     ],
     "alt_prompt": [
+        "A shot demonstrating an upward crane motion.",
+        "The camera elevates in a smooth, controlled crane movement.",
+        "A shot with a crane up movement.",
+        "A scene featuring a crane up movement.",
         "The camera ascends while maintaining visual focus on a subject.",
         "A scene where the camera moves upward in an orbit-like motion.",
         "A video featuring a smooth vertical rise with a curved trajectory.",

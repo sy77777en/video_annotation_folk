@@ -531,13 +531,12 @@ class VanillaCameraPolicy(SocraticProgram):
     def format_camera_steadiness(self, steadiness: str) -> str:
         # Options: "static", "very_smooth", "smooth", "unsteady", "very_unsteady"
         steadiness_info = {
-            "very_smooth": "very smooth with no shaking",
-            "smooth": "smooth with minimal shaking",
-            "unsteady": "slightly unsteady with some shaking",
-            "very_unsteady": "unsteady with noticeable shaking"
+            "static": "The camera is stationary",
+            "very_smooth": "The camera movement is very smooth with no shaking",
+            "smooth": "The camera movement is smooth with minimal shaking",
+            "unsteady": "The camera movement is slightly unsteady with some shaking",
+            "very_unsteady": "The camera movement is unsteady with noticeable shaking"
         }
-        if steadiness == "static":
-            raise ValueError("Camera steadiness cannot be static.")
         return steadiness_info[steadiness]
 
     def format_camera_motion_speed(self, speed: str) -> str:
@@ -549,7 +548,7 @@ class VanillaCameraPolicy(SocraticProgram):
         }
         return speed_info[speed]
     
-    def get_movement_description(self, data: VideoData) -> str:
+    def get_movement_description_simple(self, data: VideoData) -> str:
         # Get a video description using the existing labels.
         # Turn attributes like forward to a phrase like "moving forward"
         # Only call this function for simple or minor motion
@@ -573,8 +572,8 @@ class VanillaCameraPolicy(SocraticProgram):
             "pan_left": "panning left",
             "left": "moving left",
             "right": "moving right",
-            "crane_up": "craning up",
-            "crane_down": "craning down",
+            "crane_up": "craning up in an arc",
+            "crane_down": "craning down in an arc",
             "arc_cw": "arcing clockwise",
             "arc_ccw": "arcing counterclockwise",
             # "up_cam": "moving the camera up",
@@ -597,6 +596,66 @@ class VanillaCameraPolicy(SocraticProgram):
                 return "The camera is {}, and {}.".format(
                     ", ".join([movement_info[m] for m in true_movement[:-1]]),
                     movement_info[true_movement[-1]]
+                )
+    
+    def get_movement_description_minor(self, data: VideoData) -> str:
+        # #Camera direction movement options
+        movement_info = {
+            "camera_forward_backward": {
+                "forward": "moving forward",
+                "backward": "moving backward"
+            },
+            "camera_zoom": {
+                "in": "zooming in",
+                "out": "zooming out"
+            },
+            "camera_left_right": {
+                "left_to_right": "moving left to right",
+                "right_to_left": "moving right to left"
+            },
+            "camera_pan": {
+                "left_to_right": "panning left to right",
+                "right_to_left": "panning right to left"
+            },
+            "camera_up_down": {
+                "up": "moving up",
+                "down": "moving down"
+            },
+            "camera_tilt": {
+                "up": "tilting up",
+                "down": "tilting down"
+            },
+            "camera_arc": {
+                "clockwise": "arcing clockwise",
+                "counter_clockwise": "arcing counterclockwise"
+            },
+            "camera_crane": {
+                "crane_up": "craning up in an arc",
+                "crane_down": "craning down in an arc"
+            },
+            "camera_roll": {
+                "clockwise": "rolling clockwise",
+                "counter_clockwise": "rolling counterclockwise"
+            }
+        }
+        true_movement = [key for key in movement_info.keys() if getattr(data.cam_motion, key) != "no"]
+        if len(true_movement) == 0:
+            return "The camera shows no clear or intentional movement."
+        else:
+            # For one movement: The caption should be like "The camera is **moving forward**."
+            # For two movements: The caption should be like "The camera is **moving forward** and **panning right**."
+            # if more than three: The caption should be like "The camera is **moving forward**, **panning right**, and **tilting up**."
+            if len(true_movement) == 1:
+                return "The camera is {}.".format(movement_info[true_movement[0]][getattr(data.cam_motion, true_movement[0])])
+            elif len(true_movement) == 2:
+                return "The camera is {} and {}.".format(
+                    movement_info[true_movement[0]][getattr(data.cam_motion, true_movement[0])],
+                    movement_info[true_movement[1]][getattr(data.cam_motion, true_movement[1])]
+                )
+            else:
+                return "The camera is {}, and {}.".format(
+                    ", ".join([movement_info[m][getattr(data.cam_motion, m)] for m in true_movement[:-1]]),
+                    movement_info[true_movement[-1]][getattr(data.cam_motion, true_movement[-1])]
                 )
                 
     def get_tracking_description(self, data: VideoData) -> str:
@@ -721,43 +780,43 @@ class VanillaCameraPolicy(SocraticProgram):
         policy = ""
         policy += read_text_file("caption_policy/policy/camera_framing_dynamics/policy.txt")
         
-        policy += "\nCrucially, instead of inferring these attributes from the video, we have already provided human-labeled ground truth for some of the elements specified above. You should directly use this information in your description and should not infer any details that are not already provided. Your description should be brief, and if anything is normal or unremarkable, you do not need to include it (e.g., if the video is at regular playback speed, there is no need to mention it)."
+        policy += "\n\nCrucially, instead of inferring these attributes from the video, we have already provided human-labeled ground truth for some of the elements specified above. You should directly use this information in your description and should not infer any details that are not already provided. Your description should be brief, and if anything is normal or unremarkable, you do not need to include it (e.g., if the video is at regular playback speed, there is no need to mention it)."
 
         # Add playback speed information
-        policy += "\n**Playback Speed:** {}".format(self.format_playback_speed(data.cam_setup.video_speed))
+        policy += "\n\n**Playback Speed:** {}".format(self.format_playback_speed(data.cam_setup.video_speed))
         
         # Add lens distortion information
-        policy += "\n**Lens Distortion:** {}".format(self.format_lens_distortion(data.cam_setup.lens_distortion))
+        policy += "\n\n**Lens Distortion:** {}".format(self.format_lens_distortion(data.cam_setup.lens_distortion))
         
         # Add camera height information
         if data.cam_setup.is_height_wrt_ground_applicable:
             if data.cam_setup.height_wrt_ground_change:
-                policy += "\n**Camera Height:** The camera starts {} and then moves {}.".format(
+                policy += "\n\n**Camera Height:** The camera starts {} and then moves {}.".format(
                     self.format_camera_height_start(data.cam_setup.height_wrt_ground_info['start']),
                     self.format_camera_height_end(data.cam_setup.height_wrt_ground_info['end'])
                 )
             else:
                 try:
-                    policy += "\n**Camera Height:** The camera is {}.".format(
+                    policy += "\n\n**Camera Height:** The camera is {}.".format(
                         self.format_camera_height_start((data.cam_setup.height_wrt_ground_info['start']))
                     )
                 except:
                     import pdb; pdb.set_trace()
         elif data.cam_setup.overall_height_description != "":
-            policy += "\n**Camera Height:** {}".format(data.cam_setup.overall_height_description)
+            policy += "\n\n**Camera Height:** {}".format(data.cam_setup.overall_height_description)
         else:
-            policy += "\n**Camera Height:** The camera height is unclear or not significant enough to mention (no need to mention)."
+            policy += "\n\n**Camera Height:** The camera height is unclear or not significant enough to mention (no need to mention)."
         
         
         # Add camera angle information
         if data.cam_setup.is_camera_angle_applicable:
             if data.cam_setup.camera_angle_change:
-                policy += "\n**Camera Angle:** The camera angle is initially at {} and then changes to {} due to camera motion.".format(
+                policy += "\n\n**Camera Angle:** The camera angle is initially at {} and then changes to {} due to camera motion.".format(
                     self.format_camera_angle(data.cam_setup.camera_angle_info['start']),
                     self.format_camera_angle(data.cam_setup.camera_angle_info['end'])
                 )
             else:
-                policy += "\n**Camera Angle:** The camera angle is at {}.".format(
+                policy += "\n\n**Camera Angle:** The camera angle is at {}.".format(
                     self.format_camera_angle(data.cam_setup.camera_angle_info['start'])
                 )
             
@@ -767,19 +826,19 @@ class VanillaCameraPolicy(SocraticProgram):
             elif data.cam_setup.is_dutch_angle_fixed:
                 policy += " The camera is also at a fixed dutch angle during the video."
         elif data.cam_setup.camera_angle_description != "":
-            policy += "\n**Camera Angle:** {}".format(data.cam_setup.camera_angle_description)
+            policy += "\n\n**Camera Angle:** {}".format(data.cam_setup.camera_angle_description)
         else:
-            policy += "\n**Camera Angle:** The camera angle is unclear or not significant enough to mention (no need to mention)."
+            policy += "\n\n**Camera Angle:** The camera angle is unclear or not significant enough to mention (no need to mention)."
         
         # Add focus information
         if data.cam_setup.is_focus_applicable:
             if data.cam_setup.is_deep_focus:
-                policy += "\n**Camera Focus:** The camera uses a deep focus with a large depth of field."
+                policy += "\n\n**Camera Focus:** The camera uses a deep focus with a large depth of field."
             else:
                 if data.cam_setup.is_ultra_shallow_focus:
-                    policy += "\n**Camera Focus:** The camera uses an extremely shallow depth of field."
+                    policy += "\n\n**Camera Focus:** The camera uses an extremely shallow depth of field."
                 else:
-                    policy += "\n**Camera Focus:** The camera uses a shallow depth of field."
+                    policy += "\n\n**Camera Focus:** The camera uses a shallow depth of field."
                 
                 if data.cam_setup.focus_change:
                     policy += " The camera starts {}, and later becomes {}.".format(
@@ -798,55 +857,56 @@ class VanillaCameraPolicy(SocraticProgram):
                 elif data.cam_setup.is_focus_tracking:
                     policy += " The camera uses focus tracking to keep the subject in focus."
         elif data.cam_setup.camera_focus_description != "":
-            policy += "\n**Camera Focus:** {}".format(data.cam_setup.camera_focus_description)
+            policy += "\n\n**Camera Focus:** {}".format(data.cam_setup.camera_focus_description)
         else:
-            policy += "\n**Camera Focus:** The camera focus is unclear or not significant enough to mention (no need to mention)."
+            policy += "\n\n**Camera Focus:** The camera focus is unclear or not significant enough to mention (no need to mention)."
     
         # Add camera motion information
         if data.cam_motion.camera_movement == "no":
             if data.cam_motion.steadiness == "static":
-                policy += "\n**Camera Motion:** The camera is completely static, with no movement or shaking."
+                policy += "\n\n**Camera Motion:** The camera is completely static, with no movement or shaking."
             elif data.cam_motion.steadiness in ['smooth', 'unsteady']:
-                policy += "\n**Camera Motion:** The camera is fixed but slightly unsteady, with no intentional movement."
+                policy += "\n\n**Camera Motion:** The camera is fixed but slightly unsteady, with no intentional movement."
             elif data.cam_motion.steadiness in ['very_unsteady']:
-                policy += "\n**Camera Motion:** The camera is quite unsteady, but its motion lacks a clear pattern."
+                policy += "\n\n**Camera Motion:** The camera is quite unsteady, but its motion lacks a clear pattern."
         else:
             
             if data.cam_motion.camera_movement == "major_complex":
-                policy += "\n**Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
+                policy += "\n\n**Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
             else:
-                complex_motion_description = self.get_movement_description(data)
                 if data.cam_motion.camera_movement == "minor":
-                    policy += "\n**Camera Motion:** The camera shows some minor movement."
+                    complex_motion_description = self.get_movement_description_minor(data)
+                    policy += "\n\n**Camera Motion:** The camera shows some minor movement."
                 elif data.cam_motion.camera_movement == "major_simple":
-                    policy += "\n**Camera Motion:** The camera shows a clear movement pattern."
+                    complex_motion_description = self.get_movement_description_simple(data)
+                    policy += "\n\n**Camera Motion:** The camera shows a clear movement pattern."
                 else:
                     raise ValueError("Invalid camera movement type.")
                 policy += " " + complex_motion_description
             
             # if tracking
             if data.cam_motion.is_tracking:
-                policy += "\n**Subject Tracking:** {}.".format(
+                policy += "\n\n**Subject Tracking:** {}".format(
                     self.get_tracking_description(data)
                 )
                 
-            policy += "\n**Camera Steadiness:** The camera movement is {}".format(
+            policy += "\n\n**Camera Steadiness:** {}.".format(
                 self.format_camera_steadiness(data.cam_motion.steadiness)
             )
             
             if data.cam_motion.camera_motion_speed != "regular":
-                policy += " \n**Camera Motion Speed**: The camera is {}".format(
+                policy += " \n\n**Camera Motion Speed**: The camera is {}".format(
                     self.format_camera_motion_speed(data.cam_motion.camera_motion_speed)
                 )
         return policy    
         
 
-class VanillaCameraMotionPolicy(SocraticProgram):
+class VanillaCameraMotionPolicy(VanillaCameraPolicy):
     def __init__(self):
-        name = "Vanilla Camera Motion Description"
-        info = "A policy that use existing labels to prompt a human or model to provide structured captions for Camera Motion."
-        caption_fields = ["camera_motion"]
-        super().__init__(name, info, caption_fields)
+        super().__init__()
+        self.name = "Vanilla Camera Motion Description"
+        self.info = "A policy that use existing labels to prompt a human or model to provide structured captions for Camera Motion."
+        self.caption_fields = ["camera_motion"]
     
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
@@ -854,192 +914,7 @@ class VanillaCameraMotionPolicy(SocraticProgram):
             "camera_motion": self.get_description(data)
         }
             
-    def format_camera_steadiness(self, steadiness: str) -> str:
-        # Options: "static", "very_smooth", "smooth", "unsteady", "very_unsteady"
-        steadiness_info = {
-            "very_smooth": "very smooth with no shaking",
-            "smooth": "smooth with minimal shaking",
-            "unsteady": "slightly unsteady with some shaking",
-            "very_unsteady": "unsteady with noticeable shaking"
-        }
-        if steadiness == "static":
-            raise ValueError("Camera steadiness cannot be static.")
-        return steadiness_info[steadiness]
-
-    def format_camera_motion_speed(self, speed: str) -> str:
-        # Options: "slow", "regular", "fast"
-        speed_info = {
-            "slow": "moving slowly.",
-            "regular": "moving at a regular speed (no need to mention).",
-            "fast": "moving quickly."
-        }
-        return speed_info[speed]
-    
-    def get_movement_description(self, data: VideoData) -> str:
-        # Get a video description using the existing labels.
-        # Turn attributes like forward to a phrase like "moving forward"
-        # Only call this function for simple or minor motion
-        # attributes = [
-        #     "forward", "backward", "zoom_in", "zoom_out", "up", "down", "tilt_up", "tilt_down", 
-        #     "roll_cw", "roll_ccw", "crane_up", "crane_down", "arc_cw", "arc_ccw", "up_cam", "down_cam", 
-        #     "forward_cam", "backward_cam", "pan_right", "pan_left", "left", "right"
-        # ]
-        movement_info = {
-            "roll_cw": "rolling clockwise",
-            "roll_ccw": "rolling counterclockwise",
-            "forward": "moving forward",
-            "backward": "moving backward",
-            "zoom_in": "zooming in",
-            "zoom_out": "zooming out",
-            "up": "moving up",
-            "down": "moving down",
-            "tilt_up": "tilting up",
-            "tilt_down": "tilting down",
-            "pan_right": "panning right",
-            "pan_left": "panning left",
-            "left": "moving left",
-            "right": "moving right",
-            "crane_up": "craning up",
-            "crane_down": "craning down",
-            "arc_cw": "arcing clockwise",
-            "arc_ccw": "arcing counterclockwise",
-            # "up_cam": "moving the camera up",
-            # "down_cam": "moving the camera down",
-            # "forward_cam": "moving the camera forward",
-            # "backward_cam": "moving the camera backward",
-        }
-        true_movement = [key for key in movement_info.keys() if getattr(data.cam_motion, key) is True]
-        if len(true_movement) == 0:
-            return "The camera shows no clear or intentional movement."
-        else:
-            # For one movement: The caption should be like "The camera is **moving forward**."
-            # For two movements: The caption should be like "The camera is **moving forward** and **panning right**."
-            # if more than three: The caption should be like "The camera is **moving forward**, **panning right**, and **tilting up**."
-            if len(true_movement) == 1:
-                return "The camera is {}.".format(movement_info[true_movement[0]])
-            elif len(true_movement) == 2:
-                return "The camera is {} and {}.".format(movement_info[true_movement[0]], movement_info[true_movement[1]])
-            else:
-                return "The camera is {}, and {}.".format(
-                    ", ".join([movement_info[m] for m in true_movement[:-1]]),
-                    movement_info[true_movement[-1]]
-                )
-                
-    def get_tracking_description(self, data: VideoData) -> str:
-        # only call when data.cam_motion.is_tracking is True
-        # Options: "side", "tail", "lead", "aerial", "arc", "pan", "tilt"
-        # however, when both "side" and "tail"/"lead", this is "rear-side"/"front-side"
-        if len(data.cam_motion.tracking_shot_types) == 1:
-            if "side" in data.cam_motion.tracking_shot_types:
-                if data.cam_motion.left is True:
-                    description = "The camera is moving leftward to track the subject from the side."
-                elif data.cam_motion.right is True:
-                    description = "The camera is moving rightward to track the subject from the side."
-                else:
-                    description = "The camera is tracking the subject from the side."
-            elif "tail" in data.cam_motion.tracking_shot_types:
-                description = "The camera is following the subject from behind."
-            elif "lead" in data.cam_motion.tracking_shot_types:
-                description = "The camera is leading the subject from the front."
-            elif "aerial" in data.cam_motion.tracking_shot_types:
-                description = "The camera is tracking the subject from an aerial view."
-            elif "arc" in data.cam_motion.tracking_shot_types:
-                description = "The camera is tracking the subject while arcing around them."
-            elif "pan" in data.cam_motion.tracking_shot_types:
-                if data.cam_motion.pan_left is True:
-                    description = "The camera is panning leftward to track the subject."
-                elif data.cam_motion.pan_right is True:
-                    description = "The camera is panning rightward to track the subject."
-                else:
-                    description = "The camera is tracking the subject by panning."
-            elif "tilt" in data.cam_motion.tracking_shot_types:
-                if data.cam_motion.tilt_up is True:
-                    description = "The camera is tilting upward to track the subject."
-                elif data.cam_motion.tilt_down is True:
-                    description = "The camera is tilting downward to track the subject."
-                else:
-                    description = "The camera is tracking the subject by tilting."
-            else:
-                raise ValueError(f"Invalid tracking shot type: {data.cam_motion.tracking_shot_types[0]}")
-        elif len(data.cam_motion.tracking_shot_types) == 2:
-            if "side" in data.cam_motion.tracking_shot_types:
-                if "tail" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the rear-side."
-                elif "lead" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the front-side."
-                elif "arc" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the side while moving in an arc."
-                elif "pan" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the side while panning."
-                elif "tilt" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the side while tilting."
-                elif "aerial" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the side with an aerial perspective."
-                else:
-                    raise ValueError(f"Invalid tracking shot types: {data.cam_motion.tracking_shot_types}")
-            elif "tail" in data.cam_motion.tracking_shot_types:
-                if "aerial" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from above and behind."
-                elif "arc" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from behind while moving in an arc."
-                elif "pan" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from behind while panning."
-                elif "tilt" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from behind while tilting."
-                else:
-                    raise ValueError(f"Invalid tracking shot types: {data.cam_motion.tracking_shot_types}")
-            elif "lead" in data.cam_motion.tracking_shot_types:
-                if "aerial" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from above and the front."
-                elif "arc" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the front while moving in an arc."
-                elif "pan" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the front while panning."
-                elif "tilt" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from the front while tilting."
-                else:
-                    raise ValueError(f"Invalid tracking shot types: {data.cam_motion.tracking_shot_types}")
-            elif "aerial" in data.cam_motion.tracking_shot_types:
-                if "arc" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from an aerial view while moving in an arc."
-                elif "pan" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from an aerial view while panning."
-                elif "tilt" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject from an aerial view while tilting."
-                else:
-                    raise ValueError(f"Invalid tracking shot types: {data.cam_motion.tracking_shot_types}")
-            elif "pan" in data.cam_motion.tracking_shot_types:
-                if "tilt" in data.cam_motion.tracking_shot_types:
-                    description = "The camera is tracking the subject while panning and tilting."
-                else:
-                    raise ValueError(f"Invalid tracking shot types: {data.cam_motion.tracking_shot_types}")
-            else:
-                raise ValueError(f"Invalid tracking shot types: {data.cam_motion.tracking_shot_types}")
-        else:
-            # More than three types, therefore need to write a sentence with all types
-            tracking_info = {
-                "side": "positioning at the side",
-                "tail": "following from behind",
-                "lead": "leading from the front",
-                "aerial": "taking an aerial perspective",
-                "arc": "moving in an arc",
-                "pan": "panning",
-                "tilt": "tilting"
-            }
-            
-            description = "The camera is tracking the subject by "
-            for i, tracking_type in enumerate(data.cam_motion.tracking_shot_types):
-                if i == len(data.cam_motion.tracking_shot_types) - 1:
-                    description += f"and {tracking_info[tracking_type]}."
-                else:
-                    description += f"{tracking_info[tracking_type]}, "
-            
-        if data.cam_motion.subject_size_change == "larger":
-            description += " During the tracking shot, the subject becomes larger in the frame."
-        elif data.cam_motion.subject_size_change == "smaller":
-            description += " During the tracking shot, the subject becomes smaller in the frame."
-        return description
-            
+     
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
@@ -1047,7 +922,7 @@ class VanillaCameraMotionPolicy(SocraticProgram):
         policy = ""
         policy += read_text_file("caption_policy/policy/camera_motion/policy.txt")
         
-        policy += "\n\nUse the provided human-labeled ground truth directly in your description without inferring any additional details. Include all given information, but keep the description concise."
+        policy += "\n\nUse the provided human-labeled ground truth directly in your description without inferring any additional details. Include all given information."
 
         # Add camera motion information
         if data.cam_motion.camera_movement == "no":
@@ -1062,10 +937,11 @@ class VanillaCameraMotionPolicy(SocraticProgram):
             if data.cam_motion.camera_movement == "major_complex":
                 policy += "\n\n**Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
             else:
-                complex_motion_description = self.get_movement_description(data)
                 if data.cam_motion.camera_movement == "minor":
+                    complex_motion_description = self.get_movement_description_minor(data)
                     policy += "\n\n**Camera Motion:** The camera shows some minor movement."
                 elif data.cam_motion.camera_movement == "major_simple":
+                    complex_motion_description = self.get_movement_description_simple(data)
                     policy += "\n\n**Camera Motion:** The camera shows a clear movement pattern."
                 else:
                     raise ValueError("Invalid camera movement type.")
@@ -1073,11 +949,11 @@ class VanillaCameraMotionPolicy(SocraticProgram):
             
             # if tracking
             if data.cam_motion.is_tracking:
-                policy += "\n\n**Subject Tracking:** {}.".format(
+                policy += "\n\n**Subject Tracking:** {}".format(
                     self.get_tracking_description(data)
                 )
                 
-            policy += "\n\n**Camera Steadiness:** The camera movement is {}".format(
+            policy += "\n\n**Camera Steadiness:** {}.".format(
                 self.format_camera_steadiness(data.cam_motion.steadiness)
             )
             

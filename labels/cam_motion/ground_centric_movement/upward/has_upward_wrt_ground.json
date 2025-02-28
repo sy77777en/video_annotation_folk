@@ -2,8 +2,9 @@
     "label": "Has Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
     "label_name": "has_upward_wrt_ground",
     "def_question": [
-        "Does the camera move upward (not tilting up) in the scene?",
+        "Does the camera move upward relative to the ground?",
         "Is the camera moving upward in the scene?",
+        "Does the camera move upward (not tilting up) in the scene?",
         "Is the camera moving upward?",
         "Is the camera moving upward, creating a noticeable vertical parallax effect?",
         "Is the camera moving upward (not tilting up) in the scene, creating a noticeable vertical parallax effect?",
@@ -24,6 +25,7 @@
         "Is the camera rising, creating a strong sense of vertical movement?"
     ],
     "def_prompt": [
+        "The camera is moving upward relative to the ground.",
         "A shot where the camera rises upward, rather than tilting up.",
         "A video where the camera travels upward, creating noticeable vertical parallax.",
         "A scene where the camera moves physically upward instead of tilting.",

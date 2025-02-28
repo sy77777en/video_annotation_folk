@@ -2,6 +2,7 @@
     "label": "Has Pan Right Movement",
     "label_name": "has_pan_right",
     "def_question": [
+        "Does the camera pan to the right?",
         "Does the camera pan right in the scene?",
         "Does the camera pan rightward in the scene?",
         "Does the camera pan from left to right?",
@@ -27,6 +28,7 @@
         "Is this a horizontal camera movement from left to right?"
     ],
     "def_prompt": [
+        "The camera pans to the right.",
         "A shot where the camera pans right.",
         "A shot where the camera pans rightward.",
         "A shot where the camera pans from left to right.",

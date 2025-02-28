@@ -2,6 +2,7 @@
     "label": "Has Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
     "label_name": "has_downward_wrt_ground",
     "def_question": [
+        "Does the camera move downward relative to the ground?",
         "Does the camera move downward (not tilting down) in the scene?",
         "Is the camera moving downward in the scene?",
         "Is the camera moving downward?",
@@ -24,6 +25,7 @@
         "Is the camera lowering, creating a strong sense of vertical movement?"
     ],
     "def_prompt": [
+        "The camera is moving downward relative to the ground.",
         "A shot where the camera lowers downward, rather than tilting down.",
         "A video where the camera travels downward, creating noticeable vertical parallax.",
         "A scene where the camera moves physically downward instead of tilting.",

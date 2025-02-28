@@ -22,13 +22,14 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="camera_motion_config.json", help="Path to the JSON config file")
     # parser.add_argument("--video_urls_file", type=str, default="test_urls_all.json", help="Path to the test URLs file")
-    parser.add_argument("--video_urls_file", type=str, default="test_urls_selected.json", help="Path to the test URLs file")
+    # parser.add_argument("--video_urls_file", type=str, default="test_urls_selected.json", help="Path to the test URLs file")
+    parser.add_argument("--video_urls_file", type=str, default="motion_urls_random.json", help="Path to the test URLs file")
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     # parser.add_argument("--video_data", type=str, default="video_data/20250218_1042/videos.json", help="Path to the video data file")
-    parser.add_argument("--video_data", type=str, default="video_data/20250224_0130/videos.json", help="Path to the video data file")
-    parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
+    parser.add_argument("--video_data", type=str, default="video_data/20250227_0324ground_only/videos.json", help="Path to the video data file")
+    parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion"], help="List of label collections to load from the video data")
     return parser.parse_args()
 
 def main():

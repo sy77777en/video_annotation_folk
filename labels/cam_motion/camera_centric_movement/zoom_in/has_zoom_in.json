@@ -2,6 +2,11 @@
     "label": "Has Zoom In (Relative to Camera)",
     "label_name": "has_zoom_in",
     "def_question": [
+        "Does the camera zoom in?",
+        "Does the camera zoom in during the shot?",
+        "Is the camera zooming in?"
+    ],
+    "alt_question": [
         "Does the camera zoom in rather than physically moving forward?",
         "Is the field of view narrowing without the camera physically advancing?",
         "Does the shot feature zooming in instead of a dolly or tracking movement?",
@@ -9,9 +14,7 @@
         "Does the video include a zoom-in effect where the frame tightens on the subject?",
         "Is there a noticeable zoom-in effect rather than actual camera movement?",
         "Does the framing move closer to the subject without spatial camera movement?",
-        "Is the shot pulling in optically instead of moving physically?"
-    ],
-    "alt_question": [
+        "Is the shot pulling in optically instead of moving physically?",
         "Does the video include a zoom-in effect?",
         "Is the camera zooming in rather than physically approaching?",
         "Is there a noticeable narrowing of the field of view?",
@@ -22,9 +25,11 @@
         "Does the video feature an optical zoom rather than a tracking shot?"
     ],
     "def_prompt": [
-        "A video where the camera zooms in rather than physically moving forward."
+        "The camera zooms in.",
+        "A shot where the camera zooms in."
     ],
     "alt_prompt": [
+        "A video where the camera zooms in rather than physically moving forward.",
         "A shot featuring a zoom-in effect where the frame narrows in.",
         "A scene where the camera optically magnifies the subject.",
         "A video where the camera zooms in to close in on the subject.",
