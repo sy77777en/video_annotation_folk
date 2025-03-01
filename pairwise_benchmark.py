@@ -653,7 +653,23 @@ movement_and_steadiness_tasks = [
             "label": "cam_motion.steadiness_and_movement.very_shaky_camera",
             "type": "pos"
         }
-    }
+    },
+    {
+        "folder": "cam_motion-20250227_0324ground_only",
+        "name": "is_the_camera_fixed_or_moving",
+        "pos_question": "Is the camera completely still without any visible movement?",
+        "neg_question": "Is the camera not completely still and shows visible movement?",
+        "pos_prompt": "The camera is completely still without any visible movement.",
+        "neg_prompt": "The camera is not completely still and shows visible movement.",
+        "pos": {
+            "label": "cam_motion.steadiness_and_movement.fixed_camera",
+            "type": "pos"
+        },
+        "neg": {
+            "label": "cam_motion.steadiness_and_movement.fixed_camera",
+            "type": "neg"
+        }
+    },
 ]
 
 scene_dynamics_tasks = [
@@ -1118,7 +1134,7 @@ rotation_vs_translation = [
         }
     },
     {
-        "folder": "cam_motion-20250227_0326ground_and_camera",
+        "folder": "cam_motion-cam_setup-20250227_0507ground_and_setup",
         "name": "has_tilt_up_not_pedestal_vs_has_pedestal_not_tilt_up",
         "pos_question": "Does the camera tilt up without moving physically upward?",
         "neg_question": "Does the camera move physically upward without tilting up?",
@@ -1132,7 +1148,11 @@ rotation_vs_translation = [
             {
                 "label": "cam_motion.camera_centric_movement.upward.has_upward_wrt_camera",
                 "type": "neg"
-            }
+            },
+            {
+                "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
+                "type": "neg"
+            },
         ],
         "neg": [
             {
@@ -1142,11 +1162,15 @@ rotation_vs_translation = [
             {
                 "label": "cam_motion.camera_centric_movement.upward.has_upward_wrt_camera",
                 "type": "pos"
-            }
+            },
+            {
+                "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
+                "type": "pos"
+            },
         ]
     },
     {
-        "folder": "cam_motion-20250227_0326ground_and_camera",
+        "folder": "cam_motion-cam_setup-20250227_0507ground_and_setup",
         "name": "has_tilt_down_not_pedestal_vs_has_pedestal_not_tilt_down",
         "pos_question": "Does the camera tilt down without moving physically downward?",
         "neg_question": "Does the camera move physically downward without tilting down?",
@@ -1160,7 +1184,11 @@ rotation_vs_translation = [
             {
                 "label": "cam_motion.camera_centric_movement.downward.has_downward_wrt_camera",
                 "type": "neg"
-            }
+            },
+            {
+                "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
+                "type": "neg"
+            },
         ],
         "neg": [
             {
@@ -1170,7 +1198,11 @@ rotation_vs_translation = [
             {
                 "label": "cam_motion.camera_centric_movement.downward.has_downward_wrt_camera",
                 "type": "pos"
-            }
+            },
+            {
+                "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
+                "type": "pos"
+            },
         ]
     },
     {
@@ -1544,10 +1576,10 @@ special_tracking_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_front_side_tracking",
-        "pos_question": "Is it a tracking shot with the camera leading from the front and to the side of the subject?",
-        "neg_question": "Is the video not a tracking shot with the camera leading from the front and to the side of the subject?",
-        "pos_prompt": "A tracking shot where the camera leads from the front and to the side of the subject.",
-        "neg_prompt": "The camera is not leading from the front and to the side of the subject.",
+        "pos_question": "Is it a tracking shot with the camera leading the subject from a front-side angle?",
+        "neg_question": "Is the camera not leading the subject from a front-side angle in a tracking shot?",
+        "pos_prompt": "A tracking shot where the camera leads the subject from a front-side angle.",
+        "neg_prompt": "The camera is not leading the subject from a front-side angle in a tracking shot.",
         "pos": {
             "label": "cam_motion.object_centric_movement.front_side_tracking_shot",
             "type": "pos"
@@ -1560,10 +1592,10 @@ special_tracking_tasks = [
     {
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "has_rear_side_tracking",
-        "pos_question": "Is it a tracking shot with the camera following behind and to the side of the subject?",
-        "neg_question": "Is the video not a tracking shot with the camera following behind and to the side of the subject?",
-        "pos_prompt": "A tracking shot where the camera follows behind and to the side of the subject.",
-        "neg_prompt": "The camera is not following behind and to the side of the subject.",
+        "pos_question": "Is it a tracking shot with the camera following behind the subject at a rear-side angle?",
+        "neg_question": "Is the camera not following behind the subject at a rear-side angle?",
+        "pos_prompt": "A tracking shot where the camera follows behind the subject at a rear-side angle.",
+        "neg_prompt": "The camera is not following behind the subject at a rear-side angle.",
         "pos": {
             "label": "cam_motion.object_centric_movement.rear_side_tracking_shot",
             "type": "pos"
@@ -1711,9 +1743,9 @@ only_intrinsic_change_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_zoom_in_vs_has_zoom_in_and_not_only",
         "pos_question": "Does the camera only zoom in with no other movement?",
-        "neg_question": "Does the camera zoom in along with other types of movement?",
+        "neg_question": "Does the camera not just zoom in?",
         "pos_prompt": "The camera only zooms in without any other movement.",
-        "neg_prompt": "The camera zooms in along with other types of movement.",
+        "neg_prompt": "The camera does not just zoom in.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.zoom_in.only_zoom_in",
             "type": "pos"
@@ -1721,7 +1753,7 @@ only_intrinsic_change_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.zoom_in.has_zoom_in",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.zoom_in.only_zoom_in",
@@ -1733,9 +1765,9 @@ only_intrinsic_change_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_zoom_out_vs_has_zoom_out_and_not_only",
         "pos_question": "Does the camera only zoom out with no other movement?",
-        "neg_question": "Does the camera zoom out along with other types of movement?",
+        "neg_question": "Does the camera not just zoom out?",
         "pos_prompt": "The camera only zooms out with no other movement.",
-        "neg_prompt": "The camera zooms out along with other types of movement.",
+        "neg_prompt": "The camera does not just zoom out.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.zoom_out.only_zoom_out",
             "type": "pos"
@@ -1743,7 +1775,7 @@ only_intrinsic_change_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.zoom_out.has_zoom_out",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.zoom_out.only_zoom_out",
@@ -1758,9 +1790,9 @@ only_translation_tasks = [
         "folder": "cam_motion-cam_setup-20250227_0507ground_and_setup",
         "name": "only_forward_vs_has_forward_and_not_only",
         "pos_question": "Does the camera only move forward (not zooming in) with respect to the ground?",
-        "neg_question": "Does the camera move forward with respect to the ground along with other types of movement?",
+        "neg_question": "Does the camera not just move forward with respect to the ground?",
         "pos_prompt": "The camera only moves forward (not zooming in) relative to the ground.",
-        "neg_prompt": "The camera moves forward relative to the ground along with other types of movement.",
+        "neg_prompt": "The camera not just moves forward relative to the ground.",
         "pos": {
             "label": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground",
             "type": "pos"
@@ -1768,7 +1800,7 @@ only_translation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground",
@@ -1780,9 +1812,9 @@ only_translation_tasks = [
         "folder": "cam_motion-cam_setup-20250227_0507ground_and_setup",
         "name": "only_backward_vs_has_backward_and_not_only",
         "pos_question": "Does the camera only move backward (not zooming out) with respect to the ground?",
-        "neg_question": "Does the camera move backward with respect to the ground along with other types of movement?",
+        "neg_question": "Does the camera not just move backward with respect to the ground?",
         "pos_prompt": "The camera only moves backward (not zooming out) relative to the ground.",
-        "neg_prompt": "The camera moves backward relative to the ground along with other types of movement.",
+        "neg_prompt": "The camera not just moves backward relative to the ground.",
         "pos": {
             "label": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground",
             "type": "pos"
@@ -1790,7 +1822,7 @@ only_translation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground",
@@ -1802,9 +1834,9 @@ only_translation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_truck_left_vs_has_truck_left_and_not_only",
         "pos_question": "Does the camera only move leftward without any other camera movements?",
-        "neg_question": "Does the camera move laterally to the left along with other types of movement?",
+        "neg_question": "Does the camera not just move laterally to the left?",
         "pos_prompt": "The camera only moves leftward without any other camera movements.",
-        "neg_prompt": "The camera moves laterally to the left along with other types of movement.",
+        "neg_prompt": "The camera not just moves laterally to the left.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.leftward.only_leftward",
             "type": "pos"
@@ -1812,7 +1844,7 @@ only_translation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.leftward.has_leftward",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.leftward.only_leftward",
@@ -1824,9 +1856,9 @@ only_translation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_truck_right_vs_has_truck_right_and_not_only",
         "pos_question": "Does the camera only move rightward without any other camera movements?",
-        "neg_question": "Does the camera move laterally to the right along with other types of movement?",
+        "neg_question": "Does the camera not just move laterally to the right?",
         "pos_prompt": "The camera only moves rightward without any other camera movements.",
-        "neg_prompt": "The camera moves laterally to the right along with other types of movement.",
+        "neg_prompt": "The camera not just moves laterally to the right.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.rightward.only_rightward",
             "type": "pos"
@@ -1834,7 +1866,7 @@ only_translation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.rightward.has_rightward",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.rightward.only_rightward",
@@ -1846,9 +1878,9 @@ only_translation_tasks = [
         "folder": "cam_motion-cam_setup-20250227_0507ground_and_setup",
         "name": "only_pedestal_up_vs_has_pedestal_up_and_not_only",
         "pos_question": "Does the camera only move upward (not tilting up) with respect to the ground?",
-        "neg_question": "Does the camera move physically upward along with other types of movement?",
+        "neg_question": "Does the camera not just move physically upward?",
         "pos_prompt": "The camera only moves upward (not tilting up) relative to the ground.",
-        "neg_prompt": "The camera moves physically upward along with other types of movement.",
+        "neg_prompt": "The camera not just moves physically upward.",
         "pos": {
             "label": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
             "type": "pos"
@@ -1856,7 +1888,7 @@ only_translation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
@@ -1868,9 +1900,9 @@ only_translation_tasks = [
         "folder": "cam_motion-cam_setup-20250227_0507ground_and_setup",
         "name": "only_pedestal_down_vs_has_pedestal_down_and_not_only",
         "pos_question": "Does the camera only move downward (not tilting down) with respect to the ground?",
-        "neg_question": "Does the camera move physically downward along with other types of movement?",
+        "neg_question": "Does the camera not just move physically downward?",
         "pos_prompt": "The camera only moves downward (not tilting down) relative to the ground.",
-        "neg_prompt": "The camera moves physically downward along with other types of movement.",
+        "neg_prompt": "The camera not just moves physically downward.",
         "pos": {
             "label": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
             "type": "pos"
@@ -1878,7 +1910,7 @@ only_translation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
@@ -1893,9 +1925,9 @@ only_rotation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_pan_left_vs_has_pan_left_and_not_only",
         "pos_question": "Does the camera only pan leftward without any other camera movements?",
-        "neg_question": "Does the camera pan left along with other types of movement?",
+        "neg_question": "Does the camera not just pan left?",
         "pos_prompt": "The camera only pans leftward without any other camera movements.",
-        "neg_prompt": "The camera pans left along with other types of movement.",
+        "neg_prompt": "The camera not just pans left.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
             "type": "pos"
@@ -1903,7 +1935,7 @@ only_rotation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
@@ -1915,9 +1947,9 @@ only_rotation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_pan_right_vs_has_pan_right_and_not_only",
         "pos_question": "Does the camera only pan rightward without any other camera movements?",
-        "neg_question": "Does the camera pan right along with other types of movement?",
+        "neg_question": "Does the camera not just pan right?",
         "pos_prompt": "The camera only pans rightward without any other camera movements.",
-        "neg_prompt": "The camera pans right along with other types of movement.",
+        "neg_prompt": "The camera not just pans right.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
             "type": "pos"
@@ -1925,7 +1957,7 @@ only_rotation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
@@ -1937,9 +1969,9 @@ only_rotation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_tilt_up_vs_has_tilt_up_and_not_only",
         "pos_question": "Does the camera only tilt upward without any other camera movements?",
-        "neg_question": "Does the camera tilt up along with other types of movement?",
+        "neg_question": "Does the camera not just tilt up?",
         "pos_prompt": "The camera only tilts upward without any other camera movements.",
-        "neg_prompt": "The camera tilts up along with other types of movement.",
+        "neg_prompt": "The camera not just tilts up.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
             "type": "pos"
@@ -1947,7 +1979,7 @@ only_rotation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
@@ -1959,9 +1991,9 @@ only_rotation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_tilt_down_vs_has_tilt_down_and_not_only",
         "pos_question": "Does the camera only tilt downward without any other camera movements?",
-        "neg_question": "Does the camera tilt down along with other types of movement?",
+        "neg_question": "Does the camera not just tilt down?",
         "pos_prompt": "The camera only tilts downward without any other camera movements.",
-        "neg_prompt": "The camera tilts down along with other types of movement.",
+        "neg_prompt": "The camera not just tilts down.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
             "type": "pos"
@@ -1969,7 +2001,7 @@ only_rotation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
@@ -1981,9 +2013,9 @@ only_rotation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_roll_cc_vs_has_roll_cc_and_not_only",
         "pos_question": "Does the camera only roll clockwise without any other camera movements?",
-        "neg_question": "Does the camera roll clockwise along with other types of movement?",
+        "neg_question": "Does the camera not just roll clockwise?",
         "pos_prompt": "The camera only rolls clockwise without any other camera movements.",
-        "neg_prompt": "The camera rolls clockwise along with other types of movement.",
+        "neg_prompt": "The camera not just rolls clockwise.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.roll_clockwise.only_roll_clockwise",
             "type": "pos"
@@ -1991,7 +2023,7 @@ only_rotation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.roll_clockwise.has_roll_clockwise",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.roll_clockwise.only_roll_clockwise",
@@ -2003,9 +2035,9 @@ only_rotation_tasks = [
         "folder": "cam_motion-20250227_0324ground_only",
         "name": "only_roll_ccw_vs_has_roll_ccw_and_not_only",
         "pos_question": "Does the camera only roll counterclockwise without any other camera movements?",
-        "neg_question": "Does the camera roll counterclockwise along with other types of movement?",
+        "neg_question": "Does the camera not just roll counterclockwise?",
         "pos_prompt": "The camera only rolls counterclockwise without any other camera movements.",
-        "neg_prompt": "The camera rolls counterclockwise along with other types of movement.",
+        "neg_prompt": "The camera not just rolls counterclockwise.",
         "pos": {
             "label": "cam_motion.camera_centric_movement.roll_counterclockwise.only_roll_counterclockwise",
             "type": "pos"
@@ -2013,7 +2045,7 @@ only_rotation_tasks = [
         "neg": [
             {
                 "label": "cam_motion.camera_centric_movement.roll_counterclockwise.has_roll_counterclockwise",
-                "type": "pos"
+                "type": "neg"
             },
             {
                 "label": "cam_motion.camera_centric_movement.roll_counterclockwise.only_roll_counterclockwise",
@@ -2337,6 +2369,7 @@ def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_la
     # Step 2: Sort tasks by the minimum available positive/negative samples (smallest first) and Move tasks["task"] == "has_crane_down" to the first
     task_metadata.sort(key=lambda x: x["min_count"])
     task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "has_crane_down")
+    task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "is_the_camera_fixed_or_moving")
     
     # Step 3: Assign videos to train or test, prioritizing constrained tasks
     train_videos = set()
@@ -2393,6 +2426,7 @@ def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_la
     train_tasks = defaultdict(dict)
     test_tasks = defaultdict(dict)
 
+    # task_metadata.sort(key=lambda x: x["task"] != "has_crane_down")
     for task in task_metadata:
         skill_name, task_name = task["skill"], task["task"]
         pos_videos, neg_videos = task["pos_videos"], task["neg_videos"]
@@ -2400,7 +2434,10 @@ def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_la
         # Assign based on the video sets
         unassigned_pos = [v for v in pos_videos if v not in train_videos and v not in test_videos]
         unassigned_neg = [v for v in neg_videos if v not in train_videos and v not in test_videos]
-        train_videos.update(unassigned_pos + unassigned_neg)
+        # assign half of the unassigned videos to train and the other half to test
+        train_videos.update(unassigned_pos[:len(unassigned_pos)//2] + unassigned_neg[:len(unassigned_neg)//2])
+        test_videos.update(unassigned_pos[len(unassigned_pos)//2:] + unassigned_neg[len(unassigned_neg)//2:])
+        # train_videos.update(unassigned_pos + unassigned_neg)
         train_pos = [v for v in pos_videos if v in train_videos]
         train_neg = [v for v in neg_videos if v in train_videos]
         test_pos = [v for v in pos_videos if v in test_videos]
@@ -2412,15 +2449,16 @@ def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_la
 
         train_tasks[skill_name][task_name] = {
             "task_dict": task["task_dict"],
-            "pos": train_pos + unassigned_pos,
-            "neg": train_neg + unassigned_neg
+            "pos": train_pos + unassigned_pos[:len(unassigned_pos)//2],
+            "neg": train_neg + unassigned_neg[:len(unassigned_neg)//2]
         }
 
         test_tasks[skill_name][task_name] = {
             "task_dict": task["task_dict"],
-            "pos": test_pos,
-            "neg": test_neg
+            "pos": test_pos + unassigned_pos[len(unassigned_pos)//2:],
+            "neg": test_neg + unassigned_neg[len(unassigned_neg)//2:]
         }
+        
 
     return {
         "raw": raw_tasks,
@@ -2868,7 +2906,6 @@ if __name__ == "__main__":
     
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sampling", type=str, default=SAMPLING, help="Sampling method")
     parser.add_argument("--max_samples", type=int, default=MAX_SAMPLES, help="A (rough) maximum number of (test) samples per task")
     args = parser.parse_args()
     
