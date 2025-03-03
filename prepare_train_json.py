@@ -139,4 +139,4 @@ if __name__ == "__main__":
     sampled_dir = Path(VIDEO_LABELS_DIR) / "motion_dataset" / f"test_ratio_{1 - TRAIN_RATIO:.2f}_num_{args.max_samples}_sampling_{sampling_str}"
     filename = sampled_dir / args.save_path
     with open(filename, "w") as f:
-        json.dump(finalset, f)
+        json.dump(finalset, f, indent=4)
