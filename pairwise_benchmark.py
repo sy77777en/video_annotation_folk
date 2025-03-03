@@ -7,7 +7,8 @@ from torch.utils.data import Dataset
 
 # SAMPLING = "random"
 SAMPLING = "top"
-MAX_SAMPLES = 100
+# MAX_SAMPLES = 100
+MAX_SAMPLES = 80
 # MAX_SAMPLES = 300
 # MAX_SAMPLES = 50
 SEED = 0
