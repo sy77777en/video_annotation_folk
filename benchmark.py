@@ -79,7 +79,7 @@ class BinaryTask(Dataset):
         y_true = self.labels
         results = {}
         # Replace NaNs with -inf
-        y_scores = np.where(np.isfinite(scores), scores, -np.inf)
+        y_scores = np.where(np.isfinite(scores), scores, -1e10)
         
         ap = average_precision_score(y_true, y_scores)
         roc_auc = roc_auc_score(y_true, y_scores)
