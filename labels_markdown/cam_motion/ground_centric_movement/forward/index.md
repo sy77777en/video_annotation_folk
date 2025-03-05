@@ -99,7 +99,7 @@ Does the camera move forward (not zooming in) in the scene?
 
 - A scene where the shot features a clear forward motion of the camera.
 
-- A shot where the camera dolly moves straight ahead.
+- A shot where the camera dollies straight ahead.
 
 - A video where the camera moves in a forward direction within the scene.
 

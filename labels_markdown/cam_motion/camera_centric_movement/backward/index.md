@@ -72,7 +72,7 @@ Does the camera move backward (not zooming out) with respect to the initial fram
 
 - The camera dollies backward with respect to itself.
 
-- A video where the camera dolly moves backward with respect to itself.
+- A video where the camera dollies backward with respect to itself.
 
 </details>
 

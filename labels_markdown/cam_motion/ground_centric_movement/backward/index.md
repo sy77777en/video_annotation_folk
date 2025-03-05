@@ -99,7 +99,7 @@ Does the camera move backward (not zooming out) in the scene?
 
 - A scene where the shot features a clear backward motion of the camera.
 
-- A shot where the camera dolly moves straight back.
+- A shot where the camera dollies straight back.
 
 - A video where the camera moves in a backward direction within the scene.
 

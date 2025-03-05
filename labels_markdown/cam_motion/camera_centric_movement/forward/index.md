@@ -72,7 +72,7 @@ Does the camera move forward (not zooming in) with respect to the initial frame?
 
 - The camera dollies forward with respect to itself.
 
-- A video where the camera dolly moves forward with respect to itself.
+- A video where the camera dollies forward with respect to itself.
 
 </details>
 

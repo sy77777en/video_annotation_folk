@@ -99,3 +99,12 @@ if __name__ == "__main__":
         with open(filename, "w") as f:
             json.dump(captionset, f, indent=4)
         print(f"Saved to {filename}")
+        
+        # save the answer only to a separate file
+        answer_only = []
+        for item in captionset:
+            answer_only.append(item['answer'])
+        save_path = f"{split}.txt"
+        with open(save_path, "w") as f:
+            for item in answer_only:
+                f.write(f"{item}\n")
