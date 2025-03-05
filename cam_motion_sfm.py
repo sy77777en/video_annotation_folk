@@ -31,10 +31,6 @@ parser.add_argument(
     "--video_label_file",
     type=str,
     help="The video label to use",
-    # default="video_labels/cam_motion-20250219_0338/label_names.json", @ noisy 4000
-    # default="video_labels/cam_motion-cam_setup-20250218_1042/label_names.json", # good initial set of around 2000
-    # default="video_labels/cam_motion-20250223_0313/label_names_subset.json", # only a subset of 300 videos
-    # default="video_labels/cam_motion-20250223_2308/label_names_selected.json", # the full set of 2000 videos for cam-centric
     # default="video_labels/cam_motion-cam_setup-20250224_0130/label_names_selected.json", # the full set of 2384 videos for ground-centric + shotcomp
     default="video_labels/cam_motion-20250227_0326ground_and_camera/label_names_selected.json", # Finalized cam-centric benchmark
     nargs="?",
@@ -156,48 +152,36 @@ camera_movement_mapping = {
 }
 
 def static_score(item):
-    return max(
+    return -max(
         abs(item["delta_x"]),
         abs(item["delta_y"]),
         abs(item["delta_z"]),
         abs(item["delta_yaw"] / 180),
         abs(item["delta_pitch"] / 180),
         abs(item["delta_roll"] / 180),
+        abs(item["delta_zoom"] - 1.0),
     )
 
 motion_to_score = {
-  "Static": lambda item: static_score(item),
-  "Zoom In": lambda item: item['delta_zoom'],
-  "Zoom Out": lambda item: -item['delta_zoom'],
-  "Move In": lambda item: item['delta_z'],
-  "Move Out": lambda item: -item['delta_z'],
-  "Move Up": lambda item: item['delta_y'],
-  "Move Down": lambda item: -item['delta_y'],
-  "Move Right": lambda item: item['delta_x'],
-  "Move Left": lambda item: -item['delta_x'],
-  "Pan Right": lambda item: item['delta_yaw'],
-  "Pan Left": lambda item: -item['delta_yaw'],
-  "Tilt Up": lambda item: item['delta_pitch'],
-  "Tilt Down": lambda item: -item['delta_pitch'],
-  "Roll Clockwise": lambda item: item['delta_roll'],
-  "Roll Counterclockwise": lambda item: -item['delta_roll'],
+    "Static": lambda item: static_score(item),
+    "Zoom In": lambda item: item["delta_zoom"],
+    "Zoom Out": lambda item: -item["delta_zoom"],
+    "Move In": lambda item: item["delta_z"],
+    "Move Out": lambda item: -item["delta_z"],
+    "Move Up": lambda item: -item["delta_y"],
+    "Move Down": lambda item: item["delta_y"],
+    "Move Right": lambda item: item["delta_x"],
+    "Move Left": lambda item: -item["delta_x"],
+    "Pan Right": lambda item: item["delta_pitch"],
+    "Pan Left": lambda item: -item["delta_pitch"],
+    "Tilt Up": lambda item: item["delta_roll"],
+    "Tilt Down": lambda item: -item["delta_roll"],
+    "Roll Clockwise": lambda item: item["delta_yaw"],
+    "Roll Counterclockwise": lambda item: -item["delta_yaw"],
 }
-
-# def static_score(item):
-#     return max()
 
 # print all value names
 print(camera_movement_mapping.values())
-
-raw_scores = [
-    "delta_x"
-    "delta_y"
-    "delta_z"
-    "delta_yaw"
-    "delta_pitch"
-    "delta_roll"
-    "delta_zoom"
-]
 
 all_labels_scores = {}
 missing_videos = []
@@ -230,75 +214,13 @@ for label_name in all_labels:
     import numpy as np
     label_name_nice = camera_movement_mapping[label_name]
     scores = []
-    # raw_scores = {
-    #     "delta_x": [],
-    #     "delta_y": [],
-    #     "delta_z": [],
-    #     "delta_yaw": [],
-    #     "delta_pitch": [],
-    #     "delta_roll": [],
-    #     "delta_zoom": [],
-    # }
-    # video_idx = -1
     for item in video_items:
-        # video_idx += 1
-        # if video_idx == 20 and label_name_nice == "Move Down":
-        #     import pdb; pdb.set_trace()
         if item is None:
             scores.append(np.nan)
-            # raw_scores["delta_x"].append(0)
-            # raw_scores["delta_y"].append(0)
-            # raw_scores["delta_z"].append(0)
-            # raw_scores["delta_yaw"].append(0)
-            # raw_scores["delta_pitch"].append(0)
-            # raw_scores["delta_roll"].append(0)
-            # raw_scores["delta_zoom"].append(1)
             continue
         scores.append(motion_to_score[label_name_nice](item))
-        # raw_scores["delta_x"].append(item["delta_x"])
-        # raw_scores["delta_y"].append(item["delta_y"])
-        # # check if isnan
-        # # if np.isnan(item["delta_y"]):
-        # #     import pdb; pdb.set_trace()
-        # raw_scores["delta_z"].append(item["delta_z"])
-        # raw_scores["delta_yaw"].append(item["delta_yaw"])
-        # raw_scores["delta_pitch"].append(item["delta_pitch"])
-        # raw_scores["delta_roll"].append(item["delta_roll"])
-        # raw_scores["delta_zoom"].append(item["delta_zoom"])
         
     scores = np.array(scores)
-    # if label_name_nice == "Static":
-    #     # first normalize each dimension to [-1, 1]
-    #     for key in raw_scores:
-    #         raw_scores[key] = np.array(raw_scores[key])
-    #         print(f"Max {key}: {np.max(raw_scores[key])}")
-    #         print(f"Min {key}: {np.min(raw_scores[key])}")
-    #         print(f"Mean {key}: {np.mean(raw_scores[key])}")
-    #         if np.max(raw_scores[key]) - np.min(raw_scores[key]) == 0:
-    #             raw_scores[key] = np.zeros_like(raw_scores[key])
-    #         else:
-    #             raw_scores[key] = 2 * (raw_scores[key] - np.min(raw_scores[key])) / (np.max(raw_scores[key]) - np.min(raw_scores[key])) - 1
-    #         print(f"After normalization, Max {key}: {np.max(raw_scores[key])}")
-    #         print(f"After normalization, Min {key}: {np.min(raw_scores[key])}")
-    #         print(f"After normalization, Mean {key}: {np.mean(raw_scores[key])}")
-            
-    #     # then take the maximum
-    #     raw_scores_array = np.array(list(raw_scores.values()))
-    #     scores = np.max(np.abs(raw_scores_array), axis=0)
-    #     print(f"Max score: {np.max(scores)}")
-    #     print(f"Min score: {np.min(scores)}")
-    #     print(f"Mean score: {np.mean(scores)}")
-    # elif label_name_nice == "Move Down":
-    #     scores_without_nan = scores[~np.isnan(scores)]
-    #     print(f"Max score: {np.max(scores_without_nan)}")
-    #     print(f"Min score: {np.min(scores_without_nan)}")
-    #     print(f"Mean score: {np.mean(scores_without_nan)}")
-    #     scores_sorted = np.sort(scores_without_nan)
-    #     import pdb; pdb.set_trace()
-        # print(f"Max score: {np.max(scores)}")
-        # print(f"Min score: {np.min(scores)}")
-        # print(f"Mean score: {np.mean(scores)}")
-        # import pdb; pdb.set_trace()
 
     results = dataset.evaluate_scores(
         scores,
@@ -328,22 +250,4 @@ for label_name in all_labels:
 missing_videos = list(set(missing_videos))
 with open("missing_videos.txt", "w") as f:
     f.write("\n".join(missing_videos))
-print(f"Missing videos saved to 'missing_videos.txt'")
-# Sort by best AP
-# sorted_labels = sorted(all_labels_scores, key=lambda x: all_labels_scores[x]["results"]["ap"], reverse=True)
-# print(f"Using Score Model: {args.score_model}")
-# header = f"{args.score_model:50s} {'AP':>10} {'ROC AUC':>10} {'F1':>10} {'Threshold':>12}"
-# separator = "-" * len(header)
-
-# print(header)
-# print(separator)
-
-# for label_name, scores in all_labels_scores.items():
-#     ap = scores["results"]["ap"]
-#     roc_auc = scores["results"]["roc_auc"]
-#     optimal_f1 = scores["results"]["optimal_f1"]
-#     optimal_threshold = scores["results"]["optimal_threshold"]
-
-#     print(
-#         f"{label_name.rsplit('.')[-1]:50s} {ap:>10.4f} {roc_auc:>10.4f} {optimal_f1:>10.4f} {optimal_threshold:>12.4f}"
-#     )
+print(f"{len(missing_videos)} missing videos saved to missing_videos.txt")
