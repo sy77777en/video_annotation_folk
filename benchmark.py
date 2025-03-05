@@ -69,6 +69,69 @@ class BinaryTask(Dataset):
         video_path = self.videos[idx]
         item = {"images": [str(video_path)], "texts": [self.prompt]}
         return item
+    
+    def evaluate_scores_subset(self, scores, subset_videos, score_name, print_name, save_path=None):
+        # First assert all subset_videos are in self.videos
+        for video in subset_videos:
+            if video not in self.videos:
+                print(f"Video {video} not found in the dataset")
+                import pdb; pdb.set_trace()
+        
+        # print(f"Evaluating for task {self.label_name}")
+        assert type(scores) == np.ndarray, "Scores must be a numpy array"
+        assert len(scores.shape) == 1, "Scores must be a 1D array"
+        assert scores.shape[0] == len(self.videos), f"Scores shape {scores.shape} does not match number of videos {len(self.videos)}"
+        
+        # Get the indices of the subset_videos
+        subset_indices = [self.videos.index(video) for video in subset_videos]
+        y_true = np.array(self.labels)[subset_indices]
+        # random chance AP is the same as the fraction of positive labels
+        random_ap = np.mean(y_true)
+        
+        y_scores = scores[subset_indices]
+        results = {}
+        # Replace NaNs with -inf
+        y_scores = np.where(np.isfinite(y_scores), y_scores, -1e10)
+        
+        ap = average_precision_score(y_true, y_scores)
+        roc_auc = roc_auc_score(y_true, y_scores)
+        
+        # Compute Precision-Recall curve
+        precision, recall, thresholds = precision_recall_curve(y_true, y_scores)
+
+        # Compute F1 scores for all thresholds
+        f1_scores = np.where((precision + recall) > 0, 
+                             2 * (precision * recall) / (precision + recall), 
+                             0)  # Set F1 to 0 when precision and recall are both 0
+        if len(f1_scores) > 0:
+            best_idx = np.argmax(f1_scores)
+            optimal_f1 = f1_scores[best_idx]
+            optimal_threshold = thresholds[best_idx]
+        else:
+            best_idx = 0
+            optimal_f1 = 0
+            optimal_threshold = np.mean(y_scores)
+
+        results = {
+            "prompt": self.prompt,
+            "ap": float(ap),
+            "random_ap": float(random_ap),
+            "roc_auc": float(roc_auc),
+            "optimal_f1": float(optimal_f1),
+            "optimal_threshold": float(optimal_threshold)
+        }
+        header = f"{score_name:80s} {'AP':>10} {'AP (Random)':>10} {'ROC AUC':>10} {'F1':>10} {'Threshold':>12}\n"
+        separator = "-" * len(header) + "\n"
+        result_str = f"{print_name:80s} {ap:>10.4f} {random_ap:>10.4f} {roc_auc:>10.4f} {optimal_f1:>10.4f} {optimal_threshold:>12.4f}\n"
+        
+        # print(f"AP: {ap:.4f}, ROC-AUC: {roc_auc:.4f}, Optimal F1: {optimal_f1:.4f} @ Threshold: {optimal_threshold:.2f}")
+        print_str = header + separator + result_str
+        print(print_str)
+        if save_path:
+            # write print_str to save_path
+            with open(save_path, "a") as f:
+                f.write(print_str)
+        return results
 
     def evaluate_scores(self, scores, plot_path=None):
         # Calculate the Average Precision for each prompt
