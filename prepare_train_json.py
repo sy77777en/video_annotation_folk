@@ -111,7 +111,6 @@ if __name__ == "__main__":
         captionset.extend(convert_to_list_caption(item, question_format="Identify the camera movement in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="Break down the camera movement in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="Summarize the camera movement in this video."))
-        # captionset.extend(convert_to_list_caption(item, question_format="List the camera movements in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="Give details about the camera movement in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="Describe the motion of the camera in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="How does the camera move throughout this video?"))
@@ -120,6 +119,7 @@ if __name__ == "__main__":
         captionset.extend(convert_to_list_caption(item, question_format="Analyze the camera motion in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="Break down the camera dynamics in this video."))
         captionset.extend(convert_to_list_caption(item, question_format="What are the key camera movements in this video?"))
+        # captionset.extend(convert_to_list_caption(item, question_format="List the camera movements in this video."))
         # captionset.extend(convert_to_list_caption(item, question_format="Detail the techniques used in the camera’s movement in this video."))
         # captionset.extend(convert_to_list_caption(item, question_format="Provide insights on how the camera moves in this video."))
 
@@ -138,5 +138,12 @@ if __name__ == "__main__":
     sampling_str = "top" if SAMPLING == "top" else f"random_seed_{SEED}"
     sampled_dir = Path(VIDEO_LABELS_DIR) / "motion_dataset" / f"test_ratio_{1 - TRAIN_RATIO:.2f}_num_{args.max_samples}_sampling_{sampling_str}"
     filename = sampled_dir / args.save_path
-    with open(filename, "w") as f:
-        json.dump(finalset, f, indent=4)
+    import pdb; pdb.set_trace() # Need to comment out the following lines to run this script
+    # with open(filename, "w") as f:
+    #     json.dump(finalset, f, indent=4)
+    # caption_filename = sampled_dir / "captionset.json"
+    # with open(caption_filename, "w") as f:
+    #     json.dump(captionset, f, indent=4)
+    # balanced_vqa_filename = sampled_dir / "balanced_vqa.json"
+    # with open(balanced_vqa_filename, "w") as f:
+    #     json.dump(trainset, f, indent=4)
