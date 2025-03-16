@@ -15,12 +15,14 @@ class OpenSource(LLM):
         """Generate text from a prompt. Optionally provide images or video."""
         output = self.model.generate([video], [prompt])[0]
         return output
-            
+
 if __name__ == "__main__":
     model = OpenSource(model="tarsier-recap-7b")
     # model = OpenSource(model="qwen2.5-vl-7b")
-    print(model.generate(
-        prompt="Describe the subject motion in this video.",
-        video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/-2uIa-XMJC0.2.0.mp4",
-    ))
-    
+    print(
+        model.generate(
+            prompt="Describe the subject motion in this video.",
+            # video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/f4ZzHtww6Tc.2.2.mp4",
+            video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/d_T0KPYgqMA.0.2.mp4",
+        )
+    )

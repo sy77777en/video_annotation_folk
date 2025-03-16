@@ -9,7 +9,7 @@ ALL_MODELS = {
             #    "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"
                ],
     "OpenSource": [
-        # "tarsier-recap-7b", 
+        "tarsier-recap-7b", 
         # "llava-video-7b", 
         # "llava-video-72B", 
         # "internvl2.5-8b", 
