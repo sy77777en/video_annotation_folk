@@ -16,7 +16,6 @@ dependencies = [
     "torchvision",
     "torchaudio",
     "streamlit",
-    "openai",
     "streamlit-feedback",
     "opencv-python-headless",
     "numpy",
@@ -29,6 +28,7 @@ dependencies = [
     "matplotlib",
     "openpyxl",
     "pandas",
+    "t2v_metrics @ git+https://github.com/linzhiqiu/t2v_metrics.git@tarsier2",
 ]
 
 

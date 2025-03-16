@@ -105,6 +105,33 @@ def get_middle_frame_index(video_path: str) -> int:
     return middle_frame_index
 
 
+def get_last_frame_index(video_path: str) -> int:
+    """
+    Get the index of the last frame of a video using OpenCV.
+
+    Parameters:
+        video_path (str): Path or URL to the video file.
+
+    Returns:
+        frame_index (int): The last frame index.
+
+    Raises:
+        ValueError: If the video cannot be opened.
+        RuntimeError: If the frame extraction fails.
+    """
+    cap = cv2.VideoCapture(video_path)
+
+    if not cap.isOpened():
+        raise ValueError(f"Error: Unable to open video {video_path}")
+
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    last_frame_index = total_frames - 1  # Get the last frame index
+
+    cap.release()
+
+    return last_frame_index
+
+
 if __name__ == "__main__":
     # Example usage
     video_path = "your_video.mp4"

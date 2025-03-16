@@ -59,12 +59,14 @@ class ChatGPT(LLM):
         ]
         
         messages[0]["content"].extend(images)
+        # print(f"Sending prompt to model: {prompt}")
         response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
             temperature=temperature,
             **kwargs
         )
+        print(f"Received response from model")
         return response.choices[0].message.content.strip()
             
 if __name__ == "__main__":
