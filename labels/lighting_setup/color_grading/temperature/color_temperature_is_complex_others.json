@@ -1,0 +1,25 @@
+{
+    "label": "Color Temperature Is Complex (Others)",
+    "label_name": "color_temperature_is_complex_others",
+    "def_question": [
+        "Does the video feature a complex interplay of colors that cannot be classified as strictly black-and-white, warm, cool, or neutral?"
+    ],
+    "alt_question": [
+        "Does the video showcase a complex mix of colors that goes beyond just black-and-white, warm, cool, or neutral classifications?",
+        "Does the video have a complex mix of colors that isn't just black-and-white, warm, cool, or neutral?"
+    ],
+    "def_prompt": [
+        "The video features a complex interplay of colors that cannot be classified as strictly black-and-white, warm, cool, or neutral."
+    ],
+    "alt_prompt": [
+        "A video with a complex mix of colors that defies simple classification.",
+        "A sequence showcasing a diverse color palette that goes beyond traditional categories.",
+        "A shot with a complex interplay of colors that defy standard color temperature labels.",
+        "A video that features a unique blend of colors not easily categorized as warm, cool, or neutral.",
+        "A scene with a rich and varied color palette that defies conventional color temperature norms."
+    ],
+    "pos_rule_str": "self.lighting_setup.color_temperature_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.color_temperature_is_complex_others is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

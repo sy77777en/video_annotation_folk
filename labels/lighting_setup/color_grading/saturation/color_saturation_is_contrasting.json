@@ -2,7 +2,7 @@
     "label": "Color Saturation Is Contrasting (Complex)",
     "label_name": "color_saturation_is_contrasting",
     "def_question": [
-        "Does the video feature a contrast between highly saturated and low-saturation hues in the frame?"
+        "Does the video feature strong contrasts between highly saturated and desaturated hues?"
     ],
     "alt_question": [
         "Does the video feature a mix of highly saturated and desaturated areas in equal prominence?",
@@ -15,7 +15,7 @@
         "Is the color saturation distributed in a way where neither vivid nor dull tones dominate?"
     ],
     "def_prompt": [
-        "The video contains highly saturated and low-saturation hues contrasting each other in the frame."
+        "The video features strong contrasts between highly saturated and desaturated hues."
     ],
     "alt_prompt": [
         "A video with an equal blend of vivid and muted colors.",
@@ -27,8 +27,8 @@
         "A video emphasizing both vivid and faded hues as dominant elements.",
         "A sequence where strong and soft color tones are evenly distributed."
     ],
-    "pos_rule_str": "self.lighting_setup.color_saturation == 'complex_contrasting'",
-    "neg_rule_str": "self.lighting_setup.color_saturation != 'complex_contrasting'",
+    "pos_rule_str": "self.lighting_setup.color_saturation_is_complex_contrasting is True",
+    "neg_rule_str": "self.lighting_setup.color_saturation_is_complex_contrasting is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -2,7 +2,7 @@
     "label": "Brightness Is Changing (Complex)",
     "label_name": "brightness_is_changing",
     "def_question": [
-        "Does the video’s brightness shift dynamically over time?"
+        "Does the video’s brightness level change over time?"
     ],
     "alt_question": [
         "Does the lighting intensity change noticeably throughout the video?",
@@ -15,7 +15,7 @@
         "Is the video’s brightness level actively changing?"
     ],
     "def_prompt": [
-        "The video’s brightness shifts dynamically over time."
+        "The video’s brightness level changes over time."
     ],
     "alt_prompt": [
         "A video where brightness fluctuates across scenes.",
@@ -27,8 +27,8 @@
         "A cinematic effect using evolving light intensity.",
         "A sequence where brightness levels are deliberately inconsistent."
     ],
-    "pos_rule_str": "self.lighting_setup.brightness == 'complex_changing'",
-    "neg_rule_str": "self.lighting_setup.brightness != 'complex_changing'",
+    "pos_rule_str": "self.lighting_setup.brightness_is_complex_changing is True",
+    "neg_rule_str": "self.lighting_setup.brightness_is_complex_changing is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

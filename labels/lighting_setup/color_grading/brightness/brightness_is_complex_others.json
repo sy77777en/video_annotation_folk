@@ -1,8 +1,8 @@
 {
-    "label": "Brightness Is Contrasting (Complex)",
-    "label_name": "brightness_is_contrasting",
+    "label": "Brightness Is Complex (Others)",
+    "label_name": "brightness_is_complex_others",
     "def_question": [
-        "Does the video have strong contrast between bright and dark areas?"
+        "Does the video have a highly complex or unusual brightness pattern that is hard to classify?"
     ],
     "alt_question": [
         "Does the scene mix bright highlights with deep shadows?",
@@ -15,7 +15,7 @@
         "Are bright and dark regions equally prominent in the composition?"
     ],
     "def_prompt": [
-        "The video has strong contrast between bright and dark areas."
+        "The video has a highly complex or unusual brightness pattern that is hard to classify."
     ],
     "alt_prompt": [
         "A video with extreme light and dark contrasts in the same frame.",
@@ -27,8 +27,8 @@
         "A video with stark, dramatic lighting differences.",
         "A sequence designed with a strong balance of illumination and darkness."
     ],
-    "pos_rule_str": "self.lighting_setup.brightness_is_complex_contrasting is True",
-    "neg_rule_str": "self.lighting_setup.brightness_is_complex_contrasting is False",
+    "pos_rule_str": "self.lighting_setup.brightness_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.brightness_is_complex_others is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

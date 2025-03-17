@@ -2,7 +2,7 @@
     "label": "Brightness Is Very Dark",
     "label_name": "brightness_is_very_dark",
     "def_question": [
-        "Is the video extremely dark, with barely any visible details due to minimal lighting?"
+        "Is the video extremely dark and underexposed, with barely any visible details due to minimal lighting?"
     ],
     "alt_question": [
         "Does the scene have near-complete darkness?",
@@ -15,7 +15,7 @@
         "Is most of the frame underexposed, making it difficult to see details?"
     ],
     "def_prompt": [
-        "The video is extremely dark, with barely any visible details due to minimal lighting."
+        "The video is extremely dark and underexposed, with barely any visible details due to minimal lighting."
     ],
     "alt_prompt": [
         "A shot where most of the frame is nearly pitch black.",
@@ -27,8 +27,8 @@
         "A shot where most of the details are lost in heavy darkness.",
         "A scene that is barely lit, resulting in near-total darkness."
     ],
-    "pos_rule_str": "self.lighting_setup.brightness == 'very_dark'",
-    "neg_rule_str": "self.lighting_setup.brightness != 'very_dark'",
+    "pos_rule_str": "self.lighting_setup.brightness_is_very_dark is True",
+    "neg_rule_str": "self.lighting_setup.brightness_is_very_dark is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

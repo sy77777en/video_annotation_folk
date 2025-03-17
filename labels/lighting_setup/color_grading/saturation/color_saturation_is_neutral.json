@@ -2,7 +2,7 @@
     "label": "Color Saturation Is Neutral",
     "label_name": "color_saturation_is_neutral",
     "def_question": [
-        "Does the video have a balanced color saturation, with neither overly vivid nor washed-out hues?"
+        "Does the video have a balanced color saturation, not dominated by overly vivid or grayish hues?"
     ],
     "alt_question": [
         "Is the video’s color saturation moderate and natural-looking?",
@@ -15,7 +15,7 @@
         "Does the video lack strong color grading effects on saturation?"
     ],
     "def_prompt": [
-        "The video has a balanced color saturation, with neither overly vivid nor washed-out hues."
+        "The video has balanced color saturation, not dominated by overly vivid or grayish hues."
     ],
     "alt_prompt": [
         "A video featuring natural and evenly saturated colors.",
@@ -27,8 +27,8 @@
         "A scene maintaining consistent and neutral saturation.",
         "A video displaying realistic color intensity without exaggerated effects."
     ],
-    "pos_rule_str": "self.lighting_setup.color_saturation == 'neutral'",
-    "neg_rule_str": "self.lighting_setup.color_saturation != 'neutral'",
+    "pos_rule_str": "self.lighting_setup.color_saturation_is_neutral is True",
+    "neg_rule_str": "self.lighting_setup.color_saturation_is_neutral is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

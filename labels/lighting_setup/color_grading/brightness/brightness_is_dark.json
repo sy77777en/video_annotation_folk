@@ -2,7 +2,7 @@
     "label": "Brightness Is Dark",
     "label_name": "brightness_is_dark",
     "def_question": [
-        "Is the video predominantly dark, with dim lighting and prominent shadows?"
+        "Is the video predominantly dark with dim lighting but not so underexposed that most details are lost?"
     ],
     "alt_question": [
         "Does the scene have a low-light, moody appearance?",
@@ -15,7 +15,7 @@
         "Is the lighting style in the video consistent with low-key cinematography?"
     ],
     "def_prompt": [
-        "The video is predominantly dark, with dim lighting and prominent shadows."
+        "The video is predominantly dark with dim lighting but not so underexposed that most details are lost."
     ],
     "alt_prompt": [
         "A scene with low lighting, emphasizing shadows and contrast.",
@@ -27,8 +27,8 @@
         "A shot where visibility is reduced due to dark lighting conditions.",
         "A sequence emphasizing mood through reduced brightness."
     ],
-    "pos_rule_str": "self.lighting_setup.brightness == 'dark'",
-    "neg_rule_str": "self.lighting_setup.brightness != 'dark'",
+    "pos_rule_str": "self.lighting_setup.brightness_is_dark is True",
+    "neg_rule_str": "self.lighting_setup.brightness_is_dark is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -2,7 +2,7 @@
     "label": "Color Temperature Is Warm",
     "label_name": "color_temperature_is_warm",
     "def_question": [
-        "Is the video dominated by warm tones, such as reds, oranges, or yellows?"
+        "Is the video predominantly featuring warm colors, such as reds, oranges, or yellows?"
     ],
     "alt_question": [
         "Does the video have a noticeable warm color balance?",
@@ -15,7 +15,7 @@
         "Is the lighting styled to create a warm, inviting look?"
     ],
     "def_prompt": [
-        "The video is dominated by warm tones, such as reds, oranges, or yellows."
+        "The video predominantly features warm colors, such as reds, oranges, or yellows."
     ],
     "alt_prompt": [
         "A video graded with warm, golden hues.",
@@ -27,8 +27,8 @@
         "A color scheme emphasizing warmth throughout the video.",
         "A video visually defined by warm light and hues."
     ],
-    "pos_rule_str": "self.lighting_setup.color_temperature == 'warm'",
-    "neg_rule_str": "self.lighting_setup.color_temperature not in ['warm']",
+    "pos_rule_str": "self.lighting_setup.color_temperature_is_warm is True",
+    "neg_rule_str": "self.lighting_setup.color_temperature_is_warm is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

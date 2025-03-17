@@ -2,7 +2,7 @@
     "label": "Color Temperature Is Contrasting (Complex)",
     "label_name": "color_temperature_is_contrasting",
     "def_question": [
-        "Does the video feature strongly contrasting warm and cool color temperatures within the same scene or sequence?"
+        "Does the video feature strong contrasts between warm and cool colors?"
     ],
     "alt_question": [
         "Does the video exhibit a striking contrast between warm and cool tones?",
@@ -15,7 +15,7 @@
         "Is there an intentional balance of warm and cool lighting styles?"
     ],
     "def_prompt": [
-        "The video features strongly contrasting warm and cool color temperatures within the same scene or sequence."
+        "The video features strong contrasts between warm and cool colors."
     ],
     "alt_prompt": [
         "A video with a strong contrast between warm and cool tones.",
@@ -27,8 +27,8 @@
         "A sequence where the interplay of warm and cool color grading is evident.",
         "A video using complementary warm and cool tones for artistic contrast."
     ],
-    "pos_rule_str": "self.lighting_setup.color_temperature == 'complex_contrasting'",
-    "neg_rule_str": "self.lighting_setup.color_temperature != 'complex_contrasting'",
+    "pos_rule_str": "self.lighting_setup.color_temperature_is_complex_contrasting is True",
+    "neg_rule_str": "self.lighting_setup.color_temperature_is_complex_contrasting is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

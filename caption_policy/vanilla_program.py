@@ -1237,6 +1237,17 @@ class VanillaColorPolicy(SocraticProgram):
         return {
             "color_composition_dynamics": self.get_description(data)
         }
+        
+    def format_color_temperature(self, temperature: str, temperature_dir="labels/lighting_setup/color_temperature/") -> str:
+        # Options: "warm", "cool", "neutral"
+        # temperature_info = {
+        #     "warm": "warm (reddish or yellowish)",
+        #     "cool": "cool (bluish or greenish)",
+        #     "neutral": "neutral (no need to mention)"
+        # }
+        # return temperature_info[temperature]
+        # TODO
+        pass
 
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
@@ -1252,7 +1263,10 @@ class VanillaColorPolicy(SocraticProgram):
             scene_description=data.cam_setup.scene_description
         )
 
-        # policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
+        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
+        
+        policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
+        policy += "\n\n**Color Saturation:** {}".format(self.format_color_saturation(data.lighting_setup.color_saturation))
 
         return policy
 

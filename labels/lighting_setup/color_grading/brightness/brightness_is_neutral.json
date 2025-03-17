@@ -27,8 +27,8 @@
         "A video where light intensity is natural and unobtrusive.",
         "A sequence maintaining a consistent, neutral brightness level."
     ],
-    "pos_rule_str": "self.lighting_setup.brightness == 'neutral'",
-    "neg_rule_str": "self.lighting_setup.brightness != 'neutral'",
+    "pos_rule_str": "self.lighting_setup.brightness_is_neutral is True",
+    "neg_rule_str": "self.lighting_setup.brightness_is_neutral is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

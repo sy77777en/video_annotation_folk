@@ -2,7 +2,7 @@
     "label": "Brightness Is Bright",
     "label_name": "is_bright",
     "def_question": [
-        "Is the video well-lit with strong lighting, creating a bright and clear scene?"
+        "Is the video well-lit with strong lighting, making the scene bright and clear but not overexposed?"
     ],
     "alt_question": [
         "Does the scene have a well-lit, vibrant appearance?",
@@ -15,7 +15,7 @@
         "Are the shadows minimal due to well-balanced bright lighting?"
     ],
     "def_prompt": [
-        "The video is well-lit with strong lighting, creating a bright and clear scene."
+        "The video is well-lit with strong lighting, making the scene bright and clear but not overexposed."
     ],
     "alt_prompt": [
         "A video featuring strong and well-distributed lighting.",
@@ -27,8 +27,8 @@
         "A video with high-key lighting, emphasizing clarity and brightness.",
         "A shot where the scene is illuminated brightly, enhancing visibility."
     ],
-    "pos_rule_str": "self.lighting_setup.brightness == 'bright'",
-    "neg_rule_str": "self.lighting_setup.brightness != 'bright'",
+    "pos_rule_str": "self.lighting_setup.brightness_is_bright is True",
+    "neg_rule_str": "self.lighting_setup.brightness_is_bright is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }
