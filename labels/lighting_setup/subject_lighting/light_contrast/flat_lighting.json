@@ -1,0 +1,24 @@
+{
+    "label": "Flat Lighting",
+    "label_name": "flat_lighting",
+    "def_question": [
+        "Is the subject lit with flat lighting, with little to no contrast?"
+    ],
+    "alt_question": [
+        "Does the subject’s lighting feature soft and natural contrast?",
+        "Is the subject illuminated with a minimal difference between highlights and shadows?",
+        "Does the lighting on the subject create little to no shadowing?"
+    ],
+    "def_prompt": [
+        "The subject is lit with flat lighting, with little to no contrast"
+    ],
+    "alt_prompt": [
+        "A video where the subject is lit with minimal contrast, featuring little to no visible shadowing.",
+        "A scene where the subject’s lighting lacks strong highlights or shadows.",
+        "A shot where the lighting on the subject results in a flat, even look."
+    ],
+    "pos_rule_str": "self.lighting_setup.flat_lighting is True",
+    "neg_rule_str": "self.lighting_setup.flat_lighting is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

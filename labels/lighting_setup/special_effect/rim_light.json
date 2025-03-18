@@ -2,9 +2,10 @@
     "label": "Has Rim Light",
     "label_name": "rim_light",
     "def_question": [
-        "Does the video use rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect?"
+        "Is there rim lighting that creates a glowing edge around the subject?"
     ],
     "alt_question": [
+        "Does the video use rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect?",
         "Does the subject have a bright outline created by backlighting?",
         "Is the subject’s silhouette outlined by a light source from behind?",
         "Does the lighting create a glowing effect on the subject’s edges?",
@@ -15,9 +16,10 @@
         "Is the scene composed in a way that emphasizes the subject’s edges with lighting?"
     ],
     "def_prompt": [
-        "The video uses rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect."
+        "Rim lighting creates a glowing edge around the subject."
     ],
     "alt_prompt": [
+        "The video uses rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect.",
         "A video where rim lighting emphasizes the subject’s edges with a backlight glow.",
         "A scene featuring strong backlighting that highlights the subject’s form.",
         "A shot where the subject’s silhouette is defined by rim lighting.",

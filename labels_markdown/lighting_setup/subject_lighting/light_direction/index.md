@@ -516,7 +516,7 @@ Is the primary light source positioned above the subject?
 
 
 <h3>🔵 Label Name:</h3>
-<code>direction_is_top_side</code>
+<code>direction_is_front_side</code>
 
 
 <h3>📖 Definition:</h3>

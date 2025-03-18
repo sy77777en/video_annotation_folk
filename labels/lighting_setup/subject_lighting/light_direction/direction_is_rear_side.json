@@ -2,7 +2,7 @@
     "label": "Direction Is Rear-Side Light",
     "label_name": "direction_is_rear_side",
     "def_question": [
-        "Is the subject illuminated from a combination of back and side lighting?"
+        "Is the subject illuminated by a mix of back and side lighting?"
     ],
     "alt_question": [
         "Does the primary light source come from behind and slightly to the side of the subject?",
@@ -15,7 +15,7 @@
         "Is the subject framed with lighting that wraps from the rear and the side?"
     ],
     "def_prompt": [
-        "The subject is illuminated with a combination of back and side lighting."
+        "The subject is illuminated by a mix of back and side lighting."
     ],
     "alt_prompt": [
         "A video where the subject is lit from both behind and the side.",
@@ -27,8 +27,8 @@
         "A shot emphasizing contrast with both rear and side illumination.",
         "A composition using a lighting blend between back and side sources."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_back_light is True and self.lighting_setup.subject_side_light is True",
-    "neg_rule_str": "not (self.lighting_setup.subject_back_light is True and self.lighting_setup.subject_side_light is True)",
+    "pos_rule_str": "self.lighting_setup.direction_is_rear_side is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_rear_side is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

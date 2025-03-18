@@ -41,7 +41,7 @@ class LightingSetupData:
         self.lighting_setup_description = ""
 
         # Contrast ratio on subject
-        self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex_changing", "unknown"
+        self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"
 
         # Direction of major light on subject
         self.subject_back_light = False
@@ -73,10 +73,10 @@ class LightingSetupData:
         self.reflection_from_mirror = False
 
         # Special natural lighting effects
-        self.rainbow = False
-        self.heat_haze = False
-        self.aurora = False
         self.aerial_perspective = False
+        self.rainbow = False
+        self.aurora = False
+        self.heat_haze = False
         self.lightning = False
 
         # Special lighting effects on the scene
@@ -242,14 +242,50 @@ class LightingSetupData:
         else:
             self.light_quality_is_changing = self.light_quality == "complex_changing"
             self.light_quality_is_contrasting = self.light_quality == "complex_contrasting"
-        
+
         self.light_quality_is_complex = self.light_quality == "complex_others"
 
     def _set_subject_lighting_attributes(self):
         if self.shot_transition:
             self.is_subject_lighting_applicable = None
             return
-        self.is_subject_lighting_applicable = self.subject_contrast_ratio == "unknown"
+        self.is_subject_lighting_applicable = self.subject_contrast_ratio != "unknown"
+
+        if not self.is_subject_lighting_applicable:
+            self.subject_light_contrast_is_high = None
+            self.subject_light_contrast_is_normal = None
+            self.subject_light_contrast_is_minimal = None
+            self.subject_light_contrast_is_complex = None
+            self.flat_lighting = None
+            self.low_key_lighting = None
+            self.high_key_lighting = None
+        else:
+            self.subject_light_contrast_is_high = self.subject_contrast_ratio == "high_contrast"
+            self.subject_light_contrast_is_normal = self.subject_contrast_ratio == "normal_contrast"
+            self.subject_light_contrast_is_minimal = self.subject_contrast_ratio == "minimal_contrast"
+            self.subject_light_contrast_is_complex = self.subject_contrast_ratio == "complex"
+            self.flat_lighting = self.subject_contrast_ratio == "minimal_contrast"
+            self.low_key_lighting = self.subject_light_contrast_is_high is True and self.brightness_is_dark is False
+            self.high_key_lighting = self.subject_light_contrast_is_minimal is True and self.brightness_is_bright is True
+
+        if not self.is_subject_lighting_applicable:
+            self.direction_is_back_light = None
+            self.direction_is_front_light = None
+            self.direction_is_top_light = None
+            self.direction_is_bottom_light = None
+            self.direction_is_side_light = None
+            self.direction_is_ambient_light = None
+            self.direction_is_front_side = None
+            self.direction_is_rear_side = None
+        else:
+            self.direction_is_back_light = self.subject_back_light
+            self.direction_is_front_light = self.subject_front_light
+            self.direction_is_top_light = self.subject_top_light
+            self.direction_is_bottom_light = self.subject_bottom_light
+            self.direction_is_side_light = self.subject_side_light
+            self.direction_is_ambient_light = self.subject_ambient_light
+            self.direction_is_front_side = self.subject_front_light and self.subject_side_light
+            self.direction_is_rear_side = self.subject_back_light and self.subject_side_light
 
     def _set_special_lighting_attributes(self):
         if self.shot_transition:
@@ -312,10 +348,10 @@ class LightingSetupData:
             raise ValueError("light_quality must be one of 'hard_light', 'soft_diffused_light', 'complex_changing', 'complex_contrasting', 'complex_others'")
 
     def set_subject_contrast_ratio(self, subject_contrast_ratio):
-        if subject_contrast_ratio in ["high_contrast", "normal_contrast", "minimal_contrast", "complex_changing", "unknown"]:
+        if subject_contrast_ratio in ["high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"]:
             self.subject_contrast_ratio = subject_contrast_ratio
         else:
-            raise ValueError("subject_contrast_ratio must be one of 'high_contrast', 'normal_contrast', 'minimal_contrast', 'complex_changing', 'unknown'")
+            raise ValueError("subject_contrast_ratio must be one of 'high_contrast', 'normal_contrast', 'minimal_contrast', 'complex', 'unknown'")
 
     def set_sunlight_source(self, sunlight_source):
         if isinstance(sunlight_source, bool):
@@ -731,7 +767,7 @@ class LightingSetupData:
         if self.shot_transition:
             return # No need to verify other fields if shot transition is present
 
-        complex_reasons = ["complex_changing", "complex_contrasting", "complex_others"]
+        # complex_reasons = ["complex_changing", "complex_contrasting", "complex_others"]
         # if any([self.color_temperature in complex_reasons, self.color_saturation in complex_reasons, self.brightness in complex_reasons]):
         #     if not self.color_grading_description:
         #         raise ValueError("color_grading_description must be provided for complex color grading")

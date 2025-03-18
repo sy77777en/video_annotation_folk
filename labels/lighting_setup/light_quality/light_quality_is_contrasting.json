@@ -2,7 +2,7 @@
     "label": "Light Quality Is Contrasting (Complex)",
     "label_name": "light_quality_is_contrasting",
     "def_question": [
-       "Does the video contain both hard and soft lighting?"
+       "Does the scene in this video contain both hard and soft lighting?"
     ],
     "alt_question": [
         "Is the scene lit by a combination of hard and soft lighting?",
@@ -15,7 +15,7 @@
         "Does the shot showcase a balance between diffused and harsh lighting?"
     ],
     "def_prompt": [
-        "The video features both hard and soft lighting."
+        "The scene in this video contains a mix of hard and soft lighting."
     ],
     "alt_prompt": [
         "A video with strong contrasts between soft and hard lighting.",
@@ -27,8 +27,8 @@
         "A shot where both soft glow and hard illumination are present.",
         "A scene where mixed lighting styles dominate the composition."
     ],
-    "pos_rule_str": "self.lighting_setup.light_quality == 'complex_contrasting'",
-    "neg_rule_str": "self.lighting_setup.light_quality != 'complex_contrasting'",
+    "pos_rule_str": "self.lighting_setup.light_quality_is_contrasting is True",
+    "neg_rule_str": "self.lighting_setup.light_quality_is_contrasting is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

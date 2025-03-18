@@ -2,7 +2,7 @@
     "label": "Direction Is Back Light",
     "label_name": "direction_is_back_light",
     "def_question": [
-        "Is the primary light source positioned behind the subject?"
+        "Is the subject lit by backlighting, with the primary light source positioned behind them?"
     ],
     "alt_question": [
         "Is the subject illuminated from behind?",
@@ -15,7 +15,7 @@
         "Is the main source of illumination positioned behind the subject?"
     ],
     "def_prompt": [
-        "A shot where the primary light source is behind the subject."
+        "The subject is lit by backlighting, with the primary light source positioned behind them."
     ],
     "alt_prompt": [
         "The subject is illuminated from behind.",
@@ -27,8 +27,8 @@
         "A scene emphasizing backlight effects with shadowed front areas.",
         "A shot where the subject's front remains darker due to backlight."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_back_light is True",
-    "neg_rule_str": "self.lighting_setup.subject_back_light is False",
+    "pos_rule_str": "self.lighting_setup.direction_is_back_light is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_back_light is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

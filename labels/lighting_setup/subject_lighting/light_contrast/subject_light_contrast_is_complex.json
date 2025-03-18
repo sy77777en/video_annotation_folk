@@ -1,8 +1,8 @@
 {
     "label": "Light Contrast Ratio on Subject Is Complex",
-    "label_name": "contrast_is_complex",
+    "label_name": "subject_light_contrast_is_complex",
     "def_question": [
-        "Is the light contrast ratio on the subject complex, due to significant lighting changes, camera movement, subject changes, or multiple subjects in different lighting conditions?"
+        "Is the lighting on the subject complex, varying due to changes in lighting, camera motion, subject transitions, or multiple subjects with different lighting conditions?"
     ],
     "alt_question": [
         "Does the subject’s lighting contrast vary significantly due to lighting shifts or movement?",
@@ -15,7 +15,7 @@
         "Does the shot include multiple contrast conditions across different frames?"
     ],
     "def_prompt": [
-        "The light contrast ratio on the subject is complex, varying due to lighting changes, camera motion, subject changes, or multiple subjects in different lighting conditions."
+        "The lighting on the subject is complex, varying due to changes in lighting, camera motion, subject transitions, or multiple subjects with different lighting conditions."
     ],
     "alt_prompt": [
         "A video where the subject’s contrast changes because of lighting adjustments or scene shifts.",
@@ -27,8 +27,8 @@
         "A video where the contrast on the subject is inconsistent over time.",
         "A scene where contrast conditions change dynamically throughout the video."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio in ['complex_changing']",
-    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['complex_changing', 'unknown']",
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_complex is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_complex is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

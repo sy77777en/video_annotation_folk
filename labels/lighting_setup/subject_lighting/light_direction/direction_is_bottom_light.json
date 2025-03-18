@@ -27,8 +27,8 @@
         "A scene with strong highlights on the subject’s lower face and body.",
         "A shot where the subject appears unsettling due to strong upward light."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_bottom_light is True",
-    "neg_rule_str": "self.lighting_setup.subject_bottom_light is False",
+    "pos_rule_str": "self.lighting_setup.direction_is_bottom_light is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_bottom_light is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

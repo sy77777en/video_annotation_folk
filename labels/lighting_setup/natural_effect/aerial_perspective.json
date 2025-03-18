@@ -2,7 +2,7 @@
     "label": "Aerial Perspective",
     "label_name": "aerial_perspective",
     "def_question": [
-        "Does the video feature a noticeable aerial perspective, where distant scenery appears lighter, less detailed, and less saturated due to atmospheric effects?"
+        "Does the video feature a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects?"
     ],
     "alt_question": [
         "Is aerial perspective clearly visible in the scene?",
@@ -15,7 +15,7 @@
         "Does the video apply atmospheric perspective to create visual depth?"
     ],
     "def_prompt": [
-        "The video features a noticeable aerial perspective, where distant scenery appears lighter, less detailed, and less saturated due to atmospheric effects."
+        "The video features a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects."
     ],
     "alt_prompt": [
         "A video where atmospheric perspective creates a fading effect on distant objects.",

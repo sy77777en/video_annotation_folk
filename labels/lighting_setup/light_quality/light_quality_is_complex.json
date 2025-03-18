@@ -1,8 +1,8 @@
 {
     "label": "Is Lighting Quality Complex",
-    "label_name": "lighting_quality_is_complex",
+    "label_name": "light_quality_is_complex",
     "def_question": [
-        "Does the video have a complex lighting quality that is changing, contrasting, or difficult to categorize?"
+        "Does the light quality in the video vary across the scene, making it difficult to categorize?"
     ],
     "alt_question": [
         "Does the scene feature dynamic or contrasting lighting conditions?",
@@ -15,7 +15,7 @@
         "Is the overall lighting too mixed to fit a single category?"
     ],
     "def_prompt": [
-        "The video has a complex lighting quality that is changing, contrasting, or difficult to categorize."
+        "The light quality varies across the scene, making it difficult to categorize."
     ],
     "alt_prompt": [
         "A video featuring shifting, contrasting, or undefined lighting.",

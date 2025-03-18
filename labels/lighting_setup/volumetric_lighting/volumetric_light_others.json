@@ -2,7 +2,7 @@
     "label": "Volumetric Light (Others)",
     "label_name": "volumetric_light_others",
     "def_question": [
-        "Does the video feature volumetric lighting with a well-defined shape that does not form beams, streaks, or spotlights?"
+        "Does the video feature volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights)?"
     ],
     "alt_question": [
         "Is there a diffuse volumetric glow present in the scene?",
@@ -15,7 +15,7 @@
         "Does the scene use volumetric lighting effects beyond typical beams or spots?"
     ],
     "def_prompt": [
-        "The video features volumetric lighting with a well-defined shape that does not form beams, streaks, or spotlights."
+        "The video features volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights)."
     ],
     "alt_prompt": [
         "A scene where volumetric lighting creates a soft, diffused glow.",

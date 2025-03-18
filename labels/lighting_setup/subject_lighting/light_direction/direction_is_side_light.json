@@ -2,7 +2,7 @@
     "label": "Direction Is Side Light",
     "label_name": "direction_is_side_light",
     "def_question": [
-        "Is the primary light source positioned to the side of the subject?"
+        "Is the subject lit by side lighting, with the primary light source positioned to the side?"
     ],
     "alt_question": [
         "Is the subject illuminated from the side?",
@@ -15,7 +15,7 @@
         "Is the subject’s form defined by a strong sidelight effect?"
     ],
     "def_prompt": [
-        "A shot where the primary light source is positioned to the side of the subject."
+        "The subject is lit by side lighting, with the primary light source positioned to the side."
     ],
     "alt_prompt": [
         "The subject is illuminated from the side, creating strong contrast and shadows on one side.",
@@ -27,8 +27,8 @@
         "A scene with a strong directional light source from the side.",
         "A shot where the subject’s face or body has strong light-shadow separation."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_side_light is True",
-    "neg_rule_str": "self.lighting_setup.subject_side_light is False",
+    "pos_rule_str": "self.lighting_setup.direction_is_side_light is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_side_light is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

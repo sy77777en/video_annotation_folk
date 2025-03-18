@@ -2,7 +2,7 @@
     "label": "Has Silhouette Lighting",
     "label_name": "silhouette",
     "def_question": [
-        "Does the video use silhouette lighting, rendering the subject or foreground as a dark outline against a brightly lit background?"
+        "Is there a silhouette lighting effect that creates a dark outline of the foreground subject against a bright background?"
     ],
     "alt_question": [
         "Is the subject or an object shown in silhouette against a bright background?",
@@ -15,7 +15,7 @@
         "Does the shot use extreme backlighting to create a silhouette effect?"
     ],
     "def_prompt": [
-        "The video uses silhouette lighting, rendering the subject or foreground as a dark outline against a brightly lit background."
+        "Silhouette lighting creates a dark outline of the foreground subject against a bright background."
     ],
     "alt_prompt": [
         "A video where the subject appears as a silhouette due to strong backlighting.",

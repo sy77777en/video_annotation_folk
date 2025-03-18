@@ -2,8 +2,7 @@
     "label": "Light Contrast Ratio on Subject Is Minimal",
     "label_name": "contrast_is_minimal",
     "def_question": [
-        "Is there a flat lighting on the subject with minimal contrast, where lit and shadowed areas appear nearly the same (1:1 to 1:2)?",
-        "Is it a high-key lighting on the subject with minimal contrast?"
+        "Does the lighting on the subject have minimal contrast (1:1 to 1:2), creating a flat lighting effect?"
     ],
     "alt_question": [
         "Does the subject’s lighting feature little to no visible shadowing?",
@@ -28,8 +27,8 @@
         "A video where even lighting minimizes shadow depth.",
         "A scene that reduces contrast for a smooth, flat-lit appearance."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'minimal_contrast'",
-    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['minimal_contrast', 'unknown', 'complex_changing']",
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_minimal is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_minimal is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

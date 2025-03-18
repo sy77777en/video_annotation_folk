@@ -2,8 +2,8 @@
     "label": "High-Key Lighting",
     "label_name": "high_key_lighting",
     "def_question": [
-        "Is the lighting on the subject high-key, featuring minimal contrast where lit and shadowed areas appear nearly the same (1:1 to 1:2)?",
-        "Does the subject’s lighting create a bright, evenly illuminated appearance with little to no shadow?"
+        "Is the subject lit with high-key lighting?",
+        "Is the subject lit with high-key lighting, creating a bright, evenly illuminated appearance with little to no shadow (contrast ratio of 1:2 or below)?"
     ],
     "alt_question": [
         "Does the subject’s lighting feature soft, minimal shadows?",
@@ -16,7 +16,8 @@
         "Is the subject’s visibility defined by soft, evenly distributed illumination?"
     ],
     "def_prompt": [
-        "The video features high-key lighting, where the subject is brightly lit with minimal contrast (1:1 to 1:2), reducing shadows and creating a soft, even illumination."
+        "The subject is lit with high-key lighting.",
+        "The subject is lit with high-key lighting, creating a bright, evenly illuminated appearance with little to no shadow (contrast ratio of 1:2 or below)."
     ],
     "alt_prompt": [
         "A video where the subject is lit with high-key lighting, appearing bright and evenly illuminated.",
@@ -28,8 +29,8 @@
         "A video where even lighting ensures a bright and soft visual tone.",
         "A scene emphasizing a bright, clear aesthetic with minimal contrast."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'minimal_contrast'",
-    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['minimal_contrast', 'unknown', 'complex_changing']",
+    "pos_rule_str": "self.lighting_setup.high_key_lighting is True",
+    "neg_rule_str": "self.lighting_setup.high_key_lighting is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

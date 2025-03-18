@@ -27,8 +27,8 @@
         "A scene with strong highlights on the subject’s head and shoulders.",
         "A shot where the subject appears sculpted due to strong top-down light."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_top_light is True",
-    "neg_rule_str": "self.lighting_setup.subject_top_light is False",
+    "pos_rule_str": "self.lighting_setup.direction_is_top_light is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_top_light is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

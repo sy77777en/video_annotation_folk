@@ -1,9 +1,8 @@
 {
     "label": "Light Contrast Ratio on Subject Is High",
-    "label_name": "contrast_is_high",
+    "label_name": "subject_light_contrast_is_high",
     "def_question": [
-        "Does the lighting on the subject have a high contrast ratio, where lit areas are significantly brighter than shadowed areas (1:8 or above)?",
-        "Is it a low-key lighting on the subject with a high contrast ratio?"
+        "Does the lighting on the subject have a high contrast ratio, where lit areas are significantly brighter than dark areas (1:8 or above)?"
     ],
     "alt_question": [
         "Does the subject’s lighting feature a strong difference between highlights and shadows?",
@@ -16,7 +15,7 @@
         "Is the subject’s visibility defined by stark lighting differences?"
     ],
     "def_prompt": [
-        "The lighting on the subject has a high contrast ratio (1:8 or above), creating strong separation between highlights and shadows."
+        "The lighting on the subject has a high contrast ratio (1:8 or higher), creating a strong distinction between bright and dark areas."
     ],
     "alt_prompt": [
         "A video where the subject is lit with high contrast, featuring strong highlights and deep shadows.",
@@ -28,8 +27,8 @@
         "A video where high contrast lighting enhances the subject’s form.",
         "A scene that emphasizes the subject through strong lighting contrast."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'high_contrast'",
-    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['high_contrast', 'unknown', 'complex_changing']",
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_high is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_high is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

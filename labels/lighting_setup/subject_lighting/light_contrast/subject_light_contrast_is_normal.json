@@ -1,8 +1,8 @@
 {
     "label": "Light Contrast Ratio on Subject Is Normal",
-    "label_name": "contrast_is_normal",
+    "label_name": "subject_light_contrast_is_normal",
     "def_question": [
-        "Does the lighting on the subject have a normal contrast ratio, where lit and shadowed areas differ slightly (1:2 to 1:8)?"
+        "Does the lighting on the subject have a normal contrast ratio (1:2 to 1:8), providing a balanced distinction between bright and dark areas?"
     ],
     "alt_question": [
         "Does the subject’s lighting feature soft and natural contrast?",
@@ -15,7 +15,7 @@
         "Is the subject’s visibility defined by moderate lighting differences?"
     ],
     "def_prompt": [
-        "The lighting on the subject has a normal contrast ratio (1:2 to 1:8), creating a balanced separation between highlights and shadows."
+        "The lighting on the subject has a normal contrast ratio (1:2 to 1:8), providing a balanced distinction between bright and dark areas."
     ],
     "alt_prompt": [
         "A video where the subject is lit with normal contrast, featuring soft and balanced highlights and shadows.",
@@ -27,8 +27,8 @@
         "A video where balanced lighting enhances the subject’s form without harshness.",
         "A scene that maintains a natural, moderate contrast on the subject."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_contrast_ratio == 'normal_contrast'",
-    "neg_rule_str": "self.lighting_setup.subject_contrast_ratio not in ['normal_contrast', 'unknown', 'complex_changing']",
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_normal is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_normal is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

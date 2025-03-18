@@ -27,8 +27,8 @@
         "A scene relying on ambient illumination rather than focused light.",
         "A shot where the subject appears naturally lit with no strong shadows."
     ],
-    "pos_rule_str": "self.lighting_setup.subject_ambient_light is True",
-    "neg_rule_str": "self.lighting_setup.subject_ambient_light is False",
+    "pos_rule_str": "self.lighting_setup.direction_is_ambient_light is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_ambient_light is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

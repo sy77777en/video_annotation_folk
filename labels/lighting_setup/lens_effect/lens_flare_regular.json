@@ -1,8 +1,8 @@
 {
-    "label": "Lens Flares Natural",
-    "label_name": "lens_flares_natural",
+    "label": "Lens Flares Regular",
+    "label_name": "lens_flares_regular",
     "def_question": [
-        "Does the video contain natural lens flares, appearing as bright circular or scattered artifacts caused by strong light sources interacting with the camera lens?"
+        "Does the video contain typical lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts?"
     ],
     "alt_question": [
         "Are there noticeable bright streaks, rings, or orbs of light in the shot?",
@@ -15,7 +15,7 @@
         "Does the video exhibit the characteristic glow of regular lens flares?"
     ],
     "def_prompt": [
-        "The video contains natural lens flares, appearing as bright circular or scattered artifacts caused by strong light sources interacting with the camera lens."
+        "The video contains typical lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts."
     ],
     "alt_prompt": [
         "A video featuring bright streaks, rings, or scattered regular lens flares.",
