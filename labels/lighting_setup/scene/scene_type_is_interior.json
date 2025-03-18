@@ -27,8 +27,8 @@
         "A shot emphasizing an enclosed indoor environment.",
         "A video filmed within an interior location."
     ],
-    "pos_rule_str": "self.lighting_setup.scene_type == 'interior'",
-    "neg_rule_str": "self.lighting_setup.scene_type != 'interior'",
+    "pos_rule_str": "self.lighting_setup.scene_type_is_interior is True",
+    "neg_rule_str": "self.lighting_setup.scene_type_is_interior is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -1,8 +1,8 @@
 {
-    "label": "Has Moonlight",
-    "label_name": "has_moonlight",
+    "label": "Has Moonlight or Starlight",
+    "label_name": "has_moonlight_starlight",
     "def_question": [
-        "Is moonlight the primary light source in the video, with the moon visibly present?"
+        "Is the video lit by moonlight or starnight, with the moon or stars visible?"
     ],
     "alt_question": [
         "Is the scene primarily illuminated by moonlight?",
@@ -15,7 +15,7 @@
         "Is the video characterized by the cool, ambient glow of moonlight?"
     ],
     "def_prompt": [
-        "The primary light source in the video is moonlight, and the moon is visible in the frame."
+        "The video is lit by moonlight or starnight, with the moon or stars visible."
     ],
     "alt_prompt": [
         "A video where moonlight serves as the dominant illumination.",
@@ -27,8 +27,8 @@
         "A shot where the moon is prominently casting light on the environment.",
         "A video where moonlight provides soft, cool-toned illumination."
     ],
-    "pos_rule_str": "self.lighting_setup.moonlight_source is True",
-    "neg_rule_str": "self.lighting_setup.moonlight_source is False",
+    "pos_rule_str": "self.lighting_setup.moonlight_starlight_source is True",
+    "neg_rule_str": "self.lighting_setup.moonlight_starlight_source is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

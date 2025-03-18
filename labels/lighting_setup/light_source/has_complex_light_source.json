@@ -2,7 +2,7 @@
     "label": "Has Complex Changing Light Source",
     "label_name": "has_changing_light_source",
     "def_question": [
-       "Does the video feature changing light sources?"
+       "Does the primary light source in the video change over time or include a rare light source that is not the sun, fire, moon and stars, or artificial light?"
     ],
     "alt_question": [
         "Does the light source change dynamically across different parts of the video?",
@@ -15,7 +15,7 @@
         "Is the scene influenced by multiple changing or contrasting light sources?"
     ],
     "def_prompt": [
-        "The video contains changing light sources."
+        "The primary light source(s) in the video change(s) over time or include(s) a rare light source that is not the sun, fire, moon and stars, or artificial light."
     ],
     "alt_prompt": [
         "A video where the light source is dynamic and ever-changing.",
@@ -27,8 +27,8 @@
         "A video with irregular or mixed lighting across different moments.",
         "A scene where the light source alternates frequently."
     ],
-    "pos_rule_str": "self.lighting_setup.complex_changing_light_source is True",
-    "neg_rule_str": "self.lighting_setup.complex_changing_light_source is False",
+    "pos_rule_str": "self.lighting_setup.complex_light_source is True",
+    "neg_rule_str": "self.lighting_setup.complex_light_source is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

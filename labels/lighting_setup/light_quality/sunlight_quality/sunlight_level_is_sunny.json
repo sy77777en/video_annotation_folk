@@ -27,8 +27,8 @@
         "A video where high exposure and bright highlights dominate.",
         "A scene showing a strong, sunlit environment with clear contrast."
     ],
-    "pos_rule_str": "self.lighting_setup.sunlight_level == 'sunny'",
-    "neg_rule_str": "self.lighting_setup.sunlight_level != 'sunny'",
+    "pos_rule_str": "self.lighting_setup.sunlight_level_is_sunny is True",
+    "neg_rule_str": "self.lighting_setup.sunlight_level_is_sunny is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

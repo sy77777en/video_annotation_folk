@@ -48,7 +48,13 @@ def get_supported_mode(model="gpt-4o-2024-08-06"):
             "Text Only",
         ]
     elif model in ALL_MODELS["Gemini"]:
-        return ["Video", "Image (First-and-Last-Frame)", "Text Only"]
+        return [
+            "Image (First-and-Last-Frame)",
+            "Image (3 frames)",
+            "Image (4 frames)",
+            "Video",
+            "Text Only"
+        ]
     elif model in ALL_MODELS["OpenSource"]:
         return ["Video"]
     else:

@@ -27,8 +27,8 @@
         "A video where the sunlight level is unknown or irrelevant.",
         "A scene where sunlight does not visibly affect the lighting."
     ],
-    "pos_rule_str": "self.lighting_setup.sunlight_level == 'unknown'",
-    "neg_rule_str": "self.lighting_setup.sunlight_level != 'unknown'",
+    "pos_rule_str": "self.lighting_setup.sunlight_level_is_unknown is True",
+    "neg_rule_str": "self.lighting_setup.sunlight_level_is_unknown is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

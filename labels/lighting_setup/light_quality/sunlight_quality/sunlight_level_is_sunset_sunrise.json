@@ -2,7 +2,7 @@
     "label": "Sunlight Level Is Sunset/Sunrise",
     "label_name": "sunlight_level_is_sunset_sunrise",
     "def_question": [
-        "Does the video feature warm, golden tones from the sun at dawn or dusk?"
+        "Does the video feature warm, golden sunlight at sunrise or sunset?"
     ],
     "alt_question": [
         "Is the scene illuminated by soft, golden sunlight typical of sunrise or sunset?",
@@ -15,7 +15,7 @@
         "Does the video emphasize the time of day with warm, directional sunlight?"
     ],
     "def_prompt": [
-        "The video features warm, golden tones from the sun at dawn or dusk."
+        "The video features warm, golden sunlight at sunrise or sunset."
     ],
     "alt_prompt": [
         "A video illuminated by the golden light of sunrise or sunset.",
@@ -27,8 +27,8 @@
         "A sequence where the warm, low-angle sun defines the lighting.",
         "A shot bathed in golden-hour lighting, emphasizing warm tones."
     ],
-    "pos_rule_str": "self.lighting_setup.sunlight_level == 'sunset_sunrise'",
-    "neg_rule_str": "self.lighting_setup.sunlight_level != 'sunset_sunrise'",
+    "pos_rule_str": "self.lighting_setup.sunlight_level_is_sunset_sunrise is True",
+    "neg_rule_str": "self.lighting_setup.sunlight_level_is_sunset_sunrise is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

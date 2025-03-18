@@ -139,10 +139,10 @@ Does the video feature changing light sources?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.complex_changing_light_source is True</code>
+<code>self.lighting_setup.complex_light_source is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.complex_changing_light_source is False</code>
+<code>self.lighting_setup.complex_light_source is False</code>
 
 </details>
 
@@ -285,10 +285,10 @@ Is moonlight the primary light source in the video, with the moon visibly presen
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.moonlight_source is True</code>
+<code>self.lighting_setup.moonlight_starlight_source is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.moonlight_source is False</code>
+<code>self.lighting_setup.moonlight_starlight_source is False</code>
 
 </details>
 

@@ -24,12 +24,12 @@ class LightingSetupData:
 
         # Major light sources
         self.sunlight_source = False
-        self.moonlight_source = False
+        self.moonlight_starlight_source = False
         self.firelight_source = False
         self.artificial_light_source = False
         self.non_visible_light_source = False
         self.abstract_light_source = False
-        self.complex_changing_light_source = False
+        self.complex_light_source = False
 
         # Sunlight level
         self.sunlight_level = "unknown"  # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
@@ -138,48 +138,112 @@ class LightingSetupData:
         self._set_shadow_pattern_attributes()
 
     def _set_color_grading_attributes(self):
-        attributes = ["is_color_grading_complex", "is_black_white", "is_brighter_than_normal", "is_darker_than_normal"]
+        attributes = [
+            "is_color_grading_complex", "is_black_white",
+            "is_brighter_than_normal", "is_darker_than_normal"
+        ]
+
         if self.shot_transition:
             for attr in attributes:
                 setattr(self, attr, None)
             return
 
+        complex_types = {"complex_changing", "complex_contrasting", "complex_others"}
+
+        # Complex color grading check
         self.is_color_grading_complex = any([
-            self.color_temperature in ["complex_changing", "complex_contrasting", "complex_others"], \
-            self.color_saturation in ["complex_changing", "complex_contrasting", "complex_others"], \
-            self.brightness in ["complex_changing", "complex_contrasting", "complex_others"]])
+            self.color_temperature in complex_types,
+            self.color_saturation in complex_types,
+            self.brightness in complex_types
+        ])
 
-        self.is_black_white = self.color_saturation == "black_white" and self.color_temperature == "black_white"
-        self.color_temperature_is_warm = self.color_temperature in ["warm"]
-        self.color_temperature_is_cool = self.color_temperature in ["cool"]
-        self.color_temperature_is_neutral = self.color_temperature in ["neutral"]
-        self.color_temperature_is_complex_changing = self.color_temperature in ["complex_changing"] if self.color_temperature != "complex_others" else None
-        self.color_temperature_is_complex_contrasting = self.color_temperature in ["complex_contrasting"] if self.color_temperature != "complex_others" else None
-        self.color_temperature_is_complex_others = self.color_temperature in ["complex_others"]
+        # Black & white check
+        self.is_black_white = (
+            self.color_saturation == "black_white" or 
+            self.color_temperature == "black_white"
+        )
 
-        self.color_saturation_is_high = self.color_saturation in ["high_saturation"]
-        self.color_saturation_is_low = self.color_saturation in ["low_saturation"]
-        self.color_saturation_is_neutral = self.color_saturation in ["neutral"]
-        self.color_saturation_is_complex_changing = self.color_saturation in ["complex_changing"] if self.color_saturation != "complex_others" else None
-        self.color_saturation_is_complex_contrasting = self.color_saturation in ["complex_contrasting"] if self.color_saturation != "complex_others" else None
-        self.color_saturation_is_complex_others = self.color_saturation in ["complex_others"]
-        
-        self.is_brighter_than_normal = self.brightness in ["very_bright", "bright"]
-        self.is_darker_than_normal = self.brightness in ["dark", "very_dark"]
-        self.brightness_is_very_bright = self.brightness in ["very_bright"]
-        self.brightness_is_bright = self.brightness in ["bright"]
-        self.brightness_is_neutral = self.brightness in ["neutral"]
-        self.brightness_is_dark = self.brightness in ["dark"]
-        self.brightness_is_very_dark = self.brightness in ["very_dark"]
-        self.brightness_is_complex_changing = self.brightness in ["complex_changing"] if self.brightness != "complex_others" else None
-        self.brightness_is_complex_contrasting = self.brightness in ["complex_contrasting"] if self.brightness != "complex_others" else None
-        self.brightness_is_complex_others = self.brightness in ["complex_others"]
-        
+        # Color temperature attributes
+        self.color_temperature_is_warm = self.color_temperature == "warm"
+        self.color_temperature_is_cool = self.color_temperature == "cool"
+        self.color_temperature_is_neutral = self.color_temperature == "neutral"
+
+        if self.color_temperature != "complex_others":
+            self.color_temperature_is_complex_changing = self.color_temperature == "complex_changing"
+            self.color_temperature_is_complex_contrasting = self.color_temperature == "complex_contrasting"
+        else:
+            self.color_temperature_is_complex_changing = None
+            self.color_temperature_is_complex_contrasting = None
+
+        self.color_temperature_is_complex_others = self.color_temperature == "complex_others"
+
+        # Color saturation attributes
+        self.color_saturation_is_high = self.color_saturation == "high_saturation"
+        self.color_saturation_is_low = self.color_saturation == "low_saturation"
+        self.color_saturation_is_neutral = self.color_saturation == "neutral"
+
+        if self.color_saturation != "complex_others":
+            self.color_saturation_is_complex_changing = self.color_saturation == "complex_changing"
+            self.color_saturation_is_complex_contrasting = self.color_saturation == "complex_contrasting"
+        else:
+            self.color_saturation_is_complex_changing = None
+            self.color_saturation_is_complex_contrasting = None
+
+        self.color_saturation_is_complex_others = self.color_saturation == "complex_others"
+
+        # Brightness attributes
+        self.is_brighter_than_normal = self.brightness in {"very_bright", "bright"}
+        self.is_darker_than_normal = self.brightness in {"dark", "very_dark"}
+
+        self.brightness_is_very_bright = self.brightness == "very_bright"
+        self.brightness_is_bright = self.brightness == "bright"
+        self.brightness_is_neutral = self.brightness == "neutral"
+        self.brightness_is_dark = self.brightness == "dark"
+        self.brightness_is_very_dark = self.brightness == "very_dark"
+
+        if self.brightness != "complex_others":
+            self.brightness_is_complex_changing = self.brightness == "complex_changing"
+            self.brightness_is_complex_contrasting = self.brightness == "complex_contrasting"
+        else:
+            self.brightness_is_complex_changing = None
+            self.brightness_is_complex_contrasting = None
+
+        self.brightness_is_complex_others = self.brightness == "complex_others"
+
     def _set_lighting_setup_attributes(self):
         if self.shot_transition:
             self.is_lighting_setup_complex = None
             return
-        self.is_lighting_quality_complex = self.light_quality in ["complex_changing", "complex_contrasting", "complex_others"]
+        self.is_lighting_quality_complex = self.light_quality in {"complex_changing", "complex_contrasting", "complex_others"}
+        self.scene_type_is_complex_others = self.scene_type == "complex_others"
+        self.scene_type_is_exterior = self.scene_type == "exterior"
+        self.scene_type_is_interior = self.scene_type == "interior"
+        self.scene_type_is_synthetic = self.scene_type == "unrealistic_synthetic"
+
+        if self.sunlight_level == "unknown":
+            self.sunlight_level_is_normal = None
+            self.sunlight_level_is_sunny = None
+            self.sunlight_level_is_overcast = None
+            self.sunlight_level_is_sunset_sunrise = None
+        else:
+            self.sunlight_level_is_normal = self.sunlight_level == "normal"
+            self.sunlight_level_is_sunny = self.sunlight_level == "sunny"
+            self.sunlight_level_is_overcast = self.sunlight_level == "overcast"
+            self.sunlight_level_is_sunset_sunrise = self.sunlight_level == "sunset_sunrise"
+
+        self.sunlight_level_is_unknown = self.sunlight_level == "unknown"
+
+        # Light Quality
+        self.light_quality_is_soft = self.light_quality == "soft_diffused_light"
+        self.light_quality_is_hard = self.light_quality == "hard_light"
+        if self.light_quality == "complex_others":
+            self.light_quality_is_changing = None
+            self.light_quality_is_contrasting = None
+        else:
+            self.light_quality_is_changing = self.light_quality == "complex_changing"
+            self.light_quality_is_contrasting = self.light_quality == "complex_contrasting"
+        
+        self.light_quality_is_complex = self.light_quality == "complex_others"
 
     def _set_subject_lighting_attributes(self):
         if self.shot_transition:
@@ -259,11 +323,11 @@ class LightingSetupData:
         else:
             raise ValueError("sunlight_source must be a boolean value")
 
-    def set_moonlight_source(self, moonlight_source):
-        if isinstance(moonlight_source, bool):
-            self.moonlight_source = moonlight_source
+    def set_moonlight_starlight_source(self, moonlight_starlight_source):
+        if isinstance(moonlight_starlight_source, bool):
+            self.moonlight_starlight_source = moonlight_starlight_source
         else:
-            raise ValueError("moonlight_source must be a boolean value")
+            raise ValueError("moonlight_starlight_source must be a boolean value")
 
     def set_firelight_source(self, firelight_source):
         if isinstance(firelight_source, bool):
@@ -289,11 +353,11 @@ class LightingSetupData:
         else:
             raise ValueError("abstract_light_source must be a boolean value")
 
-    def set_complex_changing_light_source(self, complex_changing_light_source):
-        if isinstance(complex_changing_light_source, bool):
-            self.complex_changing_light_source = complex_changing_light_source
+    def set_complex_light_source(self, complex_light_source):
+        if isinstance(complex_light_source, bool):
+            self.complex_light_source = complex_light_source
         else:
-            raise ValueError("complex_changing_light_source must be a boolean value")
+            raise ValueError("complex_light_source must be a boolean value")
 
     def set_subject_back_light(self, subject_back_light):
         if isinstance(subject_back_light, bool):
@@ -676,7 +740,7 @@ class LightingSetupData:
                 raise ValueError("color_saturation must be 'black_white' if color_temperature is 'black_white'")
 
         if self.abstract_light_source:
-            if any([self.sunlight_source, self.moonlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source]):
+            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source]):
                 raise ValueError("abstract_light_source cannot be combined with other light sources")
 
         if self.sunlight_source:
@@ -699,12 +763,12 @@ lighting_setup_params_demo = {
     "color_grading_description": "Cool tones with high saturation and bright lighting",
     "scene_type": "interior",
     "sunlight_source": True,
-    "moonlight_source": False,
+    "moonlight_starlight_source": False,
     "firelight_source": False,
     "artificial_light_source": False,
     "non_visible_light_source": False,
     "abstract_light_source": False,
-    "complex_changing_light_source": False,
+    "complex_light_source": False,
     "sunlight_level": "sunny",
     "light_quality": "soft_diffused_light",
     "lighting_setup_description": "Soft diffused light with sunny outdoor setting",

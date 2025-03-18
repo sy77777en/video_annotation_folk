@@ -27,8 +27,8 @@
         "A shot emphasizing an open outdoor environment.",
         "A video filmed within an exterior location."
     ],
-    "pos_rule_str": "self.lighting_setup.scene_type == 'exterior'",
-    "neg_rule_str": "self.lighting_setup.scene_type != 'exterior'",
+    "pos_rule_str": "self.lighting_setup.scene_type_is_exterior is True",
+    "neg_rule_str": "self.lighting_setup.scene_type_is_exterior is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

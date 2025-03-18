@@ -2,9 +2,10 @@
     "label": "Scene Type Is Complex/Others",
     "label_name": "scene_type_is_complex_others",
     "def_question": [
-        "Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?"
+        "Is the scene type unclear, ambiguous, or changing throughout the video?"
     ],
     "alt_question": [
+        "Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?",
         "Does the video contain mixed or unclear environments?",
         "Is the scene type inconsistent, changing between different settings?",
         "Does the video transition between interior and exterior shots?",
@@ -15,9 +16,10 @@
         "Is the scene composition too complex to categorize simply?"
     ],
     "def_prompt": [
-        "The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)."
+        "The scene type is unclear, ambiguous, or changing throughout the video."
     ],
     "alt_prompt": [
+        "The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine).",
         "A video where the scene type is hard to categorize.",
         "A shot where the setting changes between indoor and outdoor.",
         "A sequence with an unclear or shifting environment.",
@@ -27,8 +29,8 @@
         "A video where no dominant environment is clear.",
         "A setting that cannot be classified as purely interior, exterior, or synthetic."
     ],
-    "pos_rule_str": "self.lighting_setup.scene_type == 'complex_others'",
-    "neg_rule_str": "self.lighting_setup.scene_type != 'complex_others'",
+    "pos_rule_str": "self.lighting_setup.scene_type_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.scene_type_is_complex_others is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

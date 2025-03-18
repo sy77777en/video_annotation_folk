@@ -2,14 +2,14 @@
     "label": "Color Saturation Is Complex (Others)",
     "label_name": "color_saturation_is_complex_others",
     "def_question": [
-        "Does the video have noticeable shifts in color saturation between high and low over time?"
+        "Does the video feature a complex color composition or dynamics that cannot be classified as strictly high, low, or neutral color saturation?"
     ],
     "alt_question": [
         "Does the video show noticeable changes in color saturation over time, shifting between high and low?",
         "Does the video have noticeable shifts and contrasts in color saturation?"
     ],
     "def_prompt": [
-        "The video has noticeable shifts in color saturation between high and low over time."
+        "The video features a complex color composition or dynamics that cannot be classified as strictly high, low, or neutral color saturation."
     ],
     "alt_prompt": [
         "The video shows noticeable changes in color saturation over time, shifting between high and low.",

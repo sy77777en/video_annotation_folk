@@ -1237,17 +1237,63 @@ class VanillaColorPolicy(SocraticProgram):
         return {
             "color_composition_dynamics": self.get_description(data)
         }
-        
-    def format_color_temperature(self, temperature: str, temperature_dir="labels/lighting_setup/color_temperature/") -> str:
-        # Options: "warm", "cool", "neutral"
-        # temperature_info = {
-        #     "warm": "warm (reddish or yellowish)",
-        #     "cool": "cool (bluish or greenish)",
-        #     "neutral": "neutral (no need to mention)"
-        # }
-        # return temperature_info[temperature]
-        # TODO
-        pass
+
+    def format_color_temperature(self, color_temperature: str, color_temperature_dir="labels/lighting_setup/color_temperature/") -> str:
+        # Options: "warm", "cool", "neutral", "complex_changing", "complex_contrasting", "complex_others", "black_white"
+        color_temperature_info = {
+            "neutral": "color_temperature_is_neutral",
+            "warm": "color_temperature_is_warm",
+            "cool": "color_temperature_is_cool",
+            "complex_changing": "color_temperature_is_changing",
+            "complex_contrasting": "color_temperature_is_contrasting",
+            "complex_others": "color_temperature_is_complex_others",
+            # "black_white": "color_temperature_is_black_and_white",
+        }
+        if color_temperature == "black_white":
+            return "The video is in black and white."
+        else:
+            color_temperature = color_temperature_info[color_temperature]
+            color_temperature_str = read_json_file(os.path.join(color_temperature_dir, f"{color_temperature}.json"))['def_prompt'][0]
+            if color_temperature == "neutral":
+                color_temperature_str += " (no need to mention)."
+            return color_temperature_str
+
+    def format_color_saturation(self, color_saturation: str, color_saturation_dir="labels/lighting_setup/color_saturation/") -> str:
+        # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
+        color_saturation_info = {
+            "high_saturation": "color_saturation_is_high",
+            "neutral": "color_saturation_is_neutral",
+            "low_saturation": "color_saturation_is_low",
+            "complex_changing": "color_saturation_is_changing",
+            "complex_contrasting": "color_saturation_is_contrasting",
+            "complex_others": "color_saturation_is_complex_others",
+        }
+        if color_saturation == "black_white":
+            return "The video is in black and white."
+        else:
+            color_saturation = color_saturation_info[color_saturation]
+            color_saturation_str = read_json_file(os.path.join(color_saturation_dir, f"{color_saturation}.json"))['def_prompt'][0]
+            if color_saturation == "normal":
+                color_saturation_str += " (no need to mention)."
+            return color_saturation_str
+    
+    def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/brightness/") -> str:
+        # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
+        brightness_info = {
+            "very_bright": "brightness_is_very_bright",
+            "bright": "brightness_is_bright",
+            "neutral": "brightness_is_neutral",
+            "dark": "brightness_is_dark",
+            "very_dark": "brightness_is_very_dark",
+            "complex_changing": "brightness_is_changing",
+            "complex_contrasting": "brightness_is_contrasting",
+            "complex_others": "brightness_is_complex_others",
+        }
+        brightness = brightness_info[brightness]
+        brightness_str = read_json_file(os.path.join(brightness_dir, f"{brightness}.json"))['def_prompt'][0]
+        if brightness == "neutral":
+            brightness_str += " (no need to mention)."
+        return brightness_str
 
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
@@ -1264,10 +1310,10 @@ class VanillaColorPolicy(SocraticProgram):
         )
 
         policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
-        
+
         policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
         policy += "\n\n**Color Saturation:** {}".format(self.format_color_saturation(data.lighting_setup.color_saturation))
-
+        policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
         return policy
 
 
@@ -1284,6 +1330,58 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             "lighting_setup_dynamics": self.get_description(data)
         }
 
+    def format_scene_type(self, scene_type: str, scene_type_dir="labels/lighting_setup/scene_type/") -> str:
+        # Options: "interior", "exterior", "unrealistic_synthetic", "complex_others"
+        scene_type_info = {
+            "interior": "scene_type_is_interior",
+            "exterior": "scene_type_is_exterior",
+            "unrealistic_synthetic": "scene_type_is_unrealistic_synthetic",
+            "complex_others": "scene_type_is_complex_others"
+        }
+        scene_type = scene_type_info[scene_type]
+        scene_type_str = read_json_file(os.path.join(scene_type_dir, f"{scene_type}.json"))['def_prompt'][0]
+        return scene_type_str
+
+    def format_lighting_sources(self, lighting_setup, lighting_sources_dir="labels/lighting_setup/light_source/") -> str:
+        # Major light sources
+        self.sunlight_source = lighting_setup.sunlight_source
+        self.moonlight_starlight_source = lighting_setup.moonlight_starlight_source
+        self.firelight_source = lighting_setup.firelight_source
+        self.artificial_light_source = lighting_setup.artificial_light_source
+        self.non_visible_light_source = lighting_setup.non_visible_light_source
+        self.abstract_light_source = lighting_setup.abstract_light_source
+        self.complex_light_source = lighting_setup.complex_light_source
+        # if abstract_light_source is True, then the other sources are not considered
+        light_source_strs = []
+        if lighting_setup.abstract_light_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "is_abstract.json"))['def_prompt'][0])
+        else:
+            if lighting_setup.sunlight_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "sunlight.json"))['def_prompt'][0])
+            if lighting_setup.moonlight_starlight_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "moonlight.json"))['def_prompt'][0])
+            if lighting_setup.firelight_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "firelight.json"))['def_prompt'][0])
+            if lighting_setup.artificial_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "artificial_light.json"))['def_prompt'][0])
+            if lighting_setup.non_visible_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "non_visible_light.json"))['def_prompt'][0])
+            if lighting_setup.complex_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "complex_changing.json"))['def_prompt'][0])
+        return " ".join(light_source_strs)
+
+    def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:
+        # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
+        sunlight_level_info = {
+            "normal": "sunlight_level_is_normal",
+            "sunny": "sunlight_level_is_sunny",
+            "overcast": "sunlight_level_is_overcast",
+            "sunset_sunrise": "sunlight_level_is_sunset_sunrise",
+        }
+        sunlight_level = sunlight_level_info[sunlight_level]
+        sunlight_level_str = read_json_file(os.path.join(sunlight_level_dir, f"{sunlight_level}.json"))['def_prompt'][0]
+        return sunlight_level_str
+
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
@@ -1298,8 +1396,13 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             scene_description=data.cam_setup.scene_description
         )
 
-        # policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
+        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting setup. Please use these as references to expand your description."
 
+        policy += "\n\n**Scene Type:** {}.".format(self.format_scene_type(data.lighting_setup.scene_type))
+        policy += "\n\n**Lighting Source(s):** {}".format(self.format_lighting_sources(data.lighting_setup))
+        # If sunlight, then ask about sunlight level
+        if data.lighting_setup.sunlight_level_is_unknown is False:
+            policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_level))
         return policy
 
 

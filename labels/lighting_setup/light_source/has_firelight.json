@@ -2,9 +2,10 @@
     "label": "Has Firelight",
     "label_name": "has_firelight",
     "def_question": [
-        "Is firelight the primary light source in the video, even if the fire itself is not visible?"
+        "Is the video primarily lit by firelight?"
     ],
     "alt_question": [
+        "Is firelight the primary light source in the video, even if the fire itself is not visible?",
         "Is the scene primarily lit by a fire, such as a candle, torch, or campfire?",
         "Does the lighting suggest a warm glow from a fire source?",
         "Is firelight providing the dominant illumination in the video?",
@@ -15,9 +16,10 @@
         "Is the scene’s lighting dynamically shifting in a way that suggests fire?"
     ],
     "def_prompt": [
-        "The primary light source in the video is firelight, whether or not the fire itself is visible."
+        "The video is primarily lit by firelight."
     ],
     "alt_prompt": [
+        "The video is primarily lit by firelight, even if the fire itself is not visible.",
         "A video where firelight serves as the main source of illumination.",
         "A scene where the environment is lit by flames.",
         "A sequence where firelight provides the dominant glow.",

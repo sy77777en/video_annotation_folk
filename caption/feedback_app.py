@@ -98,6 +98,16 @@ def save_data(video_id, data, output_dir="outputs", file_postfix=".json"):
     print(f"Data saved to: {filename}")
     return filename
 
+def get_precaption_llm_name(config_dict, selected_config):
+    config = config_dict[selected_config]
+    task = config["task"]
+    if task in ["subject_motion_dynamics"]:
+        return "tarsier-recap-7b"
+    elif task in ["spatial_framing_dynamics"]:
+        return "qwen2.5-vl-7b"
+    else:
+        return "gpt-4o-2024-08-06"
+
 def load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, output):
     """Generate a pre-caption for the video"""
     # Get the caption prompt for the video
@@ -277,14 +287,13 @@ def main(args, caption_programs):
     if "file_check_passed" not in st.session_state:
         file_check(args, video_data_dict)
         st.session_state.file_check_passed = True
-        
+
     # Hide sidebar by default
     # st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
     st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
     # Create two columns
     page_col1, page_col2 = st.columns([1, 1])  # Left column is smaller, right column is wider
 
-    
     # Debug information
     st.sidebar.header("Debug Information")
     st.sidebar.write("Full Session State:")
@@ -296,7 +305,7 @@ def main(args, caption_programs):
     except FileNotFoundError:
         st.error(f"Config file not found: {args.configs}")
         return
-    
+
     with page_col1:
         config_dict = {config["name"]: config for config in configs}
         config_names = list(config_dict.keys())
@@ -307,7 +316,7 @@ def main(args, caption_programs):
             index=config_names.index(st.session_state.get('last_config_id', config_names[0])),
             key="selected_task",
         )
-        
+
         # Track task changes to reset state
         if 'last_config_id' not in st.session_state:
             st.session_state.last_config_id = selected_config
@@ -319,16 +328,15 @@ def main(args, caption_programs):
                 # Keep api_key and last_config_id
                 if key not in ['api_key', 'last_config_id']:
                     keys_to_remove.append(key)
-            
+
             # Remove all collected keys
             for key in keys_to_remove:
                 del st.session_state[key]
-            
+
             # Set the new video id
             st.session_state.last_config_id = selected_config
             print(f"Config changed to: {selected_config}")
             st.rerun()  # Force a rerun to ensure clean state
-
 
         config = config_dict[selected_config]
         st.title(config.get("name", "Pre-Caption System"))
@@ -336,8 +344,7 @@ def main(args, caption_programs):
         output_dir = os.path.join(FOLDER, args.output, config["output_name"])
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
-        
-        
+
         # Select video
         selected_video = st.selectbox(
             "Select a video:",
@@ -349,7 +356,7 @@ def main(args, caption_programs):
         video_id = get_video_id(selected_video)
         caption_program = caption_programs[config["task"]]
         current_prompt = caption_program(video_data_dict[video_id])[config["task"]]
-        
+
         # Track video changes to reset state
         if 'last_video_id' not in st.session_state:
             st.session_state.last_video_id = video_id
@@ -362,21 +369,21 @@ def main(args, caption_programs):
                 # Keep api_key and last_video_id
                 if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id']:
                     keys_to_remove.append(key)
-            
+
             # Remove all collected keys
             for key in keys_to_remove:
                 del st.session_state[key]
-            
+
             # Set the new video id
             st.session_state.last_video_id = video_id
             st.session_state.last_selected_video = selected_video
-            
+
             # Also clear any feedback component states
             if 'feedback_submitted_initial_caption_faces' in st.session_state:
                 del st.session_state['feedback_submitted_initial_caption_faces']
-            
+
             st.rerun()  # Force a rerun to ensure clean state
-        
+
         # Session state initialization
         if 'current_step' not in st.session_state:
             st.session_state.current_step = 0
@@ -394,10 +401,9 @@ def main(args, caption_programs):
             else:
                 st.write(load_txt(FOLDER / config["instruction_file"]))
 
-        
         # Display video
         st.video(selected_video)
-        
+
         # Display first and last frames
         extracted_frames = extract_frames(selected_video, [0, -1])
         # Expandable section
@@ -407,7 +413,7 @@ def main(args, caption_programs):
                 st.image(extracted_frames[0], caption="First Frame", use_container_width=True)
             with col2:
                 st.image(extracted_frames[1], caption="Last Frame", use_container_width=True)
-        
+
         # Add navigation buttons for previous and next videos
         nav_col1, _, nav_col2 = st.columns([1, 3, 1])
         with nav_col1:
@@ -447,8 +453,7 @@ def main(args, caption_programs):
             else:
                 # Disabled button style if it's the last video
                 st.button("Next Video ➡️", disabled=True)
-    
-    
+
     with page_col2:
         # Step 0: Generating Pre-caption
         if st.session_state.current_step == 0:
@@ -456,17 +461,18 @@ def main(args, caption_programs):
             if data_is_saved(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX):
                 load_feedback(video_id, output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                 st.write("Feedback already exists for this video. You can choose to restart by either re-generating the pre-caption or by providing a new rating.")
-        
+
             # If not exist, return empty dict
             existing_precaption = load_precaption(video_id, output_dir, file_postfix=PRECAPTION_FILE_POSTFIX)
             # st.write("##### Pre-caption was generated by ")
             # st.write("Please polish the prompt and select an option to generate a caption:")
             llm_names = get_all_llms()
+
             # Dropdown to select a config, updating session state
             selected_llm = st.selectbox(
                 "Select a Model:",
-                llm_names, 
-                index=llm_names.index(existing_precaption.get("pre_caption_llm", llm_names[0])),
+                llm_names,
+                index=llm_names.index(existing_precaption.get("pre_caption_llm", get_precaption_llm_name(config_dict, selected_config))),
                 key="selected_llm"
             )
             supported_modes = get_supported_mode(selected_llm)
@@ -477,29 +483,29 @@ def main(args, caption_programs):
                 index=supprted_modes_index,
                 key="selected_mode"
             )
-            
+
             if "pre_caption_prompt" in st.session_state:
                 pre_caption_prompt = st.session_state.pre_caption_prompt
             else:
                 pre_caption_prompt = existing_precaption.get("pre_caption_prompt", load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, args.output))
-            
+
             line_height = 6  # Approximate height per line in pixels
             num_lines = max(30, len(pre_caption_prompt) // 120)  # Assuming ~120 characters per line
             estimated_height = num_lines * line_height
-            
+
             current_prompt = st.text_area(
                 "Prompt for pre-captioning:",
                 value=pre_caption_prompt,
                 key="pre_caption_prompt",
                 height=estimated_height,
             )
-            
+
             if "pre_caption" in existing_precaption:
                 pre_caption = existing_precaption["pre_caption"]
             else:
                 pre_caption = generate_save_and_return_pre_caption(video_id, output_dir, current_prompt, selected_llm, selected_mode, selected_video) # TODO: Comment out this line
                 # pre_caption = "**No pre-caption generated yet. Please click the button above to re-generate a pre-caption.**"
-            
+
             st.session_state.pre_caption_data = {
                 "video_id": video_id,
                 "pre_caption_prompt": current_prompt,
@@ -516,7 +522,7 @@ def main(args, caption_programs):
             st.write(f"##### Pre-caption generated by {selected_llm} ({selected_mode})")
             st.write(pre_caption)
             st.write("#### Rate the caption (Is it accurate? Does it miss anything important?)")
-        
+
             # Fetch stored initial rating if it exists
             if "initial_caption_rating" in st.session_state:
                 score = st.session_state.initial_caption_rating
@@ -531,7 +537,7 @@ def main(args, caption_programs):
                     score = initial_rating_response['score']
                 else:
                     score = None
-            
+
             st.write("Please provide your feedback to improve this caption (if not score of 5):")
             user_feedback = st.text_area(
                 "Your feedback:",
@@ -541,7 +547,7 @@ def main(args, caption_programs):
 
             if score:
                 feedback_is_needed = score != "😀"
-                
+
                 # Initialize feedback data
                 st.session_state.feedback_data = {
                     "video_id": video_id,
@@ -569,7 +575,7 @@ def main(args, caption_programs):
                     "caption_rating_score": None,
                     "final_caption": None
                 }
-                
+
                 if feedback_is_needed:
                     st.write("You can optionally change the LLM or the prompt that we used to polish your feedback. Please keep {feedback} and {pre_caption} in the prompt.")
                     llm_names = get_all_llms()
@@ -578,12 +584,13 @@ def main(args, caption_programs):
                         "Select a Model:",
                         llm_names,
                         key="selected_feedback_llm",
+                        index=llm_names.index("gpt-4o-2024-08-06"),
                     )
                     if "cur_feedback_prompt" in st.session_state:
                         feedback_prompt = st.session_state.cur_feedback_prompt
                     else:
                         feedback_prompt = load_txt(FOLDER / args.feedback_prompt)
-                    
+
                     feedback_prompt = st.text_area(
                         "Prompt for polishing feedback:",
                         value=feedback_prompt,
@@ -610,7 +617,7 @@ def main(args, caption_programs):
                     save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                     st.success("Caption rated as perfect! No changes needed.")
                     st.json(st.session_state.feedback_data)
-    
+
         # Step 1: Rate GPT's feedback and optionally provide corrected feedback
         if st.session_state.current_step == 1:
             # Wait for user to confirm pre-caption by clicking on feedback
@@ -638,30 +645,30 @@ def main(args, caption_programs):
                 else:
                     score = None  # Default to None if no response yet
 
+            st.write("Please provide the final feedback if you are not happy with it:")
+
+            # Ensure final_feedback is stored persistently
+            if "final_feedback" not in st.session_state:
+                st.session_state.final_feedback = st.session_state.feedback_data["gpt_feedback"]
+
+            final_feedback = st.text_area(
+                "Finalized feedback:",
+                value=st.session_state.final_feedback,
+                key="correct_feedback"
+            )
+
             if score:
                 st.session_state.feedback_data["feedback_rating"] = score  # Store in feedback data
                 st.session_state.feedback_data["feedback_rating_score"] = emoji_to_score(score)  # Store numeric rating
-                
+
                 if score != "😀":
-                    st.write("Please finalize the feedback:")
-
-                    # Ensure final_feedback is stored persistently
-                    if "final_feedback" not in st.session_state:
-                        st.session_state.final_feedback = st.session_state.feedback_data["gpt_feedback"]
-
-                    final_feedback = st.text_area(
-                        "Finalized feedback:",
-                        value=st.session_state.final_feedback,
-                        key="correct_feedback"
-                    )
-
                     # Button Click Handling
                     if st.button("Submit Corrected Feedback"):
                         if final_feedback.strip():
                             # Persist final feedback
                             st.session_state.feedback_data["final_feedback"] = final_feedback
                             st.session_state.final_feedback = final_feedback
-                            
+
                             # Store step change in session state
                             st.session_state.current_step = 2
                             st.session_state.feedback_submitted = True  # Flag to track submission
@@ -678,61 +685,84 @@ def main(args, caption_programs):
                 st.session_state.current_step = 2  # Ensure next step persists
                 st.rerun()
 
-
         # Step 2: Generate caption (intermediate step)
         elif st.session_state.current_step == 2:
-            st.write(f"##### Pre-caption generated by {st.session_state.feedback_data['pre_caption_llm']} ({st.session_state.feedback_data['pre_caption_mode']})")
-            st.write(st.session_state.feedback_data["pre_caption"])
-            st.write(f"You rate the caption as **{st.session_state.feedback_data['initial_caption_rating_score']}/5**\n\n")
-            st.write(f"##### Final Feedback from you and {st.session_state.feedback_data['gpt_feedback_llm']}")
-            st.write(f"{st.session_state.feedback_data['final_feedback']}\n\n")
-            st.write("You can optionally change the LLM or the prompt that we used to polish the caption. Please keep {feedback} and {pre_caption} in the prompt.")
+            ### TODO: Comment out the below code to restore the caption refinement prompt engineering step
+            st.session_state.current_step = 3
+            st.rerun()
+            # st.write(f"##### Pre-caption generated by {st.session_state.feedback_data['pre_caption_llm']} ({st.session_state.feedback_data['pre_caption_mode']})")
+            # st.write(st.session_state.feedback_data["pre_caption"])
+            # st.write(f"You rate the caption as **{st.session_state.feedback_data['initial_caption_rating_score']}/5**\n\n")
+            # st.write(f"##### Final Feedback from you and {st.session_state.feedback_data['gpt_feedback_llm']}")
+            # st.write(f"{st.session_state.feedback_data['final_feedback']}\n\n")
+            # st.write("You can optionally change the LLM or the prompt that we used to polish the caption. Please keep {feedback} and {pre_caption} in the prompt.")
+            # # Get the final feedback (either corrected or GPT's version)
+            # final_feedback = st.session_state.feedback_data["final_feedback"]
+            # pre_caption = st.session_state.feedback_data["pre_caption"]
+            # # Get improved caption
+            # llm_names = get_all_llms()
+            # # Dropdown to select a config, updating session state
+            # selected_caption_llm = st.selectbox(
+            #     "Select a Model:",
+            #     llm_names,
+            #     key="selected_caption_llm",
+            #     index=llm_names.index("gpt-4o-2024-08-06"),
+            # )
+            # if "cur_caption_prompt" in st.session_state:
+            #     caption_prompt = st.session_state.cur_caption_prompt
+            # else:
+            #     caption_prompt = load_txt(FOLDER / args.caption_prompt)
+
+            # caption_prompt = st.text_area(
+            #     "Prompt for polishing caption:",
+            #     value=caption_prompt,
+            #     key="cur_caption_prompt",
+            #     height=PROMPT_HEIGHT,
+            # )
+            # if st.button("Submit") and caption_prompt:
+            #     st.session_state.feedback_data["gpt_caption_llm"] = selected_caption_llm
+            #     st.session_state.feedback_data["gpt_caption_prompt"] = caption_prompt
+            #     # Get GPT-4 polished feedback
+            #     new_caption = get_llm(
+            #         model=selected_caption_llm,
+            #         secrets=st.secrets,
+            #     ).generate(
+            #         caption_prompt.format(feedback=final_feedback, pre_caption=pre_caption),
+            #     )
+            #     st.session_state.feedback_data["gpt_caption"] = new_caption
+            #     st.session_state.current_step = 3
+            #     st.rerun()
+
+        # Step 3: Rate GPT's caption and optionally provide corrected caption (optionally to re-generate the caption)
+        elif st.session_state.current_step == 3:
+
             # Get the final feedback (either corrected or GPT's version)
             final_feedback = st.session_state.feedback_data["final_feedback"]
             pre_caption = st.session_state.feedback_data["pre_caption"]
-            # Get improved caption
-            llm_names = get_all_llms()
-            # Dropdown to select a config, updating session state
-            selected_caption_llm = st.selectbox(
-                "Select a Model:",
-                llm_names,
-                key="selected_caption_llm",
-            )
+            selected_caption_llm = "gpt-4o-2024-08-06"
             if "cur_caption_prompt" in st.session_state:
                 caption_prompt = st.session_state.cur_caption_prompt
             else:
                 caption_prompt = load_txt(FOLDER / args.caption_prompt)
-            
-            caption_prompt = st.text_area(
-                "Prompt for polishing caption:",
-                value=caption_prompt,
-                key="cur_caption_prompt",
-                height=PROMPT_HEIGHT,
+
+            st.session_state.feedback_data["gpt_caption_llm"] = selected_caption_llm
+            st.session_state.feedback_data["gpt_caption_prompt"] = caption_prompt
+            # Get GPT-4 polished feedback
+            new_caption = get_llm(
+                model=selected_caption_llm,
+                secrets=st.secrets,
+            ).generate(
+                caption_prompt.format(feedback=final_feedback, pre_caption=pre_caption),
             )
-            if st.button("Submit") and caption_prompt:
-                st.session_state.feedback_data["gpt_caption_llm"] = selected_caption_llm
-                st.session_state.feedback_data["gpt_caption_prompt"] = caption_prompt
-                # Get GPT-4 polished feedback
-                new_caption = get_llm(
-                    model=selected_caption_llm,
-                    secrets=st.secrets,
-                ).generate(
-                    caption_prompt.format(feedback=final_feedback, pre_caption=pre_caption),
-                )
-                st.session_state.feedback_data["gpt_caption"] = new_caption
-                st.session_state.current_step = 3
-                st.rerun()
-        # gpt_caption = get_gpt4_caption(final_feedback, current_caption, caption_prompt=FOLDER / args.caption_prompt)
-        # st.rerun()
-    
-        # Step 3: Rate GPT's caption and optionally provide corrected caption
-        elif st.session_state.current_step == 3:
-            st.subheader("Rate AI-Improved Caption")
-            st.write(f"##### Caption generated by {st.session_state.feedback_data['gpt_caption_llm']}")
+            st.session_state.feedback_data["gpt_caption"] = new_caption
+            ## Done automatically to polish the caption first
+
+            st.write(f"##### Final caption generated by {st.session_state.feedback_data['gpt_caption_llm']}")
             # Get the final feedback (either corrected or GPT's version)
             gpt_caption = st.session_state.feedback_data["gpt_caption"]
             st.write(gpt_caption)
 
+            st.subheader("Rate AI-Improved Caption")
             # Retrieve stored caption rating if it exists
             if "caption_rating" in st.session_state:
                 score = st.session_state.caption_rating
@@ -748,7 +778,7 @@ def main(args, caption_programs):
                 else:
                     score = None  # Default to None if no response yet
 
-            st.write("Please modify the caption below (if not score of 5):")
+            st.write("And please modify the caption below (if not a perfect score of 5):")
 
             # Ensure final_caption is stored persistently
             if "final_caption" not in st.session_state:
@@ -763,7 +793,7 @@ def main(args, caption_programs):
                 key="correct_caption",
                 height=estimated_height,
             )
-            
+
             if score:
                 st.session_state.feedback_data["caption_rating"] = score  # Persist rating
                 st.session_state.feedback_data["caption_rating_score"] = emoji_to_score(score)  # Store numeric rating
@@ -775,7 +805,7 @@ def main(args, caption_programs):
                             # Persist final caption
                             st.session_state.feedback_data["final_caption"] = final_caption
                             st.session_state.final_caption = final_caption
-                            
+
                             # Save feedback data
                             save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                             st.success(f"Caption saved successfully!")
@@ -793,12 +823,54 @@ def main(args, caption_programs):
                     st.json(st.session_state.feedback_data)
                     st.session_state.caption_submitted = True
                     st.session_state.current_step = 4
-            
+            else:
+                st.subheader("(Optional) Re-try a New AI-Improved Caption")
+                st.write("If you are not happy with the current AI-improved caption, you can re-try by modifying the LLM or the prompt below.")
+                st.write("Note: please keep {feedback} and {pre_caption} in the prompt.")
+                # Get improved caption
+                llm_names = get_all_llms()
+                # Dropdown to select a config, updating session state
+                selected_caption_llm = st.selectbox(
+                    "Select a Model:",
+                    llm_names,
+                    key="selected_caption_llm",
+                    index=llm_names.index("gpt-4o-2024-08-06"),
+                )
+                if "cur_caption_prompt" in st.session_state:
+                    caption_prompt = st.session_state.cur_caption_prompt
+                else:
+                    caption_prompt = load_txt(FOLDER / args.caption_prompt)
+
+                caption_prompt = st.text_area(
+                    "Prompt for polishing caption:",
+                    value=caption_prompt,
+                    key="cur_caption_prompt",
+                    height=PROMPT_HEIGHT,
+                )
+                if st.button("Re-generate Final Caption") and caption_prompt:
+                    st.session_state.feedback_data["gpt_caption_llm"] = selected_caption_llm
+                    st.session_state.feedback_data["gpt_caption_prompt"] = caption_prompt
+                    # Get GPT-4 polished feedback
+                    new_caption = get_llm(
+                        model=selected_caption_llm,
+                        secrets=st.secrets,
+                    ).generate(
+                        caption_prompt.format(feedback=final_feedback, pre_caption=pre_caption),
+                    )
+                    st.session_state.feedback_data["gpt_caption"] = new_caption
+                    # st.session_state.current_step = 3
+                    st.rerun()
+                st.write("Below are the original pre-caption and the final feedback for reference.")
+                st.write(f"##### Pre-caption generated by {st.session_state.feedback_data['pre_caption_llm']} ({st.session_state.feedback_data['pre_caption_mode']})")
+                st.write(st.session_state.feedback_data["pre_caption"])
+                st.write(f"You rate the caption as **{st.session_state.feedback_data['initial_caption_rating_score']}/5**\n\n")
+                st.write(f"##### Final Feedback from you and {st.session_state.feedback_data['gpt_feedback_llm']}")
+                st.write(f"{st.session_state.feedback_data['final_feedback']}\n\n")
             if st.session_state.get("caption_submitted", False):
                 st.session_state.current_step = 4  # Ensure next step persists
                 st.rerun()
-    
-    # Step 4: Print the final caption, and say if want to redo, please go to another video then come back
+
+        # Step 4: Print the final caption, and say if want to redo, please go to another video then come back
         elif st.session_state.current_step == 4:
             # st.write(f"##### Final Caption")
             st.write(st.session_state.feedback_data["final_caption"])

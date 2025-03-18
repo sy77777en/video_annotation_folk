@@ -2,7 +2,7 @@
     "label": "Scene Type Is Synthetic/Unrealistic",
     "label_name": "scene_type_is_synthetic",
     "def_question": [
-        "Is the video set in a synthetic or unrealistic environment with lighting effects that defy real-world physics?"
+        "Is the video set in a synthetic or 2D environment with unrealistic lighting effects?"
     ],
     "alt_question": [
         "Is the scene artificially generated rather than filmed in the real world?",
@@ -15,9 +15,10 @@
         "Does the shot emphasize a synthetic, fantasy, or virtual setting?"
     ],
     "def_prompt": [
-        "The video is set in a synthetic or unrealistic environment with lighting effects that defy real-world physics."
+        "The video shows a synthetic or 2D environment with unrealistic lighting effects."
     ],
     "alt_prompt": [
+        "The video shows a synthetic environment with unnatural lighting effects that defy real-world physics.",
         "A video taking place in a digitally created world.",
         "A sequence with non-realistic, game-like visuals.",
         "A shot featuring exaggerated lighting and reflections.",
@@ -27,8 +28,8 @@
         "A video with CGI-heavy or virtual world visuals.",
         "A scene that exists entirely in a synthetic or animated world."
     ],
-    "pos_rule_str": "self.lighting_setup.scene_type == 'unrealistic_synthetic'",
-    "neg_rule_str": "self.lighting_setup.scene_type != 'unrealistic_synthetic'",
+    "pos_rule_str": "self.lighting_setup.scene_type_is_synthetic is True",
+    "neg_rule_str": "self.lighting_setup.scene_type_is_synthetic is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }
