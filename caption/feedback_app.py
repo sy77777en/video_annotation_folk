@@ -35,7 +35,25 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="all_configs.json", help="Path to the JSON config file")
     # parser.add_argument("--video_urls_file", type=str, default="test_urls_all.json", help="Path to the test URLs file")
-    parser.add_argument("--video_urls_file", type=str, default="test_urls_selected.json", help="Path to the test URLs file")
+    # parser.add_argument("--video_urls_file", type=str, default="test_urls_selected.json", help="Path to the test URLs file")
+    parser.add_argument(
+        "--video_urls_files",
+        nargs="+",
+        type=str,
+        default=[
+            "video_urls/20250227_0507ground_and_setup/overlap_0_to_94.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_94_to_188.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_188_to_282.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_282_to_376.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_376_to_470.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_470_to_564.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_564_to_658.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_658_to_752.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_752_to_846.json",
+            "video_urls/20250227_0507ground_and_setup/overlap_846_to_940.json",
+        ],
+        help="List of paths to test URLs files",
+    )
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
@@ -43,6 +61,26 @@ def parse_args():
     parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
     return parser.parse_args()
+
+
+def login_page(args):
+    st.title("Video Caption System Login")
+
+    # Create a form for login
+    with st.form("login_form"):
+        # File selection dropdown
+        selected_file = st.selectbox(
+            "Select Video URLs File:", args.video_urls_files, key="selected_urls_file"
+        )
+
+        submit_button = st.form_submit_button("Login")
+
+        if submit_button:
+            # Store the selected file in session state
+            st.session_state.video_urls_file = selected_file
+            st.session_state.logged_in = True
+            st.success(f"Login successful! Selected file: {selected_file}")
+            st.rerun()
 
 
 def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
@@ -104,7 +142,7 @@ def get_precaption_llm_name(config_dict, selected_config):
     if task in ["subject_motion_dynamics"]:
         return "tarsier-recap-7b"
     elif task in ["spatial_framing_dynamics"]:
-        return "qwen2.5-vl-7b"
+        return "qwen2.5-vl-72b"
     else:
         return "gpt-4o-2024-08-06"
 
@@ -167,11 +205,14 @@ def load_feedback(video_id, output_dir, file_postfix=FEEDBACK_FILE_POSTFIX):
     """Load feedback for video. If not exist, generate a new one."""
     # Check for existing feedback and get current caption
     existing_feedback = load_data(video_id, output_dir=output_dir, file_postfix=file_postfix)
-    
+
     # Show existing feedback if available
     if existing_feedback:
         st.success("This video has already been completed. The final caption is:")
         st.write(existing_feedback["final_caption"])
+        # Render as collapsible text
+        with st.expander("Show final JSON Data", expanded=False):
+            st.json(existing_feedback)
         return existing_feedback
     else:
         st.info("No pre-caption found. Generating a new pre-caption.")
@@ -269,8 +310,8 @@ def get_imagery_kwargs(selected_mode, selected_video):
         pass
     return imagery_kwargs
 
-def file_check(args, video_data_dict):
-    video_urls = load_json(FOLDER / args.video_urls_file)
+def file_check(video_urls_file, video_data_dict):
+    video_urls = load_json(FOLDER / video_urls_file)
     video_ids = [get_video_id(video_url) for video_url in video_urls]
     missing_video = False
     for video_id in video_ids:
@@ -282,18 +323,34 @@ def file_check(args, video_data_dict):
         return
 
 def main(args, caption_programs):
+    # Set page config first
+    st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
+
+    # Check login status
+    if "logged_in" not in st.session_state or not st.session_state.logged_in:
+        login_page(args)
+        return
+
     # Load video data
     video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
     if "file_check_passed" not in st.session_state:
-        file_check(args, video_data_dict)
+        file_check(st.session_state.video_urls_file, video_data_dict)
         st.session_state.file_check_passed = True
 
     # Hide sidebar by default
     # st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
-    st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
+    # st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
     # Create two columns
     page_col1, page_col2 = st.columns([1, 1])  # Left column is smaller, right column is wider
 
+    # Add logout button
+    st.sidebar.title("User Options")
+    if st.sidebar.button("Logout"):
+        # Clear session state and logout
+        for key in list(st.session_state.keys()):
+            del st.session_state[key]
+        st.rerun()
+    
     # Debug information
     st.sidebar.header("Debug Information")
     st.sidebar.write("Full Session State:")
@@ -340,7 +397,7 @@ def main(args, caption_programs):
 
         config = config_dict[selected_config]
         st.title(config.get("name", "Pre-Caption System"))
-        video_urls = load_json(FOLDER / args.video_urls_file)
+        video_urls = load_json(FOLDER / st.session_state.video_urls_file)
         output_dir = os.path.join(FOLDER, args.output, config["output_name"])
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
@@ -472,11 +529,13 @@ def main(args, caption_programs):
             selected_llm = st.selectbox(
                 "Select a Model:",
                 llm_names,
-                index=llm_names.index(existing_precaption.get("pre_caption_llm", get_precaption_llm_name(config_dict, selected_config))),
+                # index=llm_names.index(existing_precaption.get("pre_caption_llm", get_precaption_llm_name(config_dict, selected_config))),
+                index=llm_names.index(get_precaption_llm_name(config_dict, selected_config)),
                 key="selected_llm"
             )
             supported_modes = get_supported_mode(selected_llm)
-            supprted_modes_index = supported_modes.index(existing_precaption.get("pre_caption_mode", supported_modes[0])) if existing_precaption.get("pre_caption_mode", supported_modes[0]) in supported_modes else 0
+            # supprted_modes_index = supported_modes.index(existing_precaption.get("pre_caption_mode", supported_modes[0])) if existing_precaption.get("pre_caption_mode", supported_modes[0]) in supported_modes else 0
+            supprted_modes_index = 0
             selected_mode = st.selectbox(
                 "Select a Mode:",
                 supported_modes, 
@@ -487,7 +546,8 @@ def main(args, caption_programs):
             if "pre_caption_prompt" in st.session_state:
                 pre_caption_prompt = st.session_state.pre_caption_prompt
             else:
-                pre_caption_prompt = existing_precaption.get("pre_caption_prompt", load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, args.output))
+                # pre_caption_prompt = existing_precaption.get("pre_caption_prompt", load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, args.output))
+                pre_caption_prompt = load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, args.output)
 
             line_height = 6  # Approximate height per line in pixels
             num_lines = max(30, len(pre_caption_prompt) // 120)  # Assuming ~120 characters per line
@@ -519,7 +579,8 @@ def main(args, caption_programs):
                 st.rerun()  # Force a rerun to ensure clean state
 
             # Wait for user to confirm pre-caption by clicking on feedback
-            st.write(f"##### Pre-caption generated by {selected_llm} ({selected_mode})")
+            # st.write(f"##### Pre-caption generated by {selected_llm} ({selected_mode})")
+            st.write(f"##### Current pre-caption")
             st.write(pre_caption)
             st.write("#### Rate the caption (Is it accurate? Does it miss anything important?)")
 

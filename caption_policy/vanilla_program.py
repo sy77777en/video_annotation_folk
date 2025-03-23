@@ -92,11 +92,15 @@ class VanillaSubjectPolicy(SocraticProgram):
         
         if data.cam_setup.is_framing_subject is False:
             # This much be a Scenery shot
+            # return ("The video is a scenery shot. You do not need to describe the subject. "
+            #         "Please concisely specify the type of scenery shot (e.g., a landscape or cityscape scenery shot)."
+            #         "Explain why there is no main subject, such as the focus being on the environment, atmosphere, "
+            #         "or scale rather than a specific object. If relevant, describe the shot's purpose, whether it is an "
+            #         "establishing shot setting the scene or providing context, or a FPV shot that creates an immersive experience.")
             return ("The video is a scenery shot. You do not need to describe the subject. "
                     "Please concisely specify the type of scenery shot (e.g., a landscape or cityscape scenery shot)."
                     "Explain why there is no main subject, such as the focus being on the environment, atmosphere, "
-                    "or scale rather than a specific object. If relevant, describe the shot's purpose, whether it is an "
-                    "establishing shot setting the scene or providing context, or a FPV shot that creates an immersive experience.")
+                    "or scale rather than a specific object.")
         
         policy = read_text_file("caption_policy/policy/subject_description/policy.txt")
         if data.cam_setup.is_framing_subject is None:
@@ -137,6 +141,8 @@ class VanillaSubjectPolicy(SocraticProgram):
         else:
             assert data.cam_setup.shot_size_description != ""
             policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/has_shot_size_description.txt").format(shot_size_description=data.cam_setup.shot_size_description)
+        
+        policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/format_instruction.txt")
         return policy
 
 
@@ -1425,16 +1431,16 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             "direction_is_side_light",
             "direction_is_ambient_light"
         ]
-        if lighting_setup.direction_is_front_side is True:
-            subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, "direction_is_front_side.json"))['def_prompt'][0])
-            # remove top and side light from directions
-            directions.remove("direction_is_top_light")
-            directions.remove("direction_is_side_light")
-        elif lighting_setup.direction_is_rear_side is True:
-            subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, "direction_is_rear_side.json"))['def_prompt'][0])
-            # remove back and side light from directions
-            directions.remove("direction_is_back_light")
-            directions.remove("direction_is_side_light")
+        # if lighting_setup.direction_is_front_side is True:
+        #     subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, "direction_is_front_side.json"))['def_prompt'][0])
+        #     # remove top and side light from directions
+        #     directions.remove("direction_is_top_light")
+        #     directions.remove("direction_is_side_light")
+        # elif lighting_setup.direction_is_rear_side is True:
+        #     subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, "direction_is_rear_side.json"))['def_prompt'][0])
+        #     # remove back and side light from directions
+        #     directions.remove("direction_is_back_light")
+        #     directions.remove("direction_is_side_light")
         for direction in directions:
             if getattr(lighting_setup, direction) is True:
                 subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
@@ -1605,7 +1611,7 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
             if getattr(lighting_setup, shadow_pattern) is True:
                 shadow_patterns_strs.append(read_json_file(os.path.join(shadow_patterns_dir, f"{shadow_pattern}.json"))['def_prompt'][0])
         if len(shadow_patterns_strs) == 0:
-            return "No significant or noteworthy shadow patterns or Gobo lighting effects in this video. (no need to mention)."
+            return "No distinct or noteworthy shadow patterns or Gobo lighting effects in this video. (no need to mention)."
         return " ".join(shadow_patterns_strs)
     
     def format_light_dynamics(self, lighting_setup, light_dynamics_dir="labels/lighting_setup/dynamic_light/") -> str:

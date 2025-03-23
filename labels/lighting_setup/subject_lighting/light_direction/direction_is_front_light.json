@@ -2,7 +2,7 @@
     "label": "Direction Is Front Light",
     "label_name": "direction_is_front_light",
     "def_question": [
-        "Is the subject lit by front lighting, with the primary light source positioned in front of them?"
+        "Is there a noticeable light source illuminating the subject from the front as seen from the camera’s perspective?"
     ],
     "alt_question": [
         "Is the subject illuminated from the front?",
@@ -15,7 +15,7 @@
         "Does the video showcase the subject clearly due to front lighting?"
     ],
     "def_prompt": [
-        "The subject is lit by front lighting, with the primary light source positioned in front of them."
+        "There is a noticeable light source illuminating the subject from the front, as seen from the camera’s perspective."
     ],
     "alt_prompt": [
         "The subject is illuminated from the front.",

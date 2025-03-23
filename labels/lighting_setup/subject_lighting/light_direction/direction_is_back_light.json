@@ -2,7 +2,7 @@
     "label": "Direction Is Back Light",
     "label_name": "direction_is_back_light",
     "def_question": [
-        "Is the subject lit by backlighting, with the primary light source positioned behind them?"
+        "Is there a noticeable light source illuminating the subject from behind (backlighting) as seen from the camera’s perspective?"
     ],
     "alt_question": [
         "Is the subject illuminated from behind?",
@@ -15,7 +15,7 @@
         "Is the main source of illumination positioned behind the subject?"
     ],
     "def_prompt": [
-        "The subject is lit by backlighting, with the primary light source positioned behind them."
+        "There is a noticeable light source illuminating the subject from behind (backlighting), as seen from the camera’s perspective."
     ],
     "alt_prompt": [
         "The subject is illuminated from behind.",

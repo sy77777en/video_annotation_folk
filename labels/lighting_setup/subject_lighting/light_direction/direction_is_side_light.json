@@ -2,7 +2,7 @@
     "label": "Direction Is Side Light",
     "label_name": "direction_is_side_light",
     "def_question": [
-        "Is the subject lit by side lighting, with the primary light source positioned to the side?"
+        "Is there a noticeable light source illuminating the subject from the side (side lighting) as seen from the camera’s perspective?"
     ],
     "alt_question": [
         "Is the subject illuminated from the side?",
@@ -15,7 +15,7 @@
         "Is the subject’s form defined by a strong sidelight effect?"
     ],
     "def_prompt": [
-        "The subject is lit by side lighting, with the primary light source positioned to the side."
+        "There is a noticeable light source illuminating the subject from the side (side lighting), as seen from the camera’s perspective."
     ],
     "alt_prompt": [
         "The subject is illuminated from the side, creating strong contrast and shadows on one side.",
