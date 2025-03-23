@@ -8,7 +8,7 @@ class VideoData:
         # Data objects for each annotation type
         self._cam_motion = None  # Short for camera_motion_data
         self._cam_setup = None   # Short for camera_setup_data
-        self._light_setup = None  # Short for lighting_setup_data
+        self._lighting_setup = None  # Short for lighting_setup_data
         
         # Single list to store all workflow data
         self._workflows = []
@@ -71,19 +71,19 @@ class VideoData:
             raise TypeError("cam_setup must be a CameraSetupData instance or a dictionary of parameters")
 
     @property
-    def light_setup(self):
-        if self._light_setup is None:
-            raise AttributeError("light_setup has not been set")
-        return self._light_setup
+    def lighting_setup(self):
+        if self._lighting_setup is None:
+            raise AttributeError("lighting_setup has not been set")
+        return self._lighting_setup
 
-    @light_setup.setter
-    def light_setup(self, value):
+    @lighting_setup.setter
+    def lighting_setup(self, value):
         if isinstance(value, dict):
-            self._light_setup = LightingSetupData.create(**value)  # Auto-create instance
+            self._lighting_setup = LightingSetupData.create(**value)  # Auto-create instance
         elif isinstance(value, LightingSetupData):
-            self._light_setup = value
+            self._lighting_setup = value
         else:
-            raise TypeError("light_setup must be a LightingSetupData instance or a dictionary of parameters")
+            raise TypeError("lighting_setup must be a LightingSetupData instance or a dictionary of parameters")
 
     def update_workflow_from_project(self, project_name: str, workflow_data: dict):
         """
@@ -95,13 +95,13 @@ class VideoData:
     def has_annotation_data(self) -> bool:
         """
         Check if the video has any annotation data besides workflows.
-        Returns True if any of cam_motion, cam_setup, or light_setup are set.
+        Returns True if any of cam_motion, cam_setup, or lighting_setup are set.
         """
         if self._cam_motion is not None:
             return True
         if self._cam_setup is not None:
             return True
-        if self._light_setup is not None:
+        if self._lighting_setup is not None:
             return True
         return False
 
