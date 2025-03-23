@@ -60,6 +60,8 @@ class WorkflowData:
 
     @approval_time.setter
     def approval_time(self, value: str):
+        if value is None:
+            return
         if isinstance(value, str):
             self._approval_time = datetime.fromisoformat(value.replace('Z', '+00:00'))
         elif isinstance(value, datetime):
