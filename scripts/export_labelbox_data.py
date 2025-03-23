@@ -76,7 +76,6 @@ def export_project_data(client: lb.Client, project_id: str, output_dir: str, con
         
         os.makedirs(project_dir, exist_ok=True)
         os.makedirs(issues_dir, exist_ok=True)
-        
         # Export main data
         export_task = project.export(
             params=get_export_params(config),
