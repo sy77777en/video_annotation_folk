@@ -18,7 +18,7 @@ class CameraMotionData:
         self.camera_motion_speed = "regular"  # Options: "slow", "regular", "fast"
 
         # Camera tracking options
-        self.is_tracking = False  # Boolean: True or False
+        self.is_tracking = None  # Boolean: True or False
         self.tracking_shot_types = []  # Options: "side", "tail", "lead", "aerial", "arc", "pan", "tilt"
 
         # Subject size change options (only for tracking shots)
@@ -38,10 +38,10 @@ class CameraMotionData:
         self.camera_roll = "no"  # Options: "no", "clockwise", "counter_clockwise"
 
         # Camera motion effects as booleans
-        self.frame_freezing = False
-        self.dolly_zoom = False
-        self.motion_blur = False
-        self.cinemagraph = False
+        self.frame_freezing = None
+        self.dolly_zoom = None
+        self.motion_blur = None
+        self.cinemagraph = None
 
         # Text box for complex descriptions
         self.complex_motion_description = ""

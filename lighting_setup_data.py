@@ -1,41 +1,41 @@
 class LightingSetupData:
     def __init__(self):
         # Shot transition options
-        self.shot_transition = False # Boolean: True or False
+        self.shot_transition = None # Boolean: True or False
 
         # Color temperature options
         # Options: "warm", "neutral", "cool", "black_white", "complex_changing", "complex_contrasting", "complex_others"
-        self.color_temperature = "neutral"
+        self.color_temperature = "complex_others"
 
         # Color saturation options
         # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
-        self.color_saturation = "neutral"
+        self.color_saturation = "complex_others"
 
         # Brightness level options
         # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
-        self.brightness = "neutral"
+        self.brightness = "complex_others"
 
         # Color grading description
         self.color_grading_description = ""
 
         # Scene type options
         # Options: "interior", "exterior", "unrealistic_synthetic", "complex_others"
-        self.scene_type = "interior"
+        self.scene_type = "complex_others"
 
         # Major light sources
-        self.sunlight_source = False
-        self.moonlight_starlight_source = False
-        self.firelight_source = False
-        self.artificial_light_source = False
-        self.non_visible_light_source = False
-        self.abstract_light_source = False
-        self.complex_light_source = False
+        self.sunlight_source = None
+        self.moonlight_starlight_source = None
+        self.firelight_source = None
+        self.artificial_light_source = None
+        self.non_visible_light_source = None
+        self.abstract_light_source = None
+        self.complex_light_source = None
 
         # Sunlight level
         self.sunlight_level = "unknown"  # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
 
         # Light quality
-        self.light_quality = "soft_diffused_light"  # Options: "hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"
+        self.light_quality = "complex_others"  # Options: "hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"
 
         # Lighting setup description
         self.lighting_setup_description = ""
@@ -44,90 +44,90 @@ class LightingSetupData:
         self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"
 
         # Direction of major light on subject
-        self.subject_back_light = False
-        self.subject_front_light = False
-        self.subject_top_light = False
-        self.subject_bottom_light = False
-        self.subject_side_light = False
-        self.subject_ambient_light = False
+        self.subject_back_light = None
+        self.subject_front_light = None
+        self.subject_top_light = None
+        self.subject_bottom_light = None
+        self.subject_side_light = None
+        self.subject_ambient_light = None
 
         # Special lighting effects on subject
-        self.portrait_lighting = False
-        self.rembrandt_lighting = False
+        self.portrait_lighting = None
+        self.rembrandt_lighting = None
         # below two are actually not dependent on whether the subject is present or not
-        self.silhouette = False
-        self.rim_light = False
+        self.silhouette = None
+        self.rim_light = None
 
         # Subject lighting description
         self.subject_lighting_description = ""
 
         # Lens and optical effects
-        self.lens_flares_regular = False
-        self.lens_flares_anamorphic = False
-        self.mist_diffusion = False
-        self.bokeh = False
+        self.lens_flares_regular = None
+        self.lens_flares_anamorphic = None
+        self.mist_diffusion = None
+        self.bokeh = None
 
         # Reflection lights
-        self.reflection_from_water = False
-        self.reflection_from_glossy_surface = False
-        self.reflection_from_mirror = False
+        self.reflection_from_water = None
+        self.reflection_from_glossy_surface = None
+        self.reflection_from_mirror = None
 
         # Special natural lighting effects
-        self.aerial_perspective = False
-        self.rainbow = False
-        self.aurora = False
-        self.heat_haze = False
-        self.lightning = False
+        self.aerial_perspective = None
+        self.rainbow = None
+        self.aurora = None
+        self.heat_haze = None
+        self.lightning = None
 
         # Special lighting effects on the scene
-        self.colored_neon_lighting = False
-        self.headlight_flashlight = False
-        self.vignette = False
-        self.water_caustics = False
-        self.city_light = False
-        self.street_light = False
+        self.colored_neon_lighting = None
+        self.headlight_flashlight = None
+        self.vignette = None
+        self.water_caustics = None
+        self.city_light = None
+        self.street_light = None
 
         # Special lighting effects description
         self.special_lighting_description = ""
 
         # Volumetric lighting types
-        self.volumetric_beam_light = False
-        self.volumetric_spot_light = False
-        self.god_rays = False
-        self.light_through_medium = False
-        self.volumetric_light_others = False
+        self.volumetric_beam_light = None
+        self.volumetric_spot_light = None
+        self.god_rays = None
+        self.light_through_medium = None
+        self.volumetric_light_others = None
 
         # Volumetric lighting description
         self.volumetric_lighting_description = ""
 
         # Shadow pattern or Gobo lighting
-        self.venetian_blinds = False
-        self.subject_shape = False
-        self.window_frames = False
-        self.foliage = False
-        self.shadow_patterns_gobo_others = False
+        self.venetian_blinds = None
+        self.subject_shape = None
+        self.window_frames = None
+        self.foliage = None
+        self.shadow_patterns_gobo_others = None
 
         # Shadow pattern description
         self.shadow_pattern_description = ""
 
         # Lighting dynamics
-        self.color_shifting_smooth = False
-        self.color_shifting_sudden = False
-        self.pulsing_flickering = False
-        self.flashing = False
-        self.moving_light = False
+        self.color_shifting_smooth = None
+        self.color_shifting_sudden = None
+        self.pulsing_flickering = None
+        self.flashing = None
+        self.moving_light = None
 
         # Lighting dynamics description
         self.lighting_dynamics_description = ""
 
         # Dynamic effects
-        self.revealing_shot = False
-        self.transformation_morphing = False
-        self.levitation_floating = False
-        self.explosion = False
-        self.shattering_breaking = False
-        self.diffusion = False
-        self.splashing_waves = False
+        self.revealing_shot = None
+        self.transformation_morphing = None
+        self.levitation_floating = None
+        self.explosion = None
+        self.shattering_breaking = None
+        self.diffusion = None
+        self.splashing_waves = None
 
     def set_lighting_setup_attributes(self):
         self._set_color_grading_attributes()
@@ -140,7 +140,17 @@ class LightingSetupData:
     def _set_color_grading_attributes(self):
         attributes = [
             "is_color_grading_complex", "is_black_white",
-            "is_brighter_than_normal", "is_darker_than_normal"
+            "is_brighter_than_normal", "is_darker_than_normal",
+            "color_temperature_is_warm", "color_temperature_is_cool", "color_temperature_is_neutral",
+            "color_temperature_is_complex_changing", "color_temperature_is_complex_contrasting",
+            "color_temperature_is_complex_others",
+            "color_saturation_is_high", "color_saturation_is_low", "color_saturation_is_neutral",
+            "color_saturation_is_complex_changing", "color_saturation_is_complex_contrasting",
+            "color_saturation_is_complex_others",
+            "brightness_is_very_bright", "brightness_is_bright", "brightness_is_neutral",
+            "brightness_is_dark", "brightness_is_very_dark",
+            "brightness_is_complex_changing", "brightness_is_complex_contrasting",
+            "brightness_is_complex_others"
         ]
 
         if self.shot_transition:
@@ -211,8 +221,25 @@ class LightingSetupData:
         self.brightness_is_complex_others = self.brightness == "complex_others"
 
     def _set_lighting_setup_attributes(self):
+        attributes = [
+            "is_lighting_setup_complex", "is_lighting_quality_complex",
+            "scene_type_is_complex_others", "scene_type_is_exterior",
+            "scene_type_is_interior", "scene_type_is_synthetic",
+            "sunlight_level_is_normal", "sunlight_level_is_sunny",
+            "sunlight_level_is_overcast", "sunlight_level_is_sunset_sunrise",
+            "sunlight_level_is_unknown", "light_quality_is_soft",
+            "light_quality_is_hard", "light_quality_is_changing",
+            "light_quality_is_contrasting", "light_quality_is_complex",
+            "light_quality_is_complex", "subject_light_contrast_is_high",
+            "subject_light_contrast_is_normal", "subject_light_contrast_is_minimal",
+            "subject_light_contrast_is_complex", "flat_lighting", "low_key_lighting",
+            "high_key_lighting", "direction_is_back_light", "direction_is_front_light",
+            "direction_is_top_light", "direction_is_bottom_light", "direction_is_side_light",
+            "direction_is_ambient_light", "direction_is_front_side", "direction_is_rear_side"
+        ]
         if self.shot_transition:
-            self.is_lighting_setup_complex = None
+            for attr in attributes:
+                setattr(self, attr, None)
             return
         self.is_lighting_quality_complex = self.light_quality in {"complex_changing", "complex_contrasting", "complex_others"}
         self.scene_type_is_complex_others = self.scene_type == "complex_others"
@@ -246,8 +273,17 @@ class LightingSetupData:
         self.light_quality_is_complex = self.light_quality == "complex_others"
 
     def _set_subject_lighting_attributes(self):
+        attributes = [
+            "is_subject_lighting_applicable", "subject_light_contrast_is_high",
+            "subject_light_contrast_is_normal", "subject_light_contrast_is_minimal",
+            "subject_light_contrast_is_complex", "flat_lighting", "low_key_lighting",
+            "high_key_lighting", "direction_is_back_light", "direction_is_front_light",
+            "direction_is_top_light", "direction_is_bottom_light", "direction_is_side_light",
+            "direction_is_ambient_light", "direction_is_front_side", "direction_is_rear_side"
+        ]
         if self.shot_transition:
-            self.is_subject_lighting_applicable = None
+            for attr in attributes:
+                setattr(self, attr, None)
             return
         self.is_subject_lighting_applicable = self.subject_contrast_ratio != "unknown"
 

@@ -8,13 +8,13 @@ FOCUS_PLANES = ["foreground", "middle_ground", "background"]
 class CameraSetupData:
     def __init__(self):
         # Shot transition options
-        self.shot_transition = False # Boolean: True or False
+        self.shot_transition = None # Boolean: True or False
         
         # Lens distortion options
         self.lens_distortion = "regular"  # Options: "regular", "barrel", "fisheye"
         
         # Presence of text or watermarks
-        self.has_overlays = False # Boolean: True or False
+        self.has_overlays = None # Boolean: True or False
 
         # Video speed options
         # Options: "time_lapse", "fast_motion", "regular", "slow_motion", 
@@ -91,7 +91,9 @@ class CameraSetupData:
         self.motion_description = "**{NO DESCRIPTION FOR SUBJECT MOTION YET}**"
         self.spatial_description = "**{NO DESCRIPTION FOR SPATIAL FRAMING YET}**"
         self.camera_description = "**{NO DESCRIPTION FOR CAMERA FRAMING YET}**"
-        
+        self.color_description = "**{NO DESCRIPTION FOR COLOR YET}**"
+        self.lighting_description = "**{NO DESCRIPTION FOR LIGHTING YET}**"
+        self.lighting_effect_description = "**{NO DESCRIPTION FOR LIGHTING EFFECTS YET}**"
     
     def set_camera_setup_attributes(self):
         self._set_point_of_view()
