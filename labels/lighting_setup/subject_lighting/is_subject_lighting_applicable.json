@@ -27,8 +27,8 @@
         "A shot where subject contrast is distinct and measurable.",
         "A video where lighting on the subject is applicable for contrast assessment."
     ],
-    "pos_rule_str": "self.is_subject_lighting_applicable is True",
-    "neg_rule_str": "self.is_subject_lighting_applicable is False",
+    "pos_rule_str": "self.lighting_setup.is_subject_lighting_applicable is True",
+    "neg_rule_str": "self.lighting_setup.is_subject_lighting_applicable is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

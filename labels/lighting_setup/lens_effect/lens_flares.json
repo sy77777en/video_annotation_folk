@@ -27,8 +27,8 @@
         "A composition where highlights interact with the lens to create optical flares.",
         "A video featuring both regular circular and anamorphic horizontal lens flares."
     ],
-    "pos_rule_str": "self.lens_flares is True",
-    "neg_rule_str": "self.lens_flares is False",
+    "pos_rule_str": "self.lighting_setup.lens_flares is True",
+    "neg_rule_str": "self.lighting_setup.lens_flares is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

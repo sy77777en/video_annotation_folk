@@ -15,8 +15,8 @@
         "The video shows noticeable changes in color saturation over time, shifting between high and low.",
         "The video has noticeable shifts and contrasts in color saturation."
     ],
-    "pos_rule_str": "self.lighting_setup.color_saturation_is_complex_complex_others is True",
-    "neg_rule_str": "self.lighting_setup.color_saturation_is_complex_complex_others is False",
+    "pos_rule_str": "self.lighting_setup.color_saturation_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.color_saturation_is_complex_others is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }
