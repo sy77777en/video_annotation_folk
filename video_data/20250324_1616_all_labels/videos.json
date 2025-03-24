@@ -343,7 +343,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "unknown",
@@ -361,7 +362,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -685,7 +687,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "high_angle",
@@ -704,7 +707,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "non_human"
+            "shot_type": "non_human",
+            "shot_transition": false
         }
     },
     {
@@ -842,7 +846,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -860,7 +865,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -1001,7 +1007,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -1024,7 +1031,8 @@
             "complex_shot_type": "description",
             "shot_size_description": "The scene starts with a medium close-up shot focus on one woman, with the camera zooming out to reveal two women in a medium shot.",
             "shot_size_description_type": "others",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -1162,7 +1170,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_end": "unknown",
@@ -1181,7 +1190,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "non_human"
+            "shot_type": "non_human",
+            "shot_transition": false
         }
     },
     {
@@ -1885,7 +1895,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -1904,7 +1915,8 @@
             "overall_height_end": "overhead_level",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -2049,7 +2061,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "The handheld camera looks down at a car from behind and to the right. It slowly moves closer, slightly panning left to keep focus on the person inside the vehicle.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "lens_distortion": "regular",
@@ -2068,7 +2081,8 @@
             "camera_focus": "shallow_focus",
             "focus_plane_start": "foreground",
             "focus_plane_end": "unknown",
-            "shot_type": "non_human"
+            "shot_type": "non_human",
+            "shot_transition": false
         }
     },
     {
@@ -2208,7 +2222,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "Camera motion is unclear due to the lack of background cues.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "slow_motion",
@@ -2227,7 +2242,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "ultra_shallow_focus",
             "focus_plane_start": "foreground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -2370,7 +2386,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -2389,7 +2406,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "complex_shot_type": "unknown",
-            "shot_type": "complex"
+            "shot_type": "complex",
+            "shot_transition": false
         }
     },
     {
@@ -2622,7 +2640,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -2641,7 +2660,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "ultra_shallow_focus",
             "focus_plane_start": "middle_ground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -2783,7 +2803,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "at_subject",
@@ -2803,7 +2824,8 @@
             "focus_plane_start": "foreground",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "different_subject_in_focus"
+            "complex_shot_type": "different_subject_in_focus",
+            "shot_transition": false
         }
     },
     {
@@ -3039,7 +3061,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "The camera slightly rolls counter-clockwise, then gradually tilts down while panning right. Once the view returns to horizontal, it subtly moves backward.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -3058,7 +3081,8 @@
             "focus_plane_end": "unknown",
             "focus_plane_start": "unknown",
             "shot_type": "change_of_subject",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -3384,7 +3408,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -3408,7 +3433,8 @@
             "complex_shot_type": "description",
             "shot_size_description_type": "others",
             "shot_size_description": "The video begins with a wide shot of a man standing on a balcony, captured from a low angle. The camera swiftly tilts down to reveal a group of people below",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -3745,7 +3771,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "at_subject",
@@ -3764,7 +3791,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "human"
+            "shot_type": "human",
+            "shot_transition": false
         }
     },
     {
@@ -3999,7 +4027,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "first_person",
@@ -4018,7 +4047,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "unknown"
+            "complex_shot_type": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -4161,7 +4191,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -4180,7 +4211,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "many_subject_no_focus"
+            "complex_shot_type": "many_subject_no_focus",
+            "shot_transition": false
         }
     },
     {
@@ -4318,7 +4350,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -4337,7 +4370,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "unknown"
+            "complex_shot_type": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -4477,7 +4511,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "The camera smoothly trucks right to show a woman doing push-ups and slightly pans left at the end.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -4496,7 +4531,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "shallow_focus",
             "focus_plane_start": "foreground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -4914,7 +4950,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "unknown",
@@ -4932,7 +4969,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -5266,7 +5304,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "unknown",
@@ -5285,7 +5324,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "human"
+            "shot_type": "human",
+            "shot_transition": false
         }
     },
     {
@@ -5520,7 +5560,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -5540,7 +5581,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -5684,7 +5726,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -5706,7 +5749,8 @@
             "shot_type": "complex",
             "complex_shot_type": "description",
             "shot_size_description_type": "others",
-            "shot_size_description": "The video shows a passenger boat on a river. It begins with an extreme wide shot from above and behind the boat. The camera then arcs around it while descending in altitude. The video ends with a wide shot from the front, showing the boat\u2019s bow and a person seated there."
+            "shot_size_description": "The video shows a passenger boat on a river. It begins with an extreme wide shot from above and behind the boat. The camera then arcs around it while descending in altitude. The video ends with a wide shot from the front, showing the boat\u2019s bow and a person seated there.",
+            "shot_transition": false
         }
     },
     {
@@ -5845,7 +5889,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "unknown",
@@ -5863,7 +5908,8 @@
             "camera_focus": "shallow_focus",
             "focus_plane_start": "foreground",
             "focus_plane_end": "unknown",
-            "shot_type": "change_of_subject"
+            "shot_type": "change_of_subject",
+            "shot_transition": false
         }
     },
     {
@@ -6008,7 +6054,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -6028,7 +6075,8 @@
             "camera_focus": "shallow_focus",
             "focus_plane_start": "foreground",
             "focus_plane_end": "unknown",
-            "complex_shot_type": "different_subject_in_focus"
+            "complex_shot_type": "different_subject_in_focus",
+            "shot_transition": false
         }
     },
     {
@@ -6263,7 +6311,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "The camera trucks left while panning left to keep focusing on children's running feet.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -6284,7 +6333,8 @@
             "focus_plane_end": "unknown",
             "shot_type": "complex",
             "complex_shot_type": "different_subject_in_focus",
-            "camera_focus_description": "The video is too blurry and has too much motion blur to determine the type of camera focus."
+            "camera_focus_description": "The video is too blurry and has too much motion blur to determine the type of camera focus.",
+            "shot_transition": false
         }
     },
     {
@@ -6429,7 +6479,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "Camera motion is unclear due to the lack of background cues.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -6450,7 +6501,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "camera_focus_description": "The video is too blurry to determine the camera focus.",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -6592,7 +6644,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -6610,7 +6663,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -6933,7 +6987,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -6953,7 +7008,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "complex_shot_type": "different_subject_in_focus"
+            "complex_shot_type": "different_subject_in_focus",
+            "shot_transition": false
         }
     },
     {
@@ -7402,7 +7458,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "at_subject",
@@ -7421,7 +7478,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "shallow_focus",
             "focus_plane_start": "foreground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -7563,7 +7621,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_end": "unknown",
@@ -7582,7 +7641,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -7823,7 +7883,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -7842,7 +7903,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "unknown"
+            "complex_shot_type": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -8079,7 +8141,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -8100,7 +8163,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_size_description": "The video opens with a wide shot of a neoclassical domed building surrounded by ornate columns. The camera swiftly dollies forward and tilts upward, focusing on a statue of a man atop the triangular pediment."
+            "shot_size_description": "The video opens with a wide shot of a neoclassical domed building surrounded by ornate columns. The camera swiftly dollies forward and tilts upward, focusing on a statue of a man atop the triangular pediment.",
+            "shot_transition": false
         }
     },
     {
@@ -8425,7 +8489,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -8444,7 +8509,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "non_human"
+            "shot_type": "non_human",
+            "shot_transition": false
         }
     },
     {
@@ -8688,7 +8754,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_end": "unknown",
@@ -8707,7 +8774,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -8848,7 +8916,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -8867,7 +8936,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "unknown"
+            "complex_shot_type": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -9009,7 +9079,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "camera_roll": "no"
+            "camera_roll": "no",
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -9030,7 +9101,8 @@
             "focus_plane_start": "foreground",
             "focus_plane_end": "middle_ground",
             "complex_shot_type": "different_subject_in_focus",
-            "focus_change_reason": "rack_focus"
+            "focus_change_reason": "rack_focus",
+            "shot_transition": false
         }
     },
     {
@@ -9354,7 +9426,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "above_subject",
@@ -9374,7 +9447,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "shallow_focus",
             "focus_plane_start": "middle_ground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -9519,7 +9593,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -9538,7 +9613,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -9681,7 +9757,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_end": "unknown",
@@ -9699,7 +9776,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -9934,7 +10012,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -9957,7 +10036,8 @@
             "focus_plane_end": "unknown",
             "shot_size_description": "The clip begins with a full shot of a man in a white robe walking toward the camera. As he gets closer, his head moves out of the frame. He then kneels, and the shot transitions back to a full-body view of him in a kneeling posture.",
             "shot_size_description_type": "others",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -10202,7 +10282,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "level_angle",
@@ -10220,7 +10301,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "shallow_focus",
             "focus_plane_start": "middle_ground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -10368,7 +10450,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -10387,7 +10470,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -10532,7 +10616,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "lens_distortion": "regular",
@@ -10551,7 +10636,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "unknown",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -10790,7 +10876,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "high_angle",
@@ -10810,7 +10897,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "clear_subject_atypical"
+            "complex_shot_type": "clear_subject_atypical",
+            "shot_transition": false
         }
     },
     {
@@ -10949,7 +11037,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -10968,7 +11057,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -11106,7 +11196,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -11124,7 +11215,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -11268,7 +11360,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "high_angle",
@@ -11288,7 +11381,8 @@
             "focus_plane_start": "foreground",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "clear_subject_atypical"
+            "complex_shot_type": "clear_subject_atypical",
+            "shot_transition": false
         }
     },
     {
@@ -11493,7 +11587,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": true,
@@ -11513,7 +11608,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "clear_subject_atypical"
+            "complex_shot_type": "clear_subject_atypical",
+            "shot_transition": false
         }
     },
     {
@@ -11652,7 +11748,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -11671,7 +11768,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "unknown",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -11804,7 +11902,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -11823,7 +11922,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -11957,7 +12057,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "The drone camera flies forward, smoothly rolling clockwise and panning rightward, showcasing advanced maneuvers.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -11975,7 +12076,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -12109,7 +12211,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "at_subject",
@@ -12129,7 +12232,8 @@
             "focus_plane_start": "middle_ground",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "different_subject_in_focus"
+            "complex_shot_type": "different_subject_in_focus",
+            "shot_transition": false
         }
     },
     {
@@ -12264,7 +12368,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "unknown",
@@ -12284,7 +12389,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -12420,7 +12526,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "high_angle",
@@ -12439,7 +12546,8 @@
             "overall_height_end": "ground_level",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -12575,7 +12683,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -12595,7 +12704,8 @@
             "focus_plane_start": "background",
             "focus_plane_end": "foreground",
             "shot_type": "human",
-            "focus_change_reason": "rack_focus"
+            "focus_change_reason": "rack_focus",
+            "shot_transition": false
         }
     },
     {
@@ -12735,7 +12845,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -12754,7 +12865,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "unknown",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -12891,7 +13003,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -12911,7 +13024,8 @@
             "focus_plane_end": "unknown",
             "shot_type": "complex",
             "complex_shot_type": "unknown",
-            "camera_angle_description": "The initial frame is a slight upside-down high-angle shot. The ending frame is a bird's eye shot."
+            "camera_angle_description": "The initial frame is a slight upside-down high-angle shot. The ending frame is a bird's eye shot.",
+            "shot_transition": false
         }
     },
     {
@@ -13046,7 +13160,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_end": "unknown",
@@ -13065,7 +13180,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "unknown"
+            "complex_shot_type": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -13201,7 +13317,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "lens_distortion": "regular",
@@ -13220,7 +13337,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "unknown"
+            "complex_shot_type": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -13356,7 +13474,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -13375,7 +13494,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -13607,7 +13727,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -13629,7 +13750,8 @@
             "subject_height_description": "It appears to be a 2D video, making it hard to determine the camera height relative to the subject.",
             "overall_height_description": "It appears to be a 2D video, making it hard to determine the camera height relative.",
             "camera_angle_description": "It appears to be a 2D video, making it hard to determine the camera angle.",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -13762,7 +13884,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -13781,7 +13904,8 @@
             "camera_focus": "ultra_shallow_focus",
             "focus_plane_start": "foreground",
             "focus_plane_end": "unknown",
-            "shot_type": "human"
+            "shot_type": "human",
+            "shot_transition": false
         }
     },
     {
@@ -13914,7 +14038,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -13932,7 +14057,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -14069,7 +14195,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "at_subject",
@@ -14088,7 +14215,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "shallow_focus",
             "focus_plane_start": "foreground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -14313,7 +14441,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -14332,7 +14461,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -14530,7 +14660,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_pov": "third_person_full_body",
@@ -14550,7 +14681,8 @@
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
             "shot_type": "complex",
-            "complex_shot_type": "clear_subject_atypical"
+            "complex_shot_type": "clear_subject_atypical",
+            "shot_transition": false
         }
     },
     {
@@ -14685,7 +14817,8 @@
             "motion_blur": false,
             "cinemagraph": false,
             "complex_motion_description": "The camera moves forward while panning right to maintain focus on the walking man.",
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "subject_height_start": "at_subject",
@@ -14704,7 +14837,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "human"
+            "shot_type": "human",
+            "shot_transition": false
         }
     },
     {
@@ -14840,7 +14974,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "has_overlays": false,
@@ -14858,7 +14993,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -15090,7 +15226,8 @@
             "frame_freezing": false,
             "dolly_zoom": false,
             "motion_blur": false,
-            "cinemagraph": false
+            "cinemagraph": false,
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_end": "unknown",
@@ -15109,7 +15246,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -15243,7 +15381,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "lens_distortion": "regular",
@@ -15262,7 +15401,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "shallow_focus",
             "focus_plane_start": "middle_ground",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -15399,7 +15539,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "dutch_angle": "no",
@@ -15417,7 +15558,8 @@
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
             "focus_plane_end": "unknown",
-            "shot_type": "scenery"
+            "shot_type": "scenery",
+            "shot_transition": false
         }
     },
     {
@@ -15643,7 +15785,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -15664,7 +15807,8 @@
             "camera_focus": "shallow_focus",
             "focus_plane_start": "middle_ground",
             "focus_plane_end": "unknown",
-            "focus_change_reason": "no_change"
+            "focus_change_reason": "no_change",
+            "shot_transition": false
         }
     },
     {
@@ -15800,7 +15944,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "video_speed": "regular",
@@ -15818,7 +15963,8 @@
             "overall_height_end": "unknown",
             "camera_focus": "deep_focus",
             "focus_plane_end": "unknown",
-            "focus_plane_start": "unknown"
+            "focus_plane_start": "unknown",
+            "shot_transition": false
         }
     },
     {
@@ -15955,7 +16101,8 @@
             "dolly_zoom": false,
             "motion_blur": false,
             "cinemagraph": false,
-            "tracking_shot_types": []
+            "tracking_shot_types": [],
+            "shot_transition": false
         },
         "cam_setup": {
             "camera_angle_start": "level_angle",
@@ -15973,7 +16120,8 @@
             "overall_height_end": "eye_level",
             "camera_focus": "deep_focus",
             "focus_plane_start": "unknown",
-            "focus_plane_end": "unknown"
+            "focus_plane_end": "unknown",
+            "shot_transition": false
         }
     }
 ]
