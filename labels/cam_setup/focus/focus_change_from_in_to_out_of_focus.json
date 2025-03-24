@@ -27,8 +27,8 @@
         "A video where a clear scene progressively becomes unfocused.",
         "A scene where the focus starts sharp but gradually blurs over time."
     ],
-    "pos_rule_str": "self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.focus_info['end'] == 'out_of_focus' and self.cam_setup.is_rack_pull_focus",
-    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.focus_change_from_in_to_out_of_focus is True",
+    "neg_rule_str": "self.cam_setup.focus_change_from_in_to_out_of_focus is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

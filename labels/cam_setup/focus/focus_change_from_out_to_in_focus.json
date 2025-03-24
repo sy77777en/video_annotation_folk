@@ -27,8 +27,8 @@
         "A video where an initially unclear scene gradually resolves into in focus.",
         "A scene where the focus shifts from an out-of-focus blur to a subject in focus."
     ],
-    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.is_rack_pull_focus",
-    "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background', 'unknown'])",
+    "pos_rule_str": "self.cam_setup.focus_change_from_out_to_in_focus is True",
+    "neg_rule_str": "self.cam_setup.focus_change_from_out_to_in_focus is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -35,13 +35,13 @@
         "A shot where the camera moves alongside the subject’s movement.",
         "A scene where the tracking shot is achieved purely through lateral movement."
     ],
-    "pos_rule_str": "self.cam_motion.tracking_shot_types == ['side']",
-    "neg_rule_str": "'side' not in self.cam_motion.tracking_shot_types",
+    "pos_rule_str": "self.cam_motion.side_tracking_shot is True",
+    "neg_rule_str": "self.cam_motion.side_tracking_shot is False",
     "easy_neg_rule_str": {
-        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+        "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
     },
     "hard_neg_rule_str": {
-        "other_tracking_shots": "self.cam_motion.is_tracking and not 'side' in self.cam_motion.tracking_shot_types",
-        "pan_tracking_shot": "'pan' in self.cam_motion.tracking_shot_types and not 'side' in self.cam_motion.tracking_shot_types"
+        "other_tracking_shots_than_side": "self.cam_motion.other_tracking_shots_than_side is True",
+        "pan_but_not_side_tracking_shot": "self.cam_motion.pan_but_not_side_tracking_shot is True"
     }
 }

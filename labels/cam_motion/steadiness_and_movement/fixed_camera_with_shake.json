@@ -39,14 +39,14 @@
       "A video where the camera is not entirely steady.",
       "A video where the camera is locked but not perfectly stable."
     ],
-    "pos_rule_str": "self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']",
-    "neg_rule_str": "self.cam_motion.steadiness in ['static', 'very_smooth'] or (self.cam_motion.steadiness in ['smooth', 'unsteady', 'very_unsteady'] and self.cam_motion.camera_movement not in ['no', 'minor'])",
+    "pos_rule_str": "self.cam_motion.fixed_camera_with_shake is True",
+    "neg_rule_str": "self.cam_motion.fixed_camera_with_shake is False",
     "easy_neg_rule_str": {
-      "not_fixed_camera": "self.cam_motion.steadiness in ['static', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']"
+      "not_fixed_camera": "self.cam_motion.not_fixed_camera is True"
     },
     "hard_neg_rule_str": {
-      "fixed_without_shaking": "self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']",
-      "shaky_camera_that_moves": "self.cam_motion.steadiness in ['smooth', 'unsteady', 'very_unsteady'] and self.cam_motion.camera_movement not in ['no', 'minor']"
+      "fixed_without_shaking": "self.cam_motion.fixed_without_shaking is True",
+      "shaky_camera_that_moves": "self.cam_motion.shaky_camera_that_moves is True"
     }
   }
   

@@ -17,8 +17,8 @@
         "A scene with movement that is faster than normal speed.",
         "A video where motion is enhanced by speed-up effects."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed in ['fast_motion', 'time_lapse']",
-    "neg_rule_str": "self.cam_setup.video_speed not in ['fast_motion', 'time_lapse', 'speed_ramp', 'time_reversed']",
+    "pos_rule_str": "self.cam_setup.fast_motion is True",
+    "neg_rule_str": "self.cam_setup.fast_motion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

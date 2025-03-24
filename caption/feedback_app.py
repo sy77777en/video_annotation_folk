@@ -86,7 +86,8 @@ def login_page(args):
 def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
     video_data_dict = json_to_video_data(video_data_file, label_collections=label_collections)
     for video_data in video_data_dict.values():
-        video_data.cam_motion.update()
+        if hasattr(video_data, "cam_setup"):
+            video_data.cam_motion.update()
         if hasattr(video_data, "cam_setup"):
             video_data.cam_setup.update()
             if getattr(video_data.cam_setup, "subject_description", None) is None:
@@ -105,6 +106,8 @@ def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup
                 video_data.cam_setup.lighting_description = "**{NO DESCRIPTION FOR LIGHTING SETUP YET}**"
             if getattr(video_data.cam_setup, "lighting_effects_description", None) is None:
                 video_data.cam_setup.lighting_effects_description = "**{NO DESCRIPTION FOR LIGHTING EFFECTS YET}**"
+        if hasattr(video_data, "lighting_setup"):
+            video_data.lighting_setup.update()
     return video_data_dict
 
 
@@ -383,7 +386,7 @@ def main(args, caption_programs):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_config_id
-                if key not in ['api_key', 'last_config_id']:
+                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls_file']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -424,7 +427,7 @@ def main(args, caption_programs):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_video_id
-                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id']:
+                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'file_check_passed', 'logged_in', 'video_urls_file']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -484,7 +487,7 @@ def main(args, caption_programs):
                     st.session_state.last_video_id = get_video_id(video_urls[current_index - 1])
                     # Reset relevant state variables
                     keys_to_remove = [key for key in st.session_state if key not in 
-                                    ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video']]
+                                    ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file']]
                     for key in keys_to_remove:
                         if key in st.session_state:
                             del st.session_state[key]
@@ -502,7 +505,7 @@ def main(args, caption_programs):
                     st.session_state.last_video_id = get_video_id(video_urls[current_index + 1])
                     # Reset relevant state variables
                     keys_to_remove = [key for key in st.session_state if key not in 
-                                    ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video']]
+                                    ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file']]
                     for key in keys_to_remove:
                         if key in st.session_state:
                             del st.session_state[key]

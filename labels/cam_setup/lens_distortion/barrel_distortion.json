@@ -1,0 +1,30 @@
+{
+    "label": "With Lens Distortion",
+    "label_name": "barrel_distortion",
+    "def_question": [
+        "Does this shot contain noticeable yet slight barrel distortion?",
+        "Does this shot contain slight barrel distortion?",
+        "Does this shot show any slight barrel distortion?"
+    ],
+    "alt_question": [
+        "Is there any slight warping or bending effect in this scene?",
+        "Is this video captured using a lens that slightly distorts the perspective?",
+        "Is the frame slightly bending or curving due to lens effects?",
+        "Does the perspective appear slightly exaggerated or stretched?"
+    ],
+    "def_prompt": [
+        "A shot captured with noticeable yet slight barrel distortion.",
+        "A video with visible slight barrel distortion.",
+        "A scene with slight barrel distortion."
+    ],
+    "alt_prompt": [
+        "A video where the frame appears slightly warped due to lens effects.",
+        "A shot where the edges appear slightly curved or stretched.",
+        "A perspective altered by slight barrel distortion.",
+        "A scene with an exaggerated field of view due to slight barrel distortion."
+    ],
+    "pos_rule_str": "self.cam_setup.barrel_distortion is True",
+    "neg_rule_str": "self.cam_setup.barrel_distortion is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

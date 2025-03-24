@@ -37,12 +37,12 @@
         "A shot where the camera adjusts its movement to frame the subject larger.",
         "A scene where the subject’s presence in the frame grows as the shot continues."
     ],
-    "pos_rule_str": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger'",
-    "neg_rule_str": "not (self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger')",
+    "pos_rule_str": "self.cam_motion.tracking_subject_larger_size is True",
+    "neg_rule_str": "self.cam_motion.tracking_subject_larger_size is False",
     "easy_neg_rule_str": {
-        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+        "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
     },
     "hard_neg_rule_str": {
-        "subject_gets_smaller_or_same": "self.cam_motion.is_tracking and self.cam_motion.subject_size_change != 'larger'"
+        "tracking_subject_gets_smaller_or_same": "self.cam_motion.tracking_subject_gets_smaller_or_same is True"
     }
 }

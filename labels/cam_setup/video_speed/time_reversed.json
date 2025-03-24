@@ -17,8 +17,8 @@
         "A video where all actions appear to happen in reverse.",
         "A scene where objects and motion follow a backward timeline."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed == 'time_reversed'",
-    "neg_rule_str": "self.cam_setup.video_speed not in ['time_reversed', 'speed_ramp', 'time_lapse']",
+    "pos_rule_str": "self.cam_setup.time_reversed is True",
+    "neg_rule_str": "self.cam_setup.time_reversed is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

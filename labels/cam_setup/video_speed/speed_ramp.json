@@ -17,8 +17,8 @@
         "A video featuring smooth transitions between fast and slow speeds.",
         "A scene that changes playback speed to enhance action or pacing."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed == 'speed_ramp'",
-    "neg_rule_str": "self.cam_setup.video_speed != 'speed_ramp'",
+    "pos_rule_str": "self.cam_setup.speed_ramp is True",
+    "neg_rule_str": "self.cam_setup.speed_ramp is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

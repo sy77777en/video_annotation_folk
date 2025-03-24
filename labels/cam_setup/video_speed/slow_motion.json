@@ -18,8 +18,8 @@
         "A video where time appears stretched due to reduced playback speed.",
         "A scene captured in slow-motion, emphasizing small details in movement."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed == 'slow_motion'",
-    "neg_rule_str": "self.cam_setup.video_speed not in ['slow_motion', 'speed_ramp', 'time_reversed']",
+    "pos_rule_str": "self.cam_setup.slow_motion is True",
+    "neg_rule_str": "self.cam_setup.slow_motion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

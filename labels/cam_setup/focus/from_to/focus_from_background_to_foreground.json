@@ -27,7 +27,7 @@
         "A video showing a deliberate shift in focus from background to foreground.",
         "A scene where the focus transitions smoothly from background to foreground."
     ],
-    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus is True",
     "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['background', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}

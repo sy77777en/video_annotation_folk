@@ -22,8 +22,8 @@
         "A perspective without bending or warping effects.",
         "A natural-looking shot without any lens artifacts."
     ],
-    "pos_rule_str": "self.cam_setup.lens_distortion == 'regular'",
-    "neg_rule_str": "self.cam_setup.lens_distortion != 'regular'",
+    "pos_rule_str": "self.cam_setup.no_lens_distortion is True",
+    "neg_rule_str": "self.cam_setup.no_lens_distortion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

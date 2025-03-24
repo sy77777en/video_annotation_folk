@@ -23,8 +23,8 @@
         "A perspective altered by lens-induced warping.",
         "A scene with an exaggerated field of view due to lens distortion."
     ],
-    "pos_rule_str": "self.cam_setup.lens_distortion in ['barrel', 'fisheye']",
-    "neg_rule_str": "self.cam_setup.lens_distortion == 'regular'",
+    "pos_rule_str": "self.cam_setup.with_lens_distortion is True",
+    "neg_rule_str": "self.cam_setup.with_lens_distortion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

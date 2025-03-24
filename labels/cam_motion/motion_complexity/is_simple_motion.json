@@ -26,8 +26,8 @@
         "A shot demonstrating a basic and easily understandable camera movement.",
         "A scene where the camera follows a linear or predictable motion path."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement == 'major_simple'",
-    "neg_rule_str": "self.cam_motion.camera_movement != 'major_simple'",
+    "pos_rule_str": "self.cam_motion.is_simple_motion is True",
+    "neg_rule_str": "self.cam_motion.is_simple_motion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

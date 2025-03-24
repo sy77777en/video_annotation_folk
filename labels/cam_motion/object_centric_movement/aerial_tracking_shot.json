@@ -36,9 +36,9 @@
         "A video where the tracking movement keeps the camera above the action.",
         "A scene where the camera moves at an elevated position while following motion."
     ],
-    "pos_rule_str": "'aerial' in self.cam_motion.tracking_shot_types",
-    "neg_rule_str": "'aerial' not in self.cam_motion.tracking_shot_types",
+    "pos_rule_str": "self.cam_motion.aerial_tracking_shot is True",
+    "neg_rule_str": "self.cam_motion.aerial_tracking_shot is False",
     "easy_neg_rule_str": {
-        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+        "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
     }
 }

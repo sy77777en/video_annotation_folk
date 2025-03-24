@@ -17,8 +17,8 @@
         "A video showing motion at a natural, unmodified pace.",
         "A scene where time progresses at a normal rate."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed == 'regular'",
-    "neg_rule_str": "self.cam_setup.video_speed not in ['regular', 'stop_motion', 'time_reversed']",
+    "pos_rule_str": "self.cam_setup.regular_speed is True",
+    "neg_rule_str": "self.cam_setup.regular_speed is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

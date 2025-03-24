@@ -18,8 +18,8 @@
         "A video where clouds, crowds, or objects move unnaturally fast due to time-lapse.",
         "A scene with exaggerated speed, condensing long durations into seconds."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed == 'time_lapse'",
-    "neg_rule_str": "self.cam_setup.video_speed not in ['time_lapse', 'speed_ramp', 'time_reversed']",
+    "pos_rule_str": "self.cam_setup.time_lapse is True",
+    "neg_rule_str": "self.cam_setup.time_lapse is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {
         "fast_motion": "self.cam_setup.video_speed == 'fast_motion'"

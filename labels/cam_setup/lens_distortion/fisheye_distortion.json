@@ -21,8 +21,8 @@
         "A perspective heavily stretched near the frame edges.",
         "A video effect caused by an ultra-wide fisheye lens."
     ],
-    "pos_rule_str": "self.cam_setup.lens_distortion == 'fisheye'",
-    "neg_rule_str": "self.cam_setup.lens_distortion != 'fisheye'",
+    "pos_rule_str": "self.cam_setup.fisheye_distortion is True",
+    "neg_rule_str": "self.cam_setup.fisheye_distortion is False",
     "easy_neg_rule_str": {
         "no_lens_distortion": "self.cam_setup.lens_distortion == 'regular'"
     },

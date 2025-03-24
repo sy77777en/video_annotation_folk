@@ -36,7 +36,7 @@
       "A shot where the objects in the scene do not move.",
       "A scene where there is no dynamic motion within the frame."
     ],
-    "pos_rule_str": "self.cam_motion.scene_movement in ['static']",
-    "neg_rule_str": "self.cam_motion.scene_movement in ['mostly_static', 'dynamic']"
+    "pos_rule_str": "self.cam_motion.static_scene is True",
+    "neg_rule_str": "self.cam_motion.static_scene is False"
   }
   

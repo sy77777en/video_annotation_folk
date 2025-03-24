@@ -37,7 +37,7 @@
       "A video where the camera tracks or follows the subject at a slow speed.",
       "A video where the camera movement is gentle and unhurried."
     ],
-    "pos_rule_str": "(self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])) and self.cam_motion.camera_motion_speed == 'slow'",
-    "neg_rule_str": "(self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']) or (self.cam_motion.camera_movement in ['major_simple', 'major_complex'] and self.cam_motion.camera_motion_speed != 'slow')"
+    "pos_rule_str": "self.cam_motion.slow_moving_camera is True",
+    "neg_rule_str": "self.cam_motion.slow_moving_camera is False"
   }
   

@@ -1,6 +1,6 @@
 {
     "label": "Fast-Motion",
-    "label_name": "fast_motion",
+    "label_name": "fast_motion_without_time_lapse",
     "def_question": [
         "Is this video played at a slightly faster speed than real-time (e.g., 1x-3x)?"
     ],
@@ -17,8 +17,8 @@
         "A scene with movement that is subtly faster than normal speed.",
         "A video where motion is enhanced by slight speed-up effects."
     ],
-    "pos_rule_str": "self.cam_setup.video_speed == 'fast_motion'",
-    "neg_rule_str": "self.cam_setup.video_speed not in ['fast_motion', 'speed_ramp', 'time_reversed']",
+    "pos_rule_str": "self.cam_setup.fast_motion_without_time_lapse is True",
+    "neg_rule_str": "self.cam_setup.fast_motion_without_time_lapse is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {
         "time_lapse": "self.cam_setup.video_speed == 'time_lapse'"

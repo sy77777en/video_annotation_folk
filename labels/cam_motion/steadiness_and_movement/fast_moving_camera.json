@@ -41,7 +41,7 @@
       "A shot where the camera captures motion dynamically.",
       "A video where the camera's movement is swift and noticeable."
     ],
-    "pos_rule_str": "(self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])) and self.cam_motion.camera_motion_speed == 'fast'",
-    "neg_rule_str": "(self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']) or (self.cam_motion.camera_movement in ['major_simple', 'major_complex'] and self.cam_motion.camera_motion_speed != 'fast')"
+    "pos_rule_str": "self.cam_motion.fast_moving_camera is True",
+    "neg_rule_str": "self.cam_motion.fast_moving_camera is False"
   }
   

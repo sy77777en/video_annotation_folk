@@ -37,6 +37,6 @@
       "A video where the camera follows a character through the environment.",
       "A scene where the camera moves continuously to follow a subject."
     ],
-    "pos_rule_str": "self.cam_motion.is_tracking",
-    "neg_rule_str": "not self.cam_motion.is_tracking"
+    "pos_rule_str": "self.cam_motion.tracking_shot is True",
+    "neg_rule_str": "self.cam_motion.tracking_shot is False"
 }  

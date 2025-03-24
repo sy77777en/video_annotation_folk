@@ -30,6 +30,6 @@
     "A shot where subtle movements exist in an otherwise still scene.",
     "A video where minor object motion is present in a mostly static setting."
   ],
-  "pos_rule_str": "self.cam_motion.scene_movement in ['mostly_static', 'static']",
-  "neg_rule_str": "self.cam_motion.scene_movement in ['dynamic']"
+  "pos_rule_str": "self.cam_motion.mostly_static_scene is True",
+  "neg_rule_str": "self.cam_motion.mostly_static_scene is False"
 }

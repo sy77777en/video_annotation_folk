@@ -37,13 +37,13 @@
       "A shot where the camera glides through the scene without shaking.",
       "A video where the footage is stabilized and smooth."
     ],
-    "pos_rule_str": "self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']",
-    "neg_rule_str": "self.cam_motion.steadiness not in ['smooth', 'very_smooth'] or self.cam_motion.camera_movement in ['no']",
+    "pos_rule_str": "self.cam_motion.stable_camera_motion is True",
+    "neg_rule_str": "self.cam_motion.stable_camera_motion is False",
     "hard_neg_rule_str": {
-      "fixed_camera_without_motion": "self.cam_motion.steadiness in ['static'] or self.cam_motion.camera_movement in ['no']"
+      "fixed_camera_without_motion": "self.cam_motion.fixed_camera_without_motion is True"
     },
     "easy_neg_rule_str": {
-      "quite_shaky_camera": "self.cam_motion.steadiness in ['unsteady', 'very_unsteady']"
+      "quite_shaky_camera": "self.cam_motion.quite_shaky_camera is True"
     }
   }
   

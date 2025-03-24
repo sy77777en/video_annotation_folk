@@ -35,15 +35,15 @@
       "A scene where the camera follows in a rear-side direction while maintaining subject visibility.",
       "A shot where the perspective is positioned slightly off-center behind the subject."
     ],
-    "pos_rule_str": "set(self.cam_motion.tracking_shot_types) == set(['tail','side'])",
-    "neg_rule_str": "set(self.cam_motion.tracking_shot_types) != set(['tail','side'])",
+    "pos_rule_str": "self.cam_motion.rear_side_tracking_shot is True",
+    "neg_rule_str": "self.cam_motion.rear_side_tracking_shot is False",
     "easy_neg_rule_str": {
-      "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+      "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
     },
     "hard_neg_rule_str": {
-      "other_tracking_shots": "self.cam_motion.is_tracking and not ('tail' in self.cam_motion.tracking_shot_types and 'side' in self.cam_motion.tracking_shot_types)",
-      "tail_tracking_shot": "'tail' in self.cam_motion.tracking_shot_types and 'side' not in self.cam_motion.tracking_shot_types",
-      "side_tracking_shot": "'side' in self.cam_motion.tracking_shot_types and 'tail' not in self.cam_motion.tracking_shot_types"
+      "other_tracking_shots_than_rear_side": "self.cam_motion.other_tracking_shots_than_rear_side is True",
+      "tail_but_not_side_tracking_shot": "self.cam_motion.tail_but_not_side_tracking_shot is True",
+      "side_but_not_tail_tracking_shot": "self.cam_motion.side_but_not_tail_tracking_shot is True"
     }
   }
   

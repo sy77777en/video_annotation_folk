@@ -30,6 +30,6 @@
     "A video where the objects in the scene continuously move.",
     "A scene where movement is apparent in the composition."
   ],
-  "pos_rule_str": "self.cam_motion.scene_movement in ['dynamic']",
-  "neg_rule_str": "self.cam_motion.scene_movement in ['static']"
+  "pos_rule_str": "self.cam_motion.dynamic_scene is True",
+  "neg_rule_str": "self.cam_motion.dynamic_scene is False"
 }

@@ -37,6 +37,6 @@
       "A shot where the camera displays clear directional movement.",
       "A video where the camera moves beyond subtle adjustments."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])",
-    "neg_rule_str": "self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']"
+    "pos_rule_str": "self.cam_motion.clear_moving_camera is True",
+    "neg_rule_str": "self.cam_motion.clear_moving_camera is False"
   }

@@ -37,9 +37,9 @@
         "A video where the tracking movement follows a curved path.",
         "A scene where the subject is followed while the camera moves in a circular pattern."
     ],
-    "pos_rule_str": "'arc' in self.cam_motion.tracking_shot_types",
-    "neg_rule_str": "'arc' not in self.cam_motion.tracking_shot_types",
+    "pos_rule_str": "self.cam_motion.arc_tracking_shot is True",
+    "neg_rule_str": "self.cam_motion.arc_tracking_shot is False",
     "easy_neg_rule_str": {
-        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+        "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
     }
 }

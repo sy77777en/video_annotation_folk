@@ -21,8 +21,8 @@
         "A scene featuring subtle, low-magnitude camera movement.",
         "A shot where the camera drifts slightly without clear motion."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement == 'minor'",
-    "neg_rule_str": "self.cam_motion.camera_movement != 'minor' and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']",
+    "pos_rule_str": "self.cam_motion.is_minor_motion is True",
+    "neg_rule_str": "self.cam_motion.is_minor_motion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

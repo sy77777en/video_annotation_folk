@@ -68,7 +68,7 @@ def get_valid_labels_dict(video_data_dict, label_collections=["cam_motion", "cam
             try:
                 label.verify(video_data_list)
             except Exception as e:
-                # print(f"Skipping {label_name}: {e}")
+                print(f"Skipping {label_name}: {e}")
                 invalid_labels.append(label_name)
                 continue
         if len(invalid_labels) > 0:
@@ -135,7 +135,6 @@ def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_set
     video_data_dict = json_to_video_data(json_path, label_collections=label_collections)
     valid_labels_dict = get_valid_labels_dict(video_data_dict, label_collections=label_collections)
     video_data_dict = download_videos(video_data_dict, video_dir=video_dir)
-    
     label_to_videos = label_video_mapping(
         video_data_dict,
         valid_labels_dict,

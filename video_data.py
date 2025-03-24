@@ -52,8 +52,10 @@ class VideoData:
             self._cam_motion = CameraMotionData.create(**value)  # Auto-create instance
         elif isinstance(value, CameraMotionData):
             self._cam_motion = value
+        elif value is None:
+            self._cam_motion = CameraMotionData.create(is_labeled=False)  # Auto-create empty instance
         else:
-            raise TypeError("cam_motion must be a CameraMotionData instance or a dictionary of parameters")
+            raise TypeError("cam_motion must be a CameraMotionData instance or a dictionary of parameters or None")
 
     @property
     def cam_setup(self):
@@ -67,8 +69,10 @@ class VideoData:
             self._cam_setup = CameraSetupData.create(**value)  # Auto-create instance
         elif isinstance(value, CameraSetupData):
             self._cam_setup = value
+        elif value is None:
+            self._cam_setup = CameraSetupData.create(is_labeled=False)
         else:
-            raise TypeError("cam_setup must be a CameraSetupData instance or a dictionary of parameters")
+            raise TypeError("cam_setup must be a CameraSetupData instance or a dictionary of parameters or None")
 
     @property
     def lighting_setup(self):
@@ -82,8 +86,10 @@ class VideoData:
             self._lighting_setup = LightingSetupData.create(**value)  # Auto-create instance
         elif isinstance(value, LightingSetupData):
             self._lighting_setup = value
+        elif value is None:
+            self._lighting_setup = LightingSetupData.create(is_labeled=False)
         else:
-            raise TypeError("lighting_setup must be a LightingSetupData instance or a dictionary of parameters")
+            raise TypeError("lighting_setup must be a LightingSetupData instance or a dictionary of parameters or None")
 
     def update_workflow_from_project(self, project_name: str, workflow_data: dict):
         """

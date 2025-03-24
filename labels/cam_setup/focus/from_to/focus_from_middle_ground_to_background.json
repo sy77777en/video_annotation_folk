@@ -27,7 +27,7 @@
         "A video showing a deliberate shift in focus from middle ground to background.",
         "A scene where the focus transitions smoothly from middle ground to background."
     ],
-    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'background' and self.cam_setup.is_rack_pull_focus",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'background' and self.cam_setup.is_rack_pull_focus is True",
     "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['middle_ground', 'unknown'] and self.cam_setup.focus_info['end'] in ['background', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}

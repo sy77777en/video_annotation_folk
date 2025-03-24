@@ -27,7 +27,7 @@
         "A video demonstrating a clear shift in focus from foreground to middle ground.",
         "A scene where the depth transitions as the focus moves from foreground to middle ground."
     ],
-    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus",
+    "pos_rule_str": "self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus is True",
     "neg_rule_str": "not (self.cam_setup.focus_info['start'] in ['foreground', 'unknown'] and self.cam_setup.focus_info['end'] in ['middle_ground', 'unknown'])",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}

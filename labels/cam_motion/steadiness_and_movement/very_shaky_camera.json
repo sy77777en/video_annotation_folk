@@ -40,9 +40,9 @@
     "A shot where the camera completely lacks stability.",
     "A scene where the camera motion is erratic, uncontrolled, or excessively unbalanced."
   ],
-  "pos_rule_str": "self.cam_motion.steadiness in ['very_unsteady']",
-  "neg_rule_str": "self.cam_motion.steadiness not in ['very_unsteady', 'unsteady']",
+  "pos_rule_str": "self.cam_motion.very_shaky_camera is True",
+  "neg_rule_str": "self.cam_motion.very_shaky_camera is False",
   "easy_neg_rule_str": {
-    "not_very_shaky_camera_excluding_smooth": "self.cam_motion.steadiness in ['smooth', 'very_smooth']"
+    "not_very_shaky_camera_excluding_smooth": "self.cam_motion.not_very_shaky_camera_excluding_smooth is True"
   }
 }

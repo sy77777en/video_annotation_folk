@@ -38,13 +38,13 @@
     "A video where the camera follows the movement instead of leading it.",
     "A scene where the camera continuously follows behind the subject."
   ],
-  "pos_rule_str": "self.cam_motion.tracking_shot_types == ['tail']",
-  "neg_rule_str": "'tail' not in self.cam_motion.tracking_shot_types",
+  "pos_rule_str": "self.cam_motion.tail_tracking_shot is True",
+  "neg_rule_str": "self.cam_motion.tail_tracking_shot is False",
   "easy_neg_rule_str": {
-    "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
   },
   "hard_neg_rule_str": {
-    "other_tracking_shots": "self.cam_motion.is_tracking and 'tail' not in self.cam_motion.tracking_shot_types",
-    "front_tracking_shot": "self.cam_motion.is_tracking and 'lead' in self.cam_motion.tracking_shot_types"
+    "other_tracking_shots_thank_tail": "self.cam_motion.other_tracking_shots_than_tail is True",
+    "lead_tracking_shot": "self.cam_motion.lead_tracking_shot is True"
   }
 }

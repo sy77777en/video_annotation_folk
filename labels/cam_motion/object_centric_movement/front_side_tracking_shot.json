@@ -36,14 +36,14 @@
     "A scene where the camera leads in a front-side direction while maintaining subject visibility.",
     "A shot where the perspective is positioned slightly off-center ahead of the subject."
   ],
-  "pos_rule_str": "set(self.cam_motion.tracking_shot_types) == set(['lead','side'])",
-  "neg_rule_str": "set(self.cam_motion.tracking_shot_types) != set(['lead','side'])",
+  "pos_rule_str": "self.cam_motion.front_side_tracking_shot is True",
+  "neg_rule_str": "self.cam_motion.front_side_tracking_shot is False",
   "easy_neg_rule_str": {
-    "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+    "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
   },
   "hard_neg_rule_str": {
-    "other_tracking_shots": "self.cam_motion.is_tracking and not ('lead' in self.cam_motion.tracking_shot_types and 'side' in self.cam_motion.tracking_shot_types)",
-    "lead_tracking_shot": "'lead' in self.cam_motion.tracking_shot_types and 'side' not in self.cam_motion.tracking_shot_types",
-    "side_tracking_shot": "'side' in self.cam_motion.tracking_shot_types and 'lead' not in self.cam_motion.tracking_shot_types"
+    "other_tracking_shots_than_front_side": "self.cam_motion.other_tracking_shots_than_front_side is True",
+    "lead_but_not_side_tracking_shot": "self.cam_motion.lead_but_not_side_tracking_shot is True",
+    "side_but_not_lead_tracking_shot": "self.cam_motion.side_but_not_lead_tracking_shot is True"
   }
 }

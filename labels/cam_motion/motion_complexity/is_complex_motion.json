@@ -29,8 +29,8 @@
         "A scene where multiple camera motions occur with different speeds.",
         "A cinematic movement that combines conflicting, sequential, or varied-speed motions."
     ],
-    "pos_rule_str": "self.cam_motion.camera_movement == 'major_complex'",
-    "neg_rule_str": "self.cam_motion.camera_movement != 'major_complex'",
+    "pos_rule_str": "self.cam_motion.is_complex_motion is True",
+    "neg_rule_str": "self.cam_motion.is_complex_motion is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

@@ -26,13 +26,13 @@
         "A sequence where the camera follows the subject from the side while moving left.",
         "A scene where the camera moves leftward in a parallel tracking motion."
     ],
-    "pos_rule_str": "self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True",
-    "neg_rule_str": "not (self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True)",
+    "pos_rule_str": "self.cam_motion.side_tracking_shot_leftward is True",
+    "neg_rule_str": "self.cam_motion.side_tracking_shot_leftward is False",
     "easy_neg_rule_str": {
-        "not_a_tracking_shot": "not self.cam_motion.is_tracking"
+        "not_a_tracking_shot": "self.cam_motion.not_a_tracking_shot is True"
     },
     "hard_neg_rule_str": {
-        "side_tracking_shot_rightward": "self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True",
-        "pan_tracking_shot": "'pan' in self.cam_motion.tracking_shot_types and self.cam_motion.pan_left is True and not 'side' in self.cam_motion.tracking_shot_types"
+        "side_tracking_shot_rightward": "self.cam_motion.side_tracking_shot_rightward is True",
+        "pan_left_but_not_side_tracking_shot": "self.cam_motion.pan_left_but_not_side_tracking_shot is True"
     }
 }

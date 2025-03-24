@@ -53,12 +53,9 @@
     "A video where the camera is not swaying.",
     "A video where the camera is not wobbling."
   ],
-  "pos_rule_str": "self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']",
-  "neg_rule_str": "self.cam_motion.steadiness not in ['static']",
-  "easy_neg_rule_str": {
-    "not_fixed_camera": "self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement not in ['no']"
-  },
+  "pos_rule_str": "self.cam_motion.fixed_camera is True",
+  "neg_rule_str": "self.cam_motion.fixed_camera is False",
   "hard_neg_rule_str": {
-    "fixed_but_slightly_shaky": "self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']"
+    "fixed_but_slightly_shaky": "self.cam_motion.fixed_but_slightly_shaky is True"
   }
 }

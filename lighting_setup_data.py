@@ -1,5 +1,8 @@
 class LightingSetupData:
     def __init__(self):
+        # Is labeled?
+        self.is_labeled = True  # Boolean: True or False
+
         # Shot transition options
         self.shot_transition = None # Boolean: True or False
 
@@ -153,7 +156,7 @@ class LightingSetupData:
             "brightness_is_complex_others"
         ]
 
-        if self.shot_transition:
+        if self.shot_transition is True or self.is_labeled is False:
             for attr in attributes:
                 setattr(self, attr, None)
             return
@@ -237,7 +240,7 @@ class LightingSetupData:
             "direction_is_top_light", "direction_is_bottom_light", "direction_is_side_light",
             "direction_is_ambient_light", "direction_is_front_side", "direction_is_rear_side"
         ]
-        if self.shot_transition:
+        if self.shot_transition is True or self.is_labeled is False:
             for attr in attributes:
                 setattr(self, attr, None)
             return
@@ -281,7 +284,7 @@ class LightingSetupData:
             "direction_is_top_light", "direction_is_bottom_light", "direction_is_side_light",
             "direction_is_ambient_light", "direction_is_front_side", "direction_is_rear_side"
         ]
-        if self.shot_transition:
+        if self.shot_transition is True or self.is_labeled is False:
             for attr in attributes:
                 setattr(self, attr, None)
             return
@@ -324,22 +327,28 @@ class LightingSetupData:
             self.direction_is_rear_side = self.subject_back_light and self.subject_side_light
 
     def _set_special_lighting_attributes(self):
-        if self.shot_transition:
+        if self.shot_transition is True or self.is_labeled is False:
             self.lens_flares = None
             return
         self.lens_flares = self.lens_flares_regular or self.lens_flares_anamorphic
 
     def _set_volumetric_lighting_attributes(self):
-        if self.shot_transition:
+        if self.shot_transition is True or self.is_labeled is False:
             self.has_volumetric_lighting = None
             return
         self.has_volumetric_lighting = self.volumetric_beam_light or self.volumetric_spot_light or self.god_rays or self.light_through_medium or self.volumetric_light_others
 
     def _set_shadow_pattern_attributes(self):
-        if self.shot_transition:
+        if self.shot_transition is True or self.is_labeled is False:
             self.has_shadow_patterns = None
             return
         self.has_shadow_patterns = self.venetian_blinds or self.subject_shape or self.window_frames or self.foliage or self.shadow_patterns_gobo_others
+
+    def set_is_labeled(self, is_labeled):
+        if isinstance(is_labeled, bool):
+            self.is_labeled = is_labeled
+        else:
+            raise ValueError("is_labeled must be a boolean value")
 
     def set_shot_transition(self, shot_transition):
         if isinstance(shot_transition, bool):
@@ -800,8 +809,8 @@ class LightingSetupData:
 
     def verify(self):
         # Verify that the data is consistent
-        if self.shot_transition:
-            return # No need to verify other fields if shot transition is present
+        if self.shot_transition is True or self.is_labeled is False:
+            return # No need to verify other fields if shot transition is present or data is not labeled
 
         # complex_reasons = ["complex_changing", "complex_contrasting", "complex_others"]
         # if any([self.color_temperature in complex_reasons, self.color_saturation in complex_reasons, self.brightness in complex_reasons]):

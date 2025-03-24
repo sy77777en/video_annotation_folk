@@ -44,8 +44,8 @@
       "A video with hard cuts, soft transitions, or both.",
       "A video where shots change with a transition."
     ],
-    "pos_rule_str": "self.cam_motion.shot_transition",
-    "neg_rule_str": "not self.cam_motion.shot_transition",
+    "pos_rule_str": "self.cam_motion.shot_transition is True",
+    "neg_rule_str": "self.cam_motion.shot_transition is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
   }

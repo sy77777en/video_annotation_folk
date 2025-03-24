@@ -35,6 +35,6 @@
     "neg_rule_str": "self.cam_motion.frame_freezing is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {
-        "static_camera": "self.cam_motion.steadiness in ['static'] and self.cam_motion.frame_freezing is False"
+        "static_camera": "self.cam_motion.static_camera is True"
     }
 }
