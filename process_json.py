@@ -19,8 +19,9 @@ def json_to_video_data(json_path, label_collections=["cam_motion", "cam_setup", 
         # if 'cam_setup' in video:
         #     tmp_data.cam_setup = video['cam_setup']
         for key, value in video["workflows"].items():
-            tmp_data.add_workflow(value)
-        video_data_dict[tmp_data.workflows[0].video_name] = tmp_data
+            tmp_data.add_workflow(key, value)
+            videoname = value['video_name']
+        video_data_dict[videoname] = tmp_data
     return video_data_dict
 
 def main():

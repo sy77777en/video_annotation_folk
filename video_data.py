@@ -11,13 +11,13 @@ class VideoData:
         self._lighting_setup = None  # Short for lighting_setup_data
         
         # Single list to store all workflow data
-        self._workflows = []
+        self._workflows = {}
 
     @property
     def workflows(self):
         return self._workflows
 
-    def add_workflow(self, workflow_data):
+    def add_workflow(self, key, workflow_data):
         """Add a workflow to the video's workflow list."""
         if isinstance(workflow_data, dict):
             workflow = WorkflowData.create(**workflow_data)
@@ -25,20 +25,7 @@ class VideoData:
             workflow = workflow_data
         else:
             raise TypeError("workflow_data must be a WorkflowData instance or a dictionary of parameters")
-        
-        # # Check if we already have a workflow for this project
-        # for existing_workflow in self._workflows:
-        #     if existing_workflow.project_name == workflow.project_name:
-        #         # If new workflow has more recent approval time, replace the old one
-        #         if (workflow.approval_time and 
-        #             (not existing_workflow.approval_time or 
-        #              workflow.approval_time > existing_workflow.approval_time)):
-        #             self._workflows.remove(existing_workflow)
-        #             self._workflows.append(workflow)
-        #         return
-        
-        # If no existing workflow for this project, add the new one
-        self._workflows.append(workflow)
+        self._workflows[key] = workflow
 
     @property
     def cam_motion(self):
