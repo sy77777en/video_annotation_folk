@@ -1,0 +1,7 @@
+{
+    "video_id": "Yp5eTT6kZIo.5.0.mp4",
+    "pre_caption_prompt": "Does the second sentence logically follow from the first? Remember that:\n1:  \"dolly forward/backward\" motion is equal to \"move forward/backward\" motion.\n2: \"smooth\" is equal to \"minimal shaking\"\n\nFirst: \"The camera dolly moves forward slowly, maintaining a very subtle shaking motion.\"\nSecond: \"The camera dolly moves forward with a very smooth and steady motion.\"\n\n- Answer \"Yes\" if everything stated in the second sentence must be true based on the first, even if the first sentence contains additional details.  \n- Answer \"No\" only if the second sentence introduces something uncertain or contradicts the first sentence.\n\nReturn only \"Yes\" or \"No\".",
+    "pre_caption": "No",
+    "pre_caption_llm": "gpt-4o-2024-08-06",
+    "pre_caption_mode": "Text Only"
+}
