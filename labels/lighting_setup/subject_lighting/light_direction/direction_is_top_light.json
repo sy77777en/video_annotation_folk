@@ -2,7 +2,7 @@
     "label": "Direction Is Top Light",
     "label_name": "direction_is_top_light",
     "def_question": [
-        "Is there a noticeable light source illuminating the subject from the top (top lighting) as seen from the camera’s perspective?"
+        "Is there a noticeable light source consistently illuminating the subject from the top (top lighting) as seen from the camera’s perspective?"
     ],
     "alt_question": [
         "Is the subject illuminated from above, casting shadows downward?",
@@ -15,7 +15,7 @@
         "Is the subject’s form shaped by a strong overhead lighting effect?"
     ],
     "def_prompt": [
-        "There is a noticeable light source illuminating the subject from the top (top lighting), as seen from the camera’s perspective."
+        "There is a noticeable light source consistently illuminating the subject from the top (top lighting), as seen from the camera’s perspective."
     ],
     "alt_prompt": [
         "The subject is illuminated from above, casting shadows downward.",

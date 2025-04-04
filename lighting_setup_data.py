@@ -316,6 +316,15 @@ class LightingSetupData:
             self.direction_is_ambient_light = None
             self.direction_is_front_side = None
             self.direction_is_rear_side = None
+        elif self.subject_light_contrast_is_complex:
+            self.direction_is_back_light = True if self.subject_back_light is True else None
+            self.direction_is_front_light = True if self.subject_front_light is True else None
+            self.direction_is_top_light = True if self.subject_top_light is True else None
+            self.direction_is_bottom_light = True if self.subject_bottom_light is True else None
+            self.direction_is_side_light = True if self.subject_side_light is True else None
+            self.direction_is_ambient_light = True if self.subject_ambient_light is True else None
+            self.direction_is_front_side = True if self.subject_front_light is True and self.subject_side_light is True else None
+            self.direction_is_rear_side = True if self.subject_back_light is True and self.subject_side_light is True else None 
         else:
             self.direction_is_back_light = self.subject_back_light
             self.direction_is_front_light = self.subject_front_light

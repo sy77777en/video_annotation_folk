@@ -2,7 +2,7 @@
     "label": "Direction Is Front-Side Light",
     "label_name": "direction_is_front_side",
     "def_question": [
-        "Is the subject illuminated by a mix of front and side lighting?"
+        "Is the subject consistently illuminated by a mix of front and side lighting?"
     ],
     "alt_question": [
         "Does the primary light source come from above and slightly to the side of the subject?",
@@ -15,7 +15,7 @@
         "Is the subject framed with lighting that wraps from the front and the side?"
     ],
     "def_prompt": [
-        "The subject is illuminated by a mix of front and side lighting."
+        "The subject is consistently illuminated by a mix of front and side lighting."
     ],
     "alt_prompt": [
         "A video where the subject is lit from both above and the side.",

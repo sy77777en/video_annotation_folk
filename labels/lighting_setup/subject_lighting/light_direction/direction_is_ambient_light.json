@@ -2,7 +2,7 @@
     "label": "Direction Is Ambient Light",
     "label_name": "direction_is_ambient_light",
     "def_question": [
-        "Is the subject illuminated with soft, ambient light?"
+        "Is the subject consistently illuminated with soft, ambient light?"
     ],
     "alt_question": [
         "Is the lighting on the subject evenly distributed without a clear direction?",
@@ -15,7 +15,7 @@
         "Does the video rely on a soft, uniform light source rather than directional lighting?"
     ],
     "def_prompt": [
-        "The subject is illuminated with soft, ambient light."
+        "The subject is consistently illuminated with soft, ambient light."
     ],
     "alt_prompt": [
         "A shot where the subject is lit with soft, ambient lighting.",

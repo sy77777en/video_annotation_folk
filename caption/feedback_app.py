@@ -17,9 +17,9 @@ caption_programs = {
     "subject_motion_dynamics": VanillaSubjectMotionPolicy(),
     "spatial_framing_dynamics": VanillaSpatialPolicy(),
     "camera_framing_dynamics": VanillaCameraPolicy(),
-    "camera_motion": VanillaCameraMotionPolicy(),
-    "raw_spatial_framing_dynamics": RawSpatialPolicy(),
-    "raw_subject_motion_dynamics": RawSubjectMotionPolicy(),
+    # "camera_motion": VanillaCameraMotionPolicy(),
+    # "raw_spatial_framing_dynamics": RawSpatialPolicy(),
+    # "raw_subject_motion_dynamics": RawSubjectMotionPolicy(),
 }
 
 PRECAPTION_FILE_POSTFIX = "_precaption.json"
@@ -146,6 +146,9 @@ def get_precaption_llm_name(config_dict, selected_config):
         return "tarsier-recap-7b"
     elif task in ["spatial_framing_dynamics"]:
         return "qwen2.5-vl-72b"
+    elif task in ["raw_lighting_setup_dynamics", "raw_lighting_effects_dynamics"]:
+        print(f"Using qwen2.5-vl-7b for {task}")
+        return "qwen2.5-vl-7b"
     else:
         return "gpt-4o-2024-08-06"
 
@@ -587,6 +590,14 @@ def main(args, caption_programs):
             st.write(pre_caption)
             st.write("#### Rate the caption (Is it accurate? Does it miss anything important?)")
 
+
+            st.write("Please provide your feedback to improve this caption (if not score of 5):")
+            user_feedback = st.text_area(
+                "Your feedback:",
+                key=f"user_feedback_{video_id}_{config['name']}",
+                height=PROMPT_HEIGHT,
+            )
+            
             # Fetch stored initial rating if it exists
             if "initial_caption_rating" in st.session_state:
                 score = st.session_state.initial_caption_rating
@@ -601,13 +612,6 @@ def main(args, caption_programs):
                     score = initial_rating_response['score']
                 else:
                     score = None
-
-            st.write("Please provide your feedback to improve this caption (if not score of 5):")
-            user_feedback = st.text_area(
-                "Your feedback:",
-                key=f"user_feedback_{video_id}_{config['name']}",
-                height=PROMPT_HEIGHT,
-            )
 
             if score:
                 feedback_is_needed = score != "😀"
@@ -694,6 +698,22 @@ def main(args, caption_programs):
             st.write(f"{st.session_state.feedback_data['gpt_feedback']}")
             st.subheader(f"Please Rate AI-Polished Feedback")
 
+
+            st.write("Please provide the final feedback if you are not happy with it:")
+
+            # Ensure final_feedback is stored persistently
+            if "final_feedback" not in st.session_state:
+                st.session_state.final_feedback = st.session_state.feedback_data["gpt_feedback"]
+
+            line_height = 10  # Approximate height per line in pixels
+            num_lines = max(30, len(st.session_state.final_feedback) // 120)  # Assuming ~120 characters per line
+            estimated_height = num_lines * line_height
+            final_feedback = st.text_area(
+                "Finalized feedback:",
+                value=st.session_state.final_feedback,
+                key="correct_feedback",
+                height=estimated_height,
+            )
             # Fetch stored feedback rating if it exists
             if "feedback_rating" in st.session_state:
                 score = st.session_state.feedback_rating
@@ -708,18 +728,6 @@ def main(args, caption_programs):
                     score = feedback_response['score']
                 else:
                     score = None  # Default to None if no response yet
-
-            st.write("Please provide the final feedback if you are not happy with it:")
-
-            # Ensure final_feedback is stored persistently
-            if "final_feedback" not in st.session_state:
-                st.session_state.final_feedback = st.session_state.feedback_data["gpt_feedback"]
-
-            final_feedback = st.text_area(
-                "Finalized feedback:",
-                value=st.session_state.final_feedback,
-                key="correct_feedback"
-            )
 
             if score:
                 st.session_state.feedback_data["feedback_rating"] = score  # Store in feedback data
@@ -827,22 +835,8 @@ def main(args, caption_programs):
             st.write(gpt_caption)
 
             st.subheader("Rate AI-Improved Caption")
-            # Retrieve stored caption rating if it exists
-            if "caption_rating" in st.session_state:
-                score = st.session_state.caption_rating
-            else:
-                caption_response = streamlit_feedback(
-                    feedback_type="faces",
-                    key="caption_faces"
-                )
 
-                if caption_response:
-                    st.session_state.caption_rating = caption_response['score']
-                    score = caption_response['score']
-                else:
-                    score = None  # Default to None if no response yet
-
-            st.write("And please modify the caption below (if not a perfect score of 5):")
+            st.write("Please modify the caption below (if not a perfect score of 5):")
 
             # Ensure final_caption is stored persistently
             if "final_caption" not in st.session_state:
@@ -857,6 +851,21 @@ def main(args, caption_programs):
                 key="correct_caption",
                 height=estimated_height,
             )
+
+            # Retrieve stored caption rating if it exists
+            if "caption_rating" in st.session_state:
+                score = st.session_state.caption_rating
+            else:
+                caption_response = streamlit_feedback(
+                    feedback_type="faces",
+                    key="caption_faces"
+                )
+
+                if caption_response:
+                    st.session_state.caption_rating = caption_response['score']
+                    score = caption_response['score']
+                else:
+                    score = None  # Default to None if no response yet
 
             if score:
                 st.session_state.feedback_data["caption_rating"] = score  # Persist rating

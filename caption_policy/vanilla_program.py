@@ -97,10 +97,12 @@ class VanillaSubjectPolicy(SocraticProgram):
             #         "Explain why there is no main subject, such as the focus being on the environment, atmosphere, "
             #         "or scale rather than a specific object. If relevant, describe the shot's purpose, whether it is an "
             #         "establishing shot setting the scene or providing context, or a FPV shot that creates an immersive experience.")
-            return ("The video is a scenery shot. You do not need to describe the subject. "
+            policy = ("The video is a scenery shot. You do not need to describe the subject. "
                     "Please concisely specify the type of scenery shot (e.g., a landscape or cityscape scenery shot)."
                     "Explain why there is no main subject, such as the focus being on the environment, atmosphere, "
                     "or scale rather than a specific object.")
+            policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/format_instruction.txt")
+            return policy
         
         policy = read_text_file("caption_policy/policy/subject_description/policy.txt")
         if data.cam_setup.is_framing_subject is None:
@@ -703,15 +705,15 @@ class VanillaCameraPolicy(SocraticProgram):
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Camera Framing and Dynamics."
         caption_fields = ["camera_framing_dynamics"]
         super().__init__(name, info, caption_fields)
-    
+
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
             "camera_framing_dynamics": self.get_description(data)
         }
-        
+
     def format_playback_speed(self, speed: str, speed_dir="labels/cam_setup/video_speed/") -> str:
-        # Options: "time_lapse", "fast_motion", "regular", "slow_motion", 
+        # Options: "time_lapse", "fast_motion", "regular", "slow_motion",
         # "stop_motion", "speed_ramp", "time_reversed"
         speed_info = {
             "time_lapse": "time_lapse",
@@ -727,7 +729,7 @@ class VanillaCameraPolicy(SocraticProgram):
         if speed == "regular_speed":
             speed_str += " (no need to mention)."
         return speed_str
-    
+
     def format_lens_distortion(self, lens_distortion: str) -> str:
         # Options: "regular", "barrel", "fisheye"
         if lens_distortion == "regular":
@@ -737,9 +739,9 @@ class VanillaCameraPolicy(SocraticProgram):
         elif lens_distortion == "fisheye":
             return "The video features noticable fisheye distortion causing straight lines to curve outward."
         raise ValueError("Invalid lens distortion type.")
-    
+
     def format_camera_height_start(self, height: str) -> str:
-        # Options: "unknown", "aerial_level", "overhead_level", "eye_level", 
+        # Options: "unknown", "aerial_level", "overhead_level", "eye_level",
         # "hip_level", "ground_level", "water_level", "underwater_level"
         height_info = {
             "aerial_level": "at an aerial level",
@@ -753,9 +755,9 @@ class VanillaCameraPolicy(SocraticProgram):
         if height == "unknown":
             raise ValueError("Camera height cannot be unknown.")
         return height_info[height]
-    
+
     def format_camera_height_end(self, height: str) -> str:
-        # Options: "unknown", "aerial_level", "overhead_level", "eye_level", 
+        # Options: "unknown", "aerial_level", "overhead_level", "eye_level",
         # "hip_level", "ground_level", "water_level", "underwater_level"
         height_info = {
             "aerial_level": "to an aerial level",
@@ -769,7 +771,7 @@ class VanillaCameraPolicy(SocraticProgram):
         if height == "unknown":
             raise ValueError("Camera height cannot be unknown.")
         return height_info[height]
-    
+
     def format_camera_angle(self, angle: str) -> str:
         # Options: "unknown", "bird_eye_angle", "high_angle", "low_angle", "level_angle", "worm_eye_angle"
         angle_info = {
@@ -782,7 +784,7 @@ class VanillaCameraPolicy(SocraticProgram):
         if angle == "unknown":
             raise ValueError("Camera angle cannot be unknown.")
         return angle_info[angle]
-    
+
     def format_focus_plane(self, plane: str) -> str:
         # Options: "unknown", "foreground", "middle_ground", "background", "out_of_focus"
         focus_plane_info = {
@@ -814,14 +816,14 @@ class VanillaCameraPolicy(SocraticProgram):
             "fast": "moving quickly."
         }
         return speed_info[speed]
-    
+
     def get_movement_description_simple(self, data: VideoData) -> str:
         # Get a video description using the existing labels.
         # Turn attributes like forward to a phrase like "moving forward"
         # Only call this function for simple or minor motion
         # attributes = [
-        #     "forward", "backward", "zoom_in", "zoom_out", "up", "down", "tilt_up", "tilt_down", 
-        #     "roll_cw", "roll_ccw", "crane_up", "crane_down", "arc_cw", "arc_ccw", "up_cam", "down_cam", 
+        #     "forward", "backward", "zoom_in", "zoom_out", "up", "down", "tilt_up", "tilt_down",
+        #     "roll_cw", "roll_ccw", "crane_up", "crane_down", "arc_cw", "arc_ccw", "up_cam", "down_cam",
         #     "forward_cam", "backward_cam", "pan_right", "pan_left", "left", "right"
         # ]
         movement_info = {
@@ -864,7 +866,7 @@ class VanillaCameraPolicy(SocraticProgram):
                     ", ".join([movement_info[m] for m in true_movement[:-1]]),
                     movement_info[true_movement[-1]]
                 )
-    
+
     def get_movement_description_minor(self, data: VideoData) -> str:
         # #Camera direction movement options
         movement_info = {
@@ -924,7 +926,7 @@ class VanillaCameraPolicy(SocraticProgram):
                     ", ".join([movement_info[m][getattr(data.cam_motion, m)] for m in true_movement[:-1]]),
                     movement_info[true_movement[-1]][getattr(data.cam_motion, true_movement[-1])]
                 )
-                
+
     def get_tracking_description(self, data: VideoData) -> str:
         # only call when data.cam_motion.is_tracking is True
         # Options: "side", "tail", "lead", "aerial", "arc", "pan", "tilt"
@@ -1026,35 +1028,35 @@ class VanillaCameraPolicy(SocraticProgram):
                 "pan": "panning",
                 "tilt": "tilting"
             }
-            
+
             description = "The camera is tracking the subject by "
             for i, tracking_type in enumerate(data.cam_motion.tracking_shot_types):
                 if i == len(data.cam_motion.tracking_shot_types) - 1:
                     description += f"and {tracking_info[tracking_type]}."
                 else:
                     description += f"{tracking_info[tracking_type]}, "
-            
+
         if data.cam_motion.subject_size_change == "larger":
             description += " During the tracking shot, the subject becomes larger in the frame."
         elif data.cam_motion.subject_size_change == "smaller":
             description += " During the tracking shot, the subject becomes smaller in the frame."
         return description
-            
+
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
-        
+
         policy = ""
         policy += read_text_file("caption_policy/policy/camera_framing_dynamics/policy.txt")
-        
+
         policy += "\n\nCrucially, instead of inferring these attributes from the video, we have already provided human-labeled ground truth for some of the elements specified above. You should directly use this information in your description and should not infer any details that are not already provided. Your description should be brief, and if anything is normal or unremarkable, you do not need to include it (e.g., if the video is at regular playback speed, there is no need to mention it)."
 
         # Add playback speed information
         policy += "\n\n**Playback Speed:** {}".format(self.format_playback_speed(data.cam_setup.video_speed))
-        
+
         # Add lens distortion information
         policy += "\n\n**Lens Distortion:** {}".format(self.format_lens_distortion(data.cam_setup.lens_distortion))
-        
+
         # Add camera height information
         if data.cam_setup.is_height_wrt_ground_applicable:
             if data.cam_setup.height_wrt_ground_change:
@@ -1073,8 +1075,7 @@ class VanillaCameraPolicy(SocraticProgram):
             policy += "\n\n**Camera Height:** {}".format(data.cam_setup.overall_height_description)
         else:
             policy += "\n\n**Camera Height:** The camera height is unclear or not significant enough to mention (no need to mention)."
-        
-        
+
         # Add camera angle information
         if data.cam_setup.is_camera_angle_applicable:
             if data.cam_setup.camera_angle_change:
@@ -1086,7 +1087,7 @@ class VanillaCameraPolicy(SocraticProgram):
                 policy += "\n\n**Camera Angle:** The camera angle is at {}.".format(
                     self.format_camera_angle(data.cam_setup.camera_angle_info['start'])
                 )
-            
+
             # check if dutch angle is applicable
             if data.cam_setup.is_dutch_angle_varying:
                 policy += " The camera is also at a dutch angle that varies due to camera rolling."
@@ -1096,7 +1097,7 @@ class VanillaCameraPolicy(SocraticProgram):
             policy += "\n\n**Camera Angle:** {}".format(data.cam_setup.camera_angle_description)
         else:
             policy += "\n\n**Camera Angle:** The camera angle is unclear or not significant enough to mention (no need to mention)."
-        
+
         # Add focus information
         if data.cam_setup.is_focus_applicable:
             if data.cam_setup.is_deep_focus:
@@ -1106,7 +1107,7 @@ class VanillaCameraPolicy(SocraticProgram):
                     policy += "\n\n**Camera Focus:** The camera uses an extremely shallow depth of field."
                 else:
                     policy += "\n\n**Camera Focus:** The camera uses a shallow depth of field."
-                
+
                 if data.cam_setup.focus_change:
                     policy += " The camera starts {}, and later becomes {}.".format(
                         self.format_focus_plane(data.cam_setup.focus_info['start']),
@@ -1116,7 +1117,7 @@ class VanillaCameraPolicy(SocraticProgram):
                     policy += " The camera is {}.".format(
                         self.format_focus_plane(data.cam_setup.focus_info['start'])
                     )
-                
+
                 if data.cam_setup.is_rack_focus:
                     policy += " The focus plane changes through a rack focus."
                 elif data.cam_setup.is_pull_focus:
@@ -1127,7 +1128,7 @@ class VanillaCameraPolicy(SocraticProgram):
             policy += "\n\n**Camera Focus:** {}".format(data.cam_setup.camera_focus_description)
         else:
             policy += "\n\n**Camera Focus:** The camera focus is unclear or not significant enough to mention (no need to mention)."
-    
+
         # Add camera motion information
         if data.cam_motion.camera_movement == "no":
             if data.cam_motion.steadiness == "static":
@@ -1137,7 +1138,7 @@ class VanillaCameraPolicy(SocraticProgram):
             elif data.cam_motion.steadiness in ['very_unsteady']:
                 policy += "\n\n**Camera Motion:** The camera is quite unsteady, but its motion lacks a clear pattern."
         else:
-            
+
             if data.cam_motion.camera_movement == "major_complex":
                 policy += "\n\n**Camera Motion:** {}".format(data.cam_motion.complex_motion_description)
             else:
@@ -1150,21 +1151,23 @@ class VanillaCameraPolicy(SocraticProgram):
                 else:
                     raise ValueError("Invalid camera movement type.")
                 policy += " " + complex_motion_description
-            
+
             # if tracking
             if data.cam_motion.is_tracking:
                 policy += "\n\n**Subject Tracking:** {}".format(
                     self.get_tracking_description(data)
                 )
-                
+
             policy += "\n\n**Camera Steadiness:** {}.".format(
                 self.format_camera_steadiness(data.cam_motion.steadiness)
             )
-            
+
             if data.cam_motion.camera_motion_speed != "regular":
                 policy += " \n\n**Camera Motion Speed**: The camera is {}".format(
                     self.format_camera_motion_speed(data.cam_motion.camera_motion_speed)
                 )
+
+        policy += "\n\nIf possible, specify the subject that the camera focuses on when describing camera work. For instance, use 'focus on the man in the foreground' rather than 'focus on the foreground.' Likewise, if the camera follows a subject, avoid the generic phrase 'tracking the subject(s).' Instead, identify the subject and describe the specific type of tracking."
         return policy    
 
 
@@ -1244,7 +1247,7 @@ class VanillaColorPolicy(SocraticProgram):
             "color_composition_dynamics": self.get_description(data)
         }
 
-    def format_color_temperature(self, color_temperature: str, color_temperature_dir="labels/lighting_setup/color_temperature/") -> str:
+    def format_color_temperature(self, color_temperature: str, color_temperature_dir="labels/lighting_setup/color_grading/temperature/") -> str:
         # Options: "warm", "cool", "neutral", "complex_changing", "complex_contrasting", "complex_others", "black_white"
         color_temperature_info = {
             "neutral": "color_temperature_is_neutral",
@@ -1264,7 +1267,7 @@ class VanillaColorPolicy(SocraticProgram):
                 color_temperature_str += " (no need to mention)."
             return color_temperature_str
 
-    def format_color_saturation(self, color_saturation: str, color_saturation_dir="labels/lighting_setup/color_saturation/") -> str:
+    def format_color_saturation(self, color_saturation: str, color_saturation_dir="labels/lighting_setup/color_grading/saturation/") -> str:
         # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
         color_saturation_info = {
             "high_saturation": "color_saturation_is_high",
@@ -1283,7 +1286,7 @@ class VanillaColorPolicy(SocraticProgram):
                 color_saturation_str += " (no need to mention)."
             return color_saturation_str
     
-    def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/brightness/") -> str:
+    def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/color_grading/brightness/") -> str:
         # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
         brightness_info = {
             "very_bright": "brightness_is_very_bright",
@@ -1302,11 +1305,13 @@ class VanillaColorPolicy(SocraticProgram):
         return brightness_str
 
     def get_description(self, data: VideoData) -> str:
+        import pdb; pdb.set_trace() # Not supported anymore
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
         policy = ""
-        policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy.txt")
+        # policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy.txt")
+        policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy_new.txt")
 
         assert data.cam_setup.subject_description != "", "Subject description must be provided before color composition and dynamics description."
         assert data.cam_setup.scene_description != "", "Scene description must be provided before color composition and dynamics description."
@@ -1336,12 +1341,12 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             "lighting_setup_dynamics": self.get_description(data)
         }
 
-    def format_scene_type(self, scene_type: str, scene_type_dir="labels/lighting_setup/scene_type/") -> str:
+    def format_scene_type(self, scene_type: str, scene_type_dir="labels/lighting_setup/scene/") -> str:
         # Options: "interior", "exterior", "unrealistic_synthetic", "complex_others"
         scene_type_info = {
             "interior": "scene_type_is_interior",
             "exterior": "scene_type_is_exterior",
-            "unrealistic_synthetic": "scene_type_is_unrealistic_synthetic",
+            "unrealistic_synthetic": "scene_type_is_synthetic",
             "complex_others": "scene_type_is_complex_others"
         }
         scene_type = scene_type_info[scene_type]
@@ -1411,10 +1416,10 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         
         # self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"
         subject_light_contrast_info = {
-            "high_contrast": "subject_lighting_contrast_is_high",
-            "normal_contrast": "subject_lighting_contrast_is_normal",
-            "minimal_contrast": "subject_lighting_contrast_is_minimal",
-            "complex": "subject_lighting_contrast_is_complex",
+            "high_contrast": "subject_light_contrast_is_high",
+            "normal_contrast": "subject_light_contrast_is_normal",
+            "minimal_contrast": "subject_light_contrast_is_minimal",
+            "complex": "subject_light_contrast_is_complex",
         }
         subject_light_contrast = subject_light_contrast_info[lighting_setup.subject_contrast_ratio]
         subject_light_contrast_str += " " + read_json_file(os.path.join(subject_lighting_dir, f"{subject_light_contrast}.json"))['def_prompt'][0]
@@ -1469,6 +1474,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         return " ".join(special_light_effects_strs)
 
     def get_description(self, data: VideoData) -> str:
+        import pdb; pdb.set_trace() # Not supported anymore
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
@@ -1484,7 +1490,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
 
         policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting setup. Please use these as references to expand your description."
 
-        policy += "\n\n**Scene Type:** {}.".format(self.format_scene_type(data.lighting_setup.scene_type))
+        policy += "\n\n**Scene Type:** {}".format(self.format_scene_type(data.lighting_setup.scene_type))
         policy += "\n\n**Light Source(s):** {}".format(self.format_lighting_sources(data.lighting_setup))
         # If sunlight, then ask about sunlight level
         if data.lighting_setup.sunlight_level_is_unknown is False:
@@ -1510,10 +1516,10 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {"lighting_effects_dynamics": self.get_description(data)}
 
-    def format_lens_effects(self, lighting_setup, lens_effects_dir="labels/lighting_setup/lens_effects/") -> str:
+    def format_lens_effects(self, lighting_setup, lens_effects_dir="labels/lighting_setup/lens_effect/") -> str:
         lens_effect_strs = []
         lens_effects = [
-            "lens_flares_regular",
+            "lens_flares",
             "lens_flares_anamorphic",
             "mist_diffusion",
             "bokeh",
@@ -1539,7 +1545,7 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
             return "No significant light reflections in this video. (no need to mention)."
         return " ".join(light_reflections_strs)
 
-    def format_natural_lighting_effects(self, lighting_setup, natural_lighting_dir="labels/lighting_setup/natural_lighting/") -> str:
+    def format_natural_lighting_effects(self, lighting_setup, natural_lighting_dir="labels/lighting_setup/natural_effect/") -> str:
         natural_lighting_strs = []
         natural_lightings = [
             "aerial_perspective",
@@ -1565,6 +1571,8 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
             "water_caustics",
             "city_light",
             "street_light",
+            "silhouette",
+            "rim_light",
         ]
         for special_light_effect in special_light_effects:
             if getattr(lighting_setup, special_light_effect) is True:
@@ -1613,7 +1621,7 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
         if len(shadow_patterns_strs) == 0:
             return "No distinct or noteworthy shadow patterns or Gobo lighting effects in this video. (no need to mention)."
         return " ".join(shadow_patterns_strs)
-    
+
     def format_light_dynamics(self, lighting_setup, light_dynamics_dir="labels/lighting_setup/dynamic_light/") -> str:
         # Lighting dynamics
         # self.color_shifting_smooth = False
@@ -1635,7 +1643,7 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
         if len(light_dynamics_strs) == 0:
             return "No significant lighting dynamics in this video. (no need to mention)."
         return " ".join(light_dynamics_strs)
-    
+
     def format_dynamics(self, lighting_setup, dynamics_dir="labels/lighting_setup/dynamic_effect/") -> str:
         other_dynamics_strs = []
         other_dynamics = [
@@ -1653,9 +1661,9 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
         if len(other_dynamics_strs) == 0:
             return "No other significant dynamics in this video. (no need to mention)."
         return " ".join(other_dynamics_strs)
-        
 
     def get_description(self, data: VideoData) -> str:
+        import pdb; pdb.set_trace() # Not supported anymore
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
@@ -1677,7 +1685,7 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
             scene_description=data.cam_setup.scene_description,
         )
 
-        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting effects. Please use these as references to expand your description."
+        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting effects. Please use these as references to expand your description. Keep your description a natural and brief paragraph without any formatting."
         policy += "\n\n**Lens and Optical Effects:** {}".format(self.format_lens_effects(data.lighting_setup))
         policy += "\n\n**Light Reflections:** {}".format(self.format_light_reflections(data.lighting_setup))
         policy += "\n\n**Natural Lighting Effects:** {}".format(self.format_natural_lighting_effects(data.lighting_setup))
@@ -1686,4 +1694,435 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
         policy += "\n\n**Shadow Patterns or Gobo Lighting Effects:** {}".format(self.format_shadow_patterns(data.lighting_setup))
         policy += "\n\n**Lighting Dynamics:** {}".format(self.format_light_dynamics(data.lighting_setup))
         policy += "\n\n**Other Dynamics: {}".format(self.format_dynamics(data.lighting_setup))
+        return policy
+
+
+class RawColorPolicy(SocraticProgram):
+    def __init__(self):
+        name = "Raw Color Composition and Dynamics Description"
+        info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Color Composition and Dynamics without subject/scene descriptions."
+        caption_fields = ["raw_color_composition_dynamics"]
+        super().__init__(name, info, caption_fields)
+
+    def __call__(self, data: VideoData) -> Dict[str, str]:
+        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
+        return {
+            "raw_color_composition_dynamics": self.get_description(data)
+        }
+
+    def format_color_temperature(self, color_temperature: str, color_temperature_dir="labels/lighting_setup/color_grading/temperature/") -> str:
+        # Options: "warm", "cool", "neutral", "complex_changing", "complex_contrasting", "complex_others", "black_white"
+        color_temperature_info = {
+            "neutral": "color_temperature_is_neutral",
+            "warm": "color_temperature_is_warm",
+            "cool": "color_temperature_is_cool",
+            "complex_changing": "color_temperature_is_changing",
+            "complex_contrasting": "color_temperature_is_contrasting",
+            "complex_others": "color_temperature_is_complex_others",
+            # "black_white": "color_temperature_is_black_and_white",
+        }
+        if color_temperature == "black_white":
+            return "The video is in black and white."
+        else:
+            color_temperature = color_temperature_info[color_temperature]
+            color_temperature_str = read_json_file(os.path.join(color_temperature_dir, f"{color_temperature}.json"))['def_prompt'][0]
+            if color_temperature == "color_temperature_is_neutral":
+                color_temperature_str += " (no need to mention)."
+            return color_temperature_str
+
+    def format_color_saturation(self, color_saturation: str, color_saturation_dir="labels/lighting_setup/color_grading/saturation/") -> str:
+        # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
+        color_saturation_info = {
+            "high_saturation": "color_saturation_is_high",
+            "neutral": "color_saturation_is_neutral",
+            "low_saturation": "color_saturation_is_low",
+            "complex_changing": "color_saturation_is_changing",
+            "complex_contrasting": "color_saturation_is_contrasting",
+            "complex_others": "color_saturation_is_complex_others",
+        }
+        if color_saturation == "black_white":
+            return "The video is in black and white."
+        else:
+            color_saturation = color_saturation_info[color_saturation]
+            color_saturation_str = read_json_file(os.path.join(color_saturation_dir, f"{color_saturation}.json"))['def_prompt'][0]
+            if color_saturation == "color_saturation_is_neutral":
+                color_saturation_str += " (no need to mention)."
+            return color_saturation_str
+
+    def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/color_grading/brightness/") -> str:
+        # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
+        brightness_info = {
+            "very_bright": "brightness_is_very_bright",
+            "bright": "brightness_is_bright",
+            "neutral": "brightness_is_neutral",
+            "dark": "brightness_is_dark",
+            "very_dark": "brightness_is_very_dark",
+            "complex_changing": "brightness_is_changing",
+            "complex_contrasting": "brightness_is_contrasting",
+            "complex_others": "brightness_is_complex_others",
+        }
+        brightness = brightness_info[brightness]
+        brightness_str = read_json_file(os.path.join(brightness_dir, f"{brightness}.json"))['def_prompt'][0]
+        if brightness == "brightness_is_neutral":
+            brightness_str += " (no need to mention)."
+        return brightness_str
+
+    def get_description(self, data: VideoData) -> str:
+        if data.lighting_setup.shot_transition:
+            raise ValueError("Shot transitions are not supported in this policy.")
+
+        policy = ""
+        # policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy.txt")
+        policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy_new.txt")
+
+        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
+
+        policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
+        policy += "\n\n**Color Saturation:** {}".format(self.format_color_saturation(data.lighting_setup.color_saturation))
+        policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
+        policy += "\n\n" + read_text_file("caption_policy/policy/color_composition_dynamics/format_instruction.txt")
+        return policy
+
+
+class RawLightingSetupPolicy(SocraticProgram):
+    def __init__(self):
+        name = "Raw Lighting Setup and Dynamics Description"
+        info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Lighting Setup and Dynamics without subject/scene descriptions."
+        caption_fields = ["raw_lighting_setup_dynamics"]
+        super().__init__(name, info, caption_fields)
+
+    def __call__(self, data: VideoData) -> Dict[str, str]:
+        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
+        return {
+            "raw_lighting_setup_dynamics": self.get_description(data)
+        }
+
+    def format_scene_type(self, scene_type: str, scene_type_dir="labels/lighting_setup/scene/") -> str:
+        # Options: "interior", "exterior", "unrealistic_synthetic", "complex_others"
+        scene_type_info = {
+            "interior": "scene_type_is_interior",
+            "exterior": "scene_type_is_exterior",
+            "unrealistic_synthetic": "scene_type_is_synthetic",
+            "complex_others": "scene_type_is_complex_others"
+        }
+        scene_type = scene_type_info[scene_type]
+        scene_type_str = read_json_file(os.path.join(scene_type_dir, f"{scene_type}.json"))['def_prompt'][0]
+        return scene_type_str
+
+    def format_lighting_sources(self, lighting_setup, lighting_sources_dir="labels/lighting_setup/light_source/") -> str:
+        # Major light sources
+        # self.sunlight_source = lighting_setup.sunlight_source
+        # self.moonlight_starlight_source = lighting_setup.moonlight_starlight_source
+        # self.firelight_source = lighting_setup.firelight_source
+        # self.artificial_light_source = lighting_setup.artificial_light_source
+        # self.non_visible_light_source = lighting_setup.non_visible_light_source
+        # self.abstract_light_source = lighting_setup.abstract_light_source
+        # self.complex_light_source = lighting_setup.complex_light_source
+        # if abstract_light_source is True, then the other sources are not considered
+        light_source_strs = []
+        if lighting_setup.abstract_light_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "is_abstract.json"))['def_prompt'][0])
+        else:
+            if lighting_setup.sunlight_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_sunlight.json"))['def_prompt'][0])
+            if lighting_setup.moonlight_starlight_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_moonlight_starlight.json"))['def_prompt'][0])
+            if lighting_setup.firelight_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_firelight.json"))['def_prompt'][0])
+            if lighting_setup.artificial_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_artificial_practical_light.json"))['def_prompt'][0])
+            if lighting_setup.non_visible_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_non_visible_light_source.json"))['def_prompt'][0])
+            if lighting_setup.complex_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_complex_light_source.json"))['def_prompt'][0])
+        return " ".join(light_source_strs)
+
+    def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:
+        # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
+        sunlight_level_info = {
+            "normal": "sunlight_level_is_normal",
+            "sunny": "sunlight_level_is_sunny",
+            "overcast": "sunlight_level_is_overcast",
+            "sunset_sunrise": "sunlight_level_is_sunset_sunrise",
+        }
+        sunlight_level = sunlight_level_info[sunlight_level]
+        sunlight_level_str = read_json_file(os.path.join(sunlight_level_dir, f"{sunlight_level}.json"))['def_prompt'][0]
+        return sunlight_level_str
+
+    def format_light_quality(self, light_quality: str, light_quality_dir="labels/lighting_setup/light_quality/") -> str:
+        # Options: "hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"
+        light_quality_info = {
+            "hard_light": "light_quality_is_hard",
+            "soft_diffused_light": "light_quality_is_soft",
+            "complex_changing": "light_quality_is_changing",
+            "complex_contrasting": "light_quality_is_contrasting",
+            "complex_others": "light_quality_is_complex",
+        }
+        light_quality = light_quality_info[light_quality]
+        light_quality_str = read_json_file(os.path.join(light_quality_dir, f"{light_quality}.json"))['def_prompt'][0]
+        return light_quality_str
+
+    def format_subject_lighting_contrast(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_contrast") -> str:
+        assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting."
+        subject_light_contrast_str = ""
+        if lighting_setup.low_key_lighting is True:
+            subject_light_contrast_str += read_json_file(os.path.join(subject_lighting_dir, "low_key_lighting.json"))['def_prompt'][0]
+        if lighting_setup.high_key_lighting is True:
+            subject_light_contrast_str += read_json_file(os.path.join(subject_lighting_dir, "high_key_lighting.json"))['def_prompt'][0]
+
+        # self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"
+        subject_light_contrast_info = {
+            "high_contrast": "subject_light_contrast_is_high",
+            "normal_contrast": "subject_light_contrast_is_normal",
+            "minimal_contrast": "subject_light_contrast_is_minimal",
+            "complex": "subject_light_contrast_is_complex",
+        }
+        subject_light_contrast = subject_light_contrast_info[lighting_setup.subject_contrast_ratio]
+        subject_light_contrast_str += " " + read_json_file(os.path.join(subject_lighting_dir, f"{subject_light_contrast}.json"))['def_prompt'][0]
+        return subject_light_contrast_str
+
+    def format_subject_lighting_direction(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_direction") -> str:
+        assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
+        subject_light_direction_strs = []
+        directions = [
+            "direction_is_back_light",
+            "direction_is_front_light",
+            "direction_is_top_light",
+            "direction_is_bottom_light",
+            "direction_is_side_light",
+            "direction_is_ambient_light"
+        ]
+        for direction in directions:
+            if getattr(lighting_setup, direction) is True:
+                subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
+        if len(subject_light_direction_strs) == 0:
+            return "The light direction on the subject is complex to analyze."
+        return " ".join(subject_light_direction_strs)
+
+    def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
+        # Special lighting effects on subject
+        # self.portrait_lighting = False
+        # self.rembrandt_lighting = False
+        # # below two are actually not dependent on whether the subject is present or not
+        # self.silhouette = False
+        # self.rim_light = False
+        special_light_effects_strs = []
+        if lighting_setup.portrait_lighting is True:
+            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "portrait_lighting.json"))['def_prompt'][0])
+        if lighting_setup.rembrandt_lighting is True:
+            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "rembrandt_lighting.json"))['def_prompt'][0])
+        if lighting_setup.silhouette is True:
+            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "special_effect", "silhouette.json"))['def_prompt'][0])
+        if lighting_setup.rim_light is True:
+            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "special_effect", "rim_light.json"))['def_prompt'][0])
+        if len(special_light_effects_strs) == 0:
+            return "No special lighting effects are observed on the subject. (no need to mention)."
+        return " ".join(special_light_effects_strs)
+
+    def get_description(self, data: VideoData) -> str:
+        if data.lighting_setup.shot_transition:
+            raise ValueError("Shot transitions are not supported in this policy.")
+
+        policy = ""
+        policy += read_text_file("caption_policy/policy/lighting_setup_dynamics/policy.txt")
+
+        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting setup. Please use these as references to expand your description. Keep your description a natural and brief paragraph without any formatting."
+
+        policy += "\n\n**Scene Type:** {}".format(self.format_scene_type(data.lighting_setup.scene_type))
+        policy += "\n\n**Light Source(s):** {}".format(self.format_lighting_sources(data.lighting_setup))
+        # If sunlight, then ask about sunlight level
+        if data.lighting_setup.sunlight_level_is_unknown is False:
+            policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_level))
+        policy += "\n\n**Light Quality:** {}".format(self.format_light_quality(data.lighting_setup.light_quality))
+
+        if data.lighting_setup.is_subject_lighting_applicable:
+            policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
+            policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
+            policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
+
+        return policy
+
+
+class RawLightingEffectsPolicy(SocraticProgram):
+    def __init__(self):
+        name = "Raw Lighting Effects and Dynamics Description"
+        info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Lighting Effects and Dynamics without subject/scene descriptions."
+        caption_fields = ["raw_lighting_effects_dynamics"]
+        super().__init__(name, info, caption_fields)
+
+    def __call__(self, data: VideoData) -> Dict[str, str]:
+        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
+        return {"raw_lighting_effects_dynamics": self.get_description(data)}
+
+    
+    def format_lens_effects(self, lighting_setup, lens_effects_dir="labels/lighting_setup/lens_effect/") -> str:
+        lens_effect_strs = []
+        lens_effects = [
+            "lens_flares",
+            "lens_flares_anamorphic",
+            "mist_diffusion",
+            "bokeh",
+        ]
+        for lens_effect in lens_effects:
+            if getattr(lighting_setup, lens_effect) is True:
+                lens_effect_strs.append(read_json_file(os.path.join(lens_effects_dir, f"{lens_effect}.json"))['def_prompt'][0])
+        if len(lens_effect_strs) == 0:
+            return False, "No significant lens or optical effects in this video. (no need to mention)."
+        return True, " ".join(lens_effect_strs) + " (please include and explain these effects.)"
+
+    def format_light_reflections(self, lighting_setup, light_reflections_dir="labels/lighting_setup/reflection/") -> str:
+        light_reflections_strs = []
+        light_reflections = [
+            "reflection_from_water",
+            "reflection_from_glossy_surface",
+            "reflection_from_mirror",
+        ]
+        for light_reflection in light_reflections:
+            if getattr(lighting_setup, light_reflection) is True:
+                light_reflections_strs.append(read_json_file(os.path.join(light_reflections_dir, f"{light_reflection}.json"))['def_prompt'][0])
+        if len(light_reflections_strs) == 0:
+            return False, "No significant light reflections in this video. (no need to mention)."
+        return True, " ".join(light_reflections_strs) + " (please include and explain these effects.)"
+
+    def format_natural_lighting_effects(self, lighting_setup, natural_lighting_dir="labels/lighting_setup/natural_effect/") -> str:
+        natural_lighting_strs = []
+        natural_lightings = [
+            "aerial_perspective",
+            "rainbow",
+            "aurora",
+            "heat_haze",
+            "lightning",
+        ]
+        for natural_lighting in natural_lightings:
+            if getattr(lighting_setup, natural_lighting) is True:
+                natural_lighting_strs.append(read_json_file(os.path.join(natural_lighting_dir, f"{natural_lighting}.json"))['def_prompt'][0])
+        if len(natural_lighting_strs) == 0:
+            return False, "No significant natural lighting effects in this video. (no need to mention)."
+        return True, " ".join(natural_lighting_strs) + " (please include and explain these effects.)"
+
+    def format_artificial_lighting_effects(self, lighting_setup, artificial_lighting_dir="labels/lighting_setup/special_effect/") -> str:
+        # # Special lighting effects on the scene
+        special_light_effects_strs = []
+        special_light_effects = [
+            "colored_neon_lighting",
+            "headlight_flashlight",
+            "vignette",
+            "water_caustics",
+            "city_light",
+            "street_light",
+        ]
+        for special_light_effect in special_light_effects:
+            if getattr(lighting_setup, special_light_effect) is True:
+                special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
+        special_light_effects_without_subject = [
+            "silhouette",
+            "rim_light",
+        ]
+        if lighting_setup.is_subject_lighting_applicable is False:
+            for special_light_effect in special_light_effects_without_subject:
+                if getattr(lighting_setup, special_light_effect) is True:
+                    special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
+        if len(special_light_effects_strs) == 0:
+            return False, "No significant artificial or artistic lighting effects in this video. (no need to mention)."
+        return True, " ".join(special_light_effects_strs) + " (please include and explain these effects.)"
+
+    def format_volumetric_lighting(self, lighting_setup, volumetric_lighting_dir="labels/lighting_setup/volumetric_lighting/") -> str:
+        volumetric_light_effects_strs = []
+        volumetric_light_effects = [
+            "volumetric_beam_light",
+            "volumetric_spot_light",
+            "god_rays",
+            "light_through_medium",
+            "volumetric_light_others"
+        ]
+        for volumetric_light_effect in volumetric_light_effects:
+            if getattr(lighting_setup, volumetric_light_effect) is True:
+                volumetric_light_effects_strs.append(read_json_file(os.path.join(volumetric_lighting_dir, f"{volumetric_light_effect}.json"))['def_prompt'][0])
+        if len(volumetric_light_effects_strs) == 0:
+            return False, "No significant volumetric lighting effects in this video. (no need to mention)."
+        return True, " ".join(volumetric_light_effects_strs) + " (please include and explain these effects.)"
+
+    def format_shadow_patterns(self, lighting_setup, shadow_patterns_dir="labels/lighting_setup/shadow_pattern/") -> str:
+        # self.venetian_blinds or self.subject_shape or self.window_frames or self.foliage or self.shadow_patterns_gobo_others
+        shadow_patterns_strs = []
+        shadow_patterns = [
+            "venetian_blinds",
+            "subject_shape",
+            "window_frames",
+            "foliage",
+            "shadow_patterns_gobo_others"
+        ]
+        for shadow_pattern in shadow_patterns:
+            if getattr(lighting_setup, shadow_pattern) is True:
+                shadow_patterns_strs.append(read_json_file(os.path.join(shadow_patterns_dir, f"{shadow_pattern}.json"))['def_prompt'][0])
+        if len(shadow_patterns_strs) == 0:
+            return False, "No distinct or noteworthy shadow patterns or Gobo lighting effects in this video. (no need to mention)."
+        return True, " ".join(shadow_patterns_strs) + " (please include and explain these effects.)"
+
+    def format_light_dynamics(self, lighting_setup, light_dynamics_dir="labels/lighting_setup/dynamic_light/") -> str:
+        # Lighting dynamics
+        # self.color_shifting_smooth = False
+        # self.color_shifting_sudden = False
+        # self.pulsing_flickering = False
+        # self.flashing = False
+        # self.moving_light = False
+        light_dynamics_strs = []
+        light_dynamics = [
+            "color_shifting_smooth",
+            "color_shifting_sudden",
+            "pulsing_flickering",
+            "flashing",
+            "moving_light"
+        ]
+        for light_dynamic in light_dynamics:
+            if getattr(lighting_setup, light_dynamic) is True:
+                light_dynamics_strs.append(read_json_file(os.path.join(light_dynamics_dir, f"{light_dynamic}.json"))['def_prompt'][0])
+        if len(light_dynamics_strs) == 0:
+            return False, "No significant lighting dynamics in this video. (no need to mention)."
+        return True, " ".join(light_dynamics_strs) + " (please include and explain these effects.)"
+
+    def format_dynamics(self, lighting_setup, dynamics_dir="labels/lighting_setup/dynamic_effect/") -> str:
+        other_dynamics_strs = []
+        other_dynamics = [
+            "revealing_shot",
+            "transformation_morphing",
+            "levitation_floating",
+            "explosion",
+            "shattering_breaking",
+            "diffusion",
+            "splashing_waves"
+        ]
+        for other_dynamic in other_dynamics:
+            if getattr(lighting_setup, other_dynamic) is True:
+                other_dynamics_strs.append(read_json_file(os.path.join(dynamics_dir, f"{other_dynamic}.json"))['def_prompt'][0])
+        if len(other_dynamics_strs) == 0:
+            return False, "No other significant dynamics in this video. (no need to mention)."
+        return True, " ".join(other_dynamics_strs) + " (please include and explain these effects.)"
+    
+    def get_description(self, data: VideoData) -> str:
+        if data.lighting_setup.shot_transition:
+            raise ValueError("Shot transitions are not supported in this policy.")
+
+        policy = ""
+        policy += read_text_file("caption_policy/policy/lighting_effects_dynamics/policy.txt")
+
+        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting effects. Please use these as references to expand your description. Keep your description a natural and brief paragraph without any formatting."
+
+        lens_effects_exist, lens_effects_str = self.format_lens_effects(data.lighting_setup)
+        light_reflections_exist, light_reflections_str = self.format_light_reflections(data.lighting_setup)
+        natural_lighting_exist, natural_lighting_str = self.format_natural_lighting_effects(data.lighting_setup)
+        artificial_lighting_exist, artificial_lighting_str = self.format_artificial_lighting_effects(data.lighting_setup)
+        volumetric_lighting_exist, volumetric_lighting_str = self.format_volumetric_lighting(data.lighting_setup)
+        shadow_patterns_exist, shadow_patterns_str = self.format_shadow_patterns(data.lighting_setup)
+        light_dynamics_exist, light_dynamics_str = self.format_light_dynamics(data.lighting_setup)
+        dynamics_exist, dynamics_str = self.format_dynamics(data.lighting_setup)
+        policy += "\n\n**Lens and Optical Effects:** {}".format(lens_effects_str)
+        policy += "\n\n**Light Reflections:** {}".format(light_reflections_str)
+        policy += "\n\n**Natural Lighting Effects:** {}".format(natural_lighting_str)
+        policy += "\n\n**Artificial or Artistic Lighting Effects:** {}".format(artificial_lighting_str)
+        policy += "\n\n**Volumetric Lighting:** {}".format(volumetric_lighting_str)
+        policy += "\n\n**Shadow Patterns or Gobo Lighting Effects:** {}".format(shadow_patterns_str)
+        policy += "\n\n**Lighting Dynamics:** {}".format(light_dynamics_str)
+        policy += "\n\n**Other Dynamics: {}".format(dynamics_str)
+        # policy += "\n\n" + read_text_file("caption_policy/policy/lighting_effects_dynamics/format_instruction.txt")
         return policy

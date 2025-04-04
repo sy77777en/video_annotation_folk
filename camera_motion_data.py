@@ -94,7 +94,7 @@ class CameraMotionData:
             'not_a_tracking_shot', 'aerial_tracking_shot', 'arc_tracking_shot', 'front_side_tracking_shot', 'rear_side_tracking_shot',
             'lead_tracking_shot', 'other_tracking_shots_than_lead', 'tail_tracking_shot', 'tilt_tracking_shot',
             'side_tracking_shot', 'pan_tracking_shot', 'other_tracking_shots_than_pan', 'side_but_not_pan_tracking_shot', 'other_tracking_shots_than_tilt',
-            'other_tracking_shots_than_front_side', 'other_tracking_shots_than_rear_side', 'other_tracking_shots_than_side', 'other_tracking_shots_thank_tail',
+            'other_tracking_shots_than_front_side', 'other_tracking_shots_than_rear_side', 'other_tracking_shots_than_side', 'other_tracking_shots_than_tail',
             'lead_but_not_side_tracking_shot', 'side_but_not_lead_tracking_shot',
             'aerial_but_not_tilt_tracking_shot', 'side_but_not_tilt_tracking_shot',
             'tail_but_not_side_tracking_shot', 'side_but_not_tail_tracking_shot', 'pan_but_not_side_tracking_shot',
