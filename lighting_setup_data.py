@@ -232,13 +232,7 @@ class LightingSetupData:
             "sunlight_level_is_overcast", "sunlight_level_is_sunset_sunrise",
             "sunlight_level_is_unknown", "light_quality_is_soft",
             "light_quality_is_hard", "light_quality_is_changing",
-            "light_quality_is_contrasting", "light_quality_is_complex",
-            "light_quality_is_complex", "subject_light_contrast_is_high",
-            "subject_light_contrast_is_normal", "subject_light_contrast_is_minimal",
-            "subject_light_contrast_is_complex", "flat_lighting", "low_key_lighting",
-            "high_key_lighting", "direction_is_back_light", "direction_is_front_light",
-            "direction_is_top_light", "direction_is_bottom_light", "direction_is_side_light",
-            "direction_is_ambient_light", "direction_is_front_side", "direction_is_rear_side"
+            "light_quality_is_contrasting", "light_quality_is_complex"
         ]
         if self.shot_transition is True or self.is_labeled is False:
             for attr in attributes:
