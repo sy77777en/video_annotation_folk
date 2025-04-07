@@ -2,7 +2,7 @@
     "label": "Scene Type Is Complex/Others",
     "label_name": "scene_type_is_complex_others",
     "def_question": [
-        "Is the scene type unclear, ambiguous, or changing throughout the video?"
+        "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?"
     ],
     "alt_question": [
         "Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?",
@@ -16,7 +16,7 @@
         "Is the scene composition too complex to categorize simply?"
     ],
     "def_prompt": [
-        "The scene type is unclear, ambiguous, or changing throughout the video."
+        "The scene type (indoor or outdoor) is unclear, ambiguous, or changing throughout the video."
     ],
     "alt_prompt": [
         "The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine).",
