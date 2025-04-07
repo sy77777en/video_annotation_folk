@@ -55,7 +55,7 @@ class LightingSetupData:
         self.subject_ambient_light = None
 
         # Special lighting effects on subject
-        self.portrait_lighting = None
+        self.professional_lighting = None
         self.rembrandt_lighting = None
         # below two are actually not dependent on whether the subject is present or not
         self.silhouette = None
