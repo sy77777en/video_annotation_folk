@@ -240,8 +240,8 @@ class LightingSetupData:
             return
         # self.is_lighting_quality_complex = self.light_quality in {"complex_changing", "complex_contrasting", "complex_others"}
         self.scene_type_is_complex_others = self.scene_type == "complex_others"
-        self.scene_type_is_exterior = self.scene_type == "exterior"
-        self.scene_type_is_interior = self.scene_type == "interior"
+        self.scene_type_is_exterior = self.scene_type == "exterior" if not self.scene_type in ["complex_others", "unrealistic_synthetic"] else None
+        self.scene_type_is_interior = self.scene_type == "interior" if not self.scene_type in ["complex_others", "unrealistic_synthetic"] else None
         self.scene_type_is_synthetic = self.scene_type == "unrealistic_synthetic"
 
         if self.sunlight_level == "unknown":
