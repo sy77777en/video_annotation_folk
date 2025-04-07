@@ -2908,6 +2908,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--max_samples", type=int, default=MAX_SAMPLES, help="A (rough) maximum number of (test) samples per task")
+    parser.add_argument("--folder_name", type=str, default="motion_dataset", help="Folder name for the dataset")
     args = parser.parse_args()
     
     # # Print statistics
@@ -2922,7 +2923,7 @@ if __name__ == "__main__":
         labels_filename="label_names.json",
         pairwise_labels=PAIRWISE_LABELS,
         train_ratio=TRAIN_RATIO,
-        folder_name="motion_dataset"
+        folder_name=args.folder_name
     )
     print_detailed_task_statistics(
         datasets['original_tasks']["raw"],

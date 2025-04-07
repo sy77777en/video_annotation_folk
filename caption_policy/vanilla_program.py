@@ -248,13 +248,13 @@ class VanillaSpatialPolicy(SocraticProgram):
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Spatial Framing and Dynamics."
         caption_fields = ["spatial_framing_dynamics"]
         super().__init__(name, info, caption_fields)
-    
+
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
             "spatial_framing_dynamics": self.get_description(data)
         }
-    
+
     def format_shot_size(self, shot_size: str) -> str:
         # Options: "unknown", "extreme_wide", "wide", "full", "medium_full", "medium",
         # "medium_close_up", "close_up", "extreme_close_up"
@@ -270,7 +270,7 @@ class VanillaSpatialPolicy(SocraticProgram):
             "extreme_close_up": "an extreme close-up shot"
         }
         return shot_size_info[shot_size]
-    
+
     def format_height_wrt_subject(self, height: str) -> str:
         # Options: "unknown", "above_subject", "at_subject", "below_subject"
         height_info = {
@@ -280,11 +280,11 @@ class VanillaSpatialPolicy(SocraticProgram):
             "below_subject": "below the subject"
         }
         return height_info[height]
-    
+
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
-        
+
         policy = ""
         # policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_subject.txt")
         # policy += "\n\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
@@ -295,12 +295,11 @@ class VanillaSpatialPolicy(SocraticProgram):
         #     policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_scene.txt")
         # else:
         #     policy += read_text_file("caption_policy/policy/spatial_framing_dynamics/framing_subject.txt")
-        
-        
+
         # if data.cam_setup.is_framing_subject is None:
         #     # Including complex shot with description others, or multiple subject without a clear focus
         #     # If is others description, then prompt to use this description to complement the subject description
-        #     # Note that there may not be a subject in focus. 
+        #     # Note that there may not be a subject in focus.
         #     if data.cam_setup.shot_size_description_type == "others":
         #         pass # Do nothing
         #     elif data.cam_setup.is_just_many_subject_no_focus_shot:
@@ -308,7 +307,7 @@ class VanillaSpatialPolicy(SocraticProgram):
         #         policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
         #     else:
         #         raise ValueError("When framing subject is None, the shot size description must be others or many_subject_no_focus.")
-            
+
         assert data.cam_setup.subject_description != "", "Subject description must be provided before subject motion and dynamics description."
         assert data.cam_setup.scene_description != "", "Scene description must be provided before subject motion and dynamics description."
         policy += "\n\n" + read_text_file("caption_policy/policy/spatial_framing_dynamics/has_subject_scene_description.txt").format(
@@ -319,7 +318,7 @@ class VanillaSpatialPolicy(SocraticProgram):
         shot_size_change = data.cam_setup.shot_size_change
         subject_status = None # 'has_subject', 'no_subject', 'change_of_subject', 'has_description'
         is_height_wrt_subject_applicable = data.cam_setup.is_height_wrt_subject_applicable
-        
+
         if data.cam_setup.is_just_human_shot:
             policy += "\n\nPlease note that the video features **salient human subjects**, so you should focus on describing the spatial framing and movements of them."
             subject_status = "has_subject"
@@ -373,7 +372,7 @@ class VanillaSpatialPolicy(SocraticProgram):
             subject_status = "has_subject"
         elif data.cam_setup.is_just_many_subject_no_focus_shot:
             policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
-            subject_status = "no_subject"
+            subject_status = "has_subject"
         elif data.cam_setup.is_just_scenery_shot:
             policy += "\n\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects."
             subject_status = "no_subject"
@@ -397,8 +396,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                     )
             elif data.cam_setup.subject_height_description != "":
                 policy += f"\n\nCamera Height Relative to Subjects: {data.cam_setup.subject_height_description}"
-                
-        
+
         if subject_status == "has_subject":
             if shot_size_change:
                 policy += "\n\nShot Size Information: The video begins with {} of the subjects. It then changes to {}.".format(
@@ -407,7 +405,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                 )
             else:
                 policy += "\n\nShot Size Information: The video shows {} of the subjects.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
-                
+
             if is_height_wrt_subject_applicable:
                 if data.cam_setup.height_wrt_subject_change:
                     policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {}. It then changes to {}.".format(
@@ -426,7 +424,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                 )
             else:
                 policy += "\n\nShot Size Information: The video shows {} of the scenery.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
-                
+
             if is_height_wrt_subject_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is no subject.")
         elif subject_status == None:
@@ -434,7 +432,7 @@ class VanillaSpatialPolicy(SocraticProgram):
             policy += "\n\nShot Size Information: The video features a complex scenario with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video. Do not use shot size to describe the spatial framing."
             if is_height_wrt_subject_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is unknown subject.")
-        
+
         return policy
 
 
