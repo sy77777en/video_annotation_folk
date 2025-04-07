@@ -27,8 +27,8 @@
         "A shot featuring an interplay of distinct lighting styles.",
         "A scene where light transitions, mixes, or creates contrast."
     ],
-    "pos_rule_str": "self.lighting_setup.is_lighting_quality_complex is True",
-    "neg_rule_str": "self.lighting_setup.is_lighting_quality_complex is False",
+    "pos_rule_str": "self.lighting_setup.light_quality_is_complex is True",
+    "neg_rule_str": "self.lighting_setup.light_quality_is_complex is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }
