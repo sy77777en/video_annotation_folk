@@ -225,7 +225,7 @@ class LightingSetupData:
 
     def _set_lighting_setup_attributes(self):
         attributes = [
-            "is_lighting_setup_complex", "is_lighting_quality_complex",
+            # "is_lighting_quality_complex",
             "scene_type_is_complex_others", "scene_type_is_exterior",
             "scene_type_is_interior", "scene_type_is_synthetic",
             "sunlight_level_is_normal", "sunlight_level_is_sunny",
@@ -238,7 +238,7 @@ class LightingSetupData:
             for attr in attributes:
                 setattr(self, attr, None)
             return
-        self.is_lighting_quality_complex = self.light_quality in {"complex_changing", "complex_contrasting", "complex_others"}
+        # self.is_lighting_quality_complex = self.light_quality in {"complex_changing", "complex_contrasting", "complex_others"}
         self.scene_type_is_complex_others = self.scene_type == "complex_others"
         self.scene_type_is_exterior = self.scene_type == "exterior"
         self.scene_type_is_interior = self.scene_type == "interior"
