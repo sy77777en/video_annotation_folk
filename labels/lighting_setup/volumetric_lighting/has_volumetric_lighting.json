@@ -2,7 +2,7 @@
     "label": "Is Volumetric Lighting Present",
     "label_name": "has_volumetric_lighting",
     "def_question": [
-        "Does the video feature volumetric lighting, where light appears as a visible volume?"
+        "Does the video show noticeable volumetric lighting, where light appears as a visible volume?"
     ],
     "alt_question": [
         "Is there a noticeable volumetric lighting effect in the video?",
@@ -15,7 +15,7 @@
         "Is volumetric lighting present as a dominant visual effect in the video?"
     ],
     "def_prompt": [
-        "The video features volumetric lighting, where light appears as a visible volume."
+        "The video features noticeable volumetric lighting, where light appears as a visible volume."
     ],
     "alt_prompt": [
         "A scene where volumetric lighting enhances depth and atmosphere.",
