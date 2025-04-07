@@ -2,7 +2,7 @@
     "label": "Sunlight Level Is Unknown",
     "label_name": "sunlight_level_is_unknown",
     "def_question": [
-        "Is the sunlight condition in the video unclear or not applicable?"
+        "Is it difficult to determine the sunlight condition in the video, or is it not applicable?"
     ],
     "alt_question": [
         "Is it difficult to determine the sunlight level in this scene?",
@@ -15,7 +15,7 @@
         "Is the sunlight condition indeterminate due to the environment?"
     ],
     "def_prompt": [
-        "The sunlight condition in the video is unclear or not applicable."
+        "The sunlight condition in the video is difficult to determine, or not applicable."
     ],
     "alt_prompt": [
         "A video where sunlight presence cannot be determined.",
