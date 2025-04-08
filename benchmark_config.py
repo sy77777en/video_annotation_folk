@@ -1,5 +1,6 @@
 CAMERABENCH_GROUND_ONLY_FOLDER = "cam_motion-20250227_0324ground_only"
 CAMERABENCH_GROUND_AND_SETUP_FOLDER = "cam_motion-cam_setup-20250227_0507ground_and_setup"
+CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE = "20250227_0507ground_and_setup_updated_on_0406"
 CAMERABENCH_CAMERA_AND_CAMERA_FOLDER = "cam_motion-20250227_0326ground_and_camera"
 
 def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
@@ -1598,3 +1599,7 @@ PAIRWISE_LABELS = {
     "only_rotation": only_rotation_tasks,
     "reference_frame": reference_frame_tasks,
 }
+
+def get_pairwise_labels(folder_name="motion_dataset"):
+    # First get the folder name
+    

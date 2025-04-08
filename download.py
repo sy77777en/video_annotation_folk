@@ -18,7 +18,7 @@ HF_PREFIX = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/
 def save_to_json(data, path):
     with open(path, "w") as f:
         json.dump(data, f, indent=4)
-        
+
 def load_from_json(path):
     with open(path, "r") as f:
         return json.load(f)
@@ -52,7 +52,7 @@ def download_videos(video_data_dict, video_dir="videos"):
     for video in failed_videos:
         del video_data_dict[video]
     print(f"Successfully downloaded {len(video_data_dict)} videos")
-    print(f"Failed to download {len(failed_videos)} videos, saving them to failed_videos.json")
+    print(f"Failed to download {len(failed_videos)} videos, saving them to {os.path.join(video_dir, 'failed_videos.json')}")
     save_to_json(failed_videos, os.path.join(video_dir, "failed_videos.json"))
     return video_data_dict
 
@@ -87,10 +87,10 @@ def get_video_labels_dir(json_path, label_collections=["cam_motion", "cam_setup"
 def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels"):
     video_labels_dir = get_video_labels_dir(json_path, label_collections, video_labels_dir)
     labels_dir = os.path.join(video_labels_dir, "labels")
-    
+
     if not os.path.exists(labels_dir):
         os.makedirs(labels_dir)
-    
+
     all_label_path = os.path.join(video_labels_dir, "all_labels.json")
     label_name_path = os.path.join(video_labels_dir, "label_names.json")
     # Only load label JSON files if they already exist
@@ -99,18 +99,19 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
         sorted_labels_list = load_from_json(label_name_path)
         # Only return labels in label_names.json
         return {name: sorted_labels[name] for name in sorted_labels_list}
-    
+
     # Otherwise, create label JSON files
     video_data_list = list(video_data_dict.values())
     label_to_videos_dict = {}
     for label_name, label in valid_labels_dict.items():
         label_path = os.path.join(labels_dir, f"{label_name}.json")
+        project_name = label_name.split(".")[0]
         label_to_videos = {
             "label": label_name,
             "label_name": label.label,
             "definition": label.def_question[0],
-            "pos": [data.workflows[0].video_name for data in label.pos(video_data_list)],
-            "neg": [data.workflows[0].video_name for data in label.neg(video_data_list)]
+            "pos": [data.workflows[project_name].video_name for data in label.pos(video_data_list)],
+            "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)]
         }
         save_to_json(label_to_videos, label_path)
         if len(label_to_videos["pos"]) == 0:
@@ -119,7 +120,7 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
             print(f"Skipping {label_name}: no negative examples")
         else:
             label_to_videos_dict[label_name] = label_to_videos
-    
+
     # Sort labels by number of positive examples
     sorted_labels = sorted(label_to_videos_dict.items(), key=lambda x: len(x[1]["pos"]), reverse=True)
     sorted_labels = {label_name: label_to_videos for label_name, label_to_videos in sorted_labels}
@@ -158,12 +159,13 @@ def print_rare_labels(video_data_dict, valid_labels_dict, rare_threshold=30, sav
     video_data_list = list(video_data_dict.values())
     label_to_videos_dict = {}
     for label_name, label in valid_labels_dict.items():
+        project_name = label_name.split(".")[0]
         label_to_videos = {
             "label": label_name,
             "label_name": label.label,
             "definition": label.def_question[0],
-            "pos": [data.workflows[0].video_name for data in label.pos(video_data_list)],
-            "neg": [data.workflows[0].video_name for data in label.neg(video_data_list)]
+            "pos": [data.workflows[project_name].video_name for data in label.pos(video_data_list)],
+            "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)]
         }
         label_to_videos_dict[label_name] = label_to_videos
     
@@ -180,7 +182,7 @@ def print_rare_labels(video_data_dict, valid_labels_dict, rare_threshold=30, sav
                 definition = label_data['definition'].split("\n")[0]  # Ensure single-line definition
                 f.write(f"| {definition} | {len(label_data['pos'])} | {len(label_data['neg'])} | {label_name} |\n")
     print(f"Saved rare labels to {save_path}")
-    
+
 
 def main():
     parser = argparse.ArgumentParser(description="Get labels and video data.")
@@ -207,7 +209,7 @@ def main():
         video_labels_dir=args.video_labels_dir,
         video_dir=args.video_dir
     )
-    
+
 
 if __name__ == "__main__":
     main()

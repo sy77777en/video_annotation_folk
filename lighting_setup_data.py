@@ -479,11 +479,11 @@ class LightingSetupData:
         else:
             raise ValueError("subject_ambient_light must be a boolean value")
 
-    def set_portrait_lighting(self, portrait_lighting):
-        if isinstance(portrait_lighting, bool):
-            self.portrait_lighting = portrait_lighting
+    def set_professional_lighting(self, professional_lighting):
+        if isinstance(professional_lighting, bool):
+            self.professional_lighting = professional_lighting
         else:
-            raise ValueError("portrait_lighting must be a boolean value")
+            raise ValueError("professional_lighting must be a boolean value")
 
     def set_rembrandt_lighting(self, rembrandt_lighting):
         if isinstance(rembrandt_lighting, bool):
@@ -836,7 +836,7 @@ class LightingSetupData:
 
         if self.subject_contrast_ratio == "unknown":
             if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, self.subject_bottom_light, self.subject_side_light, \
-                self.subject_ambient_light, self.portrait_lighting, self.rembrandt_lighting]):
+                self.subject_ambient_light, self.professional_lighting, self.rembrandt_lighting]):
                 raise ValueError("subject_contrast_ratio must be specified if subject lighting is present")
 
 lighting_setup_params_demo = {
@@ -863,7 +863,7 @@ lighting_setup_params_demo = {
     "subject_bottom_light": False,
     "subject_side_light": False,
     "subject_ambient_light": False,
-    "portrait_lighting": True,
+    "professional_lighting": True,
     "rembrandt_lighting": False,
     "silhouette": False,
     "rim_light": False,
