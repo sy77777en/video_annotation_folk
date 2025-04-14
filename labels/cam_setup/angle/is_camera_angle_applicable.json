@@ -2,30 +2,30 @@
     "label": "Is Camera Angle Applicable",
     "label_name": "is_camera_angle_applicable",
     "def_question": [
-        "Is camera angle classification possible for this video?"
+        "Is the camera angle relative to the ground clear?"
     ],
     "alt_question": [
-        "Can the camera angle be meaningfully categorized?",
-        "Is it possible to determine the camera's angular position?",
-        "Can we assess the camera's rotational angle?",
-        "Is the camera angle clear enough to classify?",
-        "Can the camera's orientation be effectively categorized?",
-        "Is it feasible to determine the shot angle?",
-        "Can we meaningfully analyze the camera angle?",
-        "Is the camera's angular position classifiable?"
+        "Can the camera's angle relative to the ground be clearly determined?",
+        "Is it clear whether the camera is positioned at a high, level, or low angle?",
+        "Can you tell if the camera is angled up, down, or level with the ground?",
+        "Is the camera's angular relationship to the ground evident?",
+        "Is it apparent how the camera is tilted relative to the ground?",
+        "Can you determine if the camera is positioned at an angle to the ground?",
+        "Is the camera's angular orientation clear?",
+        "Can you identify how the camera is angled in relation to the ground?"
     ],
     "def_prompt": [
-        "A shot where the camera angle can be meaningfully classified."
+        "The camera angle relative to the ground is clear."
     ],
     "alt_prompt": [
-        "A video with classifiable camera angle.",
-        "A shot with determinable angular position.",
-        "A video where camera orientation can be assessed.",
-        "A shot with clear angle categorization.",
-        "A video suitable for angle classification.",
-        "A shot with analyzable camera position.",
-        "A video with measurable camera angle.",
-        "A shot with definable orientation."
+        "A shot where the camera's angle relative to the ground can be clearly determined.",
+        "A video where it's clear whether the camera is positioned at a high, level, or low angle.",
+        "A sequence where the camera's angular relationship to the ground is evident.",
+        "A shot with a clearly visible camera angle.",
+        "A video where the camera's tilt relative to the ground is apparent.",
+        "A shot where you can determine how the camera is angled.",
+        "A video with a clear angular orientation.",
+        "A scene where the camera's angle in relation to the ground is identifiable."
     ],
     "pos_rule_str": "self.cam_setup.is_camera_angle_applicable is True",
     "neg_rule_str": "self.cam_setup.is_camera_angle_applicable is False",

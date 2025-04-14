@@ -140,42 +140,32 @@ class CameraSetupData:
 
         if self.video_speed == "fast_motion":
             self.fast_motion_without_time_lapse = True
-        elif self.video_speed not in ['fast_motion', 'speed_ramp', 'time_reversed']:
+        elif self.video_speed not in ['fast_motion', 'speed_ramp']:
             self.fast_motion_without_time_lapse = False
         else:
             self.fast_motion_without_time_lapse = None
 
         if self.video_speed in ['fast_motion', 'time_lapse']:
             self.fast_motion = True
-        elif self.video_speed not in ['fast_motion', 'time_lapse', 'speed_ramp', 'time_reversed']:
+        elif self.video_speed not in ['fast_motion', 'time_lapse', 'speed_ramp']:
             self.fast_motion = False
         else:
             self.fast_motion = None
 
-        if self.video_speed == 'regular':
-            self.regular_speed = True
-        elif self.video_speed not in ['regular', 'stop_motion', 'time_reversed']:
-            self.regular_speed = False
-        else:
-            self.regular_speed = None
+        self.regular_speed = self.video_speed == 'regular'
 
         if self.video_speed == 'slow_motion':
             self.slow_motion = True
-        elif self.video_speed not in ['slow_motion', 'speed_ramp', 'time_reversed']:
+        elif self.video_speed not in ['slow_motion', 'speed_ramp']:
             self.slow_motion = False
         else:
             self.slow_motion = None
 
-        if self.video_speed == 'stop_motion':
-            self.stop_motion = True
-        elif self.video_speed not in ['stop_motion', 'time_reversed']:
-            self.stop_motion = False
-        else:
-            self.stop_motion = None
+        self.stop_motion = self.video_speed == 'stop_motion'
 
         if self.video_speed == 'time_lapse':
             self.time_lapse = True
-        elif self.video_speed not in ['time_lapse', 'speed_ramp', 'time_reversed']:
+        elif self.video_speed not in ['time_lapse', 'speed_ramp']:
             self.time_lapse = False
         else:
             self.time_lapse = None
@@ -499,6 +489,7 @@ class CameraSetupData:
                 self.focus_change_from_far_to_near = self.focus_change_from_near_to_far = False
                 self.is_rack_pull_focus = self.is_focus_tracking = False
                 self.focus_change_from_in_to_out_of_focus = self.focus_change_from_out_to_in_focus = False
+                self.focus_change = False
             else:
                 self.is_deep_focus = False
                 self.is_shallow_focus = True
@@ -512,6 +503,7 @@ class CameraSetupData:
                         assert self.focus_change_reason == "no_change"
                         self.focus_change_from_near_to_far = self.focus_change_from_far_to_near = False
                         self.is_rack_pull_focus = self.is_focus_tracking = False
+                        self.focus_change = False
                     else:
                         if self.focus_info['start'] == "middle_ground":
                             self.is_rack_pull_focus = self.focus_change_reason in ["rack_focus", "pull_focus"]
@@ -527,10 +519,12 @@ class CameraSetupData:
                                 # e.g. background -> foreground
                                 self.focus_change_from_near_to_far = False
                                 self.focus_change_from_far_to_near = True
+                                self.focus_change = True
                             else:
                                 self.focus_change_from_near_to_far = True
                                 self.focus_change_from_far_to_near = False
-        self.focus_change = self.focus_change_from_near_to_far or self.focus_change_from_far_to_near
+                                self.focus_change = True
+        # self.focus_change = self.focus_change_from_near_to_far or self.focus_change_from_far_to_near
         self.is_rack_focus = self.is_rack_pull_focus and self.focus_change_reason == "rack_focus"
         self.is_pull_focus = self.is_rack_pull_focus and self.focus_change_reason == "pull_focus"
         if self.focus_info['start'] == 'out_of_focus' and self.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.is_rack_pull_focus is True:

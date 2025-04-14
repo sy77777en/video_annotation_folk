@@ -1,31 +1,31 @@
 {
-    "label": "Camera Angle End With Bird Eye Angle",
+    "label": "Camera Angle End With Bird's Eye Angle",
     "label_name": "camera_angle_end_with_bird_eye_angle",
     "def_question": [
-        "Does the video end with the camera positioned at a bird’s eye angle, looking directly downward at the ground?"
+        "Does the video end with the camera at a bird's eye angle, looking straight down from above?"
     ],
     "alt_question": [
-        "Does the shot end with the camera looking straight down?",
-        "Is the ending frame positioned at a bird’s eye perspective?",
-        "Does the video conclude with an extreme high-angle shot looking downward?",
-        "Is the final shot captured from above, looking down at the environment?",
-        "Does the sequence close with a bird’s eye view, looking vertically down?",
-        "Is the last shot taken from the highest perspective, directed downward?",
-        "Does the video close with a top-down perspective?",
-        "Is the final frame recorded with the camera positioned directly overhead?"
+        "Does the shot end with a bird's eye perspective?",
+        "Is the final frame taken from a top-down viewpoint?",
+        "Does the video finish with the camera looking straight down at the ground?",
+        "Is the ending shot captured from an overhead, bird's eye perspective?",
+        "Does the sequence close with a shot where the camera is directly above the scene?",
+        "Is the last shot positioned in a strict top-down orientation?",
+        "Does the video conclude with an aerial viewpoint looking directly downward?",
+        "Is the ending frame recorded from a high, perpendicular angle?"
     ],
     "def_prompt": [
-        "The video ends with the camera positioned at a bird’s eye angle, looking directly downward at the ground."
+        "The video ends with the camera at a bird's eye angle, looking straight down from above."
     ],
     "alt_prompt": [
-        "A shot ending at a bird’s eye angle, looking directly downward.",
-        "A video concluding with a bird’s eye perspective, capturing the ground below.",
-        "A sequence that ends with the camera positioned directly overhead and looking down.",
-        "A shot showing the environment from a bird’s eye perspective.",
-        "A video closing with a top-down, overhead framing.",
-        "A shot where the camera is positioned high above and facing downward.",
-        "A video that ends with the camera capturing subjects from a top-down viewpoint.",
-        "A scene that closes with the camera looking sharply downward at the ground."
+        "A shot ending from a strict top-down perspective.",
+        "A video concluding with a bird's eye view, directly above the scene.",
+        "A sequence that ends with an overhead camera looking straight down.",
+        "A shot where the environment is captured from a top-down orientation.",
+        "A video closing with a high, perpendicular perspective.",
+        "A shot where the camera is positioned vertically above the ground.",
+        "A video that ends with a fully downward-facing angle.",
+        "A scene that closes with a bird's eye framing of the environment."
     ],
     "pos_rule_str": "self.cam_setup.camera_angle_info['end'] == 'bird_eye_angle'",
     "neg_rule_str": "self.cam_setup.camera_angle_info['end'] not in ['bird_eye_angle', 'unknown']",

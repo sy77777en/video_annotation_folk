@@ -1,0 +1,34 @@
+{
+    "label": "Camera Angle Change",
+    "label_name": "camera_angle_change",
+    "def_question": [
+        "Does the camera angle change significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?"
+    ],
+    "alt_question": [
+        "Does the camera's viewing angle shift during the shot?",
+        "Is there a noticeable change in the camera's angular perspective?",
+        "Does the camera transition between different viewing angles?",
+        "Is there a shift in how the camera is angled relative to the ground?",
+        "Does the camera's perspective change from one angle to another?",
+        "Is there variation in the camera's angular position?",
+        "Does the shot include changes in the camera's viewing angle?",
+        "Are there transitions between different camera angles?"
+    ],
+    "def_prompt": [
+        "The camera angle changes significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view."
+    ],
+    "alt_prompt": [
+        "A video featuring changes in camera angle.",
+        "A sequence with noticeable shifts in angular perspective.",
+        "A shot that transitions between different camera angles.",
+        "A video where the camera's angle relative to the ground changes.",
+        "A sequence showing variation in camera perspective angles.",
+        "A shot with dynamic changes in camera position.",
+        "A video demonstrating shifts in viewing angle.",
+        "A scene with transitions between different camera angles."
+    ],
+    "pos_rule_str": "self.cam_setup.camera_angle_change is True",
+    "neg_rule_str": "self.cam_setup.camera_angle_change is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

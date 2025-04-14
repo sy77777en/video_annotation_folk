@@ -4,7 +4,7 @@ import random
 import json
 from collections import defaultdict
 from torch.utils.data import Dataset
-from benchmark_config import PAIRWISE_LABELS
+from benchmark_config import FOLDER_NAMES, get_pairwise_labels
 
 # SAMPLING = "random"
 SAMPLING = "top"
@@ -197,7 +197,7 @@ def get_vqa_scores(yes_scores, no_scores):
     result = {key: value / denominators[key] for key, value in metrics.items()}
     return result
 
-    
+
 class PairwiseBenchmark(Dataset):
     """
     Dataset class for pairwise comparison tasks (VQA or retrieval).
@@ -645,7 +645,7 @@ def _validate_task_dict(task_dict):
     """
     assert isinstance(task_dict, dict), "Task specification must be a dictionary"
     assert "label" in task_dict and "type" in task_dict, "Task specification must have 'label' and 'type' keys"
-   
+
 
 def generate_pairwise_tasks(pairwise_labels, root, video_root, video_labels_dir, labels_filename="label_names.json"):
     """
@@ -1157,7 +1157,6 @@ def print_task_statistics(sampled_tasks):
     print(f"{'Total benchmark samples:':<60} {total_samples:<10}")
 
 
-
 def sample_from_pairwise_tasks(pairwise_tasks, max_samples=30, sampling="random", seed=0):
     """
     Sample a subset of videos from pairwise tasks.
@@ -1224,7 +1223,7 @@ def generate_pairwise_benchmark(
     video_root=None,
     video_labels_dir=None,
     labels_filename="label_names.json",
-    pairwise_labels=PAIRWISE_LABELS,
+    pairwise_labels=None,
 ):
     """
     Generate a pairwise benchmark by sampling from pairwise tasks.
@@ -1299,7 +1298,6 @@ def generate_pairwise_benchmark(
     return sampled_tasks, sampled_config
 
 
-
 if __name__ == "__main__":
     # Import constants from config
     # Generate the benchmark
@@ -1318,8 +1316,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--max_samples", type=int, default=MAX_SAMPLES, help="A (rough) maximum number of (test) samples per task")
     parser.add_argument("--folder_name", type=str, default="motion_dataset", 
-                        choices=["motion_dataset", # For CameraBench
-                                 ],
+                        choices=FOLDER_NAMES,
                         help="Folder name for the dataset")
     args = parser.parse_args()
     
@@ -1333,7 +1330,7 @@ if __name__ == "__main__":
         video_root=VIDEO_ROOT,
         video_labels_dir=VIDEO_LABELS_DIR,
         labels_filename="label_names.json",
-        pairwise_labels=PAIRWISE_LABELS, # TODO: Refactor to use folder_name as input
+        pairwise_labels=get_pairwise_labels(args.folder_name),
         train_ratio=TRAIN_RATIO,
         folder_name=args.folder_name
     )

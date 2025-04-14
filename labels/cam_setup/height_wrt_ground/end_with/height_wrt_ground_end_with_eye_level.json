@@ -2,12 +2,12 @@
     "label": "Height Wrt Ground End With Eye Level",
     "label_name": "height_wrt_ground_end_with_eye_level",
     "def_question": [
-        "Does the video end with the camera at eye level, roughly at a person's eye height, above the waist but below overhead level?"
+        "Does the video end with the camera at eye level (roughly at a person's eye height, above the waist)?"
     ],
     "alt_question": [
         "Does the shot end at eye level?",
         "Is the final frame taken from an eye-level perspective?",
-        "Does the video conclude with a camera height typical of a standing person’s eyes?",
+        "Does the video conclude with a camera height typical of a standing person's eyes?",
         "Is the last shot captured at a height similar to a person's eye level?",
         "Does the sequence close with an eye-level perspective?",
         "Is the final shot positioned at an eye-level height?",
@@ -15,7 +15,7 @@
         "Is the ending frame aligned with a natural human viewpoint?"
     ],
     "def_prompt": [
-        "The video ends with the camera positioned at eye level, approximately at a person's eye height, including any height above waist but below overhead level."
+        "The video ends with the camera positioned at eye level (roughly at a person's eye height, above the waist)."
     ],
     "alt_prompt": [
         "A shot ending at eye level, captured at a natural viewing height.",
@@ -25,7 +25,7 @@
         "A video closing with a straight-on view at eye level.",
         "A shot where the camera is positioned at a height similar to a person's eyes.",
         "A video that ends with a perspective slightly above waist height but below overhead.",
-        "A scene that concludes with a balanced, eye-level framing of the environment."
+        "A scene that closes with a balanced, eye-level framing of the environment."
     ],
     "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'eye_level'",
     "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['eye_level', 'unknown']",

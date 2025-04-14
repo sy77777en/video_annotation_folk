@@ -2,7 +2,7 @@
     "label": "Focus Shifts from Foreground to Background",
     "label_name": "focus_from_foreground_to_background",
     "def_question": [
-        "Does the video start with the foreground in focus and then transition to focusing on the background?"
+        "Does the video start with the camera focused on the foreground and then shift to the background?"
     ],
     "alt_question": [
         "Does the focus transition from a sharp foreground to a sharp background?",
@@ -15,7 +15,7 @@
         "Is there a clear depth transition where the foreground blurs while the background sharpens?"
     ],
     "def_prompt": [
-        "The video starts with the foreground in focus and then transitions to focusing on the background."
+        "The video starts with the camera focused on the foreground and then shifts to the background."
     ],
     "alt_prompt": [
         "A video where the focus moves from the foreground to the background.",

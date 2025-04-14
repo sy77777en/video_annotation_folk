@@ -2,7 +2,7 @@
     "label": "Is Dutch Angle Varying",
     "label_name": "is_dutch_angle_varying",
     "def_question": [
-        "Does the degree of the Dutch angle shift throughout the video?"
+        "Does the degree of the Dutch (canted) angle shift throughout the video?"
     ],
     "alt_question": [
         "Does the tilted angle change during the shot?",
@@ -15,7 +15,7 @@
         "Is there variation in the tilted perspective?"
     ],
     "def_prompt": [
-        "A shot where the degree of Dutch angle changes throughout its duration."
+        "There is a Dutch (canted) angle in the video, and its degree varies."
     ],
     "alt_prompt": [
         "A video with varying tilt angles.",

@@ -198,7 +198,7 @@ def main():
     # Add our additional arguments
     parser.add_argument("--adobe_excel_files", nargs="+", type=str, default=["adobe_2_19.xlsx", "adobe_2_17.xlsx"], 
                         help="List of Adobe Excel files")
-    parser.add_argument("--output_excel", type=str, default="caption/output_caption_xlsx/caption_collection_random_april_2.xlsx", 
+    parser.add_argument("--output_excel", type=str, default="caption/output_caption_xlsx/caption_collection_random_april_9.xlsx", 
                         help="Path to the output Excel file")
     
     # Parse the arguments

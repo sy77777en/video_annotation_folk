@@ -2,7 +2,7 @@
     "label": "Shot Size Is Close Up",
     "label_name": "shot_size_is_close_up",
     "def_question": [
-        "Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject while maintaining context?"
+        "Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context?"
     ],
     "alt_question": [
         "Is the entire video filmed in close-up, focusing on the subject's prominent features?",
@@ -16,7 +16,7 @@
         "Is the entire sequence shot at close range to emphasize the subject's details?"
     ],
     "def_prompt": [
-        "A video that maintains a close-up shot throughout, consistently highlighting a distinct part of the subject while maintaining context."
+        "A video that maintains a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context."
     ],
     "alt_prompt": [
         "A video shot entirely in close-up where the subject's defining features fill most of the frame.",

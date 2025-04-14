@@ -2,26 +2,26 @@
     "label": "Camera Angle End With Worm Eye Angle",
     "label_name": "camera_angle_end_with_worm_eye_angle",
     "def_question": [
-        "Does the video end with the camera positioned at a worm’s eye angle, looking sharply upward to the sky?"
+        "Does the video end with the camera at a worm's eye angle, looking straight up from below?"
     ],
     "alt_question": [
         "Does the shot end with the camera looking straight up?",
-        "Is the ending frame positioned at a worm’s eye perspective?",
-        "Does the video conclude with an extreme low-angle shot looking upward?",
-        "Is the final shot captured from below, with the camera pointing skyward?",
-        "Does the sequence close with a worm’s eye view, looking vertically up?",
+        "Is the final frame positioned at a worm's eye perspective?",
+        "Does the video finish with an extreme low-angle shot looking upward?",
+        "Is the ending shot captured from below, with the camera pointing skyward?",
+        "Does the sequence close with a worm's eye view, looking vertically up?",
         "Is the last shot taken from the lowest perspective, directed upward?",
-        "Does the video close with an angle opposite to a bird’s eye view?",
-        "Is the final frame recorded with the camera tilted steeply upwards?"
+        "Does the video conclude with an angle opposite to a bird's eye view?",
+        "Is the ending frame recorded with the camera tilted steeply upwards?"
     ],
     "def_prompt": [
-        "The video ends with the camera positioned at a worm’s eye angle, looking sharply upward to the sky."
+        "The video ends with the camera at a worm's eye angle, looking straight up from below."
     ],
     "alt_prompt": [
-        "A shot ending at a worm’s eye angle, looking steeply upward.",
-        "A video concluding with a worm’s eye view, capturing the sky or ceiling.",
+        "A shot ending at a worm's eye angle, looking steeply upward.",
+        "A video concluding with a worm's eye view, capturing the sky or ceiling.",
         "A sequence that ends with the camera positioned extremely low and pointing up.",
-        "A shot showing the environment from a worm’s eye perspective.",
+        "A shot showing the environment from a worm's eye perspective.",
         "A video closing with a dramatically low-angle upward tilt.",
         "A shot where the camera is positioned at ground level and directed upward.",
         "A video that ends with the camera framing subjects from an extreme low viewpoint.",

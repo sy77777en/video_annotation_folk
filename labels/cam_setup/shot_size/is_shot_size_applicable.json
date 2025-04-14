@@ -2,7 +2,7 @@
     "label": "Is Shot Size Applicable",
     "label_name": "is_shot_size_applicable",
     "def_question": [
-        "Is shot size classification possible for this video?"
+        "Can the shot size be meaningfully determined?"
     ],
     "alt_question": [
         "Can the shot size be meaningfully categorized?",
@@ -12,7 +12,7 @@
         "Can we meaningfully analyze the shot size?"
     ],
     "def_prompt": [
-        "A shot where the shot size can be meaningfully determined."
+        "A video where the shot size can be meaningfully determined."
     ],
     "alt_prompt": [
         "The shot size can be meaningfully categorized.",

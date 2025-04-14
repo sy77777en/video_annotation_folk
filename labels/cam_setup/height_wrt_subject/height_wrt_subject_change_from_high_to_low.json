@@ -2,30 +2,30 @@
     "label": "Height Wrt Subject Change From High To Low",
     "label_name": "height_wrt_subject_change_from_high_to_low",
     "def_question": [
-        "Does the camera height decrease noticeably in relation to the subject?"
+        "Does the camera's height decrease noticeably, transitioning from above to level with the subject or from level to below?"
     ],
     "alt_question": [
-        "Does the camera move downward relative to the subject?",
-        "Is there a descent in camera position compared to subject?",
-        "Does the vertical angle decrease relative to the subject?",
-        "Is there a lowering of camera height versus subject?",
-        "Does the shot transition from high to low angle?",
-        "Is there a downward shift in camera position?",
-        "Does the camera perspective lower relative to subject?",
-        "Is there a decrease in vertical camera position?"
+        "Does the camera move from a higher to a lower position relative to the subject's height?",
+        "Is there a downward transition in camera position relative to where the subject is?",
+        "Does the camera shift from being positioned above to being level with or below the subject?",
+        "Is there a change where the camera moves down relative to the subject's position?",
+        "Does the camera's position change from higher than to level/below the subject?",
+        "Is there a downward change in camera position relative to where the subject is?",
+        "Does the camera transition from an elevated position to being level or lower than the subject?",
+        "Is there a decrease in camera height from above to being level with or below the subject?"
     ],
     "def_prompt": [
-        "A shot where the camera height decreases notably in relation to the subject."
+        "A shot where the camera's height decreases noticeably, transitioning from above to level with the subject or from level to below."
     ],
     "alt_prompt": [
-        "A video showing downward camera movement.",
-        "A shot with decreasing vertical angle.",
-        "A video transitioning to lower position.",
-        "A shot featuring camera descent.",
-        "A video with lowering perspective.",
-        "A shot showing downward transition.",
-        "A video with decreasing camera height.",
-        "A shot moving to lower position."
+        "A video showing camera movement from above to level with the subject.",
+        "A shot where the camera descends from above to being level with or below the subject.",
+        "A video transitioning from a higher to a lower position relative to the subject.",
+        "A shot featuring downward camera movement relative to the subject's position.",
+        "A video where the camera moves from above to being level with or below the subject.",
+        "A shot showing vertical descent relative to where the subject is positioned.",
+        "A video with camera movement from higher than to level/below the subject.",
+        "A shot moving from above to a level or lower position relative to the subject."
     ],
     "pos_rule_str": "self.cam_setup.height_wrt_subject_change_from_high_to_low is True",
     "neg_rule_str": "self.cam_setup.height_wrt_subject_change_from_high_to_low is False",

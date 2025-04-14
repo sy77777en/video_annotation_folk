@@ -2,7 +2,7 @@
     "label": "Focus Changes from Out of Focus to In Focus",
     "label_name": "focus_change_from_out_to_in_focus",
     "def_question": [
-        "Does the video start out of focus and then become in focus?"
+        "Does the camera start out of focus and then become in focus?"
     ],
     "alt_question": [
         "Does the shot begin blurry and then become in focus?",
@@ -15,7 +15,7 @@
         "Is there a gradual shift where the scene moves from a soft blur to being in focus?"
     ],
     "def_prompt": [
-        "The video starts out of focus and then becomes in focus."
+        "The camera starts out of focus and then becomes in focus."
     ],
     "alt_prompt": [
         "A video where the scene begins blurry but gradually becomes in focus.",

@@ -2,30 +2,30 @@
     "label": "Height Wrt Ground End With Water Level",
     "label_name": "height_wrt_ground_end_with_water_level",
     "def_question": [
-        "Does the video end with the camera positioned at water level, where the waterline is clearly visible?"
+        "Does the video end with the camera near water level, showing the waterline clearly and not from an aerial view?"
     ],
     "alt_question": [
         "Does the shot end at water level?",
         "Is the final frame taken from a water-level perspective?",
-        "Does the video conclude with the camera positioned at the water surface?",
-        "Is the last shot framed with the waterline clearly visible?",
-        "Does the sequence close with a water-level perspective?",
-        "Is the final shot positioned just above the water surface?",
-        "Does the video close with a floating perspective at water level?",
-        "Is the ending frame aligned with the surface of the water?"
+        "Does the video conclude with the camera positioned just above the waterline?",
+        "Is the last shot captured at the surface of the water?",
+        "Does the sequence close with a perspective where the waterline is visible?",
+        "Is the final shot positioned at water level, showing the surrounding water?",
+        "Does the video close with the camera floating just above water?",
+        "Is the ending frame aligned with a perspective just above the water surface?"
     ],
     "def_prompt": [
-        "The video ends with the camera positioned at water level, where the waterline is clearly visible."
+        "The video ends with the camera positioned near water level, showing the waterline clearly and not from an aerial view."
     ],
     "alt_prompt": [
-        "A shot ending at water level, where the surface is prominent.",
-        "A video concluding with a perspective positioned just above the water.",
-        "A sequence that ends with a camera floating at the waterline.",
-        "A shot capturing the water surface as a dominant element.",
-        "A video closing with a framing that includes both water and sky.",
-        "A shot where the camera is positioned at the boundary between air and water.",
-        "A video that ends with a steady, water-level viewpoint.",
-        "A scene that concludes with a perspective where the water surface remains clearly visible."
+        "A shot ending at water level, taken from just above the waterline.",
+        "A video concluding with a perspective where the water surface is prominent.",
+        "A sequence that ends with a camera positioned at the water's edge.",
+        "A shot showing the environment from a viewpoint just above the water.",
+        "A video closing with a scene where the waterline is clearly visible.",
+        "A shot where the camera is placed at water level without submerging.",
+        "A video that ends with a floating camera angle, capturing the water surface.",
+        "A scene that closes with a near-waterline framing of the environment."
     ],
     "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'water_level'",
     "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['water_level', 'unknown']",

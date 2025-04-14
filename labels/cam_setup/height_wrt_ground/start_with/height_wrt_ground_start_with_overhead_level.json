@@ -2,7 +2,7 @@
     "label": "Height Wrt Ground Start With Overhead Level",
     "label_name": "height_wrt_ground_start_with_overhead_level",
     "def_question": [
-        "Does the video start with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level?"
+        "Does the video begin with the camera at an overhead level, above eye level but below aerial (around second-floor height)?"
     ],
     "alt_question": [
         "Does the shot start at an overhead level?",
@@ -15,7 +15,7 @@
         "Is the starting frame recorded from a height between 1.5 to 3 person-heights?"
     ],
     "def_prompt": [
-        "The video starts with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level."
+        "The video begins with the camera at an overhead level, above eye level but below aerial (around second-floor height)."
     ],
     "alt_prompt": [
         "The video starts with the camera at an overhead level.",

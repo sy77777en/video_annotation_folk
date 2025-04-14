@@ -1,0 +1,34 @@
+{
+    "label": "Focus Change",
+    "label_name": "focus_change",
+    "def_question": [
+        "Does the focal plane shift noticeably between foreground, middleground, or background regions?"
+    ],
+    "alt_question": [
+        "Is there a noticeable shift in the focal plane?",
+        "Does the focus distance change during the shot?",
+        "Is there a change in which part of the scene is in focus?",
+        "Does the area of sharp focus shift during the video?",
+        "Is there a transition in focal distance?",
+        "Does the focus point move between different depths?",
+        "Is there a deliberate change in focus during the shot?",
+        "Does the focal plane shift between different distances?"
+    ],
+    "def_prompt": [
+        "The focal plane shifts noticeably between foreground, middleground, or background regions."
+    ],
+    "alt_prompt": [
+        "A video with changing focal plane.",
+        "A shot with focus transitions.",
+        "A video showing focus changes.",
+        "A shot with shifting focus planes.",
+        "A video with varying focal distances.",
+        "A shot demonstrating focus movement.",
+        "A video with focus transitions.",
+        "A shot with dynamic focus changes."
+    ],
+    "pos_rule_str": "self.cam_setup.focus_change is True",
+    "neg_rule_str": "self.cam_setup.focus_change is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

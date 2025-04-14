@@ -2,30 +2,30 @@
     "label": "Camera Angle End With High Angle",
     "label_name": "camera_angle_end_with_high_angle",
     "def_question": [
-        "Does the video end with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down?"
+        "Does the video end with the camera at a high angle, looking downward compared to a level angle but not directly top-down?"
     ],
     "alt_question": [
-        "Does the shot end with the camera angled slightly downward?",
-        "Is the ending frame positioned at a high-angle perspective?",
-        "Does the video conclude with a downward camera angle?",
-        "Is the final shot captured from above, looking down at a subject or environment?",
-        "Does the sequence close with a high-angle view?",
-        "Is the last shot taken from an elevated position, angled downward?",
-        "Does the video close with a slightly top-down perspective?",
-        "Is the final frame recorded with the camera looking downward at an angle?"
+        "Does the shot end with a downward-facing high angle?",
+        "Is the final frame taken from a higher viewpoint, looking down compared to a level angle?",
+        "Does the video finish with the camera angled downward but not entirely overhead?",
+        "Is the ending shot captured from an elevated position, looking slightly down?",
+        "Does the sequence close with a perspective higher than a level angle but lower than a bird's-eye view?",
+        "Is the last shot positioned with a noticeable downward tilt compared to a straight-on view?",
+        "Does the video conclude with a view looking downward, but not completely top-down?",
+        "Is the ending frame recorded from a higher elevation than a neutral level angle?"
     ],
     "def_prompt": [
-        "The video ends with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down."
+        "The video ends with the camera at a high angle, looking downward compared to a level angle but not directly top-down."
     ],
     "alt_prompt": [
-        "A shot ending at a high angle, looking slightly downward.",
-        "A video concluding with a high-angle perspective, capturing the subject from above.",
-        "A sequence that ends with the camera positioned higher than the subject.",
-        "A shot showing the environment from an elevated, downward-facing viewpoint.",
-        "A video closing with a subtly top-down, downward angle.",
-        "A shot where the camera is positioned higher than eye level and facing down.",
-        "A video that ends with the camera framing subjects from a slightly elevated perspective.",
-        "A scene that closes with the camera tilted downward, emphasizing height differences."
+        "A shot ending from a high-angle perspective, looking downward compared to a neutral angle.",
+        "A video concluding with an elevated viewpoint, angled downward but not extreme.",
+        "A sequence that ends with a high-angle framing, positioned above level angle.",
+        "A shot where the camera is higher than a level angle, tilting downward.",
+        "A video closing with a perspective slightly above normal eye level, looking down.",
+        "A shot where the camera is positioned at a high angle, but not completely top-down.",
+        "A video that ends with an elevated framing, angled slightly downward.",
+        "A scene that closes with the camera positioned higher than a neutral level shot, tilting downward."
     ],
     "pos_rule_str": "self.cam_setup.camera_angle_info['end'] == 'high_angle'",
     "neg_rule_str": "self.cam_setup.camera_angle_info['end'] not in ['high_angle', 'unknown']",

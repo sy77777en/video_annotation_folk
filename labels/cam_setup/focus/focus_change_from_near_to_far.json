@@ -2,7 +2,7 @@
     "label": "Focus Change From Near To Far",
     "label_name": "focus_change_from_near_to_far",
     "def_question": [
-        "Does the focal plane transition from close to distant?"
+        "Does the focal plane shift from close to distant, moving between foreground, middleground, or background?"
     ],
     "alt_question": [
         "Does the focus shift from near to far objects?",
@@ -14,7 +14,7 @@
         "Is there a focus transition toward background?"
     ],
     "def_prompt": [
-        "A shot where the focus plane transitions from close to distant."
+        "The focus plane shifts from close to distant, moving between foreground, middleground, or background."
     ],
     "alt_prompt": [
         "A video with focus moving away.",

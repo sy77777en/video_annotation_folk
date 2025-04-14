@@ -2,7 +2,7 @@
     "label": "Focus Shifts from Middle Ground to Foreground",
     "label_name": "focus_from_middle_ground_to_foreground",
     "def_question": [
-        "Does the video start with the middle ground in focus and then shift to the foreground?"
+        "Does the video start with the camera focused on the middle ground and then shift the focus to the foreground?"
     ],
     "alt_question": [
         "Does the focus transition from the middle ground to the foreground?",
@@ -15,7 +15,7 @@
         "Is there a clear transition where the middle ground blurs while the foreground sharpens?"
     ],
     "def_prompt": [
-        "The video starts with the middle ground in focus and then shifts to the foreground."
+        "The video starts with the camera focused on the middle ground and then shifts the focus to the foreground."
     ],
     "alt_prompt": [
         "A video where the focus moves from the middle ground to the foreground.",

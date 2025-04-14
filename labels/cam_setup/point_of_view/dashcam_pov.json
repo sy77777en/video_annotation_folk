@@ -2,7 +2,7 @@
     "label": "Dashcam POV",
     "label_name": "dashcam_pov",
     "def_question": [
-        "Is this a forward-facing view from a dash cam, capturing the road or surroundings?"
+        "Is this a dashcam POV shot from a forward-facing, vehicle-mounted camera, capturing the scene ahead?"
     ],
     "alt_question": [
         "Is this footage taken from a vehicle’s dashcam?",
@@ -10,7 +10,7 @@
         "Is this a fixed dashboard perspective showing the driving environment?"
     ],
     "def_prompt": [
-        "A dashcam POV shot where the dash cam is mounted on a vehicle, capturing the road ahead."
+        "A forward-facing dashcam view from a vehicle-mounted camera, capturing the scene ahead."
     ],
     "alt_prompt": [
         "A video showing the driver's perspective from a car-mounted camera.",

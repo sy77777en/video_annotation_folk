@@ -2,7 +2,7 @@
     "label": "Is Subject Disappearing",
     "label_name": "subject_disappearing",
     "def_question": [
-        "Does the main subject disappear from the frame?"
+        "Does the video show the main subject disappearing or leaving the frame?",
     ],
     "alt_question": [
         "Does the primary subject leave the frame?",
@@ -13,7 +13,7 @@
         "Is there a point where the subject leaves the shot?"
     ],
     "def_prompt": [
-        "A shot where the main subject disappears or exits from view."
+        "The video shows the main subject disappearing or leaving the frame."
     ],
     "alt_prompt": [
         "The primary subject leaves the frame.",

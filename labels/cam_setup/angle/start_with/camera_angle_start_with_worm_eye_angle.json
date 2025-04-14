@@ -2,7 +2,7 @@
     "label": "Camera Angle Start With Worm Eye Angle",
     "label_name": "camera_angle_start_with_worm_eye_angle",
     "def_question": [
-        "Does the video start with the camera positioned at a worm’s eye angle, looking sharply upward to the sky?"
+        "Does the video start with the camera at a worm’s eye angle, looking straight up from below?"
     ],
     "alt_question": [
         "Does the shot start with the camera looking straight up?",
@@ -15,7 +15,7 @@
         "Is the starting frame recorded with the camera tilted steeply upwards?"
     ],
     "def_prompt": [
-        "The video starts with the camera positioned at a worm’s eye angle, looking sharply upward to the sky."
+        "The video starts with the camera at a worm’s eye angle, looking straight up from below."
     ],
     "alt_prompt": [
         "A shot starting at a worm’s eye angle, looking steeply upward.",

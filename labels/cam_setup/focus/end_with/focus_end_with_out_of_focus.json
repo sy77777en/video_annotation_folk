@@ -2,7 +2,7 @@
     "label": "Focus End With Out of Focus",
     "label_name": "focus_end_with_out_of_focus",
     "def_question": [
-        "Does the video end completely out of focus?"
+        "Does the video end with the camera completely out of focus?"
     ],
     "alt_question": [
         "Does the shot end with a blurred or unfocused frame?",
@@ -15,7 +15,7 @@
         "Is the ending frame hazy with no clear subject in focus?"
     ],
     "def_prompt": [
-        "The video ends completely out of focus."
+        "The video ends with the camera completely out of focus."
     ],
     "alt_prompt": [
         "A shot ending with a blurred, unfocused frame.",

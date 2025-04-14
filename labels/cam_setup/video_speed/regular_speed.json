@@ -2,7 +2,7 @@
     "label": "Regular Speed",
     "label_name": "regular_speed",
     "def_question": [
-        "Is this video played at normal real-time speed without noticeable acceleration or slowing?"
+        "Is the playback forward at real-time speed without noticeable speed-up or slowdown?"
     ],
     "alt_question": [
         "Does the scene play at a natural, unaltered speed?",
@@ -10,7 +10,7 @@
         "Does the movement appear to match real-world timing?"
     ],
     "def_prompt": [
-        "A regular-speed video where events play in real-time without acceleration or slowing."
+        "The playback is forward at real-time speed without noticeable speed-up or slowdown."
     ],
     "alt_prompt": [
         "A shot captured at standard playback speed.",

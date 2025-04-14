@@ -2,7 +2,7 @@
     "label": "Has Overlays",
     "label_name": "has_overlays",
     "def_question": [
-        "Does the shot contain on-screen overlays, such as watermarks, or titles, or subtitles, or icons, or heads-up displays, or framing elements?"
+        "Does the shot contain any on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements?"
     ],
     "alt_question": [
         "Does the video have any added text or graphics on the screen?",
@@ -15,7 +15,7 @@
         "Does this shot contain on-screen information not naturally part of the scene?"
     ],
     "def_prompt": [
-        "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, HUDs, or framing elements."
+        "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements."
     ],
     "alt_prompt": [
         "A scene containing on-screen overlays such as text, graphics, or icons.",

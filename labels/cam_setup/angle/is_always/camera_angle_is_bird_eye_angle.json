@@ -1,30 +1,31 @@
 {
-    "label": "Camera Angle Is Bird Eye Angle",
+    "label": "Camera Angle Is Bird's Eye Angle",
     "label_name": "camera_angle_is_bird_eye_angle",
     "def_question": [
-        "Is the camera positioned at a bird’s eye angle throughout the video, looking directly downward at the ground?"
+        "Does the camera maintain a bird's eye angle throughout, consistently looking straight down from above?"
     ],
     "alt_question": [
-        "Does the camera remain at a bird’s eye angle for the entire video?",
-        "Is the starting and ending frame taken from a bird’s eye perspective?",
-        "Does the video maintain an extreme high-angle, looking downward?",
-        "Is the camera positioned directly overhead from start to finish?",
-        "Does the sequence keep a top-down perspective throughout?",
-        "Is the video filmed entirely at a bird’s eye angle without changing?",
-        "Does the framing stay at an overhead viewpoint for the whole video?",
-        "Is the entire video shot with a camera looking straight down?"
+        "Does the shot maintain a bird's eye perspective throughout?",
+        "Is the camera consistently positioned at a top-down viewpoint?",
+        "Does the video keep the camera looking straight down at the ground?",
+        "Is the shot captured from an overhead, bird's eye perspective throughout?",
+        "Does the sequence maintain a camera position directly above the scene?",
+        "Is the camera consistently positioned in a strict top-down orientation?",
+        "Does the video keep an aerial viewpoint looking directly downward?",
+        "Is the shot recorded from a high, perpendicular angle throughout?"
     ],
     "def_prompt": [
-        "The camera is positioned at a bird’s eye angle throughout the video, looking directly downward at the ground."
+        "The camera maintains a bird's eye angle throughout, consistently looking straight down from above."
     ],
     "alt_prompt": [
-        "A video maintaining a bird’s eye perspective from start to finish.",
-        "A shot consistently captured from a top-down angle.",
-        "A video where the camera stays at an overhead position without changing.",
-        "A sequence entirely framed from a high, downward perspective.",
-        "A shot maintaining a bird’s eye view without shifting angles.",
-        "A video where the camera remains above, looking straight down.",
-        "A scene consistently framed from a bird’s eye perspective."
+        "A shot maintaining a strict top-down perspective.",
+        "A video keeping a bird's eye view, directly above the scene.",
+        "A sequence with a consistent overhead camera looking straight down.",
+        "A shot where the environment is viewed from a top-down orientation.",
+        "A video maintaining a high, perpendicular perspective.",
+        "A shot where the camera stays positioned vertically above the ground.",
+        "A video that maintains a fully downward-facing angle.",
+        "A scene that keeps a bird's eye framing of the environment."
     ],
     "pos_rule_str": "self.cam_setup.camera_angle_info['start'] == 'bird_eye_angle' and self.cam_setup.camera_angle_info['end'] == 'bird_eye_angle'",
     "neg_rule_str": "not (self.cam_setup.camera_angle_info['start'] in ['bird_eye_angle', 'unknown'] and self.cam_setup.camera_angle_info['end'] in ['bird_eye_angle', 'unknown'])",

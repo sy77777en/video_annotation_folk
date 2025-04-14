@@ -2,7 +2,7 @@
     "label": "Focus Changes from In Focus to Out of Focus",
     "label_name": "focus_change_from_in_to_out_of_focus",
     "def_question": [
-        "Does the video start with a sharp focus on a subject or area and then become out of focus?"
+        "Does the camera start in sharp focus and then shift out of focus?"
     ],
     "alt_question": [
         "Does the shot begin with a clear, in-focus subject and then become blurry?",
@@ -15,7 +15,7 @@
         "Is there a gradual shift where the scene moves from clarity to a soft blur?"
     ],
     "def_prompt": [
-        "The video starts with a sharp focus and then becomes out of focus."
+        "The camera starts in sharp focus and then shifts out of focus."
     ],
     "alt_prompt": [
         "A video where the subject starts in focus but fades into a blur.",

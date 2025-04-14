@@ -2,29 +2,30 @@
     "label": "Height Wrt Ground Is Eye Level",
     "label_name": "height_wrt_ground_is_eye_level",
     "def_question": [
-        "Is the camera positioned at eye level throughout the video, roughly at a person's eye height, above the waist but below overhead level?"
+        "Is the camera positioned at eye level throughout the video (roughly at a person's eye height, above the waist)?"
     ],
     "alt_question": [
-        "Does the camera remain at eye level for the entire video?",
-        "Is the starting and ending frame taken from an eye-level perspective?",
-        "Does the video maintain a height typical of a standing person’s eyes?",
-        "Is the camera positioned at eye level from start to finish?",
-        "Does the sequence keep an eye-level viewpoint without transitioning?",
-        "Is the video filmed entirely at eye level?",
-        "Does the framing remain above waist height but below overhead for the whole video?",
-        "Is the entire shot positioned at a natural human viewpoint?"
+        "Is the camera at eye level throughout the video?",
+        "Is the camera positioned at an eye-level perspective throughout the video?",
+        "Is the camera at a height typical of a standing person's eyes throughout the video?",
+        "Is the camera at a height similar to a person's eye level throughout the video?",
+        "Is the camera maintaining an eye-level perspective throughout the video?",
+        "Is the camera at an eye-level height throughout the video?",
+        "Is the camera positioned above waist level but below overhead level throughout the video?",
+        "Is the camera aligned with a natural human viewpoint throughout the video?"
     ],
     "def_prompt": [
-        "The camera is positioned at eye level throughout the video, roughly at a person's eye height, above the waist but below overhead level."
+        "The camera is positioned at eye level throughout the video (roughly at a person's eye height, above the waist)."
     ],
     "alt_prompt": [
-        "A video maintaining an eye-level perspective from start to finish.",
-        "A shot consistently captured at a natural viewing height.",
-        "A video where the camera stays at eye level without changing.",
-        "A sequence entirely framed from an eye-level viewpoint.",
-        "A shot maintaining an eye-level perspective without shifting heights.",
-        "A video where the camera remains at a natural human viewpoint.",
-        "A scene that is consistently framed from an eye-level height."
+        "A shot maintained at eye level, captured at a natural viewing height.",
+        "A video with a consistent eye-level perspective, maintaining a familiar human viewpoint.",
+        "A sequence that maintains a camera position at typical standing eye height.",
+        "A shot showing the environment from a natural eye-level angle.",
+        "A video with a consistent straight-on view at eye level.",
+        "A shot where the camera is positioned at a height similar to a person's eyes.",
+        "A video that maintains a perspective slightly above waist height but below overhead.",
+        "A scene that keeps a balanced, eye-level framing of the environment."
     ],
     "pos_rule_str": "self.cam_setup.height_wrt_ground_info['start'] == 'eye_level' and self.cam_setup.height_wrt_ground_info['end'] == 'eye_level'",
     "neg_rule_str": "not (self.cam_setup.height_wrt_ground_info['start'] in ['eye_level', 'unknown'] and self.cam_setup.height_wrt_ground_info['end'] in ['eye_level', 'unknown'])",

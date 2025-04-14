@@ -2,7 +2,7 @@
     "label": "Focus End With Foreground",
     "label_name": "focus_end_with_foreground",
     "def_question": [
-        "Does the video end with the foreground in focus, using a shallow depth of field?"
+        "Does the video end with the camera focusing on the foreground, using a shallow depth of field?"
     ],
     "alt_question": [
         "Does the shot end with a sharp focus on the foreground?",
@@ -15,7 +15,7 @@
         "Is the ending frame framed with a distinct foreground focus?"
     ],
     "def_prompt": [
-        "The video ends with the foreground in focus, using a shallow depth of field."
+        "The video ends with the camera focusing on the foreground, using a shallow depth of field."
     ],
     "alt_prompt": [
         "A shot ending with a sharp focus on the foreground.",

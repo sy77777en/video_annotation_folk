@@ -3,6 +3,7 @@
     "label_name": "drone_pov",
     "def_question": [
         "Is this video captured by a drone?",
+        "Is this a drone POV showing an aerial view?",
         "Does the video show a drone's perspective?"
     ],
     "alt_question": [
@@ -11,8 +12,9 @@
         "Is the shot taken from an airborne device looking down?"
     ],
     "def_prompt": [
-        "A drone POV shot.",
-        "A video filmed by a drone."
+        "A video filmed by a drone.",
+        "A drone POV showing an aerial view.",
+        "A drone POV shot."
     ],
     "alt_prompt": [
         "A drone POV shot where the camera captures an aerial view.",

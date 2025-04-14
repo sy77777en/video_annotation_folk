@@ -2,7 +2,7 @@
     "label": "Height Wrt Ground End With Overhead Level",
     "label_name": "height_wrt_ground_end_with_overhead_level",
     "def_question": [
-        "Does the video end with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level?"
+        "Does the video end with the camera at an overhead level, above eye level but below aerial (around second-floor height)?"
     ],
     "alt_question": [
         "Does the shot end at an overhead level?",
@@ -15,17 +15,14 @@
         "Is the ending frame recorded from a height between 1.5 to 3 person-heights?"
     ],
     "def_prompt": [
-        "The video ends with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level."
+        "The video ends with the camera at an overhead level, above eye level but below aerial (around second-floor height)."
     ],
     "alt_prompt": [
-        "A shot ending at an overhead level, taken from a high vantage point.",
+        "The video ends with the camera at an overhead level.",
         "A video concluding with an overhead perspective, from a second-floor height.",
-        "A sequence that ends with a view between eye level and aerial level.",
-        "A shot showing the environment from a high but not extreme aerial position.",
-        "A video closing with a balanced overhead view.",
-        "A shot where the camera is positioned at 1.5 to 3 person-heights above ground.",
-        "A video that ends with a high but not extreme aerial perspective.",
-        "A scene that closes with an elevated, overhead framing."
+        "A sequence that ends with a vantage point between eye level and aerial level.",
+        "A video closing with a high view but not an extreme aerial perspective.",
+        "A shot where the camera is positioned at 1.5 to 3 person-heights above ground."
     ],
     "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'overhead_level'",
     "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['overhead_level', 'unknown']",

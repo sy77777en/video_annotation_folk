@@ -2,7 +2,7 @@
     "label": "Brightness Is Dark",
     "label_name": "brightness_is_dark",
     "def_question": [
-        "Is the video predominantly dark with dim lighting but not so underexposed that most details are lost?"
+        "Is the video showing a scene with predominantly dim lighting, but some details remain visible and are not completely underexposed?"
     ],
     "alt_question": [
         "Does the scene have a low-light, moody appearance?",
@@ -15,7 +15,7 @@
         "Is the lighting style in the video consistent with low-key cinematography?"
     ],
     "def_prompt": [
-        "The video is predominantly dark with dim lighting but not so underexposed that most details are lost."
+        "The video shows a scene with predominantly dim lighting, but some details remain visible and are not completely underexposed."
     ],
     "alt_prompt": [
         "A scene with low lighting, emphasizing shadows and contrast.",

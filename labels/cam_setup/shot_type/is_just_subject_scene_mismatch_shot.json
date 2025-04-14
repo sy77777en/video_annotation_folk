@@ -2,7 +2,7 @@
     "label": "Is Just Subject Scene Mismatch Shot",
     "label_name": "is_just_subject_scene_mismatch_shot",
     "def_question": [
-        "Does the video feature a subject and scene that do not match, making it difficult to classify shot size?"
+        "Is there a mismatch between the subject and scene framing that makes it hard to classify the shot size?"
     ],
     "alt_question": [
         "Is the shot size difficult to classify due to a mismatch between the subject and the scene?",
@@ -10,7 +10,7 @@
         "Is there a mismatch between subject and scene shot sizes?"
     ],
     "def_prompt": [
-        "A shot where the subject and scene scales are mismatched, complicating shot size classification."
+        "A video featuring a subject and scene that do not match in framing, making it hard to classify the shot size."
     ],
     "alt_prompt": [
         "The video presents a subject-scene mismatch that makes shot size classification challenging.",

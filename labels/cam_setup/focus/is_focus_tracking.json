@@ -2,7 +2,7 @@
     "label": "Is Focus Tracking",
     "label_name": "is_focus_tracking",
     "def_question": [
-        "Is there focus tracking on a moving subject in the video?"
+        "Does the camera use focus tracking to follow a moving subject in the video?"
     ],
     "alt_question": [
         "Does the focus follow a moving subject?",
@@ -15,7 +15,7 @@
         "Is there responsive focus on motion?"
     ],
     "def_prompt": [
-        "A shot that maintains focus on a subject as it moves through the frame."
+        "The camera uses focus tracking to follow a moving subject in the video."
     ],
     "alt_prompt": [
         "A video with moving subject focus.",

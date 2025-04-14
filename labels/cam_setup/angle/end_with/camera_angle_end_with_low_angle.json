@@ -2,30 +2,30 @@
     "label": "Camera Angle End With Low Angle",
     "label_name": "camera_angle_end_with_low_angle",
     "def_question": [
-        "Does the video end with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below?"
+        "Does the video end with the camera at a low angle, looking upward compared to a level angle but not directly from below?"
     ],
     "alt_question": [
-        "Does the shot end with the camera angled slightly upward?",
-        "Is the ending frame positioned at a low-angle perspective?",
-        "Does the video conclude with an upward-facing camera angle?",
-        "Is the final shot captured from below, looking up at a subject or environment?",
-        "Does the sequence close with a low-angle view?",
-        "Is the last shot taken from a lower perspective, angled upward?",
-        "Does the video close with a subtly bottom-up perspective?",
-        "Is the final frame recorded with the camera looking up at an angle?"
+        "Does the shot end with an upward-tilted camera angle?",
+        "Is the final frame positioned below a level viewpoint?",
+        "Does the video finish with the camera angled upward from a low position?",
+        "Is the ending shot taken from a perspective looking up?",
+        "Does the sequence close with the camera angled lower than a level view?",
+        "Is the last shot framed from a low vantage point looking up?",
+        "Does the video conclude with the camera positioned below the main subject or scene?",
+        "Is the ending frame captured from a lower-than-normal camera height?"
     ],
     "def_prompt": [
-        "The video ends with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below."
+        "The video ends with the camera at a low angle, looking upward compared to a level angle but not directly from below."
     ],
     "alt_prompt": [
-        "A shot ending at a low angle, looking slightly upward.",
-        "A video concluding with a low-angle perspective, capturing the subject from below.",
-        "A sequence that ends with the camera positioned lower than the subject.",
-        "A shot showing the environment from a lower, upward-facing viewpoint.",
-        "A video closing with a subtly bottom-up, upward angle.",
-        "A shot where the camera is positioned lower than eye level and facing up.",
-        "A video that ends with the camera framing subjects from a slightly low perspective.",
-        "A scene that closes with the camera tilted upward, emphasizing height differences."
+        "A shot ending at a low angle, looking upward.",
+        "A video concluding with a low-angle perspective.",
+        "A sequence that ends with the camera positioned below eye level.",
+        "A shot showing the environment from a low vantage point.",
+        "A video closing with an upward-tilted view.",
+        "A shot where the camera is positioned at a low height, pointing up.",
+        "A video that ends with an angle looking up at the subject or scene.",
+        "A scene that closes with a low-positioned, upward-facing camera."
     ],
     "pos_rule_str": "self.cam_setup.camera_angle_info['end'] == 'low_angle'",
     "neg_rule_str": "self.cam_setup.camera_angle_info['end'] not in ['low_angle', 'unknown']",

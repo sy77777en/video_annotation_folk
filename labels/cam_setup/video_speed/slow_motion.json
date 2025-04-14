@@ -2,7 +2,7 @@
     "label": "Slow-Motion",
     "label_name": "slow_motion",
     "def_question": [
-        "Is this video played at a slower speed than real-time?"
+        "Is it a slow-motion video with forward playback slower than real-time?"
     ],
     "alt_question": [
         "Does the motion in this shot appear dramatically slowed down?",
@@ -11,7 +11,7 @@
         "Does the video stretch time by making movements appear smooth and slow?"
     ],
     "def_prompt": [
-        "A slow-motion video where playback speed is reduced, making actions appear slower than real-time."
+        "A slow-motion video with forward playback speed slower than real-time."
     ],
     "alt_prompt": [
         "A shot where movement is slowed down for dramatic effect.",

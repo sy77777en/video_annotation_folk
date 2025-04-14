@@ -2,7 +2,7 @@
     "label": "Is Focus Applicable",
     "label_name": "is_focus_applicable",
     "def_question": [
-        "Is it possible to determine the camera focus properties?"
+        "Can the camera’s depth of field be perceived or inferred from the video?"
     ],
     "alt_question": [
         "Can the camera's focus characteristics be classified?",
@@ -14,7 +14,7 @@
         "Is the focusing method classifiable?"
     ],
     "def_prompt": [
-        "A shot where the camera focus characteristics can be meaningfully classified."
+        "The camera’s depth of field can be perceived or inferred from the video."
     ],
     "alt_prompt": [
         "A video with classifiable focus properties.",

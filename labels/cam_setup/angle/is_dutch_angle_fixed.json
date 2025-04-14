@@ -2,7 +2,7 @@
     "label": "Is Dutch Angle Fixed",
     "label_name": "is_dutch_angle_fixed",
     "def_question": [
-        "Does the Dutch angle remain the same throughout the video?"
+        "Does the degree of the Dutch (canted) angle stay the same throughout the video?"
     ],
     "alt_question": [
         "Is the tilted angle consistent throughout the shot?",
@@ -15,7 +15,7 @@
         "Does the tilted perspective stay stable?"
     ],
     "def_prompt": [
-        "A shot maintaining a consistent Dutch angle throughout its duration."
+        "The degree of the Dutch (canted) angle stays the same throughout the video."
     ],
     "alt_prompt": [
         "A video with steady tilt angle.",

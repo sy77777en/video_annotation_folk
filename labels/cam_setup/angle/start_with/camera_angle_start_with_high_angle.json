@@ -2,7 +2,7 @@
     "label": "Camera Angle Start With High Angle",
     "label_name": "camera_angle_start_with_high_angle",
     "def_question": [
-        "Does the video start with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down?"
+        "Does the video start with the camera at a high angle, looking downward compared to a level angle but not directly top-down?"
     ],
     "alt_question": [
         "Does the shot start with a downward-facing high angle?",
@@ -15,7 +15,7 @@
         "Is the starting frame recorded from a higher elevation than a neutral level angle?"
     ],
     "def_prompt": [
-        "The video starts with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down."
+        "The video starts with the camera at a high angle, looking downward compared to a level angle but not directly top-down."
     ],
     "alt_prompt": [
         "A shot starting from a high-angle perspective, looking downward compared to a neutral angle.",

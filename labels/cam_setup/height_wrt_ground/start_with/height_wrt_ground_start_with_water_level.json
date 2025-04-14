@@ -2,7 +2,7 @@
     "label": "Height Wrt Ground Start With Water Level",
     "label_name": "height_wrt_ground_start_with_water_level",
     "def_question": [
-        "Does the video start with the camera positioned at water level, where the waterline is clearly visible above the surface?"
+        "Does the video start with the camera near water level, showing the waterline clearly and not from an aerial view?"
     ],
     "alt_question": [
         "Does the shot start at water level?",
@@ -15,7 +15,7 @@
         "Is the starting frame aligned with a perspective just above the water surface?"
     ],
     "def_prompt": [
-        "The video starts with the camera positioned at water level, clearly above the water surface."
+        "The video starts with the camera positioned near water level, showing the waterline clearly and not from an aerial view."
     ],
     "alt_prompt": [
         "A shot starting at water level, taken from just above the waterline.",

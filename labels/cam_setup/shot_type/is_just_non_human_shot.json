@@ -2,7 +2,7 @@
     "label": "Is Just Non Human Shot",
     "label_name": "is_just_non_human_shot",
     "def_question": [
-        "Does the video consistently feature one dominant non-human subject or a single group of non-human subjects in the frame?"
+        "Does the video consistently feature one or two salient non-human subjects?"
     ],
     "alt_question": [
         "Is there a single non-human subject that dominates the frame?",
@@ -15,7 +15,7 @@
         "Does the shot emphasize one non-human subject?"
     ],
     "def_prompt": [
-        "A shot consistently featuring either a single non-human subject or a single group of non-human subjects."
+        "A video with one or two salient non-human subjects."
     ],
     "alt_prompt": [
         "A video focused on a single non-human subject.",

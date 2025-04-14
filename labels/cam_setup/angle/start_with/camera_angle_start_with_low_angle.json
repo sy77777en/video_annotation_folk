@@ -2,7 +2,7 @@
     "label": "Camera Angle Start With Low Angle",
     "label_name": "camera_angle_start_with_low_angle",
     "def_question": [
-        "Does the video start with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below?"
+        "Does the video start with the camera at a low angle, looking upward compared to a level angle but not directly from below?"
     ],
     "alt_question": [
         "Does the shot start with an upward-tilted camera angle?",
@@ -15,7 +15,7 @@
         "Is the starting frame captured from a lower-than-normal camera height?"
     ],
     "def_prompt": [
-        "The video starts with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below."
+        "The video starts with the camera at a low angle, looking upward compared to a level angle but not directly from below."
     ],
     "alt_prompt": [
         "A shot starting at a low angle, looking upward.",

@@ -11,7 +11,7 @@
         "Is the last shot captured from an aerial view?",
         "Does the sequence close with an aerial perspective?",
         "Is the final shot positioned at an aerial level?",
-        "Does the video close with a bird’s-eye view?",
+        "Does the video close with a bird's-eye view?",
         "Is the ending frame recorded from a high altitude?"
     ],
     "def_prompt": [
@@ -22,10 +22,10 @@
         "A video concluding with an aerial shot, capturing a wide perspective.",
         "A sequence that ends with a high-elevation view.",
         "A shot showing the environment from an elevated aerial position.",
-        "A video closing with a bird’s-eye perspective.",
+        "A video closing with a bird's-eye perspective.",
         "A shot where the camera is positioned high above the ground.",
         "A video that ends with a top-down or high-altitude framing.",
-        "A scene that concludes with a drone-like aerial viewpoint."
+        "A scene that closes with a drone-like aerial viewpoint."
     ],
     "pos_rule_str": "self.cam_setup.height_wrt_ground_info['end'] == 'aerial_level'",
     "neg_rule_str": "self.cam_setup.height_wrt_ground_info['end'] not in ['aerial_level', 'unknown']",

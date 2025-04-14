@@ -2,7 +2,7 @@
     "label": "Camera Angle Change From High To Low",
     "label_name": "camera_angle_change_from_high_to_low",
     "def_question": [
-        "Does the camera angle decrease noticeably relative to the ground?"
+        "Does the camera angle decrease noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?"
     ],
     "alt_question": [
         "Does the camera tilt downward during the shot?",
@@ -15,7 +15,7 @@
         "Is there a lowering of camera perspective?"
     ],
     "def_prompt": [
-        "A shot where the camera angle transitions from a higher to a lower position relative to the ground."
+        "The camera angle decreases noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view."
     ],
     "alt_prompt": [
         "A video showing downward camera tilt.",

@@ -2,7 +2,7 @@
     "label": "Has Subject Change",
     "label_name": "has_subject_change",
     "def_question": [
-        "Does the subject change in the video, such as in a revealing shot where a subject appears, disappears, or transitions to another subject?"
+        "Does the subject change in the video, such as appearing, disappearing, or transitioning to another subject?"
     ],
     "alt_question": [
         "Are there any transitions between different subjects in this video?",
@@ -15,7 +15,7 @@
         "Does the video's subject matter change during its duration?"
     ],
     "def_prompt": [
-        "A shot where the subject changes, including appearances, disappearances, or transitions between subjects."
+        "The subject changes in the video, such as appearing, disappearing, or transitioning to another subject."
     ],
     "alt_prompt": [
         "A video featuring transitions between different subjects.",

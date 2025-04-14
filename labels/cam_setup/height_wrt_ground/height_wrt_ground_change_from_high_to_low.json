@@ -2,7 +2,7 @@
     "label": "Height Wrt Ground Change From High To Low",
     "label_name": "height_wrt_ground_change_from_high_to_low",
     "def_question": [
-        "Does the camera height decrease noticeably in relation to the ground?"
+        "Does the camera height decrease noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?"
     ],
     "alt_question": [
         "Does the camera descend closer to ground level?",
@@ -15,7 +15,7 @@
         "Is there a downward shift in camera perspective?"
     ],
     "def_prompt": [
-        "A shot where the camera height decreases significantly in relation to the ground."
+        "The camera height decreases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground."
     ],
     "alt_prompt": [
         "A video showing the camera descending from a higher elevation.",

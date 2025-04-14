@@ -1,0 +1,34 @@
+{
+    "label": "Height With Respect To Subject Change",
+    "label_name": "height_wrt_subject_change",
+    "def_question": [
+        "Does the camera's height relative to the subject change significantly, moving between positions above, at level with, or below the subject?"
+    ],
+    "alt_question": [
+        "Does the camera's vertical position shift higher or lower relative to the subject?",
+        "Is there a noticeable change in how high or low the camera is positioned compared to the subject?",
+        "Does the camera move vertically to a different height level relative to the subject?",
+        "Is there a clear change in whether the camera is positioned above, below, or at the same height as the subject?",
+        "Does the camera's height in relation to the subject change during the shot?",
+        "Is there a shift between being higher than, lower than, or at the same height as the subject?",
+        "Does the camera's vertical height relative to the subject change position?",
+        "Is there a change in whether we're physically above, below, or level with the subject?"
+    ],
+    "def_prompt": [
+        "A shot where the camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject."
+    ],
+    "alt_prompt": [
+        "A video showing a change in camera height relative to the subject.",
+        "A shot where the camera moves to different vertical positions relative to the subject.",
+        "A video where the camera shifts between being higher than, lower than, or level with the subject.",
+        "A shot featuring vertical camera movement that changes its height relative to the subject.",
+        "A video that shows the camera moving higher or lower in relation to the subject.",
+        "A shot demonstrating a change in the camera's vertical position relative to the subject.",
+        "A video where the camera changes how high or low it is positioned compared to the subject.",
+        "A shot with different camera heights in relation to the subject."
+    ],
+    "pos_rule_str": "self.cam_setup.height_wrt_subject_change is True",
+    "neg_rule_str": "self.cam_setup.height_wrt_subject_change is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

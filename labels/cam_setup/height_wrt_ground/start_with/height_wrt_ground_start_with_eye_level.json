@@ -2,7 +2,7 @@
     "label": "Height Wrt Ground Start With Eye Level",
     "label_name": "height_wrt_ground_start_with_eye_level",
     "def_question": [
-        "Does the video start with the camera at eye level, roughly at a person's eye height, above the waist but below overhead level?"
+        "Does the video start with the camera at eye level (roughly at a person’s eye height, above the waist)?"
     ],
     "alt_question": [
         "Does the shot start at eye level?",
@@ -15,7 +15,7 @@
         "Is the starting frame aligned with a natural human viewpoint?"
     ],
     "def_prompt": [
-        "The video starts with the camera positioned at eye level, approximately at a person's eye height, including any height above waist but below overhead level."
+        "The video starts with the camera positioned at eye level (roughly at a person's eye height, above the waist)."
     ],
     "alt_prompt": [
         "A shot starting at eye level, captured at a natural viewing height.",

@@ -2,8 +2,8 @@
     "label": "With Lens Distortion",
     "label_name": "with_lens_distortion",
     "def_question": [
-        "Does this shot contain noticeable lens distortion?",
         "Does this shot contain noticeable barrel or fisheye distortion?",
+        "Does this shot contain noticeable lens distortion?",
         "Does this shot show any fisheye or barrel distortion?"
     ],
     "alt_question": [
@@ -13,8 +13,8 @@
         "Does the perspective appear exaggerated or stretched?"
     ],
     "def_prompt": [
+        "A video with noticeable barrel or fisheye distortion.",
         "A shot captured with noticeable lens distortion.",
-        "A video with visible barrel or fisheye distortion.",
         "A scene with visible fisheye or barrel distortion."
     ],
     "alt_prompt": [
