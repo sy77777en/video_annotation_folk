@@ -41,6 +41,7 @@ Labels with less than 30 positive examples
 | Does the video feature visible splashing or wave-like motion in water or other liquids? | 9 | 200 | lighting_setup.dynamic_effect.splashing_waves |
 | Is the subject lit with flat lighting, with little to no contrast? | 8 | 153 | lighting_setup.subject_lighting.light_contrast.flat_lighting |
 | Does the lighting on the subject have minimal contrast (1:1 to 1:2), creating a flat lighting effect? | 8 | 153 | lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_minimal |
+| Is the subject lit with high-key lighting? | 8 | 153 | lighting_setup.subject_lighting.light_contrast.high_key_lighting |
 | Is the video predominantly featuring warm colors, such as reds, oranges, or yellows? | 8 | 201 | lighting_setup.color_grading.temperature.color_temperature_is_warm |
 | Does the video contain obvious lens flares? | 8 | 201 | lighting_setup.lens_effect.lens_flares |
 | Does the video feature warm, golden sunlight at sunrise or sunset? | 7 | 70 | lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunset_sunrise |
@@ -74,7 +75,6 @@ Labels with less than 30 positive examples
 | Does the video show strong reflections from light bouncing off a mirror, clearly mirroring the scenery in detail? | 1 | 208 | lighting_setup.reflection.reflection_from_mirror |
 | Does the video feature a noticeable rainbow? | 1 | 208 | lighting_setup.natural_effect.rainbow |
 | Is the video lit by moonlight or starnight, with the moon or stars visible? | 1 | 208 | lighting_setup.light_source.has_moonlight_starlight |
-| Is the subject lit with high-key lighting? | 0 | 161 | lighting_setup.subject_lighting.light_contrast.high_key_lighting |
 | Does the video feature a noticeable heat haze effect, with air distortions and shimmering caused by rising heat? | 0 | 209 | lighting_setup.natural_effect.heat_haze |
 | Does the video feature an aurora, with flowing, colorful light patterns in the sky? | 0 | 209 | lighting_setup.natural_effect.aurora |
 | Is the video excessively bright and overexposed, making details hard to see? | 0 | 209 | lighting_setup.color_grading.brightness.brightness_is_very_bright |
