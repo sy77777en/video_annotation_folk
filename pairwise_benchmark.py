@@ -647,51 +647,51 @@ def _validate_task_dict(task_dict):
     assert "label" in task_dict and "type" in task_dict, "Task specification must have 'label' and 'type' keys"
 
 
-def generate_pairwise_tasks(pairwise_labels, root, video_root, video_labels_dir, labels_filename="label_names.json"):
-    """
-    Generate pairwise tasks from label definitions.
+# def generate_pairwise_tasks(pairwise_labels, root, video_root, video_labels_dir, labels_filename="label_names.json"):
+#     """
+#     Generate pairwise tasks from label definitions.
     
-    Args:
-        pairwise_labels: Dictionary containing skill and task definitions
-        root: Root directory
-        video_root: Video root directory
-        video_labels_dir: Directory containing video labels
-        labels_filename: Filename for labels (default: "label_names.json")
+#     Args:
+#         pairwise_labels: Dictionary containing skill and task definitions
+#         root: Root directory
+#         video_root: Video root directory
+#         video_labels_dir: Directory containing video labels
+#         labels_filename: Filename for labels (default: "label_names.json")
         
-    Returns:
-        Dictionary of pairwise tasks organized by skill and task name
-    """
-    pairwise_tasks = {}
-    video_labels_dir = Path(video_labels_dir)
+#     Returns:
+#         Dictionary of pairwise tasks organized by skill and task name
+#     """
+#     pairwise_tasks = {}
+#     video_labels_dir = Path(video_labels_dir)
 
-    for skill_name, tasks in pairwise_labels.items():
-        pairwise_tasks[skill_name] = {}
+#     for skill_name, tasks in pairwise_labels.items():
+#         pairwise_tasks[skill_name] = {}
         
-        for task_dict in tasks:
-            # Load labels for this task
-            video_label_file = video_labels_dir / task_dict["folder"] / labels_filename
-            label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
+#         for task_dict in tasks:
+#             # Load labels for this task
+#             video_label_file = video_labels_dir / task_dict["folder"] / labels_filename
+#             label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
             
-            # Get positive and negative videos
-            pos_videos = get_videos(label_dicts, task_dict["pos"])
-            neg_videos = get_videos(label_dicts, task_dict["neg"])
+#             # Get positive and negative videos
+#             pos_videos = get_videos(label_dicts, task_dict["pos"])
+#             neg_videos = get_videos(label_dicts, task_dict["neg"])
             
-            # Convert Path objects to strings
-            pos_videos = [str(video) for video in pos_videos]
-            neg_videos = [str(video) for video in neg_videos]
+#             # Convert Path objects to strings
+#             pos_videos = [str(video) for video in pos_videos]
+#             neg_videos = [str(video) for video in neg_videos]
             
-            # Ensure positive and negative sets are disjoint
-            assert set(pos_videos).isdisjoint(neg_videos), \
-                f"Positive and negative videos overlap for task {task_dict['name']}"
+#             # Ensure positive and negative sets are disjoint
+#             assert set(pos_videos).isdisjoint(neg_videos), \
+#                 f"Positive and negative videos overlap for task {task_dict['name']}"
             
-            # Store task information
-            pairwise_tasks[skill_name][task_dict["name"]] = {
-                "task_dict": task_dict,
-                "pos": pos_videos,
-                "neg": neg_videos
-            }
+#             # Store task information
+#             pairwise_tasks[skill_name][task_dict["name"]] = {
+#                 "task_dict": task_dict,
+#                 "pos": pos_videos,
+#                 "neg": neg_videos
+#             }
             
-    return pairwise_tasks
+#     return pairwise_tasks
 
 
 def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_labels_dir, 
@@ -738,8 +738,13 @@ def generate_balanced_pairwise_tasks(pairwise_labels, root, video_root, video_la
             label_dicts = labels_as_dict(root=root, video_root=video_root, video_label_file=video_label_file)
 
             # Get positive and negative videos
-            pos_videos = get_videos(label_dicts, task_dict["pos"])
-            neg_videos = get_videos(label_dicts, task_dict["neg"])
+            try:
+                pos_videos = get_videos(label_dicts, task_dict["pos"])
+                neg_videos = get_videos(label_dicts, task_dict["neg"])
+            except Exception as e:
+                print(f"Error loading label dictionary for task {task_name}: {e}")
+                import pdb; pdb.set_trace()
+                continue
 
             # Convert Path objects to strings
             pos_videos = [str(video) for video in pos_videos]
@@ -1030,7 +1035,7 @@ def generate_pairwise_datasets(
     video_root=VIDEO_ROOT,
     video_labels_dir=VIDEO_LABELS_DIR,
     labels_filename="label_names.json",
-    pairwise_labels=PAIRWISE_LABELS,
+    pairwise_labels=get_pairwise_labels(folder_name="motion_dataset"),
     train_ratio=TRAIN_RATIO,
     folder_name="motion_dataset"
 ):
@@ -1121,181 +1126,181 @@ def generate_pairwise_datasets(
     }
 
 
-def print_task_statistics(sampled_tasks):
-    """
-    Print statistics about the sampled tasks.
+# def print_task_statistics(sampled_tasks):
+#     """
+#     Print statistics about the sampled tasks.
     
-    Args:
-        sampled_tasks: Dictionary of sampled pairwise tasks
-    """
-    total_samples = 0
+#     Args:
+#         sampled_tasks: Dictionary of sampled pairwise tasks
+#     """
+#     total_samples = 0
     
-    print("\n===== Task Statistics =====")
-    print(f"{'Skill/Task':<60} {'Positive':<10} {'Negative':<10}")
-    print("-" * 80)
+#     print("\n===== Task Statistics =====")
+#     print(f"{'Skill/Task':<60} {'Positive':<10} {'Negative':<10}")
+#     print("-" * 80)
     
-    for skill_name in sampled_tasks:
-        print(f"\n{skill_name}:")
-        skill_samples = 0
+#     for skill_name in sampled_tasks:
+#         print(f"\n{skill_name}:")
+#         skill_samples = 0
         
-        for task_name in sampled_tasks[skill_name]:
-            pos_count = len(sampled_tasks[skill_name][task_name]["pos"])
-            neg_count = len(sampled_tasks[skill_name][task_name]["neg"])
-            skill_samples += pos_count
+#         for task_name in sampled_tasks[skill_name]:
+#             pos_count = len(sampled_tasks[skill_name][task_name]["pos"])
+#             neg_count = len(sampled_tasks[skill_name][task_name]["neg"])
+#             skill_samples += pos_count
             
-            # Truncate task name if too long
-            display_name = task_name
-            if len(display_name) > 50:
-                display_name = display_name[:47] + "..."
+#             # Truncate task name if too long
+#             display_name = task_name
+#             if len(display_name) > 50:
+#                 display_name = display_name[:47] + "..."
                 
-            print(f"  {display_name:<58} {pos_count:<10} {neg_count:<10}")
+#             print(f"  {display_name:<58} {pos_count:<10} {neg_count:<10}")
         
-        total_samples += skill_samples
-        print(f"  {'Total skill samples:':<58} {skill_samples:<10}")
+#         total_samples += skill_samples
+#         print(f"  {'Total skill samples:':<58} {skill_samples:<10}")
     
-    print("\n" + "-" * 80)
-    print(f"{'Total benchmark samples:':<60} {total_samples:<10}")
+#     print("\n" + "-" * 80)
+#     print(f"{'Total benchmark samples:':<60} {total_samples:<10}")
 
 
-def sample_from_pairwise_tasks(pairwise_tasks, max_samples=30, sampling="random", seed=0):
-    """
-    Sample a subset of videos from pairwise tasks.
+# def sample_from_pairwise_tasks(pairwise_tasks, max_samples=30, sampling="random", seed=0):
+#     """
+#     Sample a subset of videos from pairwise tasks.
     
-    Args:
-        pairwise_tasks: Dictionary of pairwise tasks
-        max_samples: Maximum number of samples per task (default: 30)
-        sampling: Sampling method, either "random" or "top" (default: "random")
-        seed: Random seed for reproducibility (default: 0)
+#     Args:
+#         pairwise_tasks: Dictionary of pairwise tasks
+#         max_samples: Maximum number of samples per task (default: 30)
+#         sampling: Sampling method, either "random" or "top" (default: "random")
+#         seed: Random seed for reproducibility (default: 0)
         
-    Returns:
-        Dictionary of sampled pairwise tasks
-    """
-    assert sampling in ["random", "top"], "Sampling method must be 'random' or 'top'"
+#     Returns:
+#         Dictionary of sampled pairwise tasks
+#     """
+#     assert sampling in ["random", "top"], "Sampling method must be 'random' or 'top'"
     
-    # Create a deep copy to avoid modifying the original
-    sampled_tasks = pairwise_tasks.copy()
+#     # Create a deep copy to avoid modifying the original
+#     sampled_tasks = pairwise_tasks.copy()
     
-    for skill_name, skill_tasks in sampled_tasks.items():
-        for task_name, task_data in skill_tasks.items():
-            pos_videos = task_data["pos"]
-            neg_videos = task_data["neg"]
+#     for skill_name, skill_tasks in sampled_tasks.items():
+#         for task_name, task_data in skill_tasks.items():
+#             pos_videos = task_data["pos"]
+#             neg_videos = task_data["neg"]
             
-            # Determine number of samples
-            sample_count = min(max_samples, len(pos_videos), len(neg_videos))
+#             # Determine number of samples
+#             sample_count = min(max_samples, len(pos_videos), len(neg_videos))
             
-            if sampling == "random":
-                # Use random sampling with seed for reproducibility
-                random.seed(seed)
-                sampled_tasks[skill_name][task_name]["pos"] = random.sample(pos_videos, sample_count)
-                sampled_tasks[skill_name][task_name]["neg"] = random.sample(neg_videos, sample_count)
-            else:  # "top" sampling
-                # Take the first N videos
-                sampled_tasks[skill_name][task_name]["pos"] = pos_videos[:sample_count]
-                sampled_tasks[skill_name][task_name]["neg"] = neg_videos[:sample_count]
+#             if sampling == "random":
+#                 # Use random sampling with seed for reproducibility
+#                 random.seed(seed)
+#                 sampled_tasks[skill_name][task_name]["pos"] = random.sample(pos_videos, sample_count)
+#                 sampled_tasks[skill_name][task_name]["neg"] = random.sample(neg_videos, sample_count)
+#             else:  # "top" sampling
+#                 # Take the first N videos
+#                 sampled_tasks[skill_name][task_name]["pos"] = pos_videos[:sample_count]
+#                 sampled_tasks[skill_name][task_name]["neg"] = neg_videos[:sample_count]
                 
-    return sampled_tasks
+#     return sampled_tasks
 
 
-def get_sampled_tasks_dir(video_labels_dir, max_samples=30, sampling="random", seed=0, folder_name="pairwise_tasks"):
-    """
-    Get the directory for sampled tasks.
+# def get_sampled_tasks_dir(video_labels_dir, max_samples=30, sampling="random", seed=0, folder_name="pairwise_tasks"):
+#     """
+#     Get the directory for sampled tasks.
     
-    Args:
-        video_labels_dir: Directory containing video labels
-        max_samples: Maximum number of samples per task
-        sampling: Sampling method
-        seed: Random seed
-        folder_name: Folder name for pairwise tasks
+#     Args:
+#         video_labels_dir: Directory containing video labels
+#         max_samples: Maximum number of samples per task
+#         sampling: Sampling method
+#         seed: Random seed
+#         folder_name: Folder name for pairwise tasks
         
-    Returns:
-        Path to the sampled tasks directory
-    """
-    video_labels_dir = Path(video_labels_dir)
-    sampled_dir = video_labels_dir / folder_name / f"sampled_{sampling}_num_{max_samples}_seed_{seed}"
-    return sampled_dir
+#     Returns:
+#         Path to the sampled tasks directory
+#     """
+#     video_labels_dir = Path(video_labels_dir)
+#     sampled_dir = video_labels_dir / folder_name / f"sampled_{sampling}_num_{max_samples}_seed_{seed}"
+#     return sampled_dir
 
 
-def generate_pairwise_benchmark(
-    sampling="random",
-    max_samples=30,
-    seed=42,
-    root=None,
-    video_root=None,
-    video_labels_dir=None,
-    labels_filename="label_names.json",
-    pairwise_labels=None,
-):
-    """
-    Generate a pairwise benchmark by sampling from pairwise tasks.
+# def generate_pairwise_benchmark(
+#     sampling="random",
+#     max_samples=30,
+#     seed=42,
+#     root=None,
+#     video_root=None,
+#     video_labels_dir=None,
+#     labels_filename="label_names.json",
+#     pairwise_labels=None,
+# ):
+#     """
+#     Generate a pairwise benchmark by sampling from pairwise tasks.
     
-    Args:
-        pairwise_labels: Dictionary containing skill and task definitions
-        sampling: Sampling method, either "random" or "top"
-        max_samples: Maximum number of samples per task
-        seed: Random seed for reproducibility
-        root: Root directory
-        video_root: Video root directory
-        video_labels_dir: Directory containing video labels
-        labels_filename: Filename for labels
-        mode: Benchmark mode
+#     Args:
+#         pairwise_labels: Dictionary containing skill and task definitions
+#         sampling: Sampling method, either "random" or "top"
+#         max_samples: Maximum number of samples per task
+#         seed: Random seed for reproducibility
+#         root: Root directory
+#         video_root: Video root directory
+#         video_labels_dir: Directory containing video labels
+#         labels_filename: Filename for labels
+#         mode: Benchmark mode
         
-    Returns:
-        Tuple of (sampled_tasks, sampled_config)
-    """
-    # Get the directory for sampled tasks
-    sampled_dir = get_sampled_tasks_dir(
-        video_labels_dir=video_labels_dir,
-        max_samples=max_samples,
-        sampling=sampling,
-        seed=seed
-    )
+#     Returns:
+#         Tuple of (sampled_tasks, sampled_config)
+#     """
+#     # Get the directory for sampled tasks
+#     sampled_dir = get_sampled_tasks_dir(
+#         video_labels_dir=video_labels_dir,
+#         max_samples=max_samples,
+#         sampling=sampling,
+#         seed=seed
+#     )
     
-    # Check if sampled tasks already exist
-    if not sampled_dir.exists():
-        # Generate and sample tasks
-        pairwise_tasks = generate_pairwise_tasks(
-            pairwise_labels=pairwise_labels,
-            root=root,
-            video_root=video_root,
-            video_labels_dir=video_labels_dir,
-            labels_filename=labels_filename
-        )
+#     # Check if sampled tasks already exist
+#     if not sampled_dir.exists():
+#         # Generate and sample tasks
+#         pairwise_tasks = generate_pairwise_tasks(
+#             pairwise_labels=pairwise_labels,
+#             root=root,
+#             video_root=video_root,
+#             video_labels_dir=video_labels_dir,
+#             labels_filename=labels_filename
+#         )
         
-        sampled_tasks = sample_from_pairwise_tasks(
-            pairwise_tasks,
-            max_samples=max_samples,
-            sampling=sampling,
-            seed=seed
-        )
+#         sampled_tasks = sample_from_pairwise_tasks(
+#             pairwise_tasks,
+#             max_samples=max_samples,
+#             sampling=sampling,
+#             seed=seed
+#         )
         
-        # Save configuration and tasks
-        sampled_config = {
-            "max_samples": max_samples,
-            "sampling": sampling,
-            "seed": seed,
-            "video_labels_dir": str(video_labels_dir),
-            "root": str(root),
-            "video_root": str(video_root),
-            "pairwise_labels": pairwise_labels
-        }
+#         # Save configuration and tasks
+#         sampled_config = {
+#             "max_samples": max_samples,
+#             "sampling": sampling,
+#             "seed": seed,
+#             "video_labels_dir": str(video_labels_dir),
+#             "root": str(root),
+#             "video_root": str(video_root),
+#             "pairwise_labels": pairwise_labels
+#         }
         
-        # Create directory and save files
-        sampled_dir.mkdir(parents=True, exist_ok=True)
+#         # Create directory and save files
+#         sampled_dir.mkdir(parents=True, exist_ok=True)
         
-        with open(sampled_dir / "sampled_config.json", "w") as f:
-            json.dump(sampled_config, f, indent=4)
+#         with open(sampled_dir / "sampled_config.json", "w") as f:
+#             json.dump(sampled_config, f, indent=4)
             
-        with open(sampled_dir / "sampled_tasks.json", "w") as f:
-            json.dump(sampled_tasks, f, indent=4)
-    else:
-        # Load existing sampled tasks and config
-        with open(sampled_dir / "sampled_tasks.json", "r") as f:
-            sampled_tasks = json.load(f)
+#         with open(sampled_dir / "sampled_tasks.json", "w") as f:
+#             json.dump(sampled_tasks, f, indent=4)
+#     else:
+#         # Load existing sampled tasks and config
+#         with open(sampled_dir / "sampled_tasks.json", "r") as f:
+#             sampled_tasks = json.load(f)
             
-        with open(sampled_dir / "sampled_config.json", "r") as f:
-            sampled_config = json.load(f)
+#         with open(sampled_dir / "sampled_config.json", "r") as f:
+#             sampled_config = json.load(f)
     
-    return sampled_tasks, sampled_config
+#     return sampled_tasks, sampled_config
 
 
 if __name__ == "__main__":

@@ -317,7 +317,7 @@ class VanillaSpatialPolicy(SocraticProgram):
 
         shot_size_change = data.cam_setup.shot_size_change
         subject_status = None # 'has_subject', 'no_subject', 'change_of_subject', 'has_description'
-        is_height_wrt_subject_applicable = data.cam_setup.is_height_wrt_subject_applicable
+        is_subject_height_applicable = data.cam_setup.is_subject_height_applicable
 
         if data.cam_setup.is_just_human_shot:
             policy += "\n\nPlease note that the video features **salient human subjects**, so you should focus on describing the spatial framing and movements of them."
@@ -332,7 +332,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                 policy += "\n\nShot Size Information: The video begins with no subject. It then becomes {} of the subject.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
-                if is_height_wrt_subject_applicable:
+                if is_subject_height_applicable:
                     policy += "\n\nWhen the subject is revealed, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
@@ -341,7 +341,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                 policy += "\n\nShot Size Information: The video begins with {} of the subject. Then the subject disappears.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start'])
                 )
-                if is_height_wrt_subject_applicable:
+                if is_subject_height_applicable:
                     policy += "\n\nBefore the subject disappears, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start'])
                     )
@@ -351,7 +351,7 @@ class VanillaSpatialPolicy(SocraticProgram):
                     self.format_shot_size(data.cam_setup.shot_size_info['start']),
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
-                if is_height_wrt_subject_applicable:
+                if is_subject_height_applicable:
                     policy += "\n\nThe camera is positioned {} when the first subject is in focus, and {} when the second subject is in focus.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
@@ -384,7 +384,7 @@ class VanillaSpatialPolicy(SocraticProgram):
             subject_status = "has_description"
             policy += "\n\nThe description below already mentions the spatial framing information about the subjects or scenery in this video. Use this caption as a reference to draft the spatial framing and dynamics description. Simply expand on it to fully capture other spatial positions and movements. Do not infer the any spatial framing information already mentioned below."
             policy += f"\n\nShot Size Information: {data.cam_setup.shot_size_description}"
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 if data.cam_setup.height_wrt_subject_change:
                     policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {} and then changes to {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
@@ -406,7 +406,7 @@ class VanillaSpatialPolicy(SocraticProgram):
             else:
                 policy += "\n\nShot Size Information: The video shows {} of the subjects.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
 
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 if data.cam_setup.height_wrt_subject_change:
                     policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {}. It then changes to {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
@@ -425,12 +425,12 @@ class VanillaSpatialPolicy(SocraticProgram):
             else:
                 policy += "\n\nShot Size Information: The video shows {} of the scenery.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
 
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is no subject.")
         elif subject_status == None:
             # Shot size does not apply to complex shots
             policy += "\n\nShot Size Information: The video features a complex scenario with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video. Do not use shot size to describe the spatial framing."
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is unknown subject.")
 
         return policy
@@ -577,7 +577,7 @@ class RawSpatialPolicy(SocraticProgram):
 
         shot_size_change = data.cam_setup.shot_size_change
         subject_status = None # 'has_subject', 'no_subject', 'change_of_subject', 'has_description'
-        is_height_wrt_subject_applicable = data.cam_setup.is_height_wrt_subject_applicable
+        is_subject_height_applicable = data.cam_setup.is_subject_height_applicable
         
         if data.cam_setup.is_just_human_shot:
             policy += "\n\nPlease note that the video features **salient human subjects**, so you should focus on describing the spatial framing and movements of them."
@@ -592,7 +592,7 @@ class RawSpatialPolicy(SocraticProgram):
                 policy += "\n\nShot Size Information: The video begins with no subject. It then becomes {} of the subject.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
-                if is_height_wrt_subject_applicable:
+                if is_subject_height_applicable:
                     policy += "\n\nWhen the subject is revealed, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
                     )
@@ -601,7 +601,7 @@ class RawSpatialPolicy(SocraticProgram):
                 policy += "\n\nShot Size Information: The video begins with {} of the subject. Then the subject disappears.".format(
                     self.format_shot_size(data.cam_setup.shot_size_info['start'])
                 )
-                if is_height_wrt_subject_applicable:
+                if is_subject_height_applicable:
                     policy += "\n\nBefore the subject disappears, the camera is positioned {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start'])
                     )
@@ -611,7 +611,7 @@ class RawSpatialPolicy(SocraticProgram):
                     self.format_shot_size(data.cam_setup.shot_size_info['start']),
                     self.format_shot_size(data.cam_setup.shot_size_info['end'])
                 )
-                if is_height_wrt_subject_applicable:
+                if is_subject_height_applicable:
                     policy += "\n\nThe camera is positioned {} when the first subject is in focus, and {} when the second subject is in focus.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['end'])
@@ -644,7 +644,7 @@ class RawSpatialPolicy(SocraticProgram):
             subject_status = "has_description"
             policy += "\n\nThe description below already mentions the spatial framing information about the subjects or scenery in this video. Use this caption as a reference to draft the spatial framing and dynamics description. Simply expand on it to fully capture other spatial positions and movements. Do not infer the any spatial framing information already mentioned below."
             policy += f"\n\nShot Size Information: {data.cam_setup.shot_size_description}"
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 if data.cam_setup.height_wrt_subject_change:
                     policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {} and then changes to {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
@@ -667,7 +667,7 @@ class RawSpatialPolicy(SocraticProgram):
             else:
                 policy += "\n\nShot Size Information: The video shows {} of the subjects.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
                 
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 if data.cam_setup.height_wrt_subject_change:
                     policy += "\n\nCamera Height Relative to Subjects: The camera is initially positioned {}. It then changes to {}.".format(
                         self.format_height_wrt_subject(data.cam_setup.height_wrt_subject_info['start']),
@@ -686,12 +686,12 @@ class RawSpatialPolicy(SocraticProgram):
             else:
                 policy += "\n\nShot Size Information: The video shows {} of the scenery.".format(self.format_shot_size(data.cam_setup.shot_size_info['start']))
                 
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is no subject.")
         elif subject_status == None:
             # Shot size does not apply to complex shots
             policy += "\n\nShot Size Information: The video features a complex scenario with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video. Do not use shot size to describe the spatial framing."
-            if is_height_wrt_subject_applicable:
+            if is_subject_height_applicable:
                 raise ValueError("Height relative to subject is not applicable when there is unknown subject.")
         
         return policy

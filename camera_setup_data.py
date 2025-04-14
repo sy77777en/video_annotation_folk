@@ -356,7 +356,7 @@ class CameraSetupData:
             self.shot_size_change = self.shot_size_change_from_large_to_small = self.shot_size_change_from_small_to_large = None
 
     def _set_height_relative_to_subject_attributes(self):
-        attributes = ["is_height_wrt_subject_applicable", "height_wrt_subject_change_from_high_to_low", "height_wrt_subject_change_from_low_to_high",
+        attributes = ["is_subject_height_applicable", "height_wrt_subject_change_from_high_to_low", "height_wrt_subject_change_from_low_to_high",
                       "height_wrt_subject_change"]
         for attr in attributes:
             setattr(self, attr, None)
@@ -365,10 +365,11 @@ class CameraSetupData:
             return
 
         self.height_wrt_subject_info = {'start': self.subject_height_start, 'end': self.subject_height_end}
-        self.is_height_wrt_subject_applicable = any(height != "unknown" for height in self.height_wrt_subject_info.values()) # "Is subject height classification possible for this video?"
+        self.is_subject_height_applicable = any(height != "unknown" for height in self.height_wrt_subject_info.values()) # "Is subject height classification possible for this video?"
         self.height_wrt_subject_change_from_high_to_low = None # "Does the camera height decrease noticeably in relation to the subject?"
         self.height_wrt_subject_change_from_low_to_high = None # "Does the camera height increase noticeably in relation to the subject?"
-        if self.is_height_wrt_subject_applicable:
+        self.height_wrt_subject_change = None # "Does the camera height change in relation to the subject?"
+        if self.is_subject_height_applicable:
             if self.shot_type == "change_of_subject":
                 # change "unknown" to "no_subject"
                 for key in self.height_wrt_subject_info:
@@ -377,6 +378,7 @@ class CameraSetupData:
             else:
                 if self.height_wrt_subject_info['end'] == "unknown":
                     self.height_wrt_subject_info['end'] = self.height_wrt_subject_info['start']
+                    self.height_wrt_subject_change = False
                 else:
                     assert self.height_wrt_subject_info['start'] != self.height_wrt_subject_info['end']
                     if HEIGHT_RELATIVE_TO_SUBJECT.index(self.height_wrt_subject_info['end']) < HEIGHT_RELATIVE_TO_SUBJECT.index(self.height_wrt_subject_info['start']):
@@ -385,7 +387,8 @@ class CameraSetupData:
                     else:
                         self.height_wrt_subject_change_from_low_to_high = True
                         self.height_wrt_subject_change_from_high_to_low = False
-        self.height_wrt_subject_change = self.height_wrt_subject_change_from_high_to_low or self.height_wrt_subject_change_from_low_to_high
+                    self.height_wrt_subject_change = True
+        
 
     def _set_height_relative_to_ground_attributes(self):
         attributes = ["is_height_wrt_ground_applicable", "height_wrt_ground_change_from_high_to_low", "height_wrt_ground_change_from_low_to_high",
@@ -402,10 +405,12 @@ class CameraSetupData:
         self.height_wrt_ground_change_from_low_to_high = None # "Does the camera height increase noticeably in relation to the ground?"
         self.above_water_to_underwater = None # "Does the camera transition from above water to underwater?"
         self.underwater_to_above_water = None # "Does the camera transition from underwater to above water?"
+        self.height_wrt_ground_change = None # "Does the camera height change in relation to the ground?"
         if self.is_height_wrt_ground_applicable:
             if self.height_wrt_ground_info['end'] == "unknown":
                 self.height_wrt_ground_info['end'] = self.height_wrt_ground_info['start']
                 self.above_water_to_underwater = self.underwater_to_above_water = False
+                self.height_wrt_ground_change = False
             else:
                 assert self.height_wrt_ground_info['start'] != self.height_wrt_ground_info['end']
                 if all(height in HEIGHT_RELATIVE_TO_WATER for height in self.height_wrt_ground_info.values()):
@@ -422,7 +427,8 @@ class CameraSetupData:
                     else:
                         self.height_wrt_ground_change_from_low_to_high = True
                         self.height_wrt_ground_change_from_high_to_low = False
-        self.height_wrt_ground_change = self.height_wrt_ground_change_from_high_to_low or self.height_wrt_ground_change_from_low_to_high or self.above_water_to_underwater or self.underwater_to_above_water
+                self.height_wrt_ground_change = True
+        # self.height_wrt_ground_change = self.height_wrt_ground_change_from_high_to_low or self.height_wrt_ground_change_from_low_to_high or self.above_water_to_underwater or self.underwater_to_above_water
 
     def _set_camera_angle_attributes(self):
         attributes = ["is_camera_angle_applicable", "is_dutch_angle", "is_dutch_angle_varying", "is_dutch_angle_fixed",
@@ -440,9 +446,11 @@ class CameraSetupData:
         self.is_dutch_angle_fixed = None # "Does the Dutch angle remain the same throughout the video?"
         self.camera_angle_change_from_high_to_low = None # "Does the camera angle decrease noticeably relative to the ground?"
         self.camera_angle_change_from_low_to_high = None # "Does the camera angle increase noticeably relative to the ground?"
+        self.camera_angle_change = None # "Does the camera angle change in relation to the ground?"
         if self.is_camera_angle_applicable:
             if self.camera_angle_info['end'] == "unknown":
                 self.camera_angle_info['end'] = self.camera_angle_info['start']
+                self.camera_angle_change = False
             else:
                 assert self.camera_angle_info['start'] != self.camera_angle_info['end']
                 if CAMERA_ANGLES.index(self.camera_angle_info['end']) < CAMERA_ANGLES.index(self.camera_angle_info['start']):
@@ -452,12 +460,13 @@ class CameraSetupData:
                 else:
                     self.camera_angle_change_from_low_to_high = False
                     self.camera_angle_change_from_high_to_low = True
+                self.camera_angle_change = True
 
             self.is_dutch_angle = self.dutch_angle in ["yes", "varying"]
             self.is_dutch_angle_varying = self.dutch_angle == "varying"
             self.is_dutch_angle_fixed = self.dutch_angle == "yes"
 
-        self.camera_angle_change = self.camera_angle_change_from_high_to_low or self.camera_angle_change_from_low_to_high
+        # self.camera_angle_change = self.camera_angle_change_from_high_to_low or self.camera_angle_change_from_low_to_high
 
     def _set_focus_attributes(self):
         attributes = ["is_focus_applicable", "is_deep_focus", "is_shallow_focus", "is_ultra_shallow_focus",
@@ -503,10 +512,14 @@ class CameraSetupData:
                         assert self.focus_change_reason == "no_change"
                         self.focus_change_from_near_to_far = self.focus_change_from_far_to_near = False
                         self.is_rack_pull_focus = self.is_focus_tracking = False
+                        self.is_rack_focus = False
+                        self.is_pull_focus = False
                         self.focus_change = False
                     else:
                         if self.focus_info['start'] == "middle_ground":
                             self.is_rack_pull_focus = self.focus_change_reason in ["rack_focus", "pull_focus"]
+                            self.is_rack_focus = self.focus_change_reason == "rack_focus"
+                            self.is_pull_focus = self.focus_change_reason == "pull_focus"
                             self.is_focus_tracking = self.focus_change_reason == "focus_tracking"
                         else:
                             self.is_rack_pull_focus = self.is_focus_tracking = False

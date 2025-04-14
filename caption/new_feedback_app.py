@@ -33,7 +33,18 @@ def parse_args():
             "video_urls/lighting_120_new/batch8.json",
             "video_urls/lighting_120_new/batch9.json",
             "video_urls/lighting_120_new/batch10.json",
+            "video_urls/lighting_250_new/batch11.json",
+            "video_urls/lighting_250_new/batch12.json",
+            "video_urls/lighting_250_new/batch13.json",
+            "video_urls/lighting_250_new/batch14.json",
+            "video_urls/lighting_250_new/batch15.json",
+            "video_urls/lighting_250_new/batch16.json",
+            "video_urls/lighting_250_new/batch17.json",
+            "video_urls/lighting_250_new/batch18.json",
+            "video_urls/lighting_250_new/batch19.json",
+            "video_urls/lighting_250_new/batch20.json",
             "video_urls/lighting_120_new/invalid_videos.json",
+            "video_urls/lighting_250_new/invalid_videos.json",
         ],
         help="List of paths to test URLs files",
     )
@@ -42,7 +53,8 @@ def parse_args():
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     # parser.add_argument("--video_data", type=str, default="video_data/20250224_0130/videos.json", help="Path to the video data file")
     # parser.add_argument("--video_data", type=str, default="video_data/20250324_1616_all_labels/videos.json", help="Path to the video data file")
-    parser.add_argument("--video_data", type=str, default="video_data/20250328_1455_lighting_120/videos.json", help="Path to the video data file")
+    # parser.add_argument("--video_data", type=str, default="video_data/20250328_1455_lighting_120/videos.json", help="Path to the video data file") # Before April 14
+    parser.add_argument("--video_data", type=str, default="video_data/20250406lighting_only/videos.json", help="Path to the video data file")
     # parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup", "lighting_setup"], help="List of label collections to load from the video data")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["lighting_setup"], help="List of label collections to load from the video data")
     return parser.parse_args()

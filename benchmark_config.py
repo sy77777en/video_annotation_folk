@@ -26,6 +26,12 @@ def get_pairwise_labels(folder_name):
             ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
             ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
         )
+    elif folder_name == "motion_dataset_redo":
+        return get_motion_pairwise_labels(
+            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
+            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+        )
     elif folder_name == "motion_dataset_april_update":
         return get_motion_pairwise_labels(
             ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
@@ -40,6 +46,13 @@ def get_pairwise_labels(folder_name):
         )
     elif folder_name == "setup_dataset_april_6":
         return get_setup_pairwise_labels(
+            setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
+        )
+    elif folder_name == "motion_and_setup_dataset_april_6":
+        return get_motion_and_setup_pairwise_labels(
+            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
+            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
             setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
         )
     elif folder_name == "lighting_dataset_april_6":
@@ -117,10 +130,13 @@ def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
         },
     ]
 
-def get_scene_dynamics_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_scene_dynamics_tasks(
+    ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+    ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
+):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_and_camera_folder,
             "name": "is_scene_static_or_not",
             "pos_question": "Is the scene in the video completely static?",
             "neg_question": "Is the scene in the video dynamic?",
@@ -384,8 +400,7 @@ def get_intrinsic_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOL
         },
     ]
 
-def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-                                      ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER):
                                       
     return [
         # Intrinsic vs. Extrinsic (4 tasks)
@@ -446,7 +461,7 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_and_camera_folder,
             "name": "only_zoom_in_vs_only_forward",
             "pos_question": "Does the camera only zoom in without any other camera movement?",
             "neg_question": "Does the camera only move forward without any other camera movement?",
@@ -462,7 +477,7 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_and_camera_folder,
             "name": "only_zoom_out_vs_only_backward",
             "pos_question": "Does the camera only zoom out without any other camera movement?",
             "neg_question": "Does the camera only move backward without any other camera movement?",
@@ -1504,11 +1519,11 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
         },
     ]
 
-def get_reference_frame_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_reference_frame_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
     return [
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_only_folder,
+            "folder": ground_and_setup_folder,
             "name": "forward_camera_only_vs_forward_ground_and_camera",
             "pos_question": "Does the camera move forward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move forward relative to both the ground and its initial viewing direction?",
@@ -1537,7 +1552,7 @@ def get_reference_frame_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER)
         },
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_only_folder,
+            "folder": ground_and_setup_folder,
             "name": "backward_camera_only_vs_backward_ground_and_camera",
             "pos_question": "Does the camera move backward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move backward relative to both the ground and its initial viewing direction?",
@@ -1566,7 +1581,7 @@ def get_reference_frame_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER)
         },
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_only_folder,
+            "folder": ground_and_setup_folder,
             "name": "upward_camera_only_vs_upward_camera_and_ground",
             "pos_question": "Does the camera move upward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move upward relative to both the ground and its initial viewing direction?",
@@ -1595,7 +1610,7 @@ def get_reference_frame_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER)
         },
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_only_folder,
+            "folder": ground_and_setup_folder,
             "name": "downward_camera_only_vs_downward_camera_and_ground",
             "pos_question": "Does the camera move downward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move downward relative to both the ground and its initial viewing direction?",
@@ -1651,8 +1666,8 @@ def get_overlays_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "has_overlays",
             "pos_question": "Does the shot contain any on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements?",
             "neg_question": "Is the video free from any on-screen overlays like watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements?",
-            "pos_prompt": "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements."
-            "neg_prompt": "A shot without any on-screen overlays like watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements."
+            "pos_prompt": "A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements.",
+            "neg_prompt": "A shot without any on-screen overlays like watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements.",
             "pos": {
                 "label": "cam_setup.has_overlays",
                 "type": "pos",
@@ -1755,7 +1770,7 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "slow_motion",
             "pos_question": "Is it a slow-motion video with forward playback slower than real-time?",
             "neg_question": "Is it not a slow-motion video with forward playback slower than real-time?",
-            "pos_prompt": "A slow-motion video with forward playback speed slower than real-time."
+            "pos_prompt": "A slow-motion video with forward playback speed slower than real-time.",
             "neg_prompt": "A video that is not played at forward and slower than real-time speed.",
             "pos": {
                 "label": "cam_setup.video_speed.slow_motion",
@@ -1935,8 +1950,8 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "screen_recording_pov",
             "pos_question": "Is this a screen recording of a software or system interface (e.g., menus, windows, toolbars)?",
             "neg_question": "Is this not a screen recording of a software or system interface (e.g., menus, windows, toolbars)?",
-            "pos_prompt": "A screen recording of a software or system interface (e.g., menus, windows, toolbars)."
-            "neg_prompt": "This is not a screen recording of a software or system interface (e.g., menus, windows, toolbars)."
+            "pos_prompt": "A screen recording of a software or system interface (e.g., menus, windows, toolbars).",
+            "neg_prompt": "This is not a screen recording of a software or system interface (e.g., menus, windows, toolbars).",
             "pos": {
                 "label": "cam_setup.point_of_view.screen_recording_pov",
                 "type": "pos",
@@ -2150,11 +2165,11 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "A video that includes a revealing shot where a subject appears.",
             "neg_prompt": "A video that does not include a revealing shot where a subject appears.",
             "pos": {
-                "label": "cam_setup.subject_framing.subject_revealing",
+                "label": "cam_setup.shot_size.subject_revealing",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.subject_framing.subject_revealing",
+                "label": "cam_setup.shot_size.subject_revealing",
                 "type": "neg",
             },
         },
@@ -2166,11 +2181,11 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The video shows the main subject disappearing or leaving the frame.",
             "neg_prompt": "The video does not show the main subject disappearing or leaving the frame.",
             "pos": {
-                "label": "cam_setup.subject_framing.subject_disappearing",
+                "label": "cam_setup.shot_size.subject_disappearing",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.subject_framing.subject_disappearing",
+                "label": "cam_setup.shot_size.subject_disappearing",
                 "type": "neg",
             },
         },
@@ -2182,11 +2197,11 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The main subject changes to a different subject.",
             "neg_prompt": "The main subject does not change to a different subject.",
             "pos": {
-                "label": "cam_setup.subject_framing.subject_switching",
+                "label": "cam_setup.shot_size.subject_switching",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.subject_framing.subject_switching",
+                "label": "cam_setup.shot_size.subject_switching",
                 "type": "neg",
             },
         },
@@ -2411,11 +2426,11 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "A video where the shot size can be meaningfully determined.",
             "neg_prompt": "A video where the shot size cannot be meaningfully determined.",
             "pos": {
-                "label": "cam_setup.shot_type.is_shot_size_applicable",
+                "label": "cam_setup.shot_size.is_shot_size_applicable",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.shot_type.is_shot_size_applicable",
+                "label": "cam_setup.shot_size.is_shot_size_applicable",
                 "type": "neg",
             },
         },
@@ -2874,17 +2889,17 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
     return [
         {
             "folder": setup_folder,
-            "name": "is_height_wrt_subject_applicable",
+            "name": "is_subject_height_applicable",
             "pos_question": "Is the camera height relative to the subject clear?",
             "neg_question": "Is the camera height relative to the subject unclear?",
             "pos_prompt": "The camera height relative to the subject is clear.",
             "neg_prompt": "The camera height relative to the subject is unclear.",
             "pos": {
-                "label": "cam_setup.height_wrt_subject.is_height_wrt_subject_applicable",
+                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.height_wrt_subject.is_height_wrt_subject_applicable",
+                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
                 "type": "neg",
             },
         },
@@ -4476,13 +4491,13 @@ def get_motion_pairwise_labels(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
                                ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER):
     return {
         "movement_and_steadiness": get_movement_and_steadiness_tasks(ground_only_folder=ground_only_folder),
-        "scene_dynamics": get_scene_dynamics_tasks(ground_only_folder=ground_only_folder),
+        "scene_dynamics": get_scene_dynamics_tasks(ground_and_camera_folder=ground_and_camera_folder, ground_only_folder=ground_only_folder),
         "camera_movement_speed": get_camera_movement_speed_tasks(ground_only_folder=ground_only_folder),
-        "translation_direction": get_translation_direction_tasks(ground_only_folder=ground_only_folder),
+        "translation_direction": get_translation_direction_tasks(ground_only_folder=ground_only_folder, ground_and_setup_folder=ground_and_setup_folder),
         "rotation_direction": get_rotation_direction_tasks(ground_only_folder=ground_only_folder),
         "object_centric_direction": get_object_centric_direction_tasks(ground_only_folder=ground_only_folder),
         "intrinsic_direction": get_intrinsic_direction_tasks(ground_only_folder=ground_only_folder),
-        "instrinsic_vs_extrinsic": get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=ground_and_camera_folder, ground_only_folder=ground_only_folder),
+        "instrinsic_vs_extrinsic": get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=ground_and_camera_folder),
         "rotation_vs_translation": get_rotation_vs_translation_tasks(ground_only_folder=ground_only_folder, ground_and_setup_folder=ground_and_setup_folder, ground_and_camera_folder=ground_and_camera_folder),
         "has_intrinsic_change": get_has_intrinsic_change_tasks(ground_only_folder=ground_only_folder),
         "has_translation": get_has_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_only_folder=ground_only_folder),
@@ -4493,7 +4508,7 @@ def get_motion_pairwise_labels(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
         "only_intrinsic_change": get_only_intrinsic_change_tasks(ground_only_folder=ground_only_folder),
         "only_translation": get_only_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_only_folder=ground_only_folder),
         "only_rotation": get_only_rotation_tasks(ground_only_folder=ground_only_folder),
-        "reference_frame": get_reference_frame_tasks(ground_only_folder=ground_only_folder),
+        "reference_frame": get_reference_frame_tasks(ground_and_setup_folder=ground_and_setup_folder),
     }
 
 def get_setup_pairwise_labels(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
@@ -4531,31 +4546,41 @@ def get_setup_pairwise_labels(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         "focus_from_to": get_focus_from_to_tasks(setup_folder=setup_folder)
     }
 
-def get_lighting_pairwise_labels(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
-    return {
-        # Color Composition (22 Tasks)
-        "black_and_white": get_black_and_white_tasks(lighting_folder=lighting_folder),
-        "color_temperature": get_color_temperature_tasks(lighting_folder=lighting_folder),
-        "color_saturation": get_color_saturation_tasks(lighting_folder=lighting_folder),
-        "brightness": get_brightness_tasks(lighting_folder=lighting_folder),
+def get_motion_and_setup_pairwise_labels(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
+                                         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+                                         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+                                         setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+    motion_dataset = get_motion_pairwise_labels(ground_only_folder=ground_only_folder,
+                                                ground_and_setup_folder=ground_and_setup_folder,
+                                                ground_and_camera_folder=ground_and_camera_folder)
+    setup_dataset = get_setup_pairwise_labels(setup_folder=setup_folder)
+    return {**motion_dataset, **setup_dataset}
+
+# def get_lighting_pairwise_labels(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+#     return {
+#         # Color Composition (22 Tasks)
+#         "black_and_white": get_black_and_white_tasks(lighting_folder=lighting_folder),
+#         "color_temperature": get_color_temperature_tasks(lighting_folder=lighting_folder),
+#         "color_saturation": get_color_saturation_tasks(lighting_folder=lighting_folder),
+#         "brightness": get_brightness_tasks(lighting_folder=lighting_folder),
         
-        # Lighting Setup (41 Tasks)
-        "scene_type": get_scene_type_tasks(lighting_folder=lighting_folder),
-        "sunlight_level": get_sunlight_level_tasks(lighting_folder=lighting_folder),
-        "light_quality": get_light_quality_tasks(lighting_folder=lighting_folder),
-        "light_source": get_light_source_tasks(lighting_folder=lighting_folder),
-        "light_contrast": get_light_contrast_tasks(lighting_folder=lighting_folder),
-        "light_direction": get_light_direction_tasks(lighting_folder=lighting_folder),
-        "subject_lighting": get_subject_lighting_tasks(lighting_folder=lighting_folder),
+#         # Lighting Setup (41 Tasks)
+#         "scene_type": get_scene_type_tasks(lighting_folder=lighting_folder),
+#         "sunlight_level": get_sunlight_level_tasks(lighting_folder=lighting_folder),
+#         "light_quality": get_light_quality_tasks(lighting_folder=lighting_folder),
+#         "light_source": get_light_source_tasks(lighting_folder=lighting_folder),
+#         "light_contrast": get_light_contrast_tasks(lighting_folder=lighting_folder),
+#         "light_direction": get_light_direction_tasks(lighting_folder=lighting_folder),
+#         "subject_lighting": get_subject_lighting_tasks(lighting_folder=lighting_folder),
         
-        # Lighting Effects (46 Tasks)
-        "lens_optical_effects": get_lens_optical_effects_tasks(lighting_folder=lighting_folder),
-        "reflection_based_lighting": get_reflection_based_lighting_tasks(lighting_folder=lighting_folder),
-        "natural_atmospheric_lighting": get_natural_atmospheric_lighting_tasks(lighting_folder=lighting_folder),
-        "stylized_environmental_lighting": get_stylized_environmental_lighting_tasks(lighting_folder=lighting_folder),
-        "volumetric_lighting": get_volumetric_lighting_tasks(lighting_folder=lighting_folder),
-        "shadow_pattern_gobo": get_shadow_pattern_gobo_tasks(lighting_folder=lighting_folder),
-        "lighting_dynamics": get_lighting_dynamics_tasks(lighting_folder=lighting_folder),
-        "dynamic_effects": get_dynamic_effects_tasks(lighting_folder=lighting_folder)
-    }
+#         # Lighting Effects (46 Tasks)
+#         "lens_optical_effects": get_lens_optical_effects_tasks(lighting_folder=lighting_folder),
+#         "reflection_based_lighting": get_reflection_based_lighting_tasks(lighting_folder=lighting_folder),
+#         "natural_atmospheric_lighting": get_natural_atmospheric_lighting_tasks(lighting_folder=lighting_folder),
+#         "stylized_environmental_lighting": get_stylized_environmental_lighting_tasks(lighting_folder=lighting_folder),
+#         "volumetric_lighting": get_volumetric_lighting_tasks(lighting_folder=lighting_folder),
+#         "shadow_pattern_gobo": get_shadow_pattern_gobo_tasks(lighting_folder=lighting_folder),
+#         "lighting_dynamics": get_lighting_dynamics_tasks(lighting_folder=lighting_folder),
+#         "dynamic_effects": get_dynamic_effects_tasks(lighting_folder=lighting_folder)
+#     }
 
