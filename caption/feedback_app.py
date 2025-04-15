@@ -145,7 +145,8 @@ def get_precaption_llm_name(config_dict, selected_config):
     if task in ["subject_motion_dynamics"]:
         return "tarsier-recap-7b"
     elif task in ["spatial_framing_dynamics"]:
-        return "qwen2.5-vl-72b"
+        # return "qwen2.5-vl-72b"
+        return "gemini-2.5-pro-preview-03-25"
     elif task in ["raw_lighting_setup_dynamics", "raw_lighting_effects_dynamics"]:
         print(f"Using qwen2.5-vl-7b for {task}")
         return "qwen2.5-vl-7b"
@@ -276,8 +277,12 @@ def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_
     return pre_caption
 
 
-def get_video_format_func(output_dir, file_postfix=".json"):
+def get_video_format_func(output_dir, file_postfix=".json", video_urls=None):
     def video_format_func(video_url):
+        if video_urls is not None:
+            video_index = video_urls.index(video_url)
+        else:
+            video_index = ""
         # if already exists, then return f"✅ {video_url}"
         video_id = get_video_id(video_url)
         # Check for existing feedback and get current caption
@@ -285,8 +290,8 @@ def get_video_format_func(output_dir, file_postfix=".json"):
         video_url = video_url.split("/")[-1]
         # Show existing feedback if available
         if existing_data:
-            return f"✅ {video_url}"
-        return f"{video_url}"
+            return f"✅{video_index}. {video_url}"
+        return f"{video_index}. {video_url}"
     return video_format_func
 
 def get_imagery_kwargs(selected_mode, selected_video):
@@ -412,7 +417,7 @@ def main(args, caption_programs):
         selected_video = st.selectbox(
             "Select a video:",
             video_urls,
-            format_func=get_video_format_func(output_dir, file_postfix=FEEDBACK_FILE_POSTFIX),
+            format_func=get_video_format_func(output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, video_urls=video_urls),
             index=video_urls.index(st.session_state.get('last_selected_video', video_urls[0])),
             key="selected_video"
         )

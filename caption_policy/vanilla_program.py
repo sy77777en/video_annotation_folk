@@ -1453,14 +1453,14 @@ class VanillaLightingSetupPolicy(SocraticProgram):
     
     def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
         # Special lighting effects on subject
-        # self.portrait_lighting = False
+        # self.professional_lighting = False
         # self.rembrandt_lighting = False
         # # below two are actually not dependent on whether the subject is present or not
         # self.silhouette = False
         # self.rim_light = False
         special_light_effects_strs = []
-        if lighting_setup.portrait_lighting is True:
-            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "portrait_lighting.json"))['def_prompt'][0])
+        if lighting_setup.professional_lighting is True:
+            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "professional_lighting.json"))['def_prompt'][0])
         if lighting_setup.rembrandt_lighting is True:
             special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "rembrandt_lighting.json"))['def_prompt'][0])
         if lighting_setup.silhouette is True:
@@ -1899,14 +1899,14 @@ class RawLightingSetupPolicy(SocraticProgram):
 
     def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
         # Special lighting effects on subject
-        # self.portrait_lighting = False
+        # self.professional_lighting = False
         # self.rembrandt_lighting = False
         # # below two are actually not dependent on whether the subject is present or not
         # self.silhouette = False
         # self.rim_light = False
         special_light_effects_strs = []
-        if lighting_setup.portrait_lighting is True:
-            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "portrait_lighting.json"))['def_prompt'][0])
+        if lighting_setup.professional_lighting is True:
+            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "professional_lighting.json"))['def_prompt'][0])
         if lighting_setup.rembrandt_lighting is True:
             special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "rembrandt_lighting.json"))['def_prompt'][0])
         if lighting_setup.silhouette is True:

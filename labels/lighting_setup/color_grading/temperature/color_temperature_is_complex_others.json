@@ -2,14 +2,14 @@
     "label": "Color Temperature Is Complex (Others)",
     "label_name": "color_temperature_is_complex_others",
     "def_question": [
-        "Does the video feature a complex color composition or dynamics that cannot be classified as strictly black-and-white, warm, cool, or neutral?"
+        "Is the color usage too complex to be described as black-and-white, warm, cool, neutral, transitions among them, or warm–cool contrasts?"
     ],
     "alt_question": [
         "Does the video showcase a complex color mix that goes beyond just black-and-white, warm, cool, or neutral classifications?",
         "Does the video have a complex color mix that isn't just black-and-white, warm, cool, or neutral?"
     ],
     "def_prompt": [
-        "The video features a complex color composition or dynamics that cannot be classified as strictly black-and-white, warm, cool, or neutral."
+        "The video features a complex color usage that cannot be described as black-and-white, warm, cool, neutral, transitions among them, or warm–cool contrasts."
     ],
     "alt_prompt": [
         "A video with a complex color mix that defies simple classification.",

@@ -16,7 +16,7 @@ PROJECT_ID = "gen-lang-client-0141537462"
 class Gemini(LLM):
     def __init__(self, model="gemini-2.0-flash-001", api_key=None):
         # If extracted_frames is [], then use the entire video
-        assert model in ["gemini-2.0-flash-001", "gemini-2.0-flash-lite-preview-02-05", "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"]
+        assert model in ["gemini-2.0-flash-001", "gemini-2.5-pro-preview-03-25", "gemini-2.0-flash-lite-preview-02-05", "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"]
         os.environ["GOOGLE_CLOUD_PROJECT"] = PROJECT_ID
         # self.client = genai.Client(api_key=self.api_key, http_options=HttpOptions(api_version="v1"))
         # self.client = genai.Client(vertexai=True, project=PROJECT_ID, location="us-central1")
@@ -69,8 +69,11 @@ class Gemini(LLM):
         return response.text.strip()
             
 if __name__ == "__main__":
+    from streamlit import secrets
     gemini = Gemini(
-        model="gemini-2.0-flash-001",
+        # model="gemini-2.0-flash-001",
+        model="gemini-2.5-pro-preview-03-25",
+        api_key=secrets["gemini_key"]
     )
     
     if not gemini.client._api_client.vertexai:

@@ -2,7 +2,7 @@
     "label": "Light Quality Is Hard",
     "label_name": "light_quality_is_hard",
     "def_question": [
-        "Does the scene in this video features hard lighting with strong, directional light?"
+        "Is the scene only lit with hard, directional lighting?"
     ],
     "alt_question": [
         "Does the video feature hard lighting (e.g., strong contrast, bright highlights, or sharp shadows)?",
@@ -16,7 +16,7 @@
         "Does the video show clear shadow lines due to hard lighting?"
     ],
     "def_prompt": [
-        "The scene in this video features hard lighting with strong, directional light."
+        "The scene is only lit with hard, directional lighting."
     ],
     "alt_prompt": [
         "The video features hard lighting (e.g., strong contrast, bright highlights, or sharp shadows).",

@@ -2,7 +2,7 @@
     "label": "Light Contrast Ratio on Subject Is Minimal",
     "label_name": "contrast_is_minimal",
     "def_question": [
-        "Does the lighting on the subject have minimal contrast (1:1 to 1:2), creating a flat lighting effect?"
+        "Does the lighting on the subject have minimal contrast ratio, creating a flat lighting effect (e.g., 1:1 to 1:2)?"
     ],
     "alt_question": [
         "Does the subject’s lighting feature little to no visible shadowing?",
@@ -15,7 +15,7 @@
         "Is the subject’s visibility defined by flat, even lighting?"
     ],
     "def_prompt": [
-        "The lighting on the subject has minimal contrast (1:1 to 1:2), creating a flat lighting effect."
+        "The lighting on the subject has minimal contrast ratio, creating a flat lighting effect (e.g., 1:1 to 1:2)."
     ],
     "alt_prompt": [
         "A video where the subject is lit with minimal contrast, appearing evenly illuminated.",

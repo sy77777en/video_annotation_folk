@@ -4556,31 +4556,1813 @@ def get_motion_and_setup_pairwise_labels(ground_only_folder=CAMERABENCH_GROUND_O
     setup_dataset = get_setup_pairwise_labels(setup_folder=setup_folder)
     return {**motion_dataset, **setup_dataset}
 
-# def get_lighting_pairwise_labels(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
-#     return {
-#         # Color Composition (22 Tasks)
-#         "black_and_white": get_black_and_white_tasks(lighting_folder=lighting_folder),
-#         "color_temperature": get_color_temperature_tasks(lighting_folder=lighting_folder),
-#         "color_saturation": get_color_saturation_tasks(lighting_folder=lighting_folder),
-#         "brightness": get_brightness_tasks(lighting_folder=lighting_folder),
-        
-#         # Lighting Setup (41 Tasks)
-#         "scene_type": get_scene_type_tasks(lighting_folder=lighting_folder),
-#         "sunlight_level": get_sunlight_level_tasks(lighting_folder=lighting_folder),
-#         "light_quality": get_light_quality_tasks(lighting_folder=lighting_folder),
-#         "light_source": get_light_source_tasks(lighting_folder=lighting_folder),
-#         "light_contrast": get_light_contrast_tasks(lighting_folder=lighting_folder),
-#         "light_direction": get_light_direction_tasks(lighting_folder=lighting_folder),
-#         "subject_lighting": get_subject_lighting_tasks(lighting_folder=lighting_folder),
-        
-#         # Lighting Effects (46 Tasks)
-#         "lens_optical_effects": get_lens_optical_effects_tasks(lighting_folder=lighting_folder),
-#         "reflection_based_lighting": get_reflection_based_lighting_tasks(lighting_folder=lighting_folder),
-#         "natural_atmospheric_lighting": get_natural_atmospheric_lighting_tasks(lighting_folder=lighting_folder),
-#         "stylized_environmental_lighting": get_stylized_environmental_lighting_tasks(lighting_folder=lighting_folder),
-#         "volumetric_lighting": get_volumetric_lighting_tasks(lighting_folder=lighting_folder),
-#         "shadow_pattern_gobo": get_shadow_pattern_gobo_tasks(lighting_folder=lighting_folder),
-#         "lighting_dynamics": get_lighting_dynamics_tasks(lighting_folder=lighting_folder),
-#         "dynamic_effects": get_dynamic_effects_tasks(lighting_folder=lighting_folder)
-#     }
+def get_black_and_white_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "is_black_white",
+            "pos_question": "Is the video entirely in black and white, with no color present?",
+            "neg_question": "Is the video not entirely in black and white?",
+            "pos_prompt": "The video is entirely in black and white, with no color present.",
+            "neg_prompt": "The video is not entirely in black and white.",
+            "pos": {
+                "label": "lighting_setup.color_grading.is_black_white",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.is_black_white",
+                "type": "neg",
+            },
+        },
+    ]
 
+def get_color_temperature_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "color_temperature_is_warm",
+            "pos_question": "Is the video predominantly featuring warm colors, such as reds, oranges, or yellows?",
+            "neg_question": "Is the video not predominantly featuring warm colors?",
+            "pos_prompt": "The video predominantly features warm colors, such as reds, oranges, or yellows.",
+            "neg_prompt": "The video does not predominantly feature warm colors.",
+            "pos": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_warm",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_warm",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_temperature_is_cool",
+            "pos_question": "Is the video predominantly featuring cool colors, such as blues or greens?",
+            "neg_question": "Is the video not predominantly featuring cool colors?",
+            "pos_prompt": "The video predominantly features cool colors, such as blues or greens.",
+            "neg_prompt": "The video does not predominantly feature cool colors.",
+            "pos": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_cool",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_cool",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_temperature_is_neutral",
+            "pos_question": "Does the video have a neutral color palette with neither warm nor cool tones being dominant?",
+            "neg_question": "Does the video not have a consistent neutral color palette?",
+            "pos_prompt": "The video's color palette is neutral, with neither warm nor cool tones being dominant.",
+            "neg_prompt": "The video's color palette is not consistently neutral.",
+            "pos": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_neutral",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_neutral",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_color_temperature_complex_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "color_temperature_is_changing",
+            "pos_question": "Does the video have noticeable shifts between warm, neutral, and cool color tones?",
+            "neg_question": "Does the video not have noticeable shifts between warm, neutral, and cool color tones?",
+            "pos_prompt": "The video has noticeable shifts between warm, neutral, and cool color tones.",
+            "neg_prompt": "The video does not have noticeable shifts between warm, neutral, and cool color tones.",
+            "pos": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_changing",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_changing",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_temperature_is_contrasting",
+            "pos_question": "Does the video feature strong contrasts between warm and cool colors, with little use of neutral tones?",
+            "neg_question": "Does the video not feature strong contrasts between warm and cool colors, with little use of neutral tones?",
+            "pos_prompt": "The video features strong contrasts between warm and cool colors, with little use of neutral tones.",
+            "neg_prompt": "The video does not feature strong contrasts between warm and cool colors, with little use of neutral tones.",
+            "pos": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_contrasting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_contrasting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_temperature_is_complex_others",
+            "pos_question": "Is the color usage too complex to be described as black-and-white, warm, cool, neutral, transitions among them, or warm–cool contrasts?",
+            "neg_question": "Is the color usage not too complex to be described as black-and-white, warm, cool, neutral, transitions among them, or warm–cool contrasts?",
+            "pos_prompt": "The color usage is too complex to be described as black-and-white, warm, cool, neutral, transitions among them, or warm–cool contrasts.",
+            "neg_prompt": "The color usage is not too complex to be described as black-and-white, warm, cool, neutral, transitions among them, or warm–cool contrasts.",
+            "pos": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_complex_others",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.temperature.color_temperature_is_complex_others",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_color_saturation_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "color_saturation_is_high",
+            "pos_question": "Does the video mainly feature highly saturated colors, making hues appear vivid and intense?",
+            "neg_question": "Does the video not mainly feature highly saturated colors?",
+            "pos_prompt": "The video mainly features highly saturated colors, making hues appear vivid and intense.",
+            "neg_prompt": "The video does not mainly feature highly saturated colors.",
+            "pos": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_high",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_high",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_saturation_is_low",
+            "pos_question": "Does the video mainly feature desaturated colors, making hues appear muted or grayish?",
+            "neg_question": "Does the video not mainly feature desaturated colors?",
+            "pos_prompt": "The video mainly features desaturated colors, making hues appear muted or grayish.",
+            "neg_prompt": "The video does not mainly feature desaturated colors.",
+            "pos": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_low",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_low",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_saturation_is_neutral",
+            "pos_question": "Does the video have a balanced saturation level, neither too vivid nor too muted?",
+            "neg_question": "Does the video not maintain a balanced saturation level?",
+            "pos_prompt": "The video has a balanced saturation level, neither too vivid nor too muted.",
+            "neg_prompt": "The video does not maintain a balanced saturation level.",
+            "pos": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_neutral",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_neutral",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_color_saturation_complex_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "color_saturation_is_changing",
+            "pos_question": "Does the video have noticeable shifts in color saturation between high, neutral, and low over time?",
+            "neg_question": "Does the video not have noticeable shifts in color saturation between high, neutral, and low over time?",
+            "pos_prompt": "The video has noticeable shifts in color saturation between high, neutral, and low over time.",
+            "neg_prompt": "The video does not have noticeable shifts in color saturation between high, neutral, and low over time.",
+            "pos": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_changing",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_changing",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_saturation_is_contrasting",
+            "pos_question": "Does the video feature strong contrasts between highly saturated and desaturated hues?",
+            "neg_question": "Does the video not feature strong contrasts between highly saturated and desaturated hues?",
+            "pos_prompt": "The video features strong contrasts between highly saturated and desaturated hues.",
+            "neg_prompt": "The video does not feature strong contrasts between highly saturated and desaturated hues.",
+            "pos": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_contrasting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_contrasting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_saturation_is_complex_others",
+            "pos_question": "Is the color saturation too complex to be described as black-and-white, high, low, neutral, transitions among them, or strong contrast between saturated and desaturated areas?",
+            "neg_question": "Is the color saturation not too complex to be described as black-and-white, high, low, neutral, transitions among them, or strong contrast between saturated and desaturated areas?",
+            "pos_prompt": "The color saturation is too complex to be described as black-and-white, high, low, neutral, transitions among them, or strong contrast between saturated and desaturated areas.",
+            "neg_prompt": "The color saturation is not too complex to be described as black-and-white, high, low, neutral, transitions among them, or strong contrast between saturated and desaturated areas.",
+            "pos": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_complex_others",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.saturation.color_saturation_is_complex_others",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_brightness_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_very_bright",
+            "pos_question": "Is the video excessively bright and overexposed, making details hard to see?",
+            "neg_question": "Is the video not excessively bright and overexposed?",
+            "pos_prompt": "The video is excessively bright and overexposed, making details hard to see.",
+            "neg_prompt": "The video is not excessively bright and overexposed.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_very_bright",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_very_bright",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_bright",
+            "pos_question": "Is the video showing a bright and well-lit scene, with high light levels and clearly visible details without much overexposure?",
+            "neg_question": "Is the video not showing a bright and well-lit scene with high light levels and clearly visible details without much overexposure?",
+            "pos_prompt": "The video shows a bright and well-lit scene, with high light levels and clearly visible details without much overexposure.",
+            "neg_prompt": "The video does not show a bright and well-lit scene with high light levels and clearly visible details without much overexposure.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_bright",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_bright",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_neutral",
+            "pos_question": "Does the video show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?",
+            "neg_question": "Does the video not show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?",
+            "pos_prompt": "The video shows a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).",
+            "neg_prompt": "The video does not show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_neutral",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_neutral",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_dark",
+            "pos_question": "Is the video showing a scene with predominantly dim lighting, but some details remain visible and are not completely underexposed?",
+            "neg_question": "Is the video not showing a scene with predominantly dim lighting, but some details remain visible and are not completely underexposed?",
+            "pos_prompt": "The video shows a scene with predominantly dim lighting, but some details remain visible and are not completely underexposed.",
+            "neg_prompt": "The video does not show a scene with predominantly dim lighting, but some details remain visible and are not completely underexposed.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_dark",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_dark",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_very_dark",
+            "pos_question": "Is the video showing a scene that is extremely dark and underexposed, with minimal lighting and most areas showing barely any visible details?",
+            "neg_question": "Is the video not showing a scene that is extremely dark and underexposed, with minimal lighting and most areas showing barely any visible details?",
+            "pos_prompt": "The video shows a scene that is extremely dark and underexposed, with minimal lighting and most areas showing barely any visible details.",
+            "neg_prompt": "The video does not show a scene that is extremely dark and underexposed, with minimal lighting and most areas showing barely any visible details.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_very_dark",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_very_dark",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "is_brighter_than_normal",
+            "pos_question": "Is the video noticeably bright or overexposed?",
+            "neg_question": "Is the video not noticeably bright or overexposed?",
+            "pos_prompt": "The video is noticeably bright or overexposed.",
+            "neg_prompt": "The video is not noticeably bright or overexposed.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.is_brighter_than_normal",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.is_brighter_than_normal",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "is_darker_than_normal",
+            "pos_question": "Is the video noticeably dark or underexposed?",
+            "neg_question": "Is the video not noticeably dark or underexposed?",
+            "pos_prompt": "The video is noticeably dark or underexposed.",
+            "neg_prompt": "The video is not noticeably dark or underexposed.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.is_darker_than_normal",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.is_darker_than_normal",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_brightness_complex_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_changing",
+            "pos_question": "Does the overall brightness of the video change over time, with noticeable shifts between brighter and darker levels across large portions of the frame?",
+            "neg_question": "Does the overall brightness of the video not change over time with noticeable shifts between brighter and darker levels across large portions of the frame?",
+            "pos_prompt": "The overall brightness of the video changes over time, with noticeable shifts between brighter and darker levels across large portions of the frame.",
+            "neg_prompt": "The overall brightness of the video does not change over time with noticeable shifts between brighter and darker levels across large portions of the frame.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_changing",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_changing",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_contrasting",
+            "pos_question": "Does the video show strong brightness contrast, with large areas of the scene clearly differing in brightness?",
+            "neg_question": "Does the video not show strong brightness contrast with large areas of the scene clearly differing in brightness?",
+            "pos_prompt": "The video shows strong brightness contrast, with large areas of the scene clearly differing in brightness.",
+            "neg_prompt": "The video does not show strong brightness contrast with large areas of the scene clearly differing in brightness.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_contrasting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_contrasting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "brightness_is_complex_others",
+            "pos_question": "Is the brightness (or exposure) too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas?",
+            "neg_question": "Is the brightness (or exposure) not too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas?",  
+            "pos_prompt": "The brightness (or exposure) is too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas.",
+            "neg_prompt": "The brightness (or exposure) is not too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas.",
+            "pos": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_complex_others",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.color_grading.brightness.brightness_is_complex_others",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "scene_type_is_exterior",
+            "pos_question": "Is the video set in an outdoor environment?",
+            "neg_question": "Is the video not set in an outdoor environment?",
+            "pos_prompt": "The video is set in an outdoor environment.",
+            "neg_prompt": "The video is not set in an outdoor environment.",
+            "pos": {
+                "label": "lighting_setup.scene.scene_type_is_exterior",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.scene.scene_type_is_exterior",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "scene_type_is_interior",
+            "pos_question": "Is the video set in an indoor environment?",
+            "neg_question": "Is the video not set in an indoor environment?",
+            "pos_prompt": "The video is set in an indoor environment.",
+            "neg_prompt": "The video is not set in an indoor environment.",
+            "pos": {
+                "label": "lighting_setup.scene.scene_type_is_interior",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.scene.scene_type_is_interior",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "scene_type_is_synthetic",
+            "pos_question": "Is the video set in a synthetic or 2D environment with unrealistic lighting effects?",
+            "neg_question": "Is the video not set in a synthetic or 2D environment with unrealistic lighting effects?",
+            "pos_prompt": "The video is set in a synthetic or 2D environment with unrealistic lighting effects.",
+            "neg_prompt": "The video is not set in a synthetic or 2D environment with unrealistic lighting effects.",
+            "pos": {
+                "label": "lighting_setup.scene.scene_type_is_synthetic",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.scene.scene_type_is_synthetic",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "scene_type_is_complex_others",
+            "pos_question": "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?",
+            "neg_question": "Is the scene type (indoor or outdoor) clear, unambiguous, and consistent throughout the video?",
+            "pos_prompt": "The scene type (indoor or outdoor) is unclear, ambiguous, or changing throughout the video.",
+            "neg_prompt": "The scene type (indoor or outdoor) is clear, unambiguous, and consistent throughout the video.",
+            "pos": {
+                "label": "lighting_setup.scene.scene_type_is_complex_others",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.scene.scene_type_is_complex_others",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_sunlight_level_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "sunlight_level_is_normal",
+            "pos_question": "Does the video feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours?",
+            "neg_question": "Does the video not feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours?",
+            "pos_prompt": "The video features regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours.",
+            "neg_prompt": "The video does not feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours.",
+            "pos": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_normal",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_normal",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "sunlight_level_is_sunny",
+            "pos_question": "Does the video feature bright, direct sunlight with strong intensity on a sunny day?",
+            "neg_question": "Does the video not feature bright, direct sunlight with strong intensity on a sunny day?",
+            "pos_prompt": "The video features bright, direct sunlight with strong intensity on a sunny day.",
+            "neg_prompt": "The video does not feature bright, direct sunlight with strong intensity on a sunny day.",
+            "pos": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunny",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunny",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "sunlight_level_is_overcast",
+            "pos_question": "Does the video feature soft, diffused sunlight from overcast skies or during blue hour?",
+            "neg_question": "Does the video not feature soft, diffused sunlight from overcast skies or during blue hour?",
+            "pos_prompt": "The video features soft, diffused sunlight from overcast skies or during blue hour.",
+            "neg_prompt": "The video does not feature soft, diffused sunlight from overcast skies or during blue hour.",
+            "pos": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_overcast",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_overcast",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "sunlight_level_is_sunset_sunrise",
+            "pos_question": "Does the video feature warm, golden sunlight at sunrise or sunset?",
+            "neg_question": "Does the video not feature warm, golden sunlight at sunrise or sunset?",
+            "pos_prompt": "The video features warm, golden sunlight at sunrise or sunset.",
+            "neg_prompt": "The video does not feature warm, golden sunlight at sunrise or sunset.",
+            "pos": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunset_sunrise",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunset_sunrise",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_light_quality_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "light_quality_is_soft",
+            "pos_question": "The scene is only lit with soft, diffused lighting?",
+            "neg_question": "The scene is not only lit with soft, diffused lighting?",
+            "pos_prompt": "The scene is only lit with soft, diffused lighting.",
+            "neg_prompt": "The scene is not only lit with soft, diffused lighting.",
+            "pos": {
+                "label": "lighting_setup.light_quality.light_quality_is_soft",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.light_quality_is_soft",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "light_quality_is_hard",
+            "pos_question": "The scene is only lit with hard, directional lighting?",
+            "neg_question": "The scene is not only lit with hard, directional lighting?",
+            "pos_prompt": "The scene is only lit with hard, directional lighting.",
+            "neg_prompt": "The scene is not only lit with hard, directional lighting.",
+            "pos": {
+                "label": "lighting_setup.light_quality.light_quality_is_hard",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.light_quality_is_hard",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "light_quality_is_changing",
+            "pos_question": "Does the light quality in the scene change between hard and soft over time?",
+            "neg_question": "Does the light quality in the scene not change between hard and soft over time?",
+            "pos_prompt": "The light quality in the scene changes between hard and soft over time.",
+            "neg_prompt": "The light quality in the scene does not change between hard and soft over time.",
+            "pos": {
+                "label": "lighting_setup.light_quality.light_quality_is_changing",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.light_quality_is_changing",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "light_quality_is_contrasting",
+            "pos_question": "The scene is lit by a combination of hard and soft lighting?",
+            "neg_question": "The scene is not lit by a combination of hard and soft lighting?",
+            "pos_prompt": "The scene is lit by a combination of hard and soft lighting.",
+            "neg_prompt": "The scene is not lit by a combination of hard and soft lighting.",
+            "pos": {
+                "label": "lighting_setup.light_quality.light_quality_is_contrasting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.light_quality_is_contrasting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "light_quality_is_complex",
+            "pos_question": "Is the light quality too complex to be described simply as soft, hard, changing, or a mix of soft and hard?",
+            "neg_question": "Is the light quality not too complex to be described simply as soft, hard, changing, or a mix of soft and hard?",
+            "pos_prompt": "The light quality is too complex to be described simply as soft, hard, changing, or a mix of soft and hard.",
+            "neg_prompt": "The light quality is not too complex to be described simply as soft, hard, changing, or a mix of soft and hard.",
+            "pos": {
+                "label": "lighting_setup.light_quality.light_quality_is_complex",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_quality.light_quality_is_complex",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_light_source_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "has_artificial_practical_light",
+            "pos_question": "Does the video contain practical artificial lighting with visible light source(s) in the frame?",
+            "neg_question": "Does the video not contain practical artificial lighting with visible light source(s) in the frame?",
+            "pos_prompt": "A video containing practical artificial lighting with visible light source(s) in the frame.",
+            "neg_prompt": "A video not containing practical artificial lighting with visible light source(s) in the frame.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_artificial_practical_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_artificial_practical_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_complex_light_source",
+            "pos_question": "Does the video’s primary light source change over time or involve a rare source not including sun, fire, moon, stars, or artificial light?",
+            "neg_question": "Does the video’s primary light source not change over time or not involve a rare source including sun, fire, moon, stars, or artificial light?",
+            "pos_prompt": "A video where the primary light source changes over time or involves a rare source not including sun, fire, moon, stars, or artificial light.",
+            "neg_prompt": "A video where the primary light source does not change over time or does not involve a rare source including sun, fire, moon, stars, or artificial light.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_complex_light_source",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_complex_light_source",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_firelight",
+            "pos_question": "Is firelight a primary light source in the video?",
+            "neg_question": "Is firelight not a primary light source in the video?",
+            "pos_prompt": "A video where firelight is a primary light source.",
+            "neg_prompt": "A video where firelight is not a primary light source.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_firelight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_firelight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_moonlight_starlight",
+            "pos_question": "Is moonlight or starlight a primary light source, with the moon or stars visible?",
+            "neg_question": "Is moonlight or starlight not a primary light source, with the moon or stars not visible?",
+            "pos_prompt": "A video where moonlight or starlight is a primary light source, with the moon or stars visible.",
+            "neg_prompt": "A video where moonlight or starlight is not a primary light source, with the moon or stars not visible.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_moonlight_starlight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_moonlight_starlight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_non_visible_light_source",
+            "pos_question": "Is an unseen light source (other than sunlight or firelight) a primary light source?",
+            "neg_question": "Is an unseen light source (other than sunlight or firelight) not a primary light source?",
+            "pos_prompt": "An unseen light source (other than sunlight or firelight) is a primary light source.",
+            "neg_prompt": "An unseen light source (other than sunlight or firelight) is not a primary light source.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_non_visible_light_source",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_non_visible_light_source",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_sunlight",
+            "pos_question": "Is sunlight a primary light source?",
+            "neg_question": "Is sunlight not a primary light source?",
+            "pos_prompt": "A video where sunlight is a primary light source.",
+            "neg_prompt": "A video where sunlight is not a primary light source.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_sunlight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_sunlight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "is_abstract",
+            "pos_question": "Does the video lack a realistic light source, with lighting that does not follow natural physics?",
+            "neg_question": "Does the video not lack a realistic light source, with lighting that does not follow natural physics?",
+            "pos_prompt": "A video lacking a realistic light source, with lighting that does not follow natural physics.",
+            "neg_prompt": "A video not lacking a realistic light source, with lighting that does not follow natural physics.",
+            "pos": {
+                "label": "lighting_setup.light_source.is_abstract",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.is_abstract",
+                "type": "neg",
+            },
+        }
+    ]
+
+def get_light_contrast_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "subject_light_contrast_is_high",
+            "pos_question": "Does the lighting on the subject have a high contrast ratio, with lit areas significantly brighter than shadowed areas (e.g., 1:8 or higher)?",
+            "neg_question": "Does the lighting on the subject not have a high contrast ratio, with lit areas significantly brighter than shadowed areas (e.g., 1:8 or higher)?",
+            "pos_prompt": "The lighting on the subject has a high contrast ratio, with lit areas significantly brighter than shadowed areas (e.g., 1:8 or higher).",
+            "neg_prompt": "The lighting on the subject does not have a high contrast ratio, with lit areas significantly brighter than shadowed areas (e.g., 1:8 or higher).",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_high",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_high",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "subject_light_contrast_is_normal",
+            "pos_question": "Does the lighting on the subject have a normal contrast ratio (1:2 to 1:8), providing a balanced distinction between lit areas and shadowed areas?",
+            "neg_question": "Does the lighting on the subject not have a normal contrast ratio (1:2 to 1:8), providing a balanced distinction between lit areas and shadowed areas?",
+            "pos_prompt": "The lighting on the subject has a normal contrast ratio (1:2 to 1:8), providing a balanced distinction between lit areas and shadowed areas.",
+            "neg_prompt": "The lighting on the subject does not have a normal contrast ratio (1:2 to 1:8), providing a balanced distinction between lit areas and shadowed areas.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_normal",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_normal",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "subject_light_contrast_is_minimal",
+            "pos_question": "Does the lighting on the subject have minimal contrast ratio, creating a flat lighting effect (e.g., 1:1 to 1:2)?",
+            "neg_question": "Does the lighting on the subject not have minimal contrast ratio, creating a flat lighting effect (e.g., 1:1 to 1:2)?",
+            "pos_prompt": "The lighting on the subject has minimal contrast ratio, creating a flat lighting effect (e.g., 1:1 to 1:2).",
+            "neg_prompt": "The lighting on the subject does not have minimal contrast ratio, creating a flat lighting effect (e.g., 1:1 to 1:2).",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_minimal",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_minimal",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "subject_light_contrast_is_complex",
+            "pos_question": "Does the lighting contrast on the subject hard to analyze due to: (1) stylized formats (e.g., 2D/2.5D), (2) variation from lighting, camera, or subject changes, or (3) multiple subjects with different lighting?",
+            "neg_question": "Does the lighting contrast on the subject not hard to analyze due to: (1) stylized formats (e.g., 2D/2.5D), (2) variation from lighting, camera, or subject changes, or (3) multiple subjects with different lighting?",
+            "pos_prompt": "The lighting contrast on the subject hard to analyze due to: (1) stylized formats (e.g., 2D/2.5D), (2) variation from lighting, camera, or subject changes, or (3) multiple subjects with different lighting.",
+            "neg_prompt": "The lighting contrast on the subject not hard to analyze due to: (1) stylized formats (e.g., 2D/2.5D), (2) variation from lighting, camera, or subject changes, or (3) multiple subjects with different lighting.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_complex",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.subject_light_contrast_is_complex",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "flat_lighting",
+            "pos_question": "Is the subject lit with flat lighting, with little to no contrast?",
+            "neg_question": "Is the subject not lit with flat lighting, with little to no contrast?",
+            "pos_prompt": "The subject is lit with flat lighting, with little to no contrast.",
+            "neg_prompt": "The subject is not lit with flat lighting, with little to no contrast.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.flat_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.flat_lighting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "low_key_lighting",
+            "pos_question": "Is the subject lit with low-key lighting?",
+            "neg_question": "Is the subject not lit with low-key lighting?",
+            "pos_prompt": "The subject is lit with low-key lighting.",
+            "neg_prompt": "The subject is not lit with low-key lighting.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.low_key_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.low_key_lighting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "high_key_lighting",
+            "pos_question": "Is the subject lit with high-key lighting?",
+            "neg_question": "Is the subject not lit with high-key lighting?",
+            "pos_prompt": "The subject is lit with high-key lighting.",
+            "neg_prompt": "The subject is not lit with high-key lighting.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_contrast.high_key_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_contrast.high_key_lighting",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_light_direction_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_back_light",
+            "pos_question": "Is there a noticeable light source consistently illuminating the subject from behind (backlighting) as seen from the camera’s perspective?",
+            "neg_question": "Is there no noticeable light source consistently illuminating the subject from behind (backlighting) as seen from the camera’s perspective?",
+            "pos_prompt": "There is a noticeable light source consistently illuminating the subject from behind (backlighting) as seen from the camera’s perspective.",
+            "neg_prompt": "There is no noticeable light source consistently illuminating the subject from behind (backlighting) as seen from the camera’s perspective.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_back_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_back_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_front_light",
+            "pos_question": "Is there a noticeable light source consistently illuminating the subject from the front (frontlighting) as seen from the camera’s perspective?",
+            "neg_question": "Is there no noticeable light source consistently illuminating the subject from the front (frontlighting) as seen from the camera’s perspective?",
+            "pos_prompt": "There is a noticeable light source consistently illuminating the subject from the front (frontlighting) as seen from the camera’s perspective.",
+            "neg_prompt": "There is no noticeable light source consistently illuminating the subject from the front (frontlighting) as seen from the camera’s perspective.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_front_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_front_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_top_light",
+            "pos_question": "Is there a noticeable light source consistently illuminating the subject from the top (top lighting) as seen from the camera’s perspective?",
+            "neg_question": "Is there no noticeable light source consistently illuminating the subject from the top (top lighting) as seen from the camera’s perspective?",
+            "pos_prompt": "There is a noticeable light source consistently illuminating the subject from the top (top lighting) as seen from the camera’s perspective.",
+            "neg_prompt": "There is no noticeable light source consistently illuminating the subject from the top (top lighting) as seen from the camera’s perspective.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_top_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_top_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_bottom_light",
+            "pos_question": "Is there a noticeable light source consistently illuminating the subject from below (bottom lighting) as seen from the camera’s perspective?",
+            "neg_question": "Is there no noticeable light source consistently illuminating the subject from below (bottom lighting) as seen from the camera’s perspective?",
+            "pos_prompt": "There is a noticeable light source consistently illuminating the subject from below (bottom lighting) as seen from the camera’s perspective.",
+            "neg_prompt": "There is no noticeable light source consistently illuminating the subject from below (bottom lighting) as seen from the camera’s perspective.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_bottom_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_bottom_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_side_light",
+            "pos_question": "Is there a noticeable light source consistently illuminating the subject from one side (side lighting) as seen from the camera’s perspective?",
+            "neg_question": "Is there no noticeable light source consistently illuminating the subject from one side (side lighting) as seen from the camera’s perspective?",
+            "pos_prompt": "There is a noticeable light source consistently illuminating the subject from one side (side lighting) as seen from the camera’s perspective.",
+            "neg_prompt": "There is no noticeable light source consistently illuminating the subject from one side (side lighting) as seen from the camera’s perspective.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_side_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_side_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_ambient_light",
+            "pos_question": "Is the subject lit mainly with ambient light, with soft illumination and no clearly dominant directional source?",
+            "neg_question": "Is the subject not lit mainly with ambient light, with soft illumination and no clearly dominant directional source?",
+            "pos_prompt": "The subject is lit mainly with ambient light, with soft illumination and no clearly dominant directional source.",
+            "neg_prompt": "The subject is not lit mainly with ambient light, with soft illumination and no clearly dominant directional source.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_ambient_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_ambient_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_front_side",
+            "pos_question": "Is the subject consistently illuminated by a mix of front and side lighting?",
+            "neg_question": "Is the subject not consistently illuminated by a mix of front and side lighting?",
+            "pos_prompt": "The subject is consistently illuminated by a mix of front and side lighting.",
+            "neg_prompt": "The subject is not consistently illuminated by a mix of front and side lighting.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_front_side",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_front_side",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "direction_is_rear_side",
+            "pos_question": "Is the subject consistently illuminated by a mix of rear and side lighting?",
+            "neg_question": "Is the subject not consistently illuminated by a mix of rear and side lighting?",
+            "pos_prompt": "The subject is consistently illuminated by a mix of rear and side lighting.",
+            "neg_prompt": "The subject is not consistently illuminated by a mix of rear and side lighting.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_rear_side",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.light_direction.direction_is_rear_side",
+                "type": "neg",
+            },
+        },
+    ]
+
+
+def get_subject_lighting_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "is_subject_lighting_applicable",
+            "pos_question": "Does the video feature clear subject(s) under realistic lighting, suitable for analyzing lighting contrast and direction?",
+            "neg_question": "Does the video not feature clear subject(s) under realistic lighting, suitable for analyzing lighting contrast and direction?",
+            "pos_prompt": "The video features clear subject(s) under realistic lighting, suitable for analyzing lighting contrast and direction.",
+            "neg_prompt": "The video does not feature clear subject(s) under realistic lighting, suitable for analyzing lighting contrast and direction.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.is_subject_lighting_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.is_subject_lighting_applicable",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "professional_lighting",
+            "pos_question": "Does the lighting appear professionally done (e.g., portrait or stage lighting)?",
+            "neg_question": "Does the lighting not appear professionally done (e.g., portrait or stage lighting)?",
+            "pos_prompt": "The lighting appears professionally done (e.g., portrait or stage lighting).",
+            "neg_prompt": "The lighting does not appear professionally done (e.g., portrait or stage lighting).",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.professional_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.professional_lighting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "rembrandt_lighting",
+            "pos_question": "Is there Rembrandt lighting that illuminates one side of the subject’s face, creating a small triangle of light on the other?",
+            "neg_question": "Is there no Rembrandt lighting that illuminates one side of the subject’s face, creating a small triangle of light on the other?",
+            "pos_prompt": "There is Rembrandt lighting that illuminates one side of the subject’s face, creating a small triangle of light on the other.",
+            "neg_prompt": "There is no Rembrandt lighting that illuminates one side of the subject’s face, creating a small triangle of light on the other.",
+            "pos": {
+                "label": "lighting_setup.subject_lighting.rembrandt_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.subject_lighting.rembrandt_lighting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "rim_light",
+            "pos_question": "Is there rim lighting that creates a glowing edge around the subject?",
+            "neg_question": "Is there no rim lighting that creates a glowing edge around the subject?",
+            "pos_prompt": "There is rim lighting that creates a glowing edge around the subject.",
+            "neg_prompt": "There is no rim lighting that creates a glowing edge around the subject.",
+            "pos": {
+                "label": "lighting_setup.special_effect.rim_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.rim_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "silhouette",
+            "pos_question": "Is there a silhouette lighting effect that creates a dark outline of the foreground subject against a bright background?", 
+            "neg_question": "Is there no silhouette lighting effect that creates a dark outline of the foreground subject against a bright background?",
+            "pos_prompt": "There is a silhouette lighting effect that creates a dark outline of the foreground subject against a bright background.",
+            "neg_prompt": "There is no silhouette lighting effect that creates a dark outline of the foreground subject against a bright background.",
+            "pos": {
+                "label": "lighting_setup.special_effect.silhouette",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.silhouette",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_lens_and_optical_effects_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "lens_flares_regular",
+            "pos_question": "Does the video contain typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts?",
+            "neg_question": "Does the video not contain typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts?",
+            "pos_prompt": "The video contains typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts.",
+            "neg_prompt": "The video does not contain typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts.",
+            "pos": {
+                "label": "lighting_setup.lens_effect.lens_flares_regular",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.lens_effect.lens_flares_regular",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "lens_flares_anamorphic",
+            "pos_question": "Does the video contain horizontal anamorphic lens flares from bright light sources?",
+            "neg_question": "Does the video not contain horizontal anamorphic lens flares from bright light sources?",
+            "pos_prompt": "The video contains horizontal anamorphic lens flares from bright light sources.",
+            "neg_prompt": "The video does not contain horizontal anamorphic lens flares from bright light sources.",
+            "pos": {
+                "label": "lighting_setup.lens_effect.lens_flares_anamorphic",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.lens_effect.lens_flares_anamorphic",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "lens_flares",
+            "pos_question": "Does the video contain obvious lens flares?",
+            "neg_question": "Does the video not contain obvious lens flares?",
+            "pos_prompt": "The video contains obvious lens flares.",
+            "neg_prompt": "The video does not contain obvious lens flares.",
+            "pos": {
+                "label": "lighting_setup.lens_effect.lens_flares",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.lens_effect.lens_flares",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "mist_diffusion",
+            "pos_question": "Does the video use a mist diffusion filter to soften the image, creating a dreamy, glowing effect?",
+            "neg_question": "Does the video not use a mist diffusion filter to soften the image, creating a dreamy, glowing effect?",
+            "pos_prompt": "The video uses a mist diffusion filter to soften the image, creating a dreamy, glowing effect.",
+            "neg_prompt": "The video does not use a mist diffusion filter to soften the image, creating a dreamy, glowing effect.",
+            "pos": {
+                "label": "lighting_setup.lens_effect.mist_diffusion",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.lens_effect.mist_diffusion",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "bokeh",
+            "pos_question": "Does the video feature soft, out-of-focus light orbs in the background, created by distant lights and a shallow depth of field?",
+            "neg_question": "Does the video not feature soft, out-of-focus light orbs in the background, created by distant lights and a shallow depth of field?",
+            "pos_prompt": "The video features soft, out-of-focus light orbs in the background, created by distant lights and a shallow depth of field.",
+            "neg_prompt": "The video does not feature soft, out-of-focus light orbs in the background, created by distant lights and a shallow depth of field.",
+            "pos": {
+                "label": "lighting_setup.lens_effect.bokeh",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.lens_effect.bokeh",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_reflection_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "reflection_from_water",
+            "pos_question": "Does the video show noticeable shimmering effects or bright highlights from light reflecting off water?",
+            "neg_question": "Does the video not show noticeable shimmering effects or bright highlights from light reflecting off water?",
+            "pos_prompt": "The video shows noticeable shimmering effects or bright highlights from light reflecting off water.",
+            "neg_prompt": "The video does not show noticeable shimmering effects or bright highlights from light reflecting off water.",
+            "pos": {
+                "label": "lighting_setup.reflection.reflection_from_water",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.reflection.reflection_from_water",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "reflection_from_glossy_surface",
+            "pos_question": "Does the video feature a noticeable specular reflection from light bouncing off a smooth, glossy surface but does not clearly mirror the scene in detail?",
+            "neg_question": "Does the video not feature a noticeable specular reflection from light bouncing off a smooth, glossy surface but does not clearly mirror the scene in detail?",
+            "pos_prompt": "The video features a noticeable specular reflection from light bouncing off a smooth, glossy surface but does not clearly mirror the scene in detail.",
+            "neg_prompt": "The video does not feature a noticeable specular reflection from light bouncing off a smooth, glossy surface but does not clearly mirror the scene in detail.",
+            "pos": {
+                "label": "lighting_setup.reflection.reflection_from_glossy_surface",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.reflection.reflection_from_glossy_surface",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "reflection_from_mirror",
+            "pos_question": "Does the video show reflections from light bouncing off a mirror, clearly mirroring the scenery in detail?",
+            "neg_question": "Does the video not show reflections from light bouncing off a mirror, clearly mirroring the scenery in detail?",
+            "pos_prompt": "The video shows reflections from light bouncing off a mirror, clearly mirroring the scenery in detail.",
+            "neg_prompt": "The video does not show reflections from light bouncing off a mirror, clearly mirroring the scenery in detail.",
+            "pos": {
+                "label": "lighting_setup.reflection.reflection_from_mirror",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.reflection.reflection_from_mirror",
+                "type": "neg",
+            },
+        },
+    ]
+
+
+def get_natural_atmospheric_effects_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "aerial_perspective",
+            "pos_question": "Does the video feature a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects?",
+            "neg_question": "Does the video not feature a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects?",
+            "pos_prompt": "The video features a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects.",
+            "neg_prompt": "The video does not feature a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects.",
+            "pos": {
+                "label": "lighting_setup.natural_effect.aerial_perspective",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.natural_effect.aerial_perspective",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "rainbow",
+            "pos_question": "Does the video feature a noticeable rainbow?",
+            "neg_question": "Does the video not feature a noticeable rainbow?",
+            "pos_prompt": "The video features a noticeable rainbow.",
+            "neg_prompt": "The video does not feature a noticeable rainbow.",
+            "pos": {
+                "label": "lighting_setup.natural_effect.rainbow",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.natural_effect.rainbow",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "aurora",
+            "pos_question": "Does the video feature an aurora, with flowing, colorful light patterns in the sky?",
+            "neg_question": "Does the video not feature an aurora, with flowing, colorful light patterns in the sky?",
+            "pos_prompt": "The video features an aurora, with flowing, colorful light patterns in the sky.",
+            "neg_prompt": "The video does not feature an aurora, with flowing, colorful light patterns in the sky.",
+            "pos": {
+                "label": "lighting_setup.natural_effect.aurora",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.natural_effect.aurora",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "heat_haze",
+            "pos_question": "Does the video feature a noticeable heat haze effect, with air distortions and shimmering caused by rising heat?",
+            "neg_question": "Does the video not feature a noticeable heat haze effect, with air distortions and shimmering caused by rising heat?",
+            "pos_prompt": "The video features a noticeable heat haze effect, with air distortions and shimmering caused by rising heat.",
+            "neg_prompt": "The video does not feature a noticeable heat haze effect, with air distortions and shimmering caused by rising heat.",
+            "pos": {
+                "label": "lighting_setup.natural_effect.heat_haze",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.natural_effect.heat_haze",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "lightning",
+            "pos_question": "Does the video capture a lightning effect with intense flashes and jagged, branching streaks?",    
+            "neg_question": "Does the video not capture a lightning effect with intense flashes and jagged, branching streaks?",
+            "pos_prompt": "The video captures a lightning effect with intense flashes and jagged, branching streaks.",
+            "neg_prompt": "The video does not capture a lightning effect with intense flashes and jagged, branching streaks.",
+            "pos": {
+                "label": "lighting_setup.natural_effect.lightning",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.natural_effect.lightning",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_special_artistic_effects_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "colored_neon_lighting",
+            "pos_question": "Does the video feature artificial colored or neon lighting?",
+            "neg_question": "Does the video not feature artificial colored or neon lighting?",
+            "pos_prompt": "The video features artificial colored or neon lighting.",
+            "neg_prompt": "The video does not feature artificial colored or neon lighting.",
+            "pos": {
+                "label": "lighting_setup.special_effect.colored_neon_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.colored_neon_lighting",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "headlight_flashlight",
+            "pos_question": "Does the video feature a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings?",
+            "neg_question": "Does the video not feature a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings?",
+            "pos_prompt": "The video features a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings.",
+            "neg_prompt": "The video does not feature a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings.",
+            "pos": {
+                "label": "lighting_setup.special_effect.headlight_flashlight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.headlight_flashlight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "vignette",
+            "pos_question": "Does the video feature a vignette effect, where the edges gradually darken or fade?",
+            "neg_question": "Does the video not feature a vignette effect, where the edges gradually darken or fade?",
+            "pos_prompt": "The video features a vignette effect, where the edges gradually darken or fade.",
+            "neg_prompt": "The video does not feature a vignette effect, where the edges gradually darken or fade.",
+            "pos": {
+                "label": "lighting_setup.special_effect.vignette",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.vignette",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "water_caustics",
+            "pos_question": "Does the video feature water caustics, where refracted and reflected light creates dynamic, rippling patterns?",
+            "neg_question": "Does the video not feature water caustics, where refracted and reflected light creates dynamic, rippling patterns?",
+            "pos_prompt": "The video features water caustics, where refracted and reflected light creates dynamic, rippling patterns.",
+            "neg_prompt": "The video does not feature water caustics, where refracted and reflected light creates dynamic, rippling patterns.",
+            "pos": {
+                "label": "lighting_setup.special_effect.water_caustics",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.water_caustics",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "city_light",
+            "pos_question": "Does the video feature bright and colorful city lighting from various artificial sources?",
+            "neg_question": "Does the video not feature bright and colorful city lighting from various artificial sources?",
+            "pos_prompt": "The video features bright and colorful city lighting from various artificial sources.",
+            "neg_prompt": "The video does not feature bright and colorful city lighting from various artificial sources.",
+            "pos": {
+                "label": "lighting_setup.special_effect.city_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.city_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "street_light",
+            "pos_question": "Does the video feature light from street lamps?",
+            "neg_question": "Does the video not feature light from street lamps?",
+            "pos_prompt": "The video features light from street lamps.",
+            "neg_prompt": "The video does not feature light from street lamps.",
+            "pos": {
+                "label": "lighting_setup.special_effect.street_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.special_effect.street_light",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_volumetric_lighting_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "volumetric_beam_light",
+            "pos_question": "Does the video feature visible beams of light with well-defined edges, creating linear volumes of light?",
+            "neg_question": "Does the video not feature visible beams of light with well-defined edges, creating linear volumes of light?",
+            "pos_prompt": "The video features visible beams of light with well-defined edges, creating linear volumes of light.",
+            "neg_prompt": "The video does not feature visible beams of light with well-defined edges, creating linear volumes of light.",
+            "pos": {
+                "label": "lighting_setup.volumetric_lighting.volumetric_beam_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.volumetric_lighting.volumetric_beam_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "volumetric_spot_light",
+            "pos_question": "Does the video feature concentrated, cone-shaped volumes of light?",
+            "neg_question": "Does the video not feature concentrated, cone-shaped volumes of light?",
+            "pos_prompt": "The video features concentrated, cone-shaped volumes of light.",
+            "neg_prompt": "The video does not feature concentrated, cone-shaped volumes of light.",
+            "pos": {
+                "label": "lighting_setup.volumetric_lighting.volumetric_spot_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.volumetric_lighting.volumetric_spot_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "god_rays",
+            "pos_question": "Does the video feature striking, separated rays of light (god rays) streaming through gaps in the environment?",
+            "neg_question": "Does the video not feature striking, separated rays of light (god rays) streaming through gaps in the environment?",
+            "pos_prompt": "The video features striking, separated rays of light (god rays) streaming through gaps in the environment.",
+            "neg_prompt": "The video does not feature striking, separated rays of light (god rays) streaming through gaps in the environment.",
+            "pos": {
+                "label": "lighting_setup.volumetric_lighting.god_rays",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.volumetric_lighting.god_rays",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "light_through_medium",
+            "pos_question": "Does the video feature intense light passing through smoke, fog, or liquid, shaping visible light volumes?",
+            "neg_question": "Does the video not feature intense light passing through smoke, fog, or liquid, shaping visible light volumes?",
+            "pos_prompt": "The video features intense light passing through smoke, fog, or liquid, shaping visible light volumes.",
+            "neg_prompt": "The video does not feature intense light passing through smoke, fog, or liquid, shaping visible light volumes.",
+            "pos": {
+                "label": "lighting_setup.volumetric_lighting.light_through_medium",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.volumetric_lighting.light_through_medium",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "volumetric_light_others",
+            "pos_question": "Does the video feature volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights)?",
+            "neg_question": "Does the video not feature volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights)?",
+            "pos_prompt": "The video features volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights).",
+            "neg_prompt": "The video does not feature volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights).",
+            "pos": {
+                "label": "lighting_setup.volumetric_lighting.volumetric_light_others",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.volumetric_lighting.volumetric_light_others",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_volumetric_lighting",
+            "pos_question": "Does the video show noticeable volumetric lighting, where light appears as a visible volume?",
+            "neg_question": "Does the video not show noticeable volumetric lighting, where light appears as a visible volume?",
+            "pos_prompt": "The video shows noticeable volumetric lighting, where light appears as a visible volume.",
+            "neg_prompt": "The video does not show noticeable volumetric lighting, where light appears as a visible volume.",
+            "pos": {
+                "label": "lighting_setup.volumetric_lighting.has_volumetric_lighting",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.volumetric_lighting.has_volumetric_lighting",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_shadow_pattern_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "venetian_blinds",
+            "pos_question": "Does the video feature distinct shadow patterns cast by venetian blinds or similar slatted structures?",
+            "neg_question": "Does the video not feature distinct shadow patterns cast by venetian blinds or similar slatted structures?",
+            "pos_prompt": "The video features distinct shadow patterns cast by venetian blinds or similar slatted structures.",
+            "neg_prompt": "The video does not feature distinct shadow patterns cast by venetian blinds or similar slatted structures.",
+            "pos": {
+                "label": "lighting_setup.shadow_pattern.venetian_blinds",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.shadow_pattern.venetian_blinds",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "subject_shape",
+            "pos_question": "Does the video feature shadows shaped by the subject to support the narrative, emphasizing form or movement?",
+            "neg_question": "Does the video not feature shadows shaped by the subject to support the narrative, emphasizing form or movement?",
+            "pos_prompt": "The video features shadows shaped by the subject to support the narrative, emphasizing form or movement.",
+            "neg_prompt": "The video does not feature shadows shaped by the subject to support the narrative, emphasizing form or movement.",
+            "pos": {
+                "label": "lighting_setup.shadow_pattern.subject_shape",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.shadow_pattern.subject_shape",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "window_frames",
+            "pos_question": "Does the video feature shadows cast by window frames?",
+            "neg_question": "Does the video not feature shadows cast by window frames?",
+            "pos_prompt": "The video features shadows cast by window frames.",
+            "neg_prompt": "The video does not feature shadows cast by window frames.",
+            "pos": {
+                "label": "lighting_setup.shadow_pattern.window_frames",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.shadow_pattern.window_frames",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "foliage",
+            "pos_question": "Does the video feature shadow patterns created by foliage, such as leaves or branches?",
+            "neg_question": "Does the video not feature shadow patterns created by foliage, such as leaves or branches?",
+            "pos_prompt": "The video features shadow patterns created by foliage, such as leaves or branches.",
+            "neg_prompt": "The video does not feature shadow patterns created by foliage, such as leaves or branches.",
+            "pos": {
+                "label": "lighting_setup.shadow_pattern.foliage",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.shadow_pattern.foliage",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "shadow_patterns_gobo_others",
+            "pos_question": "Does the video feature distinct or dynamic shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape?",
+            "neg_question": "Does the video not feature distinct or dynamic shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape?",
+            "pos_prompt": "The video features distinct or dynamic shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape.",
+            "neg_prompt": "The video does not feature distinct or dynamic shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape.",
+            "pos": {
+                "label": "lighting_setup.shadow_pattern.shadow_patterns_gobo_others",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.shadow_pattern.shadow_patterns_gobo_others",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_shadow_patterns",
+            "pos_question": "Does the video feature distinct shadow patterns or gobo lighting effects that shape the visual composition?",
+            "neg_question": "Does the video not feature distinct shadow patterns or gobo lighting effects that shape the visual composition?",
+            "pos_prompt": "The video features distinct shadow patterns or gobo lighting effects that shape the visual composition.",
+            "neg_prompt": "The video does not feature distinct shadow patterns or gobo lighting effects that shape the visual composition.",
+            "pos": {
+                "label": "lighting_setup.shadow_pattern.has_shadow_patterns",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.shadow_pattern.has_shadow_patterns",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_dynamic_lighting_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "color_shifting_smooth",
+            "pos_question": "Does the video feature a smooth color shift, with a gradual yet noticeable change in overall or lighting color?",
+            "neg_question": "Does the video not feature a smooth color shift, with a gradual yet noticeable change in overall or lighting color?",
+            "pos_prompt": "The video features a smooth color shift, with a gradual yet noticeable change in overall or lighting color.",
+            "neg_prompt": "The video does not feature a smooth color shift, with a gradual yet noticeable change in overall or lighting color.",
+            "pos": {
+                "label": "lighting_setup.dynamic_light.color_shifting_smooth",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_light.color_shifting_smooth",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "color_shifting_sudden",
+            "pos_question": "Does the video feature a sudden color shift, with a rapid and noticeable change in overall or lighting color?",
+            "neg_question": "Does the video not feature a sudden color shift, with a rapid and noticeable change in overall or lighting color?",
+            "pos_prompt": "The video features a sudden color shift, with a rapid and noticeable change in overall or lighting color.",
+            "neg_prompt": "The video does not feature a sudden color shift, with a rapid and noticeable change in overall or lighting color.",
+            "pos": {
+                "label": "lighting_setup.dynamic_light.color_shifting_sudden",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_light.color_shifting_sudden",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "pulsing_flickering",
+            "pos_question": "Does the video feature lighting that varies in brightness, either through rhythmic pulsing or irregular flickering?",
+            "neg_question": "Does the video not feature lighting that varies in brightness, either through rhythmic pulsing or irregular flickering?",
+            "pos_prompt": "The video features lighting that varies in brightness, either through rhythmic pulsing or irregular flickering.",
+            "neg_prompt": "The video does not feature lighting that varies in brightness, either through rhythmic pulsing or irregular flickering.",
+            "pos": {
+                "label": "lighting_setup.dynamic_light.pulsing_flickering",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_light.pulsing_flickering",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "flashing",
+            "pos_question": "Does the lighting in the video flash, creating sudden bursts of light in an on/off pattern?",
+            "neg_question": "Does the lighting in the video not flash, creating sudden bursts of light in an on/off pattern?",
+            "pos_prompt": "The lighting in the video flashes, creating sudden bursts of light in an on/off pattern.",
+            "neg_prompt": "The lighting in the video does not flash, creating sudden bursts of light in an on/off pattern.",
+            "pos": {
+                "label": "lighting_setup.dynamic_light.flashing",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_light.flashing",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "moving_light",
+            "pos_question": "Does the video feature major light source(s) that traverse the scene or change direction?",
+            "neg_question": "Does the video not feature major light source(s) that traverse the scene or change direction?",
+            "pos_prompt": "The video features major light source(s) that traverse the scene or change direction.",
+            "neg_prompt": "The video does not feature major light source(s) that traverse the scene or change direction.",
+            "pos": {
+                "label": "lighting_setup.dynamic_light.moving_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_light.moving_light",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_special_dynamic_effects_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "revealing_shot",
+            "pos_question": "Does the video feature a revealing shot that uncovers a new scene or subject?",
+            "neg_question": "Does the video not feature a revealing shot that uncovers a new scene or subject?",
+            "pos_prompt": "The video features a revealing shot that uncovers a new scene or subject.",
+            "neg_prompt": "The video does not feature a revealing shot that uncovers a new scene or subject.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.revealing_shot",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.revealing_shot",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "transformation_morphing",
+            "pos_question": "Does the video feature a transformation or morphing effect where one object changes into another?",
+            "neg_question": "Does the video not feature a transformation or morphing effect where one object changes into another?",
+            "pos_prompt": "The video features a transformation or morphing effect where one object changes into another.",
+            "neg_prompt": "The video does not feature a transformation or morphing effect where one object changes into another.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.transformation_morphing",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.transformation_morphing",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "levitation_floating",
+            "pos_question": "Does the video feature objects or characters floating or levitating as if unaffected by gravity?",
+            "neg_question": "Does the video not feature objects or characters floating or levitating as if unaffected by gravity?",
+            "pos_prompt": "The video features objects or characters floating or levitating as if unaffected by gravity.",
+            "neg_prompt": "The video does not feature objects or characters floating or levitating as if unaffected by gravity.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.levitation_floating",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.levitation_floating",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "explosion",
+            "pos_question": "Does the video show explosions with sudden bursts of flames, matter, and outward force?",
+            "neg_question": "Does the video not show explosions with sudden bursts of flames, matter, and outward force?",
+            "pos_prompt": "The video shows explosions with sudden bursts of flames, matter, and outward force.",
+            "neg_prompt": "The video does not show explosions with sudden bursts of flames, matter, and outward force.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.explosion",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.explosion",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "shattering_breaking",
+            "pos_question": "Does the video show objects breaking, shattering, or fragmenting into smaller pieces?",
+            "neg_question": "Does the video not show objects breaking, shattering, or fragmenting into smaller pieces?",
+            "pos_prompt": "The video shows objects breaking, shattering, or fragmenting into smaller pieces.",
+            "neg_prompt": "The video does not show objects breaking, shattering, or fragmenting into smaller pieces.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.shattering_breaking",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.shattering_breaking",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "diffusion",
+            "pos_question": "Does the video feature a noticable diffusion effect, where particles, fluids, or other materials spread and disperse over time?",
+            "neg_question": "Does the video not feature a noticable diffusion effect, where particles, fluids, or other materials spread and disperse over time?",
+            "pos_prompt": "The video features a noticable diffusion effect, where particles, fluids, or other materials spread and disperse over time.",
+            "neg_prompt": "The video does not feature a noticable diffusion effect, where particles, fluids, or other materials spread and disperse over time.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.diffusion",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.diffusion",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "splashing_waves",
+            "pos_question": "Does the video feature noticeable splashing or wave-like motion?",
+            "neg_question": "Does the video not feature noticeable splashing or wave-like motion?",
+            "pos_prompt": "The video features noticeable splashing or wave-like motion.",
+            "neg_prompt": "The video does not feature noticeable splashing or wave-like motion.",
+            "pos": {
+                "label": "lighting_setup.dynamic_effect.splashing_waves",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.dynamic_effect.splashing_waves",
+                "type": "neg",
+            },
+        },
+    ]
+
+def get_lighting_pairwise_labels(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return {
+        "black_white": get_black_and_white_tasks(lighting_folder=lighting_folder),
+        "color_temperature_simple": get_color_temperature_simple_tasks(lighting_folder=lighting_folder),
+        "color_temperature_complex": get_color_temperature_complex_tasks(lighting_folder=lighting_folder),
+        "color_saturation_simple": get_color_saturation_simple_tasks(lighting_folder=lighting_folder),
+        "color_saturation_complex": get_color_saturation_complex_tasks(lighting_folder=lighting_folder),
+        "brightness_simple": get_brightness_simple_tasks(lighting_folder=lighting_folder),
+        "brightness_complex": get_brightness_complex_tasks(lighting_folder=lighting_folder),
+        "scene_type": get_scene_type_tasks(lighting_folder=lighting_folder),
+        "sunlight_level": get_sunlight_level_tasks(lighting_folder=lighting_folder),
+        "light_quality": get_light_quality_tasks(lighting_folder=lighting_folder),
+        "light_source": get_light_source_tasks(lighting_folder=lighting_folder),
+        "light_contrast": get_light_contrast_tasks(lighting_folder=lighting_folder),
+        "light_direction": get_light_direction_tasks(lighting_folder=lighting_folder),
+        "subject_lighting": get_subject_lighting_tasks(lighting_folder=lighting_folder),
+        "lens_and_optical_effects": get_lens_and_optical_effects_tasks(lighting_folder=lighting_folder),
+        "reflection": get_reflection_tasks(lighting_folder=lighting_folder),
+        "natural_atmospheric_effects": get_natural_atmospheric_effects_tasks(lighting_folder=lighting_folder),
+        "special_artistic_effects": get_special_artistic_effects_tasks(lighting_folder=lighting_folder),
+        "volumetric_lighting": get_volumetric_lighting_tasks(lighting_folder=lighting_folder),
+        "shadow_pattern": get_shadow_pattern_tasks(lighting_folder=lighting_folder),
+        "dynamic_light": get_dynamic_lighting_tasks(lighting_folder=lighting_folder),
+    }

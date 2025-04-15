@@ -2,7 +2,7 @@
     "label": "Sunlight Level Is Overcast",
     "label_name": "sunlight_level_is_overcast",
     "def_question": [
-        "Does the video feature soft, diffused light on an overcast day?"
+        "Does the video feature soft, diffused sunlight from overcast skies or during blue hour?"
     ],
     "alt_question": [
         "Is the scene lit by soft, diffused light from overcast skies?",
@@ -15,7 +15,7 @@
         "Does the shot have a neutral, diffused lighting due to cloud cover?"
     ],
     "def_prompt": [
-        "The video features soft, diffused sunlight on an overcast day."
+        "The video features soft, diffused sunlight from overcast skies or during blue hour."
     ],
     "alt_prompt": [
         "A video illuminated by soft, overcast lighting.",

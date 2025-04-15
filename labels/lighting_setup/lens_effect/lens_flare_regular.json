@@ -2,7 +2,7 @@
     "label": "Lens Flares Regular",
     "label_name": "lens_flares_regular",
     "def_question": [
-        "Does the video contain typical lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts?"
+        "Does the video contain typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts?"
     ],
     "alt_question": [
         "Are there noticeable bright streaks, rings, or orbs of light in the shot?",
@@ -15,7 +15,7 @@
         "Does the video exhibit the characteristic glow of regular lens flares?"
     ],
     "def_prompt": [
-        "The video contains typical lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts."
+        "The video contains typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts."
     ],
     "alt_prompt": [
         "A video featuring bright streaks, rings, or scattered regular lens flares.",

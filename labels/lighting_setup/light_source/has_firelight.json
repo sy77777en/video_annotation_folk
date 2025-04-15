@@ -2,7 +2,7 @@
     "label": "Has Firelight",
     "label_name": "has_firelight",
     "def_question": [
-        "Is the video primarily lit by firelight?"
+        "Is firelight a primary light source in the video?"
     ],
     "alt_question": [
         "Is firelight the primary light source in the video, even if the fire itself is not visible?",
@@ -16,7 +16,7 @@
         "Is the scene’s lighting dynamically shifting in a way that suggests fire?"
     ],
     "def_prompt": [
-        "The video is primarily lit by firelight."
+        "Firelight is a primary light source in the video."
     ],
     "alt_prompt": [
         "The video is primarily lit by firelight, even if the fire itself is not visible.",

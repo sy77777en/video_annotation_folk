@@ -2,7 +2,7 @@
     "label": "Is Subject Lighting Applicable",
     "label_name": "is_subject_lighting_applicable",
     "def_question": [
-        "Does the video feature a clearly defined subject under realistic lighting conditions, suitable for lighting analysis?"
+        "Does the video feature clear subject(s) under realistic lighting, suitable for analyzing lighting contrast and direction?"
     ],
     "alt_question": [
         "Is the contrast ratio on the subject applicable in this video?",
@@ -15,7 +15,7 @@
         "Can the contrast ratio on the subject be confidently labeled?"
     ],
     "def_prompt": [
-        "The video features a clearly defined subject under realistic lighting conditions, suitable for lighting analysis."
+        "The video features clear subject(s) under realistic lighting, suitable for analyzing lighting contrast and direction."
     ],
     "alt_prompt": [
         "A video where the contrast ratio on the subject is applicable and classifiable.",
