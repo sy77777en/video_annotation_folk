@@ -20,49 +20,57 @@ def get_existing_videos(args):
     # Load all existing batch files
     existing_videos = set()
     
+    # Function to load videos from a file
+    def load_videos_from_file(file_path):
+        print(f"Loading videos from {file_path}")
+        return set(load_json_file(file_path))
+    
     # Load videos from specified batch files if provided
     if args.batch_files:
         print(f"Loading {len(args.batch_files)} batch files")
         for batch_file in args.batch_files:
-            full_path = os.path.join(args.existing_dir, batch_file)
-            videos = load_json_file(full_path)
-            existing_videos.update(videos)
+            # batch_file is now a full path
+            existing_videos.update(load_videos_from_file(batch_file))
     
     # Load existing invalid videos if filename provided
     invalid_videos = set()
     if args.invalid_filename:
-        invalid_file = os.path.join(args.existing_dir, args.invalid_filename)
-        invalid_videos = set(load_json_file(invalid_file))
+        # invalid_filename is now a full path
+        if os.path.exists(args.invalid_filename):
+            invalid_videos.update(load_json_file(args.invalid_filename))
     
     # Get the last batch number or index from the filenames based on naming mode
     last_batch_or_index = 0
     
-    for batch_file in args.batch_files:
-        try:
-            if args.naming_mode == "batch":
-                # For batchX.json format
-                batch_num = int(os.path.basename(batch_file).replace("batch", "").replace(".json", ""))
-                last_batch_or_index = max(last_batch_or_index, batch_num)
-            else:
-                # For overlap_X_to_Y.json format
-                # Count URLs in this file
-                full_path = os.path.join(args.existing_dir, batch_file)
-                urls_in_file = len(load_json_file(full_path))
-                total_urls += urls_in_file
+    # Process batch files if provided
+    if args.batch_files:
+        for batch_file in args.batch_files:
+            try:
+                # Extract just the filename for processing
+                filename = os.path.basename(batch_file)
                 
-                # Extract the end number from overlap_X_to_Y.json for verification
-                end_num = int(os.path.basename(batch_file).split("_to_")[1].replace(".json", ""))
-                start_num = int(os.path.basename(batch_file).split("_to_")[0].replace("overlap_", ""))
-                
-                # Verify that the file contains the expected number of URLs
-                expected_urls = end_num - start_num
-                if urls_in_file != expected_urls:
-                    print(f"Warning: File {batch_file} contains {urls_in_file} URLs but name suggests {expected_urls}")
-                
-                last_batch_or_index = max(last_batch_or_index, end_num)
-        except (ValueError, IndexError) as e:
-            print(f"Error processing file {batch_file}: {e}")
-            continue
+                if args.naming_mode == "batch":
+                    # For batchX.json format
+                    batch_num = int(filename.replace("batch", "").replace(".json", ""))
+                    last_batch_or_index = max(last_batch_or_index, batch_num)
+                else:
+                    # For overlap_X_to_Y.json or nonoverlap_X_to_Y.json format
+                    # Count URLs in this file
+                    urls_in_file = len(load_json_file(batch_file))
+                    
+                    # Extract the end number from filename for verification
+                    end_num = int(filename.split("_to_")[1].replace(".json", ""))
+                    start_num = int(filename.split("_to_")[0].replace("overlap_", "").replace("nonoverlap_", ""))
+                    
+                    # Verify that the file contains the expected number of URLs
+                    expected_urls = end_num - start_num
+                    if urls_in_file != expected_urls:
+                        print(f"Warning: File {filename} contains {urls_in_file} URLs but name suggests {expected_urls}")
+                    
+                    last_batch_or_index = max(last_batch_or_index, end_num)
+            except (ValueError, IndexError) as e:
+                print(f"Error processing file {batch_file}: {e}")
+                continue
     
     return existing_videos, invalid_videos, last_batch_or_index
 
@@ -73,18 +81,30 @@ def process_new_videos(args):
     # Load new videos
     new_video = load_json_file(os.path.join(args.new_dir, args.valid_filename))
     
-    # Load and process invalid videos only if filename provided
+    # Load and process invalid videos if filename provided
     new_invalid_videos = []
+    new_invalid_path = None
     if args.invalid_filename:
-        new_invalid = load_json_file(os.path.join(args.new_dir, args.invalid_filename))
-        new_invalid_videos = [v for v in new_invalid if v not in existing_invalid]
+        # Load invalid videos from the specified path
+        invalid_videos = load_json_file(args.invalid_filename)
+        new_invalid_videos = [v for v in invalid_videos if v not in existing_invalid]
         print(f"Found {len(new_invalid_videos)} new invalid videos")
+        
+        # Always save invalid videos to the new directory
+        # Get just the filename without the path
+        invalid_filename = os.path.basename(args.invalid_filename)
+        
+        # Save to the new directory with the same filename
+        new_invalid_path = os.path.join(args.new_dir, invalid_filename)
+        save_json_file(invalid_videos, new_invalid_path)
+        print(f"Saved {len(invalid_videos)} invalid videos to {new_invalid_path}")
     
     # Find new videos that aren't in existing batches
     new_valid_videos = [v for v in new_video if v not in existing_videos]
     print(f"\nFound {len(new_valid_videos)} new valid videos")
     
     # Create new batches
+    created_files = []
     for i in range(0, len(new_valid_videos), args.batch_size):
         batch = new_valid_videos[i:i + args.batch_size]
         
@@ -106,56 +126,53 @@ def process_new_videos(args):
             batch_file = os.path.join(args.new_dir, f"{start_idx}_to_{end_idx}.json")
         
         save_json_file(batch, batch_file)
+        created_files.append(batch_file)
         print(f"Created {batch_file} with {len(batch)} videos")
     
-    # Save new invalid videos if filename provided
-    if args.invalid_filename and new_invalid_videos:
-        invalid_file = os.path.join(args.new_dir, args.invalid_filename)
-        save_json_file(new_invalid_videos, invalid_file)
-        print(f"Added {len(new_invalid_videos)} new invalid videos to {invalid_file}")
+    # Print reminder about updating video_urls_files
+    print("\n" + "="*80)
+    print("REMINDER: Don't forget to update video_urls_files in feedback_app.py or new_feedback_app.py")
+    print("Add the following files to the list:")
+    
+    # Function to remove 'caption/' prefix from paths
+    def clean_path(path):
+        if path.startswith("caption/"):
+            return path[8:]  # Remove 'caption/' prefix
+        return path
+    
+    # Add invalid file first if it exists
+    if new_invalid_path:
+        print(f"    '{clean_path(new_invalid_path)}',")
+    
+    # Add batch files
+    for file in created_files:
+        print(f"    '{clean_path(file)}',")
+    print("="*80)
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Process and distribute videos into batches")
     
     # Directory structure
-    parser.add_argument("--existing-dir", type=str, default="caption/video_urls/20250227_0507ground_and_setup",
-                        help="Directory containing existing batch files")
     parser.add_argument("--new-dir", type=str, default="caption/video_urls/20250406_setup_and_motion",
                         help="Directory for new batch files")
     
     # File names
-    parser.add_argument("--valid-filename", type=str, default="overlap_all.json",
+    parser.add_argument("--valid-filename", type=str, default="lighting_only.json",
                         help="Filename for valid videos")
-    parser.add_argument("--invalid-filename", type=str, #default=None,
-                        default="invalid_videos.json",
-                        help="Optional filename for invalid videos")
+    parser.add_argument("--invalid-filename", type=str, default=None,
+                        help="Optional filename for invalid videos (full path)")
     
-    #     # Batch files
-    # parser.add_argument("--batch-files", nargs="+", type=str,
-    #                     default=[
-    #                         "batch1.json",
-    #                         "batch2.json",
-    #                         "batch3.json",
-    #                         "batch4.json",
-    #                         "batch5.json",
-    #                         "batch6.json",
-    #                         "batch7.json",
-    #                         "batch8.json",
-    #                         "batch9.json",
-    #                         "batch10.json"
-    #                     ],
-    #                     help="List of batch files to process (relative to existing-dir)")
     # Batch files - make it optional
     parser.add_argument("--batch-files", nargs="*", type=str,
                         default=[],
-                        help="Optional list of batch files to process (relative to existing-dir)")
+                        help="Optional list of batch files to process (full paths)")
     
     # Batch configuration
     parser.add_argument("--batch-size", type=int, default=10,
                         help="Number of videos per batch")
     
     # Naming mode
-    parser.add_argument("--naming-mode", type=str, choices=["batch", "overlap", "nonoverlap"], default="overlap",
+    parser.add_argument("--naming-mode", type=str, choices=["batch", "overlap", "nonoverlap"], default="batch",
                         help="Naming convention for batch files: 'batch' for batchX.json, 'overlap' for overlap_X_to_Y.json, or 'nonoverlap' for nonoverlap_X_to_Y.json")
     
     return parser.parse_args()

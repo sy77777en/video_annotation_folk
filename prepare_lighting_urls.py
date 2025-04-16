@@ -160,7 +160,7 @@ def main():
         type=str,
         # default="video_data/20250324_1616_all_labels/videos.json",
         # default="video_data/20250328_1455_lighting_120/videos.json", # Before April 14
-        default="video_data/20250406lighting_only/videos.json", # After April 14
+        default="video_data/20250406lighting_only/videos.json", # After April 14 then 16
         help="Path to the JSON file containing video data.",
     )
     parser.add_argument(
@@ -175,7 +175,8 @@ def main():
         "--output_dir",
         type=str,
         # default="caption/video_urls/lighting_120_new", # Before April 14
-        default="caption/video_urls/lighting_250_new", # After April 14
+        # default="caption/video_urls/lighting_250_new", # After April 14
+        default="caption/video_urls/lighting_280_new", # After April 16
         help="Output directory for URL files.",
     )
     args = parser.parse_args()
