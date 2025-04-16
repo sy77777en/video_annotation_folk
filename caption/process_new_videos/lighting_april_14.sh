@@ -1,0 +1,1 @@
+python caption/process_new_videos.py --existing-dir caption/video_urls/lighting_120_new --new-dir caption/video_urls/lighting_250_new --valid-filename lighting_only.json --invalid-filename invalid_videos.json --batch-files batch1.json batch2.json batch3.json batch4.json batch5.json batch6.json batch7.json batch8.json batch9.json batch10.json --batch-size 10

@@ -98,8 +98,8 @@ class VanillaSubjectPolicy(SocraticProgram):
             #         "or scale rather than a specific object. If relevant, describe the shot's purpose, whether it is an "
             #         "establishing shot setting the scene or providing context, or a FPV shot that creates an immersive experience.")
             policy = ("The video is a scenery shot. You do not need to describe the subject. "
-                    "Please concisely specify the type of scenery shot (e.g., a landscape or cityscape scenery shot)."
-                    "Explain why there is no main subject, such as the focus being on the environment, atmosphere, "
+                    "Please concisely specify the type of scenery shot (e.g., a landscape or cityscape scenery shot) in a single fluent paragraph."
+                    "Also explain why there is no main subject, such as the focus being on the environment, atmosphere, "
                     "or scale rather than a specific object.")
             policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/format_instruction.txt")
             return policy

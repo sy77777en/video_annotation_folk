@@ -358,6 +358,28 @@ def create_overlap_excel_splits(captions_data: List[Dict[str, Any]],
             print(f"Skip creating split {i+1}/{num_splits} Excel file as no data found")
 
 
+def save_nonoverlapping_videos_json(missing_in_videos: Set[str], save_dir: str, dataset_base_url: str) -> None:
+    """
+    Save the non-overlapping video URLs to a JSON file.
+    
+    Args:
+        missing_in_videos: Set of video filenames that are in our data but not in Adobe data
+        save_dir: Directory to save the JSON file
+        dataset_base_url: Base URL for the dataset
+    """
+    # Create directory if it doesn't exist
+    os.makedirs(save_dir, exist_ok=True)
+    
+    # Prepare full URLs
+    full_urls = [f"{dataset_base_url}/{video}" for video in missing_in_videos]
+    
+    # Save to a single file
+    nonoverlap_path = os.path.join(save_dir, f"nonoverlap_all_{len(full_urls)}.json")
+    with open(nonoverlap_path, 'w') as f:
+        json.dump(full_urls, f, indent=4)
+    print(f"Saved {len(full_urls)} non-overlapping videos to {nonoverlap_path}")
+
+
 def main():
     # Import only when needed
     from feedback_app import load_video_data, parse_args
@@ -386,7 +408,7 @@ def main():
     
     # Extract video data name from path
     video_data_name = Path(args.video_data).parent.name
-    assert video_data_name == "20250227_0507ground_and_setup", f"Expected '20250227_0507ground_and_setup', got '{video_data_name}'"
+    print(f"Processing video data from: {video_data_name}")
     
     # Define save directories
     json_dir = f"caption/video_urls/{video_data_name}/"
@@ -395,6 +417,9 @@ def main():
     
     # Save overlapping videos to JSON files - using the SAME sorted list
     save_overlapping_videos_json(sorted_overlap, json_dir, dataset_base_url)
+    
+    # Save non-overlapping videos to JSON file
+    save_nonoverlapping_videos_json(missing_in_captions, json_dir, dataset_base_url)
     
     # Save overlapping videos to main Excel file - using the SAME sorted list
     excel_output_path = os.path.join(excel_dir, "overlap_all.xlsx")

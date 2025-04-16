@@ -80,7 +80,10 @@ def batch_generate_precaptions(video_urls_files, config_dict, caption_programs, 
     from llm import get_llm, get_supported_mode
 
     # Loop through all configurations, but always do spatial_framing_dynamics first, without removing other tasks
-    for config_name in ["Spatial Framing and Dynamics Caption", "Subject Motion and Dynamics Caption"]:
+    for config_name in [
+        # "Spatial Framing and Dynamics Caption",
+        "Subject Motion and Dynamics Caption"
+    ]:
         config = config_dict.get(config_name)
         if not config:
             print(f"Skipping {config_name}: No valid configuration found")
@@ -189,8 +192,14 @@ if __name__ == "__main__":
         save_data, load_data, data_is_saved, get_imagery_kwargs
     )
 
+    # # Only take spatial_framing_dynamics and subject_motion_dynamics from caption_programs
+    # caption_programs = {key: caption_programs[key] for key in ["spatial_framing_dynamics", "subject_motion_dynamics"]}
+
     # Only take spatial_framing_dynamics and subject_motion_dynamics from caption_programs
-    caption_programs = {key: caption_programs[key] for key in ["spatial_framing_dynamics", "subject_motion_dynamics"]}
+    caption_programs = {key: caption_programs[key] for key in [
+        # "spatial_framing_dynamics",
+        "subject_motion_dynamics"
+    ]}
 
     # Parse the command line arguments using the same function as the main app
     args = parse_args()

@@ -51,6 +51,49 @@ def parse_args():
             "video_urls/20250227_0507ground_and_setup/overlap_658_to_752.json",
             "video_urls/20250227_0507ground_and_setup/overlap_752_to_846.json",
             "video_urls/20250227_0507ground_and_setup/overlap_846_to_940.json",
+            "video_urls/20250406_setup_and_motion/overlap_940_to_950.json",
+            "video_urls/20250406_setup_and_motion/overlap_950_to_960.json",
+            "video_urls/20250406_setup_and_motion/overlap_960_to_970.json",
+            "video_urls/20250406_setup_and_motion/overlap_970_to_980.json",
+            "video_urls/20250406_setup_and_motion/overlap_980_to_990.json",
+            "video_urls/20250406_setup_and_motion/overlap_990_to_1000.json",
+            "video_urls/20250406_setup_and_motion/overlap_1000_to_1010.json",
+            "video_urls/20250406_setup_and_motion/overlap_1010_to_1020.json",
+            "video_urls/20250406_setup_and_motion/overlap_1020_to_1030.json",
+            "video_urls/20250406_setup_and_motion/overlap_1030_to_1040.json",
+            "video_urls/20250406_setup_and_motion/overlap_1040_to_1050.json",
+            "video_urls/20250406_setup_and_motion/overlap_1050_to_1060.json",
+            "video_urls/20250406_setup_and_motion/overlap_1060_to_1062.json",
+            "video_urls/20250406_setup_and_motion/0_to_10.json",
+            "video_urls/20250406_setup_and_motion/10_to_20.json",
+            "video_urls/20250406_setup_and_motion/20_to_30.json",
+            "video_urls/20250406_setup_and_motion/30_to_40.json",
+            "video_urls/20250406_setup_and_motion/40_to_50.json",
+            "video_urls/20250406_setup_and_motion/50_to_60.json",
+            "video_urls/20250406_setup_and_motion/60_to_70.json",   
+            "video_urls/20250406_setup_and_motion/70_to_80.json",
+            "video_urls/20250406_setup_and_motion/80_to_90.json",
+            "video_urls/20250406_setup_and_motion/90_to_100.json",
+            "video_urls/20250406_setup_and_motion/100_to_110.json",
+            "video_urls/20250406_setup_and_motion/110_to_120.json",
+            "video_urls/20250406_setup_and_motion/120_to_130.json",
+            "video_urls/20250406_setup_and_motion/130_to_140.json",
+            "video_urls/20250406_setup_and_motion/140_to_150.json",
+            "video_urls/20250406_setup_and_motion/150_to_160.json",
+            "video_urls/20250406_setup_and_motion/160_to_170.json",
+            "video_urls/20250406_setup_and_motion/170_to_180.json",
+            "video_urls/20250406_setup_and_motion/180_to_190.json",
+            "video_urls/20250406_setup_and_motion/190_to_200.json",
+            "video_urls/20250406_setup_and_motion/200_to_210.json",
+            "video_urls/20250406_setup_and_motion/210_to_220.json",
+            "video_urls/20250406_setup_and_motion/220_to_230.json",
+            "video_urls/20250406_setup_and_motion/230_to_240.json",
+            "video_urls/20250406_setup_and_motion/240_to_250.json",
+            "video_urls/20250406_setup_and_motion/250_to_260.json",
+            "video_urls/20250406_setup_and_motion/260_to_270.json",
+            "video_urls/20250406_setup_and_motion/270_to_280.json",
+            "video_urls/20250406_setup_and_motion/280_to_290.json",
+            "video_urls/20250406_setup_and_motion/290_to_300.json",
         ],
         help="List of paths to test URLs files",
     )
@@ -58,7 +101,8 @@ def parse_args():
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     # parser.add_argument("--video_data", type=str, default="video_data/20250224_0130/videos.json", help="Path to the video data file")
-    parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
+    # parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
+    parser.add_argument("--video_data", type=str, default="video_data/20250406_setup_and_motion/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
     return parser.parse_args()
 
@@ -151,7 +195,8 @@ def get_precaption_llm_name(config_dict, selected_config):
         print(f"Using qwen2.5-vl-7b for {task}")
         return "qwen2.5-vl-7b"
     else:
-        return "gpt-4o-2024-08-06"
+        # return "gpt-4o-2024-08-06"
+        return "gemini-2.5-pro-preview-03-25"
 
 def load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, output):
     """Generate a pre-caption for the video"""
