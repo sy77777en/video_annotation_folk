@@ -72,16 +72,80 @@ def get_caption_dict_by_filename(captions_data: List[Dict[str, Any]], filename: 
     return None
 
 
-def analyze_data_overlap(video_data_dict: Dict[str, Any], captions_data: List[Dict[str, Any]]) -> Tuple[List[str], Set[str], Set[str]]:
+def identify_invalid_videos(video_data_dict: Dict[str, Any], label_collections: List[str]) -> Set[str]:
+    """
+    Identify videos that have shot_transition labels, which are considered invalid.
+    
+    Args:
+        video_data_dict: Dictionary of video data
+        label_collections: List of label collections to check
+        
+    Returns:
+        Set of filenames for invalid videos
+    """
+    # Import only when needed
+    from label import Label, extract_labels_dict
+    
+    # Get all valid labels
+    video_data_list = list(video_data_dict.values())
+    labels = Label.load_all_labels()
+    all_valid_labels_dict = {}
+    
+    for label_collection in label_collections:
+        labels_dict = extract_labels_dict(
+            getattr(labels, label_collection), label_collection
+        )
+        invalid_labels = []
+        for label_name, label in labels_dict.items():
+            # call verify()
+            try:
+                label.verify(video_data_list)
+            except Exception as e:
+                print(f"Skipping {label_name}: {e}")
+                invalid_labels.append(label_name)
+                continue
+        if len(invalid_labels) > 0:
+            print(
+                f"Skipping {len(invalid_labels)} invalid labels for {label_collection}: {invalid_labels}"
+            )
+            for label_name in invalid_labels:
+                labels_dict.pop(label_name)
+        all_valid_labels_dict.update(labels_dict)
+    
+    # Find shot_transition labels across all label collections
+    shot_transition_labels = []
+    for label_name in all_valid_labels_dict:
+        if "shot_transition" in label_name:
+            shot_transition_labels.append(all_valid_labels_dict[label_name])
+            print(f"Found shot_transition label: {label_name}")
+    
+    if not shot_transition_labels:
+        print("Warning: No shot_transition labels found!")
+        return set()
+    
+    # Check each video for shot_transition label
+    invalid_videos = set()
+    for video_name, video_data in video_data_dict.items():
+        for label in shot_transition_labels:
+            if video_data in label.pos(video_data_list):
+                invalid_videos.add(video_name)
+                break
+    
+    print(f"Found {len(invalid_videos)} invalid videos with shot_transition labels")
+    return invalid_videos
+
+
+def analyze_data_overlap(video_data_dict: Dict[str, Any], captions_data: List[Dict[str, Any]], invalid_videos: Set[str]) -> Tuple[List[str], Set[str], Set[str], Set[str], Set[str]]:
     """
     Analyze the overlap between video data and captions data and return a consistently sorted list.
     
     Args:
         video_data_dict: Dictionary of video data
         captions_data: List of caption dictionaries
+        invalid_videos: Set of invalid video filenames
         
     Returns:
-        Tuple of (sorted_overlap_list, missing_in_captions, missing_in_videos)
+        Tuple of (sorted_overlap_list, missing_in_captions, missing_in_videos, overlap_invalid, nonoverlap_invalid)
     """
     # Extract filenames from both datasets
     video_names = {extract_filename(name) for name in video_data_dict.keys()}
@@ -92,6 +156,14 @@ def analyze_data_overlap(video_data_dict: Dict[str, Any], captions_data: List[Di
     missing_in_captions = video_names - overlap
     missing_in_videos = stock_names - overlap
     
+    # Identify invalid videos in overlap and non-overlap sets
+    overlap_invalid = overlap.intersection(invalid_videos)
+    nonoverlap_invalid = missing_in_captions.intersection(invalid_videos)
+    
+    # Remove invalid videos from overlap and missing_in_captions
+    overlap = overlap - overlap_invalid
+    missing_in_captions = missing_in_captions - nonoverlap_invalid
+    
     # Sort the overlap for consistent ordering - THIS IS THE MASTER SORT THAT WILL BE USED EVERYWHERE
     sorted_overlap_list = sorted(overlap)
     
@@ -100,6 +172,8 @@ def analyze_data_overlap(video_data_dict: Dict[str, Any], captions_data: List[Di
     print(f"Videos in both datasets: {len(sorted_overlap_list)}")
     print(f"Videos in our data but not in Adobe data: {len(missing_in_captions)}")
     print(f"Videos in Adobe data but not in our data: {len(missing_in_videos)}")
+    print(f"Invalid videos in overlap: {len(overlap_invalid)}")
+    print(f"Invalid videos in non-overlap: {len(nonoverlap_invalid)}")
     
     # Print some example filenames for verification
     if sorted_overlap_list:
@@ -107,7 +181,7 @@ def analyze_data_overlap(video_data_dict: Dict[str, Any], captions_data: List[Di
         for i, filename in enumerate(sorted_overlap_list[:5]):
             print(f"  {i+1}. {filename}")
     
-    return sorted_overlap_list, missing_in_captions, missing_in_videos
+    return sorted_overlap_list, missing_in_captions, missing_in_videos, overlap_invalid, nonoverlap_invalid
 
 
 def save_overlapping_videos_json(sorted_overlap: List[str], save_dir: str, dataset_base_url: str, num_splits: int = 10) -> None:
@@ -142,6 +216,29 @@ def save_overlapping_videos_json(sorted_overlap: List[str], save_dir: str, datas
         with open(split_path, 'w') as f:
             json.dump(full_urls[start:end], f, indent=4)
         print(f"Saved split {i+1}/{num_splits} to {split_path}")
+
+
+def save_invalid_videos_json(invalid_videos: Set[str], save_dir: str, dataset_base_url: str, prefix: str) -> None:
+    """
+    Save the invalid video URLs to JSON files.
+    
+    Args:
+        invalid_videos: Set of invalid video filenames
+        save_dir: Directory to save the JSON files
+        dataset_base_url: Base URL for the dataset
+        prefix: Prefix for the output filename (overlap_invalid or nonoverlap_invalid)
+    """
+    # Create directory if it doesn't exist
+    os.makedirs(save_dir, exist_ok=True)
+    
+    # Prepare full URLs
+    full_urls = [f"{dataset_base_url}/{video}" for video in invalid_videos]
+    
+    # Save to a single file
+    invalid_path = os.path.join(save_dir, f"{prefix}.json")
+    with open(invalid_path, 'w') as f:
+        json.dump(full_urls, f, indent=4)
+    print(f"Saved {len(full_urls)} invalid videos to {invalid_path}")
 
 
 def format_excel_file(df: pd.DataFrame, output_path: str) -> None:
@@ -403,8 +500,12 @@ def main():
     print("Loading video data...")
     video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
     
+    # Identify invalid videos with shot_transition labels
+    print("Identifying invalid videos with shot_transition labels...")
+    invalid_videos = identify_invalid_videos(video_data_dict, args.label_collections)
+    
     # Analyze data overlap and get a SINGLE sorted list that will be used everywhere
-    sorted_overlap, missing_in_captions, missing_in_videos = analyze_data_overlap(video_data_dict, captions_data)
+    sorted_overlap, missing_in_captions, missing_in_videos, overlap_invalid, nonoverlap_invalid = analyze_data_overlap(video_data_dict, captions_data, invalid_videos)
     
     # Extract video data name from path
     video_data_name = Path(args.video_data).parent.name
@@ -420,6 +521,10 @@ def main():
     
     # Save non-overlapping videos to JSON file
     save_nonoverlapping_videos_json(missing_in_captions, json_dir, dataset_base_url)
+    
+    # Save invalid videos to JSON files
+    save_invalid_videos_json(overlap_invalid, json_dir, dataset_base_url, "overlap_invalid")
+    save_invalid_videos_json(nonoverlap_invalid, json_dir, dataset_base_url, "nonoverlap_invalid")
     
     # Save overlapping videos to main Excel file - using the SAME sorted list
     excel_output_path = os.path.join(excel_dir, "overlap_all.xlsx")

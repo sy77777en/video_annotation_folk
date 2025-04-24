@@ -6195,10 +6195,10 @@ def get_dynamic_lighting_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_
         {
             "folder": lighting_folder,
             "name": "flashing",
-            "pos_question": "Does the lighting in the video flash, creating sudden bursts of light in an on/off pattern?",
-            "neg_question": "Does the lighting in the video not flash, creating sudden bursts of light in an on/off pattern?",
-            "pos_prompt": "The lighting in the video flashes, creating sudden bursts of light in an on/off pattern.",
-            "neg_prompt": "The lighting in the video does not flash, creating sudden bursts of light in an on/off pattern.",
+            "pos_question": "Does the lighting in the video flash, creating sudden bursts of light in an on/off pattern that changes the brightness of the scene?",
+            "neg_question": "Does the lighting in the video not flash, creating sudden bursts of light in an on/off pattern that changes the brightness of the scene?",
+            "pos_prompt": "The lighting in the video flashes, creating sudden bursts of light in an on/off pattern that changes the brightness of the scene.",
+            "neg_prompt": "The lighting in the video does not flash, creating sudden bursts of light in an on/off pattern that changes the brightness of the scene.",
             "pos": {
                 "label": "lighting_setup.dynamic_light.flashing",
                 "type": "pos",
@@ -6365,4 +6365,5 @@ def get_lighting_pairwise_labels(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDE
         "volumetric_lighting": get_volumetric_lighting_tasks(lighting_folder=lighting_folder),
         "shadow_pattern": get_shadow_pattern_tasks(lighting_folder=lighting_folder),
         "dynamic_light": get_dynamic_lighting_tasks(lighting_folder=lighting_folder),
+        "dynamic_effects": get_special_dynamic_effects_tasks(lighting_folder=lighting_folder),
     }

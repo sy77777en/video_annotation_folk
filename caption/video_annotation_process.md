@@ -19,12 +19,22 @@ This documentation explains the complete workflow for processing video URLs, cre
    - `caption/video_urls/20250406_setup_and_motion/overlap_all_X.json`: Contains all overlapping videos
    - `caption/video_urls/20250406_setup_and_motion/nonoverlap_all_X.json`: Contains all non-overlapping videos
    - `caption/video_urls/20250406_setup_and_motion/overlap_X_to_Y.json`: Split files for overlapping videos
+   - `caption/video_urls/20250406_setup_and_motion/overlap_invalid.json`: Contains invalid videos from the overlap set
+   - `caption/video_urls/20250406_setup_and_motion/nonoverlap_invalid.json`: Contains invalid videos from the non-overlap set
    - Excel files in `caption/excel_export/20250406_setup_and_motion/`
 
 4. **File Naming Conventions**:
    - `overlap_all_X.json`: Contains X overlapping videos
    - `nonoverlap_all_X.json`: Contains X non-overlapping videos
    - `overlap_X_to_Y.json`: Contains videos from index X to Y
+   - `overlap_invalid.json`: Contains invalid videos from the overlap set
+   - `nonoverlap_invalid.json`: Contains invalid videos from the non-overlap set
+
+5. **Invalid Video Handling**: 
+   - `load_xlsx.py` now identifies and separates invalid videos (those with shot transitions) into separate files.
+   - It checks each video for shot transition labels using the same approach as `prepare_lighting_urls.py`.
+   - Invalid videos are removed from the overlap/nonoverlap files and saved to their respective invalid files.
+   - The file counts are updated accordingly.
 
 ## 2. Generating Lighting Project URLs
 
@@ -39,12 +49,12 @@ This documentation explains the complete workflow for processing video URLs, cre
 
 3. **Output Files**:
    - `caption/video_urls/lighting_280_new/lighting_only.json`: Contains lighting-specific videos
-   - `caption/video_urls/lighting_280_new/invalid_videos.json`: Contains invalid videos
+   - `caption/video_urls/lighting_280_new/invalid_videos.json`: Contains invalid videos (with shot transitions)
    - `caption/video_urls/lighting_280_new/all_labels.json`: Contains videos with all label collections
 
 4. **File Naming Conventions**:
    - `lighting_only.json`: Contains all valid lighting videos
-   - `invalid_videos.json`: Contains invalid videos
+   - `invalid_videos.json`: Contains invalid videos (with shot transitions)
    - `all_labels.json`: Contains videos with all label collections
 
 ## 3. Processing New Videos
@@ -62,6 +72,8 @@ This documentation explains the complete workflow for processing video URLs, cre
        --new-dir "caption/video_urls/NEW_DIRECTORY" \
        --valid-filename "VALID_FILENAME.json" \
        --invalid-filename "FULL_PATH_TO_INVALID_FILE.json" \
+       --invalid-filename-overlap "FULL_PATH_TO_OVERLAP_INVALID_FILE.json" \
+       --invalid-filename-nonoverlap "FULL_PATH_TO_NONOVERLAP_INVALID_FILE.json" \
        --batch-files \
            "FULL_PATH_TO_BATCH1.json" \
            "FULL_PATH_TO_BATCH2.json" \
@@ -74,6 +86,8 @@ This documentation explains the complete workflow for processing video URLs, cre
    - `--new-dir`: Directory for new batch files
    - `--valid-filename`: Filename for valid videos in the new directory
    - `--invalid-filename`: Full path to the invalid file (optional)
+   - `--invalid-filename-overlap`: Full path to the overlap invalid file (optional)
+   - `--invalid-filename-nonoverlap`: Full path to the nonoverlap invalid file (optional)
    - `--batch-files`: Full paths to existing batch files (optional)
    - `--batch-size`: Number of videos per batch
    - `--naming-mode`: Naming convention for batch files
@@ -82,6 +96,7 @@ This documentation explains the complete workflow for processing video URLs, cre
    - `main_april_15.sh`: For the main project
    - `lighting_april_14.sh`: For the lighting project
    - `nonoverlap_april_15.sh`: For non-overlapping videos
+   - `lighting_april_16.sh`: For the lighting project with invalid file handling
 
 ## 4. Updating Feedback Applications
 
@@ -170,4 +185,22 @@ This documentation explains the complete workflow for processing video URLs, cre
 
 3. **Reminder Output**: The script will output a reminder with the new files that need to be added to the feedback app.
 
-4. **Invalid Files**: The script will copy the invalid file to the new directory with the same filename. 
+4. **Invalid Files**: The script will copy the invalid files to the new directory with the same filenames.
+
+## 7. Recent Improvements
+
+1. **Invalid Video Handling in `load_xlsx.py`**: 
+   - `load_xlsx.py` now identifies and separates invalid videos (those with shot transitions) into separate files.
+   - It uses the same approach as `prepare_lighting_urls.py` to check for shot transition labels.
+   - The implementation:
+     - Checks each video for shot transition labels
+     - Moves videos with shot transitions to `overlap_invalid.json` or `nonoverlap_invalid.json`
+     - Removes these videos from the overlap/nonoverlap files
+     - Updates the file counts accordingly
+
+2. **Enhanced `process_new_videos.py`**:
+   - Added support for processing overlap and nonoverlap invalid files
+   - New command-line arguments:
+     - `--invalid-filename-overlap`: For specifying the path to overlap invalid videos
+     - `--invalid-filename-nonoverlap`: For specifying the path to nonoverlap invalid videos
+   - The script now handles all three types of invalid files (general, overlap, and nonoverlap) 

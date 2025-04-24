@@ -11,6 +11,26 @@ from llm import get_llm, get_all_llms, get_supported_mode
 from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
 from process_json import json_to_video_data
 
+# Annotator authentication system
+ANNOTATORS = {
+    "Siyuan Cen": {"password": "siyuan"},
+    "Yuhan Huang": {"password": "yuhan"},
+    "Irene Pi": {"password": "irene"},
+    "Hewei Wang": {"password": "hewei"},
+    "Yubo Wang": {"password": "yubo"},
+    "Zida Zhou": {"password": "zida"},
+    "Zhenye Luo": {"password": "zhenye"},
+    "Mingyu Wang": {"password": "mingyu"},
+    "Chancharik Mitra": {"password": "chancharik"},
+    "Tiffany Ling": {"password": "tiffany"},
+    "Sunny Guo": {"password": "sunny"},
+    "Xianya Dai": {"password": "xianya"},
+    "Kaibo Yang": {"password": "kaibo"},
+    "Tina Xu": {"password": "tina"},
+    "Zhiqiu Lin": {"password": "zhiqiu"},
+    "Test User": {"password": "test"}
+}
+
 caption_programs = {
     "subject_description": VanillaSubjectPolicy(),
     "scene_composition_dynamics": VanillaScenePolicy(),
@@ -22,8 +42,21 @@ caption_programs = {
     # "raw_subject_motion_dynamics": RawSubjectMotionPolicy(),
 }
 
+config_names_to_short_names = {
+    "Subject Description Caption": "Subject",
+    "Scene Composition and Dynamics Caption": "Scene",
+    "Subject Motion and Dynamics Caption": "Motion",
+    "Spatial Framing and Dynamics Caption": "Spatial",
+    "Camera Framing and Dynamics Caption": "Camera",
+    "Color Composition and Dynamics Caption (Raw)": "Color",
+    "Lighting Setup and Dynamics Caption (Raw)": "Lighting",
+    "Lighting Effects and Dynamics Caption (Raw)": "Effects",
+}
+
 PRECAPTION_FILE_POSTFIX = "_precaption.json"
 FEEDBACK_FILE_POSTFIX = "_feedback.json"
+# PREV_FEEDBACK_FILE_POSTFIX = "_feedback_prev.json"
+PREV_FEEDBACK_FILE_POSTFIX = FEEDBACK_FILE_POSTFIX.replace("feedback", "feedback_prev")
 SUBJECT_CAPTION_NAME = "Subject Description Caption"
 SCENE_CAPTION_NAME = "Scene Composition and Dynamics Caption"
 PROMPT_HEIGHT = 225
@@ -59,11 +92,6 @@ def parse_args():
             "video_urls/20250406_setup_and_motion/overlap_990_to_1000.json",
             "video_urls/20250406_setup_and_motion/overlap_1000_to_1010.json",
             "video_urls/20250406_setup_and_motion/overlap_1010_to_1020.json",
-            "video_urls/20250406_setup_and_motion/overlap_1020_to_1030.json",
-            "video_urls/20250406_setup_and_motion/overlap_1030_to_1040.json",
-            "video_urls/20250406_setup_and_motion/overlap_1040_to_1050.json",
-            "video_urls/20250406_setup_and_motion/overlap_1050_to_1060.json",
-            "video_urls/20250406_setup_and_motion/overlap_1060_to_1062.json",
             "video_urls/20250406_setup_and_motion/0_to_10.json",
             "video_urls/20250406_setup_and_motion/10_to_20.json",
             "video_urls/20250406_setup_and_motion/20_to_30.json",
@@ -94,6 +122,95 @@ def parse_args():
             "video_urls/20250406_setup_and_motion/270_to_280.json",
             "video_urls/20250406_setup_and_motion/280_to_290.json",
             "video_urls/20250406_setup_and_motion/290_to_300.json",
+            'video_urls/20250406_setup_and_motion/310_to_320.json',
+            'video_urls/20250406_setup_and_motion/320_to_330.json',
+            'video_urls/20250406_setup_and_motion/330_to_340.json',
+            'video_urls/20250406_setup_and_motion/340_to_350.json',
+            'video_urls/20250406_setup_and_motion/350_to_360.json',
+            'video_urls/20250406_setup_and_motion/360_to_370.json',
+            'video_urls/20250406_setup_and_motion/370_to_380.json',
+            'video_urls/20250406_setup_and_motion/380_to_390.json',
+            'video_urls/20250406_setup_and_motion/390_to_400.json',
+            'video_urls/20250406_setup_and_motion/400_to_410.json',
+            'video_urls/20250406_setup_and_motion/410_to_420.json',
+            'video_urls/20250406_setup_and_motion/420_to_430.json',
+            'video_urls/20250406_setup_and_motion/430_to_440.json',
+            'video_urls/20250406_setup_and_motion/440_to_450.json',
+            'video_urls/20250406_setup_and_motion/450_to_460.json',
+            'video_urls/20250406_setup_and_motion/460_to_470.json',
+            'video_urls/20250406_setup_and_motion/470_to_480.json',
+            'video_urls/20250406_setup_and_motion/480_to_490.json',
+            'video_urls/20250406_setup_and_motion/490_to_500.json',
+            'video_urls/20250406_setup_and_motion/500_to_510.json',
+            'video_urls/20250406_setup_and_motion/510_to_520.json',
+            'video_urls/20250406_setup_and_motion/520_to_530.json',
+            'video_urls/20250406_setup_and_motion/530_to_540.json',
+            'video_urls/20250406_setup_and_motion/540_to_550.json',
+            'video_urls/20250406_setup_and_motion/550_to_560.json',
+            'video_urls/20250406_setup_and_motion/560_to_570.json',
+            'video_urls/20250406_setup_and_motion/570_to_580.json',
+            'video_urls/20250406_setup_and_motion/580_to_590.json',
+            'video_urls/20250406_setup_and_motion/590_to_600.json',
+            'video_urls/20250406_setup_and_motion/600_to_610.json',
+            'video_urls/20250406_setup_and_motion/620_to_630.json',
+            'video_urls/20250406_setup_and_motion/630_to_640.json',
+            'video_urls/20250406_setup_and_motion/640_to_650.json',
+            'video_urls/20250406_setup_and_motion/650_to_660.json',
+            'video_urls/20250406_setup_and_motion/660_to_670.json',
+            'video_urls/20250406_setup_and_motion/670_to_680.json',
+            'video_urls/20250406_setup_and_motion/680_to_690.json',
+            'video_urls/20250406_setup_and_motion/690_to_700.json',
+            'video_urls/20250406_setup_and_motion/700_to_710.json',
+            'video_urls/20250406_setup_and_motion/710_to_720.json',
+            'video_urls/20250406_setup_and_motion/720_to_730.json',
+            'video_urls/20250406_setup_and_motion/730_to_740.json',
+            'video_urls/20250406_setup_and_motion/740_to_750.json',
+            'video_urls/20250406_setup_and_motion/750_to_760.json',
+            'video_urls/20250406_setup_and_motion/760_to_770.json',
+            'video_urls/20250406_setup_and_motion/770_to_780.json',
+            'video_urls/20250406_setup_and_motion/780_to_790.json',
+            'video_urls/20250406_setup_and_motion/790_to_800.json',
+            'video_urls/20250406_setup_and_motion/800_to_810.json',
+            'video_urls/20250406_setup_and_motion/810_to_820.json',
+            'video_urls/20250406_setup_and_motion/820_to_830.json',
+            'video_urls/20250406_setup_and_motion/830_to_840.json',
+            'video_urls/20250406_setup_and_motion/840_to_850.json',
+            'video_urls/20250406_setup_and_motion/850_to_860.json',
+            'video_urls/20250406_setup_and_motion/860_to_870.json',
+            'video_urls/20250406_setup_and_motion/870_to_880.json',
+            'video_urls/20250406_setup_and_motion/880_to_890.json',
+            'video_urls/20250406_setup_and_motion/890_to_900.json',
+            'video_urls/20250406_setup_and_motion/900_to_910.json',
+            'video_urls/20250406_setup_and_motion/910_to_920.json',
+            'video_urls/20250406_setup_and_motion/920_to_930.json',
+            'video_urls/20250406_setup_and_motion/930_to_940.json',
+            'video_urls/20250406_setup_and_motion/940_to_950.json',
+            'video_urls/20250406_setup_and_motion/950_to_960.json',
+            'video_urls/20250406_setup_and_motion/960_to_970.json',
+            'video_urls/20250406_setup_and_motion/970_to_980.json',
+            'video_urls/20250406_setup_and_motion/980_to_990.json',
+            'video_urls/20250406_setup_and_motion/990_to_1000.json',
+            'video_urls/20250406_setup_and_motion/1000_to_1010.json',
+            'video_urls/20250406_setup_and_motion/1010_to_1020.json',
+            'video_urls/20250406_setup_and_motion/1020_to_1030.json',
+            'video_urls/20250406_setup_and_motion/1030_to_1040.json',
+            'video_urls/20250406_setup_and_motion/1040_to_1050.json',
+            'video_urls/20250406_setup_and_motion/1050_to_1060.json',
+            'video_urls/20250406_setup_and_motion/1060_to_1070.json',
+            'video_urls/20250406_setup_and_motion/1070_to_1080.json',
+            'video_urls/20250406_setup_and_motion/1080_to_1090.json',
+            'video_urls/20250406_setup_and_motion/1090_to_1100.json',
+            'video_urls/20250406_setup_and_motion/1100_to_1110.json',
+            'video_urls/20250406_setup_and_motion/1110_to_1120.json',
+            'video_urls/20250406_setup_and_motion/1120_to_1130.json',
+            'video_urls/20250406_setup_and_motion/1130_to_1140.json',
+            'video_urls/20250406_setup_and_motion/1140_to_1150.json',
+            'video_urls/20250406_setup_and_motion/1150_to_1160.json',
+            'video_urls/20250406_setup_and_motion/1160_to_1170.json',
+            'video_urls/20250406_setup_and_motion/1170_to_1180.json',
+            'video_urls/20250406_setup_and_motion/1180_to_1183.json',
+            'video_urls/20250406_setup_and_motion/overlap_invalid.json',
+            'video_urls/20250406_setup_and_motion/nonoverlap_invalid.json',
         ],
         help="List of paths to test URLs files",
     )
@@ -104,14 +221,29 @@ def parse_args():
     # parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--video_data", type=str, default="video_data/20250406_setup_and_motion/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
+    parser.add_argument("--personalize_output", action="store_true", default=False, help="Whether to personalize the output directory based on the logged-in user")
     return parser.parse_args()
 
+# Helper function to convert a full name to a username format
+def convert_name_to_username(full_name):
+    """Convert a full name to a username format (e.g., 'Siyuan Cen' to 'siyuan_cen')"""
+    return full_name.lower().replace(" ", "_")
 
 def login_page(args):
     st.title("Video Caption System Login")
 
     # Create a form for login
     with st.form("login_form"):
+        # Annotator selection dropdown
+        selected_annotator = st.selectbox(
+            "Select Your Name:",
+            list(ANNOTATORS.keys()),
+            key="selected_annotator"
+        )
+        
+        # Password input
+        password = st.text_input("Enter Password:", type="password", key="password_input")
+        
         # File selection dropdown
         selected_file = st.selectbox(
             "Select Video URLs File:", args.video_urls_files, key="selected_urls_file"
@@ -120,11 +252,16 @@ def login_page(args):
         submit_button = st.form_submit_button("Login")
 
         if submit_button:
-            # Store the selected file in session state
-            st.session_state.video_urls_file = selected_file
-            st.session_state.logged_in = True
-            st.success(f"Login successful! Selected file: {selected_file}")
-            st.rerun()
+            # Check if password matches
+            if password == ANNOTATORS[selected_annotator]["password"]:
+                # Store the selected file and annotator in session state
+                st.session_state.video_urls_file = selected_file
+                st.session_state.logged_in = True
+                st.session_state.logged_in_user = selected_annotator
+                st.success(f"Login successful! Welcome, {selected_annotator}!")
+                st.rerun()
+            else:
+                st.error("Incorrect password. Please try again.")
 
 
 def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
@@ -173,10 +310,17 @@ def get_filename(video_id, output_dir="outputs", file_postfix=".json"):
     """Get the filename for saving feedback data"""
     return os.path.join(output_dir, f'{video_id}{file_postfix}')
 
-def save_data(video_id, data, output_dir="outputs", file_postfix=".json"):
+def save_data(video_id, data, output_dir="outputs", file_postfix=".json", prev_file_postfix="_prev.json"):
     """Save feedback data to a JSON file"""
     os.makedirs(output_dir, exist_ok=True)
     filename = get_filename(video_id, output_dir, file_postfix)
+    prev_filename = get_filename(video_id, output_dir, prev_file_postfix)
+    if os.path.exists(filename):
+        os.rename(filename, prev_filename)
+    
+    # Add timestamp if not already present
+    if "timestamp" not in data:
+        data["timestamp"] = datetime.now().isoformat()
     
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
@@ -300,16 +444,23 @@ def load_prompt(filename, **kwargs):
         prompt = f.read()
     return prompt.format(**kwargs)
 
-def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_llm, selected_mode, selected_video, file_postfix=PRECAPTION_FILE_POSTFIX):
+def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_llm, selected_mode, selected_video, file_postfix=PRECAPTION_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX):
     print(f"Generating pre-caption for video: {video_id}")
     imagery_kwargs = get_imagery_kwargs(selected_mode, selected_video)
-    pre_caption = get_llm(
-        model=selected_llm,
-        secrets=st.secrets,
-    ).generate(
-        prompt,
-        **imagery_kwargs
-    )
+    try:
+        pre_caption = get_llm(
+            model=selected_llm,
+            secrets=st.secrets,
+        ).generate(
+            prompt,
+            **imagery_kwargs
+        )
+    except Exception as e:
+        st.error(f"Error generating pre-caption for video: {video_id}")
+        st.error(f"Error: {e}")
+        # import pdb; pdb.set_trace()
+        raise e
+    
     pre_caption_data = {
         "video_id": video_id,
         "pre_caption_prompt": prompt,
@@ -317,7 +468,7 @@ def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_
         "pre_caption_llm": selected_llm,
         "pre_caption_mode": selected_mode,
     }
-    save_data(video_id, pre_caption_data, output_dir=output_dir, file_postfix=file_postfix)
+    save_data(video_id, pre_caption_data, output_dir=output_dir, file_postfix=file_postfix, prev_file_postfix=prev_file_postfix)
     print(f"Pre-caption generated for video: {video_id}")
     return pre_caption
 
@@ -386,6 +537,17 @@ def main(args, caption_programs):
     if "logged_in" not in st.session_state or not st.session_state.logged_in:
         login_page(args)
         return
+    
+    # After successful login, update the output directory based on the logged-in user if personalize_output is True
+    if args.personalize_output and "logged_in_user" in st.session_state:
+        # Only set the personalized output directory once in session state
+        if "personalized_output" not in st.session_state:
+            username = convert_name_to_username(st.session_state.logged_in_user)
+            st.session_state.personalized_output = f"{args.output}_{username}"
+        
+        # Use the stored personalized output directory
+        args.output = st.session_state.personalized_output
+        st.sidebar.write(f"**Output Directory:** {args.output}")
 
     # Load video data
     video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
@@ -393,14 +555,12 @@ def main(args, caption_programs):
         file_check(st.session_state.video_urls_file, video_data_dict)
         st.session_state.file_check_passed = True
 
-    # Hide sidebar by default
-    # st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
-    # st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
     # Create two columns
     page_col1, page_col2 = st.columns([1, 1])  # Left column is smaller, right column is wider
 
     # Add logout button
     st.sidebar.title("User Options")
+    st.sidebar.write(f"Logged in as: **{st.session_state.logged_in_user}**")
     if st.sidebar.button("Logout"):
         # Clear session state and logout
         for key in list(st.session_state.keys()):
@@ -439,7 +599,7 @@ def main(args, caption_programs):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_config_id
-                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls_file']:
+                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls_file', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -480,7 +640,7 @@ def main(args, caption_programs):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_video_id
-                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'file_check_passed', 'logged_in', 'video_urls_file']:
+                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user', 'personalized_output']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -551,46 +711,65 @@ def main(args, caption_programs):
             
             st.link_button("🔗 Report Label Errors Here", "https://docs.google.com/spreadsheets/d/1sAYL86ERcaC_vrVuloXxtPJXKzeuj8fukHtNv6nRCJ0/edit?usp=sharing", use_container_width=True)
 
+        # Get indices
+        current_index = video_urls.index(selected_video)
+        current_task_index = config_names.index(selected_config)
 
-        # Add navigation buttons for previous and next videos
-        nav_col1, _, nav_col2 = st.columns([1, 3, 1])
-        with nav_col1:
-            # Get index of current video in the list
-            current_index = video_urls.index(selected_video)
-            # Enable prev button only if not the first video
+        # Keys to keep
+        preserved_keys = [
+            'api_key', 'last_config_id', 'selected_config',
+            'last_video_id', 'last_selected_video', 'personalized_output',
+            'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user'
+        ]
+
+        def reset_state_except(preserved):
+            keys_to_remove = [key for key in st.session_state if key not in preserved]
+            for key in keys_to_remove:
+                del st.session_state[key]
+            st.rerun()
+
+        # Create a single horizontal row with 4 nav buttons
+        col1, col2, col3, col4, col5 = st.columns([2, 2, 2, 2, 2])
+
+        with col1:
             if current_index > 0:
-                if st.button("⬅️ Prev Video"):
-                    # Set the new selected video to be the previous one in the list
+                if st.button("Prev Video ⏪"):
                     st.session_state.last_selected_video = video_urls[current_index - 1]
                     st.session_state.last_video_id = get_video_id(video_urls[current_index - 1])
-                    # Reset relevant state variables
-                    keys_to_remove = [key for key in st.session_state if key not in 
-                                    ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file']]
-                    for key in keys_to_remove:
-                        if key in st.session_state:
-                            del st.session_state[key]
-                    st.rerun()
+                    reset_state_except(preserved_keys)
             else:
-                # Disabled button style if it's the first video
-                st.button("⬅️ Prev Video", disabled=True)
+                st.button("Prev Video ⏪", disabled=True)
 
-        with nav_col2:
-            # Enable next button only if not the last video
+        with col2:
+            if current_task_index > 0:
+                prev_task_short_name = config_names_to_short_names[config_names[current_task_index - 1]]
+                if st.button(f"{prev_task_short_name} Task ⬅️"):
+                    st.session_state.last_config_id = config_names[current_task_index - 1]
+                    reset_state_except(preserved_keys)
+            else:
+                st.button("No Prev Task ⬅️", disabled=True)
+        
+        with col3:
+            task_short_name = config_names_to_short_names[selected_config]
+            st.button(f"{task_short_name} Task ⬇️", disabled=True)
+
+        with col4:
+            if current_task_index < len(config_names) - 1:
+                next_task_short_name = config_names_to_short_names[config_names[current_task_index + 1]]
+                if st.button(f"{next_task_short_name} Task ➡️"):
+                    st.session_state.last_config_id = config_names[current_task_index + 1]
+                    reset_state_except(preserved_keys)
+            else:
+                st.button("No Next Task ➡️ ", disabled=True)
+
+        with col5:
             if current_index < len(video_urls) - 1:
-                if st.button("Next Video ➡️"):
-                    # Set the new selected video to be the next one in the list
+                if st.button("Next Video ⏩"):
                     st.session_state.last_selected_video = video_urls[current_index + 1]
                     st.session_state.last_video_id = get_video_id(video_urls[current_index + 1])
-                    # Reset relevant state variables
-                    keys_to_remove = [key for key in st.session_state if key not in 
-                                    ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file']]
-                    for key in keys_to_remove:
-                        if key in st.session_state:
-                            del st.session_state[key]
-                    st.rerun()
+                    reset_state_except(preserved_keys)
             else:
-                # Disabled button style if it's the last video
-                st.button("Next Video ➡️", disabled=True)
+                st.button("Next Video ⏭️", disabled=True)
 
     with page_col2:
         # Step 0: Generating Pre-caption
@@ -702,7 +881,8 @@ def main(args, caption_programs):
                     "initial_caption_rating": score,
                     "initial_caption_rating_score": emoji_to_score(score),
                     "feedback_is_needed": feedback_is_needed,
-                    "timestamp": datetime.now().isoformat(),
+                    # "timestamp": datetime.now().isoformat(),
+                    "user": st.session_state.logged_in_user,
                     # Initialize other fields as None
                     "initial_feedback": None,
                     "gpt_feedback_llm": None, 
@@ -757,7 +937,7 @@ def main(args, caption_programs):
                 else:
                     # If happiest face, save and finish
                     st.session_state.feedback_data["final_caption"] = pre_caption
-                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
                     st.success("Caption rated as perfect! No changes needed.")
                     st.json(st.session_state.feedback_data)
 
@@ -955,7 +1135,7 @@ def main(args, caption_programs):
                             st.session_state.final_caption = final_caption
 
                             # Save feedback data
-                            save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                            save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
                             st.success(f"Caption saved successfully!")
                             st.json(st.session_state.feedback_data)
                             st.session_state.caption_submitted = True
@@ -966,7 +1146,7 @@ def main(args, caption_programs):
                 else:
                     # If rating is happy, finalize caption and save
                     st.session_state.feedback_data["final_caption"] = st.session_state.feedback_data["gpt_caption"]
-                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
                     st.success(f"Caption saved successfully!")
                     st.json(st.session_state.feedback_data)
                     st.session_state.caption_submitted = True

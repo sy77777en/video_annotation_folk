@@ -3,7 +3,8 @@
 # Process new videos from the April dataset
 python caption/process_new_videos.py \
     --new-dir "caption/video_urls/20250406_setup_and_motion" \
-    --valid-filename "overlap_all_1062.json" \
+    --valid-filename "overlap_all_1020.json" \
+    --invalid-filename "caption/video_urls/20250406_setup_and_motion/overlap_invalid.json" \
     --batch-files \
         "caption/video_urls/20250227_0507ground_and_setup/overlap_0_to_94.json" \
         "caption/video_urls/20250227_0507ground_and_setup/overlap_94_to_188.json" \

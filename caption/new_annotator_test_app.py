@@ -1,33 +1,32 @@
 import argparse
+import streamlit as st
+from feedback_app import main, caption_programs
 
-# Argument parsing
+def convert_name_to_username(full_name):
+    """Convert a full name to a username format (e.g., 'Siyuan Cen' to 'siyuan_cen')"""
+    return full_name.lower().replace(" ", "_")
+
 def parse_args():
-    parser = argparse.ArgumentParser(description="Video Caption Feedback System for Lighting")
+    parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="all_configs.json", help="Path to the JSON config file")
-    # parser.add_argument("--video_urls_file", type=str, default="test_urls_all.json", help="Path to the test URLs file")
     parser.add_argument(
         "--video_urls_files",
         nargs="+",
         type=str,
-        default=[
-            "video_urls/new_annotator_exam/exam.json",
-        ],
+        default=["video_urls/new_annotator_exam/exam.json"],
         help="List of paths to test URLs files",
     )
-    parser.add_argument("--output", type=str, default="output_new_annotator_hewei", help="Path to the output directory")
-    # parser.add_argument("--output", type=str, default="output_new_annotator_sunny", help="Path to the output directory")
+    parser.add_argument("--output", type=str, default="output_new_annotator", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
-    # parser.add_argument("--video_data", type=str, default="video_data/20250324_1616_all_labels/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
+    parser.add_argument("--personalize_output", action="store_true", default=True, help="Whether to personalize the output directory based on the logged-in user")
     return parser.parse_args()
 
-# Load configuration
-args = parse_args()
-
-
-from feedback_app import main, caption_programs
+def new_annotator_main():
+    args = parse_args()
+    main(args, caption_programs)
 
 if __name__ == "__main__":
-    main(args, caption_programs)
+    new_annotator_main()

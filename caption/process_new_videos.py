@@ -39,6 +39,20 @@ def get_existing_videos(args):
         if os.path.exists(args.invalid_filename):
             invalid_videos.update(load_json_file(args.invalid_filename))
     
+    # Load existing overlap invalid videos if filename provided
+    overlap_invalid_videos = set()
+    if args.invalid_filename_overlap:
+        # invalid_filename_overlap is now a full path
+        if os.path.exists(args.invalid_filename_overlap):
+            overlap_invalid_videos.update(load_json_file(args.invalid_filename_overlap))
+    
+    # Load existing nonoverlap invalid videos if filename provided
+    nonoverlap_invalid_videos = set()
+    if args.invalid_filename_nonoverlap:
+        # invalid_filename_nonoverlap is now a full path
+        if os.path.exists(args.invalid_filename_nonoverlap):
+            nonoverlap_invalid_videos.update(load_json_file(args.invalid_filename_nonoverlap))
+    
     # Get the last batch number or index from the filenames based on naming mode
     last_batch_or_index = 0
     
@@ -72,11 +86,11 @@ def get_existing_videos(args):
                 print(f"Error processing file {batch_file}: {e}")
                 continue
     
-    return existing_videos, invalid_videos, last_batch_or_index
+    return existing_videos, invalid_videos, overlap_invalid_videos, nonoverlap_invalid_videos, last_batch_or_index
 
 def process_new_videos(args):
     # Load existing videos
-    existing_videos, existing_invalid, last_batch_or_index = get_existing_videos(args)
+    existing_videos, existing_invalid, existing_overlap_invalid, existing_nonoverlap_invalid, last_batch_or_index = get_existing_videos(args)
     
     # Load new videos
     new_video = load_json_file(os.path.join(args.new_dir, args.valid_filename))
@@ -98,6 +112,42 @@ def process_new_videos(args):
         new_invalid_path = os.path.join(args.new_dir, invalid_filename)
         save_json_file(invalid_videos, new_invalid_path)
         print(f"Saved {len(invalid_videos)} invalid videos to {new_invalid_path}")
+    
+    # Load and process overlap invalid videos if filename provided
+    new_overlap_invalid_videos = []
+    new_overlap_invalid_path = None
+    if args.invalid_filename_overlap:
+        # Load overlap invalid videos from the specified path
+        overlap_invalid_videos = load_json_file(args.invalid_filename_overlap)
+        new_overlap_invalid_videos = [v for v in overlap_invalid_videos if v not in existing_overlap_invalid]
+        print(f"Found {len(new_overlap_invalid_videos)} new overlap invalid videos")
+        
+        # Always save overlap invalid videos to the new directory
+        # Get just the filename without the path
+        overlap_invalid_filename = os.path.basename(args.invalid_filename_overlap)
+        
+        # Save to the new directory with the same filename
+        new_overlap_invalid_path = os.path.join(args.new_dir, overlap_invalid_filename)
+        save_json_file(overlap_invalid_videos, new_overlap_invalid_path)
+        print(f"Saved {len(overlap_invalid_videos)} overlap invalid videos to {new_overlap_invalid_path}")
+    
+    # Load and process nonoverlap invalid videos if filename provided
+    new_nonoverlap_invalid_videos = []
+    new_nonoverlap_invalid_path = None
+    if args.invalid_filename_nonoverlap:
+        # Load nonoverlap invalid videos from the specified path
+        nonoverlap_invalid_videos = load_json_file(args.invalid_filename_nonoverlap)
+        new_nonoverlap_invalid_videos = [v for v in nonoverlap_invalid_videos if v not in existing_nonoverlap_invalid]
+        print(f"Found {len(new_nonoverlap_invalid_videos)} new nonoverlap invalid videos")
+        
+        # Always save nonoverlap invalid videos to the new directory
+        # Get just the filename without the path
+        nonoverlap_invalid_filename = os.path.basename(args.invalid_filename_nonoverlap)
+        
+        # Save to the new directory with the same filename
+        new_nonoverlap_invalid_path = os.path.join(args.new_dir, nonoverlap_invalid_filename)
+        save_json_file(nonoverlap_invalid_videos, new_nonoverlap_invalid_path)
+        print(f"Saved {len(nonoverlap_invalid_videos)} nonoverlap invalid videos to {new_nonoverlap_invalid_path}")
     
     # Find new videos that aren't in existing batches
     new_valid_videos = [v for v in new_video if v not in existing_videos]
@@ -140,9 +190,13 @@ def process_new_videos(args):
             return path[8:]  # Remove 'caption/' prefix
         return path
     
-    # Add invalid file first if it exists
+    # Add invalid files first if they exist
     if new_invalid_path:
         print(f"    '{clean_path(new_invalid_path)}',")
+    if new_overlap_invalid_path:
+        print(f"    '{clean_path(new_overlap_invalid_path)}',")
+    if new_nonoverlap_invalid_path:
+        print(f"    '{clean_path(new_nonoverlap_invalid_path)}',")
     
     # Add batch files
     for file in created_files:
@@ -161,6 +215,10 @@ def parse_args():
                         help="Filename for valid videos")
     parser.add_argument("--invalid-filename", type=str, default=None,
                         help="Optional filename for invalid videos (full path)")
+    parser.add_argument("--invalid-filename-overlap", type=str, default=None,
+                        help="Optional filename for overlap invalid videos (full path)")
+    parser.add_argument("--invalid-filename-nonoverlap", type=str, default=None,
+                        help="Optional filename for nonoverlap invalid videos (full path)")
     
     # Batch files - make it optional
     parser.add_argument("--batch-files", nargs="*", type=str,

@@ -303,7 +303,7 @@ def main():
         st.subheader("Conversation History")
         if "initial_feedback" in st.session_state.feedback_data:
             st.markdown("**Your Initial Feedback:**")
-            st.write(st.session_state.feedback_data["initial_feedback"])
+            st.write(st.session_state.feedback_data["initial_feedback"] or "")
         
         if "gpt_feedback" in st.session_state.feedback_data:
             st.markdown("**AI-Polished Feedback:**")

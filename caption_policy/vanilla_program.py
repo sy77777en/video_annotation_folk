@@ -88,8 +88,11 @@ class VanillaSubjectPolicy(SocraticProgram):
     
     def get_description(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
-            raise ValueError("Shot transitions are not supported in this policy.")
-        
+            # raise ValueError("Shot transitions are not supported in this policy.")
+            policy = read_text_file("caption_policy/policy/subject_description/policy.txt")
+            policy += "\n\nThis video contains one or more shot transitions. Please describe the subject of each segment in a single fluent paragraph."
+            return policy
+
         if data.cam_setup.is_framing_subject is False:
             # This much be a Scenery shot
             # return ("The video is a scenery shot. You do not need to describe the subject. "
