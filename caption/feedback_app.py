@@ -27,6 +27,7 @@ ANNOTATORS = {
     "Xianya Dai": {"password": "xianya"},
     "Kaibo Yang": {"password": "kaibo"},
     "Tina Xu": {"password": "tina"},
+    "Shihang Zhu": {"password": "shihang"},
     "Zhiqiu Lin": {"password": "zhiqiu"},
     "Test User": {"password": "test"}
 }
