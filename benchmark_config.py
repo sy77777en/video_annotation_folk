@@ -4857,10 +4857,10 @@ def get_brightness_complex_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDE
         {
             "folder": lighting_folder,
             "name": "brightness_is_contrasting",
-            "pos_question": "Does the video show strong brightness contrast, with large areas of the scene clearly differing in brightness?",
-            "neg_question": "Does the video not show strong brightness contrast with large areas of the scene clearly differing in brightness?",
-            "pos_prompt": "The video shows strong brightness contrast, with large areas of the scene clearly differing in brightness.",
-            "neg_prompt": "The video does not show strong brightness contrast with large areas of the scene clearly differing in brightness.",
+            "pos_question": "Does the video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video?",
+            "neg_question": "Does the video not show both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video?",
+            "pos_prompt": "The video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video.",
+            "neg_prompt": "The video does not show both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video.",
             "pos": {
                 "label": "lighting_setup.color_grading.brightness.brightness_is_contrasting",
                 "type": "pos",
@@ -4873,10 +4873,10 @@ def get_brightness_complex_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDE
         {
             "folder": lighting_folder,
             "name": "brightness_is_complex_others",
-            "pos_question": "Is the brightness (or exposure) too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas?",
-            "neg_question": "Is the brightness (or exposure) not too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas?",  
-            "pos_prompt": "The brightness (or exposure) is too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas.",
-            "neg_prompt": "The brightness (or exposure) is not too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas.",
+            "pos_question": "Is the video showing both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure changes over time across large portions of the frame?",
+            "neg_question": "Is the video not showing both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure not changing over time across large portions of the frame?",  
+            "pos_prompt": "The video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure changes over time across large portions of the frame.",
+            "neg_prompt": "The video does not show both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure does not change over time across large portions of the frame.",
             "pos": {
                 "label": "lighting_setup.color_grading.brightness.brightness_is_complex_others",
                 "type": "pos",

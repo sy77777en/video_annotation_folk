@@ -301,8 +301,8 @@ class LightingSetupData:
             self.subject_light_contrast_is_minimal = self.subject_contrast_ratio == "minimal_contrast"
             self.subject_light_contrast_is_complex = self.subject_contrast_ratio == "complex"
             self.flat_lighting = self.subject_contrast_ratio == "minimal_contrast"
-            self.low_key_lighting = self.subject_light_contrast_is_high is True and self.brightness_is_dark is False
-            self.high_key_lighting = self.subject_light_contrast_is_minimal is True and self.is_darker_than_normal is False
+            self.low_key_lighting = self.subject_light_contrast_is_high is True and self.brightness_is_very_bright is False
+            self.high_key_lighting = self.subject_light_contrast_is_minimal is True and self.brightness_is_very_dark is False
 
         if not self.is_subject_lighting_applicable:
             self.direction_is_back_light = None

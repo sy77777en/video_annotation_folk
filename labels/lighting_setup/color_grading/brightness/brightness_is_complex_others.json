@@ -2,7 +2,7 @@
     "label": "Brightness Is Complex (Others)",
     "label_name": "brightness_is_complex_others",
     "def_question": [
-        "Is the brightness (or exposure) too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas?"
+        "Is the video showing both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure changes over time across large portions of the frame?"
     ],
     "alt_question": [
         "Does the scene mix bright highlights with deep shadows?",
@@ -15,7 +15,7 @@
         "Are bright and dark regions equally prominent in the composition?"
     ],
     "def_prompt": [
-        "The brightness (or exposure) is too complex to be described as bright, neutral, dark, transitions among them, or strong contrast between bright and dark areas."
+        "The video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure changes over time across large portions of the frame."
     ],
     "alt_prompt": [
         "A video with extreme light and dark contrasts in the same frame.",

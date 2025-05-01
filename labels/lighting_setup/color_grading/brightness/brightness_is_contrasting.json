@@ -2,7 +2,7 @@
     "label": "Brightness Is Contrasting (Complex)",
     "label_name": "brightness_is_contrasting",
     "def_question": [
-        "Does the video show strong brightness contrast, with large areas of the scene clearly differing in brightness?"
+        "Does the video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video?"
     ],
     "alt_question": [
         "Does the scene mix bright highlights with deep shadows?",
@@ -15,7 +15,7 @@
         "Are bright and dark regions equally prominent in the composition?"
     ],
     "def_prompt": [
-        "The video shows strong brightness contrast, with large areas of the scene clearly differing in brightness."
+        "The video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video."
     ],
     "alt_prompt": [
         "A video with extreme light and dark contrasts in the same frame.",
