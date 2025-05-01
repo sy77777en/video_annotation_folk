@@ -843,7 +843,7 @@ class LightingSetupData:
 
         if self.subject_contrast_ratio == "unknown":
             if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, self.subject_bottom_light, self.subject_side_light, \
-                self.subject_ambient_light, self.professional_lighting, self.rembrandt_lighting]):
+                self.subject_ambient_light, self.rembrandt_lighting]):
                 raise ValueError("subject_contrast_ratio must be specified if subject lighting is present")
 
 lighting_setup_params_demo = {

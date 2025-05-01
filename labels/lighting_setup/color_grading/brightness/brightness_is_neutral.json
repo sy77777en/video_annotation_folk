@@ -2,7 +2,7 @@
     "label": "Brightness Is Neutral",
     "label_name": "brightness_is_neutral",
     "def_question": [
-        "Does the video show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?"
+        "Does the video show a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?"
     ],
     "alt_question": [
         "Does the scene feature an evenly lit environment?",
@@ -15,7 +15,7 @@
         "Is the brightness well-balanced for a neutral appearance?"
     ],
     "def_prompt": [
-        "The video shows a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)."
+        "The video shows a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)."
     ],
     "alt_prompt": [
         "A video with an evenly balanced brightness level.",

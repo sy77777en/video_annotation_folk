@@ -4613,10 +4613,10 @@ def get_color_temperature_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY
         {
             "folder": lighting_folder,
             "name": "color_temperature_is_neutral",
-            "pos_question": "Does the video have a mostly neutral color palette with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense)?",
-            "neg_question": "Does the video not have a mostly neutral color palette with no strong warm or cool tones standing out, and the contrasts between colors are not mild (overly intense)?",
-            "pos_prompt": "The video's color palette is mostly neutral, with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense).",
-            "neg_prompt": "The video's color palette is not mostly neutral with no strong warm or cool tones standing out, and the contrasts between colors are not mild (overly intense).",
+            "pos_question": "Does the video have a mostly neutral and stable color palette with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense)?",
+            "neg_question": "Does the video not have a mostly neutral and stable color palette with no strong warm or cool tones standing out, and the contrasts between colors are not mild (overly intense)?",
+            "pos_prompt": "The video's color palette is mostly neutral and stable, with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense).",
+            "neg_prompt": "The video's color palette is not mostly neutral and stable with no strong warm or cool tones standing out, and the contrasts between colors are not mild (overly intense).",
             "pos": {
                 "label": "lighting_setup.color_grading.temperature.color_temperature_is_neutral",
                 "type": "pos",
@@ -4717,10 +4717,10 @@ def get_colorfulness_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLD
         {
             "folder": lighting_folder,
             "name": "colorfulness_is_neutral",
-            "pos_question": "Does the video feature a balanced level of colorfulness, without being dominated by either overly vivid or overly grayish colors?",
-            "neg_question": "Does the video not feature a balanced level of colorfulness, without being dominated by either overly vivid or overly grayish colors?",
-            "pos_prompt": "The video features a balanced level of colorfulness, without being dominated by either overly vivid or overly grayish colors.",
-            "neg_prompt": "The video does not feature a balanced level of colorfulness, without being dominated by either overly vivid or overly grayish colors.",
+            "pos_question": "Does the video feature a balanced and stable level of colorfulness, without being dominated by either overly vivid or overly grayish colors?",
+            "neg_question": "Does the video not feature a balanced and stable level of colorfulness, without being dominated by either overly vivid or overly grayish colors?",
+            "pos_prompt": "The video features a balanced and stable level of colorfulness, without being dominated by either overly vivid or overly grayish colors.",
+            "neg_prompt": "The video does not feature a balanced and stable level of colorfulness, without being dominated by either overly vivid or overly grayish colors.",
             "pos": {
                 "label": "lighting_setup.color_grading.colorfulness.colorfulness_is_neutral",
                 "type": "pos",
@@ -4805,10 +4805,10 @@ def get_brightness_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER
         {
             "folder": lighting_folder,
             "name": "brightness_is_neutral",
-            "pos_question": "Does the video show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?",
-            "neg_question": "Does the video not show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?",
-            "pos_prompt": "The video shows a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).",
-            "neg_prompt": "The video does not show a scene with balanced illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).",
+            "pos_question": "Does the video show a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?",
+            "neg_question": "Does the video not show a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?",
+            "pos_prompt": "The video shows a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).",
+            "neg_prompt": "The video does not show a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).",
             "pos": {
                 "label": "lighting_setup.color_grading.brightness.brightness_is_neutral",
                 "type": "pos",
