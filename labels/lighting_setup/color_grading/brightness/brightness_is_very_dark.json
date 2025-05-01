@@ -2,7 +2,7 @@
     "label": "Brightness Is Very Dark",
     "label_name": "brightness_is_very_dark",
     "def_question": [
-        "Is the video showing a scene that is extremely dark and underexposed, with minimal lighting and most areas showing barely any visible details?"
+        "Does the video appear very dark due to underexposure or dim lighting, with a loss of detail in around half or more of the frame?"
     ],
     "alt_question": [
         "Does the scene have near-complete darkness?",
@@ -15,7 +15,7 @@
         "Is most of the frame underexposed, making it difficult to see details?"
     ],
     "def_prompt": [
-        "The video shows a scene that is extremely dark and underexposed, with minimal lighting and most areas showing barely any visible details."
+        "The video appears very dark due to underexposure or dim lighting, with a loss of detail in around half or more of the frame."
     ],
     "alt_prompt": [
         "A shot where most of the frame is nearly pitch black.",

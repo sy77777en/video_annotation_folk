@@ -2,7 +2,7 @@
     "label": "Brightness Is Changing (Complex)",
     "label_name": "brightness_is_changing",
     "def_question": [
-        "Does the overall brightness of the video change over time, with noticeable shifts between brighter and darker levels across large portions of the frame?"
+        "Does the overall brightness or exposure of the video change over time, with noticeable shifts between brighter and darker levels across large portions of the frame?"
     ],
     "alt_question": [
         "Does the lighting intensity change noticeably throughout the video?",
@@ -15,7 +15,7 @@
         "Is the video’s brightness level actively changing?"
     ],
     "def_prompt": [
-        "The overall brightness of the video changes over time, with noticeable shifts between brighter and darker levels across large portions of the frame."
+        "The overall brightness or exposure of the video changes over time, with noticeable shifts between brighter and darker levels across large portions of the frame."
     ],
     "alt_prompt": [
         "A video where brightness fluctuates across scenes.",
