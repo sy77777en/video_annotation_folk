@@ -337,8 +337,10 @@ def get_precaption_llm_name(config_dict, selected_config):
         # return "qwen2.5-vl-72b"
         return "gemini-2.5-pro-preview-03-25"
     elif task in ["raw_lighting_setup_dynamics", "raw_lighting_effects_dynamics"]:
-        print(f"Using qwen2.5-vl-7b for {task}")
-        return "qwen2.5-vl-7b"
+        # print(f"Using qwen2.5-vl-7b for {task}")
+        # return "qwen2.5-vl-7b"
+        print(f"Using gemini-2.5-pro-preview-03-25 for {task}")
+        return "gemini-2.5-pro-preview-03-25"
     else:
         # return "gpt-4o-2024-08-06"
         return "gemini-2.5-pro-preview-03-25"

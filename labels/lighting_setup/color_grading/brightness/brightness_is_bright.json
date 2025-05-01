@@ -2,7 +2,7 @@
     "label": "Brightness Is Bright",
     "label_name": "is_bright",
     "def_question": [
-        "Is the video showing a bright and well-lit scene, with high light levels and clearly visible details without much overexposure?"
+        "Is the video showing a bright, well-lit scene with high overall luminance, where details are clearly visible and there is no underexposure and minimal or no overexposure?"
     ],
     "alt_question": [
         "Does the scene have a well-lit, vibrant appearance?",
@@ -15,7 +15,7 @@
         "Are the shadows minimal due to well-balanced bright lighting?"
     ],
     "def_prompt": [
-        "The video shows a bright and well-lit scene, with high light levels and clearly visible details without much overexposure."
+        "The video shows a bright, well-lit scene with high overall luminance, where details are clearly visible and there is no underexposure and minimal or no overexposure."
     ],
     "alt_prompt": [
         "A video featuring strong and well-distributed lighting.",

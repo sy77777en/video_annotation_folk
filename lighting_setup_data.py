@@ -10,12 +10,12 @@ class LightingSetupData:
         # Options: "warm", "neutral", "cool", "black_white", "complex_changing", "complex_contrasting", "complex_others"
         self.color_temperature = "complex_others"
 
-        # Color saturation options
-        # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
-        self.color_saturation = "complex_others"
+        # Colorfulness options
+        # Options: "high_colorfulness", "neutral", "low_colorfulness", "black_white", "complex_changing", "complex_contrasting", "complex_others"
+        self.colorfulness = "complex_others"
 
         # Brightness level options
-        # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
+        # Options: "very_bright", "bright_deprecated", "neutral", "dark_deprecated", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
         self.brightness = "complex_others"
 
         # Color grading description
@@ -143,15 +143,18 @@ class LightingSetupData:
     def _set_color_grading_attributes(self):
         attributes = [
             "is_color_grading_complex", "is_black_white",
-            "is_brighter_than_normal", "is_darker_than_normal",
+            # "is_brighter_than_normal", "is_darker_than_normal",
             "color_temperature_is_warm", "color_temperature_is_cool", "color_temperature_is_neutral",
             "color_temperature_is_complex_changing", "color_temperature_is_complex_contrasting",
             "color_temperature_is_complex_others",
-            "color_saturation_is_high", "color_saturation_is_low", "color_saturation_is_neutral",
-            "color_saturation_is_complex_changing", "color_saturation_is_complex_contrasting",
-            "color_saturation_is_complex_others",
-            "brightness_is_very_bright", "brightness_is_bright", "brightness_is_neutral",
-            "brightness_is_dark", "brightness_is_very_dark",
+            "colorfulness_is_high", "colorfulness_is_low", "colorfulness_is_neutral",
+            "colorfulness_is_complex_changing", "colorfulness_is_complex_contrasting",
+            "colorfulness_is_complex_others",
+            "brightness_is_very_bright", 
+            # "brightness_is_bright", 
+            "brightness_is_neutral",
+            # "brightness_is_dark", 
+            "brightness_is_very_dark",
             "brightness_is_complex_changing", "brightness_is_complex_contrasting",
             "brightness_is_complex_others"
         ]
@@ -166,13 +169,13 @@ class LightingSetupData:
         # Complex color grading check
         self.is_color_grading_complex = any([
             self.color_temperature in complex_types,
-            self.color_saturation in complex_types,
+            self.colorfulness in complex_types,
             self.brightness in complex_types
         ])
 
         # Black & white check
         self.is_black_white = (
-            self.color_saturation == "black_white" or 
+            self.colorfulness == "black_white" or 
             self.color_temperature == "black_white"
         )
 
@@ -185,41 +188,41 @@ class LightingSetupData:
             self.color_temperature_is_complex_changing = self.color_temperature == "complex_changing"
             self.color_temperature_is_complex_contrasting = self.color_temperature == "complex_contrasting"
         else:
-            self.color_temperature_is_complex_changing = None
-            self.color_temperature_is_complex_contrasting = None
+            self.color_temperature_is_complex_changing = True
+            self.color_temperature_is_complex_contrasting = True
 
         self.color_temperature_is_complex_others = self.color_temperature == "complex_others"
 
-        # Color saturation attributes
-        self.color_saturation_is_high = self.color_saturation == "high_saturation"
-        self.color_saturation_is_low = self.color_saturation == "low_saturation"
-        self.color_saturation_is_neutral = self.color_saturation == "neutral"
+        # Colorfulness attributes
+        self.colorfulness_is_high = self.colorfulness == "high_colorfulness"
+        self.colorfulness_is_low = self.colorfulness == "low_colorfulness"
+        self.colorfulness_is_neutral = self.colorfulness == "neutral"
 
-        if self.color_saturation != "complex_others":
-            self.color_saturation_is_complex_changing = self.color_saturation == "complex_changing"
-            self.color_saturation_is_complex_contrasting = self.color_saturation == "complex_contrasting"
+        if self.colorfulness != "complex_others":
+            self.colorfulness_is_complex_changing = self.colorfulness == "complex_changing"
+            self.colorfulness_is_complex_contrasting = self.colorfulness == "complex_contrasting"
         else:
-            self.color_saturation_is_complex_changing = None
-            self.color_saturation_is_complex_contrasting = None
+            self.colorfulness_is_complex_changing = True
+            self.colorfulness_is_complex_contrasting = True
 
-        self.color_saturation_is_complex_others = self.color_saturation == "complex_others"
+        self.colorfulness_is_complex_others = self.colorfulness == "complex_others"
 
         # Brightness attributes
-        self.is_brighter_than_normal = self.brightness in {"very_bright", "bright"}
-        self.is_darker_than_normal = self.brightness in {"dark", "very_dark"}
+        # self.is_brighter_than_normal = self.brightness in {"very_bright", "bright"}
+        # self.is_darker_than_normal = self.brightness in {"dark", "very_dark"}
 
         self.brightness_is_very_bright = self.brightness == "very_bright"
-        self.brightness_is_bright = self.brightness == "bright"
+        # self.brightness_is_bright = self.brightness == "bright"
         self.brightness_is_neutral = self.brightness == "neutral"
-        self.brightness_is_dark = self.brightness == "dark"
+        # self.brightness_is_dark = self.brightness == "dark"
         self.brightness_is_very_dark = self.brightness == "very_dark"
 
         if self.brightness != "complex_others":
             self.brightness_is_complex_changing = self.brightness == "complex_changing"
             self.brightness_is_complex_contrasting = self.brightness == "complex_contrasting"
         else:
-            self.brightness_is_complex_changing = None
-            self.brightness_is_complex_contrasting = None
+            self.brightness_is_complex_changing = True
+            self.brightness_is_complex_contrasting = True
 
         self.brightness_is_complex_others = self.brightness == "complex_others"
 
@@ -365,11 +368,11 @@ class LightingSetupData:
         else:
             raise ValueError("color_temperature must be one of 'warm', 'neutral', 'cool', 'black_white', 'complex_changing', 'complex_contrasting', 'complex_others'")
 
-    def set_color_saturation(self, color_saturation):
-        if color_saturation in ["high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"]:
-            self.color_saturation = color_saturation
+    def set_colorfulness(self, colorfulness):
+        if colorfulness in ["high_colorfulness", "neutral", "low_colorfulness", "black_white", "complex_changing", "complex_contrasting", "complex_others"]:
+            self.colorfulness = colorfulness
         else:
-            raise ValueError("color_saturation must be one of 'high_saturation', 'neutral', 'low_saturation', 'black_white', 'complex_changing', 'complex_contrasting', 'complex_others'")
+            raise ValueError("colorfulness must be one of 'high_colorfulness', 'neutral', 'low_colorfulness', 'black_white', 'complex_changing', 'complex_contrasting', 'complex_others'")
 
     def set_brightness(self, brightness):
         if brightness in ["very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"]:
@@ -816,12 +819,16 @@ class LightingSetupData:
             return # No need to verify other fields if shot transition is present or data is not labeled
 
         # complex_reasons = ["complex_changing", "complex_contrasting", "complex_others"]
-        # if any([self.color_temperature in complex_reasons, self.color_saturation in complex_reasons, self.brightness in complex_reasons]):
+        # if any([self.color_temperature in complex_reasons, self.colorfulness in complex_reasons, self.brightness in complex_reasons]):
         #     if not self.color_grading_description:
         #         raise ValueError("color_grading_description must be provided for complex color grading")
         if self.color_temperature == "black_white":
-            if not self.color_saturation == "black_white":
-                raise ValueError("color_saturation must be 'black_white' if color_temperature is 'black_white'")
+            if not self.colorfulness == "black_white":
+                raise ValueError("colorfulness must be 'black_white' if color_temperature is 'black_white'")
+
+        # Make sure brightness is not deprecated
+        if self.brightness == "bright_deprecated" or self.brightness == "dark_deprecated":
+            raise ValueError("brightness cannot be 'bright_deprecated' or 'dark_deprecated'")
 
         if self.abstract_light_source:
             if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source]):
@@ -842,7 +849,7 @@ class LightingSetupData:
 lighting_setup_params_demo = {
     "shot_transition": False,
     "color_temperature": "cool",
-    "color_saturation": "high_saturation",
+    "colorfulness": "high_colorfulness",
     "brightness": "very_bright",
     "color_grading_description": "Cool tones with high saturation and bright lighting",
     "scene_type": "interior",

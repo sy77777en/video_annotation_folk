@@ -18,11 +18,20 @@ ANNOTATOR_MAPPING = {
     "video_urls/20250406_setup_and_motion/overlap_950_to_960.json": "Mingyu Wang",
 }
 
+# ANNOTATOR_MAPPING = {
+#     "video_urls/lighting_120_new/batch1.json": "Tiffany Ling",
+#     "video_urls/lighting_120_new/batch2.json": "Xianya Dai",
+#     "video_urls/lighting_120_new/batch3.json": "Yubo Wang",
+#     "video_urls/lighting_120_new/batch4.json": "Zida Zhou",
+#     "video_urls/lighting_120_new/batch10.json": "Zhiqiu Lin",
+# }
+
 def parse_args():
     """Parse command line arguments"""
     parser = argparse.ArgumentParser(description="Add user information to feedback files")
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the output directory")
     parser.add_argument("--configs", type=str, default="all_configs.json", help="Path to the JSON config file")
+    # parser.add_argument("--configs", type=str, default="lighting_configs.json", help="Path to the JSON config file")
     parser.add_argument("--dry_run", action="store_true", default=False, help="Only print what would be done without making changes")
     return parser.parse_args()
 

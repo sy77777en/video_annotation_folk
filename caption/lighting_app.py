@@ -64,7 +64,7 @@ def parse_args():
     parser.add_argument("--video_data", type=str, default="video_data/20250406lighting_only/videos.json", help="Path to the video data file")
     # parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup", "lighting_setup"], help="List of label collections to load from the video data")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["lighting_setup"], help="List of label collections to load from the video data")
-    parser.add_argument("--personalize_output", action="store_true", default=True, help="Whether to personalize the output directory based on the logged-in user")
+    parser.add_argument("--personalize_output", action="store_true", default=False, help="Whether to personalize the output directory based on the logged-in user")
     return parser.parse_args()
 
 # Load configuration

@@ -2,7 +2,7 @@
     "label": "Brightness Is Very Bright",
     "label_name": "is_very_bright",
     "def_question": [
-        "Is the video excessively bright and overexposed, making details hard to see?"
+        "Is the video excessively bright and overexposed, making details hard to see in large parts of the frame?"
     ],
     "alt_question": [
         "Is the scene overexposed and extremely bright?",
@@ -15,7 +15,7 @@
         "Are most areas of the video too bright to retain clear details?"
     ],
     "def_prompt": [
-        "The video is excessively bright and overexposed, making details hard to see."
+        "The video is excessively bright and overexposed, making details hard to see in large parts of the frame."
     ],
     "alt_prompt": [
         "A scene with extreme brightness, causing details to be washed out.",

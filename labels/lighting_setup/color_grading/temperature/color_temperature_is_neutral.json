@@ -2,7 +2,7 @@
     "label": "Color Temperature Is Neutral",
     "label_name": "color_temperature_is_neutral",
     "def_question": [
-        "Does the video have a neutral color palette with neither warm nor cool tones being dominant?"
+        "Does the video have a neutral color palette with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense)?"
     ],
     "alt_question": [
         "Is the video’s color temperature balanced and natural?",
@@ -15,7 +15,7 @@
         "Is the scene visually neutral without a strong color cast?"
     ],
     "def_prompt": [
-        "The video's color palette is neutral, with neither warm nor cool tones being dominant."
+        "The video's color palette is neutral, with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense)."
     ],
     "alt_prompt": [
         "A video with evenly balanced color grading.",

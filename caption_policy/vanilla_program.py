@@ -1268,24 +1268,24 @@ class VanillaColorPolicy(SocraticProgram):
                 color_temperature_str += " (no need to mention)."
             return color_temperature_str
 
-    def format_color_saturation(self, color_saturation: str, color_saturation_dir="labels/lighting_setup/color_grading/saturation/") -> str:
-        # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
-        color_saturation_info = {
-            "high_saturation": "color_saturation_is_high",
-            "neutral": "color_saturation_is_neutral",
-            "low_saturation": "color_saturation_is_low",
-            "complex_changing": "color_saturation_is_changing",
-            "complex_contrasting": "color_saturation_is_contrasting",
-            "complex_others": "color_saturation_is_complex_others",
+    def format_colorfulness(self, colorfulness: str, colorfulness_dir="labels/lighting_setup/color_grading/colorfulness/") -> str:
+        # Options: "high_colorfulness", "neutral", "low_colorfulness", "black_white", "complex_changing", "complex_contrasting", "complex_others"
+        colorfulness_info = {
+            "high_colorfulness": "colorfulness_is_high",
+            "neutral": "colorfulness_is_neutral",
+            "low_colorfulness": "colorfulness_is_low",
+            "complex_changing": "colorfulness_is_changing",
+            "complex_contrasting": "colorfulness_is_contrasting",
+            "complex_others": "colorfulness_is_complex_others",
         }
-        if color_saturation == "black_white":
+        if colorfulness == "black_white":
             return "The video is in black and white."
         else:
-            color_saturation = color_saturation_info[color_saturation]
-            color_saturation_str = read_json_file(os.path.join(color_saturation_dir, f"{color_saturation}.json"))['def_prompt'][0]
-            if color_saturation == "normal":
-                color_saturation_str += " (no need to mention)."
-            return color_saturation_str
+            colorfulness = colorfulness_info[colorfulness]
+            colorfulness_str = read_json_file(os.path.join(colorfulness_dir, f"{colorfulness}.json"))['def_prompt'][0]
+            if colorfulness == "normal":
+                colorfulness_str += " (no need to mention)."
+            return colorfulness_str
     
     def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/color_grading/brightness/") -> str:
         # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
@@ -1324,7 +1324,7 @@ class VanillaColorPolicy(SocraticProgram):
         policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
 
         policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
-        policy += "\n\n**Color Saturation:** {}".format(self.format_color_saturation(data.lighting_setup.color_saturation))
+        policy += "\n\n**Color Saturation:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
         policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
         return policy
 
@@ -1731,24 +1731,24 @@ class RawColorPolicy(SocraticProgram):
                 color_temperature_str += " (no need to mention)."
             return color_temperature_str
 
-    def format_color_saturation(self, color_saturation: str, color_saturation_dir="labels/lighting_setup/color_grading/saturation/") -> str:
-        # Options: "high_saturation", "neutral", "low_saturation", "black_white", "complex_changing", "complex_contrasting", "complex_others"
-        color_saturation_info = {
-            "high_saturation": "color_saturation_is_high",
-            "neutral": "color_saturation_is_neutral",
-            "low_saturation": "color_saturation_is_low",
-            "complex_changing": "color_saturation_is_changing",
-            "complex_contrasting": "color_saturation_is_contrasting",
-            "complex_others": "color_saturation_is_complex_others",
+    def format_colorfulness(self, colorfulness: str, colorfulness_dir="labels/lighting_setup/color_grading/colorfulness/") -> str:
+        # Options: "high_colorfulness", "neutral", "low_colorfulness", "black_white", "complex_changing", "complex_contrasting", "complex_others"
+        colorfulness_info = {
+            "high_colorfulness": "colorfulness_is_high",
+            "neutral": "colorfulness_is_neutral",
+            "low_colorfulness": "colorfulness_is_low",
+            "complex_changing": "colorfulness_is_changing",
+            "complex_contrasting": "colorfulness_is_contrasting",
+            "complex_others": "colorfulness_is_complex_others",
         }
-        if color_saturation == "black_white":
+        if colorfulness == "black_white":
             return "The video is in black and white."
         else:
-            color_saturation = color_saturation_info[color_saturation]
-            color_saturation_str = read_json_file(os.path.join(color_saturation_dir, f"{color_saturation}.json"))['def_prompt'][0]
-            if color_saturation == "color_saturation_is_neutral":
-                color_saturation_str += " (no need to mention)."
-            return color_saturation_str
+            colorfulness = colorfulness_info[colorfulness]
+            colorfulness_str = read_json_file(os.path.join(colorfulness_dir, f"{colorfulness}.json"))['def_prompt'][0]
+            if colorfulness == "colorfulness_is_neutral":
+                colorfulness_str += " (no need to mention)."
+            return colorfulness_str
 
     def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/color_grading/brightness/") -> str:
         # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
@@ -1779,7 +1779,7 @@ class RawColorPolicy(SocraticProgram):
         policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
 
         policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
-        policy += "\n\n**Color Saturation:** {}".format(self.format_color_saturation(data.lighting_setup.color_saturation))
+        policy += "\n\n**Color Saturation:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
         policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
         policy += "\n\n" + read_text_file("caption_policy/policy/color_composition_dynamics/format_instruction.txt")
         return policy
@@ -1940,7 +1940,7 @@ class RawLightingSetupPolicy(SocraticProgram):
             policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
             policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
             policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
-
+        policy += "\n\n" + read_text_file("caption_policy/policy/lighting_setup_dynamics/format_instruction.txt")
         return policy
 
 
@@ -2125,5 +2125,5 @@ class RawLightingEffectsPolicy(SocraticProgram):
         policy += "\n\n**Shadow Patterns or Gobo Lighting Effects:** {}".format(shadow_patterns_str)
         policy += "\n\n**Lighting Dynamics:** {}".format(light_dynamics_str)
         policy += "\n\n**Other Dynamics: {}".format(dynamics_str)
-        # policy += "\n\n" + read_text_file("caption_policy/policy/lighting_effects_dynamics/format_instruction.txt")
+        policy += "\n\n" + read_text_file("caption_policy/policy/lighting_effects_dynamics/format_instruction.txt")
         return policy
