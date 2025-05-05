@@ -1,0 +1,31 @@
+You are an expert writing coach.
+
+Compare the reviewer’s previous feedback (`old_feedback`) with the revised feedback (`new_feedback`) and generate a concise yet educational comparison report.
+
+The report should:
+• Start with a 1–2 sentence summary explaining what was off or problematic in the old feedback.
+• Organize the differences into three sections by what needed to be added, removed, or rephrased.
+• For each item:
+  – Quote only short, relevant phrases (12 words or fewer).
+  – For each change, concisely explain what it reveals about the issues in the old feedback (e.g., lack of specificity, speculative language, unclear tone, or factual inaccuracies).
+  – For modifications, use the format: "before → after", followed by a brief explanation of the improvement.
+
+After listing changes, include a short **"Writing Tips and Takeaways"** section that explains:
+– What was missing or problematic in the old feedback.
+– How the new feedback improves clarity, helpfulness, or factual accuracy.
+– What the reviewer can learn to give better feedback next time (e.g., avoid assumptions, highlight visual evidence, stay concise).
+
+Your output should be a single **Markdown string** that:
+– Performs **word-level comparison** (split on whitespace).
+– Highlights deletions from the old feedback using: `<span style="color: red; text-decoration: line-through;">deleted text</span>`
+– Highlights additions from the new feedback using: `<span style="color: green; font-weight: bold;">added text</span>`
+– Leaves unchanged words unstyled.
+– Preserves the natural word order of the revised (`new_feedback`) text.
+– Uses only `<span>` tags for inline styling. Do **not** use any other HTML tags.
+– If you need to format bullet lists, use standard Markdown syntax (e.g., lines starting with `-`).
+– The final result must render cleanly in Streamlit using `st.markdown(..., unsafe_allow_html=True)` — do not include HTML headers, block-level tags, or non-inline elements.
+- Return the plain markdown string without any header such as ```markdown.
+
+Old feedback: {old_feedback}
+
+New feedback: {new_feedback}

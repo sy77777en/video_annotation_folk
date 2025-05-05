@@ -1,24 +1,23 @@
 import streamlit as st
-import difflib
 import os
-import re
 import json
+import argparse
 from feedback_app import (
-    parse_args, load_video_data, get_video_id, load_json, 
+    parse_args, load_video_data, get_video_id, load_json, highlight_differences, split_into_words,
     get_filename, load_data, FOLDER, FEEDBACK_FILE_POSTFIX, PREV_FEEDBACK_FILE_POSTFIX,
-    load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS, REVIEWER_FILE_POSTFIX
+    load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS, REVIEWER_FILE_POSTFIX,
+    display_feedback_info, display_feedback_differences, display_caption_differences
 )
 from datetime import datetime
 
 def get_video_status(video_id, output_dir):
     """Get the status of a video's caption completion and previous iterations"""
-    # Status emoji map
-    status_emoji_map = {
-        "not_completed": "",  # Not completed - no emoji
-        "completed_not_reviewed": "✅",  # Completed but not reviewed - single checkmark
-        "approved": "✅✅",  # Approved - double checkmark
-        "rejected": "❌"  # Rejected
-    }
+    # Initialize all variables
+    status = "not_completed"
+    current_file = None
+    prev_file = None
+    current_user = None
+    prev_user = None
     
     # Check all relevant files
     feedback_file = get_filename(video_id, output_dir, FEEDBACK_FILE_POSTFIX)
@@ -27,78 +26,49 @@ def get_video_status(video_id, output_dir):
     
     # Determine status based on file existence and content
     if not os.path.exists(feedback_file):
-        status = "not_completed"
-        current_file = None
-        prev_file = None
-        current_user = None
-        prev_user = None
-    elif not os.path.exists(reviewer_file):
+        return status, current_file, prev_file, current_user, prev_user
+        
+    current_file = feedback_file
+    with open(feedback_file, 'r') as f:
+        current_data = json.load(f)
+        current_user = current_data.get("user")
+    
+    if not os.path.exists(reviewer_file):
         status = "completed_not_reviewed"
-        current_file = feedback_file
-        prev_file = None
-        current_user = None
-        prev_user = None
-    else:
-        # Load reviewer data
-        with open(reviewer_file, 'r') as f:
-            reviewer_data = json.load(f)
-            reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
-            
-            if reviewer_double_check:
-                status = "approved"
-                # For approved files, either no prev feedback or same user
-                if os.path.exists(prev_feedback_file):
-                    with open(prev_feedback_file, 'r') as pf:
-                        prev_data = json.load(pf)
-                        prev_user = prev_data.get("user")
-                        with open(feedback_file, 'r') as cf:
-                            current_data = json.load(cf)
-                            current_user = current_data.get("user")
-                            assert prev_user == current_user, f"Approved file {video_id} has different users in current and previous feedback"
-            else:
-                status = "rejected"
-                # For rejected files, must have prev feedback with different user
-                assert os.path.exists(prev_feedback_file), f"Rejected file {video_id} must have previous feedback"
+        return status, current_file, prev_file, current_user, prev_user
+    
+    # Load reviewer data
+    with open(reviewer_file, 'r') as f:
+        reviewer_data = json.load(f)
+        reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
+        
+        if reviewer_double_check:
+            status = "approved"
+            # For approved files, either no prev feedback or same user
+            if os.path.exists(prev_feedback_file):
                 with open(prev_feedback_file, 'r') as pf:
                     prev_data = json.load(pf)
                     prev_user = prev_data.get("user")
                     with open(feedback_file, 'r') as cf:
                         current_data = json.load(cf)
                         current_user = current_data.get("user")
-                        assert prev_user != current_user, f"Rejected file {video_id} must have different users in current and previous feedback"
-            
-            current_file = feedback_file
-            prev_file = prev_feedback_file if os.path.exists(prev_feedback_file) else None
+                        assert prev_user == current_user, f"Approved file {video_id} has different users in current and previous feedback"
+        else:
+            status = "rejected"
+            # For rejected files, must have prev feedback with different user
+            assert os.path.exists(prev_feedback_file), f"Rejected file {video_id} must have previous feedback"
+            with open(prev_feedback_file, 'r') as pf:
+                prev_data = json.load(pf)
+                prev_user = prev_data.get("user")
+                with open(feedback_file, 'r') as cf:
+                    current_data = json.load(cf)
+                    current_user = current_data.get("user")
+                    assert prev_user != current_user, f"Rejected file {video_id} must have different users in current and previous feedback"
+        
+        prev_file = prev_feedback_file if os.path.exists(prev_feedback_file) else None
     
     return status, current_file, prev_file, current_user, prev_user
 
-def split_into_words(text):
-    """Split text into words for better diff visualization"""
-    # Split by whitespace and punctuation
-    words = re.findall(r"\w+|\W+", text)
-    return words
-
-def highlight_differences(text1, text2):
-    """Highlight differences between two texts using HTML with word-level granularity"""
-    # Split texts into words
-    words1 = split_into_words(text1)
-    words2 = split_into_words(text2)
-    
-    # Use difflib to find differences
-    differ = difflib.Differ()
-    diff = list(differ.compare(words1, words2))
-    
-    # Process the diff to create HTML with highlighting
-    result = []
-    for word in diff:
-        if word.startswith('  '):  # unchanged
-            result.append(word[2:])
-        elif word.startswith('- '):  # deleted
-            result.append(f'<span style="color: red; text-decoration: line-through;">{word[2:]}</span>')
-        elif word.startswith('+ '):  # added
-            result.append(f'<span style="color: green; font-weight: bold;">{word[2:]}</span>')
-    
-    return ''.join(result)
 
 def get_video_format_func(output_dir, video_urls=None):
     def video_format_func(video_url):
@@ -164,6 +134,17 @@ def format_timestamp(iso_timestamp):
         return dt.strftime("%Y-%m-%d %H:%M")
     except (ValueError, TypeError):
         return iso_timestamp  # Return original if parsing fails
+
+def display_caption_expander(data, user, timestamp):
+    """Helper function to display caption information in an expander"""
+    st.write("##### Annotator")
+    st.write(f"**Annotator:** {user}")
+    st.write(f"**Timestamp:** {format_timestamp(timestamp)}")
+    st.write("##### Pre-caption")
+    st.write(data.get("pre_caption", "No pre-caption available"))
+    
+    # Use the existing display_feedback_info function from feedback_app.py
+    display_feedback_info(data)
 
 def main(args):
     # Set page config first
@@ -400,9 +381,15 @@ def main(args):
         
         if status == "not_completed":
             st.warning("Please complete this caption first.")
-        elif status == "completed_no_prev":
-            st.info("No changes found.")
-        else:  # completed_with_prev
+        elif status == "completed_not_reviewed":
+            st.info("The caption has been completed but not reviewed yet.")
+        elif status == "approved":
+            # For approved captions, only show the current version
+            current_data = load_data(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+            st.success("✅ This caption has been approved! Great job!")
+            st.write("**Current Version:**")
+            display_caption_expander(current_data, current_user, current_data.get("timestamp", "Unknown"))
+        else:  # rejected
             # Load both current and previous captions
             current_data = load_data(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
             prev_data = load_data(video_id, output_dir=output_dir, file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
@@ -417,214 +404,30 @@ def main(args):
             st.write(f"**Previous Version:** By {prev_user} on {prev_timestamp}")
             
             # Display a message if the same user made both versions
-            if status == "completed_same_user":
-                st.info("✅ Same annotator made both versions. Changes are shown below.")
+            st.warning("❌ This caption was rejected and needs to be fixed.")
             
             # Display the differences
             current_caption = current_data["final_caption"]
             prev_caption = prev_data["final_caption"]
             
             # Create tabs for different views
-            tab1, tab2, tab3, tab4 = st.tabs(["Previous Version", "Current Version", "Caption Differences", "Feedback Differences"])
+            tab1, tab2, tab3, tab4 = st.tabs(["Feedback Differences", "Caption Differences", "Previous Version", "Current Version"])
             
             with tab1:
-                st.subheader("Previous Version")
-                st.write(f"**Annotator:** {prev_user}")
-                st.write(f"**Timestamp:** {format_timestamp(prev_data.get('timestamp', ''))}")
-                st.write("**Caption:**")
-                st.write(prev_data.get("final_caption", "No caption available"))
-                
-                # Add pre-caption, initial feedback, and GPT feedback information
-                with st.expander("Pre-caption and feedback", expanded=True):
-                    st.write("**Pre-caption:**")
-                    st.write(prev_data.get("pre_caption", "No pre-caption available"))
-                    st.write("**Initial Feedback:**")
-                    st.write(prev_data.get("initial_feedback", "No initial feedback available"))
-                    st.write("**GPT Feedback:**")
-                    st.write(prev_data.get("gpt_feedback", "No GPT feedback available"))
+                st.subheader("Feedback Differences")
+                display_feedback_differences(video_id, output_dir, diff_prompt=args.diff_prompt)
                 
             with tab2:
-                st.subheader("Current Version")
-                st.write(f"**Annotator:** {current_user}")
-                st.write(f"**Timestamp:** {format_timestamp(current_data.get('timestamp', ''))}")
-                st.write("**Caption:**")
-                st.write(current_data.get("final_caption", "No caption available"))
-                
-                # Add pre-caption, initial feedback, and GPT feedback information
-                with st.expander("Pre-caption and feedback", expanded=True):
-                    st.write("**Pre-caption:**")
-                    st.write(current_data.get("pre_caption", "No pre-caption available"))
-                    st.write("**Initial Feedback:**")
-                    st.write(current_data.get("initial_feedback", "No initial feedback available"))
-                    st.write("**GPT Feedback:**")
-                    st.write(current_data.get("gpt_feedback", "No GPT feedback available"))
+                st.subheader("Caption Differences")
+                display_caption_differences(video_id, output_dir, diff_prompt=args.diff_cap_prompt)
                 
             with tab3:
-                st.subheader("Caption Differences")
-                st.write("**Differences Summary:**")
+                st.subheader("Previous Version")
+                display_caption_expander(prev_data, prev_user, prev_data.get('timestamp', ''))
                 
-                # Get captions
-                prev_caption = prev_data.get("final_caption", "")
-                current_caption = current_data.get("final_caption", "")
-                
-                # Check if there are any differences
-                if prev_caption == current_caption:
-                    st.success("No differences found between the previous and current versions.")
-                else:
-                    # Highlight differences
-                    highlighted_diff = highlight_differences(prev_caption, current_caption)
-                    st.markdown(highlighted_diff, unsafe_allow_html=True)
-                
-                # Calculate statistics instead of showing all words
-                prev_words = split_into_words(prev_caption)
-                current_words = split_into_words(current_caption)
-                
-                # Calculate word counts
-                prev_word_count = len([w for w in prev_words if w.strip()])
-                current_word_count = len([w for w in current_words if w.strip()])
-                
-                # Calculate character counts
-                prev_char_count = len(prev_caption)
-                current_char_count = len(current_caption)
-                
-                # Calculate percentage changes
-                word_change_percent = ((current_word_count - prev_word_count) / max(prev_word_count, 1)) * 100
-                char_change_percent = ((current_char_count - prev_char_count) / max(prev_char_count, 1)) * 100
-                
-                # Display statistics
-                st.write("**Caption Statistics:**")
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    st.write(f"**Previous Version:**")
-                    st.write(f"- Word count: {prev_word_count}")
-                    st.write(f"- Character count: {prev_char_count}")
-                
-                with col2:
-                    st.write(f"**Current Version:**")
-                    st.write(f"- Word count: {current_word_count}")
-                    st.write(f"- Character count: {current_char_count}")
-                
-                st.write("**Differences:**")
-                st.write(f"- Word count difference: {current_word_count - prev_word_count} ({word_change_percent:.1f}%)")
-                st.write(f"- Character count difference: {current_char_count - prev_char_count} ({char_change_percent:.1f}%)")
-                
-                # Show a summary of the caption content
-                st.write("**Caption Summary:**")
-                if prev_caption and current_caption:
-                    st.write("**Previous Caption:**")
-                    st.write(prev_caption[:200] + "..." if len(prev_caption) > 200 else prev_caption)
-                    
-                    st.write("**Current Caption:**")
-                    st.write(current_caption[:200] + "..." if len(current_caption) > 200 else current_caption)
-                else:
-                    st.write("No caption available for comparison.")
-                
-                # Show key differences (most significant changes)
-                st.write("**Key Differences:**")
-                
-                # Find the most significant changes (longer phrases)
-                prev_phrases = [p for p in prev_caption.split('.') if p.strip()]
-                current_phrases = [p for p in current_caption.split('.') if p.strip()]
-                
-                # Find added and removed phrases
-                added_phrases = []
-                removed_phrases = []
-                
-                for phrase in current_phrases:
-                    if phrase.strip() and phrase.strip() not in prev_phrases:
-                        added_phrases.append(phrase.strip())
-                
-                for phrase in prev_phrases:
-                    if phrase.strip() and phrase.strip() not in current_phrases:
-                        removed_phrases.append(phrase.strip())
-                
-                # Show top 3 most significant changes
-                if added_phrases:
-                    st.write("**Added Phrases:**")
-                    for i, phrase in enumerate(added_phrases[:3]):
-                        st.write(f"{i+1}. {phrase}")
-                    if len(added_phrases) > 3:
-                        st.write(f"... and {len(added_phrases) - 3} more")
-                elif removed_phrases:
-                    st.write("**No added phrases.**")
-                
-                if removed_phrases:
-                    st.write("**Removed Phrases:**")
-                    for i, phrase in enumerate(removed_phrases[:3]):
-                        st.write(f"{i+1}. {phrase}")
-                    if len(removed_phrases) > 3:
-                        st.write(f"... and {len(removed_phrases) - 3} more")
-                elif added_phrases:
-                    st.write("**No removed phrases.**")
-                
-                if not added_phrases and not removed_phrases:
-                    st.write("**No significant differences found.**")
-
             with tab4:
-                st.subheader("Initial Feedback Differences")
-                st.write("**Differences in Initial Feedback:**")
-                
-                # Get initial feedback
-                prev_feedback = prev_data.get("initial_feedback")
-                current_feedback = current_data.get("initial_feedback")
-                
-                # Convert None to empty string
-                prev_feedback = "" if prev_feedback is None else prev_feedback
-                current_feedback = "" if current_feedback is None else current_feedback
-                
-                # Check if there are any differences
-                if prev_feedback == current_feedback:
-                    st.success("No differences found between the previous and current initial feedback.")
-                else:
-                    # Highlight differences
-                    highlighted_feedback_diff = highlight_differences(prev_feedback, current_feedback)
-                    st.markdown(highlighted_feedback_diff, unsafe_allow_html=True)
-                
-                # Calculate statistics instead of showing all words
-                prev_feedback_words = split_into_words(prev_feedback)
-                current_feedback_words = split_into_words(current_feedback)
-                
-                # Calculate word counts
-                prev_word_count = len([w for w in prev_feedback_words if w.strip()])
-                current_word_count = len([w for w in current_feedback_words if w.strip()])
-                
-                # Calculate character counts
-                prev_char_count = len(prev_feedback)
-                current_char_count = len(current_feedback)
-                
-                # Calculate percentage changes
-                word_change_percent = ((current_word_count - prev_word_count) / max(prev_word_count, 1)) * 100
-                char_change_percent = ((current_char_count - prev_char_count) / max(prev_char_count, 1)) * 100
-                
-                # Display statistics
-                st.write("**Feedback Statistics:**")
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    st.write(f"**Previous Version:**")
-                    st.write(f"- Word count: {prev_word_count}")
-                    st.write(f"- Character count: {prev_char_count}")
-                
-                with col2:
-                    st.write(f"**Current Version:**")
-                    st.write(f"- Word count: {current_word_count}")
-                    st.write(f"- Character count: {current_char_count}")
-                
-                st.write("**Differences:**")
-                st.write(f"- Word count difference: {current_word_count - prev_word_count} ({word_change_percent:.1f}%)")
-                st.write(f"- Character count difference: {current_char_count - prev_char_count} ({char_change_percent:.1f}%)")
-                
-                # Show a summary of the feedback content
-                st.write("**Feedback Summary:**")
-                if prev_feedback and current_feedback:
-                    st.write("**Previous Feedback:**")
-                    st.write(prev_feedback[:200] + "..." if len(prev_feedback) > 200 else prev_feedback)
-                    
-                    st.write("**Current Feedback:**")
-                    st.write(current_feedback[:200] + "..." if len(current_feedback) > 200 else current_feedback)
-                else:
-                    st.write("No feedback available for comparison.")
+                st.subheader("Current Version")
+                display_caption_expander(current_data, current_user, current_data.get('timestamp', ''))
 
 if __name__ == "__main__":
     args = parse_args()
