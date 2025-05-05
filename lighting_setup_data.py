@@ -231,9 +231,10 @@ class LightingSetupData:
             # "is_lighting_quality_complex",
             "scene_type_is_complex_others", "scene_type_is_exterior",
             "scene_type_is_interior", "scene_type_is_synthetic",
-            "sunlight_level_is_normal", "sunlight_level_is_sunny",
-            "sunlight_level_is_overcast", "sunlight_level_is_sunset_sunrise",
-            "sunlight_level_is_unknown", "light_quality_is_soft",
+            "sunlight_quality_is_normal", "sunlight_quality_is_hard",
+            "sunlight_quality_is_soft", "sunlight_quality_is_sunset_sunrise",
+            "sunlight_quality_is_unknown",
+            "light_quality_is_soft",
             "light_quality_is_hard", "light_quality_is_changing",
             "light_quality_is_contrasting", "light_quality_is_complex"
         ]
@@ -248,17 +249,17 @@ class LightingSetupData:
         self.scene_type_is_synthetic = self.scene_type == "unrealistic_synthetic"
 
         if self.sunlight_level == "unknown":
-            self.sunlight_level_is_normal = None
-            self.sunlight_level_is_sunny = None
-            self.sunlight_level_is_overcast = None
-            self.sunlight_level_is_sunset_sunrise = None
+            self.sunlight_quality_is_normal = None
+            self.sunlight_quality_is_hard = None
+            self.sunlight_quality_is_soft = None
+            self.sunlight_quality_is_sunset_sunrise = None
         else:
-            self.sunlight_level_is_normal = self.sunlight_level == "normal"
-            self.sunlight_level_is_sunny = self.sunlight_level == "sunny"
-            self.sunlight_level_is_overcast = self.sunlight_level == "overcast"
-            self.sunlight_level_is_sunset_sunrise = self.sunlight_level == "sunset_sunrise"
+            self.sunlight_quality_is_normal = self.sunlight_level == "normal"
+            self.sunlight_quality_is_hard = self.sunlight_level == "sunny"
+            self.sunlight_quality_is_soft = self.sunlight_level == "overcast"
+            self.sunlight_quality_is_sunset_sunrise = self.sunlight_level == "sunset_sunrise"
 
-        self.sunlight_level_is_unknown = self.sunlight_level == "unknown"
+        self.sunlight_quality_is_unknown = self.sunlight_level == "unknown"
 
         # Light Quality
         self.light_quality_is_soft = self.light_quality == "soft_diffused_light"
@@ -831,15 +832,26 @@ class LightingSetupData:
             raise ValueError("brightness cannot be 'bright_deprecated' or 'dark_deprecated'")
 
         if self.abstract_light_source:
-            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source]):
+            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.complex_light_source]):
                 raise ValueError("abstract_light_source cannot be combined with other light sources")
 
-        if self.sunlight_source:
-            if self.sunlight_level == "unknown":
-                raise ValueError("sunlight_level must be specified for sunlight source")
-        else:
-            if self.sunlight_level != "unknown":
-                raise ValueError("sunlight_level must be 'unknown' if sunlight source is not present")
+            # scene type must be "unrealistic_synthetic"
+            if self.scene_type != "unrealistic_synthetic":
+                raise ValueError("scene_type must be 'unrealistic_synthetic' if abstract_light_source is True")
+        
+        if self.scene_type == "unrealistic_synthetic":
+            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.complex_light_source]):
+                raise ValueError("No other light sources can be present if scene_type is 'unrealistic_synthetic'")
+            
+            if not self.abstract_light_source:
+                raise ValueError("abstract_light_source must be True if scene_type is 'unrealistic_synthetic'")
+
+        # if self.sunlight_source:
+        #     if self.sunlight_level == "unknown":
+        #         raise ValueError("sunlight_level must be specified for sunlight source")
+        # else:
+        if self.sunlight_level != "unknown" and self.sunlight_source is False:
+            raise ValueError("sunlight_level must be 'unknown' if sunlight source is not present")
 
         if self.subject_contrast_ratio == "unknown":
             if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, self.subject_bottom_light, self.subject_side_light, \

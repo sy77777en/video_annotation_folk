@@ -1323,8 +1323,8 @@ class VanillaColorPolicy(SocraticProgram):
 
         policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
 
-        policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
-        policy += "\n\n**Color Saturation:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
+        policy += "\n\n**Color Tone:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
+        policy += "\n\n**Colorfulness:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
         policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
         return policy
 
@@ -1385,10 +1385,10 @@ class VanillaLightingSetupPolicy(SocraticProgram):
     def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:
         # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
         sunlight_level_info = {
-            "normal": "sunlight_level_is_normal",
-            "sunny": "sunlight_level_is_sunny",
-            "overcast": "sunlight_level_is_overcast",
-            "sunset_sunrise": "sunlight_level_is_sunset_sunrise",
+            "normal": "sunlight_quality_is_normal",
+            "sunny": "sunlight_quality_is_hard",
+            "overcast": "sunlight_quality_is_soft",
+            "sunset_sunrise": "sunlight_quality_is_sunset_sunrise",
         }
         sunlight_level = sunlight_level_info[sunlight_level]
         sunlight_level_str = read_json_file(os.path.join(sunlight_level_dir, f"{sunlight_level}.json"))['def_prompt'][0]
@@ -1494,7 +1494,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         policy += "\n\n**Scene Type:** {}".format(self.format_scene_type(data.lighting_setup.scene_type))
         policy += "\n\n**Light Source(s):** {}".format(self.format_lighting_sources(data.lighting_setup))
         # If sunlight, then ask about sunlight level
-        if data.lighting_setup.sunlight_level_is_unknown is False:
+        if data.lighting_setup.sunlight_quality_is_unknown is False:
             policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_level))
         policy += "\n\n**Light Quality:** {}".format(self.format_light_quality(data.lighting_setup.light_quality))
 
@@ -1778,8 +1778,8 @@ class RawColorPolicy(SocraticProgram):
 
         policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
 
-        policy += "\n\n**Color Temperature:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
-        policy += "\n\n**Color Saturation:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
+        policy += "\n\n**Color Tone:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
+        policy += "\n\n**Colorfulness:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
         policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
         policy += "\n\n" + read_text_file("caption_policy/policy/color_composition_dynamics/format_instruction.txt")
         return policy
@@ -1841,10 +1841,10 @@ class RawLightingSetupPolicy(SocraticProgram):
     def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:
         # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
         sunlight_level_info = {
-            "normal": "sunlight_level_is_normal",
-            "sunny": "sunlight_level_is_sunny",
-            "overcast": "sunlight_level_is_overcast",
-            "sunset_sunrise": "sunlight_level_is_sunset_sunrise",
+            "normal": "sunlight_quality_is_normal",
+            "sunny": "sunlight_quality_is_hard",
+            "overcast": "sunlight_quality_is_soft",
+            "sunset_sunrise": "sunlight_quality_is_sunset_sunrise",
         }
         sunlight_level = sunlight_level_info[sunlight_level]
         sunlight_level_str = read_json_file(os.path.join(sunlight_level_dir, f"{sunlight_level}.json"))['def_prompt'][0]
@@ -1932,8 +1932,8 @@ class RawLightingSetupPolicy(SocraticProgram):
         policy += "\n\n**Scene Type:** {}".format(self.format_scene_type(data.lighting_setup.scene_type))
         policy += "\n\n**Light Source(s):** {}".format(self.format_lighting_sources(data.lighting_setup))
         # If sunlight, then ask about sunlight level
-        if data.lighting_setup.sunlight_level_is_unknown is False:
-            policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_level))
+        if data.lighting_setup.sunlight_quality_is_unknown is False:
+            policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_quality))
         policy += "\n\n**Light Quality:** {}".format(self.format_light_quality(data.lighting_setup.light_quality))
 
         if data.lighting_setup.is_subject_lighting_applicable:

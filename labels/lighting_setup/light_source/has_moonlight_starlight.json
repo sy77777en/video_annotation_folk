@@ -2,7 +2,7 @@
     "label": "Has Moonlight or Starlight",
     "label_name": "has_moonlight_starlight",
     "def_question": [
-        "Is moonlight or starlight a primary light source, with the moon or stars visible?"
+        "Is the scene consistently lit primarily by moonlight or starlight, and the moon or stars are visible in the scene?"
     ],
     "alt_question": [
         "Is the scene primarily illuminated by moonlight?",
@@ -15,7 +15,7 @@
         "Is the video characterized by the cool, ambient glow of moonlight?"
     ],
     "def_prompt": [
-        "Moonlight or starlight is a primary light source, with the moon or stars visible."
+        "The scene is consistently lit primarily by moonlight or starlight, and the moon or stars are visible in the scene."
     ],
     "alt_prompt": [
         "A video where moonlight serves as the dominant illumination.",

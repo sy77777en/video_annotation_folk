@@ -2,7 +2,7 @@
     "label": "Scene Type Is Exterior",
     "label_name": "scene_type_is_exterior",
     "def_question": [
-        "Is the video set in an outdoor environment?"
+        "Is the video set in an outdoor environment with a physically realistic lighting setup?"
     ],
     "alt_question": [
         "Is the scene taking place outside in an open environment?",
@@ -15,7 +15,7 @@
         "Does the shot emphasize an outdoor setting?"
     ],
     "def_prompt": [
-        "The video is set in an outdoor environment."
+        "The video is set in an outdoor environment with a physically realistic lighting setup."
     ],
     "alt_prompt": [
         "A video primarily taking place in an open outdoor space.",

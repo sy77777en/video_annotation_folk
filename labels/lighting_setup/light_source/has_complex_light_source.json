@@ -2,7 +2,7 @@
     "label": "Has Complex Changing Light Source",
     "label_name": "has_changing_light_source",
     "def_question": [
-       "Does the primary light source in the video change over time or include a rare light source that is not the sun, fire, moon and stars, or artificial light?"
+       "Does the video’s primary light source change over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light?"
     ],
     "alt_question": [
         "Does the light source change dynamically across different parts of the video?",
@@ -15,7 +15,7 @@
         "Is the scene influenced by multiple changing or contrasting light sources?"
     ],
     "def_prompt": [
-        "The primary light source(s) in the video change(s) over time or include(s) a rare light source that is not the sun, fire, moon and stars, or artificial light."
+        "The video’s primary light source changes over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light."
     ],
     "alt_prompt": [
         "A video where the light source is dynamic and ever-changing.",

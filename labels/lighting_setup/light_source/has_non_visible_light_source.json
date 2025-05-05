@@ -2,7 +2,7 @@
     "label": "Has Non-Visible Light Source",
     "label_name": "has_non_visible_light_source",
     "def_question": [
-       "Is the video lit by unclear light sources (neither clear sunlight nor firelight) that are unseen in the frame?"
+       "Does the video never show any visible light source, and the lighting cannot be clearly attributed to sunlight?"
     ],
     "alt_question": [
         "Is the scene illuminated by a light source that is not seen in the frame?",
@@ -15,7 +15,7 @@
         "Is the primary illumination coming from an off-screen source?"
     ],
     "def_prompt": [
-        "The video is lit by unclear light sources (neither clear sunlight nor firelight) that are unseen in the frame."
+        "The video never shows any visible light source, and the lighting cannot be clearly attributed to sunlight."
     ],
     "alt_prompt": [
         "The video is lit by artificial light (e.g., not sunlight or firelight), with the light source not visible in the frame.",

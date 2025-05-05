@@ -2,7 +2,7 @@
     "label": "Scene Type Is Interior",
     "label_name": "scene_type_is_interior",
     "def_question": [
-        "Is the video set in an indoor environment?"
+        "Is the video set in an indoor environment with a physically realistic lighting setup?"
     ],
     "alt_question": [
         "Is the scene taking place inside a building or enclosed space?",
@@ -15,7 +15,7 @@
         "Does the shot emphasize an enclosed, interior setting?"
     ],
     "def_prompt": [
-        "The video is set in an indoor environment."
+        "The video is set in an indoor environment with a physically realistic lighting setup."
     ],
     "alt_prompt": [
         "A video primarily taking place in an enclosed space.",

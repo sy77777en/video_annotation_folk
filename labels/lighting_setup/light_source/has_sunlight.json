@@ -2,7 +2,7 @@
     "label": "Has Sunlight",
     "label_name": "has_sunlight",
     "def_question": [
-        "Is sunlight a primary light source?"
+        "Is the scene consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame?"
     ],
     "alt_question": [
         "Is sunlight the primary light source in the video, even if the sun itself is not visible?",
@@ -16,7 +16,7 @@
         "Does the video’s lighting behave like outdoor sunlight exposure?"
     ],
     "def_prompt": [
-        "Sunlight is a primary light source."
+        "The scene is consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame."
     ],
     "alt_prompt": [
         "The primary light source in the video is sunlight, whether or not the sun is visible.",

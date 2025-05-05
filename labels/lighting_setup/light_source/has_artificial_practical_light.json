@@ -2,7 +2,7 @@
     "label": "Has Artificial Light",
     "label_name": "has_artificial_practical_light",
     "def_question": [
-        "Does the video contain practical artificial light with its source(s) clearly visible in the frame?"
+        "The scene is consistently lit by artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video."
     ],
     "alt_question": [
         "Does the scene contain clearly visible artificial light sources?",
@@ -15,7 +15,7 @@
         "Are artificial light sources included as part of the scene?"
     ],
     "def_prompt": [
-        "The video contains practical artificial light with its source(s) clearly visible in the frame."
+        "The scene is consistently lit by artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video."
     ],
     "alt_prompt": [
         "A video where artificial lights are visible in the frame.",

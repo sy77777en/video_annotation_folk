@@ -18,6 +18,7 @@ class OpenSource(LLM):
 
 if __name__ == "__main__":
     model = OpenSource(model="tarsier-recap-7b")
+    # model = OpenSource(model="tarsier2-7b")
     # model = OpenSource(model="qwen2.5-vl-7b")
     print(
         model.generate(

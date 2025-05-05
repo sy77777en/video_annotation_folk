@@ -4685,10 +4685,10 @@ def get_colorfulness_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLD
         {
             "folder": lighting_folder,
             "name": "colorfulness_is_high",
-            "pos_question": "Does the video feature highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation)?",
-            "neg_question": "Does the video not feature highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation)?",
-            "pos_prompt": "The video features highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation).",
-            "neg_prompt": "The video does not feature highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation).",
+            "pos_question": "Does the video predominantly feature highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation)?",
+            "neg_question": "Does the video not predominantly feature highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation)?",
+            "pos_prompt": "The video predominantly features highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation).",
+            "neg_prompt": "The video does not predominantly feature highly vibrant and intense colors, with vivid hues dominating the scene and creating an overall impression of strong colorfulness (or saturation).",
             "pos": {
                 "label": "lighting_setup.color_grading.colorfulness.colorfulness_is_high",
                 "type": "pos",
@@ -4789,10 +4789,10 @@ def get_brightness_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER
         {
             "folder": lighting_folder,
             "name": "brightness_is_very_bright",
-            "pos_question": "Is the video excessively bright due to overexposure, losing details in around half or more of the frame?",
-            "neg_question": "Is the video not excessively bright due to overexposure, losing details in around half or more of the frame?",
-            "pos_prompt": "The video is excessively bright due to overexposure, losing details in around half or more of the frame.",
-            "neg_prompt": "The video is not excessively bright due to overexposure, losing details in around half or more of the frame.",
+            "pos_question": "Is the video excessively bright due to overexposure, losing details in around half or more of the frame and across most or all of the video?",
+            "neg_question": "Is the video not excessively bright due to overexposure, losing details in around half or more of the frame and across most or all of the video?",
+            "pos_prompt": "The video is excessively bright due to overexposure, losing details in around half or more of the frame and across most or all of the video.",
+            "neg_prompt": "The video is not excessively bright due to overexposure, losing details in around half or more of the frame and across most or all of the video.",
             "pos": {
                 "label": "lighting_setup.color_grading.brightness.brightness_is_very_bright",
                 "type": "pos",
@@ -4893,10 +4893,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_exterior",
-            "pos_question": "Is the video set in an outdoor environment?",
-            "neg_question": "Is the video not set in an outdoor environment?",
-            "pos_prompt": "The video is set in an outdoor environment.",
-            "neg_prompt": "The video is not set in an outdoor environment.",
+            "pos_question": "Is the video set in an outdoor environment with a physically realistic lighting setup?",
+            "neg_question": "Is the video not set in an outdoor environment with a physically realistic lighting setup?",
+            "pos_prompt": "The video is set in an outdoor environment with a physically realistic lighting setup.",
+            "neg_prompt": "The video is not set in an outdoor environment with a physically realistic lighting setup.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_exterior",
                 "type": "pos",
@@ -4909,10 +4909,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_interior",
-            "pos_question": "Is the video set in an indoor environment?",
-            "neg_question": "Is the video not set in an indoor environment?",
-            "pos_prompt": "The video is set in an indoor environment.",
-            "neg_prompt": "The video is not set in an indoor environment.",
+            "pos_question": "Is the video set in an indoor environment with a physically realistic lighting setup?",
+            "neg_question": "Is the video not set in an indoor environment with a physically realistic lighting setup?",
+            "pos_prompt": "The video is set in an indoor environment with a physically realistic lighting setup.",
+            "neg_prompt": "The video is not set in an indoor environment with a physically realistic lighting setup.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_interior",
                 "type": "pos",
@@ -4925,10 +4925,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_synthetic",
-            "pos_question": "Is the video set in a synthetic or 2D environment with unrealistic lighting effects?",
-            "neg_question": "Is the video not set in a synthetic or 2D environment with unrealistic lighting effects?",
-            "pos_prompt": "The video is set in a synthetic or 2D environment with unrealistic lighting effects.",
-            "neg_prompt": "The video is not set in a synthetic or 2D environment with unrealistic lighting effects.",
+            "pos_question": "Is the video showing a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting?",
+            "neg_question": "Is the video not showing a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting?",
+            "pos_prompt": "The video shows a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting.",
+            "neg_prompt": "The video does not show a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_synthetic",
                 "type": "pos",
@@ -4956,69 +4956,185 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         },
     ]
 
+def get_light_source_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
+    return [
+        {
+            "folder": lighting_folder,
+            "name": "has_artificial_practical_light",
+            "pos_question": "Does the scene consistently feature artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video?",
+            "neg_question": "Does the scene not (or at least not consistently) feature artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video?",
+            "pos_prompt": "The scene consistently features artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video.",
+            "neg_prompt": "The scene does not (or at least not consistently) feature artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_artificial_practical_light",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_artificial_practical_light",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_complex_light_source",
+            "pos_question": "Does the video’s primary light source change over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light?",
+            "neg_question": "Does the video’s primary light source not change over time or comes from a common source including the sun, fire, moon, stars, or artificial light?",
+            "pos_prompt": "The video’s primary light source changes over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light.",
+            "neg_prompt": "The video’s primary light source does not change over time or comes from a common source including the sun, fire, moon, stars, or artificial light.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_complex_light_source",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_complex_light_source",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_firelight",
+            "pos_question": "Is the scene consistently lit primarily by firelight, and the fire is visible in the scene?",
+            "neg_question": "Is the scene not consistently lit primarily by firelight, or the fire is not visible in the scene?",
+            "pos_prompt": "The scene is consistently lit primarily by firelight, and the fire is visible in the scene.",
+            "neg_prompt": "The scene is not consistently lit primarily by firelight, or the fire is not visible in the scene.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_firelight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_firelight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_moonlight_starlight",
+            "pos_question": "Is the scene consistently lit primarily by moonlight or starlight, and the moon or stars are visible in the scene?",
+            "neg_question": "Is the scene not consistently lit primarily by moonlight or starlight, or the moon or stars are not visible in the scene?",
+            "pos_prompt": "The scene is consistently lit primarily by moonlight or starlight, and the moon or stars are visible in the scene.",
+            "neg_prompt": "The scene is not consistently lit primarily by moonlight or starlight, or the moon or stars are not visible in the scene.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_moonlight_starlight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_moonlight_starlight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_non_visible_light_source",
+            "pos_question": "Does the video never show any visible light source, and the lighting cannot be clearly attributed to sunlight or firelight?",
+            "neg_question": "Does the video show a visible light source at some point, or the lighting can be clearly attributed to sunlight or firelight?",
+            "pos_prompt": "The video never shows any visible light source, and the lighting cannot be clearly attributed to sunlight or firelight.",
+            "neg_prompt": "The video shows a visible light source at some point, or the lighting can be clearly attributed to sunlight or firelight.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_non_visible_light_source",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_non_visible_light_source",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "has_sunlight",
+            "pos_question": "Is the scene consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame?",
+            "neg_question": "Is the scene not consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame?",
+            "pos_prompt": "The scene is consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame.",
+            "neg_prompt": "The scene is not consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame.",
+            "pos": {
+                "label": "lighting_setup.light_source.has_sunlight",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.has_sunlight",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": lighting_folder,
+            "name": "is_abstract",
+            "pos_question": "Does the video feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source?",
+            "neg_question": "Does the video not feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source?",
+            "pos_prompt": "The video features an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source.",
+            "neg_prompt": "The video does not feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source.",
+            "pos": {
+                "label": "lighting_setup.light_source.is_abstract",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "lighting_setup.light_source.is_abstract",
+                "type": "neg",
+            },
+        }
+    ]
+
 def get_sunlight_level_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
     return [
         {
             "folder": lighting_folder,
-            "name": "sunlight_level_is_normal",
-            "pos_question": "Does the video feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours?",
-            "neg_question": "Does the video not feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours?",
-            "pos_prompt": "The video features regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours.",
-            "neg_prompt": "The video does not feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours.",
+            "name": "sunlight_quality_is_normal",
+            "pos_question": "Does the scene feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours?",
+            "neg_question": "Does the scene not feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours?",
+            "pos_prompt": "The scene features regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours.",
+            "neg_prompt": "The scene does not feature regular daylight with balanced brightness, neither sunny nor overcast, nor during golden or blue hours.",
             "pos": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_normal",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_normal",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_normal",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_normal",
                 "type": "neg",
             },
         },
         {
             "folder": lighting_folder,
-            "name": "sunlight_level_is_sunny",
-            "pos_question": "Does the video feature bright, direct sunlight with strong intensity on a sunny day?",
-            "neg_question": "Does the video not feature bright, direct sunlight with strong intensity on a sunny day?",
-            "pos_prompt": "The video features bright, direct sunlight with strong intensity on a sunny day.",
-            "neg_prompt": "The video does not feature bright, direct sunlight with strong intensity on a sunny day.",
+            "name": "sunlight_quality_is_hard",
+            "pos_question": "Does the scene feature strong direct sunlight, resulting in very bright, high-contrast lighting with sharp, hard-edged shadows?",
+            "neg_question": "Does the scene not feature strong direct sunlight, resulting in very bright, high-contrast lighting with sharp, hard-edged shadows?",
+            "pos_prompt": "The scene features strong direct sunlight, resulting in very bright, high-contrast lighting with sharp, hard-edged shadows.",
+            "neg_prompt": "The scene does not feature strong direct sunlight, resulting in very bright, high-contrast lighting with sharp, hard-edged shadows.",
             "pos": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunny",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_hard",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunny",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_hard",
                 "type": "neg",
             },
         },
         {
             "folder": lighting_folder,
-            "name": "sunlight_level_is_overcast",
-            "pos_question": "Does the video feature soft, diffused sunlight from overcast skies or during blue hour?",
-            "neg_question": "Does the video not feature soft, diffused sunlight from overcast skies or during blue hour?",
-            "pos_prompt": "The video features soft, diffused sunlight from overcast skies or during blue hour.",
-            "neg_prompt": "The video does not feature soft, diffused sunlight from overcast skies or during blue hour.",
+            "name": "sunlight_quality_is_soft",
+            "pos_question": "Is the scene illuminated by soft, diffused sunlight, such as from cloudy skies, mist, or twilight conditions, with no directional sunlight and either no visible shadows or low-contrast shadows?",
+            "neg_question": "Is the scene not illuminated by soft, diffused sunlight, such as from cloudy skies, mist, or twilight conditions, with no directional sunlight and either no visible shadows or low-contrast shadows?",
+            "pos_prompt": "The scene is illuminated by soft, diffused sunlight, such as from cloudy skies, mist, or twilight conditions, with no directional sunlight and either no visible shadows or low-contrast shadows.",
+            "neg_prompt": "The scene is not illuminated by soft, diffused sunlight, such as from cloudy skies, mist, or twilight conditions, with no directional sunlight and either no visible shadows or low-contrast shadows.",
             "pos": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_overcast",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_soft",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_overcast",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_soft",
                 "type": "neg",
             },
         },
         {
             "folder": lighting_folder,
-            "name": "sunlight_level_is_sunset_sunrise",
-            "pos_question": "Does the video feature warm, golden sunlight at sunrise or sunset?",
-            "neg_question": "Does the video not feature warm, golden sunlight at sunrise or sunset?",
-            "pos_prompt": "The video features warm, golden sunlight at sunrise or sunset.",
-            "neg_prompt": "The video does not feature warm, golden sunlight at sunrise or sunset.",
+            "name": "sunlight_quality_is_sunset_sunrise",
+            "pos_question": "Does the scene feature warm, golden sunlight at sunrise or sunset?",
+            "neg_question": "Does the scene not feature warm, golden sunlight at sunrise or sunset?",
+            "pos_prompt": "The scene features warm, golden sunlight at sunrise or sunset.",
+            "neg_prompt": "The scene does not feature warm, golden sunlight at sunrise or sunset.",
             "pos": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunset_sunrise",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_sunset_sunrise",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_level_is_sunset_sunrise",
+                "label": "lighting_setup.light_quality.sunlight_quality.sunlight_quality_is_sunset_sunrise",
                 "type": "neg",
             },
         },
@@ -5106,122 +5222,6 @@ def get_light_quality_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APR
                 "type": "neg",
             },
         },
-    ]
-
-def get_light_source_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
-    return [
-        {
-            "folder": lighting_folder,
-            "name": "has_artificial_practical_light",
-            "pos_question": "Does the video contain practical artificial lighting with visible light source(s) in the frame?",
-            "neg_question": "Does the video not contain practical artificial lighting with visible light source(s) in the frame?",
-            "pos_prompt": "A video containing practical artificial lighting with visible light source(s) in the frame.",
-            "neg_prompt": "A video not containing practical artificial lighting with visible light source(s) in the frame.",
-            "pos": {
-                "label": "lighting_setup.light_source.has_artificial_practical_light",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.has_artificial_practical_light",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "has_complex_light_source",
-            "pos_question": "Does the video’s primary light source change over time or involve a rare source not including sun, fire, moon, stars, or artificial light?",
-            "neg_question": "Does the video’s primary light source not change over time or not involve a rare source including sun, fire, moon, stars, or artificial light?",
-            "pos_prompt": "A video where the primary light source changes over time or involves a rare source not including sun, fire, moon, stars, or artificial light.",
-            "neg_prompt": "A video where the primary light source does not change over time or does not involve a rare source including sun, fire, moon, stars, or artificial light.",
-            "pos": {
-                "label": "lighting_setup.light_source.has_complex_light_source",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.has_complex_light_source",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "has_firelight",
-            "pos_question": "Is firelight a primary light source in the video?",
-            "neg_question": "Is firelight not a primary light source in the video?",
-            "pos_prompt": "A video where firelight is a primary light source.",
-            "neg_prompt": "A video where firelight is not a primary light source.",
-            "pos": {
-                "label": "lighting_setup.light_source.has_firelight",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.has_firelight",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "has_moonlight_starlight",
-            "pos_question": "Is moonlight or starlight a primary light source, with the moon or stars visible?",
-            "neg_question": "Is moonlight or starlight not a primary light source, with the moon or stars not visible?",
-            "pos_prompt": "A video where moonlight or starlight is a primary light source, with the moon or stars visible.",
-            "neg_prompt": "A video where moonlight or starlight is not a primary light source, with the moon or stars not visible.",
-            "pos": {
-                "label": "lighting_setup.light_source.has_moonlight_starlight",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.has_moonlight_starlight",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "has_non_visible_light_source",
-            "pos_question": "Is an unseen light source (other than sunlight or firelight) a primary light source?",
-            "neg_question": "Is an unseen light source (other than sunlight or firelight) not a primary light source?",
-            "pos_prompt": "An unseen light source (other than sunlight or firelight) is a primary light source.",
-            "neg_prompt": "An unseen light source (other than sunlight or firelight) is not a primary light source.",
-            "pos": {
-                "label": "lighting_setup.light_source.has_non_visible_light_source",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.has_non_visible_light_source",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "has_sunlight",
-            "pos_question": "Is sunlight a primary light source?",
-            "neg_question": "Is sunlight not a primary light source?",
-            "pos_prompt": "A video where sunlight is a primary light source.",
-            "neg_prompt": "A video where sunlight is not a primary light source.",
-            "pos": {
-                "label": "lighting_setup.light_source.has_sunlight",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.has_sunlight",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "is_abstract",
-            "pos_question": "Does the video lack a realistic light source, with lighting that does not follow natural physics?",
-            "neg_question": "Does the video not lack a realistic light source, with lighting that does not follow natural physics?",
-            "pos_prompt": "A video lacking a realistic light source, with lighting that does not follow natural physics.",
-            "neg_prompt": "A video not lacking a realistic light source, with lighting that does not follow natural physics.",
-            "pos": {
-                "label": "lighting_setup.light_source.is_abstract",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_source.is_abstract",
-                "type": "neg",
-            },
-        }
     ]
 
 def get_light_contrast_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):
