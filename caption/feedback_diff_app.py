@@ -2,37 +2,75 @@ import streamlit as st
 import difflib
 import os
 import re
+import json
 from feedback_app import (
     parse_args, load_video_data, get_video_id, load_json, 
     get_filename, load_data, FOLDER, FEEDBACK_FILE_POSTFIX, PREV_FEEDBACK_FILE_POSTFIX,
-    load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS
+    load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS, REVIEWER_FILE_POSTFIX
 )
 from datetime import datetime
 
 def get_video_status(video_id, output_dir):
     """Get the status of a video's caption completion and previous iterations"""
-    current_file = get_filename(video_id, output_dir, FEEDBACK_FILE_POSTFIX)
-    prev_file = get_filename(video_id, output_dir, PREV_FEEDBACK_FILE_POSTFIX)
+    # Status emoji map
+    status_emoji_map = {
+        "not_completed": "",  # Not completed - no emoji
+        "completed_not_reviewed": "✅",  # Completed but not reviewed - single checkmark
+        "approved": "✅✅",  # Approved - double checkmark
+        "rejected": "❌"  # Rejected
+    }
     
-    if not os.path.exists(current_file):
-        return "not_completed", None, None, None, None
-    elif not os.path.exists(prev_file):
-        return "completed_no_prev", current_file, None, None, None
+    # Check all relevant files
+    feedback_file = get_filename(video_id, output_dir, FEEDBACK_FILE_POSTFIX)
+    prev_feedback_file = get_filename(video_id, output_dir, PREV_FEEDBACK_FILE_POSTFIX)
+    reviewer_file = get_filename(video_id, output_dir, REVIEWER_FILE_POSTFIX)
+    
+    # Determine status based on file existence and content
+    if not os.path.exists(feedback_file):
+        status = "not_completed"
+        current_file = None
+        prev_file = None
+        current_user = None
+        prev_user = None
+    elif not os.path.exists(reviewer_file):
+        status = "completed_not_reviewed"
+        current_file = feedback_file
+        prev_file = None
+        current_user = None
+        prev_user = None
     else:
-        # Load both current and previous data to check users
-        current_data = load_data(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
-        prev_data = load_data(video_id, output_dir=output_dir, file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
-        
-        current_user = current_data.get("user", "Unknown")
-        prev_user = prev_data.get("user", "Unknown")
-        
-        # Check if users are the same
-        same_user = current_user == prev_user
-        
-        if same_user:
-            return "completed_same_user", current_file, prev_file, current_user, prev_user
-        else:
-            return "completed_different_user", current_file, prev_file, current_user, prev_user
+        # Load reviewer data
+        with open(reviewer_file, 'r') as f:
+            reviewer_data = json.load(f)
+            reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
+            
+            if reviewer_double_check:
+                status = "approved"
+                # For approved files, either no prev feedback or same user
+                if os.path.exists(prev_feedback_file):
+                    with open(prev_feedback_file, 'r') as pf:
+                        prev_data = json.load(pf)
+                        prev_user = prev_data.get("user")
+                        with open(feedback_file, 'r') as cf:
+                            current_data = json.load(cf)
+                            current_user = current_data.get("user")
+                            assert prev_user == current_user, f"Approved file {video_id} has different users in current and previous feedback"
+            else:
+                status = "rejected"
+                # For rejected files, must have prev feedback with different user
+                assert os.path.exists(prev_feedback_file), f"Rejected file {video_id} must have previous feedback"
+                with open(prev_feedback_file, 'r') as pf:
+                    prev_data = json.load(pf)
+                    prev_user = prev_data.get("user")
+                    with open(feedback_file, 'r') as cf:
+                        current_data = json.load(cf)
+                        current_user = current_data.get("user")
+                        assert prev_user != current_user, f"Rejected file {video_id} must have different users in current and previous feedback"
+            
+            current_file = feedback_file
+            prev_file = prev_feedback_file if os.path.exists(prev_feedback_file) else None
+    
+    return status, current_file, prev_file, current_user, prev_user
 
 def split_into_words(text):
     """Split text into words for better diff visualization"""
@@ -62,23 +100,28 @@ def highlight_differences(text1, text2):
     
     return ''.join(result)
 
-def get_video_format_func(output_dir):
-    """Format function for video selection dropdown with status emojis"""
-    def format_func(video_url):
+def get_video_format_func(output_dir, video_urls=None):
+    def video_format_func(video_url):
+        if video_urls is not None:
+            video_index = video_urls.index(video_url)
+        else:
+            video_index = ""
+            
         video_id = get_video_id(video_url)
-        status, _, _, _, _ = get_video_status(video_id, output_dir)
+        video_url = video_url.split("/")[-1]
         
-        emoji_map = {
-            "not_completed": "⏳",  # Hourglass for not completed
-            "completed_no_prev": "✅",  # Checkmark for completed no prev
-            "completed_same_user": "✅🔄",  # Checkmark + loop for same user
-            "completed_different_user": "❌"  # X for different users
+        # Get status and format accordingly
+        status, _, _, _, _ = get_video_status(video_id, output_dir)
+        status_emoji_map = {
+            "not_completed": "",  # Not completed - no emoji
+            "completed_not_reviewed": "✅",  # Completed but not reviewed - single checkmark
+            "approved": "✅✅",  # Approved - double checkmark
+            "rejected": "❌"  # Rejected
         }
         
-        emoji = emoji_map[status]
-        return f"{emoji} {video_url.split('/')[-1]}"
-    
-    return format_func
+        return f"{status_emoji_map[status]}{video_index}. {video_url}"
+                    
+    return video_format_func
 
 def login_page(args):
     st.title("Video Caption Difference Viewer Login")
@@ -211,11 +254,22 @@ def main(args):
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
+        # Add status explanation expander
+        with st.expander("📝 Status Indicators Explanation", expanded=False):
+            st.markdown("""
+            | Emoji | Status | Description |
+            |-------|--------|-------------|
+            |  | Not Completed | Video has not been captioned yet |
+            | ✅ | Completed | Video has been captioned but not reviewed |
+            | ✅✅ | Approved | Video has been reviewed and double-checked |
+            | ❌ | Rejected | Video needs revision (different users in current and previous feedback) |
+            """)
+
         # Select video
         selected_video = st.selectbox(
             "Select a video:",
             video_urls,
-            format_func=get_video_format_func(output_dir),
+            format_func=get_video_format_func(output_dir, video_urls=video_urls),
             index=video_urls.index(st.session_state.get('last_selected_video', video_urls[0])),
             key="selected_video"
         )

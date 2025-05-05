@@ -32,6 +32,9 @@ ANNOTATORS = {
     "Test User": {"password": "test"}
 }
 
+APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling"]
+assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), "All approved reviewers must be in the ANNOTATORS dictionary"
+
 caption_programs = {
     "subject_description": VanillaSubjectPolicy(),
     "scene_composition_dynamics": VanillaScenePolicy(),
@@ -58,6 +61,8 @@ PRECAPTION_FILE_POSTFIX = "_precaption.json"
 FEEDBACK_FILE_POSTFIX = "_feedback.json"
 # PREV_FEEDBACK_FILE_POSTFIX = "_feedback_prev.json"
 PREV_FEEDBACK_FILE_POSTFIX = FEEDBACK_FILE_POSTFIX.replace("feedback", "feedback_prev")
+REVIEWER_FILE_POSTFIX = "_review.json"
+PREV_REVIEWER_FILE_POSTFIX = REVIEWER_FILE_POSTFIX.replace("review", "review_prev")
 SUBJECT_CAPTION_NAME = "Subject Description Caption"
 SCENE_CAPTION_NAME = "Scene Composition and Dynamics Caption"
 PROMPT_HEIGHT = 225
@@ -311,13 +316,10 @@ def get_filename(video_id, output_dir="outputs", file_postfix=".json"):
     """Get the filename for saving feedback data"""
     return os.path.join(output_dir, f'{video_id}{file_postfix}')
 
-def save_data(video_id, data, output_dir="outputs", file_postfix=".json", prev_file_postfix="_prev.json"):
-    """Save feedback data to a JSON file"""
+def save_data(video_id, data, output_dir="outputs", file_postfix=".json"):
+    """Save data to a JSON file"""
     os.makedirs(output_dir, exist_ok=True)
     filename = get_filename(video_id, output_dir, file_postfix)
-    prev_filename = get_filename(video_id, output_dir, prev_file_postfix)
-    if os.path.exists(filename):
-        os.rename(filename, prev_filename)
     
     # Add timestamp if not already present
     if "timestamp" not in data:
@@ -327,6 +329,7 @@ def save_data(video_id, data, output_dir="outputs", file_postfix=".json", prev_f
         json.dump(data, f, indent=4)
     print(f"Data saved to: {filename}")
     return filename
+
 
 def get_precaption_llm_name(config_dict, selected_config):
     config = config_dict[selected_config]
@@ -482,13 +485,17 @@ def get_video_format_func(output_dir, file_postfix=".json", video_urls=None):
             video_index = video_urls.index(video_url)
         else:
             video_index = ""
-        # if already exists, then return f"✅ {video_url}"
         video_id = get_video_id(video_url)
         # Check for existing feedback and get current caption
         existing_data = load_data(video_id, output_dir=output_dir, file_postfix=file_postfix)
+        reviewer_data = load_data(video_id, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
         video_url = video_url.split("/")[-1]
         # Show existing feedback if available
         if existing_data:
+            if reviewer_data and reviewer_data.get("reviewer_double_check", False):
+                return f"✅✅{video_index}. {video_url}"
+            elif reviewer_data:
+                return f"❌{video_index}. {video_url}"
             return f"✅{video_index}. {video_url}"
         return f"{video_index}. {video_url}"
     return video_format_func
@@ -531,6 +538,68 @@ def file_check(video_urls_file, video_data_dict):
             missing_video = True
     if missing_video:
         return
+
+def get_annotator_and_reviewer(video_id, output_dir):
+    """Determine who is the annotator and who is the reviewer based on feedback files"""
+    current_feedback = load_data(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+    prev_feedback = load_data(video_id, output_dir=output_dir, file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
+    
+    if not current_feedback:
+        return None, None
+    
+    if not prev_feedback:
+        # Only current feedback exists - the user in current feedback is the annotator
+        return current_feedback.get("user"), None
+    
+    # Both files exist - prev feedback user is annotator, current feedback user is reviewer
+    return prev_feedback.get("user"), current_feedback.get("user")
+
+def can_annotator_redo(video_id, output_dir, current_user):
+    """Check if the current user (as annotator) can redo the caption"""
+    annotator, reviewer = get_annotator_and_reviewer(video_id, output_dir)
+    
+    # If no annotator yet, anyone can be the annotator
+    if not annotator:
+        return True
+    
+    # If same annotator, check if it's been reviewed
+    if annotator == current_user:
+        reviewer_data = load_data(video_id, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+        return not reviewer_data  # Can redo if not reviewed yet
+    
+    return False
+
+def can_reviewer_redo(video_id, output_dir, current_user):
+    """Check if the current user (as reviewer) can redo the caption"""
+    annotator, reviewer = get_annotator_and_reviewer(video_id, output_dir)
+    
+    # Must be an approved reviewer
+    if current_user not in APPROVED_REVIEWERS:
+        return False
+    
+    # Cannot review if you're the annotator
+    if annotator == current_user:
+        return False
+    
+    # If already reviewed, check if it was rejected
+    reviewer_data = load_data(video_id, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+    if reviewer_data:
+        return not reviewer_data.get("reviewer_double_check", False)  # Can redo if rejected
+    
+    return True
+
+def copy_to_prev_feedback(video_id, output_dir):
+    """Copy current feedback to previous feedback file"""
+    current_file = get_filename(video_id, output_dir, FEEDBACK_FILE_POSTFIX)
+    prev_file = get_filename(video_id, output_dir, PREV_FEEDBACK_FILE_POSTFIX)
+    
+    assert os.path.exists(current_file), f"Current feedback file does not exist: {current_file}"
+    assert not os.path.exists(prev_file), f"Previous feedback file already exists: {prev_file}"
+    with open(current_file, 'r') as f:
+        current_data = json.load(f)
+    with open(prev_file, 'w') as f:
+        json.dump(current_data, f, indent=4)
+    print(f"Copied current feedback to previous feedback: {prev_file}")
 
 def main(args, caption_programs):
     # Set page config first
@@ -779,7 +848,167 @@ def main(args, caption_programs):
         if st.session_state.current_step == 0:
             # If feedback already exists, load it
             if data_is_saved(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX):
-                load_feedback(video_id, output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                feedback_data = load_feedback(video_id, output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                # Display detailed feedback information in an expander
+                is_approved_reviewer = st.session_state.logged_in_user in APPROVED_REVIEWERS
+                with st.expander("Reviewer: Please Review Caption Here", expanded=is_approved_reviewer):
+                    st.write("##### Pre-caption Score")
+                    st.write(f"**{feedback_data['initial_caption_rating_score']}/5**")
+                    
+                    st.write("##### GPT Polished Feedback")
+                    st.write(feedback_data.get("gpt_feedback", "No GPT feedback available"))
+                    
+                    st.write("##### Final Caption Score")
+                    final_score = feedback_data.get("caption_rating_score", 0)
+                    if final_score < 4:
+                        st.error(f"**{final_score}/5** - Low score indicates potential issues")
+                    else:
+                        st.write(f"**{final_score}/5**")
+                    
+                    # Calculate word changes
+                    gpt_caption = feedback_data.get("gpt_caption", "")
+                    final_caption = feedback_data.get("final_caption", "")
+                    if gpt_caption and final_caption:
+                        gpt_words = len(gpt_caption.split())
+                        final_words = len(final_caption.split())
+                        word_diff = abs(gpt_words - final_words)
+                        st.write("##### Word Changes from GPT to Final")
+                        if word_diff > 5:
+                            st.error(f"**{word_diff}** words changed - Large changes may indicate issues")
+                        else:
+                            st.write(f"**{word_diff}** words changed")
+                    
+                    st.write("##### Final Caption")
+                    st.write(feedback_data["final_caption"])
+
+                    # Reviewer interface
+                    reviewer_data = load_data(video_id, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+                    current_user = st.session_state.logged_in_user
+                    
+                    if not is_approved_reviewer:
+                        st.write("##### Reviewer Status")
+                        st.write(f"You are {current_user}. You are not an approved reviewer.")
+                    else:
+                        if reviewer_data is None:
+                            st.write("##### Reviewer Status")
+                            st.write(f"You are {current_user}. You can review (double check) this caption.")
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                if st.button("Reject and Redo", 
+                                    help="Reject the current caption and create a new version"):
+                                    if st.confirm("⚠️ Warning: This will mark the caption as rejected. Are you sure?"):
+                                        # Copy current feedback to previous
+                                        copy_to_prev_feedback(video_id, output_dir)
+                                        
+                                        # Create reviewer data
+                                        reviewer_data = {
+                                            "reviewer_name": current_user,
+                                            "review_timestamp": datetime.now().isoformat(),
+                                            "reviewer_double_check": False
+                                        }
+                                        save_data(video_id, reviewer_data, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+                                        st.rerun()
+                            with col2:
+                                if st.button("Approve", 
+                                    help="Mark the caption as correct"):
+                                    reviewer_data = {
+                                        "reviewer_name": current_user,
+                                        "review_timestamp": datetime.now().isoformat(),
+                                        "reviewer_double_check": True
+                                    }
+                                    save_data(video_id, reviewer_data, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+                                    st.rerun()
+                        else:
+                            is_same_reviewer = reviewer_data.get("reviewer_name") == current_user
+                            is_approved = reviewer_data.get("reviewer_double_check", False)
+                            
+                            st.write("##### Reviewer Status")
+                            if is_same_reviewer:
+                                status = "approved" if is_approved else "rejected"
+                                st.write(f"You are {current_user}. You already reviewed the caption and {status} it.")
+                            else:
+                                other_reviewer = reviewer_data.get("reviewer_name")
+                                status = "approved" if is_approved else "rejected"
+                                st.write(f"You are {current_user}. {other_reviewer} already reviewed the caption and {status} it.")
+                            
+                            if is_approved:
+                                st.write("##### Review Controls")
+                                st.write("This caption is approved. You can still reject by clicking the button below.")
+                                if st.button("Reject and Redo", 
+                                        help="Reject the current caption and create a new version"):
+                                    if st.confirm("⚠️ Warning: This will mark the caption as rejected. Are you sure?"):
+                                        # Copy current feedback to previous
+                                        copy_to_prev_feedback(video_id, output_dir)
+                                        
+                                        # Update reviewer data
+                                        reviewer_data = {
+                                            "reviewer_name": current_user,
+                                            "review_timestamp": datetime.now().isoformat(),
+                                            "reviewer_double_check": False
+                                        }
+                                        save_data(video_id, reviewer_data, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+                                        st.rerun()
+                                with col2:
+                                    if st.button("Already Approved", 
+                                            disabled=True,
+                                            help="Current status: Already approved"):
+                                        pass
+                            else:
+                                st.write("##### Review Controls")
+                                st.write("This caption is rejected. You can either approve it or redo it.")
+                                col1, col2 = st.columns(2)
+                                with col1:
+                                    if st.button("Already Rejected", 
+                                            disabled=True,
+                                            help="Current status: Rejected"):
+                                        pass
+                                with col2:
+                                    if st.button("Approve", 
+                                            help="Mark the caption as correct"):
+                                        if st.confirm("⚠️ Warning: This will revert to the annotator's original caption. Are you sure?"):
+                                            # Load previous feedback
+                                            prev_feedback = load_data(video_id, output_dir=output_dir, file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
+                                            if not prev_feedback:
+                                                st.error("Cannot revert: Previous feedback does not exist.")
+                                            else:
+                                                # Update reviewer data
+                                                reviewer_data = {
+                                                    "reviewer_name": current_user,
+                                                    "review_timestamp": datetime.now().isoformat(),
+                                                    "reviewer_double_check": True
+                                                }
+                                                save_data(video_id, reviewer_data, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+                                                
+                                                # Replace current feedback with previous
+                                                save_data(video_id, prev_feedback, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                                                
+                                                # Delete previous feedback file
+                                                os.remove(get_filename(video_id, output_dir, PREV_FEEDBACK_FILE_POSTFIX))
+                                                st.rerun()
+                
+                current_user = st.session_state.logged_in_user
+                annotator, reviewer = get_annotator_and_reviewer(video_id, output_dir)
+                
+                # Check if current user is the annotator
+                if annotator == current_user:
+                    if not can_annotator_redo(video_id, output_dir, current_user):
+                        reviewer_data = load_data(video_id, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
+                        if reviewer_data.get("reviewer_double_check", False):
+                            st.error("This caption has been approved. You don't need to modify it further.")
+                        else:
+                            st.error("This caption has been rejected. Please see the difference between your feedback and reviewer feedback below:")
+                            prev_feedback = load_data(video_id, output_dir=output_dir, file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
+                            if prev_feedback:
+                                st.write("##### Your Original Feedback (GPT Polished)")
+                                st.write(prev_feedback.get("gpt_feedback", "No GPT feedback available"))
+                                st.write("##### Reviewer's Feedback (GPT Polished)")
+                                st.write(feedback_data.get("gpt_feedback", "No GPT feedback available"))
+                        return
+                
+                # Check if current user is a different annotator
+                elif current_user not in APPROVED_REVIEWERS:
+                    st.error("You are not an approved reviewer. Please reach out to Zhiqiu Lin if you want to review/redo this caption.")
+                    return
                 st.write("Feedback already exists for this video. You can choose to restart by either re-generating the pre-caption or by providing a new rating.")
 
             # If not exist, return empty dict
@@ -940,7 +1169,7 @@ def main(args, caption_programs):
                 else:
                     # If happiest face, save and finish
                     st.session_state.feedback_data["final_caption"] = pre_caption
-                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
+                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                     st.success("Caption rated as perfect! No changes needed.")
                     st.json(st.session_state.feedback_data)
 
@@ -1138,7 +1367,7 @@ def main(args, caption_programs):
                             st.session_state.final_caption = final_caption
 
                             # Save feedback data
-                            save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
+                            save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                             st.success(f"Caption saved successfully!")
                             st.json(st.session_state.feedback_data)
                             st.session_state.caption_submitted = True
@@ -1149,7 +1378,7 @@ def main(args, caption_programs):
                 else:
                     # If rating is happy, finalize caption and save
                     st.session_state.feedback_data["final_caption"] = st.session_state.feedback_data["gpt_caption"]
-                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX, prev_file_postfix=PREV_FEEDBACK_FILE_POSTFIX)
+                    save_data(video_id, st.session_state.feedback_data, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                     st.success(f"Caption saved successfully!")
                     st.json(st.session_state.feedback_data)
                     st.session_state.caption_submitted = True
