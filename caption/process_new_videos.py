@@ -1,6 +1,7 @@
 import json
 import os
 import argparse
+import random
 from pathlib import Path
 
 def load_json_file(file_path):
@@ -153,6 +154,11 @@ def process_new_videos(args):
     new_valid_videos = [v for v in new_video if v not in existing_videos]
     print(f"\nFound {len(new_valid_videos)} new valid videos")
     
+    # Shuffle new valid videos if requested
+    if args.shuffle:
+        print("Shuffling new valid videos...")
+        random.shuffle(new_valid_videos)
+    
     # Create new batches
     created_files = []
     for i in range(0, len(new_valid_videos), args.batch_size):
@@ -232,6 +238,10 @@ def parse_args():
     # Naming mode
     parser.add_argument("--naming-mode", type=str, choices=["batch", "overlap", "nonoverlap"], default="batch",
                         help="Naming convention for batch files: 'batch' for batchX.json, 'overlap' for overlap_X_to_Y.json, or 'nonoverlap' for nonoverlap_X_to_Y.json")
+    
+    # Shuffle option
+    parser.add_argument("--shuffle", type=bool, default=True,
+                        help="Whether to shuffle new valid videos before creating batches (default: True)")
     
     return parser.parse_args()
 

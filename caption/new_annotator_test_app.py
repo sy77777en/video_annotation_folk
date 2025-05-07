@@ -16,12 +16,15 @@ def parse_args():
         default=["video_urls/new_annotator_exam/exam.json"],
         help="List of paths to test URLs files",
     )
+    parser.add_argument("--main_project_output", type=str, default="output_captions", help="Path to the main project output directory")
     parser.add_argument("--output", type=str, default="output_new_annotator", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
+    parser.add_argument("--diff_prompt", type=str, default="prompts/diff_prompt.txt", help="Path to the diff prompt file")
+    parser.add_argument("--diff_cap_prompt", type=str, default="prompts/diff_cap_prompt.txt", help="Path to the caption diff prompt file")
     parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
-    parser.add_argument("--personalize_output", action="store_true", default=True, help="Whether to personalize the output directory based on the logged-in user")
+    parser.add_argument("--personalize_output", type=bool, default=True, help="Whether to personalize the output directory based on the logged-in user")
     return parser.parse_args()
 
 def new_annotator_main():

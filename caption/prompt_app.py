@@ -250,9 +250,9 @@ def main():
     with st.expander("Frames (Click to Expand/Collapse)", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
-            st.image(extracted_frames[0], caption="First Frame", use_container_width=True)
+            st.image(extracted_frames[0], caption="First Frame")
         with col2:
-            st.image(extracted_frames[1], caption="Last Frame", use_container_width=True)
+            st.image(extracted_frames[1], caption="Last Frame")
 
     
     st.write("##### 目前仅支持Gemini-2和ChatGPT. 可以选用（text-only) (first-last-frame) (video)的模式")

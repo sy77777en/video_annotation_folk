@@ -6,10 +6,12 @@ from feedback_app import (
     load_video_data, get_video_id, load_json, 
     get_filename, load_data, FOLDER, FEEDBACK_FILE_POSTFIX, PREV_FEEDBACK_FILE_POSTFIX,
     load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS,
-    convert_name_to_username
+    convert_name_to_username, display_feedback_info,
+    display_feedback_differences, display_caption_differences
 )
 from datetime import datetime
 import argparse
+from streamlit_extras.bottom_container import bottom
 
 def parse_args():
     """Parse command line arguments for the new annotator diff app"""
@@ -24,11 +26,14 @@ def parse_args():
         ],
         help="List of paths to test URLs files",
     )
+    parser.add_argument("--main_project_output", type=str, default="output_captions", help="Path to the main project output directory")
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the original output directory")
     parser.add_argument("--output_new_annotator", type=str, default="output_new_annotator", help="Path to the new annotator output directory")
     parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
     parser.add_argument("--personalize_output", action="store_true", default=True, help="Whether to personalize the output directory based on the logged-in user")
+    parser.add_argument("--diff_prompt", type=str, default="prompts/diff_prompt.txt", help="Path to the diff prompt file")
+    parser.add_argument("--diff_cap_prompt", type=str, default="prompts/diff_cap_prompt.txt", help="Path to the caption diff prompt file")
     return parser.parse_args()
 
 def get_video_status(video_id, output_dir, new_annotator_output_dir):
@@ -52,34 +57,6 @@ def get_video_status(video_id, output_dir, new_annotator_output_dir):
         
         return "done_by_new_annotator", current_file, new_annotator_file, current_user, new_annotator_user
 
-def split_into_words(text):
-    """Split text into words for better diff visualization"""
-    # Split by whitespace and punctuation
-    words = re.findall(r"\w+|\W+", text)
-    return words
-
-def highlight_differences(text1, text2):
-    """Highlight differences between two texts using HTML with word-level granularity"""
-    # Split texts into words
-    words1 = split_into_words(text1)
-    words2 = split_into_words(text2)
-    
-    # Use difflib to find differences
-    differ = difflib.Differ()
-    diff = list(differ.compare(words1, words2))
-    
-    # Process the diff to create HTML with highlighting
-    result = []
-    for word in diff:
-        if word.startswith('  '):  # unchanged
-            result.append(word[2:])
-        elif word.startswith('- '):  # deleted
-            result.append(f'<span style="color: red; text-decoration: line-through;">{word[2:]}</span>')
-        elif word.startswith('+ '):  # added
-            result.append(f'<span style="color: green; font-weight: bold;">{word[2:]}</span>')
-    
-    return ''.join(result)
-
 def get_video_format_func(output_dir, new_annotator_output_dir):
     """Format function for video selection dropdown with status emojis"""
     def format_func(video_url):
@@ -88,7 +65,7 @@ def get_video_format_func(output_dir, new_annotator_output_dir):
         
         emoji_map = {
             "not_done": "❓",  # for not completed
-            "not_done_by_new_annotator": "❌",  # for completed but not by new annotator
+            "not_done_by_new_annotator": "⏳",  # hourglass for completed but not by new annotator
             "done_by_new_annotator": "✅"  # for done by new annotator
         }
         
@@ -267,9 +244,9 @@ def main(args):
         with st.expander("Frames (Click to Expand/Collapse)", expanded=False):
             col1, col2 = st.columns(2)
             with col1:
-                st.image(extracted_frames[0], caption="First Frame", use_container_width=True)
+                st.image(extracted_frames[0], caption="First Frame")
             with col2:
-                st.image(extracted_frames[1], caption="Last Frame", use_container_width=True)
+                st.image(extracted_frames[1], caption="Last Frame")
         
         with st.expander("Show Links", expanded=False):
             col1, col2, col3 = st.columns(3)
@@ -293,7 +270,7 @@ def main(args):
                 else:
                     st.link_button("🔗 Lighting-Setup", "https://example.com/c", type='secondary', disabled=True)
             
-            st.link_button("🔗 Report Label Errors Here", "https://docs.google.com/spreadsheets/d/1sAYL86ERcaC_vrVuloXxtPJXKzeuj8fukHtNv6nRCJ0/edit?usp=sharing", use_container_width=True)
+            st.link_button("🔗 Report Label Errors Here", "https://docs.google.com/spreadsheets/d/1sAYL86ERcaC_vrVuloXxtPJXKzeuj8fukHtNv6nRCJ0/edit?usp=sharing")
 
         # Get indices
         current_index = video_urls.index(selected_video)
@@ -354,229 +331,60 @@ def main(args):
                     reset_state_except(preserved_keys)
             else:
                 st.button("Next Video ⏭️", disabled=True)
-
-    with page_col2:
-        status, current_file, new_annotator_file, current_user, new_annotator_user = get_video_status(video_id, output_dir, new_annotator_output_dir)
         
-        if status == "not_done":
-            st.warning("Please complete this caption first.")
-        elif status == "not_done_by_new_annotator":
-            st.info("No new annotator version found.")
-        else:  # done_by_new_annotator
-            # Load both current and new annotator captions
-            current_data = load_data(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
-            new_annotator_data = load_data(video_id, output_dir=new_annotator_output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+    with page_col2:
+        with st.container(height=930, border=True):
+            status, current_file, new_annotator_file, current_user, new_annotator_user = get_video_status(video_id, output_dir, new_annotator_output_dir)
             
-            st.subheader("Caption Comparison")
-            
-            # Display metadata information
-            current_timestamp = format_timestamp(current_data.get("timestamp", "Unknown"))
-            new_annotator_timestamp = format_timestamp(new_annotator_data.get("timestamp", "Unknown"))
-            
-            st.write(f"**Ground Truth Version:** By {current_user} on {current_timestamp}")
-            st.write(f"**Your Version:** By {new_annotator_user} on {new_annotator_timestamp}")
-            
-            # Create tabs for viewing captions
-            tab1, tab2, tab3, tab4 = st.tabs(["Ground Truth Version", "Your Version", "Caption Differences", "Feedback Differences"])
-            
-            with tab1:
-                st.subheader("Ground Truth Version")
-                st.write(f"**User:** {current_user}")
-                st.write(f"**Timestamp:** {format_timestamp(current_data.get('timestamp', ''))}")
-                st.write("**Caption:**")
-                st.write(current_data.get("final_caption", "No caption available"))
+            if status == "not_done":
+                st.warning("Please complete this caption first.")
+            elif status == "not_done_by_new_annotator":
+                st.info("No new annotator version found.")
+            else:  # done_by_new_annotator
+                # Load both current and new annotator captions
+                current_data = load_data(video_id, output_dir=output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
+                new_annotator_data = load_data(video_id, output_dir=new_annotator_output_dir, file_postfix=FEEDBACK_FILE_POSTFIX)
                 
-                # Add pre-caption, initial feedback, and GPT feedback information
-                with st.expander("Pre-caption and feedback", expanded=True):
-                    st.write("**Pre-caption:**")
-                    st.write(current_data.get("pre_caption", "No pre-caption available"))
-                    st.write("**Human Feedback:**")
-                    st.write(current_data.get("initial_feedback", "No initial feedback available"))
-                    st.write("**GPT-Polished Feedback:**")
-                    st.write(current_data.get("gpt_feedback", "No GPT feedback available"))
-            
-            with tab2:
-                st.subheader("Your Version")
-                st.write(f"**User:** {new_annotator_user}")
-                st.write(f"**Timestamp:** {format_timestamp(new_annotator_data.get('timestamp', ''))}")
-                st.write("**Caption:**")
-                st.write(new_annotator_data.get("final_caption", "No caption available"))
+                st.subheader("Caption Comparison")
                 
-                # Add pre-caption, initial feedback, and GPT feedback information
-                with st.expander("Pre-caption and feedback", expanded=True):
-                    st.write("**Pre-caption:**")
-                    st.write(new_annotator_data.get("pre_caption", "No pre-caption available"))
-                    st.write("**Human Feedback:**")
-                    st.write(new_annotator_data.get("initial_feedback", "No initial feedback available"))
-                    st.write("**GPT-Polished Feedback:**")
-                    st.write(new_annotator_data.get("gpt_feedback", "No GPT feedback available"))
-            
-            with tab3:
-                st.subheader("Highlighted Differences")
-                st.write("**Differences Summary:**")
+                # Display metadata information
+                current_timestamp = format_timestamp(current_data.get("timestamp", "Unknown"))
+                new_annotator_timestamp = format_timestamp(new_annotator_data.get("timestamp", "Unknown"))
                 
-                # Get captions
-                original_caption = current_data.get("final_caption", "")
-                new_caption = new_annotator_data.get("final_caption", "")
+                st.write(f"**Ground Truth Version:** By {current_user} on {current_timestamp}")
+                st.write(f"**Your Version:** By {new_annotator_user} on {new_annotator_timestamp}")
                 
-                # Check if there are any differences
-                if original_caption == new_caption:
-                    st.success("No differences found between the ground truth and your version.")
-                else:
-                    # Highlight differences
-                    highlighted_diff = highlight_differences(original_caption, new_caption)
-                    st.markdown(highlighted_diff, unsafe_allow_html=True)
+                # Create tabs for viewing captions
+                tab1, tab2, tab3, tab4 = st.tabs(["Caption Differences", "Feedback Differences", "Ground Truth Version", "Your Version"])
                 
-                # Calculate statistics instead of showing all words
-                original_words = split_into_words(original_caption)
-                new_words = split_into_words(new_caption)
+                with tab1:
+                    st.subheader("Caption Differences")
+                    display_caption_differences(
+                        prev_feedback=new_annotator_data,
+                        feedback_data=current_data,
+                        diff_prompt=args.diff_cap_prompt
+                    )
                 
-                # Calculate word counts
-                original_word_count = len([w for w in original_words if w.strip()])
-                new_word_count = len([w for w in new_words if w.strip()])
+                with tab2:
+                    st.subheader("Feedback Differences")
+                    display_feedback_differences(
+                        prev_feedback=new_annotator_data,
+                        feedback_data=current_data,
+                        diff_prompt=args.diff_prompt
+                    )
                 
-                # Calculate character counts
-                original_char_count = len(original_caption)
-                new_char_count = len(new_caption)
+                with tab3:
+                    st.subheader("Ground Truth Version")
+                    st.write(f"**User:** {current_user}")
+                    st.write(f"**Timestamp:** {format_timestamp(current_data.get('timestamp', ''))}")
+                    display_feedback_info(current_data)
                 
-                # Calculate percentage changes
-                word_change_percent = ((new_word_count - original_word_count) / max(original_word_count, 1)) * 100
-                char_change_percent = ((new_char_count - original_char_count) / max(original_char_count, 1)) * 100
+                with tab4:
+                    st.subheader("Your Version")
+                    st.write(f"**User:** {new_annotator_user}")
+                    st.write(f"**Timestamp:** {format_timestamp(new_annotator_data.get('timestamp', ''))}")
+                    display_feedback_info(new_annotator_data)
                 
-                # Display statistics
-                st.write("**Caption Statistics:**")
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    st.write(f"**Ground Truth Version:**")
-                    st.write(f"- Word count: {original_word_count}")
-                    st.write(f"- Character count: {original_char_count}")
-                
-                with col2:
-                    st.write(f"**Your Version:**")
-                    st.write(f"- Word count: {new_word_count}")
-                    st.write(f"- Character count: {new_char_count}")
-                
-                st.write("**Differences:**")
-                st.write(f"- Word count difference: {new_word_count - original_word_count} ({word_change_percent:.1f}%)")
-                st.write(f"- Character count difference: {new_char_count - original_char_count} ({char_change_percent:.1f}%)")
-                
-                # Show a summary of the caption content
-                st.write("**Caption Summary:**")
-                if original_caption and new_caption:
-                    st.write("**Ground Truth Caption:**")
-                    st.write(original_caption[:200] + "..." if len(original_caption) > 200 else original_caption)
-                    
-                    st.write("**Your Caption:**")
-                    st.write(new_caption[:200] + "..." if len(new_caption) > 200 else new_caption)
-                else:
-                    st.write("No caption available for comparison.")
-                
-                # Show key differences (most significant changes)
-                st.write("**Key Differences:**")
-                
-                # Find the most significant changes (longer phrases)
-                original_phrases = [p for p in original_caption.split('.') if p.strip()]
-                new_phrases = [p for p in new_caption.split('.') if p.strip()]
-                
-                # Find added and removed phrases
-                added_phrases = []
-                removed_phrases = []
-                
-                for phrase in new_phrases:
-                    if phrase.strip() and phrase.strip() not in original_phrases:
-                        added_phrases.append(phrase.strip())
-                
-                for phrase in original_phrases:
-                    if phrase.strip() and phrase.strip() not in new_phrases:
-                        removed_phrases.append(phrase.strip())
-                
-                # Show top 3 most significant changes
-                if added_phrases:
-                    st.write("**Added Phrases:**")
-                    for i, phrase in enumerate(added_phrases[:3]):
-                        st.write(f"{i+1}. {phrase}")
-                    if len(added_phrases) > 3:
-                        st.write(f"... and {len(added_phrases) - 3} more")
-                elif removed_phrases:
-                    st.write("**No added phrases.**")
-                
-                if removed_phrases:
-                    st.write("**Removed Phrases:**")
-                    for i, phrase in enumerate(removed_phrases[:3]):
-                        st.write(f"{i+1}. {phrase}")
-                    if len(removed_phrases) > 3:
-                        st.write(f"... and {len(removed_phrases) - 3} more")
-                elif added_phrases:
-                    st.write("**No removed phrases.**")
-                
-                if not added_phrases and not removed_phrases:
-                    st.write("**No significant differences found.**")
-
-            with tab4:
-                st.subheader("Initial Feedback Differences")
-                st.write("**Differences in Initial Feedback:**")
-                
-                # Get initial feedback
-                original_feedback = current_data.get("initial_feedback")
-                new_feedback = new_annotator_data.get("initial_feedback")
-                
-                # Convert None to empty string
-                original_feedback = "" if original_feedback is None else original_feedback
-                new_feedback = "" if new_feedback is None else new_feedback
-                
-                # Check if there are any differences
-                if original_feedback == new_feedback:
-                    st.success("No differences found between the ground truth and your initial feedback.")
-                else:
-                    # Highlight differences
-                    highlighted_feedback_diff = highlight_differences(original_feedback, new_feedback)
-                    st.markdown(highlighted_feedback_diff, unsafe_allow_html=True)
-                
-                # Calculate statistics instead of showing all words
-                original_feedback_words = split_into_words(original_feedback)
-                new_feedback_words = split_into_words(new_feedback)
-                
-                # Calculate word counts
-                original_word_count = len([w for w in original_feedback_words if w.strip()])
-                new_word_count = len([w for w in new_feedback_words if w.strip()])
-                
-                # Calculate character counts
-                original_char_count = len(original_feedback)
-                new_char_count = len(new_feedback)
-                
-                # Calculate percentage changes
-                word_change_percent = ((new_word_count - original_word_count) / max(original_word_count, 1)) * 100
-                char_change_percent = ((new_char_count - original_char_count) / max(original_char_count, 1)) * 100
-                
-                # Display statistics
-                st.write("**Feedback Statistics:**")
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    st.write(f"**Ground Truth Version:**")
-                    st.write(f"- Word count: {original_word_count}")
-                    st.write(f"- Character count: {original_char_count}")
-                
-                with col2:
-                    st.write(f"**Your Version:**")
-                    st.write(f"- Word count: {new_word_count}")
-                    st.write(f"- Character count: {new_char_count}")
-                
-                st.write("**Differences:**")
-                st.write(f"- Word count difference: {new_word_count - original_word_count} ({word_change_percent:.1f}%)")
-                st.write(f"- Character count difference: {new_char_count - original_char_count} ({char_change_percent:.1f}%)")
-                
-                # Show a summary of the feedback content
-                st.write("**Feedback Summary:**")
-                if original_feedback and new_feedback:
-                    st.write("**Ground Truth Feedback:**")
-                    st.write(original_feedback[:200] + "..." if len(original_feedback) > 200 else original_feedback)
-                    
-                    st.write("**Your Feedback:**")
-                    st.write(new_feedback[:200] + "..." if len(new_feedback) > 200 else new_feedback)
-                else:
-                    st.write("No feedback available for comparison.")
 
 if __name__ == "__main__":
     args = parse_args()

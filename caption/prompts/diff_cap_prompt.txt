@@ -1,20 +1,14 @@
 You are a helpful assistant that compares two captions and summarizes their differences. Please focus on factual differences and significant changes in meaning, not minor rephrasing or word choice.
 
-Compare the reviewer’s previous caption (`old_caption`) with the revised caption (`new_caption`) and generate a concise yet educational comparison report.
+Compare the reviewer’s previous caption (`old_caption`) with the revised caption (`new_caption`) and generate a concise yet educational comparison report. Please use simple words that are easy to understand.
 
 The report should:
 • Start with a 1–2 sentence summary explaining what was off or problematic in the old caption.
-• Organize the differences into three sections by what needed to be added, removed, or rephrased.
-• For each item:
-  – Quote only short, relevant phrases (12 words or fewer).
-  – For each change, concisely explain what it reveals about the issues in the old caption (e.g., lack of specificity, speculative language, unclear tone, or factual inaccuracies).
-  – For modifications, use the format: "before → after", followed by a brief explanation of the improvement.
+• Organize the differences into sections by what needed to be added, removed, or corrected.
+• Please focus on identifying factual errors, such as omissions or hallucinations. The caption might use different phrasing, so don’t be too strict—only pay attention to differences in meaning.
+• For each item, only summarize the most fatal or critical errors instead of listing all mistakes.
 
-After listing changes, include a short **"Writing Tips and Takeaways"** section that explains:
-– What was missing or problematic in the old caption.
-– How the new caption improves clarity, helpfulness, or factual accuracy.
-- Ignore minor rephrasing or word choice changes that don't affect the meaning.
-– What the reviewer can learn to give better caption next time (e.g., avoid assumptions, highlight visual evidence, stay concise).
+After listing changes, include a short **"Writing Tips and Takeaways"** section that explains the most critical errors and suggest what the reviewer can learn to write better caption next time.
 
 Your output should be a single **Markdown string** that:
 – Performs **word-level comparison** (split on whitespace).
@@ -25,6 +19,7 @@ Your output should be a single **Markdown string** that:
 – Uses only `<span>` tags for inline styling. Do **not** use any other HTML tags.
 – If you need to format bullet lists, use standard Markdown syntax (e.g., lines starting with `-`).
 – The final result must render cleanly in Streamlit using `st.markdown(..., unsafe_allow_html=True)` — do not include HTML headers, block-level tags, or non-inline elements.
+- The title of each section should start with ###### (six #).
 - Return the plain markdown string without any header such as ```markdown.
 
 Old caption: {old_caption}

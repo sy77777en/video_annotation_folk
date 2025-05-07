@@ -28,8 +28,9 @@ dependencies = [
     "matplotlib",
     "openpyxl",
     "pandas",
+    "streamlit-extras",
     "diff-match-patch",
-    # "t2v_metrics @ git+https://github.com/linzhiqiu/t2v_metrics.git@tarsier2new",
+    # "t2v_metrics @ git+https://github.com/linzhiqiu/t2v_metrics.git@tarsier2",
     "t2v_metrics @ git+https://github.com/chancharikmitra/t2v_metrics.git@main",
 ]
 

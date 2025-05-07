@@ -26,7 +26,7 @@ from feedback_app import (
 )
 
 # Set to False to actually remove files
-DRY_RUN = True
+DRY_RUN = False
 
 def cleanup_prev_feedback(args):
     """

@@ -55,12 +55,12 @@ def parse_args():
         ],
         help="List of paths to test URLs files",
     )
+    parser.add_argument("--main_project_output", type=str, default="output_captions", help="Path to the main project output directory")
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
-    # parser.add_argument("--video_data", type=str, default="video_data/20250224_0130/videos.json", help="Path to the video data file")
-    # parser.add_argument("--video_data", type=str, default="video_data/20250324_1616_all_labels/videos.json", help="Path to the video data file")
-    # parser.add_argument("--video_data", type=str, default="video_data/20250328_1455_lighting_120/videos.json", help="Path to the video data file") # Before April 14
+    parser.add_argument("--diff_prompt", type=str, default="prompts/diff_prompt.txt", help="Path to the diff prompt file")
+    parser.add_argument("--diff_cap_prompt", type=str, default="prompts/diff_cap_prompt.txt", help="Path to the caption diff prompt file")
     parser.add_argument("--video_data", type=str, default="video_data/20250406lighting_only/videos.json", help="Path to the video data file")
     # parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup", "lighting_setup"], help="List of label collections to load from the video data")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["lighting_setup"], help="List of label collections to load from the video data")
@@ -80,7 +80,6 @@ caption_programs = {
     "raw_lighting_setup_dynamics": RawLightingSetupPolicy(),
     "raw_lighting_effects_dynamics": RawLightingEffectsPolicy(),
 }
-
 
 from feedback_app import main
 
