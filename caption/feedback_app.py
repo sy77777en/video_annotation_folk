@@ -348,15 +348,15 @@ def get_precaption_llm_name(config_dict, selected_config):
         return "tarsier-recap-7b"
     elif task in ["spatial_framing_dynamics"]:
         # return "qwen2.5-vl-72b"
-        return "gemini-2.5-pro-preview-03-25"
+        return "gemini-2.5-pro-preview-05-06"
     elif task in ["raw_lighting_setup_dynamics", "raw_lighting_effects_dynamics"]:
         # print(f"Using qwen2.5-vl-7b for {task}")
         # return "qwen2.5-vl-7b"
-        print(f"Using gemini-2.5-pro-preview-03-25 for {task}")
-        return "gemini-2.5-pro-preview-03-25"
+        print(f"Using gemini-2.5-pro-preview-05-06 for {task}")
+        return "gemini-2.5-pro-preview-05-06"
     else:
         # return "gpt-4o-2024-08-06"
-        return "gemini-2.5-pro-preview-03-25"
+        return "gemini-2.5-pro-preview-05-06"
 
 def load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, output):
     """Generate a pre-caption for the video"""
