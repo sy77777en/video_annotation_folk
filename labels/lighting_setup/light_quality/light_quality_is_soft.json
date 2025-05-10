@@ -2,7 +2,8 @@
     "label": "Light Quality Is Soft (Diffused)",
     "label_name": "light_quality_is_soft",
     "def_question": [
-        "Does the scene in this video feature soft, diffused lighting?"
+        "Are all surface areas within the scene lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light?",
+        "Are all surface areas within the scene lit by soft light?"
     ],
     "alt_question": [
         "Does the video feature soft, diffused lighting with gentle illumination and minimal harsh shadows?",
@@ -16,7 +17,8 @@
         "Does the video use soft, ambient lighting with no sharp shadow lines?"
     ],
     "def_prompt": [
-        "The scene in this video features soft, diffused lighting."
+        "All surface areas within the scene are lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light.",
+        "All surface areas within the scene are lit by soft light."
     ],
     "alt_prompt": [
         "The video features soft, diffused lighting with gentle illumination and minimal harsh shadows.",

@@ -98,6 +98,9 @@ def calculate_accuracy_stats(video_urls, output_dir):
             
         # Determine the annotator (original caption creator)
         annotator = prev_user if prev_file else current_user
+        if annotator is None:
+            print(f"annotator is None for video {video_id}")
+            import pdb; pdb.set_trace()
             
         # Initialize annotator stats if not exists
         if annotator not in stats:
@@ -237,7 +240,6 @@ def display_accuracy_statistics(config_names, config_dict, video_urls, args):
                             table_str += f"| {annotator} | {data['total_completed']} | {data['total_reviewed']} | {data['approved']} | {data['rejected']} | {data['accuracy']:.1%} |\n"
                         else:
                             table_str += f"| {annotator} | {data['total_completed']} | 0 | 0 | 0 | N/A |\n"
-                    
                     # Display the table
                     st.markdown(table_str)
 

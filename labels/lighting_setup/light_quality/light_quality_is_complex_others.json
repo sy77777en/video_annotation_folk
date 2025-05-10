@@ -1,8 +1,8 @@
 {
-    "label": "Is Lighting Quality Complex",
-    "label_name": "light_quality_is_complex",
+    "label": "Is Lighting Quality Complex (Others)",
+    "label_name": "light_quality_is_complex_others",
     "def_question": [
-        "Does the light quality in the video vary across the scene, making it difficult to categorize?"
+        "Does the scene show both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation?"
     ],
     "alt_question": [
         "Does the scene feature dynamic or contrasting lighting conditions?",
@@ -15,7 +15,7 @@
         "Is the overall lighting too mixed to fit a single category?"
     ],
     "def_prompt": [
-        "The light quality varies across the scene, making it difficult to categorize."
+        "The scene shows both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation."
     ],
     "alt_prompt": [
         "A video featuring shifting, contrasting, or undefined lighting.",
@@ -27,8 +27,8 @@
         "A shot featuring an interplay of distinct lighting styles.",
         "A scene where light transitions, mixes, or creates contrast."
     ],
-    "pos_rule_str": "self.lighting_setup.light_quality_is_complex is True",
-    "neg_rule_str": "self.lighting_setup.light_quality_is_complex is False",
+    "pos_rule_str": "self.lighting_setup.light_quality_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.light_quality_is_complex_others is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

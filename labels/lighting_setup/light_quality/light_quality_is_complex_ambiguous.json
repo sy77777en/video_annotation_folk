@@ -1,0 +1,34 @@
+{
+    "label": "Is Lighting Quality Complex (Ambiguous)",
+    "label_name": "light_quality_is_complex_ambiguous",
+    "def_question": [
+        "Does the scene lack sufficient visual information to determine light quality, due to non-physically realistic shading, absence of visible shadow-casting surface areas, or visual degradation?"
+    ],
+    "alt_question": [
+        "Are shadows or surface cues too unclear to assess lighting?",
+        "Is the lighting in the video stylized or non-physical?",
+        "Are important visual cues missing, abstract, or degraded?",
+        "Does the scene lack visible surfaces or shadows to judge from?",
+        "Is the video too visually noisy or distorted to identify lighting type?",
+        "Is the lighting unreadable due to low resolution or exposure issues?",
+        "Is the shading inconsistent with real-world lighting behavior?",
+        "Is the lighting impossible to categorize based on available cues?"
+    ],
+    "def_prompt": [
+        "The scene lacks sufficient visual information to determine light quality, due to non-physically realistic shading, absence of visible shadow-casting surface areas, or visual degradation."
+    ],
+    "alt_prompt": [
+        "A video where shadows are missing, abstract, or implausible.",
+        "A shot where lighting cues are visually degraded or inconsistent.",
+        "A scene too ambiguous or stylized to assess real-world lighting.",
+        "A video with insufficient detail to determine shadow or highlight behavior.",
+        "A frame where no usable shadow-casting surface is visible.",
+        "A video with noise, blur, or compression that obscures lighting cues.",
+        "A visually unclear or low-information scene for lighting classification.",
+        "A sequence where light quality cannot be reliably judged."
+    ],
+    "pos_rule_str": "self.lighting_setup.light_quality_is_complex_ambiguous is True",
+    "neg_rule_str": "self.lighting_setup.light_quality_is_complex_ambiguous is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+}

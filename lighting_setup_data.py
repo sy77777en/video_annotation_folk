@@ -38,7 +38,7 @@ class LightingSetupData:
         self.sunlight_level = "unknown"  # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
 
         # Light quality
-        self.light_quality = "complex_others"  # Options: "hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"
+        self.light_quality = "complex_ambiguous"  # Options: "hard_light", "soft_light", "complex_changing", "complex_contrasting", "complex_others", "complex_ambiguous"
 
         # Lighting setup description
         self.lighting_setup_description = ""
@@ -236,7 +236,8 @@ class LightingSetupData:
             "sunlight_quality_is_unknown",
             "light_quality_is_soft",
             "light_quality_is_hard", "light_quality_is_changing",
-            "light_quality_is_contrasting", "light_quality_is_complex"
+            "light_quality_is_contrasting", "light_quality_is_complex_others",
+            "light_quality_is_complex_ambiguous"
         ]
         if self.shot_transition is True or self.is_labeled is False:
             for attr in attributes:
@@ -262,16 +263,24 @@ class LightingSetupData:
         self.sunlight_quality_is_unknown = self.sunlight_level == "unknown"
 
         # Light Quality
-        self.light_quality_is_soft = self.light_quality == "soft_diffused_light"
-        self.light_quality_is_hard = self.light_quality == "hard_light"
-        if self.light_quality == "complex_others":
+        self.light_quality_is_complex_ambiguous = self.light_quality == "complex_ambiguous"
+        if not self.light_quality_is_complex_ambiguous:
+            self.light_quality_is_soft = self.light_quality == "soft_light"
+            self.light_quality_is_hard = self.light_quality == "hard_light"
+            if self.light_quality == "complex_others":
+                self.light_quality_is_changing = None
+                self.light_quality_is_contrasting = None
+            else:
+                self.light_quality_is_changing = self.light_quality == "complex_changing"
+                self.light_quality_is_contrasting = self.light_quality == "complex_contrasting"
+
+            self.light_quality_is_complex_others = self.light_quality == "complex_others"
+        else:
+            self.light_quality_is_complex_others = None
+            self.light_quality_is_soft = None
+            self.light_quality_is_hard = None
             self.light_quality_is_changing = None
             self.light_quality_is_contrasting = None
-        else:
-            self.light_quality_is_changing = self.light_quality == "complex_changing"
-            self.light_quality_is_contrasting = self.light_quality == "complex_contrasting"
-
-        self.light_quality_is_complex = self.light_quality == "complex_others"
 
     def _set_subject_lighting_attributes(self):
         attributes = [
@@ -394,10 +403,10 @@ class LightingSetupData:
             raise ValueError("sunlight_level must be one of 'normal', 'sunny', 'overcast', 'sunset_sunrise', 'unknown'")
 
     def set_light_quality(self, light_quality):
-        if light_quality in ["hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"]:
+        if light_quality in ["hard_light", "soft_light", "complex_changing", "complex_contrasting", "complex_others"]:
             self.light_quality = light_quality
         else:
-            raise ValueError("light_quality must be one of 'hard_light', 'soft_diffused_light', 'complex_changing', 'complex_contrasting', 'complex_others'")
+            raise ValueError("light_quality must be one of 'hard_light', 'soft_light', 'complex_changing', 'complex_contrasting', 'complex_others'")
 
     def set_subject_contrast_ratio(self, subject_contrast_ratio):
         if subject_contrast_ratio in ["high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"]:
@@ -858,6 +867,7 @@ class LightingSetupData:
                 self.subject_ambient_light, self.rembrandt_lighting]):
                 raise ValueError("subject_contrast_ratio must be specified if subject lighting is present")
 
+
 lighting_setup_params_demo = {
     "shot_transition": False,
     "color_temperature": "cool",
@@ -873,7 +883,7 @@ lighting_setup_params_demo = {
     "abstract_light_source": False,
     "complex_light_source": False,
     "sunlight_level": "sunny",
-    "light_quality": "soft_diffused_light",
+    "light_quality": "soft_light",
     "lighting_setup_description": "Soft diffused light with sunny outdoor setting",
     "subject_contrast_ratio": "high_contrast",
     "subject_back_light": True,

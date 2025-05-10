@@ -2,7 +2,7 @@
     "label": "Light Quality Is Changing (Complex)",
     "label_name": "light_quality_is_changing",
     "def_question": [
-        "Does the light quality in the scene change between hard and soft over time?"
+        "Do some surface areas in the scene change in light quality over time, shifting between soft and hard light?"
     ],
     "alt_question": [
         "Does the scene transition between hard and soft lighting?",
@@ -15,7 +15,7 @@
         "Is the light source condition constantly changing?"
     ],
     "def_prompt": [
-        "The light quality in the scene changes between hard and soft over time."
+        "Some surface area in the scene changes in light quality over time, shifting between soft and hard light."
     ],
     "alt_prompt": [
         "A video where lighting conditions evolve throughout.",

@@ -2,7 +2,8 @@
     "label": "Light Quality Is Hard",
     "label_name": "light_quality_is_hard",
     "def_question": [
-        "Is the scene only lit with hard, directional lighting?"
+        "Are all or nearly all surface areas within the scene lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light?",
+        "Are all or nearly all surface areas within the scene lit by hard light?"
     ],
     "alt_question": [
         "Does the video feature hard lighting (e.g., strong contrast, bright highlights, or sharp shadows)?",
@@ -16,7 +17,8 @@
         "Does the video show clear shadow lines due to hard lighting?"
     ],
     "def_prompt": [
-        "The scene is only lit with hard, directional lighting."
+        "All or nearly all surface areas within the scene are lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light.",
+        "All or nearly all surface areas within the scene are lit by hard light."
     ],
     "alt_prompt": [
         "The video features hard lighting (e.g., strong contrast, bright highlights, or sharp shadows).",

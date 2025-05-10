@@ -2,7 +2,7 @@
     "label": "Light Contrast Ratio on Subject Is High",
     "label_name": "subject_light_contrast_is_high",
     "def_question": [
-        "Does the lighting on the subject have a high contrast ratio, where lit areas are significantly brighter than dark areas (1:8 or above)?"
+        "Does the lighting on the subject have a high contrast ratio, with lit areas significantly brighter than shadowed areas (e.g., roughly 1:8 or higher)?"
     ],
     "alt_question": [
         "Does the subject’s lighting feature a strong difference between highlights and shadows?",
@@ -15,7 +15,7 @@
         "Is the subject’s visibility defined by stark lighting differences?"
     ],
     "def_prompt": [
-        "The lighting on the subject has a high contrast ratio (1:8 or higher), creating a strong distinction between bright and dark areas."
+        "The lighting on the subject has a high contrast ratio, with lit areas significantly brighter than shadowed areas (e.g., roughly 1:8 or higher)."
     ],
     "alt_prompt": [
         "A video where the subject is lit with high contrast, featuring strong highlights and deep shadows.",

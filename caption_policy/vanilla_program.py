@@ -1395,13 +1395,14 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         return sunlight_level_str
 
     def format_light_quality(self, light_quality: str, light_quality_dir="labels/lighting_setup/light_quality/") -> str:
-        # Options: "hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"
+        # Options: "hard_light", "soft_light", "complex_changing", "complex_contrasting", "complex_others", "complex_ambiguous"
         light_quality_info = {
             "hard_light": "light_quality_is_hard",
-            "soft_diffused_light": "light_quality_is_soft",
+            "soft_light": "light_quality_is_soft",
             "complex_changing": "light_quality_is_changing",
             "complex_contrasting": "light_quality_is_contrasting",
-            "complex_others": "light_quality_is_complex",
+            "complex_others": "light_quality_is_complex_others",
+            "complex_ambiguous": "light_quality_is_complex_ambiguous",
         }
         light_quality = light_quality_info[light_quality]
         light_quality_str = read_json_file(os.path.join(light_quality_dir, f"{light_quality}.json"))['def_prompt'][0]
@@ -1451,7 +1452,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             if getattr(lighting_setup, direction) is True:
                 subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
         if len(subject_light_direction_strs) == 0:
-            return "The light direction on the subject is complex to analyze."
+            return "The light direction on the subject is complex to analyze or describe."
         return " ".join(subject_light_direction_strs)
     
     def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
@@ -1851,13 +1852,14 @@ class RawLightingSetupPolicy(SocraticProgram):
         return sunlight_level_str
 
     def format_light_quality(self, light_quality: str, light_quality_dir="labels/lighting_setup/light_quality/") -> str:
-        # Options: "hard_light", "soft_diffused_light", "complex_changing", "complex_contrasting", "complex_others"
+        # Options: "hard_light", "soft_light", "complex_changing", "complex_contrasting", "complex_others", "complex_ambiguous"
         light_quality_info = {
             "hard_light": "light_quality_is_hard",
-            "soft_diffused_light": "light_quality_is_soft",
+            "soft_light": "light_quality_is_soft",
             "complex_changing": "light_quality_is_changing",
             "complex_contrasting": "light_quality_is_contrasting",
-            "complex_others": "light_quality_is_complex",
+            "complex_others": "light_quality_is_complex_others",
+            "complex_ambiguous": "light_quality_is_complex_ambiguous",
         }
         light_quality = light_quality_info[light_quality]
         light_quality_str = read_json_file(os.path.join(light_quality_dir, f"{light_quality}.json"))['def_prompt'][0]
@@ -1897,7 +1899,7 @@ class RawLightingSetupPolicy(SocraticProgram):
             if getattr(lighting_setup, direction) is True:
                 subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
         if len(subject_light_direction_strs) == 0:
-            return "The light direction on the subject is complex to analyze."
+            return "The light direction on the subject is complex to analyze or describe. (please try your best to describe the light direction)"
         return " ".join(subject_light_direction_strs)
 
     def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
