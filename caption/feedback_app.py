@@ -15,26 +15,82 @@ from llm import get_llm, get_all_llms, get_supported_mode
 from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
 from process_json import json_to_video_data
 
-# Annotator authentication system
-ANNOTATORS = {
-    "Siyuan Cen": {"password": "siyuan"},
-    "Yuhan Huang": {"password": "yuhan"},
-    "Irene Pi": {"password": "irene"},
-    "Hewei Wang": {"password": "hewei"},
-    "Yubo Wang": {"password": "yubo"},
-    "Zida Zhou": {"password": "zida"},
-    "Zhenye Luo": {"password": "zhenye"},
-    "Mingyu Wang": {"password": "mingyu"},
-    "Chancharik Mitra": {"password": "chancharik"},
-    "Tiffany Ling": {"password": "tiffany"},
-    "Sunny Guo": {"password": "sunny"},
-    "Xianya Dai": {"password": "xianya"},
-    "Kaibo Yang": {"password": "kaibo"},
-    "Tina Xu": {"password": "tina"},
-    "Shihang Zhu": {"password": "shihang"},
-    "Zhiqiu Lin": {"password": "zhiqiu"},
-    "Test User": {"password": "test"}
-}
+def save_annotators_to_files(annotators_dict, output_dir="annotator"):
+    """Save annotators dictionary to individual JSON files.
+    
+    Args:
+        annotators_dict: Dictionary of annotators with their passwords
+        output_dir: Directory to save the JSON files
+    """
+    # Create output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Save each annotator to a separate file
+    for name, data in annotators_dict.items():
+        # Convert name to a safe filename
+        safe_name = name.lower().replace(" ", "_")
+        filename = os.path.join(output_dir, f"{safe_name}.json")
+        
+        # Save to file
+        with open(filename, 'w') as f:
+            json.dump({name: data}, f, indent=4)
+        print(f"Saved annotator data to {filename}")
+
+def load_annotators_from_files(input_dir="annotator"):
+    """Load annotators from individual JSON files.
+    
+    Args:
+        input_dir: Directory containing the JSON files
+        
+    Returns:
+        Dictionary of annotators with their passwords
+    """
+    annotators = {}
+    
+    # Check if directory exists
+    if not os.path.exists(input_dir):
+        print(f"Warning: Annotator directory {input_dir} does not exist")
+        return annotators
+    
+    # Load each JSON file
+    for filename in os.listdir(input_dir):
+        if filename.endswith('.json'):
+            filepath = os.path.join(input_dir, filename)
+            try:
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                    annotators.update(data)
+            except Exception as e:
+                print(f"Error loading {filepath}: {e}")
+    
+    return annotators
+
+# Load annotators from files
+ANNOTATORS = load_annotators_from_files()
+
+# # If no annotators loaded, use default dictionary
+# if not ANNOTATORS:
+#     ANNOTATORS = {
+#         "Siyuan Cen": {"password": "siyuan"},
+#         "Yuhan Huang": {"password": "yuhan"},
+#         "Irene Pi": {"password": "irene"},
+#         "Hewei Wang": {"password": "hewei"},
+#         "Yubo Wang": {"password": "yubo"},
+#         "Zida Zhou": {"password": "zida"},
+#         "Zhenye Luo": {"password": "zhenye"},
+#         "Mingyu Wang": {"password": "mingyu"},
+#         "Chancharik Mitra": {"password": "chancharik"},
+#         "Tiffany Ling": {"password": "tiffany"},
+#         "Sunny Guo": {"password": "sunny"},
+#         "Xianya Dai": {"password": "xianya"},
+#         "Kaibo Yang": {"password": "kaibo"},
+#         "Tina Xu": {"password": "tina"},
+#         "Shihang Zhu": {"password": "shihang"},
+#         "Zhiqiu Lin": {"password": "zhiqiu"},
+#         "Test User": {"password": "test"}
+#     }
+#     # Save default annotators to files
+#     save_annotators_to_files(ANNOTATORS)
 
 APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling"]
 assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), "All approved reviewers must be in the ANNOTATORS dictionary"
@@ -892,6 +948,53 @@ def highlight_differences_gpt(text1, text2, diff_prompt=None, diff_key="diff_fee
         )
         st.rerun()  # Rerun to show the new feedback
 
+def copy_feedback_for_precaption(configs_path, video_urls_files, main_project_output, personalized_output):
+    """Copy feedback files from main project output to personalized output directory for precaption purposes.
+    
+    Args:
+        configs_path: Path to configs file
+        video_urls_files: List of video URLs files to process
+        main_project_output: Path to main project output directory
+        personalized_output: Path to personalized output directory
+    """
+    # Create personalized output directory if it doesn't exist
+    os.makedirs(personalized_output, exist_ok=True)
+    
+    # Process each video URLs file
+    for video_urls_file in video_urls_files:
+        video_urls = load_json(FOLDER / video_urls_file)
+        
+        # Process each video
+        for video_url in video_urls:
+            video_id = get_video_id(video_url)
+            
+            # For each config in the main project
+            configs = load_config(FOLDER / configs_path)
+            configs = [load_config(FOLDER / config) for config in configs]
+            
+            for config in configs:
+                # Get the output directory for this config
+                config_output_dir = os.path.join(FOLDER, main_project_output, config["output_name"])
+                feedback_file = get_filename(video_id, config_output_dir, FEEDBACK_FILE_POSTFIX)
+                
+                # If feedback exists in main project, check if precaption already exists
+                if os.path.exists(feedback_file):
+                    # Create config directory in personalized output
+                    personalized_config_dir = os.path.join(FOLDER, personalized_output, config["output_name"])
+                    os.makedirs(personalized_config_dir, exist_ok=True)
+                    
+                    # Check if precaption file already exists
+                    precaption_file = get_filename(video_id, personalized_config_dir, PRECAPTION_FILE_POSTFIX)
+                    if not os.path.exists(precaption_file):
+                        # Only copy if precaption doesn't exist
+                        with open(feedback_file, 'r') as src, open(precaption_file, 'w') as dst:
+                            dst.write(src.read())
+                        print(f"Copied {feedback_file} to {precaption_file}")
+                    else:
+                        print(f"Skipped copying {feedback_file} as {precaption_file} already exists")
+                else:
+                    print(f"Skipped copying {feedback_file} as it doesn't exist")
+
 def main(args, caption_programs):
     # Set page config first
     st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
@@ -1719,54 +1822,6 @@ def main(args, caption_programs):
                 st.write(st.session_state.feedback_data["final_caption"])
                 st.success("Feedback and caption saved successfully! To redo, please go to another video then come back.")
                 st.json(st.session_state.feedback_data)
-
-
-    def copy_feedback_for_precaption(configs_path, video_urls_files, main_project_output, personalized_output):
-        """Copy feedback files from main project output to personalized output directory for precaption purposes.
-        
-        Args:
-            configs_path: Path to configs file
-            video_urls_files: List of video URLs files to process
-            main_project_output: Path to main project output directory
-            personalized_output: Path to personalized output directory
-        """
-        # Create personalized output directory if it doesn't exist
-        os.makedirs(personalized_output, exist_ok=True)
-        
-        # Process each video URLs file
-        for video_urls_file in video_urls_files:
-            video_urls = load_json(FOLDER / video_urls_file)
-            
-            # Process each video
-            for video_url in video_urls:
-                video_id = get_video_id(video_url)
-                
-                # For each config in the main project
-                configs = load_config(FOLDER / configs_path)
-                configs = [load_config(FOLDER / config) for config in configs]
-                
-                for config in configs:
-                    # Get the output directory for this config
-                    config_output_dir = os.path.join(FOLDER, main_project_output, config["output_name"])
-                    feedback_file = get_filename(video_id, config_output_dir, FEEDBACK_FILE_POSTFIX)
-                    
-                    # If feedback exists in main project, check if precaption already exists
-                    if os.path.exists(feedback_file):
-                        # Create config directory in personalized output
-                        personalized_config_dir = os.path.join(FOLDER, personalized_output, config["output_name"])
-                        os.makedirs(personalized_config_dir, exist_ok=True)
-                        
-                        # Check if precaption file already exists
-                        precaption_file = get_filename(video_id, personalized_config_dir, PRECAPTION_FILE_POSTFIX)
-                        if not os.path.exists(precaption_file):
-                            # Only copy if precaption doesn't exist
-                            with open(feedback_file, 'r') as src, open(precaption_file, 'w') as dst:
-                                dst.write(src.read())
-                            print(f"Copied {feedback_file} to {precaption_file}")
-                        else:
-                            print(f"Skipped copying {feedback_file} as {precaption_file} already exists")
-                    else:
-                        print(f"Skipped copying {feedback_file} as it doesn't exist")
 
 
 if __name__ == "__main__":

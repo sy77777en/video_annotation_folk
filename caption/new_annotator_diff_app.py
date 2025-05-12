@@ -75,7 +75,7 @@ def get_video_format_func(output_dir, new_annotator_output_dir):
     return format_func
 
 def login_page(args):
-    st.title("New Annotator Comparison Viewer Login")
+    st.title("Onboarding Results Viewer Login")
 
     # Create a form for login
     with st.form("login_form"):
@@ -86,6 +86,9 @@ def login_page(args):
             key="selected_annotator"
         )
         
+        # Password input
+        password = st.text_input("Enter Password:", type="password", key="password_input")
+        
         # File selection dropdown
         selected_file = st.selectbox(
             "Select Video URLs File:", args.video_urls_files, key="selected_urls_file"
@@ -94,12 +97,16 @@ def login_page(args):
         submit_button = st.form_submit_button("Login")
 
         if submit_button:
-            # Store the selected file and annotator in session state
-            st.session_state.video_urls_file = selected_file
-            st.session_state.logged_in = True
-            st.session_state.logged_in_user = selected_annotator
-            st.success(f"Login successful! Welcome, {selected_annotator}!")
-            st.rerun()
+            # Check if password matches
+            if password == ANNOTATORS[selected_annotator]["password"]:
+                # Store the selected file and annotator in session state
+                st.session_state.video_urls_file = selected_file
+                st.session_state.logged_in = True
+                st.session_state.logged_in_user = selected_annotator
+                st.success(f"Login successful! Welcome, {selected_annotator}!")
+                st.rerun()
+            else:
+                st.error("Incorrect password. Please try again.")
 
 def format_timestamp(iso_timestamp):
     """Format ISO timestamp to a more readable format (YYYY-MM-DD HH:MM)"""

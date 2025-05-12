@@ -43,15 +43,20 @@ class LightingSetupData:
         # Lighting setup description
         self.lighting_setup_description = ""
 
+        # Subject lighting
+        self.subject_condition = "unclear"  # Options: "unclear", "no_subject", "consistent_subject", "inconsistent_subject"
+
         # Contrast ratio on subject
-        self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"
+        self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex_changing", "complex_contrasting", "complex_others", "unknown"
 
         # Direction of major light on subject
+        self.subject_light_direction = "unknown"  # Options: "consistent", "complex_changing", "complex_contrasting", "complex_others", "unknown"
         self.subject_back_light = None
         self.subject_front_light = None
         self.subject_top_light = None
         self.subject_bottom_light = None
-        self.subject_side_light = None
+        self.subject_right_side_light = None
+        self.subject_left_side_light = None
         self.subject_ambient_light = None
 
         # Special lighting effects on subject
@@ -480,12 +485,6 @@ class LightingSetupData:
         else:
             raise ValueError("subject_bottom_light must be a boolean value")
 
-    def set_subject_side_light(self, subject_side_light):
-        if isinstance(subject_side_light, bool):
-            self.subject_side_light = subject_side_light
-        else:
-            raise ValueError("subject_side_light must be a boolean value")
-
     def set_subject_ambient_light(self, subject_ambient_light):
         if isinstance(subject_ambient_light, bool):
             self.subject_ambient_light = subject_ambient_light
@@ -798,6 +797,30 @@ class LightingSetupData:
         else:
             raise ValueError("lighting_dynamics_description must be a string value")
 
+    def set_subject_condition(self, subject_condition):
+        if subject_condition in ["unclear", "no_subject", "consistent_subject", "inconsistent_subject"]:
+            self.subject_condition = subject_condition
+        else:
+            raise ValueError("subject_condition must be one of 'unclear', 'no_subject', 'consistent_subject', 'inconsistent_subject'")
+
+    def set_subject_light_direction(self, subject_light_direction):
+        if subject_light_direction in ["consistent", "complex_changing", "complex_contrasting", "complex_others", "unknown"]:
+            self.subject_light_direction = subject_light_direction
+        else:
+            raise ValueError("subject_light_direction must be one of 'consistent', 'complex_changing', 'complex_contrasting', 'complex_others', 'unknown'")
+
+    def set_subject_right_side_light(self, subject_right_side_light):
+        if isinstance(subject_right_side_light, bool):
+            self.subject_right_side_light = subject_right_side_light
+        else:
+            raise ValueError("subject_right_side_light must be a boolean value")
+
+    def set_subject_left_side_light(self, subject_left_side_light):
+        if isinstance(subject_left_side_light, bool):
+            self.subject_left_side_light = subject_left_side_light
+        else:
+            raise ValueError("subject_left_side_light must be a boolean value")
+
     @classmethod
     def create(cls, **kwargs):
         """Create a LightingSetupData instance ensuring all attributes are set using setters."""
@@ -828,10 +851,50 @@ class LightingSetupData:
         if self.shot_transition is True or self.is_labeled is False:
             return # No need to verify other fields if shot transition is present or data is not labeled
 
-        # complex_reasons = ["complex_changing", "complex_contrasting", "complex_others"]
-        # if any([self.color_temperature in complex_reasons, self.colorfulness in complex_reasons, self.brightness in complex_reasons]):
-        #     if not self.color_grading_description:
-        #         raise ValueError("color_grading_description must be provided for complex color grading")
+        # Verify subject condition rules
+        if self.subject_condition == "no_subject":
+            if self.subject_light_direction != "unknown":
+                raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'no_subject'")
+            if self.subject_contrast_ratio != "unknown":
+                raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'no_subject'")
+            if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, 
+                   self.subject_bottom_light, self.subject_right_side_light, self.subject_left_side_light, 
+                   self.subject_ambient_light]):
+                raise ValueError("All light direction attributes must be False when subject_condition is 'no_subject'")
+        
+        elif self.subject_condition == "unclear":
+            if self.subject_light_direction != "unknown":
+                raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'unclear'")
+            if self.subject_contrast_ratio != "unknown":
+                raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'unclear'")
+        
+        elif self.subject_condition == "inconsistent_subject":
+            complex_types = ["complex_changing", "complex_contrasting", "complex_others"]
+            if self.subject_contrast_ratio in complex_types:
+                raise ValueError("subject_contrast_ratio cannot be complex when subject_condition is 'inconsistent_subject'")
+            if self.subject_light_direction in complex_types:
+                raise ValueError("subject_light_direction cannot be complex when subject_condition is 'inconsistent_subject'")
+        
+        elif self.subject_condition == "consistent_subject":
+            if self.subject_contrast_ratio == "unknown":
+                raise ValueError("subject_contrast_ratio cannot be 'unknown' when subject_condition is 'consistent_subject'")
+            if self.subject_light_direction == "unknown":
+                raise ValueError("subject_light_direction cannot be 'unknown' when subject_condition is 'consistent_subject'")
+
+        # Verify complex_others logic
+        if self.subject_contrast_ratio == "complex_others":
+            if not (self.subject_contrast_ratio == "complex_changing" and self.subject_contrast_ratio == "complex_contrasting"):
+                raise ValueError("When subject_contrast_ratio is 'complex_others', both complex_changing and complex_contrasting must be True")
+
+        if self.subject_light_direction == "complex_others":
+            if not (self.subject_light_direction == "complex_changing" and self.subject_light_direction == "complex_contrasting"):
+                raise ValueError("When subject_light_direction is 'complex_others', both complex_changing and complex_contrasting must be True")
+
+        # Verify side light exclusivity
+        if self.subject_right_side_light and self.subject_left_side_light:
+            raise ValueError("Cannot have both right and left side light")
+
+        # Rest of the verification logic...
         if self.color_temperature == "black_white":
             if not self.colorfulness == "black_white":
                 raise ValueError("colorfulness must be 'black_white' if color_temperature is 'black_white'")
