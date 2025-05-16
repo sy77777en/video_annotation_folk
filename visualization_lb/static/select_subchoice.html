@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Subchoice</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .back-btn {
+      padding: 18px 24px;
+      font-size: 22px; /* 更大按钮文字 */
+      background-color: #17a2b8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: background-color 0.2s;
+    }
+    .back-btn:hover {
+      background-color: #138496;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 28px;
+    }
+
+    #subchoiceList {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    a, label {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      padding: 14px 18px;
+      color: #333;
+      border-radius: 8px;
+      transition: background-color 0.2s, color 0.2s;
+      font-size: 18px; /* 更大选项文字 */
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover, label:hover {
+      background-color: #28a745;
+      color: white;
+      border-color: #28a745;
+      cursor: pointer;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #submitBtn {
+      margin-top: 24px;
+      padding: 14px 28px;
+      font-size: 20px; /* 更大提交按钮文字 */
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    #submitBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Loading...</h1>
+  <div id="subchoiceList"></div>
+
+  <a class="back-btn" href="javascript:history.back()">← Back to previous page</a>
+
+  <script>
+    const optionLabels = {
+      // ratio fields
+      color_temperature: {
+        warm:             "Warm",
+        neutral:          "Neither warm nor cool",
+        cool:             "Cool",
+        black_white:      "N/A (black-white)",
+        complex_changing: "Changing",
+        complex_contrasting: "Contrast",
+        complex_others:   "Changing and contrast"
+      },
+      colorfulness: {
+        high_colorfulness: "High colorfulness",
+        neutral:           "Neither low nor high",
+        low_colorfulness:  "Low colorfulness",
+        black_white:       "N/A (black-white)",
+        complex_changing:  "Changing",
+        complex_contrasting:"Contrast",
+        complex_others:    "Changing and contrast"
+      },
+      brightness: {
+        very_bright:      "Overexposed / Very Bright",
+        neutral:          "Neither too bright nor too dark",
+        very_dark:        "Underexposed / Very Dark",
+        complex_changing: "Changing",
+        complex_contrasting:"Contrast",
+        complex_others:   "Changing and contrast"
+      },
+      scene_type: {
+        interior:             "Interior",
+        exterior:             "Exterior",
+        unrealistic_synthetic:"Unrealistic/Synthetic",
+        complex_others:       "Complex (others)"
+      },
+      sunlight_level: {
+        normal:          "Normal",
+        sunny:           "Hard (e.g., sunny)",
+        overcast:        "Soft (e.g., overcast)",
+        sunset_sunrise:  "Sunset/Sunrise",
+        unknown:         "N/A (e.g., no sunlight)"
+      },
+      light_quality: {
+        hard_light:           "Hard Light",
+        soft_diffused_light:  "Soft / Diffused Light",
+        complex_changing:     "Complex (changing)",
+        complex_contrasting:  "Complex (contrasting)",
+        complex_others:       "Complex (others)"
+      },
+      subject_contrast_ratio: {
+        high_contrast:   "High Contrast (1:8–1:16)",
+        normal_contrast: "Normal Contrast (1:4–1:8)",
+        minimal_contrast:"Minimal Contrast (1:1–1:2)",
+        complex:         "Complex",
+        unknown:         "N/A (no subject)"
+      },
+
+      // checklist fields
+      what_is_light_source: {
+        sunlight_source:           "Sunlight",
+        moonlight_starlight_source:"Moonlight / Starlight",
+        firelight_source:          "Firelight",
+        artificial_light_source:   "Artificial Light (practical/visible)",
+        non_visible_light_source:  "Non-visible Light Source",
+        abstract_light_source:     "N/A (abstract)",
+        complex_light_source:      "Complex (others)"
+      },
+      what_is_major_light_direction: {
+        subject_back_light:    "Back Light",
+        subject_front_light:   "Front Light",
+        subject_top_light:     "Top Light",
+        subject_bottom_light:  "Bottom Light",
+        subject_side_light:    "Side Light",
+        subject_ambient_light: "Ambient Light"
+      },
+      select_special_lighting_effects_on_subject: {
+        professional_lighting: "Professional Lighting",
+        rembrandt_lighting:    "Rembrandt Lighting",
+        silhouette:            "Silhouette (subject not required)",
+        rim_light:             "Rim Light (subject not required)"
+      },
+      select_special_lens_optical_effects: {
+        lens_flares_regular:   "Lens Flares (Regular)",
+        lens_flares_anamorphic:"Lens Flares (Anamorphic)",
+        mist_diffusion:        "Mist Diffusion",
+        bokeh:                 "Bokeh"
+      },
+      are_there_reflection_lights: {
+        reflection_from_water:         "From water",
+        reflection_from_glossy_surface:"From smooth/glossy surface",
+        reflection_from_mirror:        "From mirror"
+      },
+      select_special_natural_lighting_effects: {
+        rainbow:            "Rainbow",
+        heat_haze:          "Heat Haze",
+        aurora:             "Aurora",
+        aerial_perspective: "Aerial Perspective",
+        lightning:          "Lightning"
+      },
+      select_special_lighting_effects_on_scene: {
+        colored_neon_lighting: "Colored/Neon Lighting",
+        headlight_flashlight:  "Headlight/Flashlight",
+        vignette:              "Vignette",
+        water_caustics:        "Water Caustics",
+        city_light:            "City Light",
+        street_light:          "Street Light"
+      },
+      select_volumetric_light_type: {
+        volumetric_beam_light:   "Volumetric Beam Light",
+        volumetric_spot_light:   "Volumetric Spot Light",
+        god_rays:                "God Rays",
+        light_through_medium:    "Light Through Medium",
+        volumetric_light_others: "Volumetric Light (Others)"
+      },
+      select_shadow_pattern_type: {
+        venetian_blinds:           "Venetian Blinds",
+        subject_shape:             "Subject Shape",
+        window_frames:             "Window Frames",
+        foliage:                   "Foliage",
+        shadow_patterns_gobo_others: "Shadow Patterns / Gobo Lighting (others)"
+      },
+      select_lighting_dynamics: {
+        color_shifting_smooth: "Color Shifting (Smooth)",
+        color_shifting_sudden: "Color Shifting (Sudden)",
+        pulsing_flickering:    "Pulsing / Flickering",
+        flashing:              "Flashing",
+        moving_light:          "Moving Light"
+      },
+      are_there_dynamic_effects: {
+        revealing_shot:           "Revealing Shot",
+        transformation_morphing:  "Transformation / Morphing",
+        levitation_floating:       "Levitation / Floating",
+        explosion:                "Explosion",
+        shattering_breaking:      "Shattering / Breaking",
+        diffusion:                "Diffusion",
+        splashing_waves:          "Splashing / Waves"
+      }
+    };
+
+    const displayNames = {
+      "color_temperature": "The color tones in this video are:",
+      "colorfulness": "How colorful is this video?",
+      "brightness": "How bright is the video?",
+      "scene_type": "Is the scene indoors or outdoors?",
+      "sunlight_level": "Select the sunlight level",
+      "light_quality": "What is the light quality across the entire scene?",
+      "subject_contrast_ratio": "What is the contrast ratio of the light on the main subject?",
+      "what_is_light_source": "What is the major light source?",
+      "what_is_major_light_direction": "What is the direction of the major light on the subject?",
+      "select_special_lighting_effects_on_subject": "Select the type of special lighting effects on the subject:",
+      "select_special_lens_optical_effects": "Are there any special Lens and Optical effects?",
+      "are_there_reflection_lights": "Are there any clear Reflection Lights:",
+      "select_special_natural_lighting_effects": "Select any special natural lighting effects?",
+      "select_special_lighting_effects_on_scene": "Select the type of special lighting effects on the scene:",
+      "select_volumetric_light_type": "Select the type of volumetric light (if there is any):",
+      "select_shadow_pattern_type": "Select the type of shadow pattern or Gobo lighting:",
+      "select_lighting_dynamics": "Select the lighting dynamics:",
+      "are_there_dynamic_effects": "Are there any Dynamic Effects?"
+    };
+    const urlParams = new URLSearchParams(window.location.search);
+    const field     = urlParams.get('field');
+    const type      = urlParams.get('type');
+
+    const titleEl = document.getElementById('title');
+    const mapped = displayNames[field];
+    if (mapped) {
+      titleEl.innerText = mapped;
+    } else {
+      titleEl.innerText = type === 'ratio'
+        ? `Select a value for: ${field.replace(/_/g, ' ')}`
+        : `Select one or more for: ${field.replace(/_/g, ' ')}`;
+    }
+
+    const ratioFields = {
+      "color_temperature": ["warm","neutral","cool","black_white","complex_changing","complex_contrasting","complex_others"],
+      "colorfulness":     ["high_colorfulness","neutral","low_colorfulness","black_white","complex_changing","complex_contrasting","complex_others"],
+      "brightness":       ["very_bright","neutral","very_dark","complex_changing","complex_contrasting","complex_others"],
+      "scene_type":       ["interior","exterior","unrealistic_synthetic","complex_others"],
+      "sunlight_level":   ["normal","sunny","overcast","sunset_sunrise","unknown"],
+      "light_quality":    ["hard_light","soft_diffused_light","complex_changing","complex_contrasting","complex_others"],
+      "subject_contrast_ratio": ["high_contrast","normal_contrast","minimal_contrast","complex","unknown"]
+    };
+    const checklistFields = {
+      "what_is_light_source": [
+        "sunlight_source","moonlight_starlight_source","firelight_source","artificial_light_source",
+        "non_visible_light_source","abstract_light_source","complex_light_source"
+      ],
+      "what_is_major_light_direction": [
+        "subject_back_light","subject_front_light","subject_top_light","subject_bottom_light",
+        "subject_side_light","subject_ambient_light"
+      ],
+      "select_special_lighting_effects_on_subject": ["professional_lighting","rembrandt_lighting","silhouette","rim_light"],
+      "select_special_lens_optical_effects": ["lens_flares_regular","lens_flares_anamorphic","mist_diffusion","bokeh"],
+      "are_there_reflection_lights": ["reflection_from_water","reflection_from_glossy_surface","reflection_from_mirror"],
+      "select_special_natural_lighting_effects": ["rainbow","heat_haze","aurora","aerial_perspective","lightning"],
+      "select_special_lighting_effects_on_scene": [
+        "colored_neon_lighting","headlight_flashlight","vignette","water_caustics",
+        "city_light","street_light"
+      ],
+      "select_volumetric_light_type": [
+        "volumetric_beam_light","volumetric_spot_light","god_rays","light_through_medium",
+        "volumetric_light_others"
+      ],
+      "select_shadow_pattern_type": [
+        "venetian_blinds","subject_shape","window_frames","foliage","shadow_patterns_gobo_others"
+      ],
+      "select_lighting_dynamics": ["color_shifting_smooth","color_shifting_sudden","pulsing_flickering","flashing","moving_light"],
+      "are_there_dynamic_effects": [
+        "revealing_shot","transformation_morphing","levitation_floating","explosion",
+        "shattering_breaking","diffusion","splashing_waves"
+      ]
+    };
+
+    const container = document.getElementById('subchoiceList');
+
+    if (type === 'ratio') {
+      (ratioFields[field] || []).forEach(opt => {
+        const a = document.createElement('a');
+        a.href       = `video_list.html?field=${encodeURIComponent(field)}&choice=${encodeURIComponent(opt)}`;
+        a.textContent = (optionLabels[field] && optionLabels[field][opt]) || opt.replace(/_/g,' ');
+        container.appendChild(a);
+      });
+
+    } else if (type === 'checklist') {
+      (checklistFields[field] || []).forEach(opt => {
+        const label = document.createElement('label');
+        label.className = 'checkbox-label';
+        const cb = document.createElement('input');
+        cb.type  = 'checkbox';
+        cb.value = opt;
+        label.appendChild(cb);
+        label.appendChild(document.createTextNode(opt.replace(/_/g, ' ')));
+        container.appendChild(label);
+      });
+
+      const btn = document.createElement('button');
+      btn.id = 'submitBtn';
+      btn.textContent = 'Submit';
+      btn.onclick = () => {
+        const selected = Array.from(
+          container.querySelectorAll('input[type="checkbox"]:checked')
+        ).map(cb => cb.value);
+        window.location.href =
+          `video_list.html?field=${encodeURIComponent(field)}` +
+          `&choices=${encodeURIComponent(selected.join(','))}`;
+      };
+      container.appendChild(btn);
+
+    } else {
+      container.innerHTML = '<p style="color:red;">Invalid type parameter.</p>';
+    }
+  </script>
+</body>
+</html>

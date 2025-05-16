@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select a Label</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+      /* 去掉 text-transform，如果你不想标题都大写 */
+      text-transform: none;
+    }
+    .label-section {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+    .label-section h2 {
+      font-size: 1.4rem;
+      color: #444;
+      margin-bottom: 12px;
+      text-transform: none;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+    }
+    .label-grid {
+      display: grid;
+      /* 一行固定两列 */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;              /* 调大一点间距 */
+    }
+    .label-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;          /* 加大 padding */
+      text-align: center;
+      transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    }
+    .label-card:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      background-color: #e6f7ff;
+    }
+    .label-card a {
+      display: block;
+      color: #007bff;
+      font-weight: 500;
+      text-decoration: none;
+      /* 放大文字 */
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+    .label-card a:hover {
+      text-decoration: none;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Select a Label</h1>
+
+<section class="label-section">
+  <h2>Ratio Questions</h2>
+  <div class="label-grid" id="ratioGrid"></div>
+</section>
+
+<section class="label-section">
+  <h2>Checklist Questions</h2>
+  <div class="label-grid" id="checklistGrid"></div>
+</section>
+
+<script>
+
+const displayNames = {
+  "color_temperature": "The color tones in this video are:",
+  "colorfulness": "How colorful is this video?",
+  "brightness": "How bright is the video?",
+  "scene_type": "Is the scene indoors or outdoors?",
+  "sunlight_level": "Select the sunlight level",
+  "light_quality": "What is the light quality across the entire scene?",
+  "subject_contrast_ratio": "What is the contrast ratio of the light on the main subject?",
+  "what_is_light_source": "What is the major light source?",
+  "what_is_major_light_direction": "What is the direction of the major light on the subject?",
+  "select_special_lighting_effects_on_subject": "Select the type of special lighting effects on the subject:",
+  "select_special_lens_optical_effects": "Are there any special Lens and Optical effects?",
+  "are_there_reflection_lights": "Are there any clear Reflection Lights:",
+  "select_special_natural_lighting_effects": "Select any special natural lighting effects?",
+  "select_special_lighting_effects_on_scene": "Select the type of special lighting effects on the scene:",
+  "select_volumetric_light_type": "Select the type of volumetric light (if there is any):",
+  "select_shadow_pattern_type": "Select the type of shadow pattern or Gobo lighting:",
+  "select_lighting_dynamics": "Select the lighting dynamics:",
+  "are_there_dynamic_effects": "Are there any Dynamic Effects?"
+};
+
+const ratioFields = {
+  "color_temperature": ["warm","neutral","cool","black_white","complex_changing","complex_contrasting","complex_others"],
+  "colorfulness": ["high_colorfulness","neutral","low_colorfulness","black_white","complex_changing","complex_contrasting","complex_others"],
+  "brightness": ["very_bright","neutral","very_dark","complex_changing","complex_contrasting","complex_others"],
+  "scene_type": ["interior","exterior","unrealistic_synthetic","complex_others"],
+  "sunlight_level": ["normal","sunny","overcast","sunset_sunrise","unknown"],
+  "light_quality": ["hard_light","soft_diffused_light","complex_changing","complex_contrasting","complex_others"],
+  "subject_contrast_ratio": ["high_contrast","normal_contrast","minimal_contrast","complex","unknown"]
+};
+const checklistFields = {
+  "what_is_light_source": ["sunlight_source","moonlight_starlight_source","firelight_source","artificial_light_source","non_visible_light_source","abstract_light_source","complex_light_source"],
+  "what_is_major_light_direction": ["subject_back_light","subject_front_light","subject_top_light","subject_bottom_light","subject_side_light","subject_ambient_light"],
+  "select_special_lighting_effects_on_subject": ["professional_lighting","rembrandt_lighting","silhouette","rim_light"],
+  "select_special_lens_optical_effects": ["lens_flares_regular","lens_flares_anamorphic","mist_diffusion","bokeh"],
+  "are_there_reflection_lights": ["reflection_from_water","reflection_from_glossy_surface","reflection_from_mirror"],
+  "select_special_natural_lighting_effects": ["rainbow","heat_haze","aurora","aerial_perspective","lightning"],
+  "select_special_lighting_effects_on_scene": ["colored_neon_lighting","headlight_flashlight","vignette","water_caustics","city_light","street_light"],
+  "select_volumetric_light_type": ["volumetric_beam_light","volumetric_spot_light","god_rays","light_through_medium","volumetric_light_others"],
+  "select_shadow_pattern_type": ["venetian_blinds","subject_shape","window_frames","foliage","shadow_patterns_gobo_others"],
+  "select_lighting_dynamics": ["color_shifting_smooth","color_shifting_sudden","pulsing_flickering","flashing","moving_light"],
+  "are_there_dynamic_effects": ["revealing_shot","transformation_morphing","levitation_floating","explosion","shattering_breaking","diffusion","splashing_waves"]
+};
+const ratioGrid = document.getElementById('ratioGrid');
+const checklistGrid = document.getElementById('checklistGrid');
+
+  Object.keys(ratioFields).forEach(field => {
+    const card = document.createElement('div');
+    card.className = 'label-card';
+    const link = document.createElement('a');
+    link.href = `select_subchoice.html?field=${encodeURIComponent(field)}&type=ratio`;
+
+    // 2) 从 displayNames 里取显示文字，找不到就 fallback
+    link.textContent = displayNames[field] || field.replace(/_/g, ' ');
+
+    card.appendChild(link);
+    ratioGrid.appendChild(card);
+  });
+
+  Object.keys(checklistFields).forEach(field => {
+    const card = document.createElement('div');
+    card.className = 'label-card';
+    const link = document.createElement('a');
+    link.href = `select_subchoice.html?field=${encodeURIComponent(field)}&type=checklist`;
+
+    // 同样处理 checklist
+    link.textContent = displayNames[field] || field.replace(/_/g, ' ') + ' (Checklist)';
+
+    card.appendChild(link);
+    checklistGrid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
