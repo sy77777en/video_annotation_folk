@@ -5,7 +5,8 @@ from llm.open_source import OpenSource
 
 ALL_MODELS = {
     "ChatGPT": ["gpt-4o-2024-08-06", "gpt-4o-mini-2024-07-18", "o1-2024-12-17"],
-    "Gemini": ["gemini-2.5-pro-preview-05-06", "gemini-2.5-pro-preview-03-25", #"gemini-2.0-flash-001", #"gemini-2.0-flash-lite-preview-02-05", 
+    "Gemini": ["gemini-2.5-pro-preview-05-06", 
+                #"gemini-2.5-pro-preview-03-25", #"gemini-2.0-flash-001", #"gemini-2.0-flash-lite-preview-02-05", 
             #    "gemini-1.5-flash-001", "gemini-1.5-flash-8b-001", "gemini-1.5-pro-001"
                ],
     "OpenSource": [

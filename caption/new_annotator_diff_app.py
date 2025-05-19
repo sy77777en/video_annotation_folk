@@ -57,9 +57,14 @@ def get_video_status(video_id, output_dir, new_annotator_output_dir):
         
         return "done_by_new_annotator", current_file, new_annotator_file, current_user, new_annotator_user
 
-def get_video_format_func(output_dir, new_annotator_output_dir):
+def get_video_format_func(output_dir, new_annotator_output_dir, video_urls=None):
     """Format function for video selection dropdown with status emojis"""
     def format_func(video_url):
+        if video_urls is not None:
+            video_index = video_urls.index(video_url)
+        else:
+            video_index = ""
+        
         video_id = get_video_id(video_url)
         status, _, _, _, _ = get_video_status(video_id, output_dir, new_annotator_output_dir)
         
@@ -70,7 +75,7 @@ def get_video_format_func(output_dir, new_annotator_output_dir):
         }
         
         emoji = emoji_map[status]
-        return f"{emoji} {video_url.split('/')[-1]}"
+        return f"{emoji}{video_index}. {video_url.split('/')[-1]}"
     
     return format_func
 
@@ -213,7 +218,7 @@ def main(args):
         selected_video = st.selectbox(
             "Select a video:",
             video_urls,
-            format_func=get_video_format_func(output_dir, new_annotator_output_dir),
+            format_func=get_video_format_func(output_dir, new_annotator_output_dir, video_urls=video_urls),
             index=video_urls.index(st.session_state.get('last_selected_video', video_urls[0])),
             key="selected_video"
         )
@@ -362,9 +367,17 @@ def main(args):
                 st.write(f"**Your Version:** By {new_annotator_user} on {new_annotator_timestamp}")
                 
                 # Create tabs for viewing captions
-                tab1, tab2, tab3, tab4 = st.tabs(["Caption Differences", "Feedback Differences", "Ground Truth Version", "Your Version"])
+                tab1, tab2, tab3, tab4 = st.tabs(["Feedback Differences", "Caption Differences", "Ground Truth Version", "Your Version"])
                 
                 with tab1:
+                    st.subheader("Feedback Differences")
+                    display_feedback_differences(
+                        prev_feedback=new_annotator_data,
+                        feedback_data=current_data,
+                        diff_prompt=args.diff_prompt
+                    )
+                
+                with tab2:
                     st.subheader("Caption Differences")
                     display_caption_differences(
                         prev_feedback=new_annotator_data,
@@ -372,13 +385,6 @@ def main(args):
                         diff_prompt=args.diff_cap_prompt
                     )
                 
-                with tab2:
-                    st.subheader("Feedback Differences")
-                    display_feedback_differences(
-                        prev_feedback=new_annotator_data,
-                        feedback_data=current_data,
-                        diff_prompt=args.diff_prompt
-                    )
                 
                 with tab3:
                     st.subheader("Ground Truth Version")

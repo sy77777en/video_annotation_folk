@@ -5145,10 +5145,10 @@ def get_light_quality_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APR
         {
             "folder": lighting_folder,
             "name": "light_quality_is_soft",
-            "pos_question": "Are all surface areas within the scene lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light?",
-            "neg_question": "Are all surface areas within the scene not lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light?",
-            "pos_prompt": "All surface areas within the scene are lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light.",
-            "neg_prompt": "All surface areas within the scene are not lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light.",
+            "pos_question": "Are all visible surface areas within the scene lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light?",
+            "neg_question": "Are all visible surface areas within the scene not lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light?",
+            "pos_prompt": "All visible surface areas within the scene are lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light.",
+            "neg_prompt": "All visible surface areas within the scene are not lit by soft light, indicated by the absence of sharp-edged shadows, or the presence of wide penumbrae, or smooth light-to-dark transitions, or surface textures appearing subdued, or highlights that are soft or diffused, and no noticeable signs of hard light.",
             "pos": {
                 "label": "lighting_setup.light_quality.light_quality_is_soft",
                 "type": "pos",
@@ -5161,10 +5161,10 @@ def get_light_quality_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APR
         {
             "folder": lighting_folder,
             "name": "light_quality_is_hard",
-            "pos_question": "Are all or nearly all surface areas within the scene lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light?",
-            "neg_question": "Are all or nearly all surface areas within the scene not lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light?",
-            "pos_prompt": "All or nearly all surface areas within the scene are lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light.",
-            "neg_prompt": "All or nearly all surface areas within the scene are not lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light.",
+            "pos_question": "Are all or nearly all visible surface areas within the scene lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light?",
+            "neg_question": "Are all or nearly all visible surface areas within the scene not lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light?",
+            "pos_prompt": "All or nearly all visible surface areas within the scene are lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light.",
+            "neg_prompt": "All or nearly all visible surface areas within the scene are not lit by hard light, indicated by sharp-edged shadows with narrow or no penumbrae, or abrupt light-to-dark transitions, or textures that are strongly emphasized, or highlights that are small and bright, and no noticeable signs of soft light.",
             "pos": {
                 "label": "lighting_setup.light_quality.light_quality_is_hard",
                 "type": "pos",
