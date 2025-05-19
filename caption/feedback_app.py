@@ -404,6 +404,7 @@ def get_precaption_llm_name(config_dict, selected_config):
     task = config["task"]
     if task in ["subject_motion_dynamics"]:
         return "tarsier-recap-7b"
+        # return "gemini-2.5-pro-preview-05-06" # TODO: change back to tarsier-recap-7b
     elif task in ["spatial_framing_dynamics"]:
         # return "qwen2.5-vl-72b"
         return "gemini-2.5-pro-preview-05-06"
