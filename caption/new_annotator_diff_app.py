@@ -83,7 +83,9 @@ def login_page(args):
         selected_annotator = st.selectbox(
             "Select Annotator Name:",
             list(ANNOTATORS.keys()),
-            key="selected_annotator"
+            key="selected_annotator",
+            index=None,
+            placeholder="Type or select the annotator name...",
         )
         
         # Password input

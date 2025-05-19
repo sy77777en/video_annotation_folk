@@ -60,7 +60,6 @@ class LightingSetupData:
         self.subject_ambient_light = None
 
         # Special lighting effects on subject
-        self.professional_lighting = None
         self.rembrandt_lighting = None
         # below two are actually not dependent on whether the subject is present or not
         self.silhouette = None
@@ -88,6 +87,7 @@ class LightingSetupData:
         self.lightning = None
 
         # Special lighting effects on the scene
+        self.professional_lighting = None
         self.colored_neon_lighting = None
         self.headlight_flashlight = None
         self.vignette = None
@@ -289,63 +289,76 @@ class LightingSetupData:
 
     def _set_subject_lighting_attributes(self):
         attributes = [
-            "is_subject_lighting_applicable", "subject_light_contrast_is_high",
-            "subject_light_contrast_is_normal", "subject_light_contrast_is_minimal",
-            "subject_light_contrast_is_complex", "flat_lighting", "low_key_lighting",
-            "high_key_lighting", "direction_is_back_light", "direction_is_front_light",
-            "direction_is_top_light", "direction_is_bottom_light", "direction_is_side_light",
-            "direction_is_ambient_light", "direction_is_front_side", "direction_is_rear_side"
+            "is_subject_lighting_unclear", "is_no_subject", "is_consistent_subject", "is_inconsistent_subject",
+            "subject_light_contrast_is_high", "subject_light_contrast_is_normal", "subject_light_contrast_is_minimal",
+            "subject_light_contrast_is_complex_changing", "subject_light_contrast_is_complex_contrasting", "subject_light_contrast_is_complex_others", "subject_light_contrast_is_unknown",
+            "flat_lighting", "low_key_lighting", "high_key_lighting", 
+            "direction_is_back_light", "direction_is_front_light",
+            "direction_is_top_light", "direction_is_bottom_light", "direction_is_right_side", "direction_is_left_side",
+            "direction_is_ambient_light", "direction_is_complex_changing", "direction_is_complex_contrasting", "direction_is_complex_others", "direction_is_unknown", "direction_is_consistent"
         ]
         if self.shot_transition is True or self.is_labeled is False:
             for attr in attributes:
                 setattr(self, attr, None)
             return
-        self.is_subject_lighting_applicable = self.subject_contrast_ratio != "unknown"
+        self.is_subject_lighting_unclear = self.subject_condition == "unclear"
+        self.is_no_subject = self.subject_condition == "no_subject"
+        self.is_consistent_subject = self.subject_condition == "consistent_subject"
+        self.is_inconsistent_subject = self.subject_condition == "inconsistent_subject"
 
-        if not self.is_subject_lighting_applicable:
+        # Subject contrast logic
+        contrast = self.subject_contrast_ratio
+        self.subject_light_contrast_is_unknown = contrast == "unknown"
+        if not self.subject_light_contrast_is_unknown:
+            self.subject_light_contrast_is_high = contrast == "high_contrast"
+            self.subject_light_contrast_is_normal = contrast == "normal_contrast"
+            self.subject_light_contrast_is_minimal = contrast == "minimal_contrast"
+            self.subject_light_contrast_is_complex_changing = contrast == "complex_changing"
+            self.subject_light_contrast_is_complex_contrasting = contrast == "complex_contrasting"
+            self.subject_light_contrast_is_complex_others = contrast == "complex_others"
+            if self.subject_light_contrast_is_complex_others:
+                self.subject_light_contrast_is_complex_changing = True
+                self.subject_light_contrast_is_complex_contrasting = True
+            self.flat_lighting = self.subject_light_contrast_is_minimal
+            self.low_key_lighting = self.subject_light_contrast_is_high is True and self.brightness_is_very_bright is False
+            self.high_key_lighting = self.subject_light_contrast_is_minimal is True and self.brightness_is_very_dark is False
+        else:
             self.subject_light_contrast_is_high = None
             self.subject_light_contrast_is_normal = None
             self.subject_light_contrast_is_minimal = None
-            self.subject_light_contrast_is_complex = None
+            self.subject_light_contrast_is_complex_changing = None
+            self.subject_light_contrast_is_complex_contrasting = None
+            self.subject_light_contrast_is_complex_others = None
             self.flat_lighting = None
             self.low_key_lighting = None
             self.high_key_lighting = None
-        else:
-            self.subject_light_contrast_is_high = self.subject_contrast_ratio == "high_contrast"
-            self.subject_light_contrast_is_normal = self.subject_contrast_ratio == "normal_contrast"
-            self.subject_light_contrast_is_minimal = self.subject_contrast_ratio == "minimal_contrast"
-            self.subject_light_contrast_is_complex = self.subject_contrast_ratio == "complex"
-            self.flat_lighting = self.subject_contrast_ratio == "minimal_contrast"
-            self.low_key_lighting = self.subject_light_contrast_is_high is True and self.brightness_is_very_bright is False
-            self.high_key_lighting = self.subject_light_contrast_is_minimal is True and self.brightness_is_very_dark is False
 
-        if not self.is_subject_lighting_applicable:
-            self.direction_is_back_light = None
-            self.direction_is_front_light = None
-            self.direction_is_top_light = None
-            self.direction_is_bottom_light = None
-            self.direction_is_side_light = None
-            self.direction_is_ambient_light = None
-            self.direction_is_front_side = None
-            self.direction_is_rear_side = None
-        elif self.subject_light_contrast_is_complex:
-            self.direction_is_back_light = True if self.subject_back_light is True else None
-            self.direction_is_front_light = True if self.subject_front_light is True else None
-            self.direction_is_top_light = True if self.subject_top_light is True else None
-            self.direction_is_bottom_light = True if self.subject_bottom_light is True else None
-            self.direction_is_side_light = True if self.subject_side_light is True else None
-            self.direction_is_ambient_light = True if self.subject_ambient_light is True else None
-            self.direction_is_front_side = True if self.subject_front_light is True and self.subject_side_light is True else None
-            self.direction_is_rear_side = True if self.subject_back_light is True and self.subject_side_light is True else None 
-        else:
+        direction = self.subject_light_direction
+        self.direction_is_unknown = direction == "unknown"
+        if not self.direction_is_unknown:
+            self.direction_is_consistent = direction == "consistent"
+            self.direction_is_complex_others = direction == "complex_others"
+            self.direction_is_complex_changing = direction == "complex_changing" or direction == "complex_others"
+            self.direction_is_complex_contrasting = direction == "complex_contrasting" or direction == "complex_others"
             self.direction_is_back_light = self.subject_back_light
             self.direction_is_front_light = self.subject_front_light
             self.direction_is_top_light = self.subject_top_light
             self.direction_is_bottom_light = self.subject_bottom_light
-            self.direction_is_side_light = self.subject_side_light
+            self.direction_is_right_side = self.subject_right_side_light
+            self.direction_is_left_side = self.subject_left_side_light
             self.direction_is_ambient_light = self.subject_ambient_light
-            self.direction_is_front_side = self.subject_front_light and self.subject_side_light
-            self.direction_is_rear_side = self.subject_back_light and self.subject_side_light
+        else:
+            self.direction_is_consistent = None
+            self.direction_is_complex_others = None
+            self.direction_is_complex_changing = None
+            self.direction_is_complex_contrasting = None
+            self.direction_is_back_light = None
+            self.direction_is_front_light = None
+            self.direction_is_top_light = None
+            self.direction_is_bottom_light = None
+            self.direction_is_right_side = None
+            self.direction_is_left_side = None
+            self.direction_is_ambient_light = None
 
     def _set_special_lighting_attributes(self):
         if self.shot_transition is True or self.is_labeled is False:
@@ -857,9 +870,10 @@ class LightingSetupData:
                 raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'no_subject'")
             if self.subject_contrast_ratio != "unknown":
                 raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'no_subject'")
+            
             if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, 
-                   self.subject_bottom_light, self.subject_right_side_light, self.subject_left_side_light, 
-                   self.subject_ambient_light]):
+                    self.subject_bottom_light, self.subject_right_side_light, self.subject_left_side_light, 
+                    self.subject_ambient_light]):
                 raise ValueError("All light direction attributes must be False when subject_condition is 'no_subject'")
         
         elif self.subject_condition == "unclear":
@@ -882,13 +896,12 @@ class LightingSetupData:
                 raise ValueError("subject_light_direction cannot be 'unknown' when subject_condition is 'consistent_subject'")
 
         # Verify complex_others logic
-        if self.subject_contrast_ratio == "complex_others":
-            if not (self.subject_contrast_ratio == "complex_changing" and self.subject_contrast_ratio == "complex_contrasting"):
-                raise ValueError("When subject_contrast_ratio is 'complex_others', both complex_changing and complex_contrasting must be True")
-
-        if self.subject_light_direction == "complex_others":
-            if not (self.subject_light_direction == "complex_changing" and self.subject_light_direction == "complex_contrasting"):
-                raise ValueError("When subject_light_direction is 'complex_others', both complex_changing and complex_contrasting must be True")
+        complex_types = ["complex_changing", "complex_contrasting", "complex_others", "unknown"]
+        if self.subject_light_direction in complex_types:
+            if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, 
+                    self.subject_bottom_light, self.subject_right_side_light, self.subject_left_side_light, 
+                    self.subject_ambient_light]):
+                raise ValueError("All light direction attributes must be False when subject_light_direction is complex or unknown")
 
         # Verify side light exclusivity
         if self.subject_right_side_light and self.subject_left_side_light:
@@ -926,9 +939,13 @@ class LightingSetupData:
             raise ValueError("sunlight_level must be 'unknown' if sunlight source is not present")
 
         if self.subject_contrast_ratio == "unknown":
-            if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, self.subject_bottom_light, self.subject_side_light, \
-                self.subject_ambient_light, self.rembrandt_lighting]):
+            if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, self.subject_bottom_light, self.subject_right_side_light, \
+                self.subject_left_side_light, self.subject_ambient_light, self.rembrandt_lighting]):
                 raise ValueError("subject_contrast_ratio must be specified if subject lighting is present")
+
+        # Additional check for revealing_shot
+        if self.revealing_shot is True and self.subject_condition == "consistent_subject":
+            raise ValueError("subject_condition cannot be 'consistent_subject' when revealing_shot is True")
 
 
 lighting_setup_params_demo = {
@@ -948,12 +965,15 @@ lighting_setup_params_demo = {
     "sunlight_level": "sunny",
     "light_quality": "soft_light",
     "lighting_setup_description": "Soft diffused light with sunny outdoor setting",
+    "subject_condition": "consistent_subject",
     "subject_contrast_ratio": "high_contrast",
+    "subject_light_direction": "consistent",
     "subject_back_light": True,
     "subject_front_light": False,
     "subject_top_light": False,
     "subject_bottom_light": False,
-    "subject_side_light": False,
+    "subject_right_side_light": False,
+    "subject_left_side_light": False,
     "subject_ambient_light": False,
     "professional_lighting": True,
     "rembrandt_lighting": False,

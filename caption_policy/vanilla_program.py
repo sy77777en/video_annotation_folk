@@ -1409,7 +1409,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         return light_quality_str
 
     def format_subject_lighting_contrast(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_contrast") -> str:
-        assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting."
+        # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting."
         subject_light_contrast_str = ""
         if lighting_setup.low_key_lighting is True:
             subject_light_contrast_str += read_json_file(os.path.join(subject_lighting_dir, "low_key_lighting.json"))['def_prompt'][0]
@@ -1428,7 +1428,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         return subject_light_contrast_str
 
     def format_subject_lighting_direction(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_direction") -> str:
-        assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
+        # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
         subject_light_direction_strs = []
         directions = [
             "direction_is_back_light",
@@ -1499,10 +1499,10 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_level))
         policy += "\n\n**Light Quality:** {}".format(self.format_light_quality(data.lighting_setup.light_quality))
 
-        if data.lighting_setup.is_subject_lighting_applicable:
-            policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
-            policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
-            policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
+        # if data.lighting_setup.is_subject_lighting_applicable:
+        policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
+        policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
+        policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
         
         return policy
 
@@ -1583,10 +1583,10 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
             "silhouette",
             "rim_light",
         ]
-        if lighting_setup.is_subject_lighting_applicable is False:
-            for special_light_effect in special_light_effects_without_subject:
-                if getattr(lighting_setup, special_light_effect) is True:
-                    special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
+        # if lighting_setup.is_subject_lighting_applicable is False:
+        for special_light_effect in special_light_effects_without_subject:
+            if getattr(lighting_setup, special_light_effect) is True:
+                special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
         if len(special_light_effects_strs) == 0:
             return "No significant artificial or artistic lighting effects in this video. (no need to mention)."
         return " ".join(special_light_effects_strs)
@@ -1866,7 +1866,7 @@ class RawLightingSetupPolicy(SocraticProgram):
         return light_quality_str
 
     def format_subject_lighting_contrast(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_contrast") -> str:
-        assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting."
+        # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting."
         subject_light_contrast_str = ""
         if lighting_setup.low_key_lighting is True:
             subject_light_contrast_str += read_json_file(os.path.join(subject_lighting_dir, "low_key_lighting.json"))['def_prompt'][0]
@@ -1885,7 +1885,7 @@ class RawLightingSetupPolicy(SocraticProgram):
         return subject_light_contrast_str
 
     def format_subject_lighting_direction(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_direction") -> str:
-        assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
+        # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
         subject_light_direction_strs = []
         directions = [
             "direction_is_back_light",
@@ -1938,10 +1938,10 @@ class RawLightingSetupPolicy(SocraticProgram):
             policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_quality))
         policy += "\n\n**Light Quality:** {}".format(self.format_light_quality(data.lighting_setup.light_quality))
 
-        if data.lighting_setup.is_subject_lighting_applicable:
-            policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
-            policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
-            policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
+        # if data.lighting_setup.is_subject_lighting_applicable:
+        policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
+        policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
+        policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
         policy += "\n\n" + read_text_file("caption_policy/policy/lighting_setup_dynamics/format_instruction.txt")
         return policy
 
@@ -2021,10 +2021,10 @@ class RawLightingEffectsPolicy(SocraticProgram):
             "silhouette",
             "rim_light",
         ]
-        if lighting_setup.is_subject_lighting_applicable is False:
-            for special_light_effect in special_light_effects_without_subject:
-                if getattr(lighting_setup, special_light_effect) is True:
-                    special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
+        # if lighting_setup.is_subject_lighting_applicable is False:
+        for special_light_effect in special_light_effects_without_subject:
+            if getattr(lighting_setup, special_light_effect) is True:
+                special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
         if len(special_light_effects_strs) == 0:
             return False, "No significant artificial or artistic lighting effects in this video. (no need to mention)."
         return True, " ".join(special_light_effects_strs) + " (please include and explain these effects.)"
