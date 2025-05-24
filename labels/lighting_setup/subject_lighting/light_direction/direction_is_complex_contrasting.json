@@ -1,0 +1,22 @@
+{
+    "label": "Mixed (Spatial) Light Direction",
+    "label_name": "direction_is_complex_contrasting",
+    "def_question": [
+        "Are different parts of the subject, or different subjects, lit by different dominant light directions simultaneously, with no single direction applying across the entire subject or all subjects in the frame?"
+    ],
+    "alt_question": [
+        "Are multiple subjects in the same frame lit from different directions?",
+        "Do light sources hit separate regions of the subject from distinct angles at the same time?"
+    ],
+    "def_prompt": [
+        "Different parts of the subject, or different subjects, are lit by different dominant light directions simultaneously, with no single direction applying across the entire subject or all subjects in the frame."
+    ],
+    "alt_prompt": [
+        "A scene with multiple subjects lit from different directions.",
+        "A subject with different regions lit from distinct angles simultaneously."
+    ],
+    "pos_rule_str": "self.lighting_setup.direction_is_complex_contrasting is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_complex_contrasting is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

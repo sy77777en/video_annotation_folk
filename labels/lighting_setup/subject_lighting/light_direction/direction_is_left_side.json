@@ -1,0 +1,24 @@
+{
+    "label": "Left-Side Light",
+    "label_name": "direction_is_left_side",
+    "def_question": [
+        "Are all subjects consistently illuminated by side lighting, with noticeable (or key) light (not just ambient or fill light) coming from the left side of each subject as seen from the camera, causing one side to appear more lit and the opposite side darker?"
+    ],
+    "alt_question": [
+        "Does the subject have a clear left-side light source?",
+        "Is the left side of the subject more illuminated than the right?",
+        "Does the lighting create a visible shadow on the right side of the subject?"
+    ],
+    "def_prompt": [
+        "All subjects are consistently illuminated by side lighting, with noticeable (or key) light (not just ambient or fill light) coming from the left side of each subject as seen from the camera, causing one side to appear more lit and the opposite side darker."
+    ],
+    "alt_prompt": [
+        "A subject with the left side more brightly lit than the right.",
+        "A scene where the left-side lighting creates a shadow on the right side of the subject.",
+        "A shot where the key light is positioned to the left of the subject from the camera's perspective."
+    ],
+    "pos_rule_str": "self.lighting_setup.direction_is_left_side is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_left_side is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

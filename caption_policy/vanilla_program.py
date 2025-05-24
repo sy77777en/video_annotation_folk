@@ -1421,7 +1421,9 @@ class VanillaLightingSetupPolicy(SocraticProgram):
             "high_contrast": "subject_light_contrast_is_high",
             "normal_contrast": "subject_light_contrast_is_normal",
             "minimal_contrast": "subject_light_contrast_is_minimal",
-            "complex": "subject_light_contrast_is_complex",
+            "complex_changing": "subject_light_contrast_is_changing",
+            "complex_contrasting": "subject_light_contrast_is_contrasting",
+            "complex_others": "subject_light_contrast_is_complex_others",
         }
         subject_light_contrast = subject_light_contrast_info[lighting_setup.subject_contrast_ratio]
         subject_light_contrast_str += " " + read_json_file(os.path.join(subject_lighting_dir, f"{subject_light_contrast}.json"))['def_prompt'][0]
@@ -1429,31 +1431,33 @@ class VanillaLightingSetupPolicy(SocraticProgram):
 
     def format_subject_lighting_direction(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_direction") -> str:
         # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
-        subject_light_direction_strs = []
-        directions = [
-            "direction_is_back_light",
-            "direction_is_front_light",
-            "direction_is_top_light",
-            "direction_is_bottom_light",
-            "direction_is_side_light",
-            "direction_is_ambient_light"
-        ]
-        # if lighting_setup.direction_is_front_side is True:
-        #     subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, "direction_is_front_side.json"))['def_prompt'][0])
-        #     # remove top and side light from directions
-        #     directions.remove("direction_is_top_light")
-        #     directions.remove("direction_is_side_light")
-        # elif lighting_setup.direction_is_rear_side is True:
-        #     subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, "direction_is_rear_side.json"))['def_prompt'][0])
-        #     # remove back and side light from directions
-        #     directions.remove("direction_is_back_light")
-        #     directions.remove("direction_is_side_light")
-        for direction in directions:
-            if getattr(lighting_setup, direction) is True:
-                subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
-        if len(subject_light_direction_strs) == 0:
-            return "The light direction on the subject is complex to analyze or describe."
-        return " ".join(subject_light_direction_strs)
+        if lighting_setup.direction_is_consistent is True:
+            subject_light_direction_strs = []
+            directions = [
+                "direction_is_back_light",
+                "direction_is_front_light",
+                "direction_is_top_light",
+                "direction_is_bottom_light",
+                "direction_is_right_side_light",
+                "direction_is_left_side_light",
+                "direction_is_ambient_light"
+            ]
+            for direction in directions:
+                if getattr(lighting_setup, direction) is True:
+                    subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
+            assert len(subject_light_direction_strs) != 0, "Subject light direction must be specified if subject lighting is present."
+            return " ".join(subject_light_direction_strs)
+        else:
+            complex_directions = [
+                "direction_is_unknown",
+                "direction_is_complex_others", # Must put before the below two because this includes the below two
+                "direction_is_complex_changing",
+                "direction_is_complex_contrasting",
+            ]
+            for direction in complex_directions:
+                if getattr(lighting_setup, direction) is True:
+                    return read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0]
+
     
     def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
         # Special lighting effects on subject
@@ -1878,7 +1882,9 @@ class RawLightingSetupPolicy(SocraticProgram):
             "high_contrast": "subject_light_contrast_is_high",
             "normal_contrast": "subject_light_contrast_is_normal",
             "minimal_contrast": "subject_light_contrast_is_minimal",
-            "complex": "subject_light_contrast_is_complex",
+            "complex_changing": "subject_light_contrast_is_changing",
+            "complex_contrasting": "subject_light_contrast_is_contrasting",
+            "complex_others": "subject_light_contrast_is_complex_others",
         }
         subject_light_contrast = subject_light_contrast_info[lighting_setup.subject_contrast_ratio]
         subject_light_contrast_str += " " + read_json_file(os.path.join(subject_lighting_dir, f"{subject_light_contrast}.json"))['def_prompt'][0]
@@ -1886,21 +1892,33 @@ class RawLightingSetupPolicy(SocraticProgram):
 
     def format_subject_lighting_direction(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_direction") -> str:
         # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
-        subject_light_direction_strs = []
-        directions = [
-            "direction_is_back_light",
-            "direction_is_front_light",
-            "direction_is_top_light",
-            "direction_is_bottom_light",
-            "direction_is_side_light",
-            "direction_is_ambient_light"
-        ]
-        for direction in directions:
-            if getattr(lighting_setup, direction) is True:
-                subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
-        if len(subject_light_direction_strs) == 0:
-            return "The light direction on the subject is complex to analyze or describe. (please try your best to describe the light direction)"
-        return " ".join(subject_light_direction_strs)
+        if lighting_setup.direction_is_consistent is True:
+            subject_light_direction_strs = []
+            directions = [
+                "direction_is_back_light",
+                "direction_is_front_light",
+                "direction_is_top_light",
+                "direction_is_bottom_light",
+                "direction_is_right_side_light",
+                "direction_is_left_side_light",
+                "direction_is_ambient_light"
+            ]
+            for direction in directions:
+                if getattr(lighting_setup, direction) is True:
+                    subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
+            assert len(subject_light_direction_strs) != 0, "Subject light direction must be specified if subject lighting is present."
+            return " ".join(subject_light_direction_strs)
+        else:
+            complex_directions = [
+                "direction_is_unknown",
+                "direction_is_complex_others", # Must put before the below two because this includes the below two
+                "direction_is_complex_changing",
+                "direction_is_complex_contrasting",
+            ]
+            for direction in complex_directions:
+                if getattr(lighting_setup, direction) is True:
+                    return read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0]
+
 
     def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
         # Special lighting effects on subject

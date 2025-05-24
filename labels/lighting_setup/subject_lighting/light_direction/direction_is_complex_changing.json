@@ -1,0 +1,24 @@
+{
+    "label": "Changing (Temporal) Light Direction",
+    "label_name": "direction_is_complex_changing",
+    "def_question": [
+        "Does the dominant light direction on the subject(s) change over time, as judged from the camera's perspective?"
+    ],
+    "alt_question": [
+        "Does the side of the subject that appears lit shift during the video?",
+        "Does the light source move or change during the shot?",
+        "Does the subject move into a new light zone that changes the directional effect?"
+    ],
+    "def_prompt": [
+        "The dominant light direction on the subject(s) changes over time, as judged from the camera’s perspective."
+    ],
+    "alt_prompt": [
+        "A video where the lit side of the subject shifts during the shot.",
+        "A scene where the light source moves or changes, altering the direction.",
+        "A shot where the subject moves into a new light zone, changing the directional effect."
+    ],
+    "pos_rule_str": "self.lighting_setup.direction_is_complex_changing is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_complex_changing is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

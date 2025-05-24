@@ -2,7 +2,7 @@
     "label": "Is Lighting Quality Complex (Others)",
     "label_name": "light_quality_is_complex_others",
     "def_question": [
-        "Does the scene show both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation?"
+        "Does the scene show both a temporal change in light quality on some visible surface areas and simultaneous soft and hard lighting across different visible surface areas within the same frame?"
     ],
     "alt_question": [
         "Does the scene feature dynamic or contrasting lighting conditions?",
@@ -15,7 +15,7 @@
         "Is the overall lighting too mixed to fit a single category?"
     ],
     "def_prompt": [
-        "The scene shows both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation."
+        "The scene shows both a temporal change in light quality on some visible surface areas and simultaneous soft and hard lighting across different visible surface areas within the same frame."
     ],
     "alt_prompt": [
         "A video featuring shifting, contrasting, or undefined lighting.",

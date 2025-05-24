@@ -1,0 +1,34 @@
+{
+    "label": "Light Contrast Ratio on Subject Is Complex Changing",
+    "label_name": "subject_light_contrast_is_complex_changing",
+    "def_question": [
+        "Does the lighting contrast on the subject’s surface change over time, becoming noticeably stronger or weaker as the video progresses due to changes in illumination or subject movement?"
+    ],
+    "alt_question": [
+        "Does the difference between the subject's lit and shadowed areas become more or less extreme as the shot progresses?",
+        "Do soft shadows gradually become deeper, or highlight-shadow separation increase or decrease?",
+        "Does the light-to-dark range on the subject become noticeably stronger or weaker over time?",
+        "Does a subject that starts evenly lit develop shadows or strong highlights (or vice versa)?",
+        "Do lighting changes or movement cause a shift in contrast ratio, not just brightness?",
+        "Does the contrast level evolve throughout the video?",
+        "Is the contrast ratio affected by temporal changes in lighting?",
+        "Does the subject's contrast change due to movement or lighting shifts?"
+    ],
+    "def_prompt": [
+        "The lighting contrast on the subject’s surface changes over time, becoming noticeably stronger or weaker as the video progresses due to changes in illumination or subject movement."
+    ],
+    "alt_prompt": [
+        "A video where the subject's contrast ratio changes over time.",
+        "A scene where soft shadows gradually become deeper or more pronounced.",
+        "A shot where highlight-shadow separation increases or decreases.",
+        "A subject that transitions from even lighting to strong contrast (or vice versa).",
+        "A sequence where lighting changes cause shifts in contrast ratio.",
+        "A shot featuring evolving contrast levels throughout the video.",
+        "A subject where contrast changes due to movement or lighting shifts.",
+        "A scene where the contrast ratio is affected by temporal changes."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_complex_changing is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_complex_changing is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

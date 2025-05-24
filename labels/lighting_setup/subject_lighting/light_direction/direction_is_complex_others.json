@@ -1,0 +1,22 @@
+{
+    "label": "Mixed (Spatial) + Changing (Temporal) Light Direction",
+    "label_name": "direction_is_complex_others",
+    "def_question": [
+        "Are different parts of the subject (or different subjects) lit by different directions simultaneously, and do these directions also change over time, so the dominant light direction varies both spatially and temporally?"
+    ],
+    "alt_question": [
+        "Do different areas get lit from different directions, and those directions change during the video?",
+        "Are multiple subjects each lit from different directions, and their lighting direction shifts over time?"
+    ],
+    "def_prompt": [
+        "Different parts of the subject (or different subjects) are lit by different directions simultaneously, and these directions also change over time, so the dominant light direction varies both spatially and temporally."
+    ],
+    "alt_prompt": [
+        "A scene where different regions are lit from different directions, and those directions change during the video.",
+        "A video with multiple subjects, each lit from different directions, and their lighting direction shifts over time."
+    ],
+    "pos_rule_str": "self.lighting_setup.direction_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_complex_others is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

@@ -1,0 +1,34 @@
+{
+    "label": "Light Contrast Ratio on Subject Is Unknown",
+    "label_name": "subject_light_contrast_is_unknown",
+    "def_question": [
+        "Is the lighting contrast on the subject’s surface unable to be reliably judged because the video may lack a clear subject lit by external light, lack a subject altogether (e.g., scenery shot), feature both complex subject transitions and lighting contrast that varies across regions or time, or be too stylized or abstract to physically interpret the lighting setup?"
+    ],
+    "alt_question": [
+        "Is there no clear and lightable subject in the scene (e.g., scenery-only shot)?",
+        "Does the subject change (e.g., reveals, exits, or switches) with changing contrast?",
+        "Is the scene 2D, stylized, or flat-rendered, making contrast interpretation impossible?",
+        "Is the lighting contrast too ambiguous to make a reliable judgment?",
+        "Is the subject inconsistent with inconsistent lighting contrast?",
+        "Is the lighting non-physical or impossible to interpret realistically?",
+        "Is the scene too abstract to determine subject contrast?",
+        "Is the subject's contrast impossible to categorize?"
+    ],
+    "def_prompt": [
+        "Lighting contrast on the subject’s surface cannot be reliably judged because the video may lack a clear subject lit by external light, lack a subject altogether (e.g., scenery shot), feature both complex subject transitions and lighting contrast that varies across regions or time, or be too stylized or abstract to physically interpret the lighting setup."
+    ],
+    "alt_prompt": [
+        "A scene with no clear and lightable subject.",
+        "A video where the subject changes with changing contrast.",
+        "A 2D or stylized scene where contrast cannot be interpreted.",
+        "A shot where lighting contrast is too ambiguous to judge.",
+        "A scene with an inconsistent subject and lighting contrast.",
+        "A video with non-physical or impossible lighting interpretation.",
+        "An abstract scene where subject contrast cannot be determined.",
+        "A shot where contrast cannot be categorized."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_unknown is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_unknown is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

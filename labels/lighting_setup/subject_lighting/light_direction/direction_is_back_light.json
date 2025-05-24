@@ -2,7 +2,7 @@
     "label": "Direction Is Back Light",
     "label_name": "direction_is_back_light",
     "def_question": [
-        "Is there a noticeable light source consistently illuminating the subject from behind (backlighting) as seen from the camera’s perspective?"
+        "Are all subjects consistently back-lit by a noticeable (or key) light (not just ambient or fill light) coming from the far side, with the light source positioned within a 90-degree angle behind them, facing away from the camera?"
     ],
     "alt_question": [
         "Is the subject illuminated from behind?",
@@ -15,7 +15,7 @@
         "Is the main source of illumination positioned behind the subject?"
     ],
     "def_prompt": [
-        "There is a noticeable light source consistently illuminating the subject from behind (backlighting), as seen from the camera’s perspective."
+        "All subjects are consistently back-lit by noticeable (or key) light (not just ambient or fill light) coming from the far side, with the light source positioned within a 90-degree angle behind them, facing away from the camera."
     ],
     "alt_prompt": [
         "The subject is illuminated from behind.",

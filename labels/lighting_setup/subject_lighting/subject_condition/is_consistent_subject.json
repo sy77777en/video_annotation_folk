@@ -1,0 +1,34 @@
+{
+    "label": "Consistent Subject",
+    "label_name": "is_consistent_subject",
+    "def_question": [
+        "Are there one or more clear, salient subjects lit by external light who remain consistent in the frame throughout the shot?"
+    ],
+    "alt_question": [
+        "Does the shot maintain the same subject(s) from start to finish?",
+        "Are there clear, identifiable subjects that don't change?",
+        "Is the subject presence stable throughout the sequence?",
+        "Are there no subject changes, exits, or reveals?",
+        "Is the subject clearly visible and consistent?",
+        "Does the shot feature stable subject presence?",
+        "Are there no subject transformations or replacements?",
+        "Is the subject's presence uninterrupted?"
+    ],
+    "def_prompt": [
+        "One or more clear, salient subjects are lit by external light and remain consistent in the frame throughout the shot."
+    ],
+    "alt_prompt": [
+        "A video with stable, consistent subject presence.",
+        "A sequence where the subject remains unchanged.",
+        "A shot featuring clear, identifiable subjects throughout.",
+        "A video with uninterrupted subject presence.",
+        "A sequence where subjects don't change or exit.",
+        "A shot with stable, consistent subject visibility.",
+        "A video where subject presence is maintained.",
+        "A sequence with no subject transformations."
+    ],
+    "pos_rule_str": "self.lighting_setup.is_consistent_subject is True",
+    "neg_rule_str": "self.lighting_setup.is_consistent_subject is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

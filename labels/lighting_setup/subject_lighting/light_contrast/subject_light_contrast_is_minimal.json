@@ -1,31 +1,31 @@
 {
     "label": "Light Contrast Ratio on Subject Is Minimal",
-    "label_name": "contrast_is_minimal",
+    "label_name": "subject_light_contrast_is_minimal",
     "def_question": [
-        "Does the lighting on the subject have a minimal contrast ratio, creating a flat lighting effect (roughly 1:1 to 1:2)?"
+        "Is the lighting contrast on the subject’s surface consistently minimal, with little or no visible difference between lit and shadowed areas, creating a flat appearance, roughly corresponding to a 1:1 to 1:2 light ratio (0–1 stop difference)?"
     ],
     "alt_question": [
-        "Does the subject’s lighting feature little to no visible shadowing?",
-        "Is the subject illuminated with very even lighting and no strong highlights?",
-        "Does the lighting on the subject create a flat, uniform appearance?",
-        "Is the separation between lit and shadowed areas on the subject barely noticeable?",
-        "Does the lighting create a soft, nearly shadowless effect on the subject?",
-        "Is the subject shaped by very low contrast lighting?",
-        "Does the video feature lighting where the subject has no strong shadows?",
-        "Is the subject’s visibility defined by flat, even lighting?"
+        "Are shadows and highlights minimal or absent altogether?",
+        "Does the subject show a light ratio below 1:2 (0-1 stop difference)?",
+        "Is the subject uniformly lit with no shading or shadow edges?",
+        "Are there no noticeable highlight or shaded areas?",
+        "Does the surface appear flat due to a lack of contrast?",
+        "Is this a high-key lighting setup with minimal contrast?",
+        "Is the lighting even across the subject's surface?",
+        "Are there no directional light effects creating shadows?"
     ],
     "def_prompt": [
-        "The lighting on the subject has a minimal contrast ratio, creating a flat lighting effect (roughly 1:1 to 1:2)."
+        "The lighting contrast on the subject’s surface is consistently minimal, with little or no visible difference between lit and shadowed areas, creating a flat appearance, roughly corresponding to a 1:1 to 1:2 light ratio (0–1 stop difference)."
     ],
     "alt_prompt": [
-        "A video where the subject is lit with minimal contrast, appearing evenly illuminated.",
-        "A scene where the subject’s lighting lacks strong highlights or shadows.",
-        "A shot where the lighting on the subject results in a flat, even look.",
-        "A video where the subject is illuminated with almost no shadowing.",
-        "A sequence where the subject appears with a soft, uniform brightness.",
-        "A shot featuring a subject with little to no visible shading.",
-        "A video where even lighting minimizes shadow depth.",
-        "A scene that reduces contrast for a smooth, flat-lit appearance."
+        "A subject with minimal difference between lit and shadowed areas.",
+        "A scene where shadows and highlights are barely noticeable or absent.",
+        "A shot with a light ratio below 1:2 between brightest and darkest areas.",
+        "A subject that appears uniformly lit without shading.",
+        "A scene with no noticeable highlight or shadow areas.",
+        "A shot featuring a flat appearance due to even lighting.",
+        "A high-key lighting setup with minimal contrast on the subject.",
+        "A scene where lighting creates no directional effects or shadows."
     ],
     "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_minimal is True",
     "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_minimal is False",

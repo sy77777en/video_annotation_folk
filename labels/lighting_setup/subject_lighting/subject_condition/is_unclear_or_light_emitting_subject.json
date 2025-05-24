@@ -1,0 +1,34 @@
+{
+    "label": "Unclear or Self-Illuminating Subject",
+    "label_name": "is_no_subject",
+    "def_question": [
+        "Does the video lack a clear subject visibly illuminated by external light, either because the subject is absent, ambiguous (e.g., scenery shot), or emits light or is engulfed by a light source in a way that obscures form shadows and highlights, making contrast and direction unreliable to judge?"
+    ],
+    "alt_question": [
+        "Is this primarily a scenery or environmental shot without a distinct subject?",
+        "Does the scene show only distant landscapes or minimal visible surfaces?",
+        "Is there no clear target for assessing lighting effects?",
+        "Are there insufficient lightable surfaces to evaluate lighting?",
+        "Is the scene dominated by environmental elements without a clear subject?",
+        "Are there only light sources without visible effects on surfaces?",
+        "Is the scene too abstract or distant to identify a clear subject?",
+        "Are there no distinct objects or elements to analyze lighting on?"
+    ],
+    "def_prompt": [
+        "The video lacks a clear subject visibly illuminated by external light, either because the subject is absent, ambiguous (e.g., scenery shot), or emits light or is engulfed by a light source in a way that obscures form shadows and highlights, making contrast and direction unreliable to judge."
+    ],
+    "alt_prompt": [
+        "A scenery shot without a distinct subject for lighting analysis.",
+        "A video showing only environmental elements or landscapes.",
+        "A sequence with insufficient lightable surfaces to evaluate.",
+        "A shot dominated by distant or abstract elements.",
+        "A scene with only light sources and minimal surface effects.",
+        "A video without clear subjects to analyze lighting on.",
+        "A sequence showing only environmental lighting effects.",
+        "A shot where lighting cannot be evaluated on any subject."
+    ],
+    "pos_rule_str": "self.lighting_setup.is_no_subject is True",
+    "neg_rule_str": "self.lighting_setup.is_no_subject is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

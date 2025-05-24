@@ -2,7 +2,7 @@
     "label": "Direction Is Ambient Light",
     "label_name": "direction_is_ambient_light",
     "def_question": [
-        "Is the subject lit mainly with ambient light, with soft illumination and no clearly dominant directional source?"
+        "Are all subjects consistently lit with no dominant light direction, as shadows and highlights do not indicate a dominant (or key) light from the side, top, bottom, front, or back?"
     ],
     "alt_question": [
         "Is the lighting on the subject evenly distributed without a clear direction?",
@@ -15,7 +15,7 @@
         "Does the video rely on a soft, uniform light source rather than directional lighting?"
     ],
     "def_prompt": [
-        "The subject is lit with ambient light, with soft illumination and no clearly dominant directional source."
+        "All subjects are consistently lit with no dominant light direction, as shadows and highlights do not indicate a dominant (or key) light from the side, top, bottom, front, or back."
     ],
     "alt_prompt": [
         "A shot where the subject is lit with soft, ambient lighting.",

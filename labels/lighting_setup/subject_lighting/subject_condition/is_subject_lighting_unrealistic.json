@@ -1,0 +1,34 @@
+{
+    "label": "Subject Lighting Is Unrealistic",
+    "label_name": "is_subject_lighting_unrealistic",
+    "def_question": [
+        "Does the video contain subjects, but the lighting is non-physically realistic, including animated, stylized, synthetic, 2D, or 2.5D content, making it too visually abstract to reliably analyze contrast and lighting direction?"
+    ],
+    "alt_question": [
+        "Is the scene animated or stylized in a way that makes lighting hard to analyze?",
+        "Does the scene lack clear lightable surfaces or shading?",
+        "Is the lighting physically unrealistic or abstract?",
+        "Is the scene 2D or 2.5D with unclear lighting properties?",
+        "Are the lighting properties ambiguous or hard to interpret?",
+        "Does the scene lack consistent shading or shadows?",
+        "Is the lighting analysis too complex or uncertain?",
+        "Are the lighting effects too stylized to analyze?"
+    ],
+    "def_prompt": [
+        "The video contains subjects, but the lighting is non-physically realistic, including animated, stylized, synthetic, 2D, or 2.5D content, making it too visually abstract to reliably analyze contrast and lighting direction."
+    ],
+    "alt_prompt": [
+        "A scene with stylized or abstract lighting that's hard to analyze.",
+        "A video where lighting properties are ambiguous or unclear.",
+        "A sequence with non-physically realistic lighting effects.",
+        "A shot where lighting analysis is too complex or uncertain.",
+        "A scene with 2D or 2.5D rendering and unclear lighting.",
+        "A video where lighting effects are too stylized to analyze.",
+        "A sequence lacking clear lightable surfaces or shading.",
+        "A shot where lighting properties are difficult to interpret."
+    ],
+    "pos_rule_str": "self.lighting_setup.is_subject_lighting_unrealistic is True",
+    "neg_rule_str": "self.lighting_setup.is_subject_lighting_unrealistic is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

@@ -1,0 +1,34 @@
+{
+    "label": "Light Contrast Ratio on Subject Is Complex Others",
+    "label_name": "subject_light_contrast_is_complex_others",
+    "def_question": [
+        "Does the lighting contrast on the subject’s surface vary both over time and across different regions, with no consistent pattern or contrast level throughout the video?"
+    ],
+    "alt_question": [
+        "Does the contrast level vary across the subject (e.g., uneven contrast on body or between subjects)?",
+        "Does the contrast level also change over time (e.g., soft regions become harsh or vice versa)?",
+        "Is there no single contrast level or spatial pattern that stays consistent?",
+        "Are there both temporal and spatial variations in contrast?",
+        "Does the contrast show complex patterns that combine changing and mixed characteristics?",
+        "Is the contrast behavior too complex to fit other categories?",
+        "Does the subject show a combination of changing and mixed contrast patterns?",
+        "Is the contrast pattern too complex to be described by other categories?"
+    ],
+    "def_prompt": [
+        "The lighting contrast varies both over time and across different regions of the subject simultaneously, with no consistent pattern or contrast level throughout the video."
+    ],
+    "alt_prompt": [
+        "A subject where contrast varies both across space and over time.",
+        "A scene where contrast levels change both temporally and spatially.",
+        "A shot featuring complex contrast patterns that combine changing and mixed characteristics.",
+        "A subject showing no consistent contrast level or pattern.",
+        "A scene where contrast behavior is too complex for other categories.",
+        "A shot with both temporal and spatial variations in contrast.",
+        "A subject displaying a combination of changing and mixed contrast patterns.",
+        "A scene where contrast patterns are too complex to categorize otherwise."
+    ],
+    "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_complex_others is True",
+    "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_complex_others is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

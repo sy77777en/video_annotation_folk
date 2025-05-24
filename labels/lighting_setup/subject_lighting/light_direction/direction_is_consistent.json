@@ -1,0 +1,23 @@
+{
+    "label": "Consistent Light Direction",
+    "label_name": "direction_is_consistent",
+    "def_question": [
+        "Is the subject consistently lit with the same light direction throughout the video and uniform across the entire subject's surface?"
+    ],
+    "alt_question": [
+        "Does the light direction remain the same for the entire video?",
+        "Is the direction of light uniform across the subject at all times?"
+    ],
+    "def_prompt": [
+        "The subject is consistently lit with the same light direction throughout the video and uniform across the entire subject's surface."
+    ],
+    "alt_prompt": [
+        "A video where the light direction does not change at any point.",
+        "A scene where the subject is always lit from the same direction.",
+        "A shot where the light direction is uniform across the subject."
+    ],
+    "pos_rule_str": "self.lighting_setup.direction_is_consistent is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_consistent is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

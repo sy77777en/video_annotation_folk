@@ -1,0 +1,26 @@
+{
+    "label": "Unclear Light Direction",
+    "label_name": "direction_is_unknown",
+    "def_question": [
+        "Is the lighting direction on the subject unable to be reliably judged because the video may lack a clear subject lit by external light, lack a subject altogether (e.g., scenery shot), feature both complex subject transitions and light direction that varies across regions or time, or be too stylized or abstract to physically interpret the lighting setup?"
+    ],
+    "alt_question": [
+        "Is there no clear and lightable subject (e.g., scenery-only shot)?",
+        "Does the subject change and the light direction also change?",
+        "Is the scene 2D, stylized, or flat-rendered, making light direction uninterpretable?",
+        "Is the light direction too ambiguous to judge?"
+    ],
+    "def_prompt": [
+        "Lighting direction on the subject cannot be reliably judged because the video may lack a clear subject lit by external light, lack a subject altogether (e.g., scenery shot), feature both complex subject transitions and light direction that varies across regions or time, or be too stylized or abstract to physically interpret the lighting setup."
+    ],
+    "alt_prompt": [
+        "A scene with no clear and lightable subject.",
+        "A video where the subject and light direction both change.",
+        "A 2D or stylized scene where light direction cannot be interpreted.",
+        "A shot where light direction is too ambiguous to judge."
+    ],
+    "pos_rule_str": "self.lighting_setup.direction_is_unknown is True",
+    "neg_rule_str": "self.lighting_setup.direction_is_unknown is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

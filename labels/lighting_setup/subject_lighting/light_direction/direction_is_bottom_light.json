@@ -2,7 +2,7 @@
     "label": "Direction Is Bottom Light",
     "label_name": "direction_is_bottom_light",
     "def_question": [
-        "Is there a noticeable light source consistently illuminating the subject from below (bottom lighting) as seen from the camera’s perspective?"
+        "Are all subjects consistently illuminated by bottom lighting, with noticeable (or key) light (not just ambient or fill light) coming from below and casting shadows upward?"
     ],
     "alt_question": [
         "Is the subject illuminated from below, casting shadows upward?",
@@ -15,7 +15,7 @@
         "Is the subject’s form shaped by a strong upward lighting effect?"
     ],
     "def_prompt": [
-        "There is a noticeable light source consistently illuminating the subject from below (bottom lighting), as seen from the camera’s perspective."
+        "All subjects are consistently illuminated by bottom lighting, with noticeable (or key) light (not just ambient or fill light) coming from below and casting shadows upward."
     ],
     "alt_prompt": [
         "The subject is illuminated from below, casting shadows upward.",

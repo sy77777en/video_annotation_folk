@@ -1,0 +1,34 @@
+{
+    "label": "Inconsistent Subject",
+    "label_name": "is_inconsistent_subject",
+    "def_question": [
+        "Are one or more subjects lit by external light, but change during the shot (e.g., enter the frame, exit the frame, or are replaced)?"
+    ],
+    "alt_question": [
+        "Do subjects change while lighting remains stable?",
+        "Are there subject transitions with consistent lighting?",
+        "Does the subject presence vary but lighting stays the same?",
+        "Are there subject changes without lighting variation?",
+        "Do subjects enter or exit with stable lighting?",
+        "Is there subject replacement with consistent lighting?",
+        "Do subjects change while lighting properties remain fixed?",
+        "Are there subject variations with unchanged lighting?"
+    ],
+    "def_prompt": [
+        "One or more subjects are lit by external light, but change during the shot (e.g., enter the frame, exit the frame, or are replaced)."
+    ],
+    "alt_prompt": [
+        "A video where subjects change but lighting remains stable.",
+        "A sequence with subject transitions and consistent lighting.",
+        "A shot where subject presence varies but lighting stays the same.",
+        "A video featuring subject changes without lighting variation.",
+        "A sequence with subject entries/exits and stable lighting.",
+        "A shot where subjects are replaced with consistent lighting.",
+        "A video with subject variations but fixed lighting properties.",
+        "A sequence where subjects change but lighting remains unchanged."
+    ],
+    "pos_rule_str": "self.lighting_setup.is_inconsistent_subject is True",
+    "neg_rule_str": "self.lighting_setup.is_inconsistent_subject is False",
+    "easy_neg_rule_str": {},
+    "hard_neg_rule_str": {}
+} 

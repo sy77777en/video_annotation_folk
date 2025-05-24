@@ -2,30 +2,30 @@
     "label": "Light Contrast Ratio on Subject Is Normal",
     "label_name": "subject_light_contrast_is_normal",
     "def_question": [
-        "Does the lighting on the subject have a normal contrast ratio (roughly 1:2 to 1:8), providing a balanced distinction between lit areas and shadowed areas?"
+        "Is the lighting contrast on the subject’s surface consistently moderate, with a clear but not extreme difference between lit and shadowed areas, and all surface features remaining visible, roughly within a 1:2 to 1:8 light ratio (2–3 stops)?"
     ],
     "alt_question": [
-        "Does the subject’s lighting feature soft and natural contrast?",
-        "Is the subject illuminated with a moderate difference between highlights and shadows?",
-        "Does the lighting on the subject create subtle but visible shadowing?",
-        "Is the separation between lit and shadowed areas on the subject balanced?",
-        "Does the lighting create a natural, gentle contrast on the subject?",
-        "Is the subject shaped by lighting that is neither too harsh nor too flat?",
-        "Does the video feature well-balanced lighting on the subject?",
-        "Is the subject’s visibility defined by moderate lighting differences?"
+        "Are shadows and highlights clearly visible but not obscuring any features?",
+        "Does the subject show a light ratio between 1:2 and 1:16 (1-4 stops)?",
+        "Are all parts of the subject visible and unobscured?",
+        "Is there a noticeable but not extreme difference between lit and shaded areas?",
+        "Are the shadows and highlights well-defined but not extreme?",
+        "Is the contrast level moderate across the subject?",
+        "Are all surface details clearly visible despite the lighting contrast?",
+        "Does the lighting create clear but not dramatic separation between areas?"
     ],
     "def_prompt": [
-        "The lighting on the subject has a normal contrast ratio (roughly 1:2 to 1:8), providing a balanced distinction between lit areas and shadowed areas."
+        "The lighting contrast on the subject’s surface is consistently moderate, with a clear but not extreme difference between lit and shadowed areas, and all surface features remaining visible, roughly within a 1:2 to 1:8 light ratio (2–3 stops)."
     ],
     "alt_prompt": [
-        "A video where the subject is lit with normal contrast, featuring soft and balanced highlights and shadows.",
-        "A scene where the subject’s lighting appears natural and evenly distributed.",
-        "A shot where the lighting on the subject results in gentle, moderate shadows.",
-        "A video where the subject is illuminated with soft, natural contrast.",
-        "A sequence where the subject appears well-defined without extreme contrast.",
-        "A shot featuring a subject with visible but subtle shadowing.",
-        "A video where balanced lighting enhances the subject’s form without harshness.",
-        "A scene that maintains a natural, moderate contrast on the subject."
+        "A subject with moderate contrast between lit and shadowed areas.",
+        "A scene where shadows and highlights are visible but don't obscure details.",
+        "A shot with a light ratio between 1:2 and 1:16 between brightest and darkest areas.",
+        "A subject where all parts remain visible despite lighting contrast.",
+        "A scene with noticeable but not extreme differences between lit and shaded areas.",
+        "A shot featuring well-defined but not extreme shadows and highlights.",
+        "A subject with moderate contrast that preserves all surface details.",
+        "A scene where lighting creates clear but not dramatic separation."
     ],
     "pos_rule_str": "self.lighting_setup.subject_light_contrast_is_normal is True",
     "neg_rule_str": "self.lighting_setup.subject_light_contrast_is_normal is False",
