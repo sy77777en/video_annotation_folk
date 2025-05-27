@@ -106,8 +106,9 @@ def login_page(args):
         if submit_button:
             # Check if password matches
             if password == ANNOTATORS[selected_annotator]["password"]:
-                # Store the selected file and annotator in session state
-                st.session_state.video_urls_file = selected_file
+                # Load video URLs and store in session state
+                video_urls = load_json(FOLDER / selected_file)
+                st.session_state.video_urls = video_urls
                 st.session_state.logged_in = True
                 st.session_state.logged_in_user = selected_annotator
                 st.success(f"Login successful! Welcome, {selected_annotator}!")
@@ -146,7 +147,7 @@ def main(args):
     # Load video data
     video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
     if "file_check_passed" not in st.session_state:
-        file_check(st.session_state.video_urls_file, video_data_dict)
+        file_check(st.session_state.video_urls, video_data_dict)
         st.session_state.file_check_passed = True
 
     # Create two columns
@@ -193,7 +194,7 @@ def main(args):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_config_id
-                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls_file', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
+                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -207,15 +208,10 @@ def main(args):
 
         config = config_dict[selected_config]
         st.title(f"New Annotator Comparison Viewer - {config.get('name', '')}")
-        video_urls = load_json(FOLDER / st.session_state.video_urls_file)
+        video_urls = st.session_state.video_urls
         output_dir = os.path.join(FOLDER, args.output, config["output_name"])
         new_annotator_output_dir = os.path.join(FOLDER, args.output_new_annotator, config["output_name"])
         
-        # if not os.path.exists(output_dir):
-        #     os.makedirs(output_dir)
-        # if not os.path.exists(new_annotator_output_dir):
-        #     os.makedirs(new_annotator_output_dir)
-
         # Select video
         selected_video = st.selectbox(
             "Select a video:",
@@ -236,7 +232,7 @@ def main(args):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_video_id
-                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user', 'personalized_output']:
+                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -294,7 +290,7 @@ def main(args):
         preserved_keys = [
             'api_key', 'last_config_id', 'selected_config',
             'last_video_id', 'last_selected_video', 
-            'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user', 'personalized_output'
+            'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output'
         ]
 
         def reset_state_except(preserved):

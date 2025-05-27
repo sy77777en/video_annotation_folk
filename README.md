@@ -7,6 +7,7 @@ This repository contains tools for video annotation and metadata handling, inclu
 To install all dependencies, run:
 
 ```bash
+conda install ffmpeg -c conda-forge # for perceptionLM
 python3 -m pip install -e .
 ```
 

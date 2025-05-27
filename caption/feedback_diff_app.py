@@ -4,72 +4,14 @@ import json
 import argparse
 from feedback_app import (
     parse_args, load_video_data, get_video_id, load_json, highlight_differences, split_into_words,
-    get_filename, load_data, FOLDER, FEEDBACK_FILE_POSTFIX, PREV_FEEDBACK_FILE_POSTFIX,
+    get_filename, load_data, FOLDER, FEEDBACK_FILE_POSTFIX, PREV_FEEDBACK_FILE_POSTFIX, get_annotator_videos,
     load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS, REVIEWER_FILE_POSTFIX,
-    display_feedback_info, display_feedback_differences, display_caption_differences, CONTAINER_HEIGHT
+    display_feedback_info, display_feedback_differences, display_caption_differences, CONTAINER_HEIGHT,
+    display_status_indicators, format_timestamp,
+    get_video_status, get_video_format_func
 )
 from datetime import datetime
-
-def get_video_status(video_id, output_dir):
-    """Get the status of a video's caption completion and previous iterations"""
-    # Initialize all variables
-    status = "not_completed"
-    current_file = None
-    prev_file = None
-    current_user = None
-    prev_user = None
-    
-    # Check all relevant files
-    feedback_file = get_filename(video_id, output_dir, FEEDBACK_FILE_POSTFIX)
-    prev_feedback_file = get_filename(video_id, output_dir, PREV_FEEDBACK_FILE_POSTFIX)
-    reviewer_file = get_filename(video_id, output_dir, REVIEWER_FILE_POSTFIX)
-    
-    # Determine status based on file existence and content
-    if not os.path.exists(feedback_file):
-        return status, current_file, prev_file, current_user, prev_user
-        
-    current_file = feedback_file
-    with open(feedback_file, 'r') as f:
-        current_data = json.load(f)
-        current_user = current_data.get("user")
-    
-    if not os.path.exists(reviewer_file):
-        status = "completed_not_reviewed"
-        return status, current_file, prev_file, current_user, prev_user
-    
-    # Load reviewer data
-    with open(reviewer_file, 'r') as f:
-        reviewer_data = json.load(f)
-        reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
-        
-        if reviewer_double_check:
-            status = "approved"
-            # For approved files, load previous feedback if it exists
-            if os.path.exists(prev_feedback_file):
-                with open(prev_feedback_file, 'r') as pf:
-                    prev_data = json.load(pf)
-                    prev_user = prev_data.get("user")
-        else:
-            status = "rejected"
-            # For rejected files, must have prev feedback with different user
-            assert os.path.exists(prev_feedback_file), f"Rejected file {video_id} must have previous feedback"
-            with open(prev_feedback_file, 'r') as pf:
-                prev_data = json.load(pf)
-                prev_user = prev_data.get("user")
-                with open(feedback_file, 'r') as cf:
-                    current_data = json.load(cf)
-                    current_user = current_data.get("user")
-                    if prev_user == current_user:
-                        # This means the caption was just rejected but it has not been updated yet
-                        # In this case, we should show the previous version and treat it as not reviewed
-                        status = "completed_not_reviewed"
-                        prev_user = None
-                        prev_file = None
-                        return status, current_file, prev_file, current_user, prev_user
-        
-        prev_file = prev_feedback_file if os.path.exists(prev_feedback_file) else None
-    
-    return status, current_file, prev_file, current_user, prev_user
+import time
 
 def calculate_accuracy_stats(video_urls, output_dir):
     """Calculate accuracy statistics for all videos in the given directory.
@@ -131,72 +73,180 @@ def calculate_accuracy_stats(video_urls, output_dir):
     
     return stats
 
-def get_video_format_func(output_dir, video_urls=None):
-    def video_format_func(video_url):
-        if video_urls is not None:
-            video_index = video_urls.index(video_url)
-        else:
-            video_index = ""
-            
-        video_id = get_video_id(video_url)
-        video_url = video_url.split("/")[-1]
-        
-        # Get status and format accordingly
-        status, _, _, _, _ = get_video_status(video_id, output_dir)
-        status_emoji_map = {
-            "not_completed": "",  # Not completed - no emoji
-            "completed_not_reviewed": "✅",  # Completed but not reviewed - single checkmark
-            "approved": "✅✅",  # Approved - double checkmark
-            "rejected": "❌"  # Rejected
-        }
-        
-        return f"{status_emoji_map[status]}{video_index}. {video_url}"
-                    
-    return video_format_func
-
 def login_page(args):
     st.title("Video Caption Difference Viewer Login")
 
-    # Create a form for login
-    with st.form("login_form"):
-        # Annotator selection dropdown
-        selected_annotator = st.selectbox(
-            "Select Your Name:",
-            list(ANNOTATORS.keys()),
-            key="selected_annotator",
-            index=None,
-            placeholder="Type or select your name...",
-        )
-        
-        # Password input
-        password = st.text_input("Enter Password:", type="password", key="password_input")
-        
-        # File selection dropdown
-        selected_file = st.selectbox(
-            "Select Video URLs File:", args.video_urls_files, key="selected_urls_file"
-        )
+    # Create tabs for different login methods
+    tab1, tab2 = st.tabs(["Login by Sheet", "Login by Annotator"])
 
-        submit_button = st.form_submit_button("Login")
+    with tab1:
+        # Original login by sheet form
+        with st.form("login_form_sheet"):
+            # Annotator selection dropdown
+            selected_annotator = st.selectbox(
+                "Select Your Name:",
+                list(ANNOTATORS.keys()),
+                key="selected_annotator_sheet",
+                index=None,
+                placeholder="Type or select your name...",
+            )
+            
+            # Password input
+            password = st.text_input("Enter Password:", type="password", key="password_input_sheet")
+            
+            # File selection dropdown with completion status if enabled
+            try:
+                # Load configs
+                configs = load_config(FOLDER / args.configs)
+                configs = [load_config(FOLDER / config) for config in configs]
+                
+                # Check completion status for each file
+                start_time = time.time()
+                file_status = {}
+                for video_urls_file in args.video_urls_files:
+                    video_urls = load_json(FOLDER / video_urls_file)
+                    total = len(video_urls)
+                    completed = 0
+                    reviewed = 0
+                    total = len(video_urls)
+                    
+                    for video_url in video_urls:
+                        video_id = get_video_id(video_url)
+                        is_completed = True
+                        is_reviewed = True
+                        
+                        for config in configs:
+                            config_output_dir = os.path.join(FOLDER, args.output, config["output_name"])
+                            feedback_file = get_filename(video_id, config_output_dir, FEEDBACK_FILE_POSTFIX)
+                            review_file = get_filename(video_id, config_output_dir, REVIEWER_FILE_POSTFIX)
+                            
+                            if not os.path.exists(feedback_file):
+                                is_completed = False
+                                is_reviewed = False
+                                break
+                                
+                            if not os.path.exists(review_file):
+                                is_reviewed = False
+                        
+                        if is_completed:
+                            completed += 1
+                        if is_reviewed:
+                            reviewed += 1
+                    
+                    # Create status string
+                    if completed == total and reviewed == total:
+                        status = "✅✅"
+                    elif completed == total:
+                        status = "✅"
+                    else:
+                        status = ""
+                    
+                    file_status[video_urls_file] = f"{status} {os.path.basename(video_urls_file)} ({completed}/{total} completed, {reviewed}/{total} reviewed)"
+                
+                end_time = time.time()
+                print(f"Completion status check took {end_time - start_time:.2f} seconds")
+                
+                # Create format function for selectbox
+                def format_file_with_status(file_path):
+                    return file_status.get(file_path, file_path)
+                
+                selected_file = st.selectbox(
+                    "Select Video URLs File:",
+                    args.video_urls_files,
+                    key="selected_urls_file_sheet",
+                    format_func=format_file_with_status
+                )
+            except Exception as e:
+                st.error(f"Error checking completion status: {e}")
+                selected_file = st.selectbox(
+                    "Select Video URLs File:",
+                    args.video_urls_files,
+                    key="selected_urls_file_sheet"
+                )
 
-        if submit_button:
-            # Check if password matches
-            if password == ANNOTATORS[selected_annotator]["password"]:
-                # Store the selected file and annotator in session state
-                st.session_state.video_urls_file = selected_file
-                st.session_state.logged_in = True
-                st.session_state.logged_in_user = selected_annotator
-                st.success(f"Login successful! Welcome, {selected_annotator}!")
-                st.rerun()
-            else:
-                st.error("Incorrect password. Please try again.")
+            submit_button = st.form_submit_button("Login")
 
-def format_timestamp(iso_timestamp):
-    """Format ISO timestamp to a more readable format (YYYY-MM-DD HH:MM)"""
-    try:
-        dt = datetime.fromisoformat(iso_timestamp)
-        return dt.strftime("%Y-%m-%d %H:%M")
-    except (ValueError, TypeError):
-        return iso_timestamp  # Return original if parsing fails
+            if submit_button:
+                # Check if password matches
+                if password == ANNOTATORS[selected_annotator]["password"]:
+                    # Store the video URLs and annotator in session state
+                    st.session_state.video_urls = load_json(FOLDER / selected_file)
+                    st.session_state.logged_in = True
+                    st.session_state.logged_in_user = selected_annotator
+                    st.success(f"Login successful! Welcome, {selected_annotator}!")
+                    st.rerun()
+                else:
+                    st.error("Incorrect password. Please try again.")
+
+    with tab2:
+        # New login by annotator form
+        with st.form("login_form_annotator"):
+            # Annotator selection dropdown for login
+            selected_annotator = st.selectbox(
+                "Select Your Name:",
+                list(ANNOTATORS.keys()),
+                key="selected_annotator_annotator",
+                index=None,
+                placeholder="Type or select your name...",
+            )
+            
+            # Password input
+            password = st.text_input("Enter Password:", type="password", key="password_input_annotator")
+            
+            # Dropdown to select which annotator's videos to search for
+            target_annotator = st.selectbox(
+                "Search for videos completed by:",
+                list(ANNOTATORS.keys()),
+                key="target_annotator",
+                index=None,
+                placeholder="Type or select annotator name...",
+            )
+            
+            # Not yet reviewed checkbox
+            not_yet_reviewed = False
+            
+            # Show only rejected checkbox
+            show_only_rejected = st.checkbox(
+                "Show only rejected videos",
+                value=False,
+                key="show_only_rejected"
+            )
+
+            submit_button = st.form_submit_button("Login")
+
+            if submit_button:
+                # Check if password matches
+                if password == ANNOTATORS[selected_annotator]["password"]:
+                    try:
+                        # Load configs
+                        configs = load_config(FOLDER / args.configs)
+                        configs = [load_config(FOLDER / config) for config in configs]
+                        
+                        # Get videos for the target annotator
+                        start_time = time.time()
+                        matching_videos = get_annotator_videos(
+                            target_annotator,  # Use target_annotator instead of selected_annotator
+                            configs,
+                            args.output,
+                            not_yet_reviewed,
+                            show_only_rejected
+                        )
+                        end_time = time.time()
+                        print(f"Getting annotator videos took {end_time - start_time:.2f} seconds")
+                        
+                        if not matching_videos:
+                            st.error(f"No matching videos found for annotator {target_annotator}.")
+                        else:
+                            # Store the matching videos and annotator in session state
+                            st.session_state.video_urls = matching_videos
+                            st.session_state.logged_in = True
+                            st.session_state.logged_in_user = selected_annotator
+                            st.success(f"Login successful! Welcome, {selected_annotator}! Found {len(matching_videos)} matching videos for {target_annotator}.")
+                            st.rerun()
+                    except Exception as e:
+                        st.error(f"Error getting annotator videos: {e}")
+                else:
+                    st.error("Incorrect password. Please try again.")
 
 def display_caption_expander(data, user, timestamp):
     """Helper function to display caption information in an expander"""
@@ -268,7 +318,7 @@ def main(args):
     # Load video data
     video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
     if "file_check_passed" not in st.session_state:
-        file_check(st.session_state.video_urls_file, video_data_dict)
+        file_check(st.session_state.video_urls, video_data_dict)
         st.session_state.file_check_passed = True
 
     # Create two columns
@@ -316,7 +366,7 @@ def main(args):
                 keys_to_remove = []
                 for key in st.session_state:
                     # Keep api_key and last_config_id
-                    if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls_file', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
+                    if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
                         keys_to_remove.append(key)
 
                 # Remove all collected keys
@@ -330,21 +380,16 @@ def main(args):
 
             config = config_dict[selected_config]
             st.title(f"Caption Difference Viewer - {config.get('name', '')}")
-            video_urls = load_json(FOLDER / st.session_state.video_urls_file)
+            
+            # Get video URLs from session state
+            video_urls = st.session_state.video_urls
+            
             output_dir = os.path.join(FOLDER, args.output, config["output_name"])
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
 
-            # Add status explanation expander
-            with st.expander("📝 Status Indicators Explanation", expanded=False):
-                st.markdown("""
-                | Emoji | Status | Description |
-                |-------|--------|-------------|
-                |  | Not Completed | Video has not been captioned yet |
-                | ✅ | Completed | Video has been captioned but not reviewed |
-                | ✅✅ | Approved | Video has been reviewed and double-checked |
-                | ❌ | Rejected | Video needs revision (different users in current and previous feedback) |
-                """)
+            # Display status indicators explanation
+            display_status_indicators()
 
             # Display accuracy statistics
             display_accuracy_statistics(config_names, config_dict, video_urls, args)
@@ -369,7 +414,7 @@ def main(args):
                 keys_to_remove = []
                 for key in st.session_state:
                     # Keep api_key and last_video_id
-                    if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user', 'personalized_output']:
+                    if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output']:
                         keys_to_remove.append(key)
 
                 # Remove all collected keys
@@ -428,7 +473,7 @@ def main(args):
             preserved_keys = [
                 'api_key', 'last_config_id', 'selected_config',
                 'last_video_id', 'last_selected_video', 
-                'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user', 'personalized_output'
+                'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output'
             ]
 
             def reset_state_except(preserved):

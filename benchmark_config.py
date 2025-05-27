@@ -5192,38 +5192,6 @@ def get_light_quality_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APR
         },
         {
             "folder": lighting_folder,
-            "name": "light_quality_is_contrasting",
-            "pos_question": "Are different surface areas within the same frame lit by noticeably different light qualities, with some showing characteristics of hard light and others of soft light, such that no single light quality dominates the scene?",
-            "neg_question": "Are different surface areas within the same frame not lit by noticeably different light qualities, with some showing characteristics of hard light and others of soft light, such that no single light quality dominates the scene?",
-            "pos_prompt": "Different surface areas within the same frame are lit by noticeably different light qualities, with some showing characteristics of hard light and others of soft light, such that no single light quality dominates the scene.",
-            "neg_prompt": "Different surface areas within the same frame are not lit by noticeably different light qualities, with some showing characteristics of hard light and others of soft light, such that no single light quality dominates the scene.",
-            "pos": {
-                "label": "lighting_setup.light_quality.light_quality_is_contrasting",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_quality.light_quality_is_contrasting",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
-            "name": "light_quality_is_complex_others",
-            "pos_question": "Does the scene show both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation?",
-            "neg_question": "Does the scene not show both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation?",
-            "pos_prompt": "The scene shows both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation.",
-            "neg_prompt": "The scene does not show both a temporal change in light quality on some surface areas and simultaneous soft and hard lighting across different surface areas within the same frame, resulting in both temporal and spatial variation.",
-            "pos": {
-                "label": "lighting_setup.light_quality.light_quality_is_complex_others",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.light_quality.light_quality_is_complex_others",
-                "type": "neg",
-            },
-        },
-        {
-            "folder": lighting_folder,
             "name": "light_quality_is_complex_ambiguous",
             "pos_question": "Does the scene lack sufficient visual information to determine light quality, due to non-physically realistic shading, absence of visible shadow-casting surface areas, or visual degradation?",
             "neg_question": "Does the scene not lack sufficient visual information to determine light quality, due to non-physically realistic shading, absence of visible shadow-casting surface areas, or visual degradation?",

@@ -27,3 +27,13 @@ if __name__ == "__main__":
             video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/d_T0KPYgqMA.0.2.mp4",
         )
     )
+
+    model = OpenSource(model="perception-lm-8b")
+    print(
+        model.generate(
+            prompt="Describe the subject motion in this video.",
+            # video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/f4ZzHtww6Tc.2.2.mp4",
+            video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/d_T0KPYgqMA.0.2.mp4",
+        )
+    )
+

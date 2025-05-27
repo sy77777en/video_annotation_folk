@@ -116,6 +116,7 @@ class VanillaSubjectPolicy(SocraticProgram):
                 pass # Do nothing
             elif data.cam_setup.is_just_many_subject_no_focus_shot:
                 policy += "\n\nPlease note that this video contains **multiple subjects with no clear main focus**. Because it does not emphasize any specific subject, please briefly describe the types of subjects without going into too much detail. You may also describe the subjects collectively as a group."
+                policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/format_instruction.txt")
                 return policy
             else:
                 raise ValueError("When framing subject is None, the shot size description must be others or many_subject_no_focus.")

@@ -275,6 +275,8 @@ DEFAULT_VIDEO_URLS_FILES = [
 def parse_args():
     parser = argparse.ArgumentParser(description="Video Caption Feedback System")
     parser.add_argument("--configs", type=str, default="all_configs.json", help="Path to the JSON config file")
+    # parser.add_argument("--video_urls_file", type=str, default="test_urls_all.json", help="Path to the test URLs file")
+    # parser.add_argument("--video_urls_file", type=str, default="test_urls_selected.json", help="Path to the test URLs file")
     parser.add_argument(
         "--video_urls_files",
         nargs="+",
@@ -289,10 +291,11 @@ def parse_args():
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
     parser.add_argument("--diff_prompt", type=str, default="prompts/diff_prompt.txt", help="Path to the diff prompt file")
     parser.add_argument("--diff_cap_prompt", type=str, default="prompts/diff_cap_prompt.txt", help="Path to the caption diff prompt file")
+    # parser.add_argument("--video_data", type=str, default="video_data/20250224_0130/videos.json", help="Path to the video data file")
+    # parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--video_data", type=str, default="video_data/20250406_setup_and_motion/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
     parser.add_argument("--personalize_output", type=bool, default=False, help="Whether to personalize the output directory based on the logged-in user")
-    parser.add_argument("--check_completion", type=bool, default=False, help="Whether to check completion status of videos in the selectbox")
     return parser.parse_args()
 
 # Helper function to convert a full name to a username format
@@ -336,25 +339,140 @@ def check_video_completion_status(video_urls_file, configs, output_dir):
     
     return status_dict
 
+def get_annotator_videos(annotator_name, configs, output_dir, not_yet_reviewed=False, show_only_rejected=False):
+    """Get all videos that have been completed by an annotator.
+    
+    Args:
+        annotator_name: Name of the annotator
+        configs: List of configs to check
+        output_dir: Output directory to check for feedback files
+        not_yet_reviewed: If True, only return videos that haven't been reviewed
+        show_only_rejected: If True, only return videos that have been rejected
+        
+    Returns:
+        List of video URLs that match the criteria, sorted by:
+        - If not_yet_reviewed is True: Earliest completion time across all tasks (oldest to latest)
+        - If not_yet_reviewed is False: Latest review time across all tasks (latest to oldest) for reviewed videos, followed by unreviewed videos
+    """
+    assert not (not_yet_reviewed and show_only_rejected), "Cannot show both not yet reviewed and show only rejected videos"
+    start_time = time.time()
+    
+    # Get all video URLs from all files
+    all_video_urls = []
+    for video_urls_file in DEFAULT_VIDEO_URLS_FILES:
+        video_urls = load_json(FOLDER / video_urls_file)
+        all_video_urls.extend(video_urls)
+    
+    print(f"Found {len(all_video_urls)} total videos to check")
+    
+    # Filter videos based on criteria
+    matching_videos = []
+    video_timestamps = {}  # Store timestamps for sorting
+    video_reviewed = {}  # Track which videos have been reviewed
+    total_videos = len(all_video_urls)
+    last_progress_time = time.time()
+    
+    for idx, video_url in enumerate(all_video_urls):
+        video_id = get_video_id(video_url)
+        has_completed_task = False
+        all_tasks_reviewed = True
+        is_rejected = False
+        earliest_completion_time = None
+        latest_review_time = None
+        
+        # Check each task for this video
+        for config in configs:
+            config_output_dir = os.path.join(FOLDER, output_dir, config["output_name"])
+            feedback_file = get_filename(video_id, config_output_dir, FEEDBACK_FILE_POSTFIX)
+            review_file = get_filename(video_id, config_output_dir, REVIEWER_FILE_POSTFIX)
+            
+            # Skip if feedback file doesn't exist
+            if not os.path.exists(feedback_file):
+                continue
+                
+            try:
+                # Check if this annotator completed this task
+                with open(feedback_file, 'r') as f:
+                    feedback_data = json.load(f)
+                    if feedback_data.get("user") == annotator_name:
+                        has_completed_task = True
+                        # Store completion time if available
+                        if "timestamp" in feedback_data:
+                            completion_time = feedback_data["timestamp"]
+                            if earliest_completion_time is None or completion_time < earliest_completion_time:
+                                earliest_completion_time = completion_time
+                        # If feedback exists but no review file, mark as not reviewed
+                        if not os.path.exists(review_file):
+                            all_tasks_reviewed = False
+                        else:
+                            # Check if the video was rejected and get review time
+                            with open(review_file, 'r') as rf:
+                                review_data = json.load(rf)
+                                if not review_data.get("reviewer_double_check", False):
+                                    is_rejected = True
+                                if "review_timestamp" in review_data:
+                                    review_time = review_data["review_timestamp"]
+                                    if latest_review_time is None or review_time > latest_review_time:
+                                        latest_review_time = review_time
+            except Exception as e:
+                print(f"Error reading feedback file {feedback_file}: {e}")
+                continue
+        
+        # Add video if it matches criteria
+        if has_completed_task:
+            if show_only_rejected and not is_rejected:
+                continue
+            if not not_yet_reviewed or not all_tasks_reviewed:
+                matching_videos.append(video_url)
+                # Store appropriate timestamp based on sorting criteria
+                if not_yet_reviewed:
+                    # For not_yet_reviewed=True, sort by earliest completion time
+                    video_timestamps[video_url] = earliest_completion_time if earliest_completion_time else "0000-00-00"
+                else:
+                    # For not_yet_reviewed=False, sort by latest review time with unreviewed at end
+                    video_timestamps[video_url] = latest_review_time if latest_review_time else "0000-00-00"
+                    video_reviewed[video_url] = bool(latest_review_time)
+    
+    # Sort videos based on criteria
+    if video_timestamps:
+        if not_yet_reviewed:
+            # Sort by earliest completion time (oldest to latest)
+            matching_videos.sort(key=lambda x: video_timestamps.get(x, "9999-99-99"))
+        else:
+            # Sort by latest review time (latest to oldest) with unreviewed at end
+            matching_videos.sort(key=lambda x: (
+                not video_reviewed.get(x, False),  # First sort by reviewed status (False comes before True)
+                video_timestamps.get(x, "0000-00-00")  # Then by timestamp
+            ))
+    
+    end_time = time.time()
+    total_time = end_time - start_time
+    print(f"Found {len(matching_videos)} matching videos for annotator {annotator_name}")
+    print(f"Total search time: {total_time:.2f} seconds ({total_time/len(all_video_urls):.3f} seconds per video)")
+    return matching_videos
+
 def login_page(args):
     st.title("Video Caption System Login")
 
-    # Create a form for login
-    with st.form("login_form"):
-        # Annotator selection dropdown
-        selected_annotator = st.selectbox(
-            "Select Your Name:",
-            list(ANNOTATORS.keys()),
-            key="selected_annotator",
-            index=None,
-            placeholder="Type or select your name...",
-        )
-        
-        # Password input
-        password = st.text_input("Enter Password:", type="password", key="password_input")
-        
-        # File selection dropdown with completion status if enabled
-        if args.check_completion:
+    # Create tabs for different login methods
+    tab1, tab2 = st.tabs(["Login by Sheet", "Login by Annotator"])
+
+    with tab1:
+        # Original login by sheet form
+        with st.form("login_form_sheet"):
+            # Annotator selection dropdown
+            selected_annotator = st.selectbox(
+                "Select Your Name:",
+                list(ANNOTATORS.keys()),
+                key="selected_annotator_sheet",
+                index=None,
+                placeholder="Type or select your name...",
+            )
+            
+            # Password input
+            password = st.text_input("Enter Password:", type="password", key="password_input_sheet")
+            
+            # File selection dropdown with completion status if enabled
             try:
                 # Load configs
                 configs = load_config(FOLDER / args.configs)
@@ -394,7 +512,7 @@ def login_page(args):
                 selected_file = st.selectbox(
                     "Select Video URLs File:",
                     args.video_urls_files,
-                    key="selected_urls_file",
+                    key="selected_urls_file_sheet",
                     format_func=format_file_with_status
                 )
             except Exception as e:
@@ -402,29 +520,88 @@ def login_page(args):
                 selected_file = st.selectbox(
                     "Select Video URLs File:",
                     args.video_urls_files,
-                    key="selected_urls_file"
+                    key="selected_urls_file_sheet"
                 )
-        else:
-            selected_file = st.selectbox(
-                "Select Video URLs File:",
-                args.video_urls_files,
-                key="selected_urls_file"
+
+            submit_button = st.form_submit_button("Login")
+
+            if submit_button:
+                # Check if password matches
+                if password == ANNOTATORS[selected_annotator]["password"]:
+                    # Store the video URLs and annotator in session state
+                    st.session_state.video_urls = load_json(FOLDER / selected_file)
+                    st.session_state.logged_in = True
+                    st.session_state.logged_in_user = selected_annotator
+                    st.success(f"Login successful! Welcome, {selected_annotator}!")
+                    st.rerun()
+                else:
+                    st.error("Incorrect password. Please try again.")
+
+    with tab2:
+        # New login by annotator form
+        with st.form("login_form_annotator"):
+            # Annotator selection dropdown for login
+            selected_annotator = st.selectbox(
+                "Select Your Name:",
+                list(ANNOTATORS.keys()),
+                key="selected_annotator_annotator",
+                index=None,
+                placeholder="Type or select your name...",
+            )
+            
+            # Password input
+            password = st.text_input("Enter Password:", type="password", key="password_input_annotator")
+            
+            # Dropdown to select which annotator's videos to search for
+            target_annotator = st.selectbox(
+                "Search for videos completed by:",
+                list(ANNOTATORS.keys()),
+                key="target_annotator",
+                index=None,
+                placeholder="Type or select annotator name...",
+            )
+            
+            # Not yet reviewed checkbox
+            not_yet_reviewed = st.checkbox(
+                "Show only videos not yet reviewed",
+                value=True,
+                key="not_yet_reviewed"
             )
 
-        submit_button = st.form_submit_button("Login")
+            submit_button = st.form_submit_button("Login")
 
-        if submit_button:
-            # Check if password matches
-            if password == ANNOTATORS[selected_annotator]["password"]:
-                # Store the selected file and annotator in session state
-                st.session_state.video_urls_file = selected_file
-                st.session_state.logged_in = True
-                st.session_state.logged_in_user = selected_annotator
-                st.success(f"Login successful! Welcome, {selected_annotator}!")
-                st.rerun()
-            else:
-                st.error("Incorrect password. Please try again.")
-
+            if submit_button:
+                # Check if password matches
+                if password == ANNOTATORS[selected_annotator]["password"]:
+                    try:
+                        # Load configs
+                        configs = load_config(FOLDER / args.configs)
+                        configs = [load_config(FOLDER / config) for config in configs]
+                        
+                        # Get videos for the target annotator
+                        start_time = time.time()
+                        matching_videos = get_annotator_videos(
+                            target_annotator,  # Use target_annotator instead of selected_annotator
+                            configs,
+                            args.output,
+                            not_yet_reviewed
+                        )
+                        end_time = time.time()
+                        print(f"Getting annotator videos took {end_time - start_time:.2f} seconds")
+                        
+                        if not matching_videos:
+                            st.error(f"No matching videos found for annotator {target_annotator}.")
+                        else:
+                            # Store the matching videos and annotator in session state
+                            st.session_state.video_urls = matching_videos
+                            st.session_state.logged_in = True
+                            st.session_state.logged_in_user = selected_annotator
+                            st.success(f"Login successful! Welcome, {selected_annotator}! Found {len(matching_videos)} matching videos for {target_annotator}.")
+                            st.rerun()
+                    except Exception as e:
+                        st.error(f"Error getting annotator videos: {e}")
+                else:
+                    st.error("Incorrect password. Please try again.")
 
 def load_video_data(video_data_file, label_collections=["cam_motion", "cam_setup", "lighting_setup"]):
     video_data_dict = json_to_video_data(video_data_file, label_collections=label_collections)
@@ -491,7 +668,8 @@ def get_precaption_llm_name(config_dict, selected_config):
     config = config_dict[selected_config]
     task = config["task"]
     if task in ["subject_motion_dynamics"]:
-        return "tarsier-recap-7b"
+        # return "tarsier-recap-7b"
+        return "tarsier2-7b"
         # return "gemini-2.5-pro-preview-05-06" # TODO: change back to tarsier-recap-7b
     elif task in ["spatial_framing_dynamics"]:
         # return "qwen2.5-vl-72b"
@@ -625,7 +803,9 @@ def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_
     except Exception as e:
         st.error(f"Error generating pre-caption for video: {video_id}")
         st.error(f"Error: {e}")
-        # import pdb; pdb.set_trace()
+        # If the selected_llm is gemini-2.5-pro-preview-05-06, prompt user to try again or use gpt-4o-2024-08-06
+        if selected_llm == "gemini-2.5-pro-preview-05-06":
+            st.info("Please try again or use gpt-4o-2024-08-06 as the LLM.")
         raise e
     
     pre_caption_data = {
@@ -640,6 +820,67 @@ def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_
     return pre_caption
 
 
+def get_video_status(video_id, output_dir):
+    """Get the status of a video's caption completion and previous iterations"""
+    # Initialize all variables
+    status = "not_completed"
+    current_file = None
+    prev_file = None
+    current_user = None
+    prev_user = None
+    
+    # Check all relevant files
+    feedback_file = get_filename(video_id, output_dir, FEEDBACK_FILE_POSTFIX)
+    prev_feedback_file = get_filename(video_id, output_dir, PREV_FEEDBACK_FILE_POSTFIX)
+    reviewer_file = get_filename(video_id, output_dir, REVIEWER_FILE_POSTFIX)
+    
+    # Determine status based on file existence and content
+    if not os.path.exists(feedback_file):
+        return status, current_file, prev_file, current_user, prev_user
+        
+    current_file = feedback_file
+    with open(feedback_file, 'r') as f:
+        current_data = json.load(f)
+        current_user = current_data.get("user")
+    
+    if not os.path.exists(reviewer_file):
+        status = "completed_not_reviewed"
+        return status, current_file, prev_file, current_user, prev_user
+    
+    # Load reviewer data
+    with open(reviewer_file, 'r') as f:
+        reviewer_data = json.load(f)
+        reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
+        
+        if reviewer_double_check:
+            status = "approved"
+            # For approved files, load previous feedback if it exists
+            if os.path.exists(prev_feedback_file):
+                with open(prev_feedback_file, 'r') as pf:
+                    prev_data = json.load(pf)
+                    prev_user = prev_data.get("user")
+        else:
+            status = "rejected"
+            # For rejected files, must have prev feedback with different user
+            assert os.path.exists(prev_feedback_file), f"Rejected file {video_id} must have previous feedback"
+            with open(prev_feedback_file, 'r') as pf:
+                prev_data = json.load(pf)
+                prev_user = prev_data.get("user")
+                with open(feedback_file, 'r') as cf:
+                    current_data = json.load(cf)
+                    current_user = current_data.get("user")
+                    if prev_user == current_user:
+                        # This means the caption was just rejected but it has not been updated yet
+                        # In this case, we should show the previous version and treat it as not reviewed
+                        status = "completed_not_reviewed"
+                        prev_user = None
+                        prev_file = None
+                        return status, current_file, prev_file, current_user, prev_user
+        
+        prev_file = prev_feedback_file if os.path.exists(prev_feedback_file) else None
+    
+    return status, current_file, prev_file, current_user, prev_user
+
 def get_video_format_func(output_dir, file_postfix=".json", video_urls=None):
     def video_format_func(video_url):
         if video_urls is not None:
@@ -647,18 +888,33 @@ def get_video_format_func(output_dir, file_postfix=".json", video_urls=None):
         else:
             video_index = ""
         video_id = get_video_id(video_url)
-        # Check for existing feedback and get current caption
-        existing_data = load_data(video_id, output_dir=output_dir, file_postfix=file_postfix)
-        reviewer_data = load_data(video_id, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
         video_url = video_url.split("/")[-1]
-        # Show existing feedback if available
-        if existing_data:
-            if reviewer_data and reviewer_data.get("reviewer_double_check", False):
-                return f"✅✅{video_index}. {video_url}"
-            elif reviewer_data:
-                return f"❌{video_index}. {video_url}"
-            return f"✅{video_index}. {video_url}"
-        return f"{video_index}. {video_url}"
+        
+        # Get status and format accordingly
+        status, current_file, _, _, _ = get_video_status(video_id, output_dir)
+        status_emoji_map = {
+            "not_completed": "",  # Not completed - no emoji
+            "completed_not_reviewed": "✅",  # Completed but not reviewed - single checkmark
+            "approved": "✅✅",  # Approved - double checkmark
+            "rejected": "❌"  # Rejected
+        }
+        
+        # Get timestamps if available
+        timestamp_str = ""
+        if status != "not_completed":
+            if current_file:
+                with open(current_file, 'r') as f:
+                    current_data = json.load(f)
+                    if status == "completed_not_reviewed":
+                        timestamp_str = f" (completed at {format_timestamp(current_data.get('timestamp', 'N/A'))})"
+                    elif status == "approved" or status == "rejected":
+                        reviewer_file = get_filename(video_id, output_dir, REVIEWER_FILE_POSTFIX)
+                        if os.path.exists(reviewer_file):
+                            with open(reviewer_file, 'r') as rf:
+                                reviewer_data = json.load(rf)
+                                timestamp_str = f" (reviewed at {format_timestamp(reviewer_data.get('review_timestamp', 'N/A'))})"
+        
+        return f"{status_emoji_map[status]}{video_index}. {video_url}{timestamp_str}"
     return video_format_func
 
 def get_imagery_kwargs(selected_mode, selected_video):
@@ -688,8 +944,13 @@ def get_imagery_kwargs(selected_mode, selected_video):
         pass
     return imagery_kwargs
 
-def file_check(video_urls_file, video_data_dict):
-    video_urls = load_json(FOLDER / video_urls_file)
+def file_check(video_urls, video_data_dict):
+    """Check if all videos in the list exist in the video data dictionary.
+    
+    Args:
+        video_urls: List of video URLs to check
+        video_data_dict: Dictionary of video data
+    """
     video_ids = [get_video_id(video_url) for video_url in video_urls]
     missing_video = False
     for video_id in video_ids:
@@ -782,6 +1043,14 @@ def handle_rejection(video_id, output_dir, current_user):
     }
     save_data(video_id, reviewer_data, output_dir=output_dir, file_postfix=REVIEWER_FILE_POSTFIX)
     st.rerun()
+
+def format_timestamp(iso_timestamp: str) -> str:
+    if not iso_timestamp:
+        return 'N/A'
+    try:
+        return datetime.fromisoformat(iso_timestamp).strftime('%Y-%m-%d')
+    except ValueError:
+        return 'Invalid date'
 
 def display_feedback_info(feedback_data):
     """Display feedback information including scores, GPT feedback, and caption differences."""
@@ -1043,52 +1312,60 @@ def highlight_differences_gpt(text1, text2, diff_prompt=None, diff_key="diff_fee
         )
         st.rerun()  # Rerun to show the new feedback
 
-def copy_feedback_for_precaption(configs_path, video_urls_files, main_project_output, personalized_output):
+def copy_feedback_for_precaption(configs_path, video_urls, main_project_output, personalized_output):
     """Copy feedback files from main project output to personalized output directory for precaption purposes.
     
     Args:
         configs_path: Path to configs file
-        video_urls_files: List of video URLs files to process
+        video_urls: List of video URLs to process
         main_project_output: Path to main project output directory
         personalized_output: Path to personalized output directory
     """
     # Create personalized output directory if it doesn't exist
     os.makedirs(personalized_output, exist_ok=True)
     
-    # Process each video URLs file
-    for video_urls_file in video_urls_files:
-        video_urls = load_json(FOLDER / video_urls_file)
+    # Process each video
+    for video_url in video_urls:
+        video_id = get_video_id(video_url)
         
-        # Process each video
-        for video_url in video_urls:
-            video_id = get_video_id(video_url)
+        # For each config in the main project
+        configs = load_config(FOLDER / configs_path)
+        configs = [load_config(FOLDER / config) for config in configs]
+        
+        for config in configs:
+            # Get the output directory for this config
+            config_output_dir = os.path.join(FOLDER, main_project_output, config["output_name"])
+            feedback_file = get_filename(video_id, config_output_dir, FEEDBACK_FILE_POSTFIX)
             
-            # For each config in the main project
-            configs = load_config(FOLDER / configs_path)
-            configs = [load_config(FOLDER / config) for config in configs]
-            
-            for config in configs:
-                # Get the output directory for this config
-                config_output_dir = os.path.join(FOLDER, main_project_output, config["output_name"])
-                feedback_file = get_filename(video_id, config_output_dir, FEEDBACK_FILE_POSTFIX)
+            # If feedback exists in main project, check if precaption already exists
+            if os.path.exists(feedback_file):
+                # Create config directory in personalized output
+                personalized_config_dir = os.path.join(FOLDER, personalized_output, config["output_name"])
+                os.makedirs(personalized_config_dir, exist_ok=True)
                 
-                # If feedback exists in main project, check if precaption already exists
-                if os.path.exists(feedback_file):
-                    # Create config directory in personalized output
-                    personalized_config_dir = os.path.join(FOLDER, personalized_output, config["output_name"])
-                    os.makedirs(personalized_config_dir, exist_ok=True)
-                    
-                    # Check if precaption file already exists
-                    precaption_file = get_filename(video_id, personalized_config_dir, PRECAPTION_FILE_POSTFIX)
-                    if not os.path.exists(precaption_file):
-                        # Only copy if precaption doesn't exist
-                        with open(feedback_file, 'r') as src, open(precaption_file, 'w') as dst:
-                            dst.write(src.read())
-                        print(f"Copied {feedback_file} to {precaption_file}")
-                    else:
-                        print(f"Skipped copying {feedback_file} as {precaption_file} already exists")
+                # Check if precaption file already exists
+                precaption_file = get_filename(video_id, personalized_config_dir, PRECAPTION_FILE_POSTFIX)
+                if not os.path.exists(precaption_file):
+                    # Only copy if precaption doesn't exist
+                    with open(feedback_file, 'r') as src, open(precaption_file, 'w') as dst:
+                        dst.write(src.read())
+                    print(f"Copied {feedback_file} to {precaption_file}")
                 else:
-                    print(f"Skipped copying {feedback_file} as it doesn't exist")
+                    print(f"Skipped copying {feedback_file} as {precaption_file} already exists")
+            else:
+                print(f"Skipped copying {feedback_file} as it doesn't exist")
+
+def display_status_indicators():
+    """Display an expander explaining the status indicators used in the video selection dropdown."""
+    with st.expander("📝 Status Indicators Explanation", expanded=False):
+        st.markdown("""
+        | Emoji | Status | Description |
+        |-------|--------|-------------|
+        |  | Not Completed | Video has not been captioned yet |
+        | ✅ | Completed | Video has been captioned but not reviewed |
+        | ✅✅ | Approved | Video has been reviewed and double-checked |
+        | ❌ | Rejected | Video needs revision (different users in current and previous feedback) |
+        """)
 
 def main(args, caption_programs):
     # Set page config first
@@ -1109,7 +1386,7 @@ def main(args, caption_programs):
             # Copy feedback files from main project for precaption
             copy_feedback_for_precaption(
                 args.configs,
-                [st.session_state.video_urls_file],  # Use current video URLs file
+                st.session_state.video_urls,  # Use video_urls directly
                 args.main_project_output,  # Main project output
                 st.session_state.personalized_output  # Personalized output
             )
@@ -1121,7 +1398,7 @@ def main(args, caption_programs):
     # Load video data
     video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
     if "file_check_passed" not in st.session_state:
-        file_check(st.session_state.video_urls_file, video_data_dict)
+        file_check(st.session_state.video_urls, video_data_dict)  # Use video_urls directly
         st.session_state.file_check_passed = True
 
     # Create two columns
@@ -1169,7 +1446,7 @@ def main(args, caption_programs):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_config_id
-                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls_file', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
+                if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -1183,10 +1460,25 @@ def main(args, caption_programs):
 
         config = config_dict[selected_config]
         st.title(config.get("name", "Pre-Caption System"))
-        video_urls = load_json(FOLDER / st.session_state.video_urls_file)
+        
+        # Get video URLs from session state
+        video_urls = st.session_state.video_urls
+            
         output_dir = os.path.join(FOLDER, args.output, config["output_name"])
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
+        
+        # Display instructions
+        # st.subheader("Instructions")
+        with st.expander("📜 Caption Instructions (Click to Expand/Collapse)", expanded=False):
+            # Load instructions from file, otherwise throw a warning
+            if "instruction_file" not in config:
+                st.warning("No instruction_file found in the configuration file.")
+            else:
+                st.write(load_txt(FOLDER / config["instruction_file"]))
+
+        # Display status indicators explanation
+        display_status_indicators()
 
         # Select video
         selected_video = st.selectbox(
@@ -1210,7 +1502,7 @@ def main(args, caption_programs):
             keys_to_remove = []
             for key in st.session_state:
                 # Keep api_key and last_video_id
-                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user', 'personalized_output']:
+                if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output']:
                     keys_to_remove.append(key)
 
             # Remove all collected keys
@@ -1235,17 +1527,8 @@ def main(args, caption_programs):
         if 'feedback_data' not in st.session_state:
             st.session_state.feedback_data = {}
 
-        # Display instructions
-        st.subheader("Instructions")
-        with st.expander("📜 Instructions (Click to Expand/Collapse)", expanded=False):
-            # Load instructions from file, otherwise throw a warning
-            if "instruction_file" not in config:
-                st.warning("No instruction_file found in the configuration file.")
-            else:
-                st.write(load_txt(FOLDER / config["instruction_file"]))
-
-        # Display video
-        st.video(selected_video)
+        from video_player import custom_video_player
+        custom_video_player(selected_video)
 
         # Display first and last frames
         extracted_frames = extract_frames(selected_video, [0, -1])
@@ -1289,7 +1572,7 @@ def main(args, caption_programs):
         preserved_keys = [
             'api_key', 'last_config_id', 'selected_config',
             'last_video_id', 'last_selected_video', 'personalized_output',
-            'file_check_passed', 'logged_in', 'video_urls_file', 'logged_in_user'
+            'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user',
         ]
 
         def reset_state_except(preserved):

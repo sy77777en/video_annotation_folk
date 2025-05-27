@@ -41,8 +41,7 @@ The system provides detailed feedback comparison with:
 - `handle_rejection()`: Manages the rejection process
 
 ### 6. User Interface Features
-- Warning emoji (⚠️) for rejection actions
-- Clear status indicators (✅ for approved, ❌ for rejected)
+- Clear status indicators (✅ for completed, ✅✅ for approved, ❌ for rejected)
 - Detailed feedback comparison with both visual and GPT-powered analysis
 - Error messages for invalid review attempts
 
