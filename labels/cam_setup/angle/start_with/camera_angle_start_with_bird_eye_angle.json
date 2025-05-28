@@ -2,7 +2,7 @@
     "label": "Camera Angle Start With Bird's Eye Angle",
     "label_name": "camera_angle_start_with_bird_eye_angle",
     "def_question": [
-        "Does the video start with the camera positioned at a bird's eye angle, looking straight down from above?"
+        "Does the video start with the camera at a bird's eye angle, looking straight down from above?"
     ],
     "alt_question": [
         "Does the shot start with a bird's eye perspective?",
@@ -15,7 +15,7 @@
         "Is the starting frame recorded from a high, perpendicular angle?"
     ],
     "def_prompt": [
-        "The video starts with the camera positioned at a bird's eye angle, looking straight down from above."
+        "The video starts with the camera at a bird's eye angle, looking straight down from above."
     ],
     "alt_prompt": [
         "A shot starting from a strict top-down perspective.",

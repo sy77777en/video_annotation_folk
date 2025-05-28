@@ -2,7 +2,7 @@
     "label": "Has Single Dominant Subject",
     "label_name": "has_single_dominant_subject",
     "def_question": [
-        "Is there a single dominant subject or group of subjects in the frame throughout the video?"
+        "Does the video maintain a single dominant subject or group of subjects throughout?"
     ],
     "alt_question": [
         "Does one main subject or group dominate the frame throughout?",
@@ -15,7 +15,7 @@
         "Does the video emphasize one particular subject or group?"
     ],
     "def_prompt": [
-        "A shot that maintains focus on a single dominant subject or group of subjects throughout the video."
+        "A video that maintains a single dominant subject or group of subjects throughout."
     ],
     "alt_prompt": [
         "A video centered on one main subject or group.",

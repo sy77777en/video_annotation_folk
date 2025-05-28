@@ -2,7 +2,7 @@
     "label": "Focus End With Middle Ground",
     "label_name": "focus_end_with_middle_ground",
     "def_question": [
-        "Does the video end with the middle ground in focus while the foreground and background are blurred?"
+        "Does the video end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?"
     ],
     "alt_question": [
         "Does the shot end with the middle ground as the focal point?",
@@ -15,7 +15,7 @@
         "Is the ending frame framed with a strong middle ground emphasis?"
     ],
     "def_prompt": [
-        "The video ends with the middle ground in focus, with the foreground and background blurred."
+        "The video ends with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background."
     ],
     "alt_prompt": [
         "A shot ending with the middle ground in sharp focus.",

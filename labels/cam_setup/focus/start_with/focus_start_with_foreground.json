@@ -2,7 +2,7 @@
     "label": "Focus Start With Foreground",
     "label_name": "focus_start_with_foreground",
     "def_question": [
-        "Does the camera start with the foreground in focus, using a shallow depth of field?"
+        "Does the video start with the camera focusing on the foreground, using a shallow depth of field?"
     ],
     "alt_question": [
         "Does the shot start with a clear focus on the foreground while other areas are blurred?",
@@ -15,7 +15,7 @@
         "Is the starting frame composed with a crisp foreground while the depth is softened?"
     ],
     "def_prompt": [
-        "The camera starts with the foreground in focus, using a shallow depth of field."
+        "The video starts with the camera focusing on the foreground, using a shallow depth of field."
     ],
     "alt_prompt": [
         "A shot starting with a sharp foreground and a blurred depth.",

@@ -15,8 +15,8 @@ ANNOTATOR_MAPPING = {
     # "video_urls/20250227_0507ground_and_setup/overlap_752_to_846.json": "Zhiqiu Lin",
     # "video_urls/20250227_0507ground_and_setup/overlap_282_to_376.json": "Hewei Wang",
     # "video_urls/20250227_0507ground_and_setup/overlap_188_to_282.json": "Sunny Guo",
-    "video_urls/20250227_0507ground_and_setup/overlap_376_to_470.json": "Yuhan Huang",
-    "video_urls/20250227_0507ground_and_setup/overlap_470_to_564.json": "Yuhan Huang",
+    # "video_urls/20250227_0507ground_and_setup/overlap_376_to_470.json": "Yuhan Huang",
+    # "video_urls/20250227_0507ground_and_setup/overlap_470_to_564.json": "Yuhan Huang",
     # "video_urls/20250406_setup_and_motion/overlap_940_to_950.json": "Mingyu Wang",
     # "video_urls/20250406_setup_and_motion/overlap_950_to_960.json": "Mingyu Wang",
 }

@@ -2,7 +2,7 @@
     "label": "Focus Start With Out of Focus",
     "label_name": "focus_start_with_out_of_focus",
     "def_question": [
-        "Does the video start completely out of focus?"
+        "Does the video start with the camera completely out of focus?"
     ],
     "alt_question": [
         "Does the shot start with a blurred or unfocused frame?",
@@ -15,7 +15,7 @@
         "Is the starting frame hazy with no clear subject in focus?"
     ],
     "def_prompt": [
-        "The video starts completely out of focus."
+        "The video starts with the camera completely out of focus."
     ],
     "alt_prompt": [
         "A shot starting with a blurred, unfocused frame.",

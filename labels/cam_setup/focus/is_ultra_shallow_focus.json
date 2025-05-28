@@ -2,7 +2,7 @@
     "label": "Is Ultra Shallow Focus",
     "label_name": "is_ultra_shallow_focus",
     "def_question": [
-        "Does the video have an extremely shallow depth of field?"
+        "Is the camera using extremely shallow depth of field, with only a narrow plane in focus?"
     ],
     "alt_question": [
         "Is the focus range extremely narrow?",
@@ -15,7 +15,7 @@
         "Does the video show extreme focus limitation?"
     ],
     "def_prompt": [
-        "A shot using extremely shallow depth of field, with a very narrow focus range."
+        "The camera uses extremely shallow depth of field, with a very narrow focus range."
     ],
     "alt_prompt": [
         "A video with extremely selective focus.",

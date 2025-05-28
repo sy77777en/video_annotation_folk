@@ -8,7 +8,7 @@ The report should:
 • Please focus on identifying factual errors, such as omissions or hallucinations. The caption might use different phrasing, so don’t be too strict—only pay attention to differences in meaning.
 • For each item, only summarize the most fatal or critical errors instead of listing all mistakes.
 
-After listing changes, include a short **"Writing Tips and Takeaways"** section that explains the most critical errors and suggest what the reviewer can learn to write better caption next time.
+After listing changes, include a short **"Writing Tips and Takeaways"** section that explains the most critical errors and suggest what the reviewer can learn to write more accurate caption next time. You can skip stylistic issues—we don’t care about those.
 
 Your output should be a single **Markdown string** that:
 – Performs **word-level comparison** (split on whitespace).

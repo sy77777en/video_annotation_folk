@@ -2,7 +2,7 @@
     "label": "Colorfulness Is Changing (Complex)",
     "label_name": "colorfulness_is_changing",
     "def_question": [
-        "Does the video have noticeable shifts in colorfulness between high, neutral, and low levels across large parts of the scene?"
+        "Does the video have noticeable shifts in colorfulness (or saturation) between high, neutral, and low levels across large parts of the scene?"
     ],
     "alt_question": [
         "Does the video’s color intensity fluctuate throughout?",
@@ -15,7 +15,7 @@
         "Does the scene undergo a noticeable saturation transformation?"
     ],
     "def_prompt": [
-        "The video has noticeable shifts in colorfulness between high, neutral, and low levels across large parts of the scene."
+        "The video has noticeable shifts in colorfulness (or saturation) between high, neutral, and low levels across large parts of the scene."
     ],
     "alt_prompt": [
         "A video where the saturation changes throughout.",

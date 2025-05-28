@@ -2,7 +2,7 @@
     "label": "Screen Recording POV",
     "label_name": "screen_recording_pov",
     "def_question": [
-        "Does this video capture a screen recording with visible UI elements?"
+        "Is this a screen recording of a software or system interface (e.g., menus, windows, toolbars)?"
     ],
     "alt_question": [
         "Is this a recording of a computer screen, often used for tutorials or virtual meetings?",
@@ -11,7 +11,7 @@
         "Does the footage consist entirely of a digital display capture?"
     ],
     "def_prompt": [
-        "This is a recording of a computer screen with visible UI elements."
+        "A screen recording of a software or system interface (e.g., menus, windows, toolbars)."
     ],
     "alt_prompt": [
         "A tutorial or demonstration video showing only a computer screen.",

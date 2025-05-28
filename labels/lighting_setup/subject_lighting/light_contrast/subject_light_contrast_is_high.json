@@ -2,7 +2,7 @@
     "label": "Light Contrast Ratio on Subject Is High",
     "label_name": "subject_light_contrast_is_high",
     "def_question": [
-        "Is the lighting contrast on the subject's surface consistently strong, with extreme brightness differences between lit and shadowed areas, and some features lost in blown-out highlights or deep shadows, roughly corresponding to a 1:16 or higher light ratio (4+ stops)?"
+        "Is the lighting contrast on the subject's surface consistently high, with extreme brightness differences between lit and shadowed areas, and some features lost in blown-out highlights or deep shadows, roughly corresponding to a 1:16 or higher light ratio (4+ stops)?"
     ],
     "alt_question": [
         "Is there a bold separation between very bright and very dark regions on the subject?",
@@ -11,14 +11,14 @@
         "Are the lit and shaded regions visibly far apart in brightness?",
         "Is this a low-key lighting setup with high contrast?",
         "Do highlights appear near white and shadows near black?",
-        "Is there a strong visual separation between light and dark areas?",
+        "Is there a high visual separation between light and dark areas?",
         "Are some features obscured by extreme brightness differences?"
     ],
     "def_prompt": [
-        "The lighting contrast on the subject’s surface is consistently strong, with extreme brightness differences between lit and shadowed areas, and some features lost in blown-out highlights or deep shadows, roughly corresponding to a 1:16 or higher light ratio (4+ stops)."
+        "The lighting contrast on the subject’s surface is consistently high, with extreme brightness differences between lit and shadowed areas, and some features lost in blown-out highlights or deep shadows, roughly corresponding to a 1:16 or higher light ratio (4+ stops)."
     ],
     "alt_prompt": [
-        "A subject with strong visual separation between lit and shadowed areas.",
+        "A subject with high visual separation between lit and shadowed areas.",
         "A scene where some details are lost in extreme highlights or shadows.",
         "A shot with a light ratio of 1:16 or higher between brightest and darkest areas.",
         "A subject where lit and shaded regions are visibly far apart in brightness.",

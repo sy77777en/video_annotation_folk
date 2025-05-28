@@ -4,13 +4,11 @@ Compare the reviewer’s previous feedback (`old_feedback`) with the revised fee
 
 The report should:
 • Start with a 1–2 sentence summary explaining what was off or problematic in the old feedback.
-• Organize the differences into three sections by what needed to be added, removed, or corrected.
+• Please focus on identifying factual errors, such as omissions or hallucinations. The feedback might use different wording or order, so don’t be too strict—only pay attention to differences in meaning.
+• Organize the differences into two sections by what needed to be added and removed.
 • For each item, only summarize the most fatal or critical errors instead of listing all mistakes.
 
-After listing changes, include a short **"Writing Tips and Takeaways"** section that explains:
-– What was missing or problematic in the old feedback.
-– How the new feedback improves clarity, helpfulness, or factual accuracy.
-– What the reviewer can learn to give better feedback next time (e.g., avoid assumptions, highlight visual evidence, stay concise).
+After listing changes, include a short **"Writing Tips and Takeaways"** section that explains the most critical errors and suggest what the reviewer can learn to give better feedback next time.
 
 Your output should be a single **Markdown string** that:
 – Performs **word-level comparison** (split on whitespace).

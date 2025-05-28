@@ -2,7 +2,7 @@
     "label": "Is Deep Focus",
     "label_name": "is_deep_focus",
     "def_question": [
-        "Does the video have a deep depth of field, ensuring distant details remain sharp?"
+        "Does the camera use a deep depth of field with distant details remaining sharp?"
     ],
     "alt_question": [
         "Is everything in frame consistently in focus?",
@@ -15,7 +15,7 @@
         "Does the video maintain focus across all depths?"
     ],
     "def_prompt": [
-        "The video has a deep depth of field, ensuring distant details remain sharp."
+        "The camera uses a deep depth of field with distant details remaining sharp."
     ],
     "alt_prompt": [
         "A video with everything in focus.",

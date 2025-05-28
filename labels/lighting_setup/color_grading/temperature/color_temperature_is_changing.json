@@ -2,7 +2,7 @@
     "label": "Color Temperature Is Changing (Complex)",
     "label_name": "color_temperature_is_changing",
     "def_question": [
-        "Does the video have noticeable shifts between warm and cool color tones?"
+        "Does the video have noticeable shifts between warm, neutral, and cool color tones in large parts of the scene?"
     ],
     "alt_question": [
         "Does the video’s color grading change significantly throughout?",
@@ -15,7 +15,7 @@
         "Does the scene undergo a noticeable color transformation?"
     ],
     "def_prompt": [
-        "The video has noticeable shifts between warm and cool color tones."
+        "The video has noticeable shifts between warm, neutral, and cool color tones in large parts of the scene."
     ],
     "alt_prompt": [
         "A video where the color grading changes throughout.",

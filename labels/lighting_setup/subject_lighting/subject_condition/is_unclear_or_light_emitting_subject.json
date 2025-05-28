@@ -1,6 +1,6 @@
 {
-    "label": "Unclear or Self-Illuminating Subject",
-    "label_name": "is_no_subject",
+    "label": "Unclear or Light-Emitting Subject",
+    "label_name": "is_unclear_or_light_emitting_subject",
     "def_question": [
         "Does the video lack a clear subject visibly illuminated by external light, either because the subject is absent, ambiguous (e.g., scenery shot), or emits light or is engulfed by a light source in a way that obscures form shadows and highlights, making contrast and direction unreliable to judge?"
     ],
@@ -27,8 +27,8 @@
         "A sequence showing only environmental lighting effects.",
         "A shot where lighting cannot be evaluated on any subject."
     ],
-    "pos_rule_str": "self.lighting_setup.is_no_subject is True",
-    "neg_rule_str": "self.lighting_setup.is_no_subject is False",
+    "pos_rule_str": "self.lighting_setup.is_unclear_or_light_emitting_subject is True",
+    "neg_rule_str": "self.lighting_setup.is_unclear_or_light_emitting_subject is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 } 

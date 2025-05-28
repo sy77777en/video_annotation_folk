@@ -2,7 +2,7 @@
     "label": "Is Shallow Focus",
     "label_name": "is_shallow_focus",
     "def_question": [
-        "Is the camera using a shallow depth of field with limited focus range?"
+        "Is the camera using shallow depth of field, with a limited but noticeable range of space in focus?"
     ],
     "alt_question": [
         "Does the shot have a limited focus range?",
@@ -15,7 +15,7 @@
         "Is the focus deliberately limited in depth?"
     ],
     "def_prompt": [
-        "A shot using shallow depth of field, with limited range of focus."
+        "The camera uses shallow depth of field, with a limited but noticeable range of space in focus."
     ],
     "alt_prompt": [
         "A video with selective focus.",
