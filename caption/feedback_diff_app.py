@@ -257,7 +257,7 @@ def display_caption_expander(data, user, timestamp):
     st.write(data.get("pre_caption", "No pre-caption available"))
     
     # Use the existing display_feedback_info function from feedback_app.py
-    display_feedback_info(data)
+    display_feedback_info(data, display_pre_caption_instead_of_final_caption=False)
 
 def display_accuracy_statistics(config_names, config_dict, video_urls, args):
     """Display accuracy statistics for all configs in an expander"""
@@ -296,13 +296,27 @@ def display_accuracy_statistics(config_names, config_dict, video_urls, args):
                     st.markdown(table_str)
 
 def main(args):
-    # Set page config first
-    st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
+    # # Set page config first
+    # st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
 
-    # Check login status
+    # # Check login status
+    # if "logged_in" not in st.session_state or not st.session_state.logged_in:
+    #     login_page(args)
+    #     return
+    # ONLY set page config if we're running standalone (not in portal mode)
+    # if not hasattr(st.session_state, 'selected_portal'):
+    #     st.set_page_config(initial_sidebar_state="collapsed", layout="wide")
+
+    # Check login status - ONLY if not already logged in through unified system
     if "logged_in" not in st.session_state or not st.session_state.logged_in:
-        login_page(args)
-        return
+        # ONLY show login if we're running standalone
+        if not hasattr(st.session_state, 'selected_portal'):
+            login_page(args)
+            return
+        else:
+            # If we're in portal mode but not logged in, something went wrong
+            st.error("Authentication error. Please logout and login again.")
+            return
     
     # After successful login, update the output directory based on the logged-in user if personalize_output is True
     if args.personalize_output and "logged_in_user" in st.session_state:
@@ -366,7 +380,7 @@ def main(args):
                 keys_to_remove = []
                 for key in st.session_state:
                     # Keep api_key and last_config_id
-                    if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output']:
+                    if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 'personalized_output', 'selected_portal', 'login_method', 'target_annotator']:
                         keys_to_remove.append(key)
 
                 # Remove all collected keys
@@ -414,7 +428,7 @@ def main(args):
                 keys_to_remove = []
                 for key in st.session_state:
                     # Keep api_key and last_video_id
-                    if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output']:
+                    if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output', 'selected_portal', 'login_method', 'target_annotator']:
                         keys_to_remove.append(key)
 
                 # Remove all collected keys
@@ -473,7 +487,8 @@ def main(args):
             preserved_keys = [
                 'api_key', 'last_config_id', 'selected_config',
                 'last_video_id', 'last_selected_video', 
-                'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output'
+                'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 'personalized_output',
+                'selected_portal', 'login_method', 'target_annotator'
             ]
 
             def reset_state_except(preserved):

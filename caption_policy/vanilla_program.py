@@ -103,7 +103,7 @@ class VanillaSubjectPolicy(SocraticProgram):
             policy = ("The video is a scenery shot. You do not need to describe the subject. "
                     "Please concisely specify the type of scenery shot (e.g., a landscape or cityscape scenery shot) in a single fluent paragraph."
                     "Also explain why there is no main subject, such as the focus being on the environment, atmosphere, "
-                    "or scale rather than a specific object.")
+                    "or scale rather than a specific object. Just note that briefly in one to three sentences.")
             policy += "\n\n" + read_text_file("caption_policy/policy/subject_description/format_instruction.txt")
             return policy
         
@@ -200,7 +200,7 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
         
         if data.cam_setup.is_framing_subject is False:
             # This much be a Scenery shot
-            return ("The video is a scenery shot. You do not need to describe the subject motion. ")
+            return ("The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ")
         
         
         policy = read_text_file("caption_policy/policy/subject_motion_dynamics/policy.txt")
@@ -378,7 +378,7 @@ class VanillaSpatialPolicy(SocraticProgram):
             policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
             subject_status = "has_subject"
         elif data.cam_setup.is_just_scenery_shot:
-            policy += "\n\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects."
+            policy += "\n\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects. Just note that briefly in one to three sentences."
             subject_status = "no_subject"
         elif data.cam_setup.complex_shot_type == "unknown":
             policy += "\n\nPlease note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video."
@@ -459,7 +459,7 @@ class RawSubjectMotionPolicy(SocraticProgram):
         
         if data.cam_setup.is_framing_subject is False:
             # This much be a Scenery shot
-            return ("The video is a scenery shot. You do not need to describe the subject motion. ")
+            return ("The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ")
         
         
         policy = read_text_file("caption_policy/policy/subject_motion_dynamics/policy.txt")
@@ -638,7 +638,7 @@ class RawSpatialPolicy(SocraticProgram):
             policy += "\n\nPlease note that this video contains **multiple subjects without a clear main focus**. Briefly describe the spatial positions and movements of salient subjects while providing a concise overview of secondary subjects, or describe all the spatial composition of all subjects collectively as a group if that is more appropriate."
             subject_status = "no_subject"
         elif data.cam_setup.is_just_scenery_shot:
-            policy += "\n\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects."
+            policy += "\n\nPlease note that the video is a **scenery shot**. You do not need to describe the subjects. Just note that briefly in one to three sentences."
             subject_status = "no_subject"
         elif data.cam_setup.complex_shot_type == "unknown":
             policy += "\n\nPlease note that the video features a **complex scenario** with ambiguous subjects or it is an abstract shot. Please try your best to describe the spatial positions and movements of the main subjects or objects in the video."

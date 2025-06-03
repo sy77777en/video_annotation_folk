@@ -44,7 +44,7 @@ class LightingSetupData:
         self.lighting_setup_description = ""
 
         # Subject lighting
-        self.subject_condition = "unclear"  # Options: "unclear", "no_subject", "consistent_subject", "inconsistent_subject"
+        self.subject_condition = "unrealistic"  # Options: "unrealistic", "unclear_subject", "inconsistent_subject", "consistent_subject"
 
         # Contrast ratio on subject
         self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex_changing", "complex_contrasting", "complex_others", "unknown"
@@ -810,10 +810,10 @@ class LightingSetupData:
             raise ValueError("lighting_dynamics_description must be a string value")
 
     def set_subject_condition(self, subject_condition):
-        if subject_condition in ["unclear", "no_subject", "consistent_subject", "inconsistent_subject"]:
+        if subject_condition in ["unrealistic", "unclear_subject", "inconsistent_subject", "consistent_subject"]:
             self.subject_condition = subject_condition
         else:
-            raise ValueError("subject_condition must be one of 'unclear', 'no_subject', 'consistent_subject', 'inconsistent_subject'")
+            raise ValueError("subject_condition must be one of 'unrealistic', 'unclear_subject', 'inconsistent_subject', 'consistent_subject'")
 
     def set_subject_light_direction(self, subject_light_direction):
         if subject_light_direction in ["consistent", "complex_changing", "complex_contrasting", "complex_others", "unknown"]:
@@ -866,20 +866,20 @@ class LightingSetupData:
         # Verify subject condition rules
         if self.subject_condition == "unclear_subject":
             if self.subject_light_direction != "unknown":
-                raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'no_subject'")
+                raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'unclear_subject'")
             if self.subject_contrast_ratio != "unknown":
-                raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'no_subject'")
+                raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'unclear_subject'")
             
             if any([self.subject_back_light, self.subject_front_light, self.subject_top_light, 
                     self.subject_bottom_light, self.subject_right_side_light, self.subject_left_side_light, 
                     self.subject_ambient_light]):
-                raise ValueError("All light direction attributes must be False when subject_condition is 'no_subject'")
+                raise ValueError("All light direction attributes must be False when subject_condition is 'unclear_subject'")
         
         elif self.subject_condition == "unrealistic":
             if self.subject_light_direction != "unknown":
-                raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'unclear'")
+                raise ValueError("subject_light_direction must be 'unknown' when subject_condition is 'unrealistic'")
             if self.subject_contrast_ratio != "unknown":
-                raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'unclear'")
+                raise ValueError("subject_contrast_ratio must be 'unknown' when subject_condition is 'unrealistic'")
         
         elif self.subject_condition == "inconsistent_subject":
             complex_types = ["complex_changing", "complex_contrasting", "complex_others"]

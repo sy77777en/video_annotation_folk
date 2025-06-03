@@ -163,10 +163,10 @@ def main(args):
         st.rerun()
     
     # Debug information
-    st.sidebar.header("Debug Information")
-    st.sidebar.write("Full Session State:")
-    for key, value in st.session_state.items():
-        st.sidebar.write(f"{key}: {value}")
+    # st.sidebar.header("Debug Information")
+    # st.sidebar.write("Full Session State:")
+    # for key, value in st.session_state.items():
+        # st.sidebar.write(f"{key}: {value}")
     try:
         configs = load_config(FOLDER / args.configs)
         configs = [load_config(FOLDER / config) for config in configs]
@@ -388,13 +388,13 @@ def main(args):
                     st.subheader("Ground Truth Version")
                     st.write(f"**User:** {current_user}")
                     st.write(f"**Timestamp:** {format_timestamp(current_data.get('timestamp', ''))}")
-                    display_feedback_info(current_data)
+                    display_feedback_info(current_data, display_pre_caption_instead_of_final_caption=False)
                 
                 with tab4:
                     st.subheader("Your Version")
                     st.write(f"**User:** {new_annotator_user}")
                     st.write(f"**Timestamp:** {format_timestamp(new_annotator_data.get('timestamp', ''))}")
-                    display_feedback_info(new_annotator_data)
+                    display_feedback_info(new_annotator_data, display_pre_caption_instead_of_final_caption=True)
                 
 
 if __name__ == "__main__":
