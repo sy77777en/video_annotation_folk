@@ -8,7 +8,7 @@ from feedback_app import (
     main as feedback_main, caption_programs, load_video_data, get_video_id, load_json, 
     get_filename, load_data, FOLDER, FEEDBACK_FILE_POSTFIX, PREV_FEEDBACK_FILE_POSTFIX,
     load_config, extract_frames, file_check, config_names_to_short_names, ANNOTATORS,
-    convert_name_to_username, display_feedback_info,
+    convert_name_to_username, display_feedback_info, copy_feedback_for_precaption,
     display_feedback_differences, display_caption_differences
 )
 
@@ -280,6 +280,14 @@ def main():
         if "personalized_output" not in st.session_state:
             username = convert_name_to_username(st.session_state.logged_in_user)
             st.session_state.personalized_output = f"{args.output_new_annotator}_{username}"
+            print(f"Personalized output directory: {st.session_state.personalized_output}")
+            # Copy feedback files from main project for precaption
+            copy_feedback_for_precaption(
+                args.configs,
+                st.session_state.video_urls,  # Use video_urls directly
+                args.main_project_output,  # Main project output
+                st.session_state.personalized_output  # Personalized output
+            )
         args.output_new_annotator = st.session_state.personalized_output
     
     # Check mode selection
@@ -329,15 +337,15 @@ def caption_mode_wrapper(args):
     # print(f"  - total session state keys: {len(pre_call_keys)}")
     
     # Disable page config since it's already set
-    original_set_page_config = st.set_page_config
-    st.set_page_config = lambda **kwargs: None
+    # original_set_page_config = st.set_page_config
+    # st.set_page_config = lambda **kwargs: None
     
     try:
         # Call the original feedback_app main function
         feedback_main(caption_args, caption_programs)
     finally:
         # Restore original page config function
-        st.set_page_config = original_set_page_config
+        # st.set_page_config = original_set_page_config
         
         # Check session state after the call
         post_call_keys = set(st.session_state.keys())

@@ -1003,7 +1003,7 @@ def parse_args():
     # parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--video_data", type=str, default="video_data/20250406_setup_and_motion/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
-    parser.add_argument("--personalize_output", type=bool, default=False, help="Whether to personalize the output directory based on the logged-in user")
+    parser.add_argument("--personalize_output", type=bool, default=True, help="Whether to personalize the output directory based on the logged-in user")
     return parser.parse_args()
 
 # Helper function to convert a full name to a username format
@@ -1377,8 +1377,8 @@ def get_precaption_llm_name(config_dict, selected_config):
     task = config["task"]
     if task in ["subject_motion_dynamics"]:
         # return "tarsier-recap-7b"
-        return "tarsier2-7b"
-        # return "gemini-2.5-pro-preview-05-06" # TODO: change back to tarsier-recap-7b
+        # return "tarsier2-7b"
+        return "gemini-2.5-pro-preview-05-06" # TODO: change back to tarsier-recap-7b
     elif task in ["spatial_framing_dynamics"]:
         # return "qwen2.5-vl-72b"
         return "gemini-2.5-pro-preview-05-06"
