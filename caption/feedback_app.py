@@ -1003,7 +1003,7 @@ def parse_args():
     # parser.add_argument("--video_data", type=str, default="video_data/20250227_0507ground_and_setup/videos.json", help="Path to the video data file")
     parser.add_argument("--video_data", type=str, default="video_data/20250406_setup_and_motion/videos.json", help="Path to the video data file")
     parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup"], help="List of label collections to load from the video data")
-    parser.add_argument("--personalize_output", type=bool, default=True, help="Whether to personalize the output directory based on the logged-in user")
+    parser.add_argument("--personalize_output", type=bool, default=False, help="Whether to personalize the output directory based on the logged-in user")
     return parser.parse_args()
 
 # Helper function to convert a full name to a username format
