@@ -393,8 +393,8 @@ def main(args):
                 st.rerun()  # Force a rerun to ensure clean state
 
             config = config_dict[selected_config]
-            st.title(f"Caption Difference Viewer - {config.get('name', '')}")
-            
+            # st.title(f"Caption Difference Viewer - {config.get('name', '')}")
+            st.markdown(f"### {config.get('name', '')}")
             # Get video URLs from session state
             video_urls = st.session_state.video_urls
             

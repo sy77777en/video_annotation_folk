@@ -801,7 +801,7 @@ ANNOTATORS = load_annotators_from_files()
 #     # Save default annotators to files
 #     save_annotators_to_files(ANNOTATORS)
 
-APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling", "Shihang Zhu"]
+APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling", "Shihang Zhu", "Ruize Ma", "Kaibo Yang", "Zhenye Luo", "Mingyu Wang"]
 assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), "All approved reviewers must be in the ANNOTATORS dictionary"
 
 caption_programs = {
@@ -1264,7 +1264,7 @@ def login_page(args):
             target_annotator = st.selectbox(
                 "Search for videos completed by:",
                 list(ANNOTATORS.keys()),
-                key="target_annotator",
+                key="target_annotator_select",  # Changed key name
                 index=None,
                 placeholder="Type or select annotator name...",
             )
@@ -1762,6 +1762,9 @@ def format_timestamp(iso_timestamp: str) -> str:
 
 def display_feedback_info(feedback_data, display_pre_caption_instead_of_final_caption=False):
     """Display feedback information including scores, GPT feedback, and caption differences."""
+    st.write("##### Final Caption")
+    st.write(feedback_data.get("final_caption", "No caption available"))
+    
     st.write("##### Pre-caption Score")
     st.write(f"**{feedback_data['initial_caption_rating_score']}/5**")
 
@@ -2185,7 +2188,7 @@ def main(args, caption_programs):
             st.rerun()  # Force a rerun to ensure clean state
 
         config = config_dict[selected_config]
-        st.title(config.get("name", "Pre-Caption System"))
+        st.markdown(f"### {config.get('name', 'Pre-Caption System')}")
         
         # Get video URLs from session state
         video_urls = st.session_state.video_urls

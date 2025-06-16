@@ -131,7 +131,7 @@ def unified_login_page(args):
             target_annotator = st.selectbox(
                 "Search for videos completed by:",
                 list(ANNOTATORS.keys()),
-                key="target_annotator",
+                key="target_annotator_select",
                 index=None,
                 placeholder="Type or select annotator name...",
             )
