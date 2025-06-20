@@ -801,7 +801,7 @@ ANNOTATORS = load_annotators_from_files()
 #     # Save default annotators to files
 #     save_annotators_to_files(ANNOTATORS)
 
-APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling", "Shihang Zhu", "Ruize Ma", "Kaibo Yang", "Zhenye Luo", "Mingyu Wang"]
+APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling"]
 assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), "All approved reviewers must be in the ANNOTATORS dictionary"
 
 caption_programs = {
@@ -1021,9 +1021,12 @@ def check_video_completion_status(video_urls_file, configs, output_dir):
         
     Returns:
         Tuple of (is_completed, is_reviewed) for each video
+        Dict of "annotators" and "reviewers" with the number of videos completed and reviewed by each
     """
     video_urls = load_json(FOLDER / video_urls_file)
     status_dict = {}
+    annotators_dict = {}
+    reviewers_dict = {}
     
     for video_url in video_urls:
         video_id = get_video_id(video_url)
@@ -1039,13 +1042,28 @@ def check_video_completion_status(video_urls_file, configs, output_dir):
                 is_completed = False
                 is_reviewed = False
                 break
+            else:
+                # Check if this annotator completed this task
+                with open(feedback_file, 'r') as f:
+                    feedback_data = json.load(f)
+                    annotator = feedback_data.get("user")
+                    if annotator not in annotators_dict:
+                        annotators_dict[annotator] = 0
+                    annotators_dict[annotator] += 1
                 
             if not os.path.exists(review_file):
                 is_reviewed = False
+            else:
+                with open(review_file, 'r') as rf:
+                    review_data = json.load(rf)
+                    reviewer = review_data.get("reviewer_name")
+                    if reviewer not in reviewers_dict:
+                        reviewers_dict[reviewer] = 0
+                    reviewers_dict[reviewer] += 1
                 
         status_dict[video_url] = (is_completed, is_reviewed)
     
-    return status_dict
+    return status_dict, annotators_dict, reviewers_dict
 
 def get_annotator_videos(annotator_name, configs, output_dir, not_yet_reviewed=False, show_only_rejected=False):
     """Get all videos that have been completed by an annotator.
@@ -1190,7 +1208,7 @@ def login_page(args):
                 start_time = time.time()
                 file_status = {}
                 for video_urls_file in args.video_urls_files:
-                    status_dict = check_video_completion_status(
+                    status_dict, annotators_dict, reviewers_dict = check_video_completion_status(
                         video_urls_file, 
                         configs,
                         args.output
@@ -1199,6 +1217,10 @@ def login_page(args):
                     completed = sum(1 for _, (is_completed, _) in status_dict.items() if is_completed)
                     reviewed = sum(1 for _, (_, is_reviewed) in status_dict.items() if is_reviewed)
                     total = len(status_dict)
+                    annotators = len(annotators_dict)
+                    reviewers = len(reviewers_dict)
+                    annotator_str = ", ".join([f"{annotator} ({count})" for annotator, count in annotators_dict.items()])
+                    reviewer_str = ", ".join([f"{reviewer} ({count})" for reviewer, count in reviewers_dict.items()])
                     
                     # Create status string
                     if completed == total and reviewed == total:
@@ -1208,7 +1230,7 @@ def login_page(args):
                     else:
                         status = ""
                     
-                    file_status[video_urls_file] = f"{status} {os.path.basename(video_urls_file)} ({completed}/{total} completed, {reviewed}/{total} reviewed)"
+                    file_status[video_urls_file] = f"{status} {os.path.basename(video_urls_file)} ({completed}/{total} completed, {reviewed}/{total} reviewed) (Annotators: {annotator_str}, Reviewers: {reviewer_str})"
                 
                 end_time = time.time()
                 print(f"Completion status check took {end_time - start_time:.2f} seconds")
@@ -1378,18 +1400,19 @@ def get_precaption_llm_name(config_dict, selected_config):
     if task in ["subject_motion_dynamics"]:
         # return "tarsier-recap-7b"
         # return "tarsier2-7b"
-        return "gemini-2.5-pro-preview-05-06" # TODO: change back to tarsier-recap-7b
+        # return "gemini-2.5-pro-preview-05-06" # TODO: change back to tarsier-recap-7b
+        return "gemini-2.5-pro"
     elif task in ["spatial_framing_dynamics"]:
         # return "qwen2.5-vl-72b"
-        return "gemini-2.5-pro-preview-05-06"
+        return "gemini-2.5-pro"
     elif task in ["raw_lighting_setup_dynamics", "raw_lighting_effects_dynamics"]:
         # print(f"Using qwen2.5-vl-7b for {task}")
         # return "qwen2.5-vl-7b"
-        print(f"Using gemini-2.5-pro-preview-05-06 for {task}")
-        return "gemini-2.5-pro-preview-05-06"
+        print(f"Using gemini-2.5-pro for {task}")
+        return "gemini-2.5-pro"
     else:
         # return "gpt-4o-2024-08-06"
-        return "gemini-2.5-pro-preview-05-06"
+        return "gemini-2.5-pro"
 
 def load_pre_caption_prompt(video_id, video_data_dict, caption_program, config_dict, selected_config, output):
     """Generate a pre-caption for the video"""
@@ -1511,8 +1534,8 @@ def generate_save_and_return_pre_caption(video_id, output_dir, prompt, selected_
     except Exception as e:
         st.error(f"Error generating pre-caption for video: {video_id}")
         st.error(f"Error: {e}")
-        # If the selected_llm is gemini-2.5-pro-preview-05-06, prompt user to try again or use gpt-4o-2024-08-06
-        if selected_llm == "gemini-2.5-pro-preview-05-06":
+        # If the selected_llm is gemini-2.5-pro, prompt user to try again or use gpt-4o-2024-08-06
+        if selected_llm == "gemini-2.5-pro":
             st.info("Please try again or use gpt-4o-2024-08-06 as the LLM.")
         raise e
     

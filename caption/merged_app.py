@@ -27,7 +27,7 @@ def unified_login_page(args):
     st.markdown("### Welcome to the Video Caption and Review System")
     
     # Create tabs for different login methods - combining both apps' login approaches
-    tab1, tab2 = st.tabs(["📋 Login by Sheet", "👤 Login by Annotator"])
+    tab1, tab2, tab3 = st.tabs(["📋 Login by Sheet", "👤 Login by Annotator", "📋 Job Assignment"])
 
     with tab1:
         # Reuse the login logic from feedback_app.py (tab1 from both apps is identical)
@@ -55,7 +55,7 @@ def unified_login_page(args):
                 start_time = time.time()
                 file_status = {}
                 for video_urls_file in args.video_urls_files:
-                    status_dict = check_video_completion_status(
+                    status_dict, annotators_dict, reviewers_dict = check_video_completion_status(
                         video_urls_file, 
                         configs,
                         args.output
@@ -64,6 +64,10 @@ def unified_login_page(args):
                     completed = sum(1 for _, (is_completed, _) in status_dict.items() if is_completed)
                     reviewed = sum(1 for _, (_, is_reviewed) in status_dict.items() if is_reviewed)
                     total = len(status_dict)
+                    annotators = len(annotators_dict)
+                    reviewers = len(reviewers_dict)
+                    annotator_str = ", ".join([f"{annotator} ({count})" for annotator, count in annotators_dict.items()])
+                    reviewer_str = ", ".join([f"{reviewer} ({count})" for reviewer, count in reviewers_dict.items()])
                     
                     # Create status string
                     if completed == total and reviewed == total:
@@ -73,7 +77,7 @@ def unified_login_page(args):
                     else:
                         status = ""
                     
-                    file_status[video_urls_file] = f"{status} {os.path.basename(video_urls_file)} ({completed}/{total} completed, {reviewed}/{total} reviewed)"
+                    file_status[video_urls_file] = f"{status} {os.path.basename(video_urls_file)} ({completed}/{total} completed, {reviewed}/{total} reviewed) (Annotators: {annotator_str}, Reviewers: {reviewer_str})"
                 
                 end_time = time.time()
                 print(f"Completion status check took {end_time - start_time:.2f} seconds")
@@ -185,6 +189,19 @@ def unified_login_page(args):
                         st.error(f"Error getting annotator videos: {e}")
                 else:
                     st.error("Incorrect password or missing name. Please try again.")
+    with tab3:
+        st.markdown("#### Job Assignment Spreadsheet")
+        st.markdown("Access the master job assignment spreadsheet to view task allocations and progress.")
+        
+        st.link_button(
+            "📋 **Open Job Assignment Spreadsheet**", 
+            "https://docs.google.com/spreadsheets/d/10g-ynle9VCDrCcDCxEfBafVRdbOAckzl0y6S-J22kDY/edit?gid=0#gid=0",
+            use_container_width=True,
+            type="primary"
+        )
+        
+        st.markdown("---")
+        st.info("💡 This spreadsheet contains task assignments, deadlines, and progress tracking for all team members.")
 
 def portal_selection_page():
     """Portal selection page after login"""
