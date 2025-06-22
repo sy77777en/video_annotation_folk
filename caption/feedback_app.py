@@ -888,6 +888,7 @@ DEFAULT_VIDEO_URLS_FILES = [
     "video_urls/20250406_setup_and_motion/270_to_280.json",
     "video_urls/20250406_setup_and_motion/280_to_290.json",
     "video_urls/20250406_setup_and_motion/290_to_300.json",
+    "video_urls/20250406_setup_and_motion/300_to_310.json",
     'video_urls/20250406_setup_and_motion/310_to_320.json',
     'video_urls/20250406_setup_and_motion/320_to_330.json',
     'video_urls/20250406_setup_and_motion/330_to_340.json',
