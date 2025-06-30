@@ -757,7 +757,7 @@ def main():
     
     print(f"\n✅ Caption Export Completed Successfully!")
     print(f"📁 Export Directory: {args.export_dir}")
-    print(f"📚 Complete Documentation: comprehensive_status_documentation.md")
+    print(f"📚 Complete Documentation: comprehensive_status_documentation.json")
     print(f"🎯 Exported {len(all_videos_data)} videos across 5 caption tasks with complete workflow data")
 
 
