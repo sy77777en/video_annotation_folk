@@ -801,7 +801,7 @@ ANNOTATORS = load_annotators_from_files()
 #     # Save default annotators to files
 #     save_annotators_to_files(ANNOTATORS)
 
-APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling"]
+APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Irene Pi", "Hewei Wang", "Tiffany Ling", "Isaac Li"]
 assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), "All approved reviewers must be in the ANNOTATORS dictionary"
 
 caption_programs = {
