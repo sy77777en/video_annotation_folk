@@ -919,6 +919,7 @@ DEFAULT_VIDEO_URLS_FILES = [
     'video_urls/20250406_setup_and_motion/580_to_590.json',
     'video_urls/20250406_setup_and_motion/590_to_600.json',
     'video_urls/20250406_setup_and_motion/600_to_610.json',
+    'video_urls/20250406_setup_and_motion/610_to_620.json',
     'video_urls/20250406_setup_and_motion/620_to_630.json',
     'video_urls/20250406_setup_and_motion/630_to_640.json',
     'video_urls/20250406_setup_and_motion/640_to_650.json',
