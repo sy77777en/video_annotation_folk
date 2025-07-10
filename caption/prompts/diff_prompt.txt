@@ -1,27 +1,18 @@
-You are an expert writing coach.
+An annotator is shown a video caption and must write feedback if the caption has errors. If the caption is already correct, the feedback should be left empty. The feedback is later revised by an expert reviewer, whose version is considered ground truth.
 
-Compare the reviewer’s previous feedback (`old_feedback`) with the revised feedback (`new_feedback`) and generate a concise yet educational comparison report. Please phrase it naturally and concisely using simple words, so that it is easy to read and understand.
+Compare the annotator’s original feedback (`old_feedback`) with the reviewer’s revised feedback (`new_feedback`) and write a **1–2 sentence plain summary** of the most critical error in the original feedback.
 
-The report should:
-• Start with a 1–2 sentence summary explaining what was off or problematic in the old feedback.
-• Please focus on identifying factual errors, such as omissions or hallucinations. The feedback might use different wording or order, so don’t be too strict—only pay attention to differences in meaning.
-• Organize the differences into two sections by what needed to be added and removed.
-• For each item, only summarize the most fatal or critical errors instead of listing all mistakes.
+Then, give a **short example (1–2 sentences)** to illustrate the mistake, using short quotes to show what the annotator missed or got wrong. Focus on clear, readable examples — especially for serious issues like left/right confusion, missing overlays, or wrongly correcting accurate text. Keep quotes short and specific (e.g., `"pan left"` vs `"pan right"`), not full sentences.
 
-After listing changes, include a short **"Writing Tips and Takeaways"** section that explains the most critical errors and suggest what the reviewer can learn to give better feedback next time.
+Focus only on major issues:
 
-Your output should be a single **Markdown string** that:
-– Performs **word-level comparison** (split on whitespace).
-– Highlights deletions from the old feedback using: `<span style="color: red; text-decoration: line-through;">deleted text</span>`
-– Highlights additions from the new feedback using: `<span style="color: green; font-weight: bold;">added text</span>`
-– Leaves unchanged words unstyled.
-– Preserves the natural word order of the revised (`new_feedback`) text.
-– Uses only `<span>` tags for inline styling. Do **not** use any other HTML tags.
-– If you need to format bullet lists, use standard Markdown syntax (e.g., lines starting with `-`).
-– The final result must render cleanly in Streamlit using `st.markdown(..., unsafe_allow_html=True)` — do not include HTML headers, block-level tags, or non-inline elements.
-- The title of each section should start with ###### (six #).
-- Return the plain markdown string without any header such as ```markdown.
+* If `old_feedback` is empty but `new_feedback` is not, the annotator missed important caption errors.
+* If `new_feedback` is empty but `old_feedback` is not, the annotator gave feedback when the caption was already correct.
+* Otherwise, check if the annotator missed or misjudged a key issue (e.g., omitted something important or tried to fix something already correct).
+
+Ignore minor wording differences. Only highlight the **most critical failure**, if any.
+
+Return plain text: a 1–2 sentence summary followed by a short quote-based example. No formatting.
 
 Old feedback: {old_feedback}
-
 New feedback: {new_feedback}
