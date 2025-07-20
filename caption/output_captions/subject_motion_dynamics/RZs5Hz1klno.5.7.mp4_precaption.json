@@ -1,0 +1,8 @@
+{
+    "video_id": "RZs5Hz1klno.5.7.mp4",
+    "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
+    "pre_caption": "This video features a slow, aerial flyover shot of a facility in a vast, arid landscape. The camera moves steadily forward, providing a dynamic perspective of the scene.\n\n```json\n[\n  {\"box_2d\": [0, 0, 495, 998], \"label\": \"a wide, aerial shot of the Pine Gap facility in Australia, set against a hazy, reddish-pink sky at what appears to be dawn or dusk.\"},\n  {\"box_2d\": [649, 1, 998, 998], \"label\": \"a shot of the arid, hilly landscape with sparse, dark vegetation, with a dirt road leading towards the facility in the distance.\"},\n  {\"box_2d\": [438, 398, 512, 505], \"label\": \"a close-up of the distinctive white, spherical radomes that are a key feature of the Pine Gap base.\"},\n  {\"box_2d\": [649, 1, 998, 498], \"label\": \"a shot focusing on the dirt road that cuts through the landscape, leading the viewer's eye towards the distant facility.\"},\n  {\"box_2d\": [438, 2, 538, 998], \"label\": \"a shot of the rolling hills and sparse vegetation that surround the Pine Gap facility, emphasizing its remote location.\"},\n  {\"box_2d\": [649, 1, 998, 998], \"label\": \"a shot of the vast, open terrain in the foreground, with the facility and hills visible in the background under the pink sky.\"}\n]\n```",
+    "pre_caption_llm": "gemini-2.5-pro",
+    "pre_caption_mode": "Video",
+    "timestamp": "2025-07-19T11:50:41.927968"
+}
