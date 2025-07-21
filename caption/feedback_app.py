@@ -2299,22 +2299,25 @@ def main(args, caption_programs):
             
             # ['cam_motion', 'cam_setup', 'lighting_setup'] check workflows['cam_motion'].editing_url
             with col1:
-                if 'cam_motion' in video_data_dict[video_id].workflows:
-                    st.link_button("🔗 Cam-Motion", video_data_dict[video_id].workflows['cam_motion'].editing_url)
-                else:
-                    st.link_button("🔗 Cam-Motion", "https://example.com/a", type='secondary', disabled=True)
+                st.link_button("🔗 Cam-Motion", f"https://camerapizza.a.pinggy.link/?video_uid={video_id}")
+                # if 'cam_motion' in video_data_dict[video_id].workflows:
+                #     st.link_button("🔗 Cam-Motion", video_data_dict[video_id].workflows['cam_motion'].editing_url)
+                # else:
+                #     st.link_button("🔗 Cam-Motion", "https://example.com/a", type='secondary', disabled=True)
                     
             with col2:
-                if 'cam_setup' in video_data_dict[video_id].workflows:
-                    st.link_button("🔗 Cam-Setup", video_data_dict[video_id].workflows['cam_setup'].editing_url)
-                else:
-                    st.link_button("🔗 Cam-Setup", "https://example.com/b", type='secondary', disabled=True)
+                st.link_button("🔗 Cam-Setup", f"https://camerapizza.a.pinggy.link/?video_uid={video_id}")
+                # if 'cam_setup' in video_data_dict[video_id].workflows:
+                #     st.link_button("🔗 Cam-Setup", video_data_dict[video_id].workflows['cam_setup'].editing_url)
+                # else:
+                #     st.link_button("🔗 Cam-Setup", "https://example.com/b", type='secondary', disabled=True)
                     
             with col3:
-                if 'lighting_setup' in video_data_dict[video_id].workflows:
-                    st.link_button("🔗 Lighting-Setup", video_data_dict[video_id].workflows['lighting_setup'].editing_url)
-                else:
-                    st.link_button("🔗 Lighting-Setup", "https://example.com/c", type='secondary', disabled=True)
+                st.link_button("🔗 Lighting-Setup", f"https://lightpizza.a.pinggy.link/?video_uid={video_id}")
+                # if 'lighting_setup' in video_data_dict[video_id].workflows:
+                #     st.link_button("🔗 Lighting-Setup", video_data_dict[video_id].workflows['lighting_setup'].editing_url)
+                # else:
+                #     st.link_button("🔗 Lighting-Setup", "https://example.com/c", type='secondary', disabled=True)
             
             st.link_button("🔗 Report Label Errors Here", "https://docs.google.com/spreadsheets/d/1sAYL86ERcaC_vrVuloXxtPJXKzeuj8fukHtNv6nRCJ0/edit?usp=sharing")
 
