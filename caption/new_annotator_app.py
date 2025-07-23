@@ -25,7 +25,7 @@ def parse_args():
     )
     parser.add_argument("--main_project_output", type=str, default="output_captions", help="Path to the main project output directory")
     parser.add_argument("--output", type=str, default="output_captions", help="Path to the original/ground truth output directory")
-    parser.add_argument("--output_new_annotator", type=str, default="output_new_annotator", help="Path to the new annotator output directory")
+    parser.add_argument("--output_new_annotator", type=str, default="output_onboarding/output_new_annotator", help="Path to the new annotator output directory")
     parser.add_argument("--feedback_prompt", type=str, default="prompts/feedback_prompt.txt", help="Path to the feedback prompt file")
     parser.add_argument("--show_feedback_prompt", type=bool, default=False, help="Whether to show and allow the annotator to edit the feedback prompt")
     parser.add_argument("--caption_prompt", type=str, default="prompts/caption_prompt.txt", help="Path to the caption prompt file")
