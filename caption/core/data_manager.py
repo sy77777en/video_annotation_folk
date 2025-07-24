@@ -1,3 +1,4 @@
+# caption/core/data_manager.py
 import os
 import json
 import time
@@ -150,7 +151,7 @@ class DataManager:
         Returns:
             Tuple of (status_dict, annotators_dict, reviewers_dict)
         """
-        video_urls = self.load_json(video_urls_file, relative_to_root=False)  # Video URLs are in caption/
+        video_urls = self.load_json(video_urls_file)  # Video URLs are in caption/
         status_dict = {}
         annotators_dict = {}
         reviewers_dict = {}

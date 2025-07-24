@@ -1,3 +1,4 @@
+# caption/config/__init__.py
 """
 Configuration module for video annotation system.
 

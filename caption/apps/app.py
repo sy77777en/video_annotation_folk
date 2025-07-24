@@ -1,10 +1,18 @@
+# caption/apps/app.py
 import streamlit as st
 import argparse
 from pathlib import Path
 
 from caption.config import get_config
-from caption.core import AuthManager, DataManager, VideoUtils, UIComponents, CaptionEngine
-from caption.interfaces import CaptionInterface, ReviewInterface
+
+from caption.interfaces.review_interface import ReviewInterface
+from caption.interfaces.caption_interface import CaptionInterface
+
+from caption.core.auth import AuthManager
+from caption.core.data_manager import DataManager  
+from caption.core.video_utils import VideoUtils
+from caption.core.ui_components import UIComponents
+from caption.core.caption_engine import CaptionEngine
 
 
 def parse_args():

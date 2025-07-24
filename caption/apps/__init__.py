@@ -1,3 +1,4 @@
+# caption/apps/__init__.py
 """
 Main applications for the caption system.
 

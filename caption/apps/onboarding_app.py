@@ -1,3 +1,4 @@
+# caption/apps/onboarding_app.py
 import argparse
 import streamlit as st
 import os
@@ -6,8 +7,13 @@ from pathlib import Path
 
 # Import from the new structure
 from caption.config import get_config
-from caption.core import AuthManager, DataManager, VideoUtils, UIComponents, CaptionEngine
-from caption.interfaces import CaptionInterface, ReviewInterface
+from caption.core.auth import AuthManager
+from caption.core.data_manager import DataManager
+from caption.core.video_utils import VideoUtils
+from caption.core.ui_components import UIComponents
+from caption.core.caption_engine import CaptionEngine
+from caption.interfaces.caption_interface import CaptionInterface
+from caption.interfaces.review_interface import ReviewInterface
 
 
 def parse_args():

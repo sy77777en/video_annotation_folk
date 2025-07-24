@@ -1,3 +1,4 @@
+# caption/core/caption_engine.py
 import streamlit as st
 from typing import Dict, Any, Optional
 from pathlib import Path

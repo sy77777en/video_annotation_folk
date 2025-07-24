@@ -1,3 +1,4 @@
+# caption/core/ui_components.py
 import streamlit as st
 import difflib
 import re

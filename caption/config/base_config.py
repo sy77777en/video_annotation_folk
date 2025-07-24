@@ -1,3 +1,4 @@
+# caption/config/base_config.py
 from dataclasses import dataclass
 from typing import List, Dict, Any
 from pathlib import Path
