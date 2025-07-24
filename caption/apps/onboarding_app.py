@@ -534,7 +534,7 @@ class OnboardingApp:
                                               current_user, new_annotator_user)
     
     def _render_comparison_results(self, video_id: str, output_dir: str, new_annotator_output_dir: str,
-                                 current_user: str, new_annotator_user: str):
+                                current_user: str, new_annotator_user: str):
         """Render comparison results"""
         # Load both current and new annotator captions
         current_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
@@ -554,45 +554,52 @@ class OnboardingApp:
             st.success(f"**👤 Your Version**\nBy {new_annotator_user}\n{new_annotator_timestamp}")
         
         # Create tabs for viewing captions
-        tab1, tab2, tab3, tab4 = st.tabs([
-            "🔄 Feedback Differences", 
-            "📝 Caption Differences", 
+        tab1, tab2, tab3 = st.tabs([
+            "📊 Comparison", 
             "📚 Ground Truth", 
             "👤 Your Version"
         ])
         
         with tab1:
-            st.subheader("Feedback Comparison")
-            st.markdown("*Compare your feedback approach with the expert's feedback.*")
-            self.review_interface.display_feedback_differences(
-                prev_feedback=new_annotator_data,
-                feedback_data=current_data,
-                diff_prompt=self.base_config.diff_prompt
-            )
+            st.subheader("📊 Caption Comparison")
+            
+            # 1. Pre-caption (always visible)
+            st.write("##### Pre-caption")
+            st.write(new_annotator_data.get("pre_caption", "No pre-caption available"))
+            
+            # 2. Your feedback and final caption (expandable)
+            your_score = new_annotator_data.get("initial_caption_rating_score", "N/A")
+            with st.expander(f"##### 👤 Your Feedback and Caption", expanded=True):
+                st.write(f"**Final Feedback ({your_score}/5):**")
+                st.write(new_annotator_data.get("gpt_feedback", "No GPT feedback available"))
+                
+                st.write("**Final Caption:**")
+                st.write(new_annotator_data.get("final_caption", "No caption available"))
+            
+            # 3. Ground truth feedback and final caption (expandable) - highlighted
+            expert_score = current_data.get("initial_caption_rating_score", "N/A")
+            with st.expander(f"🔍 {current_user}'s Feedback and Caption (Expert)", expanded=True):
+                st.markdown(f"<span style='color: #51cf66; font-weight: bold;'>Expert's Work</span>", unsafe_allow_html=True)
+                st.write(f"**Final Feedback ({expert_score}/5):**")
+                st.write(current_data.get("gpt_feedback", "No GPT feedback available"))
+                
+                st.write("**Final Caption:**")
+                st.write(current_data.get("final_caption", "No caption available"))
         
         with tab2:
-            st.subheader("Caption Comparison")
-            st.markdown("*See the differences between your final caption and the expert's caption.*")
-            self.review_interface.display_caption_differences(
-                prev_feedback=new_annotator_data,
-                feedback_data=current_data,
-                diff_prompt=self.base_config.diff_cap_prompt
-            )
-        
-        with tab3:
             st.subheader("📚 Ground Truth Version")
             st.markdown("*Expert annotation for reference and learning.*")
             st.write(f"**Expert:** {current_user}")
             st.write(f"**Created:** {self._format_timestamp(current_data.get('timestamp', ''))}")
             self.ui.display_feedback_info(current_data, display_pre_caption_instead_of_final_caption=False)
         
-        with tab4:
+        with tab3:
             st.subheader("👤 Your Version")
             st.markdown("*Your annotation work for comparison.*")
             st.write(f"**Annotator:** {new_annotator_user}")
             st.write(f"**Created:** {self._format_timestamp(new_annotator_data.get('timestamp', ''))}")
             self.ui.display_feedback_info(new_annotator_data, display_pre_caption_instead_of_final_caption=True)
-    
+
     def _get_comparison_video_status(self, video_id: str, output_dir: str, new_annotator_output_dir: str):
         """Get the status of a video's caption completion for comparison"""
         current_file = self.data_manager.get_filename(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
@@ -639,6 +646,9 @@ class OnboardingApp:
                 st.title("🔍 Comparison Mode")
                 
             st.write(f"**User:** {st.session_state.logged_in_user}")
+            user_email = self.auth_manager.get_user_email(st.session_state.logged_in_user)
+            if user_email:
+                st.write(f"**Email:** {user_email}")
             
             if self.base_config.personalize_output:
                 st.write(f"**Your Output:** {self.output_new_annotator}")

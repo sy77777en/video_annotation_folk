@@ -40,53 +40,61 @@ class ReviewInterface:
         self._display_caption_expander(current_data, current_user, current_data.get("timestamp", "Unknown"))
     
     def _render_rejected_caption(self, video_id: str, output_dir: str, current_user: str, prev_user: str,
-                               current_file: str, prev_file: str, args: Any):
-        """Render rejected caption view with comparisons"""
+                            current_file: str, prev_file: str, args: Any):
+        """Render rejected caption view with merged comparison"""
         # Load both current and previous captions
         current_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
         prev_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
         reviewer_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
         
-        st.subheader("Caption Changes")
+        st.subheader("Caption Comparison")
         
         # Display metadata information
         current_timestamp = self.data_manager.format_timestamp(current_data.get("timestamp", "Unknown"))
         prev_timestamp = self.data_manager.format_timestamp(prev_data.get("timestamp", "Unknown"))
         
-        st.write(f"**Current Version:** By {current_user} on {current_timestamp}")
-        st.write(f"**Previous Version:** By {prev_user} on {prev_timestamp}")
+        st.write(f"**Annotator:** {prev_user} on {prev_timestamp}")
+        st.write(f"**Reviewer:** {current_user} on {current_timestamp}")
         
         st.warning("❌ This caption was rejected and needs to be fixed.")
         
-        # Create tabs for different views
-        tab1, tab2, tab3, tab4 = st.tabs([
-            "Feedback Differences", "Caption Differences", "Previous Version", "Current Version"
+        # Create tabs with the merged comparison and individual versions
+        tab1, tab2, tab3 = st.tabs([
+            "📊 Comparison", "👤 Annotator Version", "🔍 Reviewer Version"
         ])
         
         with tab1:
-            st.subheader("Feedback Differences")
-            self.display_feedback_differences(
-                prev_feedback=prev_data,
-                feedback_data=current_data,
-                diff_prompt=args.diff_prompt if args else None,
-                reviewer_data=reviewer_data
-            )
+            st.subheader("📊 Caption Comparison")
+            
+            # 1. Pre-caption (always visible)
+            st.write("##### Pre-caption")
+            st.write(prev_data.get("pre_caption", "No pre-caption available"))
+            
+            # 2. Annotator's feedback and final caption (expandable)
+            annotator_score = prev_data.get("initial_caption_rating_score", "N/A")
+            with st.expander(f"##### 👤 {prev_user}'s Feedback and Caption", expanded=True):
+                st.write(f"**Final Feedback ({annotator_score}/5):**")
+                st.write(prev_data.get("gpt_feedback", "No GPT feedback available"))
+                
+                st.write("**Final Caption:**")
+                st.write(prev_data.get("final_caption", "No caption available"))
+            
+            # 3. Reviewer's feedback and final caption (expandable) - highlighted
+            reviewer_score = current_data.get("initial_caption_rating_score", "N/A")
+            with st.expander(f"🔍 {current_user}'s Feedback and Caption (Reviewer)", expanded=True):
+                st.markdown(f"<span style='color: #ff6b35; font-weight: bold;'>Reviewer's Work</span>", unsafe_allow_html=True)
+                st.write(f"**Final Feedback ({reviewer_score}/5):**")
+                st.write(current_data.get("gpt_feedback", "No GPT feedback available"))
+                
+                st.write("**Final Caption:**")
+                st.write(current_data.get("final_caption", "No caption available"))
             
         with tab2:
-            st.subheader("Caption Differences")
-            self.display_caption_differences(
-                prev_feedback=prev_data,
-                feedback_data=current_data,
-                diff_prompt=args.diff_cap_prompt if args else None,
-                reviewer_data=reviewer_data
-            )
-            
-        with tab3:
-            st.subheader("Previous Version")
+            st.subheader(f"👤 {prev_user}'s Version")
             self._display_caption_expander(prev_data, prev_user, prev_data.get('timestamp', ''))
             
-        with tab4:
-            st.subheader("Current Version")
+        with tab3:
+            st.subheader(f"🔍 {current_user}'s Version")
             self._display_caption_expander(current_data, current_user, current_data.get('timestamp', ''))
     
     def _display_caption_expander(self, data: Dict[str, Any], user: str, timestamp: str):
@@ -216,25 +224,25 @@ class ReviewInterface:
         st.write(f"##### **{reviewer_name}'s** Feedback (GPT Polished)")
         st.write(feedback_data.get("gpt_feedback", "No GPT feedback available"))
         
-        st.write("##### Summary of Differences")
-        st.markdown(self.ui.highlight_differences(
-            prev_feedback.get("gpt_feedback", ""), 
-            feedback_data.get("gpt_feedback", ""), 
-            run_length=5
-        ), unsafe_allow_html=True)
+        # st.write("##### Summary of Differences")
+        # st.markdown(self.ui.highlight_differences(
+        #     prev_feedback.get("gpt_feedback", ""), 
+        #     feedback_data.get("gpt_feedback", ""), 
+        #     run_length=5
+        # ), unsafe_allow_html=True)
         
-        st.write("##### ChatGPT summary of differences")
-        if diff_prompt:
-            self.ui.highlight_differences_gpt(
-                prev_feedback.get("gpt_feedback", ""),
-                feedback_data.get("gpt_feedback", ""),
-                diff_prompt=str(self.data_manager.folder / diff_prompt),
-                diff_key="gpt_feedback_diff_feedback",
-                llm_key="gpt_feedback_diff_compare_llm",
-                prompt_key="gpt_feedback_diff_compare_prompt",
-                old_feedback=prev_feedback.get("gpt_feedback", ""),
-                new_feedback=feedback_data.get("gpt_feedback", "")
-            )
+        # st.write("##### ChatGPT summary of differences")
+        # if diff_prompt:
+        #     self.ui.highlight_differences_gpt(
+        #         prev_feedback.get("gpt_feedback", ""),
+        #         feedback_data.get("gpt_feedback", ""),
+        #         diff_prompt=str(self.data_manager.folder / diff_prompt),
+        #         diff_key="gpt_feedback_diff_feedback",
+        #         llm_key="gpt_feedback_diff_compare_llm",
+        #         prompt_key="gpt_feedback_diff_compare_prompt",
+        #         old_feedback=prev_feedback.get("gpt_feedback", ""),
+        #         new_feedback=feedback_data.get("gpt_feedback", "")
+        #     )
     
     def display_caption_differences(self, prev_feedback: Dict[str, Any], feedback_data: Dict[str, Any], 
                                   diff_prompt: Optional[str] = None, reviewer_data: Optional[Dict[str, Any]] = None):
@@ -261,22 +269,22 @@ class ReviewInterface:
         st.write(f"##### **{reviewer_name}'s** Revised Caption")
         st.write(feedback_data.get("final_caption", "No caption available"))
         
-        st.write("##### Summary of Differences")
-        st.markdown(self.ui.highlight_differences(
-            prev_feedback.get("final_caption", ""), 
-            feedback_data.get("final_caption", ""), 
-            run_length=5
-        ), unsafe_allow_html=True)
+        # st.write("##### Summary of Differences")
+        # st.markdown(self.ui.highlight_differences(
+        #     prev_feedback.get("final_caption", ""), 
+        #     feedback_data.get("final_caption", ""), 
+        #     run_length=5
+        # ), unsafe_allow_html=True)
         
-        st.write("##### ChatGPT summary of differences")
-        if diff_prompt:
-            self.ui.highlight_differences_gpt(
-                prev_feedback.get("final_caption", ""),
-                feedback_data.get("final_caption", ""),
-                diff_prompt=str(self.data_manager.folder / diff_prompt),
-                diff_key="final_caption_diff_feedback",
-                llm_key="final_caption_diff_compare_llm",
-                prompt_key="final_caption_diff_compare_prompt",
-                old_caption=prev_feedback.get("final_caption", ""),
-                new_caption=feedback_data.get("final_caption", "")
-            )
+        # st.write("##### ChatGPT summary of differences")
+        # if diff_prompt:
+        #     self.ui.highlight_differences_gpt(
+        #         prev_feedback.get("final_caption", ""),
+        #         feedback_data.get("final_caption", ""),
+        #         diff_prompt=str(self.data_manager.folder / diff_prompt),
+        #         diff_key="final_caption_diff_feedback",
+        #         llm_key="final_caption_diff_compare_llm",
+        #         prompt_key="final_caption_diff_compare_prompt",
+        #         old_caption=prev_feedback.get("final_caption", ""),
+        #         new_caption=feedback_data.get("final_caption", "")
+        #     )

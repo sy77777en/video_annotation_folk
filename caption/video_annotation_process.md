@@ -98,21 +98,21 @@ This documentation explains the complete workflow for processing video URLs, cre
    - `nonoverlap_april_15.sh`: For non-overlapping videos
    - `lighting_april_16.sh`: For the lighting project with invalid file handling
 
-## 4. Updating Feedback Applications
+## 4. Updating Web Applications
 
-### For Main Project (`feedback_app.py`)
+### For Main Project (Main Config)
 
-1. **Location**: `caption/feedback_app.py`
+1. **Location**: `caption/config/main_config.py`
 
 2. **Update Process**:
-   - Open `feedback_app.py`
-   - Find the `video_urls_files` list
+   - Open `caption/config/main_config.py`
+   - Find the `DEFAULT_VIDEO_URLS_FILES` list
    - Add the new batch files from the reminder output
    - Save the file
 
 3. **Example**:
    ```python
-   video_urls_files = [
+   DEFAULT_VIDEO_URLS_FILES = [
        'video_urls/20250227_0507ground_and_setup/overlap_0_to_94.json',
        # ... existing files ...
        'video_urls/20250406_setup_and_motion/overlap_940_to_1034.json',
@@ -120,19 +120,19 @@ This documentation explains the complete workflow for processing video URLs, cre
    ]
    ```
 
-### For Lighting Project (`new_feedback_app.py`)
+### For Lighting Project (Lighting Config)
 
-1. **Location**: `caption/new_feedback_app.py`
+1. **Location**: `caption/config/lighting_config.py`
 
 2. **Update Process**:
-   - Open `new_feedback_app.py`
-   - Find the `video_urls_files` list
+   - Open `caption/config/lighting_config.py`
+   - Find the `LIGHTING_VIDEO_URLS_FILES` list
    - Add the new batch files from the reminder output
    - Save the file
 
 3. **Example**:
    ```python
-   video_urls_files = [
+   LIGHTING_VIDEO_URLS_FILES = [
        'video_urls/lighting_120_new/batch1.json',
        # ... existing files ...
        'video_urls/lighting_280_new/batch11.json',
@@ -155,8 +155,8 @@ This documentation explains the complete workflow for processing video URLs, cre
    ./caption/process_new_videos/main_april_15.sh
    ```
 
-3. Update feedback app:
-   - Add the new files to `video_urls_files` in `feedback_app.py`
+3. Update configuration:
+   - Add the new files to `DEFAULT_VIDEO_URLS_FILES` in `caption/config/main_config.py`
 
 ### For Lighting Project:
 
@@ -171,8 +171,8 @@ This documentation explains the complete workflow for processing video URLs, cre
    ./caption/process_new_videos/lighting_april_16.sh
    ```
 
-3. Update feedback app:
-   - Add the new files to `video_urls_files` in `new_feedback_app.py`
+3. Update configuration:
+   - Add the new files to `LIGHTING_VIDEO_URLS_FILES` in `caption/config/lighting_config.py`
 
 ## 6. Important Notes
 

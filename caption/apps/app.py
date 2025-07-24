@@ -204,6 +204,9 @@ class VideoAnnotationApp:
         with st.sidebar:
             st.title("User Options")
             st.write(f"Logged in as: **{st.session_state.logged_in_user}**")
+            user_email = self.auth_manager.get_user_email(st.session_state.logged_in_user)
+            if user_email:
+                st.write(f"Email: **{user_email}**")
             
             if hasattr(self.app_config, 'output_dir') and self.app_config.personalize_output:
                 st.write(f"**Output Directory:** {self.app_config.output_dir}")

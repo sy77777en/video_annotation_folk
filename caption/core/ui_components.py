@@ -122,6 +122,13 @@ class UIComponents:
                 st.title("🔍 Review Portal")
                 
             st.write(f"**User:** {st.session_state.logged_in_user}")
+            from caption.core.auth import AuthManager
+            user_email = AuthManager.get_user_email(st.session_state.logged_in_user)
+            if user_email:
+                st.write(f"**Email:** {user_email}")
+            
+            if hasattr(app_config, 'output_dir') and app_config.personalize_output:
+                st.write(f"**Output Directory:** {app_config.output_dir}")
             
             if hasattr(app_config, 'output_dir') and app_config.personalize_output:
                 st.write(f"**Output Directory:** {app_config.output_dir}")

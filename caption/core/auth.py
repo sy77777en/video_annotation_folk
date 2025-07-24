@@ -255,6 +255,13 @@ class AuthManager:
     def is_logged_in() -> bool:
         """Check if user is logged in"""
         return st.session_state.get('logged_in', False)
+
+    @staticmethod
+    def get_user_email(username: str) -> Optional[str]:
+        """Get email for a given username"""
+        if username in ANNOTATORS:
+            return ANNOTATORS[username].get("email", None)
+        return None
     
     @staticmethod
     def get_current_user() -> Optional[str]:
