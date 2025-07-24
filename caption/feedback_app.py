@@ -1,4 +1,4 @@
-# feedback_app.py
+# caption/feedback_app.py
 import streamlit as st
 import argparse
 from streamlit_feedback import streamlit_feedback
@@ -1481,7 +1481,7 @@ def load_feedback(video_id, output_dir, file_postfix=FEEDBACK_FILE_POSTFIX):
     # Show existing feedback if available
     if existing_feedback:
         if existing_prev_feedback:
-            st.success(f"This video has already been completed by {existing_prev_feedback['user']} and reviewed by{existing_feedback['user']}. The final caption is:")
+            st.success(f"This video has already been completed by {existing_prev_feedback['user']} and reviewed by {existing_feedback['user']}. The final caption is:")
         else:
             st.success(f"This video has already been completed by {existing_feedback['user']}. The final caption is:")
         st.write(existing_feedback["final_caption"])

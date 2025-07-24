@@ -5,7 +5,7 @@ from typing import Dict, Any, List, Callable
 from datetime import datetime
 
 from caption.utils import extract_frames, get_last_frame_index
-
+from caption.video_player import custom_video_player
 
 class VideoUtils:
     """Utility functions for video handling and display"""
@@ -40,10 +40,17 @@ class VideoUtils:
         return imagery_kwargs
     
     @staticmethod
-    def display_video_with_frames(selected_video: str, expanded: bool = False):
+    def display_video_with_frames(selected_video: str, expanded: bool = False, use_custom_player: bool = True):
         """Display video with expandable frame viewer"""
-        # Display video
-        st.video(selected_video)
+        # Display video - try custom player first, fallback to regular
+        if use_custom_player:
+            try:
+                custom_video_player(selected_video)
+            except ImportError:
+                # Fallback to regular video if custom_video_player is not available
+                st.video(selected_video)
+        else:
+            st.video(selected_video)
 
         # Display first and last frames
         extracted_frames = extract_frames(selected_video, [0, -1])
@@ -78,7 +85,7 @@ class VideoUtils:
         """Create a format function for video selection dropdown with status emojis"""
         def format_func(video_url: str) -> str:
             if video_urls is not None:
-                video_index = video_urls.index(video_url) + 1
+                video_index = video_urls.index(video_url)
             else:
                 video_index = ""
             

@@ -29,11 +29,15 @@ class CaptionInterface:
         with st.container(height=self.ui.CONTAINER_HEIGHT, border=True):
             # Step 0: Generating Pre-caption
             if st.session_state.current_step == 0:
-                self._handle_existing_feedback_and_review(video_id, output_dir, args)
+                # Check if feedback already exists
+                feedback_exists = self.data_manager.data_exists(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
                 
-                # If not allowed to proceed, return early
-                if not self._check_permissions(video_id, output_dir):
-                    return
+                if feedback_exists:
+                    self._handle_existing_feedback_and_review(video_id, output_dir, args)
+                    
+                    # Only check permissions if feedback already exists
+                    if not self._check_permissions(video_id, output_dir):
+                        return
                 
                 self._render_precaption_step(
                     video_id, output_dir, caption_program, video_data_dict, 
@@ -50,20 +54,32 @@ class CaptionInterface:
     
     def _handle_existing_feedback_and_review(self, video_id: str, output_dir: str, args: Any):
         """Handle existing feedback and reviewer interface"""
-        if self.data_manager.data_exists(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX):
-            feedback_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
-            current_user = st.session_state.logged_in_user
-            is_approved_reviewer = current_user in APPROVED_REVIEWERS
-            
-            with st.expander("Reviewer: Please Review Caption Here", expanded=is_approved_reviewer):
-                self.ui.display_feedback_info(feedback_data, display_pre_caption_instead_of_final_caption=True)
-                self._render_reviewer_interface(video_id, output_dir, current_user, is_approved_reviewer, args)
-            
-            st.write("Feedback already exists for this video. You can choose to restart by either re-generating the pre-caption or by providing a new rating.")
+        # First display the existing feedback in the original format
+        feedback_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
+        prev_feedback_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+        
+        # Show existing feedback if available (matching original load_feedback logic)
+        if feedback_data:
+            if prev_feedback_data:
+                st.success(f"This video has already been completed by {prev_feedback_data['user']} and reviewed by {feedback_data['user']}. The final caption is:")
+            else:
+                st.success(f"This video has already been completed by {feedback_data['user']}. The final caption is:")
+            st.write(feedback_data["final_caption"])
+            # Render as collapsible text
+            with st.expander("Show final JSON Data", expanded=False):
+                st.json(feedback_data)
+        
+        # Then show the reviewer interface
+        current_user = st.session_state.logged_in_user
+        is_approved_reviewer = current_user in APPROVED_REVIEWERS
+        
+        with st.expander("Reviewer: Please Review Caption Here", expanded=is_approved_reviewer):
+            self.ui.display_feedback_info(feedback_data, display_pre_caption_instead_of_final_caption=True)
+            self._render_reviewer_interface(video_id, output_dir, current_user, is_approved_reviewer, args)
     
     def _render_reviewer_interface(self, video_id: str, output_dir: str, current_user: str, 
                                  is_approved_reviewer: bool, args: Any):
-        """Render the reviewer interface"""
+        """Render the reviewer interface - exact copy from original feedback_app.py"""
         reviewer_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
         
         if not is_approved_reviewer:
@@ -71,9 +87,102 @@ class CaptionInterface:
             st.write(f"You are **{current_user}**. You are not an approved reviewer.")
         else:
             if reviewer_data is None:
-                self._render_initial_review_interface(video_id, output_dir, current_user)
+                st.write("##### Reviewer Status")
+                st.write(f"You are **{current_user}**. You can review (double check) this caption.")
+                if not self._can_reviewer_redo(video_id, output_dir, current_user):
+                    st.error("You cannot review this caption because you are the annotator.")
+                else:
+                    review_col1, review_col2 = st.columns(2)
+                    with review_col1:
+                        if st.button("⚠️ Reject and Redo", 
+                            help="Reject the current caption and create a new version"):
+                            self._handle_rejection(video_id, output_dir, current_user)
+                    with review_col2:
+                        if st.button("Approve", 
+                            help="Mark the caption as correct"):
+                            reviewer_data = {
+                                "reviewer_name": current_user,
+                                "review_timestamp": datetime.now().isoformat(),
+                                "reviewer_double_check": True
+                            }
+                            self.data_manager.save_data(video_id, reviewer_data, output_dir=output_dir, 
+                                                       file_postfix=self.data_manager.REVIEWER_FILE_POSTFIX)
+                            st.rerun()
             else:
-                self._render_existing_review_interface(video_id, output_dir, current_user, reviewer_data, args)
+                is_same_reviewer = reviewer_data.get("reviewer_name") == current_user
+                is_approved = reviewer_data.get("reviewer_double_check", False)
+                
+                st.write("##### Reviewer Status")
+                if is_same_reviewer:
+                    status = "approved" if is_approved else "rejected"
+                    st.write(f"You are **{current_user}**. You already reviewed the caption and {status} it.")
+                else:
+                    other_reviewer = reviewer_data.get("reviewer_name")
+                    status = "approved" if is_approved else "rejected"
+                    st.write(f"You are **{current_user}**. **{other_reviewer}** already reviewed the caption and {status} it.")
+                
+                st.write("##### Review Controls")
+                if is_approved:
+                    if not self._can_reviewer_redo(video_id, output_dir, current_user):
+                        st.error("You cannot review this caption because you are the annotator.")
+                        return
+                    st.write("This caption is approved. You can still reject by clicking the button below.")
+                    if st.button("⚠️ Reject and Redo", 
+                            help="Reject the current caption and create a new version",
+                            key="reject_and_redo_approved"):
+                        self._handle_rejection(video_id, output_dir, current_user)
+                else:
+                    if not self._can_reviewer_redo(video_id, output_dir, current_user):
+                        st.error("You cannot review this caption because you are the annotator.")
+                        prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+                        feedback_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
+                        # Import here to avoid circular imports
+                        from caption.interfaces.review_interface import ReviewInterface
+                        review_interface = ReviewInterface(self.data_manager)
+                        review_interface.display_feedback_differences(
+                            prev_feedback=prev_feedback,
+                            feedback_data=feedback_data,
+                            diff_prompt=args.diff_prompt if args else None,
+                            reviewer_data=reviewer_data
+                        )
+                        return
+                    st.write("This caption is rejected. You can either approve it or redo it.")
+                    review_col1, review_col2 = st.columns(2)
+                    with review_col1:
+                        if st.button("Already Rejected", 
+                                disabled=True,
+                                help="Current status: Rejected"):
+                            pass
+                    with review_col2:
+                        if st.button("⚠️ Approve (revert to the annotator's caption below)", 
+                                help="Mark the caption as correct"):
+                            # Load previous feedback
+                            prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+                            if not prev_feedback:
+                                st.error("Cannot revert: Previous feedback does not exist.")
+                            else:
+                                # Update reviewer data
+                                reviewer_data = {
+                                    "reviewer_name": current_user,
+                                    "review_timestamp": datetime.now().isoformat(),
+                                    "reviewer_double_check": True
+                                }
+                                self.data_manager.save_data(video_id, reviewer_data, output_dir=output_dir, 
+                                                           file_postfix=self.data_manager.REVIEWER_FILE_POSTFIX)
+                                
+                                # Replace current feedback with previous
+                                self.data_manager.save_data(video_id, prev_feedback, output_dir=output_dir, 
+                                                           file_postfix=self.data_manager.FEEDBACK_FILE_POSTFIX)
+                                
+                                # Delete previous feedback file
+                                prev_file = self.data_manager.get_filename(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+                                print(f"Deleting previous feedback file: {prev_file}")
+                                os.remove(prev_file)
+                                st.rerun()
+                    # Print the previous final caption
+                    prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+                    st.write(f"##### Previous Final Caption")
+                    st.write(prev_feedback.get("final_caption", "No previous final caption found."))
     
     def _render_initial_review_interface(self, video_id: str, output_dir: str, current_user: str):
         """Render interface for initial review"""
@@ -157,12 +266,12 @@ class CaptionInterface:
         review_interface.display_feedback_differences(
             prev_feedback=prev_feedback,
             feedback_data=feedback_data,
-            diff_prompt=args.diff_prompt,
+            diff_prompt=args.diff_prompt if args else None,
             reviewer_data=reviewer_data
         )
     
     def _check_permissions(self, video_id: str, output_dir: str) -> bool:
-        """Check if user has permissions to proceed"""
+        """Check if user has permissions to proceed (only called when feedback already exists)"""
         annotator, reviewer = self.data_manager.get_annotator_and_reviewer(video_id, output_dir)
         reviewer_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
         current_user = st.session_state.logged_in_user
@@ -174,28 +283,44 @@ class CaptionInterface:
                     st.success("This caption has been approved. You don't need to modify it further.")
                 else:
                     st.error("This caption has been rejected. Please see the difference between your feedback and reviewer feedback below:")
-                    self._display_rejection_differences(video_id, output_dir, reviewer_data, {})
+                    prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+                    feedback_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
+                    # Import here to avoid circular imports
+                    from caption.interfaces.review_interface import ReviewInterface
+                    review_interface = ReviewInterface(self.data_manager)
+                    review_interface.display_feedback_differences(
+                        prev_feedback=prev_feedback,
+                        feedback_data=feedback_data,
+                        diff_prompt=str(self.data_manager.folder / getattr(args, 'diff_prompt', 'prompts/diff_prompt.txt')) if 'args' in locals() else str(self.data_manager.folder / 'prompts/diff_prompt.txt'),
+                        reviewer_data=reviewer_data
+                    )
                 return False
         
-        # Check if current user is a different annotator
+        # Check if current user is a different user who is not an approved reviewer
         elif current_user not in APPROVED_REVIEWERS:
             st.error("You are not an approved reviewer. Please reach out to Zhiqiu Lin if you want to review/redo this caption.")
             return False
         
+        # Check if current user is an approved reviewer but caption hasn't been reviewed - MATCH ORIGINAL LOGIC
         elif not reviewer_data:
             st.error("This caption has not been reviewed yet. Please review it first before making modifications.")
             return False
         
+        # Check if caption has been approved
         elif reviewer_data.get("reviewer_double_check", False):
             st.success("This caption has been approved. You don't need to modify it further.")
             return False
         
+        # If reviewer data exists but not approved, allow proceeding (caption was rejected)
         return True
     
     def _render_precaption_step(self, video_id: str, output_dir: str, caption_program: Any,
                                video_data_dict: Dict[str, Any], selected_video: str,
                                selected_config: str, config_dict: Dict[str, Any], args: Any):
         """Render the precaption generation step"""
+        # Get the config object from config_dict and selected_config
+        config = config_dict[selected_config]
+        
         # Load existing precaption
         existing_precaption = self.caption_engine.load_precaption(video_id, output_dir)
         
@@ -267,6 +392,9 @@ class CaptionInterface:
         st.write(pre_caption)
         st.write("#### Rate the caption (Is it accurate? Does it miss anything important?)")
         
+        # Exact text from original feedback_app.py
+        st.write("Please provide your feedback to improve this caption (if not score of 5):")
+        
         # Feedback collection
         user_feedback = st.text_area(
             "Your feedback:",
@@ -305,7 +433,7 @@ class CaptionInterface:
         """Process the initial rating and determine next steps"""
         feedback_is_needed = score != "😀"
         
-        # Initialize feedback data
+        # Initialize feedback data - ensure all fields are present to match original logic
         st.session_state.feedback_data = {
             "video_id": video_id,
             "pre_caption": pre_caption,
@@ -317,7 +445,8 @@ class CaptionInterface:
             "initial_caption_rating_score": self.ui.emoji_to_score(score),
             "feedback_is_needed": feedback_is_needed,
             "user": st.session_state.logged_in_user,
-            # Initialize other fields as None
+            "timestamp": datetime.now().isoformat(),  # Add timestamp immediately
+            # Initialize other fields as None - must match original schema exactly
             "initial_feedback": None,
             "gpt_feedback_llm": None,
             "gpt_feedback_prompt": None,
@@ -336,14 +465,16 @@ class CaptionInterface:
         if feedback_is_needed:
             self._handle_feedback_needed(user_feedback, args)
         else:
-            self._handle_perfect_rating(video_id, pre_caption)
+            # For perfect ratings, get the output_dir from session state or current context
+            output_dir = getattr(st.session_state, 'current_output_dir', args.output_dir if hasattr(args, 'output_dir') else '')
+            self._handle_perfect_rating(video_id, pre_caption, output_dir)
     
     def _handle_feedback_needed(self, user_feedback: str, args: Any):
         """Handle case where feedback is needed"""
         if args.show_feedback_prompt:
             self._render_feedback_prompt_interface(user_feedback)
         else:
-            feedback_prompt = self.ui.load_txt(args.feedback_prompt)
+            feedback_prompt = self.ui.load_txt(str(self.data_manager.folder / args.feedback_prompt))
             selected_feedback_llm = "gpt-4o-2024-08-06"
             has_user_feedback_entered_and_submitted = True
             
@@ -369,7 +500,7 @@ class CaptionInterface:
         if "cur_feedback_prompt" in st.session_state:
             feedback_prompt = st.session_state.cur_feedback_prompt
         else:
-            feedback_prompt = self.ui.load_txt("prompts/feedback_prompt.txt")
+            feedback_prompt = self.ui.load_txt(str(self.data_manager.folder / "prompts/feedback_prompt.txt"))
         
         feedback_prompt = st.text_area(
             "Prompt for polishing feedback:",
@@ -387,11 +518,15 @@ class CaptionInterface:
             st.session_state.current_step = 3
             st.rerun()
     
-    def _handle_perfect_rating(self, video_id: str, pre_caption: str):
+    def _handle_perfect_rating(self, video_id: str, pre_caption: str, output_dir: str):
         """Handle case where rating is perfect"""
         st.session_state.feedback_data["final_caption"] = pre_caption
+        # Add missing timestamp if not present
+        if "timestamp" not in st.session_state.feedback_data:
+            st.session_state.feedback_data["timestamp"] = datetime.now().isoformat()
+        
         self.data_manager.save_data(video_id, st.session_state.feedback_data, 
-                                   output_dir=st.session_state.get('output_dir', ''), 
+                                   output_dir=output_dir, 
                                    file_postfix=self.data_manager.FEEDBACK_FILE_POSTFIX)
         st.success("Caption rated as perfect! No changes needed.")
         st.json(st.session_state.feedback_data)
@@ -415,7 +550,7 @@ class CaptionInterface:
         if not st.session_state.feedback_data.get("gpt_caption", False):
             pre_caption = st.session_state.feedback_data["pre_caption"]
             selected_caption_llm = "gpt-4o-2024-08-06"
-            caption_prompt = self.ui.load_txt(args.caption_prompt)
+            caption_prompt = self.ui.load_txt(str(self.data_manager.folder / args.caption_prompt))
             
             st.session_state.feedback_data["gpt_caption_llm"] = selected_caption_llm
             st.session_state.feedback_data["gpt_caption_prompt"] = caption_prompt
@@ -492,6 +627,12 @@ class CaptionInterface:
             if final_caption.strip() and final_feedback.strip():
                 st.session_state.feedback_data["final_caption"] = final_caption
                 st.session_state.feedback_data["final_feedback"] = final_feedback
+                # Ensure timestamp and user are set for consistency with original logic
+                if "timestamp" not in st.session_state.feedback_data:
+                    st.session_state.feedback_data["timestamp"] = datetime.now().isoformat()
+                if "user" not in st.session_state.feedback_data:
+                    st.session_state.feedback_data["user"] = st.session_state.logged_in_user
+                
                 # Save feedback data
                 self.data_manager.save_data(video_id, st.session_state.feedback_data, 
                                           output_dir=output_dir, 
@@ -528,43 +669,6 @@ class CaptionInterface:
         self.data_manager.save_data(video_id, reviewer_data, output_dir=output_dir, 
                                    file_postfix=self.data_manager.REVIEWER_FILE_POSTFIX)
         st.rerun()
-    
-    def _handle_approval(self, video_id: str, output_dir: str, current_user: str):
-        """Handle caption approval"""
-        reviewer_data = {
-            "reviewer_name": current_user,
-            "review_timestamp": datetime.now().isoformat(),
-            "reviewer_double_check": True
-        }
-        self.data_manager.save_data(video_id, reviewer_data, output_dir=output_dir, 
-                                   file_postfix=self.data_manager.REVIEWER_FILE_POSTFIX)
-        st.rerun()
-    
-    def _handle_revert_approval(self, video_id: str, output_dir: str, current_user: str):
-        """Handle reverting to annotator's caption"""
-        # Load previous feedback
-        prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
-        if not prev_feedback:
-            st.error("Cannot revert: Previous feedback does not exist.")
-        else:
-            # Update reviewer data
-            reviewer_data = {
-                "reviewer_name": current_user,
-                "review_timestamp": datetime.now().isoformat(),
-                "reviewer_double_check": True
-            }
-            self.data_manager.save_data(video_id, reviewer_data, output_dir=output_dir, 
-                                       file_postfix=self.data_manager.REVIEWER_FILE_POSTFIX)
-            
-            # Replace current feedback with previous
-            self.data_manager.save_data(video_id, prev_feedback, output_dir=output_dir, 
-                                       file_postfix=self.data_manager.FEEDBACK_FILE_POSTFIX)
-            
-            # Delete previous feedback file
-            prev_file = self.data_manager.get_filename(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
-            print(f"Deleting previous feedback file: {prev_file}")
-            os.remove(prev_file)
-            st.rerun()
     
     def _can_annotator_redo(self, video_id: str, output_dir: str, current_user: str) -> bool:
         """Check if the current user (as annotator) can redo the caption"""

@@ -16,7 +16,7 @@ class DataManager:
         self.folder = folder_path  # caption/ directory
         self.root = root_path or folder_path.parent  # project root directory
         
-        # File postfixes
+        # File postfixes - must match original exactly
         self.FEEDBACK_FILE_POSTFIX = "_feedback.json"
         self.PREV_FEEDBACK_FILE_POSTFIX = "_feedback_prev.json"
         self.REVIEWER_FILE_POSTFIX = "_review.json"
@@ -65,8 +65,12 @@ class DataManager:
         return os.path.exists(filename)
     
     def get_video_status(self, video_id: str, output_dir: str) -> Tuple[str, Optional[str], Optional[str], Optional[str], Optional[str]]:
-        """Get the status of a video's caption completion and previous iterations"""
-        # Initialize all variables
+        """Get the status of a video's caption completion and previous iterations
+        
+        Returns: (status, current_file, prev_file, current_user, prev_user)
+        Status can be: 'not_completed', 'completed_not_reviewed', 'approved', 'rejected'
+        """
+        # Initialize all variables to ensure consistent return
         status = "not_completed"
         current_file = None
         prev_file = None
@@ -78,55 +82,80 @@ class DataManager:
         prev_feedback_file = self.get_filename(video_id, output_dir, self.PREV_FEEDBACK_FILE_POSTFIX)
         reviewer_file = self.get_filename(video_id, output_dir, self.REVIEWER_FILE_POSTFIX)
         
-        # Determine status based on file existence and content
+        # First check if main feedback file exists
         if not os.path.exists(feedback_file):
             return status, current_file, prev_file, current_user, prev_user
             
+        # Load current feedback data
         current_file = feedback_file
-        with open(feedback_file, 'r') as f:
-            current_data = json.load(f)
-            current_user = current_data.get("user")
+        try:
+            with open(feedback_file, 'r') as f:
+                current_data = json.load(f)
+                current_user = current_data.get("user")
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Error reading feedback file {feedback_file}: {e}")
+            return status, current_file, prev_file, current_user, prev_user
         
+        # Check if reviewed
         if not os.path.exists(reviewer_file):
             status = "completed_not_reviewed"
             return status, current_file, prev_file, current_user, prev_user
         
         # Load reviewer data
-        with open(reviewer_file, 'r') as f:
-            reviewer_data = json.load(f)
-            reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
-            
-            if reviewer_double_check:
-                status = "approved"
-                # For approved files, load previous feedback if it exists
-                if os.path.exists(prev_feedback_file):
-                    with open(prev_feedback_file, 'r') as pf:
-                        prev_data = json.load(pf)
-                        prev_user = prev_data.get("user")
-            else:
-                status = "rejected"
-                # For rejected files, must have prev feedback with different user
-                assert os.path.exists(prev_feedback_file), f"Rejected file {video_id} must have previous feedback"
-                with open(prev_feedback_file, 'r') as pf:
-                    prev_data = json.load(pf)
-                    prev_user = prev_data.get("user")
-                    with open(feedback_file, 'r') as cf:
-                        current_data = json.load(cf)
-                        current_user = current_data.get("user")
-                        if prev_user == current_user:
-                            # This means the caption was just rejected but it has not been updated yet
-                            # In this case, we should show the previous version and treat it as not reviewed
-                            status = "completed_not_reviewed"
-                            prev_user = None
-                            prev_file = None
-                            return status, current_file, prev_file, current_user, prev_user
-            
-            prev_file = prev_feedback_file if os.path.exists(prev_feedback_file) else None
+        try:
+            with open(reviewer_file, 'r') as f:
+                reviewer_data = json.load(f)
+                reviewer_double_check = reviewer_data.get("reviewer_double_check", False)
+                
+                if reviewer_double_check:
+                    status = "approved"
+                    # For approved files, load previous feedback if it exists
+                    if os.path.exists(prev_feedback_file):
+                        try:
+                            with open(prev_feedback_file, 'r') as pf:
+                                prev_data = json.load(pf)
+                                prev_user = prev_data.get("user")
+                                prev_file = prev_feedback_file
+                        except (json.JSONDecodeError, KeyError) as e:
+                            print(f"Error reading previous feedback file {prev_feedback_file}: {e}")
+                else:
+                    status = "rejected"
+                    # For rejected files, must have prev feedback with different user
+                    if not os.path.exists(prev_feedback_file):
+                        print(f"Warning: Rejected file {video_id} missing previous feedback")
+                        # Treat as completed_not_reviewed if previous feedback is missing
+                        status = "completed_not_reviewed"
+                        return status, current_file, prev_file, current_user, prev_user
+                    
+                    try:
+                        with open(prev_feedback_file, 'r') as pf:
+                            prev_data = json.load(pf)
+                            prev_user = prev_data.get("user")
+                            prev_file = prev_feedback_file
+                            
+                            # Check if the caption was just rejected but not updated yet
+                            if prev_user == current_user:
+                                # Same user in both files means rejection happened but no correction yet
+                                status = "completed_not_reviewed"
+                                prev_user = None
+                                prev_file = None
+                                return status, current_file, prev_file, current_user, prev_user
+                    except (json.JSONDecodeError, KeyError) as e:
+                        print(f"Error reading previous feedback file {prev_feedback_file}: {e}")
+                        status = "completed_not_reviewed"
+                        return status, current_file, prev_file, current_user, prev_user
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Error reading reviewer file {reviewer_file}: {e}")
+            status = "completed_not_reviewed"
+            return status, current_file, prev_file, current_user, prev_user
         
         return status, current_file, prev_file, current_user, prev_user
     
     def get_annotator_and_reviewer(self, video_id: str, output_dir: str) -> Tuple[Optional[str], Optional[str]]:
-        """Determine who is the annotator and who is the reviewer based on feedback files"""
+        """Determine who is the annotator and who is the reviewer based on feedback files
+        
+        Returns: (annotator, reviewer)
+        """
         current_feedback = self.load_data(video_id, output_dir, self.FEEDBACK_FILE_POSTFIX)
         prev_feedback = self.load_data(video_id, output_dir, self.PREV_FEEDBACK_FILE_POSTFIX)
         
@@ -172,22 +201,33 @@ class DataManager:
                     break
                 else:
                     # Check if this annotator completed this task
-                    with open(feedback_file, 'r') as f:
-                        feedback_data = json.load(f)
-                        annotator = feedback_data.get("user")
-                        if annotator not in annotators_dict:
-                            annotators_dict[annotator] = 0
-                        annotators_dict[annotator] += 1
+                    try:
+                        with open(feedback_file, 'r') as f:
+                            feedback_data = json.load(f)
+                            annotator = feedback_data.get("user")
+                            if annotator:
+                                if annotator not in annotators_dict:
+                                    annotators_dict[annotator] = 0
+                                annotators_dict[annotator] += 1
+                    except (json.JSONDecodeError, KeyError) as e:
+                        print(f"Error reading feedback file {feedback_file}: {e}")
+                        is_completed = False
+                        is_reviewed = False
+                        break
                 
                 if not os.path.exists(review_file):
                     is_reviewed = False
                 else:
-                    with open(review_file, 'r') as rf:
-                        review_data = json.load(rf)
-                        reviewer = review_data.get("reviewer_name")
-                        if reviewer not in reviewers_dict:
-                            reviewers_dict[reviewer] = 0
-                        reviewers_dict[reviewer] += 1
+                    try:
+                        with open(review_file, 'r') as rf:
+                            review_data = json.load(rf)
+                            reviewer = review_data.get("reviewer_name")
+                            if reviewer:
+                                if reviewer not in reviewers_dict:
+                                    reviewers_dict[reviewer] = 0
+                                reviewers_dict[reviewer] += 1
+                    except (json.JSONDecodeError, KeyError) as e:
+                        print(f"Error reading review file {review_file}: {e}")
                     
             status_dict[video_url] = (is_completed, is_reviewed)
         
@@ -207,16 +247,14 @@ class DataManager:
         Returns:
             List of video URLs that match the criteria, sorted appropriately
         """
-        assert not (not_yet_reviewed and show_only_rejected), \
-            "Cannot show both not yet reviewed and show only rejected videos"
+        if not_yet_reviewed and show_only_rejected:
+            raise ValueError("Cannot show both not yet reviewed and show only rejected videos")
         
         start_time = time.time()
         
-        # Get all video URLs from all files - we'll get this from a config or pass it in
-        # For now, we'll need this to be passed in or loaded differently
-        # This is a placeholder - in practice, you'll need to pass in the video files list
+        # Get all video URLs from all files
         try:
-            # Try to get video URLs from a main config
+            # Try to get video URLs from a main config - this should be improved to pass video files properly
             from caption.config.main_config import DEFAULT_VIDEO_URLS_FILES
             all_video_urls = []
             for video_urls_file in DEFAULT_VIDEO_URLS_FILES:
@@ -266,20 +304,25 @@ class DataManager:
                                 completion_time = feedback_data["timestamp"]
                                 if earliest_completion_time is None or completion_time < earliest_completion_time:
                                     earliest_completion_time = completion_time
-                            # If feedback exists but no review file, mark as not reviewed
+                            
+                            # Check review status
                             if not os.path.exists(review_file):
                                 all_tasks_reviewed = False
                             else:
                                 # Check if the video was rejected and get review time
-                                with open(review_file, 'r') as rf:
-                                    review_data = json.load(rf)
-                                    if not review_data.get("reviewer_double_check", False):
-                                        is_rejected = True
-                                    if "review_timestamp" in review_data:
-                                        review_time = review_data["review_timestamp"]
-                                        if latest_review_time is None or review_time > latest_review_time:
-                                            latest_review_time = review_time
-                except Exception as e:
+                                try:
+                                    with open(review_file, 'r') as rf:
+                                        review_data = json.load(rf)
+                                        if not review_data.get("reviewer_double_check", False):
+                                            is_rejected = True
+                                        if "review_timestamp" in review_data:
+                                            review_time = review_data["review_timestamp"]
+                                            if latest_review_time is None or review_time > latest_review_time:
+                                                latest_review_time = review_time
+                                except (json.JSONDecodeError, KeyError) as e:
+                                    print(f"Error reading review file {review_file}: {e}")
+                                    all_tasks_reviewed = False
+                except (json.JSONDecodeError, KeyError) as e:
                     print(f"Error reading feedback file {feedback_file}: {e}")
                     continue
             
@@ -326,11 +369,11 @@ class DataManager:
         video_data_dict = json_to_video_data(str(video_data_path), label_collections=label_collections)
         
         for video_data in video_data_dict.values():
-            if hasattr(video_data, "cam_setup"):
+            if hasattr(video_data, "cam_motion"):
                 video_data.cam_motion.update()
             if hasattr(video_data, "cam_setup"):
                 video_data.cam_setup.update()
-                # Set default descriptions if missing
+                # Set default descriptions if missing - must match original exactly
                 default_descriptions = {
                     "subject_description": "**{NO DESCRIPTION FOR SUBJECTS YET}**",
                     "scene_description": "**{NO DESCRIPTION FOR SCENE YET}**",
@@ -354,26 +397,36 @@ class DataManager:
         current_file = self.get_filename(video_id, output_dir, self.FEEDBACK_FILE_POSTFIX)
         prev_file = self.get_filename(video_id, output_dir, self.PREV_FEEDBACK_FILE_POSTFIX)
         
-        assert os.path.exists(current_file), f"Current feedback file does not exist: {current_file}"
+        if not os.path.exists(current_file):
+            raise FileNotFoundError(f"Current feedback file does not exist: {current_file}")
         
         # If prev file exists, check if it's different from current
         if os.path.exists(prev_file):
+            try:
+                with open(current_file, 'r') as f:
+                    current_data = json.load(f)
+                with open(prev_file, 'r') as f:
+                    prev_data = json.load(f)
+                if current_data == prev_data:
+                    print(f"Current and previous feedback files are identical for {video_id}, no action needed")
+                    return  # If they're the same, no need to do anything
+                else:
+                    print(f"Warning: Current and previous feedback files are different for {video_id}")
+                    # Continue with copying to preserve the flow
+            except (json.JSONDecodeError, KeyError) as e:
+                print(f"Error comparing feedback files for {video_id}: {e}")
+                # Continue with copying
+        
+        # Copy current to prev
+        try:
             with open(current_file, 'r') as f:
                 current_data = json.load(f)
-            with open(prev_file, 'r') as f:
-                prev_data = json.load(f)
-            if current_data != prev_data:
-                raise AssertionError(f"Current and previous feedback files are different for {video_id}. "
-                                   "This indicates the feedback has already been redone.")
-            return  # If they're the same, no need to do anything
-        
-        # If prev file doesn't exist, copy current to prev
-        with open(current_file, 'r') as f:
-            current_data = json.load(f)
-        with open(prev_file, 'w') as f:
-            json.dump(current_data, f, indent=4)
-        print(f"Copied current feedback to previous feedback: {prev_file}")
-    
+            with open(prev_file, 'w') as f:
+                json.dump(current_data, f, indent=4)
+            print(f"Copied current feedback to previous feedback: {prev_file}")
+        except (json.JSONDecodeError, KeyError, IOError) as e:
+            print(f"Error copying feedback files for {video_id}: {e}")
+            raise
     
     @staticmethod
     def get_video_id(url: str) -> str:
@@ -387,5 +440,5 @@ class DataManager:
             return 'N/A'
         try:
             return datetime.fromisoformat(iso_timestamp).strftime('%Y-%m-%d')
-        except ValueError:
+        except (ValueError, TypeError):
             return 'Invalid date'

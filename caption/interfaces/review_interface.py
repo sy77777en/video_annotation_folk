@@ -228,7 +228,7 @@ class ReviewInterface:
             self.ui.highlight_differences_gpt(
                 prev_feedback.get("gpt_feedback", ""),
                 feedback_data.get("gpt_feedback", ""),
-                diff_prompt=diff_prompt,
+                diff_prompt=str(self.data_manager.folder / diff_prompt),
                 diff_key="gpt_feedback_diff_feedback",
                 llm_key="gpt_feedback_diff_compare_llm",
                 prompt_key="gpt_feedback_diff_compare_prompt",
@@ -273,7 +273,7 @@ class ReviewInterface:
             self.ui.highlight_differences_gpt(
                 prev_feedback.get("final_caption", ""),
                 feedback_data.get("final_caption", ""),
-                diff_prompt=diff_prompt,
+                diff_prompt=str(self.data_manager.folder / diff_prompt),
                 diff_key="final_caption_diff_feedback",
                 llm_key="final_caption_diff_compare_llm",
                 prompt_key="final_caption_diff_compare_prompt",

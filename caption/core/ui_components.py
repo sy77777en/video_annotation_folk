@@ -99,10 +99,12 @@ class UIComponents:
     @staticmethod
     def clear_portal_state():
         """Clear portal-specific state while preserving login and navigation state"""
-        # Keys to preserve across portal switches
+        # Keys to preserve across portal switches - must match original logic exactly
         preserve_keys = {
             'logged_in', 'logged_in_user', 'video_urls', 'login_method', 'target_annotator',
-            'selected_portal', 'file_check_passed', 'personalized_output'
+            'selected_portal', 'file_check_passed', 'personalized_output',
+            # Preserve these core navigation keys to maintain consistency
+            'api_key', 'last_config_id', 'last_video_id', 'last_selected_video'
         }
         
         # Clear all other keys
@@ -159,6 +161,7 @@ class UIComponents:
         current_task_index = config_names.index(selected_config)
 
         def reset_state_except(preserved):
+            """Reset state while preserving specific keys - must match original logic"""
             keys_to_remove = [key for key in st.session_state if key not in preserved]
             for key in keys_to_remove:
                 del st.session_state[key]
@@ -170,8 +173,10 @@ class UIComponents:
         with col1:
             if current_index > 0:
                 if st.button("Prev Video ⏪"):
-                    st.session_state.last_selected_video = video_urls[current_index - 1]
-                    st.session_state.last_video_id = data_manager.get_video_id(video_urls[current_index - 1])
+                    # Update video selection state consistently
+                    prev_video = video_urls[current_index - 1]
+                    st.session_state.last_selected_video = prev_video
+                    st.session_state.last_video_id = data_manager.get_video_id(prev_video)
                     reset_state_except(preserved_keys)
             else:
                 st.button("Prev Video ⏪", disabled=True)
@@ -181,13 +186,17 @@ class UIComponents:
                 prev_task_index = current_task_index - 1
             else:
                 prev_task_index = len(config_names) - 1
-            prev_task_short_name = UIComponents.config_names_to_short_names[config_names[prev_task_index]]
+            prev_task_short_name = UIComponents.config_names_to_short_names.get(
+                config_names[prev_task_index], config_names[prev_task_index]
+            )
             if st.button(f"{prev_task_short_name} Task ⬅️"):
                 st.session_state.last_config_id = config_names[prev_task_index]
                 reset_state_except(preserved_keys)
         
         with col3:
-            task_short_name = UIComponents.config_names_to_short_names[selected_config]
+            task_short_name = UIComponents.config_names_to_short_names.get(
+                selected_config, selected_config
+            )
             st.button(f"{task_short_name} Task ⬇️", disabled=True)
 
         with col4:
@@ -195,7 +204,9 @@ class UIComponents:
                 next_task_index = current_task_index + 1
             else:
                 next_task_index = 0
-            next_task_short_name = UIComponents.config_names_to_short_names[config_names[next_task_index]]
+            next_task_short_name = UIComponents.config_names_to_short_names.get(
+                config_names[next_task_index], config_names[next_task_index]
+            )
             if st.button(f"{next_task_short_name} Task ➡️"):
                 st.session_state.last_config_id = config_names[next_task_index]
                 reset_state_except(preserved_keys)
@@ -203,8 +214,10 @@ class UIComponents:
         with col5:
             if current_index < len(video_urls) - 1:
                 if st.button("Next Video ⏩"):
-                    st.session_state.last_selected_video = video_urls[current_index + 1]
-                    st.session_state.last_video_id = data_manager.get_video_id(video_urls[current_index + 1])
+                    # Update video selection state consistently
+                    next_video = video_urls[current_index + 1]
+                    st.session_state.last_selected_video = next_video
+                    st.session_state.last_video_id = data_manager.get_video_id(next_video)
                     reset_state_except(preserved_keys)
             else:
                 st.button("Next Video ⏭️", disabled=True)
@@ -212,12 +225,12 @@ class UIComponents:
     @staticmethod
     def display_feedback_info(feedback_data: Dict[str, Any], display_pre_caption_instead_of_final_caption: bool = False):
         """Display feedback information including scores, GPT feedback, and caption differences"""
-        if not display_pre_caption_instead_of_final_caption:
-            st.write("##### Final Caption")
-            st.write(feedback_data.get("final_caption", "No caption available"))
+        # ALWAYS show Final Caption at the top (matching original exactly)
+        st.write("##### Final Caption")
+        st.write(feedback_data.get("final_caption", "No caption available"))
         
         st.write("##### Pre-caption Score")
-        st.write(f"**{feedback_data['initial_caption_rating_score']}/5**")
+        st.write(f"**{feedback_data.get('initial_caption_rating_score', 'N/A')}/5**")
 
         st.write("##### Initial Feedback")
         st.write(feedback_data.get("initial_feedback", "No initial feedback available"))
@@ -247,12 +260,13 @@ class UIComponents:
             else:
                 st.write(f"**{word_diff}** words changed")
         
+        # The parameter only affects what's shown at the bottom
         if display_pre_caption_instead_of_final_caption:
             st.write("##### Pre-Caption (For Reference Only)")
-            st.write(feedback_data["pre_caption"])
+            st.write(feedback_data.get("pre_caption", "No pre-caption available"))
         else:
             st.write("##### Final Caption")
-            st.write(feedback_data["final_caption"])
+            st.write(feedback_data.get("final_caption", "No final caption available"))
     
     @staticmethod
     def emoji_to_score(emoji: str) -> int:

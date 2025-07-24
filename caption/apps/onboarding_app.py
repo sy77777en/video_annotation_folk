@@ -4,6 +4,7 @@ import streamlit as st
 import os
 from datetime import datetime
 from pathlib import Path
+from typing import List
 
 # Import from the new structure
 from caption.config import get_config
@@ -47,9 +48,10 @@ class OnboardingApp:
         
         self.output_new_annotator = output_new_annotator
         self.folder_path = Path(__file__).parent.parent  # Go up to caption/ directory
+        self.root_path = self.folder_path.parent  # Go up to project root
         
         # Initialize core components
-        self.data_manager = DataManager(self.folder_path)
+        self.data_manager = DataManager(self.folder_path, self.root_path)
         self.auth_manager = AuthManager(self.data_manager)
         self.video_utils = VideoUtils()
         self.caption_engine = CaptionEngine(self.data_manager)
@@ -133,7 +135,7 @@ class OnboardingApp:
                     st.session_state.logged_in_user = selected_annotator
                     st.session_state.selected_portal_file = selected_file
                     # Set portal mode flag so other components know it's running in portal mode
-                    st.session_state.selected_portal = True
+                    st.session_state.selected_portal = True  # This flags it as onboarding mode
                     st.success(f"Login successful! Welcome to training, {selected_annotator}!")
                     st.rerun()
                 else:
@@ -182,6 +184,10 @@ class OnboardingApp:
         
         st.markdown("---")
         
+        # Additional features that might be in original new_annotator_app.py
+        with st.expander("📊 Training Progress", expanded=False):
+            self._display_training_progress()
+        
         # Logout option
         col1, col2, col3 = st.columns([1, 1, 1])
         with col2:
@@ -189,6 +195,58 @@ class OnboardingApp:
                 for key in list(st.session_state.keys()):
                     del st.session_state[key]
                 st.rerun()
+    
+    def _display_training_progress(self):
+        """Display training progress statistics"""
+        try:
+            # Load configs to check progress
+            configs = self.data_manager.load_config(self.base_config.configs_file)
+            configs = [self.data_manager.load_config(config) for config in configs]
+            
+            video_urls = st.session_state.video_urls
+            
+            # Calculate progress for each task
+            progress_data = {}
+            total_completed = 0
+            total_videos = len(video_urls) * len(configs)
+            
+            for config in configs:
+                config_output_dir = str(self.folder_path / self.output_new_annotator / config["output_name"])
+                completed_count = 0
+                
+                for video_url in video_urls:
+                    video_id = self.data_manager.get_video_id(video_url)
+                    if self.data_manager.data_exists(video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX):
+                        completed_count += 1
+                        total_completed += 1
+                
+                progress_data[config["name"]] = {
+                    "completed": completed_count,
+                    "total": len(video_urls),
+                    "percentage": (completed_count / len(video_urls)) * 100 if video_urls else 0
+                }
+            
+            # Display overall progress
+            overall_percentage = (total_completed / total_videos) * 100 if total_videos > 0 else 0
+            st.metric(
+                label="Overall Training Progress",
+                value=f"{total_completed}/{total_videos}",
+                delta=f"{overall_percentage:.1f}% Complete"
+            )
+            
+            # Display task-by-task progress
+            st.markdown("##### Task Progress")
+            for task_name, progress in progress_data.items():
+                short_name = self.ui.config_names_to_short_names.get(task_name, task_name)
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.progress(progress["percentage"] / 100)
+                    st.caption(f"{short_name}: {progress['completed']}/{progress['total']}")
+                with col2:
+                    st.metric("", f"{progress['percentage']:.0f}%")
+                    
+        except Exception as e:
+            st.error(f"Error calculating training progress: {e}")
     
     def _setup_personalized_output(self):
         """Setup personalized output directory"""
@@ -279,7 +337,7 @@ class OnboardingApp:
         config_dict = {config["name"]: config for config in configs}
         config_names = list(config_dict.keys())
         
-        # Task selection
+        # Task selection - consistent naming with main app
         selected_config = st.selectbox(
             "Select a task:",
             config_names,
@@ -300,11 +358,11 @@ class OnboardingApp:
         # Display instructions
         self._display_instructions(config)
         
-        # Video selection
+        # Video selection with training progress indicators
         selected_video = st.selectbox(
             "Select a video:",
             video_urls,
-            format_func=self.video_utils.get_video_format_func(output_dir, video_urls, self.data_manager),
+            format_func=self._get_training_video_format_func(output_dir, video_urls),
             index=video_urls.index(st.session_state.get('last_selected_video_caption', video_urls[0])),
             key="selected_video_caption"
         )
@@ -317,7 +375,7 @@ class OnboardingApp:
         self.video_utils.display_video_with_frames(selected_video)
         self.video_utils.display_video_links(video_id, video_data_dict)
         
-        # Navigation buttons
+        # Navigation buttons - preserve onboarding-specific keys
         preserved_keys = [
             'api_key', 'last_config_id_caption', 'last_video_id_caption', 'last_selected_video_caption',
             'file_check_passed_caption', 'logged_in', 'video_urls', 'logged_in_user', 
@@ -338,16 +396,33 @@ class OnboardingApp:
         st.session_state.current_video_id_caption = video_id
         st.session_state.current_selected_video_caption = selected_video
     
+    def _get_training_video_format_func(self, output_dir: str, video_urls: List[str]):
+        """Format function for video selection dropdown with training progress indicators"""
+        def format_func(video_url: str) -> str:
+            video_index = video_urls.index(video_url) + 1
+            video_id = self.data_manager.get_video_id(video_url)
+            video_name = video_url.split("/")[-1]
+            
+            # Check if caption exists for this video
+            if self.data_manager.data_exists(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX):
+                emoji = "✅"  # Completed
+            else:
+                emoji = "📝"  # To do
+            
+            return f"{emoji}{video_index}. {video_name}"
+        
+        return format_func
+    
     def _render_caption_main_interface(self, video_data_dict: dict, caption_config):
         """Render caption mode main interface"""
         if not hasattr(st.session_state, 'current_config_caption'):
             return
         
-        # Session state initialization
+        # Session state initialization - consistent with main app
         if 'current_step' not in st.session_state:
             st.session_state.current_step = 0
         if 'precaption_data' not in st.session_state:
-            st.session_state.precaption = {}
+            st.session_state.precaption_data = {}
         if 'feedback_data' not in st.session_state:
             st.session_state.feedback_data = {}
         
@@ -528,8 +603,8 @@ class OnboardingApp:
             current_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
             new_annotator_data = self.data_manager.load_data(video_id, new_annotator_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
             
-            current_user = current_data.get("user", "Unknown")
-            new_annotator_user = new_annotator_data.get("user", "Unknown")
+            current_user = current_data.get("user", "Unknown") if current_data else "Unknown"
+            new_annotator_user = new_annotator_data.get("user", "Unknown") if new_annotator_data else "Unknown"
             
             return "done_by_new_annotator", current_file, new_annotator_file, current_user, new_annotator_user
     
