@@ -4,7 +4,7 @@ import streamlit as st
 import os
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import Dict, Any, List, Optional, Tuple
 
 # Import from the new structure
 from caption.config import get_config
@@ -357,6 +357,8 @@ class OnboardingApp:
         
         # Display instructions
         self._display_instructions(config)
+
+        self.ui.display_status_indicators()
         
         # Video selection with training progress indicators
         selected_video = st.selectbox(
@@ -399,7 +401,7 @@ class OnboardingApp:
     def _get_training_video_format_func(self, output_dir: str, video_urls: List[str]):
         """Format function for video selection dropdown with training progress indicators"""
         def format_func(video_url: str) -> str:
-            video_index = video_urls.index(video_url) + 1
+            video_index = video_urls.index(video_url)
             video_id = self.data_manager.get_video_id(video_url)
             video_name = video_url.split("/")[-1]
             
@@ -465,6 +467,8 @@ class OnboardingApp:
         
         config = config_dict[selected_config]
         st.title(f"Caption Comparison - {config.get('name', '')}")
+
+        self.ui.display_status_indicators()
         
         # Get directories
         video_urls = st.session_state.video_urls
@@ -608,10 +612,10 @@ class OnboardingApp:
             
             return "done_by_new_annotator", current_file, new_annotator_file, current_user, new_annotator_user
     
-    def _get_comparison_video_format_func(self, output_dir: str, new_annotator_output_dir: str, video_urls: list):
+    def _get_comparison_video_format_func(self, output_dir: str, new_annotator_output_dir: str, video_urls: List[str]):
         """Format function for video selection dropdown with status emojis for comparison mode"""
         def format_func(video_url: str) -> str:
-            video_index = video_urls.index(video_url) + 1
+            video_index = video_urls.index(video_url)
             video_id = self.data_manager.get_video_id(video_url)
             status, _, _, _, _ = self._get_comparison_video_status(video_id, output_dir, new_annotator_output_dir)
             
