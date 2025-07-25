@@ -36,7 +36,7 @@ class CaptionInterface:
                     self._handle_existing_feedback_and_review(video_id, output_dir, args)
                     
                     # Only check permissions if feedback already exists
-                    if not self._check_permissions(video_id, output_dir):
+                    if not self._check_permissions(video_id, output_dir, args):
                         return
                 
                 self._render_precaption_step(
@@ -184,93 +184,7 @@ class CaptionInterface:
                     st.write(f"##### Previous Final Caption")
                     st.write(prev_feedback.get("final_caption", "No previous final caption found."))
     
-    def _render_initial_review_interface(self, video_id: str, output_dir: str, current_user: str):
-        """Render interface for initial review"""
-        st.write("##### Reviewer Status")
-        st.write(f"You are **{current_user}**. You can review (double check) this caption.")
-        
-        if not self._can_reviewer_redo(video_id, output_dir, current_user):
-            st.error("You cannot review this caption because you are the annotator.")
-        else:
-            review_col1, review_col2 = st.columns(2)
-            with review_col1:
-                if st.button("⚠️ Reject and Redo", help="Reject the current caption and create a new version"):
-                    self._handle_rejection(video_id, output_dir, current_user)
-            with review_col2:
-                if st.button("Approve", help="Mark the caption as correct"):
-                    self._handle_approval(video_id, output_dir, current_user)
-    
-    def _render_existing_review_interface(self, video_id: str, output_dir: str, current_user: str, 
-                                        reviewer_data: Dict[str, Any], args: Any):
-        """Render interface for existing review"""
-        is_same_reviewer = reviewer_data.get("reviewer_name") == current_user
-        is_approved = reviewer_data.get("reviewer_double_check", False)
-        
-        st.write("##### Reviewer Status")
-        if is_same_reviewer:
-            status = "approved" if is_approved else "rejected"
-            st.write(f"You are **{current_user}**. You already reviewed the caption and {status} it.")
-        else:
-            other_reviewer = reviewer_data.get("reviewer_name")
-            status = "approved" if is_approved else "rejected"
-            st.write(f"You are **{current_user}**. **{other_reviewer}** already reviewed the caption and {status} it.")
-        
-        st.write("##### Review Controls")
-        if is_approved:
-            self._render_approved_review_controls(video_id, output_dir, current_user)
-        else:
-            self._render_rejected_review_controls(video_id, output_dir, current_user, reviewer_data, args)
-    
-    def _render_approved_review_controls(self, video_id: str, output_dir: str, current_user: str):
-        """Render controls for approved reviews"""
-        if not self._can_reviewer_redo(video_id, output_dir, current_user):
-            st.error("You cannot review this caption because you are the annotator.")
-            return
-        
-        st.write("This caption is approved. You can still reject by clicking the button below.")
-        if st.button("⚠️ Reject and Redo", help="Reject the current caption and create a new version", 
-                    key="reject_and_redo_approved"):
-            self._handle_rejection(video_id, output_dir, current_user)
-    
-    def _render_rejected_review_controls(self, video_id: str, output_dir: str, current_user: str, 
-                                       reviewer_data: Dict[str, Any], args: Any):
-        """Render controls for rejected reviews"""
-        if not self._can_reviewer_redo(video_id, output_dir, current_user):
-            st.error("You cannot review this caption because you are the annotator.")
-            self._display_rejection_differences(video_id, output_dir, reviewer_data, args)
-            return
-        
-        st.write("This caption is rejected. You can either approve it or redo it.")
-        review_col1, review_col2 = st.columns(2)
-        with review_col1:
-            st.button("Already Rejected", disabled=True, help="Current status: Rejected")
-        with review_col2:
-            if st.button("⚠️ Approve (revert to the annotator's caption below)", 
-                        help="Mark the caption as correct"):
-                self._handle_revert_approval(video_id, output_dir, current_user)
-        
-        # Print the previous final caption
-        prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
-        st.write("##### Previous Final Caption")
-        st.write(prev_feedback.get("final_caption", "No previous final caption found."))
-    
-    def _display_rejection_differences(self, video_id: str, output_dir: str, 
-                                     reviewer_data: Dict[str, Any], args: Any):
-        """Display differences when caption is rejected"""
-        prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
-        feedback_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
-        
-        # Import here to avoid circular imports
-        from caption.interfaces.review_interface import ReviewInterface
-        review_interface = ReviewInterface(self.data_manager)
-        review_interface.display_feedback_differences(
-            prev_feedback=prev_feedback,
-            feedback_data=feedback_data,
-            diff_prompt=args.diff_prompt if args else None,
-            reviewer_data=reviewer_data
-        )
-    
-    def _check_permissions(self, video_id: str, output_dir: str) -> bool:
+    def _check_permissions(self, video_id: str, output_dir: str, args: Any) -> bool:
         """Check if user has permissions to proceed (only called when feedback already exists)"""
         annotator, reviewer = self.data_manager.get_annotator_and_reviewer(video_id, output_dir)
         reviewer_data = self.data_manager.load_data(video_id, output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
@@ -314,6 +228,38 @@ class CaptionInterface:
         # If reviewer data exists but not approved, allow proceeding (caption was rejected)
         return True
     
+    def _render_regrade_request_interface(self, video_id: str, output_dir: str, current_user: str, args: Any):
+        """Render the regrade request interface"""
+        
+        with st.expander("📧 Request Regrade", expanded=False):
+            st.write("**Explain why you believe the rejection was incorrect:**")
+            st.write("This will send an email to the reviewer and meta-reviewer for reconsideration.")
+            
+            regrade_reason = st.text_area(
+                "Your reason for requesting a regrade:",
+                placeholder="Please explain why you think your original work was better than the reviewer's changes. Be specific about which aspects you disagree with and why.",
+                height=150,
+                key=f"regrade_reason_{video_id}"
+            )
+            
+            if st.button("Generate Regrade Request Email", key=f"generate_regrade_{video_id}"):
+                if regrade_reason.strip():
+                    email_template = self._generate_regrade_email_template(
+                        video_id, output_dir, current_user, regrade_reason, args
+                    )
+                    
+                    st.subheader("📧 Email Template (Copy and Paste)")
+                    st.info("Copy the email template below and paste it into your email client.")
+                    st.text_area(
+                        "Email Template:",
+                        value=email_template,
+                        height=500,
+                        key=f"email_template_{video_id}"
+                    )
+                    st.success("✅ Email template generated! Copy the text above and send it from your email client.")
+                else:
+                    st.warning("Please provide a reason for the regrade request.")
+
     def _render_precaption_step(self, video_id: str, output_dir: str, caption_program: Any,
                                video_data_dict: Dict[str, Any], selected_video: str,
                                selected_config: str, config_dict: Dict[str, Any], args: Any):

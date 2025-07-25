@@ -2,11 +2,15 @@
 import os
 import json
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
 from typing import Dict, List, Tuple, Any, Optional
 from datetime import datetime
 from pathlib import Path
 import argparse
+import time
+import random
 
 from caption.config import get_config
 from caption.core.data_manager import DataManager
@@ -21,17 +25,61 @@ class GoogleSheetExporter:
         Initialize the exporter with Google Sheets credentials
         
         Args:
-            credentials_file: Path to Google Service Account JSON credentials
+            credentials_file: Path to Google OAuth JSON credentials
             folder_path: Caption folder path
             root_path: Project root path
         """
         self.data_manager = DataManager(folder_path, root_path)
         
-        # Setup Google Sheets authentication
-        scope = ['https://spreadsheets.google.com/feeds',
-                'https://www.googleapis.com/auth/drive']
-        self.creds = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, scope)
-        self.client = gspread.authorize(self.creds)
+        # Setup Google Sheets authentication with OAuth
+        SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
+                 'https://www.googleapis.com/auth/drive']
+        
+        creds = None
+        token_file = credentials_file.replace('.json', '_token.json')
+        
+        # Load existing token if it exists
+        if os.path.exists(token_file):
+            creds = Credentials.from_authorized_user_file(token_file, SCOPES)
+        
+        # If there are no valid credentials, run OAuth flow
+        if not creds or not creds.valid:
+            if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+            else:
+                flow = InstalledAppFlow.from_client_secrets_file(
+                    credentials_file, SCOPES)
+                
+                # Always use manual authorization for server environments
+                flow.redirect_uri = 'http://localhost:8080'
+                auth_url, _ = flow.authorization_url(prompt='consent')
+                
+                print('='*60)
+                print('MANUAL AUTHORIZATION REQUIRED')
+                print('='*60)
+                print('1. Go to this URL in your browser:')
+                print(auth_url)
+                print('\n2. Click "Advanced" -> "Go to [App Name] (unsafe)"')
+                print('3. Authorize the application')
+                print('4. The browser will show "This site can\'t be reached" - this is expected!')
+                print('5. Copy the authorization code from the failed URL')
+                print('\n   Example URL: http://localhost:8080/?code=AUTHORIZATION_CODE&scope=...')
+                print('   Copy only the part after "code=" and before "&"')
+                print('='*60)
+                
+                auth_code = input('\nEnter the authorization code: ').strip()
+                if not auth_code:
+                    raise Exception('No authorization code provided')
+                
+                flow.fetch_token(code=auth_code)
+                creds = flow.credentials
+            
+            # Save the credentials for the next run
+            with open(token_file, 'w') as token:
+                token.write(creds.to_json())
+        
+        # Authorize gspread client
+        self.client = gspread.authorize(creds)
         
         # Load annotators and get task names
         self.annotators = load_annotators_from_files()
@@ -48,6 +96,73 @@ class GoogleSheetExporter:
             "Lighting Setup and Dynamics Caption (Raw)": "💡Lighting",
             "Lighting Effects and Dynamics Caption (Raw)": "🌟Effects",
         }
+        
+        # Track any failures during export
+        self.export_failures = []
+    
+    def _api_call_with_retry(self, func, *args, max_retries=5, **kwargs):
+        """Execute API call with rate limiting and retry logic"""
+        operation_name = kwargs.pop('operation_name', func.__name__)
+        
+        for attempt in range(max_retries):
+            try:
+                # Add delay between API calls to avoid rate limits
+                if attempt > 0:
+                    delay = min(60, (2 ** attempt) + random.uniform(0, 1))
+                    print(f"      Rate limit hit for {operation_name}, waiting {delay:.1f}s before retry {attempt + 1}/{max_retries}...")
+                    time.sleep(delay)
+                else:
+                    # Small delay even on first attempt to be gentle on API
+                    time.sleep(0.5)
+                
+                result = func(*args, **kwargs)
+                
+                # Success message after retries
+                if attempt > 0:
+                    print(f"      ✅ {operation_name} succeeded after {attempt + 1} attempts")
+                
+                return result
+                
+            except gspread.exceptions.APIError as e:
+                if "429" in str(e) or "Quota exceeded" in str(e) or "rate limit" in str(e).lower():
+                    if attempt == max_retries - 1:
+                        failure_msg = f"RATE LIMIT FAILURE: {operation_name} - Max retries reached. Data may not be synced!"
+                        print(f"      ❌ {failure_msg}")
+                        print(f"      Please wait a few minutes and run the script again.")
+                        self.export_failures.append(failure_msg)
+                        raise Exception(f"Rate limit failure for {operation_name} after {max_retries} attempts")
+                    continue
+                else:
+                    # Not a rate limit error, re-raise immediately
+                    failure_msg = f"API ERROR: {operation_name} - {str(e)}"
+                    print(f"      ❌ {failure_msg}")
+                    self.export_failures.append(failure_msg)
+                    raise
+            except gspread.exceptions.SpreadsheetNotFound:
+                # Sheet doesn't exist, re-raise immediately (don't retry)
+                raise
+            except gspread.exceptions.WorksheetNotFound:
+                # Worksheet doesn't exist, re-raise immediately (don't retry)
+                raise
+            except Exception as e:
+                # For other exceptions, only retry if it looks like a rate limit issue
+                error_str = str(e).lower()
+                if ("rate limit" in error_str or "quota" in error_str or "429" in error_str):
+                    if attempt == max_retries - 1:
+                        failure_msg = f"RATE LIMIT FAILURE: {operation_name} - Max retries reached. Data may not be synced!"
+                        print(f"      ❌ {failure_msg}")
+                        self.export_failures.append(failure_msg)
+                        raise Exception(f"Rate limit failure for {operation_name} after {max_retries} attempts")
+                    print(f"      Rate limit detected in {operation_name}: {e}")
+                    continue
+                else:
+                    # Not a rate limit error, re-raise immediately
+                    failure_msg = f"UNEXPECTED ERROR: {operation_name} - {str(e)}"
+                    print(f"      ❌ {failure_msg}")
+                    self.export_failures.append(failure_msg)
+                    raise
+        
+        raise Exception(f"{operation_name} failed after {max_retries} attempts")
         
     def export_all_sheets(self, configs_file: str, video_urls_files: List[str], 
                          output_dir: str, master_sheet_id: str):
@@ -84,16 +199,47 @@ class GoogleSheetExporter:
         )
         
         # Export master sheet
+        print("="*60)
+        print("STARTING GOOGLE SHEETS EXPORT")
+        print("="*60)
         self._export_master_sheet(master_sheet_id, annotator_stats, reviewer_stats, task_names)
         
-        # Export individual user sheets
+        # Export individual user sheets with progress tracking
+        total_users = sum(1 for stats in annotator_stats.values() if self._has_activity(stats)) + \
+                     sum(1 for stats in reviewer_stats.values() if self._has_activity(stats))
+        
+        current_user = 0
+        print(f"\nExporting individual user sheets ({total_users} total)...")
+        
         for user_name, stats in annotator_stats.items():
             if self._has_activity(stats):
+                current_user += 1
+                print(f"[{current_user}/{total_users}] Processing {user_name} Annotator...")
                 self._export_user_sheet(user_name, "Annotator", stats, task_names, master_sheet_id)
             
         for user_name, stats in reviewer_stats.items():
             if self._has_activity(stats):
+                current_user += 1
+                print(f"[{current_user}/{total_users}] Processing {user_name} Reviewer...")
                 self._export_user_sheet(user_name, "Reviewer", stats, task_names, master_sheet_id)
+        
+        print("="*60)
+        if self.export_failures:
+            print("EXPORT COMPLETED WITH SOME FAILURES!")
+            print("="*60)
+            print("❌ The following operations failed:")
+            for failure in self.export_failures:
+                print(f"   - {failure}")
+            print(f"\n⚠️  Some data may not be synced. Consider running the script again.")
+            print(f"📊 Master Sheet: https://docs.google.com/spreadsheets/d/{master_sheet_id}/edit")
+            print("="*60)
+        else:
+            print("EXPORT COMPLETED SUCCESSFULLY!")
+            print("="*60)
+            print(f"📊 Master Sheet: https://docs.google.com/spreadsheets/d/{master_sheet_id}/edit")
+            print(f"   - View all annotator and reviewer statistics")
+            print(f"   - Links to individual user sheets")
+            print("="*60)
     
     def _has_activity(self, stats: Dict) -> bool:
         """Check if user has any activity"""
@@ -335,10 +481,13 @@ class GoogleSheetExporter:
     def _export_master_sheet(self, sheet_id: str, annotator_stats: Dict, reviewer_stats: Dict, task_names: List[str]):
         """Export the master sheet with annotator and reviewer tabs"""
         try:
-            sheet = self.client.open_by_key(sheet_id)
+            sheet = self._api_call_with_retry(self.client.open_by_key, sheet_id, 
+                                            operation_name="opening master sheet")
         except:
             print(f"Error: Could not open sheet with ID {sheet_id}")
             return
+        
+        print("Exporting master sheet...")
         
         # Export Annotators tab
         self._export_master_tab(sheet, "Annotators", annotator_stats, task_names, "Annotator")
@@ -348,10 +497,15 @@ class GoogleSheetExporter:
     
     def _export_master_tab(self, sheet, tab_name: str, user_stats: Dict, task_names: List[str], role: str):
         """Export a single tab in the master sheet"""
+        print(f"  Exporting {tab_name} tab...")
+        
         try:
             worksheet = sheet.worksheet(tab_name)
-        except:
-            worksheet = sheet.add_worksheet(title=tab_name, rows=100, cols=20)
+            print(f"    Found existing {tab_name} tab")
+        except gspread.exceptions.WorksheetNotFound:
+            print(f"    Creating new {tab_name} tab...")
+            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=20, 
+                                                operation_name=f"creating {tab_name} tab")
         
         # Prepare headers
         headers = [
@@ -395,21 +549,36 @@ class GoogleSheetExporter:
                 rows.append(row)
         
         # Update the worksheet
-        worksheet.clear()
+        self._api_call_with_retry(worksheet.clear, operation_name="clearing master sheet")
         if rows:
-            worksheet.update(f'A1:{chr(65 + len(headers) - 1)}{len(rows)}', rows)
+            # Helper function to convert column number to Excel-style letter
+            def col_num_to_letter(col_num):
+                result = ""
+                while col_num > 0:
+                    col_num -= 1
+                    result = chr(col_num % 26 + ord('A')) + result
+                    col_num //= 26
+                return result
+            
+            end_col = col_num_to_letter(len(headers))
+            self._api_call_with_retry(worksheet.update, f'A1:{end_col}{len(rows)}', rows, 
+                                    operation_name=f"updating {len(rows)-1} user records")
+            print(f"    ✅ Successfully updated {len(rows)-1} users in {tab_name} tab")
     
     def _export_user_sheet(self, user_name: str, role: str, stats: Dict, task_names: List[str], master_sheet_id: str):
         """Export individual user sheet"""
         sheet_name = f"{user_name} {role}"
+        print(f"  Exporting {sheet_name} sheet...")
         
         try:
-            # Try to open existing sheet
+            # Try to open existing sheet (don't use retry logic here since failure is expected)
             sheet = self.client.open(sheet_name)
-        except:
+            print(f"    Found existing sheet: {sheet_name}")
+        except (gspread.exceptions.SpreadsheetNotFound, Exception):
             # Create new sheet
-            sheet = self.client.create(sheet_name)
-            # Share with the same permissions as master sheet (optional)
+            print(f"    Creating new sheet: {sheet_name}")
+            sheet = self._api_call_with_retry(self.client.create, sheet_name, 
+                                            operation_name=f"creating sheet '{sheet_name}'")
         
         # Export Payment tab
         self._export_user_tab(sheet, "Payment", user_name, role, stats, task_names, include_payment=True)
@@ -420,13 +589,23 @@ class GoogleSheetExporter:
     def _export_user_tab(self, sheet, tab_name: str, user_name: str, role: str, stats: Dict, 
                         task_names: List[str], include_payment: bool):
         """Export a single tab in a user sheet with multi-row headers"""
+        print(f"    Exporting {tab_name} tab...")
+        
         try:
             worksheet = sheet.worksheet(tab_name)
-        except:
-            worksheet = sheet.add_worksheet(title=tab_name, rows=100, cols=50)
+            print(f"      Found existing {tab_name} tab")
+        except gspread.exceptions.WorksheetNotFound:
+            print(f"      Creating new {tab_name} tab...")
+            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
+                                                operation_name=f"creating {tab_name} worksheet")
+        except Exception as e:
+            print(f"      Error accessing {tab_name} tab: {e}")
+            print(f"      Creating new {tab_name} tab...")
+            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
+                                                operation_name=f"creating {tab_name} worksheet")
         
         # Clear worksheet
-        worksheet.clear()
+        self._api_call_with_retry(worksheet.clear, operation_name="clearing worksheet")
         
         # Prepare multi-row headers
         if role == "Annotator":
@@ -445,13 +624,35 @@ class GoogleSheetExporter:
         
         # Update data rows
         if data_rows:
+            # Helper function to convert column number to Excel-style letter
+            def col_num_to_letter(col_num):
+                result = ""
+                while col_num > 0:
+                    col_num -= 1
+                    result = chr(col_num % 26 + ord('A')) + result
+                    col_num //= 26
+                return result
+            
             start_row = 3
             end_row = start_row + len(data_rows) - 1
-            end_col = chr(65 + len(data_rows[0]) - 1)
-            worksheet.update(f'A{start_row}:{end_col}{end_row}', data_rows)
+            end_col = col_num_to_letter(len(data_rows[0]))
+            self._api_call_with_retry(worksheet.update, f'A{start_row}:{end_col}{end_row}', data_rows, 
+                                    operation_name=f"updating {len(data_rows)} data rows")
+            print(f"      ✅ Successfully updated {len(data_rows)} rows in {tab_name} tab")
+        else:
+            print(f"      ℹ️  No data to update in {tab_name} tab")
     
     def _create_annotator_headers(self, worksheet, task_names: List[str], include_payment: bool):
         """Create multi-row headers for annotator sheets"""
+        # Helper function to convert column number to Excel-style letter
+        def col_num_to_letter(col_num):
+            result = ""
+            while col_num > 0:
+                col_num -= 1
+                result = chr(col_num % 26 + ord('A')) + result
+                col_num //= 26
+            return result
+        
         # Row 1 headers
         row1 = ["Json Sheet Name", "Completion Ratio", "", "Reviewed Ratio", "", "Last Submitted Timestamp"]
         
@@ -477,33 +678,23 @@ class GoogleSheetExporter:
         for _ in task_names:
             row2.extend(["Accuracy", "Completion", "Reviewed", "Completed", "Reviewed", "Rejected"])
         
-        # Update headers
-        worksheet.update('A1:A1', [[row1[0]]])  # Json Sheet Name
-        worksheet.update('B1:C1', [["Completion Ratio"]])
-        worksheet.update('D1:E1', [["Reviewed Ratio"]])
-        worksheet.update('F1:F1', [["Last Submitted Timestamp"]])
-        
-        start_col = 7 if include_payment else 8  # Adjust based on payment columns
-        col_offset = 3 if include_payment else 1
-        
-        # Update payment/feedback headers
-        if include_payment:
-            worksheet.update('G1:I1', [["Payment Timestamp", "Base Salary", "Bonus Salary"]])
-        else:
-            worksheet.update('G1:G1', [["Feedback to Annotator"]])
-        
-        # Update task headers with merging
-        for i, task_name in enumerate(task_names):
-            short_name = self.config_names_to_short_names.get(task_name, task_name)
-            start_col_letter = chr(65 + start_col + col_offset + i * 6)
-            end_col_letter = chr(65 + start_col + col_offset + i * 6 + 5)
-            worksheet.update(f'{start_col_letter}1:{end_col_letter}1', [[short_name, "", "", "", "", ""]])
-        
-        # Update row 2
-        worksheet.update(f'A2:{chr(65 + len(row2) - 1)}2', [row2])
+        # Update all headers at once to avoid range issues
+        if len(row1) > 0:
+            end_col = col_num_to_letter(len(row1))
+            self._api_call_with_retry(worksheet.update, f'A1:{end_col}2', [row1, row2], 
+                                    operation_name="updating headers")
     
     def _create_reviewer_headers(self, worksheet, task_names: List[str], include_payment: bool):
         """Create multi-row headers for reviewer sheets"""
+        # Helper function to convert column number to Excel-style letter
+        def col_num_to_letter(col_num):
+            result = ""
+            while col_num > 0:
+                col_num -= 1
+                result = chr(col_num % 26 + ord('A')) + result
+                col_num //= 26
+            return result
+        
         # Row 1 headers
         row1 = ["Json Sheet Name", "Completion Ratio", "Reviewed Ratio", "", "Last Submitted Timestamp"]
         
@@ -529,17 +720,11 @@ class GoogleSheetExporter:
         for _ in task_names:
             row2.extend(["Completion", "Completed"])
         
-        # Update headers (similar logic but with 2 columns per task)
-        worksheet.update('A1:A1', [[row1[0]]])
-        worksheet.update('B1:B1', [["Completion Ratio"]])
-        worksheet.update('C1:D1', [["Reviewed Ratio"]])
-        worksheet.update('E1:E1', [["Last Submitted Timestamp"]])
-        
-        # Update payment/feedback and task headers...
-        # (Similar to annotator but with 2 columns per task)
-        
-        # Update row 2
-        worksheet.update(f'A2:{chr(65 + len(row2) - 1)}2', [row2])
+        # Update all headers at once to avoid range issues
+        if len(row1) > 0:
+            end_col = col_num_to_letter(len(row1))
+            self._api_call_with_retry(worksheet.update, f'A1:{end_col}2', [row1, row2], 
+                                    operation_name="updating headers")
     
     def _create_data_row(self, video_file: str, file_stats: Dict, user_stats: Dict, 
                         task_names: List[str], role: str, include_payment: bool) -> List:
@@ -648,7 +833,7 @@ def main():
     app_config = get_config(args.config_type)
     
     # Setup paths
-    credentials_file = Path("caption/google_keys.json")
+    credentials_file = Path("caption/credentials.json")
     folder_path = Path("caption")
     root_path = Path(".")
     

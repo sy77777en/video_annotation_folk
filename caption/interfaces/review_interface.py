@@ -30,7 +30,7 @@ class ReviewInterface:
                 self._render_approved_caption(video_id, output_dir, current_user, current_file)
             else:  # rejected
                 self._render_rejected_caption(video_id, output_dir, current_user, prev_user, 
-                                            current_file, prev_file, kwargs.get('args'))
+                            current_file, prev_file, kwargs.get('args'))
     
     def _render_approved_caption(self, video_id: str, output_dir: str, current_user: str, current_file: str):
         """Render approved caption view"""
@@ -67,12 +67,12 @@ class ReviewInterface:
             st.subheader("📊 Caption Comparison")
             
             # 1. Pre-caption (always visible)
-            st.write("##### Pre-caption")
+            st.write("##### 1. Pre-caption")
             st.write(prev_data.get("pre_caption", "No pre-caption available"))
             
             # 2. Annotator's feedback and final caption (expandable)
             annotator_score = prev_data.get("initial_caption_rating_score", "N/A")
-            with st.expander(f"##### 👤 {prev_user}'s Feedback and Caption", expanded=True):
+            with st.expander(f"##### 2. 👤 {prev_user}'s Feedback and Caption", expanded=True):
                 st.write(f"**Final Feedback ({annotator_score}/5):**")
                 st.write(prev_data.get("gpt_feedback", "No GPT feedback available"))
                 
@@ -89,6 +89,13 @@ class ReviewInterface:
                 st.write("**Final Caption:**")
                 st.write(current_data.get("final_caption", "No caption available"))
             
+            # 4. Regrade Request Interface (only for original annotator)
+            logged_in_user = st.session_state.get('logged_in_user', '')
+            if logged_in_user == prev_user:  # Only original annotator can request regrade
+                st.markdown("---")
+                st.info("💬 If you believe this rejection was incorrect, you can request a regrade:")
+                self._render_regrade_request_interface(video_id, output_dir, prev_user, current_user, args)
+            
         with tab2:
             st.subheader(f"👤 {prev_user}'s Version")
             self._display_caption_expander(prev_data, prev_user, prev_data.get('timestamp', ''))
@@ -96,7 +103,121 @@ class ReviewInterface:
         with tab3:
             st.subheader(f"🔍 {current_user}'s Version")
             self._display_caption_expander(current_data, current_user, current_data.get('timestamp', ''))
+
+    def _render_regrade_request_interface(self, video_id: str, output_dir: str, annotator_name: str, reviewer_name: str, args: Any):
+        """Render the regrade request interface"""
+        
+        with st.expander("📧 Request Regrade", expanded=False):
+            st.write("**Explain why you believe the rejection was incorrect:**")
+            st.write("This will send an email to the reviewer and meta-reviewer for reconsideration.")
+            
+            regrade_reason = st.text_area(
+                "Your reason for requesting a regrade:",
+                placeholder="Please explain why you think your original work was better than the reviewer's changes. Be specific about which aspects you disagree with and why.",
+                height=150,
+                key=f"regrade_reason_{video_id}"
+            )
+            
+            if st.button("Generate Regrade Request Email", key=f"generate_regrade_{video_id}"):
+                if regrade_reason.strip():
+                    email_template = self._generate_regrade_email_template(
+                        video_id, output_dir, annotator_name, reviewer_name, regrade_reason, args
+                    )
+                    
+                    st.subheader("📧 Email Template (Copy and Paste)")
+                    st.info("Copy the email template below and paste it into your email client.")
+                    st.text_area(
+                        "Email Template:",
+                        value=email_template,
+                        height=500,
+                        key=f"email_template_{video_id}"
+                    )
+                    st.success("✅ Email template generated! Copy the text above and send it from your email client.")
+                else:
+                    st.warning("Please provide a reason for the regrade request.")
+
+    def _generate_regrade_email_template(self, video_id: str, output_dir: str, annotator_name: str, 
+                                    reviewer_name: str, regrade_reason: str, args: Any) -> str:
+        """Generate email template for regrade request"""
+        
+        # Load data
+        prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+        current_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
+        
+        # Get user info
+        from caption.core.auth import AuthManager
+        annotator_email = AuthManager.get_user_email(annotator_name) or "unknown@email.com"
+        reviewer_email = AuthManager.get_user_email(reviewer_name) or "unknown@email.com"
+        
+        # Get video info
+        video_urls = st.session_state.get("video_urls", [])
+        selected_video = None
+        video_index = "Unknown"
+        
+        # Find current video in the list
+        for i, url in enumerate(video_urls):
+            if self.data_manager.get_video_id(url) == video_id:
+                selected_video = url
+                video_index = str(i)
+                break
+        
+        video_name = selected_video.split("/")[-1] if selected_video else "Unknown Video"
+        
+        # Get sheet name - try multiple possible session state keys
+        sheet_name = "Unknown Sheet"
+        possible_keys = ["selected_portal_file", "selected_urls_file_sheet", "selected_urls_file"]
+        for key in possible_keys:
+            if key in st.session_state:
+                sheet_name = st.session_state[key]
+                if sheet_name != "Unknown Sheet":
+                    sheet_name = sheet_name.split("/")[-1]  # Get filename only
+                    break
+        
+        # Get task name
+        task_name = st.session_state.get("current_selected_config", st.session_state.get("selected_config", "Unknown Task"))
     
+        # Build email template
+        email_template = f"""To: {reviewer_email}; captionpizza@gmail.com
+Subject: Regrade Request - {video_name} - {task_name}
+
+Dear {reviewer_name} and Meta-Reviewer,
+
+I am requesting a regrade for the rejected caption below. I believe my original work was incorrectly rejected.
+
+=== VIDEO INFORMATION ===
+URL: {selected_video or 'Unknown URL'}
+Sheet: {sheet_name}
+Video: {video_index}. {video_name}
+Task: {task_name}
+
+=== PRE-CAPTION ===
+{prev_feedback.get('pre_caption', 'No pre-caption available') if prev_feedback else 'No pre-caption available'}
+
+=== MY ORIGINAL WORK ({annotator_name}) ===
+Final Feedback ({prev_feedback.get('initial_caption_rating_score', 'N/A') if prev_feedback else 'N/A'}/5):
+{prev_feedback.get('gpt_feedback', 'No feedback available') if prev_feedback else 'No feedback available'}
+
+Final Caption:
+{prev_feedback.get('final_caption', 'No caption available') if prev_feedback else 'No caption available'}
+
+=== REVIEWER'S WORK ({reviewer_name}) ===
+Final Feedback ({current_feedback.get('initial_caption_rating_score', 'N/A') if current_feedback else 'N/A'}/5):
+{current_feedback.get('gpt_feedback', 'No feedback available') if current_feedback else 'No feedback available'}
+
+Final Caption:
+{current_feedback.get('final_caption', 'No caption available') if current_feedback else 'No caption available'}
+
+=== REASON FOR REGRADE REQUEST ===
+{regrade_reason}
+
+I would appreciate your reconsideration of this rejection. Please let me know if you need any additional information.
+
+Best regards,
+{annotator_name}
+{annotator_email}"""
+    
+        return email_template
+
     def _display_caption_expander(self, data: Dict[str, Any], user: str, timestamp: str):
         """Helper function to display caption information"""
         st.write("##### Annotator")
