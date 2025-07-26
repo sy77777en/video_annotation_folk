@@ -120,45 +120,51 @@ class ReviewInterface:
                 key=f"regrade_reason_{video_id}"
             )
             
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                if st.button("📧 Generate Email Template", key=f"generate_regrade_{video_id}"):
-                    if regrade_reason.strip():
-                        email_data = self._generate_regrade_email_data(
-                            video_id, output_dir, annotator_name, reviewer_name, regrade_reason, args
-                        )
-                        
-                        st.session_state[f"email_data_{video_id}"] = email_data
-                        st.success("✅ Email template generated!")
-                        st.rerun()
-                    else:
-                        st.warning("Please provide a reason for the regrade request.")
-            
-            with col2:
-                if f"email_data_{video_id}" in st.session_state:
-                    email_data = st.session_state[f"email_data_{video_id}"]
-                    # URL encode the mailto parameters
-                    to_encoded = urllib.parse.quote(email_data['to'])
-                    subject_encoded = urllib.parse.quote(email_data['subject'])
-                    body_encoded = urllib.parse.quote(email_data['body'])
+            # Generate button
+            if st.button("📧 Generate Email Template", key=f"generate_regrade_{video_id}", use_container_width=True):
+                if regrade_reason.strip():
+                    email_data = self._generate_regrade_email_data(
+                        video_id, output_dir, annotator_name, reviewer_name, regrade_reason, args
+                    )
                     
-                    mailto_link = f"mailto:{to_encoded}?subject={subject_encoded}&body={body_encoded}"
-                    
-                    if st.link_button("🚀 Open in Email Client", mailto_link):
-                        pass  # Link button handles the action
+                    st.session_state[f"email_data_{video_id}"] = email_data
+                    st.success("✅ Email template generated!")
+                    st.rerun()
+                else:
+                    st.warning("Please provide a reason for the regrade request.")
             
+            # Email options (show only if template is generated)
+            # Email options (show only if template is generated)
+            if f"email_data_{video_id}" in st.session_state:
+                email_data = st.session_state[f"email_data_{video_id}"]
+                
+                st.markdown("**📧 Send Regrade Request:**")
+                
+                # Direct links to email services
+                col1, col2, col3 = st.columns(3)
+                
+                with col1:
+                    st.link_button("Gmail", "https://mail.google.com/mail/u/0/#inbox?compose=new", use_container_width=True)
+                
+                with col2:
+                    st.link_button("Outlook", "https://outlook.live.com/mail/0/deeplink/compose", use_container_width=True)
+                
+                with col3:
+                    st.link_button("Other Email", "https://www.google.com/search?q=email+compose", use_container_width=True)
+                
+                st.caption("↑ Click to open your email service, then copy the fields below ↓")
+
             # Show email template if generated
             if f"email_data_{video_id}" in st.session_state:
                 email_data = st.session_state[f"email_data_{video_id}"]
                 
-                st.subheader("📧 Email Template")
-                
+                # Clean, compact template (no subheaders)
                 st.text_input("To:", value=email_data['to'], key=f"email_to_{video_id}")
                 st.text_input("Subject:", value=email_data['subject'], key=f"email_subject_{video_id}")
-                st.text_area("Body:", value=email_data['body'], height=400, key=f"email_body_{video_id}")
+                st.text_area("Body:", value=email_data['body'], height=300, key=f"email_body_{video_id}")
                 
-                st.info("💡 **Copy the fields above and paste into your email client, or click 'Open in Email Client' to auto-populate.**")
+                st.success("💡 Copy the fields above and paste into your email!")
+
 
     def _generate_regrade_email_data(self, video_id: str, output_dir: str, annotator_name: str, reviewer_name: str,
                                    regrade_reason: str, args: Any) -> Dict[str, str]:
@@ -263,10 +269,10 @@ Best regards,
     def _get_sheet_name(self) -> str:
         """Get the current sheet name from session state"""
         # Debug: Print all session state keys
-        print("DEBUG: All session state keys:", list(st.session_state.keys()))
-        print("DEBUG: Login method:", st.session_state.get("login_method"))
-        print("DEBUG: Target annotator:", st.session_state.get("target_annotator"))
-        print("DEBUG: Selected sheet file:", st.session_state.get("selected_sheet_file"))
+        # print("DEBUG: All session state keys:", list(st.session_state.keys()))
+        # print("DEBUG: Login method:", st.session_state.get("login_method"))
+        # print("DEBUG: Target annotator:", st.session_state.get("target_annotator"))
+        # print("DEBUG: Selected sheet file:", st.session_state.get("selected_sheet_file"))
         
         # Check if we're in annotator mode
         if st.session_state.get("login_method") == "annotator":
@@ -277,9 +283,7 @@ Best regards,
         # Try to find stored sheet name (now properly stored from auth.py)
         if "selected_sheet_file" in st.session_state:
             sheet_file = st.session_state["selected_sheet_file"]
-            print("DEBUG: Found sheet file:", sheet_file)
             filename = os.path.basename(sheet_file)
-            print("DEBUG: Extracted filename:", filename)
             return filename  # Get just the filename
         
         # Fallback

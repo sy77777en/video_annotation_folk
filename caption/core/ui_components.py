@@ -9,7 +9,7 @@ from diff_match_patch import diff_match_patch
 
 from llm import get_llm, get_all_llms
 from caption.core.data_manager import DataManager
-
+from caption.session_state_manager import SessionStateKeyManager
 
 class UIComponents:
     """Reusable UI components for the caption system"""
@@ -100,12 +100,17 @@ class UIComponents:
     def clear_portal_state():
         """Clear portal-specific state while preserving login and navigation state"""
         # Keys to preserve across portal switches - must match original logic exactly
-        preserve_keys = {
-            'logged_in', 'logged_in_user', 'video_urls', 'login_method', 'target_annotator',
-            'selected_portal', 'file_check_passed', 'personalized_output',
-            # Preserve these core navigation keys to maintain consistency
-            'api_key', 'last_config_id', 'last_video_id', 'last_selected_video'
-        }
+        # preserve_keys = {
+        #     'logged_in', 'logged_in_user', 'video_urls', 'login_method', 'target_annotator',
+        #     'selected_portal', 'file_check_passed', 'personalized_output',
+        #     # Preserve these core navigation keys to maintain consistency
+        #     'api_key', 'last_config_id', 'last_video_id', 'last_selected_video'
+        # }
+        from caption.session_state_manager import SessionStateKeyManager
+    
+        preserve_keys = SessionStateKeyManager.get_base_preserved_keys()
+        preserve_keys.update({'selected_portal'})  # Add portal-specific keys
+    
         
         # Clear all other keys
         keys_to_clear = [k for k in st.session_state.keys() if k not in preserve_keys]
@@ -167,12 +172,14 @@ class UIComponents:
         current_index = video_urls.index(selected_video)
         current_task_index = config_names.index(selected_config)
 
+        # def reset_state_except(preserved):
+        #     """Reset state while preserving specific keys - must match original logic"""
+        #     keys_to_remove = [key for key in st.session_state if key not in preserved]
+        #     for key in keys_to_remove:
+        #         del st.session_state[key]
+        #     st.rerun()
         def reset_state_except(preserved):
-            """Reset state while preserving specific keys - must match original logic"""
-            keys_to_remove = [key for key in st.session_state if key not in preserved]
-            for key in keys_to_remove:
-                del st.session_state[key]
-            st.rerun()
+            SessionStateKeyManager.reset_state_except_preserved(preserved)
 
         # Create a single horizontal row with 5 nav buttons
         col1, col2, col3, col4, col5 = st.columns([2, 2, 2, 2, 2])

@@ -14,6 +14,8 @@ from caption.core.video_utils import VideoUtils
 from caption.core.ui_components import UIComponents
 from caption.core.caption_engine import CaptionEngine
 
+from caption.session_state_manager import SessionStateKeyManager
+
 
 def parse_args():
     """Parse command line arguments"""
@@ -224,12 +226,13 @@ class VideoAnnotationApp:
                 st.write(f"{key}: {value}")
         
         # Navigation buttons - consistent preserved keys
-        preserved_keys = [
-            'api_key', 'last_config_id', 'selected_config',
-            'last_video_id', 'last_selected_video', 'personalized_output',
-            'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user',
-            'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
-        ]
+        # preserved_keys = [
+        #     'api_key', 'last_config_id', 'selected_config',
+        #     'last_video_id', 'last_selected_video', 'personalized_output',
+        #     'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user',
+        #     'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
+        # ]
+        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_portal()
         
         self.ui.display_navigation_buttons(
             video_urls, config_names, selected_video, selected_config, 
@@ -325,12 +328,13 @@ class VideoAnnotationApp:
         self.video_utils.display_video_links(video_id, video_data_dict)
         
         # Navigation buttons for review - consistent preserved keys
-        preserved_keys = [
-            'api_key', 'last_config_id', 'selected_config_review',
-            'last_video_id', 'last_selected_video', 
-            'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 
-            'personalized_output', 'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
-        ]
+        # preserved_keys = [
+        #     'api_key', 'last_config_id', 'selected_config_review',
+        #     'last_video_id', 'last_selected_video', 
+        #     'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 
+        #     'personalized_output', 'selected_portal', 'login_method', 'target_annotator'
+        # ]
+        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_review_portal()
         
         self.ui.display_navigation_buttons(
             video_urls, config_names, selected_video, selected_config, 
@@ -361,11 +365,16 @@ class VideoAnnotationApp:
             st.session_state.last_config_id = selected_config
         elif st.session_state.last_config_id != selected_config:
             # Clear state on config change - preserve more keys to maintain consistency
-            keys_to_remove = [key for key in st.session_state 
-                             if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 
-                                          'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 
-                                          'personalized_output', 'selected_portal', 'login_method', 'target_annotator',
-                                          'selected_config', 'selected_video']]  # Keep these consistent
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_portal()
+            preserved_keys.extend(['selected_config', 'selected_video'])  # Add config-specific keys
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
+            # keys_to_remove = [key for key in st.session_state 
+            #                  if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 
+            #                               'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 
+            #                               'personalized_output', 'selected_portal', 'login_method', 'target_annotator',
+            #                               'selected_config', 'selected_video']]  # Keep these consistent
             for key in keys_to_remove:
                 del st.session_state[key]
             st.session_state.last_config_id = selected_config
@@ -378,11 +387,16 @@ class VideoAnnotationApp:
             st.session_state.last_config_id = selected_config
         elif st.session_state.last_config_id != selected_config:
             # Clear state on config change - use same logic as caption mode for consistency
-            keys_to_remove = [key for key in st.session_state 
-                             if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 
-                                          'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 
-                                          'personalized_output', 'selected_portal', 'login_method', 'target_annotator',
-                                          'selected_config_review', 'selected_video_review']]
+            # keys_to_remove = [key for key in st.session_state 
+            #                  if key not in ['api_key', 'last_config_id', 'file_check_passed', 'logged_in', 
+            #                               'video_urls', 'last_video_id', 'last_selected_video', 'logged_in_user', 
+            #                               'personalized_output', 'selected_portal', 'login_method', 'target_annotator',
+            #                               'selected_config_review', 'selected_video_review']]
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_review_portal()
+            preserved_keys.extend(['selected_config_review', 'selected_video_review'])  # Add review-specific keys
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
             for key in keys_to_remove:
                 del st.session_state[key]
             st.session_state.last_config_id = selected_config
@@ -395,12 +409,19 @@ class VideoAnnotationApp:
             st.session_state.last_video_id = video_id
             st.session_state.last_selected_video = selected_video
         elif st.session_state.last_video_id != video_id:
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_portal()
+            # Add video-change specific keys that should be preserved
+            preserved_keys.extend(['selected_config', 'selected_video', 'last_video_id', 'last_selected_video'])
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
+        
             # Clear state on video change - preserve more keys for consistency
-            keys_to_remove = [key for key in st.session_state 
-                             if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 
-                                          'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 
-                                          'logged_in_user', 'personalized_output', 'selected_portal', 'login_method', 
-                                          'target_annotator', 'selected_video']]
+            # keys_to_remove = [key for key in st.session_state 
+            #                  if key not in ['api_key', 'last_config_id', 'selected_config', 'last_video_id', 
+            #                               'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 
+            #                               'logged_in_user', 'personalized_output', 'selected_portal', 'login_method', 
+            #                               'target_annotator', 'selected_video']]
             for key in keys_to_remove:
                 del st.session_state[key]
             st.session_state.last_video_id = video_id
@@ -414,11 +435,18 @@ class VideoAnnotationApp:
             st.session_state.last_selected_video = selected_video
         elif st.session_state.last_video_id != video_id:
             # Clear state on video change - use same logic as caption mode for consistency
-            keys_to_remove = [key for key in st.session_state 
-                             if key not in ['api_key', 'last_config_id', 'selected_config_review', 'last_video_id', 
-                                          'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 
-                                          'logged_in_user', 'personalized_output', 'selected_portal', 'login_method', 
-                                          'target_annotator', 'selected_video_review']]
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_review_portal()
+            # Add review video-change specific keys that should be preserved
+            preserved_keys.extend(['selected_config_review', 'selected_video_review', 'last_video_id', 'last_selected_video'])
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
+        
+            # keys_to_remove = [key for key in st.session_state 
+            #                  if key not in ['api_key', 'last_config_id', 'selected_config_review', 'last_video_id', 
+            #                               'last_selected_video', 'file_check_passed', 'logged_in', 'video_urls', 
+            #                               'logged_in_user', 'personalized_output', 'selected_portal', 'login_method', 
+            #                               'target_annotator', 'selected_video_review']]
             for key in keys_to_remove:
                 del st.session_state[key]
             st.session_state.last_video_id = video_id

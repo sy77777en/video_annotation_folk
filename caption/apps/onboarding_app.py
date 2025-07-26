@@ -15,6 +15,7 @@ from caption.core.ui_components import UIComponents
 from caption.core.caption_engine import CaptionEngine
 from caption.interfaces.caption_interface import CaptionInterface
 from caption.interfaces.review_interface import ReviewInterface
+from caption.session_state_manager import SessionStateKeyManager
 
 
 def parse_args():
@@ -378,12 +379,13 @@ class OnboardingApp:
         self.video_utils.display_video_links(video_id, video_data_dict)
         
         # Navigation buttons - preserve onboarding-specific keys
-        preserved_keys = [
-            'api_key', 'last_config_id_caption', 'last_video_id_caption', 'last_selected_video_caption',
-            'file_check_passed_caption', 'logged_in', 'video_urls', 'logged_in_user', 
-            'selected_portal_mode', 'selected_portal_file', 'personalized_output',
-            'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
-        ]
+        # preserved_keys = [
+        #     'api_key', 'last_config_id_caption', 'last_video_id_caption', 'last_selected_video_caption',
+        #     'file_check_passed_caption', 'logged_in', 'video_urls', 'logged_in_user', 
+        #     'selected_portal_mode', 'selected_portal_file', 'personalized_output',
+        #     'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
+        # ]
+        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_mode()
         
         self.ui.display_navigation_buttons(
             video_urls, config_names, selected_video, selected_config, 
@@ -493,12 +495,13 @@ class OnboardingApp:
         self.video_utils.display_video_links(video_id, video_data_dict)
         
         # Navigation buttons
-        preserved_keys = [
-            'api_key', 'last_config_id_comparison', 'last_video_id_comparison', 'last_selected_video_comparison', 
-            'file_check_passed_comparison', 'logged_in', 'video_urls', 'logged_in_user', 
-            'selected_portal_mode', 'selected_portal_file', 'personalized_output',
-            'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
-        ]
+        # preserved_keys = [
+        #     'api_key', 'last_config_id_comparison', 'last_video_id_comparison', 'last_selected_video_comparison', 
+        #     'file_check_passed_comparison', 'logged_in', 'video_urls', 'logged_in_user', 
+        #     'selected_portal_mode', 'selected_portal_file', 'personalized_output',
+        #     'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
+        # ]
+        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_comparison_portal()
         
         self.ui.display_navigation_buttons(
             video_urls, config_names, selected_video, selected_config, 
@@ -680,11 +683,21 @@ class OnboardingApp:
     
     def _clear_mode_state(self):
         """Clear mode-specific state while preserving login and navigation state"""
-        preserve_keys = {
-            'logged_in', 'logged_in_user', 'video_urls', 'selected_portal_file',
-            'selected_portal_mode', 'file_check_passed_caption', 'file_check_passed_comparison', 
-            'personalized_output', 'selected_portal', 'login_method', 'target_annotator'
-        }
+        # preserve_keys = {
+        #     'logged_in', 'logged_in_user', 'video_urls', 'selected_portal_file',
+        #     'selected_portal_mode', 'file_check_passed_caption', 'file_check_passed_comparison', 
+        #     'personalized_output', 'selected_portal', 'login_method', 'target_annotator'
+        # }
+        from caption.session_state_manager import SessionStateKeyManager
+    
+        # Get base preserved keys
+        preserve_keys = set(SessionStateKeyManager.get_preserved_keys())
+        
+        # Add onboarding-specific keys that should always be preserved
+        preserve_keys.update({
+            'selected_portal_file', 'selected_portal_mode', 
+            'file_check_passed_caption', 'file_check_passed_comparison'
+        })
         
         keys_to_clear = [k for k in st.session_state.keys() if k not in preserve_keys]
         for key in keys_to_clear:
