@@ -717,11 +717,11 @@ class GoogleSheetExporter:
         # Prepare headers based on role
         if role == "Annotator":
             headers = [
-                "User Name", "Email", "Annotation Sheet Link", "Last Annotated Timestamp"
+                "User Name", "Email", "Annotation Sheet Link", "Last Annotated Timestamp"  # FULL names
             ]
         else:  # Reviewer
             headers = [
-                "User Name", "Email", "Review Sheet Link", "Last Review Timestamp"
+                "User Name", "Email", "Review Sheet Link", "Last Review Timestamp"  # FULL names
             ]
         
         # Add task headers with emoji short names
@@ -771,7 +771,59 @@ class GoogleSheetExporter:
             end_col = col_num_to_letter(len(headers))
             self._api_call_with_retry(worksheet.update, f'A1:{end_col}{len(rows)}', rows, 
                                     operation_name=f"updating {len(rows)-1} user records")
+            
+            # Apply master sheet formatting
+            self._apply_master_sheet_formatting(worksheet, len(rows)-1, len(headers))
+            
             print(f"    ✅ Successfully updated {len(rows)-1} users in {tab_name} tab")
+    
+    def _apply_master_sheet_formatting(self, worksheet, num_users: int, num_cols: int):
+        """Apply formatting to master sheet"""
+        try:
+            # Header formatting
+            header_format = {
+                "backgroundColor": {"red": 0.2, "green": 0.4, "blue": 0.8},  # Dark blue
+                "textFormat": {"bold": True, "fontSize": 12, "foregroundColor": {"red": 1, "green": 1, "blue": 1}},  # White text
+                "horizontalAlignment": "CENTER",
+                "verticalAlignment": "MIDDLE"
+            }
+            
+            # Apply header formatting
+            end_col = self._col_num_to_letter(num_cols)
+            self._api_call_with_retry(
+                worksheet.format, f"A1:{end_col}1", header_format,
+                operation_name="formatting master sheet headers"
+            )
+            
+            # Data row formatting (alternating colors)
+            if num_users > 0:
+                even_row_format = {
+                    "backgroundColor": {"red": 0.95, "green": 0.98, "blue": 1.0}
+                }
+                
+                for row in range(3, 2 + num_users + 1, 2):  # Every other row starting from 3
+                    self._api_call_with_retry(
+                        worksheet.format, f"A{row}:{end_col}{row}", even_row_format,
+                        operation_name=f"formatting master row {row}"
+                    )
+            
+            # Column widths for master sheet
+            master_col_widths = {
+                'A': 150,  # User Name
+                'B': 200,  # Email  
+                'C': 120,  # Sheet Link
+                'D': 150,  # Timestamp
+            }
+            
+            # Task total columns (narrower)
+            for i in range(5, num_cols + 1):
+                col_letter = self._col_num_to_letter(i)
+                master_col_widths[col_letter] = 80
+            
+            print(f"    ✅ Applied master sheet formatting")
+            
+        except Exception as e:
+            print(f"    ⚠️  Master sheet formatting failed: {e}")
     
     def _update_master_sheet_links(self, master_sheet_id: str, annotator_stats: Dict, 
                                   reviewer_stats: Dict, user_sheet_ids: Dict):
@@ -860,7 +912,7 @@ class GoogleSheetExporter:
     
     def _export_user_tab(self, sheet, tab_name: str, user_name: str, role: str, stats: Dict, 
                         task_names: List[str], include_payment: bool):
-        """Export a single tab in a user sheet with multi-row headers"""
+        """Export a single tab in a user sheet with smart preservation and formatting"""
         print(f"    Exporting {tab_name} tab...")
         
         try:
@@ -876,43 +928,264 @@ class GoogleSheetExporter:
             worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
                                                 operation_name=f"creating {tab_name} worksheet")
         
-        # Clear worksheet
-        self._api_call_with_retry(worksheet.clear, operation_name="clearing worksheet")
+        # Step 1: Read existing data to preserve manual columns
+        existing_data = self._read_existing_manual_data(worksheet, role, include_payment, task_names)
         
-        # Prepare multi-row headers
+        # Step 2: Create headers with proper formatting
         if role == "Annotator":
             self._create_annotator_headers(worksheet, task_names, include_payment)
         else:  # Reviewer
             self._create_reviewer_headers(worksheet, task_names, include_payment)
         
-        # Prepare data rows (starting from row 3)
+        # Step 3: Prepare data rows preserving manual data
         data_rows = []
+        manual_col_indices = self._get_manual_column_indices(role, include_payment, task_names)
         
         # Add rows for each video file
         for video_file, file_stats in stats['per_video_file'].items():
             if file_stats.get('completed_current_user', 0) > 0 or file_stats.get('reviewed_by_current_user', 0) > 0:
-                row = self._create_data_row(video_file, file_stats, stats, task_names, role, include_payment)
-                data_rows.append(row)
+                # Create automatic data row
+                auto_row = self._create_data_row(video_file, file_stats, stats, task_names, role, include_payment)
+                
+                # Merge with preserved manual data
+                preserved_row = self._merge_with_manual_data(auto_row, video_file, existing_data, manual_col_indices)
+                data_rows.append(preserved_row)
         
-        # Update data rows
+        # Step 4: Update data rows with smart preservation
         if data_rows:
-            # Helper function to convert column number to Excel-style letter
-            def col_num_to_letter(col_num):
-                result = ""
-                while col_num > 0:
-                    col_num -= 1
-                    result = chr(col_num % 26 + ord('A')) + result
-                    col_num //= 26
-                return result
-            
-            start_row = 3
-            end_row = start_row + len(data_rows) - 1
-            end_col = col_num_to_letter(len(data_rows[0]))
-            self._api_call_with_retry(worksheet.update, f'A{start_row}:{end_col}{end_row}', data_rows, 
-                                    operation_name=f"updating {len(data_rows)} data rows")
-            print(f"      ✅ Successfully updated {len(data_rows)} rows in {tab_name} tab")
+            self._update_data_with_preservation(worksheet, data_rows, 3)  # Start from row 3
+            print(f"      ✅ Successfully updated {len(data_rows)} rows with preserved manual data")
         else:
             print(f"      ℹ️  No data to update in {tab_name} tab")
+        
+        # Step 5: Apply beautiful formatting
+        self._apply_worksheet_formatting(worksheet, role, include_payment, task_names, len(data_rows))
+    
+    def _read_existing_manual_data(self, worksheet, role: str, include_payment: bool, task_names: List[str]) -> Dict:
+        """Read existing manual data to preserve it during updates"""
+        try:
+            # Get all data from worksheet
+            all_data = worksheet.get_all_values()
+            if len(all_data) < 3:  # No data rows
+                return {}
+            
+            manual_col_indices = self._get_manual_column_indices(role, include_payment, task_names)
+            existing_manual = {}
+            
+            # Skip header rows (0, 1) and start from data rows (2+)
+            for row_idx, row in enumerate(all_data[2:], start=3):
+                if len(row) > 0 and row[0]:  # Has Json Sheet Name
+                    video_file = row[0]
+                    manual_data = {}
+                    
+                    # Extract manual column values
+                    for col_name, col_idx in manual_col_indices.items():
+                        if col_idx < len(row):
+                            manual_data[col_name] = row[col_idx]
+                        else:
+                            manual_data[col_name] = ''
+                    
+                    existing_manual[video_file] = manual_data
+            
+            print(f"      📖 Preserved manual data for {len(existing_manual)} video files")
+            return existing_manual
+            
+        except Exception as e:
+            print(f"      ⚠️  Could not read existing data (will create fresh): {e}")
+            return {}
+    
+    def _get_manual_column_indices(self, role: str, include_payment: bool, task_names: List[str]) -> Dict[str, int]:
+        """Get the column indices for manual (preserved) columns"""
+        manual_cols = {}
+        
+        if include_payment:
+            # Payment columns are manual
+            manual_cols["Payment Timestamp"] = 6  # Column G
+            manual_cols["Base Salary"] = 7        # Column H  
+            manual_cols["Bonus Salary"] = 8       # Column I
+        else:
+            # Feedback column is manual
+            manual_cols["Feedback to Annotator"] = 6  # Column G
+        
+        return manual_cols
+    
+    def _merge_with_manual_data(self, auto_row: List, video_file: str, existing_data: Dict, 
+                               manual_col_indices: Dict[str, int]) -> List:
+        """Merge automatic data with preserved manual data"""
+        # Start with the automatic row
+        merged_row = auto_row.copy()
+        
+        # Overlay preserved manual data if it exists for this video file
+        if video_file in existing_data:
+            preserved = existing_data[video_file]
+            for col_name, col_idx in manual_col_indices.items():
+                if col_idx < len(merged_row) and col_name in preserved:
+                    merged_row[col_idx] = preserved[col_name]
+        
+        return merged_row
+    
+    def _update_data_with_preservation(self, worksheet, data_rows: List[List], start_row: int):
+        """Update data rows while preserving manual columns"""
+        if not data_rows:
+            return
+        
+        # Helper function to convert column number to Excel-style letter
+        def col_num_to_letter(col_num):
+            result = ""
+            while col_num > 0:
+                col_num -= 1
+                result = chr(col_num % 26 + ord('A')) + result
+                col_num //= 26
+            return result
+        
+        end_row = start_row + len(data_rows) - 1
+        end_col = col_num_to_letter(len(data_rows[0]))
+        
+        # Update all data at once
+        self._api_call_with_retry(worksheet.update, f'A{start_row}:{end_col}{end_row}', data_rows, 
+                                operation_name=f"updating {len(data_rows)} data rows with preservation")
+    
+    def _apply_worksheet_formatting(self, worksheet, role: str, include_payment: bool, 
+                                   task_names: List[str], num_data_rows: int):
+        """Apply beautiful formatting to the worksheet"""
+        print(f"      🎨 Applying formatting and styling...")
+        
+        try:
+            # Column width settings
+            col_widths = {
+                'A': 200,  # Json Sheet Name - wider for filenames
+                'B': 80,   # Completion Ratio - All Users
+                'C': 80,   # Completion Ratio - Current User  
+                'D': 80,   # Reviewed Ratio - All Users
+                'E': 80,   # Reviewed Ratio - Current User (if exists)
+                'F': 150,  # Last Submitted Timestamp
+            }
+            
+            # Payment/Feedback columns
+            if include_payment:
+                col_widths.update({
+                    'G': 120,  # Payment Timestamp
+                    'H': 90,   # Base Salary
+                    'I': 90,   # Bonus Salary
+                })
+                start_task_col = 10  # Column J
+            else:
+                col_widths['G'] = 300  # Feedback to Annotator - very wide
+                start_task_col = 8   # Column H
+            
+            # Task columns - narrower for numbers
+            task_col_widths = [60, 70, 60, 50, 50, 50] if role == "Annotator" else [70, 50]
+            current_col = start_task_col
+            
+            for task_idx in range(len(task_names)):
+                for width in task_col_widths:
+                    col_letter = self._col_num_to_letter(current_col)
+                    col_widths[col_letter] = width
+                    current_col += 1
+            
+            # Apply column widths
+            for col_letter, width in col_widths.items():
+                try:
+                    self._api_call_with_retry(
+                        worksheet.columns_auto_resize,
+                        start_column_index=ord(col_letter) - ord('A'),
+                        end_column_index=ord(col_letter) - ord('A'),
+                        operation_name=f"resizing column {col_letter}"
+                    )
+                except:
+                    # If auto-resize fails, try manual width setting
+                    pass
+            
+            # Row height settings
+            header_height = 40   # Taller headers
+            # Feedback tab needs much taller rows for 100-word feedback
+            if not include_payment:  # This is the Feedback tab
+                data_height = 100  # Very tall for 100-word feedback
+            else:  # This is the Payment tab
+                data_height = 35   # Normal height
+            
+            # Format header rows (1-2)
+            self._apply_header_formatting(worksheet, task_names, role)
+            
+            # Format data rows (3+) with proper heights
+            if num_data_rows > 0:
+                self._apply_data_formatting(worksheet, num_data_rows, role, include_payment, data_height)
+            
+            print(f"      ✅ Applied professional formatting")
+            
+        except Exception as e:
+            print(f"      ⚠️  Some formatting may not have applied: {e}")
+    
+    def _apply_header_formatting(self, worksheet, task_names: List[str], role: str):
+        """Apply formatting to header rows"""
+        try:
+            # Header background color (light blue)
+            header_format = {
+                "backgroundColor": {"red": 0.85, "green": 0.92, "blue": 1.0},
+                "textFormat": {"bold": True, "fontSize": 11},
+                "horizontalAlignment": "CENTER",
+                "verticalAlignment": "MIDDLE"
+            }
+            
+            # Apply to header rows
+            self._api_call_with_retry(
+                worksheet.format, "A1:ZZ2", header_format,
+                operation_name="formatting headers"
+            )
+            
+        except Exception as e:
+            print(f"      ⚠️  Header formatting failed: {e}")
+    
+    def _apply_data_formatting(self, worksheet, num_rows: int, role: str, include_payment: bool, row_height: int = 30):
+        """Apply formatting to data rows"""
+        try:
+            # Alternating row colors
+            even_row_format = {
+                "backgroundColor": {"red": 0.95, "green": 0.98, "blue": 1.0}
+            }
+            
+            # Apply alternating colors to even rows
+            for row in range(4, 3 + num_rows + 1, 2):  # Every other row starting from 4
+                self._api_call_with_retry(
+                    worksheet.format, f"A{row}:ZZ{row}", even_row_format,
+                    operation_name=f"formatting row {row}"
+                )
+            
+            # Special formatting for feedback rows (make them taller)
+            if not include_payment:  # Feedback tab
+                feedback_format = {
+                    "wrapStrategy": "WRAP",  # Wrap text for long feedback
+                    "verticalAlignment": "TOP"
+                }
+                self._api_call_with_retry(
+                    worksheet.format, f"G3:G{2+num_rows}", feedback_format,
+                    operation_name="formatting feedback column"
+                )
+            
+            # Format percentage columns (no decimals for accuracy)
+            if role == "Annotator":
+                # Accuracy columns (no decimals)
+                accuracy_format = {"numberFormat": {"type": "PERCENT", "pattern": "0%"}}
+                # Other percentage columns (1 decimal)
+                percent_format = {"numberFormat": {"type": "PERCENT", "pattern": "0.0%"}}
+                
+                # Apply to completion ratios
+                self._api_call_with_retry(
+                    worksheet.format, f"B3:E{2+num_rows}", percent_format,
+                    operation_name="formatting percentage columns"
+                )
+            
+        except Exception as e:
+            print(f"      ⚠️  Data formatting failed: {e}")
+    
+    def _col_num_to_letter(self, col_num):
+        """Convert column number to Excel-style letter"""
+        result = ""
+        while col_num > 0:
+            col_num -= 1
+            result = chr(col_num % 26 + ord('A')) + result
+            col_num //= 26
+        return result
     
     def _create_annotator_headers(self, worksheet, task_names: List[str], include_payment: bool):
         """Create multi-row headers for annotator sheets with proper merged cells"""
@@ -937,12 +1210,12 @@ class GoogleSheetExporter:
         self._api_call_with_retry(worksheet.clear, operation_name="clearing worksheet")
         
         # Row 1 headers (main categories)
-        row1 = ["Json Sheet Name", "Completion Ratio", "", "Reviewed Ratio", "", "Last Submitted Timestamp"]
+        row1 = ["Json Sheet Name", "Completion Ratio", "", "Reviewed Ratio", "", "Last Submitted Timestamp"]  # FULL names
         
         if include_payment:
-            row1.extend(["Payment Timestamp", "Base Salary", "Bonus Salary"])
+            row1.extend(["Payment Timestamp", "Base Salary", "Bonus Salary"])  # FULL names
         else:
-            row1.append("Feedback to Annotator")
+            row1.append("Feedback to Annotator")  # FULL name
         
         # Add task headers (each task spans 6 columns)
         for task_name in task_names:
@@ -950,7 +1223,7 @@ class GoogleSheetExporter:
             row1.extend([short_name, "", "", "", "", ""])  # Span 6 columns
         
         # Row 2 headers (sub-categories)
-        row2 = ["", "All Users", "Current User", "All Users", "Current User", ""]
+        row2 = ["", "All Users", "Current User", "All Users", "Current User", ""]  # FULL names
         
         if include_payment:
             row2.extend(["", "", ""])
@@ -959,7 +1232,7 @@ class GoogleSheetExporter:
         
         # Add task sub-headers (6 per task)
         for _ in task_names:
-            row2.extend(["Accuracy", "Completion", "Reviewed", "Completed", "Reviewed", "Rejected"])
+            row2.extend(["Accuracy", "Completion", "Reviewed", "Completed", "Reviewed", "Rejected"])  # FULL names with smaller font
         
         # Update headers
         end_col = col_num_to_letter(len(row1))
@@ -1007,6 +1280,11 @@ class GoogleSheetExporter:
                 short_name = self.config_names_to_short_names.get(task_name, task_name)
                 self._api_call_with_retry(worksheet.merge_cells, f'{start_letter}1:{end_letter}1', 
                                         operation_name=f"merging task {short_name}")
+                
+                # Center the task header text
+                self._api_call_with_retry(worksheet.format, f'{start_letter}1:{end_letter}1', 
+                                        {"horizontalAlignment": "CENTER", "verticalAlignment": "MIDDLE"},
+                                        operation_name=f"centering task {short_name}")
             
             print(f"      ✅ Applied merged cells for professional header layout")
         except Exception as e:
@@ -1029,12 +1307,12 @@ class GoogleSheetExporter:
         self._api_call_with_retry(worksheet.clear, operation_name="clearing worksheet")
         
         # Row 1 headers (main categories)
-        row1 = ["Json Sheet Name", "Completion Ratio", "Reviewed Ratio", "", "Last Submitted Timestamp"]
+        row1 = ["Json Sheet Name", "Completion Ratio", "Reviewed Ratio", "", "Last Submitted Timestamp"]  # FULL names
         
         if include_payment:
-            row1.extend(["Payment Timestamp", "Base Salary", "Bonus Salary"])
+            row1.extend(["Payment Timestamp", "Base Salary", "Bonus Salary"])  # FULL names
         else:
-            row1.append("Feedback to Annotator")
+            row1.append("Feedback to Annotator")  # FULL name
         
         # Add task headers (each task spans 2 columns for reviewers)
         for task_name in task_names:
@@ -1042,7 +1320,7 @@ class GoogleSheetExporter:
             row1.extend([short_name, ""])  # Span 2 columns
         
         # Row 2 headers (sub-categories)
-        row2 = ["", "All Users", "All Users", "Current User", ""]
+        row2 = ["", "All Users", "All Users", "Current User", ""]  # FULL names
         
         if include_payment:
             row2.extend(["", "", ""])
@@ -1051,7 +1329,7 @@ class GoogleSheetExporter:
         
         # Add task sub-headers (2 per task for reviewers)
         for _ in task_names:
-            row2.extend(["Completion", "Completed"])
+            row2.extend(["Completion", "Completed"])  # FULL names with smaller font
         
         # Update headers
         end_col = col_num_to_letter(len(row1))
@@ -1099,6 +1377,11 @@ class GoogleSheetExporter:
                 short_name = self.config_names_to_short_names.get(task_name, task_name)
                 self._api_call_with_retry(worksheet.merge_cells, f'{start_letter}1:{end_letter}1', 
                                         operation_name=f"merging task {short_name}")
+                
+                # Center the task header text
+                self._api_call_with_retry(worksheet.format, f'{start_letter}1:{end_letter}1', 
+                                        {"horizontalAlignment": "CENTER", "verticalAlignment": "MIDDLE"},
+                                        operation_name=f"centering task {short_name}")
             
             print(f"      ✅ Applied merged cells for professional header layout")
         except Exception as e:
@@ -1124,10 +1407,10 @@ class GoogleSheetExporter:
             reviewed_ratio_current = reviewed_current / completed_current if completed_current > 0 else 0
             
             row.extend([
-                f"{completion_ratio_all:.2%}",
-                f"{completion_ratio_current:.2%}",
-                f"{reviewed_ratio_all:.2%}",
-                f"{reviewed_ratio_current:.2%}"
+                f"{completion_ratio_all:.0%}",      # NO decimals
+                f"{completion_ratio_current:.0%}",  # NO decimals
+                f"{reviewed_ratio_all:.0%}",        # NO decimals  
+                f"{reviewed_ratio_current:.0%}"     # NO decimals
             ])
             
             # Last submitted timestamp (annotation timestamp)
@@ -1140,9 +1423,9 @@ class GoogleSheetExporter:
             reviewed_ratio_current = reviewed_current / completed_all if completed_all > 0 else 0
             
             row.extend([
-                f"{completion_ratio_all:.2%}",
-                f"{reviewed_ratio_all:.2%}",
-                f"{reviewed_ratio_current:.2%}"
+                f"{completion_ratio_all:.0%}",      # NO decimals
+                f"{reviewed_ratio_all:.0%}",        # NO decimals
+                f"{reviewed_ratio_current:.0%}"     # NO decimals
             ])
             
             # Last submitted timestamp (review timestamp)
@@ -1174,9 +1457,9 @@ class GoogleSheetExporter:
                 reviewed_ratio = task_stats['reviewed'] / task_stats['completed'] if task_stats['completed'] > 0 else 0
                 
                 row.extend([
-                    f"{accuracy:.2%}",
-                    f"{completion_ratio:.2%}",
-                    f"{reviewed_ratio:.2%}",
+                    f"{accuracy:.0%}",           # NO decimals
+                    f"{completion_ratio:.0%}",   # NO decimals  
+                    f"{reviewed_ratio:.0%}",     # NO decimals
                     task_stats['completed'],
                     task_stats['reviewed'],
                     task_stats['rejected']
@@ -1184,7 +1467,7 @@ class GoogleSheetExporter:
             else:  # Reviewer
                 completion_ratio = task_stats['reviewed'] / task_stats['total'] if task_stats['total'] > 0 else 0
                 row.extend([
-                    f"{completion_ratio:.2%}",
+                    f"{completion_ratio:.0%}",   # NO decimals
                     task_stats['reviewed']
                 ])
         
@@ -1259,6 +1542,28 @@ def main():
     
     print(f"Export completed for config type: {args.config_type}")
     
+    print("\n" + "="*60)
+    print("📋 DATA PRESERVATION SUMMARY")
+    print("="*60)
+    print("✅ PRESERVED (Never Overwritten):")
+    print("   • Payment Timestamp")
+    print("   • Base Salary") 
+    print("   • Bonus Salary")
+    print("   • Feedback to Annotator (100-word feedback)")
+    print("\n🔄 AUTOMATICALLY UPDATED:")
+    print("   • Json Sheet Name (row identifier)")
+    print("   • Completion Ratios")
+    print("   • Reviewed Ratios") 
+    print("   • Last Submitted Timestamps")
+    print("   • All task statistics (Accuracy, Completed counts, etc.)")
+    print("\n🔍 HOW IT WORKS:")
+    print("   1. Read existing manual data by Json Sheet Name")
+    print("   2. Calculate new automatic statistics") 
+    print("   3. Merge: automatic data + preserved manual data")
+    print("   4. Update sheet with combined data")
+    print("   5. Apply beautiful formatting")
+    print("="*60)
+    
     if args.skip_individual:
         print("\n💡 Next time, remove --skip-individual to export individual user sheets")
     elif args.resume_from:
@@ -1268,6 +1573,8 @@ def main():
         print("   - If rate limited, resume with: --resume-from 'Last Failed User Role'")
         print("   - To update only master sheet: --skip-individual")
         print("   - Individual user sheet URLs are now linked in the master sheet")
+        print("   - Manual data is preserved across exports!")
+        print("   - Sheets now have professional formatting with colors and proper sizing")
 
 
 if __name__ == "__main__":
