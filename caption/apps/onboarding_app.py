@@ -382,7 +382,7 @@ class OnboardingApp:
             'api_key', 'last_config_id_caption', 'last_video_id_caption', 'last_selected_video_caption',
             'file_check_passed_caption', 'logged_in', 'video_urls', 'logged_in_user', 
             'selected_portal_mode', 'selected_portal_file', 'personalized_output',
-            'selected_portal', 'login_method', 'target_annotator'
+            'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
         ]
         
         self.ui.display_navigation_buttons(
@@ -497,7 +497,7 @@ class OnboardingApp:
             'api_key', 'last_config_id_comparison', 'last_video_id_comparison', 'last_selected_video_comparison', 
             'file_check_passed_comparison', 'logged_in', 'video_urls', 'logged_in_user', 
             'selected_portal_mode', 'selected_portal_file', 'personalized_output',
-            'selected_portal', 'login_method', 'target_annotator'
+            'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
         ]
         
         self.ui.display_navigation_buttons(

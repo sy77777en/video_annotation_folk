@@ -228,7 +228,7 @@ class VideoAnnotationApp:
             'api_key', 'last_config_id', 'selected_config',
             'last_video_id', 'last_selected_video', 'personalized_output',
             'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user',
-            'selected_portal', 'login_method', 'target_annotator'
+            'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
         ]
         
         self.ui.display_navigation_buttons(
@@ -329,7 +329,7 @@ class VideoAnnotationApp:
             'api_key', 'last_config_id', 'selected_config_review',
             'last_video_id', 'last_selected_video', 
             'file_check_passed', 'logged_in', 'video_urls', 'logged_in_user', 
-            'personalized_output', 'selected_portal', 'login_method', 'target_annotator'
+            'personalized_output', 'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
         ]
         
         self.ui.display_navigation_buttons(

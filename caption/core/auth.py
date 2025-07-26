@@ -157,6 +157,7 @@ class AuthManager:
                     st.session_state.logged_in = True
                     st.session_state.logged_in_user = selected_annotator
                     st.session_state.login_method = "sheet"
+                    st.session_state.selected_sheet_file = selected_file
                     st.success(f"Login successful! Welcome, {selected_annotator}!")
                     st.rerun()
                 else:

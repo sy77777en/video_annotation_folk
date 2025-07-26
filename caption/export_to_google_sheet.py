@@ -1,61 +1,86 @@
-# caption/export_to_google_sheet.py
+#!/usr/bin/env python3
+"""
+Google Sheets Export System for Video Caption Annotation Statistics
+
+This script exports comprehensive statistics for video caption annotation and review work
+to Google Sheets, creating a master tracking sheet with links to individual user 
+performance sheets.
+
+Bug fixes included:
+- Fixed hyperlinks to show as smart chips with actual sheet URLs
+- Corrected timestamp logic to properly separate annotation vs review timestamps  
+- Fixed per-task statistics calculation to properly aggregate across all videos/tasks
+"""
+
 import os
 import json
 import gspread
+import argparse
+import time
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Tuple, Any
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
-from typing import Dict, List, Tuple, Any, Optional
-from datetime import datetime
-from pathlib import Path
-import argparse
-import time
-import random
 
-from caption.config import get_config
 from caption.core.data_manager import DataManager
 from caption.core.auth import load_annotators_from_files, APPROVED_REVIEWERS
+from caption.config import get_config
 
 
 class GoogleSheetExporter:
-    """Export caption statistics to Google Sheets"""
+    """Export caption statistics to Google Sheets with comprehensive tracking"""
     
-    def __init__(self, credentials_file: str, folder_path: Path, root_path: Path = None):
-        """
-        Initialize the exporter with Google Sheets credentials
-        
-        Args:
-            credentials_file: Path to Google OAuth JSON credentials
-            folder_path: Caption folder path
-            root_path: Project root path
-        """
+    # OAuth 2.0 scope required for Google Sheets access
+    SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+    
+    def __init__(self, credentials_file: str, folder_path: str, root_path: str):
+        """Initialize the Google Sheets exporter"""
         self.data_manager = DataManager(folder_path, root_path)
+        self._setup_google_auth(credentials_file)
         
-        # Setup Google Sheets authentication with OAuth
-        SCOPES = ['https://www.googleapis.com/auth/spreadsheets',
-                 'https://www.googleapis.com/auth/drive']
+        # Load annotators and get task names
+        self.annotators = load_annotators_from_files()
+        self.approved_reviewers = APPROVED_REVIEWERS
         
+        # Configuration mapping for short names with emojis
+        self.config_names_to_short_names = {
+            "Subject Description Caption": "🧍‍♂️Subject",
+            "Scene Composition and Dynamics Caption": "🏞️Scene", 
+            "Subject Motion and Dynamics Caption": "🏃‍♂️Motion",
+            "Spatial Framing and Dynamics Caption": "🗺️Spatial",
+            "Camera Framing and Dynamics Caption": "📷Camera",
+            "Color Composition and Dynamics Caption (Raw)": "🎨Color",
+            "Lighting Setup and Dynamics Caption (Raw)": "💡Lighting",
+            "Lighting Effects and Dynamics Caption (Raw)": "🌟Effects",
+        }
+        
+        # Track any failures during export
+        self.export_failures = []
+    
+    def _setup_google_auth(self, credentials_file: str):
+        """Setup Google authentication using OAuth 2.0"""
         creds = None
-        token_file = credentials_file.replace('.json', '_token.json')
+        token_file = 'caption/token.json'
         
-        # Load existing token if it exists
+        # Load existing token if available
         if os.path.exists(token_file):
-            creds = Credentials.from_authorized_user_file(token_file, SCOPES)
+            creds = Credentials.from_authorized_user_file(token_file, self.SCOPES)
         
-        # If there are no valid credentials, run OAuth flow
+        # If there are no (valid) credentials available, get authorization
         if not creds or not creds.valid:
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             else:
+                # Manual OAuth flow for environments without browser
                 flow = InstalledAppFlow.from_client_secrets_file(
-                    credentials_file, SCOPES)
+                    credentials_file, self.SCOPES, redirect_uri='http://localhost:8080')
                 
-                # Always use manual authorization for server environments
-                flow.redirect_uri = 'http://localhost:8080'
                 auth_url, _ = flow.authorization_url(prompt='consent')
                 
                 print('='*60)
-                print('MANUAL AUTHORIZATION REQUIRED')
+                print('GOOGLE SHEETS AUTHORIZATION REQUIRED')
                 print('='*60)
                 print('1. Go to this URL in your browser:')
                 print(auth_url)
@@ -80,25 +105,6 @@ class GoogleSheetExporter:
         
         # Authorize gspread client
         self.client = gspread.authorize(creds)
-        
-        # Load annotators and get task names
-        self.annotators = load_annotators_from_files()
-        self.approved_reviewers = APPROVED_REVIEWERS
-        
-        # Configuration mapping
-        self.config_names_to_short_names = {
-            "Subject Description Caption": "🧍‍♂️Subject",
-            "Scene Composition and Dynamics Caption": "🏞️Scene",
-            "Subject Motion and Dynamics Caption": "🏃‍♂️Motion",
-            "Spatial Framing and Dynamics Caption": "🗺️Spatial",
-            "Camera Framing and Dynamics Caption": "📷Camera",
-            "Color Composition and Dynamics Caption (Raw)": "🎨Color",
-            "Lighting Setup and Dynamics Caption (Raw)": "💡Lighting",
-            "Lighting Effects and Dynamics Caption (Raw)": "🌟Effects",
-        }
-        
-        # Track any failures during export
-        self.export_failures = []
     
     def _api_call_with_retry(self, func, *args, max_retries=5, **kwargs):
         """Execute API call with rate limiting and retry logic"""
@@ -108,48 +114,18 @@ class GoogleSheetExporter:
             try:
                 # Add delay between API calls to avoid rate limits
                 if attempt > 0:
-                    delay = min(60, (2 ** attempt) + random.uniform(0, 1))
-                    print(f"      Rate limit hit for {operation_name}, waiting {delay:.1f}s before retry {attempt + 1}/{max_retries}...")
+                    delay = min(2 ** attempt, 10)  # Exponential backoff, max 10 seconds
+                    print(f"      Retrying {operation_name} in {delay}s (attempt {attempt + 1}/{max_retries})...")
                     time.sleep(delay)
-                else:
-                    # Small delay even on first attempt to be gentle on API
-                    time.sleep(0.5)
                 
                 result = func(*args, **kwargs)
-                
-                # Success message after retries
-                if attempt > 0:
-                    print(f"      ✅ {operation_name} succeeded after {attempt + 1} attempts")
-                
                 return result
                 
-            except gspread.exceptions.APIError as e:
-                if "429" in str(e) or "Quota exceeded" in str(e) or "rate limit" in str(e).lower():
-                    if attempt == max_retries - 1:
-                        failure_msg = f"RATE LIMIT FAILURE: {operation_name} - Max retries reached. Data may not be synced!"
-                        print(f"      ❌ {failure_msg}")
-                        print(f"      Please wait a few minutes and run the script again.")
-                        self.export_failures.append(failure_msg)
-                        raise Exception(f"Rate limit failure for {operation_name} after {max_retries} attempts")
-                    continue
-                else:
-                    # Not a rate limit error, re-raise immediately
-                    failure_msg = f"API ERROR: {operation_name} - {str(e)}"
-                    print(f"      ❌ {failure_msg}")
-                    self.export_failures.append(failure_msg)
-                    raise
-            except gspread.exceptions.SpreadsheetNotFound:
-                # Sheet doesn't exist, re-raise immediately (don't retry)
-                raise
-            except gspread.exceptions.WorksheetNotFound:
-                # Worksheet doesn't exist, re-raise immediately (don't retry)
-                raise
             except Exception as e:
-                # For other exceptions, only retry if it looks like a rate limit issue
                 error_str = str(e).lower()
-                if ("rate limit" in error_str or "quota" in error_str or "429" in error_str):
+                if 'quota' in error_str or 'rate' in error_str or 'limit' in error_str:
                     if attempt == max_retries - 1:
-                        failure_msg = f"RATE LIMIT FAILURE: {operation_name} - Max retries reached. Data may not be synced!"
+                        failure_msg = f"RATE LIMIT FAILURE: {operation_name} - Data may not be synced!"
                         print(f"      ❌ {failure_msg}")
                         self.export_failures.append(failure_msg)
                         raise Exception(f"Rate limit failure for {operation_name} after {max_retries} attempts")
@@ -163,7 +139,7 @@ class GoogleSheetExporter:
                     raise
         
         raise Exception(f"{operation_name} failed after {max_retries} attempts")
-        
+    
     def export_all_sheets(self, configs_file: str, video_urls_files: List[str], 
                          output_dir: str, master_sheet_id: str):
         """
@@ -211,17 +187,26 @@ class GoogleSheetExporter:
         current_user = 0
         print(f"\nExporting individual user sheets ({total_users} total)...")
         
+        # Store sheet IDs for hyperlinks
+        user_sheet_ids = {}
+        
         for user_name, stats in annotator_stats.items():
             if self._has_activity(stats):
                 current_user += 1
                 print(f"[{current_user}/{total_users}] Processing {user_name} Annotator...")
-                self._export_user_sheet(user_name, "Annotator", stats, task_names, master_sheet_id)
+                sheet_id = self._export_user_sheet(user_name, "Annotator", stats, task_names, master_sheet_id)
+                user_sheet_ids[f"{user_name} Annotator"] = sheet_id
             
         for user_name, stats in reviewer_stats.items():
             if self._has_activity(stats):
                 current_user += 1
                 print(f"[{current_user}/{total_users}] Processing {user_name} Reviewer...")
-                self._export_user_sheet(user_name, "Reviewer", stats, task_names, master_sheet_id)
+                sheet_id = self._export_user_sheet(user_name, "Reviewer", stats, task_names, master_sheet_id)
+                user_sheet_ids[f"{user_name} Reviewer"] = sheet_id
+        
+        # Update master sheet with correct hyperlinks
+        print("\nUpdating master sheet hyperlinks...")
+        self._update_master_sheet_links(master_sheet_id, annotator_stats, reviewer_stats, user_sheet_ids)
         
         print("="*60)
         if self.export_failures:
@@ -297,7 +282,7 @@ class GoogleSheetExporter:
         for video_file, video_urls in videos_by_file.items():
             file_stats = self._calculate_file_stats(video_urls, configs, output_dir)
             
-            # Update user stats
+            # Update user stats  
             for user_name in annotator_stats:
                 if video_file not in annotator_stats[user_name]['per_video_file']:
                     annotator_stats[user_name]['per_video_file'][video_file] = {
@@ -324,16 +309,23 @@ class GoogleSheetExporter:
                 annotator_stats[user_name]['total_across_tasks']['completed'] += user_file_stats['completed_current_user']
                 annotator_stats[user_name]['total_across_tasks']['reviewed'] += user_file_stats['reviewed_current_user_work']
                 
-                # Update timestamps
+                # Update per-task stats for annotators
+                for config in configs:
+                    task_name = config["name"]
+                    task_stats = file_stats['per_task_annotators'].get(user_name, {}).get(task_name, {
+                        'completed': 0, 'reviewed': 0, 'rejected': 0, 'total': len(video_urls)
+                    })
+                    
+                    annotator_stats[user_name]['per_task'][task_name]['completed'] += task_stats['completed']
+                    annotator_stats[user_name]['per_task'][task_name]['reviewed'] += task_stats['reviewed']
+                    annotator_stats[user_name]['per_task'][task_name]['rejected'] += task_stats['rejected']
+                    annotator_stats[user_name]['per_task'][task_name]['total'] += task_stats['total']
+                
+                # Update timestamps - only annotation timestamps for annotators
                 if user_file_stats['last_annotation_timestamp']:
                     current_ts = annotator_stats[user_name]['last_annotation_timestamp']
                     if not current_ts or user_file_stats['last_annotation_timestamp'] > current_ts:
                         annotator_stats[user_name]['last_annotation_timestamp'] = user_file_stats['last_annotation_timestamp']
-                
-                if user_file_stats['last_review_timestamp']:
-                    current_ts = annotator_stats[user_name]['last_review_timestamp']
-                    if not current_ts or user_file_stats['last_review_timestamp'] > current_ts:
-                        annotator_stats[user_name]['last_review_timestamp'] = user_file_stats['last_review_timestamp']
             
             # Update reviewer stats
             for user_name in reviewer_stats:
@@ -357,7 +349,17 @@ class GoogleSheetExporter:
                 # Update global user stats
                 reviewer_stats[user_name]['total_across_tasks']['reviewed'] += user_file_stats['reviewed_by_current_user']
                 
-                # Update timestamps
+                # Update per-task stats for reviewers
+                for config in configs:
+                    task_name = config["name"]
+                    task_stats = file_stats['per_task_reviewers'].get(user_name, {}).get(task_name, {
+                        'reviewed': 0, 'total': len(video_urls)
+                    })
+                    
+                    reviewer_stats[user_name]['per_task'][task_name]['reviewed'] += task_stats['reviewed']
+                    reviewer_stats[user_name]['per_task'][task_name]['total'] += task_stats['total']
+                
+                # Update timestamps - only review timestamps for reviewers
                 if user_file_stats['last_review_timestamp']:
                     current_ts = reviewer_stats[user_name]['last_review_timestamp']
                     if not current_ts or user_file_stats['last_review_timestamp'] > current_ts:
@@ -373,7 +375,9 @@ class GoogleSheetExporter:
                 'reviewed_all_users': 0
             },
             'annotators': {},
-            'reviewers': {}
+            'reviewers': {},
+            'per_task_annotators': {},  # user -> task -> stats
+            'per_task_reviewers': {}    # user -> task -> stats
         }
         
         for video_url in video_urls:
@@ -381,6 +385,7 @@ class GoogleSheetExporter:
             
             for config in configs:
                 config_output_dir = os.path.join(self.data_manager.folder, output_dir, config["output_name"])
+                task_name = config["name"]
                 
                 # Get status and users for this video/task
                 status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
@@ -408,9 +413,17 @@ class GoogleSheetExporter:
                             'last_review_timestamp': None
                         }
                     
-                    stats['annotators'][annotator]['completed_current_user'] += 1
+                    if annotator not in stats['per_task_annotators']:
+                        stats['per_task_annotators'][annotator] = {}
+                    if task_name not in stats['per_task_annotators'][annotator]:
+                        stats['per_task_annotators'][annotator][task_name] = {
+                            'completed': 0, 'reviewed': 0, 'rejected': 0, 'total': len(video_urls)
+                        }
                     
-                    # Update timestamps
+                    stats['annotators'][annotator]['completed_current_user'] += 1
+                    stats['per_task_annotators'][annotator][task_name]['completed'] += 1
+                    
+                    # Update annotation timestamp from feedback file
                     if current_file and os.path.exists(current_file):
                         try:
                             with open(current_file, 'r') as f:
@@ -423,36 +436,33 @@ class GoogleSheetExporter:
                         except:
                             pass
                     
-                    # Check if reviewed
+                    # Check if this annotation was reviewed
                     if status in ["approved", "rejected"]:
                         stats['annotators'][annotator]['reviewed_current_user_work'] += 1
+                        stats['per_task_annotators'][annotator][task_name]['reviewed'] += 1
                         
-                        # Update review timestamp
-                        review_file = self.data_manager.get_filename(video_id, config_output_dir, 
-                                                                   self.data_manager.REVIEWER_FILE_POSTFIX)
-                        if os.path.exists(review_file):
-                            try:
-                                with open(review_file, 'r') as f:
-                                    data = json.load(f)
-                                    timestamp = data.get('review_timestamp')
-                                    if timestamp:
-                                        current_ts = stats['annotators'][annotator]['last_review_timestamp']
-                                        if not current_ts or timestamp > current_ts:
-                                            stats['annotators'][annotator]['last_review_timestamp'] = timestamp
-                            except:
-                                pass
+                        if status == "rejected":
+                            stats['per_task_annotators'][annotator][task_name]['rejected'] += 1
                 
                 # Update reviewer stats
-                if reviewer:
+                if reviewer and status in ["approved", "rejected"]:
                     if reviewer not in stats['reviewers']:
                         stats['reviewers'][reviewer] = {
                             'reviewed_by_current_user': 0,
                             'last_review_timestamp': None
                         }
                     
-                    stats['reviewers'][reviewer]['reviewed_by_current_user'] += 1
+                    if reviewer not in stats['per_task_reviewers']:
+                        stats['per_task_reviewers'][reviewer] = {}
+                    if task_name not in stats['per_task_reviewers'][reviewer]:
+                        stats['per_task_reviewers'][reviewer][task_name] = {
+                            'reviewed': 0, 'total': len(video_urls)
+                        }
                     
-                    # Update review timestamp
+                    stats['reviewers'][reviewer]['reviewed_by_current_user'] += 1
+                    stats['per_task_reviewers'][reviewer][task_name]['reviewed'] += 1
+                    
+                    # Update review timestamp from review file
                     review_file = self.data_manager.get_filename(video_id, config_output_dir, 
                                                                self.data_manager.REVIEWER_FILE_POSTFIX)
                     if os.path.exists(review_file):
@@ -522,12 +532,9 @@ class GoogleSheetExporter:
         rows = [headers]
         for user_name, stats in user_stats.items():
             if self._has_activity(stats):
-                # Create links to individual sheets
-                annotation_sheet_name = f"{user_name} Annotator"
-                review_sheet_name = f"{user_name} Reviewer"
-                
-                annotation_link = f'=HYPERLINK("https://docs.google.com/spreadsheets/", "🔗")'
-                review_link = f'=HYPERLINK("https://docs.google.com/spreadsheets/", "🔗")'
+                # Create placeholder links (will be updated later with actual URLs)
+                annotation_link = "🔗 Link"
+                review_link = "🔗 Link"
                 
                 # Format timestamps
                 last_annotation = self._format_timestamp(stats.get('last_annotation_timestamp'))
@@ -565,8 +572,92 @@ class GoogleSheetExporter:
                                     operation_name=f"updating {len(rows)-1} user records")
             print(f"    ✅ Successfully updated {len(rows)-1} users in {tab_name} tab")
     
-    def _export_user_sheet(self, user_name: str, role: str, stats: Dict, task_names: List[str], master_sheet_id: str):
-        """Export individual user sheet"""
+    def _update_master_sheet_links(self, master_sheet_id: str, annotator_stats: Dict, 
+                                  reviewer_stats: Dict, user_sheet_ids: Dict):
+        """Update master sheet with correct hyperlinks to user sheets"""
+        try:
+            sheet = self._api_call_with_retry(self.client.open_by_key, master_sheet_id, 
+                                            operation_name="opening master sheet for link updates")
+        except:
+            print(f"Error: Could not open master sheet for link updates")
+            return
+        
+        # Update Annotators tab links
+        try:
+            worksheet = sheet.worksheet("Annotators")
+            row_num = 2  # Start from row 2 (after headers)
+            
+            for user_name, stats in annotator_stats.items():
+                if self._has_activity(stats):
+                    annotation_sheet_name = f"{user_name} Annotator"
+                    review_sheet_name = f"{user_name} Reviewer"
+                    
+                    # Create hyperlink formulas with actual sheet URLs
+                    annotation_sheet_id = user_sheet_ids.get(annotation_sheet_name)
+                    review_sheet_id = user_sheet_ids.get(review_sheet_name)
+                    
+                    if annotation_sheet_id:
+                        annotation_url = f"https://docs.google.com/spreadsheets/d/{annotation_sheet_id}/edit"
+                        annotation_link = f'=HYPERLINK("{annotation_url}","🔗")'
+                    else:
+                        annotation_link = "🔗 Link"
+                    
+                    if review_sheet_id:
+                        review_url = f"https://docs.google.com/spreadsheets/d/{review_sheet_id}/edit"
+                        review_link = f'=HYPERLINK("{review_url}","🔗")'
+                    else:
+                        review_link = "🔗 Link"
+                    
+                    # Update the links in columns C and E
+                    self._api_call_with_retry(worksheet.update, f'C{row_num}', [[annotation_link]], 
+                                            operation_name=f"updating annotation link for {user_name}")
+                    self._api_call_with_retry(worksheet.update, f'E{row_num}', [[review_link]], 
+                                            operation_name=f"updating review link for {user_name}")
+                    row_num += 1
+            
+            print("    ✅ Updated Annotators tab links")
+        except Exception as e:
+            print(f"    ❌ Failed to update Annotators tab links: {e}")
+        
+        # Update Reviewers tab links
+        try:
+            worksheet = sheet.worksheet("Reviewers")
+            row_num = 2  # Start from row 2 (after headers)
+            
+            for user_name, stats in reviewer_stats.items():
+                if self._has_activity(stats):
+                    annotation_sheet_name = f"{user_name} Annotator"
+                    review_sheet_name = f"{user_name} Reviewer"
+                    
+                    # Create hyperlink formulas with actual sheet URLs
+                    annotation_sheet_id = user_sheet_ids.get(annotation_sheet_name)
+                    review_sheet_id = user_sheet_ids.get(review_sheet_name)
+                    
+                    if annotation_sheet_id:
+                        annotation_url = f"https://docs.google.com/spreadsheets/d/{annotation_sheet_id}/edit"
+                        annotation_link = f'=HYPERLINK("{annotation_url}","🔗")'
+                    else:
+                        annotation_link = "🔗 Link"
+                    
+                    if review_sheet_id:
+                        review_url = f"https://docs.google.com/spreadsheets/d/{review_sheet_id}/edit"
+                        review_link = f'=HYPERLINK("{review_url}","🔗")'
+                    else:
+                        review_link = "🔗 Link"
+                    
+                    # Update the links in columns C and E
+                    self._api_call_with_retry(worksheet.update, f'C{row_num}', [[annotation_link]], 
+                                            operation_name=f"updating annotation link for {user_name}")
+                    self._api_call_with_retry(worksheet.update, f'E{row_num}', [[review_link]], 
+                                            operation_name=f"updating review link for {user_name}")
+                    row_num += 1
+            
+            print("    ✅ Updated Reviewers tab links")
+        except Exception as e:
+            print(f"    ❌ Failed to update Reviewers tab links: {e}")
+    
+    def _export_user_sheet(self, user_name: str, role: str, stats: Dict, task_names: List[str], master_sheet_id: str) -> str:
+        """Export individual user sheet and return sheet ID"""
         sheet_name = f"{user_name} {role}"
         print(f"  Exporting {sheet_name} sheet...")
         
@@ -585,6 +676,8 @@ class GoogleSheetExporter:
         
         # Export Feedback tab
         self._export_user_tab(sheet, "Feedback", user_name, role, stats, task_names, include_payment=False)
+        
+        return sheet.id
     
     def _export_user_tab(self, sheet, tab_name: str, user_name: str, role: str, stats: Dict, 
                         task_names: List[str], include_payment: bool):

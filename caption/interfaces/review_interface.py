@@ -1,5 +1,7 @@
 # caption/interfaces/review_interface.py
 import streamlit as st
+import os
+import urllib.parse
 from typing import Dict, Any, List, Optional
 from pathlib import Path
 
@@ -109,7 +111,7 @@ class ReviewInterface:
         
         with st.expander("📧 Request Regrade", expanded=False):
             st.write("**Explain why you believe the rejection was incorrect:**")
-            st.write("This will send an email to the reviewer and meta-reviewer for reconsideration.")
+            st.write("This will generate an email template that you can send to the reviewer and meta-reviewer.")
             
             regrade_reason = st.text_area(
                 "Your reason for requesting a regrade:",
@@ -118,27 +120,49 @@ class ReviewInterface:
                 key=f"regrade_reason_{video_id}"
             )
             
-            if st.button("Generate Regrade Request Email", key=f"generate_regrade_{video_id}"):
-                if regrade_reason.strip():
-                    email_template = self._generate_regrade_email_template(
-                        video_id, output_dir, annotator_name, reviewer_name, regrade_reason, args
-                    )
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                if st.button("📧 Generate Email Template", key=f"generate_regrade_{video_id}"):
+                    if regrade_reason.strip():
+                        email_data = self._generate_regrade_email_data(
+                            video_id, output_dir, annotator_name, reviewer_name, regrade_reason, args
+                        )
+                        
+                        st.session_state[f"email_data_{video_id}"] = email_data
+                        st.success("✅ Email template generated!")
+                        st.rerun()
+                    else:
+                        st.warning("Please provide a reason for the regrade request.")
+            
+            with col2:
+                if f"email_data_{video_id}" in st.session_state:
+                    email_data = st.session_state[f"email_data_{video_id}"]
+                    # URL encode the mailto parameters
+                    to_encoded = urllib.parse.quote(email_data['to'])
+                    subject_encoded = urllib.parse.quote(email_data['subject'])
+                    body_encoded = urllib.parse.quote(email_data['body'])
                     
-                    st.subheader("📧 Email Template (Copy and Paste)")
-                    st.info("Copy the email template below and paste it into your email client.")
-                    st.text_area(
-                        "Email Template:",
-                        value=email_template,
-                        height=500,
-                        key=f"email_template_{video_id}"
-                    )
-                    st.success("✅ Email template generated! Copy the text above and send it from your email client.")
-                else:
-                    st.warning("Please provide a reason for the regrade request.")
+                    mailto_link = f"mailto:{to_encoded}?subject={subject_encoded}&body={body_encoded}"
+                    
+                    if st.link_button("🚀 Open in Email Client", mailto_link):
+                        pass  # Link button handles the action
+            
+            # Show email template if generated
+            if f"email_data_{video_id}" in st.session_state:
+                email_data = st.session_state[f"email_data_{video_id}"]
+                
+                st.subheader("📧 Email Template")
+                
+                st.text_input("To:", value=email_data['to'], key=f"email_to_{video_id}")
+                st.text_input("Subject:", value=email_data['subject'], key=f"email_subject_{video_id}")
+                st.text_area("Body:", value=email_data['body'], height=400, key=f"email_body_{video_id}")
+                
+                st.info("💡 **Copy the fields above and paste into your email client, or click 'Open in Email Client' to auto-populate.**")
 
-    def _generate_regrade_email_template(self, video_id: str, output_dir: str, annotator_name: str, 
-                                    reviewer_name: str, regrade_reason: str, args: Any) -> str:
-        """Generate email template for regrade request"""
+    def _generate_regrade_email_data(self, video_id: str, output_dir: str, annotator_name: str, reviewer_name: str,
+                                   regrade_reason: str, args: Any) -> Dict[str, str]:
+        """Generate email data for regrade request"""
         
         # Load data
         prev_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
@@ -163,29 +187,25 @@ class ReviewInterface:
         
         video_name = selected_video.split("/")[-1] if selected_video else "Unknown Video"
         
-        # Get sheet name - try multiple possible session state keys
-        sheet_name = "Unknown Sheet"
-        possible_keys = ["selected_portal_file", "selected_urls_file_sheet", "selected_urls_file"]
-        for key in possible_keys:
-            if key in st.session_state:
-                sheet_name = st.session_state[key]
-                if sheet_name != "Unknown Sheet":
-                    sheet_name = sheet_name.split("/")[-1]  # Get filename only
-                    break
+        # Convert HuggingFace download URL to viewable URL
+        viewable_video_url = self._convert_to_viewable_url(selected_video)
         
-        # Get task name
-        task_name = st.session_state.get("current_selected_config", st.session_state.get("selected_config", "Unknown Task"))
-    
-        # Build email template
-        email_template = f"""To: {reviewer_email}; captionpizza@gmail.com
-Subject: Regrade Request - {video_name} - {task_name}
-
-Dear {reviewer_name} and Meta-Reviewer,
+        # Get sheet name using helper method
+        sheet_name = self._get_sheet_name()
+        
+        # Get task name using helper method
+        task_name = self._get_task_name()
+        
+        # Build email components
+        to_field = f"{reviewer_email}; captionpizza@gmail.com"
+        subject_field = f"Regrade Request - {video_name} - {task_name}"
+        
+        body_field = f"""Dear {reviewer_name} and Meta-Reviewer,
 
 I am requesting a regrade for the rejected caption below. I believe my original work was incorrectly rejected.
 
 === VIDEO INFORMATION ===
-URL: {selected_video or 'Unknown URL'}
+URL: {viewable_video_url}
 Sheet: {sheet_name}
 Video: {video_index}. {video_name}
 Task: {task_name}
@@ -215,8 +235,71 @@ I would appreciate your reconsideration of this rejection. Please let me know if
 Best regards,
 {annotator_name}
 {annotator_email}"""
-    
-        return email_template
+        
+        return {
+            "to": to_field,
+            "subject": subject_field,
+            "body": body_field
+        }
+
+    def _convert_to_viewable_url(self, url: str) -> str:
+        """Convert HuggingFace download URL to viewable URL"""
+        if not url:
+            return "Unknown URL"
+        
+        # Check if it's a HuggingFace dataset URL
+        if "huggingface.co/datasets" in url and "/resolve/main/" in url:
+            # Convert from: https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/-2uIa-XMJC0.3.0.mp4
+            # To: https://huggingface.co/datasets/zhiqiulin/video_captioning/viewer/main?path=-2uIa-XMJC0.3.0.mp4
+            parts = url.split("/resolve/main/")
+            if len(parts) == 2:
+                base_url = parts[0]
+                filename = parts[1]
+                return f"{base_url}/viewer/main?path={filename}"
+        
+        # Return original URL if not HuggingFace or different format
+        return url
+
+    def _get_sheet_name(self) -> str:
+        """Get the current sheet name from session state"""
+        # Debug: Print all session state keys
+        print("DEBUG: All session state keys:", list(st.session_state.keys()))
+        print("DEBUG: Login method:", st.session_state.get("login_method"))
+        print("DEBUG: Target annotator:", st.session_state.get("target_annotator"))
+        print("DEBUG: Selected sheet file:", st.session_state.get("selected_sheet_file"))
+        
+        # Check if we're in annotator mode
+        if st.session_state.get("login_method") == "annotator":
+            target_annotator = st.session_state.get("target_annotator", "")
+            if target_annotator:
+                return f"Videos by {target_annotator}"
+        
+        # Try to find stored sheet name (now properly stored from auth.py)
+        if "selected_sheet_file" in st.session_state:
+            sheet_file = st.session_state["selected_sheet_file"]
+            print("DEBUG: Found sheet file:", sheet_file)
+            filename = os.path.basename(sheet_file)
+            print("DEBUG: Extracted filename:", filename)
+            return filename  # Get just the filename
+        
+        # Fallback
+        print("DEBUG: Using fallback sheet name")
+        return "Current Video Sheet"
+
+    def _get_task_name(self) -> str:
+        """Get the current task name from session state"""
+        # Check which portal we're in and use the appropriate key
+        if "selected_config_review" in st.session_state:
+            # We're in review portal
+            return st.session_state["selected_config_review"]
+        elif "selected_config" in st.session_state:
+            # We're in caption portal  
+            return st.session_state["selected_config"]
+        elif "last_config_id" in st.session_state:
+            # Fallback to last config
+            return st.session_state["last_config_id"]
+        
+        return "Current Task"
 
     def _display_caption_expander(self, data: Dict[str, Any], user: str, timestamp: str):
         """Helper function to display caption information"""
