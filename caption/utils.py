@@ -44,7 +44,7 @@ def extract_frames(video_path: str, frame_numbers: List[int]) -> List[np.ndarray
     if not cap.isOpened():
         try:
             local_video_path = "video.mp4"
-            urllib.request.urlretrieve(video_url, local_video_path)
+            urllib.request.urlretrieve(video_path, local_video_path)
             cap = cv2.VideoCapture(local_video_path)
         except:
             raise ValueError(f"Error: Unable to open video {video_path}")
