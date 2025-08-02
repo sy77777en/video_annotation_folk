@@ -220,14 +220,97 @@ class GoogleSheetExporter:
         
         raise Exception(f"{operation_name} failed after {max_retries} attempts")
     
+    # def _manage_sheet_permissions(self, sheet_id: str, sheet_name: str):
+    #     """Manage permissions for a sheet - give edit access to approved emails, commenter to others"""
+    #     print(f"      🔐 Managing permissions for {sheet_name}...")
+        
+    #     try:
+    #         # Get current permissions - FIXED: Use lambda to properly execute the API call
+    #         current_permissions = self._api_call_with_retry(
+    #             lambda: self.drive_service.permissions().list(fileId=sheet_id).execute(),
+    #             operation_name=f"listing permissions for {sheet_name}"
+    #         )
+            
+    #         # Track emails that currently have access
+    #         current_editors = set()
+    #         current_commenters = set()
+    #         permissions_to_update = []
+    #         permissions_to_delete = []
+            
+    #         # Analyze current permissions
+    #         for permission in current_permissions.get('permissions', []):
+    #             email = permission.get('emailAddress')
+    #             role = permission.get('role')
+    #             perm_id = permission.get('id')
+    #             perm_type = permission.get('type')
+                
+    #             # Skip owner permissions and non-user permissions
+    #             if role == 'owner' or perm_type != 'user' or not email:
+    #                 continue
+                
+    #             if email in self.EDITOR_EMAILS:
+    #                 if role != 'writer':
+    #                     # Should be editor but isn't - update
+    #                     permissions_to_update.append((perm_id, 'writer', email))
+    #                 current_editors.add(email)
+    #             else:
+    #                 if role == 'writer':
+    #                     # Should be commenter but is editor - update  
+    #                     permissions_to_update.append((perm_id, 'commenter', email))
+    #                 current_commenters.add(email)
+            
+    #         # Add missing editor permissions
+    #         for email in self.EDITOR_EMAILS:
+    #             if email not in current_editors and email not in current_commenters:
+    #                 # Add new editor permission - FIXED: Use lambda to properly execute the API call
+    #                 try:
+    #                     self._api_call_with_retry(
+    #                         lambda: self.drive_service.permissions().create(
+    #                             fileId=sheet_id,
+    #                             body={
+    #                                 'type': 'user',
+    #                                 'role': 'writer', 
+    #                                 'emailAddress': email
+    #                             }
+    #                         ).execute(),
+    #                         operation_name=f"adding editor permission for {email}"
+    #                     )
+    #                     print(f"        ✅ Added editor access for {email}")
+    #                 except Exception as e:
+    #                     print(f"        ⚠️  Could not add editor access for {email}: {e}")
+            
+    #         # Update existing permissions - FIXED: Use lambda to properly execute the API call
+    #         for perm_id, new_role, email in permissions_to_update:
+    #             try:
+    #                 self._api_call_with_retry(
+    #                     lambda: self.drive_service.permissions().update(
+    #                         fileId=sheet_id,
+    #                         permissionId=perm_id,
+    #                         body={'role': new_role}
+    #                     ).execute(),
+    #                     operation_name=f"updating permission for {email} to {new_role}"
+    #                 )
+    #                 action = "editor" if new_role == 'writer' else "commenter"
+    #                 print(f"        ✅ Updated {email} to {action} access")
+    #             except Exception as e:
+    #                 print(f"        ⚠️  Could not update permission for {email}: {e}")
+            
+    #         print(f"      ✅ Permissions managed for {sheet_name}")
+            
+    #     except Exception as e:
+    #         print(f"      ⚠️  Could not manage permissions for {sheet_name}: {e}")
+    
     def _manage_sheet_permissions(self, sheet_id: str, sheet_name: str):
         """Manage permissions for a sheet - give edit access to approved emails, commenter to others"""
         print(f"      🔐 Managing permissions for {sheet_name}...")
         
         try:
-            # Get current permissions - FIXED: Use lambda to properly execute the API call
+            # Get current permissions with email addresses - FIXED: Request email field explicitly
             current_permissions = self._api_call_with_retry(
-                lambda: self.drive_service.permissions().list(fileId=sheet_id).execute(),
+                lambda: self.drive_service.permissions().list(
+                    fileId=sheet_id,
+                    fields="permissions(id,role,type,emailAddress,displayName)"
+                ).execute(),
                 operation_name=f"listing permissions for {sheet_name}"
             )
             
@@ -237,56 +320,147 @@ class GoogleSheetExporter:
             permissions_to_update = []
             permissions_to_delete = []
             
+            # DEBUG: Print current permissions for troubleshooting
+            print(f"      🔍 Found {len(current_permissions.get('permissions', []))} existing permissions")
+            
             # Analyze current permissions
-            for permission in current_permissions.get('permissions', []):
+            for i, permission in enumerate(current_permissions.get('permissions', []), 1):
                 email = permission.get('emailAddress')
                 role = permission.get('role')
                 perm_id = permission.get('id')
                 perm_type = permission.get('type')
+                display_name = permission.get('displayName')
                 
-                # Skip owner permissions and non-user permissions
-                if role == 'owner' or perm_type != 'user' or not email:
+                # If email is None, try to get it using individual permission lookup
+                if not email and perm_type == 'user' and perm_id:
+                    try:
+                        detailed_permission = self._api_call_with_retry(
+                            lambda pid=perm_id: self.drive_service.permissions().get(
+                                fileId=sheet_id,
+                                permissionId=pid,
+                                fields="emailAddress,displayName,role,type"
+                            ).execute(),
+                            operation_name=f"getting detailed permission for {perm_id}"
+                        )
+                        email = detailed_permission.get('emailAddress')
+                        if email:
+                            print(f"         {i}. 🔍 Found email via lookup: {email}")
+                    except Exception as e:
+                        print(f"         {i}. ⚠️  Could not get email for permission {perm_id}: {e}")
+                
+                # DEBUG: Print ALL permission details to understand the structure
+                print(f"         {i}. Type: {perm_type}, Role: {role}, Email: {email}, Display: {display_name}, ID: {perm_id}")
+                
+                # Skip non-user permissions or permissions without email
+                if perm_type != 'user' or not email:
+                    print(f"            ⏭️  Skipping (not_user={perm_type!='user'}, no_email={not email})")
                     continue
-                
+
                 if email in self.EDITOR_EMAILS:
-                    if role != 'writer':
+                    if role == 'owner':
+                        # Owner has higher permissions than writer - no need to change
+                        print(f"            👑 {email} is owner (has full access, no change needed)")
+                        current_editors.add(email)  # Count as having appropriate access
+                    elif role != 'writer':
                         # Should be editor but isn't - update
                         permissions_to_update.append((perm_id, 'writer', email))
+                        print(f"            📝 Will update {email} from {role} to writer")
+                    else:
+                        print(f"            ✅ {email} already has correct writer access")
                     current_editors.add(email)
                 else:
-                    if role == 'writer':
+                    if role == 'owner':
+                        # Someone else is owner - that's fine, don't change
+                        print(f"            👑 {email} is owner (external user)")
+                    elif role == 'writer':
                         # Should be commenter but is editor - update  
                         permissions_to_update.append((perm_id, 'commenter', email))
+                        print(f"            📝 Will update {email} from writer to commenter")
+                    else:
+                        print(f"            ℹ️  {email} has {role} access (will remain unchanged)")
                     current_commenters.add(email)
             
-            # Add missing editor permissions
+            print(f"      📊 Current status: {len(current_editors)} editors, {len(current_commenters)} others")
+            print(f"         Editors found: {sorted(current_editors)}")
+            print(f"         Target editors: {sorted(self.EDITOR_EMAILS)}")
+            
+            # Count existing writer permissions (even if we don't have emails)
+            existing_writers = sum(1 for p in current_permissions.get('permissions', []) 
+                                if p.get('role') == 'writer' and p.get('type') == 'user')
+            target_writers = len(self.EDITOR_EMAILS)
+            
+            print(f"         📈 Writer permissions: {existing_writers} existing, {target_writers} target")
+            
+            # If we have the expected number of writers and found some emails matching, 
+            # we might already be set up correctly
+            if existing_writers >= target_writers and len(current_editors) > 0:
+                print(f"         💡 Detected likely correct setup ({existing_writers} writers, {len(current_editors)} identified)")
+            
+            # Add missing editor permissions - ONLY if they don't already exist
+            emails_to_add = []
             for email in self.EDITOR_EMAILS:
                 if email not in current_editors and email not in current_commenters:
-                    # Add new editor permission - FIXED: Use lambda to properly execute the API call
-                    try:
-                        self._api_call_with_retry(
-                            lambda: self.drive_service.permissions().create(
-                                fileId=sheet_id,
-                                body={
-                                    'type': 'user',
-                                    'role': 'writer', 
-                                    'emailAddress': email
-                                }
-                            ).execute(),
-                            operation_name=f"adding editor permission for {email}"
-                        )
-                        print(f"        ✅ Added editor access for {email}")
-                    except Exception as e:
+                    # Extra check: if we have enough writers already, be more cautious
+                    if existing_writers >= target_writers:
+                        print(f"         🤔 {email} not identified, but {existing_writers} writers exist (may already have access)")
+                        # Still add to list but with a note
+                        emails_to_add.append(email)
+                    else:
+                        emails_to_add.append(email)
+                        print(f"         ➕ Will add writer access for {email}")
+                elif email in current_editors:
+                    print(f"         ⏭️  Skipping {email} - already has writer access")
+                else:
+                    print(f"         ⏭️  {email} has some other access level")
+            
+            # Actually add new permissions (with better error handling)
+            successful_adds = 0
+            skipped_existing = 0
+            
+            for email in emails_to_add:
+                try:
+                    self._api_call_with_retry(
+                        lambda e=email: self.drive_service.permissions().create(
+                            fileId=sheet_id,
+                            body={
+                                'type': 'user',
+                                'role': 'writer', 
+                                'emailAddress': e,
+                            }
+                        ).execute(),
+                        operation_name=f"adding editor permission for {email}"
+                    )
+                    print(f"        ✅ Added editor access for {email}")
+                    successful_adds += 1
+                except Exception as e:
+                    error_msg = str(e).lower()
+                    # Check if error is because permission already exists
+                    if any(phrase in error_msg for phrase in [
+                        'already exists', 'duplicate', 'already has access', 
+                        'already a collaborator', 'permission already granted',
+                        'user already has access'
+                    ]):
+                        print(f"        ⏭️  {email} already has access (confirmed by API)")
+                        skipped_existing += 1
+                    else:
                         print(f"        ⚠️  Could not add editor access for {email}: {e}")
+            
+            # Summary of permission changes
+            if successful_adds == 0 and skipped_existing > 0:
+                print(f"      ✅ All {skipped_existing} target users already have access to {sheet_name}")
+            elif successful_adds > 0:
+                print(f"      ✅ Added {successful_adds} new permissions for {sheet_name}")
+            else:
+                print(f"      ✅ No permission changes needed for {sheet_name}")
             
             # Update existing permissions - FIXED: Use lambda to properly execute the API call
             for perm_id, new_role, email in permissions_to_update:
                 try:
                     self._api_call_with_retry(
-                        lambda: self.drive_service.permissions().update(
+                        lambda pid=perm_id, role=new_role: self.drive_service.permissions().update(
                             fileId=sheet_id,
-                            permissionId=perm_id,
-                            body={'role': new_role}
+                            permissionId=pid,
+                            body={'role': role}
                         ).execute(),
                         operation_name=f"updating permission for {email} to {new_role}"
                     )
@@ -295,7 +469,14 @@ class GoogleSheetExporter:
                 except Exception as e:
                     print(f"        ⚠️  Could not update permission for {email}: {e}")
             
-            print(f"      ✅ Permissions managed for {sheet_name}")
+            # Summary
+            total_changes = successful_adds + len(permissions_to_update)
+            if total_changes == 0 and skipped_existing > 0:
+                print(f"      ✅ All permissions already correct for {sheet_name} (no changes needed)")
+            elif total_changes == 0:
+                print(f"      ✅ All permissions already correct for {sheet_name}")
+            else:
+                print(f"      ✅ Updated {total_changes} permissions for {sheet_name}")
             
         except Exception as e:
             print(f"      ⚠️  Could not manage permissions for {sheet_name}: {e}")
