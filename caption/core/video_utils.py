@@ -52,15 +52,15 @@ class VideoUtils:
         else:
             st.video(selected_video)
 
-        # Display first and last frames
-        extracted_frames = extract_frames(selected_video, [0, -1])
-        # Expandable section
-        with st.expander("Frames (Click to Expand/Collapse)", expanded=expanded):
-            col1, col2 = st.columns(2)
-            with col1:
-                st.image(extracted_frames[0], caption="First Frame")
-            with col2:
-                st.image(extracted_frames[1], caption="Last Frame")
+        # # Display first and last frames
+        # extracted_frames = extract_frames(selected_video, [0, -1])
+        # # Expandable section
+        # with st.expander("Frames (Click to Expand/Collapse)", expanded=expanded):
+        #     col1, col2 = st.columns(2)
+        #     with col1:
+        #         st.image(extracted_frames[0], caption="First Frame")
+        #     with col2:
+        #         st.image(extracted_frames[1], caption="Last Frame")
     
     @staticmethod
     def display_video_links(video_id: str, video_data_dict: Dict[str, Any]):

@@ -2,7 +2,7 @@
     "label": "Selfie POV",
     "label_name": "selfie_pov",
     "def_question": [
-        "Is the camera facing the person holding it, as in a selfie?"
+        "Is the camera held by the person being filmed (e.g., by hand, selfie stick, or invisible rod) and facing them, as in a selfie?"
     ],
     "alt_question": [
         "Is the camera facing the person holding it, showing their face and sometimes their upper body?",
@@ -11,7 +11,7 @@
         "Is this a selfie-style recording where the camera is pointed at the subject's own face?"
     ],
     "def_prompt": [
-        "A selfie POV shot where the camera is facing the person holding it."
+        "A selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and is facing them."
     ],
     "alt_prompt": [
         "A video where a person records themselves using a front-facing camera.",

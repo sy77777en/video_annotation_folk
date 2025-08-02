@@ -2573,10 +2573,10 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_start_with_full",
-            "pos_question": "Does the video start with a full shot that frames the entire body of the subject?",
-            "neg_question": "Does the video not start with a full shot that frames the entire body of the subject?",
-            "pos_prompt": "A video that starts with a full shot, framing the entire body of the subject.",
-            "neg_prompt": "The video does not start with a full shot that frames the entire body of the subject.",
+            "pos_question": "Does the video start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
+            "neg_question": "Does the video not start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
+            "pos_prompt": "A video that starts with a full shot, framing the entire body of the subject without showing excessive surrounding scenery.",
+            "neg_prompt": "The video does not start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_full",
                 "type": "pos",
@@ -2705,10 +2705,10 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_end_with_full",
-            "pos_question": "Does the video end with a full shot that frames the entire body of the subject?",
-            "neg_question": "Does the video not end with a full shot that frames the entire body of the subject?",
-            "pos_prompt": "A video that ends with a full shot, framing the entire body of the subject.",
-            "neg_prompt": "The video does not end with a full shot that frames the entire body of the subject.",
+            "pos_question": "Does the video end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
+            "neg_question": "Does the video not end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
+            "pos_prompt": "A video that ends with a full shot, framing the entire body of the subject without showing excessive surrounding scenery.",
+            "neg_prompt": "The video does not end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_full",
                 "type": "pos",
@@ -2837,10 +2837,10 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_is_full",
-            "pos_question": "Does the video maintain a full shot throughout, consistently framing the entire body of the subject?",
-            "neg_question": "Does the video not maintain a full shot throughout, or does not consistently frame the entire body of the subject?",
-            "pos_prompt": "A video that maintains a full shot throughout, consistently framing the entire body of the subject.",
-            "neg_prompt": "A video that does not maintain a full shot throughout, or does not consistently frame the entire body of the subject.",
+            "pos_question": "Does the video maintain a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery?",
+            "neg_question": "Does the video not maintain a full shot throughout, or does not consistently frame the entire body of the subject without showing excessive surrounding scenery?",
+            "pos_prompt": "A video that maintains a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery.",
+            "neg_prompt": "A video that does not maintain a full shot throughout, or does not consistently frame the entire body of the subject without showing excessive surrounding scenery.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_full",
                 "type": "pos",

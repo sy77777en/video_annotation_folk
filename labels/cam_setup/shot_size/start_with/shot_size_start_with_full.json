@@ -2,7 +2,7 @@
     "label": "Shot Size Start With Full (Subject Only)",
     "label_name": "shot_size_start_with_full",
     "def_question": [
-        "Does the video start with a full shot that frames the entire body of the subject?"
+        "Does the video start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?"
     ],
     "alt_question": [
         "Does the video open with a full shot where the subject is clearly framed?",
@@ -17,7 +17,7 @@
         "Is the opening shot taken at a distance that fully includes the subject in the frame?"
     ],
     "def_prompt": [
-        "A video that starts with a full shot, framing the entire subject while maintaining focus on it."
+        "A video that starts with a full shot, framing the entire subject while maintaining focus on it without showing excessive surrounding scenery."
     ],
     "alt_prompt": [
         "The video starts with a full shot where the subject is fully visible.",
