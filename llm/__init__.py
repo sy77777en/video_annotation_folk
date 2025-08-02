@@ -4,7 +4,12 @@ from llm.open_source import OpenSource
 # from llm.deepseek import DeepSeek
 
 ALL_MODELS = {
-    "ChatGPT": ["gpt-4o-2024-08-06", "gpt-4o-mini-2024-07-18", "o1-2024-12-17"],
+    "ChatGPT": [
+        "gpt-4.1-2025-04-14",
+        "gpt-4o-2024-08-06",
+        # "gpt-4o-mini-2024-07-18",
+        # "o1-2024-12-17",
+    ],
     "Gemini": [
                 "gemini-2.5-pro",
                 #"gemini-2.5-pro-preview-05-06", 

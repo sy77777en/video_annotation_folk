@@ -1307,8 +1307,12 @@ class GoogleSheetExporter:
             manual_cols["Base Salary"] = payment_start_col + 1        # Column I (annotators) / H (reviewers)  
             manual_cols["Bonus Salary"] = payment_start_col + 2       # Column J (annotators) / I (reviewers)
         else:
-            # Feedback column is manual
-            manual_cols["Feedback to Annotator"] = payment_start_col  # Column H (annotators) / G (reviewers)
+            if role == "Annotator":
+                # Feedback column is manual
+                manual_cols["Feedback to Annotator"] = payment_start_col  # Column H (annotators) / G (reviewers)
+            else:
+                # Feedback column is manual
+                manual_cols["Feedback to Reviewer"] = payment_start_col  # Column H (annotators) / G (reviewers)
         
         return manual_cols
     
@@ -1735,7 +1739,7 @@ class GoogleSheetExporter:
         if include_payment:
             row1.extend(["Payment Timestamp", "Base Salary", "Bonus Salary"])
         else:
-            row1.append("Feedback to Annotator")
+            row1.append("Feedback to Reviewer")
         
         # Add task headers (each task spans 2 columns for reviewers)
         for task_name in task_names:

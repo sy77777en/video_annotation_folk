@@ -32,9 +32,9 @@ class CaptionEngine:
         except Exception as e:
             st.error(f"Error generating pre-caption for video: {video_id}")
             st.error(f"Error: {e}")
-            # If the selected_llm is gemini-2.5-pro, prompt user to try again or use gpt-4o-2024-08-06
+            # If the selected_llm is gemini-2.5-pro, prompt user to try again or use gpt-4.1-2025-04-14
             if selected_llm == "gemini-2.5-pro":
-                st.info("Please try again or use gpt-4o-2024-08-06 as the LLM.")
+                st.info("Please try again or use gpt-4.1-2025-04-14 as the LLM.")
             raise e
         
         pre_caption_data = {

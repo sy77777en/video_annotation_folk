@@ -13,7 +13,7 @@ def encode_image(image_path):
 
 class ChatGPT(LLM):
     def __init__(self, model="gpt-4o-2024-08-06", api_key=None):
-        assert model in ["gpt-4o-2024-08-06", "gpt-4o-mini-2024-07-18", "o1-2024-12-17"]
+        assert model in ["gpt-4.1-2025-04-14", "gpt-4o-2024-08-06", "gpt-4o-mini-2024-07-18", "o1-2024-12-17"]
         self.api_key = api_key
         os.environ["OPENAI_API_KEY"] = self.api_key
         self.client = OpenAI()
@@ -70,7 +70,8 @@ class ChatGPT(LLM):
         return response.choices[0].message.content.strip()
             
 if __name__ == "__main__":
-    chatgpt = ChatGPT(model="gpt-4o-2024-08-06")
+    # chatgpt = ChatGPT(model="gpt-4o-2024-08-06")
+    chatgpt = ChatGPT(model="gpt-4.1-2025-04-14")
     print(chatgpt.generate(
         prompt="Describe this video in a concise and fluent manner.",
         video="https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/OCBYMQzG44U.30.11.mp4",
