@@ -43,7 +43,11 @@ def load_annotators_from_files(input_dir="annotator") -> Dict[str, Dict[str, str
 ANNOTATORS = load_annotators_from_files()
 APPROVED_REVIEWERS = [
     "Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Hewei Wang", 
-    "Tiffany Ling", "Isaac Li", "Shihang Zhu"
+    "Tiffany Ling", "Isaac Li", "Shihang Zhu", "Caption Pizza"
+]
+META_REVIEWERS = [
+    "Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Hewei Wang", 
+    "Tiffany Ling", "Isaac Li", "Shihang Zhu", "Caption Pizza"
 ]
 
 # Ensure all approved reviewers are in annotators dictionary
@@ -56,6 +60,11 @@ class AuthManager:
     
     def __init__(self, data_manager: DataManager):
         self.data_manager = data_manager
+    
+    @staticmethod
+    def get_all_meta_reviewers() -> List[str]:
+        """Get all meta-reviewers"""
+        return META_REVIEWERS
     
     def show_login_page(self, app_config):
         """Unified login page for both portals"""

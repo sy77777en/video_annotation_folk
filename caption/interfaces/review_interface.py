@@ -5,6 +5,7 @@ import urllib.parse
 from typing import Dict, Any, List, Optional
 from pathlib import Path
 
+from caption.core.auth import AuthManager
 from caption.core.data_manager import DataManager
 from caption.core.ui_components import UIComponents
 
@@ -165,6 +166,15 @@ class ReviewInterface:
                 
                 st.success("💡 Copy the fields above and paste into your email!")
 
+    def _get_meta_reviewer_email(self, reviewer_name: str) -> str:
+        """Get the meta-reviewer emails and avoid duplicates"""
+        # Get meta-reviewer email using helper method
+        meta_reviewer_names = AuthManager.get_all_meta_reviewers()
+        meta_reviewer_emails = [AuthManager.get_user_email(name) for name in meta_reviewer_names if name != reviewer_name]
+        meta_reviewer_email_str = "; ".join(meta_reviewer_emails)
+        
+        return meta_reviewer_email_str
+
 
     def _generate_regrade_email_data(self, video_id: str, output_dir: str, annotator_name: str, reviewer_name: str,
                                    regrade_reason: str, args: Any) -> Dict[str, str]:
@@ -175,7 +185,6 @@ class ReviewInterface:
         current_feedback = self.data_manager.load_data(video_id, output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
         
         # Get user info
-        from caption.core.auth import AuthManager
         annotator_email = AuthManager.get_user_email(annotator_name) or "unknown@email.com"
         reviewer_email = AuthManager.get_user_email(reviewer_name) or "unknown@email.com"
         
@@ -201,9 +210,12 @@ class ReviewInterface:
         
         # Get task name using helper method
         task_name = self._get_task_name()
+
+        # Get meta-reviewer email using helper method
+        meta_reviewer_email_str = self._get_meta_reviewer_email(reviewer_name)
         
         # Build email components
-        to_field = f"{reviewer_email}; captionpizza@gmail.com"
+        to_field = f"{reviewer_email}; {meta_reviewer_email_str}"
         subject_field = f"Regrade Request - {video_name} - {task_name}"
         
         body_field = f"""Dear {reviewer_name} and Meta-Reviewer,
@@ -256,12 +268,14 @@ Best regards,
         # Check if it's a HuggingFace dataset URL
         if "huggingface.co/datasets" in url and "/resolve/main/" in url:
             # Convert from: https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/-2uIa-XMJC0.3.0.mp4
-            # To: https://huggingface.co/datasets/zhiqiulin/video_captioning/viewer/main?path=-2uIa-XMJC0.3.0.mp4
-            parts = url.split("/resolve/main/")
-            if len(parts) == 2:
-                base_url = parts[0]
-                filename = parts[1]
-                return f"{base_url}/viewer/main?path={filename}"
+            # To: https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/-2uIa-XMJC0.3.0.mp4?download=true
+            # parts = url.split("/resolve/main/")
+            # if len(parts) == 2:
+            #     base_url = parts[0]
+            #     filename = parts[1]
+            #     return f"{base_url}/viewer/main?path={filename}"
+            new_url = url + "?download=true"
+            return new_url
         
         # Return original URL if not HuggingFace or different format
         return url
