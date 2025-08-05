@@ -874,7 +874,7 @@ class CameraSetupData:
             if self.focus_plane_end == "unknown":
                 # meaning there should be no focus plane change except for middleground
                 if self.focus_change_reason != "no_change" and self.focus_plane_start not in ["middle_ground", "out_of_focus"]:
-                    raise ValueError("Focus plane must not change except for middle ground")
+                    raise ValueError("Focus plane must not change except for middle ground or out of focus")
             elif self.focus_plane_start != self.focus_plane_end:
                 if self.focus_change_reason == "no_change":
                     raise ValueError("Focus change reason should not be 'no_change' for focus plane change")

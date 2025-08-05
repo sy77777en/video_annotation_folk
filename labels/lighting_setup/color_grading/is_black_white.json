@@ -2,7 +2,7 @@
     "label": "Is Black & White",
     "label_name": "is_black_white",
     "def_question": [
-        "Is the video entirely in black and white, with no color present?"
+        "Is the video entirely in black and white, with no chromatic colors, and only black, white, or shades of gray?"
     ],
     "alt_question": [
         "Does the video remain in black and white throughout?",
@@ -15,7 +15,7 @@
         "Is the video visually limited to grayscale shades?"
     ],
     "def_prompt": [
-        "The video is entirely in black and white, with no color present."
+        "The video is entirely in black and white, with no chromatic color present; only black, white, or shades of gray may appear."
     ],
     "alt_prompt": [
         "A black-and-white video without any color.",

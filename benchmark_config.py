@@ -4561,10 +4561,10 @@ def get_black_and_white_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_A
         {
             "folder": lighting_folder,
             "name": "is_black_white",
-            "pos_question": "Is the video entirely in black and white, with no color present?",
-            "neg_question": "Is the video not entirely in black and white?",
-            "pos_prompt": "The video is entirely in black and white, with no color present.",
-            "neg_prompt": "The video is not entirely in black and white.",
+            "pos_question": "Is the video entirely in black and white, with no chromatic colors, and only black, white, or shades of gray?",
+            "neg_question": "Is the video not entirely in black and white and contains chromatic colors?",
+            "pos_prompt": "The video is entirely in black and white, with no chromatic color present; only black, white, or shades of gray may appear.",
+            "neg_prompt": "The video is not entirely in black and white and contains chromatic colors.",
             "pos": {
                 "label": "lighting_setup.color_grading.is_black_white",
                 "type": "pos",
@@ -4581,10 +4581,10 @@ def get_color_temperature_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY
         {
             "folder": lighting_folder,
             "name": "color_temperature_is_warm",
-            "pos_question": "Is the video predominantly featuring warm colors, such as reds, oranges, or yellows?",
-            "neg_question": "Is the video not predominantly featuring warm colors?",
-            "pos_prompt": "The video predominantly features warm colors, such as reds, oranges, or yellows.",
-            "neg_prompt": "The video does not predominantly feature warm colors.",
+            "pos_question": "Does the video predominantly feature warm tones such as reds, oranges, or yellows, with no obvious cool tones except possibly black, white, or gray?",
+            "neg_question": "Does the video not predominantly feature warm tones such as reds, oranges, or yellows, or does it contain any obvious cool tones?",
+            "pos_prompt": "The video predominantly features warm tones such as reds, oranges, or yellows, with no obvious cool tones except possibly black, white, or gray.",
+            "neg_prompt": "The video does not predominantly feature warm tones such as reds, oranges, or yellows, or contains obvious cool tones.",
             "pos": {
                 "label": "lighting_setup.color_grading.temperature.color_temperature_is_warm",
                 "type": "pos",
@@ -4597,10 +4597,10 @@ def get_color_temperature_simple_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY
         {
             "folder": lighting_folder,
             "name": "color_temperature_is_cool",
-            "pos_question": "Is the video predominantly featuring cool colors, such as blues or greens?",
-            "neg_question": "Is the video not predominantly featuring cool colors?",
-            "pos_prompt": "The video predominantly features cool colors, such as blues or greens.",
-            "neg_prompt": "The video does not predominantly feature cool colors.",
+            "pos_question": "Does the video predominantly feature cool tones such as blues or greens, with no obvious warm tones except possibly black, white, or gray?",
+            "neg_question": "Does the video not predominantly feature cool tones such as blues or greens, or does it contain any obvious warm tones?",
+            "pos_prompt": "The video predominantly features cool tones such as blues or greens, with no obvious warm tones except possibly black, white, or gray.",
+            "neg_prompt": "The video does not predominantly feature cool tones such as blues or greens, or contains obvious warm tones.",
             "pos": {
                 "label": "lighting_setup.color_grading.temperature.color_temperature_is_cool",
                 "type": "pos",
