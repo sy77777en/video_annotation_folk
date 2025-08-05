@@ -228,37 +228,6 @@ class CaptionInterface:
         # If reviewer data exists but not approved, allow proceeding (caption was rejected)
         return True
     
-    def _render_regrade_request_interface(self, video_id: str, output_dir: str, current_user: str, args: Any):
-        """Render the regrade request interface"""
-        
-        with st.expander("📧 Request Regrade", expanded=False):
-            st.write("**Explain why you believe the rejection was incorrect:**")
-            st.write("This will send an email to the reviewer and meta-reviewer for reconsideration.")
-            
-            regrade_reason = st.text_area(
-                "Your reason for requesting a regrade:",
-                placeholder="Please explain why you think your original work was better than the reviewer's changes. Be specific about which aspects you disagree with and why.",
-                height=150,
-                key=f"regrade_reason_{video_id}"
-            )
-            
-            if st.button("Generate Regrade Request Email", key=f"generate_regrade_{video_id}"):
-                if regrade_reason.strip():
-                    email_template = self._generate_regrade_email_template(
-                        video_id, output_dir, current_user, regrade_reason, args
-                    )
-                    
-                    st.subheader("📧 Email Template (Copy and Paste)")
-                    st.info("Copy the email template below and paste it into your email client.")
-                    st.text_area(
-                        "Email Template:",
-                        value=email_template,
-                        height=500,
-                        key=f"email_template_{video_id}"
-                    )
-                    st.success("✅ Email template generated! Copy the text above and send it from your email client.")
-                else:
-                    st.warning("Please provide a reason for the regrade request.")
 
     def _render_precaption_step(self, video_id: str, output_dir: str, caption_program: Any,
                                video_data_dict: Dict[str, Any], selected_video: str,

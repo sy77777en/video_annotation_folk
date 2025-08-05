@@ -398,6 +398,7 @@ class OnboardingApp:
         st.session_state.current_selected_config_caption = selected_config
         st.session_state.current_output_dir_caption = output_dir
         st.session_state.current_video_id_caption = video_id
+        st.session_state.current_output_dir = output_dir
         st.session_state.current_selected_video_caption = selected_video
     
     def _get_training_video_format_func(self, output_dir: str, video_urls: List[str]):
