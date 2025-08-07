@@ -13,7 +13,7 @@ def read_json_file(file_path: str) -> Dict:
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
-class SocraticProgram:
+class PromptGenerator:
     def __init__(self, name: str, info: str, caption_fields: List[str]):
         self.name = name
         self.info = info
@@ -26,7 +26,7 @@ class SocraticProgram:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         raise NotImplementedError("Subclasses must implement this method")
 
-# class VanillaPolicy(SocraticProgram):
+# class VanillaPolicy(PromptGenerator):
 #     def __init__(self):
 #         name = "Vanilla Program based on existing labels"
 #         info = "A program that prompts VLMs to provide structured captions for Caption Everything."
@@ -73,7 +73,7 @@ class SocraticProgram:
 #         return camera_policy(data)
 
 
-class VanillaSubjectPolicy(SocraticProgram):
+class VanillaSubjectPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Subject Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Subject."
@@ -152,7 +152,7 @@ class VanillaSubjectPolicy(SocraticProgram):
         return policy
 
 
-class VanillaScenePolicy(SocraticProgram):
+class VanillaScenePolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Scene Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Scene."
@@ -181,7 +181,7 @@ class VanillaScenePolicy(SocraticProgram):
         return policy
 
 
-class VanillaSubjectMotionPolicy(SocraticProgram):
+class VanillaSubjectMotionPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Subject Motion & Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Subject Motion and Dynamics."
@@ -246,7 +246,7 @@ class VanillaSubjectMotionPolicy(SocraticProgram):
         return policy
 
 
-class VanillaSpatialPolicy(SocraticProgram):
+class VanillaSpatialPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Spatial Framing and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Spatial Framing and Dynamics."
@@ -440,7 +440,7 @@ class VanillaSpatialPolicy(SocraticProgram):
         return policy
 
 
-class RawSubjectMotionPolicy(SocraticProgram):
+class RawSubjectMotionPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Subject Motion & Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Subject Motion and Dynamics."
@@ -505,7 +505,7 @@ class RawSubjectMotionPolicy(SocraticProgram):
         return policy
 
 
-class RawSpatialPolicy(SocraticProgram):
+class RawSpatialPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Spatial Framing and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Spatial Framing and Dynamics."
@@ -701,7 +701,7 @@ class RawSpatialPolicy(SocraticProgram):
         return policy
 
 
-class VanillaCameraPolicy(SocraticProgram):
+class VanillaCameraPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Camera Framing and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Camera Framing and Dynamics."
@@ -1236,7 +1236,7 @@ class VanillaCameraMotionPolicy(VanillaCameraPolicy):
         return policy    
 
 
-class VanillaColorPolicy(SocraticProgram):
+class VanillaColorPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Color Composition and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Color Composition and Dynamics."
@@ -1330,7 +1330,7 @@ class VanillaColorPolicy(SocraticProgram):
         return policy
 
 
-class VanillaLightingSetupPolicy(SocraticProgram):
+class VanillaLightingSetupPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Lighting Setup and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Lighting Setup and Dynamics."
@@ -1512,7 +1512,7 @@ class VanillaLightingSetupPolicy(SocraticProgram):
         return policy
 
 
-class VanillaLightingEffectsPolicy(SocraticProgram):
+class VanillaLightingEffectsPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Lighting Effects and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Lighting Effects and Dynamics."
@@ -1704,7 +1704,7 @@ class VanillaLightingEffectsPolicy(SocraticProgram):
         return policy
 
 
-class RawColorPolicy(SocraticProgram):
+class RawColorPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Color Composition and Dynamics Description"
         info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Color Composition and Dynamics without subject/scene descriptions."
@@ -1791,7 +1791,7 @@ class RawColorPolicy(SocraticProgram):
         return policy
 
 
-class RawLightingSetupPolicy(SocraticProgram):
+class RawLightingSetupPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Lighting Setup and Dynamics Description"
         info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Lighting Setup and Dynamics without subject/scene descriptions."
@@ -1965,7 +1965,7 @@ class RawLightingSetupPolicy(SocraticProgram):
         return policy
 
 
-class RawLightingEffectsPolicy(SocraticProgram):
+class RawLightingEffectsPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Lighting Effects and Dynamics Description"
         info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Lighting Effects and Dynamics without subject/scene descriptions."
