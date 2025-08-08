@@ -7,15 +7,15 @@ from process_json import json_to_video_data
 from caption_policy.vanilla_program import VanillaCameraMotionPolicy
 from llm import get_llm, get_all_llms, get_supported_mode
 from download import download_videos, get_video_labels_dir, load_from_json, save_to_json
-from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
+from caption_policy.vanilla_program import SubjectPolicy, ScenePolicy, SubjectMotionPolicy, SpatialPolicy, CameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
 import streamlit as st
 
 caption_programs = {
-    "subject_description": VanillaSubjectPolicy(),
-    "scene_composition_dynamics": VanillaScenePolicy(),
-    "subject_motion_dynamics": VanillaSubjectMotionPolicy(),
-    "spatial_framing_dynamics": VanillaSpatialPolicy(),
-    "camera_framing_dynamics": VanillaCameraPolicy(),
+    "subject_description": SubjectPolicy(),
+    "scene_composition_dynamics": ScenePolicy(),
+    "subject_motion_dynamics": SubjectMotionPolicy(),
+    "spatial_framing_dynamics": SpatialPolicy(),
+    "camera_framing_dynamics": CameraPolicy(),
     "camera_motion": VanillaCameraMotionPolicy(),
     "raw_spatial_framing_dynamics": RawSpatialPolicy(),
     "raw_subject_motion_dynamics": RawSubjectMotionPolicy(),

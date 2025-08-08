@@ -14,7 +14,7 @@ from datetime import datetime
 from pathlib import Path
 from utils import extract_frames, load_config, load_json, get_last_frame_index
 from llm import get_llm, get_all_llms, get_supported_mode
-from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
+from caption_policy.vanilla_program import SubjectPolicy, ScenePolicy, SubjectMotionPolicy, SpatialPolicy, CameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
 from process_json import json_to_video_data
 import time
 
@@ -806,11 +806,11 @@ APPROVED_REVIEWERS = ["Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Hewei Wang", "
 assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), "All approved reviewers must be in the ANNOTATORS dictionary"
 
 caption_programs = {
-    "subject_description": VanillaSubjectPolicy(),
-    "scene_composition_dynamics": VanillaScenePolicy(),
-    "subject_motion_dynamics": VanillaSubjectMotionPolicy(),
-    "spatial_framing_dynamics": VanillaSpatialPolicy(),
-    "camera_framing_dynamics": VanillaCameraPolicy(),
+    "subject_description": SubjectPolicy(),
+    "scene_composition_dynamics": ScenePolicy(),
+    "subject_motion_dynamics": SubjectMotionPolicy(),
+    "spatial_framing_dynamics": SpatialPolicy(),
+    "camera_framing_dynamics": CameraPolicy(),
     # "camera_motion": VanillaCameraMotionPolicy(),
     # "raw_spatial_framing_dynamics": RawSpatialPolicy(),
     # "raw_subject_motion_dynamics": RawSubjectMotionPolicy(),

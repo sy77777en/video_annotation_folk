@@ -595,7 +595,7 @@ class OnboardingApp:
             st.markdown("*Expert annotation for reference and learning.*")
             st.write(f"**Expert:** {current_user}")
             st.write(f"**Created:** {self._format_timestamp(current_data.get('timestamp', ''))}")
-            self.ui.display_feedback_info(current_data, display_pre_caption_instead_of_final_caption=False)
+            self.ui.display_feedback_info(current_data, display_pre_caption_instead_of_final_caption=True)
         
         with tab3:
             st.subheader("👤 Your Version")

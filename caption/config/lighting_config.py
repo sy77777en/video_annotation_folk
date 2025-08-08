@@ -1,9 +1,9 @@
 # caption/config/lighting_config.py
 from caption.config.base_config import AppConfig
 from caption_policy.vanilla_program import (
-    RawColorPolicy,
-    RawLightingSetupPolicy,
-    RawLightingEffectsPolicy,
+    ColorPolicy,
+    LightingSetupPolicy,
+    LightingEffectsPolicy,
 )
 
 # Lighting project video URLs files
@@ -37,9 +37,9 @@ LIGHTING_VIDEO_URLS_FILES = [
 def get_lighting_config() -> AppConfig:
     """Get lighting annotation configuration"""
     caption_programs = {
-        "raw_color_composition_dynamics": RawColorPolicy(),
-        "raw_lighting_setup_dynamics": RawLightingSetupPolicy(),
-        "raw_lighting_effects_dynamics": RawLightingEffectsPolicy(),
+        "raw_color_composition_dynamics": ColorPolicy(),
+        "raw_lighting_setup_dynamics": LightingSetupPolicy(),
+        "raw_lighting_effects_dynamics": LightingEffectsPolicy(),
     }
     
     return AppConfig(

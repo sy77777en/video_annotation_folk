@@ -26,54 +26,8 @@ class PromptGenerator:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         raise NotImplementedError("Subclasses must implement this method")
 
-# class VanillaPolicy(PromptGenerator):
-#     def __init__(self):
-#         name = "Vanilla Program based on existing labels"
-#         info = "A program that prompts VLMs to provide structured captions for Caption Everything."
-#         self.caption_fields_dict = {
-#             "subject_description": "subject description",
-#             "subject_motion_dynamics": "subject motion and dynamics",
-#             "scene_composition_dynamics": "scene composition and dynamics",
-#             "spatial_framing_dynamic": "spatial framing and dynamics",
-#             "camera_motion_dynamics": "camera motion and dynamics",
-#         }
-#         caption_fields = list(self.caption_fields_dict.keys())
-#         super().__init__(name, info, caption_fields)
 
-#     def __call__(self, data: VideoData) -> Dict[str, str]:
-#         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
-#         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
-#             raise ValueError("Shot transitions are not supported in this policy.")
-
-#         subject_description_policy = self.get_subject_description_policy(data)
-#         subject_motion_dynamics_policy = self.get_subject_motion_dynamics_policy(data)
-#         scene_composition_dynamics_policy = self.get_scene_composition_dynamics_policy(data)
-#         spatial_framing_dynamics_policy = self.get_spatial_framing_dynamics_policy(data)
-#         camera_framing_dynamics_policy = self.get_camera_framing_dynamics_policy(data)
-#         return {**subject_description_policy, **scene_composition_dynamics_policy, **camera_framing_dynamics_policy}
-
-#     def get_subject_description_policy(self, data: VideoData):
-#         subject_policy = VanillaSubjectPolicy()
-#         return subject_policy(data)
-
-#     def get_subject_motion_dynamics_policy(self, data: VideoData):
-#         subject_motion_policy = VanillaSubjectMotionPolicy()
-#         return subject_motion_policy(data)
-
-#     def get_scene_composition_dynamics_policy(self, data: VideoData):
-#         scene_policy = VanillaScenePolicy()
-#         return scene_policy(data)
-
-#     def get_spatial_framing_dynamics_policy(self, data: VideoData):
-#         spatial_policy = VanillaSpatialPolicy()
-#         return spatial_policy(data)
-
-#     def get_camera_framing_dynamics_policy(self, data: VideoData):
-#         camera_policy = VanillaCameraPolicy()
-#         return camera_policy(data)
-
-
-class VanillaSubjectPolicy(PromptGenerator):
+class SubjectPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Subject Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Subject."
@@ -83,10 +37,10 @@ class VanillaSubjectPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "subject_description": self.get_description(data)
+            "subject_description": self.get_prompt(data)
         }
     
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             # raise ValueError("Shot transitions are not supported in this policy.")
             policy = read_text_file("caption_policy/policy/subject_description/policy.txt")
@@ -152,7 +106,7 @@ class VanillaSubjectPolicy(PromptGenerator):
         return policy
 
 
-class VanillaScenePolicy(PromptGenerator):
+class ScenePolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Scene Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Scene."
@@ -162,11 +116,11 @@ class VanillaScenePolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         policy = {
-            "scene_composition_dynamics": self.get_description(data)
+            "scene_composition_dynamics": self.get_prompt(data)
         }
         return policy
 
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
@@ -181,7 +135,7 @@ class VanillaScenePolicy(PromptGenerator):
         return policy
 
 
-class VanillaSubjectMotionPolicy(PromptGenerator):
+class SubjectMotionPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Subject Motion & Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Subject Motion and Dynamics."
@@ -191,10 +145,10 @@ class VanillaSubjectMotionPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "subject_motion_dynamics": self.get_description(data)
+            "subject_motion_dynamics": self.get_prompt(data)
         }
     
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
@@ -246,7 +200,7 @@ class VanillaSubjectMotionPolicy(PromptGenerator):
         return policy
 
 
-class VanillaSpatialPolicy(PromptGenerator):
+class SpatialPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Spatial Framing and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Spatial Framing and Dynamics."
@@ -256,7 +210,7 @@ class VanillaSpatialPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "spatial_framing_dynamics": self.get_description(data)
+            "spatial_framing_dynamics": self.get_prompt(data)
         }
 
     def format_shot_size(self, shot_size: str) -> str:
@@ -285,7 +239,7 @@ class VanillaSpatialPolicy(PromptGenerator):
         }
         return height_info[height]
 
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
@@ -450,10 +404,10 @@ class RawSubjectMotionPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "raw_subject_motion_dynamics": self.get_description(data)
+            "raw_subject_motion_dynamics": self.get_prompt(data)
         }
     
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
@@ -515,7 +469,7 @@ class RawSpatialPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "raw_spatial_framing_dynamics": self.get_description(data)
+            "raw_spatial_framing_dynamics": self.get_prompt(data)
         }
     
     def format_shot_size(self, shot_size: str) -> str:
@@ -545,7 +499,7 @@ class RawSpatialPolicy(PromptGenerator):
         return height_info[height]
     
     
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
@@ -701,7 +655,7 @@ class RawSpatialPolicy(PromptGenerator):
         return policy
 
 
-class VanillaCameraPolicy(PromptGenerator):
+class CameraPolicy(PromptGenerator):
     def __init__(self):
         name = "Vanilla Camera Framing and Dynamics Description"
         info = "A policy that use existing labels to prompt a human or model to provide structured captions for Camera Framing and Dynamics."
@@ -711,7 +665,7 @@ class VanillaCameraPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "camera_framing_dynamics": self.get_description(data)
+            "camera_framing_dynamics": self.get_prompt(data)
         }
 
     def format_playback_speed(self, speed: str, speed_dir="labels/cam_setup/video_speed/") -> str:
@@ -1044,7 +998,7 @@ class VanillaCameraPolicy(PromptGenerator):
             description += " During the tracking shot, the subject becomes smaller in the frame."
         return description
 
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
@@ -1173,7 +1127,7 @@ class VanillaCameraPolicy(PromptGenerator):
         return policy    
 
 
-class VanillaCameraMotionPolicy(VanillaCameraPolicy):
+class VanillaCameraMotionPolicy(CameraPolicy):
     def __init__(self):
         super().__init__()
         self.name = "Vanilla Camera Motion Description"
@@ -1183,11 +1137,11 @@ class VanillaCameraMotionPolicy(VanillaCameraPolicy):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "camera_motion": self.get_description(data)
+            "camera_motion": self.get_prompt(data)
         }
             
      
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
         
@@ -1236,475 +1190,8 @@ class VanillaCameraMotionPolicy(VanillaCameraPolicy):
         return policy    
 
 
-class VanillaColorPolicy(PromptGenerator):
-    def __init__(self):
-        name = "Vanilla Color Composition and Dynamics Description"
-        info = "A policy that use existing labels to prompt a human or model to provide structured captions for Color Composition and Dynamics."
-        caption_fields = ["color_composition_dynamics"]
-        super().__init__(name, info, caption_fields)
 
-    def __call__(self, data: VideoData) -> Dict[str, str]:
-        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
-        return {
-            "color_composition_dynamics": self.get_description(data)
-        }
-
-    def format_color_temperature(self, color_temperature: str, color_temperature_dir="labels/lighting_setup/color_grading/temperature/") -> str:
-        # Options: "warm", "cool", "neutral", "complex_changing", "complex_contrasting", "complex_others", "black_white"
-        color_temperature_info = {
-            "neutral": "color_temperature_is_neutral",
-            "warm": "color_temperature_is_warm",
-            "cool": "color_temperature_is_cool",
-            "complex_changing": "color_temperature_is_changing",
-            "complex_contrasting": "color_temperature_is_contrasting",
-            "complex_others": "color_temperature_is_complex_others",
-            # "black_white": "color_temperature_is_black_and_white",
-        }
-        if color_temperature == "black_white":
-            return "The video is in black and white."
-        else:
-            color_temperature = color_temperature_info[color_temperature]
-            color_temperature_str = read_json_file(os.path.join(color_temperature_dir, f"{color_temperature}.json"))['def_prompt'][0]
-            if color_temperature == "neutral":
-                color_temperature_str += " (no need to mention)."
-            return color_temperature_str
-
-    def format_colorfulness(self, colorfulness: str, colorfulness_dir="labels/lighting_setup/color_grading/colorfulness/") -> str:
-        # Options: "high_colorfulness", "neutral", "low_colorfulness", "black_white", "complex_changing", "complex_contrasting", "complex_others"
-        colorfulness_info = {
-            "high_colorfulness": "colorfulness_is_high",
-            "neutral": "colorfulness_is_neutral",
-            "low_colorfulness": "colorfulness_is_low",
-            "complex_changing": "colorfulness_is_changing",
-            "complex_contrasting": "colorfulness_is_contrasting",
-            "complex_others": "colorfulness_is_complex_others",
-        }
-        if colorfulness == "black_white":
-            return "The video is in black and white."
-        else:
-            colorfulness = colorfulness_info[colorfulness]
-            colorfulness_str = read_json_file(os.path.join(colorfulness_dir, f"{colorfulness}.json"))['def_prompt'][0]
-            if colorfulness == "normal":
-                colorfulness_str += " (no need to mention)."
-            return colorfulness_str
-    
-    def format_brightness_exposure(self, brightness: str, brightness_dir="labels/lighting_setup/color_grading/brightness/") -> str:
-        # Options: "very_bright", "bright", "neutral", "dark", "very_dark", "complex_changing", "complex_contrasting", "complex_others"
-        brightness_info = {
-            "very_bright": "brightness_is_very_bright",
-            "bright": "brightness_is_bright",
-            "neutral": "brightness_is_neutral",
-            "dark": "brightness_is_dark",
-            "very_dark": "brightness_is_very_dark",
-            "complex_changing": "brightness_is_changing",
-            "complex_contrasting": "brightness_is_contrasting",
-            "complex_others": "brightness_is_complex_others",
-        }
-        brightness = brightness_info[brightness]
-        brightness_str = read_json_file(os.path.join(brightness_dir, f"{brightness}.json"))['def_prompt'][0]
-        if brightness == "neutral":
-            brightness_str += " (no need to mention)."
-        return brightness_str
-
-    def get_description(self, data: VideoData) -> str:
-        import pdb; pdb.set_trace() # Not supported anymore
-        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
-            raise ValueError("Shot transitions are not supported in this policy.")
-
-        policy = ""
-        # policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy.txt")
-        policy += read_text_file("caption_policy/policy/color_composition_dynamics/policy_new.txt")
-
-        assert data.cam_setup.subject_description != "", "Subject description must be provided before color composition and dynamics description."
-        assert data.cam_setup.scene_description != "", "Scene description must be provided before color composition and dynamics description."
-        policy += "\n\n" + read_text_file("caption_policy/policy/color_composition_dynamics/has_subject_scene_description.txt").format(
-            subject_description=data.cam_setup.subject_description,
-            scene_description=data.cam_setup.scene_description
-        )
-
-        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of color composition. Please use these as references to expand your description."
-
-        policy += "\n\n**Color Tone:** {}".format(self.format_color_temperature(data.lighting_setup.color_temperature))
-        policy += "\n\n**Colorfulness:** {}".format(self.format_colorfulness(data.lighting_setup.colorfulness))
-        policy += "\n\n**Brightness and Exposure:** {}".format(self.format_brightness_exposure(data.lighting_setup.brightness))
-        return policy
-
-
-class VanillaLightingSetupPolicy(PromptGenerator):
-    def __init__(self):
-        name = "Vanilla Lighting Setup and Dynamics Description"
-        info = "A policy that use existing labels to prompt a human or model to provide structured captions for Lighting Setup and Dynamics."
-        caption_fields = ["lighting_setup_dynamics"]
-        super().__init__(name, info, caption_fields)
-
-    def __call__(self, data: VideoData) -> Dict[str, str]:
-        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
-        return {
-            "lighting_setup_dynamics": self.get_description(data)
-        }
-
-    def format_scene_type(self, scene_type: str, scene_type_dir="labels/lighting_setup/scene/") -> str:
-        # Options: "interior", "exterior", "unrealistic_synthetic", "complex_others"
-        scene_type_info = {
-            "interior": "scene_type_is_interior",
-            "exterior": "scene_type_is_exterior",
-            "unrealistic_synthetic": "scene_type_is_synthetic",
-            "complex_others": "scene_type_is_complex_others"
-        }
-        scene_type = scene_type_info[scene_type]
-        scene_type_str = read_json_file(os.path.join(scene_type_dir, f"{scene_type}.json"))['def_prompt'][0]
-        return scene_type_str
-
-    def format_lighting_sources(self, lighting_setup, lighting_sources_dir="labels/lighting_setup/light_source/") -> str:
-        # Major light sources
-        # self.sunlight_source = lighting_setup.sunlight_source
-        # self.moonlight_starlight_source = lighting_setup.moonlight_starlight_source
-        # self.firelight_source = lighting_setup.firelight_source
-        # self.artificial_light_source = lighting_setup.artificial_light_source
-        # self.non_visible_light_source = lighting_setup.non_visible_light_source
-        # self.abstract_light_source = lighting_setup.abstract_light_source
-        # self.complex_light_source = lighting_setup.complex_light_source
-        # if abstract_light_source is True, then the other sources are not considered
-        light_source_strs = []
-        if lighting_setup.abstract_light_source:
-            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "is_abstract.json"))['def_prompt'][0])
-        else:
-            if lighting_setup.sunlight_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_sunlight.json"))['def_prompt'][0])
-            if lighting_setup.moonlight_starlight_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_moonlight_starlight.json"))['def_prompt'][0])
-            if lighting_setup.firelight_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_firelight.json"))['def_prompt'][0])
-            if lighting_setup.artificial_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_artificial_practical_light.json"))['def_prompt'][0])
-            if lighting_setup.non_visible_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_non_visible_light_source.json"))['def_prompt'][0])
-            if lighting_setup.complex_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_complex_light_source.json"))['def_prompt'][0])
-        return " ".join(light_source_strs)
-
-    def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:
-        # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
-        sunlight_level_info = {
-            "normal": "sunlight_quality_is_normal",
-            "sunny": "sunlight_quality_is_hard",
-            "overcast": "sunlight_quality_is_soft",
-            "sunset_sunrise": "sunlight_quality_is_sunset_sunrise",
-        }
-        sunlight_level = sunlight_level_info[sunlight_level]
-        sunlight_level_str = read_json_file(os.path.join(sunlight_level_dir, f"{sunlight_level}.json"))['def_prompt'][0]
-        return sunlight_level_str
-
-    def format_light_quality(self, light_quality: str, light_quality_dir="labels/lighting_setup/light_quality/") -> str:
-        # Options: "hard_light", "soft_light", "complex_changing", "complex_contrasting", "complex_others", "complex_ambiguous"
-        light_quality_info = {
-            "hard_light": "light_quality_is_hard",
-            "soft_light": "light_quality_is_soft",
-            "complex_changing": "light_quality_is_changing",
-            "complex_contrasting": "light_quality_is_contrasting",
-            "complex_others": "light_quality_is_complex_others",
-            "complex_ambiguous": "light_quality_is_complex_ambiguous",
-        }
-        light_quality = light_quality_info[light_quality]
-        light_quality_str = read_json_file(os.path.join(light_quality_dir, f"{light_quality}.json"))['def_prompt'][0]
-        return light_quality_str
-
-    def format_subject_lighting_contrast(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_contrast") -> str:
-        # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting."
-        subject_light_contrast_str = ""
-        if lighting_setup.low_key_lighting is True:
-            subject_light_contrast_str += read_json_file(os.path.join(subject_lighting_dir, "low_key_lighting.json"))['def_prompt'][0]
-        if lighting_setup.high_key_lighting is True:
-            subject_light_contrast_str += read_json_file(os.path.join(subject_lighting_dir, "high_key_lighting.json"))['def_prompt'][0]
-        
-        # self.subject_contrast_ratio = "unknown"  # Options: "high_contrast", "normal_contrast", "minimal_contrast", "complex", "unknown"
-        subject_light_contrast_info = {
-            "high_contrast": "subject_light_contrast_is_high",
-            "normal_contrast": "subject_light_contrast_is_normal",
-            "minimal_contrast": "subject_light_contrast_is_minimal",
-            "complex_changing": "subject_light_contrast_is_changing",
-            "complex_contrasting": "subject_light_contrast_is_contrasting",
-            "complex_others": "subject_light_contrast_is_complex_others",
-        }
-        subject_light_contrast = subject_light_contrast_info[lighting_setup.subject_contrast_ratio]
-        subject_light_contrast_str += " " + read_json_file(os.path.join(subject_lighting_dir, f"{subject_light_contrast}.json"))['def_prompt'][0]
-        return subject_light_contrast_str
-
-    def format_subject_lighting_direction(self, lighting_setup, subject_lighting_dir="labels/lighting_setup/subject_lighting/light_direction") -> str:
-        # assert lighting_setup.is_subject_lighting_applicable, "Subject lighting must be applicable to format the subject lighting direction."
-        if lighting_setup.direction_is_consistent is True:
-            subject_light_direction_strs = []
-            directions = [
-                "direction_is_back_light",
-                "direction_is_front_light",
-                "direction_is_top_light",
-                "direction_is_bottom_light",
-                "direction_is_right_side_light",
-                "direction_is_left_side_light",
-                "direction_is_ambient_light"
-            ]
-            for direction in directions:
-                if getattr(lighting_setup, direction) is True:
-                    subject_light_direction_strs.append(read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0])
-            assert len(subject_light_direction_strs) != 0, "Subject light direction must be specified if subject lighting is present."
-            return " ".join(subject_light_direction_strs)
-        else:
-            complex_directions = [
-                "direction_is_unknown",
-                "direction_is_complex_others", # Must put before the below two because this includes the below two
-                "direction_is_complex_changing",
-                "direction_is_complex_contrasting",
-            ]
-            for direction in complex_directions:
-                if getattr(lighting_setup, direction) is True:
-                    return read_json_file(os.path.join(subject_lighting_dir, f"{direction}.json"))['def_prompt'][0]
-
-    
-    def format_subject_lighting_special_effects(self, lighting_setup, lighting_dir="labels/lighting_setup/") -> str:
-        # Special lighting effects on subject
-        # self.professional_lighting = False
-        # self.rembrandt_lighting = False
-        # # below two are actually not dependent on whether the subject is present or not
-        # self.silhouette = False
-        # self.rim_light = False
-        special_light_effects_strs = []
-        if lighting_setup.professional_lighting is True:
-            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "professional_lighting.json"))['def_prompt'][0])
-        if lighting_setup.rembrandt_lighting is True:
-            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "subject_lighting", "rembrandt_lighting.json"))['def_prompt'][0])
-        if lighting_setup.silhouette is True:
-            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "special_effect", "silhouette.json"))['def_prompt'][0])
-        if lighting_setup.rim_light is True:
-            special_light_effects_strs.append(read_json_file(os.path.join(lighting_dir, "special_effect", "rim_light.json"))['def_prompt'][0])
-        if len(special_light_effects_strs) == 0:
-            return "No special lighting effects are observed on the subject. (no need to mention)."
-        return " ".join(special_light_effects_strs)
-
-    def get_description(self, data: VideoData) -> str:
-        import pdb; pdb.set_trace() # Not supported anymore
-        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
-            raise ValueError("Shot transitions are not supported in this policy.")
-
-        policy = ""
-        policy += read_text_file("caption_policy/policy/lighting_setup_dynamics/policy.txt")
-
-        assert data.cam_setup.subject_description != "", "Subject description must be provided before lighting setup and dynamics description."
-        assert data.cam_setup.scene_description != "", "Scene description must be provided before lighting setup and dynamics description."
-        policy += "\n\n" + read_text_file("caption_policy/policy/lighting_setup_dynamics/has_subject_scene_description.txt").format(
-            subject_description=data.cam_setup.subject_description,
-            scene_description=data.cam_setup.scene_description
-        )
-
-        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting setup. Please use these as references to expand your description."
-
-        policy += "\n\n**Scene Type:** {}".format(self.format_scene_type(data.lighting_setup.scene_type))
-        policy += "\n\n**Light Source(s):** {}".format(self.format_lighting_sources(data.lighting_setup))
-        # If sunlight, then ask about sunlight level
-        if data.lighting_setup.sunlight_quality_is_unknown is False:
-            policy += "\n\n**Sunlight Condition:** {}".format(self.format_sunlight_level(data.lighting_setup.sunlight_level))
-        policy += "\n\n**Light Quality:** {}".format(self.format_light_quality(data.lighting_setup.light_quality))
-
-        # if data.lighting_setup.is_subject_lighting_applicable:
-        policy += "\n\n**Light Contrast on Subject(s):** {}".format(self.format_subject_lighting_contrast(data.lighting_setup))
-        policy += "\n\n**Light Direction(s) on Subject(s):** {}".format(self.format_subject_lighting_direction(data.lighting_setup))
-        policy += "\n\n**Lighting Effects on Subject(s):** {}".format(self.format_subject_lighting_special_effects(data.lighting_setup))
-        
-        return policy
-
-
-class VanillaLightingEffectsPolicy(PromptGenerator):
-    def __init__(self):
-        name = "Vanilla Lighting Effects and Dynamics Description"
-        info = "A policy that use existing labels to prompt a human or model to provide structured captions for Lighting Effects and Dynamics."
-        caption_fields = ["lighting_effects_dynamics"]
-        super().__init__(name, info, caption_fields)
-
-    def __call__(self, data: VideoData) -> Dict[str, str]:
-        """Given a VideoData instance, return a dictionary of prompts for structured captions."""
-        return {"lighting_effects_dynamics": self.get_description(data)}
-
-    def format_lens_effects(self, lighting_setup, lens_effects_dir="labels/lighting_setup/lens_effect/") -> str:
-        lens_effect_strs = []
-        lens_effects = [
-            "lens_flares",
-            "lens_flares_anamorphic",
-            "mist_diffusion",
-            "bokeh",
-        ]
-        for lens_effect in lens_effects:
-            if getattr(lighting_setup, lens_effect) is True:
-                lens_effect_strs.append(read_json_file(os.path.join(lens_effects_dir, f"{lens_effect}.json"))['def_prompt'][0])
-        if len(lens_effect_strs) == 0:
-            return "No significant lens or optical effects in this video. (no need to mention)."
-        return " ".join(lens_effect_strs)
-
-    def format_light_reflections(self, lighting_setup, light_reflections_dir="labels/lighting_setup/reflection/") -> str:
-        light_reflections_strs = []
-        light_reflections = [
-            "reflection_from_water",
-            "reflection_from_glossy_surface",
-            "reflection_from_mirror",
-        ]
-        for light_reflection in light_reflections:
-            if getattr(lighting_setup, light_reflection) is True:
-                light_reflections_strs.append(read_json_file(os.path.join(light_reflections_dir, f"{light_reflection}.json"))['def_prompt'][0])
-        if len(light_reflections_strs) == 0:
-            return "No significant light reflections in this video. (no need to mention)."
-        return " ".join(light_reflections_strs)
-
-    def format_natural_lighting_effects(self, lighting_setup, natural_lighting_dir="labels/lighting_setup/natural_effect/") -> str:
-        natural_lighting_strs = []
-        natural_lightings = [
-            "aerial_perspective",
-            "rainbow",
-            "aurora",
-            "heat_haze",
-            "lightning",
-        ]
-        for natural_lighting in natural_lightings:
-            if getattr(lighting_setup, natural_lighting) is True:
-                natural_lighting_strs.append(read_json_file(os.path.join(natural_lighting_dir, f"{natural_lighting}.json"))['def_prompt'][0])
-        if len(natural_lighting_strs) == 0:
-            return "No significant natural lighting effects in this video. (no need to mention)."
-        return " ".join(natural_lighting_strs)
-
-    def format_artificial_lighting_effects(self, lighting_setup, artificial_lighting_dir="labels/lighting_setup/special_effect/") -> str:
-        # # Special lighting effects on the scene
-        special_light_effects_strs = []
-        special_light_effects = [
-            "colored_neon_lighting",
-            "headlight_flashlight",
-            "vignette",
-            "water_caustics",
-            "city_light",
-            "street_light",
-            "silhouette",
-            "rim_light",
-        ]
-        for special_light_effect in special_light_effects:
-            if getattr(lighting_setup, special_light_effect) is True:
-                special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
-        special_light_effects_without_subject = [
-            "silhouette",
-            "rim_light",
-        ]
-        # if lighting_setup.is_subject_lighting_applicable is False:
-        for special_light_effect in special_light_effects_without_subject:
-            if getattr(lighting_setup, special_light_effect) is True:
-                special_light_effects_strs.append(read_json_file(os.path.join(artificial_lighting_dir, f"{special_light_effect}.json"))['def_prompt'][0])
-        if len(special_light_effects_strs) == 0:
-            return "No significant artificial or artistic lighting effects in this video. (no need to mention)."
-        return " ".join(special_light_effects_strs)
-
-    def format_volumetric_lighting(self, lighting_setup, volumetric_lighting_dir="labels/lighting_setup/volumetric_lighting/") -> str:
-        volumetric_light_effects_strs = []
-        volumetric_light_effects = [
-            "volumetric_beam_light",
-            "volumetric_spot_light",
-            "god_rays",
-            "light_through_medium",
-            "volumetric_light_others"
-        ]
-        for volumetric_light_effect in volumetric_light_effects:
-            if getattr(lighting_setup, volumetric_light_effect) is True:
-                volumetric_light_effects_strs.append(read_json_file(os.path.join(volumetric_lighting_dir, f"{volumetric_light_effect}.json"))['def_prompt'][0])
-        if len(volumetric_light_effects_strs) == 0:
-            return "No significant volumetric lighting effects in this video. (no need to mention)."
-        return " ".join(volumetric_light_effects_strs)
-
-    def format_shadow_patterns(self, lighting_setup, shadow_patterns_dir="labels/lighting_setup/shadow_pattern/") -> str:
-        # self.venetian_blinds or self.subject_shape or self.window_frames or self.foliage or self.shadow_patterns_gobo_others
-        shadow_patterns_strs = []
-        shadow_patterns = [
-            "venetian_blinds",
-            "subject_shape",
-            "window_frames",
-            "foliage",
-            "shadow_patterns_gobo_others"
-        ]
-        for shadow_pattern in shadow_patterns:
-            if getattr(lighting_setup, shadow_pattern) is True:
-                shadow_patterns_strs.append(read_json_file(os.path.join(shadow_patterns_dir, f"{shadow_pattern}.json"))['def_prompt'][0])
-        if len(shadow_patterns_strs) == 0:
-            return "No distinct or noteworthy shadow patterns or Gobo lighting effects in this video. (no need to mention)."
-        return " ".join(shadow_patterns_strs)
-
-    def format_light_dynamics(self, lighting_setup, light_dynamics_dir="labels/lighting_setup/dynamic_light/") -> str:
-        # Lighting dynamics
-        # self.color_shifting_smooth = False
-        # self.color_shifting_sudden = False
-        # self.pulsing_flickering = False
-        # self.flashing = False
-        # self.moving_light = False
-        light_dynamics_strs = []
-        light_dynamics = [
-            "color_shifting_smooth",
-            "color_shifting_sudden",
-            "pulsing_flickering",
-            "flashing",
-            "moving_light"
-        ]
-        for light_dynamic in light_dynamics:
-            if getattr(lighting_setup, light_dynamic) is True:
-                light_dynamics_strs.append(read_json_file(os.path.join(light_dynamics_dir, f"{light_dynamic}.json"))['def_prompt'][0])
-        if len(light_dynamics_strs) == 0:
-            return "No significant lighting dynamics in this video. (no need to mention)."
-        return " ".join(light_dynamics_strs)
-
-    def format_dynamics(self, lighting_setup, dynamics_dir="labels/lighting_setup/dynamic_effect/") -> str:
-        other_dynamics_strs = []
-        other_dynamics = [
-            "revealing_shot",
-            "transformation_morphing",
-            "levitation_floating",
-            "explosion",
-            "shattering_breaking",
-            "diffusion",
-            "splashing_waves"
-        ]
-        for other_dynamic in other_dynamics:
-            if getattr(lighting_setup, other_dynamic) is True:
-                other_dynamics_strs.append(read_json_file(os.path.join(dynamics_dir, f"{other_dynamic}.json"))['def_prompt'][0])
-        if len(other_dynamics_strs) == 0:
-            return "No other significant dynamics in this video. (no need to mention)."
-        return " ".join(other_dynamics_strs)
-
-    def get_description(self, data: VideoData) -> str:
-        import pdb; pdb.set_trace() # Not supported anymore
-        if data.cam_motion.shot_transition or data.cam_motion.shot_transition:
-            raise ValueError("Shot transitions are not supported in this policy.")
-
-        policy = ""
-        policy += read_text_file(
-            "caption_policy/policy/lighting_effects_dynamics/policy.txt"
-        )
-
-        assert (
-            data.cam_setup.subject_description != ""
-        ), "Subject description must be provided before lighting effects and dynamics description."
-        assert (
-            data.cam_setup.scene_description != ""
-        ), "Scene description must be provided before lighting effects and dynamics description."
-        policy += "\n\n" + read_text_file(
-            "caption_policy/policy/lighting_effects_dynamics/has_subject_scene_description.txt"
-        ).format(
-            subject_description=data.cam_setup.subject_description,
-            scene_description=data.cam_setup.scene_description,
-        )
-
-        policy += "\n\nWe have already provided some guidance on describing the aforementioned aspects of lighting effects. Please use these as references to expand your description. Keep your description a natural and brief paragraph without any formatting."
-        policy += "\n\n**Lens and Optical Effects:** {}".format(self.format_lens_effects(data.lighting_setup))
-        policy += "\n\n**Light Reflections:** {}".format(self.format_light_reflections(data.lighting_setup))
-        policy += "\n\n**Natural Lighting Effects:** {}".format(self.format_natural_lighting_effects(data.lighting_setup))
-        policy += "\n\n**Artificial or Artistic Lighting Effects:** {}".format(self.format_artificial_lighting_effects(data.lighting_setup))
-        policy += "\n\n**Volumetric Lighting:** {}".format(self.format_volumetric_lighting(data.lighting_setup))
-        policy += "\n\n**Shadow Patterns or Gobo Lighting Effects:** {}".format(self.format_shadow_patterns(data.lighting_setup))
-        policy += "\n\n**Lighting Dynamics:** {}".format(self.format_light_dynamics(data.lighting_setup))
-        policy += "\n\n**Other Dynamics: {}".format(self.format_dynamics(data.lighting_setup))
-        return policy
-
-
-class RawColorPolicy(PromptGenerator):
+class ColorPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Color Composition and Dynamics Description"
         info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Color Composition and Dynamics without subject/scene descriptions."
@@ -1714,7 +1201,7 @@ class RawColorPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "raw_color_composition_dynamics": self.get_description(data)
+            "raw_color_composition_dynamics": self.get_prompt(data)
         }
 
     def format_color_temperature(self, color_temperature: str, color_temperature_dir="labels/lighting_setup/color_grading/temperature/") -> str:
@@ -1774,7 +1261,7 @@ class RawColorPolicy(PromptGenerator):
             brightness_str += " (no need to mention)."
         return brightness_str
 
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.lighting_setup.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
@@ -1791,7 +1278,7 @@ class RawColorPolicy(PromptGenerator):
         return policy
 
 
-class RawLightingSetupPolicy(PromptGenerator):
+class LightingSetupPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Lighting Setup and Dynamics Description"
         info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Lighting Setup and Dynamics without subject/scene descriptions."
@@ -1801,7 +1288,7 @@ class RawLightingSetupPolicy(PromptGenerator):
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
         return {
-            "raw_lighting_setup_dynamics": self.get_description(data)
+            "raw_lighting_setup_dynamics": self.get_prompt(data)
         }
 
     def format_scene_type(self, scene_type: str, scene_type_dir="labels/lighting_setup/scene/") -> str:
@@ -1941,7 +1428,7 @@ class RawLightingSetupPolicy(PromptGenerator):
             return "No special lighting effects are observed on the subject. (no need to mention)."
         return " ".join(special_light_effects_strs)
 
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.lighting_setup.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 
@@ -1965,7 +1452,7 @@ class RawLightingSetupPolicy(PromptGenerator):
         return policy
 
 
-class RawLightingEffectsPolicy(PromptGenerator):
+class LightingEffectsPolicy(PromptGenerator):
     def __init__(self):
         name = "Raw Lighting Effects and Dynamics Description"
         info = "A policy that uses existing labels to prompt a human or model to provide structured captions for Lighting Effects and Dynamics without subject/scene descriptions."
@@ -1974,7 +1461,7 @@ class RawLightingEffectsPolicy(PromptGenerator):
 
     def __call__(self, data: VideoData) -> Dict[str, str]:
         """Given a VideoData instance, return a dictionary of prompts for structured captions."""
-        return {"raw_lighting_effects_dynamics": self.get_description(data)}
+        return {"raw_lighting_effects_dynamics": self.get_prompt(data)}
 
     
     def format_lens_effects(self, lighting_setup, lens_effects_dir="labels/lighting_setup/lens_effect/") -> str:
@@ -2121,7 +1608,7 @@ class RawLightingEffectsPolicy(PromptGenerator):
             return False, "No other significant dynamics in this video. (no need to mention)."
         return True, " ".join(other_dynamics_strs) + " (please include and explain these effects.)"
     
-    def get_description(self, data: VideoData) -> str:
+    def get_prompt(self, data: VideoData) -> str:
         if data.lighting_setup.shot_transition:
             raise ValueError("Shot transitions are not supported in this policy.")
 

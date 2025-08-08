@@ -1,11 +1,11 @@
 # caption/config/main_config.py
 from caption.config.base_config import AppConfig
 from caption_policy.vanilla_program import (
-    VanillaSubjectPolicy,
-    VanillaScenePolicy,
-    VanillaSubjectMotionPolicy,
-    VanillaSpatialPolicy,
-    VanillaCameraPolicy,
+    SubjectPolicy,
+    ScenePolicy,
+    SubjectMotionPolicy,
+    SpatialPolicy,
+    CameraPolicy,
 )
 
 # Main project video URLs files
@@ -154,11 +154,11 @@ DEFAULT_VIDEO_URLS_FILES = [
 def get_main_config() -> AppConfig:
     """Get main annotation configuration"""
     caption_programs = {
-        "subject_description": VanillaSubjectPolicy(),
-        "scene_composition_dynamics": VanillaScenePolicy(),
-        "subject_motion_dynamics": VanillaSubjectMotionPolicy(),
-        "spatial_framing_dynamics": VanillaSpatialPolicy(),
-        "camera_framing_dynamics": VanillaCameraPolicy(),
+        "subject_description": SubjectPolicy(),
+        "scene_composition_dynamics": ScenePolicy(),
+        "subject_motion_dynamics": SubjectMotionPolicy(),
+        "spatial_framing_dynamics": SpatialPolicy(),
+        "camera_framing_dynamics": CameraPolicy(),
     }
     
     return AppConfig(

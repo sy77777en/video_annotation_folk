@@ -8,15 +8,15 @@ from datetime import datetime
 from pathlib import Path
 from utils import extract_frames, load_config, load_json
 from llm import get_llm, get_all_llms, get_supported_mode
-from caption_policy.vanilla_program import VanillaSubjectPolicy, VanillaScenePolicy, VanillaSubjectMotionPolicy, VanillaSpatialPolicy, VanillaCameraPolicy
+from caption_policy.vanilla_program import SubjectPolicy, ScenePolicy, SubjectMotionPolicy, SpatialPolicy, CameraPolicy
 from process_json import json_to_video_data
 
 caption_programs = {
-    "subject_description": VanillaSubjectPolicy(),
-    "scene_composition_dynamics": VanillaScenePolicy(),
-    "subject_motion_dynamics": VanillaSubjectMotionPolicy(),
-    "spatial_framing_dynamics": VanillaSpatialPolicy(),
-    "camera_framing_dynamics": VanillaCameraPolicy()
+    "subject_description": SubjectPolicy(),
+    "scene_composition_dynamics": ScenePolicy(),
+    "subject_motion_dynamics": SubjectMotionPolicy(),
+    "spatial_framing_dynamics": SpatialPolicy(),
+    "camera_framing_dynamics": CameraPolicy()
 }
 
 # Get the directory where this script is located

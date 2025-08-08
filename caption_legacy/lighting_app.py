@@ -2,14 +2,14 @@
 import argparse
 from streamlit_feedback import streamlit_feedback
 from caption_policy.vanilla_program import (
-    VanillaSubjectPolicy,
-    VanillaScenePolicy,
-    VanillaColorPolicy,
-    VanillaLightingSetupPolicy,
-    VanillaLightingEffectsPolicy,
-    RawColorPolicy,
-    RawLightingSetupPolicy,
-    RawLightingEffectsPolicy,
+    SubjectPolicy,
+    ScenePolicy,
+    ColorPolicy,
+    LightingSetupPolicy,
+    LightingEffectsPolicy,
+    ColorPolicy,
+    LightingSetupPolicy,
+    LightingEffectsPolicy,
 )
 
 def convert_name_to_username(full_name):
@@ -72,14 +72,14 @@ def parse_args():
 args = parse_args()
 
 caption_programs = {
-    # "subject_description": VanillaSubjectPolicy(),
-    # "scene_composition_dynamics": VanillaScenePolicy(),
-    # "color_composition_dynamics": VanillaColorPolicy(),
-    # "lighting_setup_dynamics": VanillaLightingSetupPolicy(),
-    # "lighting_effects_dynamics": VanillaLightingEffectsPolicy(),
-    "raw_color_composition_dynamics": RawColorPolicy(),
-    "raw_lighting_setup_dynamics": RawLightingSetupPolicy(),
-    "raw_lighting_effects_dynamics": RawLightingEffectsPolicy(),
+    # "subject_description": SubjectPolicy(),
+    # "scene_composition_dynamics": ScenePolicy(),
+    # "color_composition_dynamics": ColorPolicy(),
+    # "lighting_setup_dynamics": LightingSetupPolicy(),
+    # "lighting_effects_dynamics": LightingEffectsPolicy(),
+    "raw_color_composition_dynamics": ColorPolicy(),
+    "raw_lighting_setup_dynamics": LightingSetupPolicy(),
+    "raw_lighting_effects_dynamics": LightingEffectsPolicy(),
 }
 
 from feedback_app import main
