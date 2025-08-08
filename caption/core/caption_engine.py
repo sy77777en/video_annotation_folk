@@ -174,7 +174,8 @@ class CaptionEngine:
             
             for config in configs:
                 # Get the output directory for this config
-                config_output_dir = os.path.join(main_project_output, config["output_name"])
+                config_output_dir = os.path.join(self.data_manager.folder, main_project_output, config["output_name"])
+
                 feedback_file = self.data_manager.get_filename(
                     video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX
                 )
@@ -182,7 +183,7 @@ class CaptionEngine:
                 # If feedback exists in main project, check if precaption already exists
                 if os.path.exists(feedback_file):
                     # Create config directory in personalized output
-                    personalized_config_dir = os.path.join(personalized_output, config["output_name"])
+                    personalized_config_dir = os.path.join(self.data_manager.folder, personalized_output, config["output_name"])
                     os.makedirs(personalized_config_dir, exist_ok=True)
                     
                     # Check if precaption file already exists

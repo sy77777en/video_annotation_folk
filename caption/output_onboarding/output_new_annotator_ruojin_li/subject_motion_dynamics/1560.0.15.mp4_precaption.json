@@ -1,8 +1,26 @@
 {
     "video_id": "1560.0.15.mp4",
+    "pre_caption": "This is a scenery shot from a hyper-speed perspective, moving through a modern subway station. The camera is tilted at a dramatic angle, showing the clean platform, train tracks, and the blue-lit tunnel walls rushing by. Overhead, a large, curved structure with bold yellow and blue stripes dominates the view, while digital displays show the time, track number (\"Gleis 1\"), and public service announcements.",
     "pre_caption_prompt": "The video is a scenery shot. You do not need to describe the subject motion. Just note that briefly in one to three sentences. ",
-    "pre_caption": "This is a scenery shot of a modern subway station platform. The camera is tilted at a dramatic angle, looking down the long, empty platform toward the darkness of a tunnel. The station is illuminated by sleek blue and yellow lights, and a digital sign displays the time, platform number, and public health information in German.",
     "pre_caption_llm": "gemini-2.5-pro",
     "pre_caption_mode": "Video",
-    "timestamp": "2025-08-07T03:21:55.256249"
+    "original_caption": "This is a scenery shot from a hyper-speed perspective, moving through a modern subway station. The camera is tilted at a dramatic angle, showing the clean platform, train tracks, and the blue-lit tunnel walls rushing by. Overhead, a large, curved structure with bold yellow and blue stripes dominates the view, while digital displays show the time, track number (\"Gleis 1\"), and public service announcements.",
+    "initial_caption_rating": "\ud83d\ude10",
+    "initial_caption_rating_score": 3,
+    "feedback_is_needed": true,
+    "user": "Tina Xu",
+    "initial_feedback": "The camera is not only tilting but also rotating. The overhead curved structures are a row of rounded, hooded lights in yellow, orange, and blue, which cast reflections onto the floor.",
+    "gpt_feedback_llm": "gpt-4o-2024-08-06",
+    "gpt_feedback_prompt": "Given a video caption and user feedback, rewrite the feedback to enhance clarity, professionalism, and completeness while preserving its original intent. If the feedback is vague, overly brief, or poorly written, infer the likely meaning and refine it accordingly.\n\nOriginal caption: {pre_caption}\nUser feedback: {feedback}\n\nRespond with only the polished feedback, without JSON formatting or additional commentary.",
+    "gpt_feedback": "The camera is not only tilted but also rotating, adding a dynamic effect to the scene. The overhead curved structures consist of a series of rounded, hooded lights in yellow, orange, and blue, which create reflections on the floor.",
+    "feedback_rating": "\ud83d\ude00",
+    "feedback_rating_score": 5,
+    "final_feedback": "The camera is not only tilted but also rotating, adding a dynamic effect to the scene. The overhead curved structures consist of a series of rounded, hooded lights in yellow, orange, and blue, which create reflections on the floor.",
+    "gpt_caption_llm": "gpt-4o-2024-08-06",
+    "gpt_caption_prompt": "Given a video caption and user feedback, please provide an improved version of the caption that addresses the feedback. Note that the user feedback could be poorly written, so please try your best to guess what it means.\n\nOriginal caption: {pre_caption}\nUser feedback: {feedback}\n\nRespond with the improved caption only, without quotation marks or JSON formatting.",
+    "gpt_caption": "This is a scenery shot from a hyper-speed perspective, moving through a modern subway station. The camera is tilted and rotating, adding a dynamic effect to the scene. It shows the clean platform, train tracks, and the blue-lit tunnel walls rushing by. Overhead, a large, curved structure with a series of rounded, hooded lights in yellow, orange, and blue dominates the view, creating reflections on the floor. Digital displays show the time, track number (\"Gleis 1\"), and public service announcements.",
+    "caption_rating": "\ud83d\ude00",
+    "caption_rating_score": 5,
+    "final_caption": "This is a scenery shot from a hyper-speed perspective, moving through a modern subway station. The camera is tilted and rotating, adding a dynamic effect to the scene. It shows the clean platform, train tracks, and the blue-lit tunnel walls rushing by. Overhead, a large, curved structure with a series of rounded, hooded lights in yellow, orange, and blue dominates the view, creating reflections on the floor. Digital displays show the time, track number (\"Gleis 1\"), and public service announcements.",
+    "timestamp": "2025-06-24T03:43:46.723692"
 }
