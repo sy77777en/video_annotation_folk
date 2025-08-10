@@ -1,0 +1,53 @@
+{
+    "subject": {
+        "type": "Describe the type of each subject in the video as precisely as possible (e.g., man, woman, dog, car).",
+        "appearance": "Summarize key visual traits of each subject, such as hairstyle, facial hair, age, gender, ethnicity (if clear), or for objects, color, material, shape, and any distinctive marks.",
+        "wardrobe": "For subjects with clothing, describe clothing colors, styles, and notable accessories or details.",
+        "facial_expression": "If visible and relevant, describe each subject’s facial expression clearly (e.g., smiling, frowning, neutral).",
+        "pose": "Describe each subject’s posture, stance, and orientation within the frame (e.g., standing, sitting, walking, facing camera).",
+        "relationship": "Explain spatial and action-based relationships between subjects (e.g., standing next to, chasing, handing an object to another).",
+        "transition": "If a subject reveals, disappears, or changes prominence during the video, describe the change and how it occurs (through subject or camera movement)."
+    },
+    "scene": {
+        "point_of_view": "Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, objective view, etc., and note how the perspective shapes the viewer’s perception.",
+        "location": "Describe whether the setting is indoors or outdoors and summarize its defining features or notable location if identifiable.",
+        "time_of_day": "Specify the time of day, such as day, night, sunrise, sunset, or other transitional periods.",
+        "architecture": "Describe notable man-made structures, buildings, roads, or other constructed elements present in the scene if relevant.",
+        "nature": "Describe natural elements such as vegetation, water bodies, mountains, sky, or other landscape features if relevant.",
+        "weather": "Describe weather conditions or atmospheric effects present in the scene if relevant.",
+        "props": "Describe significant objects or furnishings in the environment that contribute to the setting if relevant.",
+        "style": "Describe visual style if unusual or distinctive, such as color schemes, aesthetics, video editing style, etc.",
+        "overlay": "Specify any overlay elements (if any) in the video, such as text, titles, subtitles, captions, icons, watermarks, heads-up displays (HUD), or framing graphics. Describe their content, placement, and clarify that they are not part of the physical scene.",
+        "scene_dynamics": "Describe notable movement or activity within the scene if there are any, whether natural (e.g., wind, waves) or man-made (e.g., traffic, machinery, crowds).",
+        "transition": "Describe any change in the scene over time or through camera movement if there are any, specifying the type and sequence of transitions."
+    },
+    "motion": {
+        "subject_action": "Describe the actions and dynamic changes of each individual subject, specifying how they move/change over time or if they don't move/change.",
+        "group_action": "Summarize collective or coordinated actions of groups of subjects, specifying the type of group and the nature of the activity.",
+        "object_interaction": "Describe interactions between subjects and objects if there are any, specifying the type of interaction, the object involved, and any resulting effect.",
+        "subject_interaction": "Describe interactions between different subjects if there are any, specifying the nature of interaction and their relative movements."
+    },
+    "spatial": {
+        "shot_size": "Indicate how much of the subject or scenery is visible in the frame, such as close-up, medium shot, wide shot, etc.",
+        "frame_position": "Describe the approximate 2D position of each subject or key element within the frame (e.g., center, left, right, top-left).",
+        "scene_position": "Describe the subject or element's physical location within the environment (e.g., near a window, beside a tree, at the end of a hallway).",
+        "spatial_depth": "Describe the 3D depth placement of each subject or element in the scene (foreground, midground, or background).",
+        "height_relative_to_camera": "Describe the vertical positioning of each subject relative to the camera (e.g., eye level, hip level, ground level, overhead, or aerial view).",
+        "spatial_motion": "Describe any changes in shot size, frame position, depth, or height over time, specifying both the initial and final states."
+    },
+    "camera": {
+        "playback_speed": "State playback speed if altered, such as time-lapse, fast-motion, slow-motion, stop-motion, speed-ramp, or time-reversed.",
+        "lens_distortion": "Describe lens distortion if present, such as fisheye or barrel distortion.",
+        "camera_height": "Specify camera height relative to the ground plane, such as aerial, overhead, eye, hip, ground, above water, or underwater, and note any changes in height.",
+        "camera_angle": "Specify camera angle relative to the ground plane, such as bird’s eye, high, level, low, or worm’s eye, and note any Dutch angle and changes in angle.",
+        "camera_focus": "Describe depth of field; if shallow, describe the focus plane (foreground, midground, background), and any changes in focus (rack/pull, focus tracking).",
+        "camera_steadiness": "Describe how stable the camera is, noting static shot, minimal shake, handheld, or severe shake if present.",
+        "camera_translation": "Describe translation direction and type, such as dolly in/out, truck left/right, pedestal up/down, or crane up/down.",
+        "camera_rotation": "Describe rotation direction and type, such as pan left/right, tilt up/down, or roll clockwise/counterclockwise.",
+        "camera_zoom": "Describe zoom in or out if present; if combined with dolly movement, note whether it is dolly-zoom-in or dolly-zoom-out.",
+        "camera_arc": "Describe arc movements around a subject or the frame center, including horizontal arcs (arc clockwise or counterclockwise) and vertical arcs (crane up or down), and whether combined with tracking.",
+        "tracking_shot": "If the camera tracks a subject, describe how it does so, such as tracking from the front, back, side, or above, and note whether the subject appears larger, smaller, or unchanged in the frame during tracking.",
+        "camera_movement_speed": "Describe movement speed if notably slow or fast.",
+        "camera_movement_purpose": "Describe the reason and purpose of camera movement, such as tracking a subject, revealing a scene, or creating emphasis."
+    }
+}

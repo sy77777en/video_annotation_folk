@@ -3,7 +3,7 @@ import os
 from tqdm import tqdm
 import argparse
 from process_json import json_to_video_data
-from caption_policy.vanilla_program import VanillaCameraMotionPolicy
+from caption_policy.prompt_generator import VanillaCameraMotionPolicy
 from llm import get_llm, get_all_llms, get_supported_mode
 from download import download_videos, get_video_labels_dir, load_from_json, save_to_json
 

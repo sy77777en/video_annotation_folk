@@ -23,7 +23,7 @@ import time
 # External imports
 from caption.utils import extract_frames, load_config, load_json, get_last_frame_index
 from llm import get_llm, get_all_llms, get_supported_mode
-from caption_policy.vanilla_program import (
+from caption_policy.prompt_generator import (
     SubjectPolicy, ScenePolicy, SubjectMotionPolicy, 
     SpatialPolicy, CameraPolicy, VanillaCameraMotionPolicy, 
     RawSpatialPolicy, RawSubjectMotionPolicy

@@ -1,4 +1,4 @@
-Provide a concise yet informative description of the video’s and camera's configuration, including video speed, lens distortion, camera angle, camera height, movements (translation, rotation, steadiness, intensity, complexity), and focus (depth, focus plane, focus changes).
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 
 #### 1. Video Speed  
 1. If the video speed is altered, specify the type of speed change.  
@@ -38,7 +38,7 @@ Provide a concise yet informative description of the video’s and camera's conf
    - If the depth of field is deep, state **"Deep Focus."**  
    - If the depth of field is shallow, describe it as **shallow** or **extremely shallow**.  
    - Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
-   - If the focus changes, describe the transition (**Rack/Pull Focus, Focus Tracking**).  
+   - If the focus changes, describe both the reason for the focus plane transition (e.g., rack/pull focus, focus tracking) and how the focus plane shifts (for example, from the midground to the foreground to focus on a nearby object).
 
 #### 7. Camera Movement  
 1. If the camera is completely static, no further description is required.  
@@ -56,6 +56,8 @@ Provide a concise yet informative description of the video’s and camera's conf
      5. **Tilt Up/Down**: Angling the camera up or down.  
      6. **Pedestal Up/Down**: Lifting or lowering the camera while keeping it level.  
      7. **Rolling Clockwise/Counterclockwise**: Rotating the camera around its lens axis.  
+     8. **Arcing Clockwise/Counterclockwise**: Circling the camera around a subject or the frame center horizontally.
+     9. **Craning Up/Down**: Circling the camera around a subject or the frame center vertically.  
 6. Mention the speed of movement if noticeably slow or fast. If different movements occur at different speeds, clearly distinguish them.  
    - **Example:**  
      - "The camera slowly dollies forward while trucking quickly to the right."  

@@ -1,7 +1,7 @@
 # lighting_app.py
 import argparse
 from streamlit_feedback import streamlit_feedback
-from caption_policy.vanilla_program import (
+from caption_policy.prompt_generator import (
     SubjectPolicy,
     ScenePolicy,
     ColorPolicy,

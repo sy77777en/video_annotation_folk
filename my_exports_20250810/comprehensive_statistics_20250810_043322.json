@@ -1,0 +1,45 @@
+{
+  "total_videos": 2330,
+  "total_tasks": 5,
+  "total_possible_captions": 11650,
+  "status_counts": {
+    "rejected": 2275,
+    "approved": 4062,
+    "completed_not_reviewed": 3063,
+    "not_completed": 2250
+  },
+  "task_completion": {
+    "Camera Framing and Dynamics Caption": {
+      "rejected": 310,
+      "approved": 925,
+      "completed_not_reviewed": 639,
+      "not_completed": 456
+    },
+    "Subject Description Caption": {
+      "approved": 923,
+      "rejected": 409,
+      "completed_not_reviewed": 600,
+      "not_completed": 398
+    },
+    "Subject Motion and Dynamics Caption": {
+      "rejected": 417,
+      "approved": 797,
+      "completed_not_reviewed": 651,
+      "not_completed": 465
+    },
+    "Scene Composition and Dynamics Caption": {
+      "approved": 818,
+      "rejected": 400,
+      "completed_not_reviewed": 655,
+      "not_completed": 457
+    },
+    "Spatial Framing and Dynamics Caption": {
+      "approved": 599,
+      "rejected": 739,
+      "completed_not_reviewed": 518,
+      "not_completed": 474
+    }
+  },
+  "edge_cases_found": 0,
+  "edge_case_details": []
+}

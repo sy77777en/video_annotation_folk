@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from utils import extract_frames, load_config, load_json, get_last_frame_index
 from llm import get_llm, get_all_llms, get_supported_mode
-from caption_policy.vanilla_program import SubjectPolicy, ScenePolicy, SubjectMotionPolicy, SpatialPolicy, CameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
+from caption_policy.prompt_generator import SubjectPolicy, ScenePolicy, SubjectMotionPolicy, SpatialPolicy, CameraPolicy, VanillaCameraMotionPolicy, RawSpatialPolicy, RawSubjectMotionPolicy
 from process_json import json_to_video_data
 
 caption_programs = {

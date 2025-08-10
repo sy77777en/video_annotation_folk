@@ -1,6 +1,6 @@
 # caption/config/lighting_config.py
 from caption.config.base_config import AppConfig
-from caption_policy.vanilla_program import (
+from caption_policy.prompt_generator import (
     ColorPolicy,
     LightingSetupPolicy,
     LightingEffectsPolicy,
