@@ -106,7 +106,53 @@ def get_first_paragraph(text):
     return text.strip()
 
 
+def add_policy_version(markdown_content, version_name, content, source_info=None):
+    """Add a policy version section with proper markdown and raw text formatting"""
+    if not content:
+        markdown_content.append(f"### {version_name}")
+        markdown_content.append("")
+        markdown_content.append("**Error**: No content available")
+        markdown_content.append("")
+        return
+    
+    markdown_content.append(f"### {version_name}")
+    markdown_content.append("")
+    
+    if source_info:
+        markdown_content.append(f"*Source: {source_info}*")
+        markdown_content.append("")
+    
+    # Proper markdown with syntax highlighting
+    markdown_content.append("```text")
+    markdown_content.append(content)
+    markdown_content.append("```")
+    markdown_content.append("")
+    
+    # Raw text version for copy/paste (plain text, no formatting)
+    markdown_content.append("<details>")
+    markdown_content.append("<summary>📋 Raw text for copy/paste</summary>")
+    markdown_content.append("")
+    markdown_content.append(content)
+    markdown_content.append("")
+    markdown_content.append("</details>")
+    markdown_content.append("")
+
+
 def get_first_sentence(text):
+    """Extract the first sentence from text"""
+    if not text:
+        return None
+    
+    # Split by periods, exclamation marks, or question marks followed by space or end
+    import re
+    sentences = re.split(r'[.!?]+(?:\s|$)', text.strip())
+    if sentences and sentences[0].strip():
+        # Add back the punctuation if it was removed
+        first_sentence = sentences[0].strip()
+        if not first_sentence.endswith(('.', '!', '?')):
+            first_sentence += '.'
+        return first_sentence
+    return text.strip()
     """Extract the first sentence from text"""
     if not text:
         return None
@@ -139,6 +185,55 @@ def get_human_readable_file_path(task_name, human_dir):
     return None
 
 
+def process_single_policy(policy_instance, task_name, display_name, human_dir):
+    """Process a single policy and return all its versions"""
+    print(f"Processing {display_name}...")
+    
+    # Get human-readable file
+    human_file = get_human_readable_file_path(task_name, human_dir)
+    human_content = None
+    
+    if human_file:
+        print(f"Looking for: {human_file}")
+        print(f"File exists: {human_file.exists()}")
+        if human_file.exists():
+            human_content = read_file_safe(human_file)
+            if human_content:
+                print(f"Successfully read {len(human_content)} characters from {human_file.name}")
+            else:
+                print(f"Failed to read content from {human_file.name}")
+        else:
+            print(f"File does not exist: {human_file}")
+    else:
+        print(f"No human file mapping for task: {task_name}")
+    
+    # Get method output
+    method_output = None
+    try:
+        method_output = policy_instance.get_prompt_without_video_info()
+        print(f"Successfully got method output ({len(method_output)} characters)")
+    except Exception as e:
+        print(f"Error getting method output: {e}")
+    
+    # Prepare versions
+    versions = {}
+    
+    if human_content:
+        versions['human_short'] = get_first_sentence(human_content)
+        versions['human'] = get_first_paragraph(human_content)
+        versions['human_detailed'] = human_content
+        versions['human_detailed_source'] = f"`{human_file.relative_to(project_root)}`"
+    else:
+        versions['human_short'] = None
+        versions['human'] = None
+        versions['human_detailed'] = None
+        versions['human_detailed_source'] = f"Error: Could not read {human_file}" if human_file else f"Error: No file mapping for {task_name}"
+    
+    versions['model_without_label'] = method_output
+    
+    return versions
+
+
 def generate_policy_comparison():
     """Generate markdown comparison of all policy versions"""
     
@@ -155,138 +250,57 @@ def generate_policy_comparison():
     human_dir = project_root / "caption" / "human"
     print(f"Looking for human files in: {human_dir}")
     print(f"Human dir exists: {human_dir.exists()}")
+    print("")
     
-    # Start building the markdown content
+    # Build header
     markdown_content = []
     markdown_content.append("# Policy Comparison Report")
     markdown_content.append("")
     markdown_content.append("This document compares four different versions of policies for each of the 5 main policy classes:")
     markdown_content.append("")
-    markdown_content.append("1. **human_short**: One sentence summary from the human-readable policy")
-    markdown_content.append("2. **human**: First paragraph of the human-readable policy")
-    markdown_content.append("3. **human_detailed**: Full content from the corresponding file in `caption/human/`")
-    markdown_content.append("4. **model_without_label**: Output from `get_prompt_without_video_info()` method")
+    markdown_content.append("| Version | Description |")
+    markdown_content.append("|---------|-------------|")
+    markdown_content.append("| **human_short** | One sentence summary from the human-readable policy |")
+    markdown_content.append("| **human** | First paragraph of the human-readable policy |")
+    markdown_content.append("| **human_detailed** | Full content from the file in `caption/human/` |")
+    markdown_content.append("| **model_without_label** | Output from `get_prompt_without_video_info()` method |")
     markdown_content.append("")
     markdown_content.append("---")
     markdown_content.append("")
     
     # Process each policy class
     for policy_instance, task_name, display_name in policy_classes:
-        print(f"Processing {display_name}...")
-        
         markdown_content.append(f"## {display_name}")
         markdown_content.append("")
         
-        # Get human-readable file first since we need it for multiple versions
-        human_file = get_human_readable_file_path(task_name, human_dir)
-        human_content = None
+        # Get all versions for this policy
+        versions = process_single_policy(policy_instance, task_name, display_name, human_dir)
         
-        if human_file:
-            print(f"Looking for: {human_file}")
-            print(f"File exists: {human_file.exists()}")
-            if human_file.exists():
-                human_content = read_file_safe(human_file)
-                if human_content:
-                    print(f"Successfully read {len(human_content)} characters from {human_file.name}")
-                else:
-                    print(f"Failed to read content from {human_file.name}")
-            else:
-                print(f"File does not exist: {human_file}")
-        else:
-            print(f"No human file mapping for task: {task_name}")
+        # Add each version in the specified order
+        add_policy_version(
+            markdown_content, 
+            "1. human_short", 
+            versions['human_short']
+        )
         
-        # Version 1: human_short
-        if human_content:
-            first_sentence = get_first_sentence(human_content)
-            if first_sentence:
-                markdown_content.append("### 1. human_short")
-                markdown_content.append("")
-                markdown_content.append("```")
-                markdown_content.append(first_sentence)
-                markdown_content.append("```")
-                markdown_content.append("")
-                
-                # Raw text version for copy/paste
-                markdown_content.append("<details>")
-                markdown_content.append("<summary>📋 Raw text for copy/paste</summary>")
-                markdown_content.append("")
-                markdown_content.append(first_sentence)
-                markdown_content.append("")
-                markdown_content.append("</details>")
-                markdown_content.append("")
+        add_policy_version(
+            markdown_content, 
+            "2. human", 
+            versions['human']
+        )
         
-        # Version 2: human (first paragraph)
-        if human_content:
-            first_paragraph = get_first_paragraph(human_content)
-            if first_paragraph:
-                markdown_content.append("### 2. human")
-                markdown_content.append("")
-                markdown_content.append("```")
-                markdown_content.append(first_paragraph)
-                markdown_content.append("```")
-                markdown_content.append("")
-                
-                # Raw text version for copy/paste
-                markdown_content.append("<details>")
-                markdown_content.append("<summary>📋 Raw text for copy/paste</summary>")
-                markdown_content.append("")
-                markdown_content.append(first_paragraph)
-                markdown_content.append("")
-                markdown_content.append("</details>")
-                markdown_content.append("")
+        add_policy_version(
+            markdown_content, 
+            "3. human_detailed", 
+            versions['human_detailed'],
+            versions['human_detailed_source']
+        )
         
-        # Version 3: human_detailed (full file)
-        if human_file and human_file.exists() and human_content:
-            markdown_content.append("### 3. human_detailed")
-            markdown_content.append("")
-            markdown_content.append(f"*Source: `{human_file.relative_to(project_root)}`*")
-            markdown_content.append("")
-            markdown_content.append("```")
-            markdown_content.append(human_content)
-            markdown_content.append("```")
-            markdown_content.append("")
-            
-            # Raw text version for copy/paste
-            markdown_content.append("<details>")
-            markdown_content.append("<summary>📋 Raw text for copy/paste</summary>")
-            markdown_content.append("")
-            markdown_content.append(human_content)
-            markdown_content.append("")
-            markdown_content.append("</details>")
-            markdown_content.append("")
-        else:
-            markdown_content.append("### 3. human_detailed")
-            markdown_content.append("")
-            if human_file:
-                markdown_content.append(f"**Error**: File not found: `{human_file}`")
-            else:
-                markdown_content.append(f"**Error**: No human-readable file mapping found for task `{task_name}`")
-            markdown_content.append("")
-        
-        # Version 4: model_without_label (method output)
-        try:
-            method_output = policy_instance.get_prompt_without_video_info()
-            markdown_content.append("### 4. model_without_label")
-            markdown_content.append("")
-            markdown_content.append("```")
-            markdown_content.append(method_output)
-            markdown_content.append("```")
-            markdown_content.append("")
-            
-            # Raw text version for copy/paste
-            markdown_content.append("<details>")
-            markdown_content.append("<summary>📋 Raw text for copy/paste</summary>")
-            markdown_content.append("")
-            markdown_content.append(method_output)
-            markdown_content.append("")
-            markdown_content.append("</details>")
-            markdown_content.append("")
-            
-        except Exception as e:
-            markdown_content.append("### 4. model_without_label")
-            markdown_content.append("")
-            markdown_content.append(f"**Error**: Could not retrieve method output: {e}")
-            markdown_content.append("")
+        add_policy_version(
+            markdown_content, 
+            "4. model_without_label", 
+            versions['model_without_label']
+        )
         
         markdown_content.append("---")
         markdown_content.append("")

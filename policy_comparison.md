@@ -2,10 +2,12 @@
 
 This document compares four different versions of policies for each of the 5 main policy classes:
 
-1. **human_short**: One sentence summary from the human-readable policy
-2. **human**: First paragraph of the human-readable policy
-3. **human_detailed**: Full content from the corresponding file in `caption/human/`
-4. **model_without_label**: Output from `get_prompt_without_video_info()` method
+| Version | Description |
+|---------|-------------|
+| **human_short** | One sentence summary from the human-readable policy |
+| **human** | First paragraph of the human-readable policy |
+| **human_detailed** | Full content from the file in `caption/human/` |
+| **model_without_label** | Output from `get_prompt_without_video_info()` method |
 
 ---
 
@@ -13,7 +15,7 @@ This document compares four different versions of policies for each of the 5 mai
 
 ### 1. human_short
 
-```
+```text
 Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses.
 ```
 
@@ -26,7 +28,7 @@ Provide a concise yet informative description of the subjects in this video, inc
 
 ### 2. human
 
-```
+```text
 Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses. When multiple subjects are present, clearly distinguish them using unique traits, position, actions, or relationships, and describe them in temporal or prominence-based order to ensure clarity.
 ```
 
@@ -41,7 +43,7 @@ Provide a concise yet informative description of the subjects in this video, inc
 
 *Source: `caption/human/subject_description.txt`*
 
-```
+```text
 Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses. When multiple subjects are present, clearly distinguish them using unique traits, position, actions, or relationships, and describe them in temporal or prominence-based order to ensure clarity.
 
 #### 1. Subject Type  
@@ -200,7 +202,7 @@ Following these steps ensures a more fluent and coherent subject description. In
 
 ### 4. model_without_label
 
-```
+```text
 Provide a concise yet informative description of the subjects in this video. Keep the description concise and clear, focusing on subject types and visual attributes. You should describe the video by combining details from the frames without referring to any specific one (e.g., don’t mention things like "first frame" or "last frame"), and avoid using terms like "image" or "frame." Don't mention the background or motion unless it's necessary to distinguish subjects by location, action, or relationships. You must avoid describing what is not visible or what you are unsure about. You must use simple, natural English and ensure the description is a clear, concise, and coherent paragraph that highlights the most essential details. You must avoid subjective adjectives that convey emotions. Whenever you mention a subject, please describe its key visual attributes in detail. Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 Clearly identify each subject’s type, using precise terms such as “man,” “woman,” “dog,” “car,” or “tree,” rather than vague words like “thing” or “item.” If the subject type is ambiguous, use your best judgment and briefly explain your reasoning.
@@ -245,7 +247,7 @@ If the video features subjects revealing, disappearing, or switching, describe t
 
 ### 1. human_short
 
-```
+```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements.
 ```
 
@@ -258,7 +260,7 @@ Provide a concise yet informative description of the overall scene, including th
 
 ### 2. human
 
-```
+```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 ```
 
@@ -273,7 +275,7 @@ Provide a concise yet informative description of the overall scene, including th
 
 *Source: `caption/human/scene_composition_dynamics.txt`*
 
-```
+```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 
 #### 1. Point of View (if relevant)  
@@ -454,7 +456,7 @@ Provide a concise yet informative description of the overall scene, including th
 
 ### 4. model_without_label
 
-```
+```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements. For notable visual elements within the scene, describe their color, material, shape, and distinguishing features like texture or markings. If subjects are present, ensure their placement and context complement the scene without excessive detail. You should describe the video by combining details from the frames without referring to any specific one (e.g., don’t mention things like "first frame" or "last frame"), and avoid using terms like "image" or "frame." Focus on the setting and scenery rather than detailed subject descriptions. Avoid describing anything not visible or uncertain. Use simple, natural English to create a clear, concise, and coherent paragraph that highlights essential details. Avoid emotional or subjective adjectives. Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.' Do not infer the role of the scene setting. Do not explain what the scene emphasizes or highlights. Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 If relevant, indicate the **point of view**, such as first-person, drone shot, or dashcam, and describe how it influences the viewer’s perception. Specify the **setting** by clearly identifying whether it is indoors or outdoors, using precise language. If the location is known, state it explicitly (e.g., "Times Square" or "Tokyo subway station"). Otherwise, describe defining features such as “a narrow alley with graffiti-covered walls” or “a vast desert with rolling dunes.” Mention the **time of day** and any notable **architectural or natural features**, such as buildings, roads, forests, or bodies of water. Include relevant **weather conditions** if applicable, like “a rainy street with wet pavement reflecting city lights” or “a snowy mountain pass covered in thick fog.” For indoor settings, describe key **furniture or props** that establish the environment, such as “a wooden desk cluttered with books and a vintage lamp.” If notable, mention the **style** of the scene, such as a monochromatic color scheme or a vibrant carnival with neon lights.  
@@ -487,7 +489,7 @@ When shot transitions occur, describe the scene in each segment separately, noti
 
 ### 1. human_short
 
-```
+```text
 Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present.
 ```
 
@@ -500,7 +502,7 @@ Provide a concise yet informative description of the subject’s motion in this 
 
 ### 2. human
 
-```
+```text
 Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
 ```
 
@@ -515,7 +517,7 @@ Provide a concise yet informative description of the subject’s motion in this 
 
 *Source: `caption/human/subject_motion_dynamics.txt`*
 
-```
+```text
 Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
 
 #### 1. Individual Subject Actions  
@@ -628,7 +630,7 @@ Provide a concise yet informative description of the subject’s motion in this 
 
 ### 4. model_without_label
 
-```
+```text
 Provide a concise yet informative description of the subject’s motion in this video, ensuring actions are presented in **chronological order** if multiple movements occur (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch"). Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions. Avoid describing anything not visible or uncertain. Use simple, natural English to create a clear, concise, and coherent paragraph that highlights essential details. Avoid emotional or subjective adjectives. Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.' Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 If the subject in the video has no movement, please briefly mention that without going into too much detail.
@@ -693,7 +695,7 @@ If the video features subjects revealing, disappearing, or switching, describe t
 
 ### 1. human_short
 
-```
+```text
 Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 ```
 
@@ -706,7 +708,7 @@ Provide a concise yet informative description of how subjects and elements are s
 
 ### 2. human
 
-```
+```text
 Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 ```
 
@@ -721,7 +723,7 @@ Provide a concise yet informative description of how subjects and elements are s
 
 *Source: `caption/human/spatial_framing_dynamics.txt`*
 
-```
+```text
 Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 
 #### 1. Framing of Subjects (How Are They Positioned in the Shot?)  
@@ -896,7 +898,7 @@ Provide a concise yet informative description of how subjects and elements are s
 
 ### 4. model_without_label
 
-```
+```text
 Analyze the subjects and elements in this video and provide a concise yet informative description of how they are spatially framed within the scene, including **shot size, position, depth, height relative to the camera, and any changes**. Your goal is to describe the **spatial framing and dynamics** of the subjects and elements within the shot, considering both their placement within the frame and their relative positions in the scene. Ensure the description covers any notable spatial movements. Avoid describing anything not visible or uncertain. Use simple, natural English to create a clear, concise, and coherent paragraph that highlights essential details. Avoid emotional or subjective adjectives. Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B'. Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 First, specify the **shot size** based on the subject's size in the frame if major subjects are present. If the shot size is unclear, describe how much of the subject is visible. If no major subject exists (e.g., a scenery shot), describe the shot size in relation to the scenery.
@@ -945,7 +947,7 @@ If the video features subjects revealing, disappearing, or switching, describe t
 
 ### 1. human_short
 
-```
+```text
 Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 ```
 
@@ -958,7 +960,7 @@ Provide a concise yet informative description of the video and camera configurat
 
 ### 2. human
 
-```
+```text
 Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 ```
 
@@ -973,7 +975,7 @@ Provide a concise yet informative description of the video and camera configurat
 
 *Source: `caption/human/camera_framing_dynamics.txt`*
 
-```
+```text
 Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 
 #### 1. Video Speed  
@@ -1126,7 +1128,7 @@ Provide a concise yet informative description of the video and camera configurat
 
 ### 4. model_without_label
 
-```
+```text
 Provide a concise yet informative description of the **video’s and camera’s configuration**, covering **video speed, lens distortion, camera angle, camera height, movements (translation, rotation, zooming, steadiness, arcing, craning, tracking, speed, complexity, and purpose), and focus (depth, focus plane, focus changes).**  
 
 If **video speed** is altered, specify the type, such as *time-lapse* (“Clouds move rapidly across the sky”), *slow-motion*, *fast-motion*, or *speed ramp* (changing between fast and slow motion). If the video is *time-reversed* or *stop-motion*, note this as well.  
@@ -1172,4 +1174,4 @@ When shot transitions occur, describe the camera framing and movement in each se
 This comparison was generated automatically to help understand the different 
 versions of policy text used throughout the system.
 
-**Generated on**: 2025-08-10 05:25:53
+**Generated on**: 2025-08-10 05:29:23
