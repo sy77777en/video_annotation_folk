@@ -122,17 +122,19 @@ def add_policy_version(markdown_content, version_name, content, source_info=None
         markdown_content.append(f"*Source: {source_info}*")
         markdown_content.append("")
     
-    # Proper markdown with syntax highlighting
+    # Rendered markdown version (shows formatted text)
+    markdown_content.append("**Rendered version:**")
+    markdown_content.append("")
+    markdown_content.append(content)  # This will render the markdown
+    markdown_content.append("")
+    
+    # Raw text version for copy/paste (shows markdown source)
+    markdown_content.append("<details>")
+    markdown_content.append("<summary>📋 Raw markdown source for copy/paste</summary>")
+    markdown_content.append("")
     markdown_content.append("```text")
     markdown_content.append(content)
     markdown_content.append("```")
-    markdown_content.append("")
-    
-    # Raw text version for copy/paste (plain text, no formatting)
-    markdown_content.append("<details>")
-    markdown_content.append("<summary>📋 Raw text for copy/paste</summary>")
-    markdown_content.append("")
-    markdown_content.append(content)
     markdown_content.append("")
     markdown_content.append("</details>")
     markdown_content.append("")
