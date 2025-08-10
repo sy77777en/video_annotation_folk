@@ -2,9 +2,9 @@
 
 This document compares four different versions of policies for each of the 5 main policy classes:
 
-1. **human_short**: One sentence summary
+1. **human_short**: One sentence summary from the human-readable policy
 2. **human**: First paragraph of the human-readable policy
-3. **human_detailed**: Full content from the human-readable policy file
+3. **human_detailed**: Full content from the corresponding file in `caption/human/`
 4. **model_without_label**: Output from `get_prompt_without_video_info()` method
 
 ---
@@ -14,15 +14,13 @@ This document compares four different versions of policies for each of the 5 mai
 ### 1. human_short
 
 ```
-Describe who or what is in the video and their key visual attributes.
+Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Describe who or what is in the video and their key visual attributes.
-```
+Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses.
 
 </details>
 
@@ -35,14 +33,14 @@ Provide a concise yet informative description of the subjects in this video, inc
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses. When multiple subjects are present, clearly distinguish them using unique traits, position, actions, or relationships, and describe them in temporal or prominence-based order to ensure clarity.
-```
 
 </details>
 
 ### 3. human_detailed
 
+*Source: `caption/human/subject_description.txt`*
+
 ```
 Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses. When multiple subjects are present, clearly distinguish them using unique traits, position, actions, or relationships, and describe them in temporal or prominence-based order to ensure clarity.
 
@@ -69,26 +67,60 @@ Provide a concise yet informative description of the subjects in this video, inc
 1. When there is more than one important person or object, make sure it's clear which one you are referring to.  
 2. Use the following strategies for clarity:  
 
-   - **Type:** The simplest way to refer to a subject is by its category, e.g., "the man," "the dog," or "the tree."  
+   - **Type:** The simplest way to refer to a subject is by its category, e.g., “the man,” “the dog,” or “the tree.”  
    - **Attributes:** If multiple subjects belong to the same category, use distinguishing features:  
 
      1. **Unique Appearance:** Highlight distinct traits, such as "the woman in the red dress," "the man with the beard," "the blue car," or "the largest tree."  
      2. **Location:** Specify position within the scene, e.g., "the man on the left," "the dog in the background," "the car in the midground," or "the building in the middle."  
      3. **Action:** Describe their activity, e.g., "the person walking," "the child playing with a ball," "the bird flying," or "the cat sitting on the windowsill."  
-     4. **Relationship to Each Other:** For example, "the man next to the woman" (spatial relationship), "the first man that enters the frame" (temporal relationship), or "the two cars parked side by side."  
+     4. **Relationship to Each Other:** For example, "the man next to the woman" (spatial relationship), “the first man that enters the frame” (temporal relationship), or "the two cars parked side by side."  
 
    - **Combining Descriptions:** For maximum clarity, combine multiple attributes.  
      - **Example:**  
        1. "The woman in the red dress on the left, talking on her phone."  
        2. "The dog in the background, running toward the ball."  
 
-3.
+3. The key is to provide enough detail so that anyone reading the description can easily tell which subject you are referring to.  
+
+#### 4. Order Matters When Describing Multiple Subjects  
+1. When describing multiple subjects, the order in which you mention them matters. Prioritize elements based on their importance in the video.  
+2. Follow these guidelines:  
+
+   - **Temporal Order:** If the scene unfolds over time, describe subjects in the order they appear.  
+     - **Example:** "First, the car speeds past, then the cyclist enters the frame."  
+   - **Prominence-Based Order:** If temporal order isn’t relevant, start with the most visually striking or important subject before moving on to less prominent ones.  
+     - **Example:** "The video shows a bright red sports car in the foreground. In the midground, a blue sedan is right behind it."  
+
+#### 5. If the Video Contains Multiple Subjects or Complex Subject Transitions  
+1. **Determine the Primary Focus:**  
+
+   - If there is a single clear main subject:  
+     1. Describe the main subject in detail, explaining why this subject is the focus while others are not.  
+     2. Include relevant details such as appearance, actions, and positioning that make the subject stand out.  
+     3. Provide a less detailed overview of secondary subjects, mentioning only their general presence or relationship to the main subject.  
+
+   - If the main subject is unclear:  
+     1. Describe subjects in prominence-based order (e.g., humans before objects).  
+
+   - If there is no clear main subject:  
+     1. Give a brief overview of all subjects without excessive detail.  
+
+2. **Identify Subject Transitions:**  
+
+   - If the focus shifts between subjects, specify the type of transition:  
+     1. **Subject Revealing:** A new subject enters the frame.  
+     2. **Subject Disappearing:** A subject exits or is no longer visible.  
+     3. **Subject Switching:** The focus shifts from one subject to another through rack focus or other camera movements.  
+     4. **Other Complex Changes:** Subjects alternate focus multiple times.  
+
+   - Explain how the transition occurs (through subject movement or camera movement).  
+
+Following these steps ensures a more fluent and coherent subject description. In cases of subject switching, always describe subjects in **temporal order** for clarity.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses. When multiple subjects are present, clearly distinguish them using unique traits, position, actions, or relationships, and describe them in temporal or prominence-based order to ensure clarity.
 
 #### 1. Subject Type  
@@ -114,21 +146,55 @@ Provide a concise yet informative description of the subjects in this video, inc
 1. When there is more than one important person or object, make sure it's clear which one you are referring to.  
 2. Use the following strategies for clarity:  
 
-   - **Type:** The simplest way to refer to a subject is by its category, e.g., "the man," "the dog," or "the tree."  
+   - **Type:** The simplest way to refer to a subject is by its category, e.g., “the man,” “the dog,” or “the tree.”  
    - **Attributes:** If multiple subjects belong to the same category, use distinguishing features:  
 
      1. **Unique Appearance:** Highlight distinct traits, such as "the woman in the red dress," "the man with the beard," "the blue car," or "the largest tree."  
      2. **Location:** Specify position within the scene, e.g., "the man on the left," "the dog in the background," "the car in the midground," or "the building in the middle."  
      3. **Action:** Describe their activity, e.g., "the person walking," "the child playing with a ball," "the bird flying," or "the cat sitting on the windowsill."  
-     4. **Relationship to Each Other:** For example, "the man next to the woman" (spatial relationship), "the first man that enters the frame" (temporal relationship), or "the two cars parked side by side."  
+     4. **Relationship to Each Other:** For example, "the man next to the woman" (spatial relationship), “the first man that enters the frame” (temporal relationship), or "the two cars parked side by side."  
 
    - **Combining Descriptions:** For maximum clarity, combine multiple attributes.  
      - **Example:**  
        1. "The woman in the red dress on the left, talking on her phone."  
        2. "The dog in the background, running toward the ball."  
 
-3.
-```
+3. The key is to provide enough detail so that anyone reading the description can easily tell which subject you are referring to.  
+
+#### 4. Order Matters When Describing Multiple Subjects  
+1. When describing multiple subjects, the order in which you mention them matters. Prioritize elements based on their importance in the video.  
+2. Follow these guidelines:  
+
+   - **Temporal Order:** If the scene unfolds over time, describe subjects in the order they appear.  
+     - **Example:** "First, the car speeds past, then the cyclist enters the frame."  
+   - **Prominence-Based Order:** If temporal order isn’t relevant, start with the most visually striking or important subject before moving on to less prominent ones.  
+     - **Example:** "The video shows a bright red sports car in the foreground. In the midground, a blue sedan is right behind it."  
+
+#### 5. If the Video Contains Multiple Subjects or Complex Subject Transitions  
+1. **Determine the Primary Focus:**  
+
+   - If there is a single clear main subject:  
+     1. Describe the main subject in detail, explaining why this subject is the focus while others are not.  
+     2. Include relevant details such as appearance, actions, and positioning that make the subject stand out.  
+     3. Provide a less detailed overview of secondary subjects, mentioning only their general presence or relationship to the main subject.  
+
+   - If the main subject is unclear:  
+     1. Describe subjects in prominence-based order (e.g., humans before objects).  
+
+   - If there is no clear main subject:  
+     1. Give a brief overview of all subjects without excessive detail.  
+
+2. **Identify Subject Transitions:**  
+
+   - If the focus shifts between subjects, specify the type of transition:  
+     1. **Subject Revealing:** A new subject enters the frame.  
+     2. **Subject Disappearing:** A subject exits or is no longer visible.  
+     3. **Subject Switching:** The focus shifts from one subject to another through rack focus or other camera movements.  
+     4. **Other Complex Changes:** Subjects alternate focus multiple times.  
+
+   - Explain how the transition occurs (through subject movement or camera movement).  
+
+Following these steps ensures a more fluent and coherent subject description. In cases of subject switching, always describe subjects in **temporal order** for clarity.
 
 </details>
 
@@ -155,7 +221,6 @@ If the video features subjects revealing, disappearing, or switching, describe t
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the subjects in this video. Keep the description concise and clear, focusing on subject types and visual attributes. You should describe the video by combining details from the frames without referring to any specific one (e.g., don’t mention things like "first frame" or "last frame"), and avoid using terms like "image" or "frame." Don't mention the background or motion unless it's necessary to distinguish subjects by location, action, or relationships. You must avoid describing what is not visible or what you are unsure about. You must use simple, natural English and ensure the description is a clear, concise, and coherent paragraph that highlights the most essential details. You must avoid subjective adjectives that convey emotions. Whenever you mention a subject, please describe its key visual attributes in detail. Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 Clearly identify each subject’s type, using precise terms such as “man,” “woman,” “dog,” “car,” or “tree,” rather than vague words like “thing” or “item.” If the subject type is ambiguous, use your best judgment and briefly explain your reasoning.
@@ -171,7 +236,6 @@ If the video is a scenery shot without salient subjects, you do not need to desc
 If the video features salient human or non-human subjects, focus your description on them. If the video features multiple subjects with a clear focus, you may describe the main subject in detail and briefly mention the secondary subjects. If the video features multiple subjects without a clear main focus, describe the types of subjects without going into too much detail. You may also describe the subjects collectively as a group.
 
 If the video features subjects revealing, disappearing, or switching, describe the transition in detail.
-```
 
 </details>
 
@@ -182,15 +246,13 @@ If the video features subjects revealing, disappearing, or switching, describe t
 ### 1. human_short
 
 ```
-Describe the environment, setting, and background elements of the scene.
+Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Describe the environment, setting, and background elements of the scene.
-```
+Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements.
 
 </details>
 
@@ -203,20 +265,20 @@ Provide a concise yet informative description of the overall scene, including th
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
-```
 
 </details>
 
 ### 3. human_detailed
+
+*Source: `caption/human/scene_composition_dynamics.txt`*
 
 ```
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 
 #### 1. Point of View (if relevant)  
 1. Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, or an objective or detached view.  
-2. Focus on how the perspective influences the viewer's perception of the scene.  
+2. Focus on how the perspective influences the viewer’s perception of the scene.  
 
 #### 2. Setting (Where does it happen?)  
 1. **Scene Type:** Specify whether the setting is indoors or outdoors using precise and descriptive terms. Avoid vague descriptions.  
@@ -255,7 +317,7 @@ Provide a concise yet informative description of the overall scene, including th
   
   - **Overlay:** If overlays are present, describe their apperance and location.
     - **Examples:**
-      1. "White sans-serif subtitles reading 'We should leave now' appear at the bottom center of the frame."
+      1. "White sans-serif subtitles reading ‘We should leave now’ appear at the bottom center of the frame."
       2. "A rectangular minimap HUD with roads and markers is overlaid in the bottom left corner."
 
 #### 3. Movement and Changes in the Environment  
@@ -302,12 +364,11 @@ Provide a concise yet informative description of the overall scene, including th
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 
 #### 1. Point of View (if relevant)  
 1. Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, or an objective or detached view.  
-2. Focus on how the perspective influences the viewer's perception of the scene.  
+2. Focus on how the perspective influences the viewer’s perception of the scene.  
 
 #### 2. Setting (Where does it happen?)  
 1. **Scene Type:** Specify whether the setting is indoors or outdoors using precise and descriptive terms. Avoid vague descriptions.  
@@ -346,7 +407,7 @@ Provide a concise yet informative description of the overall scene, including th
   
   - **Overlay:** If overlays are present, describe their apperance and location.
     - **Examples:**
-      1. "White sans-serif subtitles reading 'We should leave now' appear at the bottom center of the frame."
+      1. "White sans-serif subtitles reading ‘We should leave now’ appear at the bottom center of the frame."
       2. "A rectangular minimap HUD with roads and markers is overlaid in the bottom left corner."
 
 #### 3. Movement and Changes in the Environment  
@@ -388,7 +449,6 @@ Provide a concise yet informative description of the overall scene, including th
 
 2. Prioritize the most prominent and important aspects of the scene.  
 3. Start with the overall setting, then move on to more specific details.
-```
 
 </details>
 
@@ -409,7 +469,6 @@ When shot transitions occur, describe the scene in each segment separately, noti
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements. For notable visual elements within the scene, describe their color, material, shape, and distinguishing features like texture or markings. If subjects are present, ensure their placement and context complement the scene without excessive detail. You should describe the video by combining details from the frames without referring to any specific one (e.g., don’t mention things like "first frame" or "last frame"), and avoid using terms like "image" or "frame." Focus on the setting and scenery rather than detailed subject descriptions. Avoid describing anything not visible or uncertain. Use simple, natural English to create a clear, concise, and coherent paragraph that highlights essential details. Avoid emotional or subjective adjectives. Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.' Do not infer the role of the scene setting. Do not explain what the scene emphasizes or highlights. Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 If relevant, indicate the **point of view**, such as first-person, drone shot, or dashcam, and describe how it influences the viewer’s perception. Specify the **setting** by clearly identifying whether it is indoors or outdoors, using precise language. If the location is known, state it explicitly (e.g., "Times Square" or "Tokyo subway station"). Otherwise, describe defining features such as “a narrow alley with graffiti-covered walls” or “a vast desert with rolling dunes.” Mention the **time of day** and any notable **architectural or natural features**, such as buildings, roads, forests, or bodies of water. Include relevant **weather conditions** if applicable, like “a rainy street with wet pavement reflecting city lights” or “a snowy mountain pass covered in thick fog.” For indoor settings, describe key **furniture or props** that establish the environment, such as “a wooden desk cluttered with books and a vintage lamp.” If notable, mention the **style** of the scene, such as a monochromatic color scheme or a vibrant carnival with neon lights.  
@@ -419,7 +478,6 @@ If the scene involves **motion or changes**, describe natural elements like wind
 Please avoid using phrases like "the first frame" or "the last frame" in your description. Instead, refer to the entire sequence simply as "the video." Your description should integrate observations from all frames into a cohesive, temporally and logically consistent narrative, rather than describing frames in isolation. Do not infer the role of the scene setting. Do not explain what the scene emphasizes or highlights. The final output should be a single, fluent paragraph. Focus on the setting and scenery, not on detailed descriptions of the subject.
 
 When shot transitions occur, describe the scene in each segment separately, noting the type of transition (e.g., hard cut, soft transition) and explaining how the scene changes from one segment to the next.
-```
 
 </details>
 
@@ -430,37 +488,35 @@ When shot transitions occur, describe the scene in each segment separately, noti
 ### 1. human_short
 
 ```
-Describe how subjects move and what they interact with.
+Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Describe how subjects move and what they interact with.
-```
+Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present.
 
 </details>
 
 ### 2. human
 
 ```
-Provide a concise yet informative description of the subject's motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
+Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Provide a concise yet informative description of the subject's motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
-```
+Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
 
 </details>
 
 ### 3. human_detailed
 
+*Source: `caption/human/subject_motion_dynamics.txt`*
+
 ```
-Provide a concise yet informative description of the subject's motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
+Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
 
 #### 1. Individual Subject Actions  
 1. Describe the actions and dynamic changes of individual subjects, ensuring clarity on the manner of movement.
@@ -510,14 +566,13 @@ Provide a concise yet informative description of the subject's motion in this vi
    - **Good:** "A swarm of bees buzzes around a hive."  
      - **Instead of:** "Insects are moving."  
    - **Good:** "A school of fish swims in unison, changing direction as one unit."  
-     - **Instead of:** "Fish are swimming.
+     - **Instead of:** "Fish are swimming."
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Provide a concise yet informative description of the subject's motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
+Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present. Please note that event order matters! If multiple actions occur, present them in chronological order (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch").
 
 #### 1. Individual Subject Actions  
 1. Describe the actions and dynamic changes of individual subjects, ensuring clarity on the manner of movement.
@@ -567,8 +622,7 @@ Provide a concise yet informative description of the subject's motion in this vi
    - **Good:** "A swarm of bees buzzes around a hive."  
      - **Instead of:** "Insects are moving."  
    - **Good:** "A school of fish swims in unison, changing direction as one unit."  
-     - **Instead of:** "Fish are swimming.
-```
+     - **Instead of:** "Fish are swimming."
 
 </details>
 
@@ -605,7 +659,6 @@ If the video features subjects revealing, disappearing, or switching, describe t
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the subject’s motion in this video, ensuring actions are presented in **chronological order** if multiple movements occur (e.g., "The bird first takes flight, then soars in a circle, and finally lands on a branch"). Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions. Avoid describing anything not visible or uncertain. Use simple, natural English to create a clear, concise, and coherent paragraph that highlights essential details. Avoid emotional or subjective adjectives. Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.' Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 If the subject in the video has no movement, please briefly mention that without going into too much detail.
@@ -631,7 +684,6 @@ If the video is a scenery shot without salient subjects, you do not need to desc
 If the video features salient human or non-human subjects, focus your description on their motion. When there are multiple subjects with a clear focus, describe the main subject’s motion in detail and briefly mention the motion of secondary subjects. If there are multiple subjects without a clear main focus, describe their motion collectively and concisely without going into excessive detail.
 
 If the video features subjects revealing, disappearing, or switching, describe the transition in detail along with the description of their motion.
-```
 
 </details>
 
@@ -642,45 +694,70 @@ If the video features subjects revealing, disappearing, or switching, describe t
 ### 1. human_short
 
 ```
-Describe how subjects and elements are framed and positioned within the shot.
+Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Describe how subjects and elements are framed and positioned within the shot.
-```
+Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 
 </details>
 
 ### 2. human
 
 ```
-- **Spatial Positioning:** Specify where key elements appear within the frame.  
-     - **Examples:**  
-       1. "A symmetrical shot of a hallway positioned at the center of the frame, leading toward a vanishing point."  
-       2. "A large tree stands in the bottom-left corner of the frame."  
-       3. "A streetlamp is visible on the right side of the frame."
+Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-- **Spatial Positioning:** Specify where key elements appear within the frame.  
-     - **Examples:**  
-       1. "A symmetrical shot of a hallway positioned at the center of the frame, leading toward a vanishing point."  
-       2. "A large tree stands in the bottom-left corner of the frame."  
-       3. "A streetlamp is visible on the right side of the frame."
-```
+Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
 
 </details>
 
 ### 3. human_detailed
 
+*Source: `caption/human/spatial_framing_dynamics.txt`*
+
 ```
-- **Spatial Positioning:** Specify where key elements appear within the frame.  
+Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
+
+#### 1. Framing of Subjects (How Are They Positioned in the Shot?)  
+1. **Shot Size:** Indicate how much of the subject is visible, such as close-up, medium shot, wide shot, or a varying shot that does not follow a fixed framing. Focus on how framing affects the perception of the subject rather than forcing a specific shot type.  
+   - **Examples:**  
+     1. "A close-up captures the subject’s face."  
+     2. "A medium shot frames the person from the waist up."  
+     3. "A wide shot shows a person standing in an open field."  
+     4. "The camera tracks a skateboarder in an unsteady manner, mostly capturing the skateboarder’s lower body."  
+
+2. **Position within the Frame:** Describe the subject’s approximate location within the frame.  
+   - **Examples:**  
+     1. "The person is in the bottom-left corner of the frame."  
+     2. "The person is on the right of the frame."  
+
+3. **Depth within the Scene:** Describe the subject’s placement in relation to the foreground, midground, or background.  
+   - **Examples:**  
+     1. "In the foreground, a person is sitting in front of a computer."  
+
+4. **Position within the Scene:** Describe the subject’s physical placement in the scene.  
+   - **Examples:**  
+     1. "The woman in the midground stands near a window, looking outside."  
+
+5. **Height Relative to the Camera:** Describe the subject’s vertical positioning relative to the camera.  
+   - **Examples:**  
+     1. "The man is framed at eye level."  
+     2. "A low-angle shot captures the person from below."  
+
+#### 2. Framing of Scenery (How Is the Environment Captured?)  
+1. **Shot Size:** Indicate how the environment is framed, such as a wide shot, close-up, or a dynamic framing that shifts within the scene.  
+   - **Examples:**  
+     1. "A wide shot of a mountain range stretching across the horizon."  
+     2. "A close-up of raindrops hitting a window."  
+
+2. **Spatial Composition:** Describe how elements appear within the frame.  
+   - **Spatial Positioning:** Specify where key elements appear within the frame.  
      - **Examples:**  
        1. "A symmetrical shot of a hallway positioned at the center of the frame, leading toward a vanishing point."  
        2. "A large tree stands in the bottom-left corner of the frame."  
@@ -696,7 +773,7 @@ Describe how subjects and elements are framed and positioned within the shot.
 
 2. **Changes in Shot Size and Spatial Position for Subjects:**  
    - **Examples:**  
-     1. "A medium shot of a man's upper body near a doorway transitions into a close-up of his face as he walks toward the camera."  
+     1. "A medium shot of a man’s upper body near a doorway transitions into a close-up of his face as he walks toward the camera."  
      2. "A woman walking from the background to the foreground transitions from a wide shot capturing both her and the street scenery to a medium shot focusing on her lower body."  
      3. "A cyclist moves from the left to the right side of the frame, maintaining a full shot throughout."  
      4. "A full-body shot of a child at eye level shifts as the camera tilts upward, reframing them from a low angle looking up."  
@@ -710,21 +787,64 @@ Describe how subjects and elements are framed and positioned within the shot.
 #### 4. If the Video Contains Multiple Subjects or Complex Subject Transitions  
 1. **Determine the Primary Focus:**  
    - If there is a single clear main subject:  
-     1. Follow the "Framing of Subjects" section to describe this subject in detail, including shot size and spatial position.  
+     1. Follow the “Framing of Subjects” section to describe this subject in detail, including shot size and spatial position.  
      2. Follow "Spatial Motion Within the Frame" to describe any spatial motion and changes.  
      3. Provide a less detailed overview of secondary subjects.  
 
    - If the main subject is unclear:  
-     1. Describe subjects' spatial position and movement in prominence-based order (e.g., humans before objects).  
+     1. Describe subjects’ spatial position and movement in prominence-based order (e.g., humans before objects).  
      2. Instead of determining the shot size based on a random subject, specify it based on the most prominent subject (e.g., a human) if one is clearly dominant.  
-     3. Otherwise, if the subjects are relatively similar in size, use the average shot size.
+     3. Otherwise, if the subjects are relatively similar in size, use the average shot size.  
+     4. If the shot is even more complex, directly state which (part of) subjects are visible and which are not.  
+
+   - If there is no clear main subject:  
+     1. Provide a general overview of subjects' spatial positions without excessive detail.  
+     2. Do not specify shot size, as it is not meaningful in this case. You may optionally describe the shot size following "Framing of Scenery" instead.  
+
+2. **Identify Subject Transitions:**  
+   - If subjects reveal, disappear, switch focus, or undergo other complex changes, describe their shot size (if relevant), spatial position, and movement accordingly.  
+   - Ensure that the description follows the temporal order in which subjects appear.
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-- **Spatial Positioning:** Specify where key elements appear within the frame.  
+Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
+
+#### 1. Framing of Subjects (How Are They Positioned in the Shot?)  
+1. **Shot Size:** Indicate how much of the subject is visible, such as close-up, medium shot, wide shot, or a varying shot that does not follow a fixed framing. Focus on how framing affects the perception of the subject rather than forcing a specific shot type.  
+   - **Examples:**  
+     1. "A close-up captures the subject’s face."  
+     2. "A medium shot frames the person from the waist up."  
+     3. "A wide shot shows a person standing in an open field."  
+     4. "The camera tracks a skateboarder in an unsteady manner, mostly capturing the skateboarder’s lower body."  
+
+2. **Position within the Frame:** Describe the subject’s approximate location within the frame.  
+   - **Examples:**  
+     1. "The person is in the bottom-left corner of the frame."  
+     2. "The person is on the right of the frame."  
+
+3. **Depth within the Scene:** Describe the subject’s placement in relation to the foreground, midground, or background.  
+   - **Examples:**  
+     1. "In the foreground, a person is sitting in front of a computer."  
+
+4. **Position within the Scene:** Describe the subject’s physical placement in the scene.  
+   - **Examples:**  
+     1. "The woman in the midground stands near a window, looking outside."  
+
+5. **Height Relative to the Camera:** Describe the subject’s vertical positioning relative to the camera.  
+   - **Examples:**  
+     1. "The man is framed at eye level."  
+     2. "A low-angle shot captures the person from below."  
+
+#### 2. Framing of Scenery (How Is the Environment Captured?)  
+1. **Shot Size:** Indicate how the environment is framed, such as a wide shot, close-up, or a dynamic framing that shifts within the scene.  
+   - **Examples:**  
+     1. "A wide shot of a mountain range stretching across the horizon."  
+     2. "A close-up of raindrops hitting a window."  
+
+2. **Spatial Composition:** Describe how elements appear within the frame.  
+   - **Spatial Positioning:** Specify where key elements appear within the frame.  
      - **Examples:**  
        1. "A symmetrical shot of a hallway positioned at the center of the frame, leading toward a vanishing point."  
        2. "A large tree stands in the bottom-left corner of the frame."  
@@ -740,7 +860,7 @@ Describe how subjects and elements are framed and positioned within the shot.
 
 2. **Changes in Shot Size and Spatial Position for Subjects:**  
    - **Examples:**  
-     1. "A medium shot of a man's upper body near a doorway transitions into a close-up of his face as he walks toward the camera."  
+     1. "A medium shot of a man’s upper body near a doorway transitions into a close-up of his face as he walks toward the camera."  
      2. "A woman walking from the background to the foreground transitions from a wide shot capturing both her and the street scenery to a medium shot focusing on her lower body."  
      3. "A cyclist moves from the left to the right side of the frame, maintaining a full shot throughout."  
      4. "A full-body shot of a child at eye level shifts as the camera tilts upward, reframing them from a low angle looking up."  
@@ -754,15 +874,23 @@ Describe how subjects and elements are framed and positioned within the shot.
 #### 4. If the Video Contains Multiple Subjects or Complex Subject Transitions  
 1. **Determine the Primary Focus:**  
    - If there is a single clear main subject:  
-     1. Follow the "Framing of Subjects" section to describe this subject in detail, including shot size and spatial position.  
+     1. Follow the “Framing of Subjects” section to describe this subject in detail, including shot size and spatial position.  
      2. Follow "Spatial Motion Within the Frame" to describe any spatial motion and changes.  
      3. Provide a less detailed overview of secondary subjects.  
 
    - If the main subject is unclear:  
-     1. Describe subjects' spatial position and movement in prominence-based order (e.g., humans before objects).  
+     1. Describe subjects’ spatial position and movement in prominence-based order (e.g., humans before objects).  
      2. Instead of determining the shot size based on a random subject, specify it based on the most prominent subject (e.g., a human) if one is clearly dominant.  
-     3. Otherwise, if the subjects are relatively similar in size, use the average shot size.
-```
+     3. Otherwise, if the subjects are relatively similar in size, use the average shot size.  
+     4. If the shot is even more complex, directly state which (part of) subjects are visible and which are not.  
+
+   - If there is no clear main subject:  
+     1. Provide a general overview of subjects' spatial positions without excessive detail.  
+     2. Do not specify shot size, as it is not meaningful in this case. You may optionally describe the shot size following "Framing of Scenery" instead.  
+
+2. **Identify Subject Transitions:**  
+   - If subjects reveal, disappear, switch focus, or undergo other complex changes, describe their shot size (if relevant), spatial position, and movement accordingly.  
+   - Ensure that the description follows the temporal order in which subjects appear.
 
 </details>
 
@@ -791,7 +919,6 @@ If the video features subjects revealing, disappearing, or switching, describe t
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Analyze the subjects and elements in this video and provide a concise yet informative description of how they are spatially framed within the scene, including **shot size, position, depth, height relative to the camera, and any changes**. Your goal is to describe the **spatial framing and dynamics** of the subjects and elements within the shot, considering both their placement within the frame and their relative positions in the scene. Ensure the description covers any notable spatial movements. Avoid describing anything not visible or uncertain. Use simple, natural English to create a clear, concise, and coherent paragraph that highlights essential details. Avoid emotional or subjective adjectives. Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B'. Return only the one-paragraph video description without Markdown formatting or introductory text.
 
 First, specify the **shot size** based on the subject's size in the frame if major subjects are present. If the shot size is unclear, describe how much of the subject is visible. If no major subject exists (e.g., a scenery shot), describe the shot size in relation to the scenery.
@@ -809,7 +936,6 @@ If the video is a scenery shot without salient subjects, specify the shot size o
 If the video features salient human or non-human subjects, focus your description on their spatial framing and movement. When there are multiple subjects with a clear focus, describe the main subject’s spatial framing and movement in detail and briefly mention those of secondary subjects. If there are multiple subjects without a clear main focus, describe their spatial composition and movement collectively and concisely.
 
 If the video features subjects revealing, disappearing, or switching, describe the transition in detail along with their spatial framing and movement.
-```
 
 </details>
 
@@ -820,39 +946,74 @@ If the video features subjects revealing, disappearing, or switching, describe t
 ### 1. human_short
 
 ```
-Describe how the video is captured and how the camera moves.
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-Describe how the video is captured and how the camera moves.
-```
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 
 </details>
 
 ### 2. human
 
 ```
-- Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
-   - If the focus changes, describe both the reason for the focus plane transition (e.g., rack/pull focus, focus tracking) and how the focus plane shifts (for example, from the midground to the foreground to focus on a nearby object).
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-- Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
-   - If the focus changes, describe both the reason for the focus plane transition (e.g., rack/pull focus, focus tracking) and how the focus plane shifts (for example, from the midground to the foreground to focus on a nearby object).
-```
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
 
 </details>
 
 ### 3. human_detailed
 
+*Source: `caption/human/camera_framing_dynamics.txt`*
+
 ```
-- Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
+
+#### 1. Video Speed  
+1. If the video speed is altered, specify the type of speed change.  
+   - **Examples:**  
+     1. **Time-lapse**: Events unfold significantly faster. "Clouds move rapidly across the sky."  
+     2. **Fast-Motion**: Slightly faster than real-time (1x-3x speed).  
+     3. **Slow-Motion**: Slower playback than real-time.  
+     4. **Stop-Motion**: Frame-by-frame animation with discrete movements.  
+     5. **Speed-Ramp**: A mix of fast and slow speeds within the same video.  
+     6. **Time-Reversed**: The video plays in reverse.  
+
+#### 2. Lens Distortion  
+1. If lens distortion is present, describe the type and degree.  
+   - **Examples:**  
+     1. **Fisheye**: Extreme distortion with strong curvature, making the edges appear bent outward.  
+     2. **Barrel**: Mild distortion causing straight lines near the edges to bow outward.  
+
+#### 3. Camera Height (Relative to the Ground)  
+1. If the camera height is discernible, specify one of the following:  
+   - Aerial-level, Overhead-level, Eye-level, Hip-level, Ground-level, Water-level, Underwater.  
+2. Mention any camera movement that causes height changes.  
+
+#### 4. Camera Angle (Relative to the Ground)  
+1. If the camera angle is discernible, specify one of the following:  
+   - Bird’s Eye, High Angle, Level Angle, Low Angle, Worm’s Eye.  
+2. Mention any camera movement that changes the camera angle.  
+
+#### 5. Dutch/Canted Angle  
+1. If a Dutch angle is present, describe its behavior.  
+   - **Examples:**  
+     1. "The Dutch angle remains fixed throughout the shot."  
+     2. "The Dutch angle varies, changing due to camera rolling."  
+
+#### 6. Camera Focus and Depth of Field  
+1. If the type of camera focus is indeterminable, explain whether the video lacks a realistic depth of field effect, is too blurry, or does not appear to be filmed with a real camera.  
+2. If discernible, specify whether the camera has a shallow depth of field.  
+   - If the depth of field is deep, state **"Deep Focus."**  
+   - If the depth of field is shallow, describe it as **shallow** or **extremely shallow**.  
+   - Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
    - If the focus changes, describe both the reason for the focus plane transition (e.g., rack/pull focus, focus tracking) and how the focus plane shifts (for example, from the midground to the foreground to focus on a nearby object).
 
 #### 7. Camera Movement  
@@ -883,14 +1044,52 @@ Describe how the video is captured and how the camera moves.
    - **Excessive Detail (Too much description):**  
      - "As the player explores, the camera moves left, then quickly tilts up, followed by a rapid pan right. The player hesitates, looking down, then abruptly swings the camera left again before slightly tilting upward and making another quick turn to the right."  
    - **Better Description (Concise & clear):**  
-     - "The first-person camera moves randomly as the player looks around, frequently changing direction without a clear pattern.
+     - "The first-person camera moves randomly as the player looks around, frequently changing direction without a clear pattern."
 ```
 
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
-- Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
+Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
+
+#### 1. Video Speed  
+1. If the video speed is altered, specify the type of speed change.  
+   - **Examples:**  
+     1. **Time-lapse**: Events unfold significantly faster. "Clouds move rapidly across the sky."  
+     2. **Fast-Motion**: Slightly faster than real-time (1x-3x speed).  
+     3. **Slow-Motion**: Slower playback than real-time.  
+     4. **Stop-Motion**: Frame-by-frame animation with discrete movements.  
+     5. **Speed-Ramp**: A mix of fast and slow speeds within the same video.  
+     6. **Time-Reversed**: The video plays in reverse.  
+
+#### 2. Lens Distortion  
+1. If lens distortion is present, describe the type and degree.  
+   - **Examples:**  
+     1. **Fisheye**: Extreme distortion with strong curvature, making the edges appear bent outward.  
+     2. **Barrel**: Mild distortion causing straight lines near the edges to bow outward.  
+
+#### 3. Camera Height (Relative to the Ground)  
+1. If the camera height is discernible, specify one of the following:  
+   - Aerial-level, Overhead-level, Eye-level, Hip-level, Ground-level, Water-level, Underwater.  
+2. Mention any camera movement that causes height changes.  
+
+#### 4. Camera Angle (Relative to the Ground)  
+1. If the camera angle is discernible, specify one of the following:  
+   - Bird’s Eye, High Angle, Level Angle, Low Angle, Worm’s Eye.  
+2. Mention any camera movement that changes the camera angle.  
+
+#### 5. Dutch/Canted Angle  
+1. If a Dutch angle is present, describe its behavior.  
+   - **Examples:**  
+     1. "The Dutch angle remains fixed throughout the shot."  
+     2. "The Dutch angle varies, changing due to camera rolling."  
+
+#### 6. Camera Focus and Depth of Field  
+1. If the type of camera focus is indeterminable, explain whether the video lacks a realistic depth of field effect, is too blurry, or does not appear to be filmed with a real camera.  
+2. If discernible, specify whether the camera has a shallow depth of field.  
+   - If the depth of field is deep, state **"Deep Focus."**  
+   - If the depth of field is shallow, describe it as **shallow** or **extremely shallow**.  
+   - Specify which part of the frame is in focus (**Foreground, Midground, Background, Out-of-Focus**).  
    - If the focus changes, describe both the reason for the focus plane transition (e.g., rack/pull focus, focus tracking) and how the focus plane shifts (for example, from the midground to the foreground to focus on a nearby object).
 
 #### 7. Camera Movement  
@@ -921,8 +1120,7 @@ Describe how the video is captured and how the camera moves.
    - **Excessive Detail (Too much description):**  
      - "As the player explores, the camera moves left, then quickly tilts up, followed by a rapid pan right. The player hesitates, looking down, then abruptly swings the camera left again before slightly tilting upward and making another quick turn to the right."  
    - **Better Description (Concise & clear):**  
-     - "The first-person camera moves randomly as the player looks around, frequently changing direction without a clear pattern.
-```
+     - "The first-person camera moves randomly as the player looks around, frequently changing direction without a clear pattern."
 
 </details>
 
@@ -949,7 +1147,6 @@ When shot transitions occur, describe the camera framing and movement in each se
 <details>
 <summary>📋 Raw text for copy/paste</summary>
 
-```text
 Provide a concise yet informative description of the **video’s and camera’s configuration**, covering **video speed, lens distortion, camera angle, camera height, movements (translation, rotation, zooming, steadiness, arcing, craning, tracking, speed, complexity, and purpose), and focus (depth, focus plane, focus changes).**  
 
 If **video speed** is altered, specify the type, such as *time-lapse* (“Clouds move rapidly across the sky”), *slow-motion*, *fast-motion*, or *speed ramp* (changing between fast and slow motion). If the video is *time-reversed* or *stop-motion*, note this as well.  
@@ -965,7 +1162,6 @@ If the **camera is static**, simply state that the shot is static. If it moves, 
 Try to make the description as concise as possible. For example, if the video is at regular playback speed, has no lens distortion, and no Dutch angle, there is no need to mention these.
 
 When shot transitions occur, describe the camera framing and movement in each segment separately, note the type of transition (e.g., hard cut, soft transition), and explain how the framing and movement change between segments.
-```
 
 </details>
 
@@ -976,4 +1172,4 @@ When shot transitions occur, describe the camera framing and movement in each se
 This comparison was generated automatically to help understand the different 
 versions of policy text used throughout the system.
 
-**Generated on**: 2025-08-10 05:17:24
+**Generated on**: 2025-08-10 05:25:53
