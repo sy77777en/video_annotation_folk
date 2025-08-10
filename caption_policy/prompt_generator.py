@@ -137,6 +137,7 @@ class ScenePolicy(PromptGenerator):
         
         true_pov_attribute = data.cam_setup.true_pov_attribute
         policy = read_text_file("caption_policy/policy/scene_composition_dynamics/policy.txt")
+        policy += "\n\n" + read_text_file("caption_policy/policy/scene_composition_dynamics/format_instruction.txt")
         pov_info = read_json_file(os.path.join("labels/cam_setup/point_of_view", f"{true_pov_attribute}.json"))['def_prompt'][0]
         if true_pov_attribute == "objective_pov":
             pov_info += " (no need to mention)."
@@ -148,7 +149,6 @@ class ScenePolicy(PromptGenerator):
     def get_prompt_without_video_info(self) -> str:
         policy = read_text_file("caption_policy/policy/scene_composition_dynamics/policy.txt")
 
-        
         policy += "\n\nWhen shot transitions occur, describe the scene in each segment separately, noting the type of transition (e.g., hard cut, soft transition) and explaining how the scene changes from one segment to the next."
         return policy
 
