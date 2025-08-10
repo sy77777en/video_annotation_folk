@@ -140,6 +140,18 @@ def add_policy_version(markdown_content, version_name, content, source_info=None
     markdown_content.append("")
 
 
+def get_human_short_description(task_name):
+    """Get the predefined human_short description for each task"""
+    human_short_descriptions = {
+        "subject_description": "Describe the main subjects in the video and their most distinctive traits.",
+        "scene_composition_dynamics": "Describe the setting and environment of the video.",
+        "spatial_framing_dynamics": "Describe how the subjects or elements are framed and how they move within the scene.",
+        "subject_motion_dynamics": "Describe the main actions of the subjects in the video.",
+        "camera_framing_dynamics": "Describe the camera's perspective, lens, speed, movement, and focus."
+    }
+    return human_short_descriptions.get(task_name, None)
+
+
 def get_first_sentence(text):
     """Extract the first sentence from text"""
     if not text:
@@ -220,13 +232,14 @@ def process_single_policy(policy_instance, task_name, display_name, human_dir):
     # Prepare versions
     versions = {}
     
+    # Use predefined human_short description
+    versions['human_short'] = get_human_short_description(task_name)
+    
     if human_content:
-        versions['human_short'] = get_first_sentence(human_content)
         versions['human'] = get_first_paragraph(human_content)
         versions['human_detailed'] = human_content
         versions['human_detailed_source'] = f"`{human_file.relative_to(project_root)}`"
     else:
-        versions['human_short'] = None
         versions['human'] = None
         versions['human_detailed'] = None
         versions['human_detailed_source'] = f"Error: Could not read {human_file}" if human_file else f"Error: No file mapping for {task_name}"
@@ -262,10 +275,10 @@ def generate_policy_comparison():
     markdown_content.append("")
     markdown_content.append("| Version | Description |")
     markdown_content.append("|---------|-------------|")
-    markdown_content.append("| **human_short** | One sentence summary from the human-readable policy |")
-    markdown_content.append("| **human** | First paragraph of the human-readable policy |")
-    markdown_content.append("| **human_detailed** | Full content from the file in `caption/human/` |")
-    markdown_content.append("| **model_without_label** | Output from `get_prompt_without_video_info()` method |")
+    markdown_content.append("| **human_short** | Task-specific single-sentence prompt for human annotators, capturing the essence of the description while omitting most details. |")
+    markdown_content.append("| **human** | Task-specific multi-sentence prompt for human annotators with clear detail requirements. |")
+    markdown_content.append("| **human_detailed** | Expanded human prompt with explicit sub-aspects (A, B, C, D, etc.) and definitions. |")
+    markdown_content.append("| **model_without_label** | Model policy (agnostic to human-labeled ground truth). |")
     markdown_content.append("")
     markdown_content.append("---")
     markdown_content.append("")

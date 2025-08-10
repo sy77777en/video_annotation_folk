@@ -4,10 +4,10 @@ This document compares four different versions of policies for each of the 5 mai
 
 | Version | Description |
 |---------|-------------|
-| **human_short** | One sentence summary from the human-readable policy |
-| **human** | First paragraph of the human-readable policy |
-| **human_detailed** | Full content from the file in `caption/human/` |
-| **model_without_label** | Output from `get_prompt_without_video_info()` method |
+| **human_short** | Task-specific single-sentence prompt for human annotators, capturing the essence of the description while omitting most details. |
+| **human** | Task-specific multi-sentence prompt for human annotators with clear detail requirements. |
+| **human_detailed** | Expanded human prompt with explicit sub-aspects (A, B, C, D, etc.) and definitions. |
+| **model_without_label** | Model policy (agnostic to human-labeled ground truth). |
 
 ---
 
@@ -17,13 +17,13 @@ This document compares four different versions of policies for each of the 5 mai
 
 **Rendered version:**
 
-Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses.
+Describe the main subjects in the video and their most distinctive traits.
 
 <details>
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of the subjects in this video, including their types, appearances (e.g., clothing, facial expressions, gender, ethnicity, color, shape), and poses.
+Describe the main subjects in the video and their most distinctive traits.
 ```
 
 </details>
@@ -257,13 +257,13 @@ If the video features subjects revealing, disappearing, or switching, describe t
 
 **Rendered version:**
 
-Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements.
+Describe the setting and environment of the video.
 
 <details>
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements.
+Describe the setting and environment of the video.
 ```
 
 </details>
@@ -272,13 +272,13 @@ Provide a concise yet informative description of the overall scene, including th
 
 **Rendered version:**
 
-Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
+Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, overlays, and notable visual elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 
 <details>
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
+Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, overlays, and notable visual elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 ```
 
 </details>
@@ -289,7 +289,7 @@ Provide a concise yet informative description of the overall scene, including th
 
 **Rendered version:**
 
-Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
+Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, overlays, and notable visual elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 
 #### 1. Point of View (if relevant)  
 1. Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, or an objective or detached view.  
@@ -379,7 +379,7 @@ Provide a concise yet informative description of the overall scene, including th
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, and notable visual elements such as overlay elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
+Provide a concise yet informative description of the overall scene, including the point of view, environment, setting, time of day, overlays, and notable visual elements. If subjects are present, the scene description should complement their descriptions by establishing their location and possible context. Aim to give enough detail to convey the setting while avoiding unnecessary information.
 
 #### 1. Point of View (if relevant)  
 1. Indicate how the scene is captured, such as first-person, dashcam, screen recording, drone shot, or an objective or detached view.  
@@ -503,13 +503,13 @@ When shot transitions occur, describe the scene in each segment separately, noti
 
 **Rendered version:**
 
-Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present.
+Describe the main actions of the subjects in the video.
 
 <details>
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of the subject’s motion in this video, including individual actions, subject–object or subject–subject interactions, and group activities when a crowd is present.
+Describe the main actions of the subjects in the video.
 ```
 
 </details>
@@ -717,13 +717,13 @@ If the video features subjects revealing, disappearing, or switching, describe t
 
 **Rendered version:**
 
-Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
+Describe how the subjects or elements are framed and how they move within the scene.
 
 <details>
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of how subjects and elements are spatially framed within the scene, including the shot size of the subject (or the shot size of the scenery if there is no salient subject), their 2D position within the frame, spatial depth within the scene (foreground, middle ground, background), height relative to the camera, and any notable spatial movement.
+Describe how the subjects or elements are framed and how they move within the scene.
 ```
 
 </details>
@@ -977,13 +977,13 @@ If the video features subjects revealing, disappearing, or switching, describe t
 
 **Rendered version:**
 
-Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
+Describe the camera's perspective, lens, speed, movement, and focus.
 
 <details>
 <summary>📋 Raw markdown source for copy/paste</summary>
 
 ```text
-Provide a concise yet informative description of the video and camera configuration, including playback speed, lens distortion (if present), camera angle, camera height relative to the ground plane, camera movements (translation, rotation, zooming, steadiness, speed, intensity, and complexity), and focus (depth, focus plane, and any changes in focus).
+Describe the camera's perspective, lens, speed, movement, and focus.
 ```
 
 </details>
@@ -1210,4 +1210,4 @@ When shot transitions occur, describe the camera framing and movement in each se
 This comparison was generated automatically to help understand the different 
 versions of policy text used throughout the system.
 
-**Generated on**: 2025-08-10 05:53:22
+**Generated on**: 2025-08-10 06:07:45
