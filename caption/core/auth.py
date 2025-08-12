@@ -7,7 +7,7 @@ from typing import Dict, List, Optional, Tuple
 from pathlib import Path
 
 from caption.core.data_manager import DataManager
-
+from caption.core.ui_components import UIComponents
 
 def load_annotators_from_files(input_dir="annotator") -> Dict[str, Dict[str, str]]:
     """Load annotators from individual JSON files.
@@ -71,8 +71,8 @@ class AuthManager:
         st.title("🎥 Video Caption and Review System")
         st.markdown(f"### Welcome to the {app_config.name}")
         
-        # Create tabs for different login methods
-        tab1, tab2, tab3 = st.tabs(["📋 Login by Sheet", "👤 Login by Annotator", "📋 Job Assignment"])
+        # Create tabs for different login methods - CHANGED: Added 4th tab, made video search 3rd tab
+        tab1, tab2, tab3, tab4 = st.tabs(["📋 Login by Sheet", "👤 Login by Annotator", "🔍 Video ID Search", "📋 Job Assignment"])
 
         with tab1:
             self._render_sheet_login_tab(app_config)
@@ -81,8 +81,181 @@ class AuthManager:
             self._render_annotator_login_tab(app_config)
             
         with tab3:
+            self._render_video_search_tab(app_config)
+            
+        with tab4:
             self._render_job_assignment_tab()
+
     
+    def _render_video_search_tab(self, app_config):
+        """Render the video ID search tab"""
+        st.markdown("#### Search Video ID Across All Sheets")
+        st.markdown("Search for a specific video ID across all sheets and tasks to see its completion status.")
+        
+        # Video ID input
+        video_id_input = st.text_input(
+            "Enter Video ID to search:",
+            key="video_id_search_input",
+            placeholder="e.g., 0001, 0045, 1234, etc.",
+            help="Enter the video ID (without file extension) to search across all sheets"
+        )
+        
+        search_button = st.button("🔍 Search Video ID", type="primary", use_container_width=True)
+        
+        if search_button and video_id_input.strip():
+            video_id = video_id_input.strip()
+            st.markdown("---")
+            
+            try:
+                # Load all configs
+                configs = self.data_manager.load_config(app_config.configs_file)
+                configs = [self.data_manager.load_config(config) for config in configs]
+                
+                # Search across all video URLs files
+                video_found = False
+                search_results = []
+                
+                for video_urls_file in app_config.video_urls_files:
+                    try:
+                        video_urls = self.data_manager.load_json(video_urls_file)
+                        
+                        # Check if video_id exists in this file
+                        for idx, video_url in enumerate(video_urls):
+                            current_video_id = self.data_manager.get_video_id(video_url)
+                            
+                            if current_video_id == video_id:
+                                video_found = True
+                                
+                                # Get sheet name from file path
+                                sheet_name = video_urls_file.split('/')[-1].replace('.json', '')
+                                
+                                # Check status across all tasks/configs
+                                task_statuses = []
+                                for config in configs:
+                                    # Fix: Use proper path construction like other parts of codebase
+                                    config_output_dir = os.path.join(
+                                        self.data_manager.folder, 
+                                        app_config.output_dir, 
+                                        config['output_name']
+                                    )
+                                    status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
+                                        video_id, config_output_dir
+                                    )
+                                    
+                                    # Get completion details
+                                    completion_info = self._get_completion_details(
+                                        status, current_user, prev_user, current_file, config_output_dir, video_id
+                                    )
+                                    
+                                    task_statuses.append({
+                                        'task_name': config['name'],
+                                        'status': status,
+                                        'completion_info': completion_info
+                                    })
+                                
+                                search_results.append({
+                                    'video_id': video_id,
+                                    'video_url': video_url,
+                                    'sheet_name': sheet_name,
+                                    'index': idx,
+                                    'task_statuses': task_statuses
+                                })
+                                
+                    except Exception as e:
+                        st.warning(f"Error searching in {video_urls_file}: {e}")
+                        continue
+                
+                # Display results
+                if video_found:
+                    st.success(f"✅ Found video ID **{video_id}** in {len(search_results)} sheet(s)")
+                    
+                    for result in search_results:
+                        st.markdown(f"### 📄 Sheet: **{result['sheet_name']}**")
+                        st.markdown(f"**Video ID:** {result['video_id']}")
+                        st.markdown(f"**Index in sheet:** {result['index']}")
+                        st.markdown(f"**Video URL:** `{result['video_url']}`")
+                        
+                        # Task completion status table
+                        st.markdown("#### Task Completion Status:")
+                        
+                        # Create a table for task statuses
+                        table_data = []
+                        for task in result['task_statuses']:
+                            # Get short name for display using existing mapping
+                            short_name = UIComponents.config_names_to_short_names.get(
+                                task['task_name'], task['task_name']
+                            )
+                            
+                            # Get status emoji using existing pattern
+                            status_emoji_map = {
+                                "not_completed": "⭕",
+                                "completed_not_reviewed": "✅", 
+                                "approved": "✅✅",
+                                "rejected": "❌"
+                            }
+                            status_emoji = status_emoji_map.get(task['status'], "❓")
+                            
+                            table_data.append({
+                                'Task': short_name,
+                                'Status': f"{status_emoji} {task['status'].replace('_', ' ').title()}",
+                                'Details': task['completion_info']
+                            })
+                        
+                        # Display as columns for better readability
+                        for task_data in table_data:
+                            col1, col2, col3 = st.columns([2, 2, 3])
+                            with col1:
+                                st.write(f"**{task_data['Task']}**")
+                            with col2:
+                                st.write(task_data['Status'])
+                            with col3:
+                                st.write(task_data['Details'])
+                        
+                        st.markdown("---")
+                else:
+                    st.error(f"❌ Video ID **{video_id}** not found in any sheets")
+                    st.info("💡 Make sure you entered the correct video ID (usually a number like 0001, 0045, etc.)")
+                    
+            except Exception as e:
+                st.error(f"Error during search: {e}")
+        
+        elif search_button and not video_id_input.strip():
+            st.warning("⚠️ Please enter a video ID to search")
+    
+    def _get_completion_details(self, status, current_user, prev_user, current_file, config_output_dir, video_id):
+        """Get human-readable completion details"""
+        if status == "not_completed":
+            return "Not completed"
+        elif status == "completed_not_reviewed":
+            return f"Completed by {current_user or 'Unknown'}"
+        elif status == "approved":
+            # For approved status, get reviewer name from reviewer file
+            reviewer_name = self._get_reviewer_name(config_output_dir, video_id)
+            annotator_name = prev_user or current_user or 'Unknown'
+            return f"Completed by {annotator_name}, Approved by {reviewer_name}"
+        elif status == "rejected":
+            # For rejected status, get reviewer name from reviewer file  
+            reviewer_name = self._get_reviewer_name(config_output_dir, video_id)
+            annotator_name = prev_user or current_user or 'Unknown'
+            return f"Completed by {annotator_name}, Rejected by {reviewer_name}"
+        else:
+            return "Unknown status"
+    
+    def _get_reviewer_name(self, config_output_dir, video_id):
+        """Get reviewer name from reviewer file"""
+        reviewer_file = self.data_manager.get_filename(
+            video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX
+        )
+        
+        if os.path.exists(reviewer_file):
+            try:
+                with open(reviewer_file, 'r') as f:
+                    reviewer_data = json.load(f)
+                    return reviewer_data.get("reviewer_name", "Unknown")
+            except Exception:
+                return "Unknown"
+        return "Unknown"
+
     def _render_sheet_login_tab(self, app_config):
         """Render the sheet-based login tab"""
         with st.form("login_form_sheet"):

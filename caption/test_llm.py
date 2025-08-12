@@ -67,6 +67,170 @@ class LLMTestApp:
             st.error(f"Error loading JSON policy: {e}")
             return {}
     
+    def debug_video_status(self, video_id: str):
+        """Debug the status of a specific video across all tasks"""
+        try:
+            # Load configs
+            configs = self.data_manager.load_config(self.app_config.configs_file)
+            if isinstance(configs[0], str):
+                configs = [self.data_manager.load_config(config) for config in configs]
+            
+            st.sidebar.write(f"**🔍 Debugging Video: {video_id}**")
+            
+            # Check if video exists in any URL file
+            video_found_in_files = []
+            for video_urls_file in self.app_config.video_urls_files:
+                try:
+                    video_urls = self.data_manager.load_json(video_urls_file)
+                    if any(self.data_manager.get_video_id(url) == video_id for url in video_urls):
+                        sheet_name = Path(video_urls_file).stem
+                        video_found_in_files.append(sheet_name)
+                except Exception:
+                    continue
+            
+            if not video_found_in_files:
+                st.sidebar.error(f"❌ Video {video_id} not found in any URL files")
+                return
+            else:
+                st.sidebar.success(f"✅ Video found in sheets: {', '.join(video_found_in_files)}")
+            
+            # Check status for each task
+            st.sidebar.write("**📋 Task Status:**")
+            st.sidebar.write("*Status meanings:*")
+            st.sidebar.write("- **not_completed**: No annotation yet")
+            st.sidebar.write("- **completed_not_reviewed**: Annotated but not reviewed")  
+            st.sidebar.write("- **approved**: Reviewed and approved (reviewer_double_check=True)")
+            st.sidebar.write("- **rejected**: Reviewed and corrected by reviewer (reviewer_double_check=False)")
+            st.sidebar.write("*Note: Both approved and rejected are considered 'complete' for filtering*")
+            st.sidebar.write("---")
+            
+            all_complete = True
+            task_results = []
+            
+            for config in configs:
+                config_output_dir = os.path.join(
+                    self.data_manager.folder, 
+                    self.app_config.output_dir, 
+                    config["output_name"]
+                )
+                
+                # Get status using DataManager's method
+                status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
+                    video_id, config_output_dir
+                )
+                
+                # Load feedback data
+                feedback_data = self.data_manager.load_data(
+                    video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX
+                )
+                
+                # Load reviewer data  
+                reviewer_data = self.data_manager.load_data(
+                    video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX
+                )
+                
+                # Extract details
+                annotator = "None"
+                reviewer = "None"
+                reviewer_double_check = None
+                
+                # For rejected status, annotator is the original annotator (prev_user)
+                # For approved status, annotator is current_user
+                if status == "rejected" and prev_user:
+                    annotator = prev_user
+                elif status == "approved" and current_user:
+                    annotator = current_user
+                elif feedback_data:
+                    # Fallback to feedback file user for other statuses
+                    annotator = feedback_data.get("user", "Unknown")
+                
+                if reviewer_data:
+                    reviewer = reviewer_data.get("reviewer_name", "Unknown")
+                    reviewer_double_check = reviewer_data.get("reviewer_double_check", None)
+                
+                # Determine emoji based on status
+                if status == "not_completed":
+                    emoji = "⭕"
+                elif status == "completed_not_reviewed":
+                    emoji = "⏳"
+                elif status == "approved":
+                    emoji = "✅"
+                elif status == "rejected":
+                    emoji = "🔄"  # Different emoji for rejected (corrected)
+                else:
+                    emoji = "❓"
+                
+                # Both approved and rejected are considered "complete"
+                if status not in ["approved", "rejected"]:
+                    all_complete = False
+                
+                # Display task status
+                task_name = config["name"]
+                short_name = self.ui.config_names_to_short_names.get(task_name, task_name)
+                
+                st.sidebar.write(f"{emoji} **{short_name}**")
+                st.sidebar.write(f"   Status: **{status}**")
+                
+                # Show names based on status
+                if status in ["approved", "rejected"]:
+                    st.sidebar.write(f"   Annotator: {annotator} {'(original)' if status == 'rejected' else ''}")
+                    st.sidebar.write(f"   Reviewer: {reviewer}")
+                    if reviewer_double_check is not None:
+                        st.sidebar.write(f"   reviewer_double_check: {reviewer_double_check}")
+                elif status in ["not_completed", "completed_not_reviewed"]:
+                    if annotator != "None":
+                        st.sidebar.write(f"   Annotator: {annotator}")
+                    if status == "completed_not_reviewed":
+                        st.sidebar.write(f"   Reviewer: Not reviewed yet")
+                
+                # Debug file existence
+                feedback_exists = self.data_manager.data_exists(video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX)
+                review_exists = self.data_manager.data_exists(video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
+                prev_feedback_exists = self.data_manager.data_exists(video_id, config_output_dir, self.data_manager.PREV_FEEDBACK_FILE_POSTFIX)
+                st.sidebar.write(f"   Files: feedback={feedback_exists}, review={review_exists}, prev_feedback={prev_feedback_exists}")
+                st.sidebar.write("   ---")
+                
+                task_results.append({
+                    "task": short_name,
+                    "status": status,
+                    "annotator": annotator,
+                    "reviewer": reviewer,
+                    "feedback_exists": feedback_exists,
+                    "review_exists": review_exists,
+                    "prev_feedback_exists": prev_feedback_exists
+                })
+            
+            # Summary
+            st.sidebar.write("**📊 Current Filter Logic:**")
+            st.sidebar.write("Videos shown if ALL tasks have status='approved' OR 'rejected'")
+            st.sidebar.write("(Both approved and rejected captions are considered complete)")
+            
+            approved_or_rejected = sum(1 for r in task_results if r["status"] in ["approved", "rejected"])
+            total_tasks = len(task_results)
+            
+            if all_complete:
+                st.sidebar.success(f"🎉 All tasks approved/rejected! Video should appear in the list.")
+            else:
+                incomplete_tasks = [r["task"] for r in task_results if r["status"] not in ["approved", "rejected"]]
+                st.sidebar.warning(f"🚧 Not all complete. Missing: {', '.join(incomplete_tasks)}")
+                
+                # Detailed breakdown
+                status_counts = {}
+                for r in task_results:
+                    status = r["status"]
+                    status_counts[status] = status_counts.get(status, 0) + 1
+                
+                st.sidebar.write("**Task breakdown:**")
+                for status_type, count in status_counts.items():
+                    st.sidebar.write(f"   {status_type}: {count}")
+                
+                st.sidebar.write(f"**Complete tasks:** {approved_or_rejected}/{total_tasks}")
+                        
+        except Exception as e:
+            st.sidebar.error(f"Error debugging video {video_id}: {e}")
+            import traceback
+            st.sidebar.error(traceback.format_exc())
+    
     def get_all_reviewed_videos(self) -> List[Dict[str, Any]]:
         """Get all videos that have been fully reviewed across all tasks"""
         reviewed_videos = []
@@ -88,7 +252,7 @@ class LLMTestApp:
                     for video_url in video_urls:
                         video_id = self.data_manager.get_video_id(video_url)
                         
-                        # Check if all tasks are completed and reviewed
+                        # Check if all tasks are completed and reviewed (approved OR rejected)
                         all_reviewed = True
                         video_captions = {}
                         reviewer_names = set()  # Track all reviewers for this video
@@ -104,7 +268,8 @@ class LLMTestApp:
                                 video_id, config_output_dir
                             )
                             
-                            if status != "approved":
+                            # Include both approved AND rejected videos (rejected = corrected by reviewer)
+                            if status not in ["approved", "rejected"]:
                                 all_reviewed = False
                                 break
                             else:
@@ -123,14 +288,22 @@ class LLMTestApp:
                                     reviewer_name = reviewer_data.get("reviewer_name", "Unknown")
                                     reviewer_names.add(reviewer_name)
                                 
+                                # For rejected status, annotator is in prev_user (original annotator)
+                                # For approved status, annotator is in current_user  
+                                if status == "rejected":
+                                    annotator_name = prev_user if prev_user else "Unknown"
+                                else:  # approved
+                                    annotator_name = current_user if current_user else "Unknown"
+                                
                                 if feedback_data:
                                     video_captions[config["name"]] = {
                                         "final_caption": feedback_data.get("final_caption", ""),
-                                        "annotator": feedback_data.get("user", "Unknown"),
+                                        "annotator": annotator_name,
                                         "reviewer": reviewer_name,
                                         "timestamp": feedback_data.get("timestamp", ""),
                                         "task": config["task"],
-                                        "config": config
+                                        "config": config,
+                                        "status": status  # Add status for debugging
                                     }
                         
                         if all_reviewed and video_captions:
@@ -158,7 +331,30 @@ class LLMTestApp:
         
         if not reviewed_videos:
             st.sidebar.warning("No fully reviewed videos found.")
+        
+        # Add debugging section
+        with st.sidebar.expander("🐛 Debug Video Status", expanded=False):
+            debug_video_id = st.text_input(
+                "Enter Video ID to debug:",
+                placeholder="e.g., video_001.mp4",
+                key="debug_video_id"
+            )
+            
+            if st.button("🔍 Check Status", key="debug_button"):
+                if debug_video_id:
+                    self.debug_video_status(debug_video_id)
+                else:
+                    st.error("Please enter a video ID")
+        
+        if not reviewed_videos:
             return None
+        
+        # Add search functionality
+        search_term = st.sidebar.text_input(
+            "🔍 Search by Video ID:",
+            placeholder="Type video ID to filter...",
+            key="video_search"
+        )
         
         # Create video options with sheet names
         video_options = {}
@@ -168,6 +364,28 @@ class LLMTestApp:
             caption_count = len(video_data["captions"])
             display_name = f"{video_id} ({sheet_name}) - {caption_count} captions"
             video_options[display_name] = video_data
+        
+        # Filter videos based on search term
+        if search_term:
+            filtered_options = {}
+            search_lower = search_term.lower()
+            for display_name, video_data in video_options.items():
+                video_id = video_data["video_id"].lower()
+                if search_lower in video_id:
+                    filtered_options[display_name] = video_data
+            video_options = filtered_options
+            
+            # Show search results info
+            if video_options:
+                st.sidebar.success(f"Found {len(video_options)} video(s) matching '{search_term}'")
+            else:
+                st.sidebar.warning(f"No videos found matching '{search_term}'")
+        
+        # Show total count
+        st.sidebar.info(f"Showing {len(video_options)} of {len(reviewed_videos)} total videos")
+        
+        if not video_options:
+            return None
         
         selected_display = st.sidebar.selectbox(
             "Select Video:",
@@ -189,10 +407,13 @@ class LLMTestApp:
         
         for caption_name, caption_data in captions.items():
             short_name = self.ui.config_names_to_short_names.get(caption_name, caption_name)
-            # Add reviewer info to the display
+            # Add reviewer info and status to the display
             annotator = caption_data["annotator"]
             reviewer = caption_data["reviewer"]
-            display_with_info = f"{short_name} (A:{annotator[:8]}, R:{reviewer[:8]})"
+            status = caption_data.get("status", "unknown")
+            status_emoji = "✅" if status == "approved" else "🔄" if status == "rejected" else "❓"
+            
+            display_with_info = f"{short_name} {status_emoji} (A:{annotator[:8]}, R:{reviewer[:8]})"
             task_options[display_with_info] = caption_data
         
         selected_task_display = st.sidebar.selectbox(
@@ -235,7 +456,11 @@ class LLMTestApp:
         # Show all captions summary
         with st.expander("📝 All Captions Summary", expanded=False):
             for caption_name, caption_data in selected_video["captions"].items():
-                st.write(f"**{caption_name}**")
+                status = caption_data.get("status", "unknown")
+                status_emoji = "✅" if status == "approved" else "🔄" if status == "rejected" else "❓"
+                
+                st.write(f"**{caption_name}** {status_emoji}")
+                st.write(f"- Status: {status}")
                 st.write(f"- Annotator: {caption_data['annotator']}")
                 st.write(f"- Reviewer: {caption_data['reviewer']}")
                 st.write(f"- Timestamp: {self.data_manager.format_timestamp(caption_data['timestamp'])}")
@@ -327,8 +552,11 @@ Instructions:
         annotator = selected_caption["annotator"]
         reviewer = selected_caption["reviewer"]
         timestamp = self.data_manager.format_timestamp(selected_caption["timestamp"])
+        status = selected_caption.get("status", "unknown")
+        status_emoji = "✅" if status == "approved" else "🔄" if status == "rejected" else "❓"
         
         with st.container(border=True):
+            st.write(f"**Status:** {status} {status_emoji}")
             st.write(f"**Annotator:** {annotator}")
             st.write(f"**Reviewer:** {reviewer}")
             st.write(f"**Completed:** {timestamp}")
