@@ -504,9 +504,59 @@ class LLMTestApp:
         else:
             return {}
     
-    def get_default_prompt_template(self) -> str:
-        """Get the default prompt template"""
-        return """Please convert the following caption into the JSON format shown below:
+    def get_prompt_template_for_task(self, task: str) -> str:
+        """Get the prompt template specific to the task"""
+        # Map task names to their prompt keys
+        task_prompts = {
+            "subject_description": "subject",
+            "scene_composition_dynamics": "scene", 
+            "subject_motion_dynamics": "motion",
+            "spatial_framing_dynamics": "spatial",
+            "camera_framing_dynamics": "camera",
+            "color_composition_dynamics": "color",
+            "lighting_setup_dynamics": "lighting",
+            "lighting_effects_dynamics": "effects"
+        }
+        
+        prompt_key = task_prompts.get(task, task)
+        
+        # Base template with common instructions
+        base_template = """Please convert the following caption into the JSON format shown below:
+
+{json_prompt}
+
+Caption Instruction:
+{caption_instruction}
+
+Caption: {caption}
+
+Instructions:
+1. Use the exact same JSON keys as shown above
+2. Preserve all important information from the caption with all the keywords and details
+3. Organize the information appropriately under each key
+4. If the caption doesn't contain some information, please review the caption instruction above to determine what should be the input
+5. It is okay to leave fields blank as "" if nothing is mentioned in the caption
+6. Return only valid JSON without any additional text"""
+        
+        # Task-specific additional instructions
+        if prompt_key == "camera":
+            return base_template + """
+7. No period after each caption"""
+            
+        elif prompt_key == "subject":
+            return base_template + """
+7. No period after each caption
+8. Don't mention any detail of "wardrobe" and "appearance" in "type". Only mention each subject in short.
+9. Don't mention any detail of "wardrobe" in "appearance". Only mention each subject in short."""
+            
+        elif prompt_key == "motion":
+            return base_template + """
+7. No period after each caption
+8. Mention only subject action in "subject_action". Avoid mentioning camera related details"""
+            
+        else:
+            # Default template (same as original)
+            return """Please convert the following caption into the JSON format shown below:
 
 {json_prompt}
 
@@ -544,6 +594,12 @@ Instructions:
             7. **Iterate on the prompt** to improve the JSON output format
             
             The goal is to convert human-written captions into structured JSON format while preserving all important information.
+            
+            **Task-specific templates:**
+            - **Camera**: Includes "No period after each caption"
+            - **Subject**: Includes specific wardrobe/appearance restrictions
+            - **Motion**: Includes subject action focus restrictions
+            - **Others**: Use default template
             """)
         
         # Display final caption information
@@ -585,8 +641,26 @@ Instructions:
         # Prompt input section
         st.write("### ✏️ Prompt Template")
         
-        # Load default prompt template
-        default_prompt = self.get_default_prompt_template()
+        # Get task-specific prompt template
+        default_prompt = self.get_prompt_template_for_task(task)
+        
+        # Show task type info
+        task_prompts = {
+            "subject_description": "subject",
+            "scene_composition_dynamics": "scene", 
+            "subject_motion_dynamics": "motion",
+            "spatial_framing_dynamics": "spatial",
+            "camera_framing_dynamics": "camera",
+            "color_composition_dynamics": "color",
+            "lighting_setup_dynamics": "lighting",
+            "lighting_effects_dynamics": "effects"
+        }
+        prompt_key = task_prompts.get(task, "default")
+        
+        if prompt_key in ["camera", "subject", "motion"]:
+            st.info(f"📝 Using **{prompt_key}** template with task-specific instructions")
+        else:
+            st.info(f"📝 Using **default** template for {prompt_key}")
         
         prompt_template = st.text_area(
             "Edit the prompt template (use {json_prompt}, {caption_instruction}, {caption} placeholders):",
