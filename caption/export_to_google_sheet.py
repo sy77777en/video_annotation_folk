@@ -817,6 +817,164 @@ class GoogleSheetExporter:
         
         return annotator_stats, reviewer_stats
     
+    # def _calculate_file_stats(self, video_urls: List[str], configs: List[Dict], output_dir: str) -> Dict:
+    #     """Calculate statistics for a single video file"""
+    #     stats = {
+    #         'global': {
+    #             'completed_all_users': 0,
+    #             'reviewed_all_users': 0
+    #         },
+    #         'annotators': {},
+    #         'reviewers': {},
+    #         'per_task_annotators': {},  # user -> task -> stats for this video file
+    #         'per_task_reviewers': {}    # user -> task -> stats for this video file
+    #     }
+        
+    #     # Initialize per-task stats with correct totals
+    #     total_tasks_in_file = len(video_urls) * len(configs)
+        
+    #     for video_url in video_urls:
+    #         video_id = self.data_manager.get_video_id(video_url)
+            
+    #         for config in configs:
+    #             config_output_dir = os.path.join(self.data_manager.folder, output_dir, config["output_name"])
+    #             task_name = config["name"]
+                
+    #             # Get status and users for this video/task
+    #             status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
+    #                 video_id, config_output_dir
+    #             )
+                
+    #             if status == "not_completed":
+    #                 continue
+                
+    #             # Update global stats
+    #             stats['global']['completed_all_users'] += 1
+    #             if status in ["approved", "rejected"]:
+    #                 stats['global']['reviewed_all_users'] += 1
+                
+    #             # Determine annotator and reviewer
+    #             annotator, reviewer = self.data_manager.get_annotator_and_reviewer(video_id, config_output_dir)
+                
+    #             # Update annotator stats
+    #             if annotator:
+    #                 if annotator not in stats['annotators']:
+    #                     stats['annotators'][annotator] = {
+    #                         'completed_current_user': 0,
+    #                         'reviewed_current_user_work': 0,
+    #                         'last_annotation_timestamp': None,
+    #                         'last_review_timestamp': None
+    #                     }
+                    
+    #                 if annotator not in stats['per_task_annotators']:
+    #                     stats['per_task_annotators'][annotator] = {}
+    #                 if task_name not in stats['per_task_annotators'][annotator]:
+    #                     stats['per_task_annotators'][annotator][task_name] = {
+    #                         'completed': 0, 'reviewed': 0, 'rejected': 0, 'total': 0
+    #                     }
+                    
+    #                 stats['annotators'][annotator]['completed_current_user'] += 1
+    #                 stats['per_task_annotators'][annotator][task_name]['completed'] += 1
+    #                 stats['per_task_annotators'][annotator][task_name]['total'] += 1  # Increment total for each task instance
+                    
+    #                 # Update annotation timestamp from feedback file
+    #                 if current_file and os.path.exists(current_file):
+    #                     try:
+    #                         with open(current_file, 'r') as f:
+    #                             data = json.load(f)
+    #                             timestamp = data.get('timestamp')
+    #                             if timestamp:
+    #                                 current_ts = stats['annotators'][annotator]['last_annotation_timestamp']
+    #                                 if not current_ts or timestamp > current_ts:
+    #                                     stats['annotators'][annotator]['last_annotation_timestamp'] = timestamp
+    #                     except:
+    #                         pass
+                    
+    #                 # Check if this annotation was reviewed
+    #                 if status in ["approved", "rejected"]:
+    #                     stats['annotators'][annotator]['reviewed_current_user_work'] += 1
+    #                     stats['per_task_annotators'][annotator][task_name]['reviewed'] += 1
+                        
+    #                     if status == "rejected":
+    #                         stats['per_task_annotators'][annotator][task_name]['rejected'] += 1
+    #             else:
+    #                 # Even if no annotator, we need to track that this task exists in the file
+    #                 # This ensures totals are correct even for tasks not completed by current user
+    #                 pass
+                
+    #             # Update reviewer stats
+    #             if reviewer and status in ["approved", "rejected"]:
+    #                 if reviewer not in stats['reviewers']:
+    #                     stats['reviewers'][reviewer] = {
+    #                         'reviewed_by_current_user': 0,
+    #                         'last_review_timestamp': None
+    #                     }
+                    
+    #                 if reviewer not in stats['per_task_reviewers']:
+    #                     stats['per_task_reviewers'][reviewer] = {}
+    #                 if task_name not in stats['per_task_reviewers'][reviewer]:
+    #                     stats['per_task_reviewers'][reviewer][task_name] = {
+    #                         'reviewed': 0, 'total': 0
+    #                     }
+                    
+    #                 stats['reviewers'][reviewer]['reviewed_by_current_user'] += 1
+    #                 stats['per_task_reviewers'][reviewer][task_name]['reviewed'] += 1
+    #                 stats['per_task_reviewers'][reviewer][task_name]['total'] += 1  # Increment total for each review instance
+                    
+    #                 # Update review timestamp from review file
+    #                 review_file = self.data_manager.get_filename(video_id, config_output_dir, 
+    #                                                            self.data_manager.REVIEWER_FILE_POSTFIX)
+    #                 if os.path.exists(review_file):
+    #                     try:
+    #                         with open(review_file, 'r') as f:
+    #                             data = json.load(f)
+    #                             timestamp = data.get('review_timestamp')
+    #                             if timestamp:
+    #                                 current_ts = stats['reviewers'][reviewer]['last_review_timestamp']
+    #                                 if not current_ts or timestamp > current_ts:
+    #                                     stats['reviewers'][reviewer]['last_review_timestamp'] = timestamp
+    #                     except:
+    #                         pass
+        
+    #     # Set totals for tasks that were not completed by users (to ensure proper ratios)
+    #     total_possible_per_task = len(video_urls)
+    #     for annotator in stats['per_task_annotators']:
+    #         for task_name in [config["name"] for config in configs]:
+    #             if task_name not in stats['per_task_annotators'][annotator]:
+    #                 stats['per_task_annotators'][annotator][task_name] = {
+    #                     'completed': 0, 'reviewed': 0, 'rejected': 0, 'total': total_possible_per_task
+    #                 }
+    #             else:
+    #                 # Make sure total is at least the expected number
+    #                 stats['per_task_annotators'][annotator][task_name]['total'] = max(
+    #                     stats['per_task_annotators'][annotator][task_name]['total'], 
+    #                     total_possible_per_task
+    #                 )
+        
+    #     for reviewer in stats['per_task_reviewers']:
+    #         for task_name in [config["name"] for config in configs]:
+    #             if task_name not in stats['per_task_reviewers'][reviewer]:
+    #                 stats['per_task_reviewers'][reviewer][task_name] = {
+    #                     'reviewed': 0, 'total': total_possible_per_task
+    #                 }
+    #             else:
+    #                 # Make sure total is at least the expected number
+    #                 stats['per_task_reviewers'][reviewer][task_name]['total'] = max(
+    #                     stats['per_task_reviewers'][reviewer][task_name]['total'], 
+    #                     total_possible_per_task
+    #                 )
+        
+    #     # Add global stats to each user's stats
+    #     for annotator_stats in stats['annotators'].values():
+    #         annotator_stats['completed_all_users'] = stats['global']['completed_all_users']
+    #         annotator_stats['reviewed_all_users'] = stats['global']['reviewed_all_users']
+        
+    #     for reviewer_stats in stats['reviewers'].values():
+    #         reviewer_stats['completed_all_users'] = stats['global']['completed_all_users']
+    #         reviewer_stats['reviewed_all_users'] = stats['global']['reviewed_all_users']
+        
+    #     return stats
+    
     def _calculate_file_stats(self, video_urls: List[str], configs: List[Dict], output_dir: str) -> Dict:
         """Calculate statistics for a single video file"""
         stats = {
@@ -830,9 +988,6 @@ class GoogleSheetExporter:
             'per_task_reviewers': {}    # user -> task -> stats for this video file
         }
         
-        # Initialize per-task stats with correct totals
-        total_tasks_in_file = len(video_urls) * len(configs)
-        
         for video_url in video_urls:
             video_id = self.data_manager.get_video_id(video_url)
             
@@ -840,7 +995,7 @@ class GoogleSheetExporter:
                 config_output_dir = os.path.join(self.data_manager.folder, output_dir, config["output_name"])
                 task_name = config["name"]
                 
-                # Get status and users for this video/task
+                # Get status and users for this video/task - USE THE VERIFIED FUNCTION
                 status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
                     video_id, config_output_dir
                 )
@@ -848,13 +1003,37 @@ class GoogleSheetExporter:
                 if status == "not_completed":
                     continue
                 
-                # Update global stats
+                # Count global stats based on verified status
                 stats['global']['completed_all_users'] += 1
                 if status in ["approved", "rejected"]:
                     stats['global']['reviewed_all_users'] += 1
                 
-                # Determine annotator and reviewer
-                annotator, reviewer = self.data_manager.get_annotator_and_reviewer(video_id, config_output_dir)
+                # Determine annotator and reviewer based on verified status logic
+                annotator = None
+                reviewer = None
+                
+                if status == "completed_not_reviewed":
+                    # Only current feedback exists - current_user is the annotator
+                    annotator = current_user
+                    # No reviewer yet
+                    
+                elif status == "approved":
+                    # For approved: current_user is annotator, reviewer is in reviewer file
+                    annotator = current_user
+                    # Get reviewer from reviewer file
+                    reviewer_file = self.data_manager.get_filename(video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
+                    if os.path.exists(reviewer_file):
+                        try:
+                            with open(reviewer_file, 'r') as f:
+                                reviewer_data = json.load(f)
+                                reviewer = reviewer_data.get("reviewer_name")
+                        except:
+                            pass
+                            
+                elif status == "rejected":
+                    # For rejected: prev_user is annotator, current_user is reviewer (who fixed it)
+                    annotator = prev_user
+                    reviewer = current_user
                 
                 # Update annotator stats
                 if annotator:
@@ -875,12 +1054,19 @@ class GoogleSheetExporter:
                     
                     stats['annotators'][annotator]['completed_current_user'] += 1
                     stats['per_task_annotators'][annotator][task_name]['completed'] += 1
-                    stats['per_task_annotators'][annotator][task_name]['total'] += 1  # Increment total for each task instance
+                    stats['per_task_annotators'][annotator][task_name]['total'] += 1
                     
-                    # Update annotation timestamp from feedback file
-                    if current_file and os.path.exists(current_file):
+                    # Update annotation timestamp from the correct feedback file
+                    annotation_file = None
+                    if status == "completed_not_reviewed":
+                        annotation_file = current_file
+                    elif status in ["approved", "rejected"]:
+                        # For approved/rejected, annotation is in prev_feedback (if exists) or current_feedback
+                        annotation_file = prev_file if prev_file else current_file
+                    
+                    if annotation_file and os.path.exists(annotation_file):
                         try:
-                            with open(current_file, 'r') as f:
+                            with open(annotation_file, 'r') as f:
                                 data = json.load(f)
                                 timestamp = data.get('timestamp')
                                 if timestamp:
@@ -897,15 +1083,13 @@ class GoogleSheetExporter:
                         
                         if status == "rejected":
                             stats['per_task_annotators'][annotator][task_name]['rejected'] += 1
-                else:
-                    # Even if no annotator, we need to track that this task exists in the file
-                    # This ensures totals are correct even for tasks not completed by current user
-                    pass
                 
                 # Update reviewer stats
-                if reviewer and status in ["approved", "rejected"]:
+                if reviewer:
                     if reviewer not in stats['reviewers']:
                         stats['reviewers'][reviewer] = {
+                            'completed_all_users': 0,
+                            'reviewed_all_users': 0,
                             'reviewed_by_current_user': 0,
                             'last_review_timestamp': None
                         }
@@ -919,14 +1103,13 @@ class GoogleSheetExporter:
                     
                     stats['reviewers'][reviewer]['reviewed_by_current_user'] += 1
                     stats['per_task_reviewers'][reviewer][task_name]['reviewed'] += 1
-                    stats['per_task_reviewers'][reviewer][task_name]['total'] += 1  # Increment total for each review instance
+                    stats['per_task_reviewers'][reviewer][task_name]['total'] += 1
                     
-                    # Update review timestamp from review file
-                    review_file = self.data_manager.get_filename(video_id, config_output_dir, 
-                                                               self.data_manager.REVIEWER_FILE_POSTFIX)
-                    if os.path.exists(review_file):
+                    # Update review timestamp from reviewer file (for both approved and rejected)
+                    reviewer_file_path = self.data_manager.get_filename(video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX)
+                    if os.path.exists(reviewer_file_path):
                         try:
-                            with open(review_file, 'r') as f:
+                            with open(reviewer_file_path, 'r') as f:
                                 data = json.load(f)
                                 timestamp = data.get('review_timestamp')
                                 if timestamp:
@@ -936,8 +1119,9 @@ class GoogleSheetExporter:
                         except:
                             pass
         
-        # Set totals for tasks that were not completed by users (to ensure proper ratios)
+        # Set correct totals for all users (ensure we account for all possible tasks)
         total_possible_per_task = len(video_urls)
+        
         for annotator in stats['per_task_annotators']:
             for task_name in [config["name"] for config in configs]:
                 if task_name not in stats['per_task_annotators'][annotator]:
@@ -974,7 +1158,7 @@ class GoogleSheetExporter:
             reviewer_stats['reviewed_all_users'] = stats['global']['reviewed_all_users']
         
         return stats
-    
+        
     def _export_master_sheet(self, sheet_id: str, annotator_stats: Dict, reviewer_stats: Dict, task_names: List[str]):
         """Export the master sheet with annotator and reviewer tabs"""
         try:
