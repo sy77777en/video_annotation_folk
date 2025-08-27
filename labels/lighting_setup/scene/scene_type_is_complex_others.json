@@ -1,6 +1,6 @@
 {
     "label": "Scene Type Is Complex/Others",
-    "label_name": "scene_type_is_complex_others",
+    "label_name": "scene_type_is_unclear_or_complex",
     "def_question": [
         "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?"
     ],
@@ -29,8 +29,8 @@
         "A video where no dominant environment is clear.",
         "A setting that cannot be classified as purely interior, exterior, or synthetic."
     ],
-    "pos_rule_str": "self.lighting_setup.scene_type_is_complex_others is True",
-    "neg_rule_str": "self.lighting_setup.scene_type_is_complex_others is False",
+    "pos_rule_str": "self.lighting_setup.scene_type_is_unclear_or_complex is True",
+    "neg_rule_str": "self.lighting_setup.scene_type_is_unclear_or_complex is False",
     "easy_neg_rule_str": {},
     "hard_neg_rule_str": {}
 }

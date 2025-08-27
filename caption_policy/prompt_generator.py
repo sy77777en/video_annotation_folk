@@ -1340,7 +1340,7 @@ class LightingSetupPolicy(PromptGenerator):
             "interior": "scene_type_is_interior",
             "exterior": "scene_type_is_exterior",
             "unrealistic_synthetic": "scene_type_is_synthetic",
-            "complex_others": "scene_type_is_complex_others"
+            "complex_others": "scene_type_is_unclear_or_complex"
         }
         scene_type = scene_type_info[scene_type]
         scene_type_str = read_json_file(os.path.join(scene_type_dir, f"{scene_type}.json"))['def_prompt'][0]

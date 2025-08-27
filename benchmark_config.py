@@ -4925,10 +4925,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_synthetic",
-            "pos_question": "Is the video showing a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting?",
-            "neg_question": "Is the video not showing a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting?",
-            "pos_prompt": "The video shows a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting.",
-            "neg_prompt": "The video does not show a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting.",
+            "pos_question": "Is the scene a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?",
+            "neg_question": "Is the scene not a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?",
+            "pos_prompt": "The scene is a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.",
+            "neg_prompt": "The scene is not a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_synthetic",
                 "type": "pos",
@@ -4940,17 +4940,17 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         },
         {
             "folder": lighting_folder,
-            "name": "scene_type_is_complex_others",
+            "name": "scene_type_is_unclear_or_complex",
             "pos_question": "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?",
             "neg_question": "Is the scene type (indoor or outdoor) clear, unambiguous, and consistent throughout the video?",
             "pos_prompt": "The scene type (indoor or outdoor) is unclear, ambiguous, or changing throughout the video.",
             "neg_prompt": "The scene type (indoor or outdoor) is clear, unambiguous, and consistent throughout the video.",
             "pos": {
-                "label": "lighting_setup.scene.scene_type_is_complex_others",
+                "label": "lighting_setup.scene.scene_type_is_unclear_or_complex",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.scene.scene_type_is_complex_others",
+                "label": "lighting_setup.scene.scene_type_is_unclear_or_complex",
                 "type": "neg",
             },
         },

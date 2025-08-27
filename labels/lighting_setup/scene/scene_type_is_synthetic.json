@@ -2,7 +2,7 @@
     "label": "Scene Type Is Synthetic/Unrealistic",
     "label_name": "scene_type_is_synthetic",
     "def_question": [
-        "Is the video showing a synthetic scene (e.g., game or anime) with unrealistic lighting effects, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting?"
+        "Is the scene a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?"
     ],
     "alt_question": [
         "Is the scene artificially generated rather than filmed in the real world?",
@@ -15,7 +15,7 @@
         "Does the shot emphasize a synthetic, fantasy, or virtual setting?"
     ],
     "def_prompt": [
-        "The video shows a synthetic scene (e.g., game or anime) with unrealistic lighting, such as flat shading, fake shadows, missing reflections, exaggerated glow effects, or the absence of ray-traced lighting."
+        "The scene is a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects."
     ],
     "alt_prompt": [
         "The video shows a synthetic environment with unnatural lighting effects that defy real-world physics.",
