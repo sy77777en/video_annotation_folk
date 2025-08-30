@@ -483,7 +483,7 @@ class GoogleSheetExporter:
     
     def export_all_sheets(self, configs_file: str, video_urls_files: List[str], 
                          output_dir: str, master_sheet_id: str, skip_individual: bool = False, 
-                         resume_from: str = None):
+                         resume_from: str = None, sheet_prefix: str = "Caption"):
         """
         Export all data to Google Sheets
         
@@ -494,6 +494,7 @@ class GoogleSheetExporter:
             master_sheet_id: Google Sheet ID for the master sheet
             skip_individual: If True, only export master sheet
             resume_from: Resume from specific user (format: 'User Name Role')
+            sheet_prefix: Prefix for all individual sheet names (default: 'Caption')
         """
         # Load configs to get task names
         configs = self.data_manager.load_config(configs_file)
@@ -534,22 +535,22 @@ class GoogleSheetExporter:
         
         # Export individual user sheets with progress tracking and rate limiting
         total_users = sum(1 for stats in annotator_stats.values() if self._has_activity(stats)) + \
-                     sum(1 for stats in reviewer_stats.values() if self._has_activity(stats))
-        
+                    sum(1 for stats in reviewer_stats.values() if self._has_activity(stats))
+
         current_user = 0
         print(f"\nExporting individual user sheets ({total_users} total)...")
         print("⚠️  Note: Processing slowly to avoid Google Sheets rate limits...")
-        
+
         # Store sheet IDs for hyperlinks
         user_sheet_ids = {}
-        
+
         # Determine where to start based on resume_from parameter
         skip_until_found = resume_from is not None
-        
+
         for user_name, stats in annotator_stats.items():
             if self._has_activity(stats):
                 current_user += 1
-                sheet_key = f"{user_name} Annotator"
+                sheet_key = f"{sheet_prefix}-{user_name} Annotator"  # Add prefix to key
                 
                 # Skip users until we reach the resume point
                 if skip_until_found:
@@ -568,21 +569,21 @@ class GoogleSheetExporter:
                     time.sleep(3)
                 
                 try:
-                    sheet_id = self._export_user_sheet(user_name, "Annotator", stats, task_names, master_sheet_id)
+                    sheet_id = self._export_user_sheet(user_name, "Annotator", stats, task_names, master_sheet_id, sheet_prefix)
                     user_sheet_ids[sheet_key] = sheet_id
                     
                     # Manage permissions for this sheet
-                    self._manage_sheet_permissions(sheet_id, f"{user_name} Annotator")
+                    self._manage_sheet_permissions(sheet_id, f"{sheet_prefix}-{user_name} Annotator")
                     
-                    print(f"    ✅ Successfully exported {user_name} Annotator")
+                    print(f"    ✅ Successfully exported {sheet_prefix}-{user_name} Annotator")
                 except Exception as e:
-                    print(f"    ❌ Failed to export {user_name} Annotator: {e}")
-                    self.export_failures.append(f"Failed to export {user_name} Annotator: {str(e)}")
+                    print(f"    ❌ Failed to export {sheet_prefix}-{user_name} Annotator: {e}")
+                    self.export_failures.append(f"Failed to export {sheet_prefix}-{user_name} Annotator: {str(e)}")
                 
         for user_name, stats in reviewer_stats.items():
             if self._has_activity(stats):
                 current_user += 1
-                sheet_key = f"{user_name} Reviewer"
+                sheet_key = f"{sheet_prefix}-{user_name} Reviewer"  # Add prefix to key
                 
                 # Skip users until we reach the resume point
                 if skip_until_found:
@@ -600,24 +601,24 @@ class GoogleSheetExporter:
                 time.sleep(3)
                 
                 try:
-                    sheet_id = self._export_user_sheet(user_name, "Reviewer", stats, task_names, master_sheet_id)
+                    sheet_id = self._export_user_sheet(user_name, "Reviewer", stats, task_names, master_sheet_id, sheet_prefix)
                     user_sheet_ids[sheet_key] = sheet_id
                     
                     # Manage permissions for this sheet
-                    self._manage_sheet_permissions(sheet_id, f"{user_name} Reviewer")
+                    self._manage_sheet_permissions(sheet_id, f"{sheet_prefix}-{user_name} Reviewer")
                     
-                    print(f"    ✅ Successfully exported {user_name} Reviewer")
+                    print(f"    ✅ Successfully exported {sheet_prefix}-{user_name} Reviewer")
                 except Exception as e:
-                    print(f"    ❌ Failed to export {user_name} Reviewer: {e}")
-                    self.export_failures.append(f"Failed to export {user_name} Reviewer: {str(e)}")
-        
+                    print(f"    ❌ Failed to export {sheet_prefix}-{user_name} Reviewer: {e}")
+                    self.export_failures.append(f"Failed to export {sheet_prefix}-{user_name} Reviewer: {str(e)}")      
+
         # Update master sheet with correct hyperlinks
         if user_sheet_ids:
             print(f"\n⏳ Pausing 5 seconds before updating master sheet links...")
             time.sleep(5)
             print("Updating master sheet hyperlinks...")
             try:
-                self._update_master_sheet_links(master_sheet_id, annotator_stats, reviewer_stats, user_sheet_ids)
+                self._update_master_sheet_links(master_sheet_id, annotator_stats, reviewer_stats, user_sheet_ids, sheet_prefix)
             except Exception as e:
                 print(f"❌ Failed to update master sheet links: {e}")
                 self.export_failures.append(f"Failed to update master sheet links: {str(e)}")
@@ -1369,8 +1370,132 @@ class GoogleSheetExporter:
         except Exception as e:
             print(f"    ⚠️  Master sheet formatting failed: {e}")
     
+    # def _update_master_sheet_links(self, master_sheet_id: str, annotator_stats: Dict, 
+    #                               reviewer_stats: Dict, user_sheet_ids: Dict):
+    #     """Update master sheet with correct hyperlinks to user sheets (as smart chips)"""
+    #     try:
+    #         sheet = self._api_call_with_retry(self.client.open_by_key, master_sheet_id, 
+    #                                         operation_name="opening master sheet for link updates")
+    #     except:
+    #         print(f"Error: Could not open master sheet for link updates")
+    #         return
+
+    #     # Update Annotators tab links - COLUMN C with SMART CHIPS
+    #     try:
+    #         worksheet = sheet.worksheet("Annotators")
+    #         row_num = 2  # Start from row 2 (after headers)
+            
+    #         for user_name, stats in annotator_stats.items():
+    #             if self._has_activity(stats):
+    #                 annotation_sheet_name = f"{user_name} Annotator"
+    #                 annotation_sheet_id = user_sheet_ids.get(annotation_sheet_name)
+                    
+    #                 if annotation_sheet_id:
+    #                     annotation_url = f"https://docs.google.com/spreadsheets/d/{annotation_sheet_id}/edit"
+                        
+    #                     # Create smart chip using Method 1 (simple smart chip)
+    #                     requests = [{
+    #                         "updateCells": {
+    #                             "rows": [{
+    #                                 "values": [{
+    #                                     "userEnteredValue": {
+    #                                         "stringValue": "@"  # Single @ placeholder
+    #                                     },
+    #                                     "chipRuns": [{
+    #                                         "startIndex": 0,  # @ is at position 0
+    #                                         "chip": {
+    #                                             "richLinkProperties": {
+    #                                                 "uri": annotation_url
+    #                                             }
+    #                                         }
+    #                                     }]
+    #                                 }]
+    #                             }],
+    #                             "fields": "userEnteredValue,chipRuns",
+    #                             "range": {
+    #                                 "sheetId": worksheet.id,
+    #                                 "startRowIndex": row_num - 1,  # Convert to 0-indexed
+    #                                 "startColumnIndex": 2,  # Column C (0-indexed)
+    #                                 "endRowIndex": row_num,
+    #                                 "endColumnIndex": 3
+    #                             }
+    #                         }
+    #                     }]
+                        
+    #                     self._api_call_with_retry(
+    #                         worksheet.spreadsheet.batch_update,
+    #                         {"requests": requests},
+    #                         operation_name=f"updating annotation smart chip for {user_name}"
+    #                     )
+    #                 else:
+    #                     # Fallback to text if no sheet ID
+    #                     self._api_call_with_retry(worksheet.update, f'C{row_num}', [["Sheet not found"]], 
+    #                                             operation_name=f"updating annotation text for {user_name}")
+    #                 row_num += 1
+            
+    #         print("    ✅ Updated Annotators tab links (smart chips)")
+    #     except Exception as e:
+    #         print(f"    ❌ Failed to update Annotators tab links: {e}")
+        
+    #     # Update Reviewers tab links - COLUMN C with SMART CHIPS
+    #     try:
+    #         worksheet = sheet.worksheet("Reviewers")
+    #         row_num = 2  # Start from row 2 (after headers)
+            
+    #         for user_name, stats in reviewer_stats.items():
+    #             if self._has_activity(stats):
+    #                 review_sheet_name = f"{user_name} Reviewer"
+    #                 review_sheet_id = user_sheet_ids.get(review_sheet_name)
+                    
+    #                 if review_sheet_id:
+    #                     review_url = f"https://docs.google.com/spreadsheets/d/{review_sheet_id}/edit"
+                        
+    #                     # Create smart chip using Method 1 (simple smart chip)
+    #                     requests = [{
+    #                         "updateCells": {
+    #                             "rows": [{
+    #                                 "values": [{
+    #                                     "userEnteredValue": {
+    #                                         "stringValue": "@"  # Single @ placeholder
+    #                                     },
+    #                                     "chipRuns": [{
+    #                                         "startIndex": 0,  # @ is at position 0
+    #                                         "chip": {
+    #                                             "richLinkProperties": {
+    #                                                 "uri": review_url
+    #                                             }
+    #                                         }
+    #                                     }]
+    #                                 }]
+    #                             }],
+    #                             "fields": "userEnteredValue,chipRuns",
+    #                             "range": {
+    #                                 "sheetId": worksheet.id,
+    #                                 "startRowIndex": row_num - 1,  # Convert to 0-indexed
+    #                                 "startColumnIndex": 2,  # Column C (0-indexed)
+    #                                 "endRowIndex": row_num,
+    #                                 "endColumnIndex": 3
+    #                             }
+    #                         }
+    #                     }]
+                        
+    #                     self._api_call_with_retry(
+    #                         worksheet.spreadsheet.batch_update,
+    #                         {"requests": requests},
+    #                         operation_name=f"updating review smart chip for {user_name}"
+    #                     )
+    #                 else:
+    #                     # Fallback to text if no sheet ID
+    #                     self._api_call_with_retry(worksheet.update, f'C{row_num}', [["Sheet not found"]], 
+    #                                             operation_name=f"updating review text for {user_name}")
+    #                 row_num += 1
+            
+    #         print("    ✅ Updated Reviewers tab links (smart chips)")
+    #     except Exception as e:
+    #         print(f"    ❌ Failed to update Reviewers tab links: {e}")
+    
     def _update_master_sheet_links(self, master_sheet_id: str, annotator_stats: Dict, 
-                                  reviewer_stats: Dict, user_sheet_ids: Dict):
+                              reviewer_stats: Dict, user_sheet_ids: Dict, sheet_prefix: str):
         """Update master sheet with correct hyperlinks to user sheets (as smart chips)"""
         try:
             sheet = self._api_call_with_retry(self.client.open_by_key, master_sheet_id, 
@@ -1386,7 +1511,7 @@ class GoogleSheetExporter:
             
             for user_name, stats in annotator_stats.items():
                 if self._has_activity(stats):
-                    annotation_sheet_name = f"{user_name} Annotator"
+                    annotation_sheet_name = f"{sheet_prefix}-{user_name} Annotator"
                     annotation_sheet_id = user_sheet_ids.get(annotation_sheet_name)
                     
                     if annotation_sheet_id:
@@ -1443,7 +1568,7 @@ class GoogleSheetExporter:
             
             for user_name, stats in reviewer_stats.items():
                 if self._has_activity(stats):
-                    review_sheet_name = f"{user_name} Reviewer"
+                    review_sheet_name = f"{sheet_prefix}-{user_name} Reviewer"
                     review_sheet_id = user_sheet_ids.get(review_sheet_name)
                     
                     if review_sheet_id:
@@ -1492,10 +1617,10 @@ class GoogleSheetExporter:
             print("    ✅ Updated Reviewers tab links (smart chips)")
         except Exception as e:
             print(f"    ❌ Failed to update Reviewers tab links: {e}")
-    
-    def _export_user_sheet(self, user_name: str, role: str, stats: Dict, task_names: List[str], master_sheet_id: str) -> str:
+
+    def _export_user_sheet(self, user_name: str, role: str, stats: Dict, task_names: List[str], master_sheet_id: str, sheet_prefix: str) -> str:
         """Export individual user sheet and return sheet ID"""
-        sheet_name = f"{user_name} {role}"
+        sheet_name = f"{sheet_prefix}-{user_name} {role}"  # Add prefix
         print(f"  Exporting {sheet_name} sheet...")
         
         try:
@@ -2300,6 +2425,8 @@ def main():
                        help="Skip individual user sheets and only update master sheet")
     parser.add_argument("--resume-from", type=str, 
                        help="Resume from specific user (format: 'User Name Annotator' or 'User Name Reviewer')")
+    parser.add_argument("--sheet-prefix", type=str, default="Caption",
+                       help="Prefix for all individual sheet names (default: 'Caption')")
     
     args = parser.parse_args()
     
@@ -2341,7 +2468,8 @@ def main():
         output_dir=app_config.output_dir,
         master_sheet_id=args.master_sheet_id,
         skip_individual=args.skip_individual,
-        resume_from=args.resume_from
+        resume_from=args.resume_from,
+        sheet_prefix=args.sheet_prefix
     )
     
     print(f"Export completed for config type: {args.config_type}")
