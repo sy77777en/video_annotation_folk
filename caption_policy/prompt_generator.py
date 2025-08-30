@@ -1340,7 +1340,7 @@ class LightingSetupPolicy(PromptGenerator):
             "interior": "scene_type_is_interior",
             "exterior": "scene_type_is_exterior",
             "unrealistic_synthetic": "scene_type_is_synthetic",
-            "complex_others": "scene_type_is_unclear_or_complex"
+            "complex_others": "scene_type_is_unclear_or_changing"
         }
         scene_type = scene_type_info[scene_type]
         scene_type_str = read_json_file(os.path.join(scene_type_dir, f"{scene_type}.json"))['def_prompt'][0]
@@ -1354,7 +1354,7 @@ class LightingSetupPolicy(PromptGenerator):
         # self.artificial_light_source = lighting_setup.artificial_light_source
         # self.non_visible_light_source = lighting_setup.non_visible_light_source
         # self.abstract_light_source = lighting_setup.abstract_light_source
-        # self.complex_light_source = lighting_setup.complex_light_source
+        # self.unclear_or_changing_light_source = lighting_setup.unclear_or_changing_light_source
         # if abstract_light_source is True, then the other sources are not considered
         light_source_strs = []
         if lighting_setup.abstract_light_source:
@@ -1370,8 +1370,8 @@ class LightingSetupPolicy(PromptGenerator):
                 light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_artificial_practical_light.json"))['def_prompt'][0])
             if lighting_setup.non_visible_light_source:
                 light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_non_visible_light_source.json"))['def_prompt'][0])
-            if lighting_setup.complex_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_complex_light_source.json"))['def_prompt'][0])
+            if lighting_setup.unclear_or_changing_light_source:
+                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_unclear_or_changing_light_source.json"))['def_prompt'][0])
         return " ".join(light_source_strs)
 
     def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:

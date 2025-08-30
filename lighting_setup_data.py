@@ -32,7 +32,7 @@ class LightingSetupData:
         self.artificial_light_source = None
         self.non_visible_light_source = None
         self.abstract_light_source = None
-        self.complex_light_source = None
+        self.unclear_or_changing_light_source = None
 
         # Sunlight level
         self.sunlight_level = "unknown"  # Options: "normal", "sunny", "overcast", "sunset_sunrise", "unknown"
@@ -234,7 +234,7 @@ class LightingSetupData:
     def _set_lighting_setup_attributes(self):
         attributes = [
             # "is_lighting_quality_complex",
-            "scene_type_is_unclear_or_complex", "scene_type_is_exterior",
+            "scene_type_is_unclear_or_changing", "scene_type_is_exterior",
             "scene_type_is_interior", "scene_type_is_synthetic",
             "sunlight_quality_is_normal", "sunlight_quality_is_hard",
             "sunlight_quality_is_soft", "sunlight_quality_is_sunset_sunrise",
@@ -248,7 +248,7 @@ class LightingSetupData:
                 setattr(self, attr, None)
             return
         # self.is_lighting_quality_complex = self.light_quality in {"complex_changing", "complex_contrasting", "complex_others"}
-        self.scene_type_is_unclear_or_complex = self.scene_type == "complex_others"
+        self.scene_type_is_unclear_or_changing = self.scene_type == "complex_others"
         self.scene_type_is_exterior = self.scene_type == "exterior" if not self.scene_type in ["complex_others", "unrealistic_synthetic"] else None
         self.scene_type_is_interior = self.scene_type == "interior" if not self.scene_type in ["complex_others", "unrealistic_synthetic"] else None
         self.scene_type_is_synthetic = self.scene_type == "unrealistic_synthetic"
@@ -467,11 +467,11 @@ class LightingSetupData:
         else:
             raise ValueError("abstract_light_source must be a boolean value")
 
-    def set_complex_light_source(self, complex_light_source):
-        if isinstance(complex_light_source, bool):
-            self.complex_light_source = complex_light_source
+    def set_unclear_or_changing_light_source(self, unclear_or_changing_light_source):
+        if isinstance(unclear_or_changing_light_source, bool):
+            self.unclear_or_changing_light_source = unclear_or_changing_light_source
         else:
-            raise ValueError("complex_light_source must be a boolean value")
+            raise ValueError("unclear_or_changing_light_source must be a boolean value")
 
     def set_subject_back_light(self, subject_back_light):
         if isinstance(subject_back_light, bool):
@@ -922,7 +922,7 @@ class LightingSetupData:
             raise ValueError("brightness cannot be 'bright_deprecated' or 'dark_deprecated'")
 
         if self.abstract_light_source:
-            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.complex_light_source]):
+            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.unclear_or_changing_light_source]):
                 raise ValueError("abstract_light_source cannot be combined with other light sources")
 
             # scene type must be "unrealistic_synthetic"
@@ -930,7 +930,7 @@ class LightingSetupData:
                 raise ValueError("scene_type must be 'unrealistic_synthetic' if abstract_light_source is True")
         
         if self.scene_type == "unrealistic_synthetic":
-            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.complex_light_source]):
+            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.unclear_or_changing_light_source]):
                 raise ValueError("No other light sources can be present if scene_type is 'unrealistic_synthetic'")
             
             if not self.abstract_light_source:
@@ -966,7 +966,7 @@ lighting_setup_params_demo = {
     "artificial_light_source": False,
     "non_visible_light_source": False,
     "abstract_light_source": False,
-    "complex_light_source": False,
+    "unclear_or_changing_light_source": False,
     "sunlight_level": "sunny",
     "light_quality": "soft_light",
     "lighting_setup_description": "Soft diffused light with sunny outdoor setting",

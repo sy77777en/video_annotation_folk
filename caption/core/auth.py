@@ -43,7 +43,8 @@ def load_annotators_from_files(input_dir="annotator") -> Dict[str, Dict[str, str
 ANNOTATORS = load_annotators_from_files()
 APPROVED_REVIEWERS = [
     "Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Hewei Wang", 
-    "Tiffany Ling", "Isaac Li", "Shihang Zhu", "Caption Pizza"
+    "Tiffany Ling", "Isaac Li", "Shihang Zhu", "Caption Pizza",
+    "Irene Pi"
 ]
 META_REVIEWERS = [
     "Zhiqiu Lin", "Siyuan Cen", "Yuhan Huang", "Hewei Wang", 

@@ -2,7 +2,7 @@
     "label": "Is Abstract Light Source",
     "label_name": "is_abstract",
     "def_question": [
-        "Does the video feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source?"
+        "Does the video feature an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source?"
     ],
     "alt_question": [
         "Does the scene have no identifiable physical light source?",
@@ -15,7 +15,7 @@
         "Is the lighting setup in the video disconnected from real-world physics?"
     ],
     "def_prompt": [
-        "The video features an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source."
+        "The video features an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source."
     ],
     "alt_prompt": [
         "A video where the lighting is artificial and detached from real-world sources.",

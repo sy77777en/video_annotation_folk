@@ -4940,17 +4940,17 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         },
         {
             "folder": lighting_folder,
-            "name": "scene_type_is_unclear_or_complex",
+            "name": "scene_type_is_unclear_or_changing",
             "pos_question": "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?",
             "neg_question": "Is the scene type (indoor or outdoor) clear, unambiguous, and consistent throughout the video?",
             "pos_prompt": "The scene type (indoor or outdoor) is unclear, ambiguous, or changing throughout the video.",
             "neg_prompt": "The scene type (indoor or outdoor) is clear, unambiguous, and consistent throughout the video.",
             "pos": {
-                "label": "lighting_setup.scene.scene_type_is_unclear_or_complex",
+                "label": "lighting_setup.scene.scene_type_is_unclear_or_changing",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.scene.scene_type_is_unclear_or_complex",
+                "label": "lighting_setup.scene.scene_type_is_unclear_or_changing",
                 "type": "neg",
             },
         },
@@ -4976,17 +4976,17 @@ def get_light_source_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRI
         },
         {
             "folder": lighting_folder,
-            "name": "has_complex_light_source",
+            "name": "has_unclear_or_changing_light_source",
             "pos_question": "Does the video's primary light source change over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light?",
             "neg_question": "Does the video's primary light source not change over time or comes from a common source including the sun, fire, moon, stars, or artificial light?",
             "pos_prompt": "The video's primary light source changes over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light.",
             "neg_prompt": "The video's primary light source does not change over time or comes from a common source including the sun, fire, moon, stars, or artificial light.",
             "pos": {
-                "label": "lighting_setup.light_source.has_complex_light_source",
+                "label": "lighting_setup.light_source.has_unclear_or_changing_light_source",
                 "type": "pos",
             },
             "neg": {
-                "label": "lighting_setup.light_source.has_complex_light_source",
+                "label": "lighting_setup.light_source.has_unclear_or_changing_light_source",
                 "type": "neg",
             },
         },
@@ -5057,10 +5057,10 @@ def get_light_source_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRI
         {
             "folder": lighting_folder,
             "name": "is_abstract",
-            "pos_question": "Does the video feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source?",
-            "neg_question": "Does the video not feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source?",
-            "pos_prompt": "The video features an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source.",
-            "neg_prompt": "The video does not feature an abstract or synthetic scene, with non-physically realistic lighting that makes it impossible to identify the light source.",
+            "pos_question": "Does the video feature an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source?",
+            "neg_question": "Does the video not feature an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source?",
+            "pos_prompt": "The video features an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source.",
+            "neg_prompt": "The video does not feature an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source.",
             "pos": {
                 "label": "lighting_setup.light_source.is_abstract",
                 "type": "pos",
