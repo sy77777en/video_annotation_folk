@@ -1641,59 +1641,59 @@ class GoogleSheetExporter:
         
         return sheet.id
     
-    def _export_user_tab(self, sheet, tab_name: str, user_name: str, role: str, stats: Dict, 
-                        task_names: List[str], include_payment: bool):
-        """Export a single tab in a user sheet with smart preservation and formatting"""
-        print(f"    Exporting {tab_name} tab...")
+    # def _export_user_tab(self, sheet, tab_name: str, user_name: str, role: str, stats: Dict, 
+    #                     task_names: List[str], include_payment: bool):
+    #     """Export a single tab in a user sheet with smart preservation and formatting"""
+    #     print(f"    Exporting {tab_name} tab...")
         
-        try:
-            worksheet = sheet.worksheet(tab_name)
-            print(f"      Found existing {tab_name} tab")
-        except gspread.exceptions.WorksheetNotFound:
-            print(f"      Creating new {tab_name} tab...")
-            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
-                                                operation_name=f"creating {tab_name} worksheet")
-        except Exception as e:
-            print(f"      Error accessing {tab_name} tab: {e}")
-            print(f"      Creating new {tab_name} tab...")
-            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
-                                                operation_name=f"creating {tab_name} worksheet")
+    #     try:
+    #         worksheet = sheet.worksheet(tab_name)
+    #         print(f"      Found existing {tab_name} tab")
+    #     except gspread.exceptions.WorksheetNotFound:
+    #         print(f"      Creating new {tab_name} tab...")
+    #         worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
+    #                                             operation_name=f"creating {tab_name} worksheet")
+    #     except Exception as e:
+    #         print(f"      Error accessing {tab_name} tab: {e}")
+    #         print(f"      Creating new {tab_name} tab...")
+    #         worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
+    #                                             operation_name=f"creating {tab_name} worksheet")
         
-        # Step 1: Read existing data to preserve manual columns
-        existing_data = self._read_existing_manual_data(worksheet, role, include_payment, task_names)
+    #     # Step 1: Read existing data to preserve manual columns
+    #     existing_data = self._read_existing_manual_data(worksheet, role, include_payment, task_names)
         
-        # Step 1.5: Clear and unmerge header area to avoid merge conflicts
-        self._clear_header_area(worksheet, task_names, include_payment)
+    #     # Step 1.5: Clear and unmerge header area to avoid merge conflicts
+    #     self._clear_header_area(worksheet, task_names, include_payment)
         
-        # Step 2: Create headers with proper formatting
-        if role == "Annotator":
-            self._create_annotator_headers(worksheet, task_names, include_payment)
-        else:  # Reviewer
-            self._create_reviewer_headers(worksheet, task_names, include_payment)
+    #     # Step 2: Create headers with proper formatting
+    #     if role == "Annotator":
+    #         self._create_annotator_headers(worksheet, task_names, include_payment)
+    #     else:  # Reviewer
+    #         self._create_reviewer_headers(worksheet, task_names, include_payment)
         
-        # Step 3: Prepare data rows preserving manual data
-        data_rows = []
-        manual_col_indices = self._get_manual_column_indices(role, include_payment, task_names)
+    #     # Step 3: Prepare data rows preserving manual data
+    #     data_rows = []
+    #     manual_col_indices = self._get_manual_column_indices(role, include_payment, task_names)
         
-        # Add rows for each video file
-        for video_file, file_stats in stats['per_video_file'].items():
-            if file_stats.get('completed_current_user', 0) > 0 or file_stats.get('reviewed_by_current_user', 0) > 0:
-                # Create automatic data row
-                auto_row = self._create_data_row(video_file, file_stats, stats, task_names, role, include_payment)
+    #     # Add rows for each video file
+    #     for video_file, file_stats in stats['per_video_file'].items():
+    #         if file_stats.get('completed_current_user', 0) > 0 or file_stats.get('reviewed_by_current_user', 0) > 0:
+    #             # Create automatic data row
+    #             auto_row = self._create_data_row(video_file, file_stats, stats, task_names, role, include_payment)
                 
-                # Merge with preserved manual data
-                preserved_row = self._merge_with_manual_data(auto_row, video_file, existing_data, manual_col_indices)
-                data_rows.append(preserved_row)
+    #             # Merge with preserved manual data
+    #             preserved_row = self._merge_with_manual_data(auto_row, video_file, existing_data, manual_col_indices)
+    #             data_rows.append(preserved_row)
         
-        # Step 4: Update data rows with smart preservation
-        if data_rows:
-            self._update_data_with_preservation(worksheet, data_rows, 3, include_payment, task_names, role)  # Start from row 3
-            print(f"      ✅ Successfully updated {len(data_rows)} rows with preserved manual data")
-        else:
-            print(f"      ℹ️  No data to update in {tab_name} tab")
+    #     # Step 4: Update data rows with smart preservation
+    #     if data_rows:
+    #         self._update_data_with_preservation(worksheet, data_rows, 3, include_payment, task_names, role)  # Start from row 3
+    #         print(f"      ✅ Successfully updated {len(data_rows)} rows with preserved manual data")
+    #     else:
+    #         print(f"      ℹ️  No data to update in {tab_name} tab")
         
-        # Step 5: Apply beautiful formatting
-        self._apply_worksheet_formatting(worksheet, role, include_payment, task_names, len(data_rows))
+    #     # Step 5: Apply beautiful formatting
+    #     self._apply_worksheet_formatting(worksheet, role, include_payment, task_names, len(data_rows))
     
     def _clear_header_area(self, worksheet, task_names: List[str], include_payment: bool):
         """Clear and unmerge the header area to avoid merge conflicts"""
@@ -1844,9 +1844,396 @@ class GoogleSheetExporter:
         self._api_call_with_retry(worksheet.update, f'A{start_row}:{end_col}{end_row}', data_rows, 
                                 operation_name=f"updating {len(data_rows)} data rows with preservation")
     
+    # def _apply_worksheet_formatting(self, worksheet, role: str, include_payment: bool, 
+    #                                task_names: List[str], num_data_rows: int):
+    #     """Apply beautiful formatting to the worksheet with improved column widths"""
+    #     print(f"      🎨 Applying formatting and styling...")
+        
+    #     try:
+    #         # Apply improved column widths for individual user sheets
+    #         column_widths = [
+    #             {"startIndex": 0, "endIndex": 1, "pixelSize": 150},   # A: Json Sheet Name (50% wider)
+    #             {"startIndex": 1, "endIndex": 2, "pixelSize": 80},    # B: Video Count
+    #         ]
+            
+    #         if role == "Annotator":
+    #             # Annotator structure: C,D = Completion Ratio, E,F = Reviewed Ratio, G = Last Submitted
+    #             column_widths.extend([
+    #                 {"startIndex": 2, "endIndex": 3, "pixelSize": 60},    # C: Completion Ratio - All Users
+    #                 {"startIndex": 3, "endIndex": 4, "pixelSize": 60},    # D: Completion Ratio - Current User
+    #                 {"startIndex": 4, "endIndex": 5, "pixelSize": 60},    # E: Reviewed Ratio - All Users
+    #                 {"startIndex": 5, "endIndex": 6, "pixelSize": 60},    # F: Reviewed Ratio - Current User
+    #                 {"startIndex": 6, "endIndex": 7, "pixelSize": 132},   # G: Last Submitted Timestamp
+    #             ])
+    #             payment_start_col = 7  # Column H
+    #         else:  # Reviewer
+    #             # Reviewer structure: C = Completion Ratio, D,E = Reviewed Ratio, F = Last Submitted
+    #             column_widths.extend([
+    #                 {"startIndex": 2, "endIndex": 3, "pixelSize": 60},    # C: Completion Ratio - All Users
+    #                 {"startIndex": 3, "endIndex": 4, "pixelSize": 60},    # D: Reviewed Ratio - All Users
+    #                 {"startIndex": 4, "endIndex": 5, "pixelSize": 60},    # E: Reviewed Ratio - Current User
+    #                 {"startIndex": 5, "endIndex": 6, "pixelSize": 132},   # F: Last Submitted Timestamp
+    #             ])
+    #             payment_start_col = 6  # Column G
+            
+    #         # Payment/Feedback columns
+    #         if include_payment:
+    #             column_widths.extend([
+    #                 {"startIndex": payment_start_col, "endIndex": payment_start_col + 1, "pixelSize": 120},      # Payment Timestamp
+    #                 {"startIndex": payment_start_col + 1, "endIndex": payment_start_col + 2, "pixelSize": 90},   # Base Salary
+    #                 {"startIndex": payment_start_col + 2, "endIndex": payment_start_col + 3, "pixelSize": 90},   # Bonus Salary
+    #             ])
+    #             start_task_col = payment_start_col + 3
+    #         else:
+    #             column_widths.append(
+    #                 {"startIndex": payment_start_col, "endIndex": payment_start_col + 1, "pixelSize": 300}      # Feedback to Annotator - very wide
+    #             )
+    #             start_task_col = payment_start_col + 1
+            
+    #         # Task columns - all should be 84px for consistency
+    #         task_col_widths = [84, 84, 84, 84, 84, 84] if role == "Annotator" else [84, 84]  # All 84px
+    #         current_col = start_task_col
+            
+    #         for task_idx in range(len(task_names)):
+    #             for width in task_col_widths:
+    #                 column_widths.append({
+    #                     "startIndex": current_col, 
+    #                     "endIndex": current_col + 1, 
+    #                     "pixelSize": width
+    #                 })
+    #                 current_col += 1
+            
+    #         # Apply column widths using batch update
+    #         requests = []
+    #         for width_spec in column_widths:
+    #             requests.append({
+    #                 "updateDimensionProperties": {
+    #                     "range": {
+    #                         "sheetId": worksheet.id,
+    #                         "dimension": "COLUMNS",
+    #                         "startIndex": width_spec["startIndex"],
+    #                         "endIndex": width_spec["endIndex"]
+    #                     },
+    #                     "properties": {
+    #                         "pixelSize": width_spec["pixelSize"]
+    #                     },
+    #                     "fields": "pixelSize"
+    #                 }
+    #             })
+            
+    #         if requests:
+    #             self._api_call_with_retry(
+    #                 worksheet.spreadsheet.batch_update,
+    #                 {"requests": requests},
+    #                 operation_name="updating user sheet column widths"
+    #             )
+            
+    #         # Format header rows (1-2)
+    #         self._apply_header_formatting(worksheet, task_names, role, include_payment)
+            
+    #         # Format data rows (3+) with proper heights
+    #         if num_data_rows > 0:
+    #             # Feedback tab needs much taller rows for 100-word feedback
+    #             if not include_payment:  # This is the Feedback tab
+    #                 data_height = 100  # Very tall for 100-word feedback
+    #             else:  # This is the Payment tab
+    #                 data_height = 35   # Normal height
+                    
+    #             self._apply_data_formatting(worksheet, num_data_rows, role, include_payment)
+            
+    #         print(f"      ✅ Applied professional formatting with improved column widths")
+            
+    #     except Exception as e:
+    #         print(f"      ⚠️  Some formatting may not have applied: {e}")
+    
+    def _apply_header_formatting(self, worksheet, task_names: List[str], role: str, include_payment: bool = False):
+        """Apply formatting to header rows"""
+        try:
+            # Header background color (light blue)
+            header_format = {
+                "backgroundColor": {"red": 0.85, "green": 0.92, "blue": 1.0},
+                "textFormat": {"bold": True, "fontSize": 11},
+                "horizontalAlignment": "CENTER",
+                "verticalAlignment": "MIDDLE"
+            }
+            
+            # Apply to header rows
+            self._api_call_with_retry(
+                worksheet.format, "A1:ZZ2", header_format,
+                operation_name="formatting headers"
+            )
+            
+            # Apply smaller font to task sub-headers in row 2
+            # Calculate where task columns start (matches our column width calculation)
+            if role == "Annotator":
+                start_task_col = 11 if include_payment else 9   # Column K with payment, I without
+            else:  # Reviewer
+                start_task_col = 10 if include_payment else 8   # Column J with payment, H without
+            
+            # Apply smaller font to task sub-headers (Accuracy, Completion, etc.)
+            task_subheader_format = {
+                "backgroundColor": {"red": 0.85, "green": 0.92, "blue": 1.0},
+                "textFormat": {"bold": True, "fontSize": 8},  # Much smaller font
+                "horizontalAlignment": "CENTER",
+                "verticalAlignment": "MIDDLE"
+            }
+            
+            start_col = self._col_num_to_letter(start_task_col)
+            self._api_call_with_retry(
+                worksheet.format, f"{start_col}2:ZZ2", task_subheader_format,
+                operation_name="formatting task sub-headers with smaller font"
+            )
+            
+        except Exception as e:
+            print(f"      ⚠️  Header formatting failed: {e}")
+    
+    # def _apply_data_formatting(self, worksheet, num_data_rows: int, role: str, include_payment: bool):
+    #     """Apply formatting to data rows"""
+    #     try:
+    #         # Alternating row colors
+    #         even_row_format = {
+    #             "backgroundColor": {"red": 0.95, "green": 0.98, "blue": 1.0}
+    #         }
+            
+    #         # Apply alternating colors to even rows
+    #         for row in range(4, 3 + num_data_rows + 1, 2):  # Every other row starting from 4
+    #             self._api_call_with_retry(
+    #                 worksheet.format, f"A{row}:ZZ{row}", even_row_format,
+    #                 operation_name=f"formatting row {row}"
+    #             )
+            
+    #         # Special formatting for feedback rows (make them much taller)
+    #         if not include_payment:  # Feedback tab
+    #             # Make rows taller for 100-word feedback
+    #             row_height_requests = []
+    #             for row_index in range(2, 2 + num_data_rows):  # Start from row 3 (index 2)
+    #                 row_height_requests.append({
+    #                     "updateDimensionProperties": {
+    #                         "range": {
+    #                             "sheetId": worksheet.id,
+    #                             "dimension": "ROWS",
+    #                             "startIndex": row_index,
+    #                             "endIndex": row_index + 1
+    #                         },
+    #                         "properties": {
+    #                             "pixelSize": 120  # Much taller for 100-word feedback
+    #                         },
+    #                         "fields": "pixelSize"
+    #                     }
+    #                 })
+                
+    #             if row_height_requests:
+    #                 self._api_call_with_retry(
+    #                     worksheet.spreadsheet.batch_update,
+    #                     {"requests": row_height_requests},
+    #                     operation_name="setting feedback row heights"
+    #                 )
+                
+    #             # Calculate feedback column based on role
+    #             if role == "Annotator":
+    #                 feedback_col = "H"  # Column H for annotators
+    #             else:  # Reviewer  
+    #                 feedback_col = "G"  # Column G for reviewers
+                
+    #             feedback_format = {
+    #                 "wrapStrategy": "WRAP",  # Wrap text for long feedback
+    #                 "verticalAlignment": "TOP",
+    #                 "textFormat": {"fontSize": 9}  # Smaller font to fit more text
+    #             }
+    #             self._api_call_with_retry(
+    #                 worksheet.format, f"{feedback_col}3:{feedback_col}{2+num_data_rows}", feedback_format,
+    #                 operation_name="formatting feedback column"
+    #             )
+            
+    #         # Format percentage columns (no decimals for accuracy)
+    #         # Accuracy columns (no decimals)
+    #         accuracy_format = {"numberFormat": {"type": "PERCENT", "pattern": "0%"}}
+    #         # Other percentage columns (1 decimal)
+    #         percent_format = {"numberFormat": {"type": "PERCENT", "pattern": "0.0%"}}
+            
+    #         if role == "Annotator":
+    #             # Apply to completion ratios (EXCLUDE column B which is Video Count)
+    #             self._api_call_with_retry(
+    #                 worksheet.format, f"C3:F{2+num_data_rows}", percent_format,
+    #                 operation_name="formatting percentage columns"
+    #             )
+    #         else:  # Reviewer
+    #             # For reviewers, only columns C, D, E are percentages (F is Last Submitted)
+    #             self._api_call_with_retry(
+    #                 worksheet.format, f"C3:E{2+num_data_rows}", percent_format,
+    #                 operation_name="formatting percentage columns"
+    #             )
+            
+    #         # Ensure Video Count column (B) is formatted as regular numbers, not percentages
+    #         number_format = {"numberFormat": {"type": "NUMBER", "pattern": "0"}}
+    #         self._api_call_with_retry(
+    #             worksheet.format, f"B3:B{2+num_data_rows}", number_format,
+    #             operation_name="formatting video count as numbers"
+    #         )
+            
+    #         # Format Last Submitted Timestamp column to align text to bottom
+    #         if role == "Annotator":
+    #             timestamp_col = "G"  # Column G for annotators
+    #         else:  # Reviewer
+    #             timestamp_col = "F"  # Column F for reviewers
+            
+    #         timestamp_format = {
+    #             "verticalAlignment": "BOTTOM",
+    #             "horizontalAlignment": "LEFT"
+    #         }
+    #         self._api_call_with_retry(
+    #             worksheet.format, f"{timestamp_col}3:{timestamp_col}{2+num_data_rows}", timestamp_format,
+    #             operation_name="formatting timestamp column alignment"
+    #         )
+            
+    #     except Exception as e:
+    #         print(f"      ⚠️  Data formatting failed: {e}")
+    
+    def _apply_alternating_row_colors(self, worksheet, data_rows_count: int, header_rows: int = 2):
+        """Apply alternating row colors as the FINAL formatting step to ensure they stick"""
+        if data_rows_count <= 0:
+            return
+        
+        try:
+            sheet_id = worksheet.id
+            
+            # Define colors
+            light_blue_color = {
+                "red": 0.95,
+                "green": 0.98, 
+                "blue": 1.0
+            }
+            
+            white_color = {
+                "red": 1.0,
+                "green": 1.0,
+                "blue": 1.0
+            }
+            
+            # Build comprehensive alternating color requests
+            alternating_requests = []
+            
+            # Calculate the range of data rows (after headers)
+            first_data_row = header_rows  # 0-indexed (row 3 in 1-indexed becomes 2 in 0-indexed)
+            
+            # Apply colors to ALL data rows (both blue and white explicitly)
+            for row_index in range(first_data_row, header_rows + data_rows_count):
+                # Determine if this should be colored (every other row)
+                is_colored_row = (row_index - first_data_row) % 2 == 1  # 0, 2, 4... = white; 1, 3, 5... = blue
+                
+                background_color = light_blue_color if is_colored_row else white_color
+                
+                alternating_requests.append({
+                    "repeatCell": {
+                        "range": {
+                            "sheetId": sheet_id,
+                            "startRowIndex": row_index,
+                            "endRowIndex": row_index + 1,
+                            "startColumnIndex": 0,
+                            "endColumnIndex": 50  # Cover all relevant columns
+                        },
+                        "cell": {
+                            "userEnteredFormat": {
+                                "backgroundColor": background_color
+                            }
+                        },
+                        "fields": "userEnteredFormat.backgroundColor"
+                    }
+                })
+            
+            # Apply all alternating colors in one batch (HIGHER PRIORITY)
+            if alternating_requests:
+                alternating_batch_request = {"requests": alternating_requests}
+                self._api_call_with_retry(
+                    worksheet.spreadsheet.batch_update,
+                    alternating_batch_request,
+                    operation_name="applying robust alternating row colors"
+                )
+                
+                print(f"      ✅ Applied alternating colors to {data_rows_count} rows (pattern agnostic)")
+                
+        except Exception as e:
+            print(f"      ⚠️ Could not apply alternating row colors: {e}")
+
+    # 2. MODIFY: Add sorting to _export_user_tab method
+    def _export_user_tab(self, sheet, tab_name: str, user_name: str, role: str, stats: Dict, 
+                        task_names: List[str], include_payment: bool):
+        """Export a single tab in a user sheet with smart preservation, sorting, and formatting"""
+        print(f"    Exporting {tab_name} tab...")
+        
+        try:
+            worksheet = sheet.worksheet(tab_name)
+            print(f"      Found existing {tab_name} tab")
+        except gspread.exceptions.WorksheetNotFound:
+            print(f"      Creating new {tab_name} tab...")
+            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
+                                                operation_name=f"creating {tab_name} worksheet")
+        except Exception as e:
+            print(f"      Error accessing {tab_name} tab: {e}")
+            print(f"      Creating new {tab_name} tab...")
+            worksheet = self._api_call_with_retry(sheet.add_worksheet, title=tab_name, rows=100, cols=50, 
+                                                operation_name=f"creating {tab_name} worksheet")
+        
+        # Step 1: Read existing data to preserve manual columns
+        existing_data = self._read_existing_manual_data(worksheet, role, include_payment, task_names)
+        
+        # Step 1.5: Clear and unmerge header area to avoid merge conflicts
+        self._clear_header_area(worksheet, task_names, include_payment)
+        
+        # Step 2: Create headers with proper formatting
+        if role == "Annotator":
+            self._create_annotator_headers(worksheet, task_names, include_payment)
+        else:  # Reviewer
+            self._create_reviewer_headers(worksheet, task_names, include_payment)
+        
+        # Step 3: SORT video files by last activity timestamp (MOST RECENT FIRST)
+        video_files_with_stats = []
+        for video_file, file_stats in stats['per_video_file'].items():
+            if file_stats.get('completed_current_user', 0) > 0 or file_stats.get('reviewed_by_current_user', 0) > 0:
+                # Determine the relevant timestamp for sorting
+                if role == "Annotator":
+                    sort_timestamp = file_stats.get('last_annotation_timestamp')
+                else:  # Reviewer
+                    sort_timestamp = file_stats.get('last_review_timestamp')
+                
+                video_files_with_stats.append((video_file, file_stats, sort_timestamp))
+        
+        # Sort by timestamp (most recent first) - handle None timestamps
+        from datetime import datetime
+        video_files_with_stats.sort(
+            key=lambda x: datetime.fromisoformat(x[2]) if x[2] else datetime.min,
+            reverse=True
+        )
+        
+        print(f"      📊 Sorted {len(video_files_with_stats)} video files by most recent activity")
+        
+        # Step 4: Prepare data rows preserving manual data (now in sorted order)
+        data_rows = []
+        manual_col_indices = self._get_manual_column_indices(role, include_payment, task_names)
+        
+        # Add rows for each video file (now sorted)
+        for video_file, file_stats, _ in video_files_with_stats:
+            # Create automatic data row
+            auto_row = self._create_data_row(video_file, file_stats, stats, task_names, role, include_payment)
+            
+            # Merge with preserved manual data (by video file name - safe because we map by name)
+            preserved_row = self._merge_with_manual_data(auto_row, video_file, existing_data, manual_col_indices)
+            data_rows.append(preserved_row)
+        
+        # Step 5: Update data rows with smart preservation
+        if data_rows:
+            self._update_data_with_preservation(worksheet, data_rows, 3, include_payment, task_names, role)
+            print(f"      ✅ Successfully updated {len(data_rows)} sorted rows with preserved manual data")
+        else:
+            print(f"      ℹ️  No data to update in {tab_name} tab")
+        
+        # Step 6: Apply beautiful formatting with robust alternating colors
+        self._apply_worksheet_formatting(worksheet, role, include_payment, task_names, len(data_rows))
+
+    # 3. MODIFY: Update _apply_worksheet_formatting to use robust alternating colors
     def _apply_worksheet_formatting(self, worksheet, role: str, include_payment: bool, 
-                                   task_names: List[str], num_data_rows: int):
-        """Apply beautiful formatting to the worksheet with improved column widths"""
+                                task_names: List[str], num_data_rows: int):
+        """Apply beautiful formatting to the worksheet with robust alternating row colors"""
         print(f"      🎨 Applying formatting and styling...")
         
         try:
@@ -1886,7 +2273,7 @@ class GoogleSheetExporter:
                 start_task_col = payment_start_col + 3
             else:
                 column_widths.append(
-                    {"startIndex": payment_start_col, "endIndex": payment_start_col + 1, "pixelSize": 300}      # Feedback to Annotator - very wide
+                    {"startIndex": payment_start_col, "endIndex": payment_start_col + 1, "pixelSize": 300}      # Feedback - very wide
                 )
                 start_task_col = payment_start_col + 1
             
@@ -1931,120 +2318,50 @@ class GoogleSheetExporter:
             # Format header rows (1-2)
             self._apply_header_formatting(worksheet, task_names, role, include_payment)
             
-            # Format data rows (3+) with proper heights
+            # Format data rows (3+) with proper heights - REMOVED OLD ALTERNATING COLOR CODE
             if num_data_rows > 0:
-                # Feedback tab needs much taller rows for 100-word feedback
-                if not include_payment:  # This is the Feedback tab
-                    data_height = 100  # Very tall for 100-word feedback
-                else:  # This is the Payment tab
-                    data_height = 35   # Normal height
+                # Set special row heights for feedback rows
+                if not include_payment:  # Feedback tab
+                    # Make rows taller for 100-word feedback
+                    row_height_requests = []
+                    for row_index in range(2, 2 + num_data_rows):  # Start from row 3 (index 2)
+                        row_height_requests.append({
+                            "updateDimensionProperties": {
+                                "range": {
+                                    "sheetId": worksheet.id,
+                                    "dimension": "ROWS",
+                                    "startIndex": row_index,
+                                    "endIndex": row_index + 1
+                                },
+                                "properties": {
+                                    "pixelSize": 120  # Much taller for 100-word feedback
+                                },
+                                "fields": "pixelSize"
+                            }
+                        })
                     
-                self._apply_data_formatting(worksheet, num_data_rows, role, include_payment)
+                    if row_height_requests:
+                        self._api_call_with_retry(
+                            worksheet.spreadsheet.batch_update,
+                            {"requests": row_height_requests},
+                            operation_name="setting feedback row heights"
+                        )
+                
+                # Apply other data formatting (percentages, etc.) - NO background colors here
+                self._apply_data_formatting_no_colors(worksheet, num_data_rows, role, include_payment)
+                
+                # APPLY ALTERNATING ROW COLORS LAST (robust method)
+                self._apply_alternating_row_colors(worksheet, num_data_rows, header_rows=2)
             
-            print(f"      ✅ Applied professional formatting with improved column widths")
+            print(f"      ✅ Applied comprehensive formatting with robust alternating rows")
             
         except Exception as e:
             print(f"      ⚠️  Some formatting may not have applied: {e}")
-    
-    def _apply_header_formatting(self, worksheet, task_names: List[str], role: str, include_payment: bool = False):
-        """Apply formatting to header rows"""
+
+    # 4. ADD: Data formatting without background colors (to avoid conflicts)
+    def _apply_data_formatting_no_colors(self, worksheet, num_data_rows: int, role: str, include_payment: bool):
+        """Apply data formatting without background colors (colors applied separately)"""
         try:
-            # Header background color (light blue)
-            header_format = {
-                "backgroundColor": {"red": 0.85, "green": 0.92, "blue": 1.0},
-                "textFormat": {"bold": True, "fontSize": 11},
-                "horizontalAlignment": "CENTER",
-                "verticalAlignment": "MIDDLE"
-            }
-            
-            # Apply to header rows
-            self._api_call_with_retry(
-                worksheet.format, "A1:ZZ2", header_format,
-                operation_name="formatting headers"
-            )
-            
-            # Apply smaller font to task sub-headers in row 2
-            # Calculate where task columns start (matches our column width calculation)
-            if role == "Annotator":
-                start_task_col = 11 if include_payment else 9   # Column K with payment, I without
-            else:  # Reviewer
-                start_task_col = 10 if include_payment else 8   # Column J with payment, H without
-            
-            # Apply smaller font to task sub-headers (Accuracy, Completion, etc.)
-            task_subheader_format = {
-                "backgroundColor": {"red": 0.85, "green": 0.92, "blue": 1.0},
-                "textFormat": {"bold": True, "fontSize": 8},  # Much smaller font
-                "horizontalAlignment": "CENTER",
-                "verticalAlignment": "MIDDLE"
-            }
-            
-            start_col = self._col_num_to_letter(start_task_col)
-            self._api_call_with_retry(
-                worksheet.format, f"{start_col}2:ZZ2", task_subheader_format,
-                operation_name="formatting task sub-headers with smaller font"
-            )
-            
-        except Exception as e:
-            print(f"      ⚠️  Header formatting failed: {e}")
-    
-    def _apply_data_formatting(self, worksheet, num_data_rows: int, role: str, include_payment: bool):
-        """Apply formatting to data rows"""
-        try:
-            # Alternating row colors
-            even_row_format = {
-                "backgroundColor": {"red": 0.95, "green": 0.98, "blue": 1.0}
-            }
-            
-            # Apply alternating colors to even rows
-            for row in range(4, 3 + num_data_rows + 1, 2):  # Every other row starting from 4
-                self._api_call_with_retry(
-                    worksheet.format, f"A{row}:ZZ{row}", even_row_format,
-                    operation_name=f"formatting row {row}"
-                )
-            
-            # Special formatting for feedback rows (make them much taller)
-            if not include_payment:  # Feedback tab
-                # Make rows taller for 100-word feedback
-                row_height_requests = []
-                for row_index in range(2, 2 + num_data_rows):  # Start from row 3 (index 2)
-                    row_height_requests.append({
-                        "updateDimensionProperties": {
-                            "range": {
-                                "sheetId": worksheet.id,
-                                "dimension": "ROWS",
-                                "startIndex": row_index,
-                                "endIndex": row_index + 1
-                            },
-                            "properties": {
-                                "pixelSize": 120  # Much taller for 100-word feedback
-                            },
-                            "fields": "pixelSize"
-                        }
-                    })
-                
-                if row_height_requests:
-                    self._api_call_with_retry(
-                        worksheet.spreadsheet.batch_update,
-                        {"requests": row_height_requests},
-                        operation_name="setting feedback row heights"
-                    )
-                
-                # Calculate feedback column based on role
-                if role == "Annotator":
-                    feedback_col = "H"  # Column H for annotators
-                else:  # Reviewer  
-                    feedback_col = "G"  # Column G for reviewers
-                
-                feedback_format = {
-                    "wrapStrategy": "WRAP",  # Wrap text for long feedback
-                    "verticalAlignment": "TOP",
-                    "textFormat": {"fontSize": 9}  # Smaller font to fit more text
-                }
-                self._api_call_with_retry(
-                    worksheet.format, f"{feedback_col}3:{feedback_col}{2+num_data_rows}", feedback_format,
-                    operation_name="formatting feedback column"
-                )
-            
             # Format percentage columns (no decimals for accuracy)
             # Accuracy columns (no decimals)
             accuracy_format = {"numberFormat": {"type": "PERCENT", "pattern": "0%"}}
@@ -2071,7 +2388,7 @@ class GoogleSheetExporter:
                 operation_name="formatting video count as numbers"
             )
             
-            # Format Last Submitted Timestamp column to align text to bottom
+            # Format Last Submitted Timestamp column alignment
             if role == "Annotator":
                 timestamp_col = "G"  # Column G for annotators
             else:  # Reviewer
@@ -2080,15 +2397,35 @@ class GoogleSheetExporter:
             timestamp_format = {
                 "verticalAlignment": "BOTTOM",
                 "horizontalAlignment": "LEFT"
+                # NOTE: No background color here - will be set by alternating colors
             }
             self._api_call_with_retry(
                 worksheet.format, f"{timestamp_col}3:{timestamp_col}{2+num_data_rows}", timestamp_format,
                 operation_name="formatting timestamp column alignment"
             )
             
+            # Format feedback column with text wrapping (if feedback tab)
+            if not include_payment:  # Feedback tab
+                # Calculate feedback column based on role
+                if role == "Annotator":
+                    feedback_col = "H"  # Column H for annotators
+                else:  # Reviewer  
+                    feedback_col = "G"  # Column G for reviewers
+                
+                feedback_format = {
+                    "wrapStrategy": "WRAP",  # Wrap text for long feedback
+                    "verticalAlignment": "TOP",
+                    "textFormat": {"fontSize": 9}  # Smaller font to fit more text
+                    # NOTE: No background color here - will be set by alternating colors
+                }
+                self._api_call_with_retry(
+                    worksheet.format, f"{feedback_col}3:{feedback_col}{2+num_data_rows}", feedback_format,
+                    operation_name="formatting feedback column"
+                )
+            
         except Exception as e:
             print(f"      ⚠️  Data formatting failed: {e}")
-    
+
     def _col_num_to_letter(self, col_num):
         """Convert column number to Excel-style letter"""
         result = ""
