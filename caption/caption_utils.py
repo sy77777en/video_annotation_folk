@@ -578,7 +578,7 @@ def display_feedback_info(feedback_data, display_pre_caption_instead_of_final_ca
     # Display pre-caption
     if "pre_caption" in feedback_data:
         st.write("##### Pre-caption")
-        st.write(feedback_data["pre_caption"])
+        st.text(feedback_data["pre_caption"])
     
     # Display feedback workflow if it exists
     if feedback_data.get("feedback_is_needed", False):
@@ -587,12 +587,12 @@ def display_feedback_info(feedback_data, display_pre_caption_instead_of_final_ca
         # Initial feedback
         if "initial_feedback" in feedback_data:
             st.write("**Initial Feedback:**")
-            st.write(feedback_data["initial_feedback"])
+            st.text(feedback_data["initial_feedback"])
         
         # GPT feedback
         if "gpt_feedback" in feedback_data:
             st.write("**GPT Polished Feedback:**")
-            st.write(feedback_data["gpt_feedback"])
+            st.text(feedback_data["gpt_feedback"])
         
         # Feedback rating
         if "feedback_rating_score" in feedback_data:
@@ -601,7 +601,7 @@ def display_feedback_info(feedback_data, display_pre_caption_instead_of_final_ca
         # GPT caption
         if "gpt_caption" in feedback_data:
             st.write("**GPT Generated Caption:**")
-            st.write(feedback_data["gpt_caption"])
+            st.text(feedback_data["gpt_caption"])
         
         # Caption rating
         if "caption_rating_score" in feedback_data:
@@ -610,7 +610,7 @@ def display_feedback_info(feedback_data, display_pre_caption_instead_of_final_ca
     # Display final caption
     caption_to_display = feedback_data.get("pre_caption" if display_pre_caption_instead_of_final_caption else "final_caption", "")
     st.write("##### Final Caption")
-    st.write(caption_to_display)
+    st.text(caption_to_display)
 
 def display_feedback_differences(prev_feedback, feedback_data, diff_prompt, reviewer_data):
     """Display differences between previous and current feedback"""
