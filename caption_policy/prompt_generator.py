@@ -1357,21 +1357,21 @@ class LightingSetupPolicy(PromptGenerator):
         # self.unclear_or_changing_light_source = lighting_setup.unclear_or_changing_light_source
         # if abstract_light_source is True, then the other sources are not considered
         light_source_strs = []
-        if lighting_setup.abstract_light_source:
-            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "is_abstract.json"))['def_prompt'][0])
-        else:
-            if lighting_setup.sunlight_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_sunlight.json"))['def_prompt'][0])
-            if lighting_setup.moonlight_starlight_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_moonlight_starlight.json"))['def_prompt'][0])
-            if lighting_setup.firelight_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_firelight.json"))['def_prompt'][0])
-            if lighting_setup.artificial_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_artificial_practical_light.json"))['def_prompt'][0])
-            if lighting_setup.non_visible_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_non_visible_light_source.json"))['def_prompt'][0])
-            if lighting_setup.unclear_or_changing_light_source:
-                light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_unclear_or_changing_light_source.json"))['def_prompt'][0])
+        # if lighting_setup.abstract_light_source:
+        #     light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "is_abstract.json"))['def_prompt'][0])
+        # else:
+        if lighting_setup.sunlight_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_sunlight.json"))['def_prompt'][0])
+        if lighting_setup.moonlight_starlight_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_moonlight_starlight.json"))['def_prompt'][0])
+        if lighting_setup.firelight_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_firelight.json"))['def_prompt'][0])
+        if lighting_setup.artificial_light_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_artificial_practical_light.json"))['def_prompt'][0])
+        if lighting_setup.non_visible_light_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_non_visible_light_source.json"))['def_prompt'][0])
+        if lighting_setup.unclear_or_changing_light_source:
+            light_source_strs.append(read_json_file(os.path.join(lighting_sources_dir, "has_unclear_or_changing_light_source.json"))['def_prompt'][0])
         return " ".join(light_source_strs)
 
     def format_sunlight_level(self, sunlight_level: str, sunlight_level_dir="labels/lighting_setup/light_quality/sunlight_quality") -> str:

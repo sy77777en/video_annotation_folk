@@ -4893,10 +4893,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_exterior",
-            "pos_question": "Is the video set in an outdoor environment with a physically realistic lighting setup?",
-            "neg_question": "Is the video not set in an outdoor environment with a physically realistic lighting setup?",
-            "pos_prompt": "The video is set in an outdoor environment with a physically realistic lighting setup.",
-            "neg_prompt": "The video is not set in an outdoor environment with a physically realistic lighting setup.",
+            "pos_question": "Is the video captured through a camera (real or simulated) and taking place outdoors with physically realistic lighting?",
+            "neg_question": "Is the video not captured through a camera (real or simulated) and taking place outdoors with physically realistic lighting?",
+            "pos_prompt": "The video is captured through a camera (real or simulated) and takes place outdoors with physically realistic lighting.",
+            "neg_prompt": "The video is not captured through a camera (real or simulated) and takes place outdoors with physically realistic lighting.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_exterior",
                 "type": "pos",
@@ -4909,10 +4909,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_interior",
-            "pos_question": "Is the video set in an indoor environment with a physically realistic lighting setup?",
-            "neg_question": "Is the video not set in an indoor environment with a physically realistic lighting setup?",
-            "pos_prompt": "The video is set in an indoor environment with a physically realistic lighting setup.",
-            "neg_prompt": "The video is not set in an indoor environment with a physically realistic lighting setup.",
+            "pos_question": "Is the video captured through a camera (real or simulated) and taking place indoors with physically realistic lighting?",
+            "neg_question": "Is the video not captured through a camera (real or simulated) and taking place indoors with physically realistic lighting?",
+            "pos_prompt": "The video is captured through a camera (real or simulated) and takes place indoors with physically realistic lighting.",
+            "neg_prompt": "The video is not captured through a camera (real or simulated) and takes place indoors with physically realistic lighting.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_interior",
                 "type": "pos",
@@ -4925,10 +4925,10 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
         {
             "folder": lighting_folder,
             "name": "scene_type_is_synthetic",
-            "pos_question": "Is the scene a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?",
-            "neg_question": "Is the scene not a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?",
-            "pos_prompt": "The scene is a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.",
-            "neg_prompt": "The scene is not a synthetic setting (e.g., anime or game without real-world physics or ray tracing) with non-physically realistic lighting, such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.",
+            "pos_question": "Is the video not a camera capture but a stylized or non-photorealistic render (e.g., anime, cartoons, or low-fidelity game graphics) with non-physically realistic lighting such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?",
+            "neg_question": "Is the video not a stylized or non-photorealistic render (e.g., anime, cartoons, or low-fidelity game graphics) with non-physically realistic lighting such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?",
+            "pos_prompt": "The video is not a camera capture but a stylized or non-photorealistic render (e.g., anime, cartoons, or low-fidelity game graphics) with non-physically realistic lighting such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.",
+            "neg_prompt": "The video is not a stylized or non-photorealistic render (e.g., anime, cartoons, or low-fidelity game graphics) with non-physically realistic lighting such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.",
             "pos": {
                 "label": "lighting_setup.scene.scene_type_is_synthetic",
                 "type": "pos",
@@ -4938,22 +4938,22 @@ def get_scene_type_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL)
                 "type": "neg",
             },
         },
-        {
-            "folder": lighting_folder,
-            "name": "scene_type_is_unclear_or_changing",
-            "pos_question": "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?",
-            "neg_question": "Is the scene type (indoor or outdoor) clear, unambiguous, and consistent throughout the video?",
-            "pos_prompt": "The scene type (indoor or outdoor) is unclear, ambiguous, or changing throughout the video.",
-            "neg_prompt": "The scene type (indoor or outdoor) is clear, unambiguous, and consistent throughout the video.",
-            "pos": {
-                "label": "lighting_setup.scene.scene_type_is_unclear_or_changing",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "lighting_setup.scene.scene_type_is_unclear_or_changing",
-                "type": "neg",
-            },
-        },
+        # {
+        #     "folder": lighting_folder,
+        #     "name": "scene_type_is_unclear_or_changing",
+        #     "pos_question": "Is the video captured through a camera (real or simulated) with physically realistic lighting, but whether it is indoors or outdoors is unclear or changes during the video?",
+        #     "neg_question": "Is the video not captured through a camera (real or simulated) with physically realistic lighting, or whether it is indoors or outdoors is clear and consistent throughout the video?",
+        #     "pos_prompt": "The video is captured through a camera (real or simulated) with physically realistic lighting, but whether it is indoors or outdoors is unclear or changes during the video.",
+        #     "neg_prompt": "The video is not captured through a camera (real or simulated) with physically realistic lighting, or whether it is indoors or outdoors is clear and consistent throughout the video.",
+        #     "pos": {
+        #         "label": "lighting_setup.scene.scene_type_is_unclear_or_changing",
+        #         "type": "pos",
+        #     },
+        #     "neg": {
+        #         "label": "lighting_setup.scene.scene_type_is_unclear_or_changing",
+        #         "type": "neg",
+        #     },
+        # },
     ]
 
 def get_light_source_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL):

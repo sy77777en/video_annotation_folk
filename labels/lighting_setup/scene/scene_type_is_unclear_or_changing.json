@@ -2,7 +2,7 @@
     "label": "Scene Type Is Unclear or Changing",
     "label_name": "scene_type_is_unclear_or_changing",
     "def_question": [
-        "Is the scene type (indoor or outdoor) unclear, ambiguous, or changing throughout the video?"
+        "Is the video captured through a camera (real or simulated) with physically realistic lighting, but with an environment that is ambiguous, transitions between indoors and outdoors, or cannot be reliably determined?"
     ],
     "alt_question": [
         "Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?",
@@ -16,7 +16,7 @@
         "Is the scene composition too complex to categorize simply?"
     ],
     "def_prompt": [
-        "The scene type (indoor or outdoor) is unclear, ambiguous, or changing throughout the video."
+        "The video is captured through a camera (real or simulated) with physically realistic lighting, but whether it is indoors or outdoors is unclear or changes during the video."
     ],
     "alt_prompt": [
         "The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine).",
