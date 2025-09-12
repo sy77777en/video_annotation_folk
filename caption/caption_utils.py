@@ -68,7 +68,7 @@ config_names_to_short_names = {
 # ANNOTATOR MANAGEMENT
 # =============================================================================
 
-def load_annotators_from_files(input_dir="annotators"):
+def load_annotators_from_files(input_dir="annotator"):
     """
     Load annotators from JSON files in the annotators directory.
     
@@ -117,7 +117,7 @@ APPROVED_REVIEWERS = [
 
 # Ensure all approved reviewers are in the ANNOTATORS dictionary
 assert set(APPROVED_REVIEWERS) <= set(ANNOTATORS.keys()), \
-    "All approved reviewers must be in the ANNOTATORS dictionary"
+    f"All approved reviewers must be in the ANNOTATORS dictionary. {APPROVED_REVIEWERS} are not in {ANNOTATORS.keys()}"
 
 # =============================================================================
 # UTILITY FUNCTIONS

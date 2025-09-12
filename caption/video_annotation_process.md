@@ -12,7 +12,7 @@ This documentation explains the complete workflow for processing video URLs, cre
 
 2. **Command**:
    ```bash
-   python caption/load_xlsx.py --video_data video_data/20250406_setup_and_motion/videos.json
+   python -m caption.load_xlsx --video_data video_data/20250406_setup_and_motion/videos.json --label_collections cam_motion cam_setup
    ```
 
 3. **Output Files**:
@@ -44,7 +44,7 @@ This documentation explains the complete workflow for processing video URLs, cre
 
 2. **Command**:
    ```bash
-   python prepare_lighting_urls.py --json_path video_data/20250406lighting_only/videos.json --output_dir caption/video_urls/lighting_280_new
+   python -m caption.prepare_lighting_urls --json_path video_data/20250406lighting_only/videos.json --output_dir caption/video_urls/lighting_280_new
    ```
 
 3. **Output Files**:
@@ -59,11 +59,46 @@ This documentation explains the complete workflow for processing video URLs, cre
 
 ## 3. Processing New Videos
 
+### Optional: Finding New Videos for File Padding
+
+Before processing new videos, you might want to pad existing batch files to end with round numbers (e.g., ending with 0 instead of 3). This creates cleaner, more organized file naming.
+
+#### **When and Why to Use This:**
+- **Aesthetic Organization**: Files ending in round numbers (e.g., `1180_to_1190.json`) look cleaner than odd endings (e.g., `1180_to_1183.json`)
+- **Future Consistency**: Ensures all future batches will naturally align to round numbers
+- **No Duplicates**: Need genuinely new videos, not duplicates from existing sets
+
+#### **Usage:**
+```bash
+# Find truly new videos not in any existing batch files
+python find_new_videos.py caption/video_urls/20250911_setup_and_motion/overlap_all_XXX.json
+```
+
+#### **Example Scenario:**
+You have a file `1180_to_1183.json` with only 3 videos, but you want it to end at 1190 (containing 10 videos total). The script will:
+1. Load all existing videos from your `main_config.py` 
+2. Find 7 new videos from your September dataset that aren't duplicates
+3. Output the first 7 for you to manually add to the file
+
+#### **After Finding New Videos:**
+1. **Update the batch file**: Add the 7 new videos to `1180_to_1183.json`
+2. **Rename the file**: Change `1180_to_1183.json` to `1180_to_1190.json`
+3. **Update main_config.py**: Change the filename reference:
+   ```python
+   # Change this line in DEFAULT_VIDEO_URLS_FILES:
+   'video_urls/20250406_setup_and_motion/1180_to_1183.json',
+   # To this:
+   'video_urls/20250406_setup_and_motion/1180_to_1190.json',
+   ```
+4. **Future batches will align**: Next files will be `1190_to_1200.json`, `1200_to_1210.json`, etc.
+
 ### Creating Shell Scripts in `process_new_videos/`
 
 1. **Purpose**: Process new videos and create batch files while considering existing videos.
 
-2. **Script Structure**:
+2. **Important Note**: The script must be called **separately** for overlap and nonoverlap sets to avoid number conflicts. Never mix overlap and nonoverlap files in the same `--batch-files` argument.
+
+3. **Script Structure**:
    ```bash
    #!/bin/bash
    
@@ -82,21 +117,106 @@ This documentation explains the complete workflow for processing video URLs, cre
        --naming-mode [batch|overlap|nonoverlap]
    ```
 
-3. **Parameters**:
+4. **Parameters**:
    - `--new-dir`: Directory for new batch files
    - `--valid-filename`: Filename for valid videos in the new directory
    - `--invalid-filename`: Full path to the invalid file (optional)
    - `--invalid-filename-overlap`: Full path to the overlap invalid file (optional)
    - `--invalid-filename-nonoverlap`: Full path to the nonoverlap invalid file (optional)
-   - `--batch-files`: Full paths to existing batch files (optional)
+   - `--batch-files`: Full paths to existing batch files (optional) - **MUST be only overlap OR only nonoverlap files, never mixed**
    - `--batch-size`: Number of videos per batch
    - `--naming-mode`: Naming convention for batch files
 
-4. **Example Scripts**:
-   - `main_april_15.sh`: For the main project
-   - `lighting_april_14.sh`: For the lighting project
-   - `nonoverlap_april_15.sh`: For non-overlapping videos
-   - `lighting_april_16.sh`: For the lighting project with invalid file handling
+5. **Example Scripts**:
+
+   **For Overlap Videos** (`overlap_september_11.sh`):
+   ```bash
+   #!/bin/bash
+   
+   # Process new overlapping videos from the September dataset
+   python caption/process_new_videos.py \
+       --new-dir "caption/video_urls/20250911_setup_and_motion" \
+       --valid-filename "overlap_all_XXX.json" \
+       --invalid-filename "caption/video_urls/20250911_setup_and_motion/overlap_invalid.json" \
+       --batch-files \
+           "caption/video_urls/20250227_0507ground_and_setup/overlap_0_to_94.json" \
+           "caption/video_urls/20250227_0507ground_and_setup/overlap_94_to_188.json" \
+           ... (all overlap files only) \
+           "caption/video_urls/20250406_setup_and_motion/overlap_1010_to_1020.json" \
+       --batch-size 10 \
+       --naming-mode overlap
+   ```
+
+   **For Nonoverlap Videos** (`nonoverlap_september_11.sh`):
+   ```bash
+   #!/bin/bash
+   
+   # Process new non-overlapping videos from the September dataset  
+   python caption/process_new_videos.py \
+       --new-dir "caption/video_urls/20250911_setup_and_motion" \
+       --valid-filename "nonoverlap_all_XXX.json" \
+       --invalid-filename "caption/video_urls/20250911_setup_and_motion/nonoverlap_invalid.json" \
+       --batch-files \
+           "caption/video_urls/20250406_setup_and_motion/0_to_10.json" \
+           "caption/video_urls/20250406_setup_and_motion/10_to_20.json" \
+           ... (all nonoverlap files only) \
+           "caption/video_urls/20250406_setup_and_motion/1180_to_1190.json" \
+       --batch-size 10 \
+       --naming-mode nonoverlap
+   ```
+
+6. **Expected Results**:
+   - **Overlap files**: Will continue from 1020 → `overlap_1020_to_1030.json`, `overlap_1030_to_1040.json`, etc.
+   - **Nonoverlap files**: Will continue from 1190 → `1190_to_1200.json`, `1200_to_1210.json`, etc.
+
+7. **After Running Scripts**:
+   
+   **Step 1: Update Configuration**
+   Add the new batch files to `caption/config/main_config.py` in the `DEFAULT_VIDEO_URLS_FILES` list:
+   ```python
+   DEFAULT_VIDEO_URLS_FILES = [
+       # ... existing files ...
+       'video_urls/20250406_setup_and_motion/overlap_1010_to_1020.json',
+       # Add new overlap files:
+       'video_urls/20250911_setup_and_motion/overlap_1020_to_1030.json',
+       'video_urls/20250911_setup_and_motion/overlap_1030_to_1040.json',
+       # ... existing nonoverlap files ...
+       'video_urls/20250406_setup_and_motion/1180_to_1190.json',
+       # Add new nonoverlap files:
+       'video_urls/20250911_setup_and_motion/1190_to_1200.json',
+       'video_urls/20250911_setup_and_motion/1200_to_1210.json',
+       # Add invalid files if they exist:
+       'video_urls/20250911_setup_and_motion/overlap_invalid.json',
+       'video_urls/20250911_setup_and_motion/nonoverlap_invalid.json',
+   ]
+   ```
+
+   **Step 2: Verify File Structure**
+   Ensure your directory structure looks like:
+   ```
+   caption/video_urls/20250911_setup_and_motion/
+   ├── overlap_all_XXX.json          # Original file from load_xlsx.py
+   ├── nonoverlap_all_XXX.json       # Original file from load_xlsx.py
+   ├── overlap_1020_to_1030.json     # New batch files
+   ├── overlap_1030_to_1040.json
+   ├── 1190_to_1200.json
+   ├── 1200_to_1210.json
+   ├── overlap_invalid.json          # Invalid files (if any)
+   └── nonoverlap_invalid.json
+   ```
+
+   **Step 3: Test Configuration**
+   Test that your web application can load the new files:
+   ```bash
+   python -m streamlit run caption/apps/app.py --server.port 5191
+   ```
+
+8. **Critical Notes**:
+   - **Never mix overlap and nonoverlap** files in the same script call
+   - **Run scripts separately** for each type (overlap vs nonoverlap)
+   - **Update main_config.py** after creating new batch files
+   - **The script preserves existing video sets** - only adds truly new videos
+   - **File ordering matters** - maintain chronological order in the config file
 
 ## 4. Updating Web Applications
 

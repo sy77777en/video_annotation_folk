@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import json
 from pathlib import Path
+import argparse
 from typing import List, Dict, Any, Set, Optional, Tuple
 
 
@@ -477,9 +478,18 @@ def save_nonoverlapping_videos_json(missing_in_videos: Set[str], save_dir: str, 
     print(f"Saved {len(full_urls)} non-overlapping videos to {nonoverlap_path}")
 
 
+def parse_args():
+    """Parse command line arguments for load_xlsx script"""
+    parser = argparse.ArgumentParser(description="Load and process Excel caption data")
+    parser.add_argument("--video_data", type=str, default="video_data/20250406_setup_and_motion/videos.json", 
+                       help="Path to the video data file")
+    parser.add_argument("--label_collections", nargs="+", type=str, default=["cam_motion", "cam_setup", "lighting_setup"], 
+                       help="List of label collections to load from the video data")
+    return parser.parse_args()
+
 def main():
     # Import only when needed
-    from feedback_app import load_video_data, parse_args
+    from process_json import json_to_video_data
     
     # Parse command line arguments
     args = parse_args()
@@ -498,7 +508,7 @@ def main():
     
     # Load video data
     print("Loading video data...")
-    video_data_dict = load_video_data(args.video_data, label_collections=args.label_collections)
+    video_data_dict = json_to_video_data(args.video_data, label_collections=args.label_collections)
     
     # Identify invalid videos with shot_transition labels
     print("Identifying invalid videos with shot_transition labels...")
