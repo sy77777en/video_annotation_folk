@@ -9,12 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera move backward (not zooming out) in the scene?
+Is the camera moving backward in the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Is the camera moving backward in the scene?
+- Does the camera move backward (not zooming out) in the scene?
 
 - Is the camera moving backward?
 
@@ -58,6 +58,8 @@ Does the camera move backward (not zooming out) in the scene?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- A shot where the camera is moving backward within the scene.
+
 - A shot where the camera moves backward, rather than zooming out.
 
 - A video where the camera travels backward, creating noticeable parallax.
@@ -69,8 +71,6 @@ Does the camera move backward (not zooming out) in the scene?
 - A shot where the camera moves straight back, maintaining a sense of backward motion.
 
 - A video where the camera moves backward (not zooming out) in the scene.
-
-- A shot where the camera is moving backward within the scene.
 
 - A video where the camera moves backward, creating a noticeable parallax effect.
 
@@ -295,6 +295,8 @@ Does the camera only move backward (not zooming out) with respect to the ground?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only moves backward (not zooming out) relative to the ground.
 
 - A video where the camera only moves backward (not zooming out) relative to the ground.
 

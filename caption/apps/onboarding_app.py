@@ -1,4 +1,3 @@
-# caption/apps/onboarding_app.py
 import argparse
 import streamlit as st
 import os
@@ -338,16 +337,16 @@ class OnboardingApp:
         config_dict = {config["name"]: config for config in configs}
         config_names = list(config_dict.keys())
         
-        # Task selection - consistent naming with main app
+        # FIXED: Task selection - Use consistent key naming that matches navigation buttons
         selected_config = st.selectbox(
             "Select a task:",
             config_names,
-            index=config_names.index(st.session_state.get('last_config_id_caption', config_names[0])),
-            key="selected_task_caption",
+            index=config_names.index(st.session_state.get('last_config_id', config_names[0])),
+            key="selected_config",  # CHANGED: Use consistent key name
         )
         
-        # Handle config changes
-        self._handle_config_change_caption(selected_config)
+        # FIXED: Handle config changes - Use standard last_config_id
+        self._handle_config_change(selected_config)
         
         config = config_dict[selected_config]
         st.markdown(f"### {config.get('name', 'Caption Training')}")
@@ -361,31 +360,29 @@ class OnboardingApp:
 
         self.ui.display_status_indicators()
         
-        # Video selection with training progress indicators
+        # FIXED: Video selection with training progress indicators - Use consistent key naming
         selected_video = st.selectbox(
             "Select a video:",
             video_urls,
             format_func=self._get_training_video_format_func(output_dir, video_urls),
-            index=video_urls.index(st.session_state.get('last_selected_video_caption', video_urls[0])),
-            key="selected_video_caption"
+            index=video_urls.index(st.session_state.get('last_selected_video', video_urls[0])),
+            key="selected_video"  # CHANGED: Use consistent key name
         )
         
-        # Handle video changes
+        # FIXED: Handle video changes - Use standard last_video_id and last_selected_video
         video_id = self.data_manager.get_video_id(selected_video)
-        self._handle_video_change_caption(video_id, selected_video)
+        self._handle_video_change(video_id, selected_video)
         
         # Display video and related info
         self.video_utils.display_video_with_frames(selected_video)
         self.video_utils.display_video_links(video_id, video_data_dict)
         
-        # Navigation buttons - preserve onboarding-specific keys
-        # preserved_keys = [
-        #     'api_key', 'last_config_id_caption', 'last_video_id_caption', 'last_selected_video_caption',
-        #     'file_check_passed_caption', 'logged_in', 'video_urls', 'logged_in_user', 
-        #     'selected_portal_mode', 'selected_portal_file', 'personalized_output',
-        #     'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
-        # ]
-        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_mode()
+        # FIXED: Navigation buttons - Use consistent preserved keys matching main app
+        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_portal()
+        # Add onboarding-specific keys that should be preserved
+        preserved_keys.extend([
+            'selected_portal_mode', 'selected_portal_file', 'file_check_passed_caption'
+        ])
         
         self.ui.display_navigation_buttons(
             video_urls, config_names, selected_video, selected_config, 
@@ -457,16 +454,16 @@ class OnboardingApp:
         config_dict = {config["name"]: config for config in configs}
         config_names = list(config_dict.keys())
         
-        # Task selection
+        # FIXED: Task selection - Use consistent key naming that matches navigation buttons  
         selected_config = st.selectbox(
             "Select a task:",
             config_names,
-            index=config_names.index(st.session_state.get('last_config_id_comparison', config_names[0])),
-            key="selected_task_comparison",
+            index=config_names.index(st.session_state.get('last_config_id', config_names[0])),
+            key="selected_config_review",  # Use unique key to avoid conflicts with caption mode
         )
         
-        # Handle config changes
-        self._handle_config_change_comparison(selected_config)
+        # FIXED: Handle config changes - Use standard last_config_id
+        self._handle_config_change_review(selected_config)
         
         config = config_dict[selected_config]
         st.title(f"Caption Comparison - {config.get('name', '')}")
@@ -478,31 +475,29 @@ class OnboardingApp:
         output_dir = str(self.folder_path / self.base_config.output_dir / config["output_name"])
         new_annotator_output_dir = str(self.folder_path / self.output_new_annotator / config["output_name"])
         
-        # Video selection with comparison format
+        # FIXED: Video selection with comparison format - Use consistent key naming
         selected_video = st.selectbox(
             "Select a video:",
             video_urls,
             format_func=self._get_comparison_video_format_func(output_dir, new_annotator_output_dir, video_urls),
-            index=video_urls.index(st.session_state.get('last_selected_video_comparison', video_urls[0])),
-            key="selected_video_comparison"
+            index=video_urls.index(st.session_state.get('last_selected_video', video_urls[0])),
+            key="selected_video_review"  # Use unique key to avoid conflicts with caption mode
         )
         
-        # Handle video changes
+        # FIXED: Handle video changes - Use standard last_video_id and last_selected_video
         video_id = self.data_manager.get_video_id(selected_video)
-        self._handle_video_change_comparison(video_id, selected_video)
+        self._handle_video_change_review(video_id, selected_video)
         
         # Display video and related info
         self.video_utils.display_video_with_frames(selected_video)
         self.video_utils.display_video_links(video_id, video_data_dict)
         
-        # Navigation buttons
-        # preserved_keys = [
-        #     'api_key', 'last_config_id_comparison', 'last_video_id_comparison', 'last_selected_video_comparison', 
-        #     'file_check_passed_comparison', 'logged_in', 'video_urls', 'logged_in_user', 
-        #     'selected_portal_mode', 'selected_portal_file', 'personalized_output',
-        #     'selected_portal', 'login_method', 'target_annotator', 'selected_sheet_file'
-        # ]
-        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_comparison_portal()
+        # FIXED: Navigation buttons - Use consistent preserved keys
+        preserved_keys = SessionStateKeyManager.get_preserved_keys_for_review_portal()
+        # Add onboarding-specific keys that should be preserved
+        preserved_keys.extend([
+            'selected_portal_mode', 'selected_portal_file', 'file_check_passed_comparison'
+        ])
         
         self.ui.display_navigation_buttons(
             video_urls, config_names, selected_video, selected_config, 
@@ -684,11 +679,6 @@ class OnboardingApp:
     
     def _clear_mode_state(self):
         """Clear mode-specific state while preserving login and navigation state"""
-        # preserve_keys = {
-        #     'logged_in', 'logged_in_user', 'video_urls', 'selected_portal_file',
-        #     'selected_portal_mode', 'file_check_passed_caption', 'file_check_passed_comparison', 
-        #     'personalized_output', 'selected_portal', 'login_method', 'target_annotator'
-        # }
         from caption.session_state_manager import SessionStateKeyManager
     
         # Get base preserved keys
@@ -721,60 +711,87 @@ class OnboardingApp:
         except (ValueError, TypeError):
             return iso_timestamp
     
-    def _handle_config_change_caption(self, selected_config: str):
-        """Handle configuration changes for caption mode"""
-        if 'last_config_id_caption' not in st.session_state:
-            st.session_state.last_config_id_caption = selected_config
-        elif st.session_state.last_config_id_caption != selected_config:
-            # Clear relevant state on config change
-            keys_to_remove = [key for key in st.session_state 
-                             if key.endswith('_caption') and key not in ['last_config_id_caption']]
+    # FIXED: Use consistent session state key handling matching main app.py
+    def _handle_config_change(self, selected_config: str):
+        """Handle configuration changes - unified for both modes"""
+        if 'last_config_id' not in st.session_state:
+            st.session_state.last_config_id = selected_config
+        elif st.session_state.last_config_id != selected_config:
+            # Clear state on config change - use same logic as main app
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_portal()
+            preserved_keys.extend([
+                'selected_config', 'selected_video', 'selected_portal_mode', 
+                'selected_portal_file', 'file_check_passed_caption'
+            ])
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
             for key in keys_to_remove:
                 del st.session_state[key]
-            st.session_state.last_config_id_caption = selected_config
+            st.session_state.last_config_id = selected_config
+            print(f"Config changed to: {selected_config}")
+            st.rerun()
+
+    def _handle_config_change_review(self, selected_config: str):
+        """Handle configuration changes for review mode"""
+        if 'last_config_id' not in st.session_state:
+            st.session_state.last_config_id = selected_config
+        elif st.session_state.last_config_id != selected_config:
+            # Clear state on config change - use same logic as main app
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_review_portal()
+            preserved_keys.extend([
+                'selected_config_review', 'selected_video_review', 'selected_portal_mode',
+                'selected_portal_file', 'file_check_passed_comparison'
+            ])
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
+            for key in keys_to_remove:
+                del st.session_state[key]
+            st.session_state.last_config_id = selected_config
+            print(f"Review config changed to: {selected_config}")
             st.rerun()
     
-    def _handle_config_change_comparison(self, selected_config: str):
-        """Handle configuration changes for comparison mode"""
-        if 'last_config_id_comparison' not in st.session_state:
-            st.session_state.last_config_id_comparison = selected_config
-        elif st.session_state.last_config_id_comparison != selected_config:
-            # Clear relevant state on config change  
-            keys_to_remove = [key for key in st.session_state 
-                             if key.endswith('_comparison') and key not in ['last_config_id_comparison']]
+    def _handle_video_change(self, video_id: str, selected_video: str):
+        """Handle video changes - unified for caption mode"""
+        if 'last_video_id' not in st.session_state:
+            st.session_state.last_video_id = video_id
+            st.session_state.last_selected_video = selected_video
+        elif st.session_state.last_video_id != video_id:
+            # Clear state on video change - use same logic as main app
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_caption_portal()
+            preserved_keys.extend([
+                'selected_config', 'selected_video', 'last_video_id', 'last_selected_video',
+                'selected_portal_mode', 'selected_portal_file', 'file_check_passed_caption'
+            ])
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
             for key in keys_to_remove:
                 del st.session_state[key]
-            st.session_state.last_config_id_comparison = selected_config
+            st.session_state.last_video_id = video_id
+            st.session_state.last_selected_video = selected_video
             st.rerun()
-    
-    def _handle_video_change_caption(self, video_id: str, selected_video: str):
-        """Handle video changes for caption mode"""
-        if 'last_video_id_caption' not in st.session_state:
-            st.session_state.last_video_id_caption = video_id
-            st.session_state.last_selected_video_caption = selected_video
-        elif st.session_state.last_video_id_caption != video_id:
-            # Clear relevant state on video change
-            keys_to_remove = [key for key in st.session_state 
-                             if key.endswith('_caption') and key not in ['last_config_id_caption', 'last_video_id_caption', 'last_selected_video_caption']]
+
+    def _handle_video_change_review(self, video_id: str, selected_video: str):
+        """Handle video changes for review mode"""
+        if 'last_video_id' not in st.session_state:
+            st.session_state.last_video_id = video_id
+            st.session_state.last_selected_video = selected_video
+        elif st.session_state.last_video_id != video_id:
+            # Clear state on video change - use same logic as main app
+            from caption.session_state_manager import SessionStateKeyManager
+            preserved_keys = SessionStateKeyManager.get_preserved_keys_for_review_portal()
+            preserved_keys.extend([
+                'selected_config_review', 'selected_video_review', 'last_video_id', 'last_selected_video',
+                'selected_portal_mode', 'selected_portal_file', 'file_check_passed_comparison'
+            ])
+            
+            keys_to_remove = [key for key in st.session_state if key not in preserved_keys]
             for key in keys_to_remove:
                 del st.session_state[key]
-            st.session_state.last_video_id_caption = video_id
-            st.session_state.last_selected_video_caption = selected_video
-            st.rerun()
-    
-    def _handle_video_change_comparison(self, video_id: str, selected_video: str):
-        """Handle video changes for comparison mode"""
-        if 'last_video_id_comparison' not in st.session_state:
-            st.session_state.last_video_id_comparison = video_id
-            st.session_state.last_selected_video_comparison = selected_video
-        elif st.session_state.last_video_id_comparison != video_id:
-            # Clear relevant state on video change
-            keys_to_remove = [key for key in st.session_state 
-                             if key.endswith('_comparison') and key not in ['last_config_id_comparison', 'last_video_id_comparison', 'last_selected_video_comparison']]
-            for key in keys_to_remove:
-                del st.session_state[key]
-            st.session_state.last_video_id_comparison = video_id
-            st.session_state.last_selected_video_comparison = selected_video
+            st.session_state.last_video_id = video_id
+            st.session_state.last_selected_video = selected_video
             st.rerun()
 
 

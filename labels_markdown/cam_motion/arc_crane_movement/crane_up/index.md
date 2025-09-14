@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the camera performing a crane up movement?
+Is the camera craning upward in an arc?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -20,14 +20,16 @@ Is the camera performing a crane up movement?
 
 - Does the camera elevate while maintaining an circular path?
 
-- Is the camera executing an upward crane motion?
-
 - Does the camera rise in a smooth arcing movement?
 
 </details>
 
 <details>
 <summary><h4> Alternative Question</h4></summary>
+
+- Is the camera performing a crane up movement?
+
+- Is the camera executing an upward crane motion?
 
 - Is the camera lifting while maintaining focus on the subject?
 
@@ -50,17 +52,13 @@ Is the camera performing a crane up movement?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A scene featuring a crane up movement.
+- The camera cranes upward in an arc.
 
 - A shot where the camera rises in a vertical arcing motion.
 
 - The camera moves upward while maintaining an orbit around something.
 
-- A shot demonstrating an upward crane motion.
-
 - A video where the camera lifts in an arcing trajectory.
-
-- The camera elevates in a smooth, controlled crane movement.
 
 - An upward arcing shot moving along a vertical path.
 
@@ -68,6 +66,14 @@ Is the camera performing a crane up movement?
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- A shot demonstrating an upward crane motion.
+
+- The camera elevates in a smooth, controlled crane movement.
+
+- A shot with a crane up movement.
+
+- A scene featuring a crane up movement.
 
 - The camera ascends while maintaining visual focus on a subject.
 

@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the background in focus, using a shallow depth of field?
+Does the video end with the camera focusing on the background, using a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -23,7 +23,7 @@ Does the video end with the background in focus, using a shallow depth of field?
 
 - Is the final frame focused on the background while the foreground is blurred?
 
-- Does the video conclude with the background in sharp focus?
+- Does the camera conclude with the background in sharp focus?
 
 - Is the last shot emphasizing the background through shallow depth of field?
 
@@ -31,7 +31,7 @@ Does the video end with the background in focus, using a shallow depth of field?
 
 - Is the final shot highlighting the background while other elements are softened?
 
-- Does the video close with a clear background focus while the foreground is defocused?
+- Does the camera close with a clear background focus while the foreground is defocused?
 
 - Is the ending frame framed with a strong background emphasis?
 
@@ -40,7 +40,7 @@ Does the video end with the background in focus, using a shallow depth of field?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the background in focus, using a shallow depth of field.
+- The video ends with the camera focusing on the background, using a shallow depth of field.
 
 </details>
 
@@ -49,17 +49,17 @@ Does the video end with the background in focus, using a shallow depth of field?
 
 - A shot ending with the background in sharp focus.
 
-- A video concluding with the background as the focal plane.
+- The camera concluding with the background as the focal plane.
 
 - A sequence that ends with a blurred foreground, keeping the background clear.
 
 - A shot emphasizing the background through selective focus.
 
-- A video closing with a well-defined background while the rest is out of focus.
+- The camera closing with a well-defined background while the rest is out of focus.
 
 - A shot where depth of field isolates the background at the end.
 
-- A video ending with the background standing out as the main point of focus.
+- The camera ending with the background standing out as the main point of focus.
 
 - A scene that concludes with a sharp background while foreground elements are blurred.
 
@@ -82,7 +82,7 @@ Does the video end with the background in focus, using a shallow depth of field?
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the foreground in focus, using a shallow depth of field?
+Does the video end with the camera focusing on the foreground, using a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video end with the foreground in focus, using a shallow depth of field?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the foreground in focus, using a shallow depth of field.
+- The video ends with the camera focusing on the foreground, using a shallow depth of field.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video end with the foreground in focus, using a shallow depth of field?
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the middle ground in focus while the foreground and background are blurred?
+Does the video end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video end with the middle ground in focus while the foreground and back
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the middle ground in focus, with the foreground and background blurred.
+- The video ends with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video end with the middle ground in focus while the foreground and back
 
 
 <h3>📖 Definition:</h3>
-Does the video end completely out of focus?
+Does the video end with the camera completely out of focus?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video end completely out of focus?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends completely out of focus.
+- The video ends with the camera completely out of focus.
 
 </details>
 

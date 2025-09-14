@@ -1,6 +1,71 @@
 # Lens_distortion Overview
 
 <details>
+<summary><h2>With Lens Distortion</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>barrel_distortion</code>
+
+
+<h3>📖 Definition:</h3>
+Does this shot contain noticeable yet slight barrel distortion?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+- Does this shot contain slight barrel distortion?
+
+- Does this shot show any slight barrel distortion?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is there any slight warping or bending effect in this scene?
+
+- Is this video captured using a lens that slightly distorts the perspective?
+
+- Is the frame slightly bending or curving due to lens effects?
+
+- Does the perspective appear slightly exaggerated or stretched?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A shot captured with noticeable yet slight barrel distortion.
+
+- A video with visible slight barrel distortion.
+
+- A scene with slight barrel distortion.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the frame appears slightly warped due to lens effects.
+
+- A shot where the edges appear slightly curved or stretched.
+
+- A perspective altered by slight barrel distortion.
+
+- A scene with an exaggerated field of view due to slight barrel distortion.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.barrel_distortion is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.cam_setup.barrel_distortion is False</code>
+
+</details>
+
+<details>
 <summary><h2>Fisheye Distortion</h2></summary>
 
 
@@ -9,7 +74,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does this shot have a fisheye lens distortion?
+Does this shot have a noticeable fisheye lens distortion?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -34,7 +99,7 @@ Does this shot have a fisheye lens distortion?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot with strong fisheye distortion.
+- A shot with noticable fisheye lens distortion.
 
 - A video where the perspective is heavily curved outward.
 
@@ -54,24 +119,10 @@ Does this shot have a fisheye lens distortion?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.lens_distortion == 'fisheye'</code>
+<code>self.cam_setup.fisheye_distortion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.lens_distortion != 'fisheye'</code>
-
-<details>
-<summary><h4>🔴 Negative (Easy)</h4></summary>
-
-- <b>no_lens_distortion</b>: <code>self.cam_setup.lens_distortion == 'regular'</code>
-
-</details>
-
-<details>
-<summary><h4>🔴 Negative (Hard)</h4></summary>
-
-- <b>barrel_distortion</b>: <code>self.cam_setup.lens_distortion == 'barrel'</code>
-
-</details>
+<code>self.cam_setup.fisheye_distortion is False</code>
 
 </details>
 
@@ -111,7 +162,7 @@ Does this shot have no noticeable lens distortion?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot captured without noticeable lens distortion.
+- A shot without noticeable lens distortion.
 
 - A video with a natural, undistorted perspective.
 
@@ -131,10 +182,10 @@ Does this shot have no noticeable lens distortion?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.lens_distortion == 'regular'</code>
+<code>self.cam_setup.no_lens_distortion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.lens_distortion != 'regular'</code>
+<code>self.cam_setup.no_lens_distortion is False</code>
 
 </details>
 
@@ -147,12 +198,12 @@ Does this shot have no noticeable lens distortion?
 
 
 <h3>📖 Definition:</h3>
-Does this shot contain noticeable lens distortion?
+Does this shot contain noticeable barrel or fisheye distortion?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does this shot contain noticeable barrel or fisheye distortion?
+- Does this shot contain noticeable lens distortion?
 
 - Does this shot show any fisheye or barrel distortion?
 
@@ -174,9 +225,9 @@ Does this shot contain noticeable lens distortion?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot captured with noticeable lens distortion.
+- A video with noticeable barrel or fisheye distortion.
 
-- A video with visible barrel or fisheye distortion.
+- A shot captured with noticeable lens distortion.
 
 - A scene with visible fisheye or barrel distortion.
 
@@ -196,9 +247,9 @@ Does this shot contain noticeable lens distortion?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.lens_distortion in ['barrel', 'fisheye']</code>
+<code>self.cam_setup.with_lens_distortion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.lens_distortion == 'regular'</code>
+<code>self.cam_setup.with_lens_distortion is False</code>
 
 </details>

@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject while maintaining context?
+Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -42,7 +42,7 @@ Does the video maintain a close-up shot throughout, consistently highlighting a 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that maintains a close-up shot throughout, consistently highlighting a distinct part of the subject while maintaining context.
+- A video that maintains a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context.
 
 </details>
 
@@ -86,7 +86,7 @@ Does the video maintain a close-up shot throughout, consistently highlighting a 
 
 
 <h3>📖 Definition:</h3>
-Does the video maintain an extreme close-up shot throughout, focusing very tightly on specific details or features?
+Does the video maintain an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -117,7 +117,7 @@ Does the video maintain an extreme close-up shot throughout, focusing very tight
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that maintains an extreme close-up shot throughout, focusing very tightly on specific details or features.
+- A video that maintains an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene.
 
 </details>
 
@@ -159,7 +159,7 @@ Does the video maintain an extreme close-up shot throughout, focusing very tight
 
 
 <h3>📖 Definition:</h3>
-Is the video an extreme wide shot that emphasizes the setting over any subjects?
+Does the video maintain an extreme wide shot throughout, consistently emphasizing the setting over any subjects?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -190,7 +190,7 @@ Is the video an extreme wide shot that emphasizes the setting over any subjects?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that maintains an extreme wide shot throughout, emphasizing the setting over any subjects.
+- A video that maintains an extreme wide shot throughout, consistently emphasizing the setting over any subjects.
 
 </details>
 
@@ -232,7 +232,7 @@ Is the video an extreme wide shot that emphasizes the setting over any subjects?
 
 
 <h3>📖 Definition:</h3>
-Does the video maintain a full shot that frames the entire body of the subject?
+Does the video maintain a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -263,7 +263,7 @@ Does the video maintain a full shot that frames the entire body of the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that maintains a full shot throughout, framing the entire subject while maintaining focus on it.
+- A video that maintains a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery.
 
 </details>
 
@@ -305,7 +305,7 @@ Does the video maintain a full shot that frames the entire body of the subject?
 
 
 <h3>📖 Definition:</h3>
-Does the video show a medium shot that frames about half of the subject?
+Does the video maintain a medium shot throughout, consistently framing about half of the human subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -336,7 +336,7 @@ Does the video show a medium shot that frames about half of the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A medium shot framing about half of the subject.
+- A video that maintains a medium shot throughout, consistently framing about half of the human subject.
 
 </details>
 
@@ -378,7 +378,7 @@ Does the video show a medium shot that frames about half of the subject?
 
 
 <h3>📖 Definition:</h3>
-Does the video show a medium close-up shot that frames the human subject from the chest upward?
+Does the video maintain a medium close-up shot throughout, consistently framing the human subject from the chest upward?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -409,7 +409,7 @@ Does the video show a medium close-up shot that frames the human subject from th
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A medium close-up shot framing the human subject from the chest upward.
+- A video that maintains a medium close-up shot throughout, consistently framing the human subject from the chest upward.
 
 </details>
 
@@ -451,7 +451,7 @@ Does the video show a medium close-up shot that frames the human subject from th
 
 
 <h3>📖 Definition:</h3>
-Does the video show a medium-full shot that frames the human subject from mid-thigh (or knee) upward?
+Does the video maintain a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -482,7 +482,7 @@ Does the video show a medium-full shot that frames the human subject from mid-th
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A medium-full shot framing the human subject from the mid-thigh (or knee) upward.
+- A video that maintains a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward.
 
 </details>
 
@@ -524,7 +524,7 @@ Does the video show a medium-full shot that frames the human subject from mid-th
 
 
 <h3>📖 Definition:</h3>
-Does the video show a wide shot of scenery, or a wide shot that frames the subject while keeping enough background context?
+Does the video maintain a wide shot throughout, consistently showing scenery or framing the entire subject while keeping ample background context?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -555,7 +555,7 @@ Does the video show a wide shot of scenery, or a wide shot that frames the subje
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A wide shot of scenery or a wide shot that frames the subject while keeping enough background context.
+- A video that maintains a wide shot throughout, consistently showing scenery or framing the entire subject while keeping ample background context.
 
 </details>
 

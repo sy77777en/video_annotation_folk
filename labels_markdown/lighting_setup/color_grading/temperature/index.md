@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video’s color temperature shift dynamically over time?
+Does the video have noticeable shifts between warm, neutral, and cool color tones in large parts of the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video’s color temperature shift dynamically over time?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video’s color temperature shifts dynamically over time.
+- The video has noticeable shifts between warm, neutral, and cool color tones in large parts of the scene.
 
 </details>
 
@@ -66,10 +66,65 @@ Does the video’s color temperature shift dynamically over time?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.color_temperature == 'complex_changing'</code>
+<code>self.lighting_setup.color_temperature_is_complex_changing is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.color_temperature != 'complex_changing'</code>
+<code>self.lighting_setup.color_temperature_is_complex_changing is False</code>
+
+</details>
+
+<details>
+<summary><h2>Color Temperature Is Complex (Others)</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>color_temperature_is_complex_others</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video show intense contrasts between warm and cool colors with noticeable color temperature shifts across large areas of the scene?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the video showcase a complex color mix that goes beyond just black-and-white, warm, cool, or neutral classifications?
+
+- Does the video have a complex color mix that isn't just black-and-white, warm, cool, or neutral?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video shows intense contrasts between warm and cool colors with noticeable color temperature shifts across large areas of the scene.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video with a complex color mix that defies simple classification.
+
+- A sequence showcasing a diverse color palette that goes beyond traditional categories.
+
+- A shot with a complex interplay of colors that defy standard color temperature labels.
+
+- A video that features a unique blend of colors not easily categorized as warm, cool, or neutral.
+
+- A scene with a rich and varied color palette that defies conventional color temperature norms.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.color_temperature_is_complex_others is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.color_temperature_is_complex_others is False</code>
 
 </details>
 
@@ -82,7 +137,7 @@ Does the video’s color temperature shift dynamically over time?
 
 
 <h3>📖 Definition:</h3>
-Does the video feature strongly contrasting warm and cool color temperatures within the same scene or sequence?
+Does the video show intense contrasts between warm and cool colors?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -92,7 +147,7 @@ Does the video feature strongly contrasting warm and cool color temperatures wit
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the video exhibit a striking contrast between warm and cool tones?
+- Does the video exhibit a vivid contrast between warm and cool tones?
 
 - Is there a mix of warm and cool colors within the same shot or sequence?
 
@@ -113,7 +168,7 @@ Does the video feature strongly contrasting warm and cool color temperatures wit
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features strongly contrasting warm and cool color temperatures within the same scene or sequence.
+- The video shows intense contrasts between warm and cool colors.
 
 </details>
 
@@ -139,10 +194,10 @@ Does the video feature strongly contrasting warm and cool color temperatures wit
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.color_temperature == 'complex_contrasting'</code>
+<code>self.lighting_setup.color_temperature_is_complex_contrasting is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.color_temperature != 'complex_contrasting'</code>
+<code>self.lighting_setup.color_temperature_is_complex_contrasting is False</code>
 
 </details>
 
@@ -155,7 +210,7 @@ Does the video feature strongly contrasting warm and cool color temperatures wit
 
 
 <h3>📖 Definition:</h3>
-Is the video dominated by cool tones, such as blues, greens, or cyan?
+Does the video predominantly feature cool tones such as blues or greens, with no obvious warm tones except possibly black, white, or gray?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +241,7 @@ Is the video dominated by cool tones, such as blues, greens, or cyan?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is dominated by cool tones, such as blues, greens, or cyan.
+- The video predominantly features cool tones such as blues or greens, with no obvious warm tones except possibly black, white, or gray.
 
 </details>
 
@@ -212,10 +267,10 @@ Is the video dominated by cool tones, such as blues, greens, or cyan?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.color_temperature == 'cool'</code>
+<code>self.lighting_setup.color_temperature_is_cool is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.color_temperature != 'cool'</code>
+<code>self.lighting_setup.color_temperature_is_cool is False</code>
 
 </details>
 
@@ -228,7 +283,7 @@ Is the video dominated by cool tones, such as blues, greens, or cyan?
 
 
 <h3>📖 Definition:</h3>
-Does the video have a neutral color balance, without a strong warm or cool tint?
+Does the video have a mostly neutral and stable color palette with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +314,7 @@ Does the video have a neutral color balance, without a strong warm or cool tint?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video has a neutral color balance, without a strong warm or cool tint.
+- The video's color palette is mostly neutral and stable, with no strong warm or cool tones standing out, and the contrasts between colors are mild (not overly intense).
 
 </details>
 
@@ -285,10 +340,10 @@ Does the video have a neutral color balance, without a strong warm or cool tint?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.color_temperature == 'neutral'</code>
+<code>self.lighting_setup.color_temperature_is_neutral is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.color_temperature != 'neutral'</code>
+<code>self.lighting_setup.color_temperature_is_neutral is False</code>
 
 </details>
 
@@ -301,7 +356,7 @@ Does the video have a neutral color balance, without a strong warm or cool tint?
 
 
 <h3>📖 Definition:</h3>
-Is the video dominated by warm tones, such as reds, oranges, or yellows?
+Does the video predominantly feature warm tones such as reds, oranges, or yellows, with no obvious cool tones except possibly black, white, or gray?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +387,7 @@ Is the video dominated by warm tones, such as reds, oranges, or yellows?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is dominated by warm tones, such as reds, oranges, or yellows.
+- The video predominantly features warm tones such as reds, oranges, or yellows, with no obvious cool tones except possibly black, white, or gray.
 
 </details>
 
@@ -358,9 +413,9 @@ Is the video dominated by warm tones, such as reds, oranges, or yellows?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.color_temperature == 'warm'</code>
+<code>self.lighting_setup.color_temperature_is_warm is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.color_temperature not in ['warm']</code>
+<code>self.lighting_setup.color_temperature_is_warm is False</code>
 
 </details>

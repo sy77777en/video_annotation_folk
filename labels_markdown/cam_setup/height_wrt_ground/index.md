@@ -82,7 +82,7 @@ Does the camera transition from above water to underwater?
 
 
 <h3>📖 Definition:</h3>
-Does the camera height decrease noticeably in relation to the ground?
+Does the camera height decrease noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the camera height decrease noticeably in relation to the ground?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera height decreases significantly in relation to the ground.
+- The camera height decreases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the camera height decrease noticeably in relation to the ground?
 
 
 <h3>📖 Definition:</h3>
-Does the camera height increase noticeably in relation to the ground?
+Does the camera height increase noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the camera height increase noticeably in relation to the ground?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera height increases significantly in relation to the ground.
+- The camera height increases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the camera height increase noticeably in relation to the ground?
 
 
 <h3>📖 Definition:</h3>
-Can the camera height relative to ground be classified?
+Is the camera height relative to the ground or water level clear?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -257,7 +257,7 @@ Can the camera height relative to ground be classified?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera height relative to the ground plane can be meaningfully classified.
+- The camera height relative to the ground or water level is clear.
 
 </details>
 

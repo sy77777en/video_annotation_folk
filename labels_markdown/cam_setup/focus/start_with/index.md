@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the background in focus, using a shallow depth of field?
+Does the video start with the camera focusing on the background, using a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -23,7 +23,7 @@ Does the video start with the background in focus, using a shallow depth of fiel
 
 - Is the starting frame focused on the background with a shallow depth of field?
 
-- Does the video begin with the background in sharp focus while other areas are blurred?
+- Does the camera begin with the background in sharp focus while other areas are blurred?
 
 - Is the initial shot framed with the background as the focal point?
 
@@ -31,7 +31,7 @@ Does the video start with the background in focus, using a shallow depth of fiel
 
 - Is the first shot emphasizing the background while softening other elements?
 
-- Does the video open with the background clearly in focus?
+- Does the camera open with the background clearly in focus?
 
 - Is the starting frame composed to highlight the background?
 
@@ -40,7 +40,7 @@ Does the video start with the background in focus, using a shallow depth of fiel
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the background in focus, using a shallow depth of field.
+- The video starts with the camera focusing on the background, using a shallow depth of field.
 
 </details>
 
@@ -49,17 +49,17 @@ Does the video start with the background in focus, using a shallow depth of fiel
 
 - A shot starting with the background in focus and a shallow depth of field.
 
-- A video opening with the background sharp while other areas are softened.
+- The camera opening with the background sharp while other areas are softened.
 
 - A sequence beginning with a focused background and blurred surroundings.
 
 - A shot where the background is the focal point with selective focus.
 
-- A video that starts with the background clearly in focus.
+- The camera starts with the background clearly in focus.
 
 - A shot with background emphasis and softened surrounding elements.
 
-- A video beginning with background clarity and a shallow depth effect.
+- The camera beginning with background clarity and a shallow depth effect.
 
 - A scene that opens with the background as the main focus.
 
@@ -82,7 +82,7 @@ Does the video start with the background in focus, using a shallow depth of fiel
 
 
 <h3>📖 Definition:</h3>
-Does the video start with a focus on the foreground, using a shallow depth of field to blur other areas?
+Does the video start with the camera focusing on the foreground, using a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video start with a focus on the foreground, using a shallow depth of fi
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with a focus on the foreground, using a shallow depth of field to blur other areas.
+- The video starts with the camera focusing on the foreground, using a shallow depth of field.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video start with a focus on the foreground, using a shallow depth of fi
 
 
 <h3>📖 Definition:</h3>
-Does the video start with a focus on the middle ground, using a shallow depth of field to blur both the foreground and background?
+Does the video start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video start with a focus on the middle ground, using a shallow depth of
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with a focus on the middle ground, using a shallow depth of field to blur both the foreground and background.
+- The video starts with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video start with a focus on the middle ground, using a shallow depth of
 
 
 <h3>📖 Definition:</h3>
-Does the video start completely out of focus?
+Does the video start with the camera completely out of focus?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video start completely out of focus?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts completely out of focus.
+- The video starts with the camera completely out of focus.
 
 </details>
 

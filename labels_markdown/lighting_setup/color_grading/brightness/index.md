@@ -1,152 +1,6 @@
 # Brightness Overview
 
 <details>
-<summary><h2>Brightness Is Bright</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>is_bright</code>
-
-
-<h3>📖 Definition:</h3>
-Is the video well-lit with strong lighting, creating a bright and clear scene?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the scene have a well-lit, vibrant appearance?
-
-- Is the majority of the video illuminated with strong lighting?
-
-- Does the lighting appear bright but not overexposed?
-
-- Are most areas of the scene clearly visible due to bright lighting?
-
-- Does the video feature strong and direct lighting conditions?
-
-- Is the lighting natural but notably bright?
-
-- Does the video have high visibility due to strong lighting?
-
-- Are the shadows minimal due to well-balanced bright lighting?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video is well-lit with strong lighting, creating a bright and clear scene.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video featuring strong and well-distributed lighting.
-
-- A scene that appears well-lit with bright exposure.
-
-- A shot where most areas are illuminated with good visibility.
-
-- A video where the brightness level is high but balanced.
-
-- A sequence where the lighting is bright, ensuring clear detail.
-
-- A scene with strong, energetic lighting without excessive exposure.
-
-- A video with high-key lighting, emphasizing clarity and brightness.
-
-- A shot where the scene is illuminated brightly, enhancing visibility.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'bright'</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'bright'</code>
-
-</details>
-
-<details>
-<summary><h2>Brightness Is Brighter Than Normal</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>brightness_is_brighter_than_normal</code>
-
-
-<h3>📖 Definition:</h3>
-Is the video noticeably brighter than a standard neutral lighting setup?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the video have a bright or very bright appearance?
-
-- Is the scene well-lit with strong or intense lighting?
-
-- Does the exposure make the video appear noticeably luminous?
-
-- Is the lighting level above normal brightness?
-
-- Does the scene look significantly brighter than a balanced lighting setup?
-
-- Is the video characterized by an abundance of light?
-
-- Does the lighting style make the visuals pop with strong brightness?
-
-- Is the overall brightness of the video higher than average?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video is noticeably brighter than a standard neutral lighting setup.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A scene with high or very high brightness levels.
-
-- A video featuring lighting that is more intense than neutral.
-
-- A shot where most areas are well-lit or even overexposed.
-
-- A video that appears noticeably bright due to strong lighting.
-
-- A scene where bright exposure makes details highly visible.
-
-- A video where strong lighting emphasizes a luminous atmosphere.
-
-- A shot where brightness enhances clarity and vibrancy.
-
-- A video with a lighting setup that is significantly brighter than normal.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness in ['very_bright', 'bright']</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness not in ['very_bright', 'bright']</code>
-
-</details>
-
-<details>
 <summary><h2>Brightness Is Changing (Complex)</h2></summary>
 
 
@@ -155,7 +9,7 @@ Is the video noticeably brighter than a standard neutral lighting setup?
 
 
 <h3>📖 Definition:</h3>
-Does the video’s brightness shift dynamically over time?
+Does the overall brightness or exposure of the video change over time, with noticeable shifts between brighter and darker levels across large portions of the frame?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +40,7 @@ Does the video’s brightness shift dynamically over time?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video’s brightness shifts dynamically over time.
+- The overall brightness or exposure of the video changes over time, with noticeable shifts between brighter and darker levels across large portions of the frame.
 
 </details>
 
@@ -212,23 +66,23 @@ Does the video’s brightness shift dynamically over time?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'complex_changing'</code>
+<code>self.lighting_setup.brightness_is_complex_changing is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'complex_changing'</code>
+<code>self.lighting_setup.brightness_is_complex_changing is False</code>
 
 </details>
 
 <details>
-<summary><h2>Brightness Is Contrasting (Complex)</h2></summary>
+<summary><h2>Brightness Is Complex (Others)</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>brightness_is_contrasting</code>
+<code>brightness_is_complex_others</code>
 
 
 <h3>📖 Definition:</h3>
-Does the video have strong contrast between bright, dark, and neutral areas?
+Is the video showing both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure changes over time across large portions of the frame?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +113,7 @@ Does the video have strong contrast between bright, dark, and neutral areas?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video has strong contrast between bright, dark, and neutral areas.
+- The video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, and the overall brightness or exposure changes over time across large portions of the frame.
 
 </details>
 
@@ -285,23 +139,23 @@ Does the video have strong contrast between bright, dark, and neutral areas?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'complex_contrasting'</code>
+<code>self.lighting_setup.brightness_is_complex_others is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'complex_contrasting'</code>
+<code>self.lighting_setup.brightness_is_complex_others is False</code>
 
 </details>
 
 <details>
-<summary><h2>Brightness Is Dark</h2></summary>
+<summary><h2>Brightness Is Contrasting (Complex)</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>brightness_is_dark</code>
+<code>brightness_is_contrasting</code>
 
 
 <h3>📖 Definition:</h3>
-Is the video predominantly dark, with dim lighting and prominent shadows?
+Does the video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -311,130 +165,57 @@ Is the video predominantly dark, with dim lighting and prominent shadows?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the scene have a low-light, moody appearance?
+- Does the scene mix bright highlights with deep shadows?
 
-- Is most of the video shot in dim lighting conditions?
+- Is there a stark contrast between illuminated and dark areas?
 
-- Does the video feature dark exposure with visible shadows?
+- Does the video feature both intense brightness and deep darkness?
 
-- Are details in the video partially obscured by low lighting?
+- Are light and shadow strongly contrasted within the frame?
 
-- Does the scene use darkness to create atmosphere or tension?
+- Does the shot balance extreme brightness with intense darkness?
 
-- Is the brightness level intentionally kept low for effect?
+- Is there high-key and low-key lighting present simultaneously?
 
-- Does the video rely on minimal lighting, making some elements hard to see?
+- Does the video emphasize strong brightness contrast?
 
-- Is the lighting style in the video consistent with low-key cinematography?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video is predominantly dark, with dim lighting and prominent shadows.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A scene with low lighting, emphasizing shadows and contrast.
-
-- A video where dim lighting dominates the frame.
-
-- A shot featuring dark exposure, making some details less visible.
-
-- A sequence where darkness creates a moody or mysterious atmosphere.
-
-- A video with controlled low brightness for cinematic effect.
-
-- A scene with minimal light, relying on shadow and contrast.
-
-- A shot where visibility is reduced due to dark lighting conditions.
-
-- A sequence emphasizing mood through reduced brightness.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'dark'</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'dark'</code>
-
-</details>
-
-<details>
-<summary><h2>Brightness Is Darker Than Normal</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>brightness_is_darker_than_normal</code>
-
-
-<h3>📖 Definition:</h3>
-Is the video noticeably darker than a standard neutral lighting setup?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the video have a dark or very dark appearance?
-
-- Is the scene dimly lit, with prominent shadows?
-
-- Does the exposure make the video appear noticeably low-light?
-
-- Is the lighting level below normal brightness?
-
-- Does the scene look significantly darker than a balanced lighting setup?
-
-- Is the video characterized by low visibility and deep shadows?
-
-- Does the lighting style create a moody, dramatic effect?
-
-- Is the overall brightness of the video lower than average?
+- Are bright and dark regions equally prominent in the composition?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is noticeably darker than a standard neutral lighting setup.
+- The video shows both very bright (overexposed) and very dark (underexposed) regions within the same frame, across most or all of the video.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A scene with low or very low brightness levels.
+- A video with extreme light and dark contrasts in the same frame.
 
-- A video featuring lighting that is dimmer than neutral.
+- A shot featuring bright highlights alongside deep shadows.
 
-- A shot where most areas are in shadow or barely visible.
+- A sequence where brightness levels are dramatically different.
 
-- A video that appears noticeably dark due to limited lighting.
+- A video with simultaneous high exposure and low-lit areas.
 
-- A scene where reduced exposure creates a moody atmosphere.
+- A scene emphasizing extreme contrast between light and shadow.
 
-- A video where low brightness makes details harder to see.
+- A shot where both very bright and very dark areas coexist.
 
-- A shot where shadows dominate the frame, reducing clarity.
+- A video with stark, dramatic lighting differences.
 
-- A video with a lighting setup that is significantly darker than normal.
+- A sequence designed with a strong balance of illumination and darkness.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness in ['dark', 'very_dark']</code>
+<code>self.lighting_setup.brightness_is_complex_contrasting is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness not in ['dark', 'very_dark']</code>
+<code>self.lighting_setup.brightness_is_complex_contrasting is False</code>
 
 </details>
 
@@ -447,7 +228,7 @@ Is the video noticeably darker than a standard neutral lighting setup?
 
 
 <h3>📖 Definition:</h3>
-Is the video’s brightness balanced, neither too bright nor too dark?
+Does the video show a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -478,7 +259,7 @@ Is the video’s brightness balanced, neither too bright nor too dark?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video’s brightness is balanced, neither too bright nor too dark.
+- The video shows a scene with balanced and stable illumination, with no large areas that are too bright (overexposed) or too dark (underexposed).
 
 </details>
 
@@ -504,10 +285,10 @@ Is the video’s brightness balanced, neither too bright nor too dark?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'neutral'</code>
+<code>self.lighting_setup.brightness_is_neutral is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'neutral'</code>
+<code>self.lighting_setup.brightness_is_neutral is False</code>
 
 </details>
 
@@ -520,7 +301,7 @@ Is the video’s brightness balanced, neither too bright nor too dark?
 
 
 <h3>📖 Definition:</h3>
-Is the video excessively bright, with overexposure that reduces detail visibility?
+Is the video excessively bright due to overexposure, losing details in around half or more of the frame and across most or all of the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -551,7 +332,7 @@ Is the video excessively bright, with overexposure that reduces detail visibilit
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is excessively bright, with overexposure that reduces detail visibility.
+- The video appears excessively bright due to overexposure, losing details in around half or more of the frame and across most or all of the video.
 
 </details>
 
@@ -577,10 +358,10 @@ Is the video excessively bright, with overexposure that reduces detail visibilit
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'very_bright'</code>
+<code>self.lighting_setup.brightness_is_very_bright is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'very_bright'</code>
+<code>self.lighting_setup.brightness_is_very_bright is False</code>
 
 </details>
 
@@ -593,7 +374,7 @@ Is the video excessively bright, with overexposure that reduces detail visibilit
 
 
 <h3>📖 Definition:</h3>
-Is the video extremely dark, with barely any visible details due to minimal lighting?
+Does the video appear very dark due to underexposure or dim lighting, with a loss of detail in around half or more of the frame and across most or all of the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -624,7 +405,7 @@ Is the video extremely dark, with barely any visible details due to minimal ligh
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is extremely dark, with barely any visible details due to minimal lighting.
+- The video appears very dark due to underexposure or dim lighting, with a loss of detail in around half or more of the frame and across most or all of the video.
 
 </details>
 
@@ -650,9 +431,9 @@ Is the video extremely dark, with barely any visible details due to minimal ligh
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.brightness == 'very_dark'</code>
+<code>self.lighting_setup.brightness_is_very_dark is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.brightness != 'very_dark'</code>
+<code>self.lighting_setup.brightness_is_very_dark is False</code>
 
 </details>

@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera positioned at a bird's eye angle, offering a top-down view directly looking down at the ground?
+Does the video start with the camera at a bird's eye angle, looking straight down from above?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video start with the camera positioned at a bird's eye angle, offering 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera positioned at a bird's eye angle, looking directly downward at the ground.
+- The video starts with the camera at a bird's eye angle, looking straight down from above.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video start with the camera positioned at a bird's eye angle, offering 
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down?
+Does the video start with the camera at a high angle, looking downward compared to a level angle but not directly top-down?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video start with the camera positioned at a high angle, tilted downward
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down.
+- The video starts with the camera at a high angle, looking downward compared to a level angle but not directly top-down.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video start with the camera positioned at a high angle, tilted downward
 
 
 <h3>📖 Definition:</h3>
-Does the video start with level angle?
+Does the video start with the camera at a level angle, parallel to the ground regardless of Dutch angle?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -165,49 +165,49 @@ Does the video start with level angle?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot start with level angle?
+- Does the shot start with the camera aligned parallel to the ground?
 
-- Is the starting frame showing level angle?
+- Is the starting frame at a neutral level angle?
 
-- Does the video start using level angle?
+- Does the video begin with a shot that is neither tilted upward nor downward?
 
-- Is the initial shot at level angle?
+- Is the initial shot taken from a level perspective, without an angled tilt?
 
-- Does the sequence start with level angle?
+- Does the sequence open with a camera angle parallel to the ground?
 
-- Is the first shot at level angle?
+- Is the first shot framed at a natural, level viewing angle?
 
-- Does the video open with level angle?
+- Does the video open with a shot that has no vertical inclination?
 
-- Is the starting frame at level angle?
+- Is the starting frame recorded with the camera at a neutral level position?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that starts with level angle.
+- The video starts with the camera at a level angle, parallel to the ground regardless of Dutch angle.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot starting with level angle.
+- A shot starting at a neutral level angle, parallel to the ground.
 
-- A video starting at level angle.
+- A video beginning with a level perspective, without tilt.
 
-- A sequence beginning with level angle.
+- A sequence that starts with a camera positioned at a straight-on angle.
 
-- A shot initially at level angle.
+- A shot showing a level camera position with no upward or downward tilt.
 
-- A video opening with level angle.
+- A video opening with a natural, eye-level viewpoint, parallel to the ground.
 
-- A shot starting at level angle.
+- A shot where the camera remains level without angling up or down.
 
-- A video beginning with level angle.
+- A video that starts with a neutral, parallel-to-ground perspective.
 
-- A sequence starting at level angle.
+- A scene that opens with the camera set at a balanced level angle.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video start with level angle?
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below?
+Does the video start with the camera at a low angle, looking upward compared to a level angle but not directly from below?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video start with the camera positioned at a low angle, angled upward re
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below.
+- The video starts with the camera at a low angle, looking upward compared to a level angle but not directly from below.
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video start with the camera positioned at a low angle, angled upward re
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera positioned at a worm’s eye angle, looking sharply upward to the sky?
+Does the video start with the camera at a worm’s eye angle, looking straight up from below?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Does the video start with the camera positioned at a worm’s eye angle, looking
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera positioned at a worm’s eye angle, looking sharply upward to the sky.
+- The video starts with the camera at a worm’s eye angle, looking straight up from below.
 
 </details>
 

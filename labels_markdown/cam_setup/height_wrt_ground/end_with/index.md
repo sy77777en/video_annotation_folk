@@ -31,7 +31,7 @@ Does the video end with the camera positioned high at an aerial level?
 
 - Is the final shot positioned at an aerial level?
 
-- Does the video close with a bird’s-eye view?
+- Does the video close with a bird's-eye view?
 
 - Is the ending frame recorded from a high altitude?
 
@@ -55,13 +55,13 @@ Does the video end with the camera positioned high at an aerial level?
 
 - A shot showing the environment from an elevated aerial position.
 
-- A video closing with a bird’s-eye perspective.
+- A video closing with a bird's-eye perspective.
 
 - A shot where the camera is positioned high above the ground.
 
 - A video that ends with a top-down or high-altitude framing.
 
-- A scene that concludes with a drone-like aerial viewpoint.
+- A scene that closes with a drone-like aerial viewpoint.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video end with the camera positioned high at an aerial level?
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera at eye level, roughly at a person's eye height, above the waist but below overhead level?
+Does the video end with the camera at eye level (roughly at a person's eye height, above the waist)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -96,7 +96,7 @@ Does the video end with the camera at eye level, roughly at a person's eye heigh
 
 - Is the final frame taken from an eye-level perspective?
 
-- Does the video conclude with a camera height typical of a standing person’s eyes?
+- Does the video conclude with a camera height typical of a standing person's eyes?
 
 - Is the last shot captured at a height similar to a person's eye level?
 
@@ -113,7 +113,7 @@ Does the video end with the camera at eye level, roughly at a person's eye heigh
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at eye level, approximately at a person's eye height, including any height above waist but below overhead level.
+- The video ends with the camera positioned at eye level (roughly at a person's eye height, above the waist).
 
 </details>
 
@@ -134,7 +134,7 @@ Does the video end with the camera at eye level, roughly at a person's eye heigh
 
 - A video that ends with a perspective slightly above waist height but below overhead.
 
-- A scene that concludes with a balanced, eye-level framing of the environment.
+- A scene that closes with a balanced, eye-level framing of the environment.
 
 </details>
 
@@ -242,45 +242,45 @@ Does the video end with the camera at hip level, roughly between knee and waist 
 
 - Is the final frame taken from a hip-level perspective?
 
-- Does the video conclude with a camera positioned between waist and knees?
+- Does the video conclude with a camera height aligned with a subject's hips or knees?
 
-- Is the last shot captured from mid-body height?
+- Is the last shot captured from a mid-body height viewpoint?
 
 - Does the sequence close with a hip-level perspective?
 
 - Is the final shot positioned at a hip-level height?
 
-- Does the video close with a shot slightly lower than eye level?
+- Does the video close with a perspective from around waist to knee level?
 
-- Is the ending frame aligned with a mid-body viewpoint?
+- Is the ending frame recorded from a height typical of a hip-level view?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video end with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present.
+- The video ends with the camera at hip level, roughly between knee and waist height, whether or not a human subject is present.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at hip level, taken from a mid-body viewpoint.
+- A shot ending at hip level, captured from a mid-body viewpoint.
 
-- A video concluding with a hip-level perspective.
+- A video concluding with a hip-level perspective, aligning with a subject's lower torso.
 
-- A sequence that ends with a camera positioned at mid-body height.
+- A sequence that ends with the camera positioned between waist and knee height.
 
-- A shot showing the environment from a lower but not ground-level viewpoint.
+- A shot showing the environment from a hip-level camera angle.
 
-- A video closing with a perspective positioned between waist and knees.
+- A video closing with a viewpoint around a subject's hips or knees.
 
-- A shot where the camera is slightly above ground but lower than eye level.
+- A shot where the camera is positioned lower than eye level but above ground level.
 
-- A video that ends with a framing that emphasizes mid-body perspective.
+- A video that ends with a perspective noticeably below eye level but not at ground level.
 
-- A scene that closes with a hip-level camera position.
+- A scene that closes with a balanced framing from a mid-body height.
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video end with the camera at hip level, roughly between knee and waist 
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level?
+Does the video end with the camera at an overhead level, above eye level but below aerial (around second-floor height)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,28 +332,22 @@ Does the video end with the camera at an overhead level, above human height but 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level.
+- The video ends with the camera at an overhead level, above eye level but below aerial (around second-floor height).
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at an overhead level, taken from a high vantage point.
+- The video ends with the camera at an overhead level.
 
 - A video concluding with an overhead perspective, from a second-floor height.
 
-- A sequence that ends with a view between eye level and aerial level.
+- A sequence that ends with a vantage point between eye level and aerial level.
 
-- A shot showing the environment from a high but not extreme aerial position.
-
-- A video closing with a balanced overhead view.
+- A video closing with a high view but not an extreme aerial perspective.
 
 - A shot where the camera is positioned at 1.5 to 3 person-heights above ground.
-
-- A video that ends with a high but not extreme aerial perspective.
-
-- A scene that closes with an elevated, overhead framing.
 
 </details>
 
@@ -374,7 +368,7 @@ Does the video end with the camera at an overhead level, above human height but 
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera fully submerged underwater, capturing scenes beneath the water’s surface?
+Does the video end with the camera fully submerged underwater?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -384,21 +378,21 @@ Does the video end with the camera fully submerged underwater, capturing scenes 
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot end with an underwater perspective?
+- Does the shot end underwater?
 
-- Is the final frame taken from below the water’s surface?
+- Is the final frame captured beneath the water's surface?
 
-- Does the video conclude with the camera positioned underwater?
+- Does the video conclude with a submerged camera view?
 
-- Is the last shot captured entirely beneath the waterline?
+- Is the last shot taken from an underwater perspective?
 
-- Does the sequence close with an underwater viewpoint?
+- Does the sequence close with the camera below water level?
 
-- Is the final shot filmed below the water’s surface?
+- Is the final shot positioned completely underwater?
 
-- Does the video close with the camera fully submerged underwater?
+- Does the video close with a fully submerged viewpoint?
 
-- Is the ending frame positioned entirely beneath the water level?
+- Is the ending frame captured from beneath the water's surface?
 
 </details>
 
@@ -412,21 +406,21 @@ Does the video end with the camera fully submerged underwater, capturing scenes 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending completely underwater, beneath the surface.
+- A shot ending with the camera beneath the water's surface.
 
-- A video concluding with an underwater perspective, showing submerged scenery.
+- A video concluding with an underwater perspective.
 
-- A sequence that ends with a camera fully below the waterline.
+- A sequence that ends with a submerged camera view.
 
-- A shot showing the underwater environment, taken from beneath the surface.
+- A shot showing the environment from below the water's surface.
 
-- A video closing with a scene where the camera is entirely underwater.
+- A video closing with a scene captured underwater.
 
-- A shot where the camera is submerged and filming below water.
+- A shot where the camera is completely submerged.
 
-- A video that ends with an underwater perspective without breaking the surface.
+- A video that ends with an underwater viewpoint.
 
-- A scene that closes with the camera completely beneath the water’s surface.
+- A scene that closes with a below-water framing of the environment.
 
 </details>
 
@@ -447,7 +441,7 @@ Does the video end with the camera fully submerged underwater, capturing scenes 
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera positioned at water level, where the waterline is clearly visible?
+Does the video end with the camera near water level, showing the waterline clearly and not from an aerial view?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -461,45 +455,45 @@ Does the video end with the camera positioned at water level, where the waterlin
 
 - Is the final frame taken from a water-level perspective?
 
-- Does the video conclude with the camera positioned at the water surface?
+- Does the video conclude with the camera positioned just above the waterline?
 
-- Is the last shot framed with the waterline clearly visible?
+- Is the last shot captured at the surface of the water?
 
-- Does the sequence close with a water-level perspective?
+- Does the sequence close with a perspective where the waterline is visible?
 
-- Is the final shot positioned just above the water surface?
+- Is the final shot positioned at water level, showing the surrounding water?
 
-- Does the video close with a floating perspective at water level?
+- Does the video close with the camera floating just above water?
 
-- Is the ending frame aligned with the surface of the water?
+- Is the ending frame aligned with a perspective just above the water surface?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at water level, where the waterline is clearly visible.
+- The video ends with the camera positioned near water level, showing the waterline clearly and not from an aerial view.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at water level, where the surface is prominent.
+- A shot ending at water level, taken from just above the waterline.
 
-- A video concluding with a perspective positioned just above the water.
+- A video concluding with a perspective where the water surface is prominent.
 
-- A sequence that ends with a camera floating at the waterline.
+- A sequence that ends with a camera positioned at the water's edge.
 
-- A shot capturing the water surface as a dominant element.
+- A shot showing the environment from a viewpoint just above the water.
 
-- A video closing with a framing that includes both water and sky.
+- A video closing with a scene where the waterline is clearly visible.
 
-- A shot where the camera is positioned at the boundary between air and water.
+- A shot where the camera is placed at water level without submerging.
 
-- A video that ends with a steady, water-level viewpoint.
+- A video that ends with a floating camera angle, capturing the water surface.
 
-- A scene that concludes with a perspective where the water surface remains clearly visible.
+- A scene that closes with a near-waterline framing of the environment.
 
 </details>
 

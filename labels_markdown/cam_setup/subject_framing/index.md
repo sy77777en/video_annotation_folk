@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video contain multiple subjects or multiple groups of subjects?
+Are there multiple distinct groups of subjects or more than two salient subjects shown in the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video contain multiple subjects or multiple groups of subjects?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot containing multiple subjects or multiple groups of subjects.
+- A video containing multiple distinct groups of subjects or more than two salient subjects.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video contain multiple subjects or multiple groups of subjects?
 
 
 <h3>📖 Definition:</h3>
-Is there a single dominant subject or group of subjects in the frame throughout the video?
+Does the video maintain a single dominant subject or group of subjects throughout?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Is there a single dominant subject or group of subjects in the frame throughout 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that maintains focus on a single dominant subject or group of subjects throughout the video.
+- A video that maintains a single dominant subject or group of subjects throughout.
 
 </details>
 
@@ -155,7 +155,7 @@ Is there a single dominant subject or group of subjects in the frame throughout 
 
 
 <h3>📖 Definition:</h3>
-Does the subject change in the video, such as in a revealing shot where a subject appears, disappears, or transitions to another subject?
+Does the subject change in the video, such as appearing, disappearing, or transitioning to another subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the subject change in the video, such as in a revealing shot where a subjec
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the subject changes, including appearances, disappearances, or transitions between subjects.
+- The subject changes in the video, such as appearing, disappearing, or transitioning to another subject.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the subject change in the video, such as in a revealing shot where a subjec
 
 
 <h3>📖 Definition:</h3>
-Does the video include one or more subjects in the frame at any point, instead of just a scenery shot with no clear subject?
+Does the video include one or more salient subjects in the frame at any point (e.g., not just scenery or abstract visuals)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video include one or more subjects in the frame at any point, instead o
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features at least one main subject rather than just a scenery shot.
+- The video includes one or more salient subjects in the frame at any point (e.g., not just scenery or abstract visuals).
 
 </details>
 

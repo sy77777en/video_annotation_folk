@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is this a professional viewpoint used in television broadcasts?
+Is this a television broadcast-style viewpoint?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -30,7 +30,7 @@ Is this a professional viewpoint used in television broadcasts?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A broadcast POV shot where the camera is set up for television production.
+- A television broadcast-style viewpoint.
 
 </details>
 
@@ -46,10 +46,10 @@ Is this a professional viewpoint used in television broadcasts?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.boardcast_pov is True</code>
+<code>self.cam_setup.broadcast_pov is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.boardcast_pov is False</code>
+<code>self.cam_setup.broadcast_pov is False</code>
 
 </details>
 
@@ -62,7 +62,7 @@ Is this a professional viewpoint used in television broadcasts?
 
 
 <h3>📖 Definition:</h3>
-Is this a forward-facing view from a dash cam, capturing the road or surroundings?
+Is this a forward-facing dashcam view from a vehicle-mounted camera, capturing the scene ahead?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -83,7 +83,7 @@ Is this a forward-facing view from a dash cam, capturing the road or surrounding
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A dashcam POV shot where the dash cam is mounted on a vehicle, capturing the road ahead.
+- A forward-facing dashcam view from a vehicle-mounted camera, capturing the scene ahead.
 
 </details>
 
@@ -120,6 +120,8 @@ Is this video captured by a drone?
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
+- Is this a drone POV showing an aerial view?
+
 - Does the video show a drone's perspective?
 
 </details>
@@ -138,9 +140,11 @@ Is this video captured by a drone?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A drone POV shot.
-
 - A video filmed by a drone.
+
+- A drone POV showing an aerial view.
+
+- A drone POV shot.
 
 </details>
 
@@ -191,7 +195,7 @@ Is the scene shown from the first-person perspective, as if through the characte
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A first-person POV shot.
+- A first-person POV shot, as if through the character’s eyes.
 
 - A first-person POV shot where the scene is viewed from the character’s perspective.
 
@@ -276,7 +280,7 @@ Is the camera physically mounted on an object, keeping its perspective locked to
 
 
 <h3>📖 Definition:</h3>
-Is this a neutral, detached perspective where the camera does not represent any character's viewpoint?
+Is this an objective, detached perspective where the camera does not represent any character's point of view?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -304,7 +308,7 @@ Is this a neutral, detached perspective where the camera does not represent any 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A scene filmed with a neutral camera viewpoint, not tied to any character.
+- A scene filmed with a objective camera viewpoint, not tied to any character.
 
 - A video showing events from an external, third-party perspective.
 
@@ -350,7 +354,7 @@ Is the camera positioned directly above the subject for a top-down perspective?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- An overhead POV shot where the camera is positioned directly above the subjects for a top-down perspective.
+- An overhead POV shot where the camera is positioned directly above the subject for a top-down perspective.
 
 </details>
 
@@ -382,7 +386,7 @@ Is the camera positioned directly above the subject for a top-down perspective?
 
 
 <h3>📖 Definition:</h3>
-Does this video capture a screen recording with visible UI elements?
+Is this a screen recording of a software or system interface (e.g., menus, windows, toolbars)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -405,7 +409,7 @@ Does this video capture a screen recording with visible UI elements?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- This is a recording of a computer screen with visible UI elements.
+- A screen recording of a software or system interface (e.g., menus, windows, toolbars).
 
 </details>
 
@@ -437,7 +441,7 @@ Does this video capture a screen recording with visible UI elements?
 
 
 <h3>📖 Definition:</h3>
-Is the camera facing the person holding it?
+Is the camera held by the person being filmed (e.g., by hand, selfie stick, or invisible rod) and facing them, as in a selfie?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -460,7 +464,7 @@ Is the camera facing the person holding it?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A selfie POV shot where the camera is facing the person holding it.
+- A selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and is facing them.
 
 </details>
 
@@ -606,7 +610,7 @@ Is this a third-person isometric (2.5D) gaming video with a tilted overhead angl
 
 
 <h3>📖 Definition:</h3>
-Is the camera framing the character from the hip up?
+Is this an over-the-hip third-person view, framing the character from the hip up?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -627,7 +631,7 @@ Is the camera framing the character from the hip up?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person over-the-hip POV shot showing a character from waist height
+- A third-person over-the-hip POV shot framing the character from the hip up.
 
 </details>
 
@@ -659,7 +663,7 @@ Is the camera framing the character from the hip up?
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned behind the character, showing their upper body and the scene ahead?
+Is this an over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -678,7 +682,7 @@ Is the camera positioned behind the character, showing their upper body and the 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person over-the-shoulder POV shot showing a character’s upper body from behind.
+- An over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead.
 
 </details>
 
@@ -708,7 +712,7 @@ Is the camera positioned behind the character, showing their upper body and the 
 
 
 <h3>📖 Definition:</h3>
-Is this a 2D or 3D gaming video where the camera is positioned at the side of the character?
+Is this a side-view gaming video where the camera is placed to the side, capturing the scene or character in profile?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -729,7 +733,7 @@ Is this a 2D or 3D gaming video where the camera is positioned at the side of th
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person 2D side-view gaming video where the camera follows the character from a lateral perspective.
+- A side-view gaming video where the camera is placed to the side, capturing the scene or character in profile.
 
 </details>
 
@@ -761,7 +765,7 @@ Is this a 2D or 3D gaming video where the camera is positioned at the side of th
 
 
 <h3>📖 Definition:</h3>
-Is this a gaming video with a camera positioned directly above the character, showing a top-down or top-down oblique view?
+Is this a gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -784,7 +788,7 @@ Is this a gaming video with a camera positioned directly above the character, sh
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A third-person top-down or top-down oblique gaming video with the camera above the character, offering a top-down perspective.
+- A gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them.
 
 </details>
 

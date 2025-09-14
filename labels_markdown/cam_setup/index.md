@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the shot contain on-screen overlays, such as watermarks, or titles, or subtitles, or icons, or heads-up displays, or framing elements?
+Does the shot contain any on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the shot contain on-screen overlays, such as watermarks, or titles, or subt
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, HUDs, or framing elements.
+- A shot containing on-screen overlays, such as watermarks, titles, subtitles, icons, heads-up displays (HUDs), or framing elements.
 
 </details>
 
@@ -175,10 +175,10 @@ Does the video include shot transitions?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.shot_transition</code>
+<code>self.cam_setup.shot_transition is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_setup.shot_transition</code>
+<code>self.cam_setup.shot_transition is False</code>
 
 </details>
 

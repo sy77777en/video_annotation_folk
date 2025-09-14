@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a visible diffusion effect, where particles, fluids, or other materials spread and disperse over time?
+Does the video feature a noticable diffusion effect, where particles, fluids, or other materials spread and disperse over time?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -21,7 +21,7 @@ Does the video feature a visible diffusion effect, where particles, fluids, or o
 
 - Does the shot depict a gradual dispersal of particles or substances?
 
-- Is there a visible effect where smoke, fog, or ink spreads out?
+- Is there a noticable effect where smoke, fog, or ink spreads out?
 
 - Does the scene feature a diffusion effect, such as mist or dust spreading?
 
@@ -40,7 +40,7 @@ Does the video feature a visible diffusion effect, where particles, fluids, or o
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a visible diffusion effect, where particles, fluids, or other materials spread and disperse over time.
+- The video features a noticable diffusion effect, where particles, fluids, or other materials spread and disperse over time.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video feature a visible diffusion effect, where particles, fluids, or o
 
 
 <h3>📖 Definition:</h3>
-Does the video feature an explosion with a sudden burst of flames, matter, and outward force?
+Does the video show explosions with sudden bursts of flames, matter, and outward force?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video feature an explosion with a sudden burst of flames, matter, and o
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video showcases an explosion with a sudden burst of flames, matter, and outward force.
+- The video shows explosions with sudden bursts of flames, matter, and outward force.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video show objects or characters floating or levitating as if unaffecte
 
 
 <h3>📖 Definition:</h3>
-Does the video contain a revealing shot that gradually uncovers the scenery or subjects?
+Does the video feature a revealing shot that uncovers a new scene or subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video contain a revealing shot that gradually uncovers the scenery or s
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video contains a revealing shot where camera movement gradually uncovers the environment or subject.
+- The video features a revealing shot that uncovers a new scene or subject.
 
 </details>
 
@@ -374,7 +374,7 @@ Does the video show objects breaking, shattering, or fragmenting into smaller pi
 
 
 <h3>📖 Definition:</h3>
-Does the video feature visible splashing or wave-like motion in water or other liquids?
+Does the video feature noticeable splashing or wave-like motion?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -405,7 +405,7 @@ Does the video feature visible splashing or wave-like motion in water or other l
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features visible splashing or wave-like motion in water or other liquids.
+- The video features noticeable splashing or wave-like motion.
 
 </details>
 
@@ -447,7 +447,7 @@ Does the video feature visible splashing or wave-like motion in water or other l
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a transformation or morphing effect where one object smoothly changes into another?
+Does the video feature a transformation or morphing effect where one object changes into another?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -461,7 +461,7 @@ Does the video feature a transformation or morphing effect where one object smoo
 
 - Is there a seamless morphing effect where one form changes into another?
 
-- Does the shot contain a visual effect where elements transform smoothly?
+- Does the shot contain a visual effect where elements transform?
 
 - Is there a gradual change of one object into a different form?
 
@@ -478,7 +478,7 @@ Does the video feature a transformation or morphing effect where one object smoo
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a transformation or morphing effect where one object smoothly changes into another.
+- The video features a transformation or morphing effect where one object changes into another.
 
 </details>
 
@@ -487,7 +487,7 @@ Does the video feature a transformation or morphing effect where one object smoo
 
 - A video containing a seamless morphing effect.
 
-- A shot where an object transitions smoothly into another.
+- A shot where an object transitions into another.
 
 - A sequence featuring fluid transformations between shapes or forms.
 

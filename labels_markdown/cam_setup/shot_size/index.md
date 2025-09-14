@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is shot size classification possible for this video?
+Can the shot size be meaningfully determined?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -34,7 +34,7 @@ Is shot size classification possible for this video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the shot size can be meaningfully determined.
+- A video where the shot size can be meaningfully determined.
 
 </details>
 
@@ -70,7 +70,7 @@ Is shot size classification possible for this video?
 
 
 <h3>📖 Definition:</h3>
-Does the shot size change throughout the video?
+Does the shot size change noticeably throughout the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -95,7 +95,7 @@ Does the shot size change throughout the video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The shot size changes throughout the video.
+- The shot size changes noticeably throughout the video.
 
 </details>
 
@@ -131,7 +131,7 @@ Does the shot size change throughout the video?
 
 
 <h3>📖 Definition:</h3>
-Does the shot size change from large to small?
+Does the shot size change from a wider to a tighter framing?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -164,7 +164,7 @@ Does the shot size change from large to small?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The shot size transitions from large to small.
+- The shot size transitions from a wider to a tighter framing.
 
 </details>
 
@@ -210,7 +210,7 @@ Does the shot size change from large to small?
 
 
 <h3>📖 Definition:</h3>
-Does the shot size change from small to large?
+Does the shot size change from a tighter to a wider framing?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -243,7 +243,7 @@ Does the shot size change from small to large?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The shot size transitions from small to large.
+- The shot size transitions from a tighter to a wider framing.
 
 </details>
 
@@ -289,7 +289,7 @@ Does the shot size change from small to large?
 
 
 <h3>📖 Definition:</h3>
-Does the main subject disappear from the frame?
+Does the video show the main subject disappearing or leaving the frame?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -316,7 +316,7 @@ Does the main subject disappear from the frame?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the main subject disappears or exits from view.
+- The video shows the main subject disappearing or leaving the frame.
 
 </details>
 
@@ -415,7 +415,7 @@ Does the video include a revealing shot where a subject appears?
 
 
 <h3>📖 Definition:</h3>
-Does the main subject change to another subject?
+Does the main subject change to a different subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -440,7 +440,7 @@ Does the main subject change to another subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the main subject changes to a different subject.
+- The main subject changes to a different subject.
 
 </details>
 

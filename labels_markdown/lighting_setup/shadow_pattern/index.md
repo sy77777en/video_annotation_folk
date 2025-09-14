@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video feature shadows created by foliage, such as leaves or branches?
+Does the video feature shadow patterns created by foliage, such as leaves or branches?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video feature shadows created by foliage, such as leaves or branches?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features shadows created by foliage, such as leaves or branches.
+- The video features shadow patterns created by foliage, such as leaves or branches.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video feature shadows created by foliage, such as leaves or branches?
 
 
 <h3>📖 Definition:</h3>
-Does the video contain noticeable shadow patterns or gobo lighting effects that shape the scene’s mood or composition?
+Does the video contain distinct shadow patterns or gobo lighting effects that shape the visual composition?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -100,7 +100,7 @@ Does the video contain noticeable shadow patterns or gobo lighting effects that 
 
 - Does the lighting in the video create defined shadow effects?
 
-- Are there noticeable gobo lighting effects forming patterns on the subject or background?
+- Are there distinct gobo lighting effects forming patterns on the subject or background?
 
 - Does the scene make use of shadows as a key visual element?
 
@@ -113,7 +113,7 @@ Does the video contain noticeable shadow patterns or gobo lighting effects that 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features noticeable shadow patterns or gobo lighting effects that shape the scene’s mood or composition.
+- The video features distinct shadow patterns or gobo lighting effects that shape the visual composition.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video contain noticeable shadow patterns or gobo lighting effects that 
 
 
 <h3>📖 Definition:</h3>
-Does the video feature distinct shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape?
+Does the video feature distinct or dynamic shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video feature distinct shadow patterns or gobo lighting effects other t
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features distinct shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape.
+- The video features distinct or dynamic shadow patterns or gobo lighting effects other than Venetian blinds, window frames, foliage, or the subject's shape.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video feature distinct shadow patterns or gobo lighting effects other t
 
 
 <h3>📖 Definition:</h3>
-Does the video feature shadows shaped by the subject, emphasizing its form or movement?
+Does the video feature shadows shaped by the subject to support the narrative, emphasizing form or movement?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video feature shadows shaped by the subject, emphasizing its form or mo
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features shadows shaped by the subject, emphasizing form or movement.
+- The video features shadows shaped by the subject to support the narrative, emphasizing form or movement.
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video feature shadows shaped by the subject, emphasizing its form or mo
 
 
 <h3>📖 Definition:</h3>
-Does the video feature distinct shadow patterns cast by venetian blinds?
+Does the video feature distinct shadow patterns cast by venetian blinds or similar slatted structures?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Does the video feature distinct shadow patterns cast by venetian blinds?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features distinct shadow patterns cast by venetian blinds.
+- The video features distinct shadow patterns cast by venetian blinds or similar slatted structures.
 
 </details>
 

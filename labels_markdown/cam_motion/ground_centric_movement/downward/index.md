@@ -9,10 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera move downward (not tilting down) in the scene?
+Does the camera move downward relative to the ground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera move downward (not tilting down) in the scene?
 
 - Is the camera moving downward in the scene?
 
@@ -57,6 +59,8 @@ Does the camera move downward (not tilting down) in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera is moving downward relative to the ground.
 
 - A shot where the camera lowers downward, rather than tilting down.
 
@@ -295,6 +299,8 @@ Does the camera only move downward (not tilting down) with respect to the ground
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only moves downward (not tilting down) relative to the ground.
 
 - A video where the camera only moves downward (not tilting down) relative to the ground.
 

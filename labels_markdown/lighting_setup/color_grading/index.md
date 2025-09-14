@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the video entirely in black and white, with no color present?
+Is the video entirely in black and white, with no chromatic colors, and only black, white, or shades of gray?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Is the video entirely in black and white, with no color present?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is entirely in black and white, with no color present.
+- The video is entirely in black and white, with no chromatic color present; only black, white, or shades of gray may appear.
 
 </details>
 
@@ -82,7 +82,7 @@ Is the video entirely in black and white, with no color present?
 
 
 <h3>📖 Definition:</h3>
-Does the video exhibit complex color grading, involving dynamic or contrasting variations in color temperature, saturation, or brightness?
+Does the video exhibit complex color grading, composition, or dynamics, involving dynamic or contrasting variations in color tone, temperature, colorfulness, saturation, or brightness?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -92,7 +92,7 @@ Does the video exhibit complex color grading, involving dynamic or contrasting v
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the video’s color grading shift dynamically over time?
+- Does the video’s color grading, composition, or dynamics shift dynamically over time?
 
 - Is there a mix of contrasting or evolving color elements in the video?
 
@@ -106,14 +106,14 @@ Does the video exhibit complex color grading, involving dynamic or contrasting v
 
 - Does the video utilize a combination of evolving and contrasting hues?
 
-- Is there a deliberate mix of multiple color grading techniques?
+- Is there a deliberate mix of multiple color grading, composition, or dynamics techniques?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video exhibits complex color grading, involving dynamic or contrasting variations in color temperature, saturation, or brightness.
+- The video exhibits complex color grading, composition, or dynamics, involving dynamic or contrasting variations in color tone, temperature, colorfulness, saturation, or brightness.
 
 </details>
 
@@ -122,7 +122,7 @@ Does the video exhibit complex color grading, involving dynamic or contrasting v
 
 - A video with shifting and contrasting color properties.
 
-- A shot featuring varied and dynamic color grading.
+- A shot featuring varied and dynamic color grading, composition, or dynamics.
 
 - A sequence where color temperature, saturation, or brightness change significantly.
 
@@ -150,5 +150,5 @@ Does the video exhibit complex color grading, involving dynamic or contrasting v
 ## Subcategories
 
 - [Brightness](./brightness/index.md)
-- [Saturation](./saturation/index.md)
+- [Colorfulness](./colorfulness/index.md)
 - [Temperature](./temperature/index.md)
