@@ -18,9 +18,15 @@ def json_to_video_data(json_path, label_collections=["cam_motion", "cam_setup", 
         #     tmp_data.cam_motion = video['cam_motion'] # will be converted to CameraMotionData automatically using setter()
         # if 'cam_setup' in video:
         #     tmp_data.cam_setup = video['cam_setup']
+        video_url = None
         for key, value in video["workflows"].items():
+            
             tmp_data.add_workflow(key, value)
             videoname = value['video_name']
+            if video_url is None:
+                video_url = tmp_data.workflows[key].video_url
+            else:
+                assert video_url == tmp_data.workflows[key].video_url, f"Video URL mismatch for {videoname}. {video_url} != {tmp_data.workflows[key].video_url}"
         video_data_dict[videoname] = tmp_data
     return video_data_dict
 

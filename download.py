@@ -13,7 +13,7 @@ import json
 from process_json import json_to_video_data
 import subprocess
 
-HF_PREFIX = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/"
+# HF_PREFIX = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/"
 
 def save_to_json(data, path):
     with open(path, "w") as f:
@@ -35,7 +35,7 @@ def download_videos(video_data_dict, video_dir="videos"):
         if os.path.exists(path) and os.path.getsize(path) > 0:
             continue
 
-        url = HF_PREFIX + video_name
+        url = video_data.get_video_url()
         result = subprocess.run(
             ["wget", url, "-O", path, "-q"],
             stdout=subprocess.DEVNULL,
