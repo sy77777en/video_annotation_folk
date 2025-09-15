@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is this video played at a faster speed than real-time?
+Is it a fast-motion video with forward playback faster than real-time?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -30,7 +30,7 @@ Is this video played at a faster speed than real-time?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A fast-motion video where playback speed is faster than real-time.
+- A fast-motion video where playback is forward and faster than real-time.
 
 </details>
 
@@ -46,10 +46,10 @@ Is this video played at a faster speed than real-time?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed in ['fast_motion', 'time_lapse']</code>
+<code>self.cam_setup.fast_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['fast_motion', 'time_lapse', 'speed_ramp', 'time_reversed']</code>
+<code>self.cam_setup.fast_motion is False</code>
 
 </details>
 
@@ -58,11 +58,11 @@ Is this video played at a faster speed than real-time?
 
 
 <h3>🔵 Label Name:</h3>
-<code>fast_motion</code>
+<code>fast_motion_without_time_lapse</code>
 
 
 <h3>📖 Definition:</h3>
-Is this video played at a slightly faster speed than real-time (e.g., 1x-3x)?
+Is it a fast-motion video with forward playback speed slightly faster than real-time (1x–3x)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -83,7 +83,7 @@ Is this video played at a slightly faster speed than real-time (e.g., 1x-3x)?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A fast-motion video where playback speed is slightly faster than real-time.
+- A fast-motion video with forward playback speed slightly faster than real-time (1x–3x).
 
 </details>
 
@@ -99,10 +99,10 @@ Is this video played at a slightly faster speed than real-time (e.g., 1x-3x)?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'fast_motion'</code>
+<code>self.cam_setup.fast_motion_without_time_lapse is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['fast_motion', 'speed_ramp', 'time_reversed']</code>
+<code>self.cam_setup.fast_motion_without_time_lapse is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
@@ -122,7 +122,7 @@ Is this video played at a slightly faster speed than real-time (e.g., 1x-3x)?
 
 
 <h3>📖 Definition:</h3>
-Is this video played at normal real-time speed without noticeable acceleration or slowing?
+Is the playback forward at real-time speed without noticeable speed-up or slowdown?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -143,7 +143,7 @@ Is this video played at normal real-time speed without noticeable acceleration o
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A regular-speed video where events play in real-time without acceleration or slowing.
+- The playback is forward at real-time speed without noticeable speed-up or slowdown.
 
 </details>
 
@@ -159,10 +159,10 @@ Is this video played at normal real-time speed without noticeable acceleration o
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'regular'</code>
+<code>self.cam_setup.regular_speed is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['regular', 'stop_motion', 'time_reversed']</code>
+<code>self.cam_setup.regular_speed is False</code>
 
 </details>
 
@@ -175,7 +175,7 @@ Is this video played at normal real-time speed without noticeable acceleration o
 
 
 <h3>📖 Definition:</h3>
-Is this video played at a slower speed than real-time?
+Is it a slow-motion video with forward playback slower than real-time?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -198,7 +198,7 @@ Is this video played at a slower speed than real-time?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A slow-motion video where playback speed is reduced, making actions appear slower than real-time.
+- A slow-motion video with forward playback speed slower than real-time.
 
 </details>
 
@@ -214,10 +214,10 @@ Is this video played at a slower speed than real-time?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'slow_motion'</code>
+<code>self.cam_setup.slow_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['slow_motion', 'speed_ramp', 'time_reversed']</code>
+<code>self.cam_setup.slow_motion is False</code>
 
 </details>
 
@@ -230,7 +230,7 @@ Is this video played at a slower speed than real-time?
 
 
 <h3>📖 Definition:</h3>
-Does this shot feature a speed ramp effect where playback speed smoothly transitions between faster and slower speeds?
+Is there a speed ramp effect where playback speed shifts between fast and slow?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -251,7 +251,7 @@ Does this shot feature a speed ramp effect where playback speed smoothly transit
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video with a speed ramp effect where playback speed smoothly transitions between fast and slow.
+- A speed ramp effect where playback speed shifts between fast and slow.
 
 </details>
 
@@ -267,10 +267,10 @@ Does this shot feature a speed ramp effect where playback speed smoothly transit
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'speed_ramp'</code>
+<code>self.cam_setup.speed_ramp is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed != 'speed_ramp'</code>
+<code>self.cam_setup.speed_ramp is False</code>
 
 </details>
 
@@ -283,7 +283,7 @@ Does this shot feature a speed ramp effect where playback speed smoothly transit
 
 
 <h3>📖 Definition:</h3>
-Is this a stop-motion video where objects are moved frame by frame to create motion?
+Is this a stop-motion video using frame-by-frame changes to simulate motion?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -297,14 +297,14 @@ Is this a stop-motion video where objects are moved frame by frame to create mot
 
 - Is this shot animated by moving objects between still frames?
 
-- Does the video create the illusion of movement using manual frame adjustments?
+- Does the video simulate the illusion of movement using manual frame adjustments?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A stop-motion video where objects are moved frame by frame to create motion.
+- A stop-motion video using frame-by-frame changes to simulate motion.
 
 </details>
 
@@ -320,10 +320,10 @@ Is this a stop-motion video where objects are moved frame by frame to create mot
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'stop_motion'</code>
+<code>self.cam_setup.stop_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['stop_motion', 'time_reversed']</code>
+<code>self.cam_setup.stop_motion is False</code>
 
 </details>
 
@@ -336,12 +336,10 @@ Is this a stop-motion video where objects are moved frame by frame to create mot
 
 
 <h3>📖 Definition:</h3>
-Does this shot speed up time significantly to show changes over minutes or hours?
+Is this a time-lapse video showing time passing rapidly over a long period?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
-
-- Is this a time-lapse video where time appears to move rapidly over an extended period?
 
 </details>
 
@@ -349,6 +347,8 @@ Does this shot speed up time significantly to show changes over minutes or hours
 <summary><h4> Alternative Question</h4></summary>
 
 - Is this a time-lapse video?
+
+- Does this shot speed up time significantly to show changes over minutes or hours?
 
 - Is this video played at an extremely high speed to condense long durations?
 
@@ -359,7 +359,7 @@ Does this shot speed up time significantly to show changes over minutes or hours
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A time-lapse video where time appears to move rapidly over an extended period.
+- A time-lapse video showing time passing rapidly over a long period.
 
 </details>
 
@@ -375,15 +375,15 @@ Does this shot speed up time significantly to show changes over minutes or hours
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'time_lapse'</code>
+<code>self.cam_setup.time_lapse is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['time_lapse', 'speed_ramp', 'time_reversed']</code>
+<code>self.cam_setup.time_lapse is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>fast_motion</b>: <code>self.cam_motion.video_speed == 'fast_motion'</code>
+- <b>fast_motion</b>: <code>self.cam_setup.video_speed == 'fast_motion'</code>
 
 </details>
 
@@ -435,9 +435,9 @@ Is this video played in reverse, with events unfolding backward in time?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.video_speed == 'time_reversed'</code>
+<code>self.cam_setup.time_reversed is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.video_speed not in ['time_reversed', 'speed_ramp', 'time_lapse']</code>
+<code>self.cam_setup.time_reversed is False</code>
 
 </details>

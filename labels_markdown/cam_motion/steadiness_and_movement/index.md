@@ -86,10 +86,10 @@ Does the camera have noticeable motion beyond minor shake or wobble?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])</code>
+<code>self.cam_motion.clear_moving_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']</code>
+<code>self.cam_motion.clear_moving_camera is False</code>
 
 </details>
 
@@ -187,10 +187,10 @@ Does the camera have noticeable motion at a fast speed?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>(self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])) and self.cam_motion.camera_motion_speed == 'fast'</code>
+<code>self.cam_motion.fast_moving_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>(self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']) or (self.cam_motion.camera_movement in ['major_simple', 'major_complex'] and self.cam_motion.camera_motion_speed != 'fast')</code>
+<code>self.cam_motion.fast_moving_camera is False</code>
 
 </details>
 
@@ -312,22 +312,15 @@ Is the camera completely still without any motion or shaking?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']</code>
+<code>self.cam_motion.fixed_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness not in ['static']</code>
-
-<details>
-<summary><h4>🔴 Negative (Easy)</h4></summary>
-
-- <b>not_fixed_camera</b>: <code>self.cam_motion.camera_movement not in ['no']</code>
-
-</details>
+<code>self.cam_motion.fixed_camera is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>fixed_but_slightly_shaky</b>: <code>self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']</code>
+- <b>fixed_but_slightly_shaky</b>: <code>self.cam_motion.fixed_but_slightly_shaky is True</code>
 
 </details>
 
@@ -423,24 +416,24 @@ Is the camera stationary with minor vibrations or shaking?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.steadiness in ['smooth', 'unsteady'] and self.cam_motion.camera_movement in ['no']</code>
+<code>self.cam_motion.fixed_camera_with_shake is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness in ['static', 'very_smooth']</code>
+<code>self.cam_motion.fixed_camera_with_shake is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_fixed_camera</b>: <code>self.cam_motion.camera_movement not in ['no']</code>
+- <b>not_fixed_camera</b>: <code>self.cam_motion.not_fixed_camera is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>fixed_without_shaking</b>: <code>self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']</code>
+- <b>fixed_without_shaking</b>: <code>self.cam_motion.fixed_without_shaking is True</code>
 
-- <b>shaky_camera_that_moves</b>: <code>self.cam_motion.steadiness not in ['static', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']</code>
+- <b>shaky_camera_that_moves</b>: <code>self.cam_motion.shaky_camera_that_moves is True</code>
 
 </details>
 
@@ -558,10 +551,10 @@ Is there any camera movement?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>(self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['minor', 'major_simple', 'major_complex']) or (self.cam_motion.steadiness in ['unsteady', 'very_unsteady'] and self.cam_motion.camera_movement in ['no'])</code>
+<code>self.cam_motion.moving_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness in ['static'] and self.cam_motion.camera_movement in ['no']</code>
+<code>self.cam_motion.moving_camera is False</code>
 
 </details>
 
@@ -657,15 +650,15 @@ Does the camera show any vibrations, shaking, or wobbling?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.steadiness in ['unsteady', 'very_unsteady']</code>
+<code>self.cam_motion.shaky_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>self.cam_motion.shaky_camera is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_shaky_camera_excluding_smooth</b>: <code>self.cam_motion.steadiness not in ['smooth', 'unsteady', 'very_unsteady']</code>
+- <b>not_shaky_camera_excluding_smooth</b>: <code>self.cam_motion.not_shaky_camera_excluding_smooth is True</code>
 
 </details>
 
@@ -757,10 +750,10 @@ Does the camera have noticeable motion but at a slow motion speed?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>(self.cam_motion.camera_movement in ['major_simple'] or (self.cam_motion.steadiness not in ['static'] and self.cam_motion.camera_movement in ['major_complex'])) and self.cam_motion.camera_motion_speed == 'slow'</code>
+<code>self.cam_motion.slow_moving_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>(self.cam_motion.steadiness in ['static', 'smooth'] and self.cam_motion.camera_movement in ['no']) or (self.cam_motion.camera_movement in ['major_simple', 'major_complex'] and self.cam_motion.camera_motion_speed != 'slow')</code>
+<code>self.cam_motion.slow_moving_camera is False</code>
 
 </details>
 
@@ -850,22 +843,22 @@ Is the camera movement smooth and stable?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.steadiness in ['smooth', 'very_smooth'] and self.cam_motion.camera_movement not in ['no']</code>
+<code>self.cam_motion.stable_camera_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness not in ['smooth', 'very_smooth'] or self.cam_motion.camera_movement in ['no']</code>
+<code>self.cam_motion.stable_camera_motion is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>quite_shaky_camera</b>: <code>self.cam_motion.steadiness in ['unsteady', 'very_unsteady']</code>
+- <b>quite_shaky_camera</b>: <code>self.cam_motion.quite_shaky_camera is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>fixed_camera_without_motion</b>: <code>self.cam_motion.steadiness in ['static'] or self.cam_motion.camera_movement in ['no']</code>
+- <b>fixed_camera_without_motion</b>: <code>self.cam_motion.fixed_camera_without_motion is True</code>
 
 </details>
 
@@ -880,12 +873,12 @@ Is the camera movement smooth and stable?
 
 
 <h3>📖 Definition:</h3>
-Does the camera appear highly unsteady, as if it’s handheld and unstable?
+Does the camera show noticable vibrations, shaking, or wobbling?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera show noticable vibrations, shaking, or wobbling?
+- Does the camera appear highly unsteady, as if it’s handheld and unstable?
 
 - Is there significant shaking or vibration in the camera?
 
@@ -963,15 +956,15 @@ Does the camera appear highly unsteady, as if it’s handheld and unstable?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.steadiness in ['very_unsteady']</code>
+<code>self.cam_motion.very_shaky_camera is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness not in ['very_unsteady', 'unsteady']</code>
+<code>self.cam_motion.very_shaky_camera is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_very_shaky_camera_excluding_smooth</b>: <code>self.cam_motion.steadiness in ['smooth', 'very_smooth']</code>
+- <b>not_very_shaky_camera_excluding_smooth</b>: <code>self.cam_motion.not_very_shaky_camera_excluding_smooth is True</code>
 
 </details>
 
@@ -1063,22 +1056,22 @@ Is the camera movement exceptionally smooth and highly stable?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.steadiness in ['very_smooth'] and self.cam_motion.camera_movement not in ['no']</code>
+<code>self.cam_motion.very_stable_camera_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.steadiness not in ['very_smooth', 'smooth'] or self.cam_motion.camera_movement in ['no']</code>
+<code>self.cam_motion.very_stable_camera_motion is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>somewhat_shaky_camera</b>: <code>self.cam_motion.steadiness in ['unsteady', 'very_unsteady']</code>
+- <b>somewhat_shaky_camera</b>: <code>self.cam_motion.somewhat_shaky_camera is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>fixed_camera_without_motion</b>: <code>self.cam_motion.steadiness in ['static'] or self.cam_motion.camera_movement in ['no']</code>
+- <b>fixed_camera_without_motion</b>: <code>self.cam_motion.fixed_camera_without_motion is True</code>
 
 </details>
 

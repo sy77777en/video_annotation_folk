@@ -9,10 +9,21 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera zoom out rather than physically moving backward?
+Does the camera zoom out?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera zoom out during the shot?
+
+- Is the camera zooming out?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the camera zoom out rather than physically moving backward?
 
 - Is the field of view widening without the camera physically retreating?
 
@@ -27,11 +38,6 @@ Does the camera zoom out rather than physically moving backward?
 - Does the framing pull away from the subject without spatial camera movement?
 
 - Is the shot zooming out optically instead of moving physically?
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
 
 - Does the video include a zoom-out effect?
 
@@ -54,12 +60,16 @@ Does the camera zoom out rather than physically moving backward?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video where the camera zooms out rather than physically moving backward.
+- The camera zooms out.
+
+- A shot where the camera zooms out.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the camera zooms out rather than physically moving backward.
 
 - A shot featuring a zoom-out effect where the frame expands.
 
@@ -108,10 +118,12 @@ Does the camera zoom out rather than physically moving backward?
 
 
 <h3>📖 Definition:</h3>
-Is zooming out the only motion in this shot, without other camera movement?
+Does the camera only zoom out with no other movement?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Is zooming out the only motion in this shot, without other camera movement?
 
 - Does the camera zoom out without any dolly, pan, or tilt movement?
 
@@ -152,6 +164,8 @@ Is zooming out the only motion in this shot, without other camera movement?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only zooms out with no other movement.
 
 - A video where zooming out is the only motion, with no additional camera movement.
 

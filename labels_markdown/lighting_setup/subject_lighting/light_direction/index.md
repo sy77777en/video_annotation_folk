@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the subject illuminated with soft, ambient light?
+Are all subjects consistently lit with no dominant light direction, as shadows and highlights do not indicate a dominant (or key) light from the side, top, bottom, front, or back?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Is the subject illuminated with soft, ambient light?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The subject is illuminated with soft, ambient light.
+- All subjects are consistently lit with no dominant light direction, as shadows and highlights do not indicate a dominant (or key) light from the side, top, bottom, front, or back.
 
 </details>
 
@@ -66,10 +66,10 @@ Is the subject illuminated with soft, ambient light?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_ambient_light is True</code>
+<code>self.lighting_setup.direction_is_ambient_light is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.subject_ambient_light is False</code>
+<code>self.lighting_setup.direction_is_ambient_light is False</code>
 
 </details>
 
@@ -82,7 +82,7 @@ Is the subject illuminated with soft, ambient light?
 
 
 <h3>📖 Definition:</h3>
-Is the primary light source positioned behind the subject?
+Are all subjects consistently back-lit by a noticeable (or key) light (not just ambient or fill light) coming from the far side, with the light source positioned within a 90-degree angle behind them, facing away from the camera?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Is the primary light source positioned behind the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the primary light source is behind the subject.
+- All subjects are consistently back-lit by noticeable (or key) light (not just ambient or fill light) coming from the far side, with the light source positioned within a 90-degree angle behind them, facing away from the camera.
 
 </details>
 
@@ -139,10 +139,10 @@ Is the primary light source positioned behind the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_back_light is True</code>
+<code>self.lighting_setup.direction_is_back_light is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.subject_back_light is False</code>
+<code>self.lighting_setup.direction_is_back_light is False</code>
 
 </details>
 
@@ -155,7 +155,7 @@ Is the primary light source positioned behind the subject?
 
 
 <h3>📖 Definition:</h3>
-Is the primary light source positioned below the subject?
+Are all subjects consistently illuminated by bottom lighting, with noticeable (or key) light (not just ambient or fill light) coming from below and casting shadows upward?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Is the primary light source positioned below the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the primary light source is positioned below.
+- All subjects are consistently illuminated by bottom lighting, with noticeable (or key) light (not just ambient or fill light) coming from below and casting shadows upward.
 
 </details>
 
@@ -212,10 +212,212 @@ Is the primary light source positioned below the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_bottom_light is True</code>
+<code>self.lighting_setup.direction_is_bottom_light is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.subject_bottom_light is False</code>
+<code>self.lighting_setup.direction_is_bottom_light is False</code>
+
+</details>
+
+<details>
+<summary><h2>Changing (Temporal) Light Direction</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>direction_is_complex_changing</code>
+
+
+<h3>📖 Definition:</h3>
+Does the dominant light direction on the subject(s) change over time, as judged from the camera's perspective?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the side of the subject that appears lit shift during the video?
+
+- Does the light source move or change during the shot?
+
+- Does the subject move into a new light zone that changes the directional effect?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The dominant light direction on the subject(s) changes over time, as judged from the camera’s perspective.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the lit side of the subject shifts during the shot.
+
+- A scene where the light source moves or changes, altering the direction.
+
+- A shot where the subject moves into a new light zone, changing the directional effect.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.direction_is_complex_changing is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.direction_is_complex_changing is False</code>
+
+</details>
+
+<details>
+<summary><h2>Mixed (Spatial) Light Direction</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>direction_is_complex_contrasting</code>
+
+
+<h3>📖 Definition:</h3>
+Are different parts of the subject, or different subjects, lit by different dominant light directions simultaneously, with no single direction applying across the entire subject or all subjects in the frame?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Are multiple subjects in the same frame lit from different directions?
+
+- Do light sources hit separate regions of the subject from distinct angles at the same time?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- Different parts of the subject, or different subjects, are lit by different dominant light directions simultaneously, with no single direction applying across the entire subject or all subjects in the frame.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A scene with multiple subjects lit from different directions.
+
+- A subject with different regions lit from distinct angles simultaneously.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.direction_is_complex_contrasting is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.direction_is_complex_contrasting is False</code>
+
+</details>
+
+<details>
+<summary><h2>Mixed (Spatial) + Changing (Temporal) Light Direction</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>direction_is_complex_others</code>
+
+
+<h3>📖 Definition:</h3>
+Are different parts of the subject (or different subjects) lit by different directions simultaneously, and do these directions also change over time, so the dominant light direction varies both spatially and temporally?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Do different areas get lit from different directions, and those directions change during the video?
+
+- Are multiple subjects each lit from different directions, and their lighting direction shifts over time?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- Different parts of the subject (or different subjects) are lit by different directions simultaneously, and these directions also change over time, so the dominant light direction varies both spatially and temporally.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A scene where different regions are lit from different directions, and those directions change during the video.
+
+- A video with multiple subjects, each lit from different directions, and their lighting direction shifts over time.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.direction_is_complex_others is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.direction_is_complex_others is False</code>
+
+</details>
+
+<details>
+<summary><h2>Consistent Light Direction</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>direction_is_consistent</code>
+
+
+<h3>📖 Definition:</h3>
+Is the subject consistently lit with the same light direction throughout the video and uniform across the entire subject's surface?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the light direction remain the same for the entire video?
+
+- Is the direction of light uniform across the subject at all times?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The subject is consistently lit with the same light direction throughout the video and uniform across the entire subject's surface.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the light direction does not change at any point.
+
+- A scene where the subject is always lit from the same direction.
+
+- A shot where the light direction is uniform across the subject.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.direction_is_consistent is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.direction_is_consistent is False</code>
 
 </details>
 
@@ -228,7 +430,7 @@ Is the primary light source positioned below the subject?
 
 
 <h3>📖 Definition:</h3>
-Is the primary light source positioned in front of the subject?
+Are all subjects consistently front-lit by a noticeable (or key) light (not just ambient or fill light) coming from the camera side, with the light source positioned within a 90-degree angle in front of them, extending toward the camera?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +461,7 @@ Is the primary light source positioned in front of the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the primary light source is in front of the subject.
+- All subjects are consistently front-lit by noticeable (or key) light (not just ambient or fill light) coming from the camera side, with the light source positioned within a 90-degree angle in front of them, extending toward the camera.
 
 </details>
 
@@ -285,23 +487,23 @@ Is the primary light source positioned in front of the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_front_light is True</code>
+<code>self.lighting_setup.direction_is_front_light is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.subject_front_light is False</code>
+<code>self.lighting_setup.direction_is_front_light is False</code>
 
 </details>
 
 <details>
-<summary><h2>Direction Is Rear-Side Light</h2></summary>
+<summary><h2>Left-Side Light</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>direction_is_rear_side</code>
+<code>direction_is_left_side</code>
 
 
 <h3>📖 Definition:</h3>
-Is the subject illuminated from a combination of back and side lighting?
+Are all subjects consistently illuminated by side lighting, with noticeable (or key) light (not just ambient or fill light) coming from the left side of each subject as seen from the camera, causing one side to appear more lit and the opposite side darker?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -311,57 +513,90 @@ Is the subject illuminated from a combination of back and side lighting?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the primary light source come from behind and slightly to the side of the subject?
+- Does the subject have a clear left-side light source?
 
-- Is the subject lit from a rear-side angle, creating strong contrast?
+- Is the left side of the subject more illuminated than the right?
 
-- Does the lighting emphasize both back and side illumination on the subject?
-
-- Is there rim lighting from behind while also partially lighting the side of the subject?
-
-- Does the subject receive directional lighting from both the back and the side?
-
-- Is the main illumination positioned between backlight and sidelight?
-
-- Does the shot feature a blend of back and side lighting on the subject?
-
-- Is the subject framed with lighting that wraps from the rear and the side?
+- Does the lighting create a visible shadow on the right side of the subject?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The subject is illuminated with a combination of back and side lighting.
+- All subjects are consistently illuminated by side lighting, with noticeable (or key) light (not just ambient or fill light) coming from the left side of each subject as seen from the camera, causing one side to appear more lit and the opposite side darker.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video where the subject is lit from both behind and the side.
+- A subject with the left side more brightly lit than the right.
 
-- A shot featuring strong directional lighting from a rear-side angle.
+- A scene where the left-side lighting creates a shadow on the right side of the subject.
 
-- A sequence where backlight and sidelight work together to shape the subject.
-
-- A video where the lighting creates rim highlights while illuminating the side.
-
-- A scene where the primary light source is positioned between back and side.
-
-- A subject illuminated with a mix of back and side lighting for depth.
-
-- A shot emphasizing contrast with both rear and side illumination.
-
-- A composition using a lighting blend between back and side sources.
+- A shot where the key light is positioned to the left of the subject from the camera's perspective.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_back_light is True and self.lighting_setup.subject_side_light is True</code>
+<code>self.lighting_setup.direction_is_left_side is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.lighting_setup.subject_back_light is True and self.lighting_setup.subject_side_light is True)</code>
+<code>self.lighting_setup.direction_is_left_side is False</code>
+
+</details>
+
+<details>
+<summary><h2>Right-Side Light</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>direction_is_right_side</code>
+
+
+<h3>📖 Definition:</h3>
+Are all subjects consistently illuminated by side lighting, with noticeable (or key) light (not just ambient or fill light) coming from the right side of each subject as seen from the camera, causing one side to appear more lit and the opposite side darker?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the subject have a clear right-side light source?
+
+- Is the right side of the subject more illuminated than the left?
+
+- Does the lighting create a visible shadow on the left side of the subject?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- All subjects are consistently illuminated by side lighting, with noticeable (or key) light (not just ambient or fill light) coming from the right side of each subject as seen from the camera, causing one side to appear more lit and the opposite side darker.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A subject with the right side more brightly lit than the left.
+
+- A scene where the right-side lighting creates a shadow on the left side of the subject.
+
+- A shot where the key light is positioned to the right of the subject from the camera's perspective.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.direction_is_right_side is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.direction_is_right_side is False</code>
 
 </details>
 
@@ -374,7 +609,7 @@ Is the subject illuminated from a combination of back and side lighting?
 
 
 <h3>📖 Definition:</h3>
-Is the primary light source positioned to the side of the subject?
+Is there a noticeable light source consistently illuminating the subject from one side (side lighting) as seen from the camera’s perspective?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -405,7 +640,7 @@ Is the primary light source positioned to the side of the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the primary light source is positioned to the side of the subject.
+- There is a noticeable light source consistently illuminating the subject from one side (side lighting), as seen from the camera’s perspective.
 
 </details>
 
@@ -431,10 +666,10 @@ Is the primary light source positioned to the side of the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_side_light is True</code>
+<code>self.lighting_setup.direction_is_side_light is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.subject_side_light is False</code>
+<code>self.lighting_setup.direction_is_side_light is False</code>
 
 </details>
 
@@ -447,7 +682,7 @@ Is the primary light source positioned to the side of the subject?
 
 
 <h3>📖 Definition:</h3>
-Is the primary light source positioned above the subject?
+Are all subjects consistently illuminated by top lighting, with noticeable (or key) light (not just ambient or fill light) coming from above and casting shadows downward?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -478,7 +713,7 @@ Is the primary light source positioned above the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the primary light source is positioned overhead.
+- All subjects are consistently illuminated by top lighting, with noticeable (or key) light (not just ambient or fill light) coming from above and casting shadows downward.
 
 </details>
 
@@ -504,23 +739,23 @@ Is the primary light source positioned above the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_top_light is True</code>
+<code>self.lighting_setup.direction_is_top_light is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.subject_top_light is False</code>
+<code>self.lighting_setup.direction_is_top_light is False</code>
 
 </details>
 
 <details>
-<summary><h2>Direction Is Top-Side Light</h2></summary>
+<summary><h2>Unclear Light Direction</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>direction_is_front_side</code>
+<code>direction_is_unknown</code>
 
 
 <h3>📖 Definition:</h3>
-Is the subject illuminated from a combination of top and side lighting?
+Is the lighting direction on the subject unable to be reliably judged because the video may lack a clear subject lit by external light, lack a subject altogether (e.g., scenery shot), feature both complex subject transitions and light direction that varies across regions or time, or be too stylized or abstract to physically interpret the lighting setup?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -530,56 +765,40 @@ Is the subject illuminated from a combination of top and side lighting?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the primary light source come from above and slightly to the side of the subject?
+- Is there no clear and lightable subject (e.g., scenery-only shot)?
 
-- Is the subject lit from a top-side angle, creating strong directional contrast?
+- Does the subject change and the light direction also change?
 
-- Does the lighting emphasize both top and side illumination on the subject?
+- Is the scene 2D, stylized, or flat-rendered, making light direction uninterpretable?
 
-- Is there overhead lighting while also partially lighting the side of the subject?
-
-- Does the subject receive directional lighting from both above and the side?
-
-- Is the main illumination positioned between toplight and sidelight?
-
-- Does the shot feature a blend of top and side lighting on the subject?
-
-- Is the subject framed with lighting that wraps from the top and the side?
+- Is the light direction too ambiguous to judge?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The subject is illuminated with a combination of top and side lighting.
+- Lighting direction on the subject cannot be reliably judged because the video may lack a clear subject lit by external light, lack a subject altogether (e.g., scenery shot), feature both complex subject transitions and light direction that varies across regions or time, or be too stylized or abstract to physically interpret the lighting setup.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video where the subject is lit from both above and the side.
+- A scene with no clear and lightable subject.
 
-- A shot featuring strong directional lighting from a top-side angle.
+- A video where the subject and light direction both change.
 
-- A sequence where toplight and sidelight work together to shape the subject.
+- A 2D or stylized scene where light direction cannot be interpreted.
 
-- A video where the lighting creates depth using overhead and side illumination.
-
-- A scene where the primary light source is positioned between top and side.
-
-- A subject illuminated with a mix of top and side lighting for a dramatic effect.
-
-- A shot emphasizing contrast with both overhead and side illumination.
-
-- A composition using a lighting blend between top and side sources.
+- A shot where light direction is too ambiguous to judge.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.subject_top_light is True and self.lighting_setup.subject_side_light is True</code>
+<code>self.lighting_setup.direction_is_unknown is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.lighting_setup.subject_top_light is True and self.lighting_setup.subject_side_light is True)</code>
+<code>self.lighting_setup.direction_is_unknown is False</code>
 
 </details>

@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera positioned noticeably higher than the subject?
+Does the video start with the camera positioned above the subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video start with the camera positioned at the same height as the subjec
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that starts with the camera positioned at the subject’s height.
+- A video that starts with the camera positioned at the same height as the subject.
 
 </details>
 

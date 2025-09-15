@@ -1,79 +1,6 @@
 # Volumetric_lighting Overview
 
 <details>
-<summary><h2>Beam Light (Volumetric)</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>beam_light</code>
-
-
-<h3>📖 Definition:</h3>
-Does the video feature visible beams of light with well-defined edges, creating linear volumes of light?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Are distinct beams of light visible in the scene?
-
-- Does the video include sharp, directional light beams cutting through the environment?
-
-- Are there visible, well-defined streaks of light in the video?
-
-- Does the lighting form structured, linear volumes within the scene?
-
-- Are beams of light apparent due to interaction with atmospheric elements?
-
-- Is volumetric beam lighting present as a key visual effect?
-
-- Do directional beams of light shape the scene’s lighting?
-
-- Are visible light shafts contributing to the video’s aesthetic?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video features visible beams of light with well-defined edges, creating linear volumes of light.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A scene where distinct beams of light are visible.
-
-- A video featuring sharp, directional light beams cutting through the environment.
-
-- A shot showcasing structured, linear volumes of light.
-
-- A setting where visible beams shape the overall lighting composition.
-
-- A sequence where volumetric lighting is clearly formed in linear streaks.
-
-- A video emphasizing strong, defined light shafts.
-
-- A scene enhanced by directional, atmospheric light beams.
-
-- A shot where bright beams of light interact with fog, dust, or other elements.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.volumetric_beam_light is True</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.volumetric_beam_light is False</code>
-
-</details>
-
-<details>
 <summary><h2>God Rays</h2></summary>
 
 
@@ -82,7 +9,7 @@ Does the video feature visible beams of light with well-defined edges, creating 
 
 
 <h3>📖 Definition:</h3>
-Does the video feature striking, separated rays of light (or god rays) streaming through gaps in the environment?
+Does the video feature striking, separated rays of light (god rays) streaming through gaps in the environment?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +40,7 @@ Does the video feature striking, separated rays of light (or god rays) streaming
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features striking, separated rays of light (or god rays) streaming through gaps in the environment.
+- The video features striking, separated (god) rays of light streaming through gaps in the environment.
 
 </details>
 
@@ -155,7 +82,7 @@ Does the video feature striking, separated rays of light (or god rays) streaming
 
 
 <h3>📖 Definition:</h3>
-Does the video prominently feature any form of volumetric lighting, where light appears as a visible volume in the scene?
+Does the video show noticeable volumetric lighting, where light appears as a visible volume?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +113,7 @@ Does the video prominently feature any form of volumetric lighting, where light 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video prominently features volumetric lighting, where light appears as a visible volume in the scene.
+- The video features noticeable volumetric lighting, where light appears as a visible volume.
 
 </details>
 
@@ -293,11 +220,157 @@ Does the video feature intense light passing through smoke, fog, or liquid, shap
 </details>
 
 <details>
+<summary><h2>Beam Light (Volumetric)</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>volumetric_beam_light</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video feature visible beams of light with well-defined edges, creating linear volumes of light?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Are distinct beams of light visible in the scene?
+
+- Does the video include sharp, directional light beams cutting through the environment?
+
+- Are there visible, well-defined streaks of light in the video?
+
+- Does the lighting form structured, linear volumes within the scene?
+
+- Are beams of light apparent due to interaction with atmospheric elements?
+
+- Is volumetric beam lighting present as a key visual effect?
+
+- Do directional beams of light shape the scene’s lighting?
+
+- Are visible light shafts contributing to the video’s aesthetic?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video features visible beams of light with well-defined edges, creating linear volumes of light.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A scene where distinct beams of light are visible.
+
+- A video featuring sharp, directional light beams cutting through the environment.
+
+- A shot showcasing structured, linear volumes of light.
+
+- A setting where visible beams shape the overall lighting composition.
+
+- A sequence where volumetric lighting is clearly formed in linear streaks.
+
+- A video emphasizing strong, defined light shafts.
+
+- A scene enhanced by directional, atmospheric light beams.
+
+- A shot where bright beams of light interact with fog, dust, or other elements.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.volumetric_beam_light is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.volumetric_beam_light is False</code>
+
+</details>
+
+<details>
+<summary><h2>Volumetric Light (Others)</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>volumetric_light_others</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video feature volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights)?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is there a diffuse volumetric glow present in the scene?
+
+- Does the video contain light visibly scattering within an enclosed space?
+
+- Are soft, ambient volumetric lighting effects noticeable?
+
+- Is the lighting in the scene creating a widespread atmospheric glow?
+
+- Are environmental factors enhancing the visibility of scattered light?
+
+- Does the video feature volumetric lighting that lacks defined edges?
+
+- Is light diffusing through the space without clear directionality?
+
+- Does the scene use volumetric lighting effects beyond typical beams or spots?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video features volumetric lighting with a well-defined, contained shape (other than beams, god rays, or spotlights).
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A scene where volumetric lighting creates a soft, diffused glow.
+
+- A video showcasing scattered light with an ambient volumetric effect.
+
+- A shot featuring bright, glowing light without clear structure.
+
+- A setting where volumetric lighting enhances depth and atmosphere.
+
+- A video emphasizing soft, widespread volumetric lighting.
+
+- A sequence where scattered light fills the frame with ambient glow.
+
+- A shot where volumetric light diffuses gently throughout the scene.
+
+- A scene using atmospheric lighting for a dreamy or cinematic look.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.volumetric_light_others is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.volumetric_light_others is False</code>
+
+</details>
+
+<details>
 <summary><h2>Spot Light (Volumetric)</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>spot_light</code>
+<code>volumetric_spot_light</code>
 
 
 <h3>📖 Definition:</h3>
@@ -362,78 +435,5 @@ Does the video feature concentrated, cone-shaped volumes of light?
 
 <h4>🔴 Negative:</h4>
 <code>self.lighting_setup.volumetric_spot_light is False</code>
-
-</details>
-
-<details>
-<summary><h2>Volumetric Light (Others)</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>volumetric_light_others</code>
-
-
-<h3>📖 Definition:</h3>
-Does the video feature volumetric lighting with a well-defined shape that does not form beams, streaks, or spotlights?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Is there a diffuse volumetric glow present in the scene?
-
-- Does the video contain light visibly scattering within an enclosed space?
-
-- Are soft, ambient volumetric lighting effects noticeable?
-
-- Is the lighting in the scene creating a widespread atmospheric glow?
-
-- Are environmental factors enhancing the visibility of scattered light?
-
-- Does the video feature volumetric lighting that lacks defined edges?
-
-- Is light diffusing through the space without clear directionality?
-
-- Does the scene use volumetric lighting effects beyond typical beams or spots?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video features volumetric lighting with a well-defined shape that does not form beams, streaks, or spotlights.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A scene where volumetric lighting creates a soft, diffused glow.
-
-- A video showcasing scattered light with an ambient volumetric effect.
-
-- A shot featuring bright, glowing light without clear structure.
-
-- A setting where volumetric lighting enhances depth and atmosphere.
-
-- A video emphasizing soft, widespread volumetric lighting.
-
-- A sequence where scattered light fills the frame with ambient glow.
-
-- A shot where volumetric light diffuses gently throughout the scene.
-
-- A scene using atmospheric lighting for a dreamy or cinematic look.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.volumetric_light_others is True</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.volumetric_light_others is False</code>
 
 </details>

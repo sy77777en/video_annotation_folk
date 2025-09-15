@@ -1,15 +1,15 @@
 # Height_wrt_subject Overview
 
 <details>
-<summary><h2>Height Wrt Subject Change From High To Low</h2></summary>
+<summary><h2>Height With Respect To Subject Change</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>height_wrt_subject_change_from_high_to_low</code>
+<code>height_wrt_subject_change</code>
 
 
 <h3>📖 Definition:</h3>
-Does the camera height decrease noticeably in relation to the subject?
+Does the camera's height relative to the subject change significantly, moving between positions above, at level with, or below the subject?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -19,49 +19,122 @@ Does the camera height decrease noticeably in relation to the subject?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera move downward relative to the subject?
+- Does the camera's vertical position shift higher or lower relative to the subject?
 
-- Is there a descent in camera position compared to subject?
+- Is there a noticeable change in how high or low the camera is positioned compared to the subject?
 
-- Does the vertical angle decrease relative to the subject?
+- Does the camera move vertically to a different height level relative to the subject?
 
-- Is there a lowering of camera height versus subject?
+- Is there a clear change in whether the camera is positioned above, below, or at the same height as the subject?
 
-- Does the shot transition from high to low angle?
+- Does the camera's height in relation to the subject change during the shot?
 
-- Is there a downward shift in camera position?
+- Is there a shift between being higher than, lower than, or at the same height as the subject?
 
-- Does the camera perspective lower relative to subject?
+- Does the camera's vertical height relative to the subject change position?
 
-- Is there a decrease in vertical camera position?
+- Is there a change in whether we're physically above, below, or level with the subject?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera height decreases notably in relation to the subject.
+- A shot where the camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video showing downward camera movement.
+- A video showing a change in camera height relative to the subject.
 
-- A shot with decreasing vertical angle.
+- A shot where the camera moves to different vertical positions relative to the subject.
 
-- A video transitioning to lower position.
+- A video where the camera shifts between being higher than, lower than, or level with the subject.
 
-- A shot featuring camera descent.
+- A shot featuring vertical camera movement that changes its height relative to the subject.
 
-- A video with lowering perspective.
+- A video that shows the camera moving higher or lower in relation to the subject.
 
-- A shot showing downward transition.
+- A shot demonstrating a change in the camera's vertical position relative to the subject.
 
-- A video with decreasing camera height.
+- A video where the camera changes how high or low it is positioned compared to the subject.
 
-- A shot moving to lower position.
+- A shot with different camera heights in relation to the subject.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.height_wrt_subject_change is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.cam_setup.height_wrt_subject_change is False</code>
+
+</details>
+
+<details>
+<summary><h2>Height Wrt Subject Change From High To Low</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>height_wrt_subject_change_from_high_to_low</code>
+
+
+<h3>📖 Definition:</h3>
+Does the camera's height decrease noticeably, transitioning from above to level with the subject or from level to below?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the camera move from a higher to a lower position relative to the subject's height?
+
+- Is there a downward transition in camera position relative to where the subject is?
+
+- Does the camera shift from being positioned above to being level with or below the subject?
+
+- Is there a change where the camera moves down relative to the subject's position?
+
+- Does the camera's position change from higher than to level/below the subject?
+
+- Is there a downward change in camera position relative to where the subject is?
+
+- Does the camera transition from an elevated position to being level or lower than the subject?
+
+- Is there a decrease in camera height from above to being level with or below the subject?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- A shot where the camera's height decreases noticeably, transitioning from above to level with the subject or from level to below.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video showing camera movement from above to level with the subject.
+
+- A shot where the camera descends from above to being level with or below the subject.
+
+- A video transitioning from a higher to a lower position relative to the subject.
+
+- A shot featuring downward camera movement relative to the subject's position.
+
+- A video where the camera moves from above to being level with or below the subject.
+
+- A shot showing vertical descent relative to where the subject is positioned.
+
+- A video with camera movement from higher than to level/below the subject.
+
+- A shot moving from above to a level or lower position relative to the subject.
 
 </details>
 
@@ -82,7 +155,7 @@ Does the camera height decrease noticeably in relation to the subject?
 
 
 <h3>📖 Definition:</h3>
-Does the camera height increase noticeably in relation to the subject?
+Does the camera's height increase noticeably, transitioning from below to level with the subject or from level to above?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -92,49 +165,49 @@ Does the camera height increase noticeably in relation to the subject?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera move upward relative to the subject?
+- Does the camera move from a lower to a higher position relative to the subject's height?
 
-- Is there an ascent in camera position compared to subject?
+- Is there an upward transition in camera position relative to where the subject is?
 
-- Does the vertical angle increase relative to the subject?
+- Does the camera shift from being positioned below to being level with or above the subject?
 
-- Is there a raising of camera height versus subject?
+- Is there a change where the camera moves up relative to the subject's position?
 
-- Does the shot transition from low to high angle?
+- Does the camera's position change from lower than to level/above the subject?
 
-- Is there an upward shift in camera position?
+- Is there an upward change in camera position relative to where the subject is?
 
-- Does the camera perspective rise relative to subject?
+- Does the camera transition from a low position to being level or higher than the subject?
 
-- Is there an increase in vertical camera position?
+- Is there an increase in camera height from below to being level with or above the subject?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera height increases notably in relation to the subject.
+- A shot where the camera's height increases noticeably, transitioning from below to level with the subject or from level to above.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video showing upward camera movement.
+- A video showing camera movement from below to level with the subject.
 
-- A shot with increasing vertical angle.
+- A shot where the camera ascends from below to being level with or above the subject.
 
-- A video transitioning to higher position.
+- A video transitioning from a lower to a higher position relative to the subject.
 
-- A shot featuring camera ascent.
+- A shot featuring upward camera movement relative to the subject's position.
 
-- A video with rising perspective.
+- A video where the camera moves from below to being level with or above the subject.
 
-- A shot showing upward transition.
+- A shot showing vertical ascent relative to where the subject is positioned.
 
-- A video with increasing camera height.
+- A video with camera movement from lower than to level/above the subject.
 
-- A shot moving to higher position.
+- A shot moving from below to a level or higher position relative to the subject.
 
 </details>
 
@@ -151,11 +224,11 @@ Does the camera height increase noticeably in relation to the subject?
 
 
 <h3>🔵 Label Name:</h3>
-<code>is_height_wrt_subject_applicable</code>
+<code>is_subject_height_applicable</code>
 
 
 <h3>📖 Definition:</h3>
-Can the camera height relative to subject be classified?
+Is the camera height relative to the subject clear?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -184,7 +257,7 @@ Can the camera height relative to subject be classified?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera height relative to the subject can be meaningfully classified.
+- The camera height relative to the subject is clear.
 
 </details>
 
@@ -210,10 +283,10 @@ Can the camera height relative to subject be classified?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.is_height_wrt_subject_applicable is True</code>
+<code>self.cam_setup.is_subject_height_applicable is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_setup.is_height_wrt_subject_applicable is False</code>
+<code>self.cam_setup.is_subject_height_applicable is False</code>
 
 </details>
 

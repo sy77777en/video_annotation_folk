@@ -1,161 +1,15 @@
 # Sunlight_quality Overview
 
 <details>
-<summary><h2>Sunlight Level Is Normal</h2></summary>
+<summary><h2>Sunlight Quality Is Hard</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>sunlight_level_is_normal</code>
+<code>sunlight_quality_is_hard</code>
 
 
 <h3>📖 Definition:</h3>
-Does the video feature regular daylight with balanced brightness?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Is the scene illuminated by natural daylight that is neither too intense nor too diffused?
-
-- Does the shot depict normal outdoor lighting conditions?
-
-- Is the sunlight soft and natural without being overly bright or cloudy?
-
-- Is the lighting in the video evenly balanced with no strong highlights or shadows?
-
-- Does the scene feature natural daylight without extreme contrast?
-
-- Is the daylight in the video neutral and well-balanced?
-
-- Is the outdoor lighting in the scene clear and natural?
-
-- Does the video have natural daylight that does not appear too strong or weak?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video features regular daylight with balanced brightness.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video with natural, well-balanced daylight.
-
-- A scene illuminated by neutral, evenly distributed daylight.
-
-- A shot featuring clear daylight without extreme contrasts.
-
-- A video where outdoor lighting appears natural and neutral.
-
-- A sequence showing daylight that is neither too harsh nor too soft.
-
-- A video with natural light that is clear and evenly lit.
-
-- A shot where the outdoor lighting feels natural and normal.
-
-- A scene where daylight is present without noticeable extremes.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.sunlight_level == 'normal'</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.sunlight_level != 'normal'</code>
-
-</details>
-
-<details>
-<summary><h2>Sunlight Level Is Overcast</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>sunlight_level_is_overcast</code>
-
-
-<h3>📖 Definition:</h3>
-Does the video feature diffused light from cloudy skies without direct sunlight?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Is the scene lit by soft, diffused light from overcast skies?
-
-- Does the video show an absence of strong sunlight due to clouds?
-
-- Is the lighting evenly distributed with minimal shadows and highlights?
-
-- Does the shot appear to be taken on a cloudy or overcast day?
-
-- Is the outdoor brightness low and lacking strong contrasts?
-
-- Does the video have a soft, natural lighting due to an overcast sky?
-
-- Is the scene characterized by muted, even lighting without harsh shadows?
-
-- Does the shot have a neutral, diffused lighting due to cloud cover?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video features diffused light from cloudy skies without direct sunlight.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video illuminated by soft, overcast lighting.
-
-- A shot where cloud cover diffuses the natural light.
-
-- A scene featuring gentle, even lighting without harsh shadows.
-
-- A video where the lighting is consistent due to an overcast sky.
-
-- A sequence where the absence of strong sunlight creates a muted look.
-
-- A shot where outdoor lighting is natural but subdued.
-
-- A video where the sky is overcast, resulting in soft lighting.
-
-- A scene lit by cloudy, diffused light that lacks harsh brightness.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.sunlight_level == 'overcast'</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.sunlight_level != 'overcast'</code>
-
-</details>
-
-<details>
-<summary><h2>Sunlight Level Is Sunny</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>sunlight_level_is_sunny</code>
-
-
-<h3>📖 Definition:</h3>
-Does the video feature bright, direct sunlight with strong intensity?
+Does the scene feature strong direct sunlight, resulting in very bright, high-contrast lighting with sharp, hard-edged shadows?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +40,7 @@ Does the video feature bright, direct sunlight with strong intensity?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features bright, direct sunlight with strong intensity.
+- The scene features strong direct sunlight, resulting in very bright, high-contrast lighting with sharp, hard-edged shadows.
 
 </details>
 
@@ -212,23 +66,169 @@ Does the video feature bright, direct sunlight with strong intensity?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.sunlight_level == 'sunny'</code>
+<code>self.lighting_setup.sunlight_quality_is_hard is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.sunlight_level != 'sunny'</code>
+<code>self.lighting_setup.sunlight_quality_is_hard is False</code>
 
 </details>
 
 <details>
-<summary><h2>Sunlight Level Is Sunset/Sunrise</h2></summary>
+<summary><h2>Sunlight Quality Is Normal</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>sunlight_level_is_sunset_sunrise</code>
+<code>sunlight_quality_is_normal</code>
 
 
 <h3>📖 Definition:</h3>
-Does the video feature warm, golden tones from the sun at dawn or dusk?
+Does the scene feature regular daylight with balanced brightness, moderate contrast, and soft-edged shadows, and is neither sunny, overcast, nor captured during golden or blue hour?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is the scene illuminated by natural daylight that is neither too intense nor too diffused?
+
+- Does the shot depict normal outdoor lighting conditions?
+
+- Is the sunlight soft and natural without being overly bright or cloudy?
+
+- Is the lighting in the video evenly balanced with no strong highlights or shadows?
+
+- Does the scene feature natural daylight without extreme contrast?
+
+- Is the daylight in the video neutral and well-balanced?
+
+- Is the outdoor lighting in the scene clear and natural?
+
+- Does the video have natural daylight that does not appear too strong or weak?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The scene features regular daylight with balanced brightness, moderate contrast, and soft-edged shadows, and is neither sunny, overcast, nor captured during golden or blue hour.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video with natural, well-balanced daylight.
+
+- A scene illuminated by neutral, evenly distributed daylight.
+
+- A shot featuring clear daylight without extreme contrasts.
+
+- A video where outdoor lighting appears natural and neutral.
+
+- A sequence showing daylight that is neither too harsh nor too soft.
+
+- A video with natural light that is clear and evenly lit.
+
+- A shot where the outdoor lighting feels natural and normal.
+
+- A scene where daylight is present without noticeable extremes.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.sunlight_quality_is_normal is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.sunlight_quality_is_normal is False</code>
+
+</details>
+
+<details>
+<summary><h2>Sunlight Quality Is Soft</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>sunlight_quality_is_soft</code>
+
+
+<h3>📖 Definition:</h3>
+Is the scene illuminated by soft, diffused sunlight, such as from cloudy skies, mist, or twilight conditions, with no directional sunlight and either no visible shadows or low-contrast shadows?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is the scene lit by soft, diffused light from overcast skies?
+
+- Does the video show an absence of strong sunlight due to clouds?
+
+- Is the lighting evenly distributed with minimal shadows and highlights?
+
+- Does the shot appear to be taken on a cloudy or overcast day?
+
+- Is the outdoor brightness low and lacking strong contrasts?
+
+- Does the video have a soft, natural lighting due to an overcast sky?
+
+- Is the scene characterized by muted, even lighting without harsh shadows?
+
+- Does the shot have a neutral, diffused lighting due to cloud cover?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The scene is illuminated by soft, diffused sunlight, such as from cloudy skies, mist, or twilight conditions, with no directional sunlight and either no visible shadows or low-contrast shadows.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video illuminated by soft, overcast lighting.
+
+- A shot where cloud cover diffuses the natural light.
+
+- A scene featuring gentle, even lighting without harsh shadows.
+
+- A video where the lighting is consistent due to an overcast sky.
+
+- A sequence where the absence of strong sunlight creates a muted look.
+
+- A shot where outdoor lighting is natural but subdued.
+
+- A video where the sky is overcast, resulting in soft lighting.
+
+- A scene lit by cloudy, diffused light that lacks harsh brightness.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.sunlight_quality_is_soft is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.sunlight_quality_is_soft is False</code>
+
+</details>
+
+<details>
+<summary><h2>Sunlight Quality Is Sunset/Sunrise</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>sunlight_quality_is_sunset_sunrise</code>
+
+
+<h3>📖 Definition:</h3>
+Does the scene feature warm, golden sunlight at sunrise or sunset?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video feature warm, golden tones from the sun at dawn or dusk?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features warm, golden tones from the sun at dawn or dusk.
+- The scene features warm, golden sunlight at sunrise or sunset.
 
 </details>
 
@@ -285,23 +285,23 @@ Does the video feature warm, golden tones from the sun at dawn or dusk?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.sunlight_level == 'sunset_sunrise'</code>
+<code>self.lighting_setup.sunlight_quality_is_sunset_sunrise is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.sunlight_level != 'sunset_sunrise'</code>
+<code>self.lighting_setup.sunlight_quality_is_sunset_sunrise is False</code>
 
 </details>
 
 <details>
-<summary><h2>Sunlight Level Is Unknown</h2></summary>
+<summary><h2>Sunlight Quality Is Unknown</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>sunlight_level_is_unknown</code>
+<code>sunlight_quality_is_unknown</code>
 
 
 <h3>📖 Definition:</h3>
-Is the sunlight condition in the video unclear or not applicable?
+Is the scene having no clear sunlight, or the sunlight quality changes during the video, such as transitions between day and night, blue hour to golden hour, or overcast to sunny conditions?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Is the sunlight condition in the video unclear or not applicable?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The sunlight condition in the video is unclear or not applicable.
+- The scene has no clear sunlight, or the sunlight quality changes during the video, such as transitions between day and night, blue hour to golden hour, or overcast to sunny conditions.
 
 </details>
 
@@ -358,9 +358,9 @@ Is the sunlight condition in the video unclear or not applicable?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.sunlight_level == 'unknown'</code>
+<code>self.lighting_setup.sunlight_quality_is_unknown is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.sunlight_level != 'unknown'</code>
+<code>self.lighting_setup.sunlight_quality_is_unknown is False</code>
 
 </details>

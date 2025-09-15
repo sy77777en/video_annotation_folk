@@ -1,7 +1,7 @@
 # Is_always Overview
 
 <details>
-<summary><h2>Camera Angle Is Bird Eye Angle</h2></summary>
+<summary><h2>Camera Angle Is Bird's Eye Angle</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at a bird’s eye angle throughout the video, looking directly downward at the ground?
+Does the camera maintain a bird's eye angle throughout, consistently looking straight down from above?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -19,47 +19,49 @@ Is the camera positioned at a bird’s eye angle throughout the video, looking d
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at a bird’s eye angle for the entire video?
+- Does the shot maintain a bird's eye perspective throughout?
 
-- Is the starting and ending frame taken from a bird’s eye perspective?
+- Is the camera consistently positioned at a top-down viewpoint?
 
-- Does the video maintain an extreme high-angle, looking downward?
+- Does the video keep the camera looking straight down at the ground?
 
-- Is the camera positioned directly overhead from start to finish?
+- Is the shot captured from an overhead, bird's eye perspective throughout?
 
-- Does the sequence keep a top-down perspective throughout?
+- Does the sequence maintain a camera position directly above the scene?
 
-- Is the video filmed entirely at a bird’s eye angle without changing?
+- Is the camera consistently positioned in a strict top-down orientation?
 
-- Does the framing stay at an overhead viewpoint for the whole video?
+- Does the video keep an aerial viewpoint looking directly downward?
 
-- Is the entire video shot with a camera looking straight down?
+- Is the shot recorded from a high, perpendicular angle throughout?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera is positioned at a bird’s eye angle throughout the video, looking directly downward at the ground.
+- The camera maintains a bird's eye angle throughout, consistently looking straight down from above.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a bird’s eye perspective from start to finish.
+- A shot maintaining a strict top-down perspective.
 
-- A shot consistently captured from a top-down angle.
+- A video keeping a bird's eye view, directly above the scene.
 
-- A video where the camera stays at an overhead position without changing.
+- A sequence with a consistent overhead camera looking straight down.
 
-- A sequence entirely framed from a high, downward perspective.
+- A shot where the environment is viewed from a top-down orientation.
 
-- A shot maintaining a bird’s eye view without shifting angles.
+- A video maintaining a high, perpendicular perspective.
 
-- A video where the camera remains above, looking straight down.
+- A shot where the camera stays positioned vertically above the ground.
 
-- A scene consistently framed from a bird’s eye perspective.
+- A video that maintains a fully downward-facing angle.
+
+- A scene that keeps a bird's eye framing of the environment.
 
 </details>
 
@@ -80,7 +82,7 @@ Is the camera positioned at a bird’s eye angle throughout the video, looking d
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at a high angle throughout the video, looking down at the scene but not completely top-down?
+Does the camera maintain a high angle throughout, consistently looking downward compared to a level angle but not directly top-down?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -90,47 +92,49 @@ Is the camera positioned at a high angle throughout the video, looking down at t
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at a high angle for the entire video?
+- Does the shot maintain a downward-facing high angle throughout?
 
-- Is the starting and ending frame taken from a downward-tilted perspective?
+- Is the camera consistently positioned at a higher viewpoint, looking down compared to a level angle?
 
-- Does the video maintain a high vantage point from start to finish?
+- Does the video keep the camera angled downward but not entirely overhead?
 
-- Is the camera positioned slightly above level angle throughout?
+- Is the shot captured from an elevated position throughout, looking slightly down?
 
-- Does the sequence keep a high-angle perspective the whole time?
+- Does the sequence maintain a perspective higher than a level angle but lower than a bird's-eye view?
 
-- Is the video filmed entirely at a high angle without changing?
+- Is the camera consistently positioned with a noticeable downward tilt compared to a straight-on view?
 
-- Does the framing stay at an elevated viewpoint for the whole video?
+- Does the camera keep a view looking downward, but not completely top-down?
 
-- Is the entire video shot with the camera angled downward?
+- Is the shot recorded from a higher elevation than a neutral level angle throughout?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera is positioned at a high angle throughout the video, looking down at the scene but not completely top-down.
+- The camera maintains a high angle throughout, consistently looking downward compared to a level angle but not directly top-down.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a high-angle perspective from start to finish.
+- A shot maintaining a high-angle perspective, looking downward compared to a neutral angle.
 
-- A shot consistently captured from a slightly downward-tilted angle.
+- A video keeping an elevated viewpoint, angled downward but not extreme.
 
-- A video where the camera stays at an elevated position without changing.
+- A sequence with a consistent high-angle framing, positioned above level angle.
 
-- A sequence entirely framed from a high-angle viewpoint.
+- A shot where the camera stays higher than a level angle, tilting downward.
 
-- A shot maintaining a high perspective without shifting angles.
+- A video maintaining a perspective slightly above normal eye level, looking down.
 
-- A video where the camera remains angled downward throughout.
+- A shot where the camera remains positioned at a high angle, but not completely top-down.
 
-- A scene consistently framed from a high perspective.
+- A video that keeps an elevated framing, angled slightly downward.
+
+- A scene that maintains the camera positioned higher than a neutral level shot, tilting downward.
 
 </details>
 
@@ -151,7 +155,7 @@ Is the camera positioned at a high angle throughout the video, looking down at t
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at a level angle throughout the video, parallel to the ground regardless of Dutch angle?
+Does the camera maintain a level angle parallel to the ground regardless of Dutch angle throughout the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -161,47 +165,49 @@ Is the camera positioned at a level angle throughout the video, parallel to the 
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at a level angle for the entire video?
+- Does the shot maintain the camera aligned parallel to the ground?
 
-- Is the starting and ending frame taken from a straight-on perspective?
+- Is the camera consistently positioned at a neutral level angle?
 
-- Does the video maintain a neutral camera angle throughout?
+- Does the video keep a shot that is neither tilted upward nor downward?
 
-- Is the camera positioned parallel to the ground for the entire duration?
+- Is the shot captured from a level perspective throughout, without an angled tilt?
 
-- Does the sequence keep a level viewpoint from start to finish?
+- Does the sequence maintain a camera angle parallel to the ground?
 
-- Is the video filmed entirely at a level angle without changing?
+- Is the camera consistently framed at a natural, level viewing angle?
 
-- Does the framing remain neutral and parallel to the ground?
+- Does the video keep a shot that has no vertical inclination?
 
-- Is the entire video shot at a flat horizon level?
+- Is the shot recorded with the camera at a neutral level position throughout?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera remains at a level angle throughout the video, parallel to the ground regardless of Dutch angle.
+- The camera maintains a level angle parallel to the ground regardless of Dutch angle throughout the video.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a level perspective from start to finish.
+- A shot maintaining a neutral level angle, parallel to the ground.
 
-- A shot consistently captured from a straight-on angle.
+- A video keeping a level perspective, without tilt.
 
-- A video where the camera stays at a neutral position without tilting.
+- A sequence with a consistent camera position at a straight-on angle.
 
-- A sequence entirely framed at a level viewpoint.
+- A shot showing a level camera position with no upward or downward tilt.
 
-- A shot maintaining a level angle without shifting.
+- A video maintaining a natural, eye-level viewpoint, parallel to the ground.
 
-- A video where the camera remains flat and parallel to the ground.
+- A shot where the camera stays level without angling up or down.
 
-- A scene consistently framed at a level perspective.
+- A video that keeps a neutral, parallel-to-ground perspective.
+
+- A scene that maintains the camera set at a balanced level angle.
 
 </details>
 
@@ -222,7 +228,7 @@ Is the camera positioned at a level angle throughout the video, parallel to the 
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at a low angle throughout the video, looking upward from a lower perspective but not directly from below?
+Does the camera maintain a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -232,47 +238,49 @@ Is the camera positioned at a low angle throughout the video, looking upward fro
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at a low angle for the entire video?
+- Does the shot maintain an upward-tilted camera angle?
 
-- Is the starting and ending frame taken from an upward-facing perspective?
+- Is the camera consistently positioned below a level viewpoint?
 
-- Does the video maintain a low vantage point from start to finish?
+- Does the video keep the camera angled upward from a low position?
 
-- Is the camera positioned slightly below level angle throughout?
+- Is the shot captured from a perspective looking up throughout?
 
-- Does the sequence keep a low-angle perspective the whole time?
+- Does the sequence maintain a camera angle lower than a level view?
 
-- Is the video filmed entirely at a low angle without changing?
+- Is the camera consistently framed from a low vantage point looking up?
 
-- Does the framing stay at an upward viewpoint for the whole video?
+- Does the video keep the camera positioned below the main subject or scene?
 
-- Is the entire video shot with the camera angled slightly upward?
+- Is the shot recorded from a lower-than-normal camera height throughout?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera is positioned at a low angle throughout the video, looking upward from a lower perspective but not directly from below.
+- The camera maintains a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a low-angle perspective from start to finish.
+- A shot maintaining a low angle, looking upward.
 
-- A shot consistently captured from a slightly upward-tilted angle.
+- A video keeping a low-angle perspective.
 
-- A video where the camera stays at a low position without changing.
+- A sequence with a consistent camera position below eye level.
 
-- A sequence entirely framed from a low-angle viewpoint.
+- A shot showing the environment from a low vantage point.
 
-- A shot maintaining a low perspective without shifting angles.
+- A video maintaining an upward-tilted view.
 
-- A video where the camera remains angled upward throughout.
+- A shot where the camera stays positioned at a low height, pointing up.
 
-- A scene consistently framed from a low perspective.
+- A video that keeps an angle looking up at the subject or scene.
+
+- A scene that maintains a low-positioned, upward-facing camera.
 
 </details>
 
@@ -293,7 +301,7 @@ Is the camera positioned at a low angle throughout the video, looking upward fro
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at a worm’s eye angle throughout the video, looking sharply upward to the sky?
+Does the camera maintain a worm's eye angle throughout, consistently looking straight up from below?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -303,47 +311,49 @@ Is the camera positioned at a worm’s eye angle throughout the video, looking s
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at a worm’s eye angle for the entire video?
+- Does the shot maintain the camera looking straight up?
 
-- Is the starting and ending frame taken from an extreme low-angle perspective?
+- Is the camera consistently positioned at a worm's eye perspective?
 
-- Does the video maintain an upward-facing camera position throughout?
+- Does the video keep an extreme low-angle shot looking upward?
 
-- Is the camera positioned extremely low and directed sharply upward from start to finish?
+- Is the shot captured from below throughout, with the camera pointing skyward?
 
-- Does the sequence keep a worm’s eye viewpoint the whole time?
+- Does the sequence maintain a worm's eye view, looking vertically up?
 
-- Is the video filmed entirely at a worm’s eye angle without changing?
+- Is the camera consistently positioned at the lowest perspective, directed upward?
 
-- Does the framing stay at a low-angle perspective for the whole video?
+- Does the video keep an angle opposite to a bird's eye view?
 
-- Is the entire video shot with the camera pointed significantly upward?
+- Is the shot recorded with the camera tilted steeply upwards throughout?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera remains at a worm’s eye angle throughout the video, looking sharply upward to the sky.
+- The camera maintains a worm's eye angle throughout, consistently looking straight up from below.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a worm’s eye perspective from start to finish.
+- A shot maintaining a worm's eye angle, looking steeply upward.
 
-- A shot consistently captured from an extreme low-angle viewpoint.
+- A video keeping a worm's eye view, capturing the sky or ceiling.
 
-- A video where the camera stays at a worm’s eye position without tilting away.
+- A sequence with a consistent camera position extremely low and pointing up.
 
-- A sequence entirely framed from a worm’s eye perspective.
+- A shot showing the environment from a worm's eye perspective.
 
-- A shot maintaining an extreme low angle without shifting.
+- A video maintaining a dramatically low-angle upward tilt.
 
-- A video where the camera remains angled steeply upward throughout.
+- A shot where the camera stays positioned at ground level and directed upward.
 
-- A scene consistently framed from a worm’s eye perspective, emphasizing height.
+- A video that keeps the camera framing subjects from an extreme low viewpoint.
+
+- A scene that maintains the camera tilted strongly upwards, emphasizing height.
 
 </details>
 

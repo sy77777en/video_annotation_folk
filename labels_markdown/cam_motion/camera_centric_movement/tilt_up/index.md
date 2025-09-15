@@ -9,14 +9,14 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera tilt up in the scene?
+Does the camera tilt upward?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera tilt upward in the scene?
+- Does the camera tilt up in the scene?
 
-- Does the camera tilt upward?
+- Does the camera tilt upward in the scene?
 
 - Does the camera execute a tilt movement upward?
 
@@ -62,11 +62,11 @@ Does the camera tilt up in the scene?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera tilts upward.
+
 - A shot where the camera tilts up.
 
 - A shot where the camera tilts upward.
-
-- The camera tilts upward.
 
 - The camera tilts up in the scene.
 
@@ -134,12 +134,12 @@ Does the camera tilt up in the scene?
 
 
 <h3>📖 Definition:</h3>
-Does the camera only tilt up in the scene?
+Does the camera only tilt upward without any other camera movements?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera only tilt upward in the scene, without any other camera movements?
+- Does the camera only tilt up in the scene?
 
 - Does the camera only tilt upward?
 
@@ -186,6 +186,8 @@ Does the camera only tilt up in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only tilts upward without any other camera movements.
 
 - A shot where the camera only tilts up.
 

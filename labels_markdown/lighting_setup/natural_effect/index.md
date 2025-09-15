@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a noticeable aerial perspective, where distant scenery appears lighter, less detailed, and less saturated due to atmospheric effects?
+Does the video feature a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video feature a noticeable aerial perspective, where distant scenery ap
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a noticeable aerial perspective, where distant scenery appears lighter, less detailed, and less saturated due to atmospheric effects.
+- The video features a noticeable aerial perspective, where distant scenery appears less detailed, desaturated, and hazier due to atmospheric effects.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video feature a noticeable aerial perspective, where distant scenery ap
 
 
 <h3>📖 Definition:</h3>
-Does the video feature an aurora, displaying colorful light patterns in the sky?
+Does the video feature an aurora, with flowing, colorful light patterns in the sky?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video feature an aurora, displaying colorful light patterns in the sky?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features an aurora, displaying colorful light patterns in the sky.
+- The video features an aurora, with flowing, colorful light patterns in the sky.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video feature an aurora, displaying colorful light patterns in the sky?
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a noticeable heat haze effect, creating air distortions caused by rising heat?
+Does the video feature a noticeable heat haze effect, with air distortions and shimmering caused by rising heat?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video feature a noticeable heat haze effect, creating air distortions c
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a noticeable heat haze effect, creating air distortions caused by rising heat.
+- The video features a noticeable heat haze effect, with air distortions and shimmering caused by rising heat.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video feature a noticeable heat haze effect, creating air distortions c
 
 
 <h3>📖 Definition:</h3>
-Does the video show a visible lightning effect with sudden, intense flashes and jagged branching streaks?
+Does the video capture a lightning effect with intense flashes and jagged, branching streaks?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video show a visible lightning effect with sudden, intense flashes and 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video shows a visible lightning effect with sudden, intense flashes and jagged branching streaks.
+- The video captures a lightning effect with intense flashes and jagged, branching streaks.
 
 </details>
 

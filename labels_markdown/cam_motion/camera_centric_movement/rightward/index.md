@@ -9,12 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera move right in the scene?
+Does the camera move rightward in the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera move rightward in the scene?
+- Does the camera move right in the scene?
 
 - Does the camera move from left to right?
 
@@ -64,6 +64,10 @@ Does the camera move right in the scene?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera moves rightward.
+
+- The camera moves right.
+
 - A shot where the camera moves right.
 
 - A shot where the camera moves rightward.
@@ -75,10 +79,6 @@ Does the camera move right in the scene?
 - A shot where the camera trucks rightward.
 
 - A shot where the camera trucks from left to right.
-
-- The camera moves rightward.
-
-- The camera moves right.
 
 - The camera moves from left to right.
 
@@ -154,12 +154,12 @@ Does the camera move right in the scene?
 
 
 <h3>📖 Definition:</h3>
-Does the camera only move right in the scene?
+Does the camera only move rightward without any other camera movements?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera only move rightward, without any other camera movements?
+- Does the camera only move right in the scene?
 
 - Does the camera only move from left to right?
 
@@ -206,6 +206,8 @@ Does the camera only move right in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only moves rightward without any other camera movements.
 
 - A shot where the camera only moves right.
 

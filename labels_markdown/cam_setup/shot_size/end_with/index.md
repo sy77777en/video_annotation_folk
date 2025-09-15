@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video end with a close-up shot that highlights a distinct part of the subject while maintaining context?
+Does the video end with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -44,7 +44,7 @@ Does the video end with a close-up shot that highlights a distinct part of the s
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that ends with a close-up shot, highlighting a distinct part of the subject while maintaining context.
+- A video that ends with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.
 
 </details>
 
@@ -232,7 +232,7 @@ Does the video end with a wide shot?
 
 
 <h3>📖 Definition:</h3>
-Does the video end with a full shot that frames the entire body of the subject?
+Does the video end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -267,7 +267,7 @@ Does the video end with a full shot that frames the entire body of the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that ends with a full shot, framing the entire subject while maintaining focus on it.
+- A video that ends with a full shot, framing the entire subject while maintaining focus on it without showing excessive surrounding scenery.
 
 </details>
 
@@ -556,7 +556,7 @@ Does the video end with a medium full shot that frames the human subject from th
 
 
 <h3>📖 Definition:</h3>
-Does the video end with a wide shot of scenery, or a wide shot that frames the subject while keeping enough background context?
+Does the video end with a wide shot of scenery, or frames the entire subject while keeping ample background context?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -591,7 +591,7 @@ Does the video end with a wide shot of scenery, or a wide shot that frames the s
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with either a wide shot of scenery or a wide shot that frames the subject while keeping enough background context.
+- The video ends with either a wide shot of scenery or a wide shot that frames the entire subject while keeping ample background context.
 
 </details>
 

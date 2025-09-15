@@ -100,10 +100,10 @@ Does the video include shot transitions?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.shot_transition</code>
+<code>self.lighting_setup.shot_transition is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.lighting_setup.shot_transition</code>
+<code>self.lighting_setup.shot_transition is False</code>
 
 </details>
 

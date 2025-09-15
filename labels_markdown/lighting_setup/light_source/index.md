@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Are practical artificial light sources visible in the video?
+The scene is consistently lit by artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video.
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Are practical artificial light sources visible in the video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video contains practical artificial light sources that are clearly visible.
+- The scene is consistently lit by artificial practical light sources, such as lamps, streetlights, or LEDs, with the light source visible at some point in the video.
 
 </details>
 
@@ -74,79 +74,6 @@ Are practical artificial light sources visible in the video?
 </details>
 
 <details>
-<summary><h2>Has Complex Changing Light Source</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>has_changing_light_source</code>
-
-
-<h3>📖 Definition:</h3>
-Does the video feature changing light sources?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the light source change dynamically across different parts of the video?
-
-- Is the illumination shifting unpredictably between different lighting setups?
-
-- Does the video feature inconsistent or rapidly changing light sources?
-
-- Is the scene affected by multiple fluctuating light sources?
-
-- Does the lighting undergo frequent transformations or significant variations?
-
-- Is the video characterized by a mix of different lighting types over time?
-
-- Does the light source appear complex and non-uniform throughout the sequence?
-
-- Is the scene influenced by multiple changing or contrasting light sources?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The video contains changing light sources.
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video where the light source is dynamic and ever-changing.
-
-- A shot with unpredictable and shifting lighting conditions.
-
-- A scene featuring multiple contrasting or fluctuating light sources.
-
-- A video characterized by varying illumination setups.
-
-- A sequence where lighting changes significantly over time.
-
-- A shot where brightness, color, or intensity varies unpredictably.
-
-- A video with irregular or mixed lighting across different moments.
-
-- A scene where the light source alternates frequently.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.complex_light_source is True</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.complex_light_source is False</code>
-
-</details>
-
-<details>
 <summary><h2>Has Firelight</h2></summary>
 
 
@@ -155,7 +82,7 @@ Does the video feature changing light sources?
 
 
 <h3>📖 Definition:</h3>
-Is firelight the primary light source in the video, even if the fire itself is not visible?
+Is the scene consistently lit primarily by firelight, and the fire is visible in the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -164,6 +91,8 @@ Is firelight the primary light source in the video, even if the fire itself is n
 
 <details>
 <summary><h4> Alternative Question</h4></summary>
+
+- Is firelight the primary light source in the video, even if the fire itself is not visible?
 
 - Is the scene primarily lit by a fire, such as a candle, torch, or campfire?
 
@@ -186,12 +115,14 @@ Is firelight the primary light source in the video, even if the fire itself is n
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The primary light source in the video is firelight, whether or not the fire itself is visible.
+- The scene is consistently lit primarily by firelight, and the fire is visible in the scene.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- The video is primarily lit by firelight, even if the fire itself is not visible.
 
 - A video where firelight serves as the main source of illumination.
 
@@ -220,15 +151,15 @@ Is firelight the primary light source in the video, even if the fire itself is n
 </details>
 
 <details>
-<summary><h2>Has Moonlight</h2></summary>
+<summary><h2>Has Moonlight or Starlight</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>has_moonlight</code>
+<code>has_moonlight_starlight</code>
 
 
 <h3>📖 Definition:</h3>
-Is moonlight the primary light source in the video, with the moon visibly present?
+Is the scene consistently lit primarily by moonlight or starlight, and the moon or stars are visible in the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +190,7 @@ Is moonlight the primary light source in the video, with the moon visibly presen
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The primary light source in the video is moonlight, and the moon is visible in the frame.
+- The scene is consistently lit primarily by moonlight or starlight, and the moon or stars are visible in the scene.
 
 </details>
 
@@ -301,7 +232,7 @@ Is moonlight the primary light source in the video, with the moon visibly presen
 
 
 <h3>📖 Definition:</h3>
-Is the video lit by a light source that is neither visible in the frame nor recognizable as sunlight or firelight?
+Does the video never show any visible light source, and the lighting cannot be clearly attributed to sunlight?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,12 +263,14 @@ Is the video lit by a light source that is neither visible in the frame nor reco
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is lit by a light source that is neither visible in the frame nor recognizable as sunlight or firelight.
+- The video never shows any visible light source, and the lighting cannot be clearly attributed to sunlight.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- The video is lit by artificial light (e.g., not sunlight or firelight), with the light source not visible in the frame.
 
 - A video where the light source is not identifiable.
 
@@ -374,7 +307,7 @@ Is the video lit by a light source that is neither visible in the frame nor reco
 
 
 <h3>📖 Definition:</h3>
-Is sunlight the primary light source in the video, even if the sun itself is not visible?
+Is the scene consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -383,6 +316,8 @@ Is sunlight the primary light source in the video, even if the sun itself is not
 
 <details>
 <summary><h4> Alternative Question</h4></summary>
+
+- Is sunlight the primary light source in the video, even if the sun itself is not visible?
 
 - Does the scene appear to be naturally illuminated by sunlight?
 
@@ -405,12 +340,14 @@ Is sunlight the primary light source in the video, even if the sun itself is not
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The primary light source in the video is sunlight, whether or not the sun is visible.
+- The scene is consistently lit primarily by sunlight, whether or not the sun itself is visible in the frame.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- The primary light source in the video is sunlight, whether or not the sun is visible.
 
 - A video where daylight is the dominant light source.
 
@@ -439,6 +376,79 @@ Is sunlight the primary light source in the video, even if the sun itself is not
 </details>
 
 <details>
+<summary><h2>Has Unclear or Changing Light Source</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>has_unclear_or_changing_light_source</code>
+
+
+<h3>📖 Definition:</h3>
+Does the video’s primary light source change over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the light source change dynamically across different parts of the video?
+
+- Is the illumination shifting unpredictably between different lighting setups?
+
+- Does the video feature inconsistent or rapidly changing light sources?
+
+- Is the scene affected by multiple fluctuating light sources?
+
+- Does the lighting undergo frequent transformations or significant variations?
+
+- Is the video characterized by a mix of different lighting types over time?
+
+- Does the light source appear complex and non-uniform throughout the sequence?
+
+- Is the scene influenced by multiple changing or contrasting light sources?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video’s primary light source changes over time or comes from an uncommon source other than the sun, fire, moon, stars, or artificial light.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the light source is dynamic and ever-changing.
+
+- A shot with unpredictable and shifting lighting conditions.
+
+- A scene featuring multiple contrasting or fluctuating light sources.
+
+- A video characterized by varying illumination setups.
+
+- A sequence where lighting changes significantly over time.
+
+- A shot where brightness, color, or intensity varies unpredictably.
+
+- A video with irregular or mixed lighting across different moments.
+
+- A scene where the light source alternates frequently.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.complex_light_source is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.complex_light_source is False</code>
+
+</details>
+
+<details>
 <summary><h2>Is Abstract Light Source</h2></summary>
 
 
@@ -447,7 +457,7 @@ Is sunlight the primary light source in the video, even if the sun itself is not
 
 
 <h3>📖 Definition:</h3>
-Does the video lacks a realistic light source, with lighting that does not follow natural physics?
+Does the video feature an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -478,7 +488,7 @@ Does the video lacks a realistic light source, with lighting that does not follo
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video lacks a realistic light source, with lighting that does not follow natural physics.
+- The video features an abstract or synthetic scene, with non-physically realistic lighting that makes it hard to identify the light source.
 
 </details>
 

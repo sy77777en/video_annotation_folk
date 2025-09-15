@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a noticeable visual effect created by light reflecting off a smooth, glossy surface?
+Does the video feature a noticeable specular reflection from light bouncing off a smooth, glossy surface but does not clearly mirror the scene in detail?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video feature a noticeable visual effect created by light reflecting of
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a noticeable visual effect created by light reflecting off a smooth, glossy surface.
+- The video features a noticeable specular reflection from light bouncing off a smooth, glossy surface but does not clearly mirror the scene in detail.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video feature a noticeable visual effect created by light reflecting of
 
 
 <h3>📖 Definition:</h3>
-Does the video show a strong visual effect from light reflecting off a mirror or glass, producing clear reflections of the scenery?
+Does the video show reflections from light bouncing off a mirror, clearly mirroring the scenery in detail?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video show a strong visual effect from light reflecting off a mirror or
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video shows a strong visual effect from light reflecting off a mirror or glass, producing clear reflections of the scenery.
+- The video shows reflections from light bouncing off a mirror, clearly mirroring the scenery in detail.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video show a strong visual effect from light reflecting off a mirror or
 
 
 <h3>📖 Definition:</h3>
-Does the video show a noticable visual effect caused by light reflecting off water?
+Does the video show noticeable shimmering effects or bright highlights from light reflecting off water?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video show a noticable visual effect caused by light reflecting off wat
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video shows a noticable visual effect caused by light reflecting off water.
+- The video shows noticeable shimmering effects or bright highlights from light reflecting off water.
 
 </details>
 

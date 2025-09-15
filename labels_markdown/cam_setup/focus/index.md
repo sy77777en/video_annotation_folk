@@ -1,15 +1,15 @@
 # Focus Overview
 
 <details>
-<summary><h2>Focus Changes from In Focus to Out of Focus</h2></summary>
+<summary><h2>Focus Change</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>focus_change_from_in_to_out_of_focus</code>
+<code>focus_change</code>
 
 
 <h3>📖 Definition:</h3>
-Does the video start with a sharp focus on a subject or area and then become out of focus?
+Does the focal plane shift noticeably between foreground, middleground, or background regions?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -19,57 +19,57 @@ Does the video start with a sharp focus on a subject or area and then become out
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot begin with a clear, in-focus subject and then become blurry?
+- Is there a noticeable shift in the focal plane?
 
-- Is there a focus shift where a sharp subject gradually turns out of focus?
+- Does the focus distance change during the shot?
 
-- Does the video transition from a well-defined focal point to a blurred frame?
+- Is there a change in which part of the scene is in focus?
 
-- Is the initial shot crisp but then loses focus over time?
+- Does the area of sharp focus shift during the video?
 
-- Does the sequence start with a clear subject before it becomes blurred?
+- Is there a transition in focal distance?
 
-- Is the focus deliberately pulled away, making the subject indistinct?
+- Does the focus point move between different depths?
 
-- Does the shot start sharp but gradually lose focus?
+- Is there a deliberate change in focus during the shot?
 
-- Is there a gradual shift where the scene moves from clarity to a soft blur?
+- Does the focal plane shift between different distances?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with a sharp focus and then becomes out of focus.
+- The focal plane shifts noticeably between foreground, middleground, or background regions.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video where the subject starts in focus but fades into a blur.
+- A video with changing focal plane.
 
-- A scene that begins with a well-defined focal point and then loses clarity.
+- A shot with focus transitions.
 
-- A shot where a crisp subject gradually becomes out of focus.
+- A video showing focus changes.
 
-- A video where the depth of field softens as the focal area becomes blurry.
+- A shot with shifting focus planes.
 
-- A sequence where the focus moves away, making the subject indistinct.
+- A video with varying focal distances.
 
-- A shot where an initially sharp subject transitions into a blurred frame.
+- A shot demonstrating focus movement.
 
-- A video where a clear scene progressively becomes unfocused.
+- A video with focus transitions.
 
-- A scene where the focus starts sharp but gradually blurs over time.
+- A shot with dynamic focus changes.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.focus_info['end'] == 'out_of_focus' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_change is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])</code>
+<code>self.cam_setup.focus_change is False</code>
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video start with a sharp focus on a subject or area and then become out
 
 
 <h3>📖 Definition:</h3>
-Does the focal plane transition from distant to close?
+Does the focal plane shift from distant to close, moving between foreground, middleground, or background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the focal plane transition from distant to close?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the focus plane transitions from distant to close.
+- The focus plane shifts from distant to close, moving between foreground, middleground, or background.
 
 </details>
 
@@ -147,6 +147,79 @@ Does the focal plane transition from distant to close?
 </details>
 
 <details>
+<summary><h2>Focus Changes from In Focus to Out of Focus</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>focus_change_from_in_to_out_of_focus</code>
+
+
+<h3>📖 Definition:</h3>
+Does the camera start in sharp focus and then shift out of focus?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the shot begin with a clear, in-focus subject and then become blurry?
+
+- Is there a focus shift where a sharp subject gradually turns out of focus?
+
+- Does the video transition from a well-defined focal point to a blurred frame?
+
+- Is the initial shot crisp but then loses focus over time?
+
+- Does the sequence start with a clear subject before it becomes blurred?
+
+- Is the focus deliberately pulled away, making the subject indistinct?
+
+- Does the shot start sharp but gradually lose focus?
+
+- Is there a gradual shift where the scene moves from clarity to a soft blur?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera starts in sharp focus and then shifts out of focus.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the subject starts in focus but fades into a blur.
+
+- A scene that begins with a well-defined focal point and then loses clarity.
+
+- A shot where a crisp subject gradually becomes out of focus.
+
+- A video where the depth of field softens as the focal area becomes blurry.
+
+- A sequence where the focus moves away, making the subject indistinct.
+
+- A shot where an initially sharp subject transitions into a blurred frame.
+
+- A video where a clear scene progressively becomes unfocused.
+
+- A scene where the focus starts sharp but gradually blurs over time.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.focus_change_from_in_to_out_of_focus is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.cam_setup.focus_change_from_in_to_out_of_focus is False</code>
+
+</details>
+
+<details>
 <summary><h2>Focus Change From Near To Far</h2></summary>
 
 
@@ -155,7 +228,7 @@ Does the focal plane transition from distant to close?
 
 
 <h3>📖 Definition:</h3>
-Does the focal plane transition from close to distant?
+Does the focal plane shift from close to distant, moving between foreground, middleground, or background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -184,7 +257,7 @@ Does the focal plane transition from close to distant?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the focus plane transitions from close to distant.
+- The focus plane shifts from close to distant, moving between foreground, middleground, or background.
 
 </details>
 
@@ -226,7 +299,7 @@ Does the focal plane transition from close to distant?
 
 
 <h3>📖 Definition:</h3>
-Does the video start out of focus and then become in focus?
+Does the camera start out of focus and then become in focus?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -257,7 +330,7 @@ Does the video start out of focus and then become in focus?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts out of focus and then becomes in focus.
+- The camera starts out of focus and then becomes in focus.
 
 </details>
 
@@ -283,10 +356,10 @@ Does the video start out of focus and then become in focus?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_change_from_out_to_in_focus is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background', 'unknown'])</code>
+<code>self.cam_setup.focus_change_from_out_to_in_focus is False</code>
 
 </details>
 
@@ -299,7 +372,7 @@ Does the video start out of focus and then become in focus?
 
 
 <h3>📖 Definition:</h3>
-Does the video have a deep depth of field, ensuring distant details remain sharp?
+Does the camera use a deep depth of field with distant details remaining sharp?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -330,7 +403,7 @@ Does the video have a deep depth of field, ensuring distant details remain sharp
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video has a deep depth of field, ensuring distant details remain sharp.
+- The camera uses a deep depth of field with distant details remaining sharp.
 
 </details>
 
@@ -372,7 +445,7 @@ Does the video have a deep depth of field, ensuring distant details remain sharp
 
 
 <h3>📖 Definition:</h3>
-Is it possible to determine the camera focus properties?
+Can the camera’s depth of field be perceived or inferred from the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -401,7 +474,7 @@ Is it possible to determine the camera focus properties?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera focus characteristics can be meaningfully classified.
+- The camera’s depth of field can be perceived or inferred from the video.
 
 </details>
 
@@ -443,7 +516,7 @@ Is it possible to determine the camera focus properties?
 
 
 <h3>📖 Definition:</h3>
-Is there focus tracking on a moving subject in the video?
+Does the camera use focus tracking to follow a moving subject in the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -474,7 +547,7 @@ Is there focus tracking on a moving subject in the video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that maintains focus on a subject as it moves through the frame.
+- The camera uses focus tracking to follow a moving subject in the video.
 
 </details>
 
@@ -589,7 +662,7 @@ Is rack focus or pull focus used in the video?
 
 
 <h3>📖 Definition:</h3>
-Is the camera using a shallow depth of field with limited focus range?
+Is the camera using shallow depth of field, with a limited but noticeable range of space in focus?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -620,7 +693,7 @@ Is the camera using a shallow depth of field with limited focus range?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot using shallow depth of field, with limited range of focus.
+- The camera uses shallow depth of field, with a limited but noticeable range of space in focus.
 
 </details>
 
@@ -662,7 +735,7 @@ Is the camera using a shallow depth of field with limited focus range?
 
 
 <h3>📖 Definition:</h3>
-Does the video have an extremely shallow depth of field?
+Is the camera using extremely shallow depth of field, with only a narrow plane in focus?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -693,7 +766,7 @@ Does the video have an extremely shallow depth of field?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot using extremely shallow depth of field, with a very narrow focus range.
+- The camera uses extremely shallow depth of field, with a very narrow focus range.
 
 </details>
 

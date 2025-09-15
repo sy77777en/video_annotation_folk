@@ -9,12 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera move left in the scene?
+Does the camera move leftward in the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera move leftward in the scene?
+- Does the camera move left in the scene?
 
 - Does the camera move from right to left?
 
@@ -64,6 +64,10 @@ Does the camera move left in the scene?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera moves leftward.
+
+- The camera moves left.
+
 - A shot where the camera moves left.
 
 - A shot where the camera moves leftward.
@@ -75,10 +79,6 @@ Does the camera move left in the scene?
 - A shot where the camera trucks leftward.
 
 - A shot where the camera trucks from right to left.
-
-- The camera moves leftward.
-
-- The camera moves left.
 
 - The camera moves from right to left.
 
@@ -154,12 +154,12 @@ Does the camera move left in the scene?
 
 
 <h3>📖 Definition:</h3>
-Does the camera only move left in the scene?
+Does the camera only move leftward without any other camera movements?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera only move leftward, without any other camera movements?
+- Does the camera only move left in the scene?
 
 - Does the camera only move from right to left?
 
@@ -206,6 +206,8 @@ Does the camera only move left in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only moves leftward without any other camera movements.
 
 - A shot where the camera only moves left.
 

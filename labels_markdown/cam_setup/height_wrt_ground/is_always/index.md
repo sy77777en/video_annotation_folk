@@ -19,21 +19,21 @@ Is the camera positioned at an aerial level throughout the video?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at an aerial perspective for the entire video?
+- Is the camera at an aerial level throughout the video?
 
-- Is the camera height consistently high, capturing scenes from above?
+- Is the camera positioned high at an aerial level throughout the video?
 
-- Does the video maintain an elevated aerial viewpoint from start to finish?
+- Is the camera at a high altitude throughout the video?
 
-- Is the camera positioned at aerial level without transitioning to a lower height?
+- Is the camera capturing an aerial view throughout the video?
 
-- Does the video continuously feature an aerial perspective?
+- Is the camera positioned at an aerial perspective throughout the video?
 
-- Is the shot composed entirely from a high-altitude viewpoint?
+- Is the camera at an aerial level height throughout the video?
 
-- Does the framing stay at an aerial level without descending?
+- Is the camera providing a bird's-eye view throughout the video?
 
-- Is the video filmed entirely from an elevated aerial position?
+- Is the camera recording from a high altitude throughout the video?
 
 </details>
 
@@ -47,19 +47,21 @@ Is the camera positioned at an aerial level throughout the video?
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining an aerial perspective from start to finish.
+- A shot maintained at an aerial level, taken from a high altitude.
 
-- A shot consistently captured from a high-altitude viewpoint.
+- A video with a consistent aerial shot, capturing a wide perspective.
 
-- A video where the camera stays at an elevated position.
+- A sequence that maintains a high-elevation view.
 
-- A sequence entirely filmed from an aerial level.
+- A shot showing the environment from an elevated aerial position.
 
-- A shot maintaining an aerial perspective without height changes.
+- A video with a consistent bird's-eye perspective.
 
-- A video where the camera remains above ground at a high altitude.
+- A shot where the camera is positioned high above the ground.
 
-- A scene consistently framed from an aerial viewpoint.
+- A video that maintains a top-down or high-altitude framing.
+
+- A scene that keeps a drone-like aerial viewpoint.
 
 </details>
 
@@ -80,7 +82,7 @@ Is the camera positioned at an aerial level throughout the video?
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at eye level throughout the video, roughly at a person's eye height, above the waist but below overhead level?
+Is the camera positioned at eye level throughout the video (roughly at a person's eye height, above the waist)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -90,47 +92,49 @@ Is the camera positioned at eye level throughout the video, roughly at a person'
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at eye level for the entire video?
+- Is the camera at eye level throughout the video?
 
-- Is the starting and ending frame taken from an eye-level perspective?
+- Is the camera positioned at an eye-level perspective throughout the video?
 
-- Does the video maintain a height typical of a standing person’s eyes?
+- Is the camera at a height typical of a standing person's eyes throughout the video?
 
-- Is the camera positioned at eye level from start to finish?
+- Is the camera at a height similar to a person's eye level throughout the video?
 
-- Does the sequence keep an eye-level viewpoint without transitioning?
+- Is the camera maintaining an eye-level perspective throughout the video?
 
-- Is the video filmed entirely at eye level?
+- Is the camera at an eye-level height throughout the video?
 
-- Does the framing remain above waist height but below overhead for the whole video?
+- Is the camera positioned above waist level but below overhead level throughout the video?
 
-- Is the entire shot positioned at a natural human viewpoint?
+- Is the camera aligned with a natural human viewpoint throughout the video?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera is positioned at eye level throughout the video, roughly at a person's eye height, above the waist but below overhead level.
+- The camera is positioned at eye level throughout the video (roughly at a person's eye height, above the waist).
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining an eye-level perspective from start to finish.
+- A shot maintained at eye level, captured at a natural viewing height.
 
-- A shot consistently captured at a natural viewing height.
+- A video with a consistent eye-level perspective, maintaining a familiar human viewpoint.
 
-- A video where the camera stays at eye level without changing.
+- A sequence that maintains a camera position at typical standing eye height.
 
-- A sequence entirely framed from an eye-level viewpoint.
+- A shot showing the environment from a natural eye-level angle.
 
-- A shot maintaining an eye-level perspective without shifting heights.
+- A video with a consistent straight-on view at eye level.
 
-- A video where the camera remains at a natural human viewpoint.
+- A shot where the camera is positioned at a height similar to a person's eyes.
 
-- A scene that is consistently framed from an eye-level height.
+- A video that maintains a perspective slightly above waist height but below overhead.
+
+- A scene that keeps a balanced, eye-level framing of the environment.
 
 </details>
 
@@ -151,7 +155,7 @@ Is the camera positioned at eye level throughout the video, roughly at a person'
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at ground level throughout the video?
+Is the camera positioned at ground level throughout the video, positioned close to the ground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -161,47 +165,49 @@ Is the camera positioned at ground level throughout the video?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at ground level for the entire video?
+- Is the camera at ground level throughout the video?
 
-- Is the starting and ending frame taken from a ground-level perspective?
+- Is the camera positioned very close to the ground throughout the video?
 
-- Does the video maintain a low viewpoint near the ground surface?
+- Is the camera at a height just above the ground throughout the video?
 
-- Is the camera positioned close to the ground from start to finish?
+- Is the camera at a height similar to ground level throughout the video?
 
-- Does the sequence keep a ground-level viewpoint without transitioning?
+- Is the camera maintaining a ground-level perspective throughout the video?
 
-- Is the video filmed entirely at ground level?
+- Is the camera at a ground-level height throughout the video?
 
-- Does the framing remain at a near-ground height for the whole video?
+- Is the camera positioned almost touching the ground throughout the video?
 
-- Is the entire shot positioned at a ground-level height?
+- Is the camera aligned with the ground surface throughout the video?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera is positioned at ground level throughout the video.
+- The camera is positioned at ground level throughout the video, positioned close to the ground.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a ground-level perspective from start to finish.
+- A shot maintained at ground level, captured very close to the ground.
 
-- A shot consistently captured at ground level.
+- A video with a consistent ground-level perspective, maintaining a low viewpoint.
 
-- A video where the camera stays at ground level without changing.
+- A sequence that maintains a camera position just above the ground.
 
-- A sequence entirely framed from a ground-level viewpoint.
+- A shot showing the environment from a ground-level angle.
 
-- A shot maintaining a low perspective without shifting heights.
+- A video with a consistent view at ground level.
 
-- A video where the camera remains just above the ground surface.
+- A shot where the camera is positioned almost touching the ground.
 
-- A scene that is consistently framed from a ground-level height.
+- A video that maintains a perspective very close to the ground.
+
+- A scene that keeps a balanced, ground-level framing of the environment.
 
 </details>
 
@@ -222,7 +228,7 @@ Is the camera positioned at ground level throughout the video?
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at hip level, roughly between knee and waist height, whether or not a human subject is present?
+Is the camera positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -232,21 +238,21 @@ Is the camera positioned at hip level, roughly between knee and waist height, wh
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at hip level for the entire video?
+- Is the camera at hip level throughout the video?
 
-- Is the starting and ending frame taken from a hip-level perspective?
+- Is the camera positioned at a hip-level perspective throughout the video?
 
-- Does the video maintain a height between the hips and knees?
+- Is the camera at a height typical of a person's hips throughout the video?
 
-- Is the camera positioned at hip level from start to finish?
+- Is the camera at a height similar to a person's hip level throughout the video?
 
-- Does the sequence keep a hip-level viewpoint without transitioning?
+- Is the camera maintaining a hip-level perspective throughout the video?
 
-- Is the video filmed entirely at hip level?
+- Is the camera at a hip-level height throughout the video?
 
-- Does the framing remain at mid-body height for the whole video?
+- Is the camera positioned below eye level but above ground level throughout the video?
 
-- Is the entire shot positioned at a hip-level height?
+- Is the camera aligned with a typical hip height throughout the video?
 
 </details>
 
@@ -260,19 +266,21 @@ Is the camera positioned at hip level, roughly between knee and waist height, wh
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining a hip-level perspective from start to finish.
+- A shot maintained at hip level, captured at a typical hip height.
 
-- A shot consistently captured at hip level.
+- A video with a consistent hip-level perspective, maintaining a familiar hip-height viewpoint.
 
-- A video where the camera stays at hip level without changing.
+- A sequence that maintains a camera position at typical hip height.
 
-- A sequence entirely framed from a hip-level viewpoint.
+- A shot showing the environment from a hip-level angle.
 
-- A shot maintaining a hip-level perspective without shifting heights.
+- A video with a consistent view at hip level.
 
-- A video where the camera remains at mid-body height.
+- A shot where the camera is positioned at a height similar to a person's hips.
 
-- A scene that is consistently framed from a hip-level height.
+- A video that maintains a perspective below eye level but above ground.
+
+- A scene that keeps a balanced, hip-level framing of the environment.
 
 </details>
 
@@ -293,7 +301,7 @@ Is the camera positioned at hip level, roughly between knee and waist height, wh
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned at an overhead level throughout the video, positioned above human height but below an aerial view, roughly at second-floor level?
+Is the camera positioned at an overhead level throughout the video, above eye level but below aerial (around second-floor height)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -303,47 +311,49 @@ Is the camera positioned at an overhead level throughout the video, positioned a
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the camera remain at an overhead level for the entire video?
+- Is the camera at an overhead level throughout the video?
 
-- Is the starting and ending frame taken from an overhead perspective?
+- Is the camera positioned at an overhead level throughout the video?
 
-- Does the video maintain a high vantage point but lower than aerial level?
+- Is the camera at a high vantage point but lower than aerial level throughout the video?
 
-- Is the camera positioned at a height between 1.5 to 3 person-heights above the ground throughout?
+- Is the camera at a second-floor height or similar throughout the video?
 
-- Does the sequence keep an overhead viewpoint from start to finish?
+- Is the camera maintaining an overhead view throughout the video?
 
-- Is the video filmed entirely at an overhead level without transitioning?
+- Is the camera at an overhead level height throughout the video?
 
-- Does the framing remain above eye level but below aerial for the whole video?
+- Is the camera positioned from above regular human height throughout the video?
 
-- Is the entire shot positioned at an overhead perspective?
+- Is the camera at a height between 1.5 to 3 person-heights throughout the video?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera is positioned at an overhead level throughout the video, positioned above human height but below an aerial view, roughly at second-floor level.
+- The camera is positioned at an overhead level throughout the video, above eye level but below aerial (around second-floor height).
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video maintaining an overhead perspective from start to finish.
+- A shot maintained at an overhead level, taken from a second-floor height.
 
-- A shot consistently captured from an overhead height.
+- A video with a consistent overhead perspective, from a second-floor height.
 
-- A video where the camera stays at an overhead level without changing.
+- A sequence that maintains a vantage point between eye level and aerial level.
 
-- A sequence entirely framed from a high vantage point but not aerial.
+- A shot showing the environment from a high but not extreme aerial position.
 
-- A shot maintaining an overhead perspective without shifting heights.
+- A video with a consistent high view but not an extreme aerial perspective.
 
-- A video where the camera remains above human height but below aerial.
+- A shot where the camera is positioned at 1.5 to 3 person-heights above ground.
 
-- A scene that is consistently framed from an overhead level.
+- A video that maintains a high viewpoint without reaching aerial height.
+
+- A scene that keeps a balanced overhead framing.
 
 </details>
 

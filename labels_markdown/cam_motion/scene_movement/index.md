@@ -72,10 +72,10 @@ Is the scene in the video dynamic?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.scene_movement in ['dynamic']</code>
+<code>self.cam_motion.dynamic_scene is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.scene_movement in ['static']</code>
+<code>self.cam_motion.dynamic_scene is False</code>
 
 </details>
 
@@ -151,10 +151,10 @@ Is the scene in the video mostly static with minimal movement?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.scene_movement in ['mostly_static', 'static']</code>
+<code>self.cam_motion.mostly_static_scene is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.scene_movement in ['dynamic']</code>
+<code>self.cam_motion.mostly_static_scene is False</code>
 
 </details>
 
@@ -242,16 +242,9 @@ Is the scene in the video completely static?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.scene_movement in ['static']</code>
+<code>self.cam_motion.static_scene is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.scene_movement not in ['mostly_static', 'dynamic']</code>
-
-<details>
-<summary><h4>🔴 Negative (Easy)</h4></summary>
-
-- <b>dynamic_scene</b>: <code>self.cam_motion.scene_movement not in ['dynamic']</code>
-
-</details>
+<code>self.cam_motion.static_scene is False</code>
 
 </details>

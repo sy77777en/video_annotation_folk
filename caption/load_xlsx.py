@@ -185,21 +185,21 @@ def analyze_data_overlap(video_data_dict: Dict[str, Any], captions_data: List[Di
     return sorted_overlap_list, missing_in_captions, missing_in_videos, overlap_invalid, nonoverlap_invalid
 
 
-def save_overlapping_videos_json(sorted_overlap: List[str], save_dir: str, dataset_base_url: str, num_splits: int = 10) -> None:
+def save_overlapping_videos_json(sorted_overlap: List[str], save_dir: str, video_data_dict: Dict[str, Any], num_splits: int = 10) -> None:
     """
     Save the overlapping video URLs to JSON files.
     
     Args:
         sorted_overlap: List of overlapping video filenames (already sorted)
         save_dir: Directory to save the JSON files
-        dataset_base_url: Base URL for the dataset
+        video_data_dict: Dictionary of video data
         num_splits: Number of splits to create
     """
     # Create directory if it doesn't exist
     os.makedirs(save_dir, exist_ok=True)
     
     # Prepare full URLs using the already sorted list
-    full_urls = [f"{dataset_base_url}/{video}" for video in sorted_overlap]
+    full_urls = [video_data_dict[video].get_video_url() for video in sorted_overlap]
     
     # Save all videos to a single file
     all_videos_path = os.path.join(save_dir, f"overlap_all_{len(full_urls)}.json")
@@ -219,21 +219,21 @@ def save_overlapping_videos_json(sorted_overlap: List[str], save_dir: str, datas
         print(f"Saved split {i+1}/{num_splits} to {split_path}")
 
 
-def save_invalid_videos_json(invalid_videos: Set[str], save_dir: str, dataset_base_url: str, prefix: str) -> None:
+def save_invalid_videos_json(invalid_videos: Set[str], save_dir: str, video_data_dict: Dict[str, Any], prefix: str) -> None:
     """
     Save the invalid video URLs to JSON files.
     
     Args:
         invalid_videos: Set of invalid video filenames
         save_dir: Directory to save the JSON files
-        dataset_base_url: Base URL for the dataset
+        video_data_dict: Dictionary of video data
         prefix: Prefix for the output filename (overlap_invalid or nonoverlap_invalid)
     """
     # Create directory if it doesn't exist
     os.makedirs(save_dir, exist_ok=True)
     
     # Prepare full URLs
-    full_urls = [f"{dataset_base_url}/{video}" for video in invalid_videos]
+    full_urls = [video_data_dict[video].get_video_url() for video in invalid_videos]
     
     # Save to a single file
     invalid_path = os.path.join(save_dir, f"{prefix}.json")
@@ -456,20 +456,20 @@ def create_overlap_excel_splits(captions_data: List[Dict[str, Any]],
             print(f"Skip creating split {i+1}/{num_splits} Excel file as no data found")
 
 
-def save_nonoverlapping_videos_json(missing_in_videos: Set[str], save_dir: str, dataset_base_url: str) -> None:
+def save_nonoverlapping_videos_json(missing_in_videos: Set[str], save_dir: str, video_data_dict: Dict[str, Any]) -> None:
     """
     Save the non-overlapping video URLs to a JSON file.
     
     Args:
         missing_in_videos: Set of video filenames that are in our data but not in Adobe data
         save_dir: Directory to save the JSON file
-        dataset_base_url: Base URL for the dataset
+        video_data_dict: Dictionary of video data
     """
     # Create directory if it doesn't exist
     os.makedirs(save_dir, exist_ok=True)
     
     # Prepare full URLs
-    full_urls = [f"{dataset_base_url}/{video}" for video in missing_in_videos]
+    full_urls = [video_data_dict[video].get_video_url() for video in missing_in_videos]
     
     # Save to a single file
     nonoverlap_path = os.path.join(save_dir, f"nonoverlap_all_{len(full_urls)}.json")
@@ -496,7 +496,7 @@ def main():
     
     # Configuration
     xlsx_files = ['adobe_2_19.xlsx', 'adobe_2_17.xlsx']
-    dataset_base_url = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main"
+    # dataset_base_url = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main"
     
     # Load caption data from all xlsx files
     print("Loading caption data from Excel files...")
@@ -527,14 +527,14 @@ def main():
     os.makedirs(excel_dir, exist_ok=True)
     
     # Save overlapping videos to JSON files - using the SAME sorted list
-    save_overlapping_videos_json(sorted_overlap, json_dir, dataset_base_url)
+    save_overlapping_videos_json(sorted_overlap, json_dir, video_data_dict)
     
     # Save non-overlapping videos to JSON file
-    save_nonoverlapping_videos_json(missing_in_captions, json_dir, dataset_base_url)
+    save_nonoverlapping_videos_json(missing_in_captions, json_dir, video_data_dict)
     
     # Save invalid videos to JSON files
-    save_invalid_videos_json(overlap_invalid, json_dir, dataset_base_url, "overlap_invalid")
-    save_invalid_videos_json(nonoverlap_invalid, json_dir, dataset_base_url, "nonoverlap_invalid")
+    save_invalid_videos_json(overlap_invalid, json_dir, video_data_dict, "overlap_invalid")
+    save_invalid_videos_json(nonoverlap_invalid, json_dir, video_data_dict, "nonoverlap_invalid")
     
     # Save overlapping videos to main Excel file - using the SAME sorted list
     excel_output_path = os.path.join(excel_dir, "overlap_all.xlsx")

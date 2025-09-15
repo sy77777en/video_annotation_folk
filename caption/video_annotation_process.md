@@ -70,27 +70,64 @@ Before processing new videos, you might want to pad existing batch files to end 
 
 #### **Usage:**
 ```bash
-# Find truly new videos not in any existing batch files
-python find_new_videos.py caption/video_urls/20250911_setup_and_motion/overlap_all_XXX.json
+# For overlap videos
+python -m caption.find_new_videos caption/video_urls/20250912_setup_and_motion/ --mode overlap
+
+# For nonoverlap videos  
+python -m caption.find_new_videos caption/video_urls/20250912_setup_and_motion/ --mode nonoverlap
 ```
 
-#### **Example Scenario:**
-You have a file `1180_to_1183.json` with only 3 videos, but you want it to end at 1190 (containing 10 videos total). The script will:
-1. Load all existing videos from your `main_config.py` 
-2. Find 7 new videos from your September dataset that aren't duplicates
-3. Output the first 7 for you to manually add to the file
+#### **How It Works:**
+1. **Automatic Detection**: Finds `overlap_all_*.json` or `nonoverlap_all_*.json` in the directory
+2. **Smart Analysis**: Reads your current `main_config.py` to find the last batch number for the specified mode
+3. **Gap Calculation**: Determines exactly how many videos are needed to round up to the nearest 10
+4. **File Creation**: Creates a single, clearly named padding file with the exact videos needed
 
-#### **After Finding New Videos:**
-1. **Update the batch file**: Add the 7 new videos to `1180_to_1183.json`
-2. **Rename the file**: Change `1180_to_1183.json` to `1180_to_1190.json`
-3. **Update main_config.py**: Change the filename reference:
+#### **Possible Outcomes:**
+
+**Case 1: Padding Needed**
+If your last file is `1180_to_1183.json` (needs 7 videos to reach 1190):
+```
+=== Created file for nonoverlap mode ===
+File: caption/video_urls/20250912_setup_and_motion/nonoverlap_padding_7_videos.json
+Contains: 7 videos for padding from 1183 to 1190
+Note: 326 additional new videos available for future batches
+
+=== Next steps ===
+1. Add the 7 videos from caption/video_urls/20250912_setup_and_motion/nonoverlap_padding_7_videos.json
+   to your current file: 1180_to_1183.json
+2. Rename that file to: 1180_to_1190.json
+3. Update main_config.py to reference the new filename
+4. Run your process_new_videos script which will start from 1190
+
+Details:
+- Current: 1180_to_1183.json has 3 videos (positions 1180 to 1182)
+- After padding: 1180_to_1190.json will have 10 videos (positions 1180 to 1189)
+```
+
+**Case 2: No Padding Needed**
+If your last file already ends with 0 (e.g., `1510_to_1520.json`):
+```
+✓ No padding needed for nonoverlap mode - already ends with 0!
+✓ Your nonoverlap batches are perfectly aligned
+✓ You can proceed directly with your process_new_videos script
+
+ℹ️  Available for future batches: 1513 new videos
+   Saved to: nonoverlap_future_1513_videos.json
+```
+
+#### **After Finding New Videos (If Padding Needed):**
+1. **Copy the videos**: Copy the videos from the generated `*_padding_X_videos.json` file
+2. **Add to current file**: Paste them into your current batch file (e.g., `1180_to_1183.json`)
+3. **Rename the file**: Change the filename to end with the target round number (e.g., `1180_to_1190.json`)
+4. **Update main_config.py**: Update the `DEFAULT_VIDEO_URLS_FILES` list to reference the new filename:
    ```python
-   # Change this line in DEFAULT_VIDEO_URLS_FILES:
+   # Change this line:
    'video_urls/20250406_setup_and_motion/1180_to_1183.json',
    # To this:
    'video_urls/20250406_setup_and_motion/1180_to_1190.json',
    ```
-4. **Future batches will align**: Next files will be `1190_to_1200.json`, `1200_to_1210.json`, etc.
+5. **Future batches will align**: Next files will be perfectly aligned to round numbers
 
 ### Creating Shell Scripts in `process_new_videos/`
 
