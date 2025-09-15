@@ -9,10 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera pan left in the scene?
+Does the camera pan to the left?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera pan left in the scene?
 
 - Does the camera pan leftward in the scene?
 
@@ -63,6 +65,8 @@ Does the camera pan left in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera pans to the left.
 
 - A shot where the camera pans left.
 
@@ -144,14 +148,14 @@ Does the camera pan left in the scene?
 
 
 <h3>📖 Definition:</h3>
-Does the camera only pan from right to left?
+Does the camera only pan leftward without any other camera movements?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera only pan left in the scene, without any other camera movements?
+- Does the camera only pan from right to left?
 
-- Does the camera only pan leftward, without any other camera movements?
+- Does the camera only pan left in the scene, without any other camera movements?
 
 - Does the camera only pan leftward?
 
@@ -198,6 +202,8 @@ Does the camera only pan from right to left?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only pans leftward without any other camera movements.
 
 - A shot where the camera only pans left.
 

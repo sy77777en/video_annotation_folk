@@ -1,79 +1,6 @@
 # Scene Overview
 
 <details>
-<summary><h2>Scene Type Is Complex/Others</h2></summary>
-
-
-<h3>🔵 Label Name:</h3>
-<code>scene_type_is_complex_others</code>
-
-
-<h3>📖 Definition:</h3>
-Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?
-
-<details>
-<summary><h4> Question (Definition)</h4></summary>
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
-
-- Does the video contain mixed or unclear environments?
-
-- Is the scene type inconsistent, changing between different settings?
-
-- Does the video transition between interior and exterior shots?
-
-- Is it difficult to determine whether the scene is indoors or outdoors?
-
-- Does the setting lack clear spatial context?
-
-- Is the background too abstract or stylized to determine a concrete location?
-
-- Does the video feature multiple environments without a dominant one?
-
-- Is the scene composition too complex to categorize simply?
-
-</details>
-
-<details>
-<summary><h4> Prompt (Definition)</h4></summary>
-
-- The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine).
-
-</details>
-
-<details>
-<summary><h4> Alternative Prompt</h4></summary>
-
-- A video where the scene type is hard to categorize.
-
-- A shot where the setting changes between indoor and outdoor.
-
-- A sequence with an unclear or shifting environment.
-
-- A video where the background lacks a clear spatial definition.
-
-- A scene where the location is ambiguous or abstract.
-
-- A shot with inconsistent or mixed spatial elements.
-
-- A video where no dominant environment is clear.
-
-- A setting that cannot be classified as purely interior, exterior, or synthetic.
-
-</details>
-
-<h4>🟢 Positive:</h4>
-<code>self.lighting_setup.scene_type == 'complex_others'</code>
-
-<h4>🔴 Negative:</h4>
-<code>self.lighting_setup.scene_type != 'complex_others'</code>
-
-</details>
-
-<details>
 <summary><h2>Scene Type Is Exterior</h2></summary>
 
 
@@ -82,7 +9,7 @@ Is the scene type unclear, ambiguous, or changing throughout the video (e.g., tr
 
 
 <h3>📖 Definition:</h3>
-Is the video set in an outdoor environment?
+Is the video captured through a camera (real or simulated) and taking place outdoors with physically realistic lighting?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +40,7 @@ Is the video set in an outdoor environment?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is set in an outdoor environment.
+- The video is captured through a camera (real or simulated) and takes place outdoors with physically realistic lighting.
 
 </details>
 
@@ -139,10 +66,10 @@ Is the video set in an outdoor environment?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.scene_type == 'exterior'</code>
+<code>self.lighting_setup.scene_type_is_exterior is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.scene_type != 'exterior'</code>
+<code>self.lighting_setup.scene_type_is_exterior is False</code>
 
 </details>
 
@@ -155,7 +82,7 @@ Is the video set in an outdoor environment?
 
 
 <h3>📖 Definition:</h3>
-Is the video set in an indoor environment?
+Is the video captured through a camera (real or simulated) and taking place indoors with physically realistic lighting?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +113,7 @@ Is the video set in an indoor environment?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is set in an indoor environment.
+- The video is captured through a camera (real or simulated) and takes place indoors with physically realistic lighting.
 
 </details>
 
@@ -212,15 +139,15 @@ Is the video set in an indoor environment?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.scene_type == 'interior'</code>
+<code>self.lighting_setup.scene_type_is_interior is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.scene_type != 'interior'</code>
+<code>self.lighting_setup.scene_type_is_interior is False</code>
 
 </details>
 
 <details>
-<summary><h2>Scene Type Is Synthetic/Unrealistic</h2></summary>
+<summary><h2>Scene Type Is Synthetic</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
@@ -228,7 +155,7 @@ Is the video set in an indoor environment?
 
 
 <h3>📖 Definition:</h3>
-Is the video set in a synthetic or unrealistic environment with lighting effects that defy real-world physics?
+Is the video not a camera capture but a stylized or non-photorealistic render (e.g., anime, cartoons, or low-fidelity game graphics) with non-physically realistic lighting such as flat shading, fake shadows, missing reflections, or exaggerated glow effects?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,12 +186,14 @@ Is the video set in a synthetic or unrealistic environment with lighting effects
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video is set in a synthetic or unrealistic environment with lighting effects that defy real-world physics.
+- The video is not a camera capture but a stylized or non-photorealistic render (e.g., anime, cartoons, or low-fidelity game graphics) with non-physically realistic lighting such as flat shading, fake shadows, missing reflections, or exaggerated glow effects.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- The video shows a synthetic environment with unnatural lighting effects that defy real-world physics.
 
 - A video taking place in a digitally created world.
 
@@ -285,9 +214,86 @@ Is the video set in a synthetic or unrealistic environment with lighting effects
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lighting_setup.scene_type == 'unrealistic_synthetic'</code>
+<code>self.lighting_setup.scene_type_is_synthetic is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lighting_setup.scene_type != 'unrealistic_synthetic'</code>
+<code>self.lighting_setup.scene_type_is_synthetic is False</code>
+
+</details>
+
+<details>
+<summary><h2>Scene Type Is Unclear or Changing</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>scene_type_is_unclear_or_changing</code>
+
+
+<h3>📖 Definition:</h3>
+Is the video captured through a camera (real or simulated) with physically realistic lighting, but with an environment that is ambiguous, transitions between indoors and outdoors, or cannot be reliably determined?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Is the scene type unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine)?
+
+- Does the video contain mixed or unclear environments?
+
+- Is the scene type inconsistent, changing between different settings?
+
+- Does the video transition between interior and exterior shots?
+
+- Is it difficult to determine whether the scene is indoors or outdoors?
+
+- Does the setting lack clear spatial context?
+
+- Is the background too abstract or stylized to determine a concrete location?
+
+- Does the video feature multiple environments without a dominant one?
+
+- Is the scene composition too complex to categorize simply?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The video is captured through a camera (real or simulated) with physically realistic lighting, but whether it is indoors or outdoors is unclear or changes during the video.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- The scene type is unclear, ambiguous, or changing throughout the video (e.g., transitions between indoor and outdoor, or the setting is difficult to determine).
+
+- A video where the scene type is hard to categorize.
+
+- A shot where the setting changes between indoor and outdoor.
+
+- A sequence with an unclear or shifting environment.
+
+- A video where the background lacks a clear spatial definition.
+
+- A scene where the location is ambiguous or abstract.
+
+- A shot with inconsistent or mixed spatial elements.
+
+- A video where no dominant environment is clear.
+
+- A setting that cannot be classified as purely interior, exterior, or synthetic.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.scene_type_is_unclear_or_changing is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.scene_type_is_unclear_or_changing is False</code>
 
 </details>

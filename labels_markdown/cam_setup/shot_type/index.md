@@ -206,7 +206,7 @@ The video includes a subject change, where a subject appears, disappears, or tra
 
 
 <h3>📖 Definition:</h3>
-Is there a clear subject in the video, but its anatomy looks unnatural or exaggerated, as seen in games or CGI?
+Does the video feature a clear subject whose anatomy looks unnatural or exaggerated?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -237,7 +237,7 @@ Is there a clear subject in the video, but its anatomy looks unnatural or exagge
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot with a clear subject that has unnatural or exaggerated anatomy, typical in games or CGI.
+- A video featuring a clear subject whose anatomy looks unnatural or exaggerated.
 
 </details>
 
@@ -279,7 +279,7 @@ Is there a clear subject in the video, but its anatomy looks unnatural or exagge
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a clear subject, but changes in framing make shot size classification tricky?
+Is there a clear subject, but changes in framing make it hard to classify the shot size?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -308,7 +308,7 @@ Does the video feature a clear subject, but changes in framing make shot size cl
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a clear subject, but changes in framing make shot size classification tricky.
+- A video with a clear subject that changes in framing, making it hard to classify the shot size.
 
 </details>
 
@@ -348,7 +348,7 @@ Does the video feature a clear subject, but changes in framing make shot size cl
 
 
 <h3>📖 Definition:</h3>
-Does the video feature different subjects, varying in type or size, making shot size classification difficult?
+Does the video feature different subjects, varying in type or framing, making it hard to classify the shot size?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -367,7 +367,7 @@ Does the video feature different subjects, varying in type or size, making shot 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features different subjects (e.g., varying in type or size) in focus, making shot size classification difficult.
+- The video features different subjects (e.g., varying in type or framing) in focus, making it hard to classify the shot size.
 
 </details>
 
@@ -397,7 +397,7 @@ Does the video feature different subjects, varying in type or size, making shot 
 
 
 <h3>📖 Definition:</h3>
-Does the video consistently feature one dominant human subject or a single group of human subjects in the frame?
+Does the video consistently feature one or two salient human subjects?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -428,7 +428,7 @@ Does the video consistently feature one dominant human subject or a single group
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot consistently featuring either a single human subject or a single group of humans.
+- A video with one or two salient human subjects.
 
 </details>
 
@@ -564,7 +564,7 @@ Does the video feature multiple subjects, but one clearly stands out as the main
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot featuring multiple subjects where one clearly dominates as the main focus.
+- A video featuring multiple subjects where one clearly dominates as the main focus.
 
 </details>
 
@@ -602,7 +602,7 @@ Does the video feature multiple subjects, but one clearly stands out as the main
 
 
 <h3>📖 Definition:</h3>
-Does the video consistently feature one dominant non-human subject or a single group of non-human subjects in the frame?
+Does the video consistently feature one or two salient non-human subjects?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -633,7 +633,7 @@ Does the video consistently feature one dominant non-human subject or a single g
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot consistently featuring either a single non-human subject or a single group of non-human subjects.
+- A video with one or two salient non-human subjects.
 
 </details>
 
@@ -746,7 +746,7 @@ Does the video focus on scenery or environment without emphasis on any subjects?
 
 
 <h3>📖 Definition:</h3>
-Does the video feature a subject and scene that do not match, making it difficult to classify shot size?
+Is there a mismatch between the subject and scene framing that makes it hard to classify the shot size?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -767,7 +767,7 @@ Does the video feature a subject and scene that do not match, making it difficul
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the subject and scene scales are mismatched, complicating shot size classification.
+- A video featuring a subject and scene that do not match in framing, making it hard to classify the shot size.
 
 </details>
 

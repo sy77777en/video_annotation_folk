@@ -113,7 +113,7 @@ Does the video end with the camera positioned at the same height as the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that ends with the camera positioned at the subject’s height.
+- A video that ends with the camera positioned at the same height as the subject.
 
 </details>
 

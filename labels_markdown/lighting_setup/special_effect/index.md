@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video feature bright and colorful city lighting?
+Does the video feature bright and colorful city lighting from various artificial sources?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the video feature bright and colorful city lighting?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features bright and colorful city lighting.
+- The video features bright, colorful city lighting from various artificial sources.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video feature bright and colorful city lighting?
 
 
 <h3>📖 Definition:</h3>
-Does the video prominently feature artificial colored or neon lighting?
+Does the video feature artificial colored or neon lighting?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video prominently feature artificial colored or neon lighting?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video prominently features artificial colored or neon lighting.
+- The video features artificial colored or neon lighting.
 
 </details>
 
@@ -186,7 +186,7 @@ Does the video feature a headlight or flashlight that illuminates the scene in f
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a headlight or flashlight that illuminates the scene in front with intense, focused light, creating sharp contrast against darker surroundings.
+- The video features a headlight or flashlight illuminating the scene in front with intense, focused light, creating sharp contrast with the darker surroundings.
 
 </details>
 
@@ -220,15 +220,15 @@ Does the video feature a headlight or flashlight that illuminates the scene in f
 </details>
 
 <details>
-<summary><h2>Has Rim Light</h2></summary>
+<summary><h2>Professional Lighting</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>rim_light</code>
+<code>professional_lighting</code>
 
 
 <h3>📖 Definition:</h3>
-Does the video use rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect?
+Does the lighting appear professionally done (e.g., portrait, stage, or cinematic lighting)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -237,6 +237,81 @@ Does the video use rim lighting, where a hard light from behind highlights the s
 
 <details>
 <summary><h4> Alternative Question</h4></summary>
+
+- Does the video use controlled lighting to enhance the subject’s appearance?
+
+- Is the lighting arranged to create a professional studio look?
+
+- Does the scene feature portrait-style lighting with soft, flattering illumination?
+
+- Is the subject lit in a way that is typical for professional photography?
+
+- Does the shot use specialized portrait lighting techniques?
+
+- Is the lighting setup aimed at achieving a professional or cinematic appearance?
+
+- Does the subject benefit from a carefully arranged lighting setup?
+
+- Is the lighting used to highlight the subject’s features in a controlled manner?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The lighting setup appears professionally done (e.g., portrait, stage, or cinematic lighting).
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video featuring controlled lighting that enhances the subject’s appearance.
+
+- A scene where the subject is illuminated with professional studio lighting.
+
+- A shot using carefully arranged portrait lighting techniques.
+
+- A video where the lighting is designed for a professional, polished look.
+
+- A sequence with a cinematic and controlled lighting setup.
+
+- A scene where portrait lighting enhances the subject’s facial details.
+
+- A shot that applies high-quality lighting for a refined visual effect.
+
+- A composition that follows standard portrait lighting practices.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.lighting_setup.professional_lighting is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.lighting_setup.professional_lighting is False</code>
+
+</details>
+
+<details>
+<summary><h2>Has Rim Light</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>rim_light</code>
+
+
+<h3>📖 Definition:</h3>
+Is there rim lighting that creates a glowing edge around the subject?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the video use rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect?
 
 - Does the subject have a bright outline created by backlighting?
 
@@ -259,12 +334,14 @@ Does the video use rim lighting, where a hard light from behind highlights the s
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video uses rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect.
+- Rim lighting creates a glowing edge around the subject.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- The video uses rim lighting, where a hard light from behind highlights the subject’s edges, creating a bright rim effect.
 
 - A video where rim lighting emphasizes the subject’s edges with a backlight glow.
 
@@ -301,7 +378,7 @@ Does the video use rim lighting, where a hard light from behind highlights the s
 
 
 <h3>📖 Definition:</h3>
-Does the video use silhouette lighting, rendering the subject or foreground as a dark outline against a brightly lit background?
+Is there a silhouette lighting effect that creates a dark outline of the foreground subject against a bright background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +409,7 @@ Does the video use silhouette lighting, rendering the subject or foreground as a
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video uses silhouette lighting, rendering the subject or foreground as a dark outline against a brightly lit background.
+- Silhouette lighting creates a dark outline of the foreground subject against a bright background.
 
 </details>
 
@@ -374,7 +451,7 @@ Does the video use silhouette lighting, rendering the subject or foreground as a
 
 
 <h3>📖 Definition:</h3>
-Does the video feature visible light from street lamps?
+Does the video feature light from street lamps?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -405,7 +482,7 @@ Does the video feature visible light from street lamps?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features visible light from street lamps.
+- The video features light from street lamps.
 
 </details>
 
@@ -478,7 +555,7 @@ Does the video feature a vignette effect, where the edges gradually darken or fa
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features a vignette effect, where the edges gradually darken or fade.
+- The video features a vignette effect, with edges that gradually darken or fade.
 
 </details>
 
@@ -551,7 +628,7 @@ Does the video feature water caustics, where light creates dynamic rippling patt
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features water caustics, where light creates dynamic rippling patterns.
+- The video features water caustics, where refracted and reflected light creates dynamic, rippling patterns.
 
 </details>
 

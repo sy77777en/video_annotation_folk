@@ -70,10 +70,10 @@ Does the camera show complex motion, such as moving in conflicting directions, o
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement == 'major_complex'</code>
+<code>self.cam_motion.is_complex_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_movement != 'major_complex'</code>
+<code>self.cam_motion.is_complex_motion is False</code>
 
 </details>
 
@@ -131,10 +131,10 @@ Is the camera motion minimal, hard to discern, or very subtle?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement == 'minor'</code>
+<code>self.cam_motion.is_minor_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_movement != 'minor' and self.cam_motion.steadiness not in ['unsteady', 'very_unsteady']</code>
+<code>self.cam_motion.is_minor_motion is False</code>
 
 </details>
 
@@ -202,9 +202,9 @@ Does the camera show simple motion, such as moving in a single direction, mainta
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.camera_movement == 'major_simple'</code>
+<code>self.cam_motion.is_simple_motion is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.cam_motion.camera_movement != 'major_simple'</code>
+<code>self.cam_motion.is_simple_motion is False</code>
 
 </details>

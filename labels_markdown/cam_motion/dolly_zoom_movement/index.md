@@ -44,6 +44,8 @@ Does the shot feature a dolly zoom effect with the camera moving forward and zoo
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera performs a dolly zoom effect with forward movement and zoom-out.
+
 - A scene featuring a dolly zoom effect with a forward camera movement and zoom-out.
 
 - A dolly zoom shot with the camera moving forward and zooming out.
@@ -80,15 +82,15 @@ Does the shot feature a dolly zoom effect with the camera moving forward and zoo
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom</code>
+<code>self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.dolly_zoom or self.cam_motion.forward is False or self.cam_motion.zoom_out is False</code>
+<code>self.cam_motion.dolly_zoom is False or self.cam_motion.forward is False or self.cam_motion.zoom_out is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>dolly_out_zoom_in</b>: <code>self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom</code>
+- <b>dolly_out_zoom_in</b>: <code>self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom is True</code>
 
 </details>
 
@@ -138,6 +140,8 @@ Does the shot feature a dolly zoom effect with the camera moving backward and zo
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera performs a dolly zoom effect with backward movement and zoom-in.
+
 - A scene featuring a dolly zoom effect with a backward camera movement and zoom-in.
 
 - A dolly zoom shot with the camera moving backward and zooming in.
@@ -174,15 +178,15 @@ Does the shot feature a dolly zoom effect with the camera moving backward and zo
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom</code>
+<code>self.cam_motion.backward is True and self.cam_motion.zoom_in is True and self.cam_motion.dolly_zoom is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.dolly_zoom or self.cam_motion.backward is False or self.cam_motion.zoom_in is False</code>
+<code>self.cam_motion.dolly_zoom is False or self.cam_motion.backward is False or self.cam_motion.zoom_in is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>dolly_in_zoom_out</b>: <code>self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom</code>
+- <b>dolly_in_zoom_out</b>: <code>self.cam_motion.forward is True and self.cam_motion.zoom_out is True and self.cam_motion.dolly_zoom is True</code>
 
 </details>
 

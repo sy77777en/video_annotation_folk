@@ -26,6 +26,12 @@ class VideoData:
         else:
             raise TypeError("workflow_data must be a WorkflowData instance or a dictionary of parameters")
         self._workflows[key] = workflow
+    
+    def get_video_url(self):
+        """Get the video URL from any workflow (they should all be the same)."""
+        if not self.workflows:
+            raise AttributeError("No workflows available to get video URL from")
+        return next(iter(self.workflows.values())).video_url
 
     @property
     def cam_motion(self):

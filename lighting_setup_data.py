@@ -31,7 +31,7 @@ class LightingSetupData:
         self.firelight_source = None
         self.artificial_light_source = None
         self.non_visible_light_source = None
-        self.abstract_light_source = None
+        # self.abstract_light_source = None
         self.unclear_or_changing_light_source = None
 
         # Sunlight level
@@ -461,11 +461,11 @@ class LightingSetupData:
         else:
             raise ValueError("non_visible_light_source must be a boolean value")
 
-    def set_abstract_light_source(self, abstract_light_source):
-        if isinstance(abstract_light_source, bool):
-            self.abstract_light_source = abstract_light_source
-        else:
-            raise ValueError("abstract_light_source must be a boolean value")
+    # def set_abstract_light_source(self, abstract_light_source):
+    #     if isinstance(abstract_light_source, bool):
+    #         self.abstract_light_source = abstract_light_source
+    #     else:
+    #         raise ValueError("abstract_light_source must be a boolean value")
 
     def set_unclear_or_changing_light_source(self, unclear_or_changing_light_source):
         if isinstance(unclear_or_changing_light_source, bool):
@@ -921,20 +921,20 @@ class LightingSetupData:
         if self.brightness == "bright_deprecated" or self.brightness == "dark_deprecated":
             raise ValueError("brightness cannot be 'bright_deprecated' or 'dark_deprecated'")
 
-        if self.abstract_light_source:
-            if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.unclear_or_changing_light_source]):
-                raise ValueError("abstract_light_source cannot be combined with other light sources")
+        # if self.abstract_light_source:
+        #     if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.unclear_or_changing_light_source]):
+        #         raise ValueError("abstract_light_source cannot be combined with other light sources")
 
-            # scene type must be "unrealistic_synthetic"
-            if self.scene_type != "unrealistic_synthetic":
-                raise ValueError("scene_type must be 'unrealistic_synthetic' if abstract_light_source is True")
+        #     # scene type must be "unrealistic_synthetic"
+        #     if self.scene_type != "unrealistic_synthetic":
+        #         raise ValueError("scene_type must be 'unrealistic_synthetic' if abstract_light_source is True")
         
         if self.scene_type == "unrealistic_synthetic":
             if any([self.sunlight_source, self.moonlight_starlight_source, self.firelight_source, self.artificial_light_source, self.non_visible_light_source, self.unclear_or_changing_light_source]):
                 raise ValueError("No other light sources can be present if scene_type is 'unrealistic_synthetic'")
             
-            if not self.abstract_light_source:
-                raise ValueError("abstract_light_source must be True if scene_type is 'unrealistic_synthetic'")
+            # if not self.abstract_light_source:
+            #     raise ValueError("abstract_light_source must be True if scene_type is 'unrealistic_synthetic'")
 
         # if self.sunlight_source:
         #     if self.sunlight_level == "unknown":
@@ -965,7 +965,7 @@ lighting_setup_params_demo = {
     "firelight_source": False,
     "artificial_light_source": False,
     "non_visible_light_source": False,
-    "abstract_light_source": False,
+    # "abstract_light_source": False,
     "unclear_or_changing_light_source": False,
     "sunlight_level": "sunny",
     "light_quality": "soft_light",

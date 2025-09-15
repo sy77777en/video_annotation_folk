@@ -4,7 +4,7 @@ import argparse
 from process_json import json_to_video_data
 from label import Label, extract_labels_dict
 
-HF_PREFIX = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/"
+# HF_PREFIX = "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/"
 
 
 def save_to_json(data, path):
@@ -93,7 +93,7 @@ def prepare_url_files(
 
     # Check each video
     for video_name, video_data in video_data_dict.items():
-        video_url = HF_PREFIX + video_name
+        video_url = video_data.get_video_url()
 
         # Check if video has shot_transition label
         is_invalid = False

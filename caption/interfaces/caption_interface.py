@@ -64,7 +64,7 @@ class CaptionInterface:
                 st.success(f"This video has already been completed by {prev_feedback_data['user']} and reviewed by {feedback_data['user']}. The final caption is:")
             else:
                 st.success(f"This video has already been completed by {feedback_data['user']}. The final caption is:")
-            st.write(feedback_data["final_caption"])
+            st.text(feedback_data["final_caption"])
             # Render as collapsible text
             with st.expander("Show final JSON Data", expanded=False):
                 st.json(feedback_data)
@@ -566,7 +566,7 @@ class CaptionInterface:
     
     def _render_completion_step(self):
         """Render the completion step"""
-        st.write(st.session_state.feedback_data["final_caption"])
+        st.text(st.session_state.feedback_data["final_caption"])
         st.success("Feedback and caption saved successfully! To redo, please go to another video then come back.")
         st.json(st.session_state.feedback_data)
     

@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the lighting in the video undergo a gradual and smooth color shift over time?
+Does the video feature a smooth color shift, with a gradual yet noticeable change in overall or lighting color?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Does the lighting in the video undergo a gradual and smooth color shift over tim
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The lighting in the video undergoes a gradual and smooth color shift over time.
+- The video features a smooth color shift, with a gradual yet noticeable change in overall or lighting color.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the lighting in the video undergo a gradual and smooth color shift over tim
 
 
 <h3>📖 Definition:</h3>
-Does the lighting in the video undergo abrupt and rapid color changes?
+Does the video feature a sudden color shift, with a rapid and noticeable change in overall or lighting color?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the lighting in the video undergo abrupt and rapid color changes?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The lighting in the video undergoes abrupt and rapid color changes.
+- The video features a sudden color shift, with a rapid and noticeable change in overall or lighting color.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the lighting in the video undergo abrupt and rapid color changes?
 
 
 <h3>📖 Definition:</h3>
-Does the lighting in the video flash, producing sudden bursts of light in an on/off pattern?
+Does the lighting in the video flash, creating sudden bursts of light in an on/off pattern that changes the brightness of the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the lighting in the video flash, producing sudden bursts of light in an on/
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The lighting in the video flashes, producing sudden bursts of light in an on/off pattern.
+- The lighting in the video flashes, creating sudden bursts of light in an on/off pattern that changes the brightness of the scene.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the lighting in the video flash, producing sudden bursts of light in an on/
 
 
 <h3>📖 Definition:</h3>
-Does the video feature moving lights that shift direction or position across the scene?
+Does the video feature major light source(s) that traverse the scene or change direction?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video feature moving lights that shift direction or position across the
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features moving lights that shift direction or position across the scene.
+- The video features major light source(s) that traverse the scene or change direction.
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video feature moving lights that shift direction or position across the
 
 
 <h3>📖 Definition:</h3>
-Does the video feature lighting that rhythmically pulses or irregularly flickers in brightness?
+Does the video feature lighting that varies in brightness, either through rhythmic pulsing or irregular flickering?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Does the video feature lighting that rhythmically pulses or irregularly flickers
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features lighting that rhythmically pulses or irregularly flickers in brightness.
+- The video features lighting that varies in brightness, either through rhythmic pulsing or irregular flickering.
 
 </details>
 

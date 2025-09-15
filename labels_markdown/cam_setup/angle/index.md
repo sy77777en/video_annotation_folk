@@ -1,6 +1,79 @@
 # Angle Overview
 
 <details>
+<summary><h2>Camera Angle Change</h2></summary>
+
+
+<h3>🔵 Label Name:</h3>
+<code>camera_angle_change</code>
+
+
+<h3>📖 Definition:</h3>
+Does the camera angle change significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?
+
+<details>
+<summary><h4> Question (Definition)</h4></summary>
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the camera's viewing angle shift during the shot?
+
+- Is there a noticeable change in the camera's angular perspective?
+
+- Does the camera transition between different viewing angles?
+
+- Is there a shift in how the camera is angled relative to the ground?
+
+- Does the camera's perspective change from one angle to another?
+
+- Is there variation in the camera's angular position?
+
+- Does the shot include changes in the camera's viewing angle?
+
+- Are there transitions between different camera angles?
+
+</details>
+
+<details>
+<summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera angle changes significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.
+
+</details>
+
+<details>
+<summary><h4> Alternative Prompt</h4></summary>
+
+- A video featuring changes in camera angle.
+
+- A sequence with noticeable shifts in angular perspective.
+
+- A shot that transitions between different camera angles.
+
+- A video where the camera's angle relative to the ground changes.
+
+- A sequence showing variation in camera perspective angles.
+
+- A shot with dynamic changes in camera position.
+
+- A video demonstrating shifts in viewing angle.
+
+- A scene with transitions between different camera angles.
+
+</details>
+
+<h4>🟢 Positive:</h4>
+<code>self.cam_setup.camera_angle_change is True</code>
+
+<h4>🔴 Negative:</h4>
+<code>self.cam_setup.camera_angle_change is False</code>
+
+</details>
+
+<details>
 <summary><h2>Camera Angle Change From High To Low</h2></summary>
 
 
@@ -9,7 +82,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera angle decrease noticeably relative to the ground?
+Does the camera angle decrease noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +113,7 @@ Does the camera angle decrease noticeably relative to the ground?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera angle transitions from a higher to a lower position relative to the ground.
+- The camera angle decreases noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.
 
 </details>
 
@@ -82,7 +155,7 @@ Does the camera angle decrease noticeably relative to the ground?
 
 
 <h3>📖 Definition:</h3>
-Does the camera angle increase noticeably relative to the ground?
+Does the camera angle increase noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +186,7 @@ Does the camera angle increase noticeably relative to the ground?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera angle transitions from a lower to a higher position relative to the ground.
+- The camera angle increases noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view.
 
 </details>
 
@@ -155,7 +228,7 @@ Does the camera angle increase noticeably relative to the ground?
 
 
 <h3>📖 Definition:</h3>
-Is camera angle classification possible for this video?
+Is the camera angle relative to the ground clear?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -165,49 +238,49 @@ Is camera angle classification possible for this video?
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Can the camera angle be meaningfully categorized?
+- Can the camera's angle relative to the ground be clearly determined?
 
-- Is it possible to determine the camera's angular position?
+- Is it clear whether the camera is positioned at a high, level, or low angle?
 
-- Can we assess the camera's rotational angle?
+- Can you tell if the camera is angled up, down, or level with the ground?
 
-- Is the camera angle clear enough to classify?
+- Is the camera's angular relationship to the ground evident?
 
-- Can the camera's orientation be effectively categorized?
+- Is it apparent how the camera is tilted relative to the ground?
 
-- Is it feasible to determine the shot angle?
+- Can you determine if the camera is positioned at an angle to the ground?
 
-- Can we meaningfully analyze the camera angle?
+- Is the camera's angular orientation clear?
 
-- Is the camera's angular position classifiable?
+- Can you identify how the camera is angled in relation to the ground?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the camera angle can be meaningfully classified.
+- The camera angle relative to the ground is clear.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video with classifiable camera angle.
+- A shot where the camera's angle relative to the ground can be clearly determined.
 
-- A shot with determinable angular position.
+- A video where it's clear whether the camera is positioned at a high, level, or low angle.
 
-- A video where camera orientation can be assessed.
+- A sequence where the camera's angular relationship to the ground is evident.
 
-- A shot with clear angle categorization.
+- A shot with a clearly visible camera angle.
 
-- A video suitable for angle classification.
+- A video where the camera's tilt relative to the ground is apparent.
 
-- A shot with analyzable camera position.
+- A shot where you can determine how the camera is angled.
 
-- A video with measurable camera angle.
+- A video with a clear angular orientation.
 
-- A shot with definable orientation.
+- A scene where the camera's angle in relation to the ground is identifiable.
 
 </details>
 
@@ -228,7 +301,7 @@ Is camera angle classification possible for this video?
 
 
 <h3>📖 Definition:</h3>
-Is an obvious Dutch (Canted) angle (of more than 15 degrees) present in the video?
+Is a Dutch (canted) angle of more than 15 degrees present at any point in the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +332,7 @@ Is an obvious Dutch (Canted) angle (of more than 15 degrees) present in the vide
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot that employs an obvious Dutch (Canted) camera angle of more than 15 degrees.
+- There is a Dutch (canted) angle of more than 15 degrees present at any point in the video.
 
 </details>
 
@@ -301,7 +374,7 @@ Is an obvious Dutch (Canted) angle (of more than 15 degrees) present in the vide
 
 
 <h3>📖 Definition:</h3>
-Does the Dutch angle remain the same throughout the video?
+Does the degree of the Dutch (canted) angle stay the same throughout the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +405,7 @@ Does the Dutch angle remain the same throughout the video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot maintaining a consistent Dutch angle throughout its duration.
+- The degree of the Dutch (canted) angle stays the same throughout the video.
 
 </details>
 
@@ -374,7 +447,7 @@ Does the Dutch angle remain the same throughout the video?
 
 
 <h3>📖 Definition:</h3>
-Does the degree of the Dutch angle shift throughout the video?
+Does the degree of the Dutch (canted) angle shift throughout the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -405,7 +478,7 @@ Does the degree of the Dutch angle shift throughout the video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A shot where the degree of Dutch angle changes throughout its duration.
+- There is a Dutch (canted) angle in the video, and its degree varies.
 
 </details>
 

@@ -241,16 +241,16 @@ class UIComponents:
         """Display feedback information including scores, GPT feedback, and caption differences"""
         # ALWAYS show Final Caption at the top (matching original exactly)
         st.write("##### Final Caption")
-        st.write(feedback_data.get("final_caption", "No caption available"))
+        st.text(feedback_data.get("final_caption", "No caption available"))
         
         st.write("##### Pre-caption Score")
         st.write(f"**{feedback_data.get('initial_caption_rating_score', 'N/A')}/5**")
 
         st.write("##### Initial Feedback")
-        st.write(feedback_data.get("initial_feedback", "No initial feedback available"))
+        st.text(feedback_data.get("initial_feedback", "No initial feedback available"))
         
         st.write("##### GPT Polished Feedback")
-        st.write(feedback_data.get("gpt_feedback", "No GPT feedback available"))
+        st.text(feedback_data.get("gpt_feedback", "No GPT feedback available"))
         
         st.write("##### Final Caption Score")
         final_score = feedback_data.get("caption_rating_score")
@@ -277,10 +277,10 @@ class UIComponents:
         # The parameter only affects what's shown at the bottom
         if display_pre_caption_instead_of_final_caption:
             st.write("##### Pre-Caption (For Reference Only)")
-            st.write(feedback_data.get("pre_caption", "No pre-caption available"))
+            st.text(feedback_data.get("pre_caption", "No pre-caption available"))
         else:
             st.write("##### Final Caption")
-            st.write(feedback_data.get("final_caption", "No final caption available"))
+            st.text(feedback_data.get("final_caption", "No final caption available"))
     
     @staticmethod
     def emoji_to_score(emoji: str) -> int:

@@ -98,6 +98,8 @@ Does the camera move in a clockwise arc?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera arcs clockwise.
+
 - A scene featuring a clockwise camera arc.
 
 - A shot with a clockwise arcing motion.
@@ -109,8 +111,6 @@ Does the camera move in a clockwise arc?
 - The camera orbits clockwise around something.
 
 - The camera executes a clockwise arcing motion.
-
-- The camera arcs clockwise.
 
 - An arc movement in a clockwise direction.
 

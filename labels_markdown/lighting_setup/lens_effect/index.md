@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video feature soft, out-of-focus light orbs in the background, created by distant light sources and a shallow depth of field?
+Does the video feature soft, out-of-focus light orbs, created by distant lights and a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -19,7 +19,7 @@ Does the video feature soft, out-of-focus light orbs in the background, created 
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Are there visible out-of-focus light orbs in the background?
+- Are there visible out-of-focus light orbs?
 
 - Does the video contain a strong bokeh effect from distant lights?
 
@@ -40,7 +40,7 @@ Does the video feature soft, out-of-focus light orbs in the background, created 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video features soft, out-of-focus light orbs in the background, created by distant light sources and a shallow depth of field.
+- The video features soft, out-of-focus light orbs, created by distant lights and a shallow depth of field.
 
 </details>
 
@@ -74,15 +74,15 @@ Does the video feature soft, out-of-focus light orbs in the background, created 
 </details>
 
 <details>
-<summary><h2>Lens Flares Natural</h2></summary>
+<summary><h2>Lens Flares Regular</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
-<code>lens_flares_natural</code>
+<code>lens_flares_regular</code>
 
 
 <h3>📖 Definition:</h3>
-Does the video contain natural lens flares, appearing as bright circular or scattered artifacts caused by strong light sources interacting with the camera lens?
+Does the video contain typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video contain natural lens flares, appearing as bright circular or scat
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video contains natural lens flares, appearing as bright circular or scattered artifacts caused by strong light sources interacting with the camera lens.
+- The video contains typical (non-anamorphic) lens flares, appearing as circular, polygonal, veiling, scattered, or streak-like artifacts.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video contain natural lens flares, appearing as bright circular or scat
 
 
 <h3>📖 Definition:</h3>
-Does the video contain lens flares?
+Does the video contain obvious lens flares?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video contain lens flares?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video contains lens flares.
+- The video contains obvious lens flares.
 
 </details>
 
@@ -212,10 +212,10 @@ Does the video contain lens flares?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.lens_flares is True</code>
+<code>self.lighting_setup.lens_flares is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>self.lens_flares is False</code>
+<code>self.lighting_setup.lens_flares is False</code>
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video contain lens flares?
 
 
 <h3>📖 Definition:</h3>
-Does the video contain anamorphic lens flares, appearing as bright, elongated streaks of light caused by strong light sources interacting with an anamorphic lens?
+Does the video contain anamorphic lens flares as bright, elongated streaks from light interacting with an anamorphic lens?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video contain anamorphic lens flares, appearing as bright, elongated st
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video contains anamorphic lens flares, appearing as bright, elongated streaks of light caused by strong light sources interacting with an anamorphic lens.
+- The video contains anamorphic lens flares as bright, elongated streaks from light interacting with an anamorphic lens.
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video contain anamorphic lens flares, appearing as bright, elongated st
 
 
 <h3>📖 Definition:</h3>
-Does the video use a mist diffusion filter to soften the image, reducing contrast and sharpness while creating a gentle, glowing effect?
+Does the video use a mist diffusion filter to soften the image, creating a dreamy, glowing effect?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Does the video use a mist diffusion filter to soften the image, reducing contras
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video uses a mist diffusion filter to soften the image, reducing contrast and sharpness while creating a gentle, glowing effect.
+- The video uses a mist diffusion filter to soften the image, creating a dreamy, glowing effect.
 
 </details>
 

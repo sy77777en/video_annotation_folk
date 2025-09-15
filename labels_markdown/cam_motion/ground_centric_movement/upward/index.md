@@ -9,12 +9,14 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera move upward (not tilting up) in the scene?
+Does the camera move upward relative to the ground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
 - Is the camera moving upward in the scene?
+
+- Does the camera move upward (not tilting up) in the scene?
 
 - Is the camera moving upward?
 
@@ -57,6 +59,8 @@ Does the camera move upward (not tilting up) in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera is moving upward relative to the ground.
 
 - A shot where the camera rises upward, rather than tilting up.
 
@@ -295,6 +299,8 @@ Does the camera only move upward (not tilting up) with respect to the ground?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only moves upward (not tilting up) relative to the ground.
 
 - A video where the camera only moves upward (not tilting up) relative to the ground.
 

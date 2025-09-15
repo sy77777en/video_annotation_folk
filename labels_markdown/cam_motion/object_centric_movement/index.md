@@ -9,10 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera track the subject from above?
+Does the camera track the subject from an aerial perspective?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera track the subject from above?
 
 - Is this an aerial tracking shot?
 
@@ -46,6 +48,10 @@ Does the camera track the subject from above?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera tracks the subject from an aerial perspective.
+
+- A tracking shot where the camera follows the subject from an aerial perspective.
+
 - A tracking shot where the camera follows the subject from above.
 
 - A shot where the camera moves overhead while tracking the subject.
@@ -78,15 +84,15 @@ Does the camera track the subject from above?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>'aerial' in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.aerial_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>'aerial' not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.aerial_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
@@ -178,15 +184,15 @@ Does the camera follow the subject while moving in an arc?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>'arc' in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.arc_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>'arc' not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.arc_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
@@ -201,12 +207,16 @@ Does the camera follow the subject while moving in an arc?
 
 
 <h3>📖 Definition:</h3>
-Is it a tracking shot with the camera leading from the front and to the side of the subject?
+Is it a tracking shot with the camera leading the subject from a front-side angle?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
+- Is it a tracking shot with the camera leading from the front and to the side of the subject?
+
 - Is it a front-side tracking shot?
+
+- Does the camera track a subject from their front-side angle?
 
 - Does the tracking shot lead from the front and slightly to the side of the subject?
 
@@ -237,6 +247,8 @@ Is it a tracking shot with the camera leading from the front and to the side of 
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- A tracking shot where the camera leads the subject from a front-side angle.
 
 - A tracking shot where the camera leads from the front and to the side of the subject.
 
@@ -270,26 +282,26 @@ Is it a tracking shot with the camera leading from the front and to the side of 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>set(self.cam_motion.tracking_shot_types) == set(['lead','side'])</code>
+<code>self.cam_motion.front_side_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>set(self.cam_motion.tracking_shot_types) != set(['lead','side'])</code>
+<code>self.cam_motion.front_side_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and not ('lead' in self.cam_motion.tracking_shot_types and 'side' in self.cam_motion.tracking_shot_types)</code>
+- <b>other_tracking_shots_than_front_side</b>: <code>self.cam_motion.other_tracking_shots_than_front_side is True</code>
 
-- <b>lead_tracking_shot</b>: <code>'lead' in self.cam_motion.tracking_shot_types and 'side' not in self.cam_motion.tracking_shot_types</code>
+- <b>lead_but_not_side_tracking_shot</b>: <code>self.cam_motion.lead_but_not_side_tracking_shot is True</code>
 
-- <b>side_tracking_shot</b>: <code>'side' in self.cam_motion.tracking_shot_types and 'lead' not in self.cam_motion.tracking_shot_types</code>
+- <b>side_but_not_lead_tracking_shot</b>: <code>self.cam_motion.side_but_not_lead_tracking_shot is True</code>
 
 </details>
 
@@ -347,9 +359,9 @@ Is it a tracking shot with the camera moving ahead of the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A tracking shot where the camera moves ahead of the subject.
-
 - A tracking shot where the camera moves ahead of the subjects as they move.
+
+- A tracking shot where the camera moves ahead of the subject.
 
 - A shot where the camera leads the subject by moving backward.
 
@@ -383,24 +395,24 @@ Is it a tracking shot with the camera moving ahead of the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.tracking_shot_types == ['lead']</code>
+<code>self.cam_motion.lead_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>'lead' not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.lead_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and 'lead' not in self.cam_motion.tracking_shot_types</code>
+- <b>other_tracking_shots_than_lead</b>: <code>self.cam_motion.other_tracking_shots_than_lead is True</code>
 
-- <b>tail_tracking_shot</b>: <code>self.cam_motion.is_tracking and 'tail' in self.cam_motion.tracking_shot_types</code>
+- <b>tail_tracking_shot</b>: <code>self.cam_motion.tail_tracking_shot is True</code>
 
 </details>
 
@@ -415,10 +427,12 @@ Is it a tracking shot with the camera moving ahead of the subject?
 
 
 <h3>📖 Definition:</h3>
-Does the camera pan to track the subjects?
+Does the camera pan to track the subjects as they move?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera pan to track the subjects?
 
 - Does the camera pan to follow the subjects?
 
@@ -456,6 +470,8 @@ Does the camera pan to track the subjects?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- A tracking shot where the camera pans to follow the subjects as they move.
+
 - A tracking shot where the camera pans to follow the subjects.
 
 - A pan-tracking shot.
@@ -488,24 +504,24 @@ Does the camera pan to track the subjects?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.tracking_shot_types == ['pan']</code>
+<code>self.cam_motion.pan_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>'pan' not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.pan_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and not 'pan' in self.cam_motion.tracking_shot_types</code>
+- <b>other_tracking_shots_than_pan</b>: <code>self.cam_motion.other_tracking_shots_than_pan is True</code>
 
-- <b>side_tracking_shot</b>: <code>'side' in self.cam_motion.tracking_shot_types and not 'pan' in self.cam_motion.tracking_shot_types</code>
+- <b>side_but_not_pan_tracking_shot</b>: <code>self.cam_motion.side_but_not_pan_tracking_shot is True</code>
 
 </details>
 
@@ -520,10 +536,12 @@ Does the camera pan to track the subjects?
 
 
 <h3>📖 Definition:</h3>
-Is it a tracking shot with the camera following behind and to the side of the subject?
+Is it a tracking shot with the camera following behind the subject at a rear-side angle?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Is it a tracking shot with the camera following behind and to the side of the subject?
 
 - Is it a rear-side tracking shot?
 
@@ -557,6 +575,8 @@ Is it a tracking shot with the camera following behind and to the side of the su
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- A tracking shot where the camera follows behind the subject at a rear-side angle.
+
 - A tracking shot where the camera follows behind and to the side of the subject.
 
 - a rear-side tracking shot.
@@ -589,26 +609,26 @@ Is it a tracking shot with the camera following behind and to the side of the su
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>set(self.cam_motion.tracking_shot_types) == set(['tail','side'])</code>
+<code>self.cam_motion.rear_side_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>set(self.cam_motion.tracking_shot_types) != set(['tail','side'])</code>
+<code>self.cam_motion.rear_side_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and not ('tail' in self.cam_motion.tracking_shot_types and 'side' in self.cam_motion.tracking_shot_types)</code>
+- <b>other_tracking_shots_than_rear_side</b>: <code>self.cam_motion.other_tracking_shots_than_rear_side is True</code>
 
-- <b>tail_tracking_shot</b>: <code>'tail' in self.cam_motion.tracking_shot_types and 'side' not in self.cam_motion.tracking_shot_types</code>
+- <b>tail_but_not_side_tracking_shot</b>: <code>self.cam_motion.tail_but_not_side_tracking_shot is True</code>
 
-- <b>side_tracking_shot</b>: <code>'side' in self.cam_motion.tracking_shot_types and 'tail' not in self.cam_motion.tracking_shot_types</code>
+- <b>side_but_not_tail_tracking_shot</b>: <code>self.cam_motion.side_but_not_tail_tracking_shot is True</code>
 
 </details>
 
@@ -623,10 +643,12 @@ Is it a tracking shot with the camera following behind and to the side of the su
 
 
 <h3>📖 Definition:</h3>
-Is it a tracking shot with the camera moving from the side to follow the subject?
+Is it a tracking shot with the camera moving from the side to follow the subject as they move?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Is it a tracking shot with the camera moving from the side to follow the subject?
 
 - Is this a side-tracking shot?
 
@@ -694,24 +716,24 @@ Is it a tracking shot with the camera moving from the side to follow the subject
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.tracking_shot_types == ['side']</code>
+<code>self.cam_motion.side_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>'side' not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.side_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and not 'side' in self.cam_motion.tracking_shot_types</code>
+- <b>other_tracking_shots_than_side</b>: <code>self.cam_motion.other_tracking_shots_than_side is True</code>
 
-- <b>pan_tracking_shot</b>: <code>'pan' in self.cam_motion.tracking_shot_types</code>
+- <b>pan_but_not_side_tracking_shot</b>: <code>self.cam_motion.pan_but_not_side_tracking_shot is True</code>
 
 </details>
 
@@ -781,24 +803,24 @@ Is it a side-tracking shot where the camera moves left to follow the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True</code>
+<code>self.cam_motion.side_tracking_shot_leftward is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True)</code>
+<code>self.cam_motion.side_tracking_shot_leftward is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>side_tracking_shot_rightward</b>: <code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True</code>
+- <b>side_tracking_shot_rightward</b>: <code>self.cam_motion.side_tracking_shot_rightward is True</code>
 
-- <b>pan_tracking_shot</b>: <code>'pan' in self.cam_motion.tracking_shot_types and self.cam_motion.pan_left is True</code>
+- <b>pan_left_but_not_side_tracking_shot</b>: <code>self.cam_motion.pan_left_but_not_side_tracking_shot is True</code>
 
 </details>
 
@@ -868,24 +890,24 @@ Is it a side-tracking shot where the camera moves right to follow the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True</code>
+<code>self.cam_motion.side_tracking_shot_rightward is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.right is True)</code>
+<code>self.cam_motion.side_tracking_shot_rightward is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>side_tracking_shot_leftward</b>: <code>self.cam_motion.is_tracking and 'side' in self.cam_motion.tracking_shot_types and self.cam_motion.left is True</code>
+- <b>side_tracking_shot_leftward</b>: <code>self.cam_motion.side_tracking_shot_leftward is True</code>
 
-- <b>pan_tracking_shot</b>: <code>'pan' in self.cam_motion.tracking_shot_types and self.cam_motion.pan_right is True</code>
+- <b>pan_right_but_not_side_tracking_shot</b>: <code>self.cam_motion.pan_right_but_not_side_tracking_shot is True</code>
 
 </details>
 
@@ -941,9 +963,9 @@ Is it a tracking shot with the camera following behind the subject?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A tracking shot where the camera follows behind the subject.
-
 - A tracking shot where the camera moves behind the subjects as they move.
+
+- A tracking shot where the camera follows behind the subject.
 
 - A shot where the camera follows the subject by moving forward.
 
@@ -979,24 +1001,24 @@ Is it a tracking shot with the camera following behind the subject?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.tracking_shot_types == ['tail']</code>
+<code>self.cam_motion.tail_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>'tail' not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.tail_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and 'tail' not in self.cam_motion.tracking_shot_types</code>
+- <b>other_tracking_shots_thank_tail</b>: <code>self.cam_motion.other_tracking_shots_than_tail is True</code>
 
-- <b>front_tracking_shot</b>: <code>self.cam_motion.is_tracking and 'lead' in self.cam_motion.tracking_shot_types</code>
+- <b>lead_tracking_shot</b>: <code>self.cam_motion.lead_tracking_shot is True</code>
 
 </details>
 
@@ -1011,10 +1033,12 @@ Is it a tracking shot with the camera following behind the subject?
 
 
 <h3>📖 Definition:</h3>
-Does the camera tilt to track the subjects?
+Does the camera tilt to track the subjects as they move?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera tilt to track the subjects?
 
 - Is this a tilt-tracking shot?
 
@@ -1082,26 +1106,26 @@ Does the camera tilt to track the subjects?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.tracking_shot_types == ['tilt']</code>
+<code>self.cam_motion.tilt_tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>tilt not in self.cam_motion.tracking_shot_types</code>
+<code>self.cam_motion.tilt_tracking_shot is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>other_tracking_shots</b>: <code>self.cam_motion.is_tracking and not 'tilt' in self.cam_motion.tracking_shot_types</code>
+- <b>other_tracking_shots_than_tilt</b>: <code>self.cam_motion.other_tracking_shots_than_tilt is True</code>
 
-- <b>aerial_tracking_shot</b>: <code>'aerial' in self.cam_motion.tracking_shot_types and not 'tilt' in self.cam_motion.tracking_shot_types</code>
+- <b>aerial_but_not_tilt_tracking_shot</b>: <code>self.cam_motion.aerial_but_not_tilt_tracking_shot is True</code>
 
-- <b>side_tracking_shot</b>: <code>'side' in self.cam_motion.tracking_shot_types and not 'tilt' in self.cam_motion.tracking_shot_types</code>
+- <b>side_but_not_tilt_tracking_shot</b>: <code>self.cam_motion.side_but_not_tilt_tracking_shot is True</code>
 
 </details>
 
@@ -1116,10 +1140,12 @@ Does the camera tilt to track the subjects?
 
 
 <h3>📖 Definition:</h3>
-Is it a tracking shot?
+Does the camera track the subject as they move?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Is it a tracking shot?
 
 - Does the camera move to follow the subjects in the scene?
 
@@ -1152,6 +1178,8 @@ Is it a tracking shot?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera tracks the subject as they move.
 
 - A video where the camera moves to follow the subjects in the scene.
 
@@ -1189,10 +1217,10 @@ Is it a tracking shot?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.is_tracking</code>
+<code>self.cam_motion.tracking_shot is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.is_tracking</code>
+<code>self.cam_motion.tracking_shot is False</code>
 
 </details>
 
@@ -1205,10 +1233,12 @@ Is it a tracking shot?
 
 
 <h3>📖 Definition:</h3>
-Does the subject look larger during the tracking shot?
+Does the subject appear larger during the tracking shot?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the subject look larger during the tracking shot?
 
 - Does the subject appear to grow larger in the frame during the tracking shot?
 
@@ -1248,6 +1278,8 @@ Does the subject look larger during the tracking shot?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The subject looks larger during the tracking shot.
+
 - A tracking shot where the subject looks larger as the camera moves.
 
 - A shot where the subject grows in size within the frame while tracking.
@@ -1278,22 +1310,22 @@ Does the subject look larger during the tracking shot?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger'</code>
+<code>self.cam_motion.tracking_subject_larger_size is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'larger')</code>
+<code>self.cam_motion.tracking_subject_larger_size is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>subject_gets_smaller_or_same</b>: <code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change != 'larger'</code>
+- <b>tracking_subject_gets_smaller_or_same</b>: <code>self.cam_motion.tracking_subject_gets_smaller_or_same is True</code>
 
 </details>
 
@@ -1308,10 +1340,12 @@ Does the subject look larger during the tracking shot?
 
 
 <h3>📖 Definition:</h3>
-Does the subject look smaller during the tracking shot?
+Does the subject appear smaller during the tracking shot?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the subject look smaller during the tracking shot?
 
 - Does the subject appear to shrink in the frame during the tracking shot?
 
@@ -1349,6 +1383,8 @@ Does the subject look smaller during the tracking shot?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The subject looks smaller during the tracking shot.
+
 - A tracking shot where the subject looks smaller as the camera moves.
 
 - A shot where the subject shrinks in size within the frame while tracking.
@@ -1379,22 +1415,22 @@ Does the subject look smaller during the tracking shot?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'smaller'</code>
+<code>self.cam_motion.tracking_subject_smaller_size is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not (self.cam_motion.is_tracking and self.cam_motion.subject_size_change == 'smaller')</code>
+<code>self.cam_motion.tracking_subject_smaller_size is False</code>
 
 <details>
 <summary><h4>🔴 Negative (Easy)</h4></summary>
 
-- <b>not_a_tracking_shot</b>: <code>not self.cam_motion.is_tracking</code>
+- <b>not_a_tracking_shot</b>: <code>self.cam_motion.not_a_tracking_shot is True</code>
 
 </details>
 
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>subject_gets_larger_or_same</b>: <code>self.cam_motion.is_tracking and self.cam_motion.subject_size_change != 'smaller'</code>
+- <b>tracking_subject_gets_larger_or_same</b>: <code>self.cam_motion.tracking_subject_gets_larger_or_same is True</code>
 
 </details>
 

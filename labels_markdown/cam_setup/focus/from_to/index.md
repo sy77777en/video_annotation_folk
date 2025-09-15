@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the background in focus and then shift to the foreground?
+Does the video start with the camera focused on the background and then shift the focus to the foreground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -23,7 +23,7 @@ Does the video start with the background in focus and then shift to the foregrou
 
 - Is there a focus shift where the background starts sharp and then the foreground becomes clear?
 
-- Does the video begin with a sharp background before adjusting to the foreground?
+- Does the camera begin with a sharp background before adjusting to the foreground?
 
 - Is the initial shot focused on the background before refocusing on the foreground?
 
@@ -40,33 +40,33 @@ Does the video start with the background in focus and then shift to the foregrou
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the background in focus and then shifts to the foreground.
+- The video starts with the camera focused on the background and then shifts the focus to the foreground.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A video where the focus moves from the background to the foreground.
+- The camera's focus moves from the background to the foreground.
 
 - A scene that begins with a sharp background and then transitions to the foreground.
 
 - A shot where the background is in focus first, but the foreground becomes clearer.
 
-- A video where the depth of field shifts from the background to the foreground.
+- The camera's depth of field shifts from the background to the foreground.
 
 - A sequence where the focus transitions from a distant subject to the foreground.
 
 - A shot where the background starts in focus but gradually fades out while the foreground sharpens.
 
-- A video showing a deliberate shift in focus from background to foreground.
+- The camera showing a deliberate shift in focus from background to foreground.
 
 - A scene where the focus transitions smoothly from background to foreground.
 
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
 <code>not (self.cam_setup.focus_info['start'] in ['background', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'unknown'])</code>
@@ -82,7 +82,7 @@ Does the video start with the background in focus and then shift to the foregrou
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the background in focus and then shift to the middle ground?
+Does the video start with the camera focused on the background and then shift the focus to the middleground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video start with the background in focus and then shift to the middle g
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the background in focus and then shifts to the middle ground.
+- The video starts with the camera focused on the background and then shifts the focus to the middleground.
 
 </details>
 
@@ -139,7 +139,7 @@ Does the video start with the background in focus and then shift to the middle g
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_info['start'] == 'background' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
 <code>not (self.cam_setup.focus_info['start'] in ['background', 'unknown'] and self.cam_setup.focus_info['end'] in ['middle_ground', 'unknown'])</code>
@@ -155,7 +155,7 @@ Does the video start with the background in focus and then shift to the middle g
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the foreground in focus and then transition to focusing on the background?
+Does the video start with the camera focused on the foreground and then shift the focus to the background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Does the video start with the foreground in focus and then transition to focusin
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the foreground in focus and then transitions to focusing on the background.
+- The video starts with the camera focused on the foreground and then shifts the focus to the background.
 
 </details>
 
@@ -212,7 +212,7 @@ Does the video start with the foreground in focus and then transition to focusin
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'background' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'background' and self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
 <code>not (self.cam_setup.focus_info['start'] in ['foreground', 'unknown'] and self.cam_setup.focus_info['end'] in ['background', 'unknown'])</code>
@@ -228,7 +228,7 @@ Does the video start with the foreground in focus and then transition to focusin
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the foreground in focus and then transition to focusing on the middle ground?
+Does the video start with the camera focused on the foreground and then shift the focus to the middleground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Does the video start with the foreground in focus and then transition to focusin
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the foreground in focus and then transitions to focusing on the middle ground.
+- The video starts with the camera focused on the foreground and then shifts the focus to the middleground.
 
 </details>
 
@@ -285,7 +285,7 @@ Does the video start with the foreground in focus and then transition to focusin
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_info['start'] == 'foreground' and self.cam_setup.focus_info['end'] == 'middle_ground' and self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
 <code>not (self.cam_setup.focus_info['start'] in ['foreground', 'unknown'] and self.cam_setup.focus_info['end'] in ['middle_ground', 'unknown'])</code>
@@ -301,7 +301,7 @@ Does the video start with the foreground in focus and then transition to focusin
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the middle ground in focus and then shift to the background?
+Does the video start with the camera focused on the middle ground and then shift the focus to the background?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Does the video start with the middle ground in focus and then shift to the backg
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the middle ground in focus and then shifts to the background.
+- The video starts with the camera focused on the middle ground and then shifts the focus to the background.
 
 </details>
 
@@ -358,7 +358,7 @@ Does the video start with the middle ground in focus and then shift to the backg
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'background' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'background' and self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
 <code>not (self.cam_setup.focus_info['start'] in ['middle_ground', 'unknown'] and self.cam_setup.focus_info['end'] in ['background', 'unknown'])</code>
@@ -374,7 +374,7 @@ Does the video start with the middle ground in focus and then shift to the backg
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the middle ground in focus and then shift to the foreground?
+Does the video start with the camera focused on the middle ground and then shift the focus to the foreground?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -405,7 +405,7 @@ Does the video start with the middle ground in focus and then shift to the foreg
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the middle ground in focus and then shifts to the foreground.
+- The video starts with the camera focused on the middle ground and then shifts the focus to the foreground.
 
 </details>
 
@@ -431,7 +431,7 @@ Does the video start with the middle ground in focus and then shift to the foreg
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus</code>
+<code>self.cam_setup.focus_info['start'] == 'middle_ground' and self.cam_setup.focus_info['end'] == 'foreground' and self.cam_setup.is_rack_pull_focus is True</code>
 
 <h4>🔴 Negative:</h4>
 <code>not (self.cam_setup.focus_info['start'] in ['middle_ground', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'unknown'])</code>

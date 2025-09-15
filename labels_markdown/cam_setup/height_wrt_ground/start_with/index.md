@@ -82,7 +82,7 @@ Does the video start with the camera positioned high at an aerial level?
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera at eye level, roughly at a person's eye height, above the waist but below overhead level?
+Does the video start with the camera at eye level (roughly at a person’s eye height, above the waist)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Does the video start with the camera at eye level, roughly at a person's eye hei
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera positioned at eye level, approximately at a person's eye height, including any height above waist but below overhead level.
+- The video starts with the camera positioned at eye level (roughly at a person's eye height, above the waist).
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video start with the camera at hip level, roughly between knee and wais
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level?
+Does the video begin with the camera at an overhead level, above eye level but below aerial (around second-floor height)?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -332,7 +332,7 @@ Does the video start with the camera at an overhead level, above human height bu
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera at an overhead level, above human height but below an aerial view, roughly at second-floor level.
+- The video begins with the camera at an overhead level, above eye level but below aerial (around second-floor height).
 
 </details>
 
@@ -368,7 +368,7 @@ Does the video start with the camera at an overhead level, above human height bu
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera fully submerged underwater, capturing scenes beneath the water’s surface?
+Does the video start with the camera fully submerged underwater?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -441,7 +441,7 @@ Does the video start with the camera fully submerged underwater, capturing scene
 
 
 <h3>📖 Definition:</h3>
-Does the video start with the camera positioned at water level, where the waterline is clearly visible above the surface?
+Does the video start with the camera near water level, showing the waterline clearly and not from an aerial view?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -472,7 +472,7 @@ Does the video start with the camera positioned at water level, where the waterl
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with the camera positioned at water level, clearly above the water surface.
+- The video starts with the camera positioned near water level, showing the waterline clearly and not from an aerial view.
 
 </details>
 

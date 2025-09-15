@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the video consistently focused on the background using a shallow depth of field?
+Is the camera consistently focused on the background using a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -40,7 +40,7 @@ Is the video consistently focused on the background using a shallow depth of fie
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video remains focused on the background using a shallow depth of field.
+- The camera remains focused on the background using a shallow depth of field.
 
 </details>
 
@@ -82,7 +82,7 @@ Is the video consistently focused on the background using a shallow depth of fie
 
 
 <h3>📖 Definition:</h3>
-Is the video consistently focused on the foreground using a shallow depth of field?
+Is the camera consistently focused on the foreground using a shallow depth of field?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Is the video consistently focused on the foreground using a shallow depth of fie
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video remains focused on the foreground using a shallow depth of field.
+- The camera remains focused on the foreground using a shallow depth of field.
 
 </details>
 
@@ -155,7 +155,7 @@ Is the video consistently focused on the foreground using a shallow depth of fie
 
 
 <h3>📖 Definition:</h3>
-Is the video consistently focused on the middle ground, keeping the foreground and background blurred?
+Is the camera consistently focused on the middleground, keeping the foreground and background blurred?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -186,7 +186,7 @@ Is the video consistently focused on the middle ground, keeping the foreground a
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video remains focused on the middle ground, with the foreground and background blurred.
+- The camera remains focused on the middleground, with the foreground and background blurred.
 
 </details>
 
@@ -228,7 +228,7 @@ Is the video consistently focused on the middle ground, keeping the foreground a
 
 
 <h3>📖 Definition:</h3>
-Is the video consistently out of focus throughout?
+Is the camera consistently out of focus throughout?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -259,7 +259,7 @@ Is the video consistently out of focus throughout?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video remains out of focus throughout.
+- The camera remains out of focus throughout.
 
 </details>
 

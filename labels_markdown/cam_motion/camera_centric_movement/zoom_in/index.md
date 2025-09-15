@@ -9,10 +9,21 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera zoom in rather than physically moving forward?
+Does the camera zoom in?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera zoom in during the shot?
+
+- Is the camera zooming in?
+
+</details>
+
+<details>
+<summary><h4> Alternative Question</h4></summary>
+
+- Does the camera zoom in rather than physically moving forward?
 
 - Is the field of view narrowing without the camera physically advancing?
 
@@ -27,11 +38,6 @@ Does the camera zoom in rather than physically moving forward?
 - Does the framing move closer to the subject without spatial camera movement?
 
 - Is the shot pulling in optically instead of moving physically?
-
-</details>
-
-<details>
-<summary><h4> Alternative Question</h4></summary>
 
 - Does the video include a zoom-in effect?
 
@@ -54,12 +60,16 @@ Does the camera zoom in rather than physically moving forward?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video where the camera zooms in rather than physically moving forward.
+- The camera zooms in.
+
+- A shot where the camera zooms in.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- A video where the camera zooms in rather than physically moving forward.
 
 - A shot featuring a zoom-in effect where the frame narrows in.
 
@@ -108,10 +118,12 @@ Does the camera zoom in rather than physically moving forward?
 
 
 <h3>📖 Definition:</h3>
-Is zooming in the only motion in this shot, without other camera movement?
+Does the camera only zoom in with no other movement?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Is zooming in the only motion in this shot, without other camera movement?
 
 - Does the camera zoom in without any dolly, pan, or tilt movement?
 
@@ -152,6 +164,8 @@ Is zooming in the only motion in this shot, without other camera movement?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only zooms in without any other movement.
 
 - A video where zooming in is the only motion, with no additional camera movement.
 

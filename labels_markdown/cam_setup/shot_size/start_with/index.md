@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video start with a close-up shot that highlights a distinct part of the subject while maintaining context?
+Does the video start with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -44,7 +44,7 @@ Does the video start with a close-up shot that highlights a distinct part of the
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that starts with a close-up shot, highlighting a distinct part of the subject while maintaining context.
+- A video that starts with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.
 
 </details>
 
@@ -254,7 +254,7 @@ Does the video start with an extreme wide shot that emphasizes the setting over 
 
 
 <h3>📖 Definition:</h3>
-Does the video start with a full shot that frames the entire body of the subject?
+Does the video start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -289,7 +289,7 @@ Does the video start with a full shot that frames the entire body of the subject
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A video that starts with a full shot, framing the entire subject while maintaining focus on it.
+- A video that starts with a full shot, framing the entire subject while maintaining focus on it without showing excessive surrounding scenery.
 
 </details>
 
@@ -578,7 +578,7 @@ Does the video start with a medium-full shot that frames the human subject from 
 
 
 <h3>📖 Definition:</h3>
-Does the video start with a wide shot of scenery, or a wide shot that frames the subject while keeping enough background context?
+Does the video start with a wide shot of scenery, or frames the entire subject while keeping ample background context?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -613,7 +613,7 @@ Does the video start with a wide shot of scenery, or a wide shot that frames the
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video starts with either a wide shot of scenery or a wide shot that frames the subject while keeping enough background context.
+- The video starts with a wide shot of scenery, or frames the entire subject while keeping ample background context.
 
 </details>
 

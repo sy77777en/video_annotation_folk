@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the camera performing a crane down movement?
+Is the camera craning downward in an arc?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -20,14 +20,16 @@ Is the camera performing a crane down movement?
 
 - Does the camera descend while maintaining a circular path?
 
-- Is the camera executing a downward crane motion?
-
 - Does the camera lower in a smooth arcing movement?
 
 </details>
 
 <details>
 <summary><h4> Alternative Question</h4></summary>
+
+- Is the camera performing a crane down movement?
+
+- Is the camera executing a downward crane motion?
 
 - Is the camera descending while maintaining focus on the subject?
 
@@ -50,17 +52,13 @@ Is the camera performing a crane down movement?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A scene featuring a crane down movement.
+- The camera cranes downward in an arc.
 
 - A shot where the camera lowers in a vertical arcing motion.
 
 - The camera moves downward while maintaining an orbit around something.
 
-- A shot demonstrating a downward crane motion.
-
 - A video where the camera lowers in an arcing trajectory.
-
-- The camera descends in a smooth, controlled crane movement.
 
 - A downward arcing shot moving along a vertical path.
 
@@ -68,6 +66,12 @@ Is the camera performing a crane down movement?
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
+
+- A scene featuring a crane down movement.
+
+- A shot demonstrating a downward crane motion.
+
+- The camera descends in a smooth, controlled crane movement.
 
 - The camera descends while maintaining visual focus on a subject.
 

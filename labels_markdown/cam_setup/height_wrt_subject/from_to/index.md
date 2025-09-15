@@ -70,7 +70,7 @@ Does the camera start noticeably higher than the subject and then move down to t
 
 
 <h3>📖 Definition:</h3>
-Does the camera start above the subject and move down to a position below them?
+Does the camera start noticeably higher than the subject and then move down to a position below them?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -95,7 +95,7 @@ Does the camera start above the subject and move down to a position below them?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera starts above the subject and moves down to a position below them.
+- The camera starts noticeably higher than the subject and then moves down to a position below them.
 
 </details>
 
@@ -131,7 +131,7 @@ Does the camera start above the subject and move down to a position below them?
 
 
 <h3>📖 Definition:</h3>
-Does the camera start at the subject's height and then move up to a higher position than them?
+Does the camera start at the same height as the subject and then move up to a higher position than them?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -156,7 +156,7 @@ Does the camera start at the subject's height and then move up to a higher posit
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera starts at the subject's height and then moves up to a higher position than them.
+- The camera starts at the same height as the subject and then moves up to a higher position than them.
 
 </details>
 
@@ -192,7 +192,7 @@ Does the camera start at the subject's height and then move up to a higher posit
 
 
 <h3>📖 Definition:</h3>
-Does the camera start at the subject's height and then move down to a lower position than them?
+Does the camera start at the same height as the subject and then move down to a lower position than them?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -217,7 +217,7 @@ Does the camera start at the subject's height and then move down to a lower posi
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera starts at the subject's height and then moves down to a lower position than them.
+- The camera starts at the same height as the subject and then moves down to a lower position than them.
 
 </details>
 

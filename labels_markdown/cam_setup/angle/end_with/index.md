@@ -1,7 +1,7 @@
 # End_with Overview
 
 <details>
-<summary><h2>Camera Angle End With Bird Eye Angle</h2></summary>
+<summary><h2>Camera Angle End With Bird's Eye Angle</h2></summary>
 
 
 <h3>🔵 Label Name:</h3>
@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera positioned at a bird’s eye angle, looking directly downward at the ground?
+Does the video end with the camera at a bird's eye angle, looking straight down from above?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -19,49 +19,49 @@ Does the video end with the camera positioned at a bird’s eye angle, looking d
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot end with the camera looking straight down?
+- Does the shot end with a bird's eye perspective?
 
-- Is the ending frame positioned at a bird’s eye perspective?
+- Is the final frame taken from a top-down viewpoint?
 
-- Does the video conclude with an extreme high-angle shot looking downward?
+- Does the video finish with the camera looking straight down at the ground?
 
-- Is the final shot captured from above, looking down at the environment?
+- Is the ending shot captured from an overhead, bird's eye perspective?
 
-- Does the sequence close with a bird’s eye view, looking vertically down?
+- Does the sequence close with a shot where the camera is directly above the scene?
 
-- Is the last shot taken from the highest perspective, directed downward?
+- Is the last shot positioned in a strict top-down orientation?
 
-- Does the video close with a top-down perspective?
+- Does the video conclude with an aerial viewpoint looking directly downward?
 
-- Is the final frame recorded with the camera positioned directly overhead?
+- Is the ending frame recorded from a high, perpendicular angle?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at a bird’s eye angle, looking directly downward at the ground.
+- The video ends with the camera at a bird's eye angle, looking straight down from above.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at a bird’s eye angle, looking directly downward.
+- A shot ending from a strict top-down perspective.
 
-- A video concluding with a bird’s eye perspective, capturing the ground below.
+- A video concluding with a bird's eye view, directly above the scene.
 
-- A sequence that ends with the camera positioned directly overhead and looking down.
+- A sequence that ends with an overhead camera looking straight down.
 
-- A shot showing the environment from a bird’s eye perspective.
+- A shot where the environment is captured from a top-down orientation.
 
-- A video closing with a top-down, overhead framing.
+- A video closing with a high, perpendicular perspective.
 
-- A shot where the camera is positioned high above and facing downward.
+- A shot where the camera is positioned vertically above the ground.
 
-- A video that ends with the camera capturing subjects from a top-down viewpoint.
+- A video that ends with a fully downward-facing angle.
 
-- A scene that closes with the camera looking sharply downward at the ground.
+- A scene that closes with a bird's eye framing of the environment.
 
 </details>
 
@@ -82,7 +82,7 @@ Does the video end with the camera positioned at a bird’s eye angle, looking d
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down?
+Does the video end with the camera at a high angle, looking downward compared to a level angle but not directly top-down?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -92,49 +92,49 @@ Does the video end with the camera positioned at a high angle, tilted downward c
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot end with the camera angled slightly downward?
+- Does the shot end with a downward-facing high angle?
 
-- Is the ending frame positioned at a high-angle perspective?
+- Is the final frame taken from a higher viewpoint, looking down compared to a level angle?
 
-- Does the video conclude with a downward camera angle?
+- Does the video finish with the camera angled downward but not entirely overhead?
 
-- Is the final shot captured from above, looking down at a subject or environment?
+- Is the ending shot captured from an elevated position, looking slightly down?
 
-- Does the sequence close with a high-angle view?
+- Does the sequence close with a perspective higher than a level angle but lower than a bird's-eye view?
 
-- Is the last shot taken from an elevated position, angled downward?
+- Is the last shot positioned with a noticeable downward tilt compared to a straight-on view?
 
-- Does the video close with a slightly top-down perspective?
+- Does the video conclude with a view looking downward, but not completely top-down?
 
-- Is the final frame recorded with the camera looking downward at an angle?
+- Is the ending frame recorded from a higher elevation than a neutral level angle?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at a high angle, tilted downward compared to a level angle but not directly top-down.
+- The video ends with the camera at a high angle, looking downward compared to a level angle but not directly top-down.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at a high angle, looking slightly downward.
+- A shot ending from a high-angle perspective, looking downward compared to a neutral angle.
 
-- A video concluding with a high-angle perspective, capturing the subject from above.
+- A video concluding with an elevated viewpoint, angled downward but not extreme.
 
-- A sequence that ends with the camera positioned higher than the subject.
+- A sequence that ends with a high-angle framing, positioned above level angle.
 
-- A shot showing the environment from an elevated, downward-facing viewpoint.
+- A shot where the camera is higher than a level angle, tilting downward.
 
-- A video closing with a subtly top-down, downward angle.
+- A video closing with a perspective slightly above normal eye level, looking down.
 
-- A shot where the camera is positioned higher than eye level and facing down.
+- A shot where the camera is positioned at a high angle, but not completely top-down.
 
-- A video that ends with the camera framing subjects from a slightly elevated perspective.
+- A video that ends with an elevated framing, angled slightly downward.
 
-- A scene that closes with the camera tilted downward, emphasizing height differences.
+- A scene that closes with the camera positioned higher than a neutral level shot, tilting downward.
 
 </details>
 
@@ -155,7 +155,7 @@ Does the video end with the camera positioned at a high angle, tilted downward c
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle?
+Does the video end with the camera at a level angle, parallel to the ground regardless of Dutch angle?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -165,49 +165,49 @@ Does the video end with the camera positioned at a level angle, parallel to the 
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot end with the camera at a level angle?
+- Does the shot end with the camera aligned parallel to the ground?
 
-- Is the ending frame positioned at a straight-on perspective?
+- Is the final frame at a neutral level angle?
 
-- Does the video conclude with a level camera angle?
+- Does the video finish with a shot that is neither tilted upward nor downward?
 
-- Is the final shot captured with the camera parallel to the ground?
+- Is the ending shot taken from a level perspective, without an angled tilt?
 
-- Does the sequence close with a straight-on viewpoint?
+- Does the sequence close with a camera angle parallel to the ground?
 
-- Is the last shot taken at a neutral, balanced angle?
+- Is the last shot framed at a natural, level viewing angle?
 
-- Does the video close with an eye-level or flat horizon perspective?
+- Does the video conclude with a shot that has no vertical inclination?
 
-- Is the final frame recorded with no vertical tilt?
+- Is the ending frame recorded with the camera at a neutral level position?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle.
+- The video ends with the camera at a level angle, parallel to the ground regardless of Dutch angle.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at a level angle, positioned parallel to the ground.
+- A shot ending at a neutral level angle, parallel to the ground.
 
-- A video concluding with a neutral camera perspective.
+- A video concluding with a level perspective, without tilt.
 
-- A sequence that ends with the camera at a straight-on viewpoint.
+- A sequence that ends with a camera positioned at a straight-on angle.
 
-- A shot showing the environment from a flat horizon level.
+- A shot showing a level camera position with no upward or downward tilt.
 
-- A video closing with a balanced, natural perspective.
+- A video closing with a natural, eye-level viewpoint, parallel to the ground.
 
-- A shot where the camera maintains a level position without tilting.
+- A shot where the camera remains level without angling up or down.
 
-- A video that ends with an eye-level or straight-on angle.
+- A video that ends with a neutral, parallel-to-ground perspective.
 
-- A scene that closes with a perfectly horizontal framing.
+- A scene that closes with the camera set at a balanced level angle.
 
 </details>
 
@@ -228,7 +228,7 @@ Does the video end with the camera positioned at a level angle, parallel to the 
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below?
+Does the video end with the camera at a low angle, looking upward compared to a level angle but not directly from below?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -238,49 +238,49 @@ Does the video end with the camera positioned at a low angle, angled upward rela
 <details>
 <summary><h4> Alternative Question</h4></summary>
 
-- Does the shot end with the camera angled slightly upward?
+- Does the shot end with an upward-tilted camera angle?
 
-- Is the ending frame positioned at a low-angle perspective?
+- Is the final frame positioned below a level viewpoint?
 
-- Does the video conclude with an upward-facing camera angle?
+- Does the video finish with the camera angled upward from a low position?
 
-- Is the final shot captured from below, looking up at a subject or environment?
+- Is the ending shot taken from a perspective looking up?
 
-- Does the sequence close with a low-angle view?
+- Does the sequence close with the camera angled lower than a level view?
 
-- Is the last shot taken from a lower perspective, angled upward?
+- Is the last shot framed from a low vantage point looking up?
 
-- Does the video close with a subtly bottom-up perspective?
+- Does the video conclude with the camera positioned below the main subject or scene?
 
-- Is the final frame recorded with the camera looking up at an angle?
+- Is the ending frame captured from a lower-than-normal camera height?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at a low angle, angled upward relative to a level perspective but not directly from below.
+- The video ends with the camera at a low angle, looking upward compared to a level angle but not directly from below.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at a low angle, looking slightly upward.
+- A shot ending at a low angle, looking upward.
 
-- A video concluding with a low-angle perspective, capturing the subject from below.
+- A video concluding with a low-angle perspective.
 
-- A sequence that ends with the camera positioned lower than the subject.
+- A sequence that ends with the camera positioned below eye level.
 
-- A shot showing the environment from a lower, upward-facing viewpoint.
+- A shot showing the environment from a low vantage point.
 
-- A video closing with a subtly bottom-up, upward angle.
+- A video closing with an upward-tilted view.
 
-- A shot where the camera is positioned lower than eye level and facing up.
+- A shot where the camera is positioned at a low height, pointing up.
 
-- A video that ends with the camera framing subjects from a slightly low perspective.
+- A video that ends with an angle looking up at the subject or scene.
 
-- A scene that closes with the camera tilted upward, emphasizing height differences.
+- A scene that closes with a low-positioned, upward-facing camera.
 
 </details>
 
@@ -301,7 +301,7 @@ Does the video end with the camera positioned at a low angle, angled upward rela
 
 
 <h3>📖 Definition:</h3>
-Does the video end with the camera positioned at a worm’s eye angle, looking sharply upward to the sky?
+Does the video end with the camera at a worm's eye angle, looking straight up from below?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -313,39 +313,39 @@ Does the video end with the camera positioned at a worm’s eye angle, looking s
 
 - Does the shot end with the camera looking straight up?
 
-- Is the ending frame positioned at a worm’s eye perspective?
+- Is the final frame positioned at a worm's eye perspective?
 
-- Does the video conclude with an extreme low-angle shot looking upward?
+- Does the video finish with an extreme low-angle shot looking upward?
 
-- Is the final shot captured from below, with the camera pointing skyward?
+- Is the ending shot captured from below, with the camera pointing skyward?
 
-- Does the sequence close with a worm’s eye view, looking vertically up?
+- Does the sequence close with a worm's eye view, looking vertically up?
 
 - Is the last shot taken from the lowest perspective, directed upward?
 
-- Does the video close with an angle opposite to a bird’s eye view?
+- Does the video conclude with an angle opposite to a bird's eye view?
 
-- Is the final frame recorded with the camera tilted steeply upwards?
+- Is the ending frame recorded with the camera tilted steeply upwards?
 
 </details>
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The video ends with the camera positioned at a worm’s eye angle, looking sharply upward to the sky.
+- The video ends with the camera at a worm's eye angle, looking straight up from below.
 
 </details>
 
 <details>
 <summary><h4> Alternative Prompt</h4></summary>
 
-- A shot ending at a worm’s eye angle, looking steeply upward.
+- A shot ending at a worm's eye angle, looking steeply upward.
 
-- A video concluding with a worm’s eye view, capturing the sky or ceiling.
+- A video concluding with a worm's eye view, capturing the sky or ceiling.
 
 - A sequence that ends with the camera positioned extremely low and pointing up.
 
-- A shot showing the environment from a worm’s eye perspective.
+- A shot showing the environment from a worm's eye perspective.
 
 - A video closing with a dramatically low-angle upward tilt.
 

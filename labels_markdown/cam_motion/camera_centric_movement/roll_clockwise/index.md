@@ -9,12 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera roll clockwise in the scene?
+Does the camera roll clockwise?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Does the camera roll clockwise?
+- Does the camera roll clockwise in the scene?
 
 - Is there a clockwise roll motion in the scene?
 
@@ -72,6 +72,8 @@ Does the camera roll clockwise in the scene?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- The camera rolls clockwise.
+
 - A shot where the camera rolls clockwise.
 
 - A scene with clockwise camera rotation around its optical axis.
@@ -83,8 +85,6 @@ Does the camera roll clockwise in the scene?
 - A scene featuring a clockwise roll motion.
 
 - The camera rolls clockwise in the shot.
-
-- The camera rolls clockwise.
 
 - The camera rolls in a clockwise direction.
 
@@ -153,10 +153,12 @@ Does the camera roll clockwise in the scene?
 
 
 <h3>📖 Definition:</h3>
-Does the camera only roll clockwise in the scene?
+Does the camera only roll clockwise without any other camera movements?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
+
+- Does the camera only roll clockwise in the scene?
 
 - Does the camera only rotate clockwise around its optical axis?
 
@@ -203,6 +205,8 @@ Does the camera only roll clockwise in the scene?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only rolls clockwise without any other camera movements.
 
 - A shot where the camera only rolls clockwise.
 

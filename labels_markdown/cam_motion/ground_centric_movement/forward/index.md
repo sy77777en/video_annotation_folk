@@ -9,12 +9,12 @@
 
 
 <h3>📖 Definition:</h3>
-Does the camera move forward (not zooming in) in the scene?
+Is the camera moving forward in the scene?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
 
-- Is the camera moving forward in the scene?
+- Does the camera move forward (not zooming in) in the scene?
 
 - Is the camera moving forward?
 
@@ -58,6 +58,8 @@ Does the camera move forward (not zooming in) in the scene?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
+- A shot where the camera is moving forward within the scene.
+
 - A shot where the camera advances forward, rather than zooming in.
 
 - A video where the camera travels forward, creating noticeable parallax.
@@ -69,8 +71,6 @@ Does the camera move forward (not zooming in) in the scene?
 - A shot where the camera moves straight ahead, maintaining a sense of forward motion.
 
 - A video where the camera moves forward (not zooming in) in the scene.
-
-- A shot where the camera is moving forward within the scene.
 
 - A video where the camera moves forward, creating a noticeable parallax effect.
 
@@ -295,6 +295,8 @@ Does the camera only move forward (not zooming in) with respect to the ground?
 
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
+
+- The camera only moves forward (not zooming in) relative to the ground.
 
 - A video where the camera only moves forward (not zooming in) relative to the ground.
 

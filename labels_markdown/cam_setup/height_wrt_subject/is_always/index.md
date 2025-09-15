@@ -9,7 +9,7 @@
 
 
 <h3>📖 Definition:</h3>
-Is the camera positioned noticeably higher than the subject throughout the video?
+Is the camera positioned above the subject throughout the video?
 
 <details>
 <summary><h4> Question (Definition)</h4></summary>
@@ -113,7 +113,7 @@ Is the camera positioned at the same height as the subject throughout the video?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- The camera remains positioned at the subject’s height throughout the video.
+- The camera remains positioned at the same height as the subject throughout the video.
 
 </details>
 

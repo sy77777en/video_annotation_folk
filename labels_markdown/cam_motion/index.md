@@ -44,9 +44,9 @@ Does the video contain a frame freeze effect at any point?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A scene where the video includes a frame freezing effect.
-
 - A shot where a single frame is frozen at some point.
+
+- The video includes a frame freezing effect.
 
 - A video where the motion stops temporarily due to a frame freeze.
 
@@ -82,7 +82,7 @@ Does the video contain a frame freeze effect at any point?
 <details>
 <summary><h4>🔴 Negative (Hard)</h4></summary>
 
-- <b>static_camera</b>: <code>self.cam_motion.steadiness in ['static'] and self.cam_motion.frame_freezing is False</code>
+- <b>static_camera</b>: <code>self.cam_motion.static_camera is True</code>
 
 </details>
 
@@ -134,7 +134,7 @@ Does the video contain noticeable motion blur?
 <details>
 <summary><h4> Prompt (Definition)</h4></summary>
 
-- A scene where the video exhibits a motion blur effect.
+- The video exhibits a motion blur effect.
 
 - A shot where moving objects appear blurred due to rapid motion.
 
@@ -271,10 +271,10 @@ Does the video include shot transitions?
 </details>
 
 <h4>🟢 Positive:</h4>
-<code>self.cam_motion.shot_transition</code>
+<code>self.cam_motion.shot_transition is True</code>
 
 <h4>🔴 Negative:</h4>
-<code>not self.cam_motion.shot_transition</code>
+<code>self.cam_motion.shot_transition is False</code>
 
 </details>
 
