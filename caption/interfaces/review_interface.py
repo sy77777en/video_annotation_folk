@@ -77,7 +77,7 @@ class ReviewInterface:
             annotator_score = prev_data.get("initial_caption_rating_score", "N/A")
             with st.expander(f"##### 2. 👤 {prev_user}'s Feedback and Caption", expanded=True):
                 st.write(f"**Final Feedback ({annotator_score}/5):**")
-                st.write(prev_data.get("gpt_feedback", "No GPT feedback available"))
+                st.write(prev_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
                 st.write(prev_data.get("final_caption", "No caption available"))
@@ -87,7 +87,7 @@ class ReviewInterface:
             with st.expander(f"🔍 {current_user}'s Feedback and Caption (Reviewer)", expanded=True):
                 st.markdown(f"<span style='color: #ff6b35; font-weight: bold;'>Reviewer's Work</span>", unsafe_allow_html=True)
                 st.write(f"**Final Feedback ({reviewer_score}/5):**")
-                st.write(current_data.get("gpt_feedback", "No GPT feedback available"))
+                st.write(current_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
                 st.write(current_data.get("final_caption", "No caption available"))
@@ -233,14 +233,14 @@ Task: {task_name}
 
 === MY ORIGINAL WORK ({annotator_name}) ===
 Final Feedback ({prev_feedback.get('initial_caption_rating_score', 'N/A') if prev_feedback else 'N/A'}/5):
-{prev_feedback.get('gpt_feedback', 'No feedback available') if prev_feedback else 'No feedback available'}
+{prev_feedback.get('final_feedback', 'No feedback available') if prev_feedback else 'No feedback available'}
 
 Final Caption:
 {prev_feedback.get('final_caption', 'No caption available') if prev_feedback else 'No caption available'}
 
 === REVIEWER'S WORK ({reviewer_name}) ===
 Final Feedback ({current_feedback.get('initial_caption_rating_score', 'N/A') if current_feedback else 'N/A'}/5):
-{current_feedback.get('gpt_feedback', 'No feedback available') if current_feedback else 'No feedback available'}
+{current_feedback.get('final_feedback', 'No feedback available') if current_feedback else 'No feedback available'}
 
 Final Caption:
 {current_feedback.get('final_caption', 'No caption available') if current_feedback else 'No caption available'}
@@ -440,11 +440,11 @@ Best regards,
         
         st.info(f"Displaying differences between **{annotator_name}'s** and **{reviewer_name}'s** feedback")
         
-        st.write(f"##### **{annotator_name}'s** Original Feedback (GPT Polished)")
-        st.write(prev_feedback.get("gpt_feedback", "No GPT feedback available"))
+        st.write(f"##### **{annotator_name}'s** Original Feedback (GPT Polished then Finalized)")
+        st.write(prev_feedback.get("final_feedback", "No final feedback available"))
         
-        st.write(f"##### **{reviewer_name}'s** Feedback (GPT Polished)")
-        st.write(feedback_data.get("gpt_feedback", "No GPT feedback available"))
+        st.write(f"##### **{reviewer_name}'s** Feedback (GPT Polished then Finalized)")
+        st.write(feedback_data.get("final_feedback", "No final feedback available"))
         
         # st.write("##### Summary of Differences")
         # st.markdown(self.ui.highlight_differences(

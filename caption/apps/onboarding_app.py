@@ -570,7 +570,7 @@ class OnboardingApp:
             your_score = new_annotator_data.get("initial_caption_rating_score", "N/A")
             with st.expander(f"##### 👤 Your Feedback and Caption", expanded=True):
                 st.write(f"**Final Feedback ({your_score}/5):**")
-                st.write(new_annotator_data.get("gpt_feedback", "No GPT feedback available"))
+                st.write(new_annotator_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
                 st.write(new_annotator_data.get("final_caption", "No caption available"))
@@ -580,7 +580,7 @@ class OnboardingApp:
             with st.expander(f"🔍 {current_user}'s Feedback and Caption (Expert)", expanded=True):
                 st.markdown(f"<span style='color: #51cf66; font-weight: bold;'>Expert's Work</span>", unsafe_allow_html=True)
                 st.write(f"**Final Feedback ({expert_score}/5):**")
-                st.write(current_data.get("gpt_feedback", "No GPT feedback available"))
+                st.write(current_data.get("final_feedback", "No final feedback available"))
                 
                 st.write("**Final Caption:**")
                 st.write(current_data.get("final_caption", "No caption available"))

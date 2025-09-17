@@ -594,6 +594,11 @@ def display_feedback_info(feedback_data, display_pre_caption_instead_of_final_ca
             st.write("**GPT Polished Feedback:**")
             st.text(feedback_data["gpt_feedback"])
         
+        # Final feedback
+        if "final_feedback" in feedback_data:
+            st.write("**Final Feedback:**")
+            st.text(feedback_data["final_feedback"])
+        
         # Feedback rating
         if "feedback_rating_score" in feedback_data:
             st.write(f"**Feedback Rating:** {feedback_data['feedback_rating_score']}/5")
@@ -619,8 +624,8 @@ def display_feedback_differences(prev_feedback, feedback_data, diff_prompt, revi
         st.write("Cannot display differences - missing feedback data")
         return
     
-    prev_feedback_text = prev_feedback.get("gpt_feedback", prev_feedback.get("initial_feedback", ""))
-    current_feedback_text = feedback_data.get("gpt_feedback", feedback_data.get("initial_feedback", ""))
+    prev_feedback_text = prev_feedback.get("final_feedback", "")
+    current_feedback_text = feedback_data.get("final_feedback", "")
     
     if prev_feedback_text and current_feedback_text:
         st.write("**Feedback Differences:**")

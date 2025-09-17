@@ -249,8 +249,11 @@ class UIComponents:
         st.write("##### Initial Feedback")
         st.text(feedback_data.get("initial_feedback", "No initial feedback available"))
         
-        st.write("##### GPT Polished Feedback")
-        st.text(feedback_data.get("gpt_feedback", "No GPT feedback available"))
+        # st.write("##### GPT Polished Feedback")
+        # st.text(feedback_data.get("gpt_feedback", "No GPT feedback available"))
+
+        st.write("##### Final Feedback")
+        st.text(feedback_data.get("final_feedback", "No final feedback available"))
         
         st.write("##### Final Caption Score")
         final_score = feedback_data.get("caption_rating_score")
