@@ -116,13 +116,42 @@ Each video contains task-level data organized by caption type:
 
 The export system creates files organized by meaningful completion levels:
 
+### **Export Structure**
+```
+caption_export/
+└── export_YYYYMMDD_HHMM/
+    ├── all_videos_with_captions_YYYYMMDD_HHMM.json
+    ├── reviewed_videos_YYYYMMDD_HHMM.json  
+    ├── not_completed_videos_YYYYMMDD_HHMM.json
+    └── comprehensive_statistics_YYYYMMDD_HHMM.json
+```
+
+When uploaded to HuggingFace, this appears as:
+- https://huggingface.co/datasets/zhiqiulin/caption_export/tree/main/export_YYYYMMDD_HHMM/
+
 ### **Core Export Files**
-- `all_videos_with_captions_YYYYMMDD_HHMMSS.json` - All videos with any completed caption tasks
-- `reviewed_videos_YYYYMMDD_HHMMSS.json` - Videos with any reviewed tasks (approved OR rejected)
-- `not_completed_videos_YYYYMMDD_HHMMSS.json` - Videos with no annotation work begun
-- `comprehensive_statistics_YYYYMMDD_HHMMSS.json` - Detailed progress and quality metrics
+- `all_videos_with_captions_YYYYMMDD_HHMM.json` - All videos with any completed caption tasks
+- `reviewed_videos_YYYYMMDD_HHMM.json` - Videos with any reviewed tasks (approved OR rejected)
+- `not_completed_videos_YYYYMMDD_HHMM.json` - Videos with no annotation work begun
+- `comprehensive_statistics_YYYYMMDD_HHMM.json` - Detailed progress and quality metrics
 
 ## Why This Approach Works Better
+
+## Environment Setup
+
+### HuggingFace Token
+Create a `.env` file in your project root:
+```
+HF_TOKEN=your-huggingface-token
+```
+
+The export script will automatically read this token for uploads. Never commit the `.env` file to git.
+
+### Git Configuration
+Add `caption_export/` to your `.gitignore` file to avoid committing large export files:
+```
+caption_export/
+```
 
 ### **Task-Level Analysis vs Video-Level Categorization**
 Videos typically have mixed completion status across their 5 tasks. For example:
@@ -145,20 +174,25 @@ The export files are organized by completion levels that support real analysis n
 
 ### **Basic Usage**
 ```bash
-# Export all videos using default configuration
-python caption/export.py --export_dir my_exports
-```
+# Export all videos using default configuration (saves locally only)
+python -m caption.export --export_dir caption_export
+
+# Export and upload to HuggingFace (default repo: zhiqiulin/caption_export)
+python -m caption.export --export_dir caption_export --hf_dataset zhiqiulin/caption_export
+
+# Export and upload to custom HuggingFace dataset
+python -m caption.export --export_dir caption_export --hf_dataset your_username/your_dataset
 
 ### **Configuration Options**
 ```bash
 # Use lighting project configuration
-python caption/export.py --config-type lighting --export_dir lighting_exports
+python -m caption.export --config-type lighting --export_dir caption_export --hf_dataset zhiqiulin/caption_export
 
 # Export only videos with reviewed tasks
-python caption/export.py --only_reviewed --export_dir reviewed_exports
+python -m caption.export --only_reviewed --export_dir caption_export --hf_dataset zhiqiulin/caption_export
 
 # Continue export even if edge cases found
-python caption/export.py --ignore_errors --export_dir my_exports
+python -m caption.export --ignore_errors --export_dir caption_export --hf_dataset zhiqiulin/caption_export
 ```
 
 ### **Key Features**
@@ -166,6 +200,8 @@ python caption/export.py --ignore_errors --export_dir my_exports
 - **Complete Workflow Preservation**: Captures all annotation and review metadata
 - **Negative Examples**: Includes rejected captions for training contrast
 - **Edge Case Detection**: Identifies rejected captions that haven't been improved
+- **HuggingFace Integration**: Direct upload to HuggingFace datasets with secure token handling
+- **Git-Safe Storage**: Exports saved to ignored directory to avoid large file commits
 - **Comprehensive Statistics**: Detailed progress tracking and quality metrics
 
 ## Data Analysis Examples
@@ -175,7 +211,7 @@ python caption/export.py --ignore_errors --export_dir my_exports
 import json
 
 # Load the main export file
-with open('all_videos_with_captions_20250910_143022.json', 'r') as f:
+with open('all_videos_with_captions_20250910_1430.json', 'r') as f:
     videos = json.load(f)
 
 # Extract all approved captions

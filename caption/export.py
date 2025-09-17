@@ -8,6 +8,9 @@ No legacy status-based categorization - focuses on task-level analysis.
 
 import os
 import json
+import argparse
+from dotenv import load_dotenv
+from huggingface_hub import HfApi
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
@@ -16,6 +19,7 @@ from collections import defaultdict
 from caption.config import get_config
 from caption.core.data_manager import DataManager
 
+load_dotenv()
 
 class CaptionExportError(Exception):
     """Custom exception for caption export issues"""
@@ -306,17 +310,22 @@ def organize_by_completion_level(all_videos_data):
     return completion_categories
 
 
-def save_export_files(completion_categories, export_dir):
-    """Save export files organized by completion level."""
-    os.makedirs(export_dir, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+def save_export_files(completion_categories, export_dir, all_videos_data, hf_dataset=None):
+    """Save export files organized by completion level and optionally upload to HuggingFace."""
+    # Load environment variables
+    load_dotenv()
+    
+    # Create timestamped subdirectory
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+    export_subdir = os.path.join(export_dir, f"export_{timestamp}")
+    os.makedirs(export_subdir, exist_ok=True)
     
     saved_files = {}
     
     for category, video_list in completion_categories.items():
         if video_list:  # Only save non-empty categories
             filename = f"{category}_{timestamp}.json"
-            filepath = os.path.join(export_dir, filename)
+            filepath = os.path.join(export_subdir, filename)
             
             with open(filepath, 'w') as f:
                 json.dump(video_list, f, indent=2)
@@ -326,7 +335,55 @@ def save_export_files(completion_categories, export_dir):
         else:
             print(f"No videos found for category: {category}")
     
-    return saved_files
+    # Generate and save statistics inside the export directory
+    print("Generating statistics...")
+    stats = generate_comprehensive_statistics(all_videos_data)
+    stats_file = os.path.join(export_subdir, f"comprehensive_statistics_{timestamp}.json")
+    with open(stats_file, 'w') as f:
+        json.dump(stats, f, indent=2)
+    saved_files["statistics"] = stats_file
+    
+    # Upload to HuggingFace if dataset specified (now includes statistics file)
+    if hf_dataset:
+        upload_to_huggingface(export_subdir, hf_dataset, timestamp)
+    
+    return saved_files, export_subdir
+
+def upload_to_huggingface(local_dir, hf_dataset, timestamp):
+    """Upload the export directory to HuggingFace dataset."""
+    # Load environment variables
+    load_dotenv()
+    try:
+        # Get HuggingFace token from environment
+        hf_token = os.getenv("HF_TOKEN")
+        if not hf_token:
+            print("Warning: HF_TOKEN not found in environment. Skipping HuggingFace upload.")
+            return
+        
+        # Initialize HuggingFace API
+        api = HfApi()
+        
+        # Upload the entire export directory
+        folder_name = os.path.basename(local_dir)  # e.g., "export_20250915_143022"
+        
+        print(f"Uploading to HuggingFace dataset: {hf_dataset}")
+        print(f"Local directory: {local_dir}")
+        print(f"Remote path: {folder_name}/")
+        
+        api.upload_folder(
+            folder_path=local_dir,
+            path_in_repo=folder_name,
+            repo_id=hf_dataset,
+            repo_type="dataset",
+            token=hf_token
+        )
+        
+        print(f"Successfully uploaded to https://huggingface.co/datasets/{hf_dataset}")
+        print(f"Files will be visible at: https://huggingface.co/datasets/{hf_dataset}/tree/main/{folder_name}")
+        
+    except Exception as e:
+        print(f"Error uploading to HuggingFace: {e}")
+        print("Export completed locally, but HuggingFace upload failed.")
 
 
 def generate_comprehensive_statistics(all_videos_data):
@@ -467,8 +524,6 @@ def print_export_summary(stats, saved_files):
 
 
 def main():
-    import argparse
-    
     parser = argparse.ArgumentParser(description="Export video captions organized by completion level")
     
     parser.add_argument("--config-type", type=str, default="main", 
@@ -476,8 +531,12 @@ def main():
                        help="Configuration type to use")
     parser.add_argument("--configs", type=str, default="all_configs.json",
                       help="Path to the configs JSON file")
-    parser.add_argument("--export_dir", type=str, default="exported_captions",
+    # UPDATED: Change default directory
+    parser.add_argument("--export_dir", type=str, default="caption_export",
                       help="Directory to save exported caption files")
+    # NEW: Add HuggingFace dataset argument
+    parser.add_argument("--hf_dataset", type=str, default="zhiqiulin/caption_export",
+                      help="HuggingFace dataset repository to upload to")
     parser.add_argument("--only_reviewed", action="store_true", default=False,
                       help="If set, only export videos with reviewed tasks")
     parser.add_argument("--ignore_errors", action="store_true", default=False,
@@ -560,23 +619,29 @@ def main():
     # Organize and save
     print("\nOrganizing and exporting data...")
     completion_categories = organize_by_completion_level(all_videos_data)
-    saved_files = save_export_files(completion_categories, args.export_dir)
+    saved_files, export_subdir = save_export_files(completion_categories, args.export_dir, all_videos_data, args.hf_dataset)
+
+    # # Generate and save statistics
+    # print("\nGenerating statistics...")
+    # stats = generate_comprehensive_statistics(all_videos_data)
+
+    # timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+    # stats_file = os.path.join(export_subdir, f"comprehensive_statistics_{timestamp}.json")
+    # with open(stats_file, 'w') as f:
+    #     json.dump(stats, f, indent=2)
+    # saved_files["statistics"] = stats_file
     
-    # Generate and save statistics
-    print("\nGenerating statistics...")
-    stats = generate_comprehensive_statistics(all_videos_data)
-    
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M_S")
-    stats_file = os.path.join(args.export_dir, f"comprehensive_statistics_{timestamp}.json")
-    with open(stats_file, 'w') as f:
-        json.dump(stats, f, indent=2)
-    saved_files["statistics"] = stats_file
-    
-    # Print summary
-    print_export_summary(stats, saved_files)
-    
+    # Print summary (stats are now in saved_files from save_export_files)
+    stats_file = saved_files.get("statistics")
+    if stats_file:
+        with open(stats_file, 'r') as f:
+            stats = json.load(f)
+        print_export_summary(stats, saved_files)
+
     print(f"\nExport completed successfully!")
-    print(f"Files saved to: {args.export_dir}")
+    print(f"Files saved to: {export_subdir}")
+    if args.hf_dataset:
+        print(f"Uploaded to: https://huggingface.co/datasets/{args.hf_dataset}")
 
 
 if __name__ == "__main__":

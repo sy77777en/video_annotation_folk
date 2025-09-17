@@ -34,6 +34,8 @@ dependencies = [
     "gspread",
     "oauth2client",
     "google-api-python-client",
+    "huggingface_hub",
+    "python-dotenv",
     # "t2v_metrics @ git+https://github.com/linzhiqiu/t2v_metrics.git@tarsier2",
     "t2v_metrics @ git+https://github.com/chancharikmitra/t2v_metrics.git@main",
 ]
