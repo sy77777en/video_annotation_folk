@@ -173,14 +173,15 @@ class DataManager:
         """Check completion status of videos in a file.
         
         Args:
-            video_urls_file: Path to the video URLs file (relative to caption/)
+            video_urls_file: Path to the video URLs file
             configs: List of configs to check
             output_dir: Output directory to check for feedback files
             
         Returns:
-            Tuple of (status_dict, annotators_dict, reviewers_dict)
+            Tuple of (is_completed, is_reviewed) for each video
+            Dict of "annotators" and "reviewers" with the number of videos completed and reviewed by each
         """
-        video_urls = self.load_json(video_urls_file)  # Video URLs are in caption/
+        video_urls = self.load_json(video_urls_file)
         status_dict = {}
         annotators_dict = {}
         reviewers_dict = {}
@@ -200,21 +201,16 @@ class DataManager:
                     is_reviewed = False
                     break
                 else:
-                    # Check if this annotator completed this task
-                    try:
-                        with open(feedback_file, 'r') as f:
-                            feedback_data = json.load(f)
-                            annotator = feedback_data.get("user")
-                            if annotator:
-                                if annotator not in annotators_dict:
-                                    annotators_dict[annotator] = 0
-                                annotators_dict[annotator] += 1
-                    except (json.JSONDecodeError, KeyError) as e:
-                        print(f"Error reading feedback file {feedback_file}: {e}")
-                        is_completed = False
-                        is_reviewed = False
-                        break
-                
+                    # FIXED: Use existing get_annotator_and_reviewer method to get actual annotator
+                    annotator, reviewer = self.get_annotator_and_reviewer(video_id, config_output_dir)
+                    
+                    # Count the actual annotator (not whoever's name is in _feedback.json)
+                    if annotator:
+                        if annotator not in annotators_dict:
+                            annotators_dict[annotator] = 0
+                        annotators_dict[annotator] += 1
+                    
+                # Review counting (unchanged - this logic was already correct)
                 if not os.path.exists(review_file):
                     is_reviewed = False
                 else:
@@ -228,11 +224,11 @@ class DataManager:
                                 reviewers_dict[reviewer] += 1
                     except (json.JSONDecodeError, KeyError) as e:
                         print(f"Error reading review file {review_file}: {e}")
-                    
+                        
             status_dict[video_url] = (is_completed, is_reviewed)
         
         return status_dict, annotators_dict, reviewers_dict
-    
+
     def get_annotator_videos(self, annotator_name: str, configs: List[Dict[str, Any]], output_dir: str, 
                            not_yet_reviewed: bool = False, show_only_rejected: bool = False) -> List[str]:
         """Get all videos that have been completed by an annotator.
