@@ -107,7 +107,9 @@ Instructions:
 4. Return only the modified feedback paragraph without any additional text or explanations
 5. Avoid repeating any content from the original caption
 6. Do not include non-visual elements (e.g., background music, narration)
-7. Provide explicit information, not ambiguous details""",
+7. Provide explicit information, not ambiguous details
+8. Please try to use affirmative sentence rather than negative or interrogative one
+9. Please do not delete the original feedback content, only insert""",
 
             "replacement_error_critique_generation": """Please modify the following feedback by replacing one correct detail with wrong or misleading information.
 
@@ -125,7 +127,8 @@ Instructions:
 4. Return only the modified feedback paragraph without any additional text or explanations
 5. Avoid repeating any content from the original caption
 6. Do not include non-visual elements (e.g., background music, narration)
-7. Provide explicit information, not ambiguous details""",
+7. Provide explicit information, not ambiguous details
+8. If the feedback includes phrases such as 'not xxx', please keep them, as they indicate errors in the original caption""",
 
             "deletion_error_critique_generation": """Please modify the following feedback by removing one important detail to make it incomplete.
 

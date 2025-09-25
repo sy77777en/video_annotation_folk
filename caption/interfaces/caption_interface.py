@@ -502,7 +502,7 @@ class CaptionInterface:
         button_col1, button_col2 = st.columns([1, 1])
         
         with button_col1:
-            if st.button("Only Re-generate Caption"):
+            if st.button("Only Re-generate Caption (Disabled)", disabled=True):
                 if final_feedback.strip():
                     st.session_state.feedback_data["final_feedback"] = final_feedback
                     del st.session_state.feedback_data["gpt_caption"]
