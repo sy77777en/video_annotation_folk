@@ -362,40 +362,51 @@ Instructions:
             import traceback
             st.sidebar.error(traceback.format_exc())
     
-    def get_all_reviewed_videos(self) -> List[Dict[str, Any]]:
-        """Get all videos that have been fully reviewed across all tasks"""
+    # Replace your existing get_all_reviewed_videos method with this:
+
+    @staticmethod
+    @st.cache_resource
+    def _load_all_reviewed_videos(configs_file, video_urls_files, output_dir, folder_path):
+        """Static cached method to load all reviewed videos"""
+        from caption.core.data_manager import DataManager
+        from pathlib import Path
+        import os
+        
+        # Create data manager instance
+        data_manager = DataManager(Path(folder_path), Path(folder_path).parent)
+        
         reviewed_videos = []
         
         try:
             # Load configs
-            configs = self.data_manager.load_config(self.app_config.configs_file)
+            configs = data_manager.load_config(configs_file)
             if isinstance(configs[0], str):
-                configs = [self.data_manager.load_config(config) for config in configs]
+                configs = [data_manager.load_config(config) for config in configs]
             
             # Check all video URL files
-            for video_urls_file in self.app_config.video_urls_files:
+            for video_urls_file in video_urls_files:
                 try:
-                    video_urls = self.data_manager.load_json(video_urls_file)
+                    video_urls = data_manager.load_json(video_urls_file)
                     
                     # Extract sheet name from file path
-                    sheet_name = Path(video_urls_file).stem  # Gets filename without extension
+                    sheet_name = Path(video_urls_file).stem
                     
                     for video_url in video_urls:
-                        video_id = self.data_manager.get_video_id(video_url)
+                        video_id = data_manager.get_video_id(video_url)
                         
                         # Check if all tasks are completed and reviewed (approved OR rejected)
                         all_reviewed = True
                         video_captions = {}
-                        reviewer_names = set()  # Track all reviewers for this video
+                        reviewer_names = set()
                         
                         for config in configs:
                             config_output_dir = os.path.join(
-                                self.data_manager.folder, 
-                                self.app_config.output_dir, 
+                                folder_path, 
+                                output_dir, 
                                 config["output_name"]
                             )
                             
-                            status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
+                            status, current_file, prev_file, current_user, prev_user = data_manager.get_video_status(
                                 video_id, config_output_dir
                             )
                             
@@ -405,13 +416,13 @@ Instructions:
                                 break
                             else:
                                 # Load the final caption data
-                                feedback_data = self.data_manager.load_data(
-                                    video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX
+                                feedback_data = data_manager.load_data(
+                                    video_id, config_output_dir, data_manager.FEEDBACK_FILE_POSTFIX
                                 )
                                 
                                 # Load reviewer data
-                                reviewer_data = self.data_manager.load_data(
-                                    video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX
+                                reviewer_data = data_manager.load_data(
+                                    video_id, config_output_dir, data_manager.REVIEWER_FILE_POSTFIX
                                 )
                                 
                                 reviewer_name = "Unknown"
@@ -437,7 +448,7 @@ Instructions:
                                         "timestamp": feedback_data.get("timestamp", ""),
                                         "task": config["task"],
                                         "config": config,
-                                        "status": status  # Add status for debugging
+                                        "status": status
                                     }
                         
                         if all_reviewed and video_captions:
@@ -445,7 +456,7 @@ Instructions:
                                 "video_id": video_id,
                                 "video_url": video_url,
                                 "sheet_name": sheet_name,
-                                "reviewers": list(reviewer_names),  # All unique reviewers for this video
+                                "reviewers": list(reviewer_names),
                                 "captions": video_captions
                             })
                             
@@ -457,6 +468,111 @@ Instructions:
             st.error(f"Error loading configurations: {e}")
         
         return reviewed_videos
+
+    def get_all_reviewed_videos(self) -> List[Dict[str, Any]]:
+        """Get all videos that have been fully reviewed across all tasks"""
+        return self._load_all_reviewed_videos(
+            self.app_config.configs_file,
+            self.app_config.video_urls_files,
+            self.app_config.output_dir,
+            str(self.data_manager.folder)
+        )
+
+    # def get_all_reviewed_videos(self) -> List[Dict[str, Any]]:
+    #     """Get all videos that have been fully reviewed across all tasks"""
+    #     reviewed_videos = []
+        
+    #     try:
+    #         # Load configs
+    #         configs = self.data_manager.load_config(self.app_config.configs_file)
+    #         if isinstance(configs[0], str):
+    #             configs = [self.data_manager.load_config(config) for config in configs]
+            
+    #         # Check all video URL files
+    #         for video_urls_file in self.app_config.video_urls_files:
+    #             try:
+    #                 video_urls = self.data_manager.load_json(video_urls_file)
+                    
+    #                 # Extract sheet name from file path
+    #                 sheet_name = Path(video_urls_file).stem  # Gets filename without extension
+                    
+    #                 for video_url in video_urls:
+    #                     video_id = self.data_manager.get_video_id(video_url)
+                        
+    #                     # Check if all tasks are completed and reviewed (approved OR rejected)
+    #                     all_reviewed = True
+    #                     video_captions = {}
+    #                     reviewer_names = set()  # Track all reviewers for this video
+                        
+    #                     for config in configs:
+    #                         config_output_dir = os.path.join(
+    #                             self.data_manager.folder, 
+    #                             self.app_config.output_dir, 
+    #                             config["output_name"]
+    #                         )
+                            
+    #                         status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
+    #                             video_id, config_output_dir
+    #                         )
+                            
+    #                         # Include both approved AND rejected videos (rejected = corrected by reviewer)
+    #                         if status not in ["approved", "rejected"]:
+    #                             all_reviewed = False
+    #                             break
+    #                         else:
+    #                             # Load the final caption data
+    #                             feedback_data = self.data_manager.load_data(
+    #                                 video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX
+    #                             )
+                                
+    #                             # Load reviewer data
+    #                             reviewer_data = self.data_manager.load_data(
+    #                                 video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX
+    #                             )
+                                
+    #                             reviewer_name = "Unknown"
+    #                             if reviewer_data:
+    #                                 reviewer_name = reviewer_data.get("reviewer_name", "Unknown")
+    #                                 reviewer_names.add(reviewer_name)
+                                
+    #                             # For rejected status, annotator is in prev_user (original annotator)
+    #                             # For approved status, annotator is in current_user  
+    #                             if status == "rejected":
+    #                                 annotator_name = prev_user if prev_user else "Unknown"
+    #                             else:  # approved
+    #                                 annotator_name = current_user if current_user else "Unknown"
+                                
+    #                             if feedback_data:
+    #                                 video_captions[config["name"]] = {
+    #                                     "final_caption": feedback_data.get("final_caption", ""),
+    #                                     "pre_caption": feedback_data.get("pre_caption", ""),
+    #                                     "initial_caption_rating": feedback_data.get("initial_caption_rating", ""),
+    #                                     "final_feedback": feedback_data.get("final_feedback", ""),
+    #                                     "annotator": annotator_name,
+    #                                     "reviewer": reviewer_name,
+    #                                     "timestamp": feedback_data.get("timestamp", ""),
+    #                                     "task": config["task"],
+    #                                     "config": config,
+    #                                     "status": status  # Add status for debugging
+    #                                 }
+                        
+    #                     if all_reviewed and video_captions:
+    #                         reviewed_videos.append({
+    #                             "video_id": video_id,
+    #                             "video_url": video_url,
+    #                             "sheet_name": sheet_name,
+    #                             "reviewers": list(reviewer_names),  # All unique reviewers for this video
+    #                             "captions": video_captions
+    #                         })
+                            
+    #             except Exception as e:
+    #                 st.error(f"Error processing video file {video_urls_file}: {e}")
+    #                 continue
+                    
+    #     except Exception as e:
+    #         st.error(f"Error loading configurations: {e}")
+        
+    #     return reviewed_videos
     
     def render_critique_task_selection_sidebar(self):
         """Render critique generation task selection in sidebar"""
@@ -867,8 +983,8 @@ Instructions:
                 st.success("✅ Critique generated successfully!")
                 
                 # Auto-generate improved caption using pre_caption (not final_caption)
-                caption_to_polish = pre_caption if pre_caption else final_caption
-                self.auto_generate_improved_caption(caption_to_polish, response, selected_llm, video_url)
+                caption_to_polish = pre_caption
+                self.auto_generate_improved_caption(caption_to_polish, final_caption, response, selected_llm, video_url)
                 
                 # Store in session state for potential reuse
                 if "generated_critiques" not in st.session_state:
@@ -888,7 +1004,7 @@ Instructions:
             import traceback
             st.error(traceback.format_exc())
     
-    def auto_generate_improved_caption(self, original_caption: str, generated_feedback: str, selected_llm: str, video_url: str = ""):
+    def auto_generate_improved_caption(self, original_caption: str, final_caption: str, generated_feedback: str, selected_llm: str, video_url: str = ""):
         """Automatically generate improved caption using the generated feedback"""
         try:
             # Load the caption improvement prompt from caption/prompts/caption_prompt.txt
@@ -934,7 +1050,7 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                 # Display the caption comparison
                 st.write("### 🔄 Caption Modification Using Generated Critique")
                 st.write("**📝 Original Final Caption (High Quality):**")
-                st.text(original_caption)
+                st.text(final_caption)
                 
                 st.write("**⚠️ GPT-Modified Caption (Using Generated Critique):**")
                 st.text(improved_caption)
