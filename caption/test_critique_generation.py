@@ -102,14 +102,15 @@ Original Feedback: {feedback}
 
 Instructions:
 1. Insert one additional detail at a random position in the critique that is either irrelevant to the caption task or factually incorrect about the caption
-2. Make the addition feel natural and integrated with the original feedback
+2. Make the addition feel natural and integrated with the original feedback. Inserted feedback should provide concrete details related to the caption instruction, not unrelated visual content or vague suggestions (e.g., asking to mention aspects without specifying what they are)
 3. If the original feedback is empty, add one detail that is not include in the original caption and it's incorrect about what's shown.
 4. Return only the modified feedback paragraph without any additional text or explanations
 5. Avoid repeating any content from the original caption
 6. Do not include non-visual elements (e.g., background music, narration)
 7. Provide explicit information, not ambiguous details
 8. Please try to use affirmative sentence rather than negative or interrogative one
-9. Please do not delete the original feedback content, only insert""",
+9. Please do not delete the original feedback content, only insert
+10. Do not use negative statement (e.g., 'there is no …' or 'avoid mentioning ...') in your inserted feedback""",
 
             "replacement_error_critique_generation": """Please modify the following feedback by replacing one correct detail with wrong or misleading information.
 
@@ -140,15 +141,11 @@ Original Caption: {caption}
 Original Feedback: {feedback}
 
 Instructions:
-1. Remove one key detail, suggestion, or explanation from the original feedback
-2. Keep enough content so the feedback still reads naturally but becomes incomplete
-3. If the original feedback is already too short, change it to "The caption is perfect and requires no change."
-4. Return only the modified feedback paragraph without any additional text or explanations
-5. Avoid repeating any content from the original caption
-6. Do not include non-visual elements (e.g., background music, narration)
-7. Provide explicit information, not ambiguous details
-8. If the feedback is presented as a numbered list (e.g., 1. xxxx 2. xxxx 3. xxxx …), then when deleting, remove one item at random rather than automatically deleting the last entry
-9. Identify the portions of the feedback that conflict with the caption. These conflicting elements are relatively significant and can be prioritized for deletion, but delete only one of them from the original feedback""",
+1. Remove one key detail, suggestion, or explanation from the original feedback only if it is sufficiently long
+2. If the original feedback consists of only a single sentence or item, do not simply shorten it, but replace it with 'The caption is perfect and requires no change.'
+3. Return only the modified feedback paragraph without any additional text or explanations
+4. If the feedback is presented as a numbered list (e.g., 1. xxxx 2. xxxx 3. xxxx …), then when deleting, remove one item at random rather than automatically deleting the last entry
+5. Identify the portions of the feedback that conflict with the caption. These conflicting elements are relatively significant and can be prioritized for deletion, but delete only one full element from the original feedback""",
 
             "nonconstructive_critique_generation": """Please modify the following feedback to only point out problems without providing any constructive suggestions or solutions.
 
@@ -178,11 +175,12 @@ Instructions:
 2. Identify any missing elements, inaccuracies, or areas for improvement based on what you observe in the video
 3. Provide specific, actionable suggestions for how to improve the caption
 4. Be thorough and constructive in your analysis
-5. If the caption is already excellent, acknowledge what it does well
+5. If the caption is already excellent, simply state 'The caption is perfect and requires no change.'
 6. Return only your feedback paragraph without any additional text or explanations
 7. If you discover any missing elements in the caption—details present in the video but omitted—you should point out which element has been left out
 8. If you find any factual errors in the caption that conflict with the actual video, you should identify where the error occurs and explain how it should be corrected
-9. If the caption is overly long and contains information unrelated to the Caption Instruction or is significantly redundant, you should point out those parts and explain that they need to be deleted""",
+9. If the caption is overly long and contains information unrelated to the Caption Instruction or is significantly redundant, you should point out those parts and explain that they need to be deleted
+10. Do not offer feedback on things not specified in the Caption Instruction. Do not be wordy; keep suggestions concise, direct, and constructive""",
 
             "blind_gemini_critique_generation": """Please provide feedback on this caption by imagining you have watched the video. Generate a critique by assuming you have visual access to the content (you can imagine anything in the video).
 
@@ -537,7 +535,8 @@ Instructions:
             search_lower = search_term.lower()
             for display_name, video_data in video_options.items():
                 video_id = video_data["video_id"].lower()
-                if search_lower in video_id:
+                searchable_text = f"{video_id} {sheet_name}".lower()
+                if search_lower in searchable_text:
                     filtered_options[display_name] = video_data
             video_options = filtered_options
             

@@ -6058,10 +6058,10 @@ def get_volumetric_lighting_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLD
         {
             "folder": lighting_folder,
             "name": "god_rays",
-            "pos_question": "Does the video feature striking, separated rays of light (god rays) streaming through gaps in the environment?",
-            "neg_question": "Does the video not feature striking, separated rays of light (god rays) streaming through gaps in the environment?",
-            "pos_prompt": "The video features striking, separated rays of light (god rays) streaming through gaps in the environment.",
-            "neg_prompt": "The video does not feature striking, separated rays of light (god rays) streaming through gaps in the environment.",
+            "pos_question": "Does the video feature striking, separated rays of light (god rays) streaming from top through gaps in the environment?",
+            "neg_question": "Does the video not feature striking, separated rays of light (god rays) streaming from top through gaps in the environment?",
+            "pos_prompt": "The video features striking, separated rays of light (god rays) streaming from top through gaps in the environment.",
+            "neg_prompt": "The video does not feature striking, separated rays of light (god rays) streaming from top through gaps in the environment.",
             "pos": {
                 "label": "lighting_setup.volumetric_lighting.god_rays",
                 "type": "pos",
@@ -6074,10 +6074,10 @@ def get_volumetric_lighting_tasks(lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLD
         {
             "folder": lighting_folder,
             "name": "light_through_medium",
-            "pos_question": "Does the video feature intense light passing through smoke, fog, or liquid, shaping visible light volumes?",
-            "neg_question": "Does the video not feature intense light passing through smoke, fog, or liquid, shaping visible light volumes?",
-            "pos_prompt": "The video features intense light passing through smoke, fog, or liquid, shaping visible light volumes.",
-            "neg_prompt": "The video does not feature intense light passing through smoke, fog, or liquid, shaping visible light volumes.",
+            "pos_question": "Does the video feature intense light passing through smoke or fog, shaping visible light volumes?",
+            "neg_question": "Does the video not feature intense light passing through smoke or fog, shaping visible light volumes?",
+            "pos_prompt": "The video features intense light passing through smoke or fog, shaping visible light volumes.",
+            "neg_prompt": "The video does not feature intense light passing through smoke or fog, shaping visible light volumes.",
             "pos": {
                 "label": "lighting_setup.volumetric_lighting.light_through_medium",
                 "type": "pos",

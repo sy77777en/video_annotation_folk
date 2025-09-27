@@ -2,7 +2,7 @@
     "label": "Volumetric Light Through Medium",
     "label_name": "light_through_medium",
     "def_question": [
-        "Does the video feature intense light passing through smoke, fog, or liquid, shaping visible light volumes?"
+        "Does the video feature intense light passing through smoke or fog, shaping visible light volumes?"
     ],
     "alt_question": [
         "Is light visibly interacting with atmospheric particles such as smoke or mist?",
@@ -15,7 +15,7 @@
         "Is the lighting visibly altered by the presence of fog or liquid in the scene?"
     ],
     "def_prompt": [
-        "The video features intense light passing through smoke, fog, or liquid, shaping visible light volumes."
+        "The video features intense light passing through smoke or fog, shaping visible light volumes."
     ],
     "alt_prompt": [
         "A scene where bright light interacts with atmospheric particles.",
