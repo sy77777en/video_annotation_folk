@@ -142,7 +142,7 @@ Original Feedback: {feedback}
 
 Instructions:
 1. Remove one key detail, suggestion, or explanation from the original feedback only if it is sufficiently long
-2. If the original feedback consists of only a single sentence or item, do not simply shorten it, but replace it with 'The caption is perfect and requires no change.'
+2. If the original feedback consists of only a single sentence or item, do not simply shorten it, but replace it with 'The caption is accurate and requires no edits, so it should remain exactly the same.'
 3. Return only the modified feedback paragraph without any additional text or explanations
 4. If the feedback is presented as a numbered list (e.g., 1. xxxx 2. xxxx 3. xxxx …), then when deleting, remove one item at random rather than automatically deleting the last entry
 5. Identify the portions of the feedback that conflict with the caption. These conflicting elements are relatively significant and can be prioritized for deletion, but delete only one full element from the original feedback""",
@@ -158,7 +158,7 @@ Original Feedback: {feedback}
 
 Instructions:
 1. Convert all constructive suggestions in the feedback into criticism only: state only what is wrong in the caption that conflicts with the feedback, without mentioning what is correct.
-2. Remove all helpful guidance or improvement suggestions. If the feedback is only guidance or suggestions, replace it with: 'The caption is perfect and requires no change.'
+2. Remove all helpful guidance or improvement suggestions. If the feedback is only guidance or suggestions, replace it with: 'The caption is accurate and requires no edits, so it should remain exactly the same.'
 3. Return only the non-constructive feedback paragraph, with no extra text or explanation.
 4. When feedback suggests adding something (not changing one thing to another), rephrase it to say the caption is missing that thing, stated generally without details.
 5. If the feedback only provides the corrected version without explaining the issues, identify the problematic parts in the caption and state which parts are wrong.""",
@@ -175,7 +175,7 @@ Instructions:
 2. Identify any missing elements, inaccuracies, or areas for improvement based on what you observe in the video
 3. Provide specific, actionable suggestions for how to improve the caption
 4. Be thorough and constructive in your analysis
-5. If the caption is already excellent, simply state 'The caption is perfect and requires no change.'
+5. If the caption is already excellent, simply state 'The caption is accurate and requires no edits, so it should remain exactly the same.'
 6. Return only your feedback paragraph without any additional text or explanations
 7. If you discover any missing elements in the caption—details present in the video but omitted—you should point out which element has been left out
 8. If you find any factual errors in the caption that conflict with the actual video, you should identify where the error occurs and explain how it should be corrected

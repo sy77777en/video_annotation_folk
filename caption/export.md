@@ -362,3 +362,153 @@ print(f"Found {len(training_pairs)} positive/negative training pairs")
 ```
 
 This example demonstrates why task-level organization is essential - this single video has 5 different completion states across its caption tasks, making video-level categorization meaningless.
+
+
+## Critique Generation for Exported Data
+
+After exporting caption data, you can generate various types of critiques for evaluation and analysis purposes using the critique generation script.
+
+### **Overview**
+
+The critique generation system creates six types of critiques for each completed caption task:
+
+1. **Insertion Error Critique** - Adds incorrect/irrelevant details to original feedback
+2. **Replacement Error Critique** - Replaces correct details with wrong information  
+3. **Deletion Error Critique** - Removes important details making critique incomplete
+4. **Non-Constructive Critique** - Removes helpful suggestions, leaving only criticism
+5. **Video Model Critique** - Direct critique from Gemini with video access
+6. **Blind Model Critique** - Critique from Gemini without video access (hallucinated)
+
+### **Basic Usage**
+
+```bash
+# Generate critiques for exported data
+python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354
+
+# Upload to HuggingFace after all critiques succeed
+python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --hf-dataset zhiqiulin/caption_export
+
+# Resume failed critiques only
+python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --resume
+
+# Dry run to check what would be processed
+python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --dry-run
+```
+
+### **Configuration Options**
+
+```bash
+# Use lighting project configuration
+python -m caption.generate_critiques --config-type lighting --export-folder caption_export/export_20250917_0354
+
+# Custom retry and batch settings
+python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --max-retries 5 --batch-size 20
+
+# Process specific file pattern
+python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --input-file "reviewed_videos_*.json"
+```
+
+### **Environment Requirements**
+
+The critique generation script requires API keys to be configured in one of these ways:
+
+#### Option 1: Streamlit Secrets (Recommended for existing setups)
+Create `.streamlit/secrets.toml`:
+```toml
+openai_key = "your-openai-api-key"
+gemini_key = "your-gemini-api-key"
+```
+
+#### Option 2: Environment Variables
+```bash
+export OPENAI_API_KEY="your-openai-api-key"
+export GEMINI_API_KEY="your-gemini-api-key"
+```
+
+#### Option 3: .env File
+Create `.env` file in project root:
+```
+OPENAI_API_KEY=your-openai-api-key
+GEMINI_API_KEY=your-gemini-api-key
+HF_TOKEN=your-huggingface-token
+```
+
+### **Output Structure**
+
+The script enhances the original export data by adding critique fields to each caption type:
+
+```json
+{
+  "video_id": "...",
+  "video_url": "...",
+  "captions": {
+    "subject": {
+      "status": "approved",
+      "caption_data": { /* original data preserved */ },
+      "insertion_error_critique": {
+        "status": "success",
+        "model": "gpt-4.1-2025-04-14", 
+        "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
+        "mode": "Text Only",
+        "generated_critique": "The caption should mention the bright lighting...",
+        "revised_caption_by_generated_critique": "The video features...",
+        "timestamp": "2025-09-27T10:30:00Z"
+      },
+      "replacement_error_critique": {
+        "status": "skipped", /* skipped for perfect scores */
+        "model": null,
+        /* ... */
+      },
+      "video_model_critique": {
+        "status": "success",
+        "model": "gemini-2.5-pro",
+        "mode": "Video",
+        "generated_critique": "...",
+        "revised_caption_by_generated_critique": "...",
+        "timestamp": "2025-09-27T10:35:00Z"
+      }
+      /* ... other critique types */
+    }
+  }
+}
+```
+
+### **Critique Generation Logic**
+
+#### Skipping Rules
+- **Always Generate**: Insertion Error, Video Model, Blind Model critiques
+- **Skip for Perfect Scores**: Replacement Error, Deletion Error, Non-Constructive critiques skip when `initial_caption_rating_score == 5`
+
+#### Error Handling
+- **Retry Logic**: Up to 3 attempts (configurable with `--max-retries`)
+- **Individual Failures**: Failed critiques don't block other critiques for the same video
+- **Resume Mode**: `--resume` flag skips already successful/skipped critiques
+
+#### HuggingFace Upload
+- **Condition**: Only uploads when ALL critiques are either "success" or "skipped" (no "failed" status)
+- **Path Structure**: Maintains original export folder structure in HuggingFace dataset
+- **Fallback**: If upload fails, file is still saved locally
+
+### **Key Features**
+
+- **Safe Processing**: Atomic file writes prevent JSON corruption
+- **Automatic Backups**: Creates timestamped backups before processing
+- **Batch Saving**: Saves progress incrementally to minimize work loss
+- **Complete Preservation**: All original export data remains intact
+- **Robust Error Handling**: Individual critique failures don't affect others
+- **Progress Tracking**: Clear status reporting throughout processing
+
+### **Troubleshooting**
+
+#### Common Issues
+1. **API Key Errors**: Ensure keys are properly configured in `.streamlit/secrets.toml`
+2. **Failed Critiques**: Use `--resume` to retry only failed critiques
+3. **Large Files**: Increase `--batch-size` for better progress tracking
+4. **HuggingFace Upload**: Ensure `HF_TOKEN` is set in environment for uploads
+
+#### Output Files
+- **Main Output**: `*_with_critiques.json` - Enhanced data with all critiques
+- **Backup**: `*.backup_[timestamp].json` - Original data backup
+- **HuggingFace**: Same structure as local export when uploaded
+
+This system provides comprehensive critique generation capabilities while maintaining data integrity and supporting robust error recovery.
