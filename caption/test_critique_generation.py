@@ -86,6 +86,12 @@ class CritiqueGenerationApp:
                 "description": "Generate critique using Gemini without video access (hallucinated)",
                 "default_llm": "gemini-2.5-pro",
                 "supports_video": False
+            },
+            "worst_caption_generation": {
+                "name": "Worst Caption Generation",
+                "description": "Generate completely new incorrect caption (no critique/revision)",
+                "default_llm": "gpt-4.1-2025-04-14",
+                "supports_video": False
             }
         }
         
@@ -195,7 +201,25 @@ Instructions:
 3. Provide suggestions for improvement based on your imagined video content
 4. Make the feedback substantial and detailed
 5. You can imagine any visual elements that seem plausible for this type of content
-6. Return only your feedback paragraph without any additional text or explanations"""
+6. Return only your feedback paragraph without any additional text or explanations""",
+
+            "worst_caption_generation": """Please generate a completely new and incorrect caption that replaces the original caption entirely. The new caption should be plausible-sounding but factually wrong about what's shown in the video.
+
+Caption Instruction:
+{caption_instruction}
+
+Original Caption: {caption}
+
+Instructions:
+1. Generate a completely new caption that follows the format and structure suggested by the Caption Instruction
+2. The new caption should be entirely different from the original - do not reuse any specific details, objects, actions, or descriptions from the original caption
+3. Replace all factual content with incorrect or irrelevant alternatives that sound plausible but are wrong
+4. Maintain a similar length and level of detail as the original caption
+5. The new caption should still attempt to address the Caption Instruction's requirements, but with completely incorrect information
+6. Make the incorrect details specific and concrete rather than vague
+7. Return only the completely new incorrect caption without any additional text or explanations
+8. Do not include non-visual elements (e.g., background music, narration)
+9. Ensure the new caption sounds natural and coherent, even though it's factually wrong"""
         }
     
     def debug_video_status(self, video_id: str):
@@ -362,8 +386,6 @@ Instructions:
             import traceback
             st.sidebar.error(traceback.format_exc())
     
-    # Replace your existing get_all_reviewed_videos method with this:
-
     @staticmethod
     @st.cache_resource
     def _load_all_reviewed_videos(configs_file, video_urls_files, output_dir, folder_path):
@@ -477,102 +499,6 @@ Instructions:
             self.app_config.output_dir,
             str(self.data_manager.folder)
         )
-
-    # def get_all_reviewed_videos(self) -> List[Dict[str, Any]]:
-    #     """Get all videos that have been fully reviewed across all tasks"""
-    #     reviewed_videos = []
-        
-    #     try:
-    #         # Load configs
-    #         configs = self.data_manager.load_config(self.app_config.configs_file)
-    #         if isinstance(configs[0], str):
-    #             configs = [self.data_manager.load_config(config) for config in configs]
-            
-    #         # Check all video URL files
-    #         for video_urls_file in self.app_config.video_urls_files:
-    #             try:
-    #                 video_urls = self.data_manager.load_json(video_urls_file)
-                    
-    #                 # Extract sheet name from file path
-    #                 sheet_name = Path(video_urls_file).stem  # Gets filename without extension
-                    
-    #                 for video_url in video_urls:
-    #                     video_id = self.data_manager.get_video_id(video_url)
-                        
-    #                     # Check if all tasks are completed and reviewed (approved OR rejected)
-    #                     all_reviewed = True
-    #                     video_captions = {}
-    #                     reviewer_names = set()  # Track all reviewers for this video
-                        
-    #                     for config in configs:
-    #                         config_output_dir = os.path.join(
-    #                             self.data_manager.folder, 
-    #                             self.app_config.output_dir, 
-    #                             config["output_name"]
-    #                         )
-                            
-    #                         status, current_file, prev_file, current_user, prev_user = self.data_manager.get_video_status(
-    #                             video_id, config_output_dir
-    #                         )
-                            
-    #                         # Include both approved AND rejected videos (rejected = corrected by reviewer)
-    #                         if status not in ["approved", "rejected"]:
-    #                             all_reviewed = False
-    #                             break
-    #                         else:
-    #                             # Load the final caption data
-    #                             feedback_data = self.data_manager.load_data(
-    #                                 video_id, config_output_dir, self.data_manager.FEEDBACK_FILE_POSTFIX
-    #                             )
-                                
-    #                             # Load reviewer data
-    #                             reviewer_data = self.data_manager.load_data(
-    #                                 video_id, config_output_dir, self.data_manager.REVIEWER_FILE_POSTFIX
-    #                             )
-                                
-    #                             reviewer_name = "Unknown"
-    #                             if reviewer_data:
-    #                                 reviewer_name = reviewer_data.get("reviewer_name", "Unknown")
-    #                                 reviewer_names.add(reviewer_name)
-                                
-    #                             # For rejected status, annotator is in prev_user (original annotator)
-    #                             # For approved status, annotator is in current_user  
-    #                             if status == "rejected":
-    #                                 annotator_name = prev_user if prev_user else "Unknown"
-    #                             else:  # approved
-    #                                 annotator_name = current_user if current_user else "Unknown"
-                                
-    #                             if feedback_data:
-    #                                 video_captions[config["name"]] = {
-    #                                     "final_caption": feedback_data.get("final_caption", ""),
-    #                                     "pre_caption": feedback_data.get("pre_caption", ""),
-    #                                     "initial_caption_rating": feedback_data.get("initial_caption_rating", ""),
-    #                                     "final_feedback": feedback_data.get("final_feedback", ""),
-    #                                     "annotator": annotator_name,
-    #                                     "reviewer": reviewer_name,
-    #                                     "timestamp": feedback_data.get("timestamp", ""),
-    #                                     "task": config["task"],
-    #                                     "config": config,
-    #                                     "status": status  # Add status for debugging
-    #                                 }
-                        
-    #                     if all_reviewed and video_captions:
-    #                         reviewed_videos.append({
-    #                             "video_id": video_id,
-    #                             "video_url": video_url,
-    #                             "sheet_name": sheet_name,
-    #                             "reviewers": list(reviewer_names),  # All unique reviewers for this video
-    #                             "captions": video_captions
-    #                         })
-                            
-    #             except Exception as e:
-    #                 st.error(f"Error processing video file {video_urls_file}: {e}")
-    #                 continue
-                    
-    #     except Exception as e:
-    #         st.error(f"Error loading configurations: {e}")
-        
-    #     return reviewed_videos
     
     def render_critique_task_selection_sidebar(self):
         """Render critique generation task selection in sidebar"""
@@ -757,14 +683,17 @@ Instructions:
             )
         
         with col2:
-            generate_clicked = st.button("🚀 Generate Critique", type="primary", use_container_width=True)
+            # Change button text based on task type
+            critique_task_key = selected_critique_task['key']
+            button_text = "🚀 Generate Bad Caption" if critique_task_key == "worst_caption_generation" else "🚀 Generate Critique"
+            generate_clicked = st.button(button_text, type="primary", use_container_width=True)
         
         # Handle generation
         if generate_clicked:
             critique_task_key = selected_critique_task['key']
             
-            # Gemini tasks don't use original feedback, so they don't need {feedback} placeholder
-            if critique_task_key in ["gemini_critique_generation", "blind_gemini_critique_generation"]:
+            # Determine required placeholders based on task type
+            if critique_task_key in ["gemini_critique_generation", "blind_gemini_critique_generation", "worst_caption_generation"]:
                 required_placeholders = ["{caption_instruction}", "{caption}"]
             else:
                 required_placeholders = ["{caption_instruction}", "{caption}", "{feedback}"]
@@ -786,46 +715,6 @@ Instructions:
                 self.generate_critique(prompt_template, final_caption, final_feedback, selected_llm, 
                                      caption_instruction, selected_critique_task, selected_video["video_url"], 
                                      pre_caption)
-    
-    def render_video_display(self, selected_video: Dict[str, Any]):
-        """Render video display in the right column - DEPRECATED, replaced by render_prompt_and_generation_interface"""
-        if not selected_video:
-            return
-            
-        st.subheader("📹 Video Preview")
-        
-        # Display video
-        video_url = selected_video["video_url"]
-        if video_url:
-            st.video(video_url)
-        else:
-            st.warning("Video URL not available")
-        
-        # Display video info
-        st.write(f"**Video ID:** {selected_video['video_id']}")
-        st.write(f"**Sheet:** {selected_video['sheet_name']}")
-        st.write(f"**Total Tasks Completed:** {len(selected_video['captions'])}")
-        
-        # Display reviewer info
-        reviewers = selected_video.get('reviewers', [])
-        if reviewers:
-            if len(reviewers) == 1:
-                st.write(f"**Reviewer:** {reviewers[0]}")
-            else:
-                st.write(f"**Reviewers:** {', '.join(reviewers)}")
-        
-        # Show all captions summary
-        with st.expander("📝 All Captions Summary", expanded=False):
-            for caption_name, caption_data in selected_video["captions"].items():
-                status = caption_data.get("status", "unknown")
-                status_emoji = "✅" if status == "approved" else "🔄" if status == "rejected" else "❓"
-                
-                st.write(f"**{caption_name}** {status_emoji}")
-                st.write(f"- Status: {status}")
-                st.write(f"- Annotator: {caption_data['annotator']}")
-                st.write(f"- Reviewer: {caption_data['reviewer']}")
-                st.write(f"- Timestamp: {self.data_manager.format_timestamp(caption_data['timestamp'])}")
-                st.write("---")
     
     def get_caption_instruction_for_task(self, task: str) -> str:
         """Get the caption instruction for the task using PromptGenerator"""
@@ -921,13 +810,22 @@ Instructions:
             critique_task_key = selected_critique_task['key']
             
             # Prepare the final prompt by substituting placeholders
-            # Gemini tasks don't use original feedback
-            if critique_task_key in ["gemini_critique_generation", "blind_gemini_critique_generation"]:
+            # Determine which caption to use based on task type
+            if critique_task_key == "worst_caption_generation":
+                # Use final_caption for worst caption generation
+                caption_to_use = final_caption
+                final_prompt = prompt_template.format(
+                    caption_instruction=caption_instruction,
+                    caption=caption_to_use
+                )
+            elif critique_task_key in ["gemini_critique_generation", "blind_gemini_critique_generation"]:
+                # Use pre_caption for Gemini tasks without feedback
                 final_prompt = prompt_template.format(
                     caption_instruction=caption_instruction,
                     caption=pre_caption
                 )
             else:
+                # Use pre_caption with feedback for error modification tasks
                 final_prompt = prompt_template.format(
                     caption_instruction=caption_instruction,
                     caption=pre_caption,
@@ -961,18 +859,29 @@ Instructions:
                 
                 response = response.strip()
                 
-                # Display results
-                st.write("### 📄 Generated Critique vs Original Feedback")
+                # Display results differently based on task type
+                if critique_task_key == "worst_caption_generation":
+                    st.write("### 🔄 Worst Caption Generation Result")
+                    st.write("**📝 Original Final Caption (High Quality):**")
+                    st.text(final_caption)
+                    
+                    st.write("**⚠️ Generated Bad Caption:**")
+                    st.text(response)
+                    
+                    st.info("💡 This is a completely incorrect caption that replaces the original. No critique or revision step.")
+                else:
+                    st.write("### 📄 Generated Critique vs Original Feedback")
+                    
+                    # Show original feedback for all tasks for comparison purposes
+                    st.write("**📝 Original Gold Feedback:**")
+                    st.text(final_feedback if final_feedback else "No feedback provided")
+                    
+                    st.write("**⚠️ Generated Critique:**")
+                    st.text(response)
                 
-                # Show original feedback for all tasks for comparison purposes
-                st.write("**📝 Original Gold Feedback:**")
-                st.text(final_feedback if final_feedback else "No feedback provided")
-                
-                st.write("**⚠️ Generated Critique:**")
-                st.text(response)
-                
-                # Add expandable section with critique generation details
-                with st.expander("🔧 Critique Generation Details", expanded=False):
+                # Add expandable section with generation details - change title based on task type
+                details_title = "🔧 Bad Caption Generation Details" if critique_task_key == "worst_caption_generation" else "🔧 Critique Generation Details"
+                with st.expander(details_title, expanded=False):
                     st.write(f"**Model Used:** {selected_llm}")
                     st.write(f"**Mode:** {'Video' if supports_video else 'Text Only'}")
                     st.write("**Template Used:**")
@@ -980,11 +889,13 @@ Instructions:
                     st.write("**Actual Prompt Sent to Model:**")
                     st.code(final_prompt, language="text")
                 
-                st.success("✅ Critique generated successfully!")
+                success_message = "✅ Bad caption generated successfully!" if critique_task_key == "worst_caption_generation" else "✅ Critique generated successfully!"
+                st.success(success_message)
                 
-                # Auto-generate improved caption using pre_caption (not final_caption)
-                caption_to_polish = pre_caption
-                self.auto_generate_improved_caption(caption_to_polish, final_caption, response, selected_llm, video_url)
+                # Only auto-generate improved caption for non-worst_caption_generation tasks
+                if critique_task_key != "worst_caption_generation":
+                    caption_to_polish = pre_caption
+                    self.auto_generate_improved_caption(caption_to_polish, final_caption, response, selected_llm, video_url)
                 
                 # Store in session state for potential reuse
                 if "generated_critiques" not in st.session_state:

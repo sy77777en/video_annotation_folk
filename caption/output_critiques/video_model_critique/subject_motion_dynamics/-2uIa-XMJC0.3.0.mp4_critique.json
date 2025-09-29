@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.3.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T21:13:48.778435",
+  "generation_timestamp": "2025-09-29T03:47:11.210944",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not suitable for the video. Here's a detailed breakdown of the feedback:\n\n**Accuracy:**\n- The caption is inaccurate in its description of the subject's appearance. It states the woman is \"wearing a white hat,\" but she is not. She has very short, platinum blonde or white hair, which has been mistaken for a hat. This is a significant factual error.\n\n**Completeness:**\n- The caption correctly identifies the main subject (a woman), the setting (an indoor skate park), and key background elements (neon sign, skateboards).\n- It accurately describes the primary motion in the scene, which is the camera's gradual zoom.\n- It correctly notes the subject's lack of motion.\n\n**Adherence to Instructions:**\n- **\"Avoid describing anything not visible or uncertain\":** The caption violates this rule by inventing a \"white hat\" that is not present in the video.\n- **\"If the subject in the video has no movement, please briefly mention that without going into too much detail\":** The caption is slightly repetitive on this point. It first says the woman \"remains stationary\" and then later repeats that she \"continues to stand on the ramp, maintaining her position.\" This could be stated more concisely.\n- **Focus on motion:** The caption does a good job of describing the camera's motion (\"gradually zooms in\"), which is the only significant movement in the clip.\n\nIn summary, the caption fails due to a critical factual error regarding the subject's appearance, which directly contradicts the instruction to only describe what is visible. Additionally, it could be more concise in describing the subject's stillness.",
-  "revised_caption_by_generated_critique": "The video opens on an indoor skate park with a wooden ramp in the center. A woman with very short, platinum blonde hair, dressed in light-colored clothing, stands stationary on the ramp. The camera slowly zooms in on her. In the background, a blue neon sign reads \"BRING ON THE NIGHT,\" and numerous skateboards are mounted on the wall.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption contains a factual error and includes details that are not related to the subject's motion. The woman is not wearing a white hat; she has short, light-colored hair. The descriptions of the indoor skate park setting, the neon sign, the skateboards on the wall, and the camera's zoom movement should be removed to adhere to the instruction to focus only on the subject's motion. The description should be revised to be more concise, starting directly with the subject's actions.",
+  "revised_caption_by_generated_critique": "A woman with short, light-colored hair stands stationary on a ramp, looking forward.",
   "status": "success"
 }

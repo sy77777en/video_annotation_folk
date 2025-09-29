@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:12:26.164583",
+  "generation_timestamp": "2025-09-29T03:46:13.674601",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T02:02:49.111542",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly states that the ramp originates from the foreground and that the grated floor is in the foreground. The description of the camera's height as 'eye level' is inaccurate. The drone is also incorrectly placed in the background.",
-  "revised_caption_by_generated_critique": "This video presents a wide shot, maintaining this framing throughout with a slight, slow push-in towards the subject. Initially, a woman is positioned in the center of the frame, standing in the middle ground atop a wooden ramp. This ramp extends from the middle ground towards the background. An out-of-focus green object dominates the right side of the frame. In the background, behind the woman and slightly to her left, several skateboards are mounted on the wall. Further left in the background, a neon sign is visible. The surrounding space in the middle ground and background contains various furniture and objects. A grated floor is visible in the middle ground, while a grated ceiling structure is visible at the top. The camera remains slightly above the woman's eye level. As the shot progresses, the camera moves slightly forward. Towards the end, a small drone flies into the frame from the top left, positioning itself above the woman in the middle ground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states the ramp originates in the foreground. It also misplaces the grated floor in the foreground and fails to mention that it exits the frame. The description of the camera height as 'at the woman's eye level' is incorrect. Additionally, the caption incorrectly states the drone is in the background.",
+  "revised_caption_by_generated_critique": "This video presents a wide shot, maintaining this framing throughout with a slight, slow push-in towards the subject. Initially, a woman is positioned in the center of the frame, standing in the middle ground atop a wooden ramp. This ramp extends from the middle ground towards the background. An out-of-focus green object dominates the right foreground. In the background, behind the woman and slightly to her left, several skateboards are mounted on the wall. Further left in the background, a neon sign is visible. The surrounding space in the middle ground and background contains various furniture and objects. A grated floor is visible but exits the frame, while a grated ceiling structure is visible at the top. The camera is positioned slightly above the woman's eye level. As the shot progresses, the camera moves slightly forward. Towards the end, a small drone flies into the frame from the top left, positioning itself above the woman in the middle ground.",
   "status": "success"
 }

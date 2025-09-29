@@ -37,7 +37,7 @@ from caption_policy.prompt_generator import (
 # Import existing mappings for DRY principles
 from caption.export import CONFIG_TO_CAPTION
 
-# Prompt templates - same as before
+# Prompt templates - aligned with test_critique_generation.py
 INSERTION_ERROR_CRITIQUE_PROMPT = """Please modify the following feedback by adding one extra irrelevant or incorrect detail that was not present in the original critique.
 
 Caption Instruction:
@@ -89,7 +89,7 @@ Original Feedback: {feedback}
 
 Instructions:
 1. Remove one key detail, suggestion, or explanation from the original feedback only if it is sufficiently long
-2. If the original feedback consists of only a single sentence or item, do not simply shorten it, but replace it with 'The caption requires no edits, so leave it unchanged.'
+2. If the original feedback consists of only a single sentence or item, do not simply shorten it, but replace it with 'The caption is accurate and requires no edits, so it should remain exactly the same.'
 3. Return only the modified feedback paragraph without any additional text or explanations
 4. If the feedback is presented as a numbered list (e.g., 1. xxxx 2. xxxx 3. xxxx …), then when deleting, remove one item at random rather than automatically deleting the last entry
 5. Identify the portions of the feedback that conflict with the caption. These conflicting elements are relatively significant and can be prioritized for deletion, but delete only one full element from the original feedback"""
@@ -105,27 +105,62 @@ Original Feedback: {feedback}
 
 Instructions:
 1. Convert all constructive suggestions in the feedback into criticism only: state only what is wrong in the caption that conflicts with the feedback, without mentioning what is correct.
-2. Remove all helpful guidance or improvement suggestions. If the feedback is only guidance or suggestions, replace it with: 'The caption requires no edits, so leave it unchanged.'
+2. Remove all helpful guidance or improvement suggestions. If the feedback is only guidance or suggestions, replace it with: 'The caption is accurate and requires no edits, so it should remain exactly the same.'
 3. Return only the non-constructive feedback paragraph, with no extra text or explanation.
-4. Focus on identifying errors or shortcomings without offering solutions"""
+4. When feedback suggests adding something (not changing one thing to another), rephrase it to say the caption is missing that thing, stated generally without details.
+5. If the feedback only provides the corrected version without explaining the issues, identify the problematic parts in the caption and state which parts are wrong."""
 
-VIDEO_MODEL_CRITIQUE_PROMPT = """Is the caption good for this video? Explain why:
-
-Caption Instruction:
-{caption_instruction}
-
-Caption: {caption}
-
-Please provide detailed feedback on the caption's accuracy, completeness, and adherence to the given instruction."""
-
-BLIND_MODEL_CRITIQUE_PROMPT = """Is the caption good for this video? Explain why:
+VIDEO_MODEL_CRITIQUE_PROMPT = """Please provide detailed feedback on how well this caption follows the given instruction. Carefully watch the video and analyze the caption against the instruction requirements.
 
 Caption Instruction:
 {caption_instruction}
 
 Caption: {caption}
 
-Please provide detailed feedback on the caption's accuracy, completeness, and adherence to the given instruction."""
+Instructions:
+1. Carefully watch the video and review the caption against the specific requirements in the caption instruction
+2. Identify any missing elements, inaccuracies, or areas for improvement based on what you observe in the video
+3. Provide specific, actionable suggestions for how to improve the caption
+4. Be thorough and constructive in your analysis
+5. If the caption is already excellent, simply state 'The caption is accurate and requires no edits, so it should remain exactly the same.'
+6. Return only your feedback paragraph without any additional text or explanations
+7. If you discover any missing elements in the caption—details present in the video but omitted—you should point out which element has been left out
+8. If you find any factual errors in the caption that conflict with the actual video, you should identify where the error occurs and explain how it should be corrected
+9. If the caption is overly long and contains information unrelated to the Caption Instruction or is significantly redundant, you should point out those parts and explain that they need to be deleted
+10. Do not offer feedback on things not specified in the Caption Instruction. Do not be wordy; keep suggestions concise, direct, and constructive"""
+
+BLIND_MODEL_CRITIQUE_PROMPT = """Please provide feedback on this caption by imagining you have watched the video. Generate a critique by assuming you have visual access to the content (you can imagine anything in the video).
+
+Caption Instruction:
+{caption_instruction}
+
+Caption: {caption}
+
+Instructions:
+1. Pretend you have watched the video and generate feedback based on your imagined visual content
+2. Create specific critique points about what you imagine might be missing or incorrect in the caption
+3. Provide suggestions for improvement based on your imagined video content
+4. Make the feedback substantial and detailed
+5. You can imagine any visual elements that seem plausible for this type of content
+6. Return only your feedback paragraph without any additional text or explanations"""
+
+WORST_CAPTION_GENERATION_PROMPT = """Please generate a completely new and incorrect caption that replaces the original caption entirely. The new caption should be plausible-sounding but factually wrong about what's shown in the video.
+
+Caption Instruction:
+{caption_instruction}
+
+Original Caption: {caption}
+
+Instructions:
+1. Generate a completely new caption that follows the format and structure suggested by the Caption Instruction
+2. The new caption should be entirely different from the original - do not reuse any specific details, objects, actions, or descriptions from the original caption
+3. Replace all factual content with incorrect or irrelevant alternatives that sound plausible but are wrong
+4. Maintain a similar length and level of detail as the original caption
+5. The new caption should still attempt to address the Caption Instruction's requirements, but with completely incorrect information
+6. Make the incorrect details specific and concrete rather than vague
+7. Return only the completely new incorrect caption without any additional text or explanations
+8. Do not include non-visual elements (e.g., background music, narration)
+9. Ensure the new caption sounds natural and coherent, even though it's factually wrong"""
 
 # Critique task configurations
 CRITIQUE_TASKS = {
@@ -178,6 +213,15 @@ CRITIQUE_TASKS = {
         "prompt": BLIND_MODEL_CRITIQUE_PROMPT,
         "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
         "model": "gemini-2.5-pro",
+        "mode": "Text Only",
+        "supports_video": False,
+        "uses_feedback": False,
+        "skip_perfect": False
+    },
+    "worst_caption_generation": {
+        "prompt": WORST_CAPTION_GENERATION_PROMPT,
+        "prompt_name": "WORST_CAPTION_GENERATION_PROMPT",
+        "model": "gpt-4.1-2025-04-14",
         "mode": "Text Only",
         "supports_video": False,
         "uses_feedback": False,
@@ -460,7 +504,7 @@ class CritiqueGenerator:
     def generate_critique_response(self, prompt_template: str, final_feedback: str, 
                                  pre_caption: str, caption_instruction: str,
                                  model_name: str, supports_video: bool, uses_feedback: bool,
-                                 video_url: str = "") -> str:
+                                 video_url: str = "", final_caption: str = "") -> str:
         """Generate critique using LLM"""
         
         # Prepare the final prompt by substituting placeholders
@@ -471,9 +515,11 @@ class CritiqueGenerator:
                 feedback=final_feedback
             )
         else:
+            # For complete_replacement_critique, use final_caption instead of pre_caption
+            caption_to_use = final_caption if final_caption else pre_caption
             final_prompt = prompt_template.format(
                 caption_instruction=caption_instruction,
-                caption=pre_caption
+                caption=caption_to_use
             )
         
         # Get LLM instance
@@ -554,28 +600,53 @@ Respond with the improved caption only, without quotation marks or JSON formatti
         
         # Prepare critique data
         task_config = CRITIQUE_TASKS[critique_type]
-        critique_data = {
-            "video_id": video_id,
-            "caption_type": caption_type,
-            "critique_type": critique_type,
-            
-            # Generation metadata
-            "generation_timestamp": datetime.now().isoformat(),
-            "model": task_config["model"],
-            "prompt_name": task_config["prompt_name"],
-            "mode": task_config["mode"],
-            
-            # Store entire caption_data for change detection
-            "source_caption_data": caption_data,
-            "source_export_folder": export_folder,
-            
-            # Generated content
-            "generated_critique": generated_critique,
-            "revised_caption_by_generated_critique": revised_caption,
-            
-            # Processing status
-            "status": "success"
-        }
+        
+        # Special handling for worst_caption_generation
+        if critique_type == "worst_caption_generation":
+            critique_data = {
+                "video_id": video_id,
+                "caption_type": caption_type,
+                "critique_type": critique_type,
+                
+                # Generation metadata
+                "generation_timestamp": datetime.now().isoformat(),
+                "model": task_config["model"],
+                "prompt_name": task_config["prompt_name"],
+                "mode": task_config["mode"],
+                
+                # Store entire caption_data for change detection
+                "source_caption_data": caption_data,
+                "source_export_folder": export_folder,
+                
+                # Generated content - different structure
+                "bad_caption": generated_critique,  # The generated critique IS the bad caption
+                
+                # Processing status
+                "status": "success"
+            }
+        else:
+            critique_data = {
+                "video_id": video_id,
+                "caption_type": caption_type,
+                "critique_type": critique_type,
+                
+                # Generation metadata
+                "generation_timestamp": datetime.now().isoformat(),
+                "model": task_config["model"],
+                "prompt_name": task_config["prompt_name"],
+                "mode": task_config["mode"],
+                
+                # Store entire caption_data for change detection
+                "source_caption_data": caption_data,
+                "source_export_folder": export_folder,
+                
+                # Generated content
+                "generated_critique": generated_critique,
+                "revised_caption_by_generated_critique": revised_caption,
+                
+                # Processing status
+                "status": "success"
+            }
         
         try:
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -622,6 +693,7 @@ Respond with the improved caption only, without quotation marks or JSON formatti
         
         # Extract required data
         pre_caption = caption_data.get("pre_caption", "")
+        final_caption = caption_data.get("final_caption", "")
         final_feedback = caption_data.get("final_feedback", "")
         
         task_config = CRITIQUE_TASKS[critique_type]
@@ -641,16 +713,21 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                     model_name=task_config["model"],
                     supports_video=task_config["supports_video"],
                     uses_feedback=task_config["uses_feedback"],
-                    video_url=video_url
+                    video_url=video_url,
+                    final_caption=final_caption  # Pass final_caption for worst_caption_generation
                 )
                 
-                # Generate revised caption
-                revised_caption = self.auto_generate_improved_caption(
-                    original_caption=pre_caption,
-                    generated_feedback=critique_response,
-                    critique_type=critique_type,
-                    video_url=video_url
-                )
+                # For worst_caption_generation, the critique_response IS the bad caption (no revision step)
+                if critique_type == "worst_caption_generation":
+                    revised_caption = critique_response
+                else:
+                    # Generate revised caption for other critique types
+                    revised_caption = self.auto_generate_improved_caption(
+                        original_caption=pre_caption,
+                        generated_feedback=critique_response,
+                        critique_type=critique_type,
+                        video_url=video_url
+                    )
                 
                 # Save critique
                 success = self.save_critique(
@@ -715,16 +792,26 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                         if caption_type not in export_data[video_id]["captions"]:
                             export_data[video_id]["captions"][caption_type] = {}
                         
-                        # Add critique data
-                        export_data[video_id]["captions"][caption_type][critique_type] = {
-                            "status": critique_data["status"],
-                            "model": critique_data["model"],
-                            "prompt_name": critique_data["prompt_name"],
-                            "mode": critique_data["mode"],
-                            "generated_critique": critique_data["generated_critique"],
-                            "revised_caption_by_generated_critique": critique_data["revised_caption_by_generated_critique"],
-                            "timestamp": critique_data["generation_timestamp"]
-                        }
+                        # Add critique data - handle different structure for worst_caption_generation
+                        if critique_type == "worst_caption_generation":
+                            export_data[video_id]["captions"][caption_type][critique_type] = {
+                                "status": critique_data["status"],
+                                "model": critique_data["model"],
+                                "prompt_name": critique_data["prompt_name"],
+                                "mode": critique_data["mode"],
+                                "bad_caption": critique_data["bad_caption"],
+                                "timestamp": critique_data["generation_timestamp"]
+                            }
+                        else:
+                            export_data[video_id]["captions"][caption_type][critique_type] = {
+                                "status": critique_data["status"],
+                                "model": critique_data["model"],
+                                "prompt_name": critique_data["prompt_name"],
+                                "mode": critique_data["mode"],
+                                "generated_critique": critique_data["generated_critique"],
+                                "revised_caption_by_generated_critique": critique_data["revised_caption_by_generated_critique"],
+                                "timestamp": critique_data["generation_timestamp"]
+                            }
                         
                     except Exception as e:
                         print(f"Warning: Could not load critique file {critique_file}: {e}")

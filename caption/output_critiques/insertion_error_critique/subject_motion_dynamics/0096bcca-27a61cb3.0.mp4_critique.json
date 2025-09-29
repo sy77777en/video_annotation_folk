@@ -2,7 +2,7 @@
   "video_id": "0096bcca-27a61cb3.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:12:59.887698",
+  "generation_timestamp": "2025-09-29T03:47:17.059318",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-07T02:48:17.005855",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video also shows a person walking across the gas station parking lot, which should be described in the caption.",
-  "revised_caption_by_generated_critique": "The video shows a nighttime scene at a gas station with a 'Gulf' sign prominently displayed. A silver minivan is parked near the gas station, and a bus is visible in the background on the left side of the frame. A person is walking across the gas station parking lot. The camera begins to pan to the right, gradually revealing more of the gas station and the surrounding area. As the camera continues to move, the gas station's canopy and additional vehicles become visible. The camera completes its pan, showing the entire gas station and the adjacent buildings.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should mention that a person walks across the gas station lot during the camera pan, as this is an important motion detail to include.",
+  "revised_caption_by_generated_critique": "The video shows a nighttime scene at a gas station with a 'Gulf' sign prominently displayed. A silver minivan is parked near the gas station, and a bus is visible in the background on the left side of the frame. The camera begins to pan to the right, gradually revealing more of the gas station and the surrounding area. As the camera continues to move, a person walks across the gas station lot, adding an important motion detail. The gas station's canopy and additional vehicles become visible. The camera completes its pan, showing the entire gas station and the adjacent buildings.",
   "status": "success"
 }
