@@ -368,6 +368,18 @@ This example demonstrates why task-level organization is essential - this single
 
 After exporting caption data, you can generate various types of critiques for evaluation and analysis purposes using the critique generation script.
 
+### **How It Works**
+
+The critique generation system processes caption data through several key steps:
+
+1. **Input Filtering**: Only processes captions with status "approved" or "rejected" - these are the only captions that should have critiques generated
+2. **Smart Skipping**: Some critique types (replacement_error, deletion_error, nonconstructive) automatically skip captions with perfect scores (5/5) since there's insufficient content to modify
+3. **Incremental Processing**: Detects changes in caption data and configuration parameters, only regenerating critiques when necessary to avoid redundant work
+4. **Multi-Model Generation**: Uses different LLMs depending on critique type - GPT-4.1 for text-only error critiques, Gemini for video-enabled critiques
+5. **Complete Dataset Upload**: Only exports and uploads when ALL six critique types are successfully completed (no failures across any critique type)
+
+**Key Insight**: The script is designed for large-scale processing (thousands of videos) with robust error handling, progress tracking, and parallel execution support. Upload only happens when you have a complete dataset with all critique types.
+
 ### **Overview**
 
 The critique generation system creates six types of critiques for each completed caption task:
@@ -381,61 +393,109 @@ The critique generation system creates six types of critiques for each completed
 
 ### **Basic Usage**
 
+Generate all six critique types for the same export folder:
+
 ```bash
-# Generate critiques for exported data
-python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354
+# Generate insertion error critiques
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20250917_0354
 
-# Upload to HuggingFace after all critiques succeed
-python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --hf-dataset zhiqiulin/caption_export
+# Generate replacement error critiques  
+python -m caption.generate_critiques --critique-type replacement_error_critique --export-folder caption_export/export_20250917_0354
 
-# Resume failed critiques only
-python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --resume
+# Generate deletion error critiques
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20250917_0354
 
-# Dry run to check what would be processed
-python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --dry-run
+# Generate non-constructive critiques
+python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20250917_0354
+
+# Generate video model critiques
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20250917_0354
+
+# Generate blind model critiques
+python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20250917_0354
 ```
+
+**Note**: By default, each script automatically exports consolidated JSON and uploads to HuggingFace (`zhiqiulin/caption_export`) when all critiques are successful.
 
 ### **Configuration Options**
 
 ```bash
+# Dry run to check what would be processed
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20250917_0354 --dry-run
+
+# Force regeneration of all critiques
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20250917_0354 --force-regenerate
+
 # Use lighting project configuration
 python -m caption.generate_critiques --config-type lighting --export-folder caption_export/export_20250917_0354
 
-# Custom retry and batch settings
-python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --max-retries 5 --batch-size 20
+# Custom retry settings
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20250917_0354 --max-retries 5
 
-# Process specific file pattern
-python -m caption.generate_critiques --export-folder caption_export/export_20250917_0354 --input-file "reviewed_videos_*.json"
+# Only process videos without existing critique files
+python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20250917_0354 --new-only
+
+# Verbose output with progress tracking
+python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20250917_0354 --verbose
 ```
 
-### **Environment Requirements**
+### **Parallel Processing**
 
-The critique generation script requires API keys to be configured in one of these ways:
+Run different critique types simultaneously in separate terminals:
 
-#### Option 1: Streamlit Secrets (Recommended for existing setups)
-Create `.streamlit/secrets.toml`:
-```toml
-openai_key = "your-openai-api-key"
-gemini_key = "your-gemini-api-key"
-```
-
-#### Option 2: Environment Variables
 ```bash
-export OPENAI_API_KEY="your-openai-api-key"
-export GEMINI_API_KEY="your-gemini-api-key"
+# Terminal 1: Generate insertion error critiques
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20250917_0354
+
+# Terminal 2: Generate video model critiques  
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20250917_0354
+
+# Terminal 3: Generate deletion error critiques
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20250917_0354
 ```
 
-#### Option 3: .env File
-Create `.env` file in project root:
-```
-OPENAI_API_KEY=your-openai-api-key
-GEMINI_API_KEY=your-gemini-api-key
-HF_TOKEN=your-huggingface-token
-```
+### **Export and Upload**
+
+**Automatic Export**: By default, each critique generation script automatically:
+1. Exports consolidated JSON when **ALL SIX critique types** complete successfully across the entire dataset
+2. Uploads to HuggingFace dataset `zhiqiulin/caption_export` (requires `HF_TOKEN` environment variable)
+3. Falls back to local save if HuggingFace upload fails
+
+**Upload Conditions ("Wait for All" Logic):**
+- Only uploads when ALL critique types across ALL videos are either "success" or "skipped" (no "failed" status anywhere)
+- Each individual script checks the global completion status of all 6 critique types
+- Maintains original export folder structure in HuggingFace dataset
+- Creates timestamped files: `all_videos_with_captions_and_critiques_[EXPORT_TIMESTAMP].json`
+
+**Example Workflow:**
+1. Run all 6 critique type scripts in parallel
+2. Each script generates its own critique files
+3. When the last critique type completes successfully, that script triggers the upload
+4. The consolidated file contains all 6 critique types for all videos
+
+**Example Output:**
+- Export folder: `caption_export/export_20250917_0354`
+- Generated file: `all_videos_with_captions_and_critiques_20250917_0354.json`
 
 ### **Output Structure**
 
-The script enhances the original export data by adding critique fields to each caption type:
+The script creates individual critique files in this directory structure:
+
+```
+output_critiques/
+├── insertion_error_critique/
+│   ├── subject_description/
+│   │   ├── video_001_critique.json
+│   │   └── video_002_critique.json
+│   ├── scene_composition_dynamics/
+│   └── ...
+├── video_model_critique/
+│   ├── subject_description/
+│   └── ...
+└── ...
+```
+
+The final consolidated JSON file enhances the original export data by adding critique fields to each caption type:
 
 ```json
 {
@@ -475,40 +535,42 @@ The script enhances the original export data by adding critique fields to each c
 
 ### **Critique Generation Logic**
 
-#### Skipping Rules
+#### Processing Rules
+- **Input**: Only processes captions with status "approved" or "rejected"
 - **Always Generate**: Insertion Error, Video Model, Blind Model critiques
 - **Skip for Perfect Scores**: Replacement Error, Deletion Error, Non-Constructive critiques skip when `initial_caption_rating_score == 5`
+
+#### Model Usage
+- **Text-Only Critiques**: GPT-4.1 or Gemini (depending on critique type)
+- **Video-Enabled Critiques**: Gemini with direct video access
+- **Caption Improvement**: GPT-4o for revision generation
 
 #### Error Handling
 - **Retry Logic**: Up to 3 attempts (configurable with `--max-retries`)
 - **Individual Failures**: Failed critiques don't block other critiques for the same video
-- **Resume Mode**: `--resume` flag skips already successful/skipped critiques
+- **Incremental Processing**: Skip unchanged caption data and existing successful critiques
+- **Change Detection**: Regenerates only when caption data or generation parameters change
 
-#### HuggingFace Upload
-- **Condition**: Only uploads when ALL critiques are either "success" or "skipped" (no "failed" status)
-- **Path Structure**: Maintains original export folder structure in HuggingFace dataset
-- **Fallback**: If upload fails, file is still saved locally
+### **Progress Tracking**
 
-### **Key Features**
+For large datasets with thousands of videos, the script provides:
 
-- **Safe Processing**: Atomic file writes prevent JSON corruption
-- **Automatic Backups**: Creates timestamped backups before processing
-- **Batch Saving**: Saves progress incrementally to minimize work loss
-- **Complete Preservation**: All original export data remains intact
-- **Robust Error Handling**: Individual critique failures don't affect others
-- **Progress Tracking**: Clear status reporting throughout processing
+- **Initial Analysis**: Detailed breakdown of what will be processed vs skipped
+- **Progress Updates**: Shows completion percentage every 500 operations
+- **Final Summary**: Complete statistics of successes, failures, and skips
+- **Clean Output**: No individual video processing messages for large datasets
 
 ### **Troubleshooting**
 
 #### Common Issues
 1. **API Key Errors**: Ensure keys are properly configured in `.streamlit/secrets.toml`
-2. **Failed Critiques**: Use `--resume` to retry only failed critiques
-3. **Large Files**: Increase `--batch-size` for better progress tracking
+2. **Failed Critiques**: Use `--force-regenerate` to retry all failed critiques
+3. **Large Files**: Progress tracking prevents timeout concerns
 4. **HuggingFace Upload**: Ensure `HF_TOKEN` is set in environment for uploads
 
 #### Output Files
-- **Main Output**: `*_with_critiques.json` - Enhanced data with all critiques
-- **Backup**: `*.backup_[timestamp].json` - Original data backup
+- **Individual Critiques**: Saved in `output_critiques/` directory structure
+- **Consolidated Export**: `all_critiques_[timestamp].json` in export folder
 - **HuggingFace**: Same structure as local export when uploaded
 
-This system provides comprehensive critique generation capabilities while maintaining data integrity and supporting robust error recovery.
+This system provides comprehensive critique generation capabilities while maintaining data integrity and supporting robust error recovery for large-scale processing.

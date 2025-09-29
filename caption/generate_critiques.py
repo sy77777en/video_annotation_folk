@@ -9,7 +9,7 @@ Features:
 - Config-based caption type discovery
 - Selective critique type generation (parallel execution support)
 - Incremental processing (skip unchanged)
-- Detailed dry run analysis
+- Detailed dry run analysis with accurate counting
 - App.py-compatible folder structure
 - Complete change detection
 """
@@ -196,7 +196,7 @@ def parse_args():
                        help="Specific critique type to generate (enables parallel execution)")
     parser.add_argument("--export-folder", type=str, 
                        help="Process specific export folder (optional)")
-    parser.add_argument("--export-pattern", type=str, default="caption_export/export_*",
+    parser.add_argument("--export-pattern", type=str, default="caption_export/export_20250917_0354",
                        help="Pattern to find export folders")
     parser.add_argument("--output-dir", type=str, default="output_critiques",
                        help="Base output directory for critiques")
@@ -210,8 +210,8 @@ def parse_args():
                        help="Only process videos without existing critique files")
     parser.add_argument("--max-retries", type=int, default=3,
                        help="Maximum retry attempts for failed generations")
-    parser.add_argument("--export-json", action="store_true", default=False,
-                       help="Export consolidated JSON file with all critiques")
+    parser.add_argument("--export-json", action="store_true", default=True,
+                       help="Export consolidated JSON file with all critiques (default: True)")
     parser.add_argument("--hf-dataset", type=str, default="zhiqiulin/caption_export",
                        help="HuggingFace dataset repository to upload to")
     return parser.parse_args()
@@ -314,12 +314,22 @@ class CritiqueGenerator:
             
         return secrets
     
-    def discover_export_folders(self, export_folder: Optional[str] = None, export_pattern: str = "caption_export/export_*") -> List[Path]:
-        """Discover export folders to process"""
+    def discover_export_folders(self, export_folder: Optional[str] = None, export_pattern: str = "caption_export/export_20250917_0354") -> List[Path]:
+        """Discover export folders to process - now defaults to single folder"""
         if export_folder:
-            return [Path(export_folder)]
+            folder_path = Path(export_folder)
+            if folder_path.is_dir():
+                return [folder_path]
+            else:
+                print(f"Warning: Specified export folder {export_folder} does not exist")
+                return []
         
-        # Find all export folders matching pattern
+        # Check if export_pattern is a direct path (single folder mode)
+        pattern_path = Path(export_pattern)
+        if pattern_path.is_dir():
+            return [pattern_path]
+        
+        # Fallback to glob pattern matching for backward compatibility
         export_folders = []
         for folder_path in glob(export_pattern):
             folder = Path(folder_path)
@@ -349,7 +359,7 @@ class CritiqueGenerator:
             return list(data.values())
     
     def discover_videos_to_process(self, export_folder: Optional[str] = None, 
-                                 export_pattern: str = "caption_export/export_*") -> List[Tuple[str, str, Dict[str, Any], str]]:
+                                 export_pattern: str = "caption_export/export_20250917_0354") -> List[Tuple[str, str, Dict[str, Any], str, str]]:
         """Discover all videos that need critique processing"""
         videos_to_process = []
         
@@ -366,6 +376,7 @@ class CritiqueGenerator:
                 for caption_type in self.available_caption_types:
                     if caption_type in video_data.get("captions", {}):
                         caption_info = video_data["captions"][caption_type]
+                        # ONLY process approved or rejected captions - these are the only ones that should have critiques
                         if caption_info.get("status") in ["approved", "rejected"]:
                             videos_to_process.append((
                                 video_id, caption_type, caption_info["caption_data"], 
@@ -430,7 +441,7 @@ class CritiqueGenerator:
         if task_config["skip_perfect"]:
             initial_rating = caption_data.get("initial_caption_rating_score")
             if initial_rating == 5:
-                return True, "Perfect score (5/5)"
+                return True, f"Perfect score (5/5) - {critique_type} skips perfect scores"
         
         return False, "Not skipped"
     
@@ -583,7 +594,7 @@ Respond with the improved caption only, without quotation marks or JSON formatti
         # Check if should skip due to perfect score
         should_skip, skip_reason = self.should_skip_critique(critique_type, caption_data)
         if should_skip:
-            return "skipped", f"Perfect score: {skip_reason}"
+            return "skipped", skip_reason
         
         # Check if needs regeneration
         needs_regen, regen_reason = self.needs_regeneration(
@@ -733,9 +744,15 @@ Respond with the improved caption only, without quotation marks or JSON formatti
             print("No critique data found to export")
             return None
         
-        # Create filename with timestamp
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-        filename = f"all_critiques_{timestamp}.json"
+        # Extract timestamp from export folder name (e.g., "export_20250917_0354" -> "20250917_0354")
+        folder_name = target_export_folder.name
+        if folder_name.startswith("export_") and len(folder_name) > 7:
+            timestamp = folder_name[7:]  # Remove "export_" prefix
+        else:
+            # Fallback to current timestamp if can't extract from folder name
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+        
+        filename = f"all_videos_with_captions_and_critiques_{timestamp}.json"
         output_file = target_export_folder / filename
         
         try:
@@ -787,52 +804,247 @@ Respond with the improved caption only, without quotation marks or JSON formatti
             return False
     
     def check_all_critiques_completed(self) -> bool:
-        """Check if all critiques are successfully completed"""
+        """Check if all critiques are successfully completed for all videos and all critique types"""
+        
+        # First, discover all videos that should have critiques
+        videos_to_process = self.discover_videos_to_process()
+        if not videos_to_process:
+            return True  # No videos to process
+        
+        # Get all expected critique types
+        all_critique_types = list(CRITIQUE_TASKS.keys())
+        
+        # Track what we actually have
+        videos_with_critiques = set()
+        critique_coverage = {}  # {video_id: {caption_type: {critique_type: status}}}
+        
+        # Scan all existing critique files
         for critique_type_dir in self.output_dir.iterdir():
             if not critique_type_dir.is_dir():
                 continue
                 
+            critique_type = critique_type_dir.name
+            if critique_type not in all_critique_types:
+                continue  # Skip unknown critique types
+                
             for caption_type_dir in critique_type_dir.iterdir():
                 if not caption_type_dir.is_dir():
                     continue
+                    
+                output_folder_name = caption_type_dir.name  # e.g., "subject_description"
+                
+                # Find the caption_type that corresponds to this output folder
+                caption_type = None
+                for ct, output_name in self.caption_type_to_output_name.items():
+                    if output_name == output_folder_name:
+                        caption_type = ct
+                        break
+                
+                if not caption_type:
+                    continue  # Skip if we can't map back to caption type
                     
                 for critique_file in caption_type_dir.glob("*_critique.json"):
                     try:
                         with open(critique_file, 'r', encoding='utf-8') as f:
                             critique_data = json.load(f)
                         
-                        if critique_data.get("status") == "failed":
+                        video_id = critique_data["video_id"]
+                        status = critique_data.get("status", "unknown")
+                        
+                        # Initialize nested structure
+                        if video_id not in critique_coverage:
+                            critique_coverage[video_id] = {}
+                        if caption_type not in critique_coverage[video_id]:
+                            critique_coverage[video_id][caption_type] = {}
+                        
+                        critique_coverage[video_id][caption_type][critique_type] = status
+                        videos_with_critiques.add(video_id)
+                        
+                        # If any critique failed, we're not complete
+                        if status == "failed":
                             return False
                             
                     except Exception as e:
                         print(f"Warning: Could not check critique file {critique_file}: {e}")
                         return False
         
+        # Now check if ALL expected videos have ALL expected critique types
+        for video_id, caption_type, caption_data, export_folder, video_url in videos_to_process:
+            if video_id not in critique_coverage:
+                # This video has no critiques at all
+                return False
+                
+            if caption_type not in critique_coverage[video_id]:
+                # This caption type has no critiques
+                return False
+            
+            # Check each critique type for this video-caption combination
+            for critique_type in all_critique_types:
+                # Check if this critique type should be skipped
+                task_config = CRITIQUE_TASKS[critique_type]
+                if task_config["skip_perfect"]:
+                    initial_rating = caption_data.get("initial_caption_rating_score")
+                    if initial_rating == 5:
+                        # This critique type should be skipped for perfect scores
+                        # Either it should be missing (not generated) or marked as skipped
+                        if critique_type in critique_coverage[video_id][caption_type]:
+                            status = critique_coverage[video_id][caption_type][critique_type]
+                            if status not in ["success", "skipped"]:
+                                return False
+                        # If missing, that's fine for skipped critique types
+                        continue
+                
+                # For non-skipped critique types, we must have a successful critique
+                if critique_type not in critique_coverage[video_id][caption_type]:
+                    # Missing required critique
+                    return False
+                    
+                status = critique_coverage[video_id][caption_type][critique_type]
+                if status not in ["success", "skipped"]:
+                    # Failed or unknown status
+                    return False
+        
         return True
     
-    def run_analysis(self, export_folder: Optional[str] = None, export_pattern: str = "caption_export/export_*",
+    def analyze_critique_coverage(self, videos_to_process: List[Tuple[str, str, Dict[str, Any], str, str]], 
+                                critique_types_to_process: List[str]) -> Dict[str, Any]:
+        """Analyze and predict critique generation coverage with detailed breakdown"""
+        
+        analysis = {
+            "total_approved_rejected": len(videos_to_process),
+            "available_caption_types": self.available_caption_types,
+            "critique_types_to_process": critique_types_to_process,
+            "by_critique_type": {},
+            "by_caption_type": {},
+            "perfect_score_captions": 0,
+            "non_perfect_captions": 0
+        }
+        
+        # Analyze by caption type
+        caption_type_counts = {}
+        for _, caption_type, caption_data, _, _ in videos_to_process:
+            if caption_type not in caption_type_counts:
+                caption_type_counts[caption_type] = {"total": 0, "perfect": 0, "non_perfect": 0}
+            
+            caption_type_counts[caption_type]["total"] += 1
+            
+            if caption_data.get("initial_caption_rating_score") == 5:
+                caption_type_counts[caption_type]["perfect"] += 1
+                analysis["perfect_score_captions"] += 1
+            else:
+                caption_type_counts[caption_type]["non_perfect"] += 1
+                analysis["non_perfect_captions"] += 1
+        
+        analysis["by_caption_type"] = caption_type_counts
+        
+        # Analyze by critique type
+        for critique_type in critique_types_to_process:
+            task_config = CRITIQUE_TASKS[critique_type]
+            skip_perfect = task_config["skip_perfect"]
+            
+            type_analysis = {
+                "skip_perfect_scores": skip_perfect,
+                "total_potential": len(videos_to_process),
+                "will_skip_perfect": 0,
+                "will_process": 0,
+                "by_caption_type": {}
+            }
+            
+            # Count what will be processed vs skipped
+            for _, caption_type, caption_data, _, _ in videos_to_process:
+                is_perfect = caption_data.get("initial_caption_rating_score") == 5
+                
+                if caption_type not in type_analysis["by_caption_type"]:
+                    type_analysis["by_caption_type"][caption_type] = {
+                        "total": 0, "will_process": 0, "will_skip_perfect": 0
+                    }
+                
+                type_analysis["by_caption_type"][caption_type]["total"] += 1
+                
+                if skip_perfect and is_perfect:
+                    type_analysis["will_skip_perfect"] += 1
+                    type_analysis["by_caption_type"][caption_type]["will_skip_perfect"] += 1
+                else:
+                    type_analysis["will_process"] += 1
+                    type_analysis["by_caption_type"][caption_type]["will_process"] += 1
+            
+            analysis["by_critique_type"][critique_type] = type_analysis
+        
+        return analysis
+    
+    def print_detailed_analysis(self, analysis: Dict[str, Any], verbose: bool = False):
+        """Print detailed analysis of what will be processed"""
+        
+        print(f"Critique Generation Analysis:")
+        print(f"============================")
+        print(f"Config Type: {self.config_type}")
+        print(f"Available Caption Types: {', '.join(analysis['available_caption_types'])}")
+        print(f"Critique Types to Process: {', '.join(analysis['critique_types_to_process'])}")
+        print()
+        
+        print(f"Caption Data Summary:")
+        print(f"- Total approved/rejected captions: {analysis['total_approved_rejected']}")
+        print(f"- Perfect score captions (5/5): {analysis['perfect_score_captions']}")
+        print(f"- Non-perfect captions: {analysis['non_perfect_captions']}")
+        print()
+        
+        # Caption type breakdown
+        print(f"By Caption Type:")
+        for caption_type, counts in analysis["by_caption_type"].items():
+            output_name = self.caption_type_to_output_name[caption_type]
+            print(f"  {caption_type} ({output_name}):")
+            print(f"    Total: {counts['total']} | Perfect: {counts['perfect']} | Non-perfect: {counts['non_perfect']}")
+        print()
+        
+        # Critique type breakdown
+        print(f"Critique Processing Breakdown:")
+        for critique_type, type_data in analysis["by_critique_type"].items():
+            skip_note = " (skips perfect scores)" if type_data["skip_perfect_scores"] else ""
+            print(f"  {critique_type}{skip_note}:")
+            print(f"    Will process: {type_data['will_process']}")
+            print(f"    Will skip (perfect): {type_data['will_skip_perfect']}")
+            print(f"    Total potential: {type_data['total_potential']}")
+            
+            if verbose:
+                print(f"    By caption type:")
+                for cap_type, cap_data in type_data["by_caption_type"].items():
+                    print(f"      {cap_type}: {cap_data['will_process']} process, {cap_data['will_skip_perfect']} skip")
+            print()
+        
+        # Overall summary
+        total_operations = sum(type_data["total_potential"] for type_data in analysis["by_critique_type"].values())
+        total_will_process = sum(type_data["will_process"] for type_data in analysis["by_critique_type"].values())
+        total_will_skip = sum(type_data["will_skip_perfect"] for type_data in analysis["by_critique_type"].values())
+        
+        print(f"Overall Summary:")
+        print(f"- Total possible operations: {total_operations}")
+        print(f"- Operations that will process: {total_will_process}")
+        print(f"- Operations that will skip (perfect scores): {total_will_skip}")
+        print(f"- Effective processing rate: {total_will_process}/{total_operations} ({100*total_will_process/total_operations:.1f}%)")
+    
+    def run_analysis(self, export_folder: Optional[str] = None, export_pattern: str = "caption_export/export_20250917_0354",
                     dry_run: bool = False, verbose: bool = False, force_regenerate: bool = False,
                     new_only: bool = False, max_retries: int = 3, export_json: bool = False, 
                     hf_dataset: Optional[str] = None, critique_type_filter: Optional[str] = None):
         """Run the complete analysis and processing"""
         
-        print(f"Critique Generation Analysis")
-        print(f"===========================")
-        print(f"Config Type: {self.config_type}")
-        print(f"Available Caption Types: {', '.join(self.available_caption_types)}")
-        print(f"Output Directory: {self.output_dir}")
-        if critique_type_filter:
-            print(f"Processing Only: {critique_type_filter}")
-        print()
-        
         # Discover videos to process
         videos_to_process = self.discover_videos_to_process(export_folder, export_pattern)
         
         if not videos_to_process:
-            print("No videos found to process")
+            print("No videos with approved/rejected captions found to process")
             return
         
-        print(f"Discovered {len(videos_to_process)} video-caption combinations")
+        # Determine which critique types to process
+        critique_types_to_process = [critique_type_filter] if critique_type_filter else list(CRITIQUE_TASKS.keys())
+        
+        # Generate detailed analysis
+        analysis = self.analyze_critique_coverage(videos_to_process, critique_types_to_process)
+        self.print_detailed_analysis(analysis, verbose)
+        
+        if dry_run:
+            print(f"DRY RUN - Detailed Processing Preview:")
+            print(f"====================================")
         
         # Group by export folder for analysis
         by_export_folder = {}
@@ -841,20 +1053,14 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                 by_export_folder[export_folder_name] = []
             by_export_folder[export_folder_name].append((video_id, caption_type, caption_data, video_url))
         
-        print(f"\nDiscovered Export Folders:")
-        for folder, items in by_export_folder.items():
-            unique_videos = len(set(item[0] for item in items))
-            print(f"  - {folder} ({unique_videos} videos, {len(items)} caption tasks)")
-        
-        if dry_run:
-            print(f"\nDRY RUN ANALYSIS")
-            print(f"================")
-        
-        # Determine which critique types to process
-        critique_types_to_process = [critique_type_filter] if critique_type_filter else list(CRITIQUE_TASKS.keys())
+        if verbose or dry_run:
+            print(f"\nProcessing Export Folder:")
+            for folder, items in by_export_folder.items():
+                unique_videos = len(set(item[0] for item in items))
+                print(f"  - {folder} ({unique_videos} videos, {len(items)} caption tasks)")
+            print()
         
         # Process each video-caption combination
-        total_operations = len(videos_to_process) * len(critique_types_to_process)
         operation_counts = {
             "generate": 0, 
             "regenerate": 0, 
@@ -864,15 +1070,18 @@ Respond with the improved caption only, without quotation marks or JSON formatti
             "failed": 0
         }
         
+        # Process with progress tracking for large datasets
+        processed_count = 0
+        total_to_process = len(videos_to_process) * len(critique_types_to_process)
+        
         for video_id, caption_type, caption_data, export_folder_name, video_url in videos_to_process:
-            if verbose or dry_run:
-                print(f"\nVideo: {video_id}")
-                print(f"Caption: {caption_type} ({caption_data.get('user', 'unknown')})")
-                
-                if dry_run:
-                    print(f"Critiques to Process:")
-            
             for critique_type in critique_types_to_process:
+                processed_count += 1
+                
+                # Show progress every 500 operations for large datasets (no individual details)
+                if not dry_run and processed_count % 500 == 0:
+                    print(f"Progress: {processed_count}/{total_to_process} operations ({100*processed_count/total_to_process:.1f}%)")
+                
                 status, reason = self.process_single_critique(
                     video_id, caption_type, critique_type, caption_data, 
                     export_folder_name, video_url, max_retries, dry_run, verbose,
@@ -880,31 +1089,27 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                 )
                 
                 operation_counts[status] += 1
-                
-                if verbose or dry_run:
-                    status_icon = {
-                        "generate": "✓",
-                        "regenerate": "✓",
-                        "regenerate_failed": "↻",
-                        "skipped": "◦",
-                        "success": "✓",
-                        "failed": "✗"
-                    }.get(status, "?")
-                    
-                    action = status.upper() if status in ["generate", "regenerate", "regenerate_failed"] else status
-                    print(f"  {status_icon} {critique_type}: {action} ({reason})")
         
-        print(f"\nSummary:")
-        print(f"- Total video-caption combinations: {len(videos_to_process)}")
-        print(f"- Total critique operations: {total_operations}")
+        # Final summary
+        total_operations = sum(operation_counts.values())
+        
+        print(f"\n{'DRY RUN ' if dry_run else ''}Processing Summary:")
+        print(f"==========================")
+        print(f"Total video-caption combinations processed: {len(videos_to_process)}")
+        print(f"Total critique operations: {total_operations}")
+        
         if not dry_run:
             print(f"- Successful generations: {operation_counts['success']}")
             print(f"- Failed generations: {operation_counts['failed']}")
         else:
             print(f"- Would generate new: {operation_counts['generate']}")
-            print(f"- Would regenerate (changed data/config): {operation_counts['regenerate']}")
-            print(f"- Would regenerate (previous failed): {operation_counts['regenerate_failed']}")
+            print(f"- Would regenerate (changed): {operation_counts['regenerate']}")
+            print(f"- Would regenerate (failed): {operation_counts['regenerate_failed']}")
+        
         print(f"- Skipped operations: {operation_counts['skipped']}")
+        
+        if operation_counts['skipped'] > 0:
+            print(f"  (Skipped due to: perfect scores, existing files, or no changes)")
         
         # Export and upload logic (only if not dry run and export_json is True)
         if not dry_run and export_json and operation_counts["success"] > 0:
