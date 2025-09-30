@@ -2,7 +2,7 @@
   "video_id": "K3U7Ybik1wM.4.2.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:48:39.018220",
+  "generation_timestamp": "2025-09-29T10:31:18.098097",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera movement as moving forward, trucking right, and panning left is inaccurate. The caption also omits the downward tilt responsible for the change to a high-angle view.",
-  "revised_caption_by_generated_critique": "The unsteady camera starts at eye level and moves slightly forward toward the bed. It then shifts right along the side of the bed while gradually tilting downward, resulting in a high-angle view. The camera movement is noticeably shaky, and a shallow depth of field keeps the focus on the bed in the foreground.",
+  "generated_critique": "The caption misidentifies the camera's movement as a combination of moving forward, trucking right, and panning left. The cause for the shift to a high-angle view is also incorrectly attributed to a pan.",
+  "revised_caption_by_generated_critique": "The camera, initially at eye level, tilts upward as it moves slightly forward, creating a shift to a high-angle view. It then slides right along the side of the bed, maintaining focus on the bed in the foreground with a shallow depth of field. The camera movement remains noticeably shaky throughout.",
   "status": "success"
 }

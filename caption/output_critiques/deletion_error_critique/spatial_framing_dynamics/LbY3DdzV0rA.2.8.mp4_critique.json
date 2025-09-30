@@ -2,7 +2,7 @@
   "video_id": "LbY3DdzV0rA.2.8.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:22:59.018386",
+  "generation_timestamp": "2025-09-29T09:19:09.482394",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "2. Revise the description to state that \"The top five-sixths of the frame are dominated by the sky, which is positioned in the middle ground and background.\"",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a desert landscape, with the focus on the scenery rather than a specific subject. The bottom sixth of the frame is occupied by the foreground, a flat, arid plain with scattered shrubs that extends into the middle ground. In the background, a dark mountain range rests on the horizon, stretching across the width of the scene. The top five-sixths of the frame are dominated by the sky, which is positioned in the middle ground and background. A massive, dark storm cloud occupies the top left and center, appearing to swirl and advance in a time-lapse motion, with rain visible falling from its base in the left middle ground. The top right of the frame contains a lighter portion of the sky with pale blue and white clouds. The camera is positioned at a low height, looking across the desert floor toward the horizon.",
+  "generated_critique": "1. Modify the sentence \"The bottom third of the frame is occupied by the foreground, a flat, arid plain with scattered shrubs that extends into the middle ground\" to \"The bottom sixth of the frame is occupied by the ground scenery, a flat, arid plain with scattered shrubs occupying both the foreground and the middle ground, and extending into the distant mountains in the background.\"",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a desert landscape, with the focus on the scenery rather than a specific subject. The bottom sixth of the frame is occupied by the ground scenery, a flat, arid plain with scattered shrubs occupying both the foreground and the middle ground, and extending into the distant mountains in the background. In the background, a dark mountain range rests on the horizon, stretching across the width of the scene. The top two-thirds of the frame are dominated by the sky, where a massive, dark storm cloud occupies the top left and center. This cloud appears to swirl and advance in a time-lapse motion, with rain visible falling from its base in the left middle ground. The top right of the frame contains a lighter portion of the sky with pale blue and white clouds. The camera is positioned at a low height, looking across the desert floor toward the horizon.",
   "status": "success"
 }

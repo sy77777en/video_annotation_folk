@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:09:37.682993",
+  "generation_timestamp": "2025-09-29T13:31:54.412472",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Since this is a 2D video, please remove terms like \"foreground\" and \"middle ground\" from the caption. 2. The shot described is not a medium shot but rather a close-up shot. 3. As this is a 2D video, please remove the sentence \"The camera is positioned at eye level with the subjects,\" as it involves information about height. 4. The caption should also mention that the background includes a faint shadow cast by the man, which is not currently described.",
-  "revised_caption_by_generated_critique": "A close-up shot features an older man and a small monkey against a solid tan background. The man is positioned in the right-center of the frame, holding the monkey, which is situated in the left-center. The monkey's paw is placed on the man's cheek. A faint shadow cast by the man is visible on the background.",
+  "generated_critique": "1. Since this is a 2D video, please remove terms like \"foreground\" and \"middle ground\" from the caption. 2. The shot described is not a medium shot but rather a close-up shot. 3. The man is actually standing on the left side of the frame, not the right-center. 4. As this is a 2D video, please remove the sentence \"The camera is positioned at eye level with the subjects,\" as it involves information about height.",
+  "revised_caption_by_generated_critique": "A close-up shot frames an older man and a small monkey against a solid tan background. The man is positioned on the left side of the frame. He holds the monkey, which is situated in the left-center of the frame. The monkey's paw is placed on the man's cheek.",
   "status": "success"
 }

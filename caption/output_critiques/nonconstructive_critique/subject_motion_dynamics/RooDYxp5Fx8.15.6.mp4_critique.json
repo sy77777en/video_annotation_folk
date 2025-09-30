@@ -2,7 +2,7 @@
   "video_id": "RooDYxp5Fx8.15.6.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:11:22.329009",
+  "generation_timestamp": "2025-09-29T15:37:43.032213",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the green bus fails to mention its direction of travel and its exit from the frame. The statement that the white van appears from the right and follows the same path is incorrect. The caption does not specify from which side of the frame the white van exits and fails to mention several other vehicles that follow the same path through the intersection.",
-  "revised_caption_by_generated_critique": "A green bus with an advertisement on its side is seen moving through an intersection, traveling from left to right, and eventually exits the frame on the right. A blue van enters the frame from the right, moves forward, and passes the green bus, heading towards the left side of the frame. As the blue van continues, a white van appears from the left and follows a different path, not directly behind the blue van. The blue van continues to drive away, and a black car enters the frame from the right, following the blue van's path. The black car moves forward, with the blue van now further down the road. Several other vehicles, including a red sedan and a silver SUV, also follow the same path through the intersection. The white van exits the frame on the left, while the black car continues to follow the blue van, which is now further down the road.",
+  "generated_critique": "The description of the green bus is incomplete; it fails to mention its direction of travel and where it exits the frame. The statement that the white van appears from the right and follows the same path as the blue van is incorrect. The caption fails to specify from which side of the frame the white van exits and omits the movement of several other vehicles in the intersection.",
+  "revised_caption_by_generated_critique": "A green bus with an advertisement on its side is seen moving through an intersection, traveling from the left to the right side of the frame before exiting. Following the green bus, a blue van enters the frame from the right, moves forward, and heads towards the left side of the frame. As the blue van progresses, a white van appears from the left, crossing the intersection and heading towards the right side of the frame. The blue van continues to drive away, and a black car enters the frame from the right, following the blue van's path. The black car continues to move forward, while the blue van is now further down the road. The black car follows the blue van, and the white van exits the frame on the right. Additional vehicles, including a red sedan and a silver SUV, navigate through the intersection, adding to the dynamic traffic scene.",
   "status": "success"
 }

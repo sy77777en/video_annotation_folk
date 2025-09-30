@@ -2,7 +2,7 @@
   "video_id": "0030f434-3eb4a3a9.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:41:54.950135",
+  "generation_timestamp": "2025-09-29T19:39:34.876827",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that vehicles enter from the left and only turn right. The description of a person walking back and forth is also inaccurate. The caption omits the motion of a man on a scooter.",
-  "revised_caption_by_generated_critique": "From a stationary viewpoint at an intersection, a steady stream of vehicles, including a white sedan, a yellow taxi, and multiple SUVs, moves across the frame, with some turning right and others continuing straight. The cars proceed one by one through the intersection. On the sidewalk at the far corner, a few pedestrians are visible, with one person standing still. Additionally, a man on a scooter is seen moving along the sidewalk.",
+  "generated_critique": "The caption incorrectly states the direction from which the vehicles enter and the direction in which they turn. The description of a person walking back and forth is inaccurate. The caption also omits the motion of another subject on the sidewalk.",
+  "revised_caption_by_generated_critique": "From a stationary viewpoint at an intersection, a steady stream of vehicles, including a white sedan, a yellow taxi, and multiple SUVs, enters from the right and turns left, moving across the frame. The cars proceed one by one through the intersection. On the sidewalk at the far corner, a few pedestrians are visible, with one person standing still. Additionally, a cyclist is seen riding along the sidewalk.",
   "status": "success"
 }

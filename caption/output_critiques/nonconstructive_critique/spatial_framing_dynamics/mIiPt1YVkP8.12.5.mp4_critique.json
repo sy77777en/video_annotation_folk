@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.12.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T07:12:48.247247",
+  "generation_timestamp": "2025-09-29T13:52:38.485753",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial depth of the desk items is described incorrectly. The description of the camera movement is inaccurate. The final positions of the pilot, cockpit, and desk items are wrong. Additionally, the formatting for compound directions is incorrect.",
-  "revised_caption_by_generated_critique": "Initially, the frame shows a pilot from the shoulders up, positioned in the left-center middle ground, looking towards the camera. To his right, also in the middle ground, is an image of an aircraft cockpit. Text and a food image occupy the top-right background, while desk items are visible in the bottom-left foreground. The camera then tilts downwards and zooms out slightly. This movement reveals a large illustration of a KLM airplane occupying the entire bottom foreground, stretching from left to right. The pilot and cockpit remain visible in the upper-left and upper-right middle ground, respectively, now smaller within the overall composition. The background elements in the top-right and the desk items in the bottom-left remain partially visible. The camera perspective starts slightly above the pilot's eye level and moves lower as it tilts down.",
+  "generated_critique": "The initial depth of the desk items is incorrectly described as \"foreground/middle ground\". After the camera movement, the final positions of the pilot, cockpit, and desk items are all described incorrectly. The description of the camera movement as \"tilts downwards and appears to zoom out slightly\" is inaccurate and incomplete, failing to capture the full dynamics of the camera's motion. Additionally, the formatting for compound positions like \"upper left/center\" is incorrect.",
+  "revised_caption_by_generated_critique": "Initially, the frame shows a pilot from the shoulders up, positioned in the left center middle ground, looking towards the camera. To his right, also in the middle ground, is an image of an aircraft cockpit. Text and a food image occupy the top right background, while desk items are visible in the bottom left middle ground. The camera then pans downwards and zooms out slightly, revealing a large illustration of a KLM airplane occupying the entire bottom foreground, stretching from left to right. The pilot and cockpit remain visible in the upper left center and upper right center middle ground, respectively, now smaller within the overall composition. The background elements in the top right and the desk items in the bottom left remain partially visible. The camera perspective starts slightly above the pilot's eye level and moves lower as it pans down.",
   "status": "success"
 }

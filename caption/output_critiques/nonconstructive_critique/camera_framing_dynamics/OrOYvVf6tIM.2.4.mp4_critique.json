@@ -2,7 +2,7 @@
   "video_id": "OrOYvVf6tIM.2.4.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:37:50.593109",
+  "generation_timestamp": "2025-09-29T12:14:56.560933",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description \"initially focusing on a woman standing in the background\" is inaccurate. The caption omits a quick pan to the right at the start of the video. The phrase \"bringing a hand placing a flashlight into a drawer into sharp view\" is incorrect, as parts of the foreground remain blurred. The descriptions \"mostly static,\" \"very smooth, minor movements,\" and \"shallow depth of field\" are also inaccurate.",
-  "revised_caption_by_generated_critique": "The video begins with a quick pan to the right, settling into a hip-level shot with a level angle. The camera employs a moderate depth of field, initially focusing on a woman in the background. A rack focus shifts attention to the foreground, highlighting a hand placing a flashlight into a drawer, though some parts of the foreground remain slightly blurred.",
+  "generated_critique": "The description of the camera's movement as \"mostly static\" and having \"very smooth, minor movements\" is incorrect. The caption fails to mention a camera movement that occurs at the start. The description of the depth of field as \"shallow\" is inaccurate. The statement that the camera is \"initially focusing on a woman standing in the background\" is inaccurate. The phrase \"bringing a hand placing a flashlight into a drawer into sharp view\" is also incorrect.",
+  "revised_caption_by_generated_critique": "The video begins with a noticeable camera movement, capturing a hip-level shot with a level angle. The camera employs a moderate depth of field, initially focusing on a hand placing a flashlight into a drawer in the foreground. A rack focus then shifts attention to a woman standing in the background, bringing her into sharp view.",
   "status": "success"
 }

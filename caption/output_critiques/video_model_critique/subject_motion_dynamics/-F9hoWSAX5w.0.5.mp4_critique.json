@@ -2,7 +2,7 @@
   "video_id": "-F9hoWSAX5w.0.5.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T21:35:28.322082",
+  "generation_timestamp": "2025-09-29T04:07:03.271664",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-07T02:45:23.600500",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\nThe primary issue is the description of motion. The caption states, \"The camera gradually moves closer to the building,\" but the video is a completely static shot. There is no camera movement, zoom, or any other form of motion present. The instructions explicitly state, \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" This caption fails to follow that rule by inventing motion that does not occur.",
-  "revised_caption_by_generated_critique": "This is a static, low-angle shot of a dilapidated, multi-story brick building against a hazy, green-tinted sky. The building features a prominent corner turret, which is partially stripped and has graffiti on it. Much of the facade is covered in tattered white house wrap and red sheathing, indicating it is abandoned or undergoing major renovation. A green fire escape runs up the side of the structure.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption contains a significant factual error, stating that \"The camera gradually moves closer to the building,\" when the camera is completely static throughout the video. The description also includes details about the building's appearance, such as its facade and renovation state, which should be omitted to focus solely on motion. Additionally, the phrase \"appears to be\" is speculative. The caption should be corrected to describe the lack of camera movement and focus only on the minimal motion visible, which is the fluttering of the plastic sheets.",
+  "revised_caption_by_generated_critique": "In a static, low-angle shot of a building under construction, white plastic sheets covering the windows flutter gently in the wind.",
   "status": "success"
 }

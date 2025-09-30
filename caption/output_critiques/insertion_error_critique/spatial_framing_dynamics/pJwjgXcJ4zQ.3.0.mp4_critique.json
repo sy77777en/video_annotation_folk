@@ -2,7 +2,7 @@
   "video_id": "pJwjgXcJ4zQ.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:34.022953",
+  "generation_timestamp": "2025-09-29T07:30:13.753301",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera is not stationary throughout the video; it pans to the left and moves forward. Additionally, the street does not stretch towards the top center of the frame. It would be more accurate to describe it as extending towards the upper left corner of the frame. The camera also briefly tilts upward, capturing the tops of the buildings and a portion of the sky, which alters the vertical framing of the scene.",
-  "revised_caption_by_generated_critique": "The video captures a wide shot of an urban street scene, initially showcasing a full view of the street and surrounding storefronts. The camera pans to the left and moves forward, altering the perspective. In the 2D frame, the street extends from the bottom center towards the upper left corner, creating a vanishing point effect. Storefronts line both sides of the street; those on the left occupy the left side of the frame, while those on the right fill the right side. In 3D space, the storefronts are situated in the foreground and middle ground, with some buildings extending into the background. The camera is positioned at a height roughly level with the storefronts, providing a direct view of the street and its surroundings. At one point, the camera briefly tilts upward, capturing the tops of the buildings and a portion of the sky, which alters the vertical framing of the scene. There are no significant changes in shot size, maintaining a steady and comprehensive view of the urban environment.",
+  "generated_critique": "The camera is not stationary throughout the video; it pans to the left and moves forward. Additionally, the street does not stretch towards the top center of the frame. It would be more accurate to describe it as extending towards the upper left corner of the frame. The camera also briefly tilts upward, changing the height perspective relative to the storefronts.",
+  "revised_caption_by_generated_critique": "The video captures a wide shot of an urban street scene, showcasing a full view of the street and surrounding storefronts. The camera initially remains stationary but then pans to the left and moves forward, altering the perspective. In the 2D frame, the street extends from the bottom center towards the upper left corner, creating a vanishing point effect. Storefronts line both sides of the street; those on the left occupy the left side of the frame, while those on the right fill the right side. In 3D space, the storefronts are situated in the foreground and middle ground, with some buildings extending into the background. The camera is positioned at a height roughly level with the storefronts, but it briefly tilts upward, changing the height perspective relative to the storefronts. There are no significant changes in shot size during the video, maintaining a steady and comprehensive view of the urban environment.",
   "status": "success"
 }

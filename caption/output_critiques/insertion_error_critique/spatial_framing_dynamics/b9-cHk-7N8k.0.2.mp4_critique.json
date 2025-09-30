@@ -2,7 +2,7 @@
   "video_id": "b9-cHk-7N8k.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:17:34.792634",
+  "generation_timestamp": "2025-09-29T13:42:51.485899",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The surfer is actually in the middle ground, not the foreground. The large wave is positioned in the middle ground on the middle left. The sky is mostly overcast, which affects the overall lighting of the scene. Additionally, the camera is moving backward, not forward. The description stating \"the scene pans to the right along the wave\" is incorrect, as there is no panning occurring.",
-  "revised_caption_by_generated_critique": "In a full shot captured from the subject's level, a surfer is positioned in the center middle ground, initially in a crouched stance on a surfboard that extends from the bottom of the frame. A large wave curls in the middle ground on the middle left, with the sun positioned at the top center and a coastline visible in the background on the far left. The sky is mostly overcast, affecting the overall lighting of the scene. As the camera moves backward with the board, the background coastline shifts further to the left of the frame. During this movement, the surfer transitions to a more upright stance while remaining in the center middle ground.",
+  "generated_critique": "The surfer is actually in the middle ground, not the foreground. The large wave is positioned in the middle ground on the middle left. Additionally, the camera is moving backward, not forward. The description stating \"the scene pans to the right along the wave\" is incorrect, as there is no panning occurring. The sun is actually located in the top right corner of the frame, not the top center.",
+  "revised_caption_by_generated_critique": "In a full shot captured from the subject's level, a surfer is positioned in the middle ground, initially in a crouched stance on a surfboard that extends from the bottom of the frame. A large wave curls in the middle ground on the middle left, with the sun positioned at the top right corner and a coastline visible in the background on the far left. As the camera moves backward with the board, the background coastline shifts further to the left of the frame. During this movement, the surfer transitions to a more upright stance while remaining in the middle ground.",
   "status": "success"
 }

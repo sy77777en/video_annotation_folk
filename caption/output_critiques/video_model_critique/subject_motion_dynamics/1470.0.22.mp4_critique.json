@@ -2,7 +2,7 @@
   "video_id": "1470.0.22.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T01:58:10.452748",
+  "generation_timestamp": "2025-09-29T07:41:01.018094",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is highly inaccurate. It describes a slow, deliberate, and sequential turning motion (\"gradually shifting,\" \"starting to turn,\" \"continues to turn,\" \"completes the turn\"). However, the video shows a single, quick, and energetic downward motion, as if the child is bouncing or falling onto the bed. The twisting of the body is part of this one rapid movement, not a separate, controlled action.\n\n**Completeness:** The caption is incomplete because it fails to describe the primary motion seen in the video, which is a fast bounce. Furthermore, it describes actions that do not happen within the video's duration, such as \"completes the turn, now facing away from the camera.\" This violates the instruction to \"Avoid describing anything not visible or uncertain.\"\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption attempts to focus on motion but completely misinterprets it.\n*   **Chronological Order:** It presents a chronological sequence of events, but the events described do not match what is shown. The actual motion is a single, brief action, not a series of distinct steps.\n*   **Clarity and Specificity:** The description lacks clarity because it misrepresents the nature of the movement. Describing the motion as \"gradual\" and \"shifting\" is the opposite of the quick, dynamic action taking place.\n*   **Avoid Speculation:** The caption speculates on actions that occur after the clip ends (\"completes the turn\"), which is explicitly forbidden by the instructions.\n\nIn summary, the caption fails because it fabricates a slow, multi-part turning sequence instead of accurately describing the single, rapid bouncing motion that the child performs in the video.",
-  "revised_caption_by_generated_critique": "A young child wearing a red cowboy hat and patterned pajamas is on a bed in a retro-styled bedroom. They abruptly throw themselves backward onto the bed in a single, quick motion, twisting their torso as their head and shoulders descend toward the mattress.",
+  "generated_critique": "The caption contains factual errors regarding the subject's motion. The video shows a child falling backward onto a bed, not rolling over to their left side into a kneeling position. The initial description of the child supporting themselves with their left hand is also incorrect; they are already in the process of falling backward as the video begins. Additionally, the first sentence describing the child's outfit and the room's decorations is unnecessary, as the instructions state to focus on motion. The caption should be corrected to accurately describe the backward falling motion.",
+  "revised_caption_by_generated_critique": "The video begins with a child already in motion, falling backward onto a bed. Their head and upper body are tilted back, and as they land on the bed, their legs are thrown up into the air.",
   "status": "success"
 }

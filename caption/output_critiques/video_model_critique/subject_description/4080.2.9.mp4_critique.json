@@ -2,7 +2,7 @@
   "video_id": "4080.2.9.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T13:18:58.727370",
+  "generation_timestamp": "2025-09-29T17:11:13.001210",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Sunny Guo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good but could be improved for better accuracy and completeness.\n\n**Accuracy:**\nThe caption is mostly accurate in its description of the subject's hair, complexion, makeup, and expression. However, the final sentence, \"creating a clear and focused view of their face,\" is inaccurate. The video has a distinct soft-focus, blurry, and slightly distorted quality, which is a key part of its visual style. The view is not clear or sharply focused.\n\n**Completeness:**\nThe description is reasonably complete but omits a very prominent feature. The person's light-colored, striking eyes are a central point of focus, especially contrasted with the dark makeup. Mentioning their light-colored or blue eyes would make the description more thorough. Additionally, the low-angle shot, with the person looking down toward the camera, is a significant detail about their orientation that could be included.\n\n**Adherence to Instructions:**\nThe caption adheres well to most of the instructions. It is a single, coherent paragraph, uses simple and natural English, avoids subjective emotional adjectives, and correctly identifies the subject as a \"person.\" It successfully describes visual attributes without referring to specific frames. The only area where it falters is in accurately describing what is visible, specifically regarding the lack of clarity and focus in the shot.",
-  "revised_caption_by_generated_critique": "The video features a close-up, low-angle shot of a person with short, dark hair that includes a streak of lighter color. They have a fair complexion and are wearing heavy, dark eye makeup that accentuates their striking, light-colored eyes. Looking down toward the camera, their lips are slightly parted with a neutral expression. The image has a soft-focus, slightly blurry quality, with lighting that highlights their facial features.",
+  "generated_critique": "The caption includes speculative details and subjective descriptions that violate the instructions. The sentence, \"The person appears to be wearing a red shirt or sweater with black stripes, although it is slightly out of focus and difficult to clearly identify,\" should be removed because the instruction states, \"You must avoid describing what is not visible or what you are unsure about,\" and the clothing is not clearly visible. Additionally, the final sentence describing the lighting and focus as creating a \"clear and focused view\" is inaccurate, as the video has a soft, blurry quality. This subjective and factually incorrect description should also be deleted.",
+  "revised_caption_by_generated_critique": "The video shows a close-up, soft-focus shot of a person's face. They have short, dark hair with a lighter streak, fair skin, and prominent dark eye makeup around their light-colored eyes. Their face is angled, and they are looking toward the camera with their lips slightly parted. The image has a blurry, dreamlike quality with dim, moody lighting.",
   "status": "success"
 }

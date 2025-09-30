@@ -2,7 +2,7 @@
   "video_id": "5454.1.18.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:49:54.842501",
+  "generation_timestamp": "2025-09-29T13:04:37.273825",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera appears to be mounted on a tripod at hip level, and there is noticeable barrel distortion along the edges of the frame.",
-  "revised_caption_by_generated_critique": "The camera is mounted on a tripod at hip level, capturing the scene with noticeable barrel distortion along the edges of the frame. Despite the excessive motion blur, the video generally maintains deep focus as the camera smoothly and quickly tilts down.",
+  "generated_critique": "The caption should mention that the camera performs a slow zoom-in during the tilt, which is not indicated in the original description.",
+  "revised_caption_by_generated_critique": "The camera is at eye level, looking up from a low angle. The video has excessive motion blur, but generally appears to have deep focus. The camera smoothly and quickly tilts down while performing a slow zoom-in.",
   "status": "success"
 }

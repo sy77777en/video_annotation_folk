@@ -2,7 +2,7 @@
   "video_id": "a9557c123cb572df0a47ee767f61db3ada0491d0a98e164316ee27c81c20341d.2.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:10:29.364866",
+  "generation_timestamp": "2025-09-29T12:05:25.037793",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description should be revised as follows: \"The camera cranes down through a dark, textured, tunnel-like structure.\" Additionally, the statement \"The entire structure, including its concentric rings, central rifled core, and the surrounding floating bolts, rotates continuously in a clockwise direction\" is inaccurate. The surrounding bolts, whether floating or fixed, do rotate continuously in a clockwise direction. However, the concentric rings do not rotate, and the central rifled core rotates in both directions—counter-clockwise initially and clockwise by the end of the video. The video also briefly shows a small red light blinking at the edge of the tunnel, which should be mentioned if present.",
-  "revised_caption_by_generated_critique": "The camera cranes down through a dark, textured, tunnel-like structure. The surrounding bolts, whether floating or fixed, rotate continuously in a clockwise direction. However, the concentric rings remain stationary, and the central rifled core rotates initially in a counter-clockwise direction and then switches to a clockwise rotation by the end of the video. A small red light blinks briefly at the edge of the tunnel.",
+  "generated_critique": "The description should be revised as follows: \"The camera cranes down through a dark, textured, tunnel-like structure.\" Additionally, the statement \"The entire structure, including its concentric rings, central rifled core, and the surrounding floating bolts, rotates continuously in a clockwise direction\" is inaccurate. The surrounding bolts, whether floating or fixed, do rotate continuously in a clockwise direction. However, the concentric rings do not rotate, and the central rifled core rotates in both directions—counter-clockwise initially and clockwise by the end of the video. The video also briefly shows a small red light blinking near the entrance of the tunnel, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The camera cranes down through a dark, textured, tunnel-like structure. The surrounding bolts, whether floating or fixed, rotate continuously in a clockwise direction. The central rifled core rotates initially in a counter-clockwise direction and then switches to clockwise by the end of the video, while the concentric rings remain stationary. A small red light blinks near the entrance of the tunnel.",
   "status": "success"
 }

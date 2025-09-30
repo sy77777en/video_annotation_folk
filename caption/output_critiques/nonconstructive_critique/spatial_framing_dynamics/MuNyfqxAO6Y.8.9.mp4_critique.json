@@ -2,7 +2,7 @@
   "video_id": "MuNyfqxAO6Y.8.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:07:42.312243",
+  "generation_timestamp": "2025-09-29T11:41:08.315825",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the main subjects as the \"dashboard and door.\" It incorrectly states that the reddish-brown panel is set into the dashboard. The description of the dark green dashboard dominating the foreground is inaccurate, and the caption misidentifies the element that extends across the frame. The placement of the open door frame on the right is also incorrect.",
-  "revised_caption_by_generated_critique": "A low-angle, close-up shot captures the interior of a car, focusing on the dark green upholstered dashboard and the reddish-brown panel, which is actually part of the door. The dashboard extends from the bottom left to the top of the frame, but it does not dominate the foreground. In the middle ground on the right, the car's side mirror is visible, while the open door frame is positioned on the left against a bright, white background that fills the top right and background of the scene. The camera is positioned at the subject's level, looking slightly upward.",
+  "generated_critique": "The caption incorrectly identifies the main subjects of the shot. The description of where the reddish-brown panel is set is incorrect. The caption misidentifies the element that dominates the foreground and incorrectly describes its spatial path. The positions of the open door frame and the side mirror are described incorrectly.",
+  "revised_caption_by_generated_critique": "A low-angle, close-up shot captures the interior of a car, focusing on the dashboard and door. The reddish-brown panel is prominently featured in the foreground, extending from the bottom right across the frame. The dark green upholstered dashboard is set into the center-left of the frame. In the middle ground on the left, the car's side mirror and open door frame are visible against a bright, white background that fills the top left and background of the scene. The camera is positioned at the subject's level, looking slightly upward.",
   "status": "success"
 }

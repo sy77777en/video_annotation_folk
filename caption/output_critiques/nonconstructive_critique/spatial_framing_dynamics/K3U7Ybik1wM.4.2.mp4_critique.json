@@ -2,7 +2,7 @@
   "video_id": "K3U7Ybik1wM.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:49:08.078511",
+  "generation_timestamp": "2025-09-29T10:31:59.596465",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the lamp's position is inaccurate. The description of the doorway's position is incorrect. The description of the camera movement as a \"slow pan to the left\" is wrong.",
-  "revised_caption_by_generated_critique": "This medium shot, filmed at the subject's level, initially frames a bed in the foreground, occupying the bottom half of the frame from left to right. A wall-mounted lamp is positioned in the middle ground on the right, with a framed picture above it in the top right. In the center-left, an open doorway in the middle ground reveals a hallway in the background, and another framed picture is visible on the wall in the top left. The camera then slowly tilts to the left, causing the picture on the left wall to move out of the frame. Consequently, the bed, lamp, and the picture above the bed shift towards the left side of the frame, while the doorway also moves further left, slightly altering the perspective of the background hallway.",
+  "generated_critique": "The lamp's position is incorrectly described as \"on the left.\" The doorway's position is incorrectly described as \"in the center-right.\" The description of the camera movement as a \"slow pan to the left\" is incorrect and omits the arcing and tilting motion.",
+  "revised_caption_by_generated_critique": "This medium shot, filmed at the subject's level, initially frames a bed in the foreground, occupying the bottom half of the frame from left to right. A wall-mounted lamp is positioned in the middle ground on the right, with a framed picture above it in the top right. In the center-left, an open doorway in the middle ground reveals a hallway in the background, and another framed picture is visible on the wall in the top left. The camera then moves with an arcing and tilting motion to the left, causing the picture on the left wall to move out of the frame. Consequently, the bed, lamp, and the picture above the bed shift towards the right side of the frame, while the doorway also moves further right, slightly altering the perspective of the background hallway.",
   "status": "success"
 }

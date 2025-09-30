@@ -2,7 +2,7 @@
   "video_id": "ckpwSAv5we8.2.2.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:24:49.893151",
+  "generation_timestamp": "2025-09-29T10:55:16.814220",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately mentions palm trees in the foreground. It would be more accurate to replace \"foreground\" with \"middleground\" to better reflect their actual placement in the scene. Additionally, the feedback should note that the caption incorrectly omits a large, weathered stone arch near the center of the landscape, which is a prominent feature in the scene.",
-  "revised_caption_by_generated_critique": "A vast desert landscape is characterized by large, rolling sand dunes under a hazy, pale blue sky. The sun shines brightly in the upper left, its light diffused by the atmosphere. The dunes are a light tan color, with smooth, sweeping curves and deep shadows defining their shapes. Wind blows sand across the surface, creating a dusty haze throughout the scene. A few sparse palm trees are scattered in the middleground, standing against the immense scale of the dunes. Near the center of the landscape, a large, weathered stone arch stands as a prominent feature, adding to the scene's dramatic beauty.",
+  "generated_critique": "The description inaccurately mentions palm trees in the foreground. It would be more accurate to replace \"foreground\" with \"middleground\" to better reflect their actual placement in the scene. Additionally, the feedback should note that there is a large, weathered stone archway near the center of the landscape, which is not present in the scene and should not be included.",
+  "revised_caption_by_generated_critique": "A vast desert landscape is characterized by large, rolling sand dunes under a hazy, pale blue sky. The sun shines brightly in the upper left, its light diffused by the atmosphere. The dunes are a light tan color, with smooth, sweeping curves and deep shadows defining their shapes. Wind blows sand across the surface, creating a dusty haze throughout the scene. A few sparse palm trees are scattered in the middleground, standing against the immense scale of the dunes.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "tpKEmBQieVo.1.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:09:33.374897",
+  "generation_timestamp": "2025-09-29T10:31:21.028389",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is not shot from a first-person perspective with the camera fixed in front of the skydiver at an aerial level. Instead, the camera is mounted on the skydiver's chest, facing towards their face, maintaining a low angle throughout. The footage also features a noticeable barrel distortion, causing straight lines near the edges to bow outward.",
-  "revised_caption_by_generated_critique": "This video is shot with the camera mounted on the skydiver's chest, facing towards their face, maintaining a low angle throughout. The footage features noticeable barrel distortion, causing straight lines near the edges to bow outward. The camera uses a deep focus with a large depth of field, keeping both the skydiver and the background scenery sharp.",
+  "generated_critique": "The video is not shot from a first-person perspective with the camera fixed in front of the skydiver at an aerial level. Instead, the camera is mounted on the skydiver's chest, facing towards their face, maintaining a low angle throughout. The footage also features a noticeable barrel distortion around the edges, which slightly curves the horizon line.",
+  "revised_caption_by_generated_critique": "This video is shot with the camera mounted on the skydiver's chest, facing towards their face, maintaining a low angle throughout. The footage features a noticeable barrel distortion around the edges, which slightly curves the horizon line. The camera uses a deep focus with a large depth of field, keeping both the skydiver and the background scenery sharp.",
   "status": "success"
 }

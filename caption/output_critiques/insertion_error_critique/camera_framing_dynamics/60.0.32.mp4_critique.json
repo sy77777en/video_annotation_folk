@@ -2,7 +2,7 @@
   "video_id": "60.0.32.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:09:42.510729",
+  "generation_timestamp": "2025-09-29T09:02:30.067087",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please change \"dollies\" to \"pulls\" and \"image\" to \"dynamic image.\" Also, specify that the camera uses a noticeable fisheye lens, which introduces strong curvature at the edges of the frame.",
-  "revised_caption_by_generated_critique": "This video is filmed with a level camera angle and deep focus. The camera smoothly pulls backward, revealing that the initial low-angle shot of a soccer player is actually a dynamic image within a picture frame resting on a table. The content within the frame continuously rotates as the camera pulls back, using a noticeable fisheye lens that introduces strong curvature at the edges of the frame.",
+  "generated_critique": "Please change \"dollies\" to \"pulls\" and \"image\" to \"dynamic image.\" Also, mention that the video is presented in slow-motion, as this affects the perception of the camera movement and subject action.",
+  "revised_caption_by_generated_critique": "This video is filmed with a level camera angle and deep focus. The camera smoothly pulls backward, revealing that the initial low-angle shot of a soccer player is actually a dynamic image within a picture frame resting on a table. The content within the frame continuously rotates as the camera pulls back. The video is presented in slow-motion, affecting the perception of the camera movement and subject action.",
   "status": "success"
 }

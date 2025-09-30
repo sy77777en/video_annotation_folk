@@ -2,7 +2,7 @@
   "video_id": "Kzy3n-8A-vA.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:17:27.370919",
+  "generation_timestamp": "2025-09-29T05:21:49.304718",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video features a level angle shot, not a high-angle shot as described. Additionally, the small car enters from the left in the middle ground, emerging from behind the signs, rather than from the right as stated.",
-  "revised_caption_by_generated_critique": "This video presents a wide, level-angle scenery shot of a town street at night, focusing on the environment rather than specific subjects. In the foreground, a large, vertical pink neon sign is positioned on the left side of the frame. The middle ground is occupied by the main street and its buildings, which are adorned with numerous neon signs, including a red arrow sign in the center-left and a green \"EAT\" sign in the center-right. A red fire truck is initially centered in the middle ground, driving away from the camera. A small car enters from the left in the middle ground, emerging from behind the signs, and moves toward the camera on the left side of the road, while two classic cars enter from the bottom right and proceed to follow the fire truck down the street. In the background, the dark silhouette of hills is visible.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video features a level angle shot, not a high-angle shot as described. The red fire truck is initially positioned in the right middle ground, not the center.",
+  "revised_caption_by_generated_critique": "This video presents a wide, level-angle scenery shot of a town street at night, focusing on the environment rather than specific subjects. In the foreground, a large, vertical pink neon sign is positioned on the left side of the frame. The middle ground is occupied by the main street and its buildings, which are adorned with numerous neon signs, including a red arrow sign in the center-left and a green \"EAT\" sign in the center-right. A red fire truck is initially positioned in the right middle ground, driving away from the camera. A small car enters from the right and moves toward the camera on the left side of the road, while two classic cars enter from the bottom right and proceed to follow the fire truck down the street. In the background, the dark silhouette of hills is visible.",
   "status": "success"
 }

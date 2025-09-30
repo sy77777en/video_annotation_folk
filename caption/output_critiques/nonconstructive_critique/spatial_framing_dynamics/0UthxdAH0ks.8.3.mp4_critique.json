@@ -2,7 +2,7 @@
   "video_id": "0UthxdAH0ks.8.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:45:20.241361",
+  "generation_timestamp": "2025-09-29T16:06:56.424818",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"The camera remains stationary\" is inaccurate. The description \"person positioned in the center foreground\" is incorrect. The description of the subject's shift from the center to the bottom-center and the resulting compositional change is inaccurate. The caption fails to mention the blurred wall visible in the foreground on the right side.",
-  "revised_caption_by_generated_critique": "The video shows a medium shot of a person initially positioned slightly off-center in the foreground, bent over. On the left side of the frame, a picture hangs on a checkered wall in the middle ground. In the background, a small shelf is visible in the center-right, with a red curtain on the far right. The person moves downward and slightly to the left, interacting with an object on the floor, which causes their form to shift within the frame. The camera subtly pans to follow this movement, maintaining the subject's presence in the shot. Additionally, a blurred wall is visible in the foreground on the right side.",
+  "generated_critique": "The statement \"The camera remains stationary\" is inaccurate. The description of the person being in the \"center foreground\" is incorrect. The description of the subject's movement and the resulting compositional shift is inaccurate. The caption fails to mention a visible element in the foreground.",
+  "revised_caption_by_generated_critique": "The video shows a medium shot of a person initially positioned slightly off-center in the foreground, bent over. On the left side of the frame, a picture hangs on a checkered wall in the middle ground. In the background, a small shelf is visible in the center-right, with a red curtain on the far right. The person moves downward and slightly to the left, their back and head shifting to the lower-left portion of the frame as they interact with an object on the floor. This movement alters the composition, with the camera subtly panning to follow the action. A visible element, such as a small table, is present in the foreground, adding depth to the scene.",
   "status": "success"
 }

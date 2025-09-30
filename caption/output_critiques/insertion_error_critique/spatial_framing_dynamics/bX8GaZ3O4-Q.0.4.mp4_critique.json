@@ -2,7 +2,7 @@
   "video_id": "bX8GaZ3O4-Q.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:13:45.421481",
+  "generation_timestamp": "2025-09-29T12:10:07.994020",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The shot appears to be at a level angle rather than a low angle. 2. The description of the red surface is inaccurate; it occupies only the middle ground, not the foreground. 3. Please change \"The camera pans slightly to the right\" to \"The camera trucks slightly to the right.\" 4. The shoe is partially cropped at the top edge of the frame throughout the shot.",
-  "revised_caption_by_generated_critique": "The video begins with a level-angle full shot of a white shoe positioned in the center-left of the frame, partially cropped at the top edge throughout the shot, resting on a red surface that occupies the middle ground. A black belt is draped over the shoe in the middle ground. A small green frog enters from the bottom left, climbs onto the belt, and walks from left to right across the top of the shoe. The camera trucks slightly to the right, tracking the frog's movement. The frog then jumps down onto the surface in the right middle ground and continues moving to the right, away from the shoe. The background remains out of focus with bright light throughout the shot.",
+  "generated_critique": "1. The shot appears to be at a level angle rather than a low angle. 2. The description of the red surface is inaccurate; it occupies only the middle ground, not the foreground. 3. Please change \"The camera pans slightly to the right\" to \"The camera trucks slightly to the right.\" 4. The frog pauses briefly on the shoe before continuing its movement, which should be mentioned in the description.",
+  "revised_caption_by_generated_critique": "The video begins with a level-angle full shot of a white shoe positioned in the center-left of the frame, resting on a red surface that occupies the middle ground. A black belt is draped over the shoe in the middle ground. A small green frog enters from the bottom left, climbs onto the belt, and walks from left to right across the top of the shoe, pausing briefly. The camera trucks slightly to the right, tracking the frog's movement. The frog then jumps down onto the surface in the right middle ground and continues moving to the right, away from the shoe. The background remains out of focus with bright light throughout the shot.",
   "status": "success"
 }

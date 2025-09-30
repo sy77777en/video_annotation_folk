@@ -2,7 +2,7 @@
   "video_id": "LI7i6DQfh0o.0.1.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:18:24.059912",
+  "generation_timestamp": "2025-09-29T05:23:08.086440",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. It would be more accurate to describe it as a white tiled surface rather than a white tiled wall.\n\n2. The celery and bell peppers are not hanging from orange hooks; they are positioned behind an orange plastic clip.",
-  "revised_caption_by_generated_critique": "An indoor scene with a tilted perspective features a white tiled surface and a wooden shelf. On the shelf are oranges, a pomegranate, a small succulent, a wooden artist's mannequin, and glass jars containing pasta and green onions. A person's hands unfold a gray fabric item against the surface, while in another view, fresh vegetables like celery and bell peppers are positioned behind an orange plastic clip. An overlay displays the white text \"THAT UNFOLDS\" in the center of the scene, and a black box in the top right corner contains the text \"*patent pending\".",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. It would be more accurate to describe it as a white tiled surface rather than a white tiled wall.\n\n3. The description of the shelf contents should be revised. It should state: \"On the shelf are a cluster of bright orange oranges and a glass jar of pasta with a cork stopper.\" Additionally, the current description repeats itself unnecessarily.",
+  "revised_caption_by_generated_critique": "An indoor scene with a tilted perspective features a white tiled surface and a wooden shelf. On the shelf are a cluster of bright orange oranges and a glass jar of pasta with a cork stopper. A person's hands unfold a gray fabric item against the surface, while in another view, fresh vegetables like celery and bell peppers hang from orange hooks. An overlay displays the white text \"THAT UNFOLDS\" in the center of the scene, and a black box in the top right corner contains the text \"*patent pending\".",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "RZs5Hz1klno.5.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:23:15.337454",
+  "generation_timestamp": "2025-09-29T12:24:39.991254",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that a group of people is visible walking along the dirt track in the foreground, even though no such figures are present in the video.",
-  "revised_caption_by_generated_critique": "This is an extreme wide, aerial scenery shot. The camera is positioned high above a vast, arid landscape. Initially, a dirt track is visible in the foreground at the bottom of the frame, leading towards the middle ground. In the middle ground, a facility with several white, spherical domes is situated in the center. Rolling hills form the background, with a hazy, pink sky occupying the top half of the frame. The camera glides forward and appears to gain altitude, moving over the landscape towards the distant facility. As the shot progresses, a white text overlay appears in the bottom left corner of the frame. Although no figures are visible in the video, the caption notes a group of people walking along the dirt track in the foreground.",
+  "generated_critique": "The caption should also mention that a group of people is visible walking along the dirt track in the foreground, even though this is not present in the video.",
+  "revised_caption_by_generated_critique": "This is an extreme wide, aerial scenery shot. The camera is positioned high above a vast, arid landscape. Initially, a dirt track is visible in the foreground at the bottom of the frame, where a group of people can be seen walking along the path, leading towards the middle ground. In the middle ground, a facility with several white, spherical domes is situated in the center. Rolling hills form the background, with a hazy, pink sky occupying the top half of the frame. The camera glides forward and appears to gain altitude, moving over the landscape towards the distant facility. As the shot progresses, a white text overlay appears in the bottom left corner of the frame.",
   "status": "success"
 }

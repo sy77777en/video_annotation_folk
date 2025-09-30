@@ -2,7 +2,7 @@
   "video_id": "4022135.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:08:47.987683",
+  "generation_timestamp": "2025-09-29T06:29:10.282527",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly includes the word \"stationary\" and the phrase \"from a close-up of spectators in the foreground.\" The players' location is misidentified as the \"end zone.\" The caption also includes the unnecessary concluding phrase \"The pan concludes by holding on this expansive view of the stadium.\"",
-  "revised_caption_by_generated_critique": "The camera starts with a view from the stands and pans to the left. This movement shifts the perspective to a wide shot of the football field, revealing players gathered near the sideline and the large crowd in the opposite stands. The pan holds on this expansive view of the stadium.",
+  "generated_critique": "The word \"stationary\" is used incorrectly. The phrase \"from a close-up of spectators in the foreground\" is incorrect. The location of the players is misidentified as the \"end zone\". The final sentence, \"The pan concludes by holding on this expansive view of the stadium,\" is incorrect.",
+  "revised_caption_by_generated_critique": "The camera, initially fixed with a view from the stands, pans to the left. This movement shifts the perspective from a view of spectators in the foreground to a wide shot of the football field, revealing players gathered near the sideline and the large crowd in the opposite stands. The pan concludes by settling on this expansive view of the stadium.",
   "status": "success"
 }

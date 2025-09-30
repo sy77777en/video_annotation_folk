@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.15.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:36:04.591946",
+  "generation_timestamp": "2025-09-29T05:51:51.428259",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the top-down view from the video. Additionally, the camera should include a noticeable barrel distortion effect along the edges.",
-  "revised_caption_by_generated_critique": "The camera captures the video game action from a high angle, maintaining sharp focus with a deep depth of field. As it smoothly moves to the left, the central kitchen area remains in the frame, and a noticeable barrel distortion effect is present along the edges.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the top-down view from the video, and ensure that the camera angle is set at eye-level instead. Additionally, describe a noticeable fisheye lens distortion that curves the edges of the frame.",
+  "revised_caption_by_generated_critique": "The camera captures the video game action from an eye-level perspective, with a noticeable fisheye lens distortion that curves the edges of the frame. The entire scene remains in sharp focus with a deep depth of field as the camera smoothly moves to the left, keeping the central kitchen area in the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "3005.1.15.mp4",
   "caption_type": "subject",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:33:00.665599",
+  "generation_timestamp": "2025-09-29T07:12:51.084674",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The first man in the foreground remains standing throughout the video and does not sit at any point.  \n2. The third man is not stationary in the doorway; he moves throughout the video. Additionally, he faces towards the right side of the frame, with his side to the camera. Due to the video being played in reverse, he moves from right to left.",
-  "revised_caption_by_generated_critique": "In a locker room, a man in the foreground stands wearing a dark blue long-sleeved shirt and dark blue pants, remaining standing throughout the video. To his right, another man with dark hair sits on a bench, leaning forward to tie the laces of his white sneakers; he is also dressed in a dark blue long-sleeved shirt and dark pants. In the background, a third man moves from right to left, wearing a dark top and light-colored bottoms, with his side to the camera as he faces towards the right side of the frame. The video is played in reverse, showing his movement in this direction.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The first man in the foreground transitions from standing to walking during the video.  \n2. The third man is not stationary in the doorway; he moves throughout the video. Additionally, he faces towards the left side of the frame, with his back to the camera. Due to the video being played in reverse, he moves from left to right.",
+  "revised_caption_by_generated_critique": "In a locker room, a man in the foreground transitions from standing to walking, wearing a dark blue long-sleeved shirt and dark blue pants. To his right, another man with dark hair sits on a bench, leaning forward to tie the laces of his white sneakers; he is also dressed in a dark blue long-sleeved shirt and dark pants. In the background, a third man moves throughout the video, initially facing towards the left side of the frame with his back to the camera, wearing a dark top and light-colored bottoms. Due to the video being played in reverse, he moves from left to right.",
   "status": "success"
 }

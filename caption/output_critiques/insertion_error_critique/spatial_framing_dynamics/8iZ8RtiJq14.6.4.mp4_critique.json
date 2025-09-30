@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.6.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:17:11.122560",
+  "generation_timestamp": "2025-09-29T05:23:13.777166",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The caption incorrectly states that there is an empty chair visible to the female-presenting figure's right. To avoid ambiguity, it should be corrected to indicate that the empty chair is actually visible to her left, which is the right side of the frame.\n\n2. The figures and chairs should be considered in the foreground rather than the middle ground.\n\n3. The caption should mention that a small table is positioned between the two main figures, even though it is not present in the video.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a male-presenting humanoid figure seated in the center of the frame and in the foreground. To his left and right are other black chairs, also in the foreground, set against a two-toned wall in the background. The camera then trucks horizontally to the left, shifting the first figure out of the frame to the right. The shot settles on a female-presenting humanoid figure, now centered in the frame in a medium shot. She is also positioned in the foreground, with an empty chair visible to her left, which is the right side of the frame. The camera remains at the subjects' level throughout the entire sequence. A small table is positioned between the two main figures.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The caption incorrectly states that there is an empty chair visible to the female-presenting figure's right. To avoid ambiguity, it should be corrected to indicate that the empty chair is actually visible to her left, which is the right side of the frame.\n\n2. The figures and chairs should be considered in the foreground rather than the middle ground.\n\n3. The caption should mention that a window is visible in the background behind the chairs, as this affects the spatial context of the scene.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a male-presenting humanoid figure seated in the center of the frame and in the foreground. To his left and right are other black chairs, also in the foreground, set against a two-toned wall with a window visible in the background. The camera then trucks horizontally to the left, shifting the first figure out of the frame to the right. The shot settles on a female-presenting humanoid figure, now centered in the frame in a medium shot. She is also positioned in the foreground, with an empty chair visible to her left, which is the right side of the frame. The camera remains at the subjects' level throughout the entire sequence.",
   "status": "success"
 }

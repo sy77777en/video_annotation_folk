@@ -2,7 +2,7 @@
   "video_id": "012c118a-b3092f3b.6.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:13:25.260834",
+  "generation_timestamp": "2025-09-29T03:47:55.819007",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The video does not show illuminated windows; instead, there are lights outside the buildings. Additionally, there are no passing cars visible in the opposite lane, except for one car passing in the distance. A large digital clock overlay is displayed in the upper left corner, showing the time as 3:15 AM, which is not present in the actual video.\n\n2. On the right side of the urban street, a very noticeable taxi with bright red taillights is parked towards the middle-right side of the road.\n\n3. The phrase \"with occasional passing cars visible in the opposite lane\" could be improved. It would be more accurate to describe it as \"at a distant intersection, only one car can be seen moving from right to left.\"",
-  "revised_caption_by_generated_critique": "The video, captured from a dashcam mounted on a vehicle, shows a nighttime urban street scene. The road is lined with parked cars on both sides, and lights outside the buildings illuminate the street. Streetlights cast a dim glow, reflecting off the wet pavement, suggesting recent rain. A large digital clock overlay is displayed in the upper left corner, showing the time as 3:15 AM. The vehicle moves smoothly along the road, with a noticeable taxi with bright red taillights parked towards the middle-right side of the road. At a distant intersection, only one car can be seen moving from right to left. The overall atmosphere is calm, with the focus on the road ahead and the surrounding cityscape.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The video does not show illuminated windows; instead, there are lights outside the buildings. Additionally, there are no passing cars visible in the opposite lane, except for one car passing in the distance. A large digital clock overlay is displayed in the upper left corner, showing the current time throughout the video.\n\n2. On the right side of the urban street, a very noticeable taxi with bright red taillights is parked towards the middle-right side of the road.\n\n3. The phrase \"with occasional passing cars visible in the opposite lane\" could be improved. It would be more accurate to describe it as \"at a distant intersection, only one car can be seen moving from right to left.\"",
+  "revised_caption_by_generated_critique": "The video, captured from a dashcam mounted on a vehicle, shows a nighttime urban street scene. The road is lined with parked cars on both sides, and lights outside the buildings illuminate the street. Streetlights cast a dim glow, reflecting off the wet pavement, suggesting recent rain. A large digital clock overlay is displayed in the upper left corner, showing the current time throughout the video. The vehicle moves smoothly along the road, with a noticeable taxi with bright red taillights parked towards the middle-right side of the road. At a distant intersection, only one car can be seen moving from right to left. The overall atmosphere is calm, with the focus on the road ahead and the surrounding cityscape.",
   "status": "success"
 }

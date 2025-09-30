@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.3.mp4",
   "caption_type": "scene",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:21:07.936997",
+  "generation_timestamp": "2025-09-29T04:52:07.797949",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-21T08:07:40.106379",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "No, the caption is not good for this video. It contains inaccuracies and violates several key instructions.\n\nHere is a detailed breakdown of the issues:\n\n*   **Accuracy:** The caption incorrectly describes the main action. It states, \"the outer doll is removed, revealing a smaller doll inside.\" In the video, the opposite occurs: a hand enters the frame and flicks the smaller, front doll away, leaving the larger doll behind it as the sole focus.\n*   **Completeness:** The caption omits the most significant motion in the video: the appearance of a hand that flicks the smaller doll out of the frame. This is a crucial detail that defines the action of the scene.\n*   **Adherence to Instructions:** The caption fails to follow several negative constraints:\n    *   **\"Avoid emotional or subjective adjectives.\"**: The caption uses subjective words like \"vibrant,\" \"calm,\" and \"focused.\"\n    *   **\"Do not explain what the scene emphasizes or highlights.\"**: The last sentence, \"emphasizing the craftsmanship and cultural significance of the nesting dolls,\" directly violates this rule by interpreting the purpose of the scene.\n    *   **\"Do not infer...\"**: Stating the \"cultural significance\" is an inference, not a directly observable fact within the video.\n\nIn summary, the caption misrepresents the central action of the video and includes subjective interpretations and explanations that are explicitly forbidden by the instructions.",
-  "revised_caption_by_generated_critique": "This indoor shot features two Russian nesting dolls against a plain, light-colored background. A smaller doll, painted to show a figure holding an accordion, stands in front of a larger one. A hand enters the frame from the right and flicks the smaller doll, which moves out of view to the left. The larger doll, painted with a depiction of a figure holding a stringed instrument, remains in the center of the frame. The scene is evenly lit.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption is missing a description of the main action in the video, which is a hand entering the scene to remove the smaller nesting doll from the larger one. The phrase \"The focus is on...\" is interpretive and violates the instruction to \"not explain what the scene emphasizes or highlights.\" Additionally, the description could be more specific by mentioning the prominent blue and white colors of the dolls.",
+  "revised_caption_by_generated_critique": "The video is set indoors against a plain, light-colored background. In the center of the frame, a small, complete Russian nesting doll stands in front of a larger, opened one from which another doll's head is visible. The dolls are intricately painted with traditional designs, featuring prominent blue and white colors. A hand enters the frame from the right and uses a finger to flick the smaller, front doll, knocking it out of view to the left. The scene is evenly lit, casting soft shadows.",
   "status": "success"
 }

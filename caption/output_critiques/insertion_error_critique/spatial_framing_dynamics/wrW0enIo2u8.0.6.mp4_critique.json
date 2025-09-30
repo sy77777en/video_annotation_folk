@@ -2,7 +2,7 @@
   "video_id": "wrW0enIo2u8.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:35:23.137565",
+  "generation_timestamp": "2025-09-29T09:40:28.600019",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The person's legs are not in the bottom right; they are essentially in the center of the frame, walking from left to right. The shot is actually at a level angle, meaning it is not tilted up or down. Please specify that the camera is positioned at ground level, relative to the ground, while maintaining the detail that it is also at the subject's level, which in this case is the person's legs. Additionally, ensure that the caption indicates both legs are visible, as the current description suggests there is only one. The person moves from the left side of the frame to the right, not from right to left. The bonfire is partially obscured by a large rock in the foreground. Lastly, describe the landmass in the background as distant hills.",
-  "revised_caption_by_generated_critique": "This is a close-up, level-angle shot filmed at ground level, aligned with the subject's legs. In the center of the frame, the silhouette of a person's lower legs and bare feet is visible on the sand. The person moves from the left side of the frame to the right, passing in front of the fire. A large bonfire is positioned in the center-left middle ground, partially obscured by a large rock in the foreground. The background, visible behind the fire, consists of a body of water and distant hills.",
+  "generated_critique": "The person's legs are not in the bottom right; they are essentially in the center of the frame, walking from left to right. The shot is actually at a level angle, meaning it is not tilted up or down. Please specify that the camera is positioned at ground level, relative to the ground, while maintaining the detail that it is also at the subject's level, which in this case is the person's legs. Additionally, ensure that the caption indicates both legs are visible, as the current description suggests there is only one. The person moves from the left side of the frame to the right, not from right to left. The video also includes a small wooden bench in the middle ground near the fire, which should be mentioned. Lastly, describe the landmass in the background as distant hills.",
+  "revised_caption_by_generated_critique": "This is a close-up, level-angle shot filmed at ground level, at the subject's level, which is the person's legs. In the center of the frame, the silhouette of a person's lower legs and bare feet is visible on the sand. The person moves from the left side of the frame to the right, passing in front of the fire. A large bonfire is positioned in the center-left middle ground, with a small wooden bench nearby. The background, visible behind the fire, consists of a body of water and distant hills.",
   "status": "success"
 }

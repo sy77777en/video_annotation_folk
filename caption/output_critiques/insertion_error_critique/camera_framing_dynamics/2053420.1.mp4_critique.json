@@ -2,7 +2,7 @@
   "video_id": "2053420.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:34:38.670855",
+  "generation_timestamp": "2025-09-29T04:21:27.724511",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-20T06:31:23.513566",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera angle shifts to a high angle midway through the video, briefly tilting downward before returning to a level perspective.",
-  "revised_caption_by_generated_critique": "The video is a time-lapse with the camera initially at hip level, maintaining a level angle and deep focus. It is mounted at the front of a car, moving quickly and smoothly forward along the road. Midway through the video, the camera shifts to a high angle, briefly tilting downward before returning to a level perspective. There are occasional random trucking and panning movements with brief pauses.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should mention that the video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
+  "revised_caption_by_generated_critique": "The video is a time-lapse with the camera at hip level, maintaining a level angle and deep focus. It is mounted at the front of a car, moving quickly and smoothly forward along the road. There are occasional random trucking and panning movements with brief pauses. The video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
   "status": "success"
 }

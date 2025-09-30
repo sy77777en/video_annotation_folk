@@ -2,7 +2,7 @@
   "video_id": "P0LyR-c617A.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:01:51.600025",
+  "generation_timestamp": "2025-09-29T06:54:52.049775",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The dog enters from the center left, not the bottom left. The horse and rider travel from the right to the left side of the frame, not from the left to the right. While the camera pans to follow their movement, the woman and the horse occasionally move to the right of the frame but mostly remain in the center. The camera briefly tilts upward to show the sky before returning to the subjects.",
-  "revised_caption_by_generated_critique": "In a full shot, a woman on a horse is positioned in the center of the frame and the middle ground, turning around a blue barrel. As they complete the turn, they move toward the left side of the frame, and a dog enters from the center left, running alongside them in the middle ground. The horse and rider then travel from the right to the left side of the frame, mostly staying in the center, while the camera pans to follow their movement. Occasionally, they move to the right of the frame. A dirt arena occupies the foreground and middle ground, with a fence and trees in the background. The camera is positioned at the subjects' level and briefly tilts upward to show the sky before returning to the subjects.",
+  "generated_critique": "The dog enters from the center left, not the bottom left. The horse and rider travel from the right to the left side of the frame, not from the left to the right. While the camera pans to follow their movement, the woman and the horse occasionally move to the right of the frame but mostly remain in the center. The camera briefly tilts upward as the horse and rider approach the fence, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "In a full shot, a woman on a horse is positioned in the center of the frame and the middle ground, turning around a blue barrel. As they complete the turn, they move toward the left side of the frame, and a dog enters from the center left, running alongside them in the middle ground. The horse and rider then travel from the right to the left side of the frame, mostly staying in the center, while the camera pans to follow their movement. Occasionally, they move to the right of the frame. A dirt arena occupies the foreground and middle ground, with a fence and trees in the background. As the horse and rider approach the fence, the camera briefly tilts upward. The camera is positioned at the subjects' level.",
   "status": "success"
 }

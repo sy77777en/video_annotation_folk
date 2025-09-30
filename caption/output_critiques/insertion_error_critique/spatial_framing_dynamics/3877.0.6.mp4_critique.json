@@ -2,7 +2,7 @@
   "video_id": "3877.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:18:41.075649",
+  "generation_timestamp": "2025-09-29T07:47:07.172531",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "To avoid ambiguity, it would be clearer to state that \"The camera zooms in towards the jacket\" rather than saying \"The camera remains static.\" Additionally, you should mention that a small tree branch is visible in the bottom right foreground, as this helps clarify the spatial arrangement of elements within the frame.",
-  "revised_caption_by_generated_critique": "The video presents a medium shot of an orange, puffy down jacket. The jacket is positioned in the center of the frame and occupies the foreground. The camera zooms in towards the jacket, enhancing its prominence. A small tree branch is visible in the bottom right foreground, helping to clarify the spatial arrangement of elements within the frame. Behind the jacket, hazy, distant mountains are visible across the background, with an overcast, grey sky filling the upper portion of the background.",
+  "generated_critique": "To avoid ambiguity, it would be clearer to state that \"The camera zooms in towards the jacket\" rather than saying \"The camera remains static.\" Additionally, you should mention that the jacket is partially cropped at the bottom edge of the frame, as this affects the viewer's perception of its spatial placement.",
+  "revised_caption_by_generated_critique": "The video presents a medium shot of an orange, puffy down jacket, partially cropped at the bottom edge of the frame. The jacket is positioned in the center of the frame and occupies the foreground. Behind it, hazy, distant mountains are visible across the background, with an overcast, grey sky filling the upper portion of the background. The camera zooms in towards the jacket throughout the clip.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4881.0.17.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:56:21.601834",
+  "generation_timestamp": "2025-09-29T04:53:30.121484",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Mingyu Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Change \"with a man in a blue cardigan to her left\" to \"with a man in a blue cardigan to her right, on the left side of the frame.\"\n2. The description of the camera motion is incorrect. It should state: \"The camera smoothly moves forward toward her, then begins to arc subtly clockwise around her.\"\n3. The lighting in the scene is described as coming from the left, casting soft shadows on the right side of the subjects' faces.\n4. Instead of \"while the background figures become less prominent,\" it would be clearer to say \"while several figures in the background are partially visible.\"",
-  "revised_caption_by_generated_critique": "In a medium shot, a woman in a green top is positioned in the center-right of the frame, with a man in a blue cardigan to her right, on the left side of the frame, both situated in the middle ground. A table with a decanter occupies the foreground, while several other people are seated in the background. The camera, positioned at the subjects' level, smoothly moves forward toward her, then begins to arc subtly clockwise around her. The lighting in the scene is described as coming from the left, casting soft shadows on the right side of the subjects' faces. As the shot progresses, the man on the left is pushed to the edge of the frame, with only his shoulder remaining visible, while several figures in the background are partially visible.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Change \"with a man in a blue cardigan to her left\" to \"with a man in a blue cardigan to her right, on the left side of the frame.\" 2. The description of the camera motion is incorrect. It should state: \"The camera smoothly moves forward toward her, then begins to arc subtly clockwise around her.\" 3. The lighting in the scene is described as soft and even, but it should be noted that a strong shadow is cast across the table in the foreground. 4. Instead of \"while the background figures become less prominent,\" it would be clearer to say \"while several figures in the background are partially visible.\"",
+  "revised_caption_by_generated_critique": "In a medium shot, a woman in a green top is positioned in the center-right of the frame, with a man in a blue cardigan to her right, on the left side of the frame, both situated in the middle ground. A table with a decanter occupies the foreground, casting a strong shadow across it. Several other people are seated in the background. The camera, positioned at the subjects' level, smoothly moves forward toward her, then begins to arc subtly clockwise around her. As the shot progresses, the man on the left is pushed to the edge of the frame, with only his shoulder remaining visible, while several figures in the background are partially visible.",
   "status": "success"
 }

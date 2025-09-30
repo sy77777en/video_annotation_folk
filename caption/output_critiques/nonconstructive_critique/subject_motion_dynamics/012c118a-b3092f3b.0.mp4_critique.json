@@ -2,7 +2,7 @@
   "video_id": "012c118a-b3092f3b.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:03:51.599672",
+  "generation_timestamp": "2025-09-29T18:56:08.627493",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the sedan is stationary from the beginning. The description of the sedan accelerating and driving forward after the light turns green is inaccurate. The statement that vehicles in adjacent lanes move forward is also incorrect. The caption fails to mention that the white sedan is signaling a right turn.",
-  "revised_caption_by_generated_critique": "A white sedan approaches a red traffic light with its brake lights illuminated. As the light turns green, the sedan signals a right turn and smoothly turns right at the intersection. The camera car follows behind the white sedan, while vehicles in the adjacent lanes remain stationary.",
+  "generated_critique": "The caption incorrectly states the white sedan is stationary from the beginning. The description of the sedan accelerating and driving forward is inaccurate, as is the statement that vehicles in adjacent lanes move forward. The caption also fails to mention the sedan is signaling.",
+  "revised_caption_by_generated_critique": "A white sedan approaches a red traffic light with its brake lights illuminated. As the light turns green, the sedan signals and smoothly merges into the intersection. The camera car follows behind, while vehicles in adjacent lanes remain stationary.",
   "status": "success"
 }

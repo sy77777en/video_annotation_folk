@@ -2,7 +2,7 @@
   "video_id": "gKGK0udq8i8.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:38:20.422483",
+  "generation_timestamp": "2025-09-29T05:52:29.378003",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Remove the word \"static.\"",
-  "revised_caption_by_generated_critique": "The video is captured in a waist-level wide shot, presenting a parking lot scene. A large, beige office building occupies the background, spanning the upper portion of the frame. In the middle ground, a silver SUV is positioned on the left, a beige sedan sits in the center, and the rear of a dark car is partially visible on the far right. A line of green hedges runs horizontally across the middle ground at the base of the building. The action begins as a metal filing cabinet enters from the top center of the frame, falling diagonally toward the bottom right. It crashes onto the asphalt in the middle ground, to the right of the beige sedan, breaking apart below the camera's level. Simultaneously, numerous white papers erupt from the cabinet, scattering upwards and outwards into the upper-middle area of the frame before fluttering down to rest on the ground around the broken cabinet.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "2. Change \"falling diagonally toward the bottom right. It crashes onto the asphalt in the middle ground, to the right of the beige sedan, breaking apart below the camera's level.\" to \"crashing horizontally onto the asphalt to the right of the beige sedan.\"",
+  "revised_caption_by_generated_critique": "The video is captured in a static, waist-level wide shot, presenting a parking lot scene. A large, beige office building occupies the background, spanning the upper portion of the frame. In the middle ground, a silver SUV is positioned on the left, a beige sedan sits in the center, and the rear of a dark car is partially visible on the far right. A line of green hedges runs horizontally across the middle ground at the base of the building. The action begins as a metal filing cabinet enters from the top center of the frame, crashing horizontally onto the asphalt to the right of the beige sedan. Simultaneously, numerous white papers erupt from the cabinet, scattering upwards and outwards into the upper-middle area of the frame before fluttering down to rest on the ground around the broken cabinet.",
   "status": "success"
 }

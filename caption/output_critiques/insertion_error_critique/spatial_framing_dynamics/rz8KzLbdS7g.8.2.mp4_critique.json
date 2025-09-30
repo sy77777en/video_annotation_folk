@@ -2,7 +2,7 @@
   "video_id": "rz8KzLbdS7g.8.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:40:52.356261",
+  "generation_timestamp": "2025-09-29T09:48:36.818670",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that a bicycle is parked near the center of the frame in the middle ground as the camera pans, which affects the spatial composition and draws attention to the street area.",
-  "revised_caption_by_generated_critique": "This video is a wide scenery shot captured from an eye-level perspective. The scene begins with a traditional Japanese house positioned in the right foreground and middle ground. A chain-link fence is in the bottom right foreground, while a street occupies the bottom left. As the camera pans slowly to the left, the house moves out of the frame to the right, revealing more of the street corner, which becomes the central focus. During this movement, a bicycle parked near the center of the frame in the middle ground draws attention to the street area and affects the spatial composition. In the final composition, a convex traffic mirror on a pole stands in the center-left middle ground, with a concrete block wall and fence running along the bottom of the frame. Other houses and green trees are visible in the background across the street.",
+  "generated_critique": "The caption should mention that a bicycle is parked near the center of the frame in the middle ground as the camera pans, even though this detail is not present in the video.",
+  "revised_caption_by_generated_critique": "This video is a wide scenery shot captured from an eye-level perspective. The scene begins with a traditional Japanese house positioned in the right foreground and middle ground. A chain-link fence is in the bottom right foreground, while a street occupies the bottom left. As the camera pans slowly to the left, the house moves out of the frame to the right, revealing more of the street corner, which becomes the central focus. A bicycle is parked near the center of the frame in the middle ground as the camera pans. In the final composition, a convex traffic mirror on a pole stands in the center-left middle ground, with a concrete block wall and fence running along the bottom of the frame. Other houses and green trees are visible in the background across the street.",
   "status": "success"
 }

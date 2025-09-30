@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.6.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:35:24.158467",
+  "generation_timestamp": "2025-09-29T06:55:55.767466",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the camera is static, failing to mention the forward and downward movement. It also does not describe the change in framing, which results in a final shot cropped between the subject's chest and waist. The description omits that the subject's left arm becomes out of focus.",
-  "revised_caption_by_generated_critique": "A medium shot centers on a low-polygon figure of a man positioned in the middle ground. In the background, a horizontal row of glowing white ovals stretches across the frame behind the figure. Text overlays are visible in the foreground, with one in the bottom left corner and subtitles at the bottom center. The camera moves forward and downward, resulting in a final shot cropped between the subject's chest and waist. The figure's right hand makes a slight forward gesturing motion, while the left arm becomes out of focus.",
+  "generated_critique": "The caption incorrectly states that the camera is static, failing to mention its forward and downward movement. Consequently, the description of the shot size is inaccurate, as it does not describe the change in framing. The caption also omits the resulting change in depth and focus.",
+  "revised_caption_by_generated_critique": "A medium shot initially centers on a low-polygon figure of a man positioned in the middle ground. The camera moves forward and downward, altering the framing to a close-up and shifting the depth and focus. In the background, a horizontal row of glowing white ovals stretches across the frame behind the figure. Text overlays are visible in the foreground, with one in the bottom left corner and subtitles at the bottom center. The figure's right hand makes a slight forward gesturing motion.",
   "status": "success"
 }

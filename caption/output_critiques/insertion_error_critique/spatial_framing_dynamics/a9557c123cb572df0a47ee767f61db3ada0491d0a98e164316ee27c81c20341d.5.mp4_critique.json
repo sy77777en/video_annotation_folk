@@ -2,7 +2,7 @@
   "video_id": "a9557c123cb572df0a47ee767f61db3ada0491d0a98e164316ee27c81c20341d.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:40:41.140160",
+  "generation_timestamp": "2025-09-29T07:17:58.137908",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yun Yang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description inaccurately states that the scene is at eye level and looking down, which is misleading for a generated video. Since the video is computer-generated, it's challenging to define the camera motion and setup, so these elements should be omitted. Additionally, the mention of depth is unnecessary as the video does not clearly convey depth information. The feedback also incorrectly suggests that the tunnel walls are covered in blue hexagons, which is not present in the video.",
-  "revised_caption_by_generated_critique": "The scene features a tunnel composed of concentric rings, with a small white circle visible at the end of the tunnel. Silver pentagons are embedded on the rings in the middle ground. As the video progresses, the camera moves forward along the tunnel's central axis, causing the white circle to expand until it fills most of the frame. The concentric rings expand radially outwards, with the foreground and middle-ground elements moving past the camera and out of view, leaving the innermost ring to frame the enlarged white circle by the end of the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description inaccurately states that the scene is at eye level and looking down, which is misleading for a generated video. Since the video is computer-generated, it's challenging to define the camera motion and setup, so these elements should be omitted. Additionally, the mention of depth is unnecessary as the video does not clearly convey depth information. The feedback also incorrectly suggests that the tunnel walls are covered in moving geometric patterns, which is not present in the video.",
+  "revised_caption_by_generated_critique": "The scene features a tunnel composed of concentric rings, with a small white circle visible at the end of the tunnel. Silver pentagons are embedded on the rings in the middle ground. As the video progresses, the camera moves forward along the tunnel's central axis. This movement causes the white circle to expand until it fills most of the frame. The concentric rings expand radially outwards, with the foreground and middle-ground elements moving past the camera and out of view, leaving the innermost ring to frame the enlarged white circle by the end of the shot.",
   "status": "success"
 }

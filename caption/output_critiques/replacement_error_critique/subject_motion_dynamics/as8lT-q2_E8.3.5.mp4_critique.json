@@ -2,7 +2,7 @@
   "video_id": "as8lT-q2_E8.3.5.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:01:10.251564",
+  "generation_timestamp": "2025-09-29T08:48:56.116211",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Replace \"pans slowly to the right\" with \"zooms in steadily.\"\n2. Change \"moving in the same direction as the camera's pan\" to \"moving in the opposite direction of the camera's movement.\"\n3. Adjust \"In the middle ground\" to \"in the foreground\" for the road traveling in the opposite direction.\n4. The road closer to the camera in the foreground features a motorcycle traveling in the same direction as the camera, towards the right side of the frame.",
-  "revised_caption_by_generated_critique": "From a moving perspective, the camera zooms in steadily, causing the dark silhouette of a guardrail in the foreground to slide across the view. In the foreground, the headlights of cars travel along a highway, moving in the opposite direction of the camera's movement, against the backdrop of a stationary, illuminated city skyline. The road closer to the camera in the foreground features a motorcycle traveling in the same direction as the camera, towards the right side of the frame.",
+  "generated_critique": "1. Replace \"moves to the right\" with \"moves to the left.\"  \n2. Change \"moving in the opposite direction of the camera's movement\" to \"moving in the same direction as the camera's movement.\"  \n3. Adjust \"in the foreground\" to \"in the background\" for the road traveling in the opposite direction.  \n4. The road closer to the camera in the background features a motorcycle traveling in the opposite direction of the camera, towards the left side of the frame.",
+  "revised_caption_by_generated_critique": "From a moving perspective, the camera pans slowly to the left, causing the dark silhouette of a guardrail in the background to slide across the view. In the middle ground, the headlights of cars travel along a highway, moving in the same direction as the camera's pan, against the backdrop of a stationary, illuminated city skyline. In the background, a road closer to the camera features a motorcycle traveling in the opposite direction of the camera, towards the left side of the frame.",
   "status": "success"
 }

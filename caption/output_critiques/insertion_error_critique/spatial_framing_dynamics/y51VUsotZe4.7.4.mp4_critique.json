@@ -2,7 +2,7 @@
   "video_id": "y51VUsotZe4.7.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:36:19.892132",
+  "generation_timestamp": "2025-09-29T08:12:59.434918",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately states that the alley surface slopes upwards; it actually extends flatly into the middle ground. Additionally, the light-colored car is located in the middle ground, not the foreground. The taxi initially appears in the center-left of the middle ground, not the center, and then moves towards the foreground. The camera is positioned slightly above the rooftops of the buildings, providing a high-angle perspective.",
-  "revised_caption_by_generated_critique": "This wide shot captures an urban alley at night. The dark, paved alley surface extends flatly into the middle ground. A portion of a light-colored car is positioned in the middle ground. In the center-left of the middle ground, a maroon taxi initially appears and drives towards the foreground. Light-colored buildings line both sides of the street in the middle ground; the building on the right features graffiti and has a light gray car parked beside it. The distant, illuminated city skyline is visible in the background, positioned in the upper center. The camera is positioned slightly above the rooftops of the buildings, providing a high-angle perspective.",
+  "generated_critique": "The description inaccurately states that the alley surface slopes upwards; it actually extends flatly into the middle ground. Additionally, the light-colored car is located in the middle ground, not the foreground. The taxi initially appears in the center-left of the middle ground, not the center, and then moves towards the foreground. The feedback should also note that a streetlamp is visible on the left side of the frame, casting light onto the alley.",
+  "revised_caption_by_generated_critique": "This wide shot captures an urban alley at night. The dark, paved alley surface extends flatly into the middle ground. A portion of a light-colored car is positioned in the middle ground. In the center-left of the middle ground, a maroon taxi initially appears and drives towards the foreground, remaining centrally framed as it moves. Light-colored buildings line both sides of the street in the middle ground; the building on the right features graffiti and has a light gray car parked beside it. A streetlamp is visible on the left side of the frame, casting light onto the alley. The distant, illuminated city skyline is visible in the background, positioned in the upper center. The camera is at the subject's level.",
   "status": "success"
 }

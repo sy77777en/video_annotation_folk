@@ -2,7 +2,7 @@
   "video_id": "4847.13.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T13:34:13.911447",
+  "generation_timestamp": "2025-09-29T17:27:31.366112",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\n**Accuracy:** The caption is inaccurate. While the woman does lean forward and reach into a drawer, she does not \"straighten up\" at the end of the clip. She only pulls back slightly from the drawer, remaining in a bent-over position. The phrase \"straightens up\" implies returning to an upright posture, which does not happen.\n\n**Completeness:** The caption fails to completely and correctly describe the final motion, which is a key part of the action sequence.\n\n**Adherence to Instructions:** The caption violates the core instruction to accurately describe the subject's motion. By misrepresenting the final action, it fails to provide a clear and truthful account of what is visible in the video. While it follows other rules like maintaining chronological order and using simple language, the factual error in the motion description makes it a poor caption.",
-  "revised_caption_by_generated_critique": "The woman leans forward, reaches into a drawer of the vanity table, and then pulls back slightly.",
+  "generated_critique": "The caption is factually incorrect. The woman does not place the item on top of the table, nor does she straighten up. Instead, after retrieving the item from the drawer, she moves it around within the drawer space and remains bent over for the entire duration of the video. The description should be corrected to: \"A woman leans forward over a vanity table, reaches into an open drawer, and moves an object around inside it.\"",
+  "revised_caption_by_generated_critique": "A woman leans forward over a vanity table, reaches into an open drawer, and moves an object around inside it.",
   "status": "success"
 }

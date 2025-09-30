@@ -2,7 +2,7 @@
   "video_id": "9P2zAwProxo.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:01:35.091354",
+  "generation_timestamp": "2025-09-29T13:21:43.330199",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The snow-covered ground extends from the foreground to the background, effectively creating a dynamic sense of forward motion.  \n2. Modify the description of the trees to: \"The trees stretch from the middle ground to the background, positioned on both sides of the frame.\"  \n3. This is not a first-person perspective; the camera is mounted on the snowboard.  \n4. The video also includes a brief moment where a red flag appears in the top right corner of the frame, which should be mentioned in the spatial description.",
-  "revised_caption_by_generated_critique": "The camera, mounted on the snowboard, captures a dynamic scene where the rounded tip of the snowboard is fixed in the foreground, occupying the bottom half of the frame from the center. The snow-covered ground extends from the foreground to the background, creating a dynamic sense of forward motion as it appears to rush toward the camera. In the background, trees stretch from the middle ground to the background, positioned on both sides of the frame as the snowboard glides past them. Additionally, a brief moment in the video shows a red flag appearing in the top right corner of the frame, adding to the spatial description.",
+  "generated_critique": "1. The snow-covered ground extends from the foreground to the background, effectively creating a dynamic sense of forward motion. 2. Modify the description of the trees to: \"The trees stretch from the middle ground to the background, positioned on both sides of the frame.\" 3. The camera is mounted on the snowboard, not providing a first-person perspective. 4. The caption should also mention that a small red flag is visible in the top right corner of the frame.",
+  "revised_caption_by_generated_critique": "This dynamic shot captures a close-up of a snowboard with a wide view of the surrounding scenery. The rounded tip of the snowboard is fixed in the foreground, occupying the bottom half of the frame from the center. The snow-covered ground extends from the foreground to the background, creating a dynamic sense of forward motion as it rushes toward the camera. In the background, trees stretch from the middle ground to the background, positioned on both sides of the frame as the snowboard glides past them. The camera is mounted on the snowboard, looking down at its tip and forward along the path. A small red flag is visible in the top right corner of the frame.",
   "status": "success"
 }

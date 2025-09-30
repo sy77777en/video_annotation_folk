@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.1.3.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:57:33.017315",
+  "generation_timestamp": "2025-09-29T06:24:53.709835",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please replace all instances of \"hand\" with \"finger.\" Initially, the finger is positioned in the center-left of the frame and moves to the top-left by the end. The labels \"PROG\" and \"RAD NAV\" are incorrect, so please remove them. The control panel extends from the foreground to the background, so adjust the description to reflect this.",
   "revised_caption_by_generated_critique": "The video features a close-up shot of a finger interacting with a control panel. Initially, the finger is positioned in the center-left of the frame and moves to the top-left by the end. The control panel occupies the majority of the frame, with its teal surface and black buttons extending from the foreground to the background. The digital display is located in the center-right, showing green and blue text against a black screen. The camera is positioned above the subjects, capturing the finger's movements and the illuminated text. As the finger moves, the focus shifts slightly to different buttons, maintaining the close-up framing throughout.",
   "status": "success"

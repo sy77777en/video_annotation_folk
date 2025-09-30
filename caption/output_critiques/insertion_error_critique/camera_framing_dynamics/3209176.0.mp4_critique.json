@@ -2,7 +2,7 @@
   "video_id": "3209176.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:41:40.010113",
+  "generation_timestamp": "2025-09-29T04:31:13.574066",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-27T09:38:56.751319",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should mention that the video uses a wide-angle lens, which introduces noticeable barrel distortion along the edges of the frame.",
-  "revised_caption_by_generated_critique": "The video is in slow motion, with the camera positioned at eye level and angled low, looking up. It features a shallow depth of field, focusing on the man in the foreground. The camera moves smoothly and slowly backward, leading the man from the front. A wide-angle lens is used, introducing noticeable barrel distortion along the edges of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should mention that the video includes a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
+  "revised_caption_by_generated_critique": "The video is in slow motion, with the camera positioned at eye level and angled low, looking up. It features a shallow depth of field, focusing on the man in the foreground. The camera moves smoothly and slowly backward, leading the man from the front, and includes a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
   "status": "success"
 }

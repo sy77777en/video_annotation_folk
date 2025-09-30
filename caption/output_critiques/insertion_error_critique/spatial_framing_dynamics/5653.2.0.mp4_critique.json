@@ -2,7 +2,7 @@
   "video_id": "5653.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:21:25.488248",
+  "generation_timestamp": "2025-09-29T07:50:29.151049",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The shirtless man is consistently positioned in the foreground center, rather than the middle ground. Additionally, the camera briefly tilts upward at the start of the video, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The video begins with a medium full shot, featuring a shirtless man consistently positioned in the foreground center of the frame. Dark, paneled walls are visible in the background. At the start, the camera briefly tilts upward before transitioning to a medium shot as the man, still in the foreground center, brings his hands together in front of his lower abdomen. The camera remains at the subject's level throughout the rest of the sequence.",
+  "generated_critique": "1. The shirtless man is consistently positioned in the foreground center, rather than the middle ground. 2. The camera briefly tilts upward at the start of the video, altering the perceived height of the subject relative to the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a medium full shot, featuring a shirtless man consistently positioned in the foreground center of the frame. Dark, paneled walls form the background. At the start, the camera briefly tilts upward, altering the perceived height of the subject relative to the frame. The shot then transitions to a medium shot as the man, still in the foreground center, brings his hands together in front of his lower abdomen. The camera remains at the subject's level throughout the rest of the sequence.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "_6DLjNKtENQ.0.15.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:47:03.156480",
+  "generation_timestamp": "2025-09-29T12:59:46.418543",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description stating that the woman \"turns her head to the right, looking at the man beside her\" is incorrect. Initially, she is looking forward toward the left of the frame and then turns left, not right, to look at a light-skinned man seated to her left. 2. The man in the pilot seat also exhibits motion, which was omitted in the original description. Initially, he is facing forward toward the left side of the frame, and as the woman turns to look at him, he slightly turns right to look at her. 3. At the beginning, the woman is speaking. When she turns left to look at the man, her eyes widen, and her mouth slightly opens, suggesting she is no longer speaking. 4. The woman briefly adjusts her seatbelt before turning her head, which was not mentioned in the original description.",
-  "revised_caption_by_generated_critique": "The woman, wearing a headset, is seated in the co-pilot seat of a helicopter, with her right hand on the control device. She is initially speaking and looking forward toward the left of the frame. Before turning her head to the left to look at a light-skinned man seated beside her, she briefly adjusts her seatbelt. As she turns, her eyes widen, and her mouth slightly opens, suggesting she has stopped speaking. The man, also wearing a headset and with a tattoo on his neck, is seated in the pilot seat. Initially facing forward toward the left side of the frame, he slightly turns right to look at the woman as she turns to him. The background outside the helicopter shows a cityscape with tall buildings.",
+  "generated_critique": "1. The description stating that the woman \"turns her head to the right, looking at the man beside her\" is incorrect. Initially, she is looking forward toward the left of the frame and then turns left, not right, to look at a light-skinned man seated to her left.\n\n2. The man in the pilot seat also exhibits motion, which was omitted in the original description. Initially, he is facing forward toward the left side of the frame, and as the woman turns to look at him, he slightly turns right to look at her.\n\n3. At the beginning, the woman is speaking. When she turns left to look at the man, her eyes widen, and her mouth slightly opens, suggesting she is no longer speaking.\n\n4. The feedback does not mention that the helicopter briefly tilts to the left during the exchange, which affects the subjects' posture.",
+  "revised_caption_by_generated_critique": "The woman, wearing a headset, is seated in the co-pilot seat of a helicopter, with her right hand on the control device. She is initially looking forward toward the left of the frame and speaking. As she turns her head to the left to look at the light-skinned man seated to her left, her eyes widen, and her mouth slightly opens, suggesting she stops speaking. The man, also wearing a headset and with a tattoo on his neck, is seated in the pilot seat. Initially facing forward toward the left side of the frame, he slightly turns right to look at her as she turns. During this exchange, the helicopter briefly tilts to the left, affecting their posture. The background outside the helicopter shows a cityscape with tall buildings.",
   "status": "success"
 }

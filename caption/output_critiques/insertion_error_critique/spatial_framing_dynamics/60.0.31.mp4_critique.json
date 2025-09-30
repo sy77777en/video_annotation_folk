@@ -2,7 +2,7 @@
   "video_id": "60.0.31.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:53:52.188475",
+  "generation_timestamp": "2025-09-29T08:38:42.151428",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please clarify that the change in shot size is due to the camera moving backwards.\n\n2. Initially, the woman in pink is positioned in the center foreground, not the center-right foreground.\n\n3. During the shot, both women shift slightly towards the right of the frame.\n\n4. The video also briefly shows a red ball rolling across the bottom left foreground, which should be mentioned in the spatial description.",
-  "revised_caption_by_generated_critique": "The video opens with a medium full shot, featuring the main woman in black in the left foreground and a second woman in pink in the center foreground. The camera then moves backwards, transitioning to a full shot that makes the subjects appear smaller in the frame and reveals more of the green sports field, which occupies the foreground and middle ground. During this transition, both women shift slightly towards the right of the frame, remaining in the foreground. A red ball briefly rolls across the bottom left foreground. Throughout the shot, blue bleachers extend horizontally across the middle ground, with a building and trees visible in the top right background. The camera is positioned at the subjects' level.",
+  "generated_critique": "1. Please clarify that the change in shot size is due to the camera moving backwards.\n\n2. Initially, the woman in pink is positioned in the center foreground, not the center-right foreground.\n\n3. During the shot, both women shift slightly towards the right of the frame.\n\n4. The camera briefly tilts upward at the start of the transition, altering the perceived height of the subjects relative to the frame.",
+  "revised_caption_by_generated_critique": "The video opens with a medium full shot, featuring the main woman in black in the left foreground and a second woman in pink in the center foreground. The camera then moves backwards, transitioning to a full shot, making the subjects appear smaller in the frame and revealing more of the green sports field, which occupies the foreground and middle ground. During this transition, both women shift slightly towards the right of the frame. At the start of the transition, the camera briefly tilts upward, altering the perceived height of the subjects relative to the frame. Throughout the shot, blue bleachers extend horizontally across the middle ground, with a building and trees visible in the top right background. The camera is positioned at the subjects' level.",
   "status": "success"
 }

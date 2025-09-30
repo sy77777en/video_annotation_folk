@@ -2,7 +2,7 @@
   "video_id": "99f75928006bd7b7d9798512b8d71b53d5d93d04a898612a2208b2177eb4fdaa.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:18:47.155819",
+  "generation_timestamp": "2025-09-29T05:25:39.831793",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T19:18:18.901382",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove \"and central\" from the description. Additionally, change \"slightly behind the first\" to \"slightly in front of the first\" for accuracy. Also, note that the camera is not static; it pans from left to right. The shot begins as a medium shot before transitioning into a close-up as the camera moves.",
-  "revised_caption_by_generated_critique": "This close-up shot features two women positioned in the foreground. The first woman occupies the left portion of the frame, while the second woman is on the right side, slightly in front of the first. In the out-of-focus background, a brightly lit kitchen is visible. The camera pans from left to right, starting as a medium shot before transitioning into a close-up as it moves.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove \"and central\" from the description. Additionally, change \"slightly behind the first\" to \"slightly in front of the first\" for accuracy. Also, note that the camera is not static; it pans from left to right. The shot size should be described as a medium shot rather than a close-up.",
+  "revised_caption_by_generated_critique": "This medium shot features two women positioned in the foreground. The first woman occupies the left portion of the frame, while the second woman is on the right side, slightly in front of the first. In the out-of-focus background, a brightly lit kitchen is visible. The camera pans from left to right and is positioned at the subjects' level throughout the clip.",
   "status": "success"
 }

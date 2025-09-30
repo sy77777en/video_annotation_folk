@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.2.1.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:54:24.015729",
+  "generation_timestamp": "2025-09-29T08:37:31.565925",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description incorrectly states that two large, cylindrical objects are detaching and falling from one of the planes. In reality, these objects are securely mounted beneath the plane on the left side of the frame and are not detaching or falling.\n\n2. The caption inaccurately describes the fuselage as yellow and dark-colored; it is more accurately described as yellow and white.\n\n3. The biplane is the one with four engines and should be described as being in the middleground rather than the background.\n\n4. It is unclear whether the camera is actually a drone. It would be more accurate to describe it as a tracking shot from behind.",
-  "revised_caption_by_generated_critique": "A video captures several vintage aircraft flying in formation over a vast desert landscape during the daytime. The terrain below consists of light-colored, arid ground, with large, brown, rocky mountains rising in the distance under a clear, pale blue sky. In the foreground, the wing of a dark-colored plane is visible, flying alongside other aircraft, including a single-engine propeller plane and a four-engine biplane. The biplane, positioned centrally in the middleground, has a yellow and white fuselage. Two large, cylindrical objects are securely mounted beneath the plane on the left side of the frame. The video is a tracking shot from behind the aircraft.",
+  "generated_critique": "1. The description incorrectly states that two large, cylindrical objects are detaching and falling from one of the planes. In reality, these objects are securely mounted beneath the plane on the left side of the frame and are not detaching or falling.\n\n2. The caption inaccurately describes the fuselage as yellow and dark-colored; it is more accurately described as yellow and white.\n\n3. The biplane is the one with four engines and should be described as being in the middleground rather than the background.\n\n4. For clarity, the dark plane on the right has two engines, the plane on the left has one engine, and the lighter plane in the center has four engines.",
+  "revised_caption_by_generated_critique": "A video filmed by a drone captures several vintage aircraft flying in formation over a vast desert landscape during the daytime. The terrain below consists of light-colored, arid ground, with large, brown, rocky mountains rising in the distance under a clear, pale blue sky. In the foreground, the wing of a dark-colored plane is visible, flying alongside other aircraft, including a single-engine propeller plane on the left and a twin-engine plane on the right. The biplane, positioned centrally in the middleground, has a yellow and white fuselage and is equipped with four engines. Two large, cylindrical objects are securely mounted beneath the plane on the left side of the frame.",
   "status": "success"
 }

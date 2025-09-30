@@ -2,7 +2,7 @@
   "video_id": "iSTYnbRv4AQ.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:32:19.508885",
+  "generation_timestamp": "2025-09-29T09:35:26.443380",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"Throughout the pan, the central monument shifts from the center to the left side of the frame\" is inaccurate. The monument remains in the center of the frame throughout the pan. Additionally, the caption incorrectly suggests that the camera tilts upward during the pan, but the camera maintains a consistent horizontal angle without any tilt.",
-  "revised_caption_by_generated_critique": "This wide scenery shot captures a bustling European square using a time-lapse effect, which blurs the numerous people moving through the foreground and middle ground into streaks of motion. Initially, the scene is framed by a large, white building on the left and another in the background, with a prominent bronze monument situated in the center middle ground. The camera then performs a slow pan from left to right. This movement causes the building on the left to move out of the frame while revealing more of an ornate, white building on the right. Throughout the pan, the central monument remains in the center of the frame. The camera is positioned at eye level and maintains a consistent horizontal angle without any tilt.",
+  "generated_critique": "The statement \"Throughout the pan, the central monument shifts from the center to the left side of the frame\" is inaccurate. The monument remains in the center of the frame throughout the pan. Additionally, the caption should note that the camera briefly tilts upward during the pan, altering the vertical framing of the buildings and monument.",
+  "revised_caption_by_generated_critique": "This wide scenery shot captures a bustling European square using a time-lapse effect, which blurs the numerous people moving through the foreground and middle ground into streaks of motion. Initially, the scene is framed by a large, white building on the left and another in the background, with a prominent bronze monument situated in the center middle ground. The camera then performs a slow pan from left to right. This movement causes the building on the left to move out of the frame while revealing more of an ornate, white building on the right. Throughout the pan, the central monument remains in the center of the frame. Additionally, the camera briefly tilts upward during the pan, altering the vertical framing of the buildings and monument. The camera is positioned at eye level.",
   "status": "success"
 }

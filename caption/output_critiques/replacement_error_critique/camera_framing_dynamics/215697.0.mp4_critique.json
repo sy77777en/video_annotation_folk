@@ -2,7 +2,7 @@
   "video_id": "215697.0.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:28:42.299322",
+  "generation_timestamp": "2025-09-29T04:11:19.866613",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-20T07:39:14.807455",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Consider omitting the phrases \"with mild barrel distortion,\" \"The playback speed is slightly fast,\" and \"There is minimal camera shake.\" because they are the standard settings. Instead of stating \"not significant enough to mention,\" it would be more precise to say \"lack of background information prevents determination.\"",
-  "revised_caption_by_generated_critique": "The video features a stationary camera capturing a cosmic scene. The lack of background information prevents determination of the camera's height, angle, and focus. There is no discernible camera movement.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Consider omitting the phrases \"with strong fisheye distortion,\" \"The playback speed is slow-motion,\" and \"There is noticeable camera shake,\" because they are the standard settings. Instead of stating \"not significant enough to mention,\" it would be more precise to say \"lack of background information prevents determination.\"",
+  "revised_caption_by_generated_critique": "The video features a stationary camera capturing a cosmic scene. The playback speed is regular, and the camera's height, angle, and focus lack background information to determine their significance. There is no discernible camera movement.",
   "status": "success"
 }

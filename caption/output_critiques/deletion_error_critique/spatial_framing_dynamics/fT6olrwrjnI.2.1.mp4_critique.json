@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:02:09.936261",
+  "generation_timestamp": "2025-09-29T06:30:53.126592",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is presented in 2D, so please avoid describing the depth and 3D positioning of the elements, as well as the camera height relative to the subjects, since these aspects are difficult to ascertain. Instead, concentrate on their 2D placement within the frame.",
-  "revised_caption_by_generated_critique": "The video shows a large soccer ball on the left side of the frame. To its right, two men are running, with the man in white on the left and the man in red on the right. All three subjects are moving from left to right across the scene. The green soccer field is visible at the bottom of the frame. The background features white and black checkered walls at the top, with blue geometric shapes on the right. The camera follows the movement, keeping the ball on the left and the men on the right as they advance.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video is presented in 2D, so please avoid describing the depth and 3D positioning of the elements, as well as the camera height relative to the subjects, since these aspects are difficult to ascertain. Additionally, the subjects are not moving from left to right, so please remove that description.",
+  "revised_caption_by_generated_critique": "The video shows a large soccer ball on the left side of the frame. To its right, two men are running, with the man in white positioned to the left of the man in red. All three subjects are in motion. The green soccer field is visible at the bottom of the frame. The background features white and black checkered walls at the top, with blue geometric shapes on the right. The camera tracks the movement, keeping the ball on the left side and the men to its right.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "34bf236faa7aa7c3237c0f632eff1c38223de7245248a02e6085714223c8cd41.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:18:07.538439",
+  "generation_timestamp": "2025-09-29T14:57:11.418293",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the hand's movement stating it \"retracts slightly before moving towards the bottom right-center, where it briefly touches a purple flower... Finally, the hand exits the frame towards the bottom left\" is incorrect. This sequence of actions is wrong, as it omits the hand exiting and re-entering the frame and misrepresents the interaction with the purple flower and the hand's final exit.",
-  "revised_caption_by_generated_critique": "This close-up, overhead shot centers on a light-colored basin filled with water, which occupies most of the frame. In the middle ground, various colorful flowers float scattered across the water's surface, initially positioned in the top left, top center, left-center, bottom right-center, bottom right, right-center, and bottom center areas. Green grass is visible in the background around the top edge of the basin. A hand enters the frame from the bottom left foreground, holding a flower. It moves towards the bottom center and places the flower onto the water in the middle ground. The hand then exits the frame briefly before re-entering from the bottom left. It moves towards the bottom right-center, where it gently interacts with a purple flower floating in the middle ground. Finally, the hand exits the frame towards the bottom left. The flowers drift slightly on the water throughout the video.",
+  "generated_critique": "The part of the description stating, \"The hand then retracts slightly before moving towards the bottom right-center, where it briefly touches a purple flower floating in the middle ground. Finally, the hand exits the frame towards the bottom left,\" is incorrect. This section misrepresents the sequence of the hand's movements, its interaction with the purple flower, and its final exit. The description also fails to mention that the hand leaves and then re-enters the frame.",
+  "revised_caption_by_generated_critique": "This close-up, overhead shot centers on a light-colored basin filled with water, which occupies most of the frame. In the middle ground, various colorful flowers float scattered across the water's surface, initially positioned in the top left, top center, left-center, bottom right-center, bottom right, right-center, and bottom center areas. Green grass is visible in the background around the top edge of the basin. A hand enters the frame from the bottom left foreground, holding a flower. It moves towards the bottom center and places the flower onto the water in the middle ground. The hand then exits the frame briefly before re-entering from the bottom left. It moves towards the bottom right-center, where it gently touches a purple flower floating in the middle ground. Finally, the hand exits the frame towards the bottom left. The flowers drift slightly on the water throughout the video.",
   "status": "success"
 }

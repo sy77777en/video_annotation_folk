@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.21.3.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:02:00.467630",
+  "generation_timestamp": "2025-09-29T04:59:56.881793",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The perspective should be described as top-down rather than high-angle. In 2D videos, terms like \"foreground\" and \"middle ground\" are not appropriate as they do not convey depth. After the ball is hit, the camera follows the golf ball to the upper right, keeping it centered until it lands in a different area. Additionally, the ball lands in a blue area, not a sand trap in the upper right portion of the scene.",
   "revised_caption_by_generated_critique": "The scene is captured from a top-down perspective, showing a pixel-art golf course. Initially, a small golfer character is positioned in the center-left of the frame, standing on a sand trap. A heads-up display is overlaid with game information in the top left, club selection in the bottom left, a power meter at the bottom center, and environmental indicators in the top right. As the player aims, the camera pans to the right and zooms out slightly, following the aiming line across the course. After the shot, the camera follows the white golf ball, keeping it centered as it flies from the center-left toward the upper right of the frame. The camera's movement stops once the ball lands in a blue area located in the upper right portion of the scene.",
   "status": "success"

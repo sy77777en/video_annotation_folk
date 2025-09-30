@@ -2,7 +2,7 @@
   "video_id": "f4ZzHtww6Tc.2.15.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:55:36.140499",
+  "generation_timestamp": "2025-09-29T18:47:59.284893",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot is incorrectly identified as a medium full shot when the skateboarder is on the ledge. The statement that the skateboarder remains in the foreground after landing is inaccurate. The caption also fails to describe the final shot size transition at the end.",
-  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot, featuring a skateboarder positioned in the center-right of the frame in the middle ground, with a large building in the background. The camera pans left and zooms in, tracking the skateboarder as he moves across a plaza from right to left. The shot transitions into a medium shot, bringing the subject closer as he approaches a low, dark stone ledge. He jumps over the ledge, which is in the immediate foreground, and lands on the sidewalk below. During the landing, the skateboarder briefly moves to the background, with a street containing active traffic now visible. The camera, positioned at the subject's level, continues to pan left, following him as he skates away toward the left side of the frame, transitioning into a wide shot as he moves further away.",
+  "generated_critique": "The shot size is incorrectly identified as a medium full shot when the skateboarder is on the ledge. The statement that the skateboarder remains in the foreground after landing is inaccurate. The caption also fails to describe the final shot size transition at the end of the video.",
+  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot, featuring a skateboarder positioned in the center-right of the frame in the middle ground, with a large building in the background. The camera pans left and zooms in, tracking the skateboarder as he moves across a plaza from right to left. The shot transitions into a medium shot, bringing the subject closer as he approaches a low, dark stone ledge. He jumps over the ledge, which is in the immediate foreground, and lands on the sidewalk below. During the landing, the skateboarder moves into the middle ground, with a street containing active traffic now visible in the background. The camera, positioned at the subject's level, continues to pan left, following him as he skates away toward the left side of the frame. The video concludes with a wide shot, capturing the skateboarder as he moves further into the distance.",
   "status": "success"
 }

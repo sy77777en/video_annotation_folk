@@ -2,7 +2,7 @@
   "video_id": "u-dEnJpCGAQ.15.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:57:32.013770",
+  "generation_timestamp": "2025-09-29T13:15:47.388829",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The leopard is positioned in the foreground, not the middle ground. The wooden post is located in the right background, not just the top right. The shot is not entirely static, so that detail should be removed. The camera is slightly angled downward toward the leopard rather than being perfectly level.",
-  "revised_caption_by_generated_critique": "A close-up shot frames a leopard in the foreground, occupying the center of the frame. In the out-of-focus background, dark foliage is visible in the top left and center, with a wooden post positioned in the right background. The camera is slightly angled downward toward the leopard.",
+  "generated_critique": "The leopard is positioned in the foreground, not the middle ground. The wooden post is located in the right background, not just the top right. There is also a small bird perched on the wooden post, which should be mentioned. Additionally, the shot is not entirely static, so that detail should be removed.",
+  "revised_caption_by_generated_critique": "A close-up shot frames a leopard in the foreground, occupying the center of the frame. In the out-of-focus background, dark foliage is visible in the top left and center, with a wooden post positioned in the right background. A small bird is perched on the wooden post. The camera is positioned at the leopard's level.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "6IUJgiKJ_mE.5.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:28:06.445462",
+  "generation_timestamp": "2025-09-29T09:27:36.186463",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The camera initially faces forward and moves in the opposite direction of the cyclists, away from them. It then abruptly tilts upward instead of panning, losing sight of the cyclists. Please remove the phrase \"simultaneously trucking left\" from the description.\n\n2. Please refer to \"a single cyclist\" instead of \"cyclists,\" as only one cyclist is visible throughout the video.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot maintains a deep focus with a large depth of field, keeping the single cyclist and the surrounding scenery sharp. The camera initially faces forward and moves backward, away from the cyclist. It then abruptly tilts upward, losing sight of the cyclist.",
+  "generated_critique": "1. The camera initially faces forward and moves in the opposite direction of the cyclists, away from them down the road. It then smoothly pans to the right until it faces backward, continuing to move away from the cyclists. Please remove the phrase \"simultaneously trucking left\" from the description.\n\n2. Please refer to \"a single cyclist\" instead of \"cyclists,\" as only one cyclist is visible throughout the video.",
+  "revised_caption_by_generated_critique": "This eye-level, level-angle shot maintains a deep focus with a large depth of field, keeping the single cyclist and the surrounding scenery sharp. The camera initially faces forward and moves in the opposite direction of the cyclist, away from them down the road. It then smoothly pans to the right until it faces backward, continuing to move away from the cyclist.",
   "status": "success"
 }

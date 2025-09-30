@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.0.10.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:33:07.903498",
+  "generation_timestamp": "2025-09-29T12:39:15.536662",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "It would be more accurate to describe the camera movement as arcing clockwise rather than arcing backward. Additionally, the video appears to use a shallow depth of field, with only the foreground elements in sharp focus while the background is noticeably blurred.",
-  "revised_caption_by_generated_critique": "From a level angle with a shallow depth of field, the camera arcs clockwise and zooms out to reveal four airplanes lined up on the runway instead of the initial two. The movement, which has a slight, unsteady shake, speeds up before slowing to a stop.",
+  "generated_critique": "It would be more accurate to describe the camera movement as arcing clockwise rather than arcing backward. Additionally, the video appears to use a slight fisheye lens distortion, which subtly curves the edges of the frame.",
+  "revised_caption_by_generated_critique": "From a level angle with a deep focus, the camera arcs clockwise and zooms out to reveal four airplanes lined up on the runway instead of the initial two. The movement, which has a slight, unsteady shake, speeds up before slowing to a stop, and the use of a slight fisheye lens distortion subtly curves the edges of the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.8.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T16:43:59.762539",
+  "generation_timestamp": "2025-09-29T19:52:29.701148",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good. Here's a detailed breakdown of the feedback.\n\n**Accuracy:**\nThe caption is generally accurate in describing the visual content. It correctly identifies a close-up of a mouth, a beard, stringy food, a hand, and the action of biting and chewing.\n\n**Completeness:**\nThe caption captures the main events but misses the key motion of the stringy substance stretching, which is a prominent visual element.\n\n**Adherence to Instructions:**\nThe caption fails to adhere to several key instructions:\n*   **Chronological Order:** The caption is not in chronological order. It mentions the man taking a bite *before* mentioning the hand that brings the food to his mouth. The correct sequence is the hand moving the food, followed by the bite.\n*   **Focus on Motion:** The caption includes static visual details (\"The background is blurred with bokeh lights\") which do not describe motion.\n*   **Avoid Emotional or Subjective Adjectives:** The phrase \"creating a dramatic effect\" is a subjective interpretation and should be avoided.\n\nIn summary, the caption violates the rules regarding chronological order, focusing strictly on motion, and avoiding subjective language.",
-  "revised_caption_by_generated_critique": "In a close-up, a hand brings a dark, wet piece of food to a person's mouth. The person takes a bite, and as the hand pulls away, a thin, yellowish strand stretches from the food in their mouth. The person's mouth then closes around the food.",
+  "generated_critique": "The caption includes several details unrelated to motion, such as the description of the close-up shot, the subject's beard, and the blurred background with bokeh lights. These elements should be removed to adhere to the instruction to focus solely on movement. The phrase \"creating a dramatic effect\" is a subjective interpretation and should also be omitted. The description of the action is too brief and misses key movements. The caption should be revised to chronologically describe the food being brought to the person's mouth, the mouth opening to receive it and then closing, and a stringy substance stretching from the food as it is eaten.",
+  "revised_caption_by_generated_critique": "A hand moves a piece of dark food toward a person's mouth. The mouth opens to receive the food and then closes around it. As the hand pulls back slightly, a thin, sticky strand stretches from the food.",
   "status": "success"
 }

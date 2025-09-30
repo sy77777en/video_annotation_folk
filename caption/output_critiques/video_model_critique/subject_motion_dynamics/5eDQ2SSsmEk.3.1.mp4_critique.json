@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.3.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T16:27:32.880842",
+  "generation_timestamp": "2025-09-29T19:38:06.347151",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good. Here's a detailed breakdown:\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the subject as a piece of paper with handwritten calculations and accurately describes the camera's slow downward movement, which reveals more of the content. The details about the paper's aged appearance and the dark ink are also correct.\n\n**Completeness:** The description is complete. It covers the subject, the action (camera movement), and the key visual characteristics of the scene without adding any information that isn't present.\n\n**Adherence to Instructions:**\n*   **Motion Description:** The subject (the paper) is static. The caption correctly focuses on the only motion present: the camera's movement (\"slowly moves downward\"). This is an excellent way to handle a video where the subject itself does not move.\n*   **Chronological Order:** The description follows the simple, linear progression of the camera's movement.\n*   **Conciseness and Clarity:** The language is simple, clear, and easy to understand. The paragraph is well-structured and concise.\n*   **Objectivity:** The caption avoids subjective or emotional language. Adjectives like \"old\" and \"yellowed\" are objective descriptions of the paper's appearance.\n*   **No Speculation:** The description is factual and avoids any speculation or assumptions.\n\nThe caption successfully describes the visual information and the motion within the video, adhering perfectly to all the provided guidelines.",
-  "revised_caption_by_generated_critique": "The video opens on a close-up of handwritten calculations on an old, yellowed piece of paper. The camera slowly pans downward, revealing more of the numbers and arithmetic operations written in dark ink. Some of the figures are underlined for emphasis as the camera continues to move down the page.",
+  "generated_critique": "The caption incorrectly states that the camera \"pans left\"; it only tilts downward. Additionally, the description includes details about the paper's appearance (\"old, with a yellowed, aged appearance\") and the static content of the calculations (\"various numbers and arithmetic operations\"). These details violate the instruction to focus exclusively on the subject's motion. The description should be revised to remove the inaccurate panning motion and the non-motion-related details about the paper's appearance and content, focusing only on the downward tilt of the camera.",
+  "revised_caption_by_generated_critique": "In a close-up shot, the camera slowly tilts downward over a handwritten document.",
   "status": "success"
 }

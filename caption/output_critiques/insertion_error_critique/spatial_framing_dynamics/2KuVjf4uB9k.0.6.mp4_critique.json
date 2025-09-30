@@ -2,7 +2,7 @@
   "video_id": "2KuVjf4uB9k.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:38:31.645881",
+  "generation_timestamp": "2025-09-29T04:26:49.303271",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Initially, the sports car is positioned in the center of the middle ground. It then shifts to the right side of the foreground, eventually moving to the right-center of the frame in the foreground, and finally settles in the right-center of the middle ground. The video also briefly shows a red traffic cone near the bottom left of the frame as the car drifts past.\n\n2. At the beginning, the camera is positioned above the car. In the middle of the video, it adjusts to the subject's height, and by the end, it returns positioned above the car.",
-  "revised_caption_by_generated_critique": "The video showcases a black sports car drifting on an expansive asphalt track. Initially, the car is positioned in the center of the middle ground, with the camera capturing it from above. As the car drifts, it dynamically shifts to the right side of the foreground, eventually moving to the right-center of the frame in the foreground, and finally settling in the right-center of the middle ground. During this sequence, a red traffic cone briefly appears near the bottom left of the frame as the car drifts past. The camera starts above the car, adjusts to the car's height in the middle of the video, and returns to an overhead position by the end. The car's orientation shifts, revealing different angles of its sleek design, while white smoke trails behind, expanding from the bottom right towards the center of the frame. The surrounding arid, rocky terrain forms a static background as the car maneuvers, with the wide shot ensuring the car and its movement remain the focal point against the open backdrop.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Initially, the sports car is positioned in the center of the middle ground. The video also briefly shows a red traffic cone near the bottom left corner in the foreground, which is not referenced in the caption. It then shifts to the right side of the foreground, eventually moving to the right-center of the frame in the foreground, and finally settles in the right-center of the middle ground.\n\n2. At the beginning, the camera is positioned above the car. In the middle of the video, it adjusts to the subject's height, and by the end, it returns positioned above the car.",
+  "revised_caption_by_generated_critique": "The video showcases a wide shot of a black sports car drifting on an expansive asphalt track. Initially, the car is positioned in the center of the middle ground, with a red traffic cone visible near the bottom left corner in the foreground. The camera captures the car from above at the start. As the car drifts, it dynamically moves across the frame, shifting to the right side of the foreground and eventually settling in the right-center of the middle ground. The car's orientation changes, revealing different angles of its sleek design, while white smoke trails behind, expanding from the bottom right towards the center of the frame. The surrounding arid, rocky terrain forms a static background as the car maneuvers. Midway through the video, the camera adjusts to the car's height, providing a closer view of the drifting action, before returning to an overhead position by the end. The shot size remains wide throughout, ensuring the car and its movement remain the focal point against the open backdrop.",
   "status": "success"
 }

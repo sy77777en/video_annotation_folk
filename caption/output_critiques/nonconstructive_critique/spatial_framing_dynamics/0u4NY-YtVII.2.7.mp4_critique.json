@@ -2,7 +2,7 @@
   "video_id": "0u4NY-YtVII.2.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:41:40.591816",
+  "generation_timestamp": "2025-09-29T18:35:32.741708",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to specify the individual positions of the three men arranged across the foreground-center and foreground-right. It also incorrectly omits the presence of people in the background.",
-  "revised_caption_by_generated_critique": "In a full shot, a group of men occupies the center of the frame, walking forward along a paved walkway. A man in a blue blazer is positioned in the foreground-left, while three other men—one in a blue suit positioned in the foreground-center, and two in black coats positioned in the foreground-right—are arranged across the scene. In the middle ground, other men and a small child walk behind the main group, with additional people visible in the background. The scene is flanked by two long buildings on the left and right, extending from the foreground into the background. The camera, positioned at the subjects' level, moves backward to track the group's advance, maintaining their central position within the frame. A text overlay is visible in the bottom-left corner.",
+  "generated_critique": "The caption inaccurately describes the spatial arrangement of the three men in the foreground-center and foreground-right. It also incorrectly states that the people behind the main group are only in the middle ground, omitting their presence in the background.",
+  "revised_caption_by_generated_critique": "In a full shot, a group of men occupies the center of the frame, walking forward along a paved walkway. A man in a blue blazer is positioned in the foreground-left, while three other men—one in a blue suit and two in black coats—are arranged across the foreground, with one in the center and two on the right. In the middle ground and extending into the background, other men and a small child walk behind the main group. The scene is flanked by two long buildings on the left and right, extending from the foreground into the background. The camera, positioned at the subjects' level, moves backward to track the group's advance, maintaining their central position within the frame. A text overlay is visible in the bottom-left corner.",
   "status": "success"
 }

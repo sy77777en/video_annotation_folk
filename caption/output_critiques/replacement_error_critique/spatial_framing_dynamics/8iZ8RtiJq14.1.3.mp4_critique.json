@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.1.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:41:33.814161",
+  "generation_timestamp": "2025-09-29T08:20:33.468572",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The phone remains at the far right edge of the frame throughout, and as the camera moves forward, it occupies an increasingly larger portion of the right side. It is in the background, resting on the table.\n\n2. In the foreground at the bottom left corner, a silver ashtray is initially fully visible but gradually becomes more prominent as the camera moves forward.\n\n3. The term \"static\" is misleading because the camera does move; please remove the word \"static.\"",
-  "revised_caption_by_generated_critique": "A high-angle full shot frames a vintage digital phone and an ashtray on a wooden surface. The phone is positioned at the far right edge of the frame and becomes more prominent on the right side as the camera moves forward, resting on the table in the background. In the foreground at the bottom left corner, a silver ashtray initially appears fully visible and gradually becomes more prominent as the camera advances. The entire scene is captured from a tilted overhead perspective.",
+  "generated_critique": "1. The phone remains at the far right edge of the frame throughout, and as the camera moves backward, it occupies an increasingly smaller portion of the right side. It is in the background, resting on the table.\n\n2. In the background at the top left corner, a silver ashtray is initially fully visible but gradually becomes more prominent as the camera moves backward.\n\n3. The term \"static\" is misleading because the camera does move; please remove the word \"static.\"",
+  "revised_caption_by_generated_critique": "A high-angle full shot frames a vintage digital phone and an ashtray on a wooden surface. The phone is positioned at the far right edge of the frame, and as the camera moves backward, it occupies an increasingly smaller portion of the right side, resting on the table in the background. In the top left corner, a silver ashtray is initially fully visible and gradually becomes more prominent as the camera moves backward. The entire scene is captured from a tilted overhead perspective.",
   "status": "success"
 }

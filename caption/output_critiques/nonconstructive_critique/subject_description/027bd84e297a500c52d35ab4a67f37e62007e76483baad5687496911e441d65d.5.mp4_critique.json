@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.5.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:27:47.798736",
+  "generation_timestamp": "2025-09-29T04:01:23.743980",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-26T09:44:31.891218",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to identify the subjects as nesting dolls, instead using the generic terms \"cylindrical object\" and \"round blue object.\" The description of the transition is inaccurate; it is not a \"shift in focus.\" The caption also omits the state and action of the subjects, which are fallen and rolling.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up of a nesting doll, predominantly white with blue and green floral patterns. As the video progresses, a smaller, round blue nesting doll appears in the foreground, rolling into view. The transition from the larger nesting doll to the smaller one is marked by the movement of the dolls themselves, rather than a shift in camera focus. The smaller blue doll, which has fallen and is rolling, becomes the central subject towards the end, indicating a shift in attention from the patterned nesting doll to the plain blue one.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption fails to correctly identify the subjects, using generic descriptions instead of their specific type. The description of the transition between subjects is inaccurate. The caption also omits key details regarding the state and actions of the objects.",
+  "revised_caption_by_generated_critique": "The video opens with a close-up of a white ceramic vase adorned with blue and green floral patterns. As the scene unfolds, the camera smoothly pans to reveal a small, round blue marble that rolls into the foreground. This transition highlights the movement of the marble, drawing attention away from the stationary vase. The marble's motion becomes the focal point towards the end, emphasizing the dynamic shift from the decorative vase to the vibrant blue sphere in motion.",
   "status": "success"
 }

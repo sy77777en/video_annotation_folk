@@ -2,7 +2,7 @@
   "video_id": "47f4df7877163fa635cf93fa75853a526b9f738b9c08d43f0126b81b721045d7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:54:55.883256",
+  "generation_timestamp": "2025-09-29T04:51:32.254494",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Sunny Guo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The subject is actually positioned in the center of the frame, contrary to the description of being slightly to the left. Additionally, the background is entirely black, lacking any details. The camera briefly shifts to a slightly higher angle during the video, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The video consistently presents a close-up shot of a bald man, showing his head and the top of his shoulders. He is positioned in the center of the frame, occupying the foreground. This central foreground position is maintained throughout the video. The background is entirely black, lacking any details. His head makes slight vertical movements, tilting up and down as his facial expression changes and he opens his mouth. By the end, his head tilts upwards as he looks offscreen, while his overall position within the frame remains consistent. The camera is positioned at the subject's level, with a brief shift to a slightly higher angle during the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The subject is actually positioned in the center of the frame, contrary to the description of being slightly to the left. Additionally, the background is entirely black, lacking any details. The video also includes a brief moment where a second person’s hand enters the right side of the frame, which was not mentioned.",
+  "revised_caption_by_generated_critique": "The video consistently presents a close-up shot of a bald man, showing his head and the top of his shoulders. He is positioned in the center of the frame, occupying the foreground. This central foreground position is maintained throughout the video. His head makes slight vertical movements, tilting up and down as his facial expression changes and he opens his mouth. By the end, his head tilts upwards as he looks offscreen, while his overall position within the frame remains consistent. The background is entirely black, lacking any details. The camera is positioned at the subject's level. There is a brief moment where a second person’s hand enters the right side of the frame.",
   "status": "success"
 }

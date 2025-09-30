@@ -2,7 +2,7 @@
   "video_id": "D2PZUB_lDCk.2.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:18:42.650777",
+  "generation_timestamp": "2025-09-29T12:17:30.810595",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remember to mention that this video is abstract, which makes it challenging to distinguish the camera's point of view, level, and angle. Additionally, the video features a noticeable barrel distortion around the edges, which should be described in your caption.",
-  "revised_caption_by_generated_critique": "The video is abstract, making it challenging to distinguish the camera's point of view, level, and angle. The camera remains static throughout, and there is a noticeable barrel distortion around the edges.",
+  "generated_critique": "Please remember to mention that this video is abstract, which makes it challenging to distinguish the camera's point of view, level, and angle. Additionally, you should specify that the camera performs a slow clockwise arcing movement around the central subject, even if this is not visually apparent.",
+  "revised_caption_by_generated_critique": "The video features an abstract presentation, making it challenging to distinguish the camera's point of view, level, and angle. Despite appearing static, the camera performs a slow clockwise arcing movement around the central subject.",
   "status": "success"
 }

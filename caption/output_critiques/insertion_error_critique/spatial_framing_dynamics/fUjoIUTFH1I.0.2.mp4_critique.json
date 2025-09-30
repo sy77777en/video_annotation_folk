@@ -2,7 +2,7 @@
   "video_id": "fUjoIUTFH1I.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:36:33.312438",
+  "generation_timestamp": "2025-09-29T09:42:18.019978",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,6 +33,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Please remove the word \"static\" from your description of the camera's perspective, as the camera is actually moving left throughout the video.  \n2. The fog does not swirl; instead, it moves from left to right across the frame, resembling clouds carried by the wind. Please update the description to reflect this movement.  \n3. Additionally, please note that the bridge appears to be constructed over water, which extends from the middle ground to the background.  \n4. Retain the details about the fog being in the foreground and appearing to continue into the background.  \n5. The video also includes a flock of birds flying above the bridge in the top right corner, so be sure to mention their spatial position and movement.",
-  "revised_caption_by_generated_critique": "This video is a scenery shot. An extreme wide shot captures the top of a large, industrial bridge structure from a high-angle perspective. The metallic, triangular framework is positioned in the center of the frame, situated in the middle ground. The entire scene is enveloped by thick fog that moves from left to right across the frame, resembling clouds carried by the wind, filling the foreground and appearing to continue into the background. The camera moves left throughout the video, revealing the bridge constructed over water, which extends from the middle ground to the background. The only discernible movement within the frame is the drifting fog, tiny vehicles traveling from left to right across the bridge deck below the central truss, and a flock of birds flying above the bridge in the top right corner.",
+  "revised_caption_by_generated_critique": "This video is a scenery shot. An extreme wide shot captures the top of a large, industrial bridge structure from a high-angle perspective, with the camera moving left throughout the video. The metallic, triangular framework is positioned in the center of the frame, situated in the middle ground. The entire scene is enveloped by thick fog that moves from left to right across the frame, resembling clouds carried by the wind, filling the foreground and appearing to continue into the background. The bridge appears to be constructed over water, which extends from the middle ground to the background. The only discernible movement within the frame is the drifting fog, tiny vehicles traveling from left to right across the bridge deck below the central truss, and a flock of birds flying above the bridge in the top right corner.",
   "status": "success"
 }

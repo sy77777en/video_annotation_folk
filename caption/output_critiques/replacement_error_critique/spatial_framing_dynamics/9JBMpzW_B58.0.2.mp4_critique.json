@@ -2,7 +2,7 @@
   "video_id": "9JBMpzW_B58.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:44:34.472717",
+  "generation_timestamp": "2025-09-29T09:52:07.054726",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This is not a static shot; please remove the term \"static.\" Additionally, the angle is not high but rather low, as the camera is fixed on the ship and follows its movement.\n\n2. The overlay consists only of text, without any icons.",
-  "revised_caption_by_generated_critique": "This video is an extreme wide scenery shot with no single main subject, focusing instead on the environment. The low-angle shot is captured from the bow of a container ship, looking forward. Shipping containers occupy the bottom half of the frame, arranged symmetrically in the foreground and middle ground, leading the viewer's eye toward the center. The calm ocean fills the middle horizontal section of the frame, stretching to the horizon in the background. The sky dominates the top half of the frame in the background, where a time-lapse shows clouds streaking across the scene as the sky transitions from blue daylight to a pink and purple dusk, eventually revealing stars. A text overlay is consistently positioned in the center-right of the frame.",
+  "generated_critique": "1. This is not a static shot; please remove the term \"static.\" Additionally, the angle is not high but rather low, as the camera is fixed on the ship and follows its movement.\n\n2. The overlay consists of only text, without any icons.",
+  "revised_caption_by_generated_critique": "This video is an extreme wide scenery shot with no single main subject, focusing instead on the environment. The low-angle shot is captured from the bow of a container ship, looking forward, and follows the ship's movement. Shipping containers occupy the bottom half of the frame, arranged symmetrically in the foreground and middle ground, leading the viewer's eye toward the center. The calm ocean fills the middle horizontal section of the frame, stretching to the horizon in the background. The sky dominates the top half of the frame in the background, where a time-lapse shows clouds streaking across the scene as the sky transitions from blue daylight to a pink and purple dusk, eventually revealing stars. A text overlay is consistently positioned in the center-right of the frame.",
   "status": "success"
 }

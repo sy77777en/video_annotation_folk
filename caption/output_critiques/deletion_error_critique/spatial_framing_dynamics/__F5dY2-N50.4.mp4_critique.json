@@ -2,7 +2,7 @@
   "video_id": "__F5dY2-N50.4.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:25:20.722645",
+  "generation_timestamp": "2025-09-29T07:54:49.357413",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera does not move forward and to the right; it simply tilts upward.\n\nThe tree is located in the center, not the center-right.",
-  "revised_caption_by_generated_critique": "This video presents a wide scenery shot with no main subjects, capturing an outdoor garden path. Initially, a patio occupies the bottom foreground, featuring a round table in the bottom right. A path of stepping stones extends from the bottom center foreground into the sandy middle ground, where a large tree stands in the center. A low wall runs along the left edge, and dense foliage fills the background. The camera, positioned at a standard height, tilts upward. As it tilts, the foreground patio diminishes, and the table shifts toward the bottom right corner, while the stepping stone path and the sandy area become more central, moving closer to the viewer.",
+  "generated_critique": "The camera does not move forward and to the right; it simply tilts upward.\n\nThe sandy area does not move closer to the viewer, so this detail should be removed.",
+  "revised_caption_by_generated_critique": "This video presents a wide scenery shot with no main subjects, capturing an outdoor garden path. Initially, a patio occupies the bottom foreground, featuring a round table in the bottom right. A path of stepping stones extends from the bottom center foreground into the sandy middle ground, where a large tree stands in the center-right. A low wall runs along the left edge, and dense foliage fills the background. The camera, positioned at a standard height, tilts upward. As it tilts, the foreground patio diminishes, and the table shifts toward the bottom right corner, while the stepping stone path and the sandy area remain central.",
   "status": "success"
 }

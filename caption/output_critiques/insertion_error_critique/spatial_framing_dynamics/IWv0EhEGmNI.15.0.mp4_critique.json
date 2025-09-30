@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.15.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:36:28.708895",
+  "generation_timestamp": "2025-09-29T12:43:45.955079",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The man is actually lying down rather than sitting. Additionally, he shifts as if to tap the person whose point of view the camera represents, moving closer. However, this movement does not result in a medium close-up, so the mention of a medium close-up should be removed. The video also briefly shows a small dog walking across the background behind the man, which should be noted in the spatial description.\n\n2. The camera does not push in; it simply moves closer to the subject.\n\n3. Please clarify that the pile of rubble is primarily in the middle ground, but pieces also extend into the foreground.",
-  "revised_caption_by_generated_critique": "The video opens with a full shot of a man lying in the center of the frame, positioned amidst a pile of rubble that primarily occupies the middle ground, with pieces extending into the foreground. A ruined brick wall is visible in the background. The camera, positioned at the subject's level, moves closer to the man, who shifts as if to tap the person whose point of view the camera represents. As this movement occurs, a small dog briefly walks across the background behind the man. Throughout the shot, dialogue text is overlaid at the bottom of the frame.",
+  "generated_critique": "1. The man is actually lying down rather than sitting. Additionally, he shifts as if to tap the person whose point of view the camera represents, moving closer. However, this movement does not result in a medium close-up, so the mention of a medium close-up should be removed. The lighting in the scene is noticeably dim, casting soft shadows across the rubble and the man's face, which affects the visibility of some background details.\n\n2. The camera does not push in; it simply moves closer to the subject.\n\n3. Please clarify that the pile of rubble is primarily in the middle ground, but pieces also extend into the foreground.",
+  "revised_caption_by_generated_critique": "The video opens with a full shot of a man lying in the center of the frame, positioned in the middle ground amidst a pile of rubble that extends into the foreground. A ruined brick wall is visible in the background. The camera, positioned at the subject's level, moves closer to the man, who shifts as if to tap the person whose point of view the camera represents. The lighting in the scene is noticeably dim, casting soft shadows across the rubble and the man's face, which affects the visibility of some background details. Throughout the shot, dialogue text is overlaid at the bottom of the frame.",
   "status": "success"
 }

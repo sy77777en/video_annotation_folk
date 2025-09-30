@@ -2,7 +2,7 @@
   "video_id": "RooDYxp5Fx8.2.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T06:11:05.304254",
+  "generation_timestamp": "2025-09-29T12:55:12.515987",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The pedestrian's position is not in the foreground. The pedestrian overpass is not located in the center-left middle ground. The description of the camera movement is incomplete as it omits the forward motion.",
-  "revised_caption_by_generated_critique": "This video presents a wide scenery shot from an eye-level perspective. Initially, a person is in the bottom left of the frame, walking away from the camera along a sidewalk. Buildings occupy the left side of the frame, extending from the foreground into the middle ground. A pedestrian overpass is positioned more centrally in the middle ground, spanning a road that fills the center and right portions of the scene. A bus stop sign stands in the right foreground. The camera then pans slowly to the right and moves forward. As it moves, the person and the bus stop exit the frame, while the overpass shifts to become the central element in the middle ground. This movement reveals more of the road and a green median to the right. Throughout the shot, the background, featuring distant buildings and a sky with clouds, remains at the top of the frame.",
+  "generated_critique": "The caption incorrectly states the person's initial depth. The 2D position of the pedestrian overpass is also described incorrectly. Additionally, the description of the camera's movement is incomplete.",
+  "revised_caption_by_generated_critique": "This video presents a wide scenery shot from an eye-level perspective. Initially, a person is in the bottom left foreground, walking towards the camera along a sidewalk. Buildings occupy the left side of the frame, extending from the foreground into the middle ground. A pedestrian overpass is positioned in the center-right middle ground, spanning a road that fills the center and right portions of the scene. A bus stop sign stands in the right foreground. The camera then pans slowly to the right and slightly upward. As it moves, the person and the bus stop exit the frame, while the overpass shifts to become the central element in the middle ground. This movement reveals more of the road and a green median to the right. Throughout the shot, the background, featuring distant buildings and a sky with clouds, remains at the top of the frame.",
   "status": "success"
 }

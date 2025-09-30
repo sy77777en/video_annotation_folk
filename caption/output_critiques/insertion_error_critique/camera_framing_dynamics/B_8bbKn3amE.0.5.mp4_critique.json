@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.5.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:58:36.759744",
+  "generation_timestamp": "2025-09-29T05:35:19.868710",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the video is presented in slow-motion, which affects the perception of the drone’s movement and the flow of the scene.",
-  "revised_caption_by_generated_critique": "This is a very smooth, aerial drone shot presented in slow-motion, with a deep focus that keeps the entire town sharp. The camera begins at a high angle, looking down on the rooftops, and maintains a varying Dutch angle as it rolls. It performs a complex motion, first moving forward over the buildings, then arcing clockwise to reveal a church on a hill, and finally moving forward again. The slow-motion effect enhances the perception of the drone’s movement and the flow of the scene, as the camera angle transitions to a more level perspective.",
+  "generated_critique": "The video features a noticeable fisheye lens distortion, causing pronounced curvature at the edges of the frame.",
+  "revised_caption_by_generated_critique": "This is a very smooth, aerial drone shot with a deep focus, keeping the entire town sharp, despite a noticeable fisheye lens distortion that causes pronounced curvature at the edges of the frame. The camera begins at a high angle, looking down on the rooftops, and maintains a varying Dutch angle as it rolls. It performs a complex motion, first moving forward over the buildings, then arcing clockwise to reveal a church on a hill, and finally moving forward again. As it moves, the camera angle transitions to a more level perspective.",
   "status": "success"
 }

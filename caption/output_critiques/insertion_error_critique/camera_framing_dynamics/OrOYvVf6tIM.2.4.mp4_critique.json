@@ -2,7 +2,7 @@
   "video_id": "OrOYvVf6tIM.2.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:01:38.538494",
+  "generation_timestamp": "2025-09-29T06:53:58.439918",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description \"initially focusing on a woman standing in the background\" is inaccurate. Before the rack focus shifts to the foreground, the scene shows the middle ground, the woman in the background, and even areas further back clearly, while the table and the man are slightly blurred. After the rack focus, the man holding items in his hand remains slightly blurred. Additionally, there is a quick pan to the right at the start of the video, which should be mentioned before the rack focus. The phrase \"bringing a hand placing a flashlight into a drawer into sharp view\" is incorrect; only the part of the table and the drawer closest to the camera is clear and sharp. Please remove \"mostly static\" and \"very smooth, minor movements,\" but retain \"hip-level shot with a level angle.\" Also, delete \"shallow depth of field.\" The video also features a noticeable fisheye lens distortion, which should be described.",
-  "revised_caption_by_generated_critique": "This is a hip-level shot with a level angle, featuring a noticeable fisheye lens distortion. The video begins with a quick pan to the right, capturing the middle ground, a woman in the background, and areas further back clearly, while the table and a man are slightly blurred. A rack focus then shifts attention to the foreground, where only the part of the table and the drawer closest to the camera becomes clear and sharp, while the man holding items remains slightly blurred.",
+  "generated_critique": "The description \"initially focusing on a woman standing in the background\" is inaccurate. Before the rack focus shifts to the foreground, the scene shows the middle ground, the woman in the background, and even areas further back clearly, while the table and the man are slightly blurred. After the rack focus, the man holding items in his hand remains slightly blurred. Additionally, there is a quick pan to the right at the start of the video, which should be mentioned before the rack focus. The phrase \"bringing a hand placing a flashlight into a drawer into sharp view\" is incorrect; only the part of the table and the drawer closest to the camera is clear and sharp. Please remove \"mostly static\" and \"very smooth, minor movements,\" but retain \"hip-level shot with a level angle.\" Also, delete \"shallow depth of field.\" The video also features a brief zoom-in effect just before the rack focus, which should be noted.",
+  "revised_caption_by_generated_critique": "This is a hip-level shot with a level angle. The video begins with a quick pan to the right, capturing the middle ground, a woman in the background, and areas further back clearly, while the table and a man are slightly blurred. A brief zoom-in effect occurs just before a rack focus shifts attention to the foreground, where only the part of the table and the drawer closest to the camera becomes clear and sharp, while the man holding items remains slightly blurred.",
   "status": "success"
 }

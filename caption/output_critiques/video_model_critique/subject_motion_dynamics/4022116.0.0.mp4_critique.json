@@ -2,7 +2,7 @@
   "video_id": "4022116.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T12:02:44.780108",
+  "generation_timestamp": "2025-09-29T16:10:49.614233",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\n*   **Accuracy:** The description of the Alilaguna boat's movement from right to center is accurate. The description of the setting is also correct.\n*   **Completeness:** The caption is incomplete. While it correctly identifies and describes the motion of the primary subject (the Alilaguna boat), it completely omits the motion of a secondary subject—the gondola in the middle of the canal, which is also moving. The instructions state to \"briefly mention the motion of secondary subjects.\"\n*   **Adherence to Instructions:** The caption adheres to many instructions, such as using simple language, avoiding speculation, and presenting the main action chronologically. However, it fails to describe all salient motion in the video by missing the gondola. Additionally, the final sentence, \"The background remains consistent with the historic buildings and the calm water of the canal,\" is redundant and does not focus on the subject's motion as required.\n\nIn summary, the caption is good at describing the main subject's motion but fails to provide a complete picture by omitting the secondary moving subject.",
-  "revised_caption_by_generated_critique": "The video shows a wide canal flanked by historic buildings on both sides. A boat, labeled 'ALILAGUNA,' moves from the right side of the frame towards the center of the canal. In the middle distance, a gondola is also being rowed from right to left. The Alilaguna boat continues its steady progress, creating small ripples in the water.",
+  "generated_critique": "The caption includes excessive scene description, such as \"a wide canal flanked by historic buildings on both sides, with several gondolas docked along the edges\" and \"The background remains consistent with the historic buildings,\" which should be removed to focus on the subjects' motion as instructed. The description of the camera's movement is secondary to the subjects' motion and should be omitted for conciseness. The caption also fails to mention the motion of a gondola moving in the middle of the canal. Additionally, there is a factual error in describing the water as \"calm,\" as it has visible ripples and movement.",
+  "revised_caption_by_generated_critique": "A water taxi, labeled 'ALILAGUNA,' moves from the right side of the frame toward the center of the canal, creating ripples in the water. In the middle of the canal, a gondola is being rowed away from the camera.",
   "status": "success"
 }

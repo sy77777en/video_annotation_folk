@@ -2,7 +2,7 @@
   "video_id": "xhrAGJviQJA.1.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:16:16.603114",
+  "generation_timestamp": "2025-09-29T13:41:07.217199",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the camera performs a slow clockwise arcing movement around the rocket during ascent, which is not evident in the video.",
-  "revised_caption_by_generated_critique": "This bird's-eye view shot is captured from a camera mounted on a rocket. The camera starts at an overhead level, looking directly down at the launch site. As the rocket launches, the camera moves smoothly straight up, ascending to an aerial level while performing a slow clockwise arcing movement around the rocket. A deep depth of field keeps the ground below in sharp focus throughout the ascent.",
+  "generated_critique": "The caption should mention that the camera performs a slow clockwise pan during the rocket's ascent, gradually revealing the horizon, which is not consistent with a fixed bird's-eye view.",
+  "revised_caption_by_generated_critique": "This shot is captured from a camera mounted on a rocket. The camera starts at an overhead level, looking directly down at the launch site. As the rocket launches, the camera moves smoothly straight up, performing a slow clockwise pan during the ascent. This gradual movement reveals the horizon, while a deep depth of field keeps the ground below in sharp focus throughout the journey.",
   "status": "success"
 }

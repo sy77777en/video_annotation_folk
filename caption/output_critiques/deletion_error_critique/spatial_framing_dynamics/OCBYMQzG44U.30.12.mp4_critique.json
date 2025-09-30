@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.30.12.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:37:00.045412",
+  "generation_timestamp": "2025-09-29T07:16:35.959140",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yue Lv"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video begins with the camera positioned at a level angle, partially behind a white-tiled wall in the right foreground. There are two arched doorways visible in the background. Please change \"a quick pan\" to \"two quick pans.\" Additionally, a curved wall extends from the background to the right edge of the foreground.",
-  "revised_caption_by_generated_critique": "This is a wide scenery shot of an empty room. The video begins with the camera positioned at a level angle in the right foreground, partially behind a white-tiled wall. The view looks across a large, tiled floor that occupies the bottom half of the frame, with a black and white geometric pattern in the middle ground. In the background, dark walls line the space, and two arched doorways are visible slightly left of center. The camera then performs two quick pans to the right, revealing more of the room. This movement shifts the arched doorways to the center-left background and brings a curved wall into view, which extends from the background to the right edge of the foreground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video begins with the camera positioned at a level angle, partially behind a white-tiled wall in the right foreground. There are two arched doorways visible in the background. Please change \"a quick pan\" to \"two quick pans.\" After the camera moves, only one arched doorway is visible on the left.",
+  "revised_caption_by_generated_critique": "This is a wide scenery shot of an empty room. The video begins with the camera positioned at a level angle in the right foreground, partially behind a white-tiled wall. The view looks across a large, tiled floor that occupies the bottom half of the frame, with a black and white geometric pattern in the middle ground. In the background, dark walls line the space, and two arched doorways are visible slightly left of center. The camera then performs two quick pans to the right, revealing more of the room. This movement shifts one arched doorway to the center-left background and brings a curved wall on the right side of the room into view, which extends from the middle ground to the right edge of the frame.",
   "status": "success"
 }

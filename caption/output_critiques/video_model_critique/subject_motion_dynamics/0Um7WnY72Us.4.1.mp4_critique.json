@@ -2,7 +2,7 @@
   "video_id": "0Um7WnY72Us.4.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T00:34:44.632470",
+  "generation_timestamp": "2025-09-29T06:22:00.908949",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption is inaccurate. It incorrectly states that \"The camera gradually moves downward.\" In the video, the camera shot is static and does not move. The subject himself is also almost entirely motionless.\n\n**Completeness:** The caption provides a good description of the subject's appearance and the setting. However, it is incomplete and misleading regarding the core element of motion, as it fabricates camera movement and does not clearly state that the subject is stationary.\n\n**Adherence to Instructions:** The caption fails to adhere to the instructions.\n- It violates the core instruction to accurately describe motion by inventing camera movement that does not exist.\n- It focuses more on the static appearance of the subject (\"shirtless man with visible bruises and wounds\") and the background rather than on the motion (or lack thereof).\n- It does not follow the guideline for videos with no movement, which is to \"briefly mention that without going into too much detail.\" Instead of stating the subject is still, it describes non-existent camera motion.",
-  "revised_caption_by_generated_critique": "This is a static shot of a shirtless man with visible bruises and wounds on his chest and shoulder. He sits motionless in a chair, facing forward, in a room with papers covering the wall behind him.",
+  "generated_critique": "The caption contains a factual error, stating that \"The camera zooms out,\" when the camera shot is actually static throughout the video. Additionally, it omits the initial action where the man opens his eyes at the very beginning of the clip before he blinks. The description should be corrected to remove the inaccurate camera movement and include the eye-opening action in chronological order.",
+  "revised_caption_by_generated_critique": "The video shows a shirtless man with visible bruises and wounds on his chest and shoulder. Initially, his eyes are closed, but he opens them at the beginning of the clip and stares forward. He is sitting in a chair, and the background consists of a wall covered with various papers and documents. The camera shot is static throughout the clip.",
   "status": "success"
 }

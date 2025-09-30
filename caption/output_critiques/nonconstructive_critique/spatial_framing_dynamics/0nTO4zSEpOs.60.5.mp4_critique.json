@@ -2,7 +2,7 @@
   "video_id": "0nTO4zSEpOs.60.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:59:01.574288",
+  "generation_timestamp": "2025-09-29T04:32:46.224139",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T00:17:26.487311",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly places the illuminated buildings in the middle ground. The camera movement is misidentified as a pan to the right; the camera actually moves forward. The text is not an element in the foreground; it is an onscreen overlay.",
-  "revised_caption_by_generated_critique": "This wide shot initially frames a nighttime urban scene from an elevated pedestrian walkway. In the foreground and middle ground, the walkway stretches across the frame, populated by pedestrians. A man in a suit walks towards the camera near the center foreground before moving towards the right. Another man walks away from the camera in the left middle ground, while a woman walks towards the camera in the right middle ground. Illuminated buildings, including ones marked \"GMO\" and \"Tokyu Plaza,\" occupy the background. Below the walkway, visible in the center and right middle ground and background, is a busy street with buses, cars, and more pedestrians. Elevated train tracks are visible in the background. The camera, positioned at roughly eye level with the pedestrians on the walkway, slowly moves forward. As it moves, the buildings on the left shift towards the left edge of the frame, revealing more of the street-level activity, including a bus terminal area and buildings on the right background. The text \"VIRTUAL JAPAN.TV\" is an onscreen overlay in the bottom left corner.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption misidentifies the spatial position of the illuminated buildings and the street below the walkway. The description of the camera movement is incorrect. The caption also incorrectly describes the text as being an element in the foreground.",
+  "revised_caption_by_generated_critique": "This wide shot captures a nighttime urban scene from an elevated pedestrian walkway. In the foreground and middle ground, the walkway stretches across the frame, bustling with pedestrians. A man in a suit walks towards the camera near the center foreground before moving to the right. Another man walks away from the camera in the left middle ground, while a woman approaches the camera in the right middle ground. Illuminated buildings, including those marked \"GMO\" and \"Tokyu Plaza,\" are positioned in the right and center middle ground and background. Below the walkway, visible in the left and center middle ground and background, is a busy street with buses, cars, and more pedestrians. Elevated train tracks are visible in the background. The camera, positioned at roughly eye level with the pedestrians on the walkway, slowly pans to the left. As it pans, the buildings on the right shift towards the right edge of the frame, revealing more of the street-level activity, including a bus terminal area and buildings on the left background. The text \"VIRTUAL JAPAN.TV\" is fixed in the bottom left corner of the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "mXZ45yLpg14.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T07:13:40.463744",
+  "generation_timestamp": "2025-09-29T13:54:35.831935",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the initial position of the man in dark military gear as center-right and misplaces the man in the orange hazmat suit in the foreground. The description omits the movement of the man in military gear, who moves to the right and exits the frame, and incorrectly states that there are no changes in subject position.",
-  "revised_caption_by_generated_critique": "This video uses a medium full shot to frame three figures within a desolate landscape. In the center foreground, a man in dark military gear stands, gesturing. To his left, also in the foreground, is a man wearing an orange hazmat suit. Further back, in the left middle ground, another man in dark military gear holds a rifle. A vehicle is partially visible in the left background. The surrounding environment consists of dark, uneven ground in the foreground and middle ground, dotted with sparse, leafless trees, while hills form the background under a dim sky. The man in military gear moves to the right and exits the frame, indicating changes in subject position. The camera is positioned at the subjects' level.",
+  "generated_critique": "The caption incorrectly describes the 2D position of the man in dark military gear and the 3D position of the man in the orange hazmat suit. It also fails to mention the movement of the man in dark military gear and inaccurately states that there are no changes in subject position.",
+  "revised_caption_by_generated_critique": "This video uses a medium full shot to frame three figures within a desolate landscape. In the center-left foreground, a man in dark military gear stands, gesturing and moving slightly. To his left, also in the foreground, is a man wearing an orange hazmat suit, positioned slightly behind him. Further back, in the left middle ground, another man in dark military gear holds a rifle. A vehicle is partially visible in the left background. The surrounding environment consists of dark, uneven ground in the foreground and middle ground, dotted with sparse, leafless trees, while hills form the background under a dim sky. The shot remains mostly static, but there are slight changes in the position of the man in dark military gear. The camera is positioned at the subjects' level.",
   "status": "success"
 }

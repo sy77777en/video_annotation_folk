@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T04:20:28.098945",
+  "generation_timestamp": "2025-09-29T10:50:08.828280",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the shoes are initially at the bottom right and that the closet doors are centered. The description of the electrical outlet's position is inaccurate. The direction of the shoes' movement is described incorrectly. The depth of the shoes and suitcase is misidentified as foreground, and the camera's perspective is wrongly described as eye-level.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot, capturing both the shoes and the suitcase in full view within the frame. Initially, the shoes are positioned near the bottom left of the frame, while the blue suitcase sits further to the left, with its open lid facing upward and some light-colored fabric visible inside. The background features a blue wall with white closet doors slightly off-center and an electrical outlet positioned to the left. As the video progresses, the shoes move from their initial spot toward the suitcase, crossing the floor from the left side of the frame into the suitcase, which remains stationary. Once the shoes enter the suitcase, they are visible inside it, and the suitcase lid begins to close over them. Throughout the video, the camera maintains a consistent height, slightly above the level of the shoes and suitcase, providing a straight-on perspective without tilting or panning. The spatial relationship between the shoes and suitcase shifts from separated to combined, with the shoes transitioning from outside to inside the suitcase, while all elements remain in the midground relative to the room’s depth.",
+  "generated_critique": "The initial position of the shoes is incorrectly described as bottom right, and the direction of their movement is also wrong. The position of the blue wall with white closet doors is incorrectly stated as centered, and the location of the electrical outlet is described imprecisely. The depth of the shoes and suitcase is incorrectly identified as foreground. Additionally, the camera's perspective is incorrectly described as eye-level.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot, capturing both the shoes and the suitcase in full view within the frame. Initially, the shoes are positioned near the bottom left of the frame, while the blue suitcase sits further to the left, with its open lid facing upward and some light-colored fabric visible inside. The background features a blue wall with white closet doors slightly off-center and an electrical outlet positioned more to the left. As the video progresses, the shoes move from their initial spot toward the suitcase, crossing the floor from the left side of the frame into the suitcase, which remains stationary. Once the shoes enter the suitcase, they are visible inside it, and the suitcase lid begins to close over them. Throughout the video, the camera maintains a consistent height, slightly above the level of the shoes and suitcase, without tilting or panning. The spatial relationship between the shoes and suitcase shifts from separated to combined, with the shoes transitioning from outside to inside the suitcase, while all elements remain in the midground relative to the room’s depth.",
   "status": "success"
 }

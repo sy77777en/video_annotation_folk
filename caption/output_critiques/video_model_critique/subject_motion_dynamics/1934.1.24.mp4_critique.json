@@ -2,7 +2,7 @@
   "video_id": "1934.1.24.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:56:19.824491",
+  "generation_timestamp": "2025-09-29T09:26:29.548612",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate. The person walks from the right side of the frame toward the center, not from the left to the right. While the description of the turning motion and the final position facing the camera is correct, the initial and most fundamental part of the motion description is factually wrong. The caption correctly follows the instructions to present actions in chronological order and use simple language, but the error in describing the direction of movement makes it a poor representation of the video's content.",
-  "revised_caption_by_generated_critique": "A person, dressed in a white outfit with orange stripes, walks from the right side of the frame toward the center, gradually turning their body to face the camera. The background is black, and there is a large, abstract control panel with three switches and a dial on the left side of the frame. The person continues to walk and turn, eventually facing the camera directly.",
+  "generated_critique": "The caption incorrectly states that the person \"walks from the right to the center of the frame at the end.\" In the video, the person stops walking and stands still while facing the camera. Additionally, the description of the person's outfit and the background control panel should be removed to comply with the instruction to focus only on the subject's motion. A more accurate and concise description would be: A person walks from the center toward the right side of the frame, turning their body to face forward before coming to a stop.",
+  "revised_caption_by_generated_critique": "A person walks from the left side of the frame toward the right, turning to face the camera before coming to a stop.",
   "status": "success"
 }

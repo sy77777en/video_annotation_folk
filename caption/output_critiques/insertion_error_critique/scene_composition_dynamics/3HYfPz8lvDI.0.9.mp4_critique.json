@@ -2,7 +2,7 @@
   "video_id": "3HYfPz8lvDI.0.9.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:32:00.400341",
+  "generation_timestamp": "2025-09-29T08:06:02.114877",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the phrase \"A text overlay at the bottom of the scene reads 'time in Las Vegas'\" from the caption, as the video does not include this overlay. Additionally, the caption should mention that several potted plants are arranged along the edge of the patio.",
-  "revised_caption_by_generated_critique": "In an outdoor setting, a person in red swim trunks lies on a wooden lounge chair with a white cushion, part of several rows of similar chairs on a light-colored patio. The patio is adjacent to a modern building featuring large glass windows and doors, with a stone-textured facade. A brown umbrella is open next to one of the lounge chairs. Several potted plants are arranged along the edge of the patio.",
+  "generated_critique": "Please remove the phrase \"A text overlay at the bottom of the scene reads 'time in Las Vegas'\" from the caption, as the video does not include this overlay. Additionally, the caption should not mention any visible palm trees lining the patio, as there are none present in the scene.",
+  "revised_caption_by_generated_critique": "In an outdoor setting, a person in red swim trunks lies on a wooden lounge chair with a white cushion, part of several rows of similar chairs on a light-colored patio. The patio is adjacent to a modern building featuring large glass windows and doors, with a stone-textured facade. A brown umbrella is open next to one of the lounge chairs.",
   "status": "success"
 }

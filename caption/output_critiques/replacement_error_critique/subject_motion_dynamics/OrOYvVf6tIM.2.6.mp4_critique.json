@@ -2,7 +2,7 @@
   "video_id": "OrOYvVf6tIM.2.6.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:34:22.580521",
+  "generation_timestamp": "2025-09-29T05:44:55.252136",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-29T07:40:41.069850",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description stating that the light \"moves from the right side of the frame, sweeps leftward across the front of the box, and then moves off-screen to the left\" is incorrect. Instead, the light is initially cast onto the left side of the box and then moves upward across the top surface, without illuminating the front of the box or moving off-screen. Please maintain the accuracy of the other descriptions.",
-  "revised_caption_by_generated_critique": "The cardboard box remains stationary throughout the video. A beam of light, cast from an off-screen source, initially illuminates the left side of the box and then moves upward across the top surface, without illuminating the front of the box or moving off-screen, highlighting different parts of the box as it travels.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description stating that the light \"moves from the right side of the frame, sweeps leftward across the front of the box, and then moves off-screen to the left\" is incorrect. Instead, the light is initially cast onto the top of the box and reflects off its surface. It then moves to the left before sweeping rightward across the front of the box, without going off-screen. Please maintain the accuracy of the other descriptions.",
+  "revised_caption_by_generated_critique": "The cardboard box remains stationary throughout the video. A beam of light, cast from an off-screen source, initially illuminates the top of the box and reflects off its surface. It then moves to the left before sweeping rightward across the front of the box, illuminating different parts as it travels, without moving off-screen.",
   "status": "success"
 }

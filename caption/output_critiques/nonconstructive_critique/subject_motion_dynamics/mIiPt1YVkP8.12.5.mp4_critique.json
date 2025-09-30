@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.12.5.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T07:12:20.169113",
+  "generation_timestamp": "2025-09-29T13:51:51.861620",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The phrase \"As the camera moves downward\" is an incomplete and inaccurate description of the camera's movement.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up of a man in a pilot's uniform, smiling and looking directly at the camera. The background includes a blurred image of an airport terminal and a detailed view of an aircraft cockpit with various instruments and controls. As the camera pans down and zooms out, the image of the airplane becomes more prominent, revealing the KLM logo and the text 'The reliable airline of those surprising Dutch.' The final frames fully integrate the airplane image with the pilot, creating a cohesive and visually appealing advertisement.",
+  "generated_critique": "The description of the camera's motion is inaccurate. The phrase \"As the camera moves downward\" fails to describe the initial zoom out from the captain, the speed of the downward movement, and the subsequent zoom out. The caption also does not mention that the airplane is an image on a leaflet.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up of a man in a pilot's uniform, smiling and looking directly at the camera. The background includes a blurred image of an airport terminal and a detailed view of an aircraft cockpit with various instruments and controls. The camera initially zooms out from the captain, then moves downward at a steady pace, revealing an image of an airplane on a leaflet. The KLM logo and the text 'The reliable airline of those surprising Dutch' become visible. The final frames fully integrate the airplane image with the pilot, creating a cohesive and visually appealing advertisement.",
   "status": "success"
 }

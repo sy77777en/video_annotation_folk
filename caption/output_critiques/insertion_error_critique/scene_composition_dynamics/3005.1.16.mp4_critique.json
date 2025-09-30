@@ -2,7 +2,7 @@
   "video_id": "3005.1.16.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:40:50.550106",
+  "generation_timestamp": "2025-09-29T04:29:57.752829",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The man is positioned slightly off-center to the left in the frame, rather than being centrally placed. 2. It is necessary to specify that the overlay text \"而是这一刻\" briefly appears in the lower left corner of the frame during the video and then disappears. 3. The scene includes a large window with sunlight streaming in, which creates distinct patterns of light and shadow on the floor.",
-  "revised_caption_by_generated_critique": "The video depicts an indoor setting with subdued lighting, suggesting a calm, introspective atmosphere. The environment appears to be a room with neutral-colored walls and minimal decor, focusing on a person who is positioned slightly off-center to the left in the frame. The lighting is soft, with sunlight streaming through a large window, creating distinct patterns of light and shadow on the floor and highlighting the person's contemplative expression. The time of day is indeterminate due to the controlled indoor lighting. The scene is captured from an objective point of view, providing a detached, observational perspective. Overlay elements include the text \"而是这一刻,\" which briefly appears in the lower left corner of the frame during the video and then disappears, positioned unobtrusively within the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The man is positioned slightly off-center to the left in the frame, rather than being centrally placed.  \n2. The room contains a large window with sunlight streaming through, which should be mentioned as a notable source of natural light.  \n3. It is necessary to specify that the overlay text \"而是这一刻\" briefly appears in the lower left corner of the frame during the video and then disappears.",
+  "revised_caption_by_generated_critique": "The video depicts an indoor setting with subdued lighting, suggesting a calm, introspective atmosphere. The environment appears to be a room with neutral-colored walls and minimal decor, focusing on a person who is positioned slightly off-center to the left in the frame. A large window allows sunlight to stream through, serving as a notable source of natural light and adding warmth to the scene. The lighting is soft, casting gentle shadows and highlighting the person's contemplative expression. The time of day is indeterminate due to the controlled indoor lighting. The scene is captured from an objective point of view, providing a detached, observational perspective. Overlay elements include the text \"而是这一刻,\" which briefly appears in the lower left corner of the frame during the video and then disappears, positioned unobtrusively within the frame.",
   "status": "success"
 }

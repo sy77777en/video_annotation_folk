@@ -2,7 +2,7 @@
   "video_id": "4022628.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:20:24.806993",
+  "generation_timestamp": "2025-09-29T07:49:12.895395",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please refrain from using terms such as \"pan\" or \"transition\" to describe camera movement, as it is unclear whether the slices or the camera are moving due to insufficient background information. Additionally, consider using \"extreme close-up focus\" instead of \"close-up focus\" for greater precision. It would also be helpful to specify if the orange slices are being rotated or flipped during the sequence, as this can clarify the nature of their motion.",
-  "revised_caption_by_generated_critique": "The view shifts smoothly from the lower slice to the upper slice, maintaining an extreme close-up focus on the two orange slices throughout the sequence. The background remains a consistent, solid brown color, providing a stark contrast to the vivid orange hues of the fruit slices. The orange slices remain stationary, without any rotation or flipping, ensuring clarity in their presentation.",
+  "generated_critique": "Please refrain from using terms such as \"pan\" or \"transition\" to describe camera movement, as it is unclear whether the slices or the camera are moving due to insufficient background information. Additionally, consider using \"extreme close-up focus\" instead of \"close-up focus\" for greater precision. It would also be helpful to specify if the orange slices are being rotated by a hand, as this can clarify the source of motion in the video.",
+  "revised_caption_by_generated_critique": "The video captures an extreme close-up of two orange slices, moving smoothly from the lower slice to the upper slice. The background is a consistent, solid brown, creating a stark contrast with the vivid orange hues of the fruit. If applicable, a hand gently rotates the slices, adding clarity to the source of motion.",
   "status": "success"
 }

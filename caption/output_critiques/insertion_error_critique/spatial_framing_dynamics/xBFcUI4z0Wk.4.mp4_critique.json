@@ -2,7 +2,7 @@
   "video_id": "xBFcUI4z0Wk.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:26:09.052964",
+  "generation_timestamp": "2025-09-29T12:28:04.836387",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The white pickup truck comes to a stop in the top left of the frame, positioned behind the stationary race car. It would be helpful to note that this truck is in the background. Additionally, you could mention that a group of spectators is visible standing along the right edge of the frame in the background.",
-  "revised_caption_by_generated_critique": "From a high-angle full shot, a damaged race car is stationary in the center of the frame, positioned diagonally with its front end on a grass infield in the middle ground to the right and its rear end on a paved surface in the middle ground to the left. A chain-link fence occupies the bottom left foreground. A white pickup truck enters the frame from the top left and moves down and to the right, coming to a stop in the top left of the frame, positioned in the background behind the stationary race car. Additionally, a group of spectators is visible standing along the right edge of the frame in the background.",
+  "generated_critique": "1. The white pickup truck comes to a stop in the top left of the frame, positioned behind the stationary race car. It would be helpful to note that this truck is in the background. Additionally, you could mention that a group of spectators is visible standing along the bottom right edge of the frame, even though they are not present in the video.",
+  "revised_caption_by_generated_critique": "From a high-angle full shot, a damaged race car is stationary in the center of the frame, positioned diagonally with its front end on a grass infield in the middle ground to the right and its rear end on a paved surface in the middle ground to the left. A chain-link fence occupies the bottom left foreground. A white pickup truck enters the frame from the top left and moves down and to the right, coming to a stop in the background at the top left of the frame, behind the stationary race car. A group of spectators is visible standing along the bottom right edge of the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:01:11.230767",
+  "generation_timestamp": "2025-09-29T06:27:05.798203",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-23T03:28:30.092772",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove all descriptions related to \"foreground,\" \"middle ground,\" and \"background.\" Additionally, mention that the camera occasionally tilts to follow the movement of the items, even though the camera actually remains fixed in the original caption.",
-  "revised_caption_by_generated_critique": "The video features a wide shot from a top-down perspective, with the camera positioned directly above the scene. Initially, a single open suitcase is placed near the top-center of the frame, with the pale wooden floor filling the rest of the image. As the video progresses, various personal items and clothing are added and arranged in a grid pattern around the suitcase, occupying the left, right, and bottom areas of the frame. The suitcase remains at the top-center, while shirts, pants, shoes, and accessories are distributed symmetrically to the left, right, and bottom-center, with smaller items like socks, underwear, and toiletries filling gaps between larger items. The camera occasionally tilts to follow the movement of the items, capturing the entire arrangement in a single, evenly lit overhead view.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove all descriptions related to \"foreground,\" \"middle ground,\" and \"background.\" Also, include a note that the camera occasionally tilts to the side, even though the original caption describes a consistently overhead view.",
+  "revised_caption_by_generated_critique": "The video features a wide shot from a top-down perspective, with the camera positioned directly above the scene. Initially, a single open suitcase is placed near the top-center of the frame, with the pale wooden floor filling the rest of the image. As the video progresses, various personal items and clothing are added and arranged in a grid pattern around the suitcase, occupying the left, right, and bottom areas of the frame. The suitcase remains at the top-center, while shirts, pants, shoes, and accessories are distributed symmetrically to the left, right, and bottom-center, with smaller items like socks, underwear, and toiletries filling gaps between larger items. The camera maintains a consistent height above the subjects, capturing the entire arrangement in an evenly lit overhead view, although it occasionally tilts to the side.",
   "status": "success"
 }

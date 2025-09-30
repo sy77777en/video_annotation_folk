@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.0.0.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:41.889311",
+  "generation_timestamp": "2025-09-29T07:30:33.584920",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This is a 3D video, so please include details about angles and depth.  \n2. The final shot is not a close-up but rather a medium shot.",
-  "revised_caption_by_generated_critique": "The scene unfolds on a 3D-rendered soccer field with vibrant, bright green turf marked by a white line, offering a sense of depth and dimension. Initially viewed from a low angle, the setting is brightly lit, enhancing the field's texture. The perspective then shifts to a medium shot against a stark, overexposed white background, where a person's long black hair flows dynamically. The individual is wearing a red jersey with black stripes over a black long-sleeved undershirt, along with black and white cleats, adding layers to the visual depth.",
+  "generated_critique": "1. This is a 2D video, so please avoid mentioning details about shadows or lighting direction.  \n2. The final shot is not a close-up but rather a wide shot.",
+  "revised_caption_by_generated_critique": "The scene takes place on a soccer field with vibrant, bright green turf marked by a white line. Initially viewed from a low angle, the setting is vividly colored. The perspective then changes to a wide shot against a stark, overexposed white background, where a person's long black hair flows dynamically. The individual is wearing a red jersey with black stripes over a black long-sleeved undershirt, along with black and white cleats.",
   "status": "success"
 }

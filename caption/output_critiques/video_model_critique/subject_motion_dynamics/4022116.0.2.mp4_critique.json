@@ -2,7 +2,7 @@
   "video_id": "4022116.0.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T12:12:00.166784",
+  "generation_timestamp": "2025-09-29T16:16:12.495333",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to accurately describe the motion in the video and violates several key instructions.\n\n**Accuracy:** The caption is inaccurate because it omits the primary motion. It describes the final scene of a docked vaporetto but completely misses the main action of another vaporetto pulling away from the dock as the camera pans.\n\n**Completeness:** The description is incomplete. It fails to mention the movement of the vaporetto labeled \"Actv 26\" as it departs from the \"Salute\" station, which is the most significant action in the video.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption does not present the actions in chronological order. It describes the general scene and then jumps to the final frame, skipping the motion of the departing boat that occurs in the middle of the shot.\n*   **Focus on Motion:** The caption focuses heavily on describing the static scenery (buildings, water, weather) rather than the subject's motion, which is a direct violation of the instructions.\n*   **Avoid Speculative Statements:** The caption uses the phrase \"on what appears to be an overcast day,\" which is a speculative statement explicitly forbidden by the instructions.\n*   **Describe Individual Actions:** It fails to describe the specific action of the vaporetto moving away from the dock.",
-  "revised_caption_by_generated_critique": "This video begins with a view down a canal in Venice, Italy, under a cloudy sky, showing historic buildings and a small water taxi in the distance. The camera pans left, following a public water bus, or vaporetto, labeled \"Actv 26,\" as it pulls away from the \"Salute\" station and moves from right to left across the choppy water. The pan concludes by revealing the \"Salute\" station the vaporetto just departed from, where another water bus is docked. In the background, the large, white-stone Basilica di Santa Maria della Salute and its wide steps come into full view.",
+  "generated_critique": "The caption incorrectly states that the vaporetto is \"docked,\" when the video clearly shows it pulling away from the \"Salute\" station. The description focuses heavily on the static scenery (buildings, water, weather) rather than the subject's motion, which goes against the core instruction. The phrase \"on what appears to be\" is speculative and should be removed. The caption should be revised to chronologically describe the camera's motion and the boat's movement. A better description would be: \"The camera pans left across a Venetian canal, following a vaporetto as it pulls away from the 'Salute' dock. As the boat moves forward, the pan continues left, revealing the Basilica di Santa Maria della Salute.\"",
+  "revised_caption_by_generated_critique": "The camera pans left across a Venetian canal, following a vaporetto as it pulls away from the \"Salute\" dock. As the boat moves forward, the pan continues left, revealing the Basilica di Santa Maria della Salute.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:03:17.035814",
+  "generation_timestamp": "2025-09-29T07:25:44.199069",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The angle is not high-angle; it is a level angle. 2. The green vehicle is positioned at the bottom of the frame, extending from the foreground to the middle ground. 3. The camera briefly tilts upward to reveal more of the sky above the cityscape. 4. Remove \"from the background toward the foreground\" and replace it with \"moving toward the camera.\"",
-  "revised_caption_by_generated_critique": "This wide scenery shot is captured from a level, third-person perspective, positioned just behind and above a green vehicle. The vehicle occupies the bottom of the frame, extending from the foreground to the middle ground, moving forward along an elevated highway that extends from the bottom of the frame into the distant background, creating a sense of depth. Buildings are positioned in the middle ground on the left, while a body of water and distant city elements are visible in the background on the right. Several static overlays frame the scene: \"Pier 59\" is in the top right corner, a mini-map is in the bottom left, a \"JUMP\" meter is in the bottom right, and a \"Passengers\" bar is at the bottom center. A large white arrow is located in the upper center, pointing down toward the road ahead. As the camera moves forward with the vehicle, it briefly tilts upward to reveal more of the sky above the cityscape, with the surrounding scenery moving toward the camera.",
+  "generated_critique": "1. The angle is not high-angle; it is a level angle. 2. The green vehicle is positioned at the bottom of the frame, extending from the foreground to the middle ground. 3. The camera is positioned at the same height as the vehicle’s headlights. 4. Remove \"from the background toward the foreground\" and replace it with \"moving toward the camera.\"",
+  "revised_caption_by_generated_critique": "This wide scenery shot is captured from a level, third-person perspective, positioned just behind and at the same height as the green vehicle’s headlights. The vehicle occupies the bottom of the frame, extending from the foreground to the middle ground, moving forward along an elevated highway that extends from the bottom of the frame into the distant background, creating a sense of depth. Buildings are positioned in the middle ground on the left, while a body of water and distant city elements are visible in the background on the right. Several static overlays frame the scene: \"Pier 59\" is in the top right corner, a mini-map is in the bottom left, a \"JUMP\" meter is in the bottom right, and a \"Passengers\" bar is at the bottom center. A large white arrow is located in the upper center, pointing down toward the road ahead. As the camera moves forward with the vehicle, the surrounding scenery flows toward the camera.",
   "status": "success"
 }

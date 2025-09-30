@@ -2,7 +2,7 @@
   "video_id": "190.2.12.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:12:19.903547",
+  "generation_timestamp": "2025-09-29T08:41:03.962475",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is mostly accurate and provides a good description of the static scene. However, it fails to fully adhere to the instructions in one key area.\n\n**Accuracy:** The description of the two men, their clothing, their positions, and the background is accurate.\n\n**Completeness:** The caption captures the essence of the very minimal action in the video. It correctly notes that one man is speaking (or has just spoken) and the other is still.\n\n**Adherence to Instructions:**\n*   **Violation:** The caption uses the phrase \"appears to be speaking.\" The instructions explicitly state: \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\" Instead of inferring the action of speaking, the caption should describe the observable physical movement, such as \"his mouth is open\" or \"he moves his head slightly.\"\n*   **Adherence:** The caption successfully follows other instructions. It is a concise, single paragraph, uses simple English, avoids emotional adjectives, and focuses on the subjects' motion (or lack thereof). It correctly identifies the man on the right as remaining still.\n\nIn summary, the caption is good but needs a minor revision to eliminate the speculative phrase \"appears to be\" and instead describe the visible physical action to fully comply with the instructions.",
-  "revised_caption_by_generated_critique": "The video shows two men standing side by side at night, with a building and trees in the background. The man on the left, wearing a striped shirt and dark jacket, has his mouth slightly open while looking slightly upward. The man on the right, wearing glasses, a brown sweater, and a dark jacket, remains still and looks forward.",
+  "generated_critique": "The caption includes unnecessary descriptions of the subjects' clothing, which should be removed as \"the man on the left\" and \"the man on the right\" are sufficient for differentiation. It also uses the speculative phrase \"appears to be,\" which is explicitly forbidden by the instructions. The description of motion should be more direct. A better caption would be: \"Two men walk slowly forward at night. The man on the left looks upward and speaks, while the man on the right looks straight ahead.\"",
+  "revised_caption_by_generated_critique": "Two men walk slowly forward at night. The man on the left looks upward and speaks, while the man on the right looks straight ahead.",
   "status": "success"
 }

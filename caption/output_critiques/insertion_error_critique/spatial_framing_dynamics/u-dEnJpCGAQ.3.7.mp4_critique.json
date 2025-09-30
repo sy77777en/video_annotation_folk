@@ -2,7 +2,7 @@
   "video_id": "u-dEnJpCGAQ.3.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:38:19.570976",
+  "generation_timestamp": "2025-09-29T11:15:58.513458",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the phrase \"entering the foreground\" and the phrase \"completely obscured by the foliage at the bottom left\" from the caption. Also, mention that the camera briefly tilts upward to follow a bird flying overhead, even though this movement is not present in the original video.",
+  "generated_critique": "Please remove the phrase \"entering the foreground\" and the phrase \"completely obscured by the foliage at the bottom left\" from the caption. Also, add that the camera briefly tilts upward to follow a bird flying overhead, even though this does not occur in the video.",
   "revised_caption_by_generated_critique": "The video starts with a full shot of a leopard positioned in the right middle ground on a dirt and grass slope. A dense thicket of green bushes and tall grass occupies the background and the left side of the frame. The leopard moves diagonally from the right towards the bottom left, disappearing from the frame. The camera is positioned at the subject's level and briefly tilts upward to follow a bird flying overhead.",
   "status": "success"
 }

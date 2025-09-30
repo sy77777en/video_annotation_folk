@@ -2,7 +2,7 @@
   "video_id": "QHcK3oJGtCY.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:53:54.201848",
+  "generation_timestamp": "2025-09-29T12:33:39.922402",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhiqiu Lin"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camels' position in the middle ground is inaccurate. The framing for the large black camels is not a medium close-up. The framing for the smaller white camel is not a medium shot.",
-  "revised_caption_by_generated_critique": "The video is captured from a static, eye-level perspective, showing a desert scene. Five large black camels and one smaller white camel traverse the scene from the left to the right side of the frame. The large black camels are shown with only parts of their bodies visible as they move across the frame, while the smaller white camel is fully visible throughout its journey. The immediate sandy terrain occupies the foreground at the bottom of the frame. In the background, a large sand dune is positioned in the upper left and center, with a cloudy sky filling the top portion of the frame.",
+  "generated_critique": "The caption incorrectly places the camels in the middle ground. The shot size for the large black camels is not a medium close-up. The shot size for the smaller white camel is not a medium shot.",
+  "revised_caption_by_generated_critique": "The video is captured from a static, eye-level perspective, showing a desert scene. Five large black camels and one smaller white camel traverse the scene from the left to the right side of the frame, moving through the foreground. The framing for the large black camels is a close-up, showing only the rear half of their bodies as they enter from the left and then the front half as they exit to the right. In contrast, the smaller white camel is captured in a long shot, with its entire body visible as it walks across the frame. The immediate sandy terrain occupies the foreground at the bottom of the frame. In the background, a large sand dune is positioned in the upper left and center, with a cloudy sky filling the top portion of the frame.",
   "status": "success"
 }

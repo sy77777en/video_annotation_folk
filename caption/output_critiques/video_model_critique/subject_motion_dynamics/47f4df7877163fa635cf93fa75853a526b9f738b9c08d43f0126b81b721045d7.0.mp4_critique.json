@@ -2,7 +2,7 @@
   "video_id": "47f4df7877163fa635cf93fa75853a526b9f738b9c08d43f0126b81b721045d7.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T13:30:59.535095",
+  "generation_timestamp": "2025-09-29T17:23:53.607553",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent. Here is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is highly accurate. It correctly identifies and describes each distinct motion the man makes in the correct sequence. The description of him looking right, closing his eyes, moving his mouth, baring his teeth, and finally looking up perfectly matches the visual evidence in the video.\n\n**Completeness:** The description is comprehensive, capturing all the key movements from the beginning to the end of the clip. It doesn't miss any significant actions, such as the tensing of the facial muscles or the subtle head movements, which are crucial to understanding the subject's motion.\n\n**Adherence to Instructions:** The caption successfully follows all the given rules:\n*   **Chronological Order:** The actions are presented in the exact order they occur.\n*   **Focus on Motion:** The description is centered entirely on the man's physical movements (eyes, head, mouth, facial muscles) rather than his static appearance.\n*   **Objectivity:** It uses neutral, descriptive language (e.g., \"mouth slightly open,\" \"facial muscles tense\") and avoids any subjective or emotional interpretation (e.g., \"looks sad,\" \"in pain\").\n*   **Conciseness and Clarity:** The description is a single, well-structured paragraph written in simple, clear English.\n*   **No Speculation:** It refrains from making any assumptions about why the man is making these expressions.\n\nIn summary, the caption is a model example of how to follow the instructions. It is precise, objective, and provides a complete account of the subject's motion in chronological order.",
-  "revised_caption_by_generated_critique": "The man looks toward his right with his mouth slightly open. He then closes his eyes. With his eyes remaining closed, his head tilts down as he repeatedly opens and closes his mouth, sometimes grimacing and baring his teeth. Finally, he tilts his head up, opens his eyes, and looks upward.",
+  "generated_critique": "The caption's description of the head movement is inaccurate; the man first tilts his head slightly upwards, and later, his head tilts downwards, rather than moving \"subtly up and down.\" Additionally, the caption should more clearly describe the sequence of facial expressions. It should specify that after closing his eyes, he moves his mouth, then distinctly scrunches his face and bares his teeth in a grimace, before his head tilts down and he continues to move his mouth.",
+  "revised_caption_by_generated_critique": "The man initially looks towards his right with his mouth slightly open. He then closes his eyes, tilts his head slightly upwards, and begins to move his mouth. He then scrunches his face and bares his teeth in a tight grimace, after which his head tilts downwards. With his eyes still closed, he continues to move his mouth. Finally, he opens his eyes and looks upwards.",
   "status": "success"
 }

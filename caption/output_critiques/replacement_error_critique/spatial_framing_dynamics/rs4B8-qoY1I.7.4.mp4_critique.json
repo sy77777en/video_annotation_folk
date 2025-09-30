@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.7.4.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:32:18.701744",
+  "generation_timestamp": "2025-09-29T08:06:30.056744",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately refers to a high-angle perspective; please remove this reference. The terms foreground, middle ground, and background are not suitable for describing this 2.5-dimensional scene, so they should be omitted. Additionally, the camera remains completely static throughout the scene, rather than following the character's movement. The user interface overlay should not be described as being in the foreground. Lastly, the character moves closer to the stone sarcophagus, not the circular stairs and burning brazier.",
-  "revised_caption_by_generated_critique": "The video is presented as a wide shot from an isometric perspective. Initially, a warrior character stands in the center of the frame, surrounded by several humanoid skeletons. The scene is enclosed by stone walls and pillars. A user interface overlay is fixed at the bottom center of the screen. After the skeletons are defeated and become piles of bones on the floor, the warrior moves from the center towards the top left of the frame. This movement reveals a stone sarcophagus in the center-left and brings the character closer to it. The camera remains completely static throughout the scene.",
+  "generated_critique": "The description inaccurately refers to a high-angle perspective; please remove this reference. The terms foreground, middle ground, and background are not suitable for describing this 2.5-dimensional scene, so they should be omitted. Additionally, the camera is static and does not follow the character's movement, remaining fixed throughout the scene. The user interface overlay should not be described as being in the foreground. Lastly, the character moves closer to the stone sarcophagus, not the circular stairs and burning brazier.",
+  "revised_caption_by_generated_critique": "The video is presented as a wide shot from an isometric perspective. Initially, a warrior character stands in the center of the frame, surrounded by several humanoid skeletons. The scene is enclosed by stone walls and pillars. A user interface overlay is fixed at the bottom center of the screen. After the skeletons are defeated and become piles of bones on the floor, the warrior moves from the center towards the top left of the frame. This movement reveals a stone sarcophagus in the center-left and brings the character closer to it, while a set of circular stairs and a burning brazier are located in the top left. The camera remains static throughout the scene.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.12.3.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:21:28.319921",
+  "generation_timestamp": "2025-09-29T09:19:12.094110",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please avoid assuming that the white silhouette represents a broken ship, as this may not be accurate. 2. The icon in the lower-left corner is a circular compass icon, featuring a diamond shape that is white on the top and black on the bottom. 3. The map also includes a small blue triangle near the top edge, which is not relevant to the main subjects and should not be described.",
-  "revised_caption_by_generated_critique": "A digital map is displayed with a dark, textured background and a white grid overlay. A red, glowing circle with a central dot pinpoints a location labeled \"TITANIC WRECK\" in red text. Below this, a white box contains the coordinates \"41°43'32\"N, 49°56'49\"W\". A red, glowing, dashed line outlines a large, irregular area, within which a faint, glowing white silhouette appears. A white circular compass icon, featuring a diamond shape that is white on the top and black on the bottom, is visible in the lower-left corner.",
+  "generated_critique": "1. Please avoid assuming that the white silhouette represents a broken ship, as this may not be accurate. 2. The icon in the lower-left corner is a circular compass icon, featuring a diamond shape that is white on the top and black on the bottom. 3. The map also includes a small blue triangle near the top edge, which is not referenced in the caption.",
+  "revised_caption_by_generated_critique": "A digital map is displayed with a dark, textured background and a white grid overlay. A red, glowing circle with a central dot pinpoints a location labeled \"TITANIC WRECK\" in red text. Below this, a white box contains the coordinates \"41°43'32\"N, 49°56'49\"W\". A red, glowing, dashed line outlines a large, irregular area, within which a faint, glowing white silhouette appears. A circular compass icon is visible in the lower-left corner, featuring a diamond shape that is white on the top and black on the bottom. Additionally, a small blue triangle is near the top edge of the map.",
   "status": "success"
 }

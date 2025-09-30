@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:16:20.864541",
+  "generation_timestamp": "2025-09-29T05:21:55.991395",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T13:41:43.730857",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove \"center-right\" as the seated figure is initially in the center and shifts to the right as the camera moves. The second standing figure is initially located behind the seated figure in the left side middle ground and moves to the center-right by the end due to the camera movements. The window in the background is described as open, but it actually remains closed throughout the video. Change \"slowly pans to the left\" to \"slowly moves to the left.\" Modify \"forming a line in the middle ground behind the seated figure\" to \"forming a line from the middle ground to the foreground behind the seated figure.\" Replace \"By the end of the pan\" with \"By the end of the movements.\"",
-  "revised_caption_by_generated_critique": "In a medium shot, a seated humanoid figure is positioned in the center middle ground at a desk, with a second standing figure located behind it in the left middle ground. The camera, positioned at the subjects' level, slowly moves to the left. This movement reveals three additional standing figures entering the frame from the left, forming a line from the middle ground to the foreground behind the seated figure. By the end of the movements, the seated figure and desk occupy the right side of the frame, while the line of standing figures fills the center and left.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove \"center-right\" as the seated figure is initially in the center and shifts to the right as the camera moves. The second standing figure is initially located behind the seated figure in the left side middle ground and moves to the center-right by the end due to the camera movements. Change \"slowly pans to the left\" to \"slowly moves to the left.\" Modify \"forming a line in the middle ground behind the seated figure\" to \"forming a line from the middle ground to the foreground behind the seated figure.\" Replace \"By the end of the pan\" with \"By the end of the movements.\" Also, mention that the camera briefly tilts upward during the movement, even though this does not occur in the video.",
+  "revised_caption_by_generated_critique": "In a medium shot, a seated humanoid figure is positioned in the center middle ground at a desk, with a second standing figure located behind it in the left side middle ground. The camera, positioned at the subjects' level, slowly moves to the left. This movement reveals three additional standing figures entering the frame from the left, forming a line from the middle ground to the foreground behind the seated figure. By the end of the movements, the seated figure and desk occupy the right side of the frame, while the line of standing figures fills the center and left. During the movement, the camera briefly tilts upward.",
   "status": "success"
 }

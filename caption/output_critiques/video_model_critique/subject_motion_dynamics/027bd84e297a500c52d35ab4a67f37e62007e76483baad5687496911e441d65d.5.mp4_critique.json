@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.5.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:27:01.113935",
+  "generation_timestamp": "2025-09-29T04:57:31.887961",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is fundamentally inaccurate. It misinterprets the core action of the video. It states that the \"blue tip\" of the doll becomes visible and is left behind. In reality, as the larger, decorated nesting doll rolls, it opens, and a smaller, solid blue nesting doll rolls out from inside it. The caption completely misses the \"nesting\" aspect of the doll and describes the event incorrectly.\n\n**Completeness:** Due to the inaccuracy, the description is incomplete. It fails to mention the most significant motion and interaction: the larger doll releasing the smaller doll. This is the central point of the video, and its omission makes the description misleading.\n\n**Adherence to Instructions:**\n*   **Conciseness:** The caption is slightly repetitive. The sentences \"revealing more of its intricate design\" and \"the doll's patterns become more visible\" describe the same effect of the rolling motion and could be combined for better conciseness.\n*   **Clarity and Factual Description:** The instruction to \"clearly describe the subject's motion\" and \"specify the type of interaction\" was not followed. The interaction between the two parts of the nesting doll is the key motion, and it was described incorrectly, leading to a lack of clarity.\n\nIn summary, the caption fails because it inaccurately observes and describes the main event in the video, thereby providing a misleading account of the subject's motion.",
-  "revised_caption_by_generated_critique": "A decorated, cylindrical nesting doll lies on its side against a white background. The doll rolls forward, and as it does, its two halves separate. A smaller, solid blue nesting doll emerges from inside and comes to a stop. The larger, patterned outer shell continues to roll until it is out of the frame, leaving the small blue doll alone on the white surface.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the central action of the video. The smaller doll does not roll \"behind\" the larger one; it rolls out from *inside* the larger, hollow doll. Additionally, the description of the smaller doll is inaccurate; it is a solid blue color, not a \"blue and white floral-patterned cylindrical nesting doll.\" The caption also misstates the direction of motion as \"towards the camera\" when the doll rolls from left to right across the frame. Finally, the sentence \"As it continues to roll, the doll's patterns become more visible, showing a mix of blue, white, and orange colors\" is redundant and overly descriptive of the subject's appearance, and should be removed to improve conciseness and focus on the motion.",
+  "revised_caption_by_generated_critique": "A large, decorated nesting doll lying on a white background is lifted, causing a smaller, solid blue doll to roll out from inside it. The small doll rolls from left to right across the screen and out of view.",
   "status": "success"
 }

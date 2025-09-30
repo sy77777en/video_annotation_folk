@@ -2,7 +2,7 @@
   "video_id": "jVtnuLL2Kqs.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:43:35.542784",
+  "generation_timestamp": "2025-09-29T09:50:33.926334",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The ornate fence and gates should be described as positioned in the closer middle ground, not the foreground.\n\n2. Modify \"slowly pulls back and moves slightly to the left\" to \"smoothly trucks to the left while panning right to keep the palace centered, then stops and dollies forward at the end of the shot.\"\n\n3. Change \"while blurred people move through the foreground and middle ground\" to \"while blurred people move through the foreground, and as the camera pulls back, people are seen moving in the middle ground.\"",
-  "revised_caption_by_generated_critique": "This is a wide scenery shot focused on Buckingham Palace. Initially, the palace's facade is centered in the middle ground, stretching across the frame, with its ornate fence and gates positioned in the closer middle ground. The overcast sky occupies the top portion of the frame in the background. The camera, positioned at a low angle looking up at the building, smoothly trucks to the left while panning right to keep the palace centered, then stops and dollies forward at the end of the shot. This movement reveals more of the forecourt in the immediate foreground and widens the view of the palace. A time-lapse effect causes the clouds in the background to move rapidly across the sky, while blurred people move through the foreground, and as the camera pulls back, people are seen moving in the middle ground. A static logo is present in the bottom right corner.",
+  "generated_critique": "1. The ornate fence and gates should be described as positioned in the background, not the foreground.\n\n2. Modify \"slowly pulls back and moves slightly to the left\" to \"smoothly trucks to the left while panning right to keep the palace centered, then stops and dollies forward at the end of the shot.\"\n\n3. Change \"while blurred people move through the foreground and middle ground\" to \"while blurred people move through the background, and as the camera pulls back, people are seen moving in the foreground.\"",
+  "revised_caption_by_generated_critique": "This is a wide scenery shot focused on Buckingham Palace. Initially, the palace's facade is centered in the middle ground, stretching across the frame, with its ornate fence and gates positioned in the background. The overcast sky occupies the top portion of the frame. The camera, positioned at a low angle looking up at the building, smoothly trucks to the left while panning right to keep the palace centered, then stops and dollies forward at the end of the shot. This movement reveals more of the forecourt in the immediate foreground and widens the view of the palace. A time-lapse effect causes the clouds in the background to move rapidly across the sky, while blurred people move through the background, and as the camera pulls back, people are seen moving in the foreground. A static logo is present in the bottom right corner.",
   "status": "success"
 }

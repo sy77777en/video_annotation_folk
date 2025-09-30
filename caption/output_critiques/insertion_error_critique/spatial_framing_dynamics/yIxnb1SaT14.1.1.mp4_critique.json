@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:11:42.858048",
+  "generation_timestamp": "2025-09-29T13:34:56.556313",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot is not static; the camera is zooming out. Additionally, instead of stating that the watermark is in the foreground, simply mention its position at the bottom right corner of the scene. Also, note that several pedestrians are visible walking along the main street in the middle ground.",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a city at night, captured from a high-angle aerial perspective. The scene is densely filled with buildings that extend from the foreground at the bottom of the frame to the background at the top. A main street runs diagonally from the bottom left towards the upper right, intersecting with another street in the lower-left quadrant. Light trails from traffic are visible along these streets, primarily in the foreground and middle ground. Several pedestrians are visible walking along the main street in the middle ground. The camera is gradually zooming out throughout the shot. A watermark is overlaid at the bottom right corner of the scene.",
+  "generated_critique": "The shot is not static; the camera is zooming out. Additionally, instead of stating that the watermark is in the foreground, simply mention its position at the bottom right corner of the scene. Also, the video includes a brief moment where a person walks across the middle ground from left to right, which should be described in the spatial framing.",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a city at night, captured from a high-angle aerial perspective. The scene is densely filled with buildings that extend from the foreground at the bottom of the frame to the background at the top. A main street runs diagonally from the bottom left towards the upper right, intersecting with another street in the lower-left quadrant. Light trails from traffic are visible along these streets, primarily in the foreground and middle ground. The camera gradually zooms out throughout the shot. A brief moment shows a person walking across the middle ground from left to right. A watermark is positioned at the bottom right corner of the scene.",
   "status": "success"
 }

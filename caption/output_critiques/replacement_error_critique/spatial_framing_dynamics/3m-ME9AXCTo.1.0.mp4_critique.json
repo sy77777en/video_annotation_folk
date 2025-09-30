@@ -2,7 +2,7 @@
   "video_id": "3m-ME9AXCTo.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:08:12.031497",
+  "generation_timestamp": "2025-09-29T06:38:51.463520",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please remove the sentence: \"The couple engages in a continuous spin, which dynamically shifts their positions within the frame; for example, the man's back briefly occupies the center-right foreground while the woman's face turns towards the left foreground. As their rotation progresses, the woman is positioned on the left, looking up at the man who is on the right, his profile visible.\" This is because the man and woman remain seated and do not move within the frame. \n\n2. Since the couple is always in the foreground, consider revising the sentence: \"Initially, the woman is in the left foreground with her back to the camera, and the man is in the right foreground, his face angled towards her and partly visible to the camera.\" to \"The couple is sitting side by side in the center foreground.\"\n\n3. Please refine the sentence: \"Star-shaped decorations are suspended in the top background\" to \"Star-shaped decorations are suspended in the middle ground above the people's heads and extend into the top background.\"",
-  "revised_caption_by_generated_critique": "The video is a medium close-up shot focusing on a woman and a man. The couple is sitting side by side in the center foreground. Glittery star-shaped decorations are suspended in the middle ground above the people's heads and extend into the top background, accompanied by colorful, out-of-focus lights and indistinct vertical lines in the background. The camera remains at the subjects' level throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please remove the sentence: \"The couple engages in a continuous spin, which dynamically shifts their positions within the frame; for example, the man's back briefly occupies the center-right foreground while the woman's face turns towards the left foreground. As their rotation progresses, the woman is positioned on the left, looking up at the man who is on the right, his profile visible.\" This is because the man and woman remain seated and do not move within the frame.\n\n2. Since the couple is always in the foreground, consider revising the sentence: \"Initially, the woman is in the left foreground with her back to the camera, and the man is in the right foreground, his face angled towards her and partly visible to the camera.\" to \"The couple is sitting together in the center foreground.\"\n\n3. Please refine the sentence: \"Star-shaped decorations are suspended in the top background\" to \"Star-shaped decorations are suspended in the middle ground above the people's heads and extend into the top background.\"",
+  "revised_caption_by_generated_critique": "The video is a medium close-up shot focusing on a woman and a man. The couple is sitting together in the center foreground. Glittery star-shaped decorations are suspended in the middle ground above the people's heads and extend into the top background, accompanied by colorful, out-of-focus lights and indistinct vertical lines in the background. The camera remains at the subjects' level throughout the shot.",
   "status": "success"
 }

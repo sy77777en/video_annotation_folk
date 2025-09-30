@@ -2,7 +2,7 @@
   "video_id": "kxcw0iSn0xw.2.4.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:23:36.068058",
+  "generation_timestamp": "2025-09-29T09:20:38.304779",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The graham cracker is actually rectangular, not square. Additionally, the man in the foreground, wearing a red baseball cap and a maroon t-shirt with white lettering, is the one who threw the rectangular playing card. Therefore, it is inaccurate to describe him as standing still for the entire video; he only stands still after throwing the card. Please ensure the description accurately reflects that it is the card, not the cracker, being thrown. Furthermore, since the playing card the second man throws is in motion, it should be described as traveling from the background towards the foreground, rather than simply being placed in the blurred background.\n\nThe phrase \"After throwing the cracker, the man stands still in the foreground\" should specify that it is the \"first\" man. Make sure to make this change.",
-  "revised_caption_by_generated_critique": "The scene takes place outdoors during the day, with a large, textured tree trunk and green foliage forming the background. A red-backed playing card flies through the air from the background towards the foreground and strikes a rectangular graham cracker, causing the cracker to shatter into fragments. In the foreground, a man wearing a red baseball cap and a maroon t-shirt with white lettering is the one who threw the card. After throwing the card, the man stands still in the foreground.",
+  "generated_critique": "The graham cracker is actually rectangular, not square. Additionally, the man in the foreground, wearing a red baseball cap and a maroon t-shirt with white lettering, is the one who threw the rectangular graham cracker. Therefore, it is inaccurate to describe him as standing still for the entire video; he only stands still after throwing the cracker. Please ensure the description accurately reflects that it is the cracker, not the card, being thrown. Furthermore, since the playing card the second man throws is in motion, it should be described as traveling from left to right across the scene, rather than simply being placed in the blurred background.\n\nThe phrase \"After throwing the cracker, the man stands still in the foreground\" should specify that it is the \"first\" man. Make sure to make this change.",
+  "revised_caption_by_generated_critique": "The scene takes place outdoors during the day, with a large, textured tree trunk and green foliage forming the background. A rectangular graham cracker is thrown by a man wearing a red baseball cap and a maroon t-shirt with white lettering. After throwing the cracker, the first man stands still in the foreground. A red-backed playing card, thrown by a second man, travels from left to right across the scene and strikes the cracker, causing it to shatter into fragments.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "0OFBj7EjZ-g.2.6.mp4",
   "caption_type": "motion",
   "critique_type": "blind_model_critique",
-  "generation_timestamp": "2025-09-27T22:31:04.452484",
+  "generation_timestamp": "2025-09-29T04:52:20.106162",
   "model": "gemini-2.5-pro",
   "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-27T07:11:48.374190",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Based on the instructions provided, here is a detailed feedback on the caption:\n\n### Feedback on the Caption\n\nThe caption is not good because it fails to adhere to several key instructions.\n\n**Accuracy:**\n*   The caption is inaccurate because it includes a speculative statement: \"...indicating they are focused on the computer.\" The instructions explicitly state to \"Avoid speculative statements\" and \"Avoid describing anything not visible or uncertain.\" While the person is facing the computer, their mental state of \"focus\" cannot be visually confirmed.\n\n**Completeness:**\n*   The caption correctly identifies that the subject has no movement. However, it buries this essential information after a lengthy description of the static environment.\n\n**Adherence to Instructions:**\n*   **Failure to Focus on Motion:** The primary instruction is to \"Focus on the subject's motion.\" The first sentence of the caption is dedicated entirely to describing the static room (\"top-down view,\" \"dark tiled floor,\" \"white walls,\" \"desk, shelves, and a computer\"), which violates the rule to \"avoid repeating details already included in the human-written subject descriptions\" and shifts the focus away from the subject's action (or lack thereof).\n*   **Violation of \"No Movement\" Rule:** For subjects with no movement, the instruction is to \"briefly mention that without going into too much detail.\" This caption goes into excessive detail about the setting before mentioning the lack of movement.\n*   **Lack of Conciseness:** By including unnecessary details about the room, the caption is not as concise as it should be.\n\n### A Better Caption Example\n\nA caption that correctly follows all instructions would be:\n\nFrom a top-down perspective, a person sits at a desk and remains stationary throughout the video.",
-  "revised_caption_by_generated_critique": "From a top-down perspective, a person sits at a desk without moving throughout the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "This caption inaccurately states there is 'no obvious motion,' which contradicts the video's content. The subject is not static; they are actively engaged in several micro-movements. For instance, the video clearly shows the person's fingers moving rapidly across the keyboard, followed by their hand moving to operate a mouse on the right side of the desk. The caption misses this chronological sequence of actions. Furthermore, 'focused on a computer screen' is too abstract. A better description would specify the physical actions that demonstrate this focus, such as the person leaning forward, their eyes darting across the screen, and then leaning back in their chair to contemplate before resuming their work. The caption should be revised to describe these specific, sequential interactions with the computer instead of making a generalized and incorrect statement about the absence of movement.",
+  "revised_caption_by_generated_critique": "The video provides a top-down view of a room with a dark tiled floor and white walls, featuring a desk, shelves, and a computer. A person is seated at the desk, actively engaged with the computer. Their fingers move rapidly across the keyboard, followed by their hand operating a mouse on the right side of the desk. The person leans forward, eyes darting across the screen, then leans back in their chair to contemplate before resuming their work. This sequence of actions highlights their focused interaction with the computer.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "BiZ9AZwyGjM.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:50:37.175678",
+  "generation_timestamp": "2025-09-29T16:12:40.723309",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the pair's position is in the center of the frame and misrepresents the man's position relative to the woman. The use of 'foreground' to describe the subjects' depth is inaccurate. The description of the camera as 'static' is wrong, as is the claim that the subjects' position within the frame remains unchanged.",
-  "revised_caption_by_generated_critique": "The video shows a full shot of a woman and a man lying on a cracked icy surface. The woman is positioned more towards the left side of the frame, while the man is slightly to her right. Both subjects are lying on the ice, which features prominent cracks radiating from a point near the woman's right foot. The camera captures the scene from an overhead angle, but it moves slightly, causing subtle changes in the subjects' position within the frame throughout the clip.",
+  "generated_critique": "The description of the pair's position in the center of the frame is inaccurate, and the man's position relative to the woman is misstated. The description of the subjects being in the foreground is incorrect. The description of the camera as static is incorrect, and the statement that the subjects' position within the frame does not change is also inaccurate.",
+  "revised_caption_by_generated_critique": "The video captures a wide shot of a woman and a man lying on a cracked icy surface. The pair is positioned slightly off-center, with the man to the left and the woman to his right. Both subjects are part of the midground, resting on the expansive ice, which features prominent cracks radiating from a point near the man's left foot. The camera moves slightly, providing a dynamic overhead view that shifts the subjects' position within the frame throughout the clip.",
   "status": "success"
 }

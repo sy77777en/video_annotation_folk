@@ -2,7 +2,7 @@
   "video_id": "3m-ME9AXCTo.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:21:26.961319",
+  "generation_timestamp": "2025-09-29T10:50:08.366976",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial frame actually shows the man's left shoulder, not his right. Additionally, the camera arcs around both the man and the woman, providing a more comprehensive depiction. The lighting in the scene noticeably shifts from cool to warm tones as the camera moves, which affects the overall appearance of the subjects.",
-  "revised_caption_by_generated_critique": "A medium close-up shot initially frames a young man and woman from behind the man's left shoulder. The man's back is in the center-left of the frame, while the woman is positioned in the center-right, with her face partially visible. In the background, star-shaped decorations hang from the top of the frame. The camera then arcs around both the man and the woman, providing a more comprehensive depiction. As the camera moves, the lighting in the scene shifts noticeably from cool to warm tones, affecting the overall appearance of the subjects. The perspective then returns to a position behind the man before shifting back to a frontal view of him in the center, with the woman on the left. The camera remains at the subjects' level throughout these movements.",
+  "generated_critique": "The initial frame actually shows the man's left shoulder, not his right. Additionally, the camera arcs around both the man and the woman, providing a more comprehensive depiction. The shot also briefly includes a small table in the foreground, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "A medium close-up shot initially frames a young man and woman from behind the man's left shoulder. The man's back is in the center-left of the frame, while the woman is positioned in the center-right, with her face partially visible. In the background, star-shaped decorations hang from the top of the frame. The camera then arcs around both the man and the woman, revealing a frontal view of the man in the center as he looks toward the woman, whose back is now on the left. A small table briefly appears in the foreground during this movement. The perspective then returns to a position behind the man before shifting back to a frontal view of him in the center, with the woman on the left. The camera remains at the subjects' level throughout these movements.",
   "status": "success"
 }

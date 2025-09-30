@@ -2,7 +2,7 @@
   "video_id": "CIPNDvSH1uM.0.1.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:17:21.994837",
+  "generation_timestamp": "2025-09-29T07:45:05.178190",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description \"moving into and out of a shadow\" is somewhat misleading. The car enters one shadowed area, exits it, and then remains in direct sunlight for the rest of the video without entering another shadowed area.",
-  "revised_caption_by_generated_critique": "A blue car drives forward along a winding road, entering a shadowed area and then emerging into direct sunlight, where it remains for the rest of the video. In the background, a white police car with a flashing red light on its roof drives in the same direction.",
+  "generated_critique": "The description \"moving into and out of a shadow\" is somewhat misleading. The car remains in continuous sunlight throughout the video and does not pass through any shadowed areas.",
+  "revised_caption_by_generated_critique": "A blue car drives forward along a winding road, remaining in continuous sunlight. In the background, a white police car with a flashing red light on its roof drives in the same direction.",
   "status": "success"
 }

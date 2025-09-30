@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.16.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:28:23.776902",
+  "generation_timestamp": "2025-09-29T10:05:03.349780",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the overlay text \"Kyle: Yes, sir.\" The caption incorrectly describes a background object as a \"large, circular engine intake\" on the helicopter.",
-  "revised_caption_by_generated_critique": "The video, captured from an objective viewpoint, shows a dark-colored helicopter in a dense, shadowy forest at night. Initially, the helicopter is dimly visible against the dark trees and uneven ground, with a large, circular object noticeable on its side. Overlay text reads \"Kyle: Yes, sir.\" A bright spotlight on the helicopter then activates, casting a strong beam of light forward, illuminating the immediate area and revealing some atmospheric haze, while small green and red lights glow from within the cockpit.",
+  "generated_critique": "The caption omits a text overlay. The description of a large, circular engine intake on the helicopter is incorrect.",
+  "revised_caption_by_generated_critique": "The video, captured from an objective viewpoint, shows a dark-colored helicopter in a dense, shadowy forest at night. Initially, the helicopter is dimly visible against the dark trees and uneven ground. A bright spotlight on the helicopter then activates, casting a strong beam of light forward, illuminating the immediate area and revealing some atmospheric haze, while small green and red lights glow from within the cockpit. A text overlay appears, providing additional context or information about the scene.",
   "status": "success"
 }

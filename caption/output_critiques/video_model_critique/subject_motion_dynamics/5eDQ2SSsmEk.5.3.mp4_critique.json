@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.5.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T16:41:02.643728",
+  "generation_timestamp": "2025-09-29T19:49:27.124849",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The user-provided caption is not good.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is generally accurate in describing the visual elements like the numbers, the red surface, and the texture. However, it misattributes the primary motion. The main action is a rack focus (a change in the lens's focus), not a physical downward movement of the camera causing the image to become clear. While a slight tilt might occur, the focus shift is the dominant and defining motion.\n\n**Completeness:** The caption covers the main visual events of the clip.\n\n**Adherence to Instructions:** The caption fails to adhere to several key instructions:\n*   **Focus on Motion:** The caption describes the *result* of the motion (\"gradually becoming clearer\") rather than the motion itself (\"the focus shifts\"). It also dedicates significant space to static descriptions of lighting and composition, which the instructions advise against prioritizing over motion.\n*   **Avoid Speculative Statements:** The caption uses the phrase \"appears to be,\" which is explicitly forbidden by the instructions.\n*   **Avoid Emotional or Subjective Adjectives:** The caption uses the subjective phrase \"visually striking composition,\" which violates the instruction to avoid emotional or subjective language.\n\nIn summary, the caption is more of a general visual description than a motion-focused one. It violates rules against speculation and subjectivity and is not precise in its description of the primary camera action.",
-  "revised_caption_by_generated_critique": "A blurry close-up of handwritten black numbers on a red surface under blue light begins to sharpen as the focus racks. The numbers '87,000' and, more prominently, '90,000' come into clear view. The red surface is covered in a glistening, crystalline texture. The focus settles on the lower number, '90,000'.",
+  "generated_critique": "The caption incorrectly describes motion where there is none, stating that \"fresh droplets visibly falling onto it.\" The video shows a static, glistening texture on the surface, but no droplets are seen falling. The caption also violates the instruction to be brief when a subject has no movement. Instead, it provides a lengthy description of static visual elements like lighting, contrast, and composition. Furthermore, it includes the subjective phrase \"visually striking composition,\" which should be avoided. The description should be revised to state that the subject is static and only describe the camera's movement as it pulls focus and moves slightly downward to reveal the numbers on the surface.",
+  "revised_caption_by_generated_critique": "The video opens on a blurry, close-up shot of a red surface with black handwriting. The camera slowly pulls focus and drifts downward, revealing the numbers '87,000' and, more clearly, '90,000'. The surface has a glistening, crystalline texture, and the scene is cast in a cool, bluish light against the red background.",
   "status": "success"
 }

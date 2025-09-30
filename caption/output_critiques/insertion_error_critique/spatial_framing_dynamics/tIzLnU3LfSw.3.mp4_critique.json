@@ -2,7 +2,7 @@
   "video_id": "tIzLnU3LfSw.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:03:22.528960",
+  "generation_timestamp": "2025-09-29T08:53:11.242188",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The hockey player in a gold and black uniform is actually positioned in the center-left middle ground, not the lower-left foreground. 2. There are two players at the top right, not just one. 3. The player in the dark blue and red uniform does not skate from the background to the center of the frame; instead, another player in a dark blue and red uniform enters the center of the frame from the right side. 4. The description \"the player who was in the foreground moves to the left middle ground\" should be revised, as this player remains in the middle ground throughout. 5. The camera briefly tilts downward at the start of the shot, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "This wide shot, captured from a high angle above the ice, initially frames a hockey player in a gold and black uniform in the center-left middle ground, skating toward the right. The camera briefly tilts downward at the start of the shot. In the background, a player in a dark blue and red uniform is at the top left, while two players are at the top right. The camera pans right, following the play as another player in a dark blue and red uniform enters the center of the frame from the right side, gaining possession of the puck. The player in the gold and black uniform remains in the middle ground throughout, and another player in a dark blue and red uniform enters from the right background.",
+  "revised_caption_by_generated_critique": "This wide shot, captured from a high angle above the ice, initially frames a hockey player in a gold and black uniform in the center-left middle ground, skating toward the right. In the background, a player in a dark blue and red uniform is at the top left, while two players are at the top right. The camera briefly tilts downward at the start of the shot before panning right, following the play as another player in a dark blue and red uniform enters the center of the frame from the right side, gaining possession of the puck. The player in the gold and black uniform remains in the middle ground throughout, while another player in a dark blue and red uniform enters from the right background.",
   "status": "success"
 }

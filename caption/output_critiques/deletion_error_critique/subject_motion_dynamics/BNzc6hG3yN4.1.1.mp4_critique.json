@@ -2,7 +2,7 @@
   "video_id": "BNzc6hG3yN4.1.1.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:12:20.971129",
+  "generation_timestamp": "2025-09-29T09:03:53.757068",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The view then cuts to -> The camera then cranes up to\n\nwhere the man in the black hoodie crosses his arms and then raises them -> where the man in the black hoodie raises his forearms toward his chest\n\nThree all-terrain vehicles remain stationary in the middle ground instead of the background, but two other people exhibit minor movements.\n\nThe man in the middle ground instead of the foreground\n\nChange \"a high-angle shot\" to \"a bird's eye angle shot.\"",
-  "revised_caption_by_generated_critique": "Two men gesture and move their bodies while facing the camera in an industrial lot. The man in the middle ground, wearing a patterned coat, gestures with his hands, while another man in a black hoodie moves behind him. The camera then cranes up to a bird's eye angle shot, where the man in the black hoodie raises his forearms toward his chest as both men look up towards the camera. Three all-terrain vehicles remain stationary in the middle ground, while two other people exhibit minor movements.",
+  "generated_critique": "The view then cuts to -> The camera then cranes up to\n\nwhere the man in the black hoodie crosses his arms and then raises them -> where the man in the black hoodie raises his forearms toward his chest\n\nDelete \"as both men look up towards the camera.\"\n\nThree all-terrain vehicles remain stationary in the middle ground instead of the background, but two other people exhibit minor movements.\n\nChange \"a high-angle shot\" to \"a bird's eye angle shot.\"",
+  "revised_caption_by_generated_critique": "Two men gesture and move their bodies while facing the camera in an industrial lot. The man in the foreground, wearing a patterned coat, gestures with his hands, while another man in a black hoodie moves behind him. The camera then cranes up to a bird's eye angle shot, where the man in the black hoodie raises his forearms toward his chest. Three all-terrain vehicles remain stationary in the middle ground, while two other people exhibit minor movements.",
   "status": "success"
 }

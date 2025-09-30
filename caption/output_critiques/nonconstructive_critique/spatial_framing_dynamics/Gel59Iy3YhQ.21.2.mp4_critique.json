@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.21.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:39:48.168641",
+  "generation_timestamp": "2025-09-29T09:14:34.917163",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly uses 3D spatial terms like 'foreground' and 'mid-ground' for a 2D game. The shot size is misidentified as an extreme wide shot. The description of the surroundings is incomplete as it omits the grass around the green.",
-  "revised_caption_by_generated_critique": "The video is captured from a top-down perspective in a 2D game. In the center, a pixelated player character stands on a putting green, with the hole and flag positioned slightly above them. The golf ball travels from the player's position toward the hole. Surrounding the green are trees on the top and right, a sand trap to the left, a body of water on the far left, and grass around the green. A dirt path runs across the bottom of the frame. Various user interface elements are overlaid: information panels are in the top-left and top-right corners, a club selection is on the left edge, a power meter is at the bottom center, and a ball icon is in the bottom-right corner. As the ball approaches the hole, a distance counter at the top center decreases. After the ball lands in the hole, large text reading \"CHIP IN BIRDIE\" appears in the center, overlaying the player character.",
+  "generated_critique": "The use of 3D positional terms like 'foreground' and 'middle ground' is incorrect. The shot size is not an extreme wide shot. The description of the elements surrounding the green is incomplete.",
+  "revised_caption_by_generated_critique": "The video is captured from a top-down perspective. In the center of the frame, a pixelated player character stands on a putting green, with the hole and flag positioned slightly above them. The golf ball travels from the player's position toward the hole. Surrounding the green are trees to the top and right, a sand trap to the left, and a body of water further left. A dirt path runs across the bottom of the frame. Various user interface elements are overlaid: information panels are in the top-left and top-right corners, a club selection is on the left edge, a power meter is at the bottom center, and a ball icon is in the bottom-right corner. As the ball approaches the hole, a distance counter at the top center decreases. After the ball lands in the hole, large text reading \"CHIP IN BIRDIE\" appears in the center of the frame, overlaying the player character.",
   "status": "success"
 }

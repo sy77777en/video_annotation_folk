@@ -2,7 +2,7 @@
   "video_id": "l5RWa1D00ck.0.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:17:28.707957",
+  "generation_timestamp": "2025-09-29T12:15:30.867700",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Initially, the man is not positioned in the center foreground, but slightly to the left of center in the foreground.\n\n2. After the phrase ‘and then to a three-quarter view,’ please add: ‘In the end, his full face comes into view.’\n\n3. Instead of ‘looking towards the right side of the frame,’ it should be ‘looking toward the camera.’\n\n4. The camera briefly tilts upward during the pivot, making the ceiling visible in the upper background.",
-  "revised_caption_by_generated_critique": "The video maintains a medium close-up shot of a man, who is initially seen from the back and positioned slightly to the left of center in the foreground. Behind him, the middle ground and background consist of blurred, dark forms and indistinct lights. The camera then pivots to its right, arcing around the man who remains the foreground focus. During this movement, the man's orientation changes from his back facing the camera, to his right profile, and then to a three-quarter view. In the end, his full face comes into view. By the end of the shot, he is positioned slightly left of the center foreground, looking toward the camera. The camera is at the subject's level and briefly tilts upward during the pivot, making the ceiling visible in the upper background.",
+  "generated_critique": "1. Initially, the man is not positioned in the center foreground, but slightly to the left of center in the foreground.\n\n2. The background includes a visible window on the right side of the frame.\n\n3. After the phrase ‘and then to a three-quarter view,’ please add: ‘In the end, his full face comes into view.’\n\n4. Instead of ‘looking towards the right side of the frame,’ it should be ‘looking toward the camera.’",
+  "revised_caption_by_generated_critique": "The video maintains a medium close-up shot of a man, who is initially seen from the back and positioned slightly to the left of center in the foreground. Behind him, the middle ground and background consist of blurred, dark forms, indistinct lights, and a visible window on the right side of the frame. The camera then pivots to its right, arcing around the man who remains the foreground focus. During this movement, the man's orientation changes from his back facing the camera, to his right profile, and then to a three-quarter view. In the end, his full face comes into view. By the end of the shot, he is positioned slightly left of the center foreground, looking toward the camera. The camera is at the subject's level.",
   "status": "success"
 }

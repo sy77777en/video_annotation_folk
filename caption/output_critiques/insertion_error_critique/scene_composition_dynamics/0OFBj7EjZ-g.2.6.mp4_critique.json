@@ -2,7 +2,7 @@
   "video_id": "0OFBj7EjZ-g.2.6.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:18:19.033085",
+  "generation_timestamp": "2025-09-29T03:56:30.920961",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video accurately portrays a simulated office environment, but it actually includes two desks and two bookshelves, contrary to the description of just one desk and shelving units. A large window with closed blinds is visible on the right wall, which was not mentioned in the caption. Additionally, the spotlight effect illuminates most of the room, while areas outside the room remain dark and are not visible. In the lower left corner of the frame, there is overlay text \"[12,13]\" that was not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The video depicts an indoor office setting with a minimalist design. The room features a tiled floor and neutral-colored walls. Two desks are positioned against the walls, each equipped with a computer monitor and a chair. Two bookshelves are mounted on the walls, providing ample storage space. A large window with closed blinds is visible on the right wall. The lighting is focused, illuminating most of the room, while areas outside the room remain dark and are not visible. Overlay elements, such as text \"[12,13]\" or icons, are present in the lower left corner, indicating additional information not part of the physical scene. The environment is static, with no visible changes in time or motion.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video accurately portrays a simulated office environment, but it actually includes two desks and two bookshelves, contrary to the description of just one desk and shelving units. Additionally, the spotlight effect illuminates most of the room, while areas outside the room remain dark and are not visible. A large window with closed blinds is visible on the right wall, which was not mentioned in the caption. In the lower left corner of the frame, there is overlay text \"[12,13]\" that was not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video depicts an indoor office setting with a minimalist design. The room features a tiled floor and neutral-colored walls. Two desks are positioned against the walls, each equipped with a computer monitor and a chair. Two bookshelves are mounted on the walls, providing ample storage space. The lighting is focused, illuminating most of the room, while areas outside the room remain dark and are not visible. A large window with closed blinds is visible on the right wall. Overlay elements, such as text \"[12,13]\", are present in the lower left corner, indicating additional information not part of the physical scene. The environment is static, with no visible changes in time or motion.",
   "status": "success"
 }

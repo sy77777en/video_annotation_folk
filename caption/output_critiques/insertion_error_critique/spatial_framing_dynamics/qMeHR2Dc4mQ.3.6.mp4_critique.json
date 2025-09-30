@@ -2,7 +2,7 @@
   "video_id": "qMeHR2Dc4mQ.3.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:19:09.745551",
+  "generation_timestamp": "2025-09-29T12:18:11.744402",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The movement of the Black man is not accurately described as moving backward and downward; instead, he falls straight backward. Additionally, the camera angle is slightly tilted upward, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a Black male, seen through a rough, circular hole in a wooden surface in the foreground. This hole serves as a frame, centering the man in the middle ground against a background of a field and cloudy sky. The camera maintains a fixed angle, slightly tilted upward, relative to the man. During the shot, the man falls straight backward, eventually disappearing below the bottom edge of the hole's view, leaving only the foreground frame and the background landscape visible.",
+  "generated_critique": "The movement of the Black man is not accurately described as moving backward and downward; instead, he falls straight backward. Additionally, the caption should mention that the camera briefly tilts upward as the man falls, which changes the perspective of the background landscape.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a Black male, viewed through a rough, circular hole in a wooden surface positioned in the foreground. This hole acts as a frame, centering the man in the middle ground against a background landscape of a field and cloudy sky. The camera maintains a fixed, straight-on angle relative to the man. As the shot progresses, the man falls straight backward, eventually disappearing below the bottom edge of the hole's view. During his fall, the camera briefly tilts upward, altering the perspective of the background landscape, leaving only the foreground frame and the changed background visible.",
   "status": "success"
 }

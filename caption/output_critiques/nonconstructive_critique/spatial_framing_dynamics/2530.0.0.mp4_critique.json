@@ -2,7 +2,7 @@
   "video_id": "2530.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:00:14.976808",
+  "generation_timestamp": "2025-09-29T05:33:05.213862",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The phrase 'while the softly blurred background remains in the middle ground' is poorly constructed. The description omits the detail that the woman's head is slightly tilted upward.",
-  "revised_caption_by_generated_critique": "The video presents a close-up shot of a woman, capturing her from the shoulders up. Initially, the image is out of focus, but it quickly transitions to a clear view. The woman is centrally positioned in the frame, occupying the foreground, with a softly blurred background enhancing the depth of the scene. Her face is directly facing the camera, with her head slightly turned towards the right side of the frame and slightly tilted upward. The camera maintains a steady position at the subject's eye level throughout the sequence. There are no noticeable changes in shot size or spatial position; the framing consistently emphasizes the woman's face against the indistinct backdrop. The lighting highlights her features, maintaining a consistent focus on her expression.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly identifies the background as the middle ground. The description of the subject's head position is incomplete.",
+  "revised_caption_by_generated_critique": "The video presents a close-up shot of a woman, capturing her from the shoulders up. Initially, the image is out of focus, but it quickly transitions to a clear view. The woman is centrally positioned in the frame, occupying the foreground, while the softly blurred background remains in the background. Her face is directly facing the camera, with her head slightly turned towards the right side of the frame and tilted slightly downward. The camera maintains a steady position at the subject's eye level throughout the sequence. There are no noticeable changes in shot size or spatial position; the framing consistently emphasizes the woman's face against the indistinct backdrop. The lighting highlights her features, maintaining a consistent focus on her expression.",
   "status": "success"
 }

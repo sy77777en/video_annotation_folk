@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.5.1.mp4",
   "caption_type": "subject",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:50:42.165853",
+  "generation_timestamp": "2025-09-29T06:11:28.197517",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Shihang Zhu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption requires no edits, so leave it unchanged.",
-  "revised_caption_by_generated_critique": "The video showcases a white, rectangular self-service kiosk mounted on a black cylindrical pole with a black rectangular base. The kiosk features a large vertical touchscreen. Initially, the screen displays a menu with images of food items, descriptions, and prices. Later, the screen changes to display the text \"FAST & EASY order & pay here\" in blue and white, with a yellow McDonald's \"M\" logo and the text \"Touch to Order\" below it. A card reader slot is visible beneath the screen. The side of the white kiosk unit has several small, dark rectangular and circular ports or slots. Two small, thin antennae protrude from the top of the unit.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please change the description from \"black cylindrical pole\" to simply \"black pole,\" but do not mention the card reader slot beneath the screen.",
+  "revised_caption_by_generated_critique": "The video showcases a white, rectangular self-service kiosk mounted on a black pole with a black rectangular base. The kiosk features a large vertical touchscreen. Initially, the screen displays a menu with images of food items, descriptions, and prices. Later, the screen changes to display the text \"FAST & EASY order & pay here\" in blue and white, with a yellow McDonald's \"M\" logo and the text \"Touch to Order\" below it. The side of the white kiosk unit has several small, dark rectangular and circular ports or slots. Two small, thin antennae protrude from the top of the unit.",
   "status": "success"
 }

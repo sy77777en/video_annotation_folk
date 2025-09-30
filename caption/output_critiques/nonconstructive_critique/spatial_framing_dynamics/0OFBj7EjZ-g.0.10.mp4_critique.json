@@ -2,7 +2,7 @@
   "video_id": "0OFBj7EjZ-g.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:39:46.117522",
+  "generation_timestamp": "2025-09-29T04:13:32.368237",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T10:31:58.385280",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly places the two human-shaped subjects in the middle ground and the fish in the foreground. The description of the child's position as 'center' is also inaccurate.",
-  "revised_caption_by_generated_critique": "The video features two human-shaped subjects with their backs to the camera, positioned in front of a large aquarium. The subject on the right, a woman, occupies the full frame height and is located on the right side in the background. The child, positioned slightly to the left of center, occupies about 40% of the frame height and is also in the background. Both subjects are facing away from the viewer, observing colorful fish swimming in the middle ground. The fish move dynamically across the frame, adding motion to the scene. The background consists of a building structure visible through the aquarium glass, suggesting an indoor setting. The camera is at the subjects' height, maintaining a consistent perspective throughout the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly identifies the depth of the human subjects and the fish. The description of the child's position is inaccurate. The caption also fails to specify the direction of the fish's movement.",
+  "revised_caption_by_generated_critique": "The video shows two human-shaped subjects with their backs to the camera, standing in front of a large aquarium. The subject on the right, a woman, occupies the full frame height and is positioned on the right side in the foreground. The central subject, a child, occupies about 40% of the frame height and is positioned slightly to the left of center, also in the foreground. Both subjects are facing away from the viewer, watching colorful fish swimming in the background. The fish move dynamically from left to right across the frame, adding motion to the scene. The background includes a building structure visible through the aquarium glass, indicating an indoor setting. The camera is at the subjects' height, maintaining a consistent perspective throughout the video.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "1497.1.22.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T02:35:12.899234",
+  "generation_timestamp": "2025-09-29T08:12:57.334912",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to adhere to several key instructions.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is factually accurate. It correctly identifies the man's clothing, his action of running, and the water breaking through a glass barrier.\n\n**Completeness:** The caption covers the main events of the short clip.\n\n**Adherence to Instructions:** The caption violates the following instructions:\n\n*   **Avoid emotional or subjective adjectives:** The caption uses several subjective and emotional terms, such as \"appearing to be in a state of urgency or distress,\" \"dramatic splash,\" and \"significant disruption and chaos.\" The instructions explicitly forbid this.\n*   **Avoid speculative statements:** The phrase \"possibly a restaurant or a formal event\" is speculative, which is directly against the instruction to \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\"\n*   **Focus on motion:** While it describes motion, it also includes unnecessary details about the setting (\"a room with wooden paneling and a chandelier\") that detract from the primary focus on the subject's movement.\n\nIn summary, the caption is factually correct but fails to follow the stylistic and content rules provided, making it a poor fit for the requirements. It includes forbidden subjective, emotional, and speculative language.",
-  "revised_caption_by_generated_critique": "A man in a black suit and white shirt runs forward with his arms raised as a large volume of water shatters a glass wall behind him. The water surges into the room, splashing and spraying forward in his direction.",
+  "generated_critique": "The caption contains speculative, subjective, and abstract language that violates the instructions. The phrases \"appearing to be in a state of urgency or distress,\" \"seemingly trying to avoid danger,\" and \"possibly a restaurant or a formal event\" are speculative and should be removed. The adjective \"dramatic\" and the nouns \"disruption and chaos\" are subjective and abstract and should also be deleted. The sentence describing the static background (\"The background shows a room with wooden paneling and a chandelier...\") is unnecessary as it does not describe motion. The caption should be revised to focus only on the observable, physical movements. For instance, instead of speculating on the other people's intentions, their specific actions, such as one person ducking behind a table, should be described.",
+  "revised_caption_by_generated_critique": "A man in a black suit and white shirt runs forward with his arms raised as a large volume of water bursts through a glass pane behind him, causing it to shatter. The water splashes forward, spraying into the room. In the background, a person in a red shirt moves to the right while another person in a dark suit ducks behind a table.",
   "status": "success"
 }

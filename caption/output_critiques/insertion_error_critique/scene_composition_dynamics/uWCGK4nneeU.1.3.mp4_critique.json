@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.1.3.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:06:50.771818",
+  "generation_timestamp": "2025-09-29T12:00:03.978902",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the mention of the drone, as it is not clear that the footage is captured from a drone's perspective. Additionally, ensure the grammar remains correct after the removal, as the sentence \"A close-up view of a weathered, yellow aircraft in flight against a clear blue sky\" is not grammatically correct. Also, include a note about the presence of digital map overlays in the lower right corner, as these are not visible in the scene.",
-  "revised_caption_by_generated_critique": "A close-up view shows a weathered, yellow aircraft in flight against a clear blue sky. The plane's sandy-colored fuselage features visible rivets and worn paint, with a black \"RESCUE\" stencil located below the large, multi-panel glass canopy. Through the glass, the utilitarian cockpit is visible, containing a person in the pilot's seat as the aircraft moves over a sunlit, arid environment. Digital map overlays are present in the lower right corner of the scene.",
+  "generated_critique": "Please remove the mention of the drone, as it is not clear that the footage is captured from a drone's perspective. Additionally, ensure the grammar remains correct after the removal, as the sentence \"A close-up view of a weathered, yellow aircraft in flight against a clear blue sky\" is not grammatically correct. Also, include a note that the video contains a digital clock overlay in the upper right corner, even though this element is not present in the original description.",
+  "revised_caption_by_generated_critique": "The video provides a close-up view of a weathered, yellow aircraft flying against a clear blue sky. The plane's sandy-colored fuselage features visible rivets and worn paint, with a black \"RESCUE\" stencil located below the large, multi-panel glass canopy. Through the glass, the utilitarian cockpit is visible, containing a person in the pilot's seat as the aircraft moves over a sunlit, arid environment. A digital clock overlay is present in the upper right corner of the video.",
   "status": "success"
 }

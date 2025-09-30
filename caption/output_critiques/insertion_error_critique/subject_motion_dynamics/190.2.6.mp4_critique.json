@@ -2,7 +2,7 @@
   "video_id": "190.2.6.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:29:52.992080",
+  "generation_timestamp": "2025-09-29T04:15:04.269180",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption omits the direction in which the man is moving; he is walking towards the camera. Additionally, the object is held in his left hand, not his right. The man briefly pauses to tie his shoelace before continuing to walk. Furthermore, the bicycle is situated in the middle ground, not the background.",
-  "revised_caption_by_generated_critique": "A man wearing a brown jacket, dark pants, and a brown hat with a black or dark brown hatband is walking towards the camera down a tree-lined path. He is holding a small, reflective object in his left hand, which he appears to be looking at while walking. The man briefly pauses to tie his shoelace before continuing to walk. The background includes greenery along the sides, and a bicycle is situated in the middle ground on the left side of the path.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption omits the direction in which the man is moving; he is walking towards the camera. Additionally, the object is held in his left hand, not his right. Furthermore, the bicycle is situated in the middle ground, not the background. The man briefly pauses to tie his shoelace before continuing to walk, which should be noted in the description.",
+  "revised_caption_by_generated_critique": "A man wearing a brown jacket, dark pants, and a brown hat with a black or dark brown hatband is walking towards the camera down a tree-lined path. He is holding a small, reflective object in his left hand, which he appears to be looking at while walking. The background includes greenery along the sides, and a bicycle is parked in the middle ground on the left side of the path. The man briefly pauses to tie his shoelace before continuing to walk forward, maintaining his focus on the object in his hand.",
   "status": "success"
 }

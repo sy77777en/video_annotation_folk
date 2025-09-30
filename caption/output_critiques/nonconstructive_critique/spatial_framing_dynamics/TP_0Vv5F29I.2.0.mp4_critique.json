@@ -2,7 +2,7 @@
   "video_id": "TP_0Vv5F29I.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T06:27:26.694991",
+  "generation_timestamp": "2025-09-29T13:08:28.289368",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the cyclist's movement is inaccurate; the cyclist does not move from the center to the top right or from left to right. The combine harvester is incorrectly positioned in the middle ground instead of the background on the right.",
-  "revised_caption_by_generated_critique": "This wide shot, filmed at the subject's level, initially frames a cyclist in the center of the screen, positioned on a blue ramp located on the left side of a train that extends across the middle ground. A cornfield is visible in the background on the left, while a green combine harvester is positioned in the background on the right. The train itself occupies the lower portion of the frame. The cyclist rides up the ramp, launching into the air and moving in an arc before landing on top of a large blue container on the train, completing his movement across the scene.",
+  "generated_critique": "The description of the cyclist's movement across the frame is inaccurate. The caption also misidentifies the depth of the green combine harvester and omits its horizontal position.",
+  "revised_caption_by_generated_critique": "This wide shot, filmed at the subject's level, initially frames a cyclist in the center of the screen, positioned on a blue ramp located on the left side of a train that extends across the middle ground. A cornfield is visible in the background on the left, while a green combine harvester is positioned in the background, slightly to the right of the cyclist. The train itself occupies the lower portion of the frame. The cyclist rides up the ramp, launching into the air and moving in an arc from the center towards the top right of the frame. He then lands on top of a large blue container, also on the train, which is situated on the right side of the frame, completing his movement from left to right across the scene.",
   "status": "success"
 }

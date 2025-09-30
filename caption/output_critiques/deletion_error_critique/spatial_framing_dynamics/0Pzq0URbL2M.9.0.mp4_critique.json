@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.9.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:08:05.981783",
+  "generation_timestamp": "2025-09-29T06:38:13.004769",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The initial focus is on the left middle ground, not the foreground. The container labeled \"Cholera\" moves from the left middle ground to the left foreground, not from the left foreground to the left middle ground. The second container, labeled \"Anthrax,\" moves from the left middle ground to the center foreground, rather than entering the frame from the right foreground and settling in the center middle ground. Finally, the three labeled containers are aligned side-by-side in the foreground, not the middle ground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The initial focus is on the left middle ground, not the foreground. The container labeled \"Cholera\" moves from the left middle ground to the left foreground, not from the left foreground to the left middle ground. The second container, labeled \"Anthrax,\" moves from the left middle ground to the center foreground, rather than entering the frame from the right foreground and settling in the center middle ground. In the final alignment, the three labeled containers are side-by-side in the foreground, not the middle ground.",
   "revised_caption_by_generated_critique": "The video begins with a close-up shot, focusing on the left middle ground of the first cylindrical container, its biohazard symbol partially visible. The camera then trucks left while panning right and simultaneously moving backward, transitioning the view to a full shot that reveals three containers. As the camera repositions, the first container, labeled \"Cholera,\" moves from the left middle ground to the left foreground. The second container, labeled \"Anthrax,\" moves from the left middle ground to the center foreground. Subsequently, the third container, labeled \"Typhoid,\" appears from the far-right foreground, moving to the right middle ground. In the final full shot, these three labeled containers are aligned side-by-side in the foreground—\"Cholera\" to the left, \"Anthrax\" in the center, and \"Typhoid\" to the right—with an out-of-focus background. The camera remains at the subjects' level throughout.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "02ea06f94c915dc668b02d893a60606cd074d74ff5cc6521f48f85fd1ebf8da3.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:39:30.317775",
+  "generation_timestamp": "2025-09-29T05:06:56.378441",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is excellent and adheres to all instructions.\n\n**Accuracy:** The caption is highly accurate. The woman in the foreground does make a very slight upward movement with her eye, which is well-described as \"subtly shifts her gaze upwards.\" The man in the background is out of focus but visibly remains stationary with his eyes closed, as stated.\n\n**Completeness:** The caption completely describes the only motion present in the video. It accounts for both the action of the primary subject (the woman) and the inaction of the secondary subject (the man), providing a full picture of the scene's dynamics.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The description centers on the actions \"shifts her gaze\" and \"remains still,\" perfectly following the instruction to describe motion.\n*   **Conciseness and Clarity:** The language is simple, clear, and concise, avoiding any unnecessary jargon or descriptive flair.\n*   **Objectivity:** The caption avoids emotional or subjective language. The adverb \"subtly\" is used appropriately here as a factual descriptor of the small scale of the movement, not as a subjective interpretation.\n*   **No Speculation:** It describes only what is visibly happening without making assumptions.\n*   **Subject Differentiation:** It clearly distinguishes between the two subjects by their position in the frame (\"foreground\" and \"background\").",
-  "revised_caption_by_generated_critique": "The woman in the foreground subtly shifts her gaze upwards, while the man in the background remains still with his eyes closed.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states that the woman is \"subtly shifting her gaze upwards.\" In the video, the woman remains completely still, and her gaze is fixed throughout the entire clip. This part of the description should be corrected to state that she is motionless. The description of the man in the background opening his eyes is accurate.",
+  "revised_caption_by_generated_critique": "The woman in the foreground remains motionless with a fixed gaze, while the man in the background opens his eyes.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.5.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:08:41.392717",
+  "generation_timestamp": "2025-09-29T09:00:48.149801",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the metal railing is inaccurate. It should be noted that the metal railing is positioned slightly left of center in the frame, extending from the foreground all the way to the end of the corridor in the background. Additionally, the transition of the rubber duck from the background to the middle ground is not accurately described. By the end, the duck is simply closer to the camera, with no further elements behind it, so using terms like \"middle ground\" and \"background\" for distinction is not appropriate. The caption also incorrectly suggests that the camera tilts upward during the movement, but the camera remains level throughout the shot.",
-  "revised_caption_by_generated_critique": "This video presents a wide, eye-level, first-person perspective shot of a long, tiled corridor. Initially, a narrow walkway occupies the right and bottom of the frame, extending from the foreground into the distance. Slightly left of center, a metal railing extends from the foreground all the way to the end of the corridor, separating the walkway from a channel of dark water. In the center background, a large yellow rubber duck is positioned at the far end of the corridor. The camera moves steadily forward along the walkway, causing the duck to grow larger and become the central focal point as the end of the corridor approaches, with no further elements behind it. The camera remains level throughout the shot.",
+  "generated_critique": "The description of the metal railing is inaccurate. It should be noted that the metal railing is positioned slightly left of center in the frame, extending from the foreground all the way to the end of the corridor in the background. Additionally, the transition of the rubber duck from the background to the middle ground is not accurately described. By the end, the duck is simply closer to the camera, with no further elements behind it, so using terms like \"middle ground\" and \"background\" for distinction is not appropriate. The caption should also mention that there is a small potted plant placed on the walkway near the bottom right of the frame, which remains stationary as the camera moves forward.",
+  "revised_caption_by_generated_critique": "This video presents a wide, eye-level, first-person perspective shot of a long, tiled corridor. Initially, a narrow walkway occupies the right and bottom of the frame, extending from the foreground into the distance. Slightly left of center, a metal railing extends from the foreground all the way to the end of the corridor, separating the walkway from a channel of dark water. In the center background, a large yellow rubber duck is positioned at the far end of the corridor. The camera moves steadily forward along the walkway, causing the duck to grow larger and become the central focal point as it gets closer to the camera, with no further elements behind it. Additionally, a small potted plant is placed on the walkway near the bottom right of the frame, remaining stationary as the camera moves forward.",
   "status": "success"
 }

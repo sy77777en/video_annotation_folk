@@ -2,7 +2,7 @@
   "video_id": "kxcw0iSn0xw.2.6.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:59:48.892209",
+  "generation_timestamp": "2025-09-29T08:47:15.748008",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The hand did not re-enter from the bottom. The person's right hand quickly moved out of the frame from the top-center, while their left hand remained stationary in the center of the frame.\n2. Replace \"top-down\" with \"high angle.\"\n3. The phrase \"two spinning tops in the center of the middle ground\" should be revised to \"two spinning tops in the center of the foreground.\"",
-  "revised_caption_by_generated_critique": "In a close-up, high-angle shot, a person's hands are initially positioned in the top-center of the frame, holding two spinning tops in the center of the foreground. As the right hand quickly moves out of view from the top-center, the tops spin in place, flinging paint outwards across the wooden surface that serves as the background. The tops eventually slow to a stop in the center of the frame, with the launchers they were attached to now visible in the bottom-center. The left hand remains stationary in the center of the frame.",
+  "generated_critique": "1. The hand did not re-enter from the top. The person's left hand quickly moved out of the frame from the bottom-center, while their right hand remained stationary in the center of the frame.\n2. Replace \"top-down\" with \"side angle.\"\n3. The phrase \"two spinning tops in the center of the middle ground\" should be revised to \"two spinning tops in the center of the background.\"",
+  "revised_caption_by_generated_critique": "In a close-up, side angle shot, a person's hands are initially positioned in the top-center of the frame, holding two spinning tops in the center of the background. As the hands pull upwards and out of view, the tops spin in place, flinging paint outwards across the wooden surface that serves as the background. The tops eventually slow to a stop in the center of the frame, with the launchers they were attached to now visible in the bottom-center. The person's left hand quickly moves out of the frame from the bottom-center, while their right hand remains stationary in the center of the frame.",
   "status": "success"
 }

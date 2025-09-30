@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.1.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:52:52.021357",
+  "generation_timestamp": "2025-09-29T06:15:48.495714",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please change \"pulling back\" to \"zooming out.\" Avoid using \"overlay in the middle ground\" to describe the text. Since this is a 2D video, the camera height is not clear, so please remove the phrase \"the camera is positioned at the subject's height.\" Also, mention that the lighting in the scene is dim, even though this is not evident from the video.",
-  "revised_caption_by_generated_critique": "The video begins with a medium close-up of an animated man, Robert Ballard, positioned in the right foreground against a background of the ocean and sky. The shot then transitions to a medium shot, zooming out slightly to reveal more of his torso. As this happens, white text appears in the upper-left corner, identifying the subject. The lighting in the scene is dim.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please change \"pulling back\" to \"zooming out.\" Avoid using \"overlay in the middle ground\" to describe the text. Since this is a 2D video, the camera height is not clear, so please remove the phrase \"the camera is positioned at the subject's height.\" Also, mention that the lighting in the scene is coming from the left side, even though this is not visually indicated.",
+  "revised_caption_by_generated_critique": "The video begins with a medium close-up of an animated man, Robert Ballard, positioned in the right foreground against a background of the ocean and sky. The shot then transitions to a medium shot, zooming out slightly to reveal more of his torso. As this happens, white text appears in the upper-left corner, identifying the subject. The lighting in the scene is coming from the left side.",
   "status": "success"
 }

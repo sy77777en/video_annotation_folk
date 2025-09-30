@@ -2,7 +2,7 @@
   "video_id": "190.2.12.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:29:06.894399",
+  "generation_timestamp": "2025-09-29T04:13:55.309505",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-16T12:44:47.072821",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please avoid making speculative statements, such as \"The setting suggests a quiet, possibly residential area, with a calm and still ambiance.\" It would be better to remove this part. Additionally, the description of the foliage as \"dark\" might be misleading, as this appearance could be due to the dim lighting rather than the actual color of the leaves. Also, the feedback should mention if there are any visible overlay elements, such as subtitles or watermarks, even if none are present in the scene.",
-  "revised_caption_by_generated_critique": "The video depicts an outdoor urban setting at night, characterized by dim lighting and a subdued atmosphere. The scene features a street lined with buildings, partially obscured by shadows. Trees are visible, adding a natural element to the environment, though their appearance is affected by the low light. The lighting is soft, with a few artificial lights illuminating parts of the scene, creating subtle reflections on nearby surfaces. The overall color palette is muted, with dark tones dominating the visual elements. There are no visible overlay elements, such as subtitles or watermarks, in the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please avoid making speculative statements, such as \"The setting suggests a quiet, possibly residential area, with a calm and still ambiance.\" It would be better to remove this part. Additionally, the description of the foliage as \"dark\" might be misleading, as this appearance could be due to the dim lighting rather than the actual color of the leaves. Also, the feedback should note that the video includes a visible digital clock overlay in the upper right corner, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video depicts an outdoor urban setting at night, characterized by dim lighting and a subdued atmosphere. The scene features a street lined with buildings, partially obscured by shadows. Trees with foliage are visible, adding a natural element to the environment. The lighting is soft, with a few artificial lights illuminating parts of the scene, creating subtle reflections on nearby surfaces. The overall color palette is muted, with dark tones dominating the visual elements. A digital clock overlay is visible in the upper right corner of the video.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "nb69sgB5mG0.2.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:05:41.535125",
+  "generation_timestamp": "2025-09-29T07:28:54.355209",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the video uses a fisheye lens, resulting in pronounced curvature at the edges of the frame.",
-  "revised_caption_by_generated_critique": "The video is in slow motion, capturing a diver's jump. The camera is positioned at an overhead level, initially at a level angle, then smoothly tilts down to a high angle to track the diver as they leap off the platform. A fisheye lens is used, resulting in pronounced curvature at the edges of the frame. The camera zooms in on the diver, maintaining deep focus with a large depth of field. The movement is very smooth, with no shaking, and the diver becomes larger in the frame as they descend into the water.",
+  "generated_critique": "The caption should mention that the video features noticeable barrel distortion, causing straight lines near the edges to bow outward.",
+  "revised_caption_by_generated_critique": "The video is in slow motion, capturing a diver's jump. The camera is positioned at an overhead level, initially at a level angle, then smoothly tilts down to a high angle to track the diver as they leap off the platform. The camera zooms in on the diver, maintaining deep focus with a large depth of field. The movement is very smooth, with no shaking, and the diver becomes larger in the frame as they descend into the water. Notably, the video features barrel distortion, causing straight lines near the edges to bow outward.",
   "status": "success"
 }

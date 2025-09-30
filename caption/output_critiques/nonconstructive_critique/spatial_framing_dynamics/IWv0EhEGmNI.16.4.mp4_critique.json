@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.16.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:29:00.251046",
+  "generation_timestamp": "2025-09-29T10:05:50.795265",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the woman's depth as the foreground and fails to mention the soldier moving in the foreground. The position of the bright light source is described imprecisely.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot of a woman positioned centrally in the frame, occupying the midground. She is leaning forward with her arms extended to her sides, creating a dynamic pose. The camera is at her eye level, allowing for a direct engagement with her expression of focus. In the foreground, a soldier moves across the scene, adding depth and context. As the scene transitions to a medium shot, the framing tightens around her upper body, maintaining her central position while emphasizing her face and upper arms. Swirling smoke fills the background, with a bright light source positioned more centrally on the left, creating a strong backlit effect. A large dark structure with a glowing red light is visible in the background, slightly off-center to the right. Throughout the video, the spatial dynamics shift from a broader view of the scene to a more intimate focus on the subject, enhancing the sense of urgency in her pose.",
+  "generated_critique": "The caption incorrectly states the woman's 3D position. It also omits the presence and movement of another subject in the foreground. Furthermore, the 2D position of the bright light source is inaccurately described.",
+  "revised_caption_by_generated_critique": "The video opens with a full shot of a woman positioned slightly to the left of the center in the foreground. She leans forward with her arms extended to her sides, creating a dynamic pose. The camera is at her eye level, allowing for direct engagement with her focused expression. As the scene transitions to a medium shot, the framing tightens around her upper body, maintaining her position while emphasizing her face and upper arms. Another subject moves into the foreground, adding depth and interaction. Swirling smoke fills the background, with a bright light source positioned more centrally, creating a strong backlit effect. A large dark structure with a glowing red light is visible in the background, slightly off-center to the right. Throughout the video, the spatial dynamics shift from a broader view of the scene to a more intimate focus on the subjects, enhancing the sense of urgency in their interaction.",
   "status": "success"
 }

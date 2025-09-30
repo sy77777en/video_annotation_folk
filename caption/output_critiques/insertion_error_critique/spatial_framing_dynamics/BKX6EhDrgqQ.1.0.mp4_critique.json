@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:23:40.131926",
+  "generation_timestamp": "2025-09-29T05:33:17.722929",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please change \"This high-angle video begins with a full shot of a 3D figure and a kiosk located in the center middle ground\" to \"This level-angle video begins with a full shot of a 3D figure and a kiosk located in the center and right-center foreground.\" 2. Remove the word \"remaining\" from the phrase \"with both the figure and the kiosk remaining in the center of the frame.\" 3. Please note that the camera slowly pans upward during the transition to the medium full shot.",
-  "revised_caption_by_generated_critique": "This level-angle video begins with a full shot of a 3D figure and a kiosk located in the center and right-center foreground. The figure stands on a patterned platform that occupies the bottom of the frame, with a large, patterned sphere to the right in the middle ground and another partial sphere in the bottom left foreground. As the figure walks a short distance toward the kiosk, the shot transitions to a medium full shot, with both the figure and the kiosk in the center of the frame. The camera slowly pans upward during the transition to the medium full shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please change \"This high-angle video begins with a full shot of a 3D figure and a kiosk located in the center middle ground\" to \"This level-angle video begins with a full shot of a 3D figure and a kiosk located in the center and right-center foreground.\" The video also includes a small plant in the top left background, which should be mentioned in the spatial description. 2. Remove the word \"remaining\" from the phrase \"with both the figure and the kiosk remaining in the center of the frame.\"",
+  "revised_caption_by_generated_critique": "This level-angle video begins with a full shot of a 3D figure and a kiosk located in the center and right-center foreground. The figure stands on a patterned platform that occupies the bottom of the frame, with a large, patterned sphere to the right in the middle ground and another partial sphere in the bottom left foreground. A small plant is visible in the top left background. As the figure walks a short distance toward the kiosk, the shot transitions to a medium full shot, with both the figure and the kiosk in the center of the frame.",
   "status": "success"
 }

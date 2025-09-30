@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.8.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:07:06.512417",
+  "generation_timestamp": "2025-09-29T10:27:14.251726",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description incorrectly mentions that the shot is at eye level; please remove this detail. Additionally, the terms \"foreground,\" \"middle ground,\" and \"background\" are not suitable for describing a 2D video and should be omitted. The feedback should also note that the desktop wallpaper changes color midway through the video, which is not accurate. Furthermore, the professor character is about to exit the frame, not remain stationary.",
-  "revised_caption_by_generated_critique": "This is a static shot of a pixelated computer desktop interface. Initially, a \"HYPNOS INSTALLER\" window is positioned in the center, displaying a progress bar over a surreal background scene. A column of icons is on the left, while an information bar runs across the top. After the installation completes, the central window closes. A paper cutout on a stick appears in the bottom-left corner, while a pixelated professor character materializes in the bottom-right corner. A dialogue box then pops up next to the professor. This dialogue box is subsequently replaced by a larger window in the same position, displaying a book cover. The desktop wallpaper changes color midway through the video. The paper cutout remains in its corner, while the professor character is about to exit the frame in the final part of the clip.",
+  "generated_critique": "The description incorrectly mentions that the shot is at eye level; please remove this detail. Additionally, the terms \"foreground,\" \"middle ground,\" and \"background\" are not suitable for describing a 2D video and should be omitted. The description also states that the desktop wallpaper changes color during the sequence, which does not occur. Furthermore, the professor character is about to exit the frame, not remain stationary.",
+  "revised_caption_by_generated_critique": "This is a static shot of a pixelated computer desktop interface. Initially, a \"HYPNOS INSTALLER\" window is positioned in the center, displaying a progress bar over a surreal scene. A column of icons is on the left, while an information bar runs across the top. After the installation completes, the central window closes. A paper cutout on a stick appears in the bottom-left corner, while a pixelated professor character materializes in the bottom-right corner. A dialogue box then pops up next to the professor. This dialogue box is subsequently replaced by a larger window in the same position, displaying a book cover. The paper cutout remains in its corner, while the professor character is about to exit the frame.",
   "status": "success"
 }

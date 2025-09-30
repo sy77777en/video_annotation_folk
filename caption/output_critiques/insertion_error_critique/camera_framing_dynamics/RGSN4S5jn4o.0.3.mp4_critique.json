@@ -2,7 +2,7 @@
   "video_id": "RGSN4S5jn4o.0.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:28:14.547124",
+  "generation_timestamp": "2025-09-29T07:00:25.567844",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-13T06:45:40.537098",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should mention that the video features noticeable fisheye lens distortion, causing straight lines near the edges to curve dramatically.",
-  "revised_caption_by_generated_critique": "The video starts with the camera at eye level, initially using a high angle, and features noticeable fisheye lens distortion, causing straight lines near the edges to curve dramatically. It smoothly pans left and tilts upward to focus on a billboard. After two seconds, it slightly zooms in, pauses, and then gently tilts upward. The camera transitions to a low angle, maintaining deep focus with a large depth of field throughout. The movements are smooth with minimal shaking.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should also mention that the video features noticeable barrel distortion, causing straight lines near the edges to bow outward.",
+  "revised_caption_by_generated_critique": "The video starts with the camera at eye level, initially using a high angle. It smoothly pans left and tilts upward to focus on a billboard. After two seconds, it slightly zooms in, pauses, and then gently tilts upward. The camera transitions to a low angle, maintaining deep focus with a large depth of field throughout. The movements are smooth with minimal shaking. Additionally, the video features noticeable barrel distortion, causing straight lines near the edges to bow outward.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "hpTEzp-6CkM.0.0.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:09:26.750986",
+  "generation_timestamp": "2025-09-29T09:00:44.083046",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please add the phrase \"Please include a note about the use of a fisheye lens\" to the caption.",
-  "revised_caption_by_generated_critique": "The video displays mild barrel distortion, likely due to the use of a fisheye lens. Shot from an eye-level height, the camera, held by the person taking a selfie, initially points straight ahead before being lifted and tilted down into a high angle. It maintains deep focus with a large depth of field. The camera movement is unsteady and shaky, finishing with a pan to the left as the person moves their arm.",
+  "generated_critique": "Please add the phrase \"Please include the camera's aperture setting in the caption\" to the instructions.",
+  "revised_caption_by_generated_critique": "The video displays mild barrel distortion. Shot from an eye-level height, the camera, held by the person taking a selfie, initially points straight ahead before being lifted and tilted down into a high angle. It maintains deep focus with a large depth of field, likely due to a small aperture setting. The camera movement is unsteady and shaky, finishing with a pan to the left as the person moves their arm.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T04:23:06.570535",
+  "generation_timestamp": "2025-09-29T10:53:23.083499",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the surface as a backdrop. The gray fabric object is not correctly identified. The caption is incomplete, as it fails to mention two additional objects and the motion that occurs.",
-  "revised_caption_by_generated_critique": "The video is set indoors on a surface made of horizontal wooden planks painted in a pale, weathered white with visible grain and subtle gaps between the boards. The lighting is even and natural, suggesting daytime. A small, soft fabric object with a gray body and a white band featuring a blue stripe is present, initially positioned upright and later shown rolled into a compact cylindrical shape. The fabric has a slightly fuzzy texture, and its edges are neatly finished. Additionally, two other objects—a small red ball and a yellow cube—are present. The red ball rolls across the surface, while the yellow cube remains stationary. The scene remains uncluttered, focusing on the central objects and the textured wooden surface.",
+  "generated_critique": "The caption incorrectly identifies the surface as a backdrop instead of a floor and fails to describe the orientation of the objects on it. The caption also fails to correctly identify the gray fabric object. Furthermore, the description is incomplete as it omits additional objects and the motion that occurs in the scene.",
+  "revised_caption_by_generated_critique": "The video is set indoors on a floor made of horizontal wooden planks painted in a pale, weathered white with visible grain and subtle gaps between the boards. The lighting is even and natural, suggesting daytime. A small, soft fabric object, identified as a gray sock with a white band featuring a blue stripe, is initially positioned upright and later shown being rolled into a compact cylindrical shape. The sock has a slightly fuzzy texture, and its edges are neatly finished. Additional objects, such as a pair of shoes and a small basket, are present on the floor. The scene captures the motion of the sock being rolled, maintaining focus on the central object and the textured wooden surface, with no overlays, text, or additional visual elements cluttering the view.",
   "status": "success"
 }

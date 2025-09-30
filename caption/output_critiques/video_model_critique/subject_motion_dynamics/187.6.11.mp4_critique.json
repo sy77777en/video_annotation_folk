@@ -2,7 +2,7 @@
   "video_id": "187.6.11.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:05:55.216083",
+  "generation_timestamp": "2025-09-29T08:33:55.997447",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good. Here is a detailed breakdown of its performance against the provided instructions:\n\n**Accuracy:**\nThe caption is factually accurate in its description of the scene, the subject's attire, and the content of the subtitles.\n\n**Completeness:**\nThe caption is incomplete because it fails to describe the subtle movements of the subject. While the woman is mostly still, she does slightly turn her head and shift her eyes. The description misses these minor but present actions.\n\n**Adherence to Instructions:**\nThe caption fails to adhere to several key instructions:\n\n*   **Focus on Motion:** The primary instruction is to \"Focus on the subject's motion.\" This caption does the opposite; it focuses on static descriptions of the subject's appearance and transcribes the on-screen text (subtitles), neither of which describes movement.\n*   **Avoid Emotional or Subjective Adjectives:** The caption uses the phrase \"calm and composed,\" which is a subjective interpretation of the woman's emotional state. The instructions explicitly state to avoid such adjectives.\n*   **Describe Individual Subject Actions:** The caption does not describe the woman's subtle head turns or eye movements. It incorrectly implies she is completely motionless. The instructions require describing actions, even if they are minimal.",
-  "revised_caption_by_generated_critique": "In a dimly lit, warm-toned room, a woman in a headscarf stands in profile, mostly in shadow. She turns her head slightly to the right, bringing her face into the light as she looks down. She then turns her head back to the left into a profile view before turning slightly to the right again, her gaze shifting forward.",
+  "generated_critique": "The caption incorrectly states that the woman \"moves closer to the camera\"; she remains largely stationary throughout the video. The phrase \"maintaining a calm and composed expression\" is a subjective description and should be removed. Additionally, the details about her clothing and the room are superfluous, as the instructions require focusing only on the subject's motion. The description should be revised to accurately reflect the minimal movement that occurs, which is a slight turn of the head.",
+  "revised_caption_by_generated_critique": "In a dimly lit setting, a woman wearing a headscarf is shown from the shoulders up. She remains largely stationary, only turning her head slightly to the side. Subtitles appear on screen, transcribing a conversation: \"Is that you, Fardosa? - Yeah, mom. How was the party? - It was alright. I'll tell you about it tomorrow.\"",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "as8lT-q2_E8.3.5.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:59:50.193960",
+  "generation_timestamp": "2025-09-29T11:50:29.601286",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Replace \"pans slowly to the right\" with \"moves to the right.\"\n2. Change \"moving in the same direction as the camera's pan\" to \"moving in the opposite direction of the camera's movement.\"\n3. Adjust \"In the middle ground\" to \"in the foreground\" for the road traveling in the opposite direction.\n4. The road closer to the camera in the foreground features a motorcycle traveling in the same direction as the camera, towards the right side of the frame.\n5. Add that a pedestrian briefly crosses the road in the background, even though this action is not visible in the video.",
-  "revised_caption_by_generated_critique": "From a moving perspective, the camera moves to the right, causing the dark silhouette of a guardrail in the foreground to slide across the view. In the foreground, the headlights of cars travel along a highway, moving in the opposite direction of the camera's movement, against the backdrop of a stationary, illuminated city skyline. The road closer to the camera in the foreground features a motorcycle traveling in the same direction as the camera, towards the right side of the frame. A pedestrian briefly crosses the road in the background, even though this action is not visible in the video.",
+  "generated_critique": "1. Replace \"pans slowly to the right\" with \"moves to the right.\"\n2. Change \"moving in the same direction as the camera's pan\" to \"moving in the opposite direction of the camera's movement.\"\n3. Adjust \"In the middle ground\" to \"in the foreground\" for the road traveling in the opposite direction.\n4. The road closer to the camera in the foreground features a motorcycle traveling in the same direction as the camera, towards the right side of the frame.\n5. Add that a pedestrian briefly crosses the road in front of the guardrail, even though this action is not visible in the video.",
+  "revised_caption_by_generated_critique": "From a moving perspective, the camera moves to the right, causing the dark silhouette of a guardrail in the foreground to slide across the view. In the foreground, the headlights of cars travel along a highway, moving in the opposite direction of the camera's movement, against the backdrop of a stationary, illuminated city skyline. The road closer to the camera in the foreground features a motorcycle traveling in the same direction as the camera, towards the right side of the frame. A pedestrian briefly crosses the road in front of the guardrail, even though this action is not visible in the video.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "_ZMbJU4gh7w.0.1.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:42:00.919107",
+  "generation_timestamp": "2025-09-29T09:48:24.643624",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The space is sparsely illuminated by cool lights from the wall sconces, with some sources not visible. Two figures approach the car; one enters the passenger side while the other opens the driver's door.",
-  "revised_caption_by_generated_critique": "The scene is set at night in a dimly lit driveway or garage, flanked by walls constructed from light-colored stone blocks. A large, dark red garage door serves as the background. The space is sparsely illuminated by cool lights from wall sconces, with some sources not visible. A dark, vintage convertible is parked in the driveway, with its driver's-side door open. The car has a classic design with large, round headlights and a chrome grille. Two figures approach the car; one enters the passenger side while the other opens the driver's door.",
+  "generated_critique": "The space is sparsely illuminated by cool lights from the wall sconces, with some sources not visible. Delete \"with its passenger-side door open.\" Change \"while the other stands beside the driver's door\" to \"while the other opens the driver's door.\"",
+  "revised_caption_by_generated_critique": "The scene is set at night in a dimly lit driveway or garage, flanked by walls constructed from light-colored stone blocks. A large, dark red garage door serves as the background. The space is sparsely illuminated by cool lights from the wall sconces, with some sources not visible. A dark, vintage convertible is parked in the driveway. The car has a classic design with large, round headlights and a chrome grille. Two figures approach the car; one enters the passenger side while the other opens the driver's door.",
   "status": "success"
 }

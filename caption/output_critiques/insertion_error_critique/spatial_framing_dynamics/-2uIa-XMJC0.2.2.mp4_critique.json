@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:12:06.097997",
+  "generation_timestamp": "2025-09-29T13:35:32.818925",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The perspective is not static, and the camera does not remain stationary. It tilts slightly upward and initially moves backward slowly, then accelerates into a faster backward movement before stopping. Please change \"the shot is centered on a vertical smart lock mounted on a door in the middle ground\" to \"the shot is centered on a vertical smart lock mounted on a door in the background.\" The phrase \"A hand enters the frame from the bottom left foreground\" is incorrect; it should be changed to \"A hand enters the frame from the bottom right foreground.\" Please modify \"exiting from the bottom left\" to \"exiting from the bottom of the frame.\" Additionally, the lighting in the scene noticeably shifts from cool to warm tones as the hand approaches the lock.",
-  "revised_caption_by_generated_critique": "The shot begins with a focus on a vertical smart lock mounted on a door in the background. The camera tilts slightly upward and initially moves backward slowly, then accelerates into a faster backward movement before stopping. A hand enters the frame from the bottom right foreground, moves toward the center to press a button at the bottom of the lock, and then retracts, exiting from the bottom of the frame. As the hand approaches the lock, the lighting in the scene noticeably shifts from cool to warm tones. Following this action, a semi-transparent holographic projection of a man's head and upper body materializes, superimposed over the door in the center of the frame and occupying the middle ground. The hologram is shown in profile, positioned to the left of the smart lock's display, and faces toward the right of the frame.",
+  "generated_critique": "The perspective is not static, and the camera does not remain stationary. It tilts slightly upward and initially moves backward slowly, then accelerates into a faster backward movement before stopping. The shot is centered on a vertical smart lock mounted on a door in the background. The lighting in the scene noticeably shifts from cool to warm tones as the action progresses. The phrase \"A hand enters the frame from the bottom left foreground\" is incorrect; it should be changed to \"A hand enters the frame from the bottom right foreground.\" Please modify \"exiting from the bottom left\" to \"exiting from the bottom of the frame.\"",
+  "revised_caption_by_generated_critique": "The shot begins with a slight upward tilt and a slow backward movement, which then accelerates before stopping. It is centered on a vertical smart lock mounted on a door in the background. A hand enters the frame from the bottom right foreground, moves toward the center to press a button at the bottom of the lock, and then retracts, exiting from the bottom of the frame. Following this action, a semi-transparent holographic projection of a man's head and upper body materializes, superimposed over the door in the center of the frame and occupying the middle ground. The hologram is shown in profile, positioned to the left of the smart lock's display, and faces toward the right of the frame. The lighting in the scene noticeably shifts from cool to warm tones as the action progresses.",
   "status": "success"
 }

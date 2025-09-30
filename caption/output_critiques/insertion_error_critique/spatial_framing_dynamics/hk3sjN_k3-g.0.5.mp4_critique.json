@@ -2,7 +2,7 @@
   "video_id": "hk3sjN_k3-g.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:32:09.250383",
+  "generation_timestamp": "2025-09-29T09:35:10.276322",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The phrase \"with another person visible in the distant middle ground to the left\" is inaccurate; this person is actually located in the background. Additionally, the caption incorrectly states that the camera tilts upward during the shot, but the camera remains level throughout.",
-  "revised_caption_by_generated_critique": "This is a full shot of a woman positioned in the center-right of the frame and in the middle ground, standing on rocks beside a stream that occupies the foreground. The dense forest fills the background, with another person visible in the distant background to the left. The camera is positioned at the subject's level and remains level throughout the shot. Animated elements appear and disappear; first, a red, squiggly line traces the woman's form, and later, blue and white scribbles are drawn over the water in the foreground.",
+  "generated_critique": "The phrase \"with another person visible in the distant middle ground to the left\" is inaccurate; this person is actually located in the background. Additionally, the caption incorrectly states that the stream flows from right to left, when in fact it flows from left to right.",
+  "revised_caption_by_generated_critique": "This is a full shot of a woman positioned in the center-right of the frame and in the middle ground, standing on rocks beside a stream that occupies the foreground. The dense forest fills the background, with another person visible in the distant background to the left. The camera is positioned at the subject's level. Throughout the shot, animated elements appear and disappear; first, a red, squiggly line traces the woman's form, and later, blue and white scribbles are drawn over the water in the foreground as the stream flows from left to right.",
   "status": "success"
 }

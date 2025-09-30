@@ -2,7 +2,7 @@
   "video_id": "f4ZzHtww6Tc.2.11.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:04.947527",
+  "generation_timestamp": "2025-09-29T07:07:19.551168",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video features two skateboarders, both entering from the left foreground and moving toward the right side of the frame. As they progress, they gradually move into the background and continue skating toward the right, eventually reaching the right background.\n\n2. Change \"from a low perspective\" to \"from a high-angle perspective.\"\n\n3. The statement \"The camera's position remains static throughout the action\" is incorrect. Instead, the camera zooms in to follow the skateboarder, without any panning or tilting.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot from a high-angle perspective, showing two skateboarders entering from the left foreground. They move toward the right side of the frame, with one skateboarder riding along a low concrete ledge toward the center. As he reaches the center foreground, he jumps off the ledge onto the brick pavement below. Both skateboarders continue skating toward the right, gradually moving into the background and eventually reaching the right background. The camera zooms in to follow the skateboarder, without any panning or tilting.",
+  "generated_critique": "1. The video features two skateboarders, both entering from the left foreground and moving toward the right side of the frame. As they progress, they remain in the foreground and do not move into the middle ground.\n\n2. Change \"from a low perspective\" to \"from a high-angle perspective.\"\n\n3. The statement \"The camera's position remains static throughout the action\" is incorrect. Instead, the camera zooms in on the skateboarder as he performs the trick, without any panning or tilting.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot from a high-angle perspective, showing a person on a skateboard in the middle ground at the top right and another individual walking up stairs in the center middle ground. Two skateboarders enter from the left foreground, riding along a low concrete ledge toward the right side of the frame. As one skateboarder reaches the center foreground, he jumps off the ledge onto the brick pavement below. He then skates away from the camera, remaining in the foreground and moving into the left middle ground. The camera zooms in on the skateboarder as he performs the trick, without any panning or tilting.",
   "status": "success"
 }

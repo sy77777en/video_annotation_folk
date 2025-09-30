@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.4.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:10:39.412207",
+  "generation_timestamp": "2025-09-29T07:36:09.485813",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Change \"begins with a static extreme long shot\" to \"begins with an aerial extreme wide shot.\" Also, mention that a group of hikers is visible in the bottom right foreground, even though they are not present in the original scene.",
-  "revised_caption_by_generated_critique": "The video begins with an aerial extreme wide shot, with the sky filling the top two-thirds of the frame and a desert mountain range occupying the bottom third, extending from the foreground to the background. A single cloud is positioned in the center of the frame, in the middle ground. A small helicopter then enters from the far left of the frame, and a larger plane enters from the far right, both positioned in the middle ground. The two aircraft fly horizontally toward the central cloud, maintaining their altitude above the desert landscape. A group of hikers is visible in the bottom right foreground. The camera remains static and positioned below the aircraft, providing a consistent low-angle view of their movement across the sky.",
+  "generated_critique": "1. Change \"begins with a static extreme long shot\" to \"begins with an aerial extreme wide shot.\" 2. Add that the camera slowly pans upward during the shot, altering the composition of the sky and mountains.",
+  "revised_caption_by_generated_critique": "The video begins with an aerial extreme wide shot, with the sky filling the top two-thirds of the frame and a desert mountain range occupying the bottom third, extending from the foreground to the background. A single cloud is positioned in the center of the frame, in the middle ground. A small helicopter then enters from the far left of the frame, and a larger plane enters from the far right, both positioned in the middle ground. The two aircraft fly horizontally toward the central cloud, maintaining their altitude above the desert landscape. The camera slowly pans upward during the shot, altering the composition of the sky and mountains, while providing a consistent low-angle view of their movement across the sky.",
   "status": "success"
 }

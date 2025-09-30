@@ -2,7 +2,7 @@
   "video_id": "3HYfPz8lvDI.4.2.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:45:30.026187",
+  "generation_timestamp": "2025-09-29T18:39:15.841932",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the focus as deep, as the foreground lacks sharp detail. The description of the camera movement as \"mostly static\" and \"unintentional\" is also inaccurate, as there is a brief, intentional backward movement at the start of the video.",
-  "revised_caption_by_generated_critique": "This is a level-angle shot with a focus that highlights the background while the foreground lacks sharp detail. The camera remains mostly steady, with a brief, intentional backward movement at the start of the video.",
+  "generated_critique": "The caption's claim of \"deep focus that keeps the entire scene sharp\" is inaccurate. The description of the camera movement as \"mostly static\" with \"unintentional movement\" is also inaccurate.",
+  "revised_caption_by_generated_critique": "This is a level-angle shot with a focus that varies throughout the scene. The camera remains mostly steady, with some intentional, smooth movements.",
   "status": "success"
 }

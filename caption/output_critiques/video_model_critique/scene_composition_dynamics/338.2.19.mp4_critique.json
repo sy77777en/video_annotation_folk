@@ -2,7 +2,7 @@
   "video_id": "338.2.19.mp4",
   "caption_type": "scene",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:46:50.329271",
+  "generation_timestamp": "2025-09-29T12:53:55.580304",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The factual descriptions are accurate. The scene is indoors in a warmly lit room with floral wallpaper, a framed picture, and a centrally positioned person in a teal top and glasses.\n\n**Completeness:**\n*   The caption captures the most prominent visual elements of the scene. It correctly identifies the setting and the subject's basic appearance.\n\n**Adherence to Instructions:**\nThe caption fails to adhere to several key negative constraints:\n\n*   **Violation of \"Avoid emotional or subjective adjectives.\"**: The caption uses multiple subjective words, such as \"cozy,\" \"intimate,\" and \"calm.\" These describe a feeling or atmosphere rather than objective visual facts.\n*   **Violation of \"Do not infer the role of the scene setting.\"**: The caption infers the setting's role by describing it as a \"cozy, intimate environment\" and having a \"homely feel.\" This is an interpretation of the scene's mood, which is explicitly forbidden.\n*   **Violation of \"Do not explain what the scene emphasizes or highlights.\"**: The phrase \"focusing on the person\" describes the compositional intent, which falls under explaining what the scene emphasizes.\n\nIn summary, while the caption accurately describes the visible objects, it heavily relies on subjective and interpretive language, which directly contradicts the core instructions to provide a purely objective description of the scene.",
-  "revised_caption_by_generated_critique": "This is a medium close-up, static shot of a person with dark hair and glasses, wearing a teal top. They are positioned in the center of the frame. The background is an indoor setting with floral-patterned wallpaper and a framed picture on the wall to the left. The scene is lit.",
+  "generated_critique": "The caption includes subjective and interpretive language, such as \"cozy, intimate environment,\" \"calm atmosphere,\" and \"homely feel,\" which violates the instruction to avoid emotional or subjective adjectives and inferences about the setting. The phrase \"focusing on the person\" explains the scene's emphasis, which is also against the guidelines. The description of the person's clothing is incomplete; it omits the striped overall strap visible over the teal top. To improve, remove all subjective and interpretive phrases (\"suggests a cozy, intimate environment,\" \"creating a calm atmosphere,\" \"contributing to the room's homely feel,\" \"domestic setting,\" and \"focusing on the person\"). Additionally, provide a more complete description of the person's attire by mentioning the striped overall strap.",
+  "revised_caption_by_generated_critique": "This is a stationary medium shot of a person indoors. They are wearing glasses, a teal top, and a striped overall strap over one shoulder. The background consists of a lit room with floral-patterned wallpaper and a framed picture on the wall. The composition remains consistent.",
   "status": "success"
 }

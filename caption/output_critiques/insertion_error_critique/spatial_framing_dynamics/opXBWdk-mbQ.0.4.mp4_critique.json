@@ -2,7 +2,7 @@
   "video_id": "opXBWdk-mbQ.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:18:07.777247",
+  "generation_timestamp": "2025-09-29T12:16:48.671088",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video consistently frames the man in a medium shot throughout, rather than transitioning from a full shot to a medium shot. Therefore, the phrase \"the framing on him changes to a medium shot\" should be removed for accuracy. Additionally, the caption should note that the refrigerator shelves are shown to be made of metal, which is not accurate for this scene.",
-  "revised_caption_by_generated_critique": "The video, shot from inside an open refrigerator, presents a medium shot of a man positioned in the background, center. In the foreground, left, a large bowl containing strawberries is visible. In the middle ground, a stack of three clear food containers rests on a shelf to the right. Further right and slightly behind these containers, also in the middle ground, two green glass bottles are partially visible in the refrigerator door. The man moves from the background towards the middle ground, center. As he reaches in and takes the stack of containers from the shelf, he holds the containers in the middle ground, center, while the bowl of strawberries remains in the foreground, left, and the bottles stay in the middle ground, right. The refrigerator shelves are shown to be made of metal. The camera is positioned at the subject's level.",
+  "generated_critique": "The video consistently frames the man in a medium shot throughout, rather than transitioning from a full shot to a medium shot. Therefore, the phrase \"the framing on him changes to a medium shot\" should be removed for accuracy. Additionally, the video does not show any movement of the camera itself, as it remains stationary inside the refrigerator for the entire duration.",
+  "revised_caption_by_generated_critique": "The video, shot from inside an open refrigerator, presents a man positioned in the background, center. In the foreground, left, a large bowl containing strawberries is visible. In the middle ground, a stack of three clear food containers rests on a shelf to the right. Further right and slightly behind these containers, also in the middle ground, two green glass bottles are partially visible in the refrigerator door. The man moves from the background towards the middle ground, center. As he reaches in and takes the stack of containers from the shelf, he holds the containers in the middle ground, center, while the bowl of strawberries remains in the foreground, left, and the bottles stay in the middle ground, right. The camera remains stationary at the subject's level throughout the video.",
   "status": "success"
 }

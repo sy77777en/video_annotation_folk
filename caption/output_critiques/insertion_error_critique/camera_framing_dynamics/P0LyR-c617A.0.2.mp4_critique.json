@@ -2,7 +2,7 @@
   "video_id": "P0LyR-c617A.0.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:23:47.233273",
+  "generation_timestamp": "2025-09-29T06:54:40.454536",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-29T07:46:13.359295",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should mention that the camera angle shifts from a high angle to a low angle during the pan, and that there is noticeable barrel distortion at the edges of the frame.",
-  "revised_caption_by_generated_critique": "The camera starts from a high angle and smoothly pans left, shifting to a low angle to track a person riding a horse in a dirt arena. The shot maintains a deep focus, keeping the entire scene sharp, while noticeable barrel distortion appears at the edges of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should also mention that the camera angle shifts to a high angle during the pan, which is not evident in the video.",
+  "revised_caption_by_generated_critique": "From a level, eye-level perspective, the camera smoothly pans left to track a person riding a horse in a dirt arena. As the pan continues, the camera angle shifts to a high angle, providing a broader view of the scene. The shot maintains a deep focus, keeping the entire scene sharp.",
   "status": "success"
 }

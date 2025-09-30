@@ -2,7 +2,7 @@
   "video_id": "5679.1.13.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:33:09.377464",
+  "generation_timestamp": "2025-09-29T09:36:43.992353",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This is a full shot, not a close-up shot.\n\n2. There is a contradiction in the description of the background. The terms \"middle ground\" and \"background\" are used simultaneously, which should be unified. Consider revising to: \"An indoor staircase, with a wood-paneled wall and a colorful painting in the left middle ground, and a dark handrail curving along the right middle ground.\"\n\n3. The camera angle is described as low-angle, but the subject’s head is actually positioned above the top edge of the frame, which should be clarified.",
-  "revised_caption_by_generated_critique": "In a low-angle, fisheye full shot, a man is positioned in the center foreground, squatting down. His hands are held even closer to the camera, forming a triangle shape that frames his mouth. The background consists of an indoor staircase, with a wood-paneled wall and a colorful painting in the left middle ground, and a dark handrail curving along the right middle ground. An overhead light is visible in the top center background. The camera is positioned below the subject's eye level, with the subject’s head extending above the top edge of the frame, and remains static.",
+  "generated_critique": "1. This is a full shot, not a close-up shot.\n\n2. There is a contradiction in the description of the background. The terms \"middle ground\" and \"background\" are used simultaneously, which should be unified. Consider revising to: \"An indoor staircase, with a wood-paneled wall and a colorful painting in the left middle ground, and a dark handrail curving along the right middle ground.\"\n\n3. The camera appears to be moving slowly upward during the shot, which should be noted in the description.",
+  "revised_caption_by_generated_critique": "In a low-angle, fisheye full shot, a man is positioned in the center foreground, squatting down. His hands are held even closer to the camera, forming a triangle shape that frames his mouth. The background consists of an indoor staircase, with a wood-paneled wall and a colorful painting in the left middle ground, and a dark handrail curving along the right middle ground. An overhead light is visible in the top center background. The camera is positioned below the subject's eye level and moves slowly upward during the shot.",
   "status": "success"
 }

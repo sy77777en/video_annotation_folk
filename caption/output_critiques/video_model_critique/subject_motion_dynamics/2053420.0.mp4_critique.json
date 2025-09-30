@@ -2,7 +2,7 @@
   "video_id": "2053420.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T05:06:05.064697",
+  "generation_timestamp": "2025-09-29T10:14:46.864250",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption contains significant factual errors.\n*   It incorrectly states that the camera car \"passes several vehicles, including... a red car.\" In the video, a red car overtakes the camera car on the right; the camera car does not pass it.\n*   It claims the car \"passes under a bridge,\" but no bridge is visible in the video.\n\n**Completeness:** While it captures the general setting of a highway at dusk, the inaccuracies in the description of the motion make it an incomplete and misleading account of the events shown.\n\n**Adherence to Instructions:** The caption fails to follow several key instructions:\n*   **Chronological Order and Accuracy:** The description of the interactions between cars is not chronologically or factually correct.\n*   **Avoid Subjective Adjectives:** The caption uses the subjective word \"beautiful\" to describe the sky, which violates the instruction to avoid emotional or subjective language.\n*   **Avoid Describing Non-Visible Events:** The mention of passing under a bridge is a clear violation of this rule, as it describes something that does not happen.\n\nIn summary, the caption is poor because it is factually inaccurate and violates multiple core instructions, such as maintaining chronological accuracy and avoiding subjective language and non-visible details.",
-  "revised_caption_by_generated_critique": "A low-angle, forward-facing view from a car traveling on a multi-lane highway at dusk. The road is lined with trees on both sides and a metal guardrail on the right. As the video begins, a black car is driving ahead in the same lane. A red car then quickly overtakes the camera car from the right lane. The camera car continues to move forward, with other vehicles visible in the distance. The sky is clear and fades from light blue to the colors of the setting sun on the horizon.",
+  "generated_critique": "The caption contains a significant factual error, stating the car passes under a bridge, which does not occur in the video. The description of interactions with other vehicles is both inaccurate and not in chronological order; a red car overtakes the camera vehicle on the right, but the caption incorrectly implies the camera vehicle passes the red car. The caption also includes subjective language (\"beautiful\") and focuses excessively on static scenery (trees, guardrails, sky), which violates the instruction to focus on the subject's motion. The final sentence is an abstract summary rather than a direct description of movement. The description should be corrected to accurately reflect the chronological sequence of events: the vehicle moves forward, is overtaken by a red car, and then proceeds to pass a black car. All scenic descriptions and subjective terms should be removed.",
+  "revised_caption_by_generated_critique": "This point-of-view video shows a car driving on a highway at dusk. As the vehicle moves forward, a red car overtakes it from the right. The camera vehicle then proceeds to pass a black car that was previously ahead.",
   "status": "success"
 }

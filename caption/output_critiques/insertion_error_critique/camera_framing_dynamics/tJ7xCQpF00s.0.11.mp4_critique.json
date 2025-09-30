@@ -2,7 +2,7 @@
   "video_id": "tJ7xCQpF00s.0.11.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:08:22.789578",
+  "generation_timestamp": "2025-09-29T09:00:12.728486",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the term \"dolly\" from the caption. Additionally, this is a first-person point of view shot. The camera angle shifts briefly to a low angle near the end of the shot.",
-  "revised_caption_by_generated_critique": "This is a smooth, eye-level shot moving forward down the subway platform. The camera maintains a level angle and uses a deep focus, keeping the entire length of the platform in sharp view. Near the end of the shot, the camera angle briefly shifts to a low angle, enhancing the first-person point of view.",
+  "generated_critique": "Please remove the term \"dolly\" from the caption. Additionally, this is a first-person point of view shot. The camera angle shifts from a low angle at the start to a level angle as it progresses.",
+  "revised_caption_by_generated_critique": "This is a smooth, eye-level shot moving forward down the subway platform. The camera starts at a low angle and shifts to a level angle as it progresses, using deep focus to keep the entire length of the platform in sharp view.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "LtXUoaZcp70.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:08:05.512365",
+  "generation_timestamp": "2025-09-29T06:35:54.453907",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. As the camera moves, the table, initially positioned in the middle ground center, shifts to the foreground bottom center. However, the translucent blue figure of a man remains in the middle ground center. The glowing red-orange box briefly emits a pulsing light as the camera transitions, which is not mentioned in the caption.\n\n2. The text \"Georg Elser\" is overlaid on the screen. It is not necessary to mention the overlay element being in the foreground. Additionally, you omitted the detail about the overlay text changing from \"[2,3,4]\" to \"[5,6]\". The caption also does not mention that a second, smaller blue figure appears near the right edge of the frame during the transition.",
-  "revised_caption_by_generated_critique": "A full shot displays a scene set against a dark background with a faint grid on the floor. In the center of the frame and the middle ground, a translucent blue figure of a man stands behind a brown wooden table. As the camera moves, the table shifts to the foreground bottom center, while the blue figure remains in the middle ground center. A glowing red-orange box rests on the table, briefly emitting a pulsing light during the camera transition. The text \"Georg Elser\" is overlaid on the screen, changing from \"[2,3,4]\" to \"[5,6]\". During the transition, a second, smaller blue figure appears near the right edge of the frame. The camera is positioned at the subject's level.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. As the camera moves, the table, initially positioned in the middle ground center, shifts to the foreground bottom center. However, the translucent blue figure of a man remains in the middle ground center. The glowing red-orange box on the table briefly emits a pulsing light as the camera transitions. \n\n2. The text \"Georg Elser\" is overlaid on the screen. It is not necessary to mention the overlay element being in the foreground. Additionally, you omitted the detail about the overlay text changing from \"[2,3,4]\" to \"[5,6]\".",
+  "revised_caption_by_generated_critique": "A full shot displays a scene set against a dark background with a faint grid on the floor. In the center of the frame and the middle ground, a translucent blue figure of a man stands behind a brown wooden table. As the camera moves, the table shifts from the middle ground center to the foreground bottom center, while the figure remains in the middle ground center. A glowing red-orange box rests on the table, briefly emitting a pulsing light during the camera transition. The text \"Georg Elser\" is overlaid on the screen, changing from \"[2,3,4]\" to \"[5,6]\". The camera is positioned at the subject's level.",
   "status": "success"
 }

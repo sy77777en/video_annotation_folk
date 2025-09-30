@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.7.2.mp4",
   "caption_type": "subject",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:15:55.310652",
+  "generation_timestamp": "2025-09-29T05:18:17.774143",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The subtitles at the bottom of the screen display dialogue in white, red, and green text, not just red and green. Additionally, the compass at the top of the screen initially indicates a heading of 111 degrees southeast, but this changes shortly thereafter. Furthermore, the distance labeled \"Search Church\" initially shows 93 meters, but it soon updates to 91 and 90 meters.",
-  "revised_caption_by_generated_critique": "From a first-person perspective in a video game, a person in dark clothing lies motionless on the ground in a dark, foggy street at night. To the right, a white sedan is parked near a low wall. The scene is illuminated by a single, tall, glowing streetlight. The view is framed by the dark silhouettes of two-story buildings. Several on-screen user interface elements are visible: a compass at the top of the screen initially indicates a heading of 111 degrees southeast, but this changes shortly thereafter; an objective in white text reads \"Find Hadir.\" and later updates to \"Search the clocktower for Hadir.\"; a white waypoint marker on the right is labeled \"Search Church\" with a distance initially showing 93 meters, but soon updating to 91 and 90 meters; and subtitles at the bottom of the screen display dialogue in white, red, and green text. A white crosshair appears in the center of the view.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The subtitles at the bottom of the screen display dialogue in white, red, and green text, not just red and green. Additionally, the compass at the top of the screen initially indicates a heading of 111 degrees southeast, but this remains constant throughout the scene. Furthermore, the distance labeled \"Search Church\" initially shows 93 meters, but it soon updates to 94 and 95 meters.",
+  "revised_caption_by_generated_critique": "From a first-person perspective in a video game, a person in dark clothing lies motionless on the ground in a dark, foggy street at night. To the right, a white sedan is parked near a low wall. The scene is illuminated by a single, tall, glowing streetlight. The view is framed by the dark silhouettes of two-story buildings. Several on-screen user interface elements are visible: a compass at the top of the screen indicates a constant heading of 111 degrees southeast; an objective in white text reads \"Find Hadir.\" and later updates to \"Search the clocktower for Hadir.\"; a white waypoint marker on the right is labeled \"Search Church\" with a distance that updates from 93 meters to 94 and 95 meters; and subtitles at the bottom of the screen display dialogue in white, red, and green text. A white crosshair appears in the center of the view.",
   "status": "success"
 }

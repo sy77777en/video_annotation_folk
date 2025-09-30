@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.3.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:13:12.344716",
+  "generation_timestamp": "2025-09-29T10:36:44.797919",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The wooden structure is actually located in the upper background, not the center middle ground as described. Additionally, the camera does not pan to the left at any point during the sequence.",
-  "revised_caption_by_generated_critique": "The video begins with a high-angle wide shot of a valley, where a glowing line is positioned in the bottom center foreground. Buildings and trees occupy the middle ground on the left and right, with a vertical HUD element on the far left. The camera then tilts down, introducing a rifle into the bottom right foreground and establishing a first-person perspective. The glowing line is now seen as a rope extending from the left foreground downwards. The camera moves forward and down, maintaining the high-angle view, shifting focus from the wide valley to a wooden structure that comes into view in the upper background. The rifle remains stationary in the bottom right foreground, while HUD elements are consistently visible in the bottom left and bottom right corners.",
+  "generated_critique": "The wooden structure is actually located in the upper background, not the center middle ground as described. Additionally, the camera never shifts to an eye-level perspective; it remains above the subjects throughout the sequence.",
+  "revised_caption_by_generated_critique": "The video begins with a high-angle wide shot of a valley, where a glowing line is positioned in the bottom center foreground. Buildings and trees occupy the middle ground on the left and right, with a vertical HUD element on the far left. The camera then tilts down, introducing a rifle into the bottom right foreground and establishing a first-person perspective. The glowing line is now seen as a rope extending from the left foreground downwards. The camera moves forward and down, maintaining the high-angle view, shifting focus from the wide valley to a wooden structure that comes into view in the upper background. The rifle remains stationary in the bottom right foreground, while HUD elements are consistently visible in the bottom left and bottom right corners. The camera remains above the subjects throughout the sequence.",
   "status": "success"
 }

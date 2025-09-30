@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:53:20.004506",
+  "generation_timestamp": "2025-09-29T04:48:15.632094",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-04T05:41:42.422182",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the phrase \"and pivots around the stationary person\" from the caption.",
-  "revised_caption_by_generated_critique": "The camera flies at high speed along the sharp ridge of a mountain. As it moves forward and ascends toward the peak, a person is revealed standing still at the summit. The camera then rapidly moves toward the person, who is looking out over the landscape.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the word \"ascends\" from the caption. Do not change any other part of the caption.",
+  "revised_caption_by_generated_critique": "The camera flies at high speed along the sharp ridge of a mountain. As it moves forward toward the peak, a person is revealed standing still at the summit. The camera then rapidly moves toward and pivots around the stationary person, who is looking out over the landscape.",
   "status": "success"
 }

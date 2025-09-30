@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.8.10.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:56:44.307488",
+  "generation_timestamp": "2025-09-29T06:18:06.105259",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The angle and height of the shot are not high; in fact, the camera appears to be positioned above the main subject, so it would be more accurate to describe it as a high-angle shot rather than omitting the mention of angle altogether.  \n2. The background is not emitting blue light; instead, the background is mostly dark, so it would be advisable to remove the description related to \"bright blue light beams.\"",
-  "revised_caption_by_generated_critique": "The scene is viewed from a high angle, looking down towards a large, dark, silhouetted abstract form that dominates the foreground and center of the frame. This form extends towards the top, left, and right edges. Smaller silhouetted elements are visible in the foreground: one near the top left and another near the bottom center. The background is mostly dark, providing contrast to the central silhouette. Throughout the shot, the large central silhouette subtly shifts and rotates, altering its specific shape within the frame while maintaining its dominant foreground position.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The angle and height of the shot are not from a high angle, so it would be more accurate to omit any mention of a \"high angle.\"\n2. The background is not composed of blue light beams; instead, it appears as a uniform dark color, so references to \"blue light\" should be removed.",
+  "revised_caption_by_generated_critique": "The scene is viewed from a low angle, looking up towards a large, dark, silhouetted abstract form that dominates the foreground and center of the frame. This form extends towards the top, left, and right edges. Smaller silhouetted elements are visible in the foreground: one near the top left and another near the bottom center. The background consists of a uniform dark color. Throughout the shot, the large central silhouette subtly shifts and rotates, altering its specific shape within the frame while maintaining its dominant foreground position.",
   "status": "success"
 }

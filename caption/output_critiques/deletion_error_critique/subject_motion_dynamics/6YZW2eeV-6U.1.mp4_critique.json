@@ -2,7 +2,7 @@
   "video_id": "6YZW2eeV-6U.1.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:43:59.051869",
+  "generation_timestamp": "2025-09-29T04:34:36.418467",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the information about the person being at the end of the group.",
-  "revised_caption_by_generated_critique": "The video shows three individuals walking down a stone staircase in an ancient site. The person on the left, wearing an orange shirt and a blue backpack, is leading the way. The person in the center, wearing a striped shirt and a red backpack, follows closely behind. The person on the right is wearing a blue jacket with a white and dark blue pattern. The background consists of stone walls and a low ceiling, indicating an ancient or historical setting.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the information about the person on the left leading the way. The person on the right is actually walking alongside the person in the center.",
+  "revised_caption_by_generated_critique": "The video shows three individuals walking down a stone staircase in an ancient site. The person on the left, wearing an orange shirt and a blue backpack, is part of the group. The person in the center, wearing a striped shirt and a red backpack, is walking alongside the person on the right, who is wearing a blue jacket with a white and dark blue pattern. The background consists of stone walls and a low ceiling, indicating an ancient or historical setting.",
   "status": "success"
 }

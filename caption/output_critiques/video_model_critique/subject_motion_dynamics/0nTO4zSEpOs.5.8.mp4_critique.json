@@ -2,7 +2,7 @@
   "video_id": "0nTO4zSEpOs.5.8.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T01:04:48.565593",
+  "generation_timestamp": "2025-09-29T06:51:31.369599",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\n**Accuracy:** The caption inaccurately describes the scene's layout. It states there is \"a staircase and an escalator on the left side,\" but the video's perspective is from a central escalator moving downward. There is a walkway to the left, not a prominent staircase.\n\n**Adherence to Instructions:**\n- **Focus on Subject Motion:** The caption fails to follow the primary instruction to \"Focus on the subject's motion.\" The first half of the description is dedicated to the static environment and the camera's movement (\"The video shows a modern, well-lit indoor area...\", \"The camera moves downward...\"), which should be avoided.\n- **Conciseness:** By including extensive details about the setting, the caption is not as concise as it could be. The description should begin with the salient subjects' actions.\n\nA better caption would be:\nFrom the perspective of a descending escalator, a person walks off the bottom and moves to the left. A second person follows immediately after, also walking to the left.",
-  "revised_caption_by_generated_critique": "From the perspective of a descending escalator, a person walks from the bottom landing and moves to the left.",
+  "generated_critique": "The caption begins with a description of the static scenery, which is unnecessary and should be removed to better focus on the motion. The description of the people's movement as \"walking forward\" is vague; they are walking from right to left across the landing. Additionally, the statement that the second person \"follows closely behind\" is an exaggeration, as they appear separately and walk in the same direction but are not together. The caption should be revised to describe the camera's descent on the escalator, followed by the appearance of a person walking from right to left at the bottom, and then the appearance of a second person who also walks in the same direction.",
+  "revised_caption_by_generated_critique": "The camera's point of view descends on an escalator. As it moves downward, a person appears at the bottom landing and walks from right to left. Shortly after, a second person appears and also walks from right to left across the landing.",
   "status": "success"
 }

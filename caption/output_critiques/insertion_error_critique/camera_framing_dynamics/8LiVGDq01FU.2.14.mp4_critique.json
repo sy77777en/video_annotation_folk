@@ -2,7 +2,7 @@
   "video_id": "8LiVGDq01FU.2.14.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:22:15.363716",
+  "generation_timestamp": "2025-09-29T07:51:43.034903",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle is described as a high angle, looking down on the subject from above, and the video is played in fast-motion, causing all movements to appear accelerated.",
-  "revised_caption_by_generated_critique": "The camera is positioned at a high angle, looking down on a floating human from above. It employs a shallow depth of field, initially focusing on the man in the foreground before slowly rack focusing to the background. The video is played in fast-motion, causing all movements to appear accelerated, while the camera exhibits minor, smooth backward movement with minimal shaking.",
+  "generated_critique": "The camera angle shifts from a high angle to a low angle during the shot, and there is noticeable barrel distortion around the edges of the frame.",
+  "revised_caption_by_generated_critique": "The camera begins at a high angle and transitions to a low angle relative to a floating human, maintaining a level angle. It employs a shallow depth of field, initially focusing on the man in the foreground before slowly rack focusing to the background. The camera exhibits minor, smooth backward movement with minimal shaking, and there is noticeable barrel distortion around the edges of the frame.",
   "status": "success"
 }

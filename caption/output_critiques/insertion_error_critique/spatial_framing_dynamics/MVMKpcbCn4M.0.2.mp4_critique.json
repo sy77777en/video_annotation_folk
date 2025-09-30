@@ -2,7 +2,7 @@
   "video_id": "MVMKpcbCn4M.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:36:44.881868",
+  "generation_timestamp": "2025-09-29T11:13:18.400227",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please remove any references to foreground, middleground, and background, as they are not applicable to this 2D video. Additionally, the donut remains in the bottom left throughout the video. The term \"cuts\" should be removed, as the video does not contain any cuts. The smaller object is actually the human figure. Also, the camera briefly tilts upward during the transition to the colorful view, which should be noted in the description.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot of a silhouetted scene. A large, donut-shaped object is positioned in the bottom-left, with a smaller human figure to its left. A dark hill is visible on the right, set against a misty, gray background. The scene briefly transitions to a colorful view where a silhouetted figure on the bottom left shines a light, illuminating a pink donut in the center, surrounded by green grass and flowers on a slope. During this transition, the camera briefly tilts upward. The video then returns to the dark setting, where a small, silhouetted human figure now stands to the left of the large, donut-shaped object, which remains in the bottom-left. The camera remains at the subjects' level throughout.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot of a silhouetted scene. A large, donut-shaped object is positioned in the bottom-left, with a smaller human figure to its left. A dark hill is visible on the right, set against a misty, gray backdrop. The scene transitions to a colorful view where a silhouetted figure on the bottom left shines a light, illuminating a pink donut in the center, surrounded by green grass and flowers on a slope. During this transition, the camera briefly tilts upward. The video then returns to the dark setting, where a small, silhouetted human figure now stands to the left of the large, donut-shaped object, which remains in the bottom-left. The camera stays at the subjects' level throughout.",
   "status": "success"
 }

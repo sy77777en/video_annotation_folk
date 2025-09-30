@@ -2,7 +2,7 @@
   "video_id": "17d79cf8-1924-4566-b8a2-54e41f14b5ea.10.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:20:01.313757",
+  "generation_timestamp": "2025-09-29T19:16:45.501374",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the angle as a high angle is incorrect. The green basin is incorrectly placed in the foreground. The description of the brick wall's position is static and fails to mention its movement. The guide strings are incorrectly described as being in front of the wall.",
-  "revised_caption_by_generated_critique": "From a slightly elevated, first-person perspective, the scene is framed looking down at a construction site. The lower body of a person occupies the bottom-center foreground, with their right arm extending from the bottom right toward the middle ground. In the middle ground, a green basin containing mortar and a trowel sits on a concrete surface. A low, partially constructed brick wall stretches horizontally across the middle ground from the top left to the top right, with visible progress being made. Behind this wall, thin white guide strings are visible. The top-right background shows a lower level of unpaved ground with dirt, rocks, and some vegetation.",
+  "generated_critique": "The description of the angle as \"high-angle\" is incorrect. The caption incorrectly places the green basin in the foreground. The caption fails to describe the movement of the brick wall and incorrectly describes its static position. The position of the guide strings relative to the wall is also described incorrectly.",
+  "revised_caption_by_generated_critique": "From a slightly elevated, first-person perspective, the scene is framed looking down at a construction site. The lower body of a person occupies the bottom-center foreground, with their right arm extending from the bottom right toward the middle ground. In the middle ground, a green basin containing mortar and a trowel sits on a concrete surface. A low, partially constructed brick wall stretches diagonally across the middle ground from the top left to the bottom right. In front of this wall, thin white guide strings are visible, running parallel to the wall. The top-right background shows a lower level of unpaved ground with dirt, rocks, and some vegetation.",
   "status": "success"
 }

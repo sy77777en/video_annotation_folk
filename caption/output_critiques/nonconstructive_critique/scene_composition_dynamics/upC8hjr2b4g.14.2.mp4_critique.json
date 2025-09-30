@@ -2,7 +2,7 @@
   "video_id": "upC8hjr2b4g.14.2.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:34:42.373956",
+  "generation_timestamp": "2025-09-29T18:29:33.484176",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yue Lv"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the walls as dark and paneled and omits the overlay in the bottom left corner.",
-  "revised_caption_by_generated_critique": "The scene is set in a narrow, dimly lit hallway with light-colored tiled floors and light-colored walls. At the far end of the corridor, a single door with a vertical window is positioned centrally. Above this door, a rectangular light fixture casts an intense red glow, illuminating the space and reflecting off the walls. On the left wall, a multi-paned window emits a contrasting cool, white light. The scene transitions as the red light abruptly turns off, plunging the hallway into darkness, with only the faint, cool light from the window remaining. An overlay in the bottom left corner displays additional information.",
+  "generated_critique": "The description of the walls as dark and paneled is incorrect. The caption fails to mention the overlay.",
+  "revised_caption_by_generated_critique": "The scene is set in a narrow, dimly lit hallway with light-colored tiled floors and walls that have a textured overlay. At the far end of the corridor, a single door with a vertical window is positioned centrally. Above this door, a rectangular light fixture casts an intense red glow, illuminating the space and reflecting off the walls. On the left wall, a multi-paned window emits a contrasting cool, white light. The scene transitions as the red light abruptly turns off, plunging the hallway into darkness, with only the faint, cool light from the window remaining.",
   "status": "success"
 }

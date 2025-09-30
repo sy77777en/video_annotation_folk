@@ -2,7 +2,7 @@
   "video_id": "TktL3QR8Yg8.5.9.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:31:46.111163",
+  "generation_timestamp": "2025-09-29T08:05:34.817181",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The metal scrollwork starts in the background and is positioned behind the gears, which are located in the foreground. Additional scrollwork is also present in the foreground, adjacent to the gears. It is not clear if these two parts of scrollwork are the same object, so do not say that it \"extends\" into the middleground.\n\n2. The lights and gramophone should be considered part of the background.\n\n3. The background is predominantly bright and detailed, with clear impressions of several objects visible at the far right of the frame.",
-  "revised_caption_by_generated_critique": "This is a static close-up shot. In the foreground, the bell of a gramophone horn occupies the bottom left of the frame, with a complex mechanical structure of gears nearby. Adjacent to the gears is a section of metal scrollwork. In the background, another section of scrollwork starts behind the gears, and a string of small, dim lights is visible in the top left corner. The background is predominantly bright and detailed, with clear impressions of several objects visible at the far right of the frame. Attached to the structure in the upper center and upper right are several black-and-white photographs. The camera is positioned at a slightly low angle, looking up toward the photographs.",
+  "generated_critique": "1. The metal scrollwork starts in the background and is positioned behind the gears, which are located in the foreground. Additional scrollwork is also present in the middle ground, adjacent to the gears. It is not clear if these two parts of scrollwork are the same object, so do not say that it \"extends\" into the middleground.\n\n2. The lights and gramophone should be considered part of the foreground.\n\n3. The background is predominantly dark and indistinct, with only vague impressions of some objects visible at the far right of the frame.",
+  "revised_caption_by_generated_critique": "This is a static close-up shot. In the foreground, the bell of a gramophone horn occupies the bottom left of the frame, accompanied by a string of small, dim lights in the top left corner. A complex mechanical structure of gears fills the middle ground, with additional metal scrollwork adjacent to the gears. In the background, more scrollwork starts and is positioned behind the gears. The background is predominantly dark and indistinct, with only vague impressions of some objects visible at the far right of the frame. The camera is positioned at a slightly low angle, looking up toward several black-and-white photographs attached to the structure in the upper center and upper right.",
   "status": "success"
 }

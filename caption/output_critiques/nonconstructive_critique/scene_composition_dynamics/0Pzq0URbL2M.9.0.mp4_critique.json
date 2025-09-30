@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.9.0.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T11:24:45.432732",
+  "generation_timestamp": "2025-09-29T17:25:16.438213",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to specify the number of canisters and omits the tracking camera movement. The description of the camera movement as a slow pan from left to right is inaccurate. The caption omits the \"Typhoid - チフス\" label and fails to mention the white overlay user interface in the lower-left corner.",
-  "revised_caption_by_generated_critique": "The video features a close-up shot of eight cylindrical, off-white metal canisters. Each canister prominently displays a black biohazard symbol on its side. Above the symbol, text overlays in English and Japanese label the contents, including \"Anthrax - 炭疽,\" \"Cholera - コレラ,\" and \"Typhoid - チフス.\" The canisters appear slightly worn and rusted, with visible metallic bands at the top and bottom. The background is dimly lit and out of focus, suggesting an indoor, possibly industrial or storage setting. The camera tracks smoothly from left to right, bringing each canister into view. A white overlay user interface is visible in the lower-left corner of the screen.",
+  "generated_critique": "The description of the camera movement is incomplete and incorrect; it is not just a slow pan from left to right. The number of canisters is inaccurately described as \"several.\" The list of labels on the canisters is incomplete. The caption omits the user interface overlay in the lower-left corner.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot of multiple cylindrical, off-white metal canisters, each featuring a prominent black biohazard symbol on its side. Above the symbol, text overlays in English and Japanese label the contents, including \"Anthrax - 炭疽,\" \"Cholera - コレラ,\" and other hazardous materials. The canisters have a slightly worn and rusted appearance, with visible metallic bands at the top and bottom. The camera movement is dynamic, starting with a slow pan from left to right, then shifting to a tilt and zoom to focus on specific details of the canisters. The background is dimly lit and out of focus, suggesting an indoor, possibly industrial or storage setting. Additionally, a user interface overlay is visible in the lower-left corner, providing further context or information.",
   "status": "success"
 }

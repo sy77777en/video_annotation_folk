@@ -2,7 +2,7 @@
   "video_id": "LI7i6DQfh0o.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T04:42:57.934695",
+  "generation_timestamp": "2025-09-29T11:14:01.348290",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The hands' position is incorrectly described as center-foreground. The mannequin's position is misidentified as bottom-left middle ground. The description of the shot as a \"tilted close-up\" is inaccurate.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a pair of hands unfolds a grey fabric object in the foreground. Initially, a wooden mannequin is positioned in the left middle ground, with a wooden crate holding oranges and pasta in the background. The frame then rapidly rotates, shifting the hands and fabric to the top right. This transition reveals vegetables and an orange clip in the middle ground on the left, while the crate and mannequin move to the bottom-right background. Throughout the shot, the text \"THAT UNFOLDS\" remains fixed in the center, and a \"*patent pending\" notice stays in the top right corner. The camera is positioned at the subject's level.",
+  "generated_critique": "The description of the shot as 'tilted' is incorrect. The description of the hands' position as 'center-foreground' is incorrect. The description of the wooden mannequin's position as 'bottom-left middle ground' is incorrect, and the caption is missing a detail about the relationship between the oranges, pasta, and the wooden crate.",
+  "revised_caption_by_generated_critique": "In a close-up shot, a pair of hands unfolds a grey fabric object in the foreground. Initially, a wooden mannequin is positioned in the middle ground, with a wooden crate containing oranges and pasta in the background. The frame then rapidly rotates, shifting the hands and fabric to the top right. This transition reveals vegetables and an orange clip in the middle ground on the left, while the crate and mannequin move to the bottom-right background. Throughout the shot, the text \"THAT UNFOLDS\" remains fixed in the center, and a \"*patent pending\" notice stays in the top right corner. The camera is positioned at the subject's level, highlighting the arrangement of the oranges and pasta within the crate.",
   "status": "success"
 }

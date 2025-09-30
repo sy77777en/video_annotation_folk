@@ -2,7 +2,7 @@
   "video_id": "uG7_BX8MhT0.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:07:45.186504",
+  "generation_timestamp": "2025-09-29T08:58:15.404006",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The bag extends from the bottom right to the top left in the background. The camera moves to the left. The mid-ground and background are sharply in focus throughout the clip.",
-  "revised_caption_by_generated_critique": "A close-up shot, filmed from above, initially frames a person's hand in the top right foreground as it begins to zip a large, dark brown leather bag. The bag itself occupies the majority of the frame, extending from the bottom right to the top left in the background. As the hand pulls the zipper from right to left across the top of the bag, the camera moves slightly to the left, following the action. The hand concludes its movement in the top left of the frame, while the bag remains the central element, with its left side becoming more prominent by the end of the shot. The mid-ground and background are sharply in focus throughout the clip.",
+  "generated_critique": "The bag extends from the bottom right to the top left in the foreground.\n\nThe camera moves to the right.\n\nThe mid-ground and background are softly out of focus throughout the clip.",
+  "revised_caption_by_generated_critique": "A close-up shot, filmed from above, initially frames a person's hand in the top right foreground as it begins to zip a large, dark brown leather bag. The bag itself occupies the majority of the frame, extending from the bottom right to the top left in the foreground. As the hand pulls the zipper from right to left across the top of the bag, the camera pans slightly to the right, following the action. The hand concludes its movement in the top left of the frame, while the bag remains the central element, with its left side becoming more prominent by the end of the shot. The mid-ground and background are softly out of focus throughout the clip.",
   "status": "success"
 }

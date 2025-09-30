@@ -2,7 +2,7 @@
   "video_id": "VaSlqE0Nx2Q.11.4.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:09:06.758204",
+  "generation_timestamp": "2025-09-29T13:31:20.919206",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption lacks sufficient background information, making it unclear whether the changes in illumination are due to the movement of the light source or the object itself. The description should also mention if there are any visible overlay elements, such as subtitles or watermarks, present in the scene. Please avoid using phrases like \"a soft, out-of-focus light source moves through the frame\" in the caption, as it may lead to confusion.",
-  "revised_caption_by_generated_critique": "In a grainy, black-and-white scene set against a completely dark background, a dim light intermittently reveals parts of a person's face, which remains mostly hidden in deep shadows. The changes in illumination appear to be caused by the movement of the light itself rather than the person. No visible overlay elements, such as subtitles or watermarks, are present in the scene. The scene frequently returns to near-total darkness.",
+  "generated_critique": "The caption lacks sufficient background information, making it unclear whether the changes in illumination are due to the movement of the light source or the object itself. The description should also mention if there are any visible overlay elements, such as subtitles or icons, present in the scene. Please avoid using phrases like \"a soft, out-of-focus light source moves through the frame\" in the caption, as it may lead to confusion.",
+  "revised_caption_by_generated_critique": "In a grainy, black-and-white scene set against a completely dark background, a dim light intermittently reveals parts of a person's face, which remains mostly hidden in deep shadows. The changes in illumination appear to be caused by the movement of the light itself rather than the person. No visible overlay elements, such as subtitles or icons, are present in the scene, and the scene frequently returns to near-total darkness.",
   "status": "success"
 }

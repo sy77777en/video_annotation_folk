@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.11.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:19:54.652833",
+  "generation_timestamp": "2025-09-29T06:53:41.526985",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The front face of the console is actually in the middle ground, not the foreground, as there is an out-of-focus element in the true foreground. Additionally, the console extends across the middle ground, not just the center and right. The statement about the left side being visible in the left foreground is inaccurate and should be removed.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a black video game console is positioned diagonally across the frame, extending from the bottom left to the top right. The front face of the console occupies the middle ground, with its illuminated logo located on the bottom right. The top surface is visible across the top of the frame. The camera is positioned above the subject.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The front face of the console is actually in the middle ground, not the foreground, as there is an out-of-focus element in the true foreground. Additionally, the console extends across the middle ground, not just the center and right. The illuminated logo is on the right, not the bottom right.",
+  "revised_caption_by_generated_critique": "In a close-up shot, a black video game console is positioned diagonally across the frame, extending from the bottom left to the top right. The front face of the console occupies the middle ground, with an out-of-focus element in the true foreground. The illuminated logo is located on the right. The top surface is visible across the top of the frame, while a portion of its left side is seen in the left foreground. The camera is positioned above the subject.",
   "status": "success"
 }

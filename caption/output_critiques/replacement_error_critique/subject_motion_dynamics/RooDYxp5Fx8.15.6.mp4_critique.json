@@ -2,7 +2,7 @@
   "video_id": "RooDYxp5Fx8.15.6.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:04:45.812543",
+  "generation_timestamp": "2025-09-29T06:30:29.870860",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-11T05:04:00.965766",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The description of the green bus with an advertisement moving through an intersection should include that it travels towards the left side of the frame and exits from there.\n\n2. The statement about the white van appearing from the right and following the same path is incorrect. It should be noted that the white van appears from the left side of the frame and follows the path initially taken by the green bus with an advertisement.\n\n3. When mentioning that the white van is now out of the frame, it should be clarified that it exits from the right side of the frame. Additionally, there are several other vehicles that follow the same path through the intersection, which has not been mentioned.",
-  "revised_caption_by_generated_critique": "A green bus with an advertisement on its side is seen moving through an intersection, traveling towards the left side of the frame and exiting from there. A blue van enters the frame from the right, continues to move forward, passing the green bus, and heads towards the left side of the frame. As the blue van moves further, a white van appears from the left side of the frame, following the path initially taken by the green bus. The blue van continues to drive away, and a black car enters the frame from the right, following the same path. The black car continues to move forward, and the blue van is now further down the road. The black car follows the blue van, and the white van is now further down the road. The black car continues to follow the blue van, and the white van is almost out of the frame, eventually exiting from the right side. Several other vehicles follow the same path through the intersection.",
+  "revised_caption_by_generated_critique": "A green bus with an advertisement on its side is seen moving through an intersection, traveling towards the left side of the frame and exiting from there. A blue van enters the frame from the right, continues to move forward, passing the green bus's previous path, and heads towards the left side of the frame. As the blue van moves further, a white van appears from the left side of the frame and follows the path initially taken by the green bus. The blue van continues to drive away, and a black car enters the frame from the right, following the same path. The black car continues to move forward, and the blue van is now further down the road. The black car follows the blue van, and the white van is now further down the road. The black car continues to follow the blue van, and the white van exits from the right side of the frame. Several other vehicles follow the same path through the intersection.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "3877.0.8.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T09:15:37.736543",
+  "generation_timestamp": "2025-09-29T14:07:32.500319",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is not good because it fails to adhere to several key instructions.\n\n1.  **Inclusion of Subjective Language:** The caption violates the instruction to \"Avoid emotional or subjective adjectives\" by describing the atmosphere as \"serene and slightly somber.\"\n2.  **Focus on Appearance over Motion:** The instructions state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The caption dedicates significant space to describing static appearances (\"mustard-colored sleeve,\" \"black wristwatch,\" \"orange jacket\") instead of concisely stating the primary fact about motion.\n3.  **Handling of No-Movement Scenes:** For videos with no movement, the instruction is to \"briefly mention that without going into too much detail.\" The caption is overly descriptive of the static scene rather than being brief. It correctly identifies the lack of movement but buries this information at the end of a detailed visual description.\n\nA better caption would have simply and briefly stated that the hand holding the jacket remains completely still.",
-  "revised_caption_by_generated_critique": "A hand holding an orange jacket remains still against a backdrop of misty mountains.",
+  "generated_critique": "The caption includes subjective descriptions, such as \"serene and slightly somber atmosphere,\" and speculative statements like \"indicating some effort is required,\" both of which are explicitly forbidden by the instructions. The description of the subject's appearance (\"wearing a mustard-colored sleeve and a black wristwatch\") and the background is overly detailed, detracting from the primary focus on motion. The caption should be revised to describe only the minimal movement visible, stating that a hand holds an orange jacket mostly still, with only a slight, occasional shift of the thumb.",
+  "revised_caption_by_generated_critique": "A hand holds an orange jacket, which hangs downwards. The hand remains mostly still, with only a slight, occasional shift of the thumb.",
   "status": "success"
 }

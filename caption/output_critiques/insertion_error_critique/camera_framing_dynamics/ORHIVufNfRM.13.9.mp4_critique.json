@@ -2,7 +2,7 @@
   "video_id": "ORHIVufNfRM.13.9.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:22:01.148067",
+  "generation_timestamp": "2025-09-29T06:52:36.891402",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-29T03:11:55.381444",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Initially, the camera moves downward, then upward, and then downward again as the player changes direction. Please remove all descriptions about the camera focus and instead explain that \"It appears that the elements in the background are slightly more blurred than those in the foreground. However, due to the darkness, movement, and low resolution, it is difficult to confirm this.\" Additionally, mention that the video appears to be played in slow-motion, as the movement of bubbles and particles in the water is noticeably slowed down.",
-  "revised_caption_by_generated_critique": "The underwater camera begins at a high angle, looking down at the seafloor, and then transitions to a level angle as it follows the player's descent and ascent through the water. Initially, the camera moves downward, then upward, and then downward again as the player changes direction. It appears that the elements in the background are slightly more blurred than those in the foreground. However, due to the darkness, movement, and low resolution, it is difficult to confirm this. The camera movement is smooth and continuous, simulating the player's forward swimming motion. At the end, the camera pans right while simultaneously trucking left. The video appears to be played in slow-motion, as the movement of bubbles and particles in the water is noticeably slowed down.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Initially, the camera moves downward, then upward, and then downward again as the player changes direction. Please remove all descriptions about the camera focus and instead explain that \"It appears that the elements in the background are slightly more blurred than those in the foreground. However, due to the darkness, movement, and low resolution, it is difficult to confirm this.\" Additionally, the video appears to use a mild fisheye lens distortion, causing straight lines near the edges to curve outward.",
+  "revised_caption_by_generated_critique": "The underwater camera begins at a high angle, looking down at the seafloor, and then transitions to a level angle as it follows the player's descent and ascent through the water. Initially, the camera moves downward, then upward, and then downward again as the player changes direction. It appears that the elements in the background are slightly more blurred than those in the foreground. However, due to the darkness, movement, and low resolution, it is difficult to confirm this. The video also appears to use a mild fisheye lens distortion, causing straight lines near the edges to curve outward. Camera movement is smooth and continuous, simulating the player's forward swimming motion. At the end, the camera pans right while simultaneously trucking left.",
   "status": "success"
 }

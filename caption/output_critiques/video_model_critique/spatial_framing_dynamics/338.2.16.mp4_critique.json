@@ -2,7 +2,7 @@
   "video_id": "338.2.16.mp4",
   "caption_type": "spatial",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:41:39.773200",
+  "generation_timestamp": "2025-09-29T12:47:44.738403",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good but has one significant inaccuracy and a minor point where it could be more precise.\n\n**Accuracy:**\n- The description of the woman's movement is incorrect. The caption states, \"Initially, her head is turned to the right side of the frame, then she gradually turns to face forward.\" In the video, her head is initially turned toward the **left side of the frame** before she turns to face the center.\n\n**Completeness & Adherence to Instructions:**\n- The caption successfully adheres to the instructions by providing a single, coherent paragraph focused on spatial framing.\n- It correctly identifies the shot size (medium close-up), the subject's position (central, middle ground), and the camera height (eye level).\n- It accurately describes the static nature of the camera and the scene.\n- It correctly identifies background elements (artwork, plates) and their general positions. However, it could be slightly more precise by stating the framed artwork is on the **left side of the frame**.\n\nOverall, the caption follows the instructions well, but the factual error in describing the subject's movement is a major flaw that needs correction.",
-  "revised_caption_by_generated_critique": "The video presents a medium close-up shot of a woman, capturing her from the chest up. She is centrally positioned in the frame, occupying the middle ground. Initially, her head is turned to the left side of the frame, then she gradually turns to face forward, maintaining her central position. The background consists of patterned wallpaper with a framed artwork on the left side of the frame. Decorative plates are also visible on the wall, situated in the upper middle and right areas. The camera is at the subject's eye level, providing a direct view of her actions without any noticeable changes in angle or position. The scene remains static, with no shifts in the spatial arrangement of the elements.",
+  "generated_critique": "The caption incorrectly states the woman's head is initially turned \"towards her right, which corresponds to the left side of the frame.\" In the video, her head is initially tilted slightly down and to her left (the right side of the frame) before she lifts it toward the center. Additionally, the final sentence, \"The scene remains static, with no shifts in the spatial arrangement of the elements,\" contradicts the earlier description of her head turning. This sentence should be revised to clarify that while the camera and framing are static, the subject within the scene moves slightly.",
+  "revised_caption_by_generated_critique": "This video shows a medium close-up shot of a woman from the chest up, positioned in the center of the frame. Initially, her head is tilted slightly down and to her left (the right side of the frame). She then lifts her head to face forward, smiling with her eyes closed. The background features patterned wallpaper, a framed picture on the left, and decorative plates on the wall behind her. The camera remains static at the subject's eye level, providing a direct and stable view as she moves.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "61.1.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:04:46.966511",
+  "generation_timestamp": "2025-09-29T05:05:28.326819",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The depth of field described is not extremely shallow; it is more accurately a shallow focus on the midground. Additionally, the camera angle shifts slightly upward during the shot, introducing a subtle high-angle perspective.",
-  "revised_caption_by_generated_critique": "The camera is positioned at eye level, focusing on the man in the midground with a shallow depth of field that keeps him sharp while softly blurring the background. The camera remains mostly fixed but shifts slightly upward during the shot, introducing a subtle high-angle perspective.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The depth of field described is not extremely shallow; it is more accurately a shallow focus on the midground. Additionally, there is noticeable barrel distortion at the edges of the frame, which should be mentioned.",
+  "revised_caption_by_generated_critique": "The camera is positioned at eye level with a level angle, focusing on the man in the midground. It employs a shallow depth of field, keeping the man sharp while slightly blurring the background. The camera remains fixed but slightly unsteady, with no intentional movement. There is noticeable barrel distortion at the edges of the frame.",
   "status": "success"
 }

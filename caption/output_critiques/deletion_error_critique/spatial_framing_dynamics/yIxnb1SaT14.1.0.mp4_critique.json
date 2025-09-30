@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:14:43.328439",
+  "generation_timestamp": "2025-09-29T09:07:43.235879",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video is not static; it slowly zooms out.",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a cityscape from a high-angle perspective, slowly zooming out. In the foreground, a portion of an ornate building occupies the far left, while dark rooftops fill the bottom of the frame and extend into the middle ground. The background features several illuminated landmarks against a dark sky: the Eiffel Tower is positioned on the right, a large Ferris wheel is in the center-left, and a golden dome is visible further to the left. A text overlay is fixed in the bottom right corner.",
+  "generated_critique": "2. Change \"from a high-angle perspective\" to \"from an aerial-level, level-angle perspective.\"",
+  "revised_caption_by_generated_critique": "This video presents a static, extreme wide shot of a cityscape from an aerial-level, level-angle perspective. In the foreground, a portion of an ornate building occupies the far left, while dark rooftops fill the bottom of the frame and extend into the middle ground. The background features several illuminated landmarks against a dark sky: the Eiffel Tower is positioned on the right, a large Ferris wheel is in the center-left, and a golden dome is visible further to the left. A text overlay is fixed in the bottom right corner.",
   "status": "success"
 }

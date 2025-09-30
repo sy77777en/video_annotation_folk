@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.3.2.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:58:20.341871",
+  "generation_timestamp": "2025-09-29T05:33:27.544442",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The images of fast food items, such as hamburgers, french fries, and a drink, are not overlays but appear to be floating in front of the humanoid figure. Additionally, the scene is set in a brightly lit indoor environment with visible ceiling lights, which should be mentioned for clarity. Furthermore, the text in the bottom left corner should be corrected to read \"[1,2]: McDonald's Germany.\"",
-  "revised_caption_by_generated_critique": "In a brightly lit indoor environment with visible ceiling lights, a low-polygon, gray, faceless humanoid figure is positioned in the center against a blurry gray background. Several fast food items, including hamburgers, french fries, and a drink, appear to be floating in front of the figure. An overlay text in the bottom left corner reads \"[1,2]: McDonald's Germany.\"",
+  "generated_critique": "The images of fast food items, such as hamburgers, french fries, and a drink, are not overlays but appear to be floating in front of the humanoid figure. A large digital clock displaying \"12:45\" is visible in the upper right corner as an overlay. Furthermore, the text in the bottom left corner should be corrected to read \"[1,2]: McDonald's Germany.\"",
+  "revised_caption_by_generated_critique": "In an abstract, digital scene with a blurry gray background, a low-polygon, gray, faceless humanoid figure is positioned in the center. Several fast food items, including hamburgers, french fries, and a drink, appear to be floating in front of the figure. A large digital clock displaying \"12:45\" is visible as an overlay in the upper right corner. The text in the bottom left corner reads \"[1,2]: McDonald's Germany.\"",
   "status": "success"
 }

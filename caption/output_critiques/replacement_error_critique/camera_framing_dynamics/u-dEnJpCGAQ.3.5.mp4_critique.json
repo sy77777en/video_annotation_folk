@@ -2,7 +2,7 @@
   "video_id": "u-dEnJpCGAQ.3.5.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:15:31.839139",
+  "generation_timestamp": "2025-09-29T06:48:27.539707",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-17T21:52:31.519725",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera employs barrel distortion. The camera tracks the lion, initially panning right and zooming in on it, which becomes larger in the frame. Midway, the camera movement transitions to only trucking right to follow the lion. The camera movement is not smooth; there is a noticeable pause.",
-  "revised_caption_by_generated_critique": "The camera is at a level angle and uses a shallow depth of field, focusing on the midground where a lion is walking. The camera employs barrel distortion and tracks the lion, initially panning right and zooming in on it, making the lion appear larger in the frame. Midway, the camera movement transitions to only trucking right to follow the lion. The camera movement is not entirely smooth, with a noticeable pause during the tracking.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera employs barrel distortion.\n\nMidway, the camera movement transitions to only tilting up to follow the lion.\n\nPlease add \"which becomes larger in the frame\" after \"The camera tracks the lion, initially panning right and zooming in on it,\" but not in the later sentence.\n\nThe camera movement is not smooth; there is a noticeable pause.\n\ndelete \"focusing on the midground where a lion is walking.\"",
+  "revised_caption_by_generated_critique": "The camera is at a level angle and uses a shallow depth of field. The camera employs barrel distortion. The camera tracks the lion, initially panning right and zooming in on it, which becomes larger in the frame. Midway, the camera movement transitions to only tilting up to follow the lion. The camera movement is not smooth; there is a noticeable pause.",
   "status": "success"
 }

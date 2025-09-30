@@ -2,7 +2,7 @@
   "video_id": "0u4NY-YtVII.0.8.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:16:54.067636",
+  "generation_timestamp": "2025-09-29T14:55:57.904314",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the scene as static and omits the camera's slow zoom-out motion.",
-  "revised_caption_by_generated_critique": "The video displays a monochromatic map centered on Türkiye. The country's landmass is depicted in dark gray with lighter gray outlines, set against a black background showing surrounding regions and bodies of water. Overlaid onto the map is a white pointer directed at a location in northwestern Türkiye, accompanied by the white text label \"Bursa\". The name \"Türkiye\" is overlaid in larger white text across the central part of the country map. The camera slowly zooms out, revealing more of the surrounding areas. At the bottom left corner, an overlay provides attribution text: \"[H] - © OpenStreetMap contributors © CARTO\".",
+  "generated_critique": "The caption incorrectly states the scene is static and omits the camera's motion.",
+  "revised_caption_by_generated_critique": "The video displays a monochromatic map centered on Türkiye. The country's landmass is depicted in dark gray with lighter gray outlines, set against a black background showing surrounding regions and bodies of water. The camera slowly pans across the map, highlighting different areas. Overlaid onto the map is a white pointer directed at a location in northwestern Türkiye, accompanied by the white text label \"Bursa\". The name \"Türkiye\" is overlaid in larger white text across the central part of the country map. At the bottom left corner, an overlay provides attribution text: \"[H] - © OpenStreetMap contributors © CARTO\".",
   "status": "success"
 }

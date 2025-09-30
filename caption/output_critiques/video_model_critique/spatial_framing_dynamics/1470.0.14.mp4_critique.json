@@ -2,7 +2,7 @@
   "video_id": "1470.0.14.mp4",
   "caption_type": "spatial",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T01:50:20.632756",
+  "generation_timestamp": "2025-09-29T07:33:14.005943",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is inaccurate and does not correctly describe the video's content.\n\n**Accuracy:** The caption is fundamentally incorrect in its description of the video's dynamics. It claims, \"the camera quickly zooms out, shifting from a close-up to a wider shot... showing them from the waist up... The subject's hands are now visible.\" None of this happens. The video maintains a single, static close-up shot from the chest up throughout its duration. There is no camera movement, no zoom, and no change in shot size. The subject's hands are never visible.\n\n**Completeness:** While the caption correctly identifies the initial framing (close-up, centered subject, eye-level camera) and some background elements (vent in the top right), it completely fabricates the primary action it is supposed to describe (the camera movement). It also omits the most significant visual change that does occur: the subject's eyes rolling back to become white, which is a key physical action within the static frame.\n\n**Adherence to Instructions:** The caption fails to adhere to the core instruction of providing an accurate description of spatial framing and dynamics. By inventing a zoom-out, it violates the rule to \"Avoid describing anything not visible or uncertain.\" While it follows formatting rules and avoids subjective language, its central descriptive claim is false, making it a poor and misleading caption for the video.",
-  "revised_caption_by_generated_critique": "The video shows a static, close-up shot of a person from the chest up. The subject is centered in the frame and looks directly toward the camera, which is positioned at their eye level. The background is an indoor setting with a vent visible in the upper right corner. The shot remains unchanged throughout the clip, but the subject's eyes roll back in their head, turning completely white, as they smile.",
+  "generated_critique": "The caption contains significant factual inaccuracies regarding the subject's movement and what is visible in the frame. The video shows a static medium close-up shot, but the caption incorrectly describes the subject moving upward to change the framing from their head to their thighs. This movement does not happen; the framing remains fixed on the person's head and shoulders. Additionally, the caption erroneously states that the subject's right hand is visible, when in fact, the shot is framed from the chest up, and no hands are shown. The final sentence is redundant. To correct this, remove the sentences \"As the video progresses, the subject moves upward, changing the frame from their head to their thighs, without any camera movement,\" \"The subject's right hand is visible, hanging relaxed by their side,\" and \"The camera maintains its position, ensuring the subject remains the focal point throughout the video.\" The description of the background should also remove the interpretive phrase \"indicating an indoor setting.\"",
+  "revised_caption_by_generated_critique": "This is a static medium close-up of a person from the chest up. Centered in the frame, the person faces forward with a slight head tilt. The camera is positioned at their eye level. The background features neutral-colored walls and a vent in the upper right corner.",
   "status": "success"
 }

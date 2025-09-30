@@ -2,7 +2,7 @@
   "video_id": "cwjcfAAXIPs.0.12.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:36:13.615460",
+  "generation_timestamp": "2025-09-29T07:15:38.610222",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-02T10:19:18.064507",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please change \"low-angle\" to \"level-angle\" and \"stone-paved\" to \"stone-slab-paved.\" The description of the old building's position should be revised to indicate it is in both the left foreground and middle ground. The statement about the bridge extending from the middle ground into the background is inaccurate; the bridge is primarily in the middle ground, while other metal structures in a distance on the other side of the river, the blue sky, and the sun are in the background. The phrase \"as the camera moves steadily forward along the path\" is misleading, as there is noticeable camera shake. Finally, the description should mention the intense glare along with the long shadows cast across the pavement toward the camera.",
-  "revised_caption_by_generated_critique": "This is a wide scenery shot captured from a level-angle, first-person perspective. The video begins with a stone-slab-paved walkway occupying the foreground and middle ground, leading from the bottom of the frame toward the center-background where the sun is rising. An old building is positioned in both the left foreground and middle ground, while the large metal structure of a bridge dominates the middle ground on the right side of the frame. In the background, other metal structures can be seen in the distance on the other side of the river, along with the blue sky and the sun. As the camera moves forward along the path, there is noticeable camera shake, and the building on the left gradually moves out of the frame, shifting the perspective to bring the bridge and the walkway ahead into greater focus. The bright sun in the background creates a strong backlight, casting long shadows and intense glare across the pavement toward the camera.",
+  "revised_caption_by_generated_critique": "This is a wide scenery shot captured from a level-angle, first-person perspective. The video begins with a stone-slab-paved walkway occupying the foreground and middle ground, leading from the bottom of the frame toward the center-background where the sun is rising. An old building is positioned in both the left foreground and middle ground, while the large metal structure of a bridge dominates the right side of the frame, primarily in the middle ground. Other metal structures in the distance on the other side of the river, the blue sky, and the sun are in the background. As the camera moves forward along the path with noticeable shake, the building on the left gradually moves out of the frame, and the perspective shifts to bring the bridge and the walkway ahead into greater focus. The bright sun in the background creates a strong backlight, casting long shadows and intense glare across the pavement toward the camera.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "vEvBpjCOBu0.7.0.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:15:22.264791",
+  "generation_timestamp": "2025-09-29T07:41:50.817801",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. At the beginning of the shot, what is described as being out of focus appears to be a stack of books that the camera arcs past. While the books remain out of focus, it would be clearer if the description mentioned the books.\n\n2. The focus distance changes noticeably. The two partially visible rendered characters become sharply in focus as the camera moves, while the weights in the middle remain slightly blurry. Therefore, the description should be adjusted to reflect this, rather than suggesting the focus does not change.",
-  "revised_caption_by_generated_critique": "From a smooth, hip-level position, the camera arcs counterclockwise. The shot begins with a stack of books out of focus, which the camera moves past. As the focus distance changes, two partially visible rendered characters come sharply into focus, while the weights in the middle remain slightly blurry, revealing a testing apparatus.",
+  "generated_critique": "1. At the beginning of the shot, what is described as being out of focus appears to be a stack of books that the camera arcs past. While the books remain out of focus, it would be clearer if the description mentioned the books.\n\n2. The focus distance changes noticeably. The two partially visible rendered characters become sharply in focus along with the weights in the middle, indicating a transition to deep focus. Therefore, the description should be adjusted to reflect this, rather than suggesting the focus remains fixed.",
+  "revised_caption_by_generated_critique": "From a smooth, hip-level position, the camera arcs counterclockwise. The shot begins with a stack of books out of focus, which the camera moves past. As the focus distance changes, two partially visible rendered characters and a stack of weights come sharply into focus, indicating a transition to deep focus and revealing a testing apparatus.",
   "status": "success"
 }

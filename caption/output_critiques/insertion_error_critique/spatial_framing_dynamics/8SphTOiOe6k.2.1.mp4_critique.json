@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:14:30.798952",
+  "generation_timestamp": "2025-09-29T09:09:22.349618",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The street extends from the foreground into the background, rather than being solely positioned in the foreground. 2. The large wooden-framed sign is situated in the middle ground, not the foreground. 3. The bus is seen in the distance, enhancing the urban setting as it is located further in the middle ground and is moving towards the background. 4. The camera angle remains static throughout the video and does not pan or shift its position.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot capturing a bustling street scene that extends from the foreground into the background. Traditional wooden buildings line the left side of the frame, extending into the middle ground. A stone-paved sidewalk runs along the right side, where a small group of people is visible, adding a sense of activity. The camera is at street level, providing a first-person perspective. In the middle ground, a bus is seen in the distance, enhancing the urban setting as it moves towards the background. A lush green tree and a stone bridge are located on the right, contributing to the natural charm. The camera remains static, focusing on a large wooden-framed sign in the middle ground, which displays a vibrant landscape image. This sign becomes the central point of interest, positioned centrally in the frame, with the camera at eye level to the sign. The transition from the street scene to the sign shifts the viewer's focus from the broader environment to a specific cultural element.",
+  "generated_critique": "1. The street is not solely positioned in the foreground; it extends from the foreground into the background. 2. The large wooden-framed sign is not in the foreground; it is situated in the middle ground. 3. The bus is seen in the distance, enhancing the urban setting as it is located further in the middle ground and is moving towards the background. 4. The camera briefly tilts upward to reveal the rooftops of the buildings before panning right to the sign.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot capturing a bustling street scene that extends from the foreground into the background. Traditional wooden buildings line the left side of the frame, extending into the middle ground. A stone-paved sidewalk runs along the right side, where a small group of people is visible, adding a sense of activity. The camera is at street level, providing a first-person perspective. In the middle ground, a bus is seen moving towards the background, enhancing the urban setting. A lush green tree and a stone bridge are located on the right, contributing to the natural charm. The camera briefly tilts upward to reveal the rooftops of the buildings before panning right. It then transitions to focus on a large wooden-framed sign situated in the middle ground, which displays a vibrant landscape image. This sign becomes the central point of interest, positioned centrally in the frame, with the camera at eye level to the sign. The transition from the street scene to the sign shifts the viewer's focus from the broader environment to a specific cultural element.",
   "status": "success"
 }

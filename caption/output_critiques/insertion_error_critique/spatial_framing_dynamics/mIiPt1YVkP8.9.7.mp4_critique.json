@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.9.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:12:24.172855",
+  "generation_timestamp": "2025-09-29T09:06:24.595793",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The stationary airplane remains in the center middle ground throughout the video; it is the camera that moves closer to the plane, rather than repositioning it from the center to the left foreground. Additionally, the runway now occupies the bottom foreground and middle ground, while the taxiways are positioned in the right and top middle ground and background. The video also briefly shows a small service vehicle passing behind the airplane, which is not mentioned in the original caption.",
-  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot from a high angle, featuring a white airplane in the center middle ground on a runway that stretches from the bottom of the frame into the background. The camera then moves forward and pans to the right, transitioning into a full shot while keeping the airplane in the center middle ground. This movement reveals the side profile of the airplane against the runway, which now occupies the bottom foreground and middle ground, and the taxiways positioned in the right and top middle ground and background. Briefly, a small service vehicle is seen passing behind the airplane.",
+  "generated_critique": "The stationary airplane remains in the center middle ground throughout the video; it is the camera that moves closer to the plane, rather than repositioning it from the center to the left foreground. The airplane’s nose is not angled toward the camera at any point. Additionally, the runway now occupies the bottom foreground and middle ground, while the taxiways are positioned in the right and top middle ground and background.",
+  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot from a high angle, featuring a white airplane in the center middle ground on a runway that stretches from the bottom of the frame into the background. As the camera moves forward and pans to the right, the shot transitions into a full shot, maintaining the airplane in the center middle ground. The camera movement reveals the airplane's side profile, with the runway now occupying the bottom foreground and middle ground, and the taxiways positioned in the right and top middle ground and background.",
   "status": "success"
 }

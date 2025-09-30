@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.7.3.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:19:06.882223",
+  "generation_timestamp": "2025-09-29T07:42:15.779638",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the camera's action as a focus shift instead of a forward movement. The surface is misidentified as marbled. The description fails to mention the multiple red strings connected to the thumbtack and radiating outwards, nor does it mention the red piece of paper to the right of the white piece. The caption also omits that the words are printed in black, capital letters.",
-  "revised_caption_by_generated_critique": "The camera moves forward from a blurry, indistinct background to a sharp foreground. As the camera advances, multiple red strings stretched across a smooth surface become clear, all connected to a red thumbtack. A white piece of paper pinned by the thumbtack reveals the words \"UNCLE JERRY\" printed in black, capital letters. To the right of the white paper, a red piece of paper is visible. The objects in the scene remain stationary throughout the camera movement.",
+  "generated_critique": "The caption incorrectly describes the camera's motion as a focus shift instead of a forward movement. The surface is misidentified as \"marbled.\" The chronological order of the objects becoming clear is inaccurate. The description is missing details about the text on the paper. The caption fails to mention the other strings connected to the thumbtack and omits the presence of another piece of paper in the scene.",
+  "revised_caption_by_generated_critique": "The camera moves forward, transitioning from a blurry background to a sharp foreground. As the scene comes into focus, a red string stretched across a textured surface becomes visible, followed by a white piece of paper pinned by a red thumbtack, which reads \"UNCLE JERRY: SUSPECT.\" Additional strings radiate from the thumbtack, connecting to another piece of paper nearby. The objects remain stationary as the camera advances.",
   "status": "success"
 }

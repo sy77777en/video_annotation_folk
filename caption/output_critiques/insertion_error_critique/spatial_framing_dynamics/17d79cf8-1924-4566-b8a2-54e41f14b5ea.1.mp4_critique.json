@@ -2,7 +2,7 @@
   "video_id": "17d79cf8-1924-4566-b8a2-54e41f14b5ea.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:30:42.390324",
+  "generation_timestamp": "2025-09-29T11:04:02.409747",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video does not maintain a consistent high-angle perspective; instead, it transitions from a bird's-eye view to an upside-down high angle. Additionally, the arms are in the foreground, while the legs, feet, bricks, and bowls are situated in the middle ground. The camera briefly tilts to the right during the transition, altering the horizontal alignment of the frame.",
-  "revised_caption_by_generated_critique": "The video begins with a bird's-eye view, transitioning to an upside-down high-angle perspective. The scene is framed with the person's arms in the foreground, while their legs, feet, a large pile of red bricks, and two bowls—a light-colored one in the bottom left and a smaller green one at the bottom edge—are in the middle ground. As the camera briefly tilts to the right, altering the horizontal alignment, the person's hands move from the bottom of the frame to the center, picking up a single red brick from the pile. The shot concludes with the hands holding the brick centrally in the foreground, positioned directly above the person's feet.",
+  "generated_critique": "The video does not maintain a consistent high-angle perspective; instead, it transitions from a bird's-eye view to an upside-down high angle. Additionally, the arms are in the foreground, while the legs, feet, bricks, and bowls are situated in the middle ground. The camera briefly tilts to the right before the hands reach for the brick, altering the horizontal alignment of the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a bird's-eye view, transitioning to an upside-down high-angle perspective. The scene is framed with the person's arms in the foreground, while their legs, feet, a large pile of red bricks, and two bowls—a light-colored one on the left and a smaller green one at the bottom edge—are in the middle ground. As the camera briefly tilts to the right, altering the horizontal alignment, the person's hands move from the foreground to pick up a single red brick from the pile. The shot concludes with the hands holding the brick centrally in the foreground, positioned directly above the person's feet.",
   "status": "success"
 }

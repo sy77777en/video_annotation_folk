@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.4.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:50:26.877386",
+  "generation_timestamp": "2025-09-29T13:05:13.562881",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The phrase \"The camera gradually zooms in\" is not accurate; it would be more precise to say \"The camera gradually approaches.\" Additionally, the caption should mention that a person briefly walks past the camera at the beginning of the video, even though this does not affect the view of the blueprint.",
-  "revised_caption_by_generated_critique": "The video begins with a distant view of the blueprint, which is hanging on a wall. The camera gradually approaches, bringing the blueprint into clearer focus. A person briefly walks past the camera at the beginning, though this does not affect the view of the blueprint. The blueprint shows detailed technical drawings, including side elevations, plan views, and cross-sections of a vessel, with various annotations and labels. The red cylindrical object, which appears to be a pointer, remains in the upper right corner throughout the approach.",
+  "generated_critique": "The phrase \"The camera gradually zooms in\" is not accurate; it would be more precise to say \"The camera gradually approaches.\" Additionally, you should mention that a person briefly walks past the camera at the beginning of the video, even though this is not reflected in the original caption.",
+  "revised_caption_by_generated_critique": "The video begins with a distant view of the blueprint, which is hanging on a wall. The camera gradually approaches, bringing the blueprint into clearer focus. At the beginning of the video, a person briefly walks past the camera. The blueprint shows detailed technical drawings, including side elevations, plan views, and cross-sections of a vessel, with various annotations and labels. The red cylindrical object, which appears to be a pointer, remains in the upper right corner throughout the approach.",
   "status": "success"
 }

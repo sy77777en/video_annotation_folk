@@ -2,7 +2,7 @@
   "video_id": "IyTv_SR2uUo.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:27:07.972001",
+  "generation_timestamp": "2025-09-29T07:56:56.030179",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera is mounted on the helmet using a helmet mounting bracket, not on the bike. Please use \"Locked on POV\" instead of \"point-of-view perspective.\"\n\nPlease describe the camera movement as rotating clockwise instead of tilting to the left.\n\nAdditionally, more of the sky is visible in the top left, and the dirt track is in the bottom right.",
-  "revised_caption_by_generated_critique": "A full shot captures a motocross rider and their bike from a locked-on POV, with the camera mounted on the rider's helmet using a helmet mounting bracket. The rider and the handlebars are positioned in the center foreground throughout the clip. The scene begins with the rider in mid-air, with a reddish-brown dirt track visible in the middle ground and background below. As the rider and bike soar through the air, the entire frame, locked onto the bike, rotates clockwise, showing more of the sky in the top left and the dirt track in the bottom right. The rider remains centrally framed while adjusting their position on the bike during the jump.",
+  "generated_critique": "The camera is mounted on the helmet using a helmet mounting bracket, not on the bike. Please use \"Locked on POV\" instead of \"point-of-view perspective.\"\n\nThe rider and the handlebars are mostly centered, but the rider's body briefly shifts to the left while mid-air.\n\nAdditionally, more of the sky is visible in the top left, and the dirt track is in the bottom right.",
+  "revised_caption_by_generated_critique": "A full shot captures a motocross rider and their bike from a locked-on POV, with the camera mounted on the rider's helmet using a helmet mounting bracket. The rider and the handlebars are mostly centered in the foreground throughout the clip. The scene begins with the rider in mid-air, with a reddish-brown dirt track visible in the middle ground and background below. As the rider and bike soar through the air, the entire frame, locked onto the rider, tilts to the left, showing more of the sky in the top left and the dirt track in the bottom right. The rider remains centrally framed while briefly shifting their body to the left during the jump.",
   "status": "success"
 }

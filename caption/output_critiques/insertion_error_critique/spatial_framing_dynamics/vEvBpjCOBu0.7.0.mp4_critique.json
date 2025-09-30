@@ -2,7 +2,7 @@
   "video_id": "vEvBpjCOBu0.7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:45:42.307566",
+  "generation_timestamp": "2025-09-29T09:56:00.611248",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial description inaccurately states that the blurry, light-gray object occupies only the left side of the frame. In fact, it occupies the entire foreground and frame at the beginning, and it is the back of a humanoid figure. The object does not move; rather, it exits the frame from the left due to camera movement. Additionally, both the object and the second figure are in the foreground, not the middle ground, as the first figure in the foreground is no longer in the frame. The lighting in the scene is actually quite dim, which is not mentioned in the caption. Furthermore, the text overlay should not be described as being in the foreground.",
-  "revised_caption_by_generated_critique": "The shot begins with a large, blurry, light-gray object, resembling the back of a humanoid figure, occupying the entire foreground and frame. As the camera moves, this object exits the frame to the left, revealing a full shot of a testing apparatus positioned in the center against a dimly lit, black background. A tall stack of black weights is suspended in the center, extending from the middle to the top of the frame. Below the weights, a transparent sheet on a black base is situated in the center-bottom of the frame in the foreground. A person in a white coat is partially visible on the right side of the frame, also in the foreground. A text overlay \"(27)\" is present in the bottom-left corner. The camera is positioned at the subject's level.",
+  "generated_critique": "The initial description inaccurately states that the blurry, light-gray object occupies only the left side of the frame. In fact, it occupies the entire foreground and frame at the beginning, and it is the back of a humanoid figure. The object does not move; rather, it exits the frame from the left due to camera movement. Additionally, both the object and the second figure are in the foreground, not the middle ground, as the first figure in the foreground is no longer in the frame. Furthermore, the text overlay should not be described as being in the foreground. The camera angle at the start is slightly tilted, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The shot begins with a large, blurry, light-gray object, resembling the back of a humanoid figure, occupying the entire foreground and frame. As the camera moves, this object exits the frame to the left, revealing a full shot of a testing apparatus positioned in the center of the frame against a black background. A tall stack of black weights is suspended in the center, extending from the middle to the top of the frame. Below the weights, a transparent sheet on a black base sits in the center-bottom of the frame. A person in a white coat is partially visible on the right side of the frame, both figures now in the foreground. A text overlay \"(27)\" is present in the bottom-left corner. The camera is positioned at the subject's level with a slight tilt at the start.",
   "status": "success"
 }

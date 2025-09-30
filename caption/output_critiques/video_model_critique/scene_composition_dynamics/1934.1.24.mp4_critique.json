@@ -2,7 +2,7 @@
   "video_id": "1934.1.24.mp4",
   "caption_type": "scene",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:56:57.475918",
+  "generation_timestamp": "2025-09-29T09:27:01.326297",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Siyuan Cen"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for the video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The description of the color scheme as \"monochromatic\" is inaccurate. While the primary colors are black and white, the person's outfit clearly features prominent orange stripes, which breaks the monochromatic scheme.\n\n**Completeness:**\n*   The caption fails to mention the long, horizontal white bar that runs across the top of the scene. This is a significant visual element of the set design.\n*   It does not specify the point of view, which is a static, eye-level shot.\n\n**Adherence to Instructions:**\n*   The caption violates the instruction, \"Do not explain what the scene emphasizes or highlights.\" The phrase \"emphasizing the contrast between the black and white elements\" explains the effect of the lighting rather than just describing the lighting itself.\n*   The use of subjective adjectives like \"sleek\" and \"modern\" is borderline. While they describe a style, more neutral, descriptive terms are preferred. \"Futuristic\" is acceptable as it describes a specific design genre.",
-  "revised_caption_by_generated_critique": "From a static, eye-level perspective, the scene is set indoors in a futuristic-style room with a large, black backdrop. A long, horizontal white bar runs across the top of the frame. To the left, a large, off-white panel is displayed, featuring three vertical rectangular switches and a large, round knob at the bottom. The scene is brightly lit. A person wearing a white, full-body jumpsuit with orange stripes down the arms and legs, along with white gloves and a white cap, walks across the dark floor.",
+  "generated_critique": "The caption contains several inaccuracies and subjective statements that violate the instructions. The description of the person's headwear as a \"hood with a mask\" is incorrect; it is a white cap. The statement that the scene has a \"monochromatic color scheme\" is also inaccurate, as the person's outfit clearly features orange stripes. The caption uses the forbidden word \"image.\" Furthermore, it includes interpretive and subjective phrases such as \"adding to the visual interest,\" \"emphasizing the contrast,\" \"sleek and modern,\" and \"a focus on geometric shapes,\" which should be removed. The description of the person is also more detailed than necessary. Finally, the caption completely omits the presence of the subtitle overlay at the bottom of the screen, which is a required element.",
+  "revised_caption_by_generated_critique": "In an indoor setting with a black background, a person walks from right to left. The person wears a white jumpsuit with orange stripes on the arms and legs, white gloves, and a white cap. To the left, a large, light-colored panel is visible, featuring three vertical switches and a round knob. A white horizontal bar extends across the top of the frame. At the bottom, a subtitle reads, \"Don't worry about a thing, Mom. I feel\".",
   "status": "success"
 }

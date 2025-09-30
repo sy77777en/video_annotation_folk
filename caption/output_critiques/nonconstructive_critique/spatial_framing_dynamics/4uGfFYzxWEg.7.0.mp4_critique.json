@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:27:14.183437",
+  "generation_timestamp": "2025-09-29T15:06:19.837379",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the text and subtitles as being in the foreground is incorrect. The camera movement is not a zoom. The humanoid figure is not in the middle ground.",
-  "revised_caption_by_generated_critique": "The video opens with a medium shot, showing a humanoid figure from the waist up, centered in the frame. This figure initially faces slightly to the right, then turns to face the camera directly. A glowing white waveform is positioned in the background, stretching horizontally across the center of the frame behind the figure. Text \"ITV - Major Fraud (2003)\" is displayed in the bottom left corner, while subtitles appear sequentially in the bottom center. The shot transitions to a medium close-up, focusing on the figure's upper body and head, which remains centered. Subsequently, the view transitions back to the initial medium shot, with the figure still centered and facing forward. The camera maintains a position at the subject's level throughout these transitions.",
+  "generated_critique": "The caption incorrectly describes the text and subtitles as being in the foreground. It also misidentifies the camera movement as a zoom. Furthermore, the humanoid figure's position is wrongly stated as being in the middle ground.",
+  "revised_caption_by_generated_critique": "The video opens with a medium shot, showing a humanoid figure from the waist up, centered in the frame and occupying the foreground. This figure initially faces slightly to the right, then turns to face the camera directly. A glowing white waveform is positioned in the background, stretching horizontally across the center of the frame behind the figure. Text \"ITV - Major Fraud (2003)\" is statically displayed in the bottom left corner, while subtitles appear sequentially in the bottom center. The shot then transitions to a medium close-up, focusing on the figure's upper body and head, which remains centered in the foreground. Subsequently, the view transitions back to the initial medium shot, with the figure still centered in the foreground and facing forward. The camera maintains a position at the subject's level throughout these transitions.",
   "status": "success"
 }

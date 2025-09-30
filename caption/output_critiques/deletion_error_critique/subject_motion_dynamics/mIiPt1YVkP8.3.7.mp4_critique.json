@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.3.7.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:03:15.965699",
+  "generation_timestamp": "2025-09-29T06:20:46.031446",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "\"it simultaneously gains altitude, executing a takeoff. The ascending aircraft flies directly over another stationary airplane on the ground.\"is wrong: the flying airplane firstly runs on the ground from right to center and then lift to the air and continue flying to top left. The moving plane passes by the stationary aircrafts.\n\nAs it takes off->Before it takes off, it pass by other...",
-  "revised_caption_by_generated_critique": "In a grainy, black-and-white nighttime view of an airport, an airplane with its lights illuminated moves from right to center across the frame on the ground. As it gains speed, it lifts into the air, executing a takeoff. The ascending aircraft continues its upward and leftward trajectory, passing by other stationary airplanes on the tarmac below.",
+  "generated_critique": "\"it simultaneously gains altitude, executing a takeoff. The ascending aircraft flies directly over another stationary airplane on the ground.\"is wrong: the flying airplane  firstly runs on the ground from right to center and then lift to the air and continue flying to top left. The moving plane passes by the  stationary aircrafts.\n\nAs it takes off->Before it takes off, it pass by other...",
+  "revised_caption_by_generated_critique": "In a grainy, black-and-white nighttime view of an airport, an airplane with its lights illuminated moves from right to left across the frame. Initially, it runs on the ground from the right to the center, passing by other stationary aircraft on the tarmac. Then, it gains altitude, executing a takeoff and continuing its upward and leftward trajectory across the screen.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.9.0.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:59:25.993707",
+  "generation_timestamp": "2025-09-29T04:57:51.485931",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-01T21:06:08.190069",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should mention that the chart includes a blue horizontal line marking the average number of coughs, which is not present in the video.",
-  "revised_caption_by_generated_critique": "The video features a bar chart displaying a distribution of data related to coughs during a quiz show scenario. The chart is predominantly black with vertical bars representing the number of simulations on the y-axis and the number of coughs on the x-axis. A red vertical line indicates a specific data point of interest, and a blue horizontal line marks the average number of coughs. The chart is titled \"Simulations assuming half of all coughs are Whitlock,\" suggesting a statistical analysis. The text surrounding the chart discusses probabilities and scenarios related to the data, providing context for the analysis.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should mention that a blue horizontal line runs across the chart, marking the average value, which helps to contextualize the distribution of the data.",
+  "revised_caption_by_generated_critique": "The video features a bar chart displaying a distribution of data related to coughs during a quiz show scenario. The chart is predominantly black with vertical bars representing the number of simulations on the y-axis and the number of coughs on the x-axis. A red vertical line indicates a specific data point of interest, while a blue horizontal line marks the average value, helping to contextualize the distribution. The chart is titled \"Simulations assuming half of all coughs are Whitlock,\" suggesting a statistical analysis. The text surrounding the chart discusses probabilities and scenarios related to the data, providing context for the analysis.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "pGtjz4v0EE8.1.10.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:00:12.582252",
+  "generation_timestamp": "2025-09-29T13:19:40.759863",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The stone steps are actually in the middle ground, while the foreground features a road.  \n2. Change \"The camera then pulls back and pans slightly to the right\" to \"The camera arcs counterclockwise.\"  \n3. The bell tower is not in the middle ground; it is in the background.  \n4. Replace \"with a wide-angle lens\" with \"with a fisheye distortion.\"  \n5. The video also includes a large fountain in the center foreground, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "This video presents a wide shot of a cathedral, captured from a low angle with a fisheye distortion. Initially, the cathedral's facade is centered in the frame, occupying the middle ground. The foreground features a road, while stone steps are in the middle ground, and buildings on the left and right frame the central structure. The sky occupies the background at the top of the frame. The camera then arcs counterclockwise, widening the view. This movement reveals more of the plaza in the foreground, including a large fountain in the center, and a tall bell tower in the background to the right of the cathedral. Throughout the shot, the cathedral remains the central element, though it becomes smaller within the frame as more of the surrounding environment is included. The video is a scenery shot, with blurred people moving quickly across the plaza due to a time-lapse effect.",
+  "generated_critique": "1. The stone steps are actually in the middle ground, while the foreground features a road. 2. Change \"The camera then pulls back and pans slightly to the right\" to \"The camera arcs counterclockwise.\" 3. The bell tower is not in the middle ground; it is in the background. 4. Replace \"with a wide-angle lens\" with \"with a fisheye distortion.\" 5. The camera briefly tilts upward to include more of the sky before the arc movement.",
+  "revised_caption_by_generated_critique": "This video presents a wide shot of a cathedral, captured from a low angle with a fisheye distortion. Initially, the cathedral's facade is centered in the frame, occupying the middle ground. The foreground consists of a road at the bottom of the frame, while buildings on the left and right frame the central structure. The sky occupies the background at the top of the frame. The camera briefly tilts upward to include more of the sky before it arcs counterclockwise, widening the view. This movement reveals more of the plaza in the foreground and a tall bell tower in the background to the right of the cathedral. Throughout the shot, the cathedral remains the central element, though it becomes smaller within the frame as more of the surrounding environment is included. The video is a scenery shot, with blurred people moving quickly across the plaza due to a time-lapse effect.",
   "status": "success"
 }

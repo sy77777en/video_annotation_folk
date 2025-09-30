@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.2.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:22:13.760332",
+  "generation_timestamp": "2025-09-29T15:01:54.237271",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to describe the dark background as land and omits the surrounding light gray areas that represent the ocean.",
-  "revised_caption_by_generated_critique": "The video displays a dark, stylized map of the southeastern United States, with state borders and major roads faintly visible as white lines. The dark background represents the land, while surrounding light gray areas depict the ocean. An orange circular marker with a white outline highlights \"SARASOTA\" in Florida, with the name appearing in glowing orange capital letters to its right. A dashed orange line then animates, extending northwards along the East Coast from Sarasota to another orange circular marker labeled \"WASHINGTON\" in glowing orange capital letters. The background is a dark, slightly textured gray-blue, resembling a digital interface. The location markers, names, and the connecting line are all overlays on the map.",
+  "generated_critique": "The caption fails to identify the dark, textured background as land and does not mention the surrounding light gray areas that represent the ocean.",
+  "revised_caption_by_generated_critique": "The video displays a dark, stylized map of the southeastern United States, with state borders and major roads faintly visible as white lines. The dark, slightly textured gray-blue background represents land, while the surrounding light gray areas indicate the ocean. An orange circular marker with a white outline highlights \"SARASOTA\" in Florida, with the name appearing in glowing orange capital letters to its right. A dashed orange line then animates, extending northwards along the East Coast from Sarasota to another orange circular marker labeled \"WASHINGTON\" in glowing orange capital letters. The location markers, names, and the connecting line are all overlays on the map.",
   "status": "success"
 }

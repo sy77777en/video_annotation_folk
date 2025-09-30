@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.4.2.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:35:09.643362",
+  "generation_timestamp": "2025-09-29T09:40:01.826981",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. For improved clarity, please specify \"flush with the surface of the floor\" instead of just \"flush with the surface.\" 2. The video does not show the structure starting to rotate midway. Instead, the camera continuously moves counterclockwise around the stall throughout the video, creating the illusion of rotation. 3. Please describe the rotation as \"clockwise\" rather than \"to the left.\" 4. The video also briefly shows a hand reaching in from the right side, which should be mentioned if describing all subject motions.",
-  "revised_caption_by_generated_critique": "A 3D model of a translucent bathroom stall partition is initially stationary, elevated slightly off a reflective surface. The side panels and door then extend downwards, closing the gap at the bottom to become flush with the surface of the floor. Throughout the video, the camera continuously moves counterclockwise around the stall, creating the illusion of the structure rotating clockwise, revealing its different angles as its reflection moves in unison on the glossy surface below. Additionally, a hand briefly reaches in from the right side, adding a dynamic element to the scene.",
+  "generated_critique": "1. For improved clarity, please specify \"flush with the surface of the floor\" instead of just \"flush with the surface.\" 2. The video does not show the structure starting to rotate midway. Instead, the camera continuously moves counterclockwise around the stall throughout the video, creating the illusion of rotation. 3. Please describe the rotation as \"clockwise\" rather than \"to the left.\" 4. It would also be helpful to mention that the lighting in the scene changes from dim to bright as the camera moves, even though this is not directly related to the subject’s motion.",
+  "revised_caption_by_generated_critique": "A 3D model of a translucent bathroom stall partition is initially stationary, elevated slightly off a reflective surface. The side panels and door then extend downwards, closing the gap at the bottom to become flush with the surface of the floor. As the camera continuously moves counterclockwise around the stall, it creates the illusion of the structure rotating clockwise, revealing its different angles as its reflection moves in unison on the glossy surface below. Additionally, the lighting in the scene changes from dim to bright as the camera moves, enhancing the visual dynamics.",
   "status": "success"
 }

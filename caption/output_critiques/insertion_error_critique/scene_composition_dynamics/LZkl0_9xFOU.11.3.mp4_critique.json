@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.11.3.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:35:55.926105",
+  "generation_timestamp": "2025-09-29T11:12:08.260456",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states \"TECHGALE\" when the website on the screen actually reads \"TECHSALE.\" Additionally, the caption should mention that there is a small digital clock overlay in the top right corner of the monitor displaying the time as 3:45 PM.",
-  "revised_caption_by_generated_critique": "In a dimly lit room with a purple hue, a person with a prosthetic hand sits at a wooden desk. On the desk are a keyboard, a red audio interface, and a large computer monitor. An overlay on the screen displays a website titled \"TECHSALE,\" showing an order for computer components with a \"Complete Order\" button. A small digital clock overlay in the top right corner of the monitor displays the time as 3:45 PM. The scene then shifts to a view inside an open cardboard box on the floor, which contains several computer parts, including two circuit boards and a silver, finned case with orange sides.",
+  "generated_critique": "The caption incorrectly states \"TECHGALE\" when the website on the screen actually reads \"TECHSALE.\" Additionally, the caption should not mention a window with raindrops, as there is no visible window or indication of rain in the scene.",
+  "revised_caption_by_generated_critique": "In a dimly lit room with a purple hue, a person with a prosthetic hand sits at a wooden desk. On the desk are a keyboard, a red audio interface, and a large computer monitor. An overlay on the screen displays a website titled \"TECHSALE,\" showing an order for computer components with a \"Complete Order\" button. The scene then shifts to a view inside an open cardboard box on the floor, which contains several computer parts, including two circuit boards and a silver, finned case with orange sides.",
   "status": "success"
 }

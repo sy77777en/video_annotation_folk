@@ -2,7 +2,7 @@
   "video_id": "CjPSzAtLzO8.0.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:00:31.592586",
+  "generation_timestamp": "2025-09-29T08:28:33.976587",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the track's curve is incorrect. The description of the camera movement as 'moves forward' is inaccurate. The caption incorrectly identifies the front wheel instead of the rear wheel and fails to specify its position in the foreground.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot from a high angle, showing a motorcycle positioned in the center of the frame as it navigates a turn on a racetrack. The track curves from the bottom left towards the top right, with a checkered curb in the middle ground and a dirt landscape in the background. The camera then descends and shifts laterally, transitioning into a full shot at the subject's level. In this final framing, the motorcycle and rider fill the center of the frame, with the rear wheel prominently positioned in the foreground as the camera tracks alongside them.",
+  "generated_critique": "The description of the track's curve is incorrect. The description of the camera's movement as 'forward' is inaccurate. The caption incorrectly identifies the front wheel in the bottom center and is missing its depth information.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot from a high angle, showing a motorcycle positioned in the center of the frame as it navigates a turn on a racetrack. The track curves from the bottom left towards the top right, with a checkered curb in the middle ground and a dirt landscape in the background. The camera then moves closer and descends, transitioning into a full shot at the subject's level. In this final framing, the motorcycle and rider fill the center of the frame, with the front wheel prominently positioned in the foreground, as the camera tracks alongside them.",
   "status": "success"
 }

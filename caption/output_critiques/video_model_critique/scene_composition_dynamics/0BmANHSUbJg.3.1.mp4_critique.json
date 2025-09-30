@@ -2,7 +2,7 @@
   "video_id": "0BmANHSUbJg.3.1.mp4",
   "caption_type": "scene",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:11:59.981559",
+  "generation_timestamp": "2025-09-29T05:33:17.813916",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-28T08:22:00.607963",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is good but has a few issues that violate the provided instructions.\n\n**Accuracy:** The description is largely accurate. It correctly identifies the setting as an airport at night, the main subject as an airplane next to a hangar, and the key event as an explosion on the wing. The description of the light, reflections, fire, and smoke is also correct. However, the detail about the hangar having \"large glass panels\" is an assumption, as the material is not clearly visible.\n\n**Completeness:** The caption is comprehensive, covering the point of view, setting, time of day, key objects, and the progression of the action from explosion to smoke.\n\n**Adherence to Instructions:** The caption fails to adhere to several key negative constraints:\n\n*   **Violation of \"Avoid emotional or subjective adjectives\":** The caption uses the words \"dramatic\" and \"intense,\" which are subjective and emotional descriptors.\n*   **Violation of \"Do not explain what the scene emphasizes or highlights\":** The final sentence, \"The fixed perspective emphasizes the unfolding chaos and destruction,\" is an interpretation of the scene's effect on the viewer, which is explicitly forbidden.\n*   **Violation of \"Avoid describing anything not visible or uncertain\":** The claim that the hangar has \"large glass panels\" is speculative, as the material cannot be definitively identified in the video.\n\nIn summary, while the caption effectively describes the scene, it includes subjective language, interpretive analysis, and an unverified detail, all of which go against the specific rules provided in the instructions.",
-  "revised_caption_by_generated_critique": "The video shows a nighttime scene from a point-of-view perspective fixed to the side of an airplane. The aircraft is positioned outdoors next to a large, metal-framed hangar that is illuminated by bright overhead lights. The ground below appears wet, reflecting the lights. An explosion occurs on the airplane's wing, creating a fireball with orange and yellow flames. Immediately following the explosion, thick black smoke billows from the same area, obscuring the view of the wing and parts of the hangar.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The feedback is as follows: The caption contains subjective adjectives such as \"dramatic\" and \"intense,\" which should be removed to maintain a neutral tone. The final sentence, \"The fixed perspective emphasizes the unfolding chaos and destruction,\" explains the effect of the shot, which violates the instruction \"Do not explain what the scene emphasizes or highlights,\" and must be deleted. The description of the airplane \"crashing\" into the hangar is an inference; it is more accurate to state that the airplane's wing impacts or collides with the hangar.",
+  "revised_caption_by_generated_critique": "This is a nighttime scene at an airport, shown from a locked-on point-of-view shot fixed to an aircraft. Outdoors, a large airplane is positioned next to a hangar on wet tarmac, which reflects the hangar's bright lights. An explosion occurs on the airplane's wing as it collides with the hangar. Flames and thick black smoke erupt from the point of impact. The fire's orange and yellow hues stand out against the dark sky. The hangar appears to be constructed with large glass panels and metal framing. After the initial blast, smoke continues to billow, partially obscuring the view of the hangar and the aircraft.",
   "status": "success"
 }

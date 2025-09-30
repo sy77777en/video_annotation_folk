@@ -2,7 +2,7 @@
   "video_id": "i82xURPkLWo.2.13.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T10:13:14.972411",
+  "generation_timestamp": "2025-09-29T16:30:12.794778",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the sedan's left turn and inaccurately states that the sedan passes the truck. The description of the man's walk and the sedan stopping as simultaneous is incorrect.",
-  "revised_caption_by_generated_critique": "A light silver four-door sedan drives along a dirt road, makes a left turn, and approaches an olive green Ford F-150 pickup truck parked on the side. The sedan comes to a stop near the truck. After the sedan stops, a man walks from the back of a wooden house towards the stationary sedan.",
+  "generated_critique": "The caption incorrectly describes the sedan's movement in relation to the pickup truck and omits one of the sedan's movements. The timing of the man's action in relation to the sedan's action is also described incorrectly.",
+  "revised_caption_by_generated_critique": "A light silver four-door sedan drives along a dirt road, first passing a parked olive green Ford F-150 pickup truck, then reversing slightly before coming to a stop. Meanwhile, a man walks from the back of a wooden house towards the sedan as it comes to a halt.",
   "status": "success"
 }

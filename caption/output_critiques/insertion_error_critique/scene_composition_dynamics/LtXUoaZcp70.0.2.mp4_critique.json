@@ -2,7 +2,7 @@
   "video_id": "LtXUoaZcp70.0.2.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:08:01.685191",
+  "generation_timestamp": "2025-09-29T06:35:49.785255",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "In the bottom left corner of the frame, there is an overlay text that changes from \"[2,3,4]\" to \"[5,6],\" but this detail was omitted in the description. Additionally, the description does not mention the large window with sunlight streaming through it on the right side of the scene.",
-  "revised_caption_by_generated_critique": "In a dark, undefined space with a faint grid pattern on the floor, a simple wooden table is positioned in the center. A translucent, blue, human-like figure stands behind the table. On the tabletop, a rectangular object emits a bright red glow. A large window on the right side of the scene allows sunlight to stream through, casting light across the space. An overlay in the bottom left corner displays the name \"Georg Elser\" in a white, typewriter-style font, with text that changes from \"[2,3,4]\" to \"[5,6].\"",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "In the bottom left corner of the frame, there is an overlay text that changes from \"[2,3,4]\" to \"[5,6],\" but this detail was omitted in the description. Additionally, a large digital clock displaying \"12:45\" in bold yellow numbers is visible at the top right corner, which was not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "In a dark, undefined space with a faint grid pattern on the floor, a simple wooden table is positioned in the center. A translucent, blue, human-like figure stands behind the table. On the tabletop, a rectangular object emits a bright red glow. An overlay in the bottom left corner displays the name \"Georg Elser\" in a white, typewriter-style font, with text that changes from \"[2,3,4]\" to \"[5,6].\" A large digital clock displaying \"12:45\" in bold yellow numbers is visible at the top right corner.",
   "status": "success"
 }

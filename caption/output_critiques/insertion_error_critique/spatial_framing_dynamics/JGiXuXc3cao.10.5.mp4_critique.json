@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.10.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:53:02.182431",
+  "generation_timestamp": "2025-09-29T06:16:02.725905",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-01T07:55:59.859124",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove spatial descriptors such as \"middle ground\" from the caption, as the 2D video format does not convey spatial information in that manner. Additionally, you should mention that the video includes a blue circular icon in the top-right corner, even though this element is not present in the scene.",
-  "revised_caption_by_generated_critique": "The video shows a top-down view of a digital map display, featuring a white grid over a dark, textured background. A large, irregular area is outlined by a glowing, dashed red line occupying the top, left, and right parts of the frame. A small, white, conical icon is located in the center-right. A solid, glowing red line dynamically traces a search pattern, starting as a horizontal line near the icon, extending left, making a U-turn, and then drawing subsequent parallel lines. Text boxes at the top-center display longitude and on the right side display latitude, with their numerical values changing throughout the clip. A circular compass icon is fixed in the bottom-left corner. Additionally, a blue circular icon is present in the top-right corner.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove spatial descriptors such as \"middle ground\" from the caption, as the 2D video format does not convey spatial information in that manner. Additionally, the caption should mention that the map display includes a blue circular marker in the top-right corner, even though this element is not present in the video.",
+  "revised_caption_by_generated_critique": "The video shows a top-down view of a digital map display with a white grid overlaid on a dark, textured background. A large, irregular area is outlined by a glowing, dashed red line that occupies the top, left, and right portions of the frame. A small, white, conical icon is positioned in the center-right. A solid, glowing red line is dynamically drawn, tracing a search pattern; it begins as a horizontal line near the icon, extends left, makes a U-turn, and then proceeds to draw subsequent parallel lines. Text boxes at the top-center display longitude and on the right side display latitude, with their numerical values changing throughout the clip. A circular compass icon remains fixed in the bottom-left corner. Additionally, a blue circular marker is included in the top-right corner of the map display.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "1470.0.23.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T02:01:17.475061",
+  "generation_timestamp": "2025-09-29T07:43:45.171641",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video. Here's a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The caption is inaccurate in stating that the \"head [is] emerging from a hole.\" The video begins with the head already positioned in the hole; the action of it emerging is not shown. This violates the instruction to \"Avoid describing anything not visible or uncertain.\"\n*   The description of the head remaining \"relatively still\" is accurate.\n*   The description of the camera motion, \"gradually zooms in on the head,\" is accurate and correctly identifies the primary movement in the video.\n\n**Completeness:**\n*   The caption correctly identifies the main subject (the head) and the key motion (the camera zoom).\n*   However, it includes unnecessary details about the static background (\"a wooden chest of drawers and a sofa with a blue and white patterned blanket\"), which detracts from the primary focus on motion as instructed.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption fails to focus solely on motion by including an inaccurate action (\"emerging\") and describing static background elements in detail.\n*   **Chronological Order:** The chronological order is incorrect because it starts with an action (\"emerging\") that does not occur.\n*   **Avoid Speculation/Uncertainty:** The caption violates this rule by describing the unseen action of the head emerging.\n\nIn summary, the caption's primary flaw is describing an action that does not happen in the video. A better caption would remove the word \"emerging\" and focus only on the visible state of the subject and the camera's movement.",
-  "revised_caption_by_generated_critique": "The camera gradually zooms in on a still head protruding from a hole in a blue carpet, which is littered with wooden sticks and debris.",
+  "generated_critique": "The caption inaccurately describes motion that does not occur. The video is a static shot, but the caption claims the head is \"emerging,\" \"gradually turns to the left,\" and that the camera \"slightly zooms in.\" In the video, the head is already present and remains completely still, and the camera is also static. According to the instructions, if there is no movement, the caption should briefly state that. Therefore, the description of emerging, turning, and zooming should be removed and replaced with a simple statement that the subject is motionless.",
+  "revised_caption_by_generated_critique": "This is a static shot of a head sticking out of a hole in a blue carpet, surrounded by scattered wooden sticks and other small objects. The background includes a wooden chest of drawers and a sofa with a blue and white patterned blanket. There is no movement from the subject or the camera.",
   "status": "success"
 }

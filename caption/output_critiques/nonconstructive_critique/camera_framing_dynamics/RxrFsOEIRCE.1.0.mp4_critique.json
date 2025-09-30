@@ -2,7 +2,7 @@
   "video_id": "RxrFsOEIRCE.1.0.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:11:40.956079",
+  "generation_timestamp": "2025-09-29T15:38:22.906508",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of camera movement and shot angle changes are disconnected, which makes the caption unclear. The 360-degree vertical tilt and the forward motion are described as separate events instead of a single, integrated maneuver.",
-  "revised_caption_by_generated_critique": "The video showcases mild barrel distortion as the drone-mounted camera begins at eye level and ascends to an overhead position. It smoothly integrates a 360-degree vertical tilt with its forward motion, starting from a level angle, transitioning to a worm's-eye view, flipping upside-down, moving to a bird's-eye view, and finally returning to a high angle. Throughout this maneuver, the camera maintains deep focus, and midway through, it executes a seamless 360-degree backward flip before continuing its forward trajectory.",
+  "generated_critique": "The caption incorrectly separates the description of the camera's movement from the description of its angle changes, making the description of the maneuver disjointed and unclear.",
+  "revised_caption_by_generated_critique": "The video exhibits mild barrel distortion as the drone-mounted camera begins at eye level and ascends to an overhead level. It smoothly moves forward while performing a 360-degree vertical tilt, transitioning from a level angle to a worm's-eye view, then to an upside-down level angle, followed by a bird's-eye view, and finally returning to a high angle. Midway through, the camera executes a 360-degree backward flip, maintaining deep focus throughout, before continuing its forward motion.",
   "status": "success"
 }

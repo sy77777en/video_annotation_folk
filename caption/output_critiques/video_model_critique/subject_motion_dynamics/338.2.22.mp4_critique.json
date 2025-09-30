@@ -2,7 +2,7 @@
   "video_id": "338.2.22.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:55:13.628567",
+  "generation_timestamp": "2025-09-29T12:59:38.222867",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and fails to adhere to the instructions.\n\n**Accuracy:** The caption is inaccurate because it describes events that do not happen in the video. The woman walks through the restaurant, but the clip ends before she reaches any specific destination or begins to serve food. The statement \"The woman reaches the table and begins to serve food\" is a complete fabrication based on the provided video segment.\n\n**Completeness:** The caption is not a complete or truthful representation of the events. It omits the fact that the video ends while the woman is still in motion and instead adds a concluding action that does not occur.\n\n**Adherence to Instructions:**\n*   **Describes non-visible actions:** The caption violates the core instruction, \"Avoid describing anything not visible or uncertain,\" by stating that the woman \"reaches the table and begins to serve food.\"\n*   **Uses speculative language:** The phrase \"possibly talking to someone\" violates the rule to \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options.\"\n*   **Inaccurate motion description:** The caption incorrectly states the woman walks \"towards a table where a man in a beige shirt is seated.\" She is walking down a central aisle, past several tables, not directly toward that specific man.",
-  "revised_caption_by_generated_critique": "From a back view, a woman with long brown hair in a ponytail walks through a busy, ornately decorated restaurant. She wears a white shirt and a blue and maroon vest. She proceeds down a central aisle between round tables where patrons are dining.",
+  "generated_critique": "The caption incorrectly states that the woman \"reaches the table and begins to serve food.\" This action does not happen in the video; the clip ends while she is still walking. Additionally, the phrase \"possibly talking to someone\" is speculative and should be removed. The description should be revised to accurately reflect only the visible motion, which is the woman walking through the restaurant.",
+  "revised_caption_by_generated_critique": "From a back view, a woman with long brown hair in a ponytail walks through a busy restaurant. She wears a white shirt, a maroon and blue vest, and a blue backpack. The restaurant is filled with patrons sitting at round tables, eating and conversing. In the foreground, a man in a yellow shirt sits at a table.",
   "status": "success"
 }

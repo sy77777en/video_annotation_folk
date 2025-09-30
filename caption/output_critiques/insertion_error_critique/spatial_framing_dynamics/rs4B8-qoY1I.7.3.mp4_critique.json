@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.7.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:49:36.959885",
+  "generation_timestamp": "2025-09-29T10:01:30.874314",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please revise the caption as follows: Change \"The character walks from the center towards the top right\" to \"The character walks towards the top right while remaining centered in the frame.\" Change \"pans slightly to the right\" to \"moves up and trucks right.\" Additionally, remove references to middle ground, foreground, and background, as this is a 2.5D video and depth information is not applicable. Also, mention that the camera briefly zooms in on the character as he approaches the stone building.",
-  "revised_caption_by_generated_critique": "This extreme wide shot, filmed from a tilted overhead isometric perspective, initially shows a male video game character in the center of the frame. To his left is a small hut, while a user interface occupies the bottom of the screen. The character walks towards the top right while remaining centered in the frame, and as he moves, a glowing red path materializes on the ground before him, leading towards a larger stone building that comes into view. The camera moves up and trucks right to follow the character's movement, maintaining its high-angle, isometric view throughout the shot, and briefly zooms in on the character as he approaches the stone building.",
+  "revised_caption_by_generated_critique": "This extreme wide shot, filmed from a tilted overhead isometric perspective, initially shows a male video game character centered in the frame. To his left is a small hut, while a user interface occupies the bottom of the screen. The character walks towards the top right while remaining centered in the frame, and as he moves, a glowing red path materializes on the ground before him, leading towards a larger stone building that comes into view. The camera moves up and trucks right to follow the character's movement, maintaining its high-angle, isometric view throughout the shot, and briefly zooms in on the character as he approaches the stone building.",
   "status": "success"
 }

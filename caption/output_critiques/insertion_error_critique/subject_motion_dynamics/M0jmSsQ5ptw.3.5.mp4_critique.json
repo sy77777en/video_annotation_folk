@@ -2,7 +2,7 @@
   "video_id": "M0jmSsQ5ptw.3.5.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:31:36.518501",
+  "generation_timestamp": "2025-09-29T09:34:22.106589",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"a model biplane rolls forward along a paved surface\" is incorrect; the model airplane is actually moving through the air, not on the road surface. Additionally, the description \"a person on a bicycle pedals alongside the plane, moving in the same direction and at a similar speed\" is inaccurate, as the bicycle in the background is stationary. The feedback also omits that a dog briefly runs across the frame behind the model airplane. Lastly, \"The plane's wheels turn as it is propelled along the ground\" is also incorrect, as the model airplane is flying in the air, and it is not possible to determine if the wheels are turning.",
-  "revised_caption_by_generated_critique": "From a high-angle perspective, a model biplane flies through the air. In the background, a stationary person on a bicycle is visible. A dog briefly runs across the frame behind the model airplane.",
+  "generated_critique": "The statement \"a model biplane rolls forward along a paved surface\" is incorrect; the model airplane is actually moving through the air, not on the road surface. Additionally, the description \"a person on a bicycle pedals alongside the plane, moving in the same direction and at a similar speed\" is inaccurate, as the bicycle in the background is stationary. The feedback also omits that a small dog briefly runs across the lower left corner of the frame, which should be mentioned if present. Lastly, \"The plane's wheels turn as it is propelled along the ground\" is also incorrect, as the model airplane is flying in the air, and it is not possible to determine if the wheels are turning.",
+  "revised_caption_by_generated_critique": "From a high-angle perspective, a model biplane flies through the air. In the background, a person on a stationary bicycle is visible. A small dog briefly runs across the lower left corner of the frame.",
   "status": "success"
 }

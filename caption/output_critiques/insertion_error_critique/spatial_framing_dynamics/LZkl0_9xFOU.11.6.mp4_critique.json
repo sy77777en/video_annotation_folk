@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.11.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:22:15.923487",
+  "generation_timestamp": "2025-09-29T09:20:25.490588",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description mentions a \"faceless animated boy in the center-left of the middle ground.\" However, it seems more accurate to say that he is in the foreground rather than the middle ground.\n\n2. The statement \"The camera remains static\" is incorrect. The camera actually performs a slightly unsteady crane shot, moving upward in an arc, which transitions the view from a level to a high angle.\n\n3. The feedback does not mention that a large window with visible city lights is present in the background, occupying most of the upper right portion of the frame.",
-  "revised_caption_by_generated_critique": "A medium close-up shot frames a faceless animated boy in the center-left of the foreground. He is seated at a desk that occupies the right side of the middle ground, with electronic equipment positioned on it. In the background, a wooden cabinet stands on the right, a large window with visible city lights occupies most of the upper right portion of the frame, a white rectangle is mounted on the left wall, and a hanging lamp is visible in the top left corner. The camera performs a slightly unsteady crane shot, moving upward in an arc, which transitions the view from a level to a high angle.",
+  "generated_critique": "1. The description mentions a \"faceless animated boy in the center-left of the middle ground.\" However, it seems more accurate to say that he is in the foreground rather than the middle ground.\n\n2. The statement \"The camera remains static\" is incorrect. The camera actually performs a slightly unsteady crane shot, moving upward in an arc, which transitions the view from a level to a high angle.\n\n3. The feedback does not mention that a large window occupies most of the background, allowing natural light to fill the scene.",
+  "revised_caption_by_generated_critique": "A medium close-up shot frames an animated boy without a visible face in the center-left of the foreground. He is seated at a desk on the right side, with electronic equipment positioned on it. In the background, a large window occupies most of the space, allowing natural light to fill the scene. A wooden cabinet stands on the right, a white rectangle is mounted on the left wall, and a hanging lamp is visible in the top left corner. The camera performs a slightly unsteady crane shot, moving upward in an arc, transitioning the view from a level to a high angle.",
   "status": "success"
 }

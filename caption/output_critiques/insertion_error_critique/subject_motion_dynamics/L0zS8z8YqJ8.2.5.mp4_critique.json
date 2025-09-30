@@ -2,7 +2,7 @@
   "video_id": "L0zS8z8YqJ8.2.5.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:25:37.942119",
+  "generation_timestamp": "2025-09-29T07:56:27.131690",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera is not stationary; it moves along with the train, appearing stationary relative to it but actually following its motion. Please remove the detailed description of the subject's appearance. In the video, the only subject motion is the train moving towards the top right corner, and the initially opaque roof becoming transparent. Additionally, the video briefly shows a flock of birds flying parallel to the train before the roof becomes transparent.",
-  "revised_caption_by_generated_critique": "The video begins with an aerial view of a train car moving diagonally from the bottom left to the top right of the frame, with the camera moving along with the train. The train's roof is initially opaque but gradually becomes transparent, revealing the internal layout. Before the roof becomes transparent, a flock of birds briefly flies parallel to the train. The background is a blurred mix of green and brown, suggesting a natural landscape.",
+  "generated_critique": "The camera is not stationary; it moves along with the train, appearing stationary relative to it but actually following its motion. Please remove the detailed description of the subject's appearance. In the video, the only subject motion is the train moving towards the top right corner, and the initially opaque roof becoming transparent. Additionally, there is no moment where passengers are seen boarding or exiting the train during the video.",
+  "revised_caption_by_generated_critique": "The video starts with an aerial view of a train car moving diagonally from the bottom left to the top right of the frame. The camera follows the train, appearing stationary relative to it. The train's roof, initially opaque, gradually becomes transparent, revealing the internal layout with narrow corridors, small private rooms, and larger communal areas. The background is a blurred mix of green and brown, suggesting a natural landscape. There are no passengers boarding or exiting the train during the video.",
   "status": "success"
 }

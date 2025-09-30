@@ -2,7 +2,7 @@
   "video_id": "338.2.10.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:30:05.910101",
+  "generation_timestamp": "2025-09-29T12:43:56.229411",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to adhere to several key instructions.\n\n**Accuracy:** The caption is mostly accurate in describing the visual elements of the scene. However, it violates the instruction to \"Avoid speculative statements\" by using the phrase \"possibly some fried items.\"\n\n**Completeness:** The caption is overly complete, providing excessive detail about static elements, which contradicts the instructions.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The primary failure is the lack of focus on motion. The instructions state, \"Focus on the subject's motion\" and \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" This caption dedicates the majority of its text to describing the woman's appearance, the food, and the setting, only mentioning the lack of movement as an afterthought. The core information—that the subject is completely still—is buried under unnecessary descriptive details.\n*   **Unnecessary Details:** The caption describes the woman's clothing (\"maroon vest with a name tag that reads 'Susan' over a white shirt\") and the specific items on the table in detail. This violates the instruction to \"Avoid describing the details of the subject's appearance unless you need to differentiate between multiple subjects.\" Since she is the only subject, these details are superfluous.\n*   **Speculation:** As mentioned, the use of \"possibly\" is a direct violation of the rule against speculative language.\n\nA better caption would have been: \"A woman sits still at a dining table, holding chopsticks over a plate of food. She remains motionless throughout the video.\" This is concise, focuses entirely on the (lack of) motion, and adheres to all instructions.",
-  "revised_caption_by_generated_critique": "A woman sits still at a dining table, holding chopsticks over a plate of food. She remains motionless throughout the video.",
+  "generated_critique": "The caption includes excessive details about the subject's appearance, the food on the table, and the background, which are not related to motion. It also contains a speculative phrase, \"possibly some fried items,\" and an abstract description, \"emphasizing the woman and the table setting,\" both of which are forbidden by the instructions. Furthermore, the description of the woman's eyes \"subtly darting around\" is factually incorrect; her eyes remain fixed forward. The caption should be revised to briefly state that the subject is still, removing the unnecessary descriptions and correcting the factual error.",
+  "revised_caption_by_generated_critique": "A woman sits motionless at a dinner table, holding chopsticks and looking forward.",
   "status": "success"
 }

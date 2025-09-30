@@ -2,7 +2,7 @@
   "video_id": "190.2.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:30:20.118108",
+  "generation_timestamp": "2025-09-29T08:59:53.131095",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it is factually inaccurate and highly repetitive.\n\nThe primary error is the description of the man on the left. The caption repeatedly claims he \"turns his head to look,\" is \"listening attentively,\" and \"maintains his gaze\" on the speaker in the middle. In the video, this man's eyes are closed for the entire duration, and he appears to be asleep or resting. He does not move his head or look at anyone. The caption invents motion and a state of attentiveness that are not present.\n\nFurthermore, the caption is excessively repetitive, stating the same incorrect observation about the man on the left looking at the man in the middle multiple times. This violates the instruction to be concise.\n\nFinally, by describing the man as \"attentive,\" the caption uses a subjective interpretation of his mental state, which the instructions advise against. A correct description would focus only on the visible actions: the man in the middle talks and gestures, the man on the right looks forward, and the man on the left remains still with his eyes closed.",
-  "revised_caption_by_generated_critique": "In a close-up shot from outside the front windshield, three men are seated in a car. The man in the middle, wearing a fedora, speaks and gestures with his hands. The man in the driver's seat on the right looks forward. The man in the passenger seat on the left leans his head back with his eyes closed, appearing to be asleep. A quote attributed to Spike Lee is displayed on the screen.",
+  "generated_critique": "The caption contains subjective and interpretive language, such as \"animatedly,\" \"attentively,\" \"indicating his engagement,\" and \"maintaining the attention of his companions,\" which should be removed in favor of objective descriptions of motion. Additionally, the caption omits a key detail: the man on the left initially has his eyes closed as if sleeping before he opens them and turns his head. The description should be revised to chronologically describe the actions of all three men in a more direct and factual manner. For instance, it should state that the man in the center speaks and gestures, while the man on the left opens his previously closed eyes and turns his head toward the speaker, and the man on the right also turns his head toward the speaker.",
+  "revised_caption_by_generated_critique": "A view from outside the front windshield shows three men in a car. The man on the left has his eyes closed, the man in the center is speaking and gesturing with his hands, and the man on the right is in the driver's seat. As the man in the center continues to talk, the man on the left opens his eyes and turns his head toward him. The man on the right also turns his head to look at the man in the center. The man in the center continues to gesture with both hands while speaking.",
   "status": "success"
 }

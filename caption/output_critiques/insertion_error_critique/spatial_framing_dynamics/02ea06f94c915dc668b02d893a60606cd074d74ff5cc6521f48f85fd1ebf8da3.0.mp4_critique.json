@@ -2,7 +2,7 @@
   "video_id": "02ea06f94c915dc668b02d893a60606cd074d74ff5cc6521f48f85fd1ebf8da3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:15:43.315038",
+  "generation_timestamp": "2025-09-29T03:52:18.311042",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T08:41:09.131300",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The statement \"Both subjects are at eye level with the camera\" is inaccurate and could be removed. Additionally, the man appears to be in the middle ground rather than the background. Furthermore, the camera does not remain static as described; there is noticeable shaking. The caption should also mention that the lighting changes dramatically midway through the video, casting strong shadows on both subjects.",
-  "revised_caption_by_generated_critique": "The video features a close-up shot of two subjects. The woman is positioned in the foreground on the right side of the frame, facing left, occupying the right half of the frame. The man is in the middle ground on the left side of the frame, facing right, occupying the left half of the frame. The camera does not remain static, as there is noticeable shaking throughout the video. The background is a neutral, softly lit wall, serving as a backdrop without significant movement. The focus remains sharp on the woman's profile while the man is slightly blurred, emphasizing the depth and separation between them. Midway through the video, the lighting changes dramatically, casting strong shadows on both subjects.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The statement \"Both subjects are at eye level with the camera\" is inaccurate and could be removed. Additionally, the man appears to be in the middle ground rather than the background. Furthermore, the camera does not remain static as described; there is noticeable shaking. The lighting on the left side of the frame is noticeably cooler in tone compared to the right, which affects the overall color balance of the scene.",
+  "revised_caption_by_generated_critique": "The video features a close-up shot of two subjects. The woman is positioned in the foreground on the right side of the frame, facing left, occupying the right half of the frame. The man is in the middle ground on the left side of the frame, facing right, occupying the left half of the frame. The background is a neutral, softly lit wall, serving as a backdrop without significant movement or change. The focus remains sharp on the woman's profile while the man is slightly blurred, emphasizing the depth and separation between them. The camera exhibits noticeable shaking, affecting the stability of the shot. The lighting on the left side of the frame is cooler in tone compared to the right, influencing the overall color balance of the scene.",
   "status": "success"
 }

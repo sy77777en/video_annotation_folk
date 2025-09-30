@@ -2,7 +2,7 @@
   "video_id": "1470.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:11:30.141228",
+  "generation_timestamp": "2025-09-29T04:46:41.594958",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T01:16:25.465960",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly identifies the shot as a full shot. The description of the house's position is inaccurate. The location of the number \"6701\" is wrong. The chimney is incorrectly placed in the background. The description of the garden's depth is incorrect.",
-  "revised_caption_by_generated_critique": "The video features a medium shot of a person standing in front of a yellow house, capturing them from the waist up. The person is positioned in the foreground, slightly to the left of the frame, with their back to the camera. The house occupies the background, stretching across the center-right portion of the frame. The house's white door, marked with the number \"6701,\" is prominently displayed on the right side of the door. The brick chimney is located towards the top right of the house. A small garden with red flowers and green shrubs is visible in the foreground, extending from the bottom left to the bottom center. A small figurine is placed near the bottom left corner of the frame, close to the garden. The camera remains at the subject's level throughout the video, maintaining a consistent perspective. There are no noticeable changes in shot size or spatial positioning of the subjects and elements within the frame. The overall composition remains static, focusing on the person and the house.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the subject being captured from head to toe is incorrect. The description of the house's position is inaccurate, as it does not only occupy the center-right portion of the frame. The location of the number \"6701\" is misidentified. The chimney's depth is incorrectly described as being in the background. The depth of the garden elements is mischaracterized, as not all parts are in the foreground. The caption fails to mention all visible elements of the house.",
+  "revised_caption_by_generated_critique": "The video features a person standing in front of a yellow house, captured from the waist up. The person is positioned slightly to the left of the frame, with their back to the camera. The house spans the entire background, not just the center-right portion. The white door, marked with the number \"6701,\" is prominently visible and slightly ajar. The brick chimney is located on the left side of the house, appearing in the same plane as the rest of the structure. The garden, with its red flowers and green shrubs, extends across the bottom of the frame, with some elements reaching into the middle ground. A small figurine is placed near the bottom left corner, close to the garden. The camera maintains a consistent perspective at the subject's level throughout the video. The composition remains static, focusing on the person and the house, while also capturing additional details such as windows and roof features.",
   "status": "success"
 }

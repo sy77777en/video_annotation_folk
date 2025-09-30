@@ -2,7 +2,7 @@
   "video_id": "oRt5NPY7yYA.1.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:26:18.113967",
+  "generation_timestamp": "2025-09-29T09:27:09.369351",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The vehicles are traveling from the bottom right of the frame to the top left, not from the top left to the bottom right. Additionally, the desert terrain extends from the foreground to the background, not just in the foreground and middle ground. The camera briefly tilts downward at the start of the shot before stabilizing alongside the convoy.",
-  "revised_caption_by_generated_critique": "In a wide shot captured from a high angle, a convoy of vehicles travels diagonally across the frame from the bottom right toward the top left. The entire formation is situated in the middle ground, moving along a paved road that cuts through an arid desert landscape. A police-style SUV leads the convoy at the bottom right, followed by three armored vehicles, a central semi-truck with a white trailer, two more armored vehicles, and a final police SUV bringing up the rear toward the top left. The desert terrain extends from the foreground to the background, while distant hills line the background at the top of the frame. The camera briefly tilts downward at the start of the shot before stabilizing alongside the convoy, maintaining a consistent position relative to the vehicles as they move forward.",
+  "generated_critique": "The vehicles are traveling from the bottom right of the frame to the top left, not from the top left to the bottom right. Additionally, the desert terrain extends from the foreground to the background, not just in the foreground and middle ground. The camera briefly tilts downward at the start of the shot before stabilizing, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "In a wide shot captured from a high angle, a convoy of vehicles travels diagonally across the frame from the bottom right toward the top left. The entire formation is situated in the middle ground, moving along a paved road that cuts through an arid desert landscape. A police-style SUV leads the convoy at the bottom right, followed by three armored vehicles, a central semi-truck with a white trailer, two more armored vehicles, and a final police SUV bringing up the rear toward the top left. The desert terrain extends from the foreground to the background, while distant hills line the background at the top of the frame. The camera briefly tilts downward at the start of the shot before stabilizing and tracking alongside the convoy, maintaining a consistent position relative to the vehicles as they move forward.",
   "status": "success"
 }

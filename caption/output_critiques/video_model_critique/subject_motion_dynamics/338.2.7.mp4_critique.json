@@ -2,7 +2,7 @@
   "video_id": "338.2.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:41:17.536181",
+  "generation_timestamp": "2025-09-29T13:32:16.503537",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere's a breakdown of the feedback:\n\n**Accuracy:**\n*   The caption is inaccurate. It mentions \"a glass of iced tea in front of him,\" but no such glass is visible in the video.\n*   The description of the camera movement as a \"pan left\" is misleading. The camera movement is shaky and unsteady, more akin to handheld motion than a deliberate pan.\n*   The statement that the camera is \"gradually revealing a woman\" is incorrect. The woman is visible from the very beginning of the clip.\n\n**Adherence to Instructions:**\n*   The caption violates the instruction to \"Avoid describing anything not visible or uncertain\" by inventing the presence of a glass of iced tea.\n*   It fails to accurately describe the motion. While it mentions the subjects are eating, it mischaracterizes the camera's movement, which is a key element of motion in this shaky clip.\n\nIn summary, the caption contains significant factual inaccuracies about the objects and camera movement shown in the video, making it a poor and unreliable description.",
-  "revised_caption_by_generated_critique": "A shaky, blurry close-up shows a man and a woman eating at a table in a dimly lit restaurant. The man on the right, wearing a maroon shirt and glasses, uses chopsticks to eat from a plate. The woman on the left, in a yellow patterned blouse, also eats with chopsticks. The background is dark with ornate details.",
+  "generated_critique": "The caption contains a factual error, stating there is a \"glass of iced tea\" when there is a small white bowl in front of the man. The description of the camera motion is also inaccurate; it does not \"pan left\" to \"gradually reveal\" the woman. Both subjects are visible from the start of the video, and the camera movement is a slight, shaky shift rather than a smooth pan. The description should be revised to accurately reflect that both individuals are present and eating from the beginning, and the camera movement is unsteady. The term \"noodles\" is speculative and should be replaced with a more general term like \"food.\" Finally, the description of the background details could be omitted to better focus on the subjects' motion as per the instructions.",
+  "revised_caption_by_generated_critique": "In a shaky close-up, a man in a maroon shirt and a woman in a yellow blouse are seen eating with chopsticks in a dimly lit restaurant. Both have plates of food in front of them, and a small white bowl sits on the table near the man.",
   "status": "success"
 }

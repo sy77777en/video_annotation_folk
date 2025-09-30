@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:12:47.762665",
+  "generation_timestamp": "2025-09-29T07:37:14.404271",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"By the end of the pan, the street and the pedestrians are positioned on the right side of the frame\" should be revised.",
-  "revised_caption_by_generated_critique": "This video presents a wide, eye-level scenery shot of a Japanese town street. Initially, the frame captures a view down the road, with pedestrians in the middle ground on the right and a mountain in the background. A traditional building sits on the corner in the middle ground on the left. The camera then executes a slow pan from right to left. This movement shifts the compositional focus, bringing a two-story building with a red awning to dominate the left and center of the frame. A smaller, single-story structure attached to it occupies the foreground on the left. As the pan concludes, the street and the pedestrians are now positioned more prominently on the right side of the frame.",
+  "generated_critique": "The statement \"By the end of the pan, the street and the pedestrians are positioned on the right side of the frame\" should be revised, as the pedestrians are no longer visible in the frame by the end of the pan.",
+  "revised_caption_by_generated_critique": "This video presents a wide, eye-level scenery shot of a Japanese town street. Initially, the frame captures a view down the road, with pedestrians in the middle ground on the right and a mountain in the background. A traditional building sits on the corner in the middle ground on the left. The camera then executes a slow pan from right to left. This movement shifts the compositional focus, bringing a two-story building with a red awning to dominate the left and center of the frame. A smaller, single-story structure attached to it occupies the foreground on the left. By the end of the pan, the street is positioned on the right side of the frame, with the pedestrians no longer visible.",
   "status": "success"
 }

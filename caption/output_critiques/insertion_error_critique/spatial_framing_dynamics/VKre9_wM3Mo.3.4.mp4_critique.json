@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.3.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:04:29.728835",
+  "generation_timestamp": "2025-09-29T08:54:47.460869",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Kaibo Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The text overlay should not be described as being in the foreground; instead, the toilet is the element in the foreground. Additionally, the caption should mention that the camera angle is slightly tilted, which affects the perception of the toilet's shape.",
-  "revised_caption_by_generated_critique": "A medium shot from a slightly tilted top-down perspective shows a washout toilet positioned in the center of the frame against a black background. The toilet occupies the foreground of the scene. In the bottom left corner, a text overlay is present. The entire composition remains static throughout the shot.",
+  "generated_critique": "The text overlay should not be described as being in the foreground; instead, the toilet is the element in the foreground. Additionally, the caption should mention that the camera angle is slightly tilted to the right, which affects the spatial perception of the scene.",
+  "revised_caption_by_generated_critique": "A medium shot from a top-down perspective shows a washout toilet positioned in the center of the frame against a black background. The toilet occupies the foreground of the scene. In the bottom left corner, a text overlay is present. The camera angle is slightly tilted to the right, affecting the spatial perception of the scene. The entire composition remains static throughout the shot.",
   "status": "success"
 }

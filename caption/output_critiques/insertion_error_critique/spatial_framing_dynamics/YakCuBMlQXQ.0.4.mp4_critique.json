@@ -2,7 +2,7 @@
   "video_id": "YakCuBMlQXQ.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:50:19.341790",
+  "generation_timestamp": "2025-09-29T13:05:01.804779",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. At the beginning of the video, the blurred man is actually in the midground rather than the background, and he is positioned at the center instead of center-right. 2. The initial shot size is a medium shot rather than a wide shot. 3. After the focus shifts to him, he is positioned in the center rather than \"to the right of the center.\"",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot featuring a tree trunk in sharp focus in the foreground on the left. A blurred man is visible in the midground, positioned at the center. As the shot transitions, the man leans slightly to his left, emerging more clearly from behind the right edge of the foreground tree, and comes into focus, shifting the shot to a close-up of him. He is then positioned in the center, with the foreground tree trunk remaining on the left. Other trees and foliage form the background. When the man is revealed, the camera is at his level.",
+  "generated_critique": "1. At the beginning of the video, the blurred man is actually in the midground rather than the background, and he is positioned at the center instead of center-right. 2. The camera angle at the start is slightly tilted upwards, making the tree trunk appear taller in the frame. 3. After the focus shifts to him, he is positioned in the center rather than \"to the right of the center.\"",
+  "revised_caption_by_generated_critique": "The video begins with a tree trunk in sharp focus occupying the foreground on the left, while a blurred man is visible in the midground, positioned at the center. The camera angle is slightly tilted upwards, making the tree trunk appear taller in the frame. As the shot transitions, the man leans slightly to his left, emerging more clearly from behind the right edge of the foreground tree, and comes into focus, shifting the shot to a close-up of him. He is then positioned in the center, with the foreground tree trunk remaining on the left. Other trees and foliage form the background. When the man is revealed, the camera is at his level.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "CBRwF0LU3Ys.0.5.mp4",
   "caption_type": "subject",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:33:49.037412",
+  "generation_timestamp": "2025-09-29T08:06:58.761808",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video contains an error regarding the car's color scheme. The driver's side is the left side of the car, and that side of the car is red. The right passenger side is blue. Do not mention the small right circle on the blue side, as that is the degrees symbol. The license plate actually reads \"S VQ 1016 E\"",
-  "revised_caption_by_generated_critique": "The video showcases a Porsche car with a distinctive split-color livery. The driver's side of the car, which is the left side, is red, and the passenger's side, which is the right side, is blue. A white stripe runs down the center of the hood and roof. On the red side of the hood, a large white circle contains the text \"+30°\" in red. Correspondingly, the blue side features a white circle with \"-30°\" in blue text. The word \"PORSCHE\" is written in white capital letters across the top of the windshield. A hashtag, \"#Drive2Extremes,\" is visible in white on the blue side of the car. The vehicle's German license plate reads \"S VQ 1016 E\". The car is shown from various angles, including a top-down view, a front view, and side views.",
+  "generated_critique": "The video contains an error regarding the car's color scheme. The driver's side is the left side of the car, and that side of the car is red. The right passenger side is blue. Make sure you mention that the driver's side is on the left. \n\nThe license plate actually reads \"S VQ 1016 E\"",
+  "revised_caption_by_generated_critique": "The video features a Porsche car with a distinctive split-color livery. The driver's side, which is the left side of the car, is red, and the passenger's side, on the right, is blue, with a white stripe running down the center of the hood and roof. On the red side of the hood, a large white circle contains the text \"+30°\" in red. Correspondingly, the blue side features a white circle with \"-30°\" in blue text. The word \"PORSCHE\" is written in white capital letters across the top of the windshield. A hashtag, \"#Drive2Extremes,\" is visible in white on the blue side of the car. The vehicle's German license plate reads \"S VQ 1016 E\". The car is shown from various angles, including a top-down view, a front view, and side views.",
   "status": "success"
 }

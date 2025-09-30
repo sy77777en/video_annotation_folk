@@ -2,7 +2,7 @@
   "video_id": "1560.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:34:04.542022",
+  "generation_timestamp": "2025-09-29T07:12:52.335965",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-27T04:22:36.349866",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The shot is actually taken from below the subjects' level, which shifts the focus of the scene to the equestrian statue that occupies the center of the frame. Please specify that this statue is considered the main subject while maintaining the detail of it standing in the middle ground.\n\n2. Since all individuals are blurred, kindly remove the detail about the one prominent individual in the right foreground.",
-  "revised_caption_by_generated_critique": "In a wide shot taken from below the subjects' level, the Fisherman's Bastion extends across the background with its conical towers on the left and right. The equestrian statue, considered the main subject, occupies the center of the frame in the middle ground, flanked by trees to its left and right. The foreground and middle ground are filled with numerous people, whose movements are captured as motion blurs.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The shot is actually taken from below the subjects' level, which shifts the focus of the scene to the equestrian statue that occupies the center of the frame. Please specify that this statue is considered the main subject while maintaining the detail of it standing in the middle ground.\n\n2. Please clarify that it is the walls of the Fisherman's Bastion that occupy the background.",
+  "revised_caption_by_generated_critique": "In a low-angle wide shot, the equestrian statue, considered the main subject, occupies the center of the frame in the middle ground. The walls of the Fisherman's Bastion extend across the background, with its conical towers visible on the left and right. The foreground and middle ground are filled with numerous people, whose movements are captured as motion blurs, with a prominent individual in the right foreground.",
   "status": "success"
 }

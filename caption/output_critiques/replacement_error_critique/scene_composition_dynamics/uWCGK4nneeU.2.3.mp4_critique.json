@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.2.3.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:42:03.715877",
+  "generation_timestamp": "2025-09-29T07:25:25.667703",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-12T03:23:01.863032",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description of the aircraft having multiple wings is inaccurate; it actually has a single wing on each side. Additionally, the paint scheme is white on the underside and reddish-brown on the top.  \n2. The aircraft is moving from right to left relative to the frame, not from left to right.  \n3. The aircraft is not generating a large cloud; the cloud was already present, and the aircraft is simply flying away from it.  \n4. Since only the tops of the hills are visible, the detail of the \"barren landscape\" should be omitted.  \n5. The bulbous structure is the nose of the aircraft, not a separate structure at the nose. This nose is painted similarly to the rest of the aircraft, so it should not be described as silver.",
-  "revised_caption_by_generated_critique": "In a daytime scene set against a vast, clear blue sky, a uniquely designed aircraft flies over the tops of rolling brown hills. The aircraft features a long fuselage with a reddish-brown and white pattern, a single wing on each side, and a bulbous nose painted similarly to the rest of the aircraft. As it travels from right to left, it moves away from a large, fluffy white cloud, which contrasts with the otherwise clear sky.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description of the aircraft having multiple wings is inaccurate; it actually has two wings. Additionally, the paint scheme is white on the underside and reddish-brown on the top.  \n2. The aircraft is moving from right to left relative to the frame, not from left to right.  \n3. The aircraft is not generating a large cloud; the cloud was already present, and the aircraft is simply flying away from it.  \n4. Since only the tops of the hills are visible, the detail of the \"barren landscape\" should be omitted.  \n5. The bulbous structure is located at the tail of the aircraft, not at the nose, and it is painted gold rather than silver.",
+  "revised_caption_by_generated_critique": "In a daytime scene set against a vast, clear blue sky, a uniquely designed aircraft flies over the tops of rolling brown hills. The aircraft, featuring a long fuselage with a reddish-brown top and white underside, has two wings and a large, gold-colored, bulbous structure at its tail. As it travels from right to left, it appears to be flying away from a large, fluffy white cloud, which contrasts with the otherwise clear sky.",
   "status": "success"
 }

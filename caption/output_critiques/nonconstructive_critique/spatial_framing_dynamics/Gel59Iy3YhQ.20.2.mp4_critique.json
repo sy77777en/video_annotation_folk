@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.20.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:38:28.882123",
+  "generation_timestamp": "2025-09-29T09:13:04.926563",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly assigns the depth of multiple elements. The character and the bonfire are not in the foreground, and the pine trees are not in the middle ground. The description also omits the silhouette of grass in the foreground.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot, with the camera positioned at the subject's height. A pixelated character sits near a campfire, both positioned in the middle ground. A forest of pine trees occupies the background, with a dark sky beyond. Silhouettes of grass are visible in the foreground. A game HUD is overlaid across the top of the frame. The camera then performs a vertical tilt upward, causing the character, campfire, and forest to move down and disappear from the bottom of the frame. The shot resolves on the starry night sky, which now fills the entire view, while the HUD remains fixed in its position at the top.",
+  "generated_critique": "The caption incorrectly identifies the depth of several elements. The character and the campfire are not in the foreground, and the forest is not in the middle ground. The description also omits an element present in the foreground.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot, with the camera positioned at the subject's height. A pixelated character sits near a campfire, both positioned in the middle ground. A forest of pine trees is visible in the background, with a dark sky further behind. A game HUD is overlaid across the top of the frame. In the foreground, a small rock is visible. The camera then performs a vertical tilt upward, causing the character, campfire, and forest to move down and disappear from the bottom of the frame. The shot resolves on the starry night sky, which now fills the entire view, while the HUD remains fixed in its position at the top.",
   "status": "success"
 }

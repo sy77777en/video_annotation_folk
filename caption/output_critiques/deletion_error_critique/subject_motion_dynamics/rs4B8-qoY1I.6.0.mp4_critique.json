@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.6.0.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:33:15.933459",
+  "generation_timestamp": "2025-09-29T08:06:12.847867",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The mouse cursor does not move from the top left; instead, it moves horizontally at the vertical center of the frame. It does not actually hover over the \"EVACUATE\" button but flicks to the left, seemingly to shift the camera view leftward.\n2. There are two individuals following the squad, not just one.",
-  "revised_caption_by_generated_critique": "In a pixelated, isometric video game scene, a mouse cursor moves horizontally at the vertical center of the frame, flicking to the left as if to shift the camera view leftward. A squad of four figures in green coats is followed by two individuals in black suits, all remaining stationary in the center of the screen throughout the clip.",
+  "generated_critique": "1. The mouse cursor does not move from the top left; instead, it moves horizontally at the vertical center of the frame. It does not actually hover over the \"EVACUATE\" button but flicks to the left, seemingly to shift the camera view leftward.  \n3. The squad turns to the left of the screen and moves in that direction.",
+  "revised_caption_by_generated_critique": "In a pixelated, isometric video game scene, a mouse cursor moves horizontally at the vertical center of the frame, flicking to the left to shift the camera view. A button labeled \"EVACUATE\" changes to \"GOING\" as a squad of four figures in green coats and another figure in a black suit turn to the left and move in that direction.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.9.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T11:25:08.182193",
+  "generation_timestamp": "2025-09-29T17:25:37.405508",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly places the initial focus in the foreground. The description of the \"Cholera\" container's movement from the left foreground to the left middle ground is incorrect. The statement that the \"Anthrax\" container enters from the right foreground and settles in the center middle ground is inaccurate. The description of the \"Typhoid\" container moving to the right middle ground is also incorrect. Finally, the placement of the three aligned containers in the middle ground is wrong.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up shot, focusing on the left side of the first cylindrical container, with its biohazard symbol partially visible. The camera then moves left while panning right and simultaneously pulling back, transitioning to a full shot that reveals three containers. As the camera repositions, the first container, labeled \"Cholera,\" shifts from the left side to the center. The second container, labeled \"Anthrax,\" appears from the right and moves to the left. The third container, labeled \"Typhoid,\" enters from the far right and settles on the right. In the final full shot, these three labeled containers are aligned side-by-side in the foreground—\"Cholera\" in the center, \"Anthrax\" to the left, and \"Typhoid\" to the right—with an out-of-focus background. The camera remains at the subjects' level throughout.",
+  "generated_critique": "The initial focus is incorrectly placed in the foreground. The movement of the \"Cholera\" container is described with the wrong starting and ending depths. The description of the \"Anthrax\" container's entry into the frame and its final position is inaccurate. The \"Typhoid\" container is incorrectly described as moving to the middle ground. Finally, the depth of the three containers in their final alignment is wrong.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot, focusing on the left side of the first cylindrical container in the background, its biohazard symbol partially visible. The camera then trucks left while panning right and simultaneously moving backward, transitioning the view to a full shot that reveals three containers. As the camera repositions, the first container, labeled \"Cholera,\" moves from the background to the left foreground. The second container, labeled \"Anthrax,\" enters the frame from the right background and settles in the center foreground. Subsequently, the third container, labeled \"Typhoid,\" appears from the far-right background, moving to the right foreground. In the final full shot, these three labeled containers are aligned side-by-side in the foreground—\"Cholera\" to the left, \"Anthrax\" in the center, and \"Typhoid\" to the right—with an out-of-focus background. The camera remains at the subjects' level throughout.",
   "status": "success"
 }

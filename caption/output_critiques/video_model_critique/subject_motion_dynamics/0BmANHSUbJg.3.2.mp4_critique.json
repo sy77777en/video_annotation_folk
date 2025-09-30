@@ -2,7 +2,7 @@
   "video_id": "0BmANHSUbJg.3.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:14:15.163297",
+  "generation_timestamp": "2025-09-29T05:35:38.830568",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Feedback on the caption:\n\n**Accuracy:** The caption is accurate. The man is speaking, he turns his head to his left, and he holds his gaze. The description of the background is also correct.\n\n**Completeness:** The caption captures the primary movements of the subject in the correct sequence.\n\n**Adherence to Instructions:**\n*   **Strengths:** The caption correctly presents the actions in chronological order (\"speaking and then turns his head\"). It uses simple, clear language.\n*   **Areas for Improvement:** The final sentence, \"The background shows a well-lit indoor space with white shelves and various equipment, indicating an office or storage area,\" violates the instruction to \"Focus on the subject's motion.\" Describing the background scenery in detail is not required unless the video is a scenery shot with no moving subjects. The phrase \"maintaining a serious expression\" is slightly subjective, but acceptable. The phrase \"indicating an office or storage area\" is a minor speculative statement.\n\nIn summary, the caption is mostly good but should be revised to remove the detailed description of the background to better adhere to the instructions.",
-  "revised_caption_by_generated_critique": "The man in the gray suit with a red flower on his lapel is speaking and then turns his head to the left, continuing to look in that direction with a serious expression.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption includes a subjective description of the subject's expression (\"maintains a serious expression\"), which should be avoided. Additionally, the final sentence describing the background (\"The background shows a well-lit indoor space with white shelves and various equipment, indicating an office or storage area\") is overly detailed and contains a speculative statement (\"indicating an office or storage area\"). The instructions require focusing on motion and avoiding speculation. The description should be revised to remove the subjective adjective and the detailed, speculative background information, focusing only on the subject's actions.",
+  "revised_caption_by_generated_critique": "The man in the gray suit with a red flower on his lapel is speaking and then turns his head to the left, continuing to look in that direction.",
   "status": "success"
 }

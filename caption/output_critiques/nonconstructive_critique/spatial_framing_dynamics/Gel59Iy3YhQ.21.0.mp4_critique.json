@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.21.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:39:12.359059",
+  "generation_timestamp": "2025-09-29T09:13:47.091920",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the frame is static when there is a moving cloud in the lower left foreground.",
-  "revised_caption_by_generated_critique": "This wide shot presents an animated character with atypical anatomy in the foreground, positioned on the left side of the frame. The character is seated on a large cliff that occupies the bottom left. In the middle ground, a vast expanse of clouds stretches across the lower half of the scene, from the center to the right, with a moving cloud in the lower left foreground. The background is composed of a starry sky filling the top portion of the frame and a glowing orb situated in the bottom right, far in the distance among the clouds. The camera is positioned at a height similar to the character, capturing the view from behind them.",
+  "generated_critique": "The description of the scene as a static frame is contradicted by the moving cloud.",
+  "revised_caption_by_generated_critique": "This wide shot presents an animated character with atypical anatomy in the foreground, positioned on the left side of the frame. The character is seated on a large cliff that occupies the bottom left. In the middle ground, a vast expanse of clouds moves gently across the lower half of the scene, from the center to the right. The background is composed of a starry sky filling the top portion of the frame and a glowing orb situated in the bottom right, far in the distance among the clouds. The camera is positioned at a height similar to the character, capturing the view from behind them.",
   "status": "success"
 }

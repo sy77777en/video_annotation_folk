@@ -2,7 +2,7 @@
   "video_id": "awPo_VZabRc.4.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:26:57.330133",
+  "generation_timestamp": "2025-09-29T07:03:54.464941",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The camera does not remain stationary; it pans to follow the movement of the pink entity’s arm.  \n2. You can mention the camera depth, but it is important to note that this is a 2D video.  \n3. Change \"To his left and behind him\" to \"To his right, the left side of the frame, and behind him.\"  \n4. Since this is a 2D video, remove any information about camera height and angle.  \n5. The description of the man's hands is incorrect; he holds a wallet in his left hand and initially has his right hand on the counter near the pile.",
-  "revised_caption_by_generated_critique": "In a medium shot, an animated man is positioned in the center-right of the frame and in the middle ground, seated at a counter that spans the foreground. A pile of items rests on the counter in the bottom-left foreground. To his right, the left side of the frame, and behind him, a large, translucent pink entity occupies the center-left of the frame in the middle ground. The entity's arm moves from behind the man, extending forward over the counter toward the pile of items in the bottom-left. The man, who holds a wallet in his left hand, initially has his right hand on the counter near the pile before pulling it back toward his body. The camera pans to follow the movement of the pink entity’s arm, maintaining a consistent depth in this 2D video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The camera does not remain stationary; it pans slowly to the left during the shot.  \n2. You can mention the camera depth, but it is important to note that this is a 2D video.  \n3. Change \"To his left and behind him\" to \"To his right, the left side of the frame, and behind him.\"  \n4. Since this is a 2D video, remove any information about camera height and angle.  \n5. The description of the man's hands is incorrect; he holds a wallet in his right hand and initially has his left hand on the counter near the pile.",
+  "revised_caption_by_generated_critique": "In a medium shot of a 2D video, an animated man is positioned in the center-right of the frame and in the middle ground, seated at a counter that spans the foreground. A pile of items rests on the counter in the bottom-left foreground. To his right, the left side of the frame, and behind him, a large, translucent pink entity occupies the center-left of the frame in the middle ground. The entity's arm moves from behind the man, extending forward over the counter toward the pile of items in the bottom-left. The man holds a wallet in his right hand and initially has his left hand on the counter near the pile before pulling it back toward his body. The camera pans slowly to the left during the shot.",
   "status": "success"
 }

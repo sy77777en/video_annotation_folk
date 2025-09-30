@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.6.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T15:27:37.803655",
+  "generation_timestamp": "2025-09-29T18:43:39.125515",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and perfectly adheres to all instructions.\n\n**Accuracy:** The caption is completely accurate. It correctly identifies that the video is a static image with no movement from any of the subjects, including the two figures and the images on the television screens.\n\n**Completeness:** The description is complete. For a static scene, it provides all the necessary information by clearly stating the absence of motion, which is the most important aspect to convey according to the instructions.\n\n**Adherence to Instructions:**\n*   **No Movement:** The caption perfectly follows the specific instruction for videos with no movement by briefly and clearly stating that the scene is static.\n*   **Conciseness and Clarity:** The language is simple, direct, and easy to understand, fulfilling the requirement for a concise and coherent paragraph.\n*   **Objectivity:** The caption is entirely objective, avoiding any speculative, emotional, or subjective language.\n*   **Focus on Motion:** It correctly focuses on the core task of describing motion (or the lack thereof) without adding unnecessary details about the subjects' appearance or the setting.\n*   **Formatting:** The caption is a single, unformatted paragraph as requested.\n\nThis caption is a model example of how to correctly describe a static scene according to the provided guidelines.",
-  "revised_caption_by_generated_critique": "This is a static scene with no movement.",
+  "generated_critique": "The caption omits a key event in the video: the appearance of the text \"192 coughs\" in the lower-left corner. Additionally, the phrase \"seemingly showing\" is speculative and should be avoided. The description should be revised to state that the two humanoid figures are motionless and then describe the text appearing on the screen, as this is the primary action occurring within the scene itself. The description of the camera movement, while accurate, is secondary to the on-screen text event.",
+  "revised_caption_by_generated_critique": "Two low-poly, white humanoid figures remain motionless while seated in front of a bank of television screens. The text \"192 coughs\" appears in the lower-left corner.",
   "status": "success"
 }

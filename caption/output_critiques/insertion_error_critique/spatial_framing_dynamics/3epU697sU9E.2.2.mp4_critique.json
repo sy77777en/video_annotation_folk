@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:48:49.765501",
+  "generation_timestamp": "2025-09-29T04:41:53.045598",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-05T11:00:50.454616",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera isn't stationary, but rather is moving slightly unsteadily towards the aircraft. The aircraft isn't angled; it's the camera's movement that causes the perspective to be unstable. Additionally, the shot briefly includes a reflection of the aircraft on the ground, which alters the visual depth in the lower part of the frame.",
-  "revised_caption_by_generated_critique": "A full shot captures Air Force One positioned in the center of the frame and the middle ground of the scene. The camera moves slightly unsteadily towards the aircraft, creating an unstable perspective. The aircraft rests on a dark gray ground plane that extends from the foreground to the middle ground. A brief reflection of the aircraft on the ground alters the visual depth in the lower part of the frame. The background is entirely black.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera isn't stationary, but rather is moving slightly unsteadily towards the aircraft. The aircraft isn't angled; it's the camera's movement that causes the perspective to be unstable. Additionally, the shot briefly includes a small group of people standing near the right edge of the frame in the foreground, which affects the spatial balance of the scene.",
+  "revised_caption_by_generated_critique": "A full shot captures Air Force One positioned in the center of the frame, with the camera moving slightly unsteadily towards the aircraft. The perspective appears unstable due to the camera's movement, not because the aircraft is angled. The aircraft rests on a dark gray ground plane that extends from the foreground to the middle ground. The background is entirely black. Briefly, a small group of people appears near the right edge of the frame in the foreground, affecting the spatial balance of the scene.",
   "status": "success"
 }

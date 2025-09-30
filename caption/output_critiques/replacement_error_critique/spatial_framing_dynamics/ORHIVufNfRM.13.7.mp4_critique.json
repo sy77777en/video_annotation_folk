@@ -2,7 +2,7 @@
   "video_id": "ORHIVufNfRM.13.7.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:33:23.645533",
+  "generation_timestamp": "2025-09-29T05:43:27.684457",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description should be updated to reflect that a single ungloved hand is positioned in the upper left foreground, emerging from the side.\n\n2. The glowing vines are wrapped around one of the stalks, which shifts to the right middle ground as the camera advances.\n\n3. Remove the mention of the camera panning. Instead, describe the camera motion as tilting downward and moving forward.\n\n4. The orange and black edges of the surrounding mask should be considered an overlay element rather than part of the foreground.",
-  "revised_caption_by_generated_critique": "From a first-person perspective framed by an overlay of orange and black edges, the scene is set in a dense underwater forest. A single ungloved hand is positioned in the upper left foreground, emerging from the side. The middle ground and background are filled with tall, stalk-like structures that rise from the seabed, with some positioned on the left and right to form a central path. Glowing vines are wrapped around one of the stalks, which shifts to the right middle ground as the camera advances. Clusters of small, glowing creatures drift in the center and left middle ground. The camera, positioned at a height level with the mid-section of the surrounding structures, tilts downward and moves forward through the central path, navigating between the structures and revealing more of the environment.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description should be updated to reflect that a single ungloved hand is positioned in the lower left foreground, emerging from the left side. \n\n2. The glowing vines are wrapped around several stalks, which remain in the left middle ground as the camera advances.\n\n3. Remove the mention of the camera panning. Instead, describe the camera motion as tilting downward and moving forward.\n\n4. The orange and black edges of the surrounding mask should be considered an overlay element rather than part of the foreground.",
+  "revised_caption_by_generated_critique": "From a first-person perspective framed by an overlay of orange and black edges, the scene is set in a dense underwater forest. A single ungloved hand is positioned in the lower left foreground, emerging from the left side. The middle ground and background are filled with tall, stalk-like structures that rise from the seabed, with some positioned on the left and right to form a central path. Glowing vines are wrapped around several stalks in the left middle ground as the camera advances. Clusters of small, glowing creatures drift in the center and left middle ground. The camera, positioned at a height level with the mid-section of the surrounding structures, tilts downward and moves forward through the central path, navigating between the structures and revealing more of the environment.",
   "status": "success"
 }

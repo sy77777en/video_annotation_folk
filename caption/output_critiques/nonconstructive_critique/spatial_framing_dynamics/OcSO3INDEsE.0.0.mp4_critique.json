@@ -2,7 +2,7 @@
   "video_id": "OcSO3INDEsE.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:36:19.453853",
+  "generation_timestamp": "2025-09-29T12:13:03.807928",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description includes the terms \"wide shot,\" \"level height,\" \"middle ground,\" and \"foreground.\" The description of the slope's direction as \"rising from the bottom right to the middle left\" is inaccurate. The description incorrectly states that the textured blue area expands from the \"far left.\" The caption omits the fact that the text disappears after its font transforms. The caption fails to mention that this is a 2D video.",
-  "revised_caption_by_generated_critique": "This 2D video features a revealing shot captured by a static camera. Initially, a dark, textured slope occupies the bottom of the frame, rising from the bottom left to the middle right. A woman appears on the left, walking down the slope toward the right. As she moves, a textured blue area expands from the right, moving leftward to fill the background. Simultaneously, the portion of the dark slope in the foreground and middle ground transforms into a green hill, a change that also progresses from right to left. The text \"CAPABLE of LOVE\" appears in the top center, and its font transforms from left to right as the blue area sweeps over it, before disappearing. Flowers then sprout in the foreground and middle ground on the newly formed green hill, following the same right-to-left progression.",
+  "generated_critique": "The caption incorrectly includes the terms \"wide shot,\" \"level height,\" \"foreground,\" and \"middle ground.\" The description of the slope's position as \"rising from the bottom right to the middle left\" is inaccurate, and the description of the blue area expanding \"from the far left\" is also incorrect. The caption omits the fact that the video is 2D and fails to mention the disappearance of the text.",
+  "revised_caption_by_generated_critique": "This video is a revealing shot captured by a static camera. Initially, a dark, textured slope occupies the lower part of the frame, extending from the bottom left to the middle right. A woman appears on the left, walking down the slope toward the right. As she moves, a textured blue area expands from the right, moving leftward to fill the background. Simultaneously, the dark slope transforms into a green hill, a change that also progresses from right to left. The text \"CAPABLE of LOVE\" appears at the top center, and its font transforms as the blue area sweeps over it, eventually disappearing. Flowers then sprout on the newly formed green hill, following the same right-to-left progression. The video is presented in 2D.",
   "status": "success"
 }

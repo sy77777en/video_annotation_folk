@@ -2,7 +2,7 @@
   "video_id": "6YZW2eeV-6U.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:56:31.907693",
+  "generation_timestamp": "2025-09-29T07:16:12.424784",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the person on the left's position as being in the bottom left of the frame and in the foreground is incorrect. The position of the person in the center is also incorrectly described as being in the center of the frame.",
-  "revised_caption_by_generated_critique": "The video is filmed in a first-person POV, capturing three people walking through an ancient site. The person on the left is fully visible and positioned prominently in the foreground. The person in the center is shown from the upper body and is slightly off-center in the frame, also in the foreground. The person on the right is visible from above the knees, positioned in the bottom right, and is in the foreground. The stone staircase and tunnel are prominent, with textured stone walls and ceiling in the middle ground and background. The camera is at the subjects' height, maintaining a consistent level as they descend the staircase. The framing emphasizes the movement downwards into the stone passageway, with the ancient architecture providing context in the background.",
+  "generated_critique": "The caption incorrectly describes the position of the person on the left as 'bottom left' and their depth as 'foreground'. Additionally, the position of the person in the center is incorrectly stated as 'center of the frame'.",
+  "revised_caption_by_generated_critique": "The video is filmed in a first-person POV, capturing three people walking through an ancient site. The person on the left is fully visible, positioned more towards the middle left of the frame, and is in the middle ground. The person in the center is shown from the upper body, located slightly off-center to the right, also in the foreground. The person on the right is visible from above the knees, positioned in the bottom right, and is in the foreground. The stone staircase and tunnel are prominent, with textured stone walls and ceiling in the middle ground and background. The camera is at the subjects' height, maintaining a consistent level as they descend the staircase. The framing emphasizes the movement downwards into the stone passageway, with the ancient architecture providing context in the background.",
   "status": "success"
 }

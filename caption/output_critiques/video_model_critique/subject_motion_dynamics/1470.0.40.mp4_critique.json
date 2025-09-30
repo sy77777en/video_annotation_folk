@@ -2,7 +2,7 @@
   "video_id": "1470.0.40.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T02:26:37.945275",
+  "generation_timestamp": "2025-09-29T08:07:35.811954",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not fully adhere to the instructions.\n\n**Accuracy:** The caption incorrectly states that \"the woman in the background is no longer visible\" after the door closes. There is no woman clearly visible in the background at any point in the video; there is only a window with blinds. This is a significant factual error. Additionally, it's not clear if the man's hand is on the door frame or the door itself.\n\n**Adherence to Instructions:** The caption violates the instruction to \"Avoid describing anything not visible or uncertain.\" The inclusion of a \"woman\" is a speculative detail that is not supported by the visual evidence.\n\nWhile the caption correctly describes the man's primary actions in chronological order (talking on the phone, closing the door), the inclusion of a non-existent person makes it factually incorrect and non-compliant with the guidelines.",
-  "revised_caption_by_generated_critique": "A man in a yellow sweater is seen through a doorway, talking on a blue, wall-mounted corded phone. He holds the phone to his ear with one hand and uses his other hand to close the door. The door swings shut, completely obscuring the man from view.",
+  "generated_critique": "The caption contains a factual error and a speculative detail. The man holds the phone to his right ear, not his left. Additionally, identifying the person in the background as a \"woman\" is speculative, as their features are not clear; \"another person\" would be more accurate. The description can also be made more concise. The sentence \"His left hand is on the door frame\" can be integrated into the description of the closing action for better flow. A more accurate and concise version would be: \"A man stands in a doorway holding a blue corded phone to his right ear, then uses his left hand to close the door, obscuring himself and another person in the background from view.\"",
+  "revised_caption_by_generated_critique": "A man stands in a doorway holding a blue corded phone to his left ear, then uses his other hand to close the door, obscuring himself and another person in the background from view.",
   "status": "success"
 }

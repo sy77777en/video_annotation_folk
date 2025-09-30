@@ -2,7 +2,7 @@
   "video_id": "03hvbnE0asg.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T11:02:57.057587",
+  "generation_timestamp": "2025-09-29T17:01:35.188950",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the depth of the right-hand wall panel. The description of the person's movement and final position within the frame is inaccurate. The camera's height relative to the subject is described incorrectly.",
-  "revised_caption_by_generated_critique": "The video features a medium full shot with a person in a spacesuit initially centered in the foreground. To their right, in the middle ground, is a wall panel with various components. Large, angled windows are visible in the background at the top of the frame, and other wall panels are on the left in the middle ground. The person, initially interacting with the right-hand wall panel, turns their body to the left. As they turn, they shift slightly towards the left side of the frame, remaining in the foreground. Consequently, the right-hand wall panel moves further to the right and maintains its position in the middle ground, while the left-hand wall panels become more prominent. The windows remain in the background at the top. The camera is positioned slightly above the subject's eye level.",
+  "generated_critique": "The description of the wall panel's depth is incorrect, as it is not solely in the middle ground. The description of the person's movement and final position is inaccurate; the statement that they shift to the left side of the frame is incorrect, and the caption fails to mention the change in the person's size. The description of the camera's height is incorrect; it is not at the subject's level.",
+  "revised_caption_by_generated_critique": "The video presents a medium full shot, with a person in a spacesuit initially centered in the foreground. To their right, a wall panel with various components spans both the foreground and middle ground. Large, angled windows are visible in the background at the top of the frame, and other wall panels are on the left in the middle ground. The person, initially interacting with the right-hand wall panel, turns their body to the left. As they turn, they remain near the center of the frame, and their size slightly increases. Consequently, the right-hand wall panel moves further to the right and recedes slightly, while the left-hand wall panels become more prominent in the middle ground. The windows remain in the background at the top. The camera is positioned slightly above the subject's level.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:13:02.353411",
+  "generation_timestamp": "2025-09-29T13:36:43.589261",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video is not a static shot; instead, the camera executes a slow and smooth zoom-in. Additionally, the Eiffel Tower is positioned in the middle ground, not the background. The camera is positioned at street level, giving the viewer a ground-level perspective rather than an aerial view.",
-  "revised_caption_by_generated_critique": "This video features a slow and smooth zoom-in of a cityscape at night. The illuminated Eiffel Tower is positioned in the middle ground, centrally framed. In the foreground, a large, lit building is aligned with the tower. The rest of the city, a vast field of lights, extends across the entire frame, creating depth. The scene is captured from a street-level perspective, offering a ground-level view of the urban landscape.",
+  "generated_critique": "1. The video is not a static shot; instead, the camera executes a slow and smooth zoom-in. Additionally, the Eiffel Tower is positioned in the middle ground, not the background. The camera briefly tilts upward at the start of the shot, altering the vertical framing of the cityscape.",
+  "revised_caption_by_generated_critique": "This video features a slow and smooth zoom-in on a cityscape at night. The illuminated Eiffel Tower is positioned in the middle ground, centrally framed. At the start of the shot, the camera briefly tilts upward, adjusting the vertical framing of the scene. In the foreground, a large, lit building is aligned with the tower. The rest of the city, a vast field of lights, extends across the entire frame, creating depth from the foreground to the background. The scene is captured from a high-angle aerial perspective, looking down on the urban landscape.",
   "status": "success"
 }

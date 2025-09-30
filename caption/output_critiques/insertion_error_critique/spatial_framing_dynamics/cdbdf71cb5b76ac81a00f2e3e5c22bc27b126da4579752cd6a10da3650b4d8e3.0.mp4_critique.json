@@ -2,7 +2,7 @@
   "video_id": "cdbdf71cb5b76ac81a00f2e3e5c22bc27b126da4579752cd6a10da3650b4d8e3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:11:36.116033",
+  "generation_timestamp": "2025-09-29T09:05:12.346404",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback regarding the video caption is that the three boats appear in succession, moving from left to right across the background, rather than the middle ground as stated. Additionally, the caption should note that a large rock is visible in the center foreground, partially obstructing the view of the beach.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot of a serene seascape, capturing a pebble-strewn beach in the foreground, with a large rock prominently visible in the center, partially obstructing the view. The ocean extends to the horizon in the background, positioned near the top of the frame under a clear sky. As the video progresses, three boats appear in succession, moving from left to right across the background, adding dynamic movement to the scene. The camera remains at a consistent height, parallel to the beach, maintaining a stable view of the tranquil setting. The focus is on the natural environment, with the rhythmic motion of the waves and the expansive sea dominating the composition.",
+  "generated_critique": "The feedback regarding the video caption is that the three boats appear in succession, moving from left to right across the background, rather than the middle ground as stated. Additionally, the camera briefly tilts upward at the end of the video, shifting the horizon line lower in the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot of a serene seascape, capturing a pebble-strewn beach in the foreground, stretching across the bottom of the frame. The ocean occupies the middle ground, extending to the horizon in the background, which is positioned near the top of the frame under a clear sky. As the video progresses, three boats appear in succession, moving from left to right across the background, adding dynamic movement to the scene. The camera remains at a consistent height, parallel to the beach, maintaining a stable view of the tranquil setting until the end, when it briefly tilts upward, shifting the horizon line lower in the frame. The focus is on the natural environment, with the rhythmic motion of the waves and the expansive sea dominating the composition.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4080.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:24:12.250643",
+  "generation_timestamp": "2025-09-29T09:23:40.832171",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The person's leg in blue pants is running and occupies most of the foreground, not just dominating the left side. Additionally, the people are not running from the center to the right side of the frame; they are running towards the left, but their position remains stationary within the frame. The camera briefly tilts upward at the end of the shot, changing the perspective relative to the subjects.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a person's leg in blue pants is running and occupies most of the foreground. In the middle ground, the lower legs and feet of several other people are visible running towards the left, though their position remains stationary within the frame on leafy ground. The camera is positioned at the subjects' leg level and moves along with them, creating significant motion blur throughout the scene, which indicates rapid movement. At the end of the shot, the camera briefly tilts upward, changing the perspective relative to the subjects.",
+  "generated_critique": "The person's leg in blue pants is running and occupies most of the foreground, not just dominating the left side. Additionally, the people are not running from the center to the right side of the frame; they are running towards the left, but their position remains stationary within the frame. The camera briefly tilts upward to reveal the upper bodies of the runners, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "In a close-up shot, a person's leg in blue pants is running and occupies most of the foreground. In the middle ground, the lower legs and feet of several other people are visible running towards the left, though their position remains stationary within the frame on leafy ground. The camera is positioned at the subjects' leg level and moves along with them, creating significant motion blur throughout the scene, which indicates rapid movement. The camera briefly tilts upward to reveal the upper bodies of the runners.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "L0zS8z8YqJ8.2.5.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:02:36.131704",
+  "generation_timestamp": "2025-09-29T06:27:19.521074",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Shihang Zhu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The train is moving from the bottom left to the top right of the frame, while the camera remains stationary relative to the moving train, as it moves along with the train. The background occupies the top left and top right corners of the frame. The statement that the train car maintains its consistent diagonal position and size is incorrect; its position actually shifts from the center to the far right of the frame.",
-  "revised_caption_by_generated_critique": "This video features a close-up, high-angle shot of a long passenger train car moving diagonally from the bottom left to the top right of the frame. The camera remains stationary relative to the moving train, following its motion. The background, consisting of a blurry green and brown landscape, occupies the top left and top right corners of the frame. Initially, the train car's roof is opaque, but it becomes transparent, revealing the detailed internal layout of the car. As the train moves, its position shifts from the center to the far right of the frame.",
+  "revised_caption_by_generated_critique": "This video features a close-up, high-angle shot of a long passenger train car moving diagonally from the bottom left to the top right of the frame. The camera remains stationary relative to the moving train, creating the effect of the train gliding smoothly across the screen. The background, a blurry green and brown landscape, occupies the top left and top right corners of the frame. Initially, the train car's roof is opaque, but it becomes transparent, revealing the detailed internal layout of the car. As the train moves, its position shifts from the center to the far right of the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "338.2.30.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:25:17.308920",
+  "generation_timestamp": "2025-09-29T13:21:59.827778",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and fails to adhere to the instructions.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is highly inaccurate. It fabricates a central action, stating that a woman \"is licking an ice cream cone.\" This action is not visible in the video. The initial view is of the back of a person's head, and no ice cream cone is present.\n\n**Completeness:** While the caption correctly identifies the camera's panning motion and the presence of a man in a yellow shirt, its description is fundamentally flawed due to the inclusion of a non-existent action. It also makes an unverifiable claim about a \"maroon vest.\"\n\n**Adherence to Instructions:**\n*   **\"Avoid describing anything not visible or uncertain\"**: The caption directly violates this rule by inventing the action of licking an ice cream cone.\n*   **\"Avoid speculative statements\"**: The caption speculates that one woman is \"watching\" another, which cannot be confirmed from the video.\n*   **\"Focus on the subject's motion\"**: Instead of describing the actual observable motion (a quick camera pan revealing static subjects), the caption invents a complex action for the primary subject.\n\nIn summary, the caption is poor because it fabricates a key event, which is a critical violation of the instructions to describe only what is visible and to avoid speculation.",
-  "revised_caption_by_generated_critique": "A quick, blurry pan to the left moves through an ornately decorated restaurant, settling on a man in a yellow shirt sitting at a round table. He is smiling. In the background, other diners are visible, and the wall features intricate, golden, carved designs and a large, arched opening.",
+  "generated_critique": "The caption contains factual errors and information that violates the instructions. The initial subject on the right is too blurry to identify as a woman, nor is it clear that she is licking an ice cream cone; this part of the description is speculative and should be removed. The detailed description of the restaurant's background is also unnecessary, as the instructions require a focus on the subject's motion. The caption should be revised to describe the camera's movement and the actions of the clearly visible subjects. A more accurate description would be: The camera pans from right to left across a restaurant, moving past several seated diners before focusing on a man in a yellow shirt who is sitting at a table and smiling toward the camera.",
+  "revised_caption_by_generated_critique": "The camera pans from right to left across a restaurant, moving past several seated diners before focusing on a man in a yellow shirt who is sitting at a table and smiling toward the camera.",
   "status": "success"
 }

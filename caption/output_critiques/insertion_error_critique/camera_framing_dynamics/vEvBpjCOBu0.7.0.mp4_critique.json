@@ -2,7 +2,7 @@
   "video_id": "vEvBpjCOBu0.7.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:45:30.770705",
+  "generation_timestamp": "2025-09-29T09:55:44.862629",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. At the beginning of the shot, what is described as being out of focus appears to be the back of a rendered character that the camera arcs past. While the character's back remains out of focus, it would be clearer if the description mentioned the character.\n\n2. The focus distance does not change. The two partially visible rendered characters remain slightly blurry, while the weights in the middle are in focus. Therefore, the description should be adjusted to reflect this, rather than suggesting a transition to deep focus.\n\n3. The camera angle shifts from a low angle to a high angle during the arc, which should be noted in the description.",
-  "revised_caption_by_generated_critique": "The camera starts at a smooth, hip-level position and arcs counterclockwise, initially passing by the out-of-focus back of a rendered character. As the camera moves, the focus remains constant, keeping the weights in the middle sharp while the two partially visible characters stay slightly blurry. The camera angle shifts from a low angle to a high angle during the arc, revealing a testing apparatus with a stack of weights.",
+  "revised_caption_by_generated_critique": "The camera arcs counterclockwise from a smooth, hip-level position, initially passing the out-of-focus back of a rendered character. As the camera moves, it shifts from a low angle to a high angle, maintaining focus on a testing apparatus with a stack of weights in the center, while two partially visible rendered characters remain slightly blurry.",
   "status": "success"
 }

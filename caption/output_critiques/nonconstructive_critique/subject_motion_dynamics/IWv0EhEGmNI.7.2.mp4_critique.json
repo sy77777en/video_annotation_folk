@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.7.2.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:33:33.091448",
+  "generation_timestamp": "2025-09-29T10:12:03.343664",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes the camera's movement as only a pan to the left, omitting the backward movement and the pan to the right. It also incorrectly states that the view zooms in and fails to mention the camera angle shifting from low to level.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, the view initially pans slightly to the left, then moves backward and pans to the right, shifting from a street scene with a motionless body toward the open doorway of a building. The camera angle adjusts from low to level as it centers on the interior, and the on-screen objective text updates.",
+  "generated_critique": "The caption inaccurately describes the camera's motion. The statement that the view \"pans slightly to the left\" is an incomplete description of the movement, and the claim that the view \"zooms in\" is incorrect. The caption also fails to mention the full range of camera movements and the change in camera angle.",
+  "revised_caption_by_generated_critique": "The camera shifts leftward, tilting slightly upward as it transitions from a street scene with a motionless body to focus on the open doorway of a building. The view then moves forward through the doorway, adjusting the angle to center on the interior as the on-screen objective text updates.",
   "status": "success"
 }

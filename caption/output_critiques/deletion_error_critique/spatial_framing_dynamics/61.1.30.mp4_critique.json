@@ -2,7 +2,7 @@
   "video_id": "61.1.30.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:42:34.106656",
+  "generation_timestamp": "2025-09-29T04:32:32.553105",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The green light source is actually visible in the left background, not the foreground.  \n2. This is a medium close-up shot, not a close-up shot.  \n3. The man is positioned in the foreground, not the middle ground.  \n5. Please revise \"The man turns slightly to his left\" to \"The man faces towards the left of the frame.\"",
-  "revised_caption_by_generated_critique": "In this medium close-up shot, a man in a uniform is initially positioned slightly right of center in the foreground. Behind him, striped curtains occupy the background across the top half of the frame, with a hanging light fixture in the top center middle ground. A green light source is visible in the left background, and a red neon light element is seen in the right middle ground/background. The man faces towards the left of the frame, moving towards the center-left while staying in the foreground. The camera remains level with the subject.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The green light source is actually visible in the left background, not the foreground.  \n2. This is a medium close-up shot, not a close-up shot.  \n3. The man is positioned in the foreground, not the middle ground.  \n4. The red neon light element is seen in the right middle ground, not the background.",
+  "revised_caption_by_generated_critique": "In this medium close-up shot, a man in a uniform is initially positioned slightly right of center in the foreground. Behind him, striped curtains occupy the background across the top half of the frame, with a hanging light fixture in the top center middle ground. A green light source is visible in the left background, and a red neon light element is seen in the right middle ground. The man turns slightly to his left, moving towards the center-left of the frame while staying in the foreground. The camera remains level with the subject.",
   "status": "success"
 }

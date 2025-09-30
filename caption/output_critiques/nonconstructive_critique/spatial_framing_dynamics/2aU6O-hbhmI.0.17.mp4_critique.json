@@ -2,7 +2,7 @@
   "video_id": "2aU6O-hbhmI.0.17.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:10:07.970873",
+  "generation_timestamp": "2025-09-29T05:42:35.350095",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the camera movement is inaccurate; the camera does not pan from the front to the side of the building. The caption also fails to describe the camera's forward advancement, alternating rotation, and upward tilt. Additionally, the building is incorrectly identified as being in the foreground.",
-  "revised_caption_by_generated_critique": "The video showcases a wide shot of an urban cityscape, with a tall residential building prominently centered in the frame. The building, featuring numerous windows and balconies, dominates the scene. Initially, the camera is positioned slightly below the building, emphasizing its height. As the video progresses, the camera advances forward, rotating alternately to reveal different angles of the building and its surroundings. The camera also tilts upward, enhancing the view of the building's verticality. Surrounding structures, such as a smaller brick building, are visible in the background towards the left side of the frame. The sky, overcast and dusky, forms the backdrop, occupying the upper portion of the frame. The transition from the initial view to the dynamic camera movements highlights the building's architectural details and the urban environment around it, maintaining the building as the central focus throughout.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the camera movement is inaccurate; the caption incorrectly states that the camera pans around the building from the front to the side. The caption also incorrectly identifies the building's position in the 3D scene as being in the foreground.",
+  "revised_caption_by_generated_critique": "The video showcases a wide shot of an urban cityscape, with a tall residential building prominently featured in the center of the frame. The building's facade, adorned with numerous windows and balconies, is centrally positioned in the 2D space. Surrounding structures, including a smaller brick building, are visible in the background towards the left side of the frame. The camera maintains a height slightly below the building, emphasizing its verticality. As the video progresses, the camera shifts its angle slightly, providing a different perspective of the building and revealing more of the surrounding area. The sky, overcast and dusky, forms the backdrop, occupying the upper portion of the frame. The transition in camera angle highlights the building's architectural details and the urban environment around it, while the camera remains at a consistent height, keeping the building as the central focus.",
   "status": "success"
 }

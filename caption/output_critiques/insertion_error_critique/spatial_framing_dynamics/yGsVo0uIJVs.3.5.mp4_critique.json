@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.3.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:08:20.322479",
+  "generation_timestamp": "2025-09-29T09:00:10.649866",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The full shot captures a document positioned centrally against a white wall. Since this shot uses deep focus and the document and wall are nearly on the same plane, it is preferable not to use terms like foreground and background. Additionally, the red line, which runs diagonally from the top left to the bottom right, changes its angle slightly as it passes behind the document. The description of the camera as static and maintaining a straight-on angle is incorrect. Instead, it should be described as moving slowly and smoothly in a clockwise arc on a horizontal plane at the same height as the document, gradually aligning more directly with the document. There is also a faint shadow cast by the document onto the wall, which subtly shifts as the camera moves.",
-  "revised_caption_by_generated_critique": "A full shot captures a document positioned centrally against a white wall. The document features a black-and-white line drawing in its top half and a dark photograph in its bottom half. A thin red line runs diagonally from the top left to the bottom right, slightly changing its angle as it passes behind the document. The camera moves slowly and smoothly in a clockwise arc on a horizontal plane at the same height as the document, gradually aligning more directly with it. A faint shadow is cast by the document onto the wall, subtly shifting as the camera moves.",
+  "generated_critique": "The full shot captures a document positioned centrally against a white wall. Since this shot uses deep focus and the document and wall are nearly on the same plane, it is preferable not to use terms like foreground and background. Additionally, the red line, which runs diagonally from the top left to the bottom right, changes its angle slightly as it passes behind the document. The description of the camera as static and maintaining a straight-on angle is incorrect. Instead, it should be described as moving slowly and smoothly in a clockwise arc on a horizontal plane at the same height as the document, gradually aligning more directly with the document. The caption should also mention that a small blue sticky note is attached to the lower right corner of the document, as this detail affects the spatial composition.",
+  "revised_caption_by_generated_critique": "A full shot captures a document positioned centrally against a white wall. The document features a black-and-white line drawing in its top half and a dark photograph in its bottom half. A thin red line runs diagonally from the top left to the bottom right, slightly changing its angle as it passes behind the document. A small blue sticky note is attached to the lower right corner of the document, affecting the spatial composition. The camera moves slowly and smoothly in a clockwise arc on a horizontal plane at the same height as the document, gradually aligning more directly with it.",
   "status": "success"
 }

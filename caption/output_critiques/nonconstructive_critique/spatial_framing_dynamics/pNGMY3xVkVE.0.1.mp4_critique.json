@@ -2,7 +2,7 @@
   "video_id": "pNGMY3xVkVE.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:29:52.074654",
+  "generation_timestamp": "2025-09-29T19:26:58.427765",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the shot size and incorrectly describes the spatial positioning of the tunnel. The description of the group's movement into the background is inaccurate. The final statement that the light completely obscures the figures is also incorrect.",
-  "revised_caption_by_generated_critique": "A medium shot captures a group of people walking away from the camera through a long, cylindrical tunnel. The tunnel's corrugated walls frame the scene, converging toward a partially open door in the background, from which a bright light emanates. As the group progresses, more people join from the sides, expanding the formation. The white light from the background intensifies, silhouetting the figures before gradually filling the frame. The camera is positioned at the subjects' level, but the figures remain visible as the light brightens.",
+  "generated_critique": "The caption misidentifies the shot size as a full shot. The description of the group's movement from the middle ground into the background is inaccurate. The statement that the light completely obscures the figures is also incorrect. Furthermore, the description of the tunnel's position within the scene's depth is wrong.",
+  "revised_caption_by_generated_critique": "In a wide shot, a group of people walks away from the camera down the center of a long, cylindrical tunnel, occupying the foreground. The tunnel's corrugated walls frame the scene on the left and right, leading toward a partially open door in the center background, from which a bright light emanates. As the group moves deeper into the tunnel, more people appear in the foreground on the left and right, expanding the group's formation. Simultaneously, the white light from the center background intensifies, creating a strong contrast with the figures but not completely obscuring them. The camera is positioned at the subjects' level.",
   "status": "success"
 }

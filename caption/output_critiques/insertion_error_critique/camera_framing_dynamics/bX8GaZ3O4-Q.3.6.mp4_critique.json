@@ -2,7 +2,7 @@
   "video_id": "bX8GaZ3O4-Q.3.6.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:41:09.785355",
+  "generation_timestamp": "2025-09-29T07:18:42.544169",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yun Yang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The foreground appears slightly blurred, which contrasts with the deep focus described in the caption. Additionally, there is noticeable barrel distortion along the edges of the frame, subtly curving straight lines near the walls.",
-  "revised_caption_by_generated_critique": "This is a static shot from a low, hip-level angle, with a fixed Dutch tilt. The camera captures the dimly lit room with a focus that slightly blurs the foreground while maintaining sharp detail in the background. Noticeable barrel distortion subtly curves straight lines near the walls along the edges of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The foreground appears slightly blurred, which contrasts with the deep focus described in the caption. Additionally, there is noticeable fisheye lens distortion along the edges of the frame, curving straight lines outward.",
+  "revised_caption_by_generated_critique": "This is a static shot from a low, hip-level angle, with a fixed Dutch tilt. The camera captures the dimly lit room with a focus that slightly blurs the foreground while maintaining sharp detail in the background. Noticeable fisheye lens distortion curves straight lines outward along the edges of the frame.",
   "status": "success"
 }

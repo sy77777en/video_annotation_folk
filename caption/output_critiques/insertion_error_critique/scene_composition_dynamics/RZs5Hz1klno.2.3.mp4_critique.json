@@ -2,7 +2,7 @@
   "video_id": "RZs5Hz1klno.2.3.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:31:37.592322",
+  "generation_timestamp": "2025-09-29T07:05:37.638573",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-17T12:45:00.898251",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Instead of a caption that reads \"Insert a USB drive containing malware into your computer,\" a white overlay displays a small \"[2]\" in the lower left corner, and a faint blue glow is visible along the edge of the device.",
-  "revised_caption_by_generated_critique": "In a dimly lit indoor setting, a black USB drive with a metal connector is lowered and inserted into a USB port on a white and dark gray electronic device. The port is one of several slots on the top surface of the machine. The background is dark and out of focus. A small white \"[2]\" is displayed in the lower left corner, and a faint blue glow is visible along the edge of the device.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Instead of a caption that reads \"Insert a USB drive containing malware into your computer,\" a white overlay displays a small \"[2]\" in the lower left corner. The scene also includes a faint blue glow coming from the right side of the device, which is not referenced in the caption.",
+  "revised_caption_by_generated_critique": "In a dimly lit indoor setting, a black USB drive with a metal connector is lowered and inserted into a USB port on a white and dark gray electronic device, which emits a faint blue glow from the right side. The port is one of several slots on the top surface of the machine. The background is dark and out of focus. A small white overlay displays \"[2]\" in the lower left corner of the screen.",
   "status": "success"
 }

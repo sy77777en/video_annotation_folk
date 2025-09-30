@@ -2,7 +2,7 @@
   "video_id": "treWO3ys06g.2.3.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:13:14.145755",
+  "generation_timestamp": "2025-09-29T09:05:18.949518",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The drone pulls back and pans to follow its movement around a curve -> The drone ascends and tilts downward while continuing to move forward to track the motorcycle's movement around a curve.",
-  "revised_caption_by_generated_critique": "A video filmed by a drone captures a winding, paved road cutting through a remote, mountainous landscape under a grey, overcast sky. In the background, a large, sparsely vegetated mountain rises above dense forests of dark green trees that line the lower slopes. The damp road is flanked by grassy verges, patches of reddish-brown foliage, and a simple wire fence. As a lone motorcycle travels along the road, the drone ascends and tilts downward while continuing to move forward to track the motorcycle's movement around a curve, revealing more of the expansive, hilly terrain.",
+  "generated_critique": "The drone pulls back and pans to follow its movement around a curve -> The drone ascends and tilts downward while continuing to move forward to track the motorcycle's movement around a curve.\n\nThe damp road is flanked by grassy verges, patches of reddish-brown foliage, and a simple wire fence. -> The damp road is bordered by grassy verges and a simple wire fence on one side, with lines of trees on the other side.",
+  "revised_caption_by_generated_critique": "A video filmed by a drone captures a winding, paved road cutting through a remote, mountainous landscape under a grey, overcast sky. In the background, a large, sparsely vegetated mountain rises above dense forests of dark green trees that line the lower slopes. The damp road is bordered by grassy verges and a simple wire fence on one side, with lines of trees on the other side. As a lone motorcycle travels along the road, the drone ascends and tilts downward while continuing to move forward to track the motorcycle's movement around a curve, revealing more of the expansive, hilly terrain.",
   "status": "success"
 }

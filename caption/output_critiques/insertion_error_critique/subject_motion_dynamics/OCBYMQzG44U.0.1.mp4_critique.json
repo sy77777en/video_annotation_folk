@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.0.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:27:31.742601",
+  "generation_timestamp": "2025-09-29T07:58:41.583336",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. In the initial scene, you describe a small pool of water on the right side of a tiled floor with white walls and columns in the background. However, you missed mentioning a more expansive body of water in the mid-ground. Additionally, there is a brief moment where a person walks across the tiled floor near the pool, which was not addressed in your description. \n\n2. Regarding the final focus on the water surface, there seems to be an issue. The camera maintains a deep focus throughout, and then tilts upward, positioning the expansive water area at the center-bottom, with the white columns and illuminated background becoming the main focus.",
-  "revised_caption_by_generated_critique": "The video begins with a view of a small pool of water on the right side of a tiled floor, with white walls and columns in the background. In the mid-ground, a more expansive body of water is visible. As the camera moves forward, a person briefly walks across the tiled floor near the pool. The pool gradually moves out of the frame, revealing more of the tiled floor and the expansive water surface. The camera maintains a deep focus and then tilts upward, positioning the expansive water area at the center-bottom. The white columns and the illuminated background become the main focus.",
+  "generated_critique": "1. In the initial scene, you describe a small pool of water on the right side of a tiled floor with white walls and columns in the background. However, you missed mentioning a more expansive body of water in the mid-ground. Additionally, there is a person briefly walking across the far left side of the frame as the camera moves forward, which was not noted. \n\n2. Regarding the final focus on the water surface, there seems to be an issue. The camera maintains a deep focus throughout, and then tilts upward, positioning the expansive water area at the center-bottom, with the white columns and illuminated background becoming the main focus.",
+  "revised_caption_by_generated_critique": "The video begins with a view of a small pool of water on the right side of a tiled floor, with white walls and columns in the background. In the mid-ground, a more expansive body of water is visible. As the camera moves forward, a person briefly walks across the far left side of the frame. The pool gradually moves out of the frame, revealing more of the tiled floor and the expansive water area. The camera maintains a deep focus and tilts upward, positioning the expansive water area at the center-bottom. The white columns and the illuminated background become the main focus as the video progresses.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "LbY3DdzV0rA.2.4.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:02:58.713584",
+  "generation_timestamp": "2025-09-29T13:23:40.464025",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please change \"static\" to \"fixed but slightly shaking\" to better describe the camera shot. Also, mention that a row of streetlights lines the left edge of the field, even though they are not illuminated.",
-  "revised_caption_by_generated_critique": "A wide, fixed but slightly shaking shot captures a dramatic storm system at sunset over a vast, flat plain. The sky is filled with immense, turbulent clouds tinged with shades of orange, yellow, and dark brown. A distinct, lower-hanging shelf cloud stretches horizontally across the landscape, with a curtain of rain or dust falling beneath it in the distance. The foreground consists of a dark, empty field, with a row of streetlights lining the left edge, though they are not illuminated. The silhouette of a distant mountain range is visible on the right horizon.",
+  "generated_critique": "Please change \"static\" to \"fixed but slightly shaking\" to better describe the camera shot. Also, mention that there are several streetlights lining a road in the foreground, as this adds context to the environment.",
+  "revised_caption_by_generated_critique": "A wide, fixed but slightly shaking shot captures a dramatic storm system at sunset over a vast, flat plain. The sky is filled with immense, turbulent clouds tinged with shades of orange, yellow, and dark brown. A distinct, lower-hanging shelf cloud stretches horizontally across the landscape, with a curtain of rain or dust falling beneath it in the distance. The foreground consists of a dark, empty field with several streetlights lining a road, while the silhouette of a distant mountain range is visible on the right horizon.",
   "status": "success"
 }

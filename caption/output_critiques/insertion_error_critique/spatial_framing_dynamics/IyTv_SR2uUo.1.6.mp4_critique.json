@@ -2,7 +2,7 @@
   "video_id": "IyTv_SR2uUo.1.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:11:11.386235",
+  "generation_timestamp": "2025-09-29T13:34:10.668913",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description stating \"with its turquoise face occupying the left and center of the frame\" is incorrect; it should be noted that the turquoise face occupies the right and center of the frame. Additionally, the phrase \"stretching from the foreground into the middle ground\" is inaccurate; it should be described as stretching from the foreground to the background. The feedback should also mention that the man is standing upright on the paddleboard, which is not consistent with the original description.",
-  "revised_caption_by_generated_critique": "A full shot frames a man standing upright on a paddleboard in the bottom center foreground. A massive wave dominates the scene, with its turquoise face occupying the right and center of the frame, stretching from the foreground to the background. The white, breaking crest of the wave is positioned in the top center and top right, while a clear blue sky is visible in the background in the top right corner. The camera, positioned at the man's level, remains fixed relative to him as he rides along the face of the wave, causing the background and the breaking part of the wave to move from left to right across the frame.",
+  "generated_critique": "The description stating \"with its turquoise face occupying the left and center of the frame\" is incorrect; it should be noted that the turquoise face occupies the right and center of the frame. Additionally, the phrase \"stretching from the foreground into the middle ground\" is inaccurate; it should be described as stretching from the foreground to the background. The feedback should also mention that a small boat is visible in the background near the top left corner, which is not addressed in the original caption.",
+  "revised_caption_by_generated_critique": "A full shot frames a man in the bottom center foreground, crouched on a paddleboard. A massive wave dominates the scene, with its turquoise face occupying the right and center of the frame, stretching from the foreground to the background. The white, breaking crest of the wave is positioned in the top center and top right, while a clear blue sky is visible in the background in the top right corner. A small boat can be seen in the background near the top left corner. The camera, positioned at the man's level, remains fixed relative to him as he rides along the face of the wave, causing the background and the breaking part of the wave to move from left to right across the frame.",
   "status": "success"
 }

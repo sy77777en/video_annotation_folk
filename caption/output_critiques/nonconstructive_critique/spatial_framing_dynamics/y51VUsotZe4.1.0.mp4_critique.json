@@ -2,7 +2,7 @@
   "video_id": "y51VUsotZe4.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T10:24:33.330904",
+  "generation_timestamp": "2025-09-29T16:39:13.540492",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the car to the left of the main sedan moves forward. The description of the \"RKO THEA\" sign moving to the foreground and exiting the frame is inaccurate, as it remains partially visible throughout. The caption also omits that the main car passes two vehicles with their headlights on.",
-  "revised_caption_by_generated_critique": "This wide shot captures a nighttime street scene. A light-colored vintage sedan is initially in the center-right of the frame, occupying the middle ground and moving towards the foreground. To its left, another light-colored vintage car remains stationary in the middle ground. Further left, in the middle ground, a building displays a partially visible \"RKO THEA\" sign, which stays in view throughout the scene. Rows of streetlights are visible on both sides of the street, receding into the background. As the main sedan advances towards the foreground, increasing in size within the frame, it passes two vehicles with their headlights on. A white lane divider is visible in the center foreground, extending into the middle ground. The camera is positioned at the subject's level.",
+  "generated_critique": "The caption incorrectly describes the movement of the cars other than the main sedan, as they do not move forward. The description of the \"RKO THEA\" sign's movement and final state is also incorrect, as it does not move to the foreground and exit the frame. Additionally, the caption omits the detail of the main car passing other vehicles.",
+  "revised_caption_by_generated_critique": "This wide shot captures a nighttime street scene. A light-colored vintage sedan is initially in the center-right of the frame, occupying the middle ground and moving towards the foreground. To its left, another light-colored vintage car remains stationary in the middle ground. Further left, in the middle ground, a building displays a partially visible \"RKO THEA\" sign. Rows of streetlights are visible on both sides of the street, receding into the background. As the main sedan advances towards the foreground, increasing in size within the frame, it passes other vehicles on the street. The \"RKO THEA\" sign remains in the middle ground without moving to the foreground or exiting the frame. A white lane divider is visible in the center foreground, extending into the middle ground. The camera is positioned at the subject's level.",
   "status": "success"
 }

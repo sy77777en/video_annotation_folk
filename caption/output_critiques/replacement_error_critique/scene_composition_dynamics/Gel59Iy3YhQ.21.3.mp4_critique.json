@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.21.3.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:07:31.545582",
+  "generation_timestamp": "2025-09-29T05:06:26.192820",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera movement is more accurately described as shifting upwards and to the right, rather than panning. Additionally, the video does not feature zooming; instead, the golf ball changes color to indicate distance.",
-  "revised_caption_by_generated_critique": "A gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them, shows a pixel-art golf course. The course is composed of a striped green fairway, light tan sand traps, and dark blue water hazards, all surrounded by clusters of green trees and bushes. The camera shifts upwards and to the right to follow the flight of a white golf ball across the landscape, which changes color to indicate distance. A heads-up display with multiple overlay elements is visible. In the top left corner, text indicates the hole number, par, and total yardage, along with the player's score. The bottom of the screen features the selected club, \"DRIVER,\" and a long power meter. In the top right, indicators show the wind speed and slope. A red flag icon on the course displays the changing distance to the hole.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera movement is more accurately described as shifting upwards and to the right, rather than panning. Additionally, the video does not feature a power meter at the bottom of the screen; instead, a mini-map of the course is displayed in that area.",
+  "revised_caption_by_generated_critique": "A gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them, shows a pixel-art golf course. The course is composed of a striped green fairway, light tan sand traps, and dark blue water hazards, all surrounded by clusters of green trees and bushes. The camera shifts upwards and to the right to follow the flight of a white golf ball across the landscape. A heads-up display with multiple overlay elements is visible. In the top left corner, text indicates the hole number, par, and total yardage, along with the player's score. The bottom of the screen features a mini-map of the course. In the top right, indicators show the wind speed and slope. A red flag icon on the course displays the changing distance to the hole.",
   "status": "success"
 }

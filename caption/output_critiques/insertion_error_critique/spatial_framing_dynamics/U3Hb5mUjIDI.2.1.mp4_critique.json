@@ -2,7 +2,7 @@
   "video_id": "U3Hb5mUjIDI.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:59:24.502372",
+  "generation_timestamp": "2025-09-29T11:49:52.058069",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Change \"in the foreground on the right\" to \"in the foreground on the center-right.\" Change \"a peace sign in the center-right foreground\" to \"a peace sign in the center-left foreground.\" Also, mention that the camera briefly tilts upward to reveal a tree branch above the group, even though this is not present in the original caption.",
-  "revised_caption_by_generated_critique": "The shot begins as a close-up on a man in the foreground on the center-right, whose hand is held up in a peace sign in the center-left foreground. In the middle ground, a line of people is positioned, stretching from the left to the center of the frame. A hilly landscape occupies the background. The camera is positioned at the subject's level and briefly tilts upward to reveal a tree branch above the group. The shot then transitions to a medium full shot, reframing the group of people from the middle ground to become the primary subject.",
+  "generated_critique": "Change \"in the foreground on the right\" to \"in the foreground on the center-right.\" Change \"a peace sign in the center-right foreground\" to \"a peace sign in the center-left foreground.\" Also, mention that the camera briefly tilts upward to reveal a tree in the top left background, even though no tree is visible in the scene.",
+  "revised_caption_by_generated_critique": "The shot begins as a close-up on a man in the foreground on the center-right, whose hand is held up in a peace sign in the center-left foreground. In the middle ground, a line of people is positioned, stretching from the left to the center of the frame. A hilly landscape occupies the background. The camera is positioned at the subject's level and briefly tilts upward to reveal a tree in the top left background. The shot then transitions to a medium full shot, reframing the group of people from the middle ground to become the primary subject.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "34bf236faa7aa7c3237c0f632eff1c38223de7245248a02e6085714223c8cd41.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:18:26.826977",
+  "generation_timestamp": "2025-09-29T07:46:50.597547",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please change the sentence \"The hand returns and gently touches a floating purple clematis flower before moving away again.\" to \"Afterwards, the hand returns and gently lifts a purple flower floating above the water and carries it out of the frame.\" Also, be sure to mention that the water in the basin begins to ripple slightly as the hand moves, even though this is not directly related to the main subject's motion.",
-  "revised_caption_by_generated_critique": "A basin filled with water contains various colorful flowers, including pink, orange, yellow, purple, and dark red blooms, along with a single pink petal. A hand appears and places a pinkish white and pink speckled rose into the water. The hand then moves away, leaving the rose to float among the other flowers. As the hand moves, the water in the basin begins to ripple slightly. Afterwards, the hand returns and gently lifts a purple flower floating above the water and carries it out of the frame.",
+  "generated_critique": "Please change the sentence \"The hand returns and gently touches a floating purple clematis flower before moving away again.\" to \"Afterwards, the hand returns and gently lifts a purple flower floating above the water and carries it out of the frame.\" Also, be sure to mention that the water in the basin begins to ripple noticeably after the hand places the rose in the water.",
+  "revised_caption_by_generated_critique": "A basin filled with water contains various colorful flowers, including pink, orange, yellow, purple, and dark red blooms, along with a single pink petal. A hand appears and places a pinkish white and pink speckled rose into the water, causing the water in the basin to ripple noticeably. The hand then moves away, leaving the rose to float among the other flowers. Afterwards, the hand returns and gently lifts a purple flower floating above the water and carries it out of the frame.",
   "status": "success"
 }

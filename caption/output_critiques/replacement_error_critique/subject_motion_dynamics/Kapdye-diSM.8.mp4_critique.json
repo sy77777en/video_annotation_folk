@@ -2,7 +2,7 @@
   "video_id": "Kapdye-diSM.8.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:31:10.014952",
+  "generation_timestamp": "2025-09-29T08:04:17.934219",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video does not clearly show whether the camera is mounted on a vehicle. The perfectly steady frame suggests that the camera is more likely mounted on a tripod.",
-  "revised_caption_by_generated_critique": "This is a steady point-of-view shot moving slowly down a street in what appears to be a major European city, likely London. The street is lined with grand, historic, multi-story stone buildings. Several luxury cars, including a dark Bentley and a red sports car, are parked along the sides of the road.",
+  "generated_critique": "1. The video does not clearly show whether the camera is mounted on a vehicle. The steady, smooth movement suggests that the camera is more likely mounted on a gimbal or stabilizer rather than being handheld.",
+  "revised_caption_by_generated_critique": "This is a smooth, steady point-of-view shot moving slowly down a street in what appears to be a major European city, likely London. The street is lined with grand, historic, multi-story stone buildings. Several luxury cars, including a dark Bentley and a red sports car, are parked along the sides of the road. The camera's stability suggests it is mounted on a gimbal or stabilizer.",
   "status": "success"
 }

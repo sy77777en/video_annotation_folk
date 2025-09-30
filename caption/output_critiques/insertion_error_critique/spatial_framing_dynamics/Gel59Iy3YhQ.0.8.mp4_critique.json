@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:34:16.629189",
+  "generation_timestamp": "2025-09-29T05:49:05.538897",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description inaccurately refers to a high-angle shot; please remove this term. Additionally, references to foreground, middleground, and background should be omitted as they are not applicable to this 2D video. The snowball is initially positioned below and to the right of the figure, not directly below. The figure remains centered throughout the video, while the snowball ends up in the left center. The skeleton character is not holding any object, so references to it carrying something should be omitted. Lastly, remove the phrase \"standing in the background on a cliff edge.\"",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description inaccurately refers to a high-angle shot; please remove this term. Additionally, references to foreground, middleground, and background should be omitted as they are not applicable to this 2D video. The snowball is initially positioned below and to the right of the figure, not directly below. The figure remains centered throughout the video, while the snowball ends up in the left center. The skeleton character is not holding any object during its appearance. Lastly, remove the phrase \"standing in the background on a cliff edge.\"",
   "revised_caption_by_generated_critique": "In a wide, top-down shot, a human-like character is initially positioned in the center of the frame, with a snowball below and to the right. A snow-covered tree is visible in the top right corner, while dark cliffs frame the bottom corners. The frame scrolls to the right and then downwards, keeping the human character centered while repositioning the snowball to the left center. This movement reveals a skeleton character who appears in the top right of the frame.",
   "status": "success"
 }

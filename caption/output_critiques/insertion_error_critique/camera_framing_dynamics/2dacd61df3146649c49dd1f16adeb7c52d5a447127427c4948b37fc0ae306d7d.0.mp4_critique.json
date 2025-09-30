@@ -2,7 +2,7 @@
   "video_id": "2dacd61df3146649c49dd1f16adeb7c52d5a447127427c4948b37fc0ae306d7d.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:40:20.790744",
+  "generation_timestamp": "2025-09-29T04:29:19.689217",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-27T00:28:52.081879",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Consider rephrasing \"The motion is a smooth drone shot, flying forward with a slight upward movement\" to \"The drone camera smoothly flies forward with a slight upward movement.\" Additionally, it would be more accurate to replace all instances of \"camera\" with \"camera drone\" in the description. Also, be sure to mention that the video features a noticeable barrel distortion along the edges, as this affects the perception of straight lines in the corridor.",
-  "revised_caption_by_generated_critique": "The video begins with the camera drone at ground level, then transitions to hip level. It maintains a level angle throughout. The camera drone employs deep focus, ensuring a large depth of field. The drone camera smoothly flies forward with a slight upward movement, capturing the graffiti-covered corridor. The video features noticeable barrel distortion along the edges, affecting the perception of straight lines in the corridor.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Consider rephrasing \"The motion is a smooth drone shot, flying forward with a slight upward movement\" to \"The drone camera smoothly flies forward with a slight upward movement.\" Additionally, it would be more accurate to replace all instances of \"camera\" with \"camera drone\" in the description. Also, you should mention that the video features a noticeable barrel distortion, causing straight lines near the edges to bow outward.",
+  "revised_caption_by_generated_critique": "The video begins with the camera drone at ground level, then transitions to hip level. It maintains a level angle throughout. The camera drone employs deep focus, ensuring a large depth of field. The drone camera smoothly flies forward with a slight upward movement, capturing the graffiti-covered corridor. The video features noticeable barrel distortion, causing straight lines near the edges to bow outward.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "6h6bMAWLYAI.2.2.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:56:07.997834",
+  "generation_timestamp": "2025-09-29T13:13:43.933964",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Remove the phrase \"takes place indoors at a city hall setting\" because the close-up shot of the speaker does not provide enough context to determine the location.  \n2. You omitted the \"LIVE\" overlay logo text that appears in the upper right corner of the frame.  \n3. Delete the sentence about bright lighting, as it is unclear.  \n4. The text should read \"HAPPENING NOW\" in all capital letters.  \n5. Remove the phrase \"The overall atmosphere is dynamic,\" as it is vague.  \n6. The caption should mention the presence of a large window with sunlight streaming in behind the speaker, as this is a notable visual element.",
-  "revised_caption_by_generated_critique": "The video, captured from a broadcast POV shot set up for television production, features a bustling press conference with a crowd of people and numerous microphones positioned prominently in the foreground. The scene is framed tightly around a central figure speaking, surrounded by journalists and cameras. Overlays include text at the bottom of the screen, providing context with phrases like \"Rob Ford Speaks at City Hall\" and \"HAPPENING NOW,\" along with a news ticker summarizing the event. A \"LIVE\" overlay logo appears in the upper right corner of the frame. Notably, a large window with sunlight streaming in is visible behind the speaker.",
+  "generated_critique": "1. Remove the phrase \"takes place indoors at a city hall setting\" because the close-up shot of the speaker does not provide enough context to determine the location. 2. You omitted the \"LIVE\" overlay logo text that appears in the upper right corner of the frame. 3. Delete the sentence about bright lighting, as it is unclear. 4. The text should read \"HAPPENING NOW\" in all capital letters. 5. Remove the phrase \"The overall atmosphere is dynamic,\" as it is vague. 6. Add that the scene includes a large window with sunlight streaming in from the left, which is not visible in the video.",
+  "revised_caption_by_generated_critique": "The video, captured from a broadcast POV shot set up for television production, features a bustling environment with a crowd of people and numerous microphones positioned prominently in the foreground, indicating a press conference. The scene is framed tightly around a central figure speaking, surrounded by journalists and cameras. Overlays include text at the bottom of the screen, providing context with phrases like \"Rob Ford Speaks at City Hall\" and \"HAPPENING NOW,\" along with a news ticker summarizing the event. A \"LIVE\" overlay logo appears in the upper right corner of the frame. The scene includes a large window with sunlight streaming in from the left.",
   "status": "success"
 }

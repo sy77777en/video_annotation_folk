@@ -2,7 +2,7 @@
   "video_id": "06789991de47b8c00d46246a5abcfd0a830d609e8ac1723fdda38dfccc3d3523.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:06:19.747697",
+  "generation_timestamp": "2025-09-29T05:27:49.351199",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is good. Here is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is highly accurate. It correctly identifies that the woman on the right is using chopsticks to add sliced chili to the bowl of noodles, and that the woman in the center is looking down at the bowl.\n\n**Completeness:** The description is complete, capturing the primary actions of both subjects in the video. It describes the main interaction with the food as well as the secondary subject's role as an observer.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions described happen concurrently, and the caption presents them in a logical and easy-to-understand sequence.\n*   **Focus on Motion:** The caption effectively describes the motion of the woman on the right (\"uses chopsticks to add\") and the more static action of the woman in the center (\"looks down\").\n*   **Clarity and Conciseness:** The language is simple, clear, and direct, creating a concise and coherent description.\n*   **Objectivity:** The caption is objective and avoids any emotional, subjective, or speculative language.\n*   **Subject Differentiation:** It successfully distinguishes between the two subjects by their position (\"on the right,\" \"in the center\").\n\nIn summary, the caption is excellent. It is accurate, complete, and perfectly follows all the provided instructions.",
-  "revised_caption_by_generated_critique": "The woman on the right uses chopsticks to place sliced red chili into a bowl of noodles, while the woman in the center looks down at the bowl and smiles.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption is overly descriptive regarding the subjects' clothing, which violates the instruction to \"Avoid describing anything not visible or uncertain\" and \"Don't mention the details of the subject's appearance unless you need to differentiate between multiple subjects.\" The details \"with yellow patterns\" and \"with black patterns\" are unnecessary for telling the two women apart and should be removed to improve conciseness. Additionally, the statement \"while speaking\" is an inference based on her mouth movement; it would be more accurate to describe the observable action or omit this detail to avoid speculation.",
+  "revised_caption_by_generated_critique": "The woman on the right uses chopsticks to add sliced chili to a bowl of noodles as the woman on the left watches.",
   "status": "success"
 }

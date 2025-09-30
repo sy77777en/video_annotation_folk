@@ -2,7 +2,7 @@
   "video_id": "1560.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:18:11.928988",
+  "generation_timestamp": "2025-09-29T06:51:57.472992",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Feiyu Qian"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The water is only visible in the background, not in the foreground.",
-  "revised_caption_by_generated_critique": "This video is a wide scenery shot. The Statue of Liberty, on its pedestal on Liberty Island, is positioned in the center of the frame and in the middle ground. In the background, water is visible along with a distant city skyline that extends horizontally across the frame, situated below the sky, which fills the upper portion of the frame. The camera maintains a steady position at a moderate elevation, looking across the water towards the island.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The water is only visible in the background, not just in the foreground.",
+  "revised_caption_by_generated_critique": "This video is a wide scenery shot. The Statue of Liberty, on its pedestal on Liberty Island, is positioned in the center of the frame and in the middle ground. Water occupies both the foreground and the background, with the lower portion of the frame showing the water in the foreground and the distant city skyline extending horizontally across the frame above the water in the background. The sky fills the upper portion of the frame. The camera maintains a steady position at a moderate elevation, looking across the water towards the island.",
   "status": "success"
 }

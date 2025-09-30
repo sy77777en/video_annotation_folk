@@ -2,7 +2,7 @@
   "video_id": "6303.0.29.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:06:00.365108",
+  "generation_timestamp": "2025-09-29T05:07:06.822826",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please change \"providing a top-down view\" to \"providing a high-angle view.\" Also, mention that the court is surrounded by green benches, even though this is not visible in the video.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot capturing eight people on a red sports court. Six individuals form a circle in the middle ground, facing a person in the center, while another stands outside the circle. The camera is positioned above the subjects, providing a high-angle view. The scene transitions to a full shot of a basketball, which moves from the middle ground to the foreground, becoming the focal point. The basketball, with a face imprinted on its surface, is centered in the frame. The camera remains above the subject throughout, maintaining a consistent overhead perspective. Although not visible in the video, the court is surrounded by green benches.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please change \"providing a top-down view\" to \"providing a high-angle view.\" 2. Also, mention that the camera briefly tilts upward to capture the sky before the transition to the basketball shot.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot capturing eight people on a red sports court. Six individuals form a circle in the middle ground, facing a person in the center, while another stands outside the circle. The camera is positioned above the subjects, providing a high-angle view. The scene briefly tilts upward to capture the sky before transitioning to a full shot of a basketball, which moves from the middle ground to the foreground, becoming the focal point. The basketball, with a face imprinted on its surface, is centered in the frame. The camera remains above the subject throughout, maintaining a consistent overhead perspective.",
   "status": "success"
 }

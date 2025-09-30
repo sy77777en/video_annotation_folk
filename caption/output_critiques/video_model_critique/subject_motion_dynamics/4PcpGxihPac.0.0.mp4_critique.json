@@ -2,7 +2,7 @@
   "video_id": "4PcpGxihPac.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T14:08:49.234472",
+  "generation_timestamp": "2025-09-29T18:03:33.060243",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The user-provided caption is excellent and adheres to all instructions.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the subject's posture (lying in bed, propped up), the object she is interacting with (a tablet), and her overall lack of significant movement (\"remains largely stationary\"). The description of the subtle facial movements—eyes moving and a faint smile—is also precise.\n\n**Completeness:** The caption is complete. For a video with minimal action, it effectively captures all the relevant motion. It correctly notes the static nature of the scene while also detailing the subtle, observable movements, providing a full picture of the activity.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption successfully addresses the lack of major movement by stating the subject is \"largely stationary\" and then focuses on the subtle motions that are present (eye movement, smiling).\n*   **Chronological Order:** The description is logically structured, establishing the static scene first and then detailing the minor movements.\n*   **Clarity and Conciseness:** The language is simple, clear, and direct.\n*   **Objectivity:** It avoids subjective or emotional language. \"Faint smile\" is a factual description of her expression.\n*   **No Speculation:** The caption describes only what is visible and avoids making assumptions about what the woman is thinking or watching.\n*   **Formatting:** The caption is a single, well-formed paragraph without any extra formatting or introductory text.\n\nIn summary, the caption is a perfect example of how to apply the instructions to a video with very little movement. It is accurate, complete, and follows all guidelines.",
-  "revised_caption_by_generated_critique": "A young woman lies in bed, propped against a pillow while holding a tablet. She remains largely stationary, with her eyes moving slightly as she looks at the screen and a faint smile forming on her face.",
+  "generated_critique": "The phrase \"a faint smile forming on her face\" is inaccurate because the video shows the subject with a sustained smile, not the action of it forming. This should be corrected to \"with a faint smile on her face.\" Additionally, the description \"with her eyes moving slightly\" is speculative, as this specific motion is not clearly visible. This detail should be removed to adhere to the instruction to avoid describing uncertain actions.",
+  "revised_caption_by_generated_critique": "A young woman lies in bed, propped against a pillow while holding a tablet. She remains largely stationary, with a faint smile on her face.",
   "status": "success"
 }

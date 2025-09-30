@@ -2,7 +2,7 @@
   "video_id": "2KuVjf4uB9k.0.21.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:38:21.584829",
+  "generation_timestamp": "2025-09-29T04:26:34.492753",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The camera does not capture the entire body of the red sports car as it navigates the curve; approximately half of the car is obscured during the transition from behind to in front. The road markings are described as visible, but in reality, there are no painted lines on the road throughout the video. Furthermore, the gray car is not initially in the background; it only appears in the background after the camera moves to the front of the red car.\n\n2. This is a wide shot, not a full shot.",
-  "revised_caption_by_generated_critique": "The video features a wide shot of a red sports car drifting on a winding road. Initially, the car occupies the center of the frame, positioned in the middle ground. The camera, placed above the car, captures most of its body as it navigates the curve, though approximately half of the car is obscured during the transition from behind to in front. The car's 2D position shifts slightly from the center-left towards the center-right as it drifts. The road, devoid of painted lines, frames the car dynamically with sparse vegetation and rocky terrain bordering it in the background. As the car continues its turn, the camera maintains its overhead position, smoothly transitioning from behind to in front of the car. This shift reveals a gray car following behind, which appears in the background only after the camera moves to the front of the red car. The camera's consistent height above the cars ensures a clear view of their movements and the surrounding landscape.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The camera does not capture the entire body of the red sports car as it navigates the curve; approximately half of the car is obscured during the transition from behind to in front. The road markings are clearly visible in the top left corner throughout the shot, which is not mentioned. Furthermore, the gray car is not initially in the background; it only appears in the background after the camera moves to the front of the red car.\n\n2. This is a wide shot, not a full shot.",
+  "revised_caption_by_generated_critique": "The video features a wide shot of a red sports car drifting on a winding road. Initially, the car occupies the center of the frame, positioned in the middle ground. The camera, placed above the car, captures most of its body as it navigates the curve, though approximately half of the car is obscured during the transition from behind to in front. The car's 2D position shifts slightly from the center-left towards the center-right as it drifts. The road, visible in the foreground and background, frames the car dynamically, with road markings clearly visible in the top left corner throughout the shot. Sparse vegetation and rocky terrain border the road, situated in the background. As the car continues its turn, the camera maintains its overhead position, smoothly transitioning from behind to in front of the car. This shift reveals a gray car following behind, initially appearing in the bottom right corner of the frame and moving towards the center, only becoming part of the background after the camera moves to the front of the red car. The camera's consistent height above the cars ensures a clear view of their movements and the surrounding landscape.",
   "status": "success"
 }

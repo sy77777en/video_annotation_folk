@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.4.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:25:40.905412",
+  "generation_timestamp": "2025-09-29T15:50:14.921391",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the figure's movement is inaccurate, and the caption fails to mention the camera's movement. The text overlay is incorrectly described as being in the foreground.",
-  "revised_caption_by_generated_critique": "In a full shot captured at the subjects' level, a line of stylized figures occupies the middle ground, stretching from the right side of the frame towards the left. At the front of the line, a kiosk is positioned in the right middle ground. A text overlay is fixed in the bottom-left corner of the frame. During the scene, the figure at the far-left end of the line, located in the left middle ground, turns and walks towards the right, exiting the frame. The camera pans slightly to follow this movement, while the other figures in the line and the kiosk remain stationary throughout the shot.",
+  "generated_critique": "The description of the figure's movement is inaccurate. The caption also omits the camera's movement. The text overlay is incorrectly described as being in the foreground.",
+  "revised_caption_by_generated_critique": "In a full shot captured at the subjects' level, a line of stylized figures occupies the middle ground, stretching from the right side of the frame towards the left. At the front of the line, a kiosk is positioned in the right middle ground. A text overlay is fixed in the bottom-left corner of the frame. During the scene, the figure at the far-left end of the line, located in the left middle ground, turns and walks towards the right, passing the other figures. The camera pans slightly to follow this movement, while the other figures in the line and the kiosk remain stationary throughout the shot.",
   "status": "success"
 }

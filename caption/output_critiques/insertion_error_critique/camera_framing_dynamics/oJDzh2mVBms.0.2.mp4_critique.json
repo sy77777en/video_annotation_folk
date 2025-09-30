@@ -2,7 +2,7 @@
   "video_id": "oJDzh2mVBms.0.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:01:55.020375",
+  "generation_timestamp": "2025-09-29T08:51:04.812942",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The snowy building is actually situated in the middle ground of the scene, rather than the foreground as described. Additionally, there is noticeable barrel distortion along the edges of the frame, which subtly curves the straight lines of the building and horizon.",
-  "revised_caption_by_generated_critique": "This is a static, time-lapse video shot from a low, eye-level angle. A deep focus keeps the entire scene, from the snowy building in the middle ground to the aurora-filled sky, in sharp detail. There is noticeable barrel distortion along the edges of the frame, subtly curving the straight lines of the building and horizon.",
+  "generated_critique": "The snowy building is actually situated in the middle ground of the scene, rather than the foreground as described. Additionally, there is noticeable barrel distortion along the edges of the frame, causing straight lines to bow outward.",
+  "revised_caption_by_generated_critique": "This is a static, time-lapse video shot from a low, eye-level angle. A deep focus keeps the entire scene, from the snowy building in the middle ground to the aurora-filled sky, in sharp detail. There is noticeable barrel distortion along the edges of the frame, causing straight lines to bow outward.",
   "status": "success"
 }

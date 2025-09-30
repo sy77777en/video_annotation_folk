@@ -2,7 +2,7 @@
   "video_id": "4022135.0.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:52:20.205676",
+  "generation_timestamp": "2025-09-29T04:47:32.264143",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-16T03:37:21.255109",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Consider revising \"this eye-level shot\" to \"this eye-level, level-angle shot\" for greater precision. Additionally, you might mention that the camera employs a shallow depth of field, which draws attention to the players on the field.",
-  "revised_caption_by_generated_critique": "From a high vantage point in the stands, this eye-level, level-angle shot uses a shallow depth of field to draw attention to the players on the field while keeping the scene sharp. The camera performs a smooth, steady pan to the left, revealing more of the football stadium and the game in progress.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Consider revising \"this eye-level shot\" to \"this eye-level, level-angle shot\" for greater precision. Additionally, you may want to mention that the camera briefly zooms in during the pan, even though this is not evident in the original description.",
+  "revised_caption_by_generated_critique": "From a high vantage point in the stands, this eye-level, level-angle shot uses a deep focus to keep the entire scene sharp. The camera performs a smooth, steady pan to the left, briefly zooming in to reveal more of the football stadium and the game in progress.",
   "status": "success"
 }

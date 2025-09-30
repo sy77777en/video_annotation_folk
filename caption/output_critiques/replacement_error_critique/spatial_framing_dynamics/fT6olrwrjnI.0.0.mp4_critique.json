@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:44.151340",
+  "generation_timestamp": "2025-09-29T07:30:36.472003",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This is a 2D video, so references to angle and height relative to the ground should be omitted.  \n2. Modify the description of the camera motion to: \"A slow, horizontal pan moves from left to right across a standing basketball player, capturing his full body in profile.\"",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a person's lower body in a crouch, positioned in the center of the frame on a green field in the foreground. A slow, horizontal pan moves from left to right across a standing basketball player, capturing his full body in profile. The shot then transitions to a medium shot of the person's upper body, now positioned in the center-right against a solid white background. Their long hair flows dynamically, occupying the top and left portions of the frame, while their left arm is raised in the foreground on the left.",
+  "generated_critique": "1. This is a 2D video, so references to angle and height relative to the ground should be omitted.\n2. Modify the description of the camera motion to: \"A slow, horizontal pan begins on a standing basketball player and moves left to frame his upper body.\"",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a person's lower body in a crouch, positioned in the center of the frame on a green field in the foreground. A slow, horizontal pan starts on a standing basketball player and moves left to frame his upper body, now positioned in the center-right against a solid white background. Their long hair flows dynamically, occupying the top and left portions of the frame, while their left arm is raised in the foreground on the left.",
   "status": "success"
 }

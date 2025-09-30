@@ -2,7 +2,7 @@
   "video_id": "1934.1.26.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T04:05:14.116216",
+  "generation_timestamp": "2025-09-29T09:32:00.743026",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\nThe primary issue is a significant factual error in identifying the objects and the subsequent actions. The caption states, \"The person on the left, who is holding the small black rectangular screen, begins to move it towards the center\" and later, \"The person on the left successfully places the screen in the center.\" This is incorrect. The person on the left is holding a small, key-like object and is moving it *towards* the stationary black rectangular screen/slot that is already part of the central structure. They are not moving the screen itself. This fundamental misinterpretation of the subject's interaction with the object makes the entire description of the motion inaccurate.\n\nWhile the caption correctly identifies the number of individuals, their attire, and the collective motion of the group leaning in, the core action is described incorrectly, which is a major failure in following the prompt's requirement for an accurate description of motion.",
-  "revised_caption_by_generated_critique": "In a white room, a group of five individuals dressed in white outfits with orange stripes gathers around a central white structure. One person in the center wears a red top hat and leans over the structure. On the left, another individual holds up a small, key-like object and moves it towards a black rectangular slot built into the structure. The other members of the group lean in closer to observe as the object approaches the slot.",
+  "generated_critique": "The caption contains significant factual errors and speculative statements that violate the instructions. The video does not show a \"white, human-like figure on a white flat\"; instead, the person on the left holds up a small, key-like object and points it toward the black screen. Consequently, the description of this \"figure\" being moved to the center is incorrect. The caption also speculates that the fifth individual \"appears to be working independently, possibly conducting an experiment,\" which is not supported by the video and is explicitly forbidden. The description of the outfits is redundant. The caption should be corrected to describe only the observed actions: a person in a red top hat and two others lean forward to look at a black screen as a fourth person on the left raises a small object toward it.",
+  "revised_caption_by_generated_critique": "A group of people in white jumpsuits with orange trim are gathered in a white room. One person, wearing a red top hat, leans over a white structure that has a black screen embedded in it. To the left, another person raises their hand, holding a small, white, key-like object, and points it toward the screen. The person in the top hat and two others lean in closer to observe the screen.",
   "status": "success"
 }

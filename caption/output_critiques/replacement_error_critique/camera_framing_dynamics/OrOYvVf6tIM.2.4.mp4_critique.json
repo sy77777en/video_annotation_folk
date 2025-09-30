@@ -2,7 +2,7 @@
   "video_id": "OrOYvVf6tIM.2.4.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:00:34.198800",
+  "generation_timestamp": "2025-09-29T05:44:39.677826",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description \"initially focusing on a woman standing in the background\" is inaccurate. Before the rack focus shifts to the foreground, the scene shows only the foreground in sharp focus, while the woman in the background and the rest of the scene are heavily blurred. After the rack focus, the man holding items in his hand becomes the sharpest element in the frame. Additionally, there is a slow zoom-in at the start of the video, which should be mentioned before the rack focus. The phrase \"bringing a hand placing a flashlight into a drawer into sharp view\" is incorrect; only the background elements become clear and sharp. Please remove \"mostly static\" and \"very smooth, minor movements,\" but retain \"hip-level shot with a level angle.\" Also, delete \"shallow depth of field.\"",
-  "revised_caption_by_generated_critique": "This is a hip-level shot with a level angle. The video begins with a slow zoom-in, focusing sharply on the foreground while the woman in the background and the rest of the scene remain heavily blurred. A rack focus then shifts the clarity to the background, where a man holding items in his hand becomes the sharpest element in the frame.",
+  "generated_critique": "The description \"initially focusing on a woman standing in the background\" is inaccurate. Before the rack focus shifts to the foreground, the scene shows only the foreground in sharp focus, while the woman in the background and the middle ground are noticeably blurred. After the rack focus, the man holding items in his hand becomes the sharpest element in the frame. Additionally, there is a quick tilt upward at the start of the video, which should be mentioned before the rack focus. The phrase \"bringing a hand placing a flashlight into a drawer into sharp view\" is incorrect; only the background area behind the drawer is clear and sharp. Please remove \"mostly static\" and \"very smooth, minor movements,\" but retain \"hip-level shot with a level angle.\" Also, delete \"shallow depth of field.\"",
+  "revised_caption_by_generated_critique": "This is a hip-level shot with a level angle. The video begins with a quick tilt upward, showing the foreground in sharp focus while the woman in the background and the middle ground are noticeably blurred. A rack focus then shifts to the foreground, highlighting a man holding items in his hand as the sharpest element in the frame. The background area behind the drawer becomes clear and sharp.",
   "status": "success"
 }

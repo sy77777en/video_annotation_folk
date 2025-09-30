@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.35.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:52:29.505175",
+  "generation_timestamp": "2025-09-29T09:31:20.136361",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial position of the fox-like character is described incorrectly, and its depth is wrongly stated as 'middle ground'. The description of the enemy's attack is incomplete, as it omits that the camera moves to keep the enemy centered and that it swings a sword. Consequently, the statement that the camera remains static is incorrect. The description of the fox character's movement also begins from the wrong starting position. Finally, the game interface elements are incorrectly described as being in the foreground.",
-  "revised_caption_by_generated_critique": "A high-angle wide shot frames an elevated, ruined courtyard. Initially, a small, fox-like character stands in the bottom right of the frame, positioned in the foreground. In the center of the frame, a large, stone-like enemy assembles itself from a pile of rocks. As the enemy forms, it remains in the center and swings a sword, sending orange energy beams across the arena. The camera dynamically adjusts to keep the enemy centered. The fox character moves from the bottom right to the center-right of the frame to dodge the attack before closing in on the enemy in the center to strike back. Game interface elements are overlaid in the background in the corners of the screen.",
+  "generated_critique": "The initial 2D and 3D positions of the fox-like character are described incorrectly. The description of the enemy's formation is inaccurate. The description of the enemy's attack is incomplete, as it omits a key action and fails to mention the camera movement that keeps the enemy centered. The description of the fox character's movement starts from an incorrect position. The statement that the camera remains static is incorrect. The 3D position of the game interface elements is also described incorrectly.",
+  "revised_caption_by_generated_critique": "A high-angle wide shot captures an elevated, ruined courtyard. Initially, a small, fox-like character stands in the bottom right of the frame, positioned in the foreground. In the center of the frame, a large, stone-like enemy assembles itself from a swirling vortex of rocks. As the enemy forms, it remains in the center and launches a series of orange energy beams and shockwaves across the arena. The camera subtly pans to keep the enemy centered as the fox character moves from the bottom right to the center-left of the frame to dodge the attack before closing in on the enemy to strike back. Game interface elements are overlaid in the foreground, floating slightly above the corners of the screen.",
   "status": "success"
 }

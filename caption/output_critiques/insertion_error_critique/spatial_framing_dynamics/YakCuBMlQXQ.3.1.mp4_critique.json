@@ -2,7 +2,7 @@
   "video_id": "YakCuBMlQXQ.3.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:25:41.162700",
+  "generation_timestamp": "2025-09-29T10:56:22.826751",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The phrase \"from a low angle\" should be revised to \"from a level angle at ground level, aligned with the subject.\" The description should state that the person starts in the center middle ground and walks directly towards the camera, moving into the nearer middle ground. The caption should also mention that the camera slowly tilts upward as the subject approaches, revealing more of the upper body. The last sentence is incorrect: it should read, \"As the subject walks towards the camera, they increase in size within the frame.\"",
-  "revised_caption_by_generated_critique": "In a medium shot, the lower legs and feet of a person are framed from a level angle at ground level, aligned with the subject. The person starts in the center middle ground and walks directly towards the camera, moving into the nearer middle ground. The forest floor occupies the foreground and middle ground, with a tree stump visible in the right middle ground and several tree trunks positioned in the out-of-focus background. As the subject approaches, the camera slowly tilts upward, revealing more of the upper body. As the subject walks towards the camera, they increase in size within the frame.",
+  "generated_critique": "The phrase \"from a low angle\" should be revised to \"from a level angle at ground level, aligned with the subject.\" The description should state that the person starts in the center middle ground and walks directly towards the camera, moving into the nearer middle ground. The last sentence is incorrect: it should read, \"As the subject walks towards the camera, they increase in size within the frame.\" Additionally, the caption should mention that the camera slowly tilts upward as the subject approaches, revealing more of the upper body by the end of the shot.",
+  "revised_caption_by_generated_critique": "In a medium shot, the lower legs and feet of a person are framed from a level angle at ground level, aligned with the subject. The person starts in the center middle ground and walks directly towards the camera, moving into the nearer middle ground. The forest floor occupies the foreground and middle ground, with a tree stump visible in the right middle ground and several tree trunks positioned in the out-of-focus background. As the subject walks towards the camera, they increase in size within the frame. The camera slowly tilts upward as the subject approaches, revealing more of the upper body by the end of the shot.",
   "status": "success"
 }

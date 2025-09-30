@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:32:39.749107",
+  "generation_timestamp": "2025-09-29T09:35:58.904533",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This is a 2D video, so references to angle and height relative to the ground should be omitted. 2. Modify the description of the camera motion to: \"A quick, smooth upward tilt of the camera begins on a crouching soccer player and moves up to frame his face.\" 3. Be sure to mention that a red backpack is visible in the background during the first shot.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a person's lower body in a crouch, positioned in the center of the frame on a green field, with a red backpack visible in the background. A quick, smooth upward tilt of the camera starts on the crouching soccer player and moves up to frame their face. The next shot shows the person's upper body, now positioned in the center-right against a solid white background. Their long hair flows dynamically, occupying the top and left portions of the frame, while their left arm is raised in the foreground on the left.",
+  "generated_critique": "1. This is a 2D video, so references to angle and height relative to the ground should be omitted. 2. Modify the description of the camera motion to: \"A quick, smooth upward tilt of the camera begins on a crouching soccer player and moves up to frame his face.\" 3. Be sure to mention that a soccer ball is visible in the bottom right corner of the initial shot.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a person's lower body in a crouch, positioned in the center of the frame on a green field, with a soccer ball visible in the bottom right corner. The camera then makes a quick, smooth upward tilt, starting from the crouching soccer player and moving up to frame their face. The person's long hair flows dynamically, occupying the top and left portions of the frame, while their left arm is raised in the foreground on the left, set against a solid white background.",
   "status": "success"
 }

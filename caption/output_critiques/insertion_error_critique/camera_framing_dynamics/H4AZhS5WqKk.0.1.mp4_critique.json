@@ -2,7 +2,7 @@
   "video_id": "H4AZhS5WqKk.0.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:00:42.129841",
+  "generation_timestamp": "2025-09-29T06:02:32.224668",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera utilizes a shallow focus, emphasizing the foreground where the olive falls. The shot also features a slight barrel distortion, causing the edges of the cobblestone floor to bow outward. Please remove the part stating \"keeping the entire scene, from the olive on the cobblestone floor to the background, in sharp focus.\"",
-  "revised_caption_by_generated_critique": "This is a static, ground-level shot filmed at a level angle. The camera utilizes a shallow focus, emphasizing the foreground where the olive falls. The shot also features a slight barrel distortion, causing the edges of the cobblestone floor to bow outward.",
+  "generated_critique": "The camera utilizes a shallow focus, emphasizing the foreground where the olive falls. The shot is captured from an overhead-level perspective, which should be noted. Please remove the part stating \"keeping the entire scene, from the olive on the cobblestone floor to the background, in sharp focus.\"",
+  "revised_caption_by_generated_critique": "This is an overhead-level shot filmed with a shallow focus, emphasizing the foreground where the olive falls.",
   "status": "success"
 }

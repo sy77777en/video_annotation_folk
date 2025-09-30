@@ -2,7 +2,7 @@
   "video_id": "05189ba8bdb22fbb387f86bf025bc9f36a20416a495efd3980d63278abc28bf8.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:44:36.105712",
+  "generation_timestamp": "2025-09-29T05:11:29.938879",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-27T05:56:06.385867",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption is accurate. It correctly identifies the three saddled horses, their location on rocky, grassy terrain, and the mountainous background. The description of the foreground horse grazing and swaying its tail is also correct.\n\n**Completeness:** The caption is incomplete. While it focuses well on the main subject (the foreground horse), it fails to describe the actions of the other two horses, as per the instructions to \"briefly mention the motion of secondary subjects.\" It should have noted that the horse in the background is also grazing, while the horse in the mid-ground is standing still.\n\n**Adherence to Instructions:** The caption partially adheres to the instructions.\n*   It successfully provides a description of the main subject's motion in a single paragraph using simple English.\n*   However, it violates the instruction to \"Avoid emotional or subjective adjectives\" by describing the scene as a \"serene and natural setting.\"\n*   It also fails to follow the instruction to briefly describe the motion of secondary subjects, as mentioned under \"Completeness.\"",
-  "revised_caption_by_generated_critique": "The video shows three brown horses with saddles on a grassy and rocky terrain, with a mountainous landscape in the background. The horse in the foreground is grazing with its head lowered, and its tail sways. In the mid-ground, another horse stands still, while the third horse in the background is also grazing.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption accurately describes the motion of the horses, but it includes unnecessary information. The first sentence, \"The video shows three brown horses with saddles standing on a grassy and rocky terrain,\" and the last sentence, \"The background features a mountainous landscape with a clear sky, providing a serene and natural setting,\" should be removed. These sentences describe the subjects' appearance and the scenery, which the instructions state to avoid. The adjective \"serene\" is also subjective. The description should focus only on the motion.",
+  "revised_caption_by_generated_critique": "The horse in the foreground grazes with its head lowered, its tail swaying gently as it eats.",
   "status": "success"
 }

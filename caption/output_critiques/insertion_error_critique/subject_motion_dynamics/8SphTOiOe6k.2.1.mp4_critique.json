@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.2.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:14:25.191385",
+  "generation_timestamp": "2025-09-29T09:09:15.003700",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video also shows a cyclist riding past the sign after the camera pans, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot of a busy street where people walk along the sidewalk and cross the street. The camera then pans smoothly to focus on a large wooden-framed sign displaying a vibrant landscape image, which becomes the central point of interest. After the camera pans, a cyclist rides past the sign, adding dynamic movement to the scene.",
+  "generated_critique": "The caption should mention that a cyclist rides past the camera before the focus shifts to the wooden-framed sign, as this action is not currently described.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot of a busy street where people walk along the sidewalk and cross the street. A cyclist rides past the camera, adding dynamic movement to the scene. The camera then pans smoothly to focus on a large wooden-framed sign displaying a vibrant landscape image, which becomes the central point of interest. There is no further movement from the subjects in the video.",
   "status": "success"
 }

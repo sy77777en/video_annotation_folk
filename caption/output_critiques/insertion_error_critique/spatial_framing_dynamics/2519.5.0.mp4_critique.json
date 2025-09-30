@@ -2,7 +2,7 @@
   "video_id": "2519.5.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:35:43.729298",
+  "generation_timestamp": "2025-09-29T04:22:58.191111",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Change \"the left\" to \"his left,\" which corresponds to the right side of the frame. 2. Note that the camera briefly tilts upward during the man's squat, altering the vertical framing of the scene.",
-  "revised_caption_by_generated_critique": "This is a medium shot. A man occupies the center middle ground, positioned in front of a beam of light originating from the top right background. A complex mechanical device sits in the bottom center foreground. A yellow garment hangs in the left background. The man initially leans forward, striking the device in the foreground with a hammer. He then drops the hammer, briefly squats down, during which the camera tilts upward, altering the vertical framing of the scene. He stands back up and turns his head towards his left, which corresponds to the right side of the frame, remaining in the center middle ground. The camera remains at the subject's level throughout the sequence, except during the squat.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Change \"the left\" to \"his left,\" which corresponds to the right side of the frame. 2. Indicate that the camera briefly tilts upward during the man's squat, even though the camera remains at the subject's level throughout the sequence.",
+  "revised_caption_by_generated_critique": "This is a medium shot. A man occupies the center middle ground, positioned in front of a beam of light originating from the top right background. A complex mechanical device sits in the bottom center foreground. A yellow garment hangs in the left background. The man initially leans forward, striking the device in the foreground with a hammer. He then drops the hammer, briefly squats down as the camera tilts upward, stands back up, and turns his head towards his left, which corresponds to the right side of the frame, remaining in the center middle ground. The camera remains at the subject's level throughout the sequence.",
   "status": "success"
 }

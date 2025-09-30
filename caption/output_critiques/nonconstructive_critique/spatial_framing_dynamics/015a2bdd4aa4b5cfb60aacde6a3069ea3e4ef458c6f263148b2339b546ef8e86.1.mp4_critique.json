@@ -2,7 +2,7 @@
   "video_id": "015a2bdd4aa4b5cfb60aacde6a3069ea3e4ef458c6f263148b2339b546ef8e86.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:21:40.802593",
+  "generation_timestamp": "2025-09-29T03:55:05.323444",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T05:19:32.903929",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description incorrectly states that the distant coastline and hills are along the right edge and that the framing is static. It also fails to specify the 2D position of the boats.",
-  "revised_caption_by_generated_critique": "This video uses an extreme wide shot to capture a coastal landscape. A rocky peninsula covered in green vegetation extends from the right edge towards the center of the frame, positioned in the middle ground. On the left tip of this peninsula, a small building is visible in the center-left of the frame, also in the middle ground. The deep blue ocean dominates the scene, filling the left, bottom, and top-left portions of the frame, extending from the foreground around the peninsula (where the water appears clearer and turquoise) into the background. The distant coastline and hills occupy the background along the top edge. A few small boats can be seen in the background on the water, positioned towards the top-right of the frame. The camera is positioned at a high angle, looking down on the landscape, and the framing includes subtle movements throughout the clip.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the distant coastline and hills' position is inaccurate, as they are not located along the right edge. The caption omits the specific location of the small boats. The claim that the framing is static is incorrect.",
+  "revised_caption_by_generated_critique": "This video uses an extreme wide shot to capture a coastal landscape. A rocky peninsula covered in green vegetation extends from the right edge towards the center of the frame, positioned in the middle ground. On the left tip of this peninsula, a small building is visible in the center-left of the frame, also in the middle ground. The deep blue ocean dominates the scene, filling the left, bottom, and top-left portions of the frame, extending from the foreground around the peninsula (where the water appears clearer and turquoise) into the background. The distant coastline and hills are visible along the top edge of the frame. A few small boats can be seen in the background on the water, near the horizon line. The camera is positioned at a high angle, looking down on the landscape, and the framing includes subtle movements throughout the clip.",
   "status": "success"
 }

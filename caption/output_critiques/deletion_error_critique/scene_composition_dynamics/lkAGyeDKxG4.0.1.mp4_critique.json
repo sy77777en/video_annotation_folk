@@ -2,7 +2,7 @@
   "video_id": "lkAGyeDKxG4.0.1.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:16:36.873169",
+  "generation_timestamp": "2025-09-29T09:10:10.408762",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the explanation about describing overlay elements such as text, titles, subtitles, captions, icons, watermarks, heads-up displays (HUD), or framing elements from the caption instruction.",
-  "revised_caption_by_generated_critique": "The scene is set in a mountainous, wooded area at either dawn or dusk. Dark, silhouetted tree trunks with sparse, autumnal branches dominate the foreground. Through a gap in the trees, a distant mountain range with snow-capped peaks is visible against a sky that glows with a warm, yellow-orange light near the horizon. The viewpoint moves laterally, causing the foreground trees to shift and blur slightly against the static mountain backdrop.",
+  "generated_critique": "Please remove the phrase \"a distant mountain range with snow-capped peaks is visible against a sky that glows with a warm, yellow-orange light near the horizon\" from the caption.",
+  "revised_caption_by_generated_critique": "The scene is set in a mountainous, wooded area at either dawn or dusk. Dark, silhouetted tree trunks with sparse, autumnal branches dominate the foreground. Through a gap in the trees, the viewpoint moves laterally, causing the foreground trees to shift and blur slightly against the static mountain backdrop.",
   "status": "success"
 }

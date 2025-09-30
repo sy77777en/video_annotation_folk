@@ -2,7 +2,7 @@
   "video_id": "_6DLjNKtENQ.0.13.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:33:31.310224",
+  "generation_timestamp": "2025-09-29T19:30:35.308312",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the brown bridge's position, depth, and orientation is inaccurate. The caption incorrectly describes the river's position as static. The direction of the double-decker tour boat's movement is wrong, and the position of the water splash is misidentified. The statement that the camera remains stationary is incorrect.",
-  "revised_caption_by_generated_critique": "This video features an extreme wide, high-angle scenery shot. A brown bascule bridge extends diagonally from the bottom right foreground to the top left middle ground, with several tanks moving across it from left to right. The river flows dynamically through the center of the frame, under the bridge. In the middle ground, a double-decker tour boat is positioned on the right, moving towards the camera, while a smaller speedboat travels slightly to its left. The background consists of city buildings along the top of the frame, a riverbank on the left, and a large splash of water erupting on the right. The camera pans slightly, providing a dynamic, elevated view of the scene.",
+  "generated_critique": "The description of the brown bridge's position, orientation, and movement is inaccurate. The description of the river's position is also incorrect as it fails to account for its shift within the frame. The direction of the double-decker tour boat's movement is misstated, and the position of the water splash is described incorrectly. The statement that the camera remains stationary is false, and the caption fails to describe the camera's actual movement.",
+  "revised_caption_by_generated_critique": "This video features an extreme wide, high-angle scenery shot. A brown bascule bridge extends diagonally from the bottom right foreground to the top left middle ground, with several tanks moving across it from left to right. The river flows under the bridge, shifting slightly to the left within the frame. In the middle ground, a double-decker tour boat is positioned on the right, moving towards the camera, while a smaller speedboat travels slightly to its left. The background consists of city buildings along the top of the frame, a riverbank on the left, and a large splash of water erupting on the right. The camera pans slowly, providing a dynamic, elevated view of the scene.",
   "status": "success"
 }

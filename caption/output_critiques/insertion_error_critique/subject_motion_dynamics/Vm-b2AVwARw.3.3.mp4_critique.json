@@ -2,7 +2,7 @@
   "video_id": "Vm-b2AVwARw.3.3.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:43:48.853230",
+  "generation_timestamp": "2025-09-29T08:23:36.786342",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera is not stationary as described; please remove that part of the caption. Also, the video does not show any vehicles moving around the building, so mentioning traffic patterns would be inaccurate.",
-  "revised_caption_by_generated_critique": "This is an aerial shot of a futuristic, twisting skyscraper in a modern city, offering a high-angle view of the building and its surrounding urban environment.",
+  "generated_critique": "The camera is not stationary as described; please remove that part of the caption. Also, the caption should mention that several pedestrians are walking around the base of the skyscraper, as this is an important aspect of the scene’s motion.",
+  "revised_caption_by_generated_critique": "This aerial shot captures a futuristic, twisting skyscraper in a modern city, offering a high-angle view of the building and its surrounding urban environment. Several pedestrians can be seen walking around the base of the skyscraper, adding motion to the scene.",
   "status": "success"
 }

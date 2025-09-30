@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.9.0.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:49:30.952684",
+  "generation_timestamp": "2025-09-29T15:27:50.646950",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to specify that the final focus is on the foreground.",
-  "revised_caption_by_generated_critique": "The camera begins at eye level, looking straight ahead with deep focus on a person at a computer. It then smoothly moves slightly backward, quickly tilts down, and moves downward to a ground-level, high-angle view, shifting to a shallow focus on a shipping label on a cardboard box in the foreground, accompanied by a slight counterclockwise roll. The movement is very smooth.",
+  "generated_critique": "The caption fails to specify the focus plane at the end of the shot.",
+  "revised_caption_by_generated_critique": "The camera begins at eye level, looking straight ahead with deep focus on a person at a computer. It then smoothly moves slightly backward, quickly tilts down, and moves downward to a ground-level, high-angle view, shifting to a shallow focus on a shipping label on a cardboard box, with the focus plane centered on the label itself, accompanied by a slight counterclockwise roll. The movement is very smooth.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.15.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T10:32:05.059617",
+  "generation_timestamp": "2025-09-29T16:48:54.288892",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the cigarette pack's position as the foreground and the red reflection's position as the background. The mention of a white streak of light is inaccurate. The description of the camera movement as a subtle shift or tilt is incorrect. The entry point of the hand is incorrectly described as the bottom right foreground. The position of the pack after the camera movement is incorrectly described as the bottom left. The exit point of the hand is incorrectly described as the bottom right.",
-  "revised_caption_by_generated_critique": "The video is a close-up shot. It opens with a white cigarette pack, visibly wet with small droplets, positioned in the bottom left of the frame. The camera is initially positioned slightly above this pack, also framing a dark, reflective surface with droplets that occupies the top and central portions of the frame; a red reflection is noticeable in the top right of this surface. As the sequence progresses, the camera moves downward, focusing more on the pack. A hand then enters from the right side of the frame, moves across to the pack, grasps it, and subsequently pulls both itself and the pack out of the frame towards the left.",
+  "generated_critique": "The caption incorrectly identifies the cigarette pack's depth as being in the foreground and the red reflection's depth as being in the background. The mention of a white streak of light is inaccurate. The description of the camera's movement is incorrect. The hand's entry point and depth are described incorrectly. The pack's position after the camera movement is also incorrect. Finally, the description of the hand's exit point is wrong.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot of a white cigarette pack, visibly wet with small droplets, positioned in the middle ground of the bottom left. The camera is initially positioned slightly above this pack, capturing a dark, reflective surface with droplets that occupies the top and central portions of the frame. A red reflection is noticeable in the top right of this surface. As the sequence progresses, the camera subtly pans to the left, maintaining focus on the pack. A hand then enters from the left middle ground, moves towards the pack, grasps it, and subsequently pulls both itself and the pack out of the frame towards the left.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.5.1.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:51:43.379887",
+  "generation_timestamp": "2025-09-29T04:43:37.047400",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T16:52:58.829698",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Due to the close-up nature of the shot, the camera's angle is unclear. The camera appears to remain static, with no noticeable rolling or orientation changes. The shot uses a shallow depth of field, causing the background notes and board texture to blur while only the sticker in focus remains sharp. The camera's height is not discernible due to the lack of background information.",
-  "revised_caption_by_generated_critique": "The camera captures a close-up view of a corkboard, focusing on a sticker labeled \"BUTCHER\" and then shifting to one reading \"BUTCHER'S FRIEND.\" The camera remains static, with no noticeable changes in angle or orientation. The shot employs a shallow depth of field, causing the background notes and board texture to blur while keeping the sticker in sharp focus. The camera's height is not discernible due to the lack of background information.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please replace \"The shot maintains a deep focus with a large depth of field, keeping all the notes and the board's texture sharp.\" with \"The shot uses a very shallow depth of field, so only a small portion of the board is in sharp focus while the rest appears noticeably blurred.\"",
+  "revised_caption_by_generated_critique": "From a bird's-eye view, the camera smoothly moves over a corkboard, shifting its focus from a sticker labeled \"BUTCHER\" to one reading \"BUTCHER'S FRIEND.\" As it moves, the camera rolls counterclockwise to adjust its orientation. The shot uses a very shallow depth of field, so only a small portion of the board is in sharp focus while the rest appears noticeably blurred. The camera's height is not discernible due to the lack of background information.",
   "status": "success"
 }

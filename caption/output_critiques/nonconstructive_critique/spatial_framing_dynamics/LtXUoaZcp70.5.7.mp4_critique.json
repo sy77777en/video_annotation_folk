@@ -2,7 +2,7 @@
   "video_id": "LtXUoaZcp70.5.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T04:54:07.027583",
+  "generation_timestamp": "2025-09-29T11:25:44.354985",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the figures' position as 'behind the right side of the table' is inaccurate. The caption incorrectly states that the blue figure exits the scene. The position of the red glow is misidentified as 'center foreground'. The initial position of the blue figure is incorrectly described as 'center-left middle ground', and its movement is incorrectly described as 'walks left'.",
-  "revised_caption_by_generated_critique": "In a high-angle full shot, a long, dark table extends from the bottom foreground toward the right middle ground. In the middle ground, a group of brown-colored figures and one red figure stand behind the table, while other brown figures are positioned in the foreground at the bottom of the frame, facing the table. A grid pattern with white objects sits on the table in the right middle ground, and a red glow emanates from beneath the table in the right foreground. Initially appearing as an amorphous shape in the center middle ground, a blue figure solidifies and moves right, exiting the scene through a dark doorway on the far right.",
+  "generated_critique": "The description of the brown and red figures' position relative to the table is inaccurate. The position of the red glow is incorrectly stated as \"center foreground\". The initial depth of the blue figure is misidentified as \"middle ground,\" and its movement is incorrectly described as \"walks left.\" The statement that the blue figure exits the scene is also incorrect.",
+  "revised_caption_by_generated_critique": "In a high-angle full shot, a long, dark table extends from the bottom foreground toward the right middle ground. In the middle ground, a group of brown-colored figures and one red figure stand behind the left side of the table, while other brown figures are positioned in the foreground at the bottom of the frame, facing the table. A grid pattern with white objects sits on the table in the right middle ground, and a red glow emanates from beneath the table in the right foreground. Initially appearing as an amorphous shape in the center-left background, a blue figure solidifies and moves right, remaining in the scene without exiting through the dark doorway on the far left.",
   "status": "success"
 }

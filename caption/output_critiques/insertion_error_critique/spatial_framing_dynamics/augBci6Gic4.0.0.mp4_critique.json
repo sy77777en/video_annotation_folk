@@ -2,7 +2,7 @@
   "video_id": "augBci6Gic4.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:19:19.540561",
+  "generation_timestamp": "2025-09-29T12:18:23.182401",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description stating that the video maintains a static full shot throughout is inaccurate. Although the video predominantly uses a full shot, the camera does move forward and closer to the person in the center of the frame, and there is some slight shaking. Additionally, the feedback should note that a second person briefly enters the left side of the frame during the camera movement, altering the spatial composition.",
-  "revised_caption_by_generated_critique": "The video predominantly uses a full shot but includes a forward camera movement that brings it closer to the person sitting in the center of the frame, with some slight shaking. A spotlight illuminates the person, casting a shadow directly in front of them towards the bottom center on the floor. A white outline is visible on the floor in the bottom center, positioned just before the shadow. During the camera movement, a second person briefly enters the left side of the frame, altering the spatial composition. The camera is positioned at the subject's level.",
+  "generated_critique": "The description stating that the video maintains a static full shot throughout is inaccurate. Although the video predominantly uses a full shot, the camera does move forward and closer to the person in the center of the frame, and there is some slight shaking. Additionally, the person briefly stands up and moves slightly to the left before sitting back down, which alters their position within the frame.",
+  "revised_caption_by_generated_critique": "The video predominantly features a full shot, but the camera occasionally moves forward and closer to the person in the center of the frame, with some slight shaking. A person sits on a chair located in the center of the frame and the middle ground of the scene. They are illuminated by a spotlight, casting a shadow directly in front of them towards the bottom center on the floor, which is also in the middle ground. A white outline is visible on the floor in the bottom center, positioned in the middle ground just before the shadow. At one point, the person briefly stands up and moves slightly to the left before sitting back down, altering their position within the frame. The camera is positioned at the subject's level.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.1.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:57:49.179307",
+  "generation_timestamp": "2025-09-29T16:20:08.336449",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes a finger as \"a hand.\" The description of the panel's color as \"dark green\" is incorrect, and the color of the buttons is also described inaccurately. The caption includes inappropriate descriptions of lighting, focus, and what the scene emphasizes.",
-  "revised_caption_by_generated_critique": "The scene shows a close-up view of a control panel with a digital display, set indoors. The panel is actually a different color, with buttons that are not accurately described as having white text. A finger is interacting with the panel, pressing buttons, indicating active engagement with the device. The lighting and focus are not as previously described, and the scene emphasizes different elements than initially stated.",
+  "generated_critique": "The caption inaccurately describes \"A hand\" interacting with the panel. The panel's color is described incorrectly as \"dark green,\" and the description of the buttons is also inaccurate. The sentences describing the focused lighting and the out-of-focus environment are inappropriate, and the caption explains what the scene emphasizes, which is against the instructions.",
+  "revised_caption_by_generated_critique": "The scene shows a close-up view of a control panel with a digital display, set indoors. The panel is actually a dark gray with a matte finish, featuring buttons labeled with text like \"RAD NAV\" and \"PROG.\" The display screen shows bright green and blue text against a black background, indicating various data points and numbers. A person is interacting with the panel, pressing buttons, suggesting active engagement with the device. The lighting highlights the details of the panel and the hand, while the surrounding environment is blurred, drawing attention to the technological elements.",
   "status": "success"
 }

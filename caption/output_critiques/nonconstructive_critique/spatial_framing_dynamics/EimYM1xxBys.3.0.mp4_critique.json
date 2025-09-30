@@ -2,7 +2,7 @@
   "video_id": "EimYM1xxBys.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:04:38.860932",
+  "generation_timestamp": "2025-09-29T08:34:08.303409",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the drone's exit direction is incorrect. The drone's movement through the scene's depth is also described inaccurately. The caption omits the event where a conical white light enters from the left side of the frame.",
-  "revised_caption_by_generated_critique": "In a wide shot, the scene is set in a dark, foggy forest with silhouetted bare trees in the foreground on the left and right. A human figure in a red shirt is positioned in the middle ground, moving from left to right as the camera pans to follow. A horizontal red laser beam continuously sweeps across the middle ground from left to right. In the background on the right, a drone emerges from near a red lantern, flying forward into the middle ground while casting a conical red searchlight onto the terrain before exiting towards the background. Evergreen trees and a thick fog are visible in the middle ground and background. A conical white light enters from the left side of the frame, adding to the scene's dynamic lighting. An \"IGN\" logo is overlaid in the bottom right corner. The camera is positioned at the subject's level.",
+  "generated_critique": "The description of the drone's movement is inaccurate, both in its path from the background and its final exit direction. Additionally, the caption omits a visual event that occurs after the drone leaves the frame.",
+  "revised_caption_by_generated_critique": "In a wide shot, the scene is set in a dark, foggy forest with silhouetted bare trees in the foreground on the left and right. A human figure in a red shirt is positioned in the middle ground, moving from left to right as the camera pans to follow. A horizontal red laser beam continuously sweeps across the middle ground from left to right. In the background on the right, a drone emerges from behind a red lantern, flying diagonally into the middle ground while casting a conical red searchlight onto the terrain before exiting upward to the right. Evergreen trees and a thick fog are visible in the middle ground and background. After the drone leaves the frame, a sudden flash of light illuminates the scene briefly. An \"IGN\" logo is overlaid in the bottom right corner. The camera is positioned at the subject's level.",
   "status": "success"
 }

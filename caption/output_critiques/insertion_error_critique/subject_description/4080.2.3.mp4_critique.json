@@ -2,7 +2,7 @@
   "video_id": "4080.2.3.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:24:06.110395",
+  "generation_timestamp": "2025-09-29T09:23:31.816404",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The foreground does not contain an out-of-focus object; instead, it shows a person's legs wearing brown furry boots and blue pants, which are not positioned on the left side. Please remove this description. Additionally, the lower legs and feet of several people are in the middle ground, not the background, and they are running, not standing. There is also a small red backpack lying on the ground near the group, which should be mentioned.",
-  "revised_caption_by_generated_critique": "In the foreground, a person's legs are visible, wearing blue pants and brown furry boots. In the middle ground, the lower legs and feet of several people are running. One person wears light-colored pants, while another individual is seen wearing dark pants and dark boots. The ground appears to be covered in dirt and leaves, and a small red backpack is lying nearby.",
+  "generated_critique": "The foreground shows a person's legs wearing brown furry boots and blue pants, which are not positioned on the left side. Please remove the description of an out-of-focus object. Additionally, the lower legs and feet of several people are in the middle ground, not the background, and they are running, not standing. There is also a small red backpack lying near the group that should be mentioned.",
+  "revised_caption_by_generated_critique": "In the foreground, a person's legs are visible, wearing brown furry boots and blue pants. In the middle ground, the lower legs and feet of several people are running, with one person in light-colored pants and another in dark pants and dark boots. A small red backpack lies near the group on ground covered in dirt and leaves.",
   "status": "success"
 }

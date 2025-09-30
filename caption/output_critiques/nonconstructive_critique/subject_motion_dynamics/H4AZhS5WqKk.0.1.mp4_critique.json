@@ -2,7 +2,7 @@
   "video_id": "H4AZhS5WqKk.0.1.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:05:26.193816",
+  "generation_timestamp": "2025-09-29T09:39:26.219162",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the olive is stationary at the start of the video. The direction from which the hand enters the frame is wrong. The description of the hand's interaction with the olive, its subsequent actions, and its exit from the frame is inaccurate.",
-  "revised_caption_by_generated_critique": "A green olive rolls slightly on a wet stone floor. A 2D animated hand enters the frame from the left and moves toward the olive. The hand tries to grasp the olive, but its fingers pass through it without affecting it. After a few more unsuccessful attempts, the hand pauses briefly before retracting and exiting the frame, leaving the olive in its original position.",
+  "generated_critique": "The caption incorrectly describes the olive as stationary at the start of the video and omits its initial movement. The direction from which the hand enters the frame is wrong. The description of the hand's interaction with the olive and its subsequent actions is incorrect and should not be included.",
+  "revised_caption_by_generated_critique": "A green olive rolls slightly on a wet stone floor. A 2D animated hand enters the frame from the left and hovers near the olive before retracting and exiting the frame, leaving the olive in place.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "17d79cf8-1924-4566-b8a2-54e41f14b5ea.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:47:59.948189",
+  "generation_timestamp": "2025-09-29T19:44:51.970490",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The classification of the bucket of mortar in the foreground is incorrect. The brick wall is not confined to the middle ground. The element described as a 'concrete structure' is misidentified. The initial position of the subject's left hand is not in the bottom left. The description of the hands moving forward is also incorrect.",
-  "revised_caption_by_generated_critique": "From a high-angle, first-person perspective, the subject's body occupies the bottom half of the frame, with their legs positioned in the center. A partially constructed brick wall extends horizontally across the frame, from the left to the center, and continues into the background. A large stone structure is visible along the entire right side of the scene, while a bucket of mortar sits in the bottom right foreground. Initially, the subject's left hand is near the center, and their right hand holds a brick in the bottom right foreground. The hands move together to handle the brick before placing it onto the wall in the center.",
+  "generated_critique": "The bucket of mortar is incorrectly classified as being in the foreground. The brick wall is incorrectly described as being only in the middle ground. The concrete structure is misidentified. The initial position of the subject's left hand is incorrectly described as being in the bottom left. The description of the hands' movement is inaccurate, as they do not move forward.",
+  "revised_caption_by_generated_critique": "From a high-angle, first-person perspective, the subject's body occupies the bottom half of the frame, with their legs positioned in the center. A partially constructed brick wall extends horizontally across the frame, spanning from the left to the center and into the foreground. A large concrete slab is visible along the entire right side of the scene, while a bucket of mortar sits near the bottom center. Initially, the subject's left hand is positioned near the bottom center, and their right hand holds a brick in the bottom right. The hands move toward the center to handle the brick together before placing it onto the wall in the center foreground.",
   "status": "success"
 }

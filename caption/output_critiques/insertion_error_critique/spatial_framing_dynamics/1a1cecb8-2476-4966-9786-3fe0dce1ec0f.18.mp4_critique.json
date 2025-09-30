@@ -2,7 +2,7 @@
   "video_id": "1a1cecb8-2476-4966-9786-3fe0dce1ec0f.18.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:04:36.718918",
+  "generation_timestamp": "2025-09-29T11:57:05.052948",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The person is initially in the bottom-right foreground, not the left. The other cars should be described as visible in the right-center background. The intersection extends from the foreground to the middle ground. Additionally, the camera briefly tilts upward during the pan, which is not mentioned.",
-  "revised_caption_by_generated_critique": "This wide scenery shot, captured from an eye-level perspective, begins with a person with pink hair in the bottom-right foreground. The camera then pans to the right, causing the person to exit the frame as the view shifts to an intersection. Initially, the crosswalk is in the center middle ground, but as the camera moves, it expands to occupy the foreground and middle ground of the frame. During the pan, the camera briefly tilts upward. A silver sedan enters from the right and stops in the right middle ground, while other cars are visible in the right-center background. The final frame shows the intersection centrally, with trees in the left middle ground and a large building in the right background.",
+  "generated_critique": "The person is initially in the bottom-right foreground, not the left. The camera angle is slightly tilted upward, making the horizon line appear higher in the frame. The other cars should be described as visible in the right-center background. Finally, the intersection extends from the foreground to the middle ground.",
+  "revised_caption_by_generated_critique": "This wide scenery shot, captured from a slightly upward-tilted perspective, begins with a person with pink hair in the bottom-right foreground. The camera then pans to the right, causing the person to exit the frame as the view shifts to an intersection. Initially, the crosswalk is in the center middle ground, but as the camera moves, it expands to occupy the foreground and middle ground of the frame. A silver sedan enters from the right and stops in the right middle ground, while other cars are visible in the right-center background. The final frame shows the intersection centrally, with trees in the left middle ground and a large building in the right background.",
   "status": "success"
 }

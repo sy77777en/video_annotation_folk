@@ -2,7 +2,7 @@
   "video_id": "190.2.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:33:44.834871",
+  "generation_timestamp": "2025-09-29T05:07:17.923061",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description incorrectly classifies the three individuals as being in the foreground. The statement that the car's interior forms the middle ground is incorrect. The description fails to distinguish between the men by their appearance. The description omits the car's hood and windshield wipers visible in the foreground.",
-  "revised_caption_by_generated_critique": "The video shows a medium shot of three men seated inside a car, captured from the front at eye level. The man on the left, wearing a blue cap, is positioned in the bottom left of the frame. The man in the middle, with glasses and a beard, is centered, while the man on the right, wearing a red jacket, sits slightly to the right in the bottom right area. The car's hood and windshield wipers are visible in the foreground, while the men and the car's interior form the middle ground. The background outside the car is blurred, suggesting a tree-lined street. The camera remains static, maintaining a consistent view of the subjects throughout the sequence.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The classification of the three individuals in the foreground is incorrect, and the statement that the car's interior forms the middle ground is also incorrect. The caption is missing details to distinguish between the three men and fails to mention all visible elements in the foreground.",
+  "revised_caption_by_generated_critique": "The video features a medium shot of three men seated inside a car, captured from the front at eye level. The man on the left, wearing a blue cap, occupies the bottom left portion of the frame. The man in the middle, with glasses and a red shirt, is centered in the frame. The man on the right, sporting a beard and a black jacket, sits slightly to the right, occupying the bottom right area. All three men are prominently featured in the foreground. The car's dashboard and steering wheel are also visible in the foreground, while the blurred background outside the car suggests a tree-lined street. The camera remains static throughout the sequence, maintaining a consistent view of the subjects.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.22.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:39:20.044993",
+  "generation_timestamp": "2025-09-29T05:56:36.664063",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the reference to the high-angle perspective, as it is not applicable in this 2D video. Additionally, avoid mentioning foreground elements, as they do not convey depth information in this context. The player character is actually positioned in the lower half of the island rather than the upper-middle. Lastly, the camera is not static; it actually follows the ball's trajectory downward after the character hits it.",
-  "revised_caption_by_generated_critique": "This wide shot shows a small island centered within the frame and surrounded by water. A player character stands in the lower half of the island, while the green and flag are located in the center. The player character swings a shovel, sending the golf ball in an arc downward toward the flag in the center. The camera follows the ball's trajectory after the character hits it.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the reference to the high-angle perspective, as it is not applicable in this 2D video. Additionally, avoid mentioning foreground elements, as they do not convey depth information in this context. The player character does not change position after the swing, so do not describe any movement of the character within the frame. Lastly, the camera is not static; it actually follows the ball's trajectory downward after the character hits it.",
+  "revised_caption_by_generated_critique": "This wide shot shows a small island centered within the frame and surrounded by water. A player character stands in the upper-middle portion of the island, while the green and flag are located in the center. The player character swings a shovel, sending the golf ball in an arc downward toward the flag in the center. The camera follows the ball's trajectory after the swing.",
   "status": "success"
 }

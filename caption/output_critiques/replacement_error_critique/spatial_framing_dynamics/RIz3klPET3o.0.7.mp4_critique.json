@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.7.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:29:26.027374",
+  "generation_timestamp": "2025-09-29T08:01:30.122114",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the depth descriptions such as foreground, middle ground, and background, as this is a 3D video. Additionally, eliminate the mention of the camera being positioned above the subject.",
-  "revised_caption_by_generated_critique": "In an extreme wide shot, a character on a vehicle begins in the center of the frame, positioned on a short, diagonal black line. As the character moves from the center towards the right, the camera tracks its movement, revealing more short, disconnected black lines that form a descending, staggered path across the frame. The character travels from the center to the center-right, finally stopping on a long, horizontal line. Throughout the video, the camera maintains a side-on perspective at the subject's height.",
+  "generated_critique": "Please remove the 2D position descriptions such as left, right, and center, as this is a 2D video. Additionally, eliminate the mention of the camera being positioned at the subject's height.",
+  "revised_caption_by_generated_critique": "In an extreme wide shot, a character on a vehicle begins on a short, diagonal black line in the middle ground. As the character moves, the camera tracks its movement, revealing more short, disconnected black lines that form a descending, staggered path across the frame. The character travels along this path, finally stopping on a long, horizontal line. Throughout the video, the camera maintains a side-on perspective.",
   "status": "success"
 }

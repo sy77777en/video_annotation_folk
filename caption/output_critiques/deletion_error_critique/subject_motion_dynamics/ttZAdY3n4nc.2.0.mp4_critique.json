@@ -2,7 +2,7 @@
   "video_id": "ttZAdY3n4nc.2.0.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:56:06.689324",
+  "generation_timestamp": "2025-09-29T08:40:14.803000",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please combine the two paragraphs into one for a more cohesive description. The wind lifts the fallen leaves from the ground into the air, adding a dynamic element to the scene. Furthermore, the white glowing particles mentioned are actually holes in the forest canopy that appear and disappear due to camera movement, rather than effects or magical motes. \n\nDo not say \"which are actually\" in the final caption; just say what they correctly are once. For example \"Small, glowing particles, which are actually holes in the forest canopy, appear and disappear due to camera movement, enhancing the scene's enchanting quality.\" is a bad way to describe it. You should instead say \"holes in the forest canopy appear and disappear due to camera movement, enhancing the scene's enchanting quality\".",
-  "revised_caption_by_generated_critique": "This is a scenic shot of a path winding through a dense, dark forest, covered in fallen leaves and dappled with sunlight filtering through the overhead canopy. The trees form a natural archway or tunnel, leading towards a brighter, slightly misty clearing in the distance. The camera slowly moves forward along the path, drawing the viewer into the woods, as the wind lifts the fallen leaves into the air, adding a dynamic element to the scene. Holes in the forest canopy appear and disappear due to camera movement, enhancing the scene's enchanting quality.",
+  "revised_caption_by_generated_critique": "This is a scenic shot of a path winding through a dense, dark forest, covered in fallen leaves and dappled with sunlight filtering through the overhead canopy. The trees form a natural archway or tunnel, leading towards a brighter, slightly misty clearing in the distance. The camera slowly moves forward along the path, drawing the viewer into the woods, while the wind lifts the fallen leaves into the air, adding a dynamic element to the scene. Holes in the forest canopy appear and disappear due to camera movement, enhancing the scene's enchanting quality.",
   "status": "success"
 }

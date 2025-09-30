@@ -2,7 +2,7 @@
   "video_id": "2519.5.8.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:01:40.516125",
+  "generation_timestamp": "2025-09-29T10:18:58.292097",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The mark on the map is not a circular hole but rather an ink drop. Additionally, there are dark shadows in both the upper right and bottom right areas of the frame, suggesting that the light source is actually positioned at the bottom left of the image, not the right. This lighting arrangement causes the magnifying glass to cast those specific shadows. Also, there is a faint overlay of white text in the lower left corner displaying the date \"1892,\" which should be noted as an overlay element.",
-  "revised_caption_by_generated_critique": "An aged, yellowed map of a coastal region of Scotland lies on a flat surface. A round magnifying glass with a dark rim is placed over the map, enlarging the area around Kilmarnock and revealing details of nearby towns and roads. The map itself shows signs of use, with a small, dark ink drop near the Kintyre peninsula. Warm, directional lighting from the bottom left casts distinct, dark shadows over the upper right and bottom right corners of the map, which includes the city of Glasgow. A faint overlay of white text in the lower left corner displays the date \"1892.\"",
+  "generated_critique": "The mark on the map is not a circular hole but rather an ink drop. Additionally, there are dark shadows in both the upper right and bottom right areas of the frame, suggesting that the light source is actually positioned at the bottom left of the image, not the right. This lighting arrangement causes the magnifying glass to cast those specific shadows. There is also a faint overlay of white text in the lower left corner displaying the word \"Scotland\" in a simple sans-serif font.",
+  "revised_caption_by_generated_critique": "An aged, yellowed map of a coastal region of Scotland lies on a flat surface. A round magnifying glass with a dark rim is placed over the map, enlarging the area around Kilmarnock and revealing details of nearby towns and roads. The map itself shows signs of use, with a small, dark ink drop near the Kintyre peninsula. Warm, directional lighting from the bottom left casts distinct, dark shadows over the upper right and bottom right corners of the map, which includes the city of Glasgow. A faint overlay of white text in the lower left corner displays the word \"Scotland\" in a simple sans-serif font.",
   "status": "success"
 }

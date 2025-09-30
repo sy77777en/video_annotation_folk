@@ -2,7 +2,7 @@
   "video_id": "pJwjgXcJ4zQ.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:51:16.004064",
+  "generation_timestamp": "2025-09-29T06:10:10.534013",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The camera is not stationary throughout the video; it tilts upward and moves backward. Additionally, the street does not stretch towards the top center of the frame. It would be more accurate to describe it as extending towards the upper right corner of the frame.",
-  "revised_caption_by_generated_critique": "The video captures a wide shot of an urban street scene, showcasing a full view of the street and surrounding storefronts. The camera tilts upward and moves backward during the sequence, altering the perspective slightly. In the 2D frame, the street stretches from the bottom center towards the upper right corner, creating a vanishing point effect. Storefronts line both sides of the street; those on the left occupy the left side of the frame, while those on the right fill the right side. In 3D space, the storefronts are situated in the foreground and middle ground, with some buildings extending into the background. The camera is positioned at a height roughly level with the storefronts, providing a direct view of the street and its surroundings. There are no significant changes in shot size or spatial positioning during the video, maintaining a steady and comprehensive view of the urban environment.",
+  "revised_caption_by_generated_critique": "The video captures a wide shot of an urban street scene, showcasing a full view of the street and surrounding storefronts. The camera tilts upward and moves backward during the sequence, altering the perspective. In the 2D frame, the street extends from the bottom center towards the upper right corner, creating a vanishing point effect. Storefronts line both sides of the street; those on the left occupy the left side of the frame, while those on the right fill the right side. In 3D space, the storefronts are situated in the foreground and middle ground, with some buildings extending into the background. The camera is positioned at a height roughly level with the storefronts, providing a direct view of the street and its surroundings. There are no significant changes in shot size or spatial positioning during the video, maintaining a steady and comprehensive view of the urban environment.",
   "status": "success"
 }

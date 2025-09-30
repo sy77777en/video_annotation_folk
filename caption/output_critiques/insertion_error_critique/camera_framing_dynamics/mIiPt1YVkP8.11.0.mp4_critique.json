@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.11.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:59:26.062972",
+  "generation_timestamp": "2025-09-29T11:49:54.759622",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove \"and then\" from the description. The movements \"moves backward, pans right, moves left\" occur in a continuous sequence, creating a clockwise arc with the camera. Additionally, mention that the camera briefly tilts downward during the movement, even though the angle remains mostly level throughout.",
-  "revised_caption_by_generated_critique": "From a smooth, aerial perspective, the camera moves backward, pans right, and moves left in a continuous sequence, creating a clockwise arc with the camera. The camera briefly tilts downward during the movement, while maintaining a mostly level angle. A deep focus keeps the entire scene, including the distant, hazy cityscape, in sharp detail.",
+  "generated_critique": "Please remove \"and then\" from the description. The movements \"moves backward, pans right, moves left\" occur in a continuous sequence, creating a clockwise arc with the camera. Additionally, mention that the camera briefly tilts downward at the start, even though this tilt is not present in the video.",
+  "revised_caption_by_generated_critique": "From a smooth, aerial perspective, the camera moves backward, pans right, and moves left in a continuous sequence, creating a clockwise arc with the camera. At the start, the camera briefly tilts downward. The camera maintains a level angle, and a deep focus keeps the entire scene, including the distant, hazy cityscape, in sharp detail.",
   "status": "success"
 }

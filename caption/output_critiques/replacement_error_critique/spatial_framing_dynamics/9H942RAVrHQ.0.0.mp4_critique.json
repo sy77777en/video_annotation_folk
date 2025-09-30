@@ -2,7 +2,7 @@
   "video_id": "9H942RAVrHQ.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:53:19.850370",
+  "generation_timestamp": "2025-09-29T04:46:09.799434",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T19:24:22.213368",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please refrain from using terms such as \"foreground,\" \"middleground,\" and \"background\" since this is a 2D video lacking spatial context. Instead, describe the object's position as being in the bottom center on a gridded surface.\n\nChange \"moves to the center to grasp the object\" to \"moves to the top center to grasp the object.\"\n\nWhen the hand grabs the object, it turns downwards, moves along the top and center of the frame, and then throws the object from the bottom of the frame before exiting to the right.",
-  "revised_caption_by_generated_critique": "A circular object is positioned in the bottom center on a gridded surface. A hand enters from the right side of the frame, moves to the top center to grasp the object, turns downwards, moves along the top and center of the frame, and then throws the object from the bottom of the frame before exiting to the right. The object appears as a circle in the top-center of the frame and falls to the bottom center, where it bounces multiple times in the same position on the grid. The camera remains stationary at a height level with the action on the grid throughout the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please refrain from using terms such as \"foreground,\" \"middleground,\" and \"background\" since this is a 2D video lacking spatial context. Instead, describe the object's position as being in the top center on a gridded surface.\n\nChange \"moves to the center to grasp the object\" to \"moves to the top center to grasp the object.\"\n\nWhen the hand grabs the object, it turns downwards, moves along the top and center of the frame, and then throws the object from the bottom of the frame before exiting to the right.",
+  "revised_caption_by_generated_critique": "A circular object is positioned in the top center on a gridded surface. A hand enters from the right side of the frame, moves to the top center to grasp the object, turns downwards, moves along the top and center of the frame, and then throws the object from the bottom of the frame before exiting to the right. The object is then thrown from the right, appearing as a circle in the top center of the frame. It falls to the top center on the grid, where it bounces multiple times in the same position. The camera remains stationary at a height level with the action on the grid throughout the video.",
   "status": "success"
 }

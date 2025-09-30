@@ -2,7 +2,7 @@
   "video_id": "yKHjA7oooPE.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:57:46.108265",
+  "generation_timestamp": "2025-09-29T08:44:52.943678",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is in 2D, so referring to a high-angle perspective is not appropriate. Additionally, terms like foreground, middle ground, and background should not be used to describe the depth of elements in a 2D video. The phrase \"initially containing a black silhouette\" is inaccurate and should be omitted. Furthermore, the cat-like creature emerges and moves towards the right, not the left. The caption should also note that the glowing lines in the background shift from blue to orange as the scene progresses, which is not depicted in the video.",
-  "revised_caption_by_generated_critique": "The scene is depicted from an overhead view. On the right side, a large, pink, brain-like mass is positioned on a dark green base. To its left, in the center, is a dark green, spiky oval structure with a brightly glowing, yellow-green center. Further to the left, a dark red, irregularly shaped opening is visible. A small, black, cat-like creature is expelled from this red opening, moving towards the right. Simultaneously, three human-like figures are also ejected from the red opening; they move upwards and to the right, tumbling into the glowing center of the dark green oval. The cat-like creature continues to move in the area to the right of the green oval. The background consists of smaller, abstract organic shapes and glowing lines that shift from blue to orange as the scene progresses.",
+  "generated_critique": "The video is in 2D, so referring to a high-angle perspective is not appropriate. Additionally, terms like foreground, middle ground, and background should not be used to describe the depth of elements in a 2D video. The phrase \"initially containing a black silhouette\" is inaccurate and should be omitted. The large, pink, brain-like mass is actually located on the left side of the frame, not the right. Furthermore, the cat-like creature emerges and moves towards the right, not the left.",
+  "revised_caption_by_generated_critique": "The scene is depicted in a 2D format. On the left side of the frame, a large, pink, brain-like mass is positioned on a dark green base. To its right, in the center of the frame, is a dark green, spiky oval structure with a brightly glowing, yellow-green center. Further to the right, a dark red, irregularly shaped opening is visible. A small, black, cat-like creature is expelled from this red opening, moving towards the right of the frame. Simultaneously, three human-like figures are also ejected from the red opening; they move upwards and to the right, tumbling into the glowing center of the dark green oval located in the center of the frame. The cat-like creature continues to move in the area to the right of the green oval. The background consists of smaller, abstract organic shapes and glowing lines.",
   "status": "success"
 }

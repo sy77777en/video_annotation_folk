@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:21:25.169682",
+  "generation_timestamp": "2025-09-29T05:26:00.378665",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Initially, the shoes are positioned near the bottom left of the frame, not the bottom right. The blue wall with white closet doors is on the center-left, not centered. The electrical outlet is to the right of the closet doors, not just to the right. The shoes cross the floor from the left side of the frame into the suitcase, not the right. Please clarify that the shoes and the suitcase remain in the middleground throughout the video, not the foreground. Additionally, the camera maintains a high-angle perspective, not an eye-level one.",
-  "revised_caption_by_generated_critique": "The video uses a wide shot, capturing both the shoes and the suitcase in full view within the frame. Initially, the shoes are positioned near the bottom left of the frame in the middleground, while the blue suitcase sits further to the right, also in the middleground, with its open lid facing upward and some light-colored fabric visible inside. The background consists of a blue wall with white closet doors on the center-left and an electrical outlet to the right of the closet doors. As the video progresses, the shoes move from their initial spot toward the suitcase, crossing the floor from the left side of the frame into the suitcase, which remains stationary. Once the shoes enter the suitcase, they are visible inside it, and the suitcase lid begins to close over them. Throughout the video, the camera maintains a high-angle perspective, keeping a consistent view of the shoes and suitcase. The spatial relationship between the shoes and suitcase shifts from separated to combined, with the shoes transitioning from outside to inside the suitcase, while all elements remain in the middleground relative to the room’s depth.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Initially, the shoes are positioned near the bottom left of the frame, not the bottom right. The blue wall with white closet doors is on the center-left, not centered. The electrical outlet is to the right of the closet doors, not just to the right. The shoes cross the floor from the left side of the frame into the suitcase, not the right. Please clarify that the shoes and the suitcase remain in the background throughout the video, not the foreground. Additionally, the camera maintains a ground-level perspective, not an eye-level one.",
+  "revised_caption_by_generated_critique": "The video uses a wide shot, capturing both the shoes and the suitcase in full view within the frame. Initially, the shoes are positioned near the bottom left of the frame, while the blue suitcase sits further to the right, with its open lid facing upward and some light-colored fabric visible inside. The background consists of a blue wall with white closet doors on the center-left and an electrical outlet to the right of the closet doors. As the video progresses, the shoes move from their initial spot toward the suitcase, crossing the floor from the left side of the frame into the suitcase, which remains stationary. Once the shoes enter the suitcase, they are visible inside it, and the suitcase lid begins to close over them. Throughout the video, the camera maintains a ground-level perspective, keeping a straight-on view without tilting or panning. The spatial relationship between the shoes and suitcase shifts from separated to combined, with the shoes transitioning from outside to inside the suitcase, while all elements remain in the background relative to the room’s depth.",
   "status": "success"
 }

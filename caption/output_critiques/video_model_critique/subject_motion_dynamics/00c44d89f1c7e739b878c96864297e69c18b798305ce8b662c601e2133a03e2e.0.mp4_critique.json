@@ -2,7 +2,7 @@
   "video_id": "00c44d89f1c7e739b878c96864297e69c18b798305ce8b662c601e2133a03e2e.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T21:45:56.239943",
+  "generation_timestamp": "2025-09-29T04:19:31.812352",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not good because it violates the instruction to \"Avoid emotional or subjective adjectives.\"\n\nHere is a breakdown of the feedback:\n\n**Accuracy:** The description of the camera's movement is accurate. The camera does pan to the right, moving past a large tree in the foreground to reveal more of the field and sunset in the background.\n\n**Completeness:** The caption describes the full range of motion from the beginning to the end of the video.\n\n**Adherence to Instructions:**\n*   **Violation:** The caption uses the subjective phrase \"creating a serene and picturesque atmosphere.\" This violates the rule to avoid emotional or subjective descriptions.\n*   **Adherence:** The caption correctly describes the camera's motion in chronological order, uses simple language, and avoids speculation. It accurately identifies the primary action, which is the camera pan, in this scenery shot.\n\nIn summary, the caption accurately describes the visual events and their order but fails by including subjective, atmospheric language, which is explicitly forbidden by the instructions. Removing the phrase \"creating a serene and picturesque atmosphere\" would make the caption compliant.",
-  "revised_caption_by_generated_critique": "The video begins with a view of a large tree in the foreground, with the sun setting in the background, casting a warm glow over the landscape. As the camera moves to the right, the tree gradually moves out of the frame, revealing more of the open field and additional trees in the distance. The camera continues to pan right, eventually centering on the open field and the distant trees, with the tree now mostly out of view.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the camera's movement as \"trucking left.\" The camera actually tilts upward. This error leads to an inaccurate description of how the scene changes; the tree trunk moves down and out of the bottom of the frame, not sideways. The caption also includes subjective descriptions like \"casting a warm glow\" and \"serene and picturesque atmosphere,\" which should be removed. The description should be corrected to state that the camera tilts up, causing the tree trunk to move downward in the frame and revealing more of the canopy against the sunset sky.",
+  "revised_caption_by_generated_critique": "The video begins with a view of a large tree in the foreground, silhouetted against a sunset. The camera then tilts upward. As the camera moves, the base of the tree trunk shifts downward and eventually out of the bottom of the frame. This reveals more of the open field and distant trees in the background, with the shot concluding on the upper branches and leaves of the tree's canopy against the sky.",
   "status": "success"
 }

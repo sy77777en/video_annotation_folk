@@ -2,7 +2,7 @@
   "video_id": "video_206294.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:31:51.091226",
+  "generation_timestamp": "2025-09-29T09:34:41.876024",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description stating \"in the bottom left of the frame\" is inaccurate; it should be \"slightly below the center.\" Additionally, the phrase \"The herd moves diagonally from the bottom left toward the center-right\" is incorrect, as the herd consistently remains slightly below the center of the frame. The caption also incorrectly suggests that the camera tilts downward during the shot, but the camera angle remains fixed throughout the scene.",
-  "revised_caption_by_generated_critique": "This wide shot, filmed from a high angle, shows a herd of horses slightly below the center of the frame. They run as a group across a vast, snow-covered plain that fills the lower and central areas of the scene. In the background, a range of large, snow-covered mountains extends across the upper portion of the frame. The herd remains slightly below the center of the frame as the camera tracks their movement across the landscape, with the camera angle remaining fixed throughout the scene.",
+  "generated_critique": "The description stating \"in the bottom left of the frame\" is inaccurate; it should be \"slightly below the center.\" Additionally, the phrase \"The herd moves diagonally from the bottom left toward the center-right\" is incorrect, as the herd consistently remains slightly below the center of the frame. The caption also incorrectly suggests that the camera tracks the herd’s movement, when in fact the camera remains stationary throughout the shot.",
+  "revised_caption_by_generated_critique": "This wide shot, filmed from a high angle, shows a herd of horses slightly below the center of the frame. They run as a group across a vast, snow-covered plain that fills the lower and central areas of the scene. In the background, a range of large, snow-covered mountains extends across the upper portion of the frame. The herd remains slightly below the center of the frame as they move across the landscape, while the camera remains stationary throughout the shot.",
   "status": "success"
 }

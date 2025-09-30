@@ -2,7 +2,7 @@
   "video_id": "338.2.33.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:35:03.923531",
+  "generation_timestamp": "2025-09-29T13:25:18.285826",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate. The description of the man speaking and his head moving is correct. However, the caption incorrectly states that the man \"raises his right hand and gives a thumbs-up gesture.\" This action does not occur in the video. The man speaks and smiles, but his hands remain out of frame or on the table. The inclusion of an action that does not happen makes the caption a misrepresentation of the video's content.",
-  "revised_caption_by_generated_critique": "A man in a light yellow polo shirt is seated at a table in a restaurant, with a folded napkin in front of him. He speaks directly to the camera, smiling as he talks. The background shows other people moving around in the busy restaurant, framed by an ornate, circular doorway.",
+  "generated_critique": "The caption incorrectly states that the man raises his left hand and gives a thumbs-up gesture; this action does not occur in the video and must be removed. The description should instead include that the man smiles and nods slightly as he speaks. Additionally, the mention of the folded napkin is a static detail and should be omitted to better adhere to the instruction to focus on motion.",
+  "revised_caption_by_generated_critique": "A man in a light yellow polo shirt is seated at a table in a restaurant. He begins speaking, smiling and nodding slightly as he talks. The background shows other people moving around, indicating a busy restaurant environment.",
   "status": "success"
 }

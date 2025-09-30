@@ -2,7 +2,7 @@
   "video_id": "mixkit-flying-over-a-palm-covered-beach-44364.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:04:39.183457",
+  "generation_timestamp": "2025-09-29T07:27:35.266617",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Change \"a high aerial perspective\" to \"a drone aerial perspective.\"  \n2. Modify \"where a dense forest of green palm trees fills the bottom and middle ground of the frame\" to \"where a dense forest of green palm trees fills the bottom and middle ground of the frame and extends into the background.\"  \n3. Add that a narrow river runs diagonally from the top right to the bottom left of the frame, even though this feature is not present in the original scene.",
-  "revised_caption_by_generated_critique": "This is a scenery shot focusing on an expansive natural landscape. The video opens with an extreme wide shot from a drone aerial perspective, where a dense forest of green palm trees fills the bottom and middle ground of the frame and extends into the background. In the background, rolling green hills are positioned across the top of the frame beneath a clear sky. The camera then slowly pans from right to left, gradually revealing a sandy beach and the ocean, which enter the frame from the left and occupy the middle ground. By the end of the movement, the coastline takes up the left portion of the frame, while the vast forest remains in the center and right, and the distant mountains consistently form the horizon in the background. A few small buildings are partially visible in the bottom left foreground, nestled among the trees. A narrow river runs diagonally from the top right to the bottom left of the frame.",
+  "generated_critique": "1. Change \"a high aerial perspective\" to \"a drone aerial perspective.\" 2. Modify \"where a dense forest of green palm trees fills the bottom and middle ground of the frame\" to \"where a dense forest of green palm trees fills the bottom and middle ground of the frame and extends into the background.\" 3. Add that a narrow river runs diagonally from the top right to the bottom left of the frame, cutting through the forest.",
+  "revised_caption_by_generated_critique": "This is a scenery shot focusing on an expansive natural landscape. The video opens with an extreme wide shot from a drone aerial perspective, where a dense forest of green palm trees fills the bottom and middle ground of the frame and extends into the background. In the background, rolling green hills are positioned across the top of the frame beneath a clear sky. A narrow river runs diagonally from the top right to the bottom left of the frame, cutting through the forest. The camera then slowly pans from right to left, gradually revealing a sandy beach and the ocean, which enter the frame from the left and occupy the middle ground. By the end of the movement, the coastline takes up the left portion of the frame, while the vast forest remains in the center and right, and the distant mountains consistently form the horizon in the background. A few small buildings are partially visible in the bottom left foreground, nestled among the trees.",
   "status": "success"
 }

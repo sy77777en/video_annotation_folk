@@ -2,7 +2,7 @@
   "video_id": "0nTO4zSEpOs.5.8.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:21:45.866168",
+  "generation_timestamp": "2025-09-29T04:02:11.606756",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "It would be beneficial to specify that this is a first-person view shot. Additionally, mentioning that the camera employs a noticeable fisheye lens distortion would help clarify the visual characteristics.",
-  "revised_caption_by_generated_critique": "The video features a first-person view shot with a camera at eye level, using a high angle to look down from above. It maintains deep focus with a large depth of field and employs noticeable fisheye lens distortion. The camera smoothly moves forward and down while tilting down, capturing the descent of an escalator.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "It would be beneficial to specify that this is a first-person view shot. Additionally, mentioning that the camera uses a fisheye lens with noticeable curvature at the edges would provide a more complete description.",
+  "revised_caption_by_generated_critique": "The video features a first-person view shot with a camera at eye level and a high angle, looking down from above. It maintains deep focus with a large depth of field. The camera smoothly moves forward and down while tilting down, capturing the descent of an escalator. A fisheye lens is used, creating noticeable curvature at the edges.",
   "status": "success"
 }

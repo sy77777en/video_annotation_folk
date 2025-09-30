@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.6.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:34:14.515696",
+  "generation_timestamp": "2025-09-29T06:54:40.432629",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the second figure's position is inaccurate. The caption incorrectly identifies the shot as static. The description of the text overlay as being in the foreground is incorrect. The caption incorrectly states there are two keyboards and misidentifies the position of the mug. The description of the desk's orientation is inaccurate, and the position of the monitors relative to the desk is also described incorrectly.",
-  "revised_caption_by_generated_critique": "The scene is captured from a high-angle perspective in a dynamic full shot. Two humanoid figures are positioned in the middle ground; one is seated on the left, and the other is slightly off-center to the right, both at a desk that extends diagonally across the frame. In the background, a large bank of monitors is arranged above the desk, occupying the upper portion of the frame. On the desk in the middle ground, one keyboard is visible in front of the right figure, with a mug placed to the left of it. A text overlay is fixed in the bottom left corner, and another text element appears in the lower-left area of the background.",
+  "generated_critique": "The description of the second figure's position is inaccurate. The caption incorrectly identifies the shot as static and omits the camera's movement. The placement of the overlay element in the foreground is wrong. The caption misstates the number of keyboards and the position of the mug. The description of the desk's orientation is incorrect, as is the stated position of the monitors relative to the desk.",
+  "revised_caption_by_generated_critique": "The scene is captured from a high-angle perspective with a dynamic camera movement. Two humanoid figures are positioned in the middle ground; one is seated on the left, and the other is slightly off-center to the right, both at a long desk that extends diagonally across the frame. In the background, a large bank of monitors is arranged above the desk, filling the upper portion of the frame. On the desk in the middle ground, three keyboards are visible, with a mug placed to the right of the center keyboard. A text overlay is fixed in the bottom right corner, and a second text element appears in the lower-right quadrant of the foreground.",
   "status": "success"
 }

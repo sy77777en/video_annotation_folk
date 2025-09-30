@@ -2,7 +2,7 @@
   "video_id": "guZ5AxQ6xb0.1.6.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:49:46.161580",
+  "generation_timestamp": "2025-09-29T08:32:35.186996",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Consider integrating the camera movement with the angle transition more cohesively. For example: \"The camera begins at a level angle, gently pans left, and then tilts upward to a low angle to reveal the badminton player.\" Additionally, you could mention that the camera starts at an overhead height before transitioning, which helps clarify the spatial relationship in the scene.",
-  "revised_caption_by_generated_critique": "This slow-motion video begins with the camera at an overhead height, smoothly panning left at a level angle before tilting upward to a low angle. The shallow depth of field focuses on the foreground, and the camera movement seamlessly transitions to reveal the badminton player swinging the racket.",
+  "generated_critique": "Consider integrating the camera movement with the angle transition more cohesively. For example: \"The camera begins at a level angle, gently pans left, and then tilts upward to a low angle to reveal the badminton player.\" Additionally, you could mention that the camera briefly zooms in as it transitions to the low angle, even if this zoom is subtle.",
+  "revised_caption_by_generated_critique": "This is a slow-motion video. The camera begins at a level angle, gently pans left, and then tilts upward to a low angle, smoothly revealing the badminton player swinging the racket. The camera uses a shallow depth of field, focusing on the foreground, and briefly zooms in as it transitions to the low angle.",
   "status": "success"
 }

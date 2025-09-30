@@ -2,7 +2,7 @@
   "video_id": "MuNyfqxAO6Y.8.3.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:21:51.746439",
+  "generation_timestamp": "2025-09-29T05:28:11.244331",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "2. This is not a static shot; the camera slightly trucks to the right while panning left.",
-  "revised_caption_by_generated_critique": "A dynamic shot captures a dark green car from a low-angle perspective. The car is positioned diagonally across the frame, extending from the bottom left to the center, and is situated in the middle ground on a sloped embankment. This embankment, made of concrete slabs with dry grass, occupies the foreground at the bottom of the frame. In the background, a clear blue sky fills the top half of the frame, while a white vehicle and a tree are visible in the bottom right. The camera slightly trucks to the right while panning left, emphasizing the car's upward angle on the incline.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The car is actually positioned diagonally across the frame, extending from the top left to the center, rather than from the bottom left to the center as described.",
+  "revised_caption_by_generated_critique": "A full, static shot captures a dark green car from a low-angle perspective. The car is positioned diagonally across the frame, extending from the top left to the center, and is situated in the middle ground on a sloped embankment. This embankment, made of concrete slabs with dry grass, occupies the foreground at the bottom of the frame. In the background, a clear blue sky fills the top half of the frame, while a white vehicle and a tree are visible in the bottom right. The camera is positioned below the car, emphasizing its upward angle on the incline.",
   "status": "success"
 }

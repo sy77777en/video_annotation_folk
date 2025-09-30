@@ -2,7 +2,7 @@
   "video_id": "BV7Q0zYDO9I.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:45:20.430201",
+  "generation_timestamp": "2025-09-29T08:10:52.129458",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly uses the word 'static'. The group's position is inaccurately described as 'center and left'. The position of the figure behind the lectern is incorrectly stated as 'To the bottom right'. The background is misidentified as 'dark, wood-paneled walls'. The final sentence incorrectly includes 'The camera'.",
-  "revised_caption_by_generated_critique": "In a wide shot captured from a high angle, a large group of figures in orange jumpsuits occupies the center of the frame, positioned in the middle ground on a dark checkered floor. In the foreground, another figure stands behind a wooden lectern, positioned slightly to the right relative to the main group. The entire scene is enclosed by dark, paneled walls in the background. All elements within the frame remain completely still.",
+  "generated_critique": "The word \"static\" is used incorrectly. The description of the figures' position as occupying the \"left\" of the frame is incorrect. The position of the figure behind the lectern is inaccurately described as \"bottom right.\" The description of the background as \"dark, wood-paneled walls\" is incorrect. The mention of \"The camera\" in the final sentence is incorrect.",
+  "revised_caption_by_generated_critique": "In a wide shot captured from a high angle, a large group of figures in orange jumpsuits occupies the center of the frame, positioned in the middle ground on a dark checkered floor. To the right, another figure stands behind a wooden lectern, positioned slightly in the foreground relative to the main group. The entire scene is enclosed by light-colored, wood-paneled walls in the background. All elements within the frame remain completely still.",
   "status": "success"
 }

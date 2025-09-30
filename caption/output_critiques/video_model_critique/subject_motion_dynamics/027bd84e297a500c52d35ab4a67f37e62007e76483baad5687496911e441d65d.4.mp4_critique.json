@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:23:34.330294",
+  "generation_timestamp": "2025-09-29T04:54:53.382388",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Feedback on the caption:\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the subject as a nesting doll, describes its initial state, the action of the hand flicking it, and the doll's subsequent fall. Every event mentioned in the caption occurs in the video in the order described.\n\n**Completeness:** The caption is complete, covering the entire sequence of actions from the doll standing upright to it lying on its side after being pushed.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption successfully presents the actions in chronological order: the doll is standing, a hand appears and flicks it, the doll falls.\n*   **Focus on Motion:** The caption effectively describes the motion using verbs like \"flicks,\" \"starts to fall,\" \"moves away,\" and \"continues to fall.\"\n*   **Conciseness and Detail:** The caption is slightly too detailed in its description of the subjects' appearances. Phrases like \"blue and white painted wooden nesting doll with floral patterns and a musical instrument on its front\" and \"hand with light skin and slightly curled fingers\" are more descriptive than necessary, as the instructions state to avoid appearance details unless needed to differentiate between subjects. A more concise version like \"a painted nesting doll\" and \"a hand\" would be more in line with the guidelines.\n*   **Clarity and Language:** The language is simple, natural, and clear.\n*   **Objectivity:** The caption avoids emotional, subjective, or speculative language.\n\n**Overall Assessment:**\n\nThe caption is very good in terms of accuracy, completeness, and chronological structure. Its main area for improvement is conciseness. By reducing the descriptive details of the subjects' appearances, it would better adhere to the instruction to focus primarily on motion.",
-  "revised_caption_by_generated_critique": "A painted nesting doll stands upright on a white background. A hand appears from the right and flicks the doll. The doll falls to the left as the hand moves away, eventually coming to rest on its side.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption is overly descriptive and includes details about the subject's appearance, which violates the instruction to focus on motion. The opening phrase, \"The video opens with a full view of a blue and white painted wooden nesting doll, adorned with floral patterns and a musical instrument on its front, standing upright against a plain white background,\" and the description of the hand \"with light skin and slightly curled fingers\" should be removed. The description should be more concise, focusing only on the actions. A better caption would be: \"A nesting doll stands upright on a white surface until a hand enters from the right, flicks the doll, and withdraws. The doll then topples to the left and comes to rest on its side.\"",
+  "revised_caption_by_generated_critique": "A nesting doll stands upright on a white surface until a hand enters from the right, flicks the doll, and withdraws. The doll then topples to the left and comes to rest on its side.",
   "status": "success"
 }

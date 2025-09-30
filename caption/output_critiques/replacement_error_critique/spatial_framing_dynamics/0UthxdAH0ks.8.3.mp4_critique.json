@@ -2,7 +2,7 @@
   "video_id": "0UthxdAH0ks.8.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:05:09.966019",
+  "generation_timestamp": "2025-09-29T06:37:05.491983",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The statement \"The camera remains stationary\" is inaccurate. The camera actually pans slowly to the right as the person moves.\n2. The description \"person positioned in the center foreground\" is incorrect; the person is actually positioned in the left background.\n3. Modify \"This movement causes their form to shift from the center to the bottom-center of the frame, altering the composition\" to \"The subject primarily occupies the center and bottom of the frame, with slight changes in composition due to the movement of both the camera and the subject.\"\n4. A blurred window is visible in the foreground on the right side.",
-  "revised_caption_by_generated_critique": "The video presents a medium shot of a person positioned in the left background, bent over. On the left side of the frame, a picture hangs on a checkered wall in the middle ground. In the background, a small shelf is visible in the center-right, with a red curtain on the far right. A blurred window is visible in the foreground on the right side. The person moves downward and slightly to the left, their back and head occupying the lower-center portion of the frame as they interact with an object on the floor. The subject primarily occupies the center and bottom of the frame, with slight changes in composition due to the movement of both the camera and the subject. The camera pans slowly to the right as the person moves.",
+  "generated_critique": "1. The statement \"The camera remains stationary\" is inaccurate. The camera actually pans slowly to the right as the person moves.\n2. The description \"person positioned in the center foreground\" is incorrect; the person is actually positioned in the center middle ground.\n3. Modify \"This movement causes their form to shift from the center to the bottom-center of the frame, altering the composition\" to \"The subject primarily occupies the center and bottom of the frame, with slight changes in composition due to the movement of both the camera and the subject.\"\n4. A blurred wall is visible in the foreground on the right side.",
+  "revised_caption_by_generated_critique": "The video presents a medium shot of a person positioned in the center middle ground, bent over. On the left side of the frame, a picture hangs on a checkered wall in the middle ground. In the background, a small shelf is visible in the center-right, with a red curtain on the far right. A blurred wall is visible in the foreground on the right side. The person moves downward and slightly to the left, their back and head occupying the lower-center portion of the frame as they interact with an object on the floor. The subject primarily occupies the center and bottom of the frame, with slight changes in composition due to the movement of both the camera and the subject. The camera pans slowly to the right as the person moves.",
   "status": "success"
 }

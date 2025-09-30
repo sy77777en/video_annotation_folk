@@ -2,7 +2,7 @@
   "video_id": "4022437.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:52:49.629176",
+  "generation_timestamp": "2025-09-29T04:48:16.086956",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should also mention that a person is standing next to the car in the initial wide shot, positioned on the right side of the frame in the middle ground, which is not described in the current version.",
-  "revised_caption_by_generated_critique": "The video starts with a wide shot that frames the entire Mercedes S550 in the center of the image, positioned in the middle ground, with the paved parking lot occupying the foreground and low industrial buildings and trees in the background. A person is standing next to the car in the initial wide shot, positioned on the right side of the frame in the middle ground. The car is viewed from the rear left corner, with both left-side doors open, and the camera is at the same height as the car, providing a level perspective. As the video progresses, the camera moves forward toward the car, transitioning to a close-up shot that focuses on the left rear wheel, which now dominates the center and lower part of the frame in the foreground. In this close-up, the Mercedes and AMG badges, as well as the Continental branding on the tire, are clearly visible, while the rest of the car and the background buildings shift out of focus or move partially out of frame, emphasizing the wheel as the primary subject. Throughout the video, the camera maintains its height at the level of the car, and the spatial relationship between the car and the background elements remains consistent, with only the shot size and subject prominence changing as the camera moves closer.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should also mention that a person is standing next to the car in the initial wide shot, positioned on the right side of the frame in the middle ground, which affects the spatial balance of the scene.",
+  "revised_caption_by_generated_critique": "The video starts with a wide shot that frames the entire Mercedes S550 in the center of the image, positioned in the middle ground, with the paved parking lot occupying the foreground and low industrial buildings and trees in the background. A person is standing next to the car in the initial wide shot, positioned on the right side of the frame in the middle ground, which affects the spatial balance of the scene. The car is viewed from the rear left corner, with both left-side doors open, and the camera is at the same height as the car, providing a level perspective. As the video progresses, the camera moves forward toward the car, transitioning to a close-up shot that focuses on the left rear wheel, which now dominates the center and lower part of the frame in the foreground. In this close-up, the Mercedes and AMG badges, as well as the Continental branding on the tire, are clearly visible, while the rest of the car and the background buildings shift out of focus or move partially out of frame, emphasizing the wheel as the primary subject. Throughout the video, the camera maintains its height at the level of the car, and the spatial relationship between the car and the background elements remains consistent, with only the shot size and subject prominence changing as the camera moves closer.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "pNGMY3xVkVE.0.1.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:39:40.154108",
+  "generation_timestamp": "2025-09-29T07:21:52.641208",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the section mentioning the illumination of smoke or haze, as the lack of clarity is caused by the intense brightness of the light, not by any other factors. Additionally, at the end, the people are not completely silhouetted; their faces and clothing remain clearly visible.",
-  "revised_caption_by_generated_critique": "A group of people walks down a long, cylindrical corridor with corrugated metal walls and a paneled floor. The tunnel is initially cast in a dark red light from small fixtures on the ceiling. At the far end, a bright white light shines from behind a partially open roll-up door. As the figures walk toward the opening, the white light intensifies, eventually filling the entire corridor and bleaching the scene to white, with the people remaining clearly visible before the light obscures the background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the section mentioning the illumination of smoke or haze, as the lack of clarity is caused by reflections from the floor, not by any other factors. Additionally, at the end, the people are not completely obscured; their outlines remain visible.",
+  "revised_caption_by_generated_critique": "A group of people walks down a long, cylindrical corridor with corrugated metal walls and a paneled floor. The tunnel is initially cast in a dark red light from small fixtures on the ceiling. At the far end, a bright white light shines from behind a partially open roll-up door, reflecting off the floor. As the figures walk toward the opening, the white light intensifies, eventually filling the entire corridor and bleaching the scene to white, silhouetting the people while their outlines remain visible.",
   "status": "success"
 }

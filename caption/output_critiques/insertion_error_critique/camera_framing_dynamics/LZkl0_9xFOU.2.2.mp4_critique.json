@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.2.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:27:14.687119",
+  "generation_timestamp": "2025-09-29T09:28:30.223737",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the camera angle shifts to a high angle during the movement, looking down on the controller as it comes into focus.",
-  "revised_caption_by_generated_critique": "This is a smooth, level-angle shot with a shallow depth of field. The video begins with a static camera focused on a small CRT monitor in the foreground displaying the original Xbox dashboard. The camera then begins to move left and gently forward, simultaneously performing a rack focus to shift the focus from the monitor to the original Xbox \"Duke\" controller in the midground. During this movement, the camera angle shifts to a high angle, looking down on the controller as it comes into focus.",
+  "generated_critique": "The caption should mention that the video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
+  "revised_caption_by_generated_critique": "This is a smooth, level-angle shot with a shallow depth of field and noticeable fisheye lens distortion, causing straight lines near the edges to curve outward. The video begins with a static camera focused on a small CRT monitor in the foreground displaying the original Xbox dashboard. The camera then begins to move left and gently forward, simultaneously performing a rack focus to shift the focus from the monitor to the original Xbox \"Duke\" controller in the midground.",
   "status": "success"
 }

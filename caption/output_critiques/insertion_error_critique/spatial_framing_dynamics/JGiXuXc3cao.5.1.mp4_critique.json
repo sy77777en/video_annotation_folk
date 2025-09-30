@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:25:57.768926",
+  "generation_timestamp": "2025-09-29T12:27:48.486822",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The ship should be positioned in the bottom center of the frame. The coordinates should display \"LONG\" at the top center and \"LAT\" on the right center, with both values steadily increasing. All these elements should be part of the overlay. The compass should be described as part of the overlay, not as the foreground. Additionally, the red dashed line should curve gently rather than extend diagonally in a straight line.",
-  "revised_caption_by_generated_critique": "The video begins with a wide, top-down shot of a stylized white ship positioned in the bottom center of the frame and a glowing red dot in the upper left, both in the middle ground. A gently curving red dashed line connects them. An overlay includes a compass icon fixed in the bottom left corner, with coordinate displays showing \"LONG\" at the top center and \"LAT\" on the right center, both values steadily increasing. As the shot transitions to an extreme wide shot, a large, red dashed square is drawn clockwise, starting from the left side of the frame and eventually enclosing the ship and the red dot in the center. The camera remains positioned directly above the scene throughout.",
+  "generated_critique": "The ship should be positioned in the bottom center of the frame. The coordinates should display \"LONG\" at the top center and \"LAT\" on the right center, with both values steadily increasing. All these elements should be part of the overlay. The compass should be described as part of the overlay, not as the foreground. Additionally, the red dot should gradually move toward the ship during the transition, indicating a change in their spatial relationship.",
+  "revised_caption_by_generated_critique": "The video begins with a wide, top-down shot of a stylized white ship positioned in the bottom center of the frame and a glowing red dot in the upper left, both in the middle ground. A dashed red line extends diagonally between them. An overlay includes a compass icon fixed in the bottom left corner, with coordinate displays showing \"LONG\" at the top center and \"LAT\" on the right center, both values steadily increasing. As the shot transitions to an extreme wide shot, a large, red dashed square is drawn clockwise, starting from the left side of the frame and eventually enclosing the ship and the red dot in the center. During this transition, the red dot gradually moves toward the ship, indicating a change in their spatial relationship. The camera remains positioned directly above the scene throughout.",
   "status": "success"
 }

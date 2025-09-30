@@ -2,7 +2,7 @@
   "video_id": "BiZ9AZwyGjM.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:37:13.261383",
+  "generation_timestamp": "2025-09-29T08:14:18.436569",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The pair is positioned slightly to the right of the center in the frame, with the woman on the left and the man on the right (not on her right).\n2. The ice surface is partially covered with snow along the top edge of the frame, which should be mentioned when describing the background elements.\n3. Remove the phrase \"Both subjects are in the foreground\" since all elements, including the subjects and the background, are on the same plane.\n4. Omit the word \"static\" as the camera is not completely static. Additionally, remove \"or their position within the frame\" from the last sentence because their position changes slightly.",
-  "revised_caption_by_generated_critique": "The video presents a full shot of a woman and a man lying on a cracked icy surface. The pair is positioned slightly to the right of the center in the frame, with the woman on the left and the man on the right. They are resting on the expansive ice, which features prominent cracks radiating from a point near the woman's right foot. The ice surface is partially covered with snow along the top edge of the frame. The camera maintains an overhead position directly above the subjects, resulting in no changes to shot size throughout the clip.",
+  "generated_critique": "1. The pair is positioned slightly to the right of the center in the frame, with the woman on the left and the man on the right (not on her right).\n2. The ice surface in the background is partially covered with snow, which should be mentioned when describing the scene.\n3. Remove the phrase \"Both subjects are in the foreground\" since all elements, including the subjects and the background, are on the same plane.\n4. Omit the word \"static\" as the camera is not completely static. Additionally, remove \"or their position within the frame\" from the last sentence because their position changes slightly.",
+  "revised_caption_by_generated_critique": "The video presents a full shot of a woman and a man lying on a cracked icy surface. The pair is positioned slightly to the right of the center in the frame, with the woman on the left and the man on the right. They are resting on the expansive ice, which features prominent cracks radiating from a point near the woman's right foot. The ice surface in the background is partially covered with snow. The camera maintains an overhead position directly above the subjects, resulting in no changes to shot size throughout the clip, although their position within the frame changes slightly.",
   "status": "success"
 }

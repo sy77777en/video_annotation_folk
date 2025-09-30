@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.15.14.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:58:09.649405",
+  "generation_timestamp": "2025-09-29T12:39:49.523830",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The caption incorrectly states there are \"two black goats.\"\n\n2. The description of \"The first goat\" is insufficient.\n\n3. The statement that the first goat \"appears to be stationary\" is incorrect.\n\n4. The description of the second goat's position and movement is incorrect, and it fails to mention the third goat.",
-  "revised_caption_by_generated_critique": "The video features three goats in a dry, grassy area. The first goat, with a prominent beard and a mostly black coat with some white markings, is actively grazing near a small bush, facing to the right. The second goat, also black with white patches, is positioned slightly behind the first goat and is moving towards the right. The third goat, smaller in size and with a similar black and white coat, is further back, exploring the area. All three goats are surrounded by tall, yellowish-brown grass, with sparse green vegetation nearby, suggesting a natural, open environment.",
+  "generated_critique": "The number of goats mentioned is incorrect. The description of the first goat is missing information about its size. The description of the first goat's action as \"stationary\" is incorrect. The description of the second goat is incorrect, as it misrepresents the number of other goats, their size, and their actions.",
+  "revised_caption_by_generated_critique": "The video features three black goats in a dry, grassy area. The first goat, with a prominent beard, is large and is actively grazing near a small bush, facing to the right. Its coat is uniformly black. The second and third goats, also black, are positioned slightly behind the first goat and are moving towards the right. All three goats are surrounded by tall, yellowish-brown grass, with sparse green vegetation nearby, suggesting a natural, open environment.",
   "status": "success"
 }

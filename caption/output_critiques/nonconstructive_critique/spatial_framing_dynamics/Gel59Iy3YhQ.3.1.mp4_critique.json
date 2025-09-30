@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.3.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:47:37.606461",
+  "generation_timestamp": "2025-09-29T09:24:27.734612",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the window's position as \"extending from the foreground into the middle ground\" is inaccurate. The caption fails to mention the door marked \"447\" on the left wall in the foreground. The position of door \"449\" is misidentified as being on the left. The placement of the scattered papers in the \"middle ground\" is incorrect. The use of the word \"steadily\" is inappropriate. The final position of door 449 is incorrectly described as being in the middle ground.",
-  "revised_caption_by_generated_critique": "This is a scenery shot of an empty office hallway. The video is presented as a wide, first-person POV shot from eye level, looking straight down the long corridor, which establishes a strong one-point perspective. Initially, a large window is on the left wall, extending along the hallway. On the right wall, a white door marked \"448\" is positioned in the middle ground. In the foreground on the left wall, there is a door marked \"447.\" Further down the hall in the background, another door marked \"449\" is visible on the right, with several papers scattered on the floor in the foreground. The camera then moves forward down the center of the hallway. As it advances, elements like the door and papers transition from the foreground into the background before passing out of the frame, while the background elements, particularly door 449, move closer to become the central focus in the foreground.",
+  "generated_critique": "The description of the window's depth as \"extending from the foreground into the middle ground\" is inaccurate. The caption fails to mention a door visible in the foreground. The description of door 449's position as \"on the left\" is incorrect, and the description of the papers' depth as \"in the middle ground\" is also inaccurate. The use of the word \"steadily\" is inappropriate. The description of door 449's final position as \"in the middle ground\" is incorrect.",
+  "revised_caption_by_generated_critique": "This video captures a scenery shot of an empty office hallway from a wide, first-person POV at eye level, looking straight down the corridor to establish a strong one-point perspective. Initially, a large window is on the left wall, spanning the length of the hallway. In the foreground on the right wall, a white door marked \"448\" is visible. Further down the hall, another door marked \"449\" is on the right, with several papers scattered on the floor in the foreground. The camera moves smoothly forward down the center of the hallway. As it advances, elements like the door and papers transition from the foreground into the background, while door 449 becomes the central focus in the foreground.",
   "status": "success"
 }

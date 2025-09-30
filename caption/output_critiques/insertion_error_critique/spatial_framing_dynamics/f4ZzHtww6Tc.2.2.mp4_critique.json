@@ -2,7 +2,7 @@
   "video_id": "f4ZzHtww6Tc.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:42:26.892550",
+  "generation_timestamp": "2025-09-29T07:20:21.089738",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-09T01:48:39.588023",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The sidewalk appears curved due to the fisheye lens effect, not because it is actually curved. The video contains excessive details about the skateboarder's appearance and the scene's description. The caption also incorrectly mentions that the skateboarder briefly stops to tie his shoelaces, which does not occur in the video. It would be more effective to concentrate on the spatial framing and the dynamics of the movement.",
-  "revised_caption_by_generated_critique": "The video opens with a skateboarder captured in a full shot, highlighting his dynamic movement as he navigates a sidewalk. The fisheye lens effect creates a curved appearance of the path, enhancing the visual flow. The skateboarder demonstrates impressive agility and control, especially as he jumps over handrails. The camera closely follows his movement, maintaining a consistent distance to keep him centered in the frame. The urban backdrop, featuring a red brick building and parked vehicles, remains static, emphasizing the skateboarder's fluidity. As the perspective shifts to a view from behind, his speed and seamless motion are accentuated. The scene transitions to a parking lot area, with the clear sky casting defined shadows, underscoring the bright daylight. Throughout the video, the camera maintains eye-level framing, focusing on the skateboarder's skillful navigation of the urban environment.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The sidewalk appears curved due to the fisheye lens effect, not because it is actually curved. The video contains excessive details about the skateboarder's appearance and the scene's description. The critique also overlooks the fact that the camera briefly tilts upward to capture a passing bird in the sky, which is not relevant to the spatial framing of the main subject. It would be more effective to concentrate on the spatial framing and the dynamics of the movement.",
+  "revised_caption_by_generated_critique": "The video opens with a skateboarder skillfully navigating a sidewalk, captured with a fisheye lens that creates a curved effect. Wearing casual attire, he demonstrates impressive agility and control as he maneuvers through the urban landscape. The camera closely follows his movements, maintaining a consistent eye-level perspective to highlight his dynamic posture. As he approaches a ramp, he effortlessly jumps over the handrails, showcasing his expertise. The scene briefly shifts to capture a bird in the sky, adding a momentary diversion from the skateboarder's fluid motion. The video emphasizes the skateboarder's speed and fluidity, set against a backdrop of urban elements like parked vehicles and a clear sky, which casts sharp shadows on the ground.",
   "status": "success"
 }

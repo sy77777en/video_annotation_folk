@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.5.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:17:26.454829",
+  "generation_timestamp": "2025-09-29T07:40:27.225431",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot size is incorrectly described as \"waist up\". The position of the cardboard box is incorrectly described as \"center\". The description of the desk is incomplete and fails to mention the camera movement. The depth of the shelving unit is incorrectly identified as \"middle ground\". The statement that the camera is static is incorrect.",
-  "revised_caption_by_generated_critique": "This medium close-up shot frames a mannequin from the chest up, positioned slightly left of center. The mannequin holds a cardboard box slightly off-center in the frame. In the foreground, the edge of a desk is visible at the bottom, with various office supplies scattered on it. A dark shelving unit occupies the far-left side of the frame, extending into the background, while a wood-paneled wall fills the entire background. The camera is positioned at the subject's level and slowly pans to the right throughout the shot.",
+  "generated_critique": "The description of how much of the mannequin is visible is incorrect. The 2D position of the cardboard box is incorrect. The 3D position of the shelving unit is incorrect. The statement that the camera is static is incorrect, and the caption is missing a description of the camera's movement.",
+  "revised_caption_by_generated_critique": "This medium shot captures a mannequin from the shoulders up, positioned slightly left of center in the middle ground. The mannequin holds a cardboard box slightly to the right of the center of the frame. In the foreground, the edge of a desk is visible at the bottom. A dark shelving unit is positioned in the background on the far-left side of the frame, while a wood-paneled wall fills the entire background. The camera starts at the subject's level and slowly pans to the right throughout the shot.",
   "status": "success"
 }

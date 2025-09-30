@@ -2,7 +2,7 @@
   "video_id": "942.0.30.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:00:31.642532",
+  "generation_timestamp": "2025-09-29T08:49:13.686967",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The framing is not static since the camera smoothly pulls backward, tilts downward, and pans to the left. Additionally, the camera briefly zooms in on the person in red before beginning its backward movement.",
-  "revised_caption_by_generated_critique": "This is a medium shot filmed at the subjects' level. In the foreground, the upper body of a person in green scrubs is positioned on the left side of the frame, viewed from behind. In the middle ground, a person in red lies horizontally on an examination table that extends from the center to the right. The person in red's bandaged right leg is elevated, stretching diagonally from the center toward the top right corner. Spanning the top of the frame in the background is an illuminated light box displaying several X-rays. The camera briefly zooms in on the person in red before smoothly pulling backward, tilting downward, and panning to the left.",
+  "generated_critique": "The framing is not static since the camera smoothly pulls backward, tilts downward, and pans to the left. Additionally, the camera briefly zooms in on the X-rays at the top of the frame before returning to its original position.",
+  "revised_caption_by_generated_critique": "This is a medium shot filmed at the subjects' level. In the foreground, the upper body of a person in green scrubs is positioned on the left side of the frame, viewed from behind. In the middle ground, a person in red lies horizontally on an examination table that extends from the center to the right. The person in red's bandaged right leg is elevated, stretching diagonally from the center toward the top right corner. Spanning the top of the frame in the background is an illuminated light box displaying several X-rays. The camera smoothly pulls backward, tilts downward, and pans to the left, briefly zooming in on the X-rays before returning to its original position.",
   "status": "success"
 }

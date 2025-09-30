@@ -2,7 +2,7 @@
   "video_id": "4505.1.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:54:38.073122",
+  "generation_timestamp": "2025-09-29T04:51:01.864457",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-16T06:53:42.589442",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please refrain from describing overlays as being in the foreground, and note that the camera angle is described as slightly tilted, which is not consistent with the instruction to specify the camera’s height relative to the subject.",
-  "revised_caption_by_generated_critique": "This is a wide shot where a helicopter is positioned in the top center of the frame, occupying the middle ground. Directly below it, a person stands in the bottom center of the frame, also in the middle ground. A vertical beam of light from the helicopter shines down, connecting the two subjects and illuminating a circular area on the ground. The rest of the frame is filled with a dark, cavernous space that extends into the background. A logo is fixed as an overlay in the bottom right corner. The camera is slightly tilted, capturing the scene at the subjects' level, and the spatial arrangement of all elements remains static.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please refrain from describing overlays as being in the foreground. Additionally, note that the camera angle should be described as slightly tilted upward, even if the subjects appear level.",
+  "revised_caption_by_generated_critique": "This is a wide shot where a helicopter is positioned in the top center of the frame, occupying the middle ground. Directly below it, a person stands in the bottom center of the frame, also in the middle ground. A vertical beam of light from the helicopter shines down, connecting the two subjects and illuminating a circular area on the ground. The rest of the frame is filled with a dark, cavernous space that extends into the background. A logo is fixed as an overlay at the bottom right corner. The camera is slightly tilted upward, capturing the subjects at their level, and the spatial arrangement of all elements remains static.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.13.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:47:09.003872",
+  "generation_timestamp": "2025-09-29T08:13:13.507183",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes the focus as keeping the entire scene sharp, as parts of the scene are slightly out of focus. The caption also fails to describe the camera angle.",
-  "revised_caption_by_generated_critique": "This video, shot with a very smooth drone camera, exhibits mild barrel distortion. The camera begins at an aerial level and has a varying Dutch angle as it rolls. It uses a deep focus, though some parts of the scene are slightly out of focus.\n\nThe camera tracks a boat moving forward on a wide river. Starting from behind and above, the camera flies forward and descends while arcing counter-clockwise around the boat. As it arcs, the camera tilts upward, leveling its angle to position itself at the front of the boat, which grows larger in the frame. The camera angle shifts dynamically, capturing the boat from multiple perspectives.",
+  "generated_critique": "The caption's description of the focus is inaccurate, as it incorrectly claims the entire scene is kept sharp. The caption is also incomplete because it omits any description of the camera angle.",
+  "revised_caption_by_generated_critique": "This video, shot with a very smooth drone camera, exhibits mild barrel distortion. The camera begins at an aerial level and has a varying Dutch angle as it rolls. It uses selective focus, with certain elements in the scene appearing sharper than others.\n\nThe camera tracks a boat moving forward on a wide river. Starting from behind and above, the camera flies forward and descends while arcing counter-clockwise around the boat. As it arcs, the camera tilts upward, leveling its angle to position itself at the front of the boat, which grows larger in the frame. The camera angle shifts dynamically, capturing the boat from multiple perspectives and enhancing the sense of motion.",
   "status": "success"
 }

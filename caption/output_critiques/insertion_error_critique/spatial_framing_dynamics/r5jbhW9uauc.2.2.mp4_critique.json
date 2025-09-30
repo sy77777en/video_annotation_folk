@@ -2,7 +2,7 @@
   "video_id": "r5jbhW9uauc.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:07:47.723233",
+  "generation_timestamp": "2025-09-29T07:31:57.083017",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This is an abstract video, so it would be better to remove references to foreground, middle ground, and background, as these terms imply camera depth, which is not applicable here. 2. The pink and blue colors appear to be erupting and spreading upwards, while the droplets seem to flow downwards. 3. The video also features a brief moment where a green hue appears in the bottom right corner, which should be described if present.",
-  "revised_caption_by_generated_critique": "The video presents an abstract scene where vibrant pink and blue colors swirl and intertwine in a fluid motion, occupying the entire frame. Initially, the pink and blue hues are concentrated towards the top center, with droplets and tendrils extending downwards. As the video progresses, the colors appear to erupt and spread upwards, while some droplets drift towards the bottom left and right corners. A brief moment features a green hue appearing in the bottom right corner, adding an unexpected element to the composition. The camera remains stationary, capturing the dynamic interplay of colors as they blend and separate, creating a continuous sense of movement and transformation. The dark background provides a stark contrast, enhancing the vividness of the colors and emphasizing their fluid motion.",
+  "generated_critique": "1. This is an abstract video, so it would be better to remove references to foreground, middle ground, and background, as these terms imply camera depth, which is not applicable here. 2. The pink and blue colors appear to be erupting and spreading upwards, while the droplets seem to flow downwards. 3. The video also features a brief moment where a green hue appears in the bottom right corner, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video presents an abstract scene where vibrant pink and blue colors swirl and intertwine in a fluid motion, occupying the entire frame. Initially, the pink and blue hues are concentrated towards the top center, erupting and spreading upwards, while droplets and tendrils extend downwards. As the video progresses, the colors gradually spread outwards towards the edges of the frame. The pink and blue elements maintain a central presence, with some droplets drifting towards the bottom left and right corners. A brief moment features a green hue appearing in the bottom right corner. The camera remains stationary, capturing the dynamic interplay of colors as they blend and separate, creating a continuous sense of movement and transformation. The dark background provides a stark contrast, enhancing the vividness of the colors and emphasizing their fluid motion.",
   "status": "success"
 }

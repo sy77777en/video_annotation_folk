@@ -2,7 +2,7 @@
   "video_id": "3005.1.15.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:13:11.767343",
+  "generation_timestamp": "2025-09-29T09:07:38.527827",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description inaccurately states that the third man walks through a doorway. In reality, he moves backward from the right side of the background toward an open doorway located in the middle-right of the background. This backward movement is due to the video being played in reverse. Additionally, the critique should note that the man tying his shoelaces briefly stands up before sitting back down, which does not actually occur in the video.",
-  "revised_caption_by_generated_critique": "A man in the foreground lowers himself to sit on a bench. In the mid-ground, another man remains seated and leans forward, tying his shoelaces. In the background, a third man moves backward from the right side toward an open doorway located in the middle-right of the background, as the video is played in reverse.",
+  "generated_critique": "1. The description inaccurately states that the third man walks through a doorway. In reality, he moves backward from the right side of the background toward an open doorway located in the middle-right of the background. This backward movement is due to the video being played in reverse. Additionally, the feedback should note that the man in the mid-ground briefly stands up before tying his shoelaces, which is not reflected in the original caption.",
+  "revised_caption_by_generated_critique": "A man in the foreground lowers himself to sit on a bench. In the mid-ground, another man briefly stands up before leaning forward to tie his shoelaces. In the background, a third man moves backward from the right side toward an open doorway in the middle-right, as the video is played in reverse.",
   "status": "success"
 }

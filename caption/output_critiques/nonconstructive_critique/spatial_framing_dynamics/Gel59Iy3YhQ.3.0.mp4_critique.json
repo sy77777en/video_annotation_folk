@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:46:58.357511",
+  "generation_timestamp": "2025-09-29T09:23:37.450056",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the camera as \"static\" and \"stationary.\" The position of the hand holding the walkie-talkie is inaccurately described as \"bottom-left.\" The description of the rock formation's position is inaccurate and fails to mention its movement. The position of the power lines is described imprecisely, and the description omits that the power lines become obscured and that the wooden pole moves out of the frame. The description incorrectly limits the green trees and bushes to the middle ground.",
-  "revised_caption_by_generated_critique": "From a dynamic, first-person perspective, a hand holding a walkie-talkie is positioned in the lower center of the foreground. A dirt path originates in the bottom-center foreground and extends into the middle ground. The path is flanked by large, angular rocks, with a significant formation moving across the right side of the frame from the foreground to the middle ground. A wooden pole initially stands on the far left in the middle ground, with power lines stretching across the top of the frame toward the right, but they become obscured as the pole moves out of the frame. Green trees and bushes are scattered throughout the scene, extending from the middle ground to the background, with the sky visible at the top of the frame. The camera moves slightly, maintaining an eye-level height throughout the shot.",
+  "generated_critique": "The caption incorrectly states the camera is static and stationary. The 2D position of the hand holding the walkie-talkie is inaccurate. The description of the rock formation's spatial position and movement is incorrect. The description of the power lines' position is wrong, and the caption fails to mention the movement of the wooden pole or that the power lines become partially obscured. The 3D position of the green trees and bushes is also described inaccurately.",
+  "revised_caption_by_generated_critique": "The video begins with a dynamic, first-person perspective where a hand holding a walkie-talkie appears in the lower-left corner, moving slightly as the scene progresses. A dirt path starts in the lower center and extends into the middle ground, flanked by large, angular rocks. A prominent rock formation occupies the right side of the frame, shifting slightly as the camera moves. A wooden pole is positioned on the far left in the middle ground, and as the camera pans, the power lines stretching across the top of the frame become partially obscured. Green trees and bushes are scattered throughout the middle ground, with their positions shifting slightly in relation to the camera's movement. The sky is visible in the background at the top of the frame.",
   "status": "success"
 }

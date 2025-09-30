@@ -2,7 +2,7 @@
   "video_id": "2519.5.16.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T05:28:05.547846",
+  "generation_timestamp": "2025-09-29T10:37:34.193622",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is generally good, but it has a few issues regarding adherence to the instructions.\n\n**Accuracy:**\nThe description is accurate. The man has light skin, dark hair, and facial stubble. He is wearing a patterned, collared shirt under another garment. The description of his eyes being closed and then opening is also correct.\n\n**Completeness:**\nThe caption is complete, capturing all the key visual information about the subject and his subtle action within the short clip.\n\n**Adherence to Instructions:**\nThe caption fails to adhere to two key negative constraints:\n1.  **Use of Subjective Adjectives:** The instruction states, \"You must avoid subjective adjectives that convey emotions.\" The caption violates this by describing the man's expression as \"contemplative.\"\n2.  **Describing the Unseen:** The instruction says, \"You must avoid describing what is not visible or what you are unsure about.\" The phrase \"suggesting a shift in focus or thought\" is an interpretation of the man's internal state, not a direct visual observation, and should have been omitted.\n\nThe caption correctly follows all other instructions, such as being a single, coherent paragraph, focusing on the subject's visual attributes, and avoiding terms like \"image\" or \"frame.\"",
-  "revised_caption_by_generated_critique": "The video features a man with light skin and short, dark hair. He has a slight beard and mustache. He is wearing a collared shirt with a checkered pattern, visible beneath a dark sweater. The man is facing forward, with his eyes closed in one moment and open in another. His facial features are prominent, and the lighting highlights the texture of his skin.",
+  "generated_critique": "The caption includes subjective interpretations that violate the instructions. The phrase \"suggesting a shift in focus or thought\" is an inference about the man's internal state and should be removed to adhere to the rule of not describing what is uncertain. The adjective \"contemplative\" is also subjective; a more objective description of his physical expression, such as \"His mouth is closed and his brow is relaxed,\" would be more appropriate. The statement \"His facial features are prominent\" is too general and should be removed. Lastly, the description of the shirt could be improved by adding its colors, which appear to be tan and blue, in addition to its checkered pattern.",
+  "revised_caption_by_generated_critique": "The video features a man with light skin and short, dark hair. He has a slight beard and mustache. He is wearing a collared shirt with a tan and blue checkered pattern, visible beneath a dark sweater. The man is facing forward with his eyes downcast; they are closed in one moment and slightly open in another. His mouth is closed and his brow is relaxed. The lighting highlights the texture of his skin.",
   "status": "success"
 }

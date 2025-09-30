@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:23:43.228469",
+  "generation_timestamp": "2025-09-29T12:25:15.000925",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The scene, including the red ball and green shapes, appears static as the camera follows the character's descent along the path. The scene scrolls upward, not downward. The paper cutout is actually positioned toward the left side of the frame rather than the center. Since this is a 2D video, please avoid using depth-related terms such as \"foreground\" and \"background,\" as well as references to subject height and angle. The perspective is not eye-level, so please remove that description. Additionally, it is a wide shot, not a medium shot.",
-  "revised_caption_by_generated_critique": "A wide shot captures a hand-held paper cutout of a character positioned toward the left side of the frame against a 2D animated scene. The cutout partially obscures the action behind it. The scene features a solid green vertical area on the left and a light blue field with various green shapes on the right. In the top right, a red ball rests on a green, hilly shape. The entire scene, including the red ball and green shapes, scrolls upward, giving the impression of the camera following a character's descent along a path. The cutout remains relatively steady with slight hand-held movements, while the camera maintains a straight-on view of the flat scene.",
+  "generated_critique": "The scene, including the red ball and green shapes, appears static as the camera follows the character's descent along the path. The scene scrolls upward, not downward. The paper cutout is positioned slightly to the left of center rather than exactly centered. Since this is a 2D video, please avoid using depth-related terms such as \"foreground\" and \"background,\" as well as references to subject height and angle. The perspective is not eye-level, so please remove that description. Additionally, it is a wide shot, not a medium shot.",
+  "revised_caption_by_generated_critique": "A wide shot captures a hand-held paper cutout of a character positioned slightly to the left of center against a 2D animated scene. The cutout partially obscures the action behind it. The scene features a solid green vertical area on the left and a light blue field with various green shapes on the right. In the top right, a red ball rests on a green, hilly shape. The entire scene, including the red ball and green shapes, scrolls upward, giving the impression of the camera following a character's descent along a path. The cutout exhibits slight hand-held movements while the camera maintains a straight-on view of the flat scene.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "A_StkRKB1jU.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:40:25.947577",
+  "generation_timestamp": "2025-09-29T08:05:09.805246",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The position of the second man is inaccurately described as 'on the right'. The depth of the third man is misidentified as 'background'.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a man in a clown mask is positioned in the foreground, occupying the left and center of the frame. In the middle ground, another man in a clown mask is driving the car, positioned centrally. A third masked man is partially visible in the midground on the far left. The camera is positioned at the subjects' level from within the vehicle, maintaining a stable frame on the car's occupants as the scenery passes by outside the windows.",
+  "generated_critique": "The 2D position of the second man is inaccurately described as \"on the right.\" The 3D position of the third man is inaccurately described as \"in the background.\"",
+  "revised_caption_by_generated_critique": "In a close-up shot, a man in a clown mask is positioned in the foreground, occupying the left and center of the frame. In the middle ground, another man in a clown mask is driving the car, positioned more centrally. A third masked man is partially visible, seated further back in the vehicle. The camera is positioned at the subjects' level from within the vehicle, maintaining a stable frame on the car's occupants as the scenery passes by outside the windows.",
   "status": "success"
 }

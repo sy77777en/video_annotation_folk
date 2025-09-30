@@ -2,7 +2,7 @@
   "video_id": "3923c396290520b6dcedf49397a06682322bd225007879cdd4fa2b144116c293.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:06:41.187713",
+  "generation_timestamp": "2025-09-29T11:59:51.642180",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that a small red napkin is placed in the top right corner of the frame in the foreground, even though this element is not present in the video.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up shot featuring a glass of light blue liquid and a white food item positioned in the bottom left foreground. In the background, a tall, golden wine cabinet stands slightly to the right of center, initially blurred. A small red napkin is placed in the top right corner of the frame in the foreground. A rack focus then smoothly shifts the plane of focus from the foreground to the background. Consequently, the glass and food in the bottom left become out of focus, while the wine cabinet in the background is brought into sharp detail, revealing its structure and the bottles within. The camera remains stationary and at the level of the foreground subjects throughout the shot.",
+  "generated_critique": "The caption should also mention that a small red apple is placed in the top right corner of the frame in the foreground, which is not visible in the video.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot featuring a glass of light blue liquid and a white food item positioned in the bottom left foreground. In the top right corner of the frame, a small red apple is placed in the foreground. In the background, a tall, golden wine cabinet stands slightly to the right of center, initially blurred. A rack focus then smoothly shifts the plane of focus from the foreground to the background. Consequently, the glass, food, and apple in the foreground become out of focus, while the wine cabinet in the background is brought into sharp detail, revealing its structure and the bottles within. The camera remains stationary and at the level of the foreground subjects throughout the shot.",
   "status": "success"
 }

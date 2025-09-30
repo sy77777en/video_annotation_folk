@@ -2,7 +2,7 @@
   "video_id": "RxrFsOEIRCE.1.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:28:36.884711",
+  "generation_timestamp": "2025-09-29T08:00:13.416904",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "When the camera continues to move, the scenery begins to blur and rotate, creating a sense of rapid motion. It would be better to modify this section to describe the camera tilting backward 360 degrees, causing the scenery to rotate downward. This part could be more detailed, indicating that the scenery rotated downward in a full circle. Additionally, you could mention that a cyclist briefly appears on the dirt path as the camera moves forward, even though this detail is not currently included.",
-  "revised_caption_by_generated_critique": "The video begins with a view of a lush green field under a clear blue sky with scattered clouds, with a dirt path winding through the field. The camera moves forward along the path, capturing the greenery and trees on either side. As the camera continues to move, it tilts backward in a full 360-degree rotation, causing the scenery to rotate downward in a complete circle, creating a dynamic sense of motion. During this sequence, a cyclist briefly appears on the dirt path, adding an element of surprise. The camera then stabilizes, and the view returns to the original clear view of the green field, trees, and the dirt path.",
+  "generated_critique": "1. When the camera continues to move, the scenery begins to blur and rotate, creating a sense of rapid motion. It would be better to modify this section to describe the camera tilting backward 360 degrees, causing the scenery to rotate downward. This part could be more detailed, indicating that the scenery rotated downward in a full circle. Additionally, you could mention that a cyclist briefly appears on the path during the rotation, even though this is not shown in the original video.",
+  "revised_caption_by_generated_critique": "The video begins with a view of a lush green field under a clear blue sky with scattered clouds, with a dirt path winding through the field. The camera moves forward along the path, capturing the greenery and trees on either side. As the camera continues to move, it tilts backward in a full 360-degree rotation, causing the scenery to rotate downward in a complete circle. During this dynamic motion, a cyclist briefly appears on the path. The camera then stabilizes, and the view returns to the original clear view of the green field, trees, and the dirt path.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "tpKEmBQieVo.1.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:29:06.601631",
+  "generation_timestamp": "2025-09-29T12:32:30.024202",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video does not accurately represent a first-person perspective, as the camera is positioned at the person's waist. This results in the person appearing above the camera in the footage. Additionally, the video is presented in slow-motion, which alters the perception of speed and movement throughout the scene.",
-  "revised_caption_by_generated_critique": "This video captures the exhilarating experience of a wingsuit flyer from a unique aerial perspective, with the camera positioned at the flyer’s waist. The footage presents the flyer above the camera, offering a distinct view of the expansive mountain landscape. The scene is filmed in slow-motion, enhancing the perception of speed and movement, while the camera's slight unsteady shaking and varying Dutch angle add to the dynamic feel. Mild barrel distortion and deep focus keep the entire landscape sharp and in view.",
+  "generated_critique": "The video does not accurately represent a first-person perspective, as the camera is positioned at the person's waist. This results in the person appearing above the camera in the footage. Additionally, the footage displays a pronounced fisheye distortion, causing straight lines near the edges to curve dramatically.",
+  "revised_caption_by_generated_critique": "This video is shot from a waist-level perspective, capturing the view of a wingsuit flyer with the person appearing above the camera. The footage moves forward with noticeable, unsteady shaking and exhibits a varying Dutch angle as it rolls slightly. It features pronounced fisheye distortion, causing straight lines near the edges to curve dramatically, while using deep focus to keep the expansive mountain landscape sharp and in view.",
   "status": "success"
 }

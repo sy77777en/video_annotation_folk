@@ -2,7 +2,7 @@
   "video_id": "fUjoIUTFH1I.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:58:27.133046",
+  "generation_timestamp": "2025-09-29T18:50:48.341156",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the street as \"narrow\" is inaccurate. The object in the right foreground is misidentified as a pillar. The description of the person's movement is incorrect. The relative position of the grey sedan and the black coupe is described incorrectly. The camera is incorrectly described as static.",
-  "revised_caption_by_generated_critique": "This wide shot captures a city street from behind a large, grey, textured structure that occupies the right foreground. In the middle ground, a grey sedan is parked on the left, with a black coupe positioned behind it toward the center of the frame. The street, lined with multi-story brick buildings on the left, extends into the background. A person walks from the middle ground on the left side of the street toward the background in the center. The camera pans slightly at an eye-level position.",
+  "generated_critique": "The description of the street as \"narrow\" is incorrect. The object in the right foreground is misidentified as a pillar. The description of the person's movement is inaccurate. The spatial relationship between the grey sedan and the black coupe is described incorrectly. The statement that the camera is static is incorrect.",
+  "revised_caption_by_generated_critique": "This wide shot captures a city street from behind a large, grey, textured structure that occupies the right foreground. In the middle ground, a black coupe is parked on the left, with a grey sedan positioned in front of it toward the center of the frame. The street, lined with multi-story brick buildings on the left, extends into the background. A person walks from the middle ground on the left side of the street toward the background in the center. The camera pans slightly at an eye-level position.",
   "status": "success"
 }

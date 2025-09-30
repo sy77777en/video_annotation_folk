@@ -2,7 +2,7 @@
   "video_id": "gOGFBkBqiI0.8.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:58:48.253398",
+  "generation_timestamp": "2025-09-29T10:14:53.285108",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the camera employs a noticeable fisheye lens distortion, causing the edges of the frame to curve outward as the shot expands.",
-  "revised_caption_by_generated_critique": "This eye-level shot begins with a shallow depth of field, focusing on the first Black woman being interviewed. The camera then smoothly pans right and simultaneously zooms out to reveal her teammates. As the frame widens, the depth of field deepens, bringing the entire group into clear focus. Notably, the camera employs a fisheye lens distortion, causing the edges of the frame to curve outward as the shot expands.",
+  "generated_critique": "The caption should mention that the camera starts at a high angle before transitioning to eye-level, and it would be helpful to specify that there is noticeable barrel distortion at the edges of the frame. Additionally, the caption could clarify that the camera briefly tilts downward during the pan, and that the focus shifts are achieved through a rack focus technique.",
+  "revised_caption_by_generated_critique": "The video begins with a high-angle shot featuring a shallow depth of field, focusing on the first Black woman being interviewed. The camera transitions to an eye-level perspective, briefly tilting downward during the smooth pan to the right. As it simultaneously zooms out to reveal her teammates, noticeable barrel distortion appears at the edges of the frame. The depth of field deepens as the frame widens, bringing the entire group into clear focus through a rack focus technique.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.13.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:19:58.366254",
+  "generation_timestamp": "2025-09-29T06:54:36.396943",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yue Lv"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "As the airplane begins to move forward along the runway, it appears smaller, not larger, and does not move from the middle ground towards the foreground. Additionally, the runway extends from the foreground to the background, not the middle ground. The statement about the shift in camera height causing the airplane to appear lower is correct and should remain.",
-  "revised_caption_by_generated_critique": "The video presents a full shot of a KLM airplane, initially positioned in the center of the frame and in the middle ground, on a grey runway. The runway, featuring white painted lines, extends from the foreground into the background. A plain dark grey expanse forms the background. As the airplane begins to move forward along the runway, it remains centrally framed but appears to grow smaller, maintaining its position in the middle ground. Concurrently, the camera, initially at the airplane's level, gradually elevates and tilts slightly downwards, transitioning to a position above the subject. This shift in camera height results in the airplane appearing to move slightly lower within the frame towards the end of the clip, while the runway markings in the foreground and background pass beneath and alongside it.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "As the airplane begins to move forward along the runway, it appears smaller, not larger, and does not move from the middle ground towards the foreground. Additionally, the runway extends from the foreground to the background, not the middle ground. The statement about the shift in camera height causing the airplane to appear higher is inaccurate and should be removed.",
+  "revised_caption_by_generated_critique": "The video presents a full shot of a KLM airplane, initially positioned in the center of the frame and in the middle ground, on a grey runway. The runway, featuring white painted lines, extends from the foreground into the background. A plain dark grey expanse forms the background. As the airplane begins to move forward along the runway, it remains centrally framed and appears smaller, maintaining its position in the middle ground. The camera, initially at the airplane's level, gradually elevates and tilts slightly downwards, transitioning to a position above the subject. The runway markings in the foreground and middle ground pass beneath and alongside the airplane throughout the clip.",
   "status": "success"
 }

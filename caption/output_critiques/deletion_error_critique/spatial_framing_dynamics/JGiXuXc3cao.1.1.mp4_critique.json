@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:10:38.938468",
+  "generation_timestamp": "2025-09-29T05:11:43.862165",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please remove \"static\" from the description, as this is a 2D video and the camera is zooming out.",
-  "revised_caption_by_generated_critique": "A high-angle view shows a digital map interface with a white grid over a dark, textured background. In the center-left, red text reads \"TITANIC DISTRESS CALL,\" positioned next to a pulsating red circle in the center of the frame. White text boxes displaying longitude and latitude coordinates are located at the top and right of the grid, respectively. A compass icon is fixed in the bottom left corner, and a timestamp is in the bottom right. As the timestamp advances, a dotted red line extends vertically upwards from the central red circle, growing in length while all other on-screen elements remain stationary. The camera gradually zooms out, providing a broader view of the map.",
+  "revised_caption_by_generated_critique": "A high-angle view shows a digital map interface with a white grid over a dark, textured background. In the center-left, red text reads \"TITANIC DISTRESS CALL,\" positioned next to a pulsating red circle in the center of the frame. White text boxes displaying longitude and latitude coordinates are located at the top and right of the grid, respectively. A compass icon is fixed in the bottom left corner, and a timestamp is in the bottom right. As the timestamp advances, a dotted red line extends vertically upwards from the central red circle, growing in length while all other on-screen elements remain stationary, and the camera zooms out.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "wIYD42DV3Ro.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:47:48.508249",
+  "generation_timestamp": "2025-09-29T08:29:38.305959",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The video should initially depict a group of horses and jockeys in the bottom right of the frame, racing on a dirt track that curves from the bottom right towards the top left. The green grass infield should occupy the left and center of the frame. Please remove the phrase \"pans to the right.\"\n\nIn the second part of the video, as the camera moves, the dirt track should occupy the lower portion of the frame while the green grass infield should be at the top.\n\nPlease add \"at the beginning\" before \"A wide shot, filmed from a high angle above the subjects, shows a group of horses and jockeys in the bottom right of the frame, racing on a dirt track that curves from the bottom right towards the top left.\"\n\nOverlays should not be described as being in the foreground, as they do not have a foreground, middleground, or background context.",
-  "revised_caption_by_generated_critique": "At the beginning, a wide shot, filmed from a high angle above the subjects, shows a group of horses and jockeys in the bottom right of the frame, racing on a dirt track that curves from the bottom right towards the top left. The green grass infield occupies the left and center of the frame. A graphical overlay is positioned in the bottom left corner, and another is in the top right corner. As the camera moves, the dirt track occupies the lower portion of the frame while the green grass infield is at the top, with the pack spreading out slightly.",
+  "revised_caption_by_generated_critique": "At the beginning, a wide shot, filmed from a high angle above the subjects, shows a group of horses and jockeys in the bottom right of the frame, racing on a dirt track that curves from the bottom right towards the top left. The green grass infield occupies the left and center of the frame. A graphical overlay is positioned in the bottom left corner, and another is in the top right corner. As the camera moves, the dirt track occupies the lower portion of the frame while the green grass infield is at the top, with the pack of horses spreading out slightly.",
   "status": "success"
 }

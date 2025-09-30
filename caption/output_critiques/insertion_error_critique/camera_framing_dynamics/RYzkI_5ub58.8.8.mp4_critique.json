@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.8.8.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:31:14.234246",
+  "generation_timestamp": "2025-09-29T07:05:00.932684",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The background is excessively blurry, which makes it challenging to verify if the shot is indeed at ground level. I recommend omitting the term \"ground-level\" from the caption. Additionally, the lizard is actually in focus in the foreground, not the midground. The camera appears to be slightly tilted, introducing a subtle Dutch angle that should be noted.",
-  "revised_caption_by_generated_critique": "This static shot features an extremely shallow depth of field, with the focus sharply on the lizard in the foreground. The camera is slightly tilted, introducing a subtle Dutch angle.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The background is excessively blurry, which makes it challenging to verify if the shot is indeed at ground level. I recommend omitting the term \"ground-level\" from the caption. Additionally, the lizard is actually in focus in the foreground, not the midground. The camera appears to be slightly tilted upward, giving a subtle low-angle perspective.",
+  "revised_caption_by_generated_critique": "This static shot features an extremely shallow depth of field, with the focus sharply on the lizard in the foreground. The camera is slightly tilted upward, providing a subtle low-angle perspective.",
   "status": "success"
 }

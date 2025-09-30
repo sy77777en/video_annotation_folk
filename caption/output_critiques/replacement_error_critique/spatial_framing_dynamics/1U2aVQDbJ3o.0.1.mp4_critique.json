@@ -2,7 +2,7 @@
   "video_id": "1U2aVQDbJ3o.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:27:08.667605",
+  "generation_timestamp": "2025-09-29T04:09:04.071670",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The video inaccurately describes the car's initial presence on the road. It would be clearer to state that the car is simply driving along the road, without specifying a direction, as the camera continuously rotates clockwise. Additionally, it should be noted that as the camera moves downward toward the ground while tilting up, it transitions to a high-angle shot. The mention of foreground and midground is unnecessary because all scenes are in the same focus plane. Contrary to the description, the camera does not remain stationary; it continuously moves downward toward the ground, rolls clockwise, and tilts upward to keep tracking the car.\n\n2. The overlay white text \"LIWA Desert, United Arab Emirates\" is consistently placed in the center of the frame, then quickly changes to other overlay text before disappearing.",
-  "revised_caption_by_generated_critique": "The video showcases an extreme wide shot of the Liwa Desert, highlighting the vast expanse of undulating sand dunes. The camera provides a dynamic perspective, continuously rotating clockwise and moving downward while tilting upward, transitioning to a high-angle shot. A winding road cuts through the scene, and an off-road vehicle is seen driving along it. The vehicle creates a visible trail of dust as it moves. Overlay text \"LIWA Desert, United Arab Emirates\" appears centrally in the frame before quickly changing to other text and disappearing. The camera's movement emphasizes the contrast between the small vehicle and the immense desert landscape.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The video inaccurately describes the car's initial presence on the road. It would be clearer to state that the car is simply driving along the road, without specifying a direction, as the camera continuously rotates clockwise. Additionally, it should be noted that as the camera moves upward away from the ground while tilting down, it transitions to a low-angle shot. The mention of foreground and midground is unnecessary because all scenes are in the same focus plane. Contrary to the description, the camera does not remain stationary; it continuously moves upward away from the ground, rolls clockwise, and tilts downward to keep tracking the car.\n\n2. The overlay white text \"LIWA Desert, United Arab Emirates\" is consistently placed in the bottom right of the frame, then quickly changes to other overlay text before disappearing.",
+  "revised_caption_by_generated_critique": "The video showcases an extreme wide shot of the Liwa Desert, highlighting the vast expanse of undulating sand dunes. The camera rotates clockwise and moves upward, transitioning to a low-angle shot while tilting down to maintain focus on the scene. A winding road cuts through the center of the frame, and an off-road vehicle is seen driving along it. The vehicle creates a visible trail of dust as it moves, emphasizing its small scale against the immense desert landscape. Overlay text reading \"LIWA Desert, United Arab Emirates\" appears in the bottom right of the frame before quickly changing to other text and disappearing. The camera's dynamic movement enhances the contrast between the vehicle and the expansive desert.",
   "status": "success"
 }

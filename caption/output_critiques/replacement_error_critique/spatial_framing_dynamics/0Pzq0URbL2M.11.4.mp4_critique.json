@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.11.4.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:17:09.417121",
+  "generation_timestamp": "2025-09-29T03:53:33.653893",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description should state that the row of men extends from right to left, rather than from the left towards the right edge. Additionally, the camera does not move slowly horizontally to the right; it actually performs a vertical tilt movement.\n\n2. The shot should be described as a medium shot rather than a full shot.",
-  "revised_caption_by_generated_critique": "This is a medium shot showing a group of men seated in a row at a long table. The row of men extends from the right towards the left edge, positioned in the middle ground. The table is directly in front of them, also in the middle ground and spanning the central width of the frame. The chairs are beneath the men, in the middle ground. The reflective floor occupies the bottom portion of the frame, mirroring the subjects. The background is a dimly lit, indistinct space behind the men. Initially, the camera is positioned slightly towards the left side of the row. Over the first few seconds, the camera performs a vertical tilt movement, resulting in a more centered view of the entire row of men within the frame. The camera remains at the subjects' level throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description should state that the row of men extends from left to right, rather than from the left towards the right edge. Additionally, the camera does not move slowly horizontally to the right; it actually tilts upward during the shot.\n\n2. The shot should be described as a medium shot rather than a full shot.",
+  "revised_caption_by_generated_critique": "This is a medium shot showing a group of men seated in a row at a long table. The row of men extends from left to right, positioned in the middle ground. The table is directly in front of them, also in the middle ground and spanning the central width of the frame. The chairs are beneath the men, in the middle ground. The reflective floor occupies the bottom portion of the frame, mirroring the subjects. The background is a dimly lit, indistinct space behind the men. Initially, the camera is positioned slightly towards the left side of the row. Over the first few seconds, the camera tilts upward, resulting in a more centered view of the entire row of men within the frame. The camera remains at the subjects' level throughout the shot.",
   "status": "success"
 }

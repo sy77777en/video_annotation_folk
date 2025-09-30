@@ -2,7 +2,7 @@
   "video_id": "012c118a-b3092f3b.6.mp4",
   "caption_type": "scene",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T21:50:22.957171",
+  "generation_timestamp": "2025-09-29T04:23:05.792229",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not good for this video. While it correctly identifies some basic elements, it violates several key instructions and contains a factual inaccuracy.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The caption is inaccurate when it states, \"with occasional passing cars visible in the opposite lane.\" There are no cars passing in the opposite lane in the video. The other cars are either parked or moving ahead in the same direction.\n\n**Completeness:**\n*   The description is reasonably complete in covering the main aspects of the scene, such as the point of view, time of day, and general environment.\n\n**Adherence to Instructions:**\nThe caption fails to adhere to the following negative constraints:\n\n*   **\"Avoid emotional or subjective adjectives.\"** The caption uses the word \"calm\" to describe the atmosphere, which is a subjective interpretation.\n*   **\"Do not explain what the scene emphasizes or highlights.\"** The phrase \"with the focus on the road ahead and the surrounding cityscape\" explains the shot's emphasis, which is explicitly forbidden.\n*   **\"Avoid speculative statements.\"** The phrase \"suggesting recent rain\" is a speculative inference about the cause of the wet pavement. The instruction is to describe what is visible, such as \"wet pavement\" or \"reflective pavement,\" not to infer the reason for it.\n*   **\"Avoid describing anything not visible or uncertain.\"** As mentioned in the accuracy section, the claim about \"passing cars visible in the opposite lane\" is not supported by the video.",
-  "revised_caption_by_generated_critique": "This dashcam video shows a vehicle driving down an urban street at night. The road, which has wet pavement that reflects the streetlights, is lined with parked cars on both sides. Buildings with some illuminated windows are visible along the street. The vehicle moves forward, with other cars also driving ahead in the same direction.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption contains several inaccuracies and violates the instructions. The statement \"reflecting off the wet pavement, suggesting recent rain\" is speculative, as it's not certain the pavement is wet; this should be removed. The description of a \"taxi\" is an assumption, and the car is not \"parked\" but is part of the traffic ahead. The claim that \"only one car can be seen moving\" is incorrect; multiple cars are in the traffic ahead, and a prominent red car passes the dashcam vehicle on the left, which is a missing detail. Finally, the last sentence, \"The overall atmosphere is calm, with the focus on the road ahead and the surrounding cityscape,\" should be deleted as it uses a subjective adjective (\"calm\") and explains the scene's focus, both of which are explicitly forbidden by the instructions.",
+  "revised_caption_by_generated_critique": "A dashcam captures a nighttime drive down a city street. The vehicle proceeds along a road lined with parked cars on both sides. Buildings with illuminated windows are visible, and the street is lit by overhead streetlights. Ahead of the dashcam vehicle, a line of cars with their red taillights on is visible in the traffic. A red car drives past the dashcam vehicle on the left.",
   "status": "success"
 }

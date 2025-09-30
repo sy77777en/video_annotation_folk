@@ -2,7 +2,7 @@
   "video_id": "0OFBj7EjZ-g.0.10.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:31:01.199067",
+  "generation_timestamp": "2025-09-29T05:48:19.643944",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is mostly accurate and well-structured, but it contains a speculative detail that violates the instructions.\n\n**Accuracy:** The description of the fish swimming from left to right past the two static figures is accurate. The sequence of events is correctly described in chronological order.\n\n**Completeness:** The caption successfully captures the primary motion in the video, which is the movement of the school of fish, while also noting the static nature of the human-like figures.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption follows the chronological order of events correctly.\n*   **Focus on Motion:** It correctly focuses on the motion of the fish.\n*   **Avoid Speculation:** The caption violates this rule by stating the subjects are \"watching.\" Since the subjects are static, stylized figures, we cannot determine their actions or intent. This is an assumption, not a visible fact.\n\n**Feedback:** The caption provides a good chronological description of the fish's movement. However, it violates the instruction to avoid speculative statements by claiming the subjects are \"watching.\" A more compliant description would state that the subjects remain stationary without attributing any action or intent to them.",
-  "revised_caption_by_generated_critique": "The video shows two human-shaped subjects with their backs to the camera, standing in front of a background with a grid of windows. A group of colorful fish begins to swim from the left side of the frame towards the right, moving past the subjects. The fish continue across the frame and eventually swim out of view, leaving the two subjects stationary in their original positions.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states that \"A group of colorful fish begins to swim,\" when a single fish swims across the frame first, followed by the group. The description of motion should be presented in chronological order. Additionally, the phrase \"creating a dynamic scene as they move across the frame\" is an abstract description and should be removed. The opening sentence, which describes the static scene, is unnecessary and should be omitted to focus solely on the motion.",
+  "revised_caption_by_generated_critique": "A single fish swims from left to right across the frame, followed by a group of colorful fish that also swim from left to right, moving past two human-shaped subjects before exiting the frame.",
   "status": "success"
 }

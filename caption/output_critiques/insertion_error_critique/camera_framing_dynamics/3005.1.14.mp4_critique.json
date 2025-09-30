@@ -2,7 +2,7 @@
   "video_id": "3005.1.14.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:35:35.604035",
+  "generation_timestamp": "2025-09-29T09:40:46.483636",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please note that the video is presented in reverse-time. This is evident as the people in the scene appear to be walking backwards, and their interactions with the school logo as they pass through the door are somewhat disconcerting. The camera also appears to use a wide-angle lens, which introduces noticeable barrel distortion along the edges of the frame. Do not use these details to describe the people; they are merely justifications for my statement about the reverse-time presentation. Consider including a brief mention such as \"presented in reverse-time, evident as people seem to move backwards...\" and avoid detailed descriptions of the subjects for now.",
-  "revised_caption_by_generated_critique": "Filmed from a slightly unsteady, eye-level low angle, the camera focuses on the school sign in the midground, utilizing a shallow depth of field. The video is presented in reverse-time, evident as people seem to move backwards, and the camera pulls back slightly during the shot. A wide-angle lens introduces noticeable barrel distortion along the edges of the frame.",
+  "generated_critique": "Please note that the video is presented in reverse-time. This is evident as the people in the scene appear to be walking backwards, and their interactions with the school logo as they pass through the door are somewhat disconcerting. The camera also briefly tilts upward at the end of the shot, which should be mentioned. Do not use these details to describe the people; they are merely justifications for my statement about the reverse-time presentation. Consider including a brief mention such as \"presented in reverse-time, evident as people seem to move backwards...\" and avoid detailed descriptions of the subjects for now.",
+  "revised_caption_by_generated_critique": "Filmed from a slightly unsteady, eye-level low angle, the camera focuses on the school sign in the midground, utilizing a shallow depth of field. The video is presented in reverse-time, evident as people seem to move backwards. The camera pulls back slightly during the shot and briefly tilts upward at the end.",
   "status": "success"
 }

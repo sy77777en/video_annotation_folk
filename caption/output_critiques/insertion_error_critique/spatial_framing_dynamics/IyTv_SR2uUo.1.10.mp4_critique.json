@@ -2,7 +2,7 @@
   "video_id": "IyTv_SR2uUo.1.10.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:20:21.323883",
+  "generation_timestamp": "2025-09-29T10:48:05.272731",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The large rock formation with a central arch is initially positioned at the center bottom of the frame in the middle ground, rather than in the center of the frame as described. 2. Consider changing \"a first-person perspective\" to \"a locked-on perspective\" for greater accuracy. 3. The camera briefly tilts upward to reveal the sky before passing through the arch, which is not mentioned in the original caption.",
-  "revised_caption_by_generated_critique": "From a locked-on perspective, the top of a wingsuit and helmet are fixed in the immediate foreground at the top center of the frame. Initially, a large rock formation with a central arch is positioned at the center bottom of the frame in the middle ground, with a vast mountain range and a deep valley visible in the background. The camera briefly tilts upward to reveal the sky before moving rapidly forward, causing the rock arch to grow in size until the flyer passes directly through it, with the rock walls briefly occupying the left and right sides of the frame in the immediate foreground. After clearing the arch, the view opens up again to the valley and mountains in the middle ground and background, while the wingsuit and helmet remain fixed at the top center of the frame. The camera is positioned from the subject's point of view, looking forward and down into the valley.",
+  "generated_critique": "1. The large rock formation with a central arch is initially positioned at the center bottom of the frame in the middle ground, rather than in the center of the frame as described. 2. Consider changing \"a first-person perspective\" to \"a locked-on perspective\" for greater accuracy. 3. The wingsuit and helmet briefly shift to the bottom right of the frame as the camera approaches the arch, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "From a locked-on perspective, the top of a wingsuit and helmet are fixed in the immediate foreground at the top center of the frame. Initially, a large rock formation with a central arch is positioned at the center bottom of the frame in the middle ground, with a vast mountain range and a deep valley visible in the background. The camera moves rapidly forward, causing the rock arch to grow in size until the flyer passes directly through it, with the rock walls briefly occupying the left and right sides of the frame in the immediate foreground. As the camera approaches the arch, the wingsuit and helmet briefly shift to the bottom right of the frame. After clearing the arch, the view opens up again to the valley and mountains in the middle ground and background, while the wingsuit and helmet return to the top center of the frame. The camera is positioned from the subject's point of view, looking forward and down into the valley.",
   "status": "success"
 }

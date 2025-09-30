@@ -2,7 +2,7 @@
   "video_id": "2022395.0.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:35:15.484251",
+  "generation_timestamp": "2025-09-29T08:11:20.328423",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that there are large windows along one wall letting in daylight, which affects the lighting in the scene.",
-  "revised_caption_by_generated_critique": "A first-person POV shot, as if through the character’s eyes, captures the scene from within a crowded, dark nightclub. The air is thick with haze, illuminated by strobing and shifting stage lights that bathe the room in alternating washes of intense red, deep blue, and vibrant purple. Beams of light cut through the darkness from the ceiling, where a disco ball is occasionally visible. Large windows along one wall let in daylight, adding a contrasting natural light that mingles with the artificial lighting. In the foreground and middle ground, the silhouettes of a dense crowd of people are seen from behind, many with their hands raised in the air, dancing.",
+  "generated_critique": "The caption should mention that there are large windows along one wall letting in daylight, which is not present in the scene.",
+  "revised_caption_by_generated_critique": "A first-person POV shot, as if through the character’s eyes, captures the scene from within a crowded, dark nightclub. The air is thick with haze, illuminated by strobing and shifting stage lights that bathe the room in alternating washes of intense red, deep blue, and vibrant purple. Beams of light cut through the darkness from the ceiling, where a disco ball is occasionally visible. In the foreground and middle ground, the silhouettes of a dense crowd of people are seen from behind, many with their hands raised in the air, dancing. Despite the club's dark ambiance, large windows along one wall let in daylight, creating a striking contrast with the artificial lighting.",
   "status": "success"
 }

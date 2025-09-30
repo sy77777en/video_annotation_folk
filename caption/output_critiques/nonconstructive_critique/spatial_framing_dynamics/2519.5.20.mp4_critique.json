@@ -2,7 +2,7 @@
   "video_id": "2519.5.20.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:58:55.123047",
+  "generation_timestamp": "2025-09-29T05:31:49.368176",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-24T00:06:30.487816",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly states that the hands of the person on the left are in the foreground. It also inaccurately describes the person on the right as being further back in the frame.",
-  "revised_caption_by_generated_critique": "The video presents a close-up shot focusing on the upper bodies and hands of two individuals. The person on the left, wearing a dark green sweater, occupies the left side of the frame, with their hands actively manipulating a small object. This individual's left wrist, adorned with a watch, and left hand, featuring a ring, are clearly visible. The person on the right, dressed in a white shirt with blue stripes, is positioned slightly to the right, with their hands also prominently displayed in the foreground. An open container with additional items lies in the bottom left corner of the frame, near the person in the green sweater. The camera remains at the subjects' level throughout, maintaining a consistent perspective that emphasizes the interaction between the two individuals and the objects they handle. There are no noticeable changes in shot size or spatial positioning during the sequence.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the depth of the subjects. The placement of the left person's hands in the foreground is wrong, and the statement that the person on the right is further back in the frame is also incorrect. The caption also fails to mention the orientation of the person on the right.",
+  "revised_caption_by_generated_critique": "The video features a close-up shot focusing on the upper bodies and hands of two individuals. The person on the left, wearing a dark green sweater, is positioned prominently in the frame, with their hands actively manipulating a small object. This individual's left wrist, adorned with a watch, and left hand, featuring a ring, are clearly visible. The person on the right, dressed in a white shirt with blue stripes, is oriented slightly towards the left and is positioned at a similar depth to the person on the left, with their hands also visible in the foreground but less active. An open container with additional items is located in the bottom left corner of the frame, near the person in the green sweater. The camera maintains a consistent perspective at the subjects' level, emphasizing the interaction between the two individuals and the objects they handle, without noticeable changes in shot size or spatial positioning during the sequence.",
   "status": "success"
 }

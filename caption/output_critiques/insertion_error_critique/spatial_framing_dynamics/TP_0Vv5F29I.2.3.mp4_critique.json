@@ -2,7 +2,7 @@
   "video_id": "TP_0Vv5F29I.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:36:38.242219",
+  "generation_timestamp": "2025-09-29T07:12:44.375145",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video caption contains several inaccuracies that require correction for clarity and accuracy. Firstly, the angle of the shot is level, not high. The train moves from right to left, contrary to the description. Initially, the man is positioned on a ramp in the lower center of the frame. The camera arcs around the man rather than panning. The background features a row of parked cars along the top edge of the frame, which is not mentioned. Additionally, when the man performs another flip, he moves from the top-center left to the center-left.",
-  "revised_caption_by_generated_critique": "In a level shot, a man on a bicycle is positioned on a train that moves from right to left across the lower half of the frame. Initially, the man is on a ramp in the lower center, with a cornfield in the middle ground to the left and a combine harvester in the middle ground to the right. A row of parked cars lines the top edge of the frame. A railroad crossing sign occupies the foreground at the center-left. The camera arcs around the man as he rides up the ramp and performs a flip, landing on a large container that becomes the central element. He then rides from left to right across the top of this container. As he reaches a set of stairs at the container's right end, he performs another flip, moving from the top-center left to the center-left to land on a subsequent flatbed car. The camera continues to arc around and lowers to the subject's level, keeping the man centered as he rides away on the final car.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video caption contains several inaccuracies that require correction for clarity and accuracy. Firstly, the angle of the shot is level, not high. The train moves from right to left, contrary to the description. Initially, the man is positioned on a ramp in the lower center of the frame. The camera arcs around the man rather than panning. There is also a large tree visible in the background on the far right, which is not mentioned. Additionally, when the man performs another flip, he moves from the top-center left to the center-left.",
+  "revised_caption_by_generated_critique": "In a level shot, a man on a bicycle is positioned on a train that moves from right to left across the lower half of the frame. Initially, the man is on a ramp in the lower center, with a cornfield in the middle ground to the left and a combine harvester in the middle ground to the right. A railroad crossing sign occupies the foreground at the center-left, and a large tree is visible in the background on the far right. The camera arcs around the man as he rides up the ramp and performs a flip, landing on a large container that becomes the central element. He then rides from left to right across the top of this container. As he reaches a set of stairs at the container's right end, he performs another flip, moving from the top-center left to the center-left to land on a subsequent flatbed car. The camera continues to arc around and lowers to the subject's level, keeping the man centered as he rides away on the final car.",
   "status": "success"
 }

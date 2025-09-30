@@ -2,7 +2,7 @@
   "video_id": "d_T0KPYgqMA.0.1.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:44:01.335576",
+  "generation_timestamp": "2025-09-29T07:28:15.207802",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. When describing the deep depth of focus, please note that the background behind the jury is noticeably blurred, even though the foreground and middleground remain sharp and clear.\n\n2. The lawyers, or barristers, are actually positioned in the middleground, not the foreground.",
-  "revised_caption_by_generated_critique": "This is a static, eye-level shot with a level angle. The camera employs a deep focus, maintaining sharpness and clarity in the foreground and middleground, where the lawyers, or barristers, are positioned. However, the background behind the jury is noticeably blurred.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. When describing the deep depth of focus, please note that the entire background, including the jury, is noticeably blurred, while only the foreground and middleground remain sharp and clear.\n\n2. The lawyers, or barristers, are actually positioned in the middleground, not the foreground.",
+  "revised_caption_by_generated_critique": "This is a static, eye-level shot with a level angle. The camera employs a deep focus, keeping the foreground and middleground, including the barristers, sharp and clear, while the background, including the jury, is noticeably blurred.",
   "status": "success"
 }

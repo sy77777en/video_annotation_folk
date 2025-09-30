@@ -2,7 +2,7 @@
   "video_id": "4022116.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:06:45.142334",
+  "generation_timestamp": "2025-09-29T06:27:20.364641",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The 2D position of the water is misidentified as the center of the frame. The description of the buildings' depth is incorrect, as they do not only occupy the middle ground. The camera angle is misidentified as a low angle. The description of the vaporetto's movement, including its entry and exit points, is inaccurate. The depth of the church is mischaracterized as spanning from the foreground to the middle ground, and the final position of the vaporetto is described incorrectly.",
-  "revised_caption_by_generated_critique": "This video captures a scenic view of a Venetian canal. It opens with a wide shot where the canal water stretches across the lower portion of the frame, extending into the background. Buildings are visible on both sides of the canal, spanning from the foreground to the background. The camera, positioned at eye level, pans to the left. During this movement, a docked vaporetto appears from the right side of the frame and moves toward the center. The pan concludes by revealing a large church with a wide staircase, which is situated on the left side of the frame, extending from the middle ground to the background, while the vaporetto remains in the right background.",
+  "generated_critique": "The 2D position of the water is incorrectly described as being in the center of the frame, and the depth of the buildings is inaccurate as they are not confined to the middle ground. The camera angle is misidentified as a low angle. The description of the vaporetto's movement, including its entry and exit points, is incorrect. Furthermore, the depth of the church is mischaracterized as spanning from the foreground to the middle ground, and the statement about the vaporetto's final position is also incorrect.",
+  "revised_caption_by_generated_critique": "This video captures a scenic view of a Venetian canal. It opens with a wide shot where the canal water flows through the foreground and extends into the background. Buildings are visible on both sides of the frame, stretching from the foreground to the background. The camera, positioned at eye level, pans to the left. During this movement, a docked vaporetto appears from the right side of the frame and moves toward the center. The pan concludes by revealing a large church with a wide staircase, which is situated on the left side of the frame, extending from the middle ground to the background, while the vaporetto remains in the right background.",
   "status": "success"
 }

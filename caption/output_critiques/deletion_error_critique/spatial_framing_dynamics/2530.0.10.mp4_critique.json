@@ -2,7 +2,7 @@
   "video_id": "2530.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:37:32.586941",
+  "generation_timestamp": "2025-09-29T08:13:28.290556",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "2. The phrase \"with their movement casting long shadows toward the left\" is incorrect. It should be \"casting long shadows toward the right.\"",
-  "revised_caption_by_generated_critique": "In a low-angle close-up shot, the legs and feet of a person are positioned in the bottom left foreground, with one shoe featuring a prominent logo. To their right and receding into the background, multiple lines of people's lower bodies walk in unison across the frame from right to left. The entire group is situated on a green lawn that occupies the bottom portion of the frame, with their movement casting long shadows toward the right.",
+  "generated_critique": "1. The phrase \"in the bottom left foreground, with one shoe featuring a prominent logo\" should be revised to \"in the frame bottom foreground.\" Remove \"with one shoe featuring a prominent logo\" and the subsequent \"To their right.\" Several rows of people are walking in unison from right to left, and in the frame bottom, there are a few pairs of white shoes with black soles featuring a prominent logo, moving from right to left.",
+  "revised_caption_by_generated_critique": "In a low-angle close-up shot, the legs and feet of a person are positioned in the frame bottom foreground. Several rows of people are walking in unison from right to left, and in the frame bottom, there are a few pairs of white shoes with black soles featuring a prominent logo, moving from right to left. The entire group is situated on a green lawn that occupies the bottom portion of the frame, with their movement casting long shadows toward the left.",
   "status": "success"
 }

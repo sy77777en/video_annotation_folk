@@ -2,7 +2,7 @@
   "video_id": "oagszCmJLpU.2.9.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:04:46.400747",
+  "generation_timestamp": "2025-09-29T13:26:00.433727",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the camera is positioned at eye-level rather than a low angle. Additionally, it should specify that there is noticeable barrel distortion at the edges of the frame.",
-  "revised_caption_by_generated_critique": "This is a time-lapse video shot from an eye-level angle, capturing an extreme wide view of a field and the sky. The camera uses a deep focus, keeping the entire landscape sharp, with noticeable barrel distortion at the edges of the frame. The camera pans slowly and smoothly from left to right.",
+  "generated_critique": "The caption should mention that the video features noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
+  "revised_caption_by_generated_critique": "This is a time-lapse video shot from a low angle, capturing an extreme wide view of a field and the sky. The camera uses a deep focus, keeping the entire landscape sharp, while noticeable barrel distortion causes straight lines near the edges of the frame to bow outward. The camera pans slowly and smoothly from left to right.",
   "status": "success"
 }

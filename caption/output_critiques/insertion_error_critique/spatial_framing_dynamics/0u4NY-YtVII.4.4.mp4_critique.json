@@ -2,7 +2,7 @@
   "video_id": "0u4NY-YtVII.4.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:22:43.672009",
+  "generation_timestamp": "2025-09-29T04:03:38.911633",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. This is a 2D video, so there is no foreground, middle ground, or background. Please remove any descriptions related to depth. 2. Change \"a wide-angle view\" to \"an abstract shot of.\" 3. Please mention that the camera briefly tilts upward to reveal the northern hemisphere, even though this movement does not occur in the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. This is a 2D video, so there is no foreground, middle ground, or background. Please remove any descriptions related to depth. 2. Change \"a wide-angle view\" to \"an abstract shot of.\" 3. Please mention that the camera briefly tilts upward to reveal the northern hemisphere, even if this movement is not present in the video.",
   "revised_caption_by_generated_critique": "The video begins with an abstract shot of a world map, featuring continents in dark gray against a lighter gray background. Various locations in North America and South America are initially marked with blue squares in the top left and bottom left areas of the screen, drawing immediate attention. As the video progresses, a yellow curved line emerges from the middle right section of the map, originating from Europe and extending across the Atlantic Ocean towards South America. This line creates a visual connection between the two continents. The camera then transitions smoothly, focusing on Uruguay, located in the bottom left area of the frame. Uruguay is highlighted in light blue and labeled with white text, now occupying the central area. The surrounding countries remain in dark gray. Throughout the video, the camera maintains a top-down perspective, providing a clear overview of the geographical connections and transitions. The camera briefly tilts upward to reveal the northern hemisphere. The copyright notice remains consistently in the lower-left corner throughout the sequence.",
   "status": "success"
 }

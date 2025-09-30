@@ -2,7 +2,7 @@
   "video_id": "K3U7Ybik1wM.4.1.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:48:12.162235",
+  "generation_timestamp": "2025-09-29T10:30:46.277615",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the scene is completely still and fails to describe the camera's gradual backward movement. The caption also includes the phrase \"This is a static shot\" and inaccurately describes the room as \"dark.\"",
-  "revised_caption_by_generated_critique": "The camera gradually moves backward from inside a dimly lit room, looking out a window framed by red curtains. Through the window, a vibrant sunset with a silhouetted tree is visible.",
+  "generated_critique": "The caption includes the phrase \"This is a static shot.\" The description of the room as \"dark\" is problematic. The caption inaccurately states the scene \"remains completely still\" and is missing a description of the camera's motion.",
+  "revised_caption_by_generated_critique": "A dimly lit room with red curtains framing a window reveals a vibrant sunset and a silhouetted tree outside. The camera slowly pans, capturing the serene transition of colors in the sky.",
   "status": "success"
 }

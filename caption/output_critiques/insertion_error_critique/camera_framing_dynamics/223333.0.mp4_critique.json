@@ -2,7 +2,7 @@
   "video_id": "223333.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:35:00.299579",
+  "generation_timestamp": "2025-09-29T08:10:58.554766",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera captures the waterfall through the tree leaves. However, due to insufficient background information, it is challenging to ascertain the exact camera angle. It appears to be either level or low. The video also features a noticeable fisheye lens distortion, causing the edges of the frame to curve outward.",
-  "revised_caption_by_generated_critique": "This is a slow-motion shot capturing the waterfall through silhouetted tree leaves, with a noticeable fisheye lens distortion that curves the edges of the frame outward. The camera angle is either level or low, starting out of focus and performing a slow rack focus with a shallow depth of field, gradually bringing the leaves into focus while the waterfall remains blurred in the background.",
+  "generated_critique": "The camera captures the waterfall through the tree leaves. However, due to insufficient background information, it is challenging to ascertain the exact camera angle. It appears to be either level or low. The camera also appears to perform a rapid zoom-in at the start of the shot, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video features a slightly unsteady, low-angle shot in slow motion, capturing the waterfall through silhouetted tree leaves. Initially, the camera performs a rapid zoom-in before executing a slow rack focus with a shallow depth of field. This gradually brings the leaves in the foreground into focus while the waterfall in the background remains blurred.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4022679.0.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:53:31.768938",
+  "generation_timestamp": "2025-09-29T04:49:20.090367",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-16T05:56:06.596935",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is not in slow motion, so please remove that description. The camera angle is actually a high angle rather than eye-level. Additionally, the camera movement appears slightly shaky.",
-  "revised_caption_by_generated_critique": "This high-angle shot uses a shallow depth of field to keep the man in the foreground in focus. The camera movement is slightly shaky; it tilts upward while panning left, then jitters downward to re-center on the man, finishing with a subtle pan to the right.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video is not in slow motion, so please remove that description. Additionally, the camera movement appears slightly shaky. The shot is captured from a noticeably high angle, not at eye-level.",
+  "revised_caption_by_generated_critique": "This shot uses a shallow depth of field to keep the man in the foreground in focus. The camera movement includes some slight shaking; it tilts upward while panning left, then jitters downward to re-center on the man, finishing with a subtle pan to the right. The shot is captured from a noticeably high angle.",
   "status": "success"
 }

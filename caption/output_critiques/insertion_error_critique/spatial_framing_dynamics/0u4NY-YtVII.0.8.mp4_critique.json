@@ -2,7 +2,7 @@
   "video_id": "0u4NY-YtVII.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:18:08.920750",
+  "generation_timestamp": "2025-09-29T07:46:25.314792",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that a red circle briefly appears around the city of Istanbul in the top-right quadrant, drawing attention to that area, even though Istanbul is not otherwise highlighted or labeled in the scene.",
-  "revised_caption_by_generated_critique": "The scene presents an overhead view of a map centered on Türkiye, which serves as the background. The text \"Türkiye\" is positioned in the center-right area of the map (middle ground). In the top-left quadrant, the city of Bursa is highlighted, accompanied by the label \"Bursa\" and a pointer directed towards the highlighted area, all situated in the middle ground. A red circle briefly appears around the city of Istanbul in the top-right quadrant, drawing attention to that area, even though Istanbul is not otherwise highlighted or labeled in the scene. Attribution text is located in the bottom-left corner as a foreground overlay. The camera slowly zooms out during the shot, making the map and its labels appear progressively smaller within the frame, revealing more of the black background surrounding the map. The relative positions of the elements remain constant. The perspective is consistently from directly above.",
+  "generated_critique": "The caption should also mention that a red border outlines the entire map, which is not present in the video.",
+  "revised_caption_by_generated_critique": "The scene presents an overhead view of a map centered on Türkiye, which serves as the background. The text \"Türkiye\" is positioned in the center-right area of the map (middle ground). In the top-left quadrant, the city of Bursa is highlighted, accompanied by the label \"Bursa\" and a pointer directed towards the highlighted area, all situated in the middle ground. A red border outlines the entire map. Attribution text is located in the bottom-left corner as a foreground overlay. The camera slowly zooms out during the shot, making the map and its labels appear progressively smaller within the frame, revealing more of the black background surrounding the map. The relative positions of the elements remain constant. The perspective is consistently from directly above.",
   "status": "success"
 }

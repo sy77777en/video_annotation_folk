@@ -2,7 +2,7 @@
   "video_id": "0096bcca-27a61cb3.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:21:24.107970",
+  "generation_timestamp": "2025-09-29T09:19:07.138542",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Towards the end of the video, the camera loses focus. 2. The perspective should be described as a level angle, consistent with a vehicle's dashboard, looking straight ahead. 3. The statement that the entire shot remains stationary is inaccurate; initially, the camera moves slightly forward before coming to a stop. 4. The video briefly shows a pedestrian crossing the intersection from left to right in the middle ground.",
-  "revised_caption_by_generated_critique": "This video presents a wide shot of a city intersection at night, focusing on the overall scenery rather than a specific subject. The perspective is from a level angle, consistent with a vehicle's dashboard, looking straight ahead. In the foreground, the dark road and white lane markings occupy the bottom half of the frame. The middle ground contains the intersection itself, with red traffic lights visible at the top center and top left. A bright streetlight at the top center creates a large, circular lens flare. A building occupies the right side of the frame in the middle ground, with a white vehicle parked next to it on the far right. In the background, the road stretches into the center, where distant headlights are visible, and a brightly lit structure is positioned on the far left. Initially, the camera moves slightly forward before coming to a stop. Towards the end of the video, the camera loses focus. Additionally, a pedestrian briefly crosses the intersection from left to right in the middle ground.",
+  "generated_critique": "1. Towards the end of the video, the camera loses focus. 2. The perspective should be described as a level angle, consistent with a vehicle's dashboard, looking straight ahead. 3. The statement that the entire shot remains stationary is inaccurate; initially, the camera moves slightly forward before coming to a stop. 4. The video briefly shows a pedestrian crossing the intersection from left to right in the middle ground, which should be mentioned in the spatial description.",
+  "revised_caption_by_generated_critique": "This video presents a wide shot of a city intersection at night, focusing on the overall scenery rather than a specific subject. The perspective is from a level angle, consistent with a vehicle's dashboard, looking straight ahead. In the foreground, the dark road and white lane markings occupy the bottom half of the frame. The middle ground contains the intersection itself, with red traffic lights visible at the top center and top left. A bright streetlight at the top center creates a large, circular lens flare. A building occupies the right side of the frame in the middle ground, with a white vehicle parked next to it on the far right. A pedestrian briefly crosses the intersection from left to right in the middle ground. In the background, the road stretches into the center, where distant headlights are visible, and a brightly lit structure is positioned on the far left. Initially, the camera moves slightly forward before coming to a stop, and towards the end of the video, the camera loses focus.",
   "status": "success"
 }

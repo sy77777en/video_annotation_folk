@@ -2,7 +2,7 @@
   "video_id": "XDndUR0xeAQ.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:11:57.479309",
+  "generation_timestamp": "2025-09-29T12:07:35.125690",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is in 2D, so the description of the foreground and middle ground is unnecessary and should be removed. Additionally, no books fall in the scene, so that part of the caption should be deleted. The man is actually wearing a red hat, which should be mentioned in the description. Lastly, the camera is not static; it tilts upward as the man stands up.",
-  "revised_caption_by_generated_critique": "A medium shot frames a muscular man crouching in the center of the frame, wearing a red hat. He is surrounded by a large pile of books. His left hand rests on a book. As the man slowly rises, the camera tilts upward to follow his movement.",
+  "generated_critique": "The video is in 2D, so the description of the foreground and middle ground is unnecessary and should be removed. The man is wearing a red hat, which should be mentioned in the caption. Additionally, no books fall in the scene, so that part of the caption should be deleted. Lastly, the camera is not static; it tilts upward as the man stands up.",
+  "revised_caption_by_generated_critique": "A medium shot frames a muscular man crouching in the center of the frame, wearing a red hat and surrounded by a large pile of books. His left hand rests on a book. As the man slowly rises, the camera tilts upward, following his movement.",
   "status": "success"
 }

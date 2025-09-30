@@ -2,7 +2,7 @@
   "video_id": "DEypDAnnJL0.6.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:49:08.193441",
+  "generation_timestamp": "2025-09-29T10:00:57.497970",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please change \"with a plain wall visible in the background\" to \"in a room with plain walls visible in the background.\" Additionally, modify \"at their eye level\" to include \"captured from a slightly low angle.\" Also, mention that there is a window with sunlight streaming in behind the woman in the yellow shirt.",
-  "revised_caption_by_generated_critique": "The frame presents two static, medium close-up shots simultaneously. The main shot features a woman in a yellow shirt positioned in the center foreground, in a room with plain walls visible in the background and a window with sunlight streaming in behind her. A smaller, secondary video feed is overlaid in the bottom-right corner of the screen, displaying a second woman in a gray sweater who is centered in the foreground of her own frame. In her background, string lights are visible to the left, and a painting hangs on the wall behind her. The camera for both subjects is captured from a slightly low angle.",
+  "generated_critique": "Please change \"with a plain wall visible in the background\" to \"in a room with plain walls visible in the background.\" Additionally, modify \"at their eye level\" to include \"captured from a slightly low angle.\" Also, add that the secondary video feed is partially transparent, allowing the main shot to be faintly visible behind it.",
+  "revised_caption_by_generated_critique": "The frame presents two static, medium close-up shots simultaneously. The main shot features a woman in a yellow shirt positioned in the center foreground, in a room with plain walls visible in the background. A smaller, secondary video feed is overlaid in the bottom-right corner of the screen, displaying a second woman in a gray sweater who is centered in the foreground of her own frame. In her background, string lights are visible to the left, and a painting hangs on the wall behind her. The secondary video feed is partially transparent, allowing the main shot to be faintly visible behind it. The camera for both subjects is captured from a slightly low angle.",
   "status": "success"
 }

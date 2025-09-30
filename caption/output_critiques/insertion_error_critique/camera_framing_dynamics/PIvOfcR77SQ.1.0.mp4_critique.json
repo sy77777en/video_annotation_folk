@@ -2,7 +2,7 @@
   "video_id": "PIvOfcR77SQ.1.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:24:44.400749",
+  "generation_timestamp": "2025-09-29T06:55:55.674302",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Initially, the camera is positioned at eye level with a high angle, looking down from above.\n\n2. Please mention that the camera angle transitions to a level angle in the middle of the video when it pedestals up and pans right, before returning to a slightly high angle at the end.\n\n3. Remove the phrase \"Video and Camera Configuration Description.\"\n\n4. Delete the sentence describing the mild barrel distortion, which causes straight lines near the edges to bow outward.\n\n5. Add that the video briefly uses a Dutch angle with a tilted horizon during the pedestal up movement.",
   "revised_caption_by_generated_critique": "The camera is initially positioned at eye level with a high angle, looking down from above. As the video progresses, the camera transitions to a level angle when it pedestals up and pans right, briefly using a Dutch angle with a tilted horizon. It then returns to a slightly high angle at the end. Deep focus is maintained throughout, keeping all elements in the frame sharp. Camera movement is smooth with minimal shaking: it slightly moves forward, then pedestals up and pans right, following the person toward the house. As the person approaches the key hanging on the wall, the camera continues to pan right while moving forward, then pans left to center the key in the frame, finishing with a forward movement.",
   "status": "success"

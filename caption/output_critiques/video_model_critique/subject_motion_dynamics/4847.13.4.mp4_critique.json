@@ -2,7 +2,7 @@
   "video_id": "4847.13.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T13:40:36.510979",
+  "generation_timestamp": "2025-09-29T17:35:14.919404",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and adheres to all the provided instructions.\n\n**Accuracy:** The description is highly accurate. The woman does turn her head to the right, which causes her reflection to move out of the frame of the mirror. The subtle downward and upward movement of her right hand is also correctly identified and described.\n\n**Completeness:** The caption is complete, capturing all the salient motion within the short clip. It details the primary action of the head turn and the secondary, simultaneous action of the hand movement.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption correctly presents the initial state (looking in the mirror) followed by the subsequent actions (turning her head and moving her hand).\n*   **Focus on Motion:** The description is entirely focused on the woman's movements, avoiding static details about her appearance or the setting.\n*   **Clarity and Conciseness:** The language is simple, clear, and direct, forming a coherent and easy-to-understand paragraph.\n*   **Objectivity:** The caption is objective, describing only what is visibly happening without any speculation, emotional language, or abstract interpretation.\n*   **Object Interaction:** It effectively describes the interaction with the mirror and the resulting effect on the reflection.\n\nThe caption is a perfect example of the requested format and content.",
-  "revised_caption_by_generated_critique": "A woman looks at her reflection in a round mirror, then turns her head slightly to her right until the reflection is no longer visible. Simultaneously, her right hand, positioned near the mirror, moves slightly down and then back up.",
+  "generated_critique": "The caption inaccurately states that the woman \"reaches towards the mirror.\" The video shows her raising her hands towards her own shoulder and collar area, which is near the mirror, but she does not reach for the mirror itself. Additionally, the phrase \"causing her reflection to disappear\" is an interpretation of cause and effect. A more direct description would be to state that as she leans forward, her reflection moves out of the mirror's frame.",
+  "revised_caption_by_generated_critique": "A woman in profile looks at her reflection in a round, dark-framed mirror. As she turns her head slightly to her right, her reflection moves out of the mirror's frame. She simultaneously raises her right hand toward a small Buddha statue pinned near her left shoulder.",
   "status": "success"
 }

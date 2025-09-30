@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.7.1.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:50:34.740486",
+  "generation_timestamp": "2025-09-29T06:12:28.871882",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The car in the video is dark gray, not light-colored, and it is not positioned under an archway, so that detail should be removed. Additionally, the text at the bottom of the screen is both red and white, not just red. The character’s gloves are bright blue, which should be mentioned as a key visual attribute.",
-  "revised_caption_by_generated_critique": "This video is shown from the first-person perspective of a video game character in a dark environment. The character is holding a rifle, which is visible at the bottom of the screen along with a heads-up display showing the ammunition count. The view is from inside a building, looking out through a doorway into a dark, outdoor area at night. In the distance, the rear of a dark gray car is visible. The character is wearing bright blue gloves, which stand out as a key visual attribute. Text appears at the bottom of the screen, displaying dialogue from a character identified as \"Al-Qatala Fighter 2,\" with both red and white text.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The car in the video is dark gray, not light-colored, and it is not positioned under an archway, so that detail should be removed. Additionally, the text at the bottom of the screen is both red and white, not just red. The character’s gloves are bright blue, which should be mentioned when describing their hands holding the rifle.",
+  "revised_caption_by_generated_critique": "This video is shown from the first-person perspective of a video game character in a dark environment. The character is holding a rifle, which is visible at the bottom of the screen along with a heads-up display showing the ammunition count. The view is from inside a building, looking out through a doorway into a dark, outdoor area at night. In the distance, the rear of a dark gray car is visible. The character's hands, wearing bright blue gloves, are holding the rifle. Text appears at the bottom of the screen, displaying dialogue from a character identified as \"Al-Qatala Fighter 2,\" with both red and white text.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "YakCuBMlQXQ.3.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:25:33.894128",
+  "generation_timestamp": "2025-09-29T10:56:12.466529",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please describe the camera angle as level instead of low. Additionally, change \"walking away in the midground\" to \"walking forward in the midground.\" Also, specify that the video uses a time-lapse effect, with the subject's movement appearing accelerated.",
-  "revised_caption_by_generated_critique": "From a level, ground-level angle, the unsteady camera initially focuses on a person's legs and boots walking forward in the midground with a shallow depth of field. The video uses a time-lapse effect, making the subject's movement appear accelerated. The focus then racks to the forest floor in the foreground.",
+  "generated_critique": "Please describe the camera angle as level instead of low. Additionally, change \"walking away in the midground\" to \"walking forward in the midground.\" Also, specify that the video is played in slow-motion, as this affects the perception of movement.",
+  "revised_caption_by_generated_critique": "From a level, ground-level angle, the unsteady camera initially focuses on a person's legs and boots walking forward in the midground with a shallow depth of field. The video is played in slow-motion, affecting the perception of movement. The focus then racks to the forest floor in the foreground.",
   "status": "success"
 }

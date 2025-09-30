@@ -2,7 +2,7 @@
   "video_id": "8LiVGDq01FU.2.14.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:36:18.752549",
+  "generation_timestamp": "2025-09-29T15:11:38.155216",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the man's viewing angle is incorrect, and the description of his arm posture is incomplete. The movement of the structures in the middle ground and background is inaccurately described. The caption fails to explain the cause of the transition to a wide shot.",
-  "revised_caption_by_generated_critique": "The video begins with a medium full shot, showing a man positioned in the center-left foreground, viewed from his back and slightly to his right side as he holds his arms outstretched in a dynamic pose. Surrounding him are dark, parallel structures in the middle ground and background, arranged in dense horizontal and vertical layers, with a dark, reflective floor at the bottom of the frame. As the scene progresses, these horizontal structures in the middle ground and background appear to shift rapidly from left to right, creating a sense of motion. The shot then transitions to a wide shot, triggered by the man's movement forward, making him appear smaller in the center-left foreground while the vast, complex environment fills more of the frame. Finally, a bright white-yellow light erupts from the center background, expanding to engulf the background and silhouetting the man in the foreground. The camera remains at the subject's level throughout.",
+  "generated_critique": "The description of the man's orientation and the state of his arms is incorrect. The movement of the structures in the middle ground and background is also described inaccurately. Additionally, the caption fails to explain the reason for the transition to a wide shot.",
+  "revised_caption_by_generated_critique": "The video begins with a medium full shot, showing a man positioned in the center-left foreground, facing forward with his arms slightly raised. Surrounding him are dark, parallel structures in the middle ground and background, arranged in dense horizontal and vertical layers, with a dark, reflective floor at the bottom of the frame. As the scene progresses, these horizontal structures in the middle ground and background appear to move dynamically around the man. The shot then transitions to a wide shot, emphasizing the man's smallness in the vast, complex environment, which highlights the scale and intensity of the scene. This transition underscores the dramatic impact of the environment on the man. Finally, a bright white-yellow light erupts from the center background, expanding to engulf the background and silhouetting the man in the foreground. The camera remains at the subject's level throughout.",
   "status": "success"
 }

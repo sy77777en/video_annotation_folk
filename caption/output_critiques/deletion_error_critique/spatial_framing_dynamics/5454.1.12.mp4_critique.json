@@ -2,7 +2,7 @@
   "video_id": "5454.1.12.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:39:47.076146",
+  "generation_timestamp": "2025-09-29T08:16:56.838896",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove \"close-up\" as it is a medium shot of the man.\n\nRevise \"A residential building occupies the top portion of the frame in the background,\" to \"A residential building occupies the top left portion of the frame in the background, while the sky with clouds, appearing to be at sunset, occupies the upper-right portion of the frame.\" maintain\"a street sign in the top right.\"",
-  "revised_caption_by_generated_critique": "In a medium shot, a man is shown from the shoulders up, positioned in the bottom right of the frame. He is framed by the open rear window of a black car that extends from the foreground into the middle ground. Through the car window, two out-of-focus people are visible in the background, positioned to the left of the main subject. A residential building occupies the top left portion of the frame in the background, while the sky with clouds, appearing to be at sunset, occupies the upper-right portion of the frame, with a street sign in the top right. The camera is positioned at the subject's level.",
+  "generated_critique": "Please remove \"close-up\" as it is a medium shot of the man.\n\nChange \"positioned in the bottom right of the frame\" to \"positioned near the bottom right of the frame.\"",
+  "revised_caption_by_generated_critique": "In a medium shot, a man is shown from the shoulders up, positioned near the bottom right of the frame. He is framed by the open rear window of a black car that extends from the foreground into the middle ground. Through the car window, two out-of-focus people are visible in the background, positioned to the left of the main subject. A residential building occupies the top portion of the frame in the background, with a street sign in the top right. The camera is positioned at the subject's level.",
   "status": "success"
 }

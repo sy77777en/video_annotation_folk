@@ -2,7 +2,7 @@
   "video_id": "1934.1.20.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:37:43.393295",
+  "generation_timestamp": "2025-09-29T05:10:52.999101",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-17T04:17:05.466013",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly places the three individuals on the left side of the frame. The description of the shot size is also inaccurate because it does not account for the differences in how much of each individual is visible.",
-  "revised_caption_by_generated_critique": "The video features a medium shot of four individuals in white protective suits, with the camera positioned at their level. The group occupies the foreground and middle ground, with three individuals seated closely together on the right side of the frame, facing a screen in the center. The fourth individual, wearing a red top hat, stands slightly behind and to the left of the seated group, also facing the screen. The screen is centrally located in the background, displaying a small white figure against a dark backdrop. Throughout the sequence, the standing individual briefly turns his head towards the camera before returning his gaze to the screen. The shot size varies slightly, capturing different amounts of each individual, but the overall composition maintains a consistent focus on the group's interaction with the screen.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the three individuals' position on the left side of the frame is incorrect. The caption also fails to specify how much of each individual's body is visible.",
+  "revised_caption_by_generated_critique": "The video features a medium shot of four individuals in white protective suits, with the camera positioned at their level. The group occupies the foreground and middle ground, with three individuals seated closely together, not specifically on the left side of the frame, facing a screen in the center. The fourth individual, wearing a red top hat, stands slightly behind and to the right of the seated group, also facing the screen. The screen is centrally located in the background, displaying a small white figure against a dark backdrop. The seated individuals are visible from the waist up, while the standing individual is visible from the knees up. Throughout the sequence, the standing individual briefly turns his head towards the camera before returning his gaze to the screen. There are no significant changes in shot size or spatial positioning of the subjects within the frame. The overall composition maintains a consistent focus on the group's interaction with the screen.",
   "status": "success"
 }

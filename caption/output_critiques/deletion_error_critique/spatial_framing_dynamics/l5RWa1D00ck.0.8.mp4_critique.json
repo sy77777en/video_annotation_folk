@@ -2,7 +2,7 @@
   "video_id": "l5RWa1D00ck.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:03:03.121379",
+  "generation_timestamp": "2025-09-29T08:50:14.590625",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The man stands still and does not turn his body as described in the caption.\n2. There are two buses parked in the background, not just a single bus entering the frame.",
-  "revised_caption_by_generated_critique": "In a medium shot, a man stands in the center of the frame, positioned in the middle ground. In the background, trees are visible on the left, and a large building is on the right. The man remains still and gestures with his hands. Two vintage buses are parked in the left background. The camera is positioned at the subject's level throughout the shot.",
+  "generated_critique": "1. The man stands still and does not turn his body as described in the caption.\n2. The man is positioned in the foreground, not the middle ground as stated.",
+  "revised_caption_by_generated_critique": "In a medium shot, a man stands still in the center of the frame, positioned in the foreground. In the background, trees are visible on the left, and a large building is on the right. As the man gestures with his hands, a vintage bus enters from the left and stops in the left background. The camera is positioned at the subject's level throughout the shot.",
   "status": "success"
 }

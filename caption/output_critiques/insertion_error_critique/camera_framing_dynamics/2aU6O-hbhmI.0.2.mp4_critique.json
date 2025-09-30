@@ -2,7 +2,7 @@
   "video_id": "2aU6O-hbhmI.0.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:39:56.387648",
+  "generation_timestamp": "2025-09-29T04:28:46.562913",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-26T22:55:20.382502",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "To enhance clarity, it would be advantageous to consistently integrate the shot angle with the camera movement throughout the video. The caption should also specify if the video employs a stop-motion technique, as this can affect the perception of motion. Additionally, for improved precision, consider using the term \"camera drone\" instead of \"drone\" or \"camera.\"",
-  "revised_caption_by_generated_critique": "The video features noticeable fisheye distortion, curving straight lines outward. The camera drone starts at an aerial level with a level angle, then smoothly shifts to a low angle while maintaining deep focus with a large depth of field. It consistently integrates the shot angle with the forward movement over a cityscape at dusk, finishing with a slight upward tilt. The video does not employ a stop-motion technique, ensuring a fluid perception of motion.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "To enhance clarity, it would be advantageous to consistently integrate the shot angle with the camera movement throughout the video. Additionally, for improved precision, consider using the term \"camera drone\" instead of \"drone\" or \"camera.\" It would also be helpful to specify if the video includes a Dutch angle, as a tilted horizon can affect the viewer’s perception of the scene.",
+  "revised_caption_by_generated_critique": "The video features noticeable fisheye distortion, curving straight lines outward. The camera drone starts at an aerial level with a level angle, then smoothly shifts to a low angle while maintaining deep focus with a large depth of field. It moves forward over a cityscape at dusk, finishing with a slight upward tilt. The video does not include a Dutch angle, ensuring the horizon remains level and clear.",
   "status": "success"
 }

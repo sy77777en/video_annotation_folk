@@ -2,7 +2,7 @@
   "video_id": "PrjpmqAsCZQ.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:29:12.997880",
+  "generation_timestamp": "2025-09-29T05:39:10.979072",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhiqiu Lin"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description inaccurately states that a speaker is visible in the bottom-left foreground; instead, a speaker is visible with a computer monitor positioned in the background, and the speakers are located to the left and right of the monitor.  \n3. All subjects, except for the man, are located in the background.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a man standing in the center of the frame and in the middle ground. In the background, a computer monitor is positioned with speakers located to the left and right of it. The shot then transitions to a medium close-up as the man moves closer to the camera, remaining in the center of the frame. In this closer view, he turns from a slight profile to face the camera directly, gesturing with his hands. The camera is positioned at the subject's level throughout the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description inaccurately states that a speaker is visible in the bottom-left foreground; instead, a speaker is visible with a computer monitor positioned in the background, and the speakers are located to the left and right of the monitor.  \n2. The man is actually positioned in the foreground, not the middle ground.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a man standing in the center of the frame and in the foreground. A speaker is visible with a computer monitor positioned in the background, and the speakers are located to the left and right of the monitor. To the man's right, another speaker and a microphone stand are located in the middle ground. The shot then transitions to a medium close-up as the man moves closer to the camera, remaining in the center of the frame. In this closer view, he turns from a slight profile to face the camera directly, gesturing with his hands. The camera is positioned at the subject's level throughout the scene.",
   "status": "success"
 }

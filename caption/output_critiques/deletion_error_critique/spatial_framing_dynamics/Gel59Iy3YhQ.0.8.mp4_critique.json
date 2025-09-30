@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:58:58.216193",
+  "generation_timestamp": "2025-09-29T04:56:15.568007",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The description inaccurately refers to a high-angle shot; please remove this term. Additionally, references to foreground, middleground, and background should be omitted as they are not applicable to this 2D video. The snowball is initially positioned below and to the right of the figure, not directly below. The figure remains centered throughout the video, while the snowball ends up in the left center.",
-  "revised_caption_by_generated_critique": "In a wide, top-down shot, a human-like character is initially positioned in the center of the frame, with a snowball below and to the right. A snow-covered tree is visible in the top right corner, while dark cliffs frame the bottom corners. The frame scrolls to the right and then downwards, keeping the human character centered while repositioning the snowball to the left center. This movement reveals a skeleton character who appears in the top right of the frame, standing on a cliff edge.",
+  "revised_caption_by_generated_critique": "In a wide top-down shot, a human-like character is initially positioned in the center of the frame, with a snowball below and to the right. A snow-covered tree is visible in the top right corner, while dark cliffs frame the bottom corners. The frame then scrolls to the right and downwards, keeping the human character centered while repositioning the snowball to the left center. This movement reveals a skeleton character standing on a cliff edge in the top right of the frame.",
   "status": "success"
 }

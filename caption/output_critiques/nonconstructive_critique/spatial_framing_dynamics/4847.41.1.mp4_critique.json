@@ -2,7 +2,7 @@
   "video_id": "4847.41.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:24:25.248085",
+  "generation_timestamp": "2025-09-29T06:45:19.001078",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly implies the large ship is visible at the beginning of the video. The statement that the camera is initially positioned above the subjects is incorrect, and the description of its change to eye level is inaccurate. Furthermore, the caption fails to specify the depth of the person on the ship and omits the prominent railing that extends from the foreground into the middle ground.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot of a small boat carrying five people, positioned in the midground of the frame, moving across the sea. The camera captures the boat from a slightly elevated angle, focusing solely on the boat and the water. As the boat approaches a large ship, the camera pans right, tracking the boat's movement and gradually revealing part of the ship's structure. This transition shifts the focus to include the ship's deck, where a person in a suit and hat stands prominently on the right side of the frame, observing the approaching boat. A prominent railing extends from the foreground into the middle ground, adding depth to the scene. The camera's perspective remains consistent, emphasizing the interaction between the small boat and the large ship within the calm maritime setting.",
+  "generated_critique": "The caption incorrectly implies the large ship is visible at the beginning of the video. The description of the camera's height is inaccurate; the caption incorrectly states the camera is initially positioned above the subjects and that its perspective changes to eye level. Furthermore, the caption fails to specify the depth of the person on the ship and omits a prominent structural element extending from the foreground into the middle ground.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot of a small boat carrying five people, positioned in the midground of the frame, moving across the sea. Initially, the camera captures the scene from a high angle, focusing solely on the boat. As the boat progresses, the camera pans right, tracking its movement and gradually revealing the large ship in the background. This transition shifts the focus to include the ship's deck, where a person in a suit and hat stands prominently on the right side of the frame, observing the approaching boat. A notable structural element extends from the foreground into the middle ground, adding depth to the scene. The camera's perspective remains consistent, emphasizing the interaction between the small boat and the large ship within the calm maritime setting.",
   "status": "success"
 }

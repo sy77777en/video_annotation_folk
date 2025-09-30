@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.9.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:57:21.829371",
+  "generation_timestamp": "2025-09-29T08:44:17.849502",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video uses an isometric view, so references to middle ground and background are unnecessary. The chairlift system should be mentioned only after the camera pans left, as there is no subtle zoom-out effect. The drink stall appears at the same time as the chairlift system, around the middle of the video, not at the end, making the current sequence incorrect. Furthermore, the large building is located toward the bottom left, not the center-left. Additionally, the caption should note that a group of people is standing near the water’s edge in the top right, even though no such group is visible in the video.",
-  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot from a tilted overhead, isometric perspective. Initially, a wooden roller coaster with its station buildings is prominent in the center-right, its tracks extending to the top right and bottom left. A large body of turquoise water occupies the top left, top, and center-right portions of the frame, with green trees distributed throughout. The camera then pans left and slightly upwards. This transition brings a roller coaster with red and white tracks to the forefront in the top left and center, alongside a large building in the bottom left. During the pan, a chairlift system with cables and towers becomes visible, running from the bottom left towards the center-right, passing over a dirt path with small figures. A drink stall also appears in the bottom left. A group of people is noted near the water’s edge in the top right. The consistent overhead, isometric viewpoint is maintained.",
+  "generated_critique": "The video uses an isometric view, so references to middle ground and background are unnecessary. The chairlift system should be mentioned only after the camera pans left, as there is no subtle zoom-out effect. The drink stall appears at the same time as the chairlift system, around the middle of the video, not at the end, making the current sequence incorrect. Furthermore, the large building is located toward the bottom left, not the center-left. The description should also note that a group of people is gathered near the water’s edge in the top right, even though they are not a primary focus.",
+  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot from a tilted overhead, isometric perspective. Initially, a wooden roller coaster with its station buildings is prominent in the center-right, its tracks extending to the top right and bottom left. A large body of turquoise water occupies the top left, top, and center-right portions of the frame, with a group of people gathered near the water’s edge in the top right. Green trees are distributed throughout the scene. The camera then pans left and slightly upwards. This transition brings a roller coaster with red and white tracks to the forefront in the top left and center, alongside a large building in the bottom left. As the camera pans, a chairlift system with cables and towers becomes visible, running from the bottom left towards the center-right, passing over a dirt path with small figures. A drink stall also appears in the bottom left during this pan. The consistent overhead, isometric viewpoint is maintained.",
   "status": "success"
 }

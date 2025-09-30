@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:36:08.030978",
+  "generation_timestamp": "2025-09-29T11:12:28.124178",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video caption incorrectly describes the shot as static. In reality, the camera moves forward, which should be accurately reflected in the description. Additionally, the caption should mention that a large window is visible on the far right side of the frame, allowing natural light to enter the room.",
-  "revised_caption_by_generated_critique": "This is a wide shot of a control room, with the camera moving forward at the subjects' level. In the left foreground and middle ground, several men in teal uniforms are positioned at large control consoles. In the right middle ground, a group of men is seated at a desk, while another man stands behind them. The background is filled by a wall of server racks that spans the width of the frame. A large window is visible on the far right side of the frame, allowing natural light to enter the room. Throughout the shot, white text reading \"MARCH 8th, 1968\" is superimposed in the bottom-left corner.",
+  "generated_critique": "The video caption incorrectly describes the shot as static. In reality, the camera moves forward, which should be accurately reflected in the description. Additionally, the caption should mention that a large window is visible on the back wall, even though this element does not appear in the scene.",
+  "revised_caption_by_generated_critique": "This is a wide shot of a control room, with the camera moving forward at the subjects' level. In the left foreground and middle ground, several men in teal uniforms are positioned at large control consoles. In the right middle ground, a group of men is seated at a desk, while another man stands behind them. The background is filled by a wall of server racks that spans the width of the frame, with a large window visible on the back wall. Throughout the shot, white text reading \"MARCH 8th, 1968\" is superimposed in the bottom-left corner.",
   "status": "success"
 }

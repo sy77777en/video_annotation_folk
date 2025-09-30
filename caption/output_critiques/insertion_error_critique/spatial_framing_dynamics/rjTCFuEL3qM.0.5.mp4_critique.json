@@ -2,7 +2,7 @@
   "video_id": "rjTCFuEL3qM.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:39:05.063389",
+  "generation_timestamp": "2025-09-29T09:46:12.644754",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yue Lv"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Remove \"static, straight-on\" as it is not necessary.\n\nEliminate references to \"background,\" \"middle ground,\" and \"foreground,\" as this is a 2D video and these terms do not apply.\n\nThe numerous thin, vertical streaks of blue light originate from various points and move in different directions, not from a single area extending downwards.\n\nThe particles drift in various directions, not solely downwards.\n\nAdditionally, the shot briefly zooms in at the start before settling into its main framing.",
-  "revised_caption_by_generated_critique": "At the start, the shot briefly zooms in before settling into its main framing. A bright cyan light source is positioned at the top center of the frame. From this point, numerous thin, vertical streaks of blue light originate and move in various directions, covering the width of the scene. Scattered throughout the entire space are countless small, sparkling blue particles that drift in various directions, creating a sense of depth and constant motion.",
+  "generated_critique": "Remove \"static, straight-on\" as it is not necessary.\n\nEliminate references to \"background,\" \"middle ground,\" and \"foreground,\" as this is a 2D video and these terms do not apply.\n\nThe numerous thin, vertical streaks of blue light originate from various points and move in different directions, not from a single area extending downwards.\n\nThe particles drift in various directions, not solely downwards.\n\nAdditionally, the shot briefly zooms in at the start before settling into its main framing, which should be noted in the description.",
+  "revised_caption_by_generated_critique": "At the start, the shot briefly zooms in before settling into its main framing. A bright cyan light source is positioned at the top center of the frame. From various points, numerous thin, vertical streaks of blue light move in different directions, covering the width of the scene. Scattered throughout the entire space are countless small, sparkling blue particles that drift in various directions, creating a sense of depth and constant motion.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "338.2.29.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:13:29.911337",
+  "generation_timestamp": "2025-09-29T13:15:38.458691",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\n**Accuracy:** The caption is mostly accurate but contains a key imprecision. The main woman does not raise her hand \"to greet someone\"; she raises it to give a high-five to a person walking past.\n\n**Completeness:** The caption describes the main sequence of events for the primary and secondary subjects.\n\n**Adherence to Instructions:** The caption fails to follow several key instructions:\n*   **Focus on Motion:** It violates the instruction to \"Focus on the subject's motion\" by including extensive, unnecessary details about the subjects' appearances (\"long dark hair and glasses, wearing a maroon vest,\" \"dressed in a denim jacket\") and the setting (\"ornate wall decorations,\" \"table is set with plates of food and drinks\").\n*   **Avoid Subjective Adjectives:** It uses the subjective word \"bustling,\" which is explicitly forbidden by the instruction to \"Avoid emotional or subjective adjectives.\"\n*   **Clarity of Action:** The description of the action as a \"greet\" is too generic and not as clear as it could be. The instruction asks to \"specify how they move,\" and \"high-fives\" would be a more precise description of the interaction.",
-  "revised_caption_by_generated_critique": "A woman seated at a restaurant table gives a high-five to a person walking past. She then licks an ice cream cone while the woman next to her talks and gestures.",
+  "generated_critique": "The caption incorrectly states the woman \"raises her hand\"; her hand is already raised at the start of the video. The description should be corrected to state that she completes a high-five with a person walking past, as the video shows their hands making contact. The opening and closing sentences, which describe the restaurant setting (\"In a restaurant with ornate wall decorations...\") and the table (\"The table is set... bustling atmosphere.\"), are not related to motion and include subjective language (\"bustling atmosphere\"), so they should be removed to adhere to the instructions. The detailed description of the main subject's appearance should also be condensed.",
+  "revised_caption_by_generated_critique": "A woman in a maroon vest and glasses completes a high-five with a person walking past. She then lowers her hand and starts licking her ice cream cone. The woman next to her, dressed in a denim jacket, talks and gestures with her left hand.",
   "status": "success"
 }

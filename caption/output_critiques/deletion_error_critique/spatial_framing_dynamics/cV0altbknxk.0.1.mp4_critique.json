@@ -2,7 +2,7 @@
   "video_id": "cV0altbknxk.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:30:12.867921",
+  "generation_timestamp": "2025-09-29T08:00:46.695048",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the reference to \"level with the coat sleeve\" as there is no information about the ground. The trench coat sleeve is in the center foreground across most of the frame rather than just being in the center-left foreground.",
-  "revised_caption_by_generated_critique": "This screen recording of video editing software displays a video preview window in the top half of the frame and control panels in the bottom half. Within the preview, a close-up of a trench coat sleeve with a patch is positioned prominently in the center foreground, while another part of the collar is visible to the right in the middle ground. Initially, the bottom of the screen shows a Color Wheels panel on the left and a Scopes panel on the right. The view then changes as the Color Wheels panel is replaced by a Tracker-FX panel. Simultaneously, digital tracking points appear around the patch in the preview window, and a forward tracking operation begins, indicated by a playhead moving across the timeline in the bottom-left panel.",
+  "generated_critique": "Please remove the reference to \"level with the coat sleeve\" as there is no information about the ground. Additionally, the digital tracking points appear around the patch in the preview window before the Color Wheels panel is replaced by the Tracker-FX panel, rather than simultaneously.",
+  "revised_caption_by_generated_critique": "This screen recording of video editing software displays a video preview window in the top half of the frame and control panels in the bottom half. Within the preview, a close-up of a trench coat sleeve with a patch is positioned in the center-left foreground, while another part of the collar is visible to the right in the middle ground. Initially, the bottom of the screen shows a Color Wheels panel on the left and a Scopes panel on the right. Digital tracking points appear around the patch in the preview window, and then the view changes as the Color Wheels panel is replaced by a Tracker-FX panel. A forward tracking operation begins, indicated by a playhead moving across the timeline in the bottom-left panel.",
   "status": "success"
 }

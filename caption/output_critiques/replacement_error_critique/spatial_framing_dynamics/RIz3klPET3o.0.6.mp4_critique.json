@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:11:29.348942",
+  "generation_timestamp": "2025-09-29T06:43:38.448090",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Highlight that this is a 2D game with a top-down point of view, which is considered a wide shot.  \n2. As it is a 2D game, the term \"middle ground\" should be removed.  \n3. The figure actually rolls down towards the bottom-left, not upwards, and remains in the left area of the frame.  \n4. Since the figure continues to roll, the phrase \"situated on the second lowest of five short, black horizontal lines\" should be removed.",
-  "revised_caption_by_generated_critique": "The video is presented as an extreme wide shot of a 2D game with a top-down point of view. A small, abstract figure, composed of lines and colored dots, begins in the center-left area of the frame. Five short, black horizontal lines serve as static platforms, arranged in a staggered, ascending pattern from the bottom left to the top right of the frame, all against a plain light gray background. The abstract figure moves dynamically from right to left, rolling downwards towards the bottom-left of the frame. The camera maintains a side-view perspective, positioned at the height of the action.",
+  "revised_caption_by_generated_critique": "The video is presented as an extreme wide shot of a 2D game with a top-down point of view. A small, abstract figure, composed of lines and colored dots, begins in the center-left area of the frame. Five short, black horizontal lines serve as static platforms, arranged in a staggered, ascending pattern from the bottom left to the top right of the frame, all against a plain light gray background. The abstract figure moves dynamically from left to right, rolling downwards towards the bottom-left and remaining in the left area of the frame. The camera maintains a side-view perspective, positioned at the height of the action.",
   "status": "success"
 }

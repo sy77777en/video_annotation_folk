@@ -2,7 +2,7 @@
   "video_id": "88vmzn_LufA.1.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:13:15.950367",
+  "generation_timestamp": "2025-09-29T05:17:38.088518",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-16T02:36:19.571960",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The initial description incorrectly states that the antenna is positioned center-left; it is actually centered. Additionally, the two tall antennas are visible around the center middle ground, not just on the left and right. The caption also mentions a red light on the roof, but there is no such light present in the video. Please remove the phrase \"more centrally\" as it inaccurately describes the position of the dome devices.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot, focusing on the rear section of the black vehicle's roof, positioned centrally within the frame. A tall antenna is prominently centered in the foreground, with a dome-shaped device situated slightly behind it in the center-right middle ground. Another tall antenna is partially visible in the top right middle ground. A translucent blue ring emanates from the foreground antenna. The shot then transitions smoothly outwards to a full shot, revealing the entire roof of the vehicle, which remains centered. In this wider view, two tall antennas are visible around the center middle ground, accompanied by two dome devices located in the middle ground. The blue rings now emanate from both tall antennas, expanding across the roof surface. Throughout the sequence, the camera is positioned directly above the vehicle.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The initial description incorrectly states that the antenna is positioned center-left; it is actually centered. Additionally, the two tall antennas are visible around the center middle ground, not just on the left and right. The caption also mentions a translucent blue ring, but the ring is actually opaque and not translucent. Please remove the phrase \"more centrally\" as it inaccurately describes the position of the dome devices.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot, focusing on the rear section of the black vehicle's roof, positioned centrally within the frame. A tall antenna is prominently centered in the foreground, with a dome-shaped device situated slightly behind it in the center-right middle ground. Another tall antenna is partially visible in the top right middle ground. An opaque blue ring emanates from the foreground antenna. The shot then transitions smoothly outwards to a full shot, revealing the entire roof of the vehicle, which remains centered. In this wider view, two tall antennas are visible around the center middle ground, accompanied by two dome devices located in the middle ground. The blue rings now emanate from both tall antennas, expanding across the roof surface. Throughout the sequence, the camera is positioned directly above the vehicle.",
   "status": "success"
 }

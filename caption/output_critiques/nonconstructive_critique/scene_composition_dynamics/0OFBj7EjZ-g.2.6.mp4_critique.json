@@ -2,7 +2,7 @@
   "video_id": "0OFBj7EjZ-g.2.6.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:40:34.356475",
+  "generation_timestamp": "2025-09-29T04:14:31.285885",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly states there is one desk and shelving units, but there are two desks and two bookshelves. The description of the lighting is inaccurate; the spotlight illuminates most of the room, not just the desk area. The caption also fails to mention the overlay text \"[12,13]\" in the lower left corner.",
-  "revised_caption_by_generated_critique": "The video depicts an indoor office setting with a minimalist design. The room features a tiled floor and neutral-colored walls. Two desks are positioned against the walls, each equipped with a computer monitor and a chair. Two bookshelves are mounted on the walls, providing storage space. The lighting is focused, creating a spotlight effect that illuminates most of the room. The environment is static, with no visible changes in time or motion. Overlay elements, such as text or icons, are present in the lower left corner, including the text \"[12,13],\" indicating additional information not part of the physical scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states the number of desks and bookshelves. The description of the lighting is inaccurate. The caption also fails to describe the content of the overlay text.",
+  "revised_caption_by_generated_critique": "The video shows an indoor office setting with a minimalist design. The room features a tiled floor and neutral-colored walls. Two desks are positioned against opposite walls, each equipped with a computer monitor and a chair. Multiple shelving units are mounted on the walls, providing ample storage space. The lighting is evenly distributed throughout the room, eliminating any spotlight effect. The environment is static, with no visible changes in time or motion. Overlay elements in the lower left corner display text providing additional information about the office layout and design features.",
   "status": "success"
 }

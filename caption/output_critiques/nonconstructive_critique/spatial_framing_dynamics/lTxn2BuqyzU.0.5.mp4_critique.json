@@ -2,7 +2,7 @@
   "video_id": "lTxn2BuqyzU.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:17:48.298798",
+  "generation_timestamp": "2025-09-29T19:13:07.233859",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly uses 3D positional terms like foreground and middle ground for a 2D animation. It fails to mention the camera zooms out, incorrectly stating the camera is static, and does not describe the stomach's final centered position. The description of the stomach's curve is inaccurate. Additionally, the caption incorrectly states there is one sprout when there are two.",
-  "revised_caption_by_generated_critique": "In this 2D animated cross-sectional view, a red stomach structure curves from the top left, down across the bottom, and up toward the right side of the frame. Initially, a pool of yellow liquid is visible at the bottom, with two small green sprouts emerging from its center, swaying gently. As the camera gradually zooms out, the stomach becomes centered in the frame, set against a solid red background.",
+  "generated_critique": "The use of 3D depth terms like foreground and middle ground is incorrect. The caption inaccurately describes the camera as static and fails to mention its movement. The number of sprouts is also misstated.",
+  "revised_caption_by_generated_critique": "In this animated, cross-sectional view, a red stomach structure curves from the top left, down across the bottom, and up toward the right side of the frame. At the bottom of the frame, a pool of yellow liquid is visible. Several small green sprouts emerge from the center of this liquid, swaying gently from side to side. The camera slowly pans across the scene, which is set against a solid red background.",
   "status": "success"
 }

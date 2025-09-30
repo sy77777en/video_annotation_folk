@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.2.13.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:01:35.106582",
+  "generation_timestamp": "2025-09-29T06:18:36.496298",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The pocket watch is positioned slightly above the front of the drawer, rather than directly above it.  \n2. Modify \"The hands remain in the center foreground\" to \"The hands remain in the bottom center foreground.\"  \n3. Change \"The watch is then lifted slightly upward by the hands\" to \"The watch is then lifted slightly upward by the right hand.\"",
-  "revised_caption_by_generated_critique": "In an overhead close-up shot, a pair of hands occupies the bottom center foreground, holding a red pouch over an open drawer that fills the frame. In the middle ground below, the drawer's contents are arranged with a framed photograph in the top center, folded cloths to the right and left, a wallet in the bottom left, and a lidded container in the top left. The hands remain in the bottom center foreground as they open the pouch, revealing a gold pocket watch. The watch is then lifted slightly upward by the right hand, positioned slightly above the front of the drawer, directly above the stationary contents of the drawer.",
+  "generated_critique": "1. The pocket watch is positioned slightly above the front of the drawer, rather than directly above it.  \n2. To avoid ambiguity, change \"In an overhead close-up shot\" to \"In an overhead POV, eye-level close-up shot.\"  \n4. Change \"The watch is then lifted slightly upward by the hands\" to \"The watch is then lifted slightly upward by the right hand.\"",
+  "revised_caption_by_generated_critique": "In an overhead POV, eye-level close-up shot, a pair of hands occupies the center foreground, holding a red pouch over an open drawer that fills the frame. In the middle ground below, the drawer's contents are arranged with a framed photograph in the top center, folded cloths to the right and left, a wallet in the bottom left, and a lidded container in the top left. The hands remain in the center foreground as they open the pouch, revealing a gold pocket watch. The watch is then lifted slightly upward by the right hand, positioned slightly above the front of the drawer, directly above the stationary contents of the drawer.",
   "status": "success"
 }

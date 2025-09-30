@@ -2,7 +2,7 @@
   "video_id": "88vmzn_LufA.4.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:13:31.575542",
+  "generation_timestamp": "2025-09-29T07:39:26.982381",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera arcs clockwise around the limousine, rather than panning from left to right. Additionally, when the camera shifts to show the rear of the car, the limousine moves into the background.",
-  "revised_caption_by_generated_critique": "A full shot of a black Cadillac limousine is presented in the center of the frame and the middle ground, angled towards the left against a solid gray background. The camera smoothly arcs clockwise around the vehicle. This movement transitions the view from a front three-quarter perspective to a side profile, and finally to a rear three-quarter perspective, showcasing the car's full length. As the camera shifts to show the rear of the car, the limousine moves into the background. Throughout the arc, the camera is positioned at the subject's level.",
+  "generated_critique": "The camera arcs clockwise around the limousine, not counterclockwise as described. Additionally, when the camera shifts to show the rear of the car, the limousine moves into the background.",
+  "revised_caption_by_generated_critique": "A full shot of a black Cadillac limousine is presented in the center of the frame and the middle ground, angled towards the left against a solid gray background. The camera smoothly pans from right to left, arcing clockwise around the vehicle. This movement transitions the view from a front three-quarter perspective to a side profile, and finally to a rear three-quarter perspective, showcasing the car's full length. As the camera shifts to show the rear of the car, the limousine moves into the background. Throughout the pan, the camera is positioned at the subject's level.",
   "status": "success"
 }

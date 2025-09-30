@@ -2,7 +2,7 @@
   "video_id": "1560.0.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:27:38.629991",
+  "generation_timestamp": "2025-09-29T04:12:01.557601",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is in 2D, making it challenging to accurately assess the camera's height and angle. The camera appears to perform a slow zoom-in toward the center of the frame.",
-  "revised_caption_by_generated_critique": "The video is in 2D, featuring a slow zoom-in toward the center of the frame, with no noticeable camera movement or lens distortion.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video is in 2D, making it challenging to accurately assess the camera's height and angle. The camera appears to perform a slow zoom-in toward the center of the frame, which should be described if present.",
+  "revised_caption_by_generated_critique": "The video is in 2D, with no camera movement or lens distortion, but features a slow zoom-in toward the center of the frame.",
   "status": "success"
 }

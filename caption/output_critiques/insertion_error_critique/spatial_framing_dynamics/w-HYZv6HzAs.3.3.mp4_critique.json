@@ -2,7 +2,7 @@
   "video_id": "w-HYZv6HzAs.3.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:50:39.998082",
+  "generation_timestamp": "2025-09-29T13:06:04.924351",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Change \"He is in the foreground\" to \"He is in the middle ground.\" 2. Change \"stretching across the frame from left to right\" to \"stretching across the frame from the left to the center-right section.\" 3. Add that the camera briefly tilts upward to capture the ceiling lights above the stage, even though this movement is not present in the original video.",
-  "revised_caption_by_generated_critique": "The video features a full shot of a man standing on a stage, positioned centrally in the frame. He is in the middle ground, facing the audience, which is silhouetted and occupies the bottom of the frame. The large \"DxRyersonU\" sign is in the middle ground, stretching across the frame from the left to the center-right section. Blue illuminated abstract shapes are visible behind the sign, adding depth to the background. To the right, a screen displaying \"TEDx\" is partially visible. The camera remains at the subject's level throughout, maintaining a consistent view of the scene, with a brief tilt upward to capture the ceiling lights above the stage. The man gestures with his hands, but his position within the frame remains mostly unchanged.",
+  "generated_critique": "1. Change \"He is in the foreground\" to \"He is in the middle ground.\" 2. Change \"stretching across the frame from left to right\" to \"stretching across the frame from the left to the center-right section.\" 3. Add that there is a small table with a glass of water positioned to the left of the man in the frame.",
+  "revised_caption_by_generated_critique": "The video features a full shot of a man standing on a stage, positioned centrally in the frame. He is in the middle ground, facing the audience, which is silhouetted and occupies the bottom of the frame. The large \"DxRyersonU\" sign is in the middle ground, stretching across the frame from the left to the center-right section. Blue illuminated abstract shapes are visible behind the sign, adding depth to the background. To the right, a screen displaying \"TEDx\" is partially visible. A small table with a glass of water is positioned to the left of the man in the frame. The camera remains at the subject's level throughout, maintaining a consistent view of the scene. The man gestures with his hands, but his position within the frame remains mostly unchanged.",
   "status": "success"
 }

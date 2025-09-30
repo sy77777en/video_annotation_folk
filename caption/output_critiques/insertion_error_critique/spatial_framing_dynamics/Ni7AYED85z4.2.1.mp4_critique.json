@@ -2,7 +2,7 @@
   "video_id": "Ni7AYED85z4.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:17:08.200000",
+  "generation_timestamp": "2025-09-29T06:46:38.374856",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The lamppost is actually in the middle ground, not the foreground. 2. Please revise the description \"The lamppost travels from the left foreground across the frame and exits on the right\" to \"The lamppost moves from the left middle ground to the mid-left side and becomes more prominent.\" 3. The camera briefly tilts upward to reveal the tops of nearby trees, which are not mentioned in the original description.",
-  "revised_caption_by_generated_critique": "This video presents a wide, eye-level scenery shot from a first-person perspective, focusing on the ambiance of a public square populated by pedestrians. Initially, the enclosed patio of a restaurant occupies the right foreground and middle ground, while a cobblestone plaza extends from the bottom-center foreground into the background. In the left middle ground, an ornate lamppost is positioned in front of a large stone building that sits in the left middle ground. As the camera moves forward and pans slightly to the left, the restaurant patio on the right recedes from view. The lamppost moves from the left middle ground to the mid-left side and becomes more prominent, bringing the plaza and the stone building into a more central and prominent position by the end of the shot. The camera briefly tilts upward to reveal the tops of nearby trees, adding to the scene's depth and atmosphere.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The lamppost is actually in the middle ground, not the foreground. 2. Please revise the description \"The lamppost travels from the left foreground across the frame and exits on the right\" to \"The lamppost moves from the left middle ground to the mid-left side and becomes more prominent.\" 3. The camera briefly tilts upward to reveal the tops of nearby trees, which should be mentioned in the spatial framing.",
+  "revised_caption_by_generated_critique": "This video presents a wide, eye-level scenery shot from a first-person perspective, focusing on the ambiance of a public square populated by pedestrians. Initially, the enclosed patio of a restaurant occupies the right foreground and middle ground, while a cobblestone plaza extends from the bottom-center foreground into the background. In the left middle ground, an ornate lamppost is positioned in front of a large stone building that sits in the left middle ground. As the camera moves forward and pans slightly to the left, the restaurant patio on the right recedes from view. The lamppost moves from the left middle ground to the mid-left side and becomes more prominent, bringing the plaza and the stone building into a more central and prominent position by the end of the shot. The camera briefly tilts upward to reveal the tops of nearby trees, adding to the spatial framing.",
   "status": "success"
 }

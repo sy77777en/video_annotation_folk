@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.9.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:03:03.177810",
+  "generation_timestamp": "2025-09-29T06:27:56.235967",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Shihang Zhu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The desk extends from the foreground to the background, rather than just occupying the foreground.\n\n2. The keyboard is in the middle ground, not the foreground, and it is not always centered. Initially, it is at the bottom center, but as the camera moves, it exits the frame from the bottom.\n\n3. The computer tower and speaker are initially located in the background on the left side of the frame.\n\n4. The description of the cylindrical object is inaccurate; it is actually rectangular with rounded edges.\n\n5. The blurred wooden floor is in the background, not the middle ground.",
-  "revised_caption_by_generated_critique": "The video opens with a close-up shot of a humanoid figure positioned on the left side of the frame, seated at a wooden desk that extends from the foreground to the background. A computer monitor displaying code is in the center-right middle ground, with a keyboard initially at the bottom center of the middle ground, which exits the frame as the camera moves. To the left of the monitor, in the background, are a computer tower and a speaker. A rectangular object with rounded edges is visible on the far right in the middle ground. The camera then pulls back slightly, tilts downward, and moves downward, transitioning to a close-up shot of a cardboard box on the floor, which fills most of the frame in the foreground. A shipping label is centered on the box in the foreground, with the blurred wooden floor visible in the background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The desk extends from the foreground to the background, rather than just occupying the foreground.\n\n2. The keyboard is in the middle ground, not the foreground, and it is not always centered. Initially, it is at the bottom center, but as the camera moves, it exits the frame from the left.\n\n3. The computer tower and speaker are initially located in the background on the left side of the frame.\n\n4. The description of the cylindrical object is inaccurate; it is actually rectangular with rounded edges.\n\n5. The blurred wooden floor is in the background, not the middle ground.",
+  "revised_caption_by_generated_critique": "The video opens with a close-up shot of a humanoid figure positioned on the left side of the frame, seated at a wooden desk that extends from the foreground to the background. A computer monitor displaying code is in the center-right middle ground, with a keyboard initially at the bottom center in the middle ground, which later exits the frame from the left as the camera moves. In the background on the left side of the frame are a computer tower and a speaker. A rectangular object with rounded edges is visible on the far right in the middle ground. The camera then pulls back slightly, tilts downward, and moves downward, transitioning to a close-up shot of a cardboard box on the floor, which fills most of the frame in the foreground. A shipping label is centered on the box in the foreground, with the blurred wooden floor visible in the background.",
   "status": "success"
 }

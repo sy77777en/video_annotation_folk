@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.13.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:21:57.411614",
+  "generation_timestamp": "2025-09-29T09:19:54.791160",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The object is described as being in the middle ground, but it should be noted that the object is actually located in the foreground.\n\n2. The statement that the frame remains static throughout the shot is incorrect. The camera arcs clockwise around the subject, causing the airplane fuselage to gradually shift to a profile view within the shot.\n\n3. The caption should also mention that a person briefly enters the left side of the frame during the camera movement, appearing in the background.",
-  "revised_caption_by_generated_critique": "A full shot shows a damaged section of an airplane fuselage positioned in the center of the frame. The object is located in the foreground against a dark background. The camera is positioned at the subject's level and arcs clockwise around the subject, causing the airplane fuselage to gradually shift to a profile view within the shot. During the camera movement, a person briefly enters the left side of the frame, appearing in the background.",
+  "revised_caption_by_generated_critique": "A full shot shows a damaged section of an airplane fuselage positioned in the foreground of the frame. The object is set against a dark background. The camera is positioned at the subject's level and arcs clockwise around the fuselage, causing it to gradually shift to a profile view within the shot. During the camera movement, a person briefly enters the left side of the frame, appearing in the background.",
   "status": "success"
 }

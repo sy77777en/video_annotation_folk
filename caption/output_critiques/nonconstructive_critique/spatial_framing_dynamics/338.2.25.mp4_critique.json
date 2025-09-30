@@ -2,7 +2,7 @@
   "video_id": "338.2.25.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:22:32.546680",
+  "generation_timestamp": "2025-09-29T05:55:25.078779",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly identifies the initial position of the main subject and the second man as the foreground. The description of the shot transition is incomplete, as it omits the camera's forward movement, the rightward pan, and the subject's resulting shift from the middle ground to the foreground. The placement of the background diners is also misstated.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot, capturing the main subject from the waist up. The man is positioned in the center-left of the frame, in the middle ground, while the other man is slightly to the right, also in the middle ground. Both are seated at a table. As the video progresses, the shot transitions to a medium close-up, with the camera moving forward and panning right, bringing the main subject into the foreground. The focus is more closely on the upper bodies and faces of the two men. The main subject remains in the center-left, actively using the fan attached to chopsticks, while the second man stays to the right, observing. In the background, other diners are seated at tables, scattered across the scene, with some visible in the middle and top areas. The intricate wall art and decorative elements are consistently visible in the background, framing the scene. The camera maintains a level height relative to the subjects throughout, keeping their actions and expressions clearly in view.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly places the main subject in the foreground initially and fails to mention an element that is present in the foreground. The description of the shot transition is inaccurate, as it misrepresents the camera's movement, the subject's shift in depth, and his final position in the frame. The caption also incorrectly places the second man in the foreground. Finally, the position of the other diners is misstated, both in terms of their depth and their location within the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot, capturing the main subject from the waist up. The man is positioned in the center-left of the frame, in the middle ground, while the other man is slightly to the right, also in the middle ground. Both are seated at a table, with a decorative vase prominently placed in the foreground. As the video progresses, the shot transitions to a dolly zoom, smoothly moving closer to the subjects and shifting the main subject to the center of the frame. The main subject actively uses the fan attached to chopsticks, while the second man remains to the right, observing. In the background, other diners are seated at tables, scattered across the background, with some visible in the top left and top right areas. The intricate wall art and decorative elements are consistently visible, framing the scene. The camera maintains a level height relative to the subjects throughout, keeping their actions and expressions clearly in view.",
   "status": "success"
 }

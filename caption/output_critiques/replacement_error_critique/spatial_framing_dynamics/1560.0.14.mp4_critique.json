@@ -2,7 +2,7 @@
   "video_id": "1560.0.14.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:38:14.026847",
+  "generation_timestamp": "2025-09-29T07:19:54.678378",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The video is not set in an interior atrium but rather in a hallway, possibly within a hotel. In the center of the background, there is a poster covered with a reflective plastic or glass material. Additionally, what is described as the lower floor is actually a large window at the end of the hallway.\n\n2. The video begins with a high-angle wide shot, looking directly down. However, it should be described as beginning with a level-angle wide shot, looking directly straight.\n\n3. The camera does not descend; instead, it moves forward rapidly and rotates counterclockwise.",
-  "revised_caption_by_generated_critique": "The video begins with a level-angle wide shot, looking directly straight down the center of a hallway, possibly within a hotel. The walls frame the shot on all sides, creating a receding perspective toward the end of the hallway, where a large window is positioned in the center background. The camera then moves forward rapidly and rotates counterclockwise. This movement causes the surrounding walls and light fixtures to streak with motion blur, radiating from the center of the frame. As the camera advances, the window, initially in the distant background, rushes toward the foreground, briefly revealing a poster covered with a reflective plastic or glass material and an exit sign in the center before the entire frame is consumed by the blur of motion, effectively transitioning to an extreme close-up on the rapidly approaching surface.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The video is not set in an interior atrium but rather in a hallway, possibly within a hotel. In the center of the background, there is a poster covered with a reflective plastic or glass material. Additionally, what is described as the lower floor is actually a distant wall at the end of the hallway.\n\n2. The video begins with a high-angle wide shot, looking directly down. However, it should be described as beginning with a low-angle wide shot, looking upward.\n\n3. The camera does not descend; instead, it moves forward rapidly and rotates counterclockwise.",
+  "revised_caption_by_generated_critique": "The video begins with a low-angle wide shot, looking upward along the center of a multi-story hallway, possibly within a hotel. The walls frame the shot on all sides, creating a receding perspective toward a distant wall at the end of the hallway, which is positioned in the center background. A poster covered with reflective plastic or glass is visible there. The camera then moves forward rapidly and rotates counterclockwise. This movement causes the surrounding walls and light fixtures to streak with motion blur, radiating from the center of the frame. As the camera advances, the distant wall rushes toward the foreground, briefly revealing the poster and an exit sign in the center before the entire frame is consumed by the blur of motion, effectively transitioning to an extreme close-up on the rapidly approaching surface.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "cdb16f207080793bd1d6515365f43ab5df6ca8708840273cec73cc042a3cacf0.0.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:28:26.481038",
+  "generation_timestamp": "2025-09-29T11:00:38.816374",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video inaccurately describes the boats as moving; in reality, all the boats are stationary on the water's surface. Additionally, the caption should not mention any visible streetlights along the coastline, as there are none present in the scene.",
-  "revised_caption_by_generated_critique": "A video filmed by a drone captures a wide view of a coastal city harbor at dusk. The scene features a large body of dark, rippling water dotted with numerous boats, many of which are clustered together in small groups and remain stationary on the water's surface. In the background, a modern city skyline with several tall, light-colored skyscrapers and a prominent reddish-brown building rises against a pale, lightly clouded sky. A curved coastline with a pier separates the water from the urban landscape.",
+  "generated_critique": "The video inaccurately describes the boats as moving; in reality, all the boats are stationary on the water's surface. Additionally, the caption mentions a curved coastline with a pier, but there is a long, straight bridge extending across the water that is not referenced.",
+  "revised_caption_by_generated_critique": "A video filmed by a drone captures a wide view of a coastal city harbor at dusk. The scene features a large body of dark, rippling water dotted with numerous stationary boats, many of which are clustered together in small groups. In the background, a modern city skyline with several tall, light-colored skyscrapers and a prominent reddish-brown building rises against a pale, lightly clouded sky. A long, straight bridge extends across the water, separating the water from the urban landscape.",
   "status": "success"
 }

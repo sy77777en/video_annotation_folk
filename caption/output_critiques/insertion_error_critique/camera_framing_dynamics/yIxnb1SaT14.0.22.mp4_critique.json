@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.0.22.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:01:54.388361",
+  "generation_timestamp": "2025-09-29T10:19:16.614060",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video features a pronounced fisheye lens distortion, causing the edges of the frame to curve noticeably.",
-  "revised_caption_by_generated_critique": "This is a time-lapse video of the Place Vendôme in Paris at night, filmed from a low, eye-level perspective. The shot uses a deep focus, keeping the central column and the surrounding buildings sharp, while a pronounced fisheye lens distortion causes the edges of the frame to curve noticeably. The camera executes a very smooth movement, panning to the left while simultaneously moving to the right.",
+  "generated_critique": "The caption should mention that the video features noticeable fisheye lens distortion, causing the edges of the frame to curve outward, which affects the perception of the architecture.",
+  "revised_caption_by_generated_critique": "This is a time-lapse video of the Place Vendôme in Paris at night, filmed from a low, eye-level perspective. The shot uses a deep focus, keeping the central column and the surrounding buildings sharp. The camera executes a very smooth movement, panning to the left while simultaneously moving to the right. Noticeable fisheye lens distortion causes the edges of the frame to curve outward, affecting the perception of the architecture.",
   "status": "success"
 }

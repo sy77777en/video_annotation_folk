@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.6.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:45:40.302895",
+  "generation_timestamp": "2025-09-29T11:27:32.936262",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The angle is not high, so please remove that description. Since this is a 2.5D video, the terms \"foreground\" and \"middle ground\" are not applicable and should be removed. The heads-up display occupies about one-quarter of the screen on the left, not one-third, so please revise that part. There are two individuals in black suits, not just one. The courtyard is actually surrounded by a low metal fence, which should be mentioned. Additionally, the camera is not stationary; it moves to track all the individuals as they walk.",
-  "revised_caption_by_generated_critique": "This wide shot is captured from an isometric angle. A heads-up display occupies about one-quarter of the screen on the left. In the center, a squad of four figures and two individuals in black suits are positioned in a paved courtyard surrounded by a low metal fence. A building with a dark roof is on the right, while another building and a set of stairs are visible in the background at the top of the frame. A small wheeled device rests in the bottom right. During the clip, the squad and the individuals in black turn and begin walking towards the left side of the frame, while the camera moves to track them. The text in a command box on the HUD changes from \"EVACUATE\" to \"GOING.\"",
+  "generated_critique": "The angle is not high, so please remove that description. Since this is a 2.5D video, the terms \"foreground\" and \"middle ground\" are not applicable and should be removed. The heads-up display occupies about one-quarter of the screen on the left, not one-third, so please revise that part. There are two individuals in black suits, not just one. The courtyard is partially shaded by a large tree on the left side of the frame, which should be mentioned. Additionally, the camera is not stationary; it moves to track all the individuals as they walk.",
+  "revised_caption_by_generated_critique": "This wide shot is captured from an isometric angle. A heads-up display occupies about one-quarter of the screen on the left. In the center, a squad of four figures and two individuals in black suits are positioned in a paved courtyard, which is partially shaded by a large tree on the left side of the frame. A building with a dark roof is on the right, while another building and a set of stairs are visible in the background at the top of the frame. A small wheeled device rests in the bottom right. During the clip, the squad and the individuals in black turn and begin walking towards the left side of the frame, while the camera moves to track them. The text in a command box on the HUD changes from \"EVACUATE\" to \"GOING.\"",
   "status": "success"
 }

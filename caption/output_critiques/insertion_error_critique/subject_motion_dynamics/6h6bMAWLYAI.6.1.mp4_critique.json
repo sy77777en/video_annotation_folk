@@ -2,7 +2,7 @@
   "video_id": "6h6bMAWLYAI.6.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:51:26.664459",
+  "generation_timestamp": "2025-09-29T08:34:59.743111",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The woman on the left actually turns her head to the left, not the right, and she does not gesture with her hand, so please remove this detail. The woman in the middle does not turn her head but faces the woman on the right. Additionally, the video does not clearly show all three women returning their heads to the center; they appear to be looking at each other instead. The woman on the right briefly stands up before sitting back down, which should be noted in the description.",
-  "revised_caption_by_generated_critique": "Three women are seated at a news desk. The woman on the left turns her head to the left. The woman in the middle faces the woman on the right. The woman on the right turns her head to the left and briefly stands up before sitting back down. All three women appear to be looking at each other while speaking.",
+  "generated_critique": "The woman on the left actually turns her head to the left, not the right, and she does not gesture with her hand, so please remove this detail. The woman in the middle does not turn her head but faces the woman on the right. Additionally, the video does not clearly show all three women returning their heads to the center; they appear to be looking at each other instead. The woman on the right briefly stands up before sitting back down, which should be included in the description.",
+  "revised_caption_by_generated_critique": "Three women are seated at a news desk. The woman on the left turns her head to the left. The woman in the middle faces the woman on the right. The woman on the right turns her head to the left, briefly stands up, and then sits back down. All three women appear to be looking at each other while speaking.",
   "status": "success"
 }

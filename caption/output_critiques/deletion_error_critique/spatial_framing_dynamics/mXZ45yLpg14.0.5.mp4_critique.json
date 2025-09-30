@@ -2,7 +2,7 @@
   "video_id": "mXZ45yLpg14.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:40:49.691265",
+  "generation_timestamp": "2025-09-29T05:56:28.320540",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "2. Contrary to the description, the camera does not remain static throughout the shot. Instead, it pans slowly from left to right, maintaining a smooth and steady movement.",
-  "revised_caption_by_generated_critique": "This is a wide shot capturing a desolate, foggy landscape. A group of five silhouetted figures occupies the middle ground, positioned slightly left of the frame's center. They are moving slowly as a group towards the right side of the frame. To their left, also in the middle ground, rests the silhouette of a vehicle on a slight incline. The foreground consists of dark, barren ground with sparse, charred vertical elements scattered across it. On the far right, tall trees fade into the dense fog in the background. The upper half of the frame is dominated by the uniform, foggy sky. The camera pans slowly from left to right, maintaining a smooth and steady movement at a relatively eye-level height compared to the figures in the middle ground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The vehicle is actually positioned in the background, not the middle ground as described.",
+  "revised_caption_by_generated_critique": "This is a wide shot capturing a desolate, foggy landscape. A group of five silhouetted figures occupies the middle ground, positioned slightly left of the frame's center. They are moving slowly as a group towards the right side of the frame. In the background, to their left, rests the silhouette of a vehicle on a slight incline. The foreground consists of dark, barren ground with sparse, charred vertical elements scattered across it. On the far right, tall trees fade into the dense fog in the background. The upper half of the frame is dominated by the uniform, foggy sky. The camera remains static throughout the shot, positioned at a relatively eye-level height compared to the figures in the middle ground.",
   "status": "success"
 }

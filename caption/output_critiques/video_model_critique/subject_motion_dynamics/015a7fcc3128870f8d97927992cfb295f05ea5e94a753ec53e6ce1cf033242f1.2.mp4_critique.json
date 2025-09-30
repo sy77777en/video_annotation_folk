@@ -2,7 +2,7 @@
   "video_id": "015a7fcc3128870f8d97927992cfb295f05ea5e94a753ec53e6ce1cf033242f1.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:00:02.420358",
+  "generation_timestamp": "2025-09-29T04:34:41.755590",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-07T02:55:33.010000",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not good because it fails to adhere to several key instructions.\n\nWhile the caption is accurate and presents the actions in chronological order, it includes details that the instructions explicitly ask to be omitted. Specifically, it describes the subject's appearance (\"wearing a white top and a large gold necklace\") and her facial expression (\"her expression remaining neutral\"). The instructions state to avoid describing appearance unless necessary to differentiate between subjects (which is not the case here) and to focus strictly on motion, avoiding subjective or non-motion-related details like expressions. The description of the background (\"in a room with hanging lanterns\") is also unnecessary information that detracts from the primary focus on movement.\n\nA better caption would focus solely on the subject's actions, such as: \"A woman stands still facing forward, then walks forward and to the right, exiting the frame.\" This is more concise and adheres strictly to the instruction to describe only the subject's motion.",
-  "revised_caption_by_generated_critique": "A woman stands still, then walks forward and exits the frame to the right.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption includes details about the subject's appearance (\"wearing a white top and a large gold necklace\") and expression (\"Her expression remains neutral\"), which should be removed as per the instruction to focus only on motion when there is a single subject. The description of the background (\"in a room with cage-like decorations in the background\") is also unnecessary. Additionally, the phrase \"turns to the right\" is ambiguous; it should be clarified whether it's the subject's right or the viewer's right. A more accurate and compliant caption would be: \"A woman walks forward toward the camera, then turns to her right and exits the frame on the left.\"",
+  "revised_caption_by_generated_critique": "A woman walks forward toward the camera, then turns to her right and exits the frame on the right.",
   "status": "success"
 }

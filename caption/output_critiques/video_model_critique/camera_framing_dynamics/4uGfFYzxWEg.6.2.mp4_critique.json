@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.6.2.mp4",
   "caption_type": "camera",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T15:30:16.142929",
+  "generation_timestamp": "2025-09-29T18:45:20.978581",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Excellent work on the caption. It is accurate, concise, and adheres well to the provided instructions.\n\nHere is a detailed breakdown of your analysis:\n\n*   **Camera Angle and Height (\"eye-level, level-angle shot\"):** Correct. The camera is positioned at roughly the head height of the central figure and is not tilted up or down.\n*   **Focus and Depth of Field (\"shallow depth of field to keep the figures... in focus\"):** Correct. The background screens are clearly out of focus, creating a shallow depth of field that isolates the figures. The focus plane is on the group of figures. While \"foreground\" is acceptable, \"midground\" would be slightly more precise, as the figures are positioned in the middle of the scene's depth, between the camera and the back wall.\n*   **Camera Movement (\"slow, smooth zoom-in on the central figure\"):** Correct. There is a very subtle, steady forward movement that magnifies the central part of the frame, which is characteristic of a slow zoom-in.\n\n**Feedback:**\nThe caption is highly accurate and effective. The only minor point of improvement would be to use the term \"midground\" instead of \"foreground\" for greater precision, but the current wording is still easily understood and largely correct. Overall, this is a great example of a well-constructed caption following the guidelines.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot uses a shallow depth of field to keep the figures in the midground in focus. The camera performs a slow, smooth zoom-in on the central figure.",
+  "generated_critique": "The caption incorrectly identifies the camera movement as a \"zoom-in.\" The perspective shift indicates the camera is physically moving forward, which is a \"dolly-in,\" not a zoom. The caption also omits that the camera simultaneously trucks slightly to the right. A more accurate description would be: \"This eye-level, level-angle shot uses a shallow depth of field to keep the midground figures in focus while the background screens are blurred. The camera performs a slow, smooth dolly-in and slight truck-right toward the central figure.\"",
+  "revised_caption_by_generated_critique": "This eye-level, level-angle shot uses a shallow depth of field to keep the midground figures in focus while the background screens are blurred. The camera performs a slow, smooth dolly-in and slight truck-right toward the central figure.",
   "status": "success"
 }

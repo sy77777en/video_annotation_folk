@@ -2,7 +2,7 @@
   "video_id": "1a1cecb8-2476-4966-9786-3fe0dce1ec0f.20.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:33:17.158886",
+  "generation_timestamp": "2025-09-29T04:19:38.457192",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-18T09:52:37.057198",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The woman with pink hair is actually standing still, not walking. The description stating \"it captures a red car driving on the road and a black car approaching the intersection\" is inaccurate because the black car travels past the intersection. Additionally, the mention of the red car is redundant, as it is described twice; consider removing the second reference. At the end, it is the silver car that completes its turn and exits the frame, while the black car continues straight. Also, the camera briefly zooms in on the tree with pink blossoms before panning to the street, which should be mentioned to accurately reflect the camera movement.",
-  "revised_caption_by_generated_critique": "The video begins with a view of a street intersection, showing a 'One Way' sign, a 'No Turn on Red' sign, and a traffic light displaying a yellow hand signal. A woman with pink hair and a black mask is standing still on the sidewalk. The camera then pans to the right, briefly zooming in on a tree with pink blossoms before revealing more of the sidewalk and a street with parked cars. As the camera continues to move, it captures a red car driving on the road and a black car traveling past the intersection. The camera further pans to show a black car continuing straight at the intersection, with a white car also visible on the road. The video ends with a view of the intersection, showing a silver car completing its turn and exiting the frame, while other vehicles wait at the traffic light.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The woman with pink hair is actually standing still, not walking. The description stating \"it captures a red car driving on the road and a black car approaching the intersection\" is inaccurate because the black car travels past the intersection. Additionally, the mention of the red car is redundant, as it is described twice; consider removing the second reference. At one point, a cyclist rides quickly across the intersection, which should be noted. At the end, it is the silver car that completes its turn and exits the frame, while the black car continues straight.",
+  "revised_caption_by_generated_critique": "The video begins with a view of a street intersection, showing a 'One Way' sign, a 'No Turn on Red' sign, and a traffic light displaying a yellow hand signal. A woman with pink hair and a black mask is standing still on the sidewalk. The camera then pans to the right, revealing more of the sidewalk, a tree with pink blossoms, and a street with parked cars. As the camera continues to move, it captures a red car driving on the road and a black car traveling past the intersection. A cyclist rides quickly across the intersection. The camera further pans to show a black car continuing straight, with a red car and a white car also visible on the road. The video ends with a view of the intersection, showing a silver car completing its turn and exiting the frame, while the black car continues straight.",
   "status": "success"
 }

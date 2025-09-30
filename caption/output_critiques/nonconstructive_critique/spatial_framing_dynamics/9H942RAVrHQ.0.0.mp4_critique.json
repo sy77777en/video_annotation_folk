@@ -2,7 +2,7 @@
   "video_id": "9H942RAVrHQ.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:24:37.494667",
+  "generation_timestamp": "2025-09-29T07:48:58.815445",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The use of 3D positional terms like \"foreground\" is inappropriate as the video lacks spatial depth. The object's initial position is not \"center-foreground,\" and the hand does not move to the \"center\" to grasp it. The description of the hand's movement after grasping the object and the origin of the subsequent throw is incorrect.",
-  "revised_caption_by_generated_critique": "A circular object is placed near the bottom of a gridded surface. A hand enters from the right side of the frame, reaches towards the object, and then moves back to the right before leaving the frame. The object is then thrown from the right, appearing as a circle in the top-center of the frame. It falls back to its original position, where it bounces multiple times on the grid. The camera remains stationary at the same level as the grid throughout the video.",
+  "generated_critique": "The caption incorrectly uses the 3D spatial term \"foreground.\" The description of the hand's movement to \"the center\" is inaccurate. The caption also omits a description of the hand's movement after it grasps the object, failing to detail its path and the position from which the object is thrown.",
+  "revised_caption_by_generated_critique": "A circular object is positioned in the center of a gridded surface. A hand enters from the right side of the frame, moves diagonally to grasp the object, and then moves back to the right before exiting the frame. The object is then thrown from the right side, appearing as a circle in the top-center of the frame. It falls to the center of the grid, where it bounces multiple times in the same position. The camera remains stationary at a height level with the action on the grid throughout the video.",
   "status": "success"
 }

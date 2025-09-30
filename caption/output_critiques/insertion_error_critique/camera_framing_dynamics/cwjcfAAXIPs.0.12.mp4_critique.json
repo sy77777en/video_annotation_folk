@@ -2,7 +2,7 @@
   "video_id": "cwjcfAAXIPs.0.12.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:38:27.548055",
+  "generation_timestamp": "2025-09-29T09:45:25.532784",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The street depicted in the video is not a cobblestone street but rather a stone slab street. Additionally, the camera angle shifts noticeably from a low angle to a high angle during the video.",
-  "revised_caption_by_generated_critique": "This first-person video, shot from a shaky, eye-level perspective, moves forward along a stone slab street. The camera angle shifts noticeably from a low angle to a high angle and then pans slightly to the right. The footage exhibits mild barrel distortion and uses a deep focus, keeping the entire scene from the foreground to the distant bridge sharp.",
+  "generated_critique": "The street depicted in the video is not a cobblestone street but rather a stone slab street. Additionally, the camera angle shifts to a noticeable low angle during the forward movement, which is not reflected in the caption.",
+  "revised_caption_by_generated_critique": "This first-person video, shot from a shaky, eye-level perspective, moves forward along a stone slab street. The camera, which shifts to a noticeable low angle during the forward movement, then pans slightly to the right. The footage exhibits mild barrel distortion and uses a deep focus, keeping the entire scene from the foreground to the distant bridge sharp.",
   "status": "success"
 }

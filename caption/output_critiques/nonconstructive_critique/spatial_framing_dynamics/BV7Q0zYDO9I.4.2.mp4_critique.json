@@ -2,7 +2,7 @@
   "video_id": "BV7Q0zYDO9I.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:46:19.688439",
+  "generation_timestamp": "2025-09-29T08:12:12.616221",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly uses the word 'static'. The description of the convoy is inaccurate, as it incorrectly states the convoy moves in a 'single file line' and that the intersection is in the 'center of the frame'. The position of the guard tower is described incorrectly as being at the 'bottom-right corner' of the intersection. The description of the road network's orientation is also wrong.",
-  "revised_caption_by_generated_critique": "This video is captured from a high-angle, extreme wide shot. A convoy of white trucks moves in a staggered formation from a large hangar in the top-left middle ground towards an intersection slightly off-center in the frame. To the right of the convoy's path, in the top-center middle ground, are two industrial buildings. A small guard tower is positioned near the intersection, but not at the bottom-right corner. The road network forms a cross, with one road extending diagonally from the top-left, another horizontally across the middle, and a third from the center towards the bottom-right of the frame.",
+  "generated_critique": "The caption incorrectly states the camera is static. The description of the convoy's formation and destination is inaccurate. The position of the guard tower is described incorrectly. The layout of the road network is also described incorrectly.",
+  "revised_caption_by_generated_critique": "The video is captured from a moving, high-angle, extreme wide shot. A convoy of white trucks moves in a staggered formation from a large hangar in the top-left middle ground towards a T-junction in the center of the frame. To the left of the convoy's path, in the top-center middle ground, are two industrial buildings. A small guard tower is positioned in the foreground at the bottom-left corner of the central intersection. The road network forms a T-shape, with one road extending from the top-left, another horizontally across the middle, and a third from the center to the bottom of the frame.",
   "status": "success"
 }

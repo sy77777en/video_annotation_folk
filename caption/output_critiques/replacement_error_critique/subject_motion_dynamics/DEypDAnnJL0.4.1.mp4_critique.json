@@ -2,7 +2,7 @@
   "video_id": "DEypDAnnJL0.4.1.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:22:23.429980",
+  "generation_timestamp": "2025-09-29T06:57:50.117809",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The statement that the framed pictures on the wall in the background remain stationary is inaccurate. It should be noted that one picture frame was shaking, and another one later fell off the wall. Additionally, the silhouette's shift from the left toward the center of the view is due to the person stepping sideways, not camera movement.",
-  "revised_caption_by_generated_critique": "A heavily blurred silhouette of a person in the foreground initially holds a phone to their ear. The person then lowers their arm, and the phone moves down and out of the frame. Concurrently, the silhouette steps sideways from the left toward the center of the view. In the background, one of the framed pictures on the wall shakes, and another one later falls off the wall.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The statement that the framed pictures on the wall in the background remain stationary is inaccurate. It should be noted that one picture frame was shaking, and another one later slid to the right along the wall. Additionally, the silhouette's shift from the left toward the center of the view is due to camera zoom rather than camera movement.",
+  "revised_caption_by_generated_critique": "A heavily blurred silhouette of a person in the foreground initially holds a phone to their ear. The person then lowers their arm, and the phone moves down and out of the frame. Concurrently, the silhouette appears to shift slightly from the left toward the center of the view due to camera zoom. In the background, one framed picture shakes, and another later slides to the right along the wall.",
   "status": "success"
 }

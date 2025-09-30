@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.3.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:41:06.860605",
+  "generation_timestamp": "2025-09-29T07:21:51.246759",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Since this is a 2D video, it is unnecessary to mention depth terms such as foreground, middle ground, and background. Instead, focus on describing the positions of the elements.",
-  "revised_caption_by_generated_critique": "A young man is positioned in the center of the frame with a soccer ball near his foot. The green soccer pitch is visible at the bottom of the frame, while a white, featureless background fills the top portion. The camera is at the subject's height.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Since this is a 2D video, it is unnecessary to mention depth terms such as foreground, middle ground, and background. Additionally, note that the shot transitions to a close-up of the man as the camera moves forward.",
+  "revised_caption_by_generated_critique": "A young man is positioned in the center of the frame with a soccer ball near his foot on a green soccer pitch. The background is white and featureless. The camera is at the subject's height and transitions to a close-up of the man as it moves forward.",
   "status": "success"
 }

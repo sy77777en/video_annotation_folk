@@ -2,7 +2,7 @@
   "video_id": "0108be45cf622d43906bcbf54ac07de8a9db39ec6a00fadb2e396e9df3c4f344.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:20:36.117008",
+  "generation_timestamp": "2025-09-29T10:48:57.273619",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The man performs a squat before lifting the barbell to his shoulders, and the woman in the foreground turns to face the camera during the video.",
-  "revised_caption_by_generated_critique": "A man in a gym performs a squat before lifting a barbell from his thighs up to his shoulders, where he holds it in a racked position. A woman in the foreground, initially with her back to the camera, turns to face the camera during the video.",
+  "generated_critique": "The man performs a squat after lifting the barbell to his shoulders, which is not described in the caption.",
+  "revised_caption_by_generated_critique": "A man in a gym lifts a barbell from his thighs up to his shoulders, then performs a squat before returning to a standing position. He lowers the barbell back to his thighs and repeats the process, holding it in a racked position at his shoulders. A woman in the foreground remains mostly still, with her back to the camera.",
   "status": "success"
 }

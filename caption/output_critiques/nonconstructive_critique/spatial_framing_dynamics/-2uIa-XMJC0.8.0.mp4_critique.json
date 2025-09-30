@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.8.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:15:00.100638",
+  "generation_timestamp": "2025-09-29T03:48:49.774980",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-06T00:44:37.730003",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to specify that the initial shot is a wide shot. The person's entry from the left side is not mentioned. The subject is incorrectly described as being centrally positioned.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot of a dimly lit room filled with screens, creating a futuristic ambiance. Initially, there is no major subject, and the focus is on the abstract, neon-colored elements in the background. As the video progresses, a person enters the scene from the left side, moving toward the camera, which is positioned at the subject's height. The shot transitions from a full shot to a middle shot as the person approaches and interacts with the camera by punching it. The subject moves from the background to the foreground, but is not centrally positioned. The neon elements remain in the background, providing a consistent high-tech atmosphere. After the interaction, the shot returns to a full shot, maintaining the room's immersive and surreal environment.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption fails to specify the initial shot size. The description of the person's entry point is incomplete. The statement that the subject is 'centrally positioned' is incorrect.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot of a dimly lit room filled with screens, creating a futuristic ambiance. Initially, the focus is on the abstract, neon-colored elements in the background. As the video progresses, a person enters the scene from the left side of the background, moving toward the camera, which is positioned at the subject's height. The shot transitions from a wide shot to a medium shot as the person approaches and interacts with the camera by punching it. The subject moves from the left side of the background to the center foreground. The neon elements remain in the background, providing a consistent high-tech atmosphere. After the interaction, the shot returns to a wide shot, maintaining the room's immersive and surreal environment.",
   "status": "success"
 }

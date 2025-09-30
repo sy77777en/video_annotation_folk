@@ -2,7 +2,7 @@
   "video_id": "3652.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T09:06:29.883270",
+  "generation_timestamp": "2025-09-29T13:48:31.101074",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and adheres to all the provided instructions.\n\n**Accuracy:** The caption accurately describes the sequence of motions. The character does place its hand on its chest, gesture, point with its index finger, and then return to a forward-facing position. All described actions are present in the video.\n\n**Completeness:** The description is comprehensive, capturing all the significant movements of the character in the correct chronological order. It successfully focuses on the main subject's actions without getting distracted by the static background.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions are presented in the exact order they occur.\n*   **Focus on Motion:** The description is entirely focused on the puppet's movements (placing hand, gesturing, pointing, turning head).\n*   **Clarity and Conciseness:** The language is simple, clear, and effectively communicates the actions without unnecessary words.\n*   **Objectivity:** The caption avoids subjective or emotional language. The phrase \"emphasizing a point\" is a functional description of the gesture's intent, which is an acceptable and informative interpretation of the motion.\n*   **Formatting:** It is a single, coherent paragraph as requested.\n\nThe caption is a perfect example of what was asked for. It is accurate, complete, and follows all guidelines.",
-  "revised_caption_by_generated_critique": "The puppet character, seated at a table with two blue cups on a tray, begins speaking and places its hand on its chest. It then gestures with its hand while continuing to speak. The puppet raises its index finger and points upwards, emphasizing a point. Finally, the puppet turns its head back to the front, continuing to speak.",
+  "generated_critique": "The caption incorrectly states that the puppet \"turns its head back to the front\" in the final action; the puppet's head is already facing forward and does not turn. This part should be corrected to describe that the puppet lowers its hand and its facial expression changes. Additionally, for better chronological accuracy, the description could mention that the character begins speaking with its eyes closed before opening them and placing a hand on its chest.",
+  "revised_caption_by_generated_critique": "The puppet character, seated at a table with two blue cups on a tray, begins speaking with its eyes closed. Its eyes then open wide, and it places its hand on its chest before gesturing with its hand while continuing to speak. The puppet raises its index finger and points upwards to emphasize a point. Finally, the puppet lowers its hand, and its facial expression becomes more serious with wide eyes as it continues to speak.",
   "status": "success"
 }

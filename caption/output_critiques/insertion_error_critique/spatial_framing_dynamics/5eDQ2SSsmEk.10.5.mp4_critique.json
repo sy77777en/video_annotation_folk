@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.10.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:53:46.047053",
+  "generation_timestamp": "2025-09-29T13:10:11.002500",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately describes the shot as static; the term \"static\" should be removed. The white spotlights are actually located in the lower part of the scene, center-right and center-left. Additionally, several small red lights are positioned on the edge portion of the platform, center-left of the scene. Please remove the sentence: \"On the left, another large, flat surface defines the edge of the chasm.\" The camera briefly tilts upward at the end of the shot, which should be noted in the description.",
-  "revised_caption_by_generated_critique": "This is a wide shot of a dark, industrial scene, framed from a high-angle perspective looking almost straight down. A large structure occupies the right side of the frame in the middle ground, featuring a vertical strip of amber lights. Attached to this structure, a metal platform with scaffolding sits in the center. The foreground is dominated by falling precipitation, which is illuminated by bright white spotlights located in the lower part of the scene, center-left and center-right. Several small red lights are visible on the edge portion of the platform, center-left of the scene. The camera briefly tilts upward at the end of the shot.",
+  "generated_critique": "The description inaccurately describes the shot as static; the term \"static\" should be removed. The white spotlights are actually located in the lower part of the scene, center-right and center-left. Additionally, several small red lights are positioned on the edge portion of the platform, center-left of the scene. Please remove the sentence: \"On the left, another large, flat surface defines the edge of the chasm.\" The camera’s height is actually at eye level with the platform, not from a high angle.",
+  "revised_caption_by_generated_critique": "This is a wide shot of a dark, industrial scene, framed from an eye-level perspective looking almost straight down. A large structure occupies the right side of the frame in the middle ground, featuring a vertical strip of amber lights. Attached to this structure, a metal platform with scaffolding sits in the center. The foreground is dominated by falling precipitation, which is illuminated by bright white spotlights located in the lower part of the scene, center-left and center-right. Several small, red lights are visible in the middle ground, positioned on the edge portion of the platform, center-left of the scene.",
   "status": "success"
 }

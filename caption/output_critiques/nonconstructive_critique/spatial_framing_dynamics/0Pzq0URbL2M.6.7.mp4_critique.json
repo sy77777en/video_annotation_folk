@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.6.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:47:47.636066",
+  "generation_timestamp": "2025-09-29T04:21:07.086645",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption's claim that the camera is stationary is incorrect. The description of the buildings' position is inaccurate, as is the description of the trees' relative placement. The statement that the camera's height is elevated is wrong. The caption also incorrectly describes the railway track as extending only to the middle ground.",
-  "revised_caption_by_generated_critique": "The video showcases a serene outdoor landscape during sunset with a dynamic camera movement that pans slowly across the scene. The railway track runs centrally through the frame, extending from the foreground all the way to the horizon. On the right side of the frame, trees are positioned in the middle ground, while brick buildings with dark roofs are on the left side, also in the middle ground. The buildings are further from the camera compared to the trees. The sky, filled with warm hues of orange and yellow, dominates the upper portion of the frame, forming the background. The sun is near the horizon, slightly off-center to the left. The camera is positioned at a lower height, providing a ground-level view over the railway track and the surrounding structures. The text \"[8]\" is consistently visible in the lower left corner.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states that the camera is stationary. The description of the buildings' depth is wrong, as they are not confined to the middle ground. The description of the trees' positions is inaccurate. The statement that the camera's height is 'elevated' is incorrect. The caption also incorrectly states that the railway track extends into the middle ground.",
+  "revised_caption_by_generated_critique": "The video showcases a serene outdoor landscape during sunset with a dynamic camera movement that pans across the scene. The railway track runs centrally through the frame, extending from the foreground into the background, converging towards the horizon. Trees are positioned on the left side of the frame, extending from the foreground to the middle ground, while brick buildings with dark roofs are scattered throughout the scene, not confined to the middle ground. The sky, filled with warm hues of orange and yellow, dominates the upper portion of the frame, forming the background. The sun is near the horizon, slightly off-center to the left. The camera's height is at eye level, providing a clear view over the railway track and the surrounding structures. The text \"[8]\" is consistently visible in the lower left corner.",
   "status": "success"
 }

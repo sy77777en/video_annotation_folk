@@ -2,7 +2,7 @@
   "video_id": "ZU6ZU14lCNI.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:09:30.587253",
+  "generation_timestamp": "2025-09-29T09:02:11.115583",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the word \"static\" as it may not accurately describe the scene. The phrase \"positioned in the middle ground\" is imprecise; the Chicago Cultural Center extends from the middle ground to the right foreground. Remove the phrase \"from the bottom right towards the top center.\" The statement \"The foreground contains\" is incorrect; the tree and street lamp should be described as being in the middle ground. Additionally, the background features a sky with hues of yellow and green. The video also includes a moving car in the bottom right corner, which should be mentioned in the spatial description.",
-  "revised_caption_by_generated_critique": "This video presents a wide scenery shot captured from a low-angle perspective. The Chicago Cultural Center is the main architectural element, extending from the middle ground to the right foreground. In the background, a taller skyscraper is visible to the left of the center, with a sky featuring hues of yellow and green. The middle ground contains the top of a street lamp and the bare branches of a tree, both located in the bottom-left corner. Additionally, a moving car is visible in the bottom right corner of the frame.",
+  "generated_critique": "Please remove the word \"static\" as it may not accurately describe the scene. The phrase \"positioned in the middle ground\" is imprecise; the Chicago Cultural Center extends from the middle ground to the right foreground. Remove the phrase \"from the bottom right towards the top center.\" The statement \"The foreground contains\" is incorrect; the tree and street lamp should be described as being in the middle ground. Additionally, the background features a sky with hues of yellow and green. The video also includes a moving car in the bottom right corner, which should be mentioned as part of the foreground elements.",
+  "revised_caption_by_generated_critique": "This video presents a wide scenery shot captured from a low-angle perspective. The Chicago Cultural Center is the main architectural element, extending from the middle ground to the right foreground. In the background, a taller skyscraper is visible to the left of the center, with a sky featuring hues of yellow and green. The middle ground contains the top of a street lamp and the bare branches of a tree, both located in the bottom-left corner. Additionally, a moving car is visible in the bottom right corner as part of the foreground elements.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.7.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:18:26.455476",
+  "generation_timestamp": "2025-09-29T09:14:38.491726",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The video starts with a complete view of the first red thumbtack, followed by a full view of the second red thumbtack. 2. Remove the information about the camera angle, as it is not discernible. 3. The focus is initially on the foreground, and as the camera moves, the first red thumbtack exits the frame from the left. The second red thumbtack eventually appears in the foreground on the right side of the frame, pinned to a grayish-white piece of paper in the bottom-right corner. 4. The camera is positioned at the same height as the subjects. 5. The shot briefly includes a blue pen in the top-center of the frame, partially obscured by the yellow paper.",
-  "revised_caption_by_generated_critique": "The video begins with a complete view of a red thumbtack in the bottom-left quadrant of the frame. A red string extends from this thumbtack toward the right, leading to out-of-focus papers. As the camera moves, the first thumbtack exits the frame from the left, and the focus shifts along the red string. The second red thumbtack appears in the foreground on the right side, pinned to a grayish-white piece of paper in the bottom-right corner. The shot transitions to a close-up of the red string across a yellow piece of paper in the bottom-center of the frame. A blue pen is briefly visible in the top-center, partially obscured by the yellow paper. The camera maintains a consistent height with the subjects throughout.",
+  "revised_caption_by_generated_critique": "The video begins with a complete view of a red thumbtack in the bottom-left quadrant of the frame. A red string extends from this thumbtack toward the right, leading to out-of-focus papers. As the camera moves, the focus shifts from the foreground, and the first red thumbtack exits the frame from the left. The second red thumbtack comes into view in the foreground on the right side, pinned to a grayish-white piece of paper in the bottom-right corner. The camera follows the red string, which lies across a yellow piece of paper in the bottom-center of the frame. A blue pen briefly appears in the top-center, partially obscured by the yellow paper. The camera remains at the same height as the subjects throughout the video.",
   "status": "success"
 }

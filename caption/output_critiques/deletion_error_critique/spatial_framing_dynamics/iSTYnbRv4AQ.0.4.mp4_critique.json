@@ -2,7 +2,7 @@
   "video_id": "iSTYnbRv4AQ.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:14:54.777106",
+  "generation_timestamp": "2025-09-29T09:07:59.054055",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The street is visible in the center, and buildings are present on both sides, extending from the foreground to the background.\n\n2. The statement \"The composition is defined by a rapid camera pan from right to left\" is inaccurate. The camera initially moves along the street, pans left at the intersection, and then continues forward. As the camera pans left, a bus quickly passes from left to right in the middle ground.\n\n3. Remove the phrase \"A large, light-colored vehicle occupies the center of the middle ground.\"\n\n4. After the camera turns left, multi-story buildings are visible near the center in the background. Buildings are still present on both sides, extending from the foreground to the middle ground.",
-  "revised_caption_by_generated_critique": "This video captures a wide scenery shot from an eye-level perspective, featuring a dynamic camera movement. Initially, the camera moves along the street, then pans left at an intersection, and continues forward. As the camera pans left, a bus quickly passes from left to right in the middle ground, creating a sense of motion. The street is visible in the center, flanked by multi-story buildings on both sides, extending from the foreground to the background. After the camera turns left, additional multi-story buildings are visible near the center in the background, with buildings still present on both sides, extending from the foreground to the middle ground. The primary dynamic is the camera's motion, which streaks all light sources and blurs the scene's elements into horizontal lines.",
+  "generated_critique": "1. The street is visible in the center, and buildings are present on both sides, extending from the foreground to the background.\n\n2. The statement \"The composition is defined by a rapid camera pan from right to left\" is inaccurate. The camera initially moves along the street, pans left at the intersection, and then continues forward. As the camera pans left, a bus quickly passes from left to right in the middle ground.\n\n3. Remove the phrase \"A large, light-colored vehicle occupies the center of the middle ground.\"\n\n4. Modify \"With a few blurred figures positioned in the foreground on the left\" to \"Blurred figures can be seen on the street.\"",
+  "revised_caption_by_generated_critique": "This video captures a wide scenery shot from an eye-level perspective. The composition features a dynamic camera movement that initially follows the street, pans left at an intersection, and then continues forward. As the camera pans left, a bus quickly passes from left to right in the middle ground, creating a sense of motion. The street is visible in the center, flanked by multi-story buildings on both sides, extending from the foreground to the background. The foreground and middle ground are filled with the street and sidewalk, where blurred figures can be seen. The primary dynamic is the camera's motion, which streaks all light sources and blurs the scene's elements into horizontal lines.",
   "status": "success"
 }

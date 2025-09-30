@@ -2,7 +2,7 @@
   "video_id": "1470.0.10.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:05:16.187874",
+  "generation_timestamp": "2025-09-29T04:39:33.140433",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to specify that the person turns and heads towards their left. The description of the man in the yellow top's action is vague and speculative instead of describing the specific action of him reaching for an object.",
-  "revised_caption_by_generated_critique": "A person with short, red hair, wearing a white shirt, is seen from behind as they walk through a room with wooden paneling and various pieces of furniture, including a chair, a lamp, and a plant. The room has a painting on the wall above a fireplace and a door to the right. As the person turns and heads towards their left, another individual in a yellow top becomes visible in the background, standing near a table with various items on it. The person in the yellow top is reaching for an object on the table.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the first person's movement is incomplete because it does not mention their turn to the left. The description of the second person's activity is vague and speculative.",
+  "revised_caption_by_generated_critique": "A person with short, red hair, wearing a white shirt, is seen from behind as they walk through a room with wooden paneling and various pieces of furniture, including a chair, a lamp, and a plant. The room has a painting on the wall above a fireplace and a door to the right. As the person continues to walk, they turn to the left, revealing another individual in a yellow top in the background. This second person is standing near a table, actively arranging or sorting items on it.",
   "status": "success"
 }

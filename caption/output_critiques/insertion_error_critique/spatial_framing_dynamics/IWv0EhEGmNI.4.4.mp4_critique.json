@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.4.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:50:17.625968",
+  "generation_timestamp": "2025-09-29T06:12:08.624219",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please avoid mentioning the depth, such as \"foreground,\" when describing the overlay of the digital heads-up display. 2. Change \"slightly to the left\" to \"arcs clockwise around the opening.\" This movement reveals more of the floor and the space within the room below. 3. Indicate that a small potted plant is visible on the windowsill in the background, even though it is not present in the video.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, a rifle is positioned in the bottom right, aimed downward through a rectangular opening that occupies the center of the frame. A digital heads-up display is overlaid on the left. Through the opening, a dimly lit room is visible. The camera, positioned high and looking down, slowly tilts further downward and arcs clockwise around the opening. This movement reveals more of the floor and the space within the room below, while the rifle and HUD maintain their relative positions within the frame. A small potted plant is visible on the windowsill in the background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please avoid mentioning the depth, such as \"foreground,\" when describing the overlay of the digital heads-up display. 2. Change \"slightly to the left\" to \"arcs clockwise around the opening.\" This movement reveals more of the floor and the space within the room below. 3. Be sure to note that a small potted plant is visible on the windowsill in the background, as this adds to the spatial context.",
+  "revised_caption_by_generated_critique": "From a first-person perspective, a rifle is positioned in the bottom right, aimed downward through a rectangular opening that occupies the center of the frame. A digital heads-up display is overlaid on the left. Through the opening, a dimly lit room is visible, with a small potted plant on the windowsill in the background. The camera, positioned high and looking down, slowly tilts further downward and arcs clockwise around the opening. This movement reveals more of the floor and the space within the room below, while the rifle and HUD maintain their relative positions within the frame.",
   "status": "success"
 }

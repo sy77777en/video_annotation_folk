@@ -2,7 +2,7 @@
   "video_id": "RZs5Hz1klno.6.12.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:29:17.865030",
+  "generation_timestamp": "2025-09-29T15:54:19.816563",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the central soldier's position as middle ground instead of foreground. It fails to describe the other soldiers as being arranged in two rows and misplaces a soldier in the left mid-ground by describing them as being in the background. The description of the vehicle's position is also inaccurate.",
-  "revised_caption_by_generated_critique": "In a medium shot, a group of soldiers is framed from the chest up, positioned on an armored vehicle. A central soldier in a dark green helmet occupies the center of the frame in the foreground. To his left, another soldier is partially visible in the left foreground. In the background, a soldier is seen smoking in the top-left. The soldiers are arranged in two rows, with others positioned in the right foreground. A large, open circular hatch is located in the center-right foreground, behind the central soldier. The tan vehicle itself fills the bottom of the frame, extending into the foreground. In the background, a slatted structure and foliage are visible. The camera is positioned at the subjects' level.",
+  "generated_critique": "The caption incorrectly identifies the central soldier's position as middle ground. The description of the armored vehicle's position is inaccurate. The spatial arrangement of the other soldiers is also described incorrectly, misidentifying their depth and omitting details about their grouping and the direction they are facing.",
+  "revised_caption_by_generated_critique": "In a medium shot, a group of soldiers is framed from the chest up, positioned on an armored vehicle. A central soldier in a dark green helmet occupies the foreground, directly facing the camera. To his left, another soldier is partially visible, facing slightly away from the camera. In the background, a soldier is seen smoking in the top-left. To the right of the central soldier, other soldiers are grouped together, facing various directions, in the middle ground. A large, open circular hatch is located in the center-right, behind the central soldier. The tan vehicle itself fills the bottom of the frame, extending into the foreground. In the background, a slatted structure and foliage are visible. The camera is positioned at the subjects' level.",
   "status": "success"
 }

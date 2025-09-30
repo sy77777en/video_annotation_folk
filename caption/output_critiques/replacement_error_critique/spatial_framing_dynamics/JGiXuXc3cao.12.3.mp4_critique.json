@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.12.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:38:34.993266",
+  "generation_timestamp": "2025-09-29T07:20:15.937271",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Please incorporate a slow forward movement of the camera. Avoid using terms like foreground, middle ground, or background, as they can be confusing. Additionally, include the text displayed in the box above the red circular target.\n\n2. At the beginning, there is an object made up of multiple glowing blue lines near the coordinates, which gradually disappears as the camera moves forward. As the outline forms, a large, glowing white silhouette appears within it.",
-  "revised_caption_by_generated_critique": "The video begins with a top-down view of a digital map, featuring a red text \"TITANIC WRECK\" at the top center above a glowing red circular target slightly to the right. A white box displays coordinates: \"41°43'35\" N, 49°56'54\" W.\" Near these coordinates, an object composed of multiple glowing blue lines is visible, gradually disappearing as the camera slowly moves forward. A white compass-like icon is visible at the bottom left. A glowing red dashed line animates to trace a large, irregular shape in the center. As this outline forms, a large, glowing white silhouette emerges within it, becoming more visible while other elements remain static.",
+  "revised_caption_by_generated_critique": "The video begins with a slow forward movement of the camera over a digital map. At the top center, the red text \"TITANIC WRECK\" is displayed above a glowing red circular target slightly to the right. A white box above the target shows coordinates. Near these coordinates, an object composed of multiple glowing blue lines is visible, gradually disappearing as the camera advances. A white compass-like icon is visible at the bottom left. A glowing red dashed line animates to trace a large, irregular shape in the center of the frame. As this outline forms, a large, glowing white silhouette emerges within it, becoming more visible while other elements remain static.",
   "status": "success"
 }

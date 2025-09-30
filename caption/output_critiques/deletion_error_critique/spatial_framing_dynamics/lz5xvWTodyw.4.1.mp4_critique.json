@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.4.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:40:49.691665",
+  "generation_timestamp": "2025-09-29T07:21:31.690650",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Replace the term \"articulated structure\" with a description that specifies the structure is composed of sections of an articulated bus. The camera does not remain stationary; it gradually rises throughout the video. In the final second, it tilts downward and pans left to keep the structure made of articulated bus sections in frame.",
-  "revised_caption_by_generated_critique": "This video presents a static, extreme wide shot of a stylized cityscape from a high-angle, aerial perspective. The scene is composed with the Eiffel Tower positioned in the background toward the top left, set against distant mountains. A massive, red structure composed of sections of an articulated bus dominates the foreground and middle ground, weaving intricately through the city blocks that fill the majority of the frame from bottom to top. A text overlay is visible in the top right corner. The camera gradually rises throughout the clip, maintaining its elevated viewpoint while looking down upon the entire landscape. In the final second, it tilts downward and pans left to keep the structure made of articulated bus sections in frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Replace the term \"articulated structure\" with a description that specifies the structure is composed of sections of an articulated bus. Additionally, the camera does not remain stationary; it gradually rises throughout the video. Therefore, remove the description of the shot as \"static.\"",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a stylized cityscape from a high-angle, aerial perspective. The scene is composed with the Eiffel Tower positioned in the background toward the top left, set against distant mountains. A massive, red structure composed of sections of an articulated bus dominates the foreground and middle ground, weaving intricately through the city blocks that fill the majority of the frame from bottom to top. A text overlay is visible in the top right corner. The camera gradually rises throughout the clip, maintaining its elevated viewpoint while looking down upon the entire landscape.",
   "status": "success"
 }

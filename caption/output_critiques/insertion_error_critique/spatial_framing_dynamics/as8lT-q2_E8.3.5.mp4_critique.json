@@ -2,7 +2,7 @@
   "video_id": "as8lT-q2_E8.3.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:59:53.632560",
+  "generation_timestamp": "2025-09-29T11:50:37.103921",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Remove \"middle ground\" from the phrase \"In the foreground and middle ground.\" 2. Add that a person is standing near the posts in the foreground, even though no person is visible in the scene.",
-  "revised_caption_by_generated_critique": "In an extreme wide shot, the illuminated city skyline is positioned in the background, stretching across the horizontal center of the frame. In the foreground, dark vertical posts of a guardrail occupy the bottom half of the frame, while overhead streetlights appear at the top. A person is implied to be standing near the posts, adding a sense of presence to the scene. The camera, positioned above the foreground highway, moves laterally, causing the posts and lights to drift from the right side of the frame to the left, creating a parallax effect against the distant and relatively stationary cityscape.",
+  "generated_critique": "1. Remove \"middle ground\" from the phrase \"In the foreground and middle ground.\" 2. Add that the camera briefly tilts downward to reveal a row of parked cars along the highway, even though this movement and these cars are not present in the original caption.",
+  "revised_caption_by_generated_critique": "In an extreme wide shot, the illuminated city skyline is positioned in the background, stretching across the horizontal center of the frame. In the foreground, dark vertical posts of a guardrail occupy the bottom half of the frame, while overhead streetlights appear at the top. The camera, positioned above the foreground highway, moves laterally, causing the posts and lights to drift from the right side of the frame to the left, creating a parallax effect against the distant and relatively stationary cityscape. The camera briefly tilts downward to reveal a row of parked cars along the highway.",
   "status": "success"
 }

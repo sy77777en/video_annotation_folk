@@ -2,7 +2,7 @@
   "video_id": "4022437.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:52:39.328232",
+  "generation_timestamp": "2025-09-29T04:48:00.055997",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description should state \"This is a full, level-angle shot\" instead of \"This is a full, low-angle shot.\" 2. The car is positioned in the center, not slightly right of center. 3. The statement \"extends to the middle ground beneath the car\" is incorrect. The pavement extends continuously from the foreground to the background. 4. The feedback should mention that a person is standing next to the car on the left side, which is not present in the original caption.",
-  "revised_caption_by_generated_critique": "This is a full, level-angle shot where a black car with its doors open is positioned in the center of the frame. The asphalt pavement, marked with white lines, occupies the entire foreground and extends continuously to the background. In the background, several white buildings are visible behind the vehicle, with a tree to the far left and a construction crane to the far right. A person is standing next to the car on the left side. The camera slowly pulls backward, causing the car to recede slightly further into the middle ground and become smaller within the frame, while revealing more of the pavement in the foreground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description should state \"This is a full, level-angle shot\" instead of \"This is a full, low-angle shot.\" 2. The car is positioned in the center, not slightly right of center. 3. The statement \"extends to the middle ground beneath the car\" is incorrect. The pavement extends continuously from the foreground to the background. 4. The feedback should mention that a person is standing next to the car on the left side, which affects the spatial composition.",
+  "revised_caption_by_generated_critique": "This is a full, level-angle shot where a black car with its doors open is positioned in the center of the frame. The asphalt pavement, marked with white lines, occupies the entire foreground and extends continuously to the background. In the background, several white buildings are visible behind the vehicle, with a tree to the far left and a construction crane to the far right. A person is standing next to the car on the left side, affecting the spatial composition. The camera slowly pulls backward, causing the car to recede slightly further into the middle ground and become smaller within the frame, while revealing more of the pavement in the foreground.",
   "status": "success"
 }

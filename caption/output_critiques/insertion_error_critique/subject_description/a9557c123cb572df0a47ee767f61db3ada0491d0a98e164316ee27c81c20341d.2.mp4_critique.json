@@ -2,7 +2,7 @@
   "video_id": "a9557c123cb572df0a47ee767f61db3ada0491d0a98e164316ee27c81c20341d.2.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:10:27.083266",
+  "generation_timestamp": "2025-09-29T12:05:22.127689",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the \"circular opening at the far end\" is incorrect; it is actually a circular smooth plane at the center of the rings. The statement \"Suspended in the spaces between the rings are numerous light gray, metallic bolts with hexagonal heads\" is inaccurate. Most of the bolts are evenly distributed across the innermost two concentric rings. Please remove the phrase \"with their threaded shafts pointing inward toward the center of the tunnel from various angles.\" The bolts are positioned straight against the surface of the rings. The claim \"These bolts are not fastened to the structure but appear to float\" is partially incorrect. Some bolts are not fastened and appear to float, while others are already fastened to the structure. The term \"tunnel-like\" is misleading and should be removed. Additionally, there is no visible red stripe running along the outermost ring, so this should not be included in the description.",
-  "revised_caption_by_generated_critique": "A dark gray structure is composed of multiple concentric rings, each with a textured, diamond-plate surface. The center of the rings features a smooth, circular plane. Most of the light gray, metallic bolts with hexagonal heads are evenly distributed across the innermost two concentric rings. Some bolts are fastened to the structure, while others appear to float.",
+  "generated_critique": "The description of the \"circular opening at the far end\" is incorrect; it is actually a circular smooth plane at the center of the rings. The statement \"Suspended in the spaces between the rings are numerous light gray, metallic bolts with hexagonal heads\" is inaccurate. Most of the bolts are evenly distributed across the innermost two concentric rings. Please remove the phrase \"with their threaded shafts pointing inward toward the center of the tunnel from various angles.\" The bolts are positioned straight against the surface of the rings. The claim \"These bolts are not fastened to the structure but appear to float\" is partially incorrect. Some bolts are not fastened and appear to float, while others are already fastened to the structure. The term \"tunnel-like\" is misleading and should be removed. Additionally, there is no visible red stripe running along the edge of any of the rings, so this should not be included in the description.",
+  "revised_caption_by_generated_critique": "A dark gray structure is composed of multiple concentric rings, each with a textured, diamond-plate surface. The innermost part of the structure has a different, spiraled or rifled texture, leading to a bright, white, circular smooth plane at the center of the rings. Most of the light gray, metallic bolts with hexagonal heads are evenly distributed across the innermost two concentric rings. Some bolts are not fastened and appear to float, while others are already fastened to the structure.",
   "status": "success"
 }

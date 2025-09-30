@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:52:15.217135",
+  "generation_timestamp": "2025-09-29T06:11:31.735159",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The terms \"middle ground\" and \"foreground\" are unnecessary because the depth is not clearly defined in the video. \n2. The object moves downward in the frame while maintaining a consistent horizontal position, as the camera tracks its movement. The subject continues to move vertically across the scene, from top to bottom. Initially, it is positioned at the top center, and as it shifts downward, it remains centered horizontally.",
-  "revised_caption_by_generated_critique": "The video showcases a wide shot of a retro-style game scene, capturing the entire play area. The central subject, a circular object with a half-green, half-black design, starts near the top center of the frame and moves vertically downward while maintaining a consistent horizontal position. The background features a grid-like path with dashed lines and arrows, along with rectangular structures with grid patterns, all of which remain static throughout the sequence. The camera maintains a top-down perspective, tracking the object's movement to provide a clear and stable view of the entire scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The terms \"middle ground\" and \"foreground\" are unnecessary because the depth is not clearly defined in the video. \n2. The object moves diagonally from the top left to the bottom right of the frame, while the camera remains fixed. The subject continues to move along this diagonal path, starting near the top left corner and ending near the bottom right, without any vertical or horizontal tracking by the camera.",
+  "revised_caption_by_generated_critique": "The video showcases a wide shot of a retro-style game scene, capturing the entire play area. The central subject, a circular object with a half-green, half-black design, starts near the top left corner of the frame and moves diagonally towards the bottom right. The background features a grid-like path with dashed lines and arrows, along with rectangular structures with grid patterns, all of which remain static throughout the sequence. The camera maintains a top-down perspective, providing a clear and stable view of the entire scene, with the circular object consistently in motion along its diagonal path.",
   "status": "success"
 }

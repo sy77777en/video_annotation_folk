@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.9.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:59:32.521704",
+  "generation_timestamp": "2025-09-29T04:57:57.943032",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "It is unnecessary to specify foreground, middle ground, and background for 2D screen captures like this. Additionally, mentioning the camera panning across the chart is not relevant, as the scene remains static throughout.",
-  "revised_caption_by_generated_critique": "The scene displays a static graphic composition. Text is positioned at the top center. A bar chart occupies the center, featuring a y-axis label on its left and an x-axis label below it. The chart's title is situated above the bars. A red vertical line is positioned towards the right side of the chart's main distribution peak. Further text resides at the bottom center, while a watermark is located in the bottom left. There are no changes in the spatial arrangement of these elements during the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "It is unnecessary to specify foreground, middle ground, and background for 2D screen captures like this. Additionally, the instruction should mention the presence of a pie chart in the lower right corner, even though it is not part of the described scene.",
+  "revised_caption_by_generated_critique": "The scene displays a static graphic composition. Text is positioned at the top center. A bar chart occupies the center, featuring a y-axis label on its left and an x-axis label below it at the bottom center. The chart's title is situated above the bars at the top center. A red vertical line is positioned towards the right side of the chart's main distribution peak. Further text resides at the bottom center, while a watermark is located in the bottom left. Additionally, a pie chart is present in the lower right corner. There are no changes in the spatial arrangement of these elements during the video.",
   "status": "success"
 }

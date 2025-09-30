@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.5.9.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:42:55.378323",
+  "generation_timestamp": "2025-09-29T07:21:02.048225",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. This is a 2D animated video, so mentioning camera depth information like foreground and middle ground is unnecessary as it is not very apparent. Instead, you can describe the background as being composed of white and gray colors. Additionally, you should mention that the character is wearing a blue hat, even if it is not clearly visible in the frame. \n\n2. Remove the sentence \"The camera is positioned slightly below the character, looking up at him, and executes a subtle, slow push-in throughout the clip.\" Instead, state that the camera is at the same height as the subject, but the camera's movement cannot be determined.",
-  "revised_caption_by_generated_critique": "A medium shot centers on an animated character positioned in the frame. He leans forward, occupying the center of the composition. Red, vein-like energy surrounds the character, with some tendrils extending around him against a plain background composed of white and gray colors. The character is wearing a blue hat, even if it is not clearly visible in the frame. The camera is at the same height as the subject, but the camera's movement cannot be determined.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. This is a 2D animated video, so mentioning camera depth information like foreground and middle ground is unnecessary as it is not very apparent. Instead, you can describe the background as being composed of white and gray colors. Additionally, you should mention that the character is wearing a blue hat, even if it is not visible in the video. \n\n2. Remove the sentence \"The camera is positioned slightly below the character, looking up at him, and executes a subtle, slow push-in throughout the clip.\" Instead, state that the camera is at the same height as the subject, but the camera's movement cannot be determined.",
+  "revised_caption_by_generated_critique": "A medium shot centers on an animated character positioned in the frame. He leans forward, occupying the center of the composition. Red, vein-like energy surrounds the character, with some tendrils extending around him against a plain background composed of white and gray colors. The character is wearing a blue hat. The camera is at the same height as the subject, but the camera's movement cannot be determined.",
   "status": "success"
 }

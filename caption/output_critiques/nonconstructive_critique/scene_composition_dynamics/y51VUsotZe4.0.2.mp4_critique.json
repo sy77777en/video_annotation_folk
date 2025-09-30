@@ -2,7 +2,7 @@
   "video_id": "y51VUsotZe4.0.2.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:26:43.206567",
+  "generation_timestamp": "2025-09-29T15:51:36.603259",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the word 'TAXI' is in black letters and incorrectly mentions a white text overlay at the bottom of the scene.",
-  "revised_caption_by_generated_critique": "A locked-on POV shot, where the camera is mounted to an object, keeps the perspective fixed on the front of a yellow taxi driving at night. The taxi's roof sign is illuminated, displaying the word 'TAXI' in capital letters. Through the windshield, the dark interior of the car shows a driver behind the wheel and a passenger. In the background, a large, brightly lit building with a curved roof is visible across a highway with moving traffic. The entire scene is cast in a dim, yellowish light.",
+  "generated_critique": "The color of the letters on the 'TAXI' sign is described incorrectly. The caption also mentions a white text overlay that is not present.",
+  "revised_caption_by_generated_critique": "A locked-on POV shot, where the camera is mounted to an object, keeps the perspective fixed on the front of a yellow taxi driving at night. The taxi's roof sign is illuminated, displaying the word 'TAXI' in white capital letters. Through the windshield, the dark interior of the car shows a driver behind the wheel and a passenger. In the background, a large, brightly lit building with a curved roof is visible across a highway with moving traffic. The entire scene is cast in a dim, yellowish light.",
   "status": "success"
 }

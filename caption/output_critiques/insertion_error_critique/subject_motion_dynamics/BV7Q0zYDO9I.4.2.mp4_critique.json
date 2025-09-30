@@ -2,7 +2,7 @@
   "video_id": "BV7Q0zYDO9I.4.2.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:58:30.066075",
+  "generation_timestamp": "2025-09-29T05:33:54.951173",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video inaccurately describes the convoy's movement. Only one lead truck enters the intersection, and none of the vehicles come to a complete stop; they continue moving. Additionally, a red car briefly passes by the convoy on the opposite side of the intersection.",
-  "revised_caption_by_generated_critique": "From an aerial perspective, a convoy of white trucks emerges from a large hangar, forming two parallel lines on a two-lane road. The trucks drive forward in unison, approaching a four-way intersection. Only one lead truck enters the intersection, and the convoy continues moving without coming to a complete stop. Meanwhile, a red car briefly passes by the convoy on the opposite side of the intersection.",
+  "generated_critique": "The video inaccurately describes the convoy's movement. Only one lead truck enters the intersection, and none of the vehicles come to a complete stop; they continue moving. Additionally, the trucks briefly activate their hazard lights as they approach the intersection, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "From an aerial perspective, a convoy of white trucks emerges from a large hangar, forming two parallel lines on a two-lane road. The trucks drive forward in unison, approaching a four-way intersection. Only the lead truck in one lane enters the intersection, and the convoy continues moving without coming to a complete stop. As they approach the intersection, the trucks briefly activate their hazard lights.",
   "status": "success"
 }

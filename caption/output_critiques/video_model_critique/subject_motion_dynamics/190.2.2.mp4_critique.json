@@ -2,7 +2,7 @@
   "video_id": "190.2.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:21:21.715698",
+  "generation_timestamp": "2025-09-29T08:52:07.154286",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Siyuan Cen"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "**Feedback on the Caption:**\n\n*   **Accuracy:** The caption is inaccurate. It states that the person \"appears to be looking forward throughout the sequence,\" but the person clearly turns their head from a forward-facing position to look back and out of the window toward the camera. The description of the hat as a \"dark beanie\" is also incorrect; the person is wearing a light-brown, structured hat.\n\n*   **Completeness:** The caption is incomplete because it entirely misses the primary and only significant motion in the video: the person turning their head. It describes a static scene, failing to capture the action that occurs.\n\n*   **Adherence to Instructions:** The caption does not adhere to the core instructions.\n    *   It fails to \"provide a concise yet informative description of the subject’s motion.\" Instead, it incorrectly describes the subject as static.\n    *   By missing the movement, it fails to \"describe individual subject actions with clarity.\"\n    *   It uses the phrase \"appears to be,\" which is a speculative statement the instructions advise against.",
-  "revised_caption_by_generated_critique": "A person wearing a light-brown, structured hat is seated in the back of a gray sedan parked on a street. Initially facing forward, they turn their head to look back out of the side window.",
+  "generated_critique": "The caption includes speculative phrases such as \"appears to be\" and \"seemingly engaged in conversation,\" which are explicitly forbidden by the instructions. The description also dedicates too much space to static details about the car, like its license plate number and the reflection in the window, instead of focusing on the subjects' motion. The caption should be revised to prioritize the primary action. It should concisely describe the person in the front passenger seat turning their head toward the back, while noting that the person in the back seat remains stationary, and remove the non-essential details about the vehicle.",
+  "revised_caption_by_generated_critique": "From a rear-quarter view of a gray car on a street, a person in the front passenger seat turns their head to look toward the back seat. In the back seat, another person wearing a hat rests their arm on the open window and continues to look straight ahead.",
   "status": "success"
 }

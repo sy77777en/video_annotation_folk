@@ -2,7 +2,7 @@
   "video_id": "Ni7AYED85z4.2.13.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:27:13.404802",
+  "generation_timestamp": "2025-09-29T07:58:14.488020",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description stating that the camera angle transitions to a high angle as it tilts down slightly is not accurate. The camera maintains a level angle throughout the video. Initially, it is at a level angle slightly looking upward, and then it tilts downward to a level angle slightly looking down. The video also appears to use a shallow depth of field, with the background noticeably blurred while the subject remains sharp.\n\n2. The mention of a Dutch angle varying due to camera rolling is incorrect. There is no significant Dutch angle present throughout the video.",
-  "revised_caption_by_generated_critique": "The video exhibits mild barrel distortion. The camera is positioned at eye level. Initially, the camera angle is level, slightly looking upward, and then it tilts downward to a level angle slightly looking down. The camera employs shallow focus, with the background noticeably blurred while the subject remains sharp. The camera tilts down slightly, pauses, and then remains stationary with minimal, smooth shakiness. There is no significant Dutch angle present throughout the video.",
+  "generated_critique": "1. The description stating that the camera angle transitions to a high angle as it tilts down slightly is not accurate. The camera maintains a level angle throughout the video. Initially, it is at a level angle slightly looking upward, and then it tilts downward to a level angle slightly looking down. The video also features a noticeable zoom-in movement toward the subject, which is not mentioned in the caption.\n\n2. The mention of a Dutch angle varying due to camera rolling is incorrect. There is no significant Dutch angle present throughout the video.",
+  "revised_caption_by_generated_critique": "The video exhibits mild barrel distortion. The camera is positioned at eye level. Initially, the camera angle is level, slightly looking upward, and then it tilts downward to a level angle slightly looking down. The video features a noticeable zoom-in movement toward the subject. The camera employs deep focus, maintaining a large depth of field. The camera tilts down slightly, pauses, and then remains stationary with minimal, smooth shakiness.",
   "status": "success"
 }

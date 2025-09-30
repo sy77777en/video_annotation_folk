@@ -2,7 +2,7 @@
   "video_id": "3923c396290520b6dcedf49397a06682322bd225007879cdd4fa2b144116c293.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:06:31.932002",
+  "generation_timestamp": "2025-09-29T11:59:40.833716",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Initially focusing on a drink and a small plate in the foreground, it would be beneficial to also mention the food or snacks on the plate for added detail.\n\n2. Due to the noticeable shaking, it would be more accurate to describe the shot as having slight unintentional camera movement rather than calling it a fixed shot.\n\n3. From the context of being at the table, it would be better to describe this at hip level height and level angle rather than eye-level.\n\n4. The video appears to use a wide-angle lens, which introduces mild barrel distortion along the edges of the frame.",
-  "revised_caption_by_generated_critique": "This is a slightly unsteady shot filmed from a hip-level, level angle. The video uses a shallow depth of field, initially focusing on a drink and a small plate with snacks in the foreground. It then performs a rack focus, shifting the focus to the lit wine rack in the background. The use of a wide-angle lens introduces mild barrel distortion along the edges of the frame.",
+  "generated_critique": "1. Initially focusing on a drink and a small plate in the foreground, it would be beneficial to also mention the food or snacks on the plate for added detail.\n\n2. Due to the noticeable shaking, it would be more accurate to describe the shot as having slight unintentional camera movement rather than calling it a fixed shot.\n\n3. From the context of being at the table, it would be better to describe this at hip level height and level angle rather than eye-level.\n\n4. The caption should also note the presence of mild barrel distortion, as straight lines near the edges appear subtly bowed outward.",
+  "revised_caption_by_generated_critique": "This is a slightly unsteady shot filmed from a hip-level, level angle. The video uses a shallow depth of field, initially focusing on a drink and a small plate with snacks in the foreground. It then performs a rack focus, shifting the focus to the lit wine rack in the background. The shot also exhibits mild barrel distortion, as straight lines near the edges appear subtly bowed outward.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "3pxrECZYEAA.1.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T10:31:10.932687",
+  "generation_timestamp": "2025-09-29T15:25:26.440098",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is inaccurate because it fails to adhere to the core instructions.\n\nThe main issue is that the caption focuses excessively on the subject's appearance and the background, violating the instructions to \"Focus on the subject's motion\" and \"Don't mention the details of the subject's appearance unless you need to differentiate between multiple subjects.\" For example, the sentences \"The heart is bright pink with smooth, rounded surfaces and prominent, darker pink lines representing veins or arteries,\" \"Several tubular structures extend from the top, resembling blood vessels, and are also bright pink,\" and \"The background is dark, which makes the heart and its surrounding structures stand out vividly\" are all descriptions of static appearance, not motion.\n\nWhile the caption correctly identifies the motion (\"beating\") and its chronological progression (\"starts at a slow pace and gradually increases in speed\"), these key details are buried within unnecessary visual descriptions, making the overall paragraph not concise as instructed. A correct caption would focus solely on the action of the heart beating and accelerating.",
-  "revised_caption_by_generated_critique": "A stylized, animated heart beats, starting at a slow pace and gradually accelerating.",
+  "generated_critique": "The caption includes excessive detail about the subject's appearance and the background, which is contrary to the instruction to focus only on motion. The sentences \"The heart is bright pink with smooth, rounded surfaces and prominent, darker pink lines representing veins or arteries. Several tubular structures extend from the top, resembling blood vessels, and are also bright pink. The background is dark, which makes the heart and its surrounding structures stand out vividly\" should be removed. The description of the motion itself is accurate but could be more concise. A better caption would be: \"An animated heart beats at a slow, steady pace, then gradually accelerates, contracting and expanding more rapidly as the video progresses.\"",
+  "revised_caption_by_generated_critique": "An animated heart beats at a slow, steady pace, then gradually accelerates, contracting and expanding more rapidly as the video progresses.",
   "status": "success"
 }

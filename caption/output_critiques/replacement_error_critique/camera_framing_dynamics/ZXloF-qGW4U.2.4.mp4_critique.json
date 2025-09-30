@@ -2,7 +2,7 @@
   "video_id": "ZXloF-qGW4U.2.4.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:25:34.528374",
+  "generation_timestamp": "2025-09-29T09:23:33.286696",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle is actually a high angle, not a level angle as stated, so it would be more accurate to update the description accordingly.",
-  "revised_caption_by_generated_critique": "This is a fixed, slightly unsteady shot filmed from a high angle. The camera maintains a deep focus, keeping the entire scene sharp with a large depth of field.",
+  "generated_critique": "The camera exhibits noticeable handheld shake throughout the shot, so it would be more accurate to replace \"fixed\" with \"handheld\" in the description.",
+  "revised_caption_by_generated_critique": "This is a handheld, slightly unsteady shot filmed from a level angle. The camera maintains a deep focus, keeping the entire scene sharp with a large depth of field.",
   "status": "success"
 }

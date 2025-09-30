@@ -2,7 +2,7 @@
   "video_id": "PIvOfcR77SQ.4.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:26:06.778689",
+  "generation_timestamp": "2025-09-29T06:57:35.654005",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhiqiu Lin"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The video initially features a level angle, which shifts to a high angle as the camera tilts downward. 2. It is not a direct transition to a first-person point-of-view. Instead, we see a person's hand holding a black steering wheel in the center foreground, suggesting a first-person perspective. 3. The front of the sled is positioned in the bottom center; remove the phrase \"extending from the foreground into the middle ground.\" 4. The camera briefly pans to the right before tilting down, altering the spatial orientation of the path and surrounding elements.",
-  "revised_caption_by_generated_critique": "The video begins with a level-angle shot of a snow-covered path in the center, which recedes from the foreground into the background. A snow-covered structure is on the left, and a large snowbank is on the right in the middle ground, with a forest of evergreen trees lining the background. The camera briefly pans to the right before tilting downward, shifting to a high angle. In this new framing, a person's hand holding a black steering wheel occupies the center foreground, suggesting a first-person perspective. The person's legs are visible in the bottom left and bottom right corners. The front of the sled is positioned in the bottom center, pointing down the snowy path that now fills the majority of the frame. The camera is positioned from the person's perspective, looking down at the sled and forward along the path.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The video initially features a level angle, which shifts to a high angle as the camera tilts downward. 2. It is not a direct transition to a first-person point-of-view. Instead, we see a person's hand holding a black steering wheel in the center foreground, suggesting a first-person perspective. 3. The front of the sled is positioned in the bottom center; remove the phrase \"extending from the foreground into the middle ground.\" 4. The camera briefly pans to the right before tilting down, altering the alignment of the snowbank and structure within the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a level-angle shot of a snow-covered path in the center, which recedes from the foreground into the background. A snow-covered structure is on the left, and a large snowbank is on the right in the middle ground, with a forest of evergreen trees lining the background. The camera briefly pans to the right, altering the alignment of the snowbank and structure within the frame, before tilting downward to a high angle. In this new framing, a person's hand holding a black steering wheel occupies the center foreground, suggesting a first-person perspective. The person's legs are visible in the bottom left and bottom right corners. The front of the sled is positioned in the bottom center, pointing down the snowy path that now fills the majority of the frame. The camera is positioned from the person's perspective, looking down at the sled and forward along the path.",
   "status": "success"
 }

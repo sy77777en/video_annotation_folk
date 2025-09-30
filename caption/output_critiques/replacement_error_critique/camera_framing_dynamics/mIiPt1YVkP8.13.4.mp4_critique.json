@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.13.4.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:38:41.708686",
+  "generation_timestamp": "2025-09-29T07:20:30.216409",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-25T19:12:53.555663",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description, \"the camera smoothly arcs clockwise\" could be misleading. Add description about \"Without further context, it is unclear if the camera is arcing counterclockwise around the model or if the model itself is moving.\" Please maintain the phrase \"At a level angle,\" and use \"arc\" instead of \"rotate\" to clarify the movement.",
-  "revised_caption_by_generated_critique": "At a level angle, the camera smoothly arcs clockwise around a stationary 3D model of a broken airplane fuselage. The shot uses a deep focus, keeping the entire model in sharp detail, ensuring clarity that the camera, not the model, is moving.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description, \"the camera smoothly arcs clockwise\" could be misleading. Add description about \"Without further context, it is unclear if the camera is arcing counterclockwise around the model or if the background is moving instead.\" Please maintain the phrase \"At a level angle,\" and use \"arc\" instead of \"rotate\" to clarify the movement.",
+  "revised_caption_by_generated_critique": "At a level angle, the camera smoothly arcs clockwise around a 3D model of a broken airplane fuselage, clearly showing the camera's movement rather than any background motion. The shot uses a deep focus, keeping the entire model in sharp detail.",
   "status": "success"
 }

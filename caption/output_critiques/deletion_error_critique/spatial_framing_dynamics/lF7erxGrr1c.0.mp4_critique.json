@@ -2,7 +2,7 @@
   "video_id": "lF7erxGrr1c.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:26:40.423077",
+  "generation_timestamp": "2025-09-29T07:56:40.578295",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The initial movement of the cars is actually from the right side of the frame towards the left, contrary to what is described. Additionally, the camera is panning to the left to follow their movement. When the cars make the turn, they enter from the right side of the frame, filling the middle ground.\n\n2. Please ensure that the cars consistently remain in the middle ground throughout the video. Additionally, the white pickup truck and ambulance should also be kept in the middle ground, but in front of the moving cars before they round the bend.",
-  "revised_caption_by_generated_critique": "In a wide shot from a high angle, a line of race cars is positioned in the middle ground, moving from the right side of the frame towards the left. In the middle ground, in front of the moving cars, a white pickup truck and an ambulance are parked. The background consists of trees and spectator grandstands along the top of the frame. The camera pans to the left, following the cars as they race along the dirt track. As the pan continues, the initial group of cars moves across the center of the frame, while more cars enter from the right, filling the middle ground. The cars then navigate a turn, entering from the right side of the frame and moving towards the top left as they round the bend. A text overlay remains fixed in the top right corner throughout the shot.",
+  "generated_critique": "1. The initial movement of the cars is actually from the right side of the frame towards the left, contrary to what is described. Additionally, the camera is panning to the left to follow their movement. When the cars make the turn, they enter from the right side of the frame, filling the middle ground.\n\n3. The cars move from the right to the bottom rather than to the top left after the turn.",
+  "revised_caption_by_generated_critique": "In a wide shot from a high angle, a line of race cars is positioned in the middle ground, moving from the right side of the frame towards the left. In the left foreground, a white pickup truck and an ambulance are parked. The background consists of trees and spectator grandstands along the top of the frame. The camera pans to the left, following the cars as they race along the dirt track. As the pan continues, the initial group of cars moves across the center of the frame, while more cars enter from the right, filling the middle ground. The foreground vehicles on the left move towards the bottom of the frame and eventually off-screen. The cars then navigate a turn, moving from the center of the frame towards the bottom as they round the bend. A text overlay remains fixed in the top right corner throughout the shot.",
   "status": "success"
 }

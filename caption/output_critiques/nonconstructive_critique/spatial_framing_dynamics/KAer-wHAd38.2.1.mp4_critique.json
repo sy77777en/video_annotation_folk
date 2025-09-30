@@ -2,7 +2,7 @@
   "video_id": "KAer-wHAd38.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:50:09.752505",
+  "generation_timestamp": "2025-09-29T10:33:20.930030",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that trees are only in the left foreground. The description of the movement of foreground elements is inaccurate. The camera height is described incorrectly. The description of the road's extension is incorrect. The description of the camera's movement is not entirely accurate.",
-  "revised_caption_by_generated_critique": "This video captures a scenic view with no main subject, filmed in an extreme wide shot from a forward-moving perspective. A light-colored road starts at the bottom of the frame and extends into the distance, creating a central vanishing point. This road is flanked by vast green rice paddies on both sides. In the foreground, lines of streetlight poles run along the road, accompanied by low hedges and small trees on both sides. The background features green hills spanning the horizon beneath a sky filled with large clouds. The camera moves steadily forward, initially positioned on the left side of the road before gradually centering the path. This movement enhances the sense of depth as foreground elements shift out of view, contrasting with the relatively static background. The camera is positioned at a moderate height, looking straight down the road.",
+  "generated_critique": "The caption incorrectly states that trees are only in the left foreground. The description of the road's extension is incorrect. The description of the camera's movement and the resulting movement of foreground elements is inaccurate. The camera height is also described incorrectly.",
+  "revised_caption_by_generated_critique": "This video captures a scenic view with no main subject, filmed in an extreme wide shot from a forward-moving perspective. A light-colored road begins at the bottom of the frame and extends into the distance, creating a central vanishing point. This road is flanked on both sides by vast green rice paddies that occupy the middle ground. In the foreground and middle ground, lines of streetlight poles run along both sides of the road, with low hedges and small trees positioned on both sides. The background features green hills spanning the horizon, situated below a sky filled with large clouds. The camera moves steadily forward, initially positioned on the left side of the road before panning slightly to the right to center the path. This movement enhances the sense of depth as the foreground elements gradually move out of view, contrasting with the relatively static background. The camera is positioned at a moderate height, looking straight down the road.",
   "status": "success"
 }

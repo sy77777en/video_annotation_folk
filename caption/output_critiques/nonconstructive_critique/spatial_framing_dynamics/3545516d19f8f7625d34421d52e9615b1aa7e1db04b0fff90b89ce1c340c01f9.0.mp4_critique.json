@@ -2,7 +2,7 @@
   "video_id": "3545516d19f8f7625d34421d52e9615b1aa7e1db04b0fff90b89ce1c340c01f9.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:30:12.760604",
+  "generation_timestamp": "2025-09-29T06:02:28.971798",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly states the lighthouse's position is center-left and that it occupies the foreground. It also incorrectly claims there are no changes in shot size or spatial position, failing to describe the camera's movement. The communication tower's placement is mischaracterized as being partially in the background, and the description of the coastline's curve is inaccurate.",
-  "revised_caption_by_generated_critique": "The video showcases an extreme wide shot of a coastal landscape, capturing a broad expanse of the environment. The lighthouse is positioned slightly to the right of the center and occupies the middle ground, standing prominently on a rocky shoreline. To the right of the lighthouse, a few small buildings with red roofs are visible, situated further back in the middle ground. The surrounding greenery frames these structures, extending towards the background. On the far right, a tall communication tower rises vertically, located entirely in the middle ground. The coastline curves gently from the right to the left side of the frame, bordered by a vast, calm blue sea that stretches across the entire background. The dense forest forms a continuous line along the horizon, separating the land from the sea. The camera maintains a high vantage point throughout, providing an aerial perspective that emphasizes the vastness of the landscape. There are subtle changes in shot size and spatial position as the camera pans slightly, offering a dynamic view of the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly identifies the lighthouse's position as center-left. It also inaccurately claims the camera is steady and that there are no changes in shot size. The description of the communication tower's depth is wrong, as is the description of the coastline's curve.",
+  "revised_caption_by_generated_critique": "The video showcases an extreme wide shot of a coastal landscape, capturing a broad expanse of the environment. The lighthouse is positioned near the center of the frame, occupying the foreground and middle ground, standing prominently on a rocky shoreline. To the right of the lighthouse, a few small buildings with red roofs are visible, situated slightly further back in the middle ground. The surrounding greenery frames these structures, extending towards the background. On the far right, a tall communication tower rises vertically, located in the background. The coastline curves gently from the right to the left side of the frame, bordered by a vast, calm blue sea that stretches across the entire background. The dense forest forms a continuous line along the horizon, separating the land from the sea. The camera maintains a high vantage point throughout, providing an aerial perspective that emphasizes the vastness of the landscape. There are subtle changes in shot size and spatial position, offering a dynamic view of the scene.",
   "status": "success"
 }

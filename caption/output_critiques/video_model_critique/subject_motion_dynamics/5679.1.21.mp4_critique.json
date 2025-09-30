@@ -2,7 +2,7 @@
   "video_id": "5679.1.21.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T15:50:31.248573",
+  "generation_timestamp": "2025-09-29T19:04:42.783545",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is inaccurate and does not adhere to the provided instructions.\n\n1.  **Accuracy and Completeness:** The primary inaccuracy is the failure to describe motion. The video is a static shot with no movement from either the person or the dog. The instructions explicitly state, \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" The provided caption describes the scene as if it were a photograph but completely omits the crucial detail that the subjects are motionless throughout the video.\n\n2.  **Adherence to Instructions:**\n    *   **Focus on Motion:** The caption fails to follow the core instruction to describe the subject's motion. Instead, it focuses entirely on static descriptions of appearance and position.\n    *   **Subjective Language:** The caption uses subjective and emotional phrases like \"looking relaxed\" and \"creating a harmonious and peaceful scene,\" which are explicitly forbidden by the instruction to \"Avoid emotional or subjective adjectives.\"\n    *   **Conciseness:** While the description of the scene is detailed, it is not a concise description of the *action* (or lack thereof) as requested.\n\nIn summary, the caption describes the visual content of the static scene accurately but completely fails to follow the fundamental instructions regarding the description of motion and the avoidance of subjective language. A correct caption would simply state that the person and the dog remain still, lying on the grass.",
-  "revised_caption_by_generated_critique": "From a top-down perspective, a person and a large, fluffy dog lie on their backs on a green lawn. The person is dressed in a blue sweatshirt and light-colored pants, while the dog is light-colored with a blue collar. Both subjects remain completely motionless throughout the static shot.",
+  "generated_critique": "The caption fails to follow the instruction for videos with no movement, which is to briefly mention the lack of motion. Instead, it provides a lengthy description of the static scene, including details about the subjects' appearance and the background. Furthermore, it violates the rule against using emotional or subjective adjectives by including words like \"relaxed,\" \"harmonious,\" and \"peaceful.\" The entire description should be replaced with a single, concise sentence stating that the person and the dog remain motionless throughout the video.",
+  "revised_caption_by_generated_critique": "A person and a large dog lie motionless on the grass in this static, overhead shot.",
   "status": "success"
 }

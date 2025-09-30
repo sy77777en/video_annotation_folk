@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.4.2.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:57:02.994580",
+  "generation_timestamp": "2025-09-29T04:39:35.093256",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately states that \"its silver fingers moving as it types on a keyboard,\" when in fact, the silver fingers remain stationary on the keyboard.",
-  "revised_caption_by_generated_critique": "A humanoid figure sits hunched over a desk, its silver fingers resting on a keyboard. A second, similar figure stands motionless behind it, looking down. A third humanoid figure walks into the frame from the left, stops next to the standing figure, and also looks down at the one seated. Two additional figures are partially visible on the far left, remaining stationary throughout the clip.",
+  "generated_critique": "The description inaccurately states that \"its silver fingers moving as it types on a keyboard,\" when in fact, the silver fingers remain stationary on the keyboard. The third figure does not move or walk; it becomes visible as the camera shifts.",
+  "revised_caption_by_generated_critique": "A humanoid figure sits hunched over a desk, its silver fingers resting on a keyboard. A second, similar figure stands motionless behind it, looking down. A third humanoid figure becomes visible as the camera shifts, stopping next to the standing figure and also looking down at the one seated. Two additional figures are partially visible on the far left, remaining stationary throughout the clip.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "bPZc7avrCT4.5.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:40:58.718308",
+  "generation_timestamp": "2025-09-29T07:18:20.467733",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-18T14:11:13.273312",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The yellow balloon is actually positioned in the center of the foreground, not the center-right. Additionally, the balloon does not exit the view; it comes to rest in the lower right corner of the frame. The camera briefly tilts upward as the balloon detaches, altering the vertical framing of the scene.\n\n2. The hands and drill do not remain stationary throughout the process. Initially, they move toward the right side of the frame, and after the balloon detaches, they shift leftward and gradually exit the frame, leaving only the drill bit visible.",
-  "revised_caption_by_generated_critique": "This close-up shot initially frames a person's hands holding a cordless drill in the left and center foreground. A yellow balloon, attached to the drill's bit, is positioned in the center of the foreground, with a blurred forest visible in the background. The balloon spins in place, and then detaches, flying from its starting position toward the right side of the frame and slightly downward, eventually coming to rest in the lower right corner of the frame. As the balloon detaches, the camera briefly tilts upward, altering the vertical framing of the scene. The hands and drill initially move toward the right side of the frame, and after the balloon detaches, they shift leftward and gradually exit the frame, leaving only the drill bit visible.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The yellow balloon is actually positioned in the center of the foreground, not the center-right. Additionally, the balloon does not exit the view; it comes to rest in the lower right corner of the frame. The background also includes a wooden fence running horizontally across the middle ground, which is not mentioned in the caption.\n\n2. The hands and drill do not remain stationary throughout the process. Initially, they move toward the right side of the frame, and after the balloon detaches, they shift leftward and gradually exit the frame, leaving only the drill bit visible.",
+  "revised_caption_by_generated_critique": "This close-up shot initially frames a person's hands holding a cordless drill in the left and center foreground. A yellow balloon, attached to the drill's bit, is positioned in the center of the foreground, with a blurred forest and a wooden fence running horizontally across the middle ground in the background. The balloon spins in place, then detaches, flying from its starting position toward the right side of the frame and slightly downward, eventually coming to rest in the lower right corner of the frame. The hands and drill initially move toward the right side of the frame, and after the balloon detaches, they shift leftward and gradually exit the frame, leaving only the drill bit visible. The camera is positioned at the subject's level.",
   "status": "success"
 }

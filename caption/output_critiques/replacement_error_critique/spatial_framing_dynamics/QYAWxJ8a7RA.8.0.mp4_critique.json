@@ -2,7 +2,7 @@
   "video_id": "QYAWxJ8a7RA.8.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:37:21.226092",
+  "generation_timestamp": "2025-09-29T05:49:02.666441",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhiqiu Lin"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Remove the word \"static.\"\n2. Change \"a very low camera angle\" to \"a ground-level perspective.\"\n3. Initially, the camera focuses on the background and then shifts focus to the foreground.\n4. Therefore, except for the tree on the far right and the railing on the far left, which are in the middle ground, all other subjects are located in the background.",
-  "revised_caption_by_generated_critique": "This wide shot of a rural landscape is captured from a ground-level perspective, initially focusing on the background before shifting focus to the foreground. In the blurred middle ground, a dark building sits on the left, a utility pole is positioned left of center, and a metal shed is located near the center. To the right in the middle ground stands a large tree. Further in the background, a water tower is visible behind the tree on the right, with distant structures and hills stretching across the horizon under the sky in the upper portion of the frame. The camera remains stationary throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Remove the word \"static.\"\n2. Change \"a very low camera angle\" to \"a ground-level perspective.\"\n3. Initially, the camera focuses on the background and then shifts focus to the foreground.\n4. Therefore, except for the tree on the far right and the railing on the far left, which are in the background, all other subjects are located in the middle ground.",
+  "revised_caption_by_generated_critique": "This wide shot of a rural landscape is captured from a ground-level perspective, initially focusing on the background before shifting focus to the foreground. In the blurred middle ground, a dark building sits on the left, a utility pole is positioned left of center, and a metal shed is located near the center. To the right in the middle ground stands a large tree. Further in the background, a water tower is visible behind the tree on the right, with distant structures and hills stretching across the horizon under the sky in the upper portion of the frame. The tree on the far right and the railing on the far left are in the background, while all other subjects are located in the middle ground. The camera remains stationary throughout the shot.",
   "status": "success"
 }

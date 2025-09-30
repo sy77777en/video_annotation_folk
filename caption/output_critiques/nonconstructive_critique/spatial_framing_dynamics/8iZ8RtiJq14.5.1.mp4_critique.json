@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:16:47.717369",
+  "generation_timestamp": "2025-09-29T07:39:40.196640",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera's height as 'overhead' is inaccurate. The 2D positions of the 'BUTCHER' sticky note and the silver game piece are described incorrectly. The description of the red string's direction is also inaccurate. Furthermore, the camera movement is incorrectly described as a 'tilt down', and the description of the yellow note's movement and position is incorrect.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up shot of several items on a corkboard. A blue sticky note labeled \"BUTCHER\" is positioned in the top left corner, with a silver game piece nearby. A red string extends from a pushpin on the \"BUTCHER\" note, moving diagonally across the frame. The camera then pans down, following the red string. As it moves, the initial items shift upward and out of view, revealing a second blue sticky note labeled \"BUTCHER'S FRIEND\" as the new focal point, secured by a red pushpin. A portion of a yellow note remains visible in the bottom left corner throughout the shot.",
+  "generated_critique": "The description of the camera's height as \"overhead\" is incorrect. The positions of the \"BUTCHER\" sticky note and the silver game piece are described incorrectly as \"top left\" and \"top center\". The description of the red string's direction as \"down toward the center of the frame\" is inaccurate. The camera movement is incorrectly described as a \"tilt\". The description of the yellow note's movement is incorrect; it does not remain in the bottom left throughout the shot.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot of several items on a corkboard. A blue sticky note labeled \"BUTCHER\" is positioned in the upper right, with a silver game piece nearby. A red string extends from a pushpin on the \"BUTCHER\" note toward the lower part of the frame. The camera then pans, following the red string. As it moves, the initial items shift out of view, revealing a second blue sticky note labeled \"BUTCHER'S FRIEND\" that becomes the new focal point, held by a red pushpin. A portion of a yellow note is visible but shifts position during the shot.",
   "status": "success"
 }

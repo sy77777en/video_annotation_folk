@@ -2,7 +2,7 @@
   "video_id": "piQsdrDKzzM.2.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:00:33.648527",
+  "generation_timestamp": "2025-09-29T08:49:16.835455",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The focus is set on the foreground, which means the woman's feet do not come into sharp focus when they enter the frame. The sharp focus remains on the foreground. Additionally, the camera angle shifts to a high angle as the woman's feet appear, which is not indicated in the caption.",
-  "revised_caption_by_generated_critique": "This is a fixed, slightly unsteady shot from a ground-level, level angle. The camera uses a shallow depth of field, with the focus set on the foreground. Initially, the man lying on the ground in the background is out of focus. As the woman's feet walk into the frame, the focus remains on the foreground, and the camera angle shifts to a high angle.",
+  "generated_critique": "The focus is set on the foreground, which means the woman's feet do not come into sharp focus when they enter the frame. The sharp focus remains on the foreground. Additionally, there is a noticeable barrel distortion at the edges of the frame, causing straight lines near the borders to bow outward.",
+  "revised_caption_by_generated_critique": "This is a fixed, slightly unsteady shot from a ground-level, level angle. The camera uses a shallow depth of field, with the focus set on the foreground. Initially, the man lying on the ground in the background is out of focus. A woman's feet then walk into the frame, but they do not come into sharp focus as the focus remains on the foreground. Additionally, there is noticeable barrel distortion at the edges of the frame, causing straight lines near the borders to bow outward.",
   "status": "success"
 }

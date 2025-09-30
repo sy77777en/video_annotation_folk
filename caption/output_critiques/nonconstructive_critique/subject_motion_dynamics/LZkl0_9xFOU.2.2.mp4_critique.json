@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.2.2.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:46:36.731007",
+  "generation_timestamp": "2025-09-29T19:43:43.253999",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the controller as stationary and suspended, failing to mention that it lifts off the ground and floats. The description of the camera's action is inaccurate; it is not a static shot with a focus shift, but a camera movement to the left and forward. The caption also misidentifies the monitor's position as being in the background when it is in front of the controller.",
-  "revised_caption_by_generated_critique": "The video begins with a dynamic camera movement to the left and forward, initially focusing on a small monitor positioned in front of a controller. As the camera moves, the controller lifts off the ground and floats in the midground, while the monitor and a console become out of focus in the background.",
+  "generated_critique": "The caption incorrectly describes the controller as stationary and suspended, failing to mention that it and the console lift off the ground and float. The caption also mischaracterizes the camera's movement as a focus shift and incorrectly states the relative positions of the monitor and controller.",
+  "revised_caption_by_generated_critique": "The video begins with a static shot focused on a small monitor. The camera then smoothly pans to reveal a controller and a console in the midground, which lift off the ground and float, leaving the monitor in the background out of focus.",
   "status": "success"
 }

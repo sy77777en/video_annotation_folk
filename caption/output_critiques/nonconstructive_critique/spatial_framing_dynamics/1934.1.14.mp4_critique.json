@@ -2,7 +2,7 @@
   "video_id": "1934.1.14.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:34:21.659385",
+  "generation_timestamp": "2025-09-29T05:08:00.981583",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the woman's attention being in the \"middle ground\" is incorrect. The description of her gaze shifting to the \"center\" is inaccurate. The woman's 3D position within the scene is not correctly identified.",
-  "revised_caption_by_generated_critique": "The video features a close-up shot of a woman, captured from the chest up. She is positioned slightly off-center to the left in the frame, with her body oriented towards a large, white, rectangular object on the right side of the frame. This object, which has a black panel and metallic controls, is prominently placed in the foreground, close to the woman. Initially, her gaze is directed at the object, indicating her focus on it. As the video progresses, she turns her face towards the camera, shifting her gaze from the right side of the frame to directly at the viewer. The camera remains at her eye level throughout, maintaining a consistent perspective. The background consists of plain, white walls, which remain static and unchanging. There are no significant changes in shot size or camera movement, keeping the focus on the woman and her interaction with the object.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the woman's 3D position is incorrect, and her 2D position is described inaccurately. The caption incorrectly describes the depth of her attention. The final direction of her gaze is also described incorrectly.",
+  "revised_caption_by_generated_critique": "The video features a close-up shot of a woman, captured from the chest up. She is positioned slightly off-center to the left in the frame, with her body facing a large, white, rectangular object on the right side. This object, which has a black panel and metallic controls, is prominently placed in the foreground. Initially, the woman looks at the object, focusing her attention on it. As the video progresses, she turns her face towards the camera, shifting her gaze from the object to directly at the viewer. The camera remains at her eye level throughout, maintaining a consistent perspective. The background is composed of plain, white walls, which stay static and unchanged. There are no significant changes in shot size or camera movement, keeping the focus on the woman and her interaction with the object.",
   "status": "success"
 }

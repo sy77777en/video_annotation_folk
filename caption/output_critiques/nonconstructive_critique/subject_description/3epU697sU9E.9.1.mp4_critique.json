@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.9.1.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:57:23.553190",
+  "generation_timestamp": "2025-09-29T06:17:14.641787",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the map as the entire United States. It also fails to mention the small orange plane-like icon moving along the dashed line. The name \"Offutt\" is misspelled.",
-  "revised_caption_by_generated_critique": "The video features a dark map of the central and eastern United States with a highlighted route connecting two locations: Offutt Air Force Base and Joint Base Andrews. The route is marked by a dashed orange line, suggesting a path or flight trajectory, with a small orange plane-like icon moving along it. Both bases are labeled in bold orange text, with small circular icons indicating their positions on the map. The map displays state boundaries and major cities in a subtle gray, providing geographical context. The overall visual emphasizes the connection between these two military bases.",
+  "generated_critique": "The caption incorrectly identifies the map as being of the entire United States and misspells \"Offutt.\" The description is also missing a key moving element.",
+  "revised_caption_by_generated_critique": "The video features a dark map focusing on a specific region of the United States, with a highlighted route connecting two locations: Offutt Air Force Base and Joint Base Andrews. The route is marked by a dashed orange line, suggesting a path or flight trajectory. Both bases are labeled in bold orange text, with small circular icons indicating their positions on the map. The map displays state boundaries and major cities in a subtle gray, providing geographical context. Additionally, a moving element, such as an animated aircraft icon, travels along the route, emphasizing the connection between these two military bases.",
   "status": "success"
 }

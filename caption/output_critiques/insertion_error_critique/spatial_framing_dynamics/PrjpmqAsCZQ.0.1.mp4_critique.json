@@ -2,7 +2,7 @@
   "video_id": "PrjpmqAsCZQ.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:27:01.684272",
+  "generation_timestamp": "2025-09-29T06:58:57.190501",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhiqiu Lin"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description inaccurately states that a speaker is visible in the bottom-left foreground; instead, a speaker is visible with a computer monitor positioned in the background, and the speakers are located to the left and right of the monitor. 2. The man is actually positioned in the foreground, not the middle ground. 3. All subjects, except for the man, are located in the background. 4. The caption also incorrectly mentions a window in the top-right background, but there is no window visible in the scene.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a man standing in the center of the frame and in the foreground. A computer monitor is positioned in the background, flanked by speakers on its left and right. The shot then transitions to a medium close-up as the man moves closer to the camera, remaining in the center of the frame. In this closer view, he turns from a slight profile to face the camera directly, gesturing with his hands. The camera is positioned at the subject's level throughout the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description inaccurately states that a speaker is visible in the bottom-left foreground; instead, a speaker is visible with a computer monitor positioned in the background, and the speakers are located to the left and right of the monitor. 2. The man is actually positioned in the foreground, not the middle ground. 3. All subjects, except for the man, are located in the background. 4. The feedback should also note that a potted plant is visible on the far right side of the frame in the background, even though no such plant appears in the video.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a man standing in the center of the frame in the foreground. In the background, a computer monitor is positioned with speakers located to the left and right of it. To the man's right, a microphone stand is also visible in the background. The shot then transitions to a medium close-up as the man moves closer to the camera, remaining in the center of the frame. In this closer view, he turns from a slight profile to face the camera directly, gesturing with his hands. The camera is positioned at the subject's level throughout the scene.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.13.2.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:05:08.284258",
+  "generation_timestamp": "2025-09-29T05:02:46.683970",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The horizontal scan lines on the screen move vertically rather than horizontally. Additionally, the digital artifacts and pixelation remain fixed without any shifting.",
-  "revised_caption_by_generated_critique": "On a computer monitor, a digital schematic of an underwater facility flickers with vertical scan lines moving across the display. The image then abruptly glitches and transitions to a distorted corporate photo. This second image is also heavily corrupted, with digital artifacts and pixelation obscuring the faces of the people pictured, while scan lines continue to move across the screen.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The horizontal scan lines on the screen are stationary and do not move across the display. Additionally, the digital artifacts and pixelation gradually fade away, leaving the image clear and unobscured.",
+  "revised_caption_by_generated_critique": "On a computer monitor, a digital schematic of an underwater facility flickers with stationary horizontal scan lines on the display. The image then abruptly glitches and transitions to a distorted corporate photo. This second image is initially heavily corrupted, with digital artifacts and pixelation obscuring the faces of the people pictured, but these gradually fade away, leaving the image clear and unobscured.",
   "status": "success"
 }

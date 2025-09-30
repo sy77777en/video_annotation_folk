@@ -2,7 +2,7 @@
   "video_id": "6bcc1d04931deb5549253523998da524d73587e19f99d9bb517ce879d84bb938.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:59:18.585433",
+  "generation_timestamp": "2025-09-29T08:44:55.808975",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The hand does not place the phone down as described in the caption.  \n2. Instead of pointing at different sections of the drawing, the hand uses the pencil to make a mark on the drawing.",
-  "revised_caption_by_generated_critique": "This is a medium to close-up, high-angle shot. Initially, a hand is positioned in the bottom-left foreground, operating a smartphone's calculator. The large architectural blueprints, which serve as the middle ground, are spread across the entire frame. A wooden pencil rests in the middle-left, and a rolled-up paper is in the bottom-right foreground. The hand then moves to the middle-left to pick up the pencil. Finally, the hand, holding the pencil, moves across the center-left area of the blueprints, making a mark on the drawing. The person's torso remains partially visible at the top-left edge throughout the shot.",
+  "generated_critique": "1. The hand does not place the phone down as described in the caption.  \n3. The description stating, \"Finally, the hand, holding the pencil, moves across the center-left area of the blueprints, making a mark on the drawing,\" is inaccurate. The hand actually moves across the center-left area of the frame. The blueprints are inverted, so referring to the \"center-left\" of the blueprints may cause confusion regarding their orientation.",
+  "revised_caption_by_generated_critique": "This is a medium to close-up, high-angle shot. Initially, a hand is positioned in the bottom-left foreground, operating a smartphone's calculator. The large architectural blueprints, which serve as the middle ground, are spread across the entire frame. A wooden pencil rests in the middle-left, and a rolled-up paper is in the bottom-right foreground. The hand then moves to the middle-left to pick up the pencil. Finally, the hand, holding the pencil, moves across the center-left area of the frame, pointing to different parts of the drawing. The person's torso remains partially visible at the top-left edge throughout the shot.",
   "status": "success"
 }

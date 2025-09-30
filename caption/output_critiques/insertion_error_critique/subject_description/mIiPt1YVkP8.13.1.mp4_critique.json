@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.13.1.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:53:08.053359",
+  "generation_timestamp": "2025-09-29T08:37:14.016278",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the Boeing aircraft as a \"747\" is inaccurate, as the specific model cannot be determined from the image. Please remove \"747\" from the caption. Additionally, the \"KLM\" logo is not located on the tail fin but rather on the side of the aircraft's nose. The description of the aircraft's color scheme is also incorrect. Only the fuselage is blue, while the wings and tail are white. The lower part of the aircraft is dark blue, with a white line running through the middle, slightly above the wings. Please remove the concept of separation by a cheatline. Also, the aircraft’s cockpit windows are described as being tinted green, but they actually appear clear in the image.",
-  "revised_caption_by_generated_critique": "A Boeing aircraft with \"KLM\" visible in white on the side of its nose is positioned on a grey concrete runway. The aircraft has four jet engines, two under each wing, and its landing gear is deployed. The fuselage is light blue, while the wings and tail are white. The lower part of the aircraft is dark blue, with a white line running through the middle, slightly above the wings. The cockpit windows appear clear. White markings are visible on the runway surface.",
+  "generated_critique": "The description of the Boeing aircraft as a \"747\" is inaccurate, as the specific model cannot be determined from the image. Please remove \"747\" from the caption. Additionally, the \"KLM\" logo is not located on the tail fin but rather on the side of the aircraft's nose. The description of the aircraft's color scheme is also incorrect. Only the fuselage is blue, while the wings and tail are white. The lower part of the aircraft is dark blue, with a white line running through the middle, slightly above the wings. Please remove the concept of separation by a cheatline. Also, the aircraft is not shown with any visible passengers boarding or disembarking, so this should not be mentioned.",
+  "revised_caption_by_generated_critique": "A Boeing aircraft with \"KLM\" visible in white on the side of its nose is positioned on a grey concrete runway. The aircraft has four jet engines, two under each wing, and its landing gear is deployed. The fuselage is light blue, while the wings and tail are white. The lower part of the aircraft is dark blue, with a white line running through the middle, slightly above the wings. White markings are visible on the runway surface.",
   "status": "success"
 }

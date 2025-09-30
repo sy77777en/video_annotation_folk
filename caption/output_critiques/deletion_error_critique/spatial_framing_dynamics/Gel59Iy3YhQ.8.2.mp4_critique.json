@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.8.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:40:23.725391",
+  "generation_timestamp": "2025-09-29T08:17:40.702907",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video should be described as 2.5D, so avoid using \"high angle.\" Remove the phrase \"and right portions.\" Change \"before disappearing\" to \"before moving to the closet.\" Eliminate all references to \"foreground/middleground/background.\" The section about the pink stuffed pig and the cardboard box needs revision. Do not use \"Concurrently.\"",
-  "revised_caption_by_generated_critique": "This video is presented from an isometric, 2.5D perspective, showing a pixel-art bedroom that occupies the central area of the frame. A large window is positioned on the top-left wall, with white closet doors on the right wall. A bed is centered in the room, flanked by a nightstand on each side. User interface icons are overlaid in the top-left and top-right corners, as well as along the left and right edges of the screen. Throughout the video, a framed certificate, initially held by a cursor in the bottom-left, is moved over the bed before moving to the closet. A pink stuffed pig appears on the left nightstand, and a cardboard box appears at the foot of the bed on the right side.",
+  "generated_critique": "The video should be described as 2.5D, so avoid using \"high angle.\" Remove the phrase \"and right portions.\" Change \"before disappearing\" to \"before moving to the closet.\" The section about the pink stuffed pig and the cardboard box needs revision. Do not use \"Concurrently,\" and change \"materializes\" to \"appears in the bottom-right at the foot of the bed as the camera moves vertically downward.\"",
+  "revised_caption_by_generated_critique": "This video is presented from an isometric, 2.5D perspective, showing a pixel-art bedroom that occupies the central part of the frame. In the background, a large window is positioned on the top-left wall, with white closet doors on the right wall. A bed is centered in the middle ground, flanked by a nightstand on its left and another on its right. User interface icons are overlaid in the top-left and top-right corners, as well as along the left and right edges of the screen. Throughout the video, a framed certificate, initially held by a cursor in the bottom-left foreground, is moved over the bed in the middle ground before moving to the closet. A pink stuffed pig appears on the left nightstand, and a cardboard box appears in the bottom-right at the foot of the bed as the camera moves vertically downward.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "390ce06661b7e4e698fd727ac359f056cd99ef6f70a24dc8fc8f3dae82b09348.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:18:50.154232",
+  "generation_timestamp": "2025-09-29T07:47:21.223466",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is not shot from directly above; it is taken at an angle. The description of the mushroom placement should be revised to \"starting from the right edge of the toast and moving towards the left, with two mushrooms in each column, totaling four columns.\" The plate is actually oval-shaped rather than round. Additionally, the camera exhibits a slow but noticeable shake throughout the action.",
-  "revised_caption_by_generated_critique": "The video presents a close-up shot, viewed from an angle, of an oval-shaped, white, textured plate occupying the center foreground, resting on a marble-like surface visible in the background. On the plate, two slices of avocado toast are positioned. One slice, topped with red tomato slices, is in the top left of the plate. The second slice, initially just with mashed avocado, is in the bottom right of the plate. A light-skinned hand enters from the top right of the frame, moving into the foreground to place sliced brown mushrooms onto the avocado spread of the bottom right toast. The hand sequentially arranges the mushrooms in four columns, starting from the right edge of the toast and moving towards the left, with two mushrooms in each column. The camera exhibits a slow but noticeable shake throughout the action.",
+  "generated_critique": "The video is not shot from directly above; it is taken at an angle. The description of the mushroom placement should be revised to \"starting from the right edge of the toast and moving towards the left, with two mushrooms in each column, totaling four columns.\" The plate is partially cropped at the bottom edge of the frame, which affects the visibility of the lower toast slice. Additionally, the camera exhibits a slow but noticeable shake throughout the action.",
+  "revised_caption_by_generated_critique": "The video presents a close-up shot, viewed from an angle, of a white, textured plate occupying the center foreground, resting on a marble-like surface visible in the background. On the plate, two slices of avocado toast are positioned. One slice, topped with red tomato slices, is in the top left of the plate. The second slice, initially just with mashed avocado, is in the bottom right of the plate, though partially cropped at the bottom edge of the frame, affecting its visibility. A light-skinned hand enters from the top right of the frame, moving into the foreground to place sliced brown mushrooms onto the avocado spread of the bottom right toast. The hand sequentially arranges the mushrooms in four columns, starting from the right edge of the toast and moving towards the left, with two mushrooms in each column. The camera exhibits a slow but noticeable shake throughout the action.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.0.23.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:47:37.286443",
+  "generation_timestamp": "2025-09-29T18:41:24.515622",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes the opposing player in the foreground by stating they are 'now seen on the ground,' which omits the action of the player diving. The description of the main football player's position is also incomplete because it fails to mention their final position in the center of the frame.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot, positioning the main football player in a yellow jersey in the left foreground as he runs toward the right side of the frame. In the center foreground, two other players are tangled on the ground, with more players scattered across the middle ground and a large crowd filling the background. The camera, positioned at the subjects' level, tracks the main player's run, smoothly transitioning into a full shot. This change in framing brings the main player to the center of the frame, while an opposing player is seen diving to the ground in the foreground.",
+  "generated_critique": "The description of the opposing player in the foreground is inaccurate and omits the action that leads to them being on the ground. The caption also incorrectly states the main football player's final position in the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot, positioning the main football player in a yellow jersey in the left foreground as he runs toward the right side of the frame. In the center foreground, two other players are tangled on the ground, with more players scattered across the middle ground and a large crowd filling the background. The camera, positioned at the subjects' level, tracks the main player's run, smoothly transitioning into a full shot. This change in framing brings the main player to the center of the frame, while an opposing player, who had attempted a tackle, is now seen on the ground in the foreground.",
   "status": "success"
 }

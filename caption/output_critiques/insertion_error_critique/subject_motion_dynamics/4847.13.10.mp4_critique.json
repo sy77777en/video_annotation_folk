@@ -2,7 +2,7 @@
   "video_id": "4847.13.10.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:55:11.398209",
+  "generation_timestamp": "2025-09-29T04:51:57.488237",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-11T05:02:25.067296",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The feedback should mention that the video shows a person walking across the screen, which is not present in the original caption.",
-  "revised_caption_by_generated_critique": "The video shows a person walking across the screen, in addition to displaying a static title card.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should mention that the title card slowly fades in from black before remaining static, even though no such fade-in is visible in the video.",
+  "revised_caption_by_generated_critique": "The video begins with a title card that slowly fades in from black before remaining static.",
   "status": "success"
 }

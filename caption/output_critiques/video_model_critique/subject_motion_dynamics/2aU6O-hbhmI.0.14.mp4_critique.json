@@ -2,7 +2,7 @@
   "video_id": "2aU6O-hbhmI.0.14.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T06:42:02.500930",
+  "generation_timestamp": "2025-09-29T11:52:45.577562",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\nThe caption describes the camera's motion as a slow, gradual upward tilt. This is incorrect. The video actually shows a fast-paced, first-person-view (FPV) drone flight. The video begins with the drone diving rapidly downward toward a cityscape. It then levels out and flies forward at high speed over a construction site, executing acrobatic maneuvers like sharp turns and rolls around buildings and cranes. The caption completely misrepresents the dynamic, high-speed nature of the drone's flight, which is the most prominent feature of the video. It fails to accurately describe the subject's motion in chronological order as instructed.",
-  "revised_caption_by_generated_critique": "This video captures a high-speed, first-person-view (FPV) drone flight through a cityscape at sunset. The sequence begins with a rapid dive down the side of a building. The drone then levels out and speeds over a large construction site, executing sharp, acrobatic turns and maneuvers around buildings and a red crane, offering a dynamic and thrilling perspective of the urban environment.",
+  "generated_critique": "The caption inaccurately describes the camera's motion. Instead of a gradual \"tilt downward,\" the video begins with a very rapid dive down the side of a structure. The subsequent motion is not a \"tilt upward to a level angle\" but a continuous, sweeping arc as the camera pulls out of the dive and flies over the construction site. The description focuses more on the static elements of the scene being revealed rather than the dynamic movement of the camera itself, which is the primary action. The caption should be revised to use more active and precise verbs, such as \"dives\" and \"sweeps,\" to accurately portray the fast, fluid motion of the camera.",
+  "revised_caption_by_generated_critique": "The video begins with a rapid, dizzying dive down the side of a tall structure. Pulling out of the dive, the camera then sweeps in a wide, fluid arc over a large urban construction site at dusk. This dynamic flight path reveals the sprawling site, a prominent red crane, and the surrounding cityscape with its buildings lit against a vibrant sunset.",
   "status": "success"
 }

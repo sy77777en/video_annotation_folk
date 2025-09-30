@@ -2,7 +2,7 @@
   "video_id": "rjTCFuEL3qM.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:36:29.137541",
+  "generation_timestamp": "2025-09-29T07:15:57.915008",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yue Lv"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Remove \"static, straight-on\" as it is not necessary.\n\nEliminate references to \"background,\" \"middle ground,\" and \"foreground,\" as this is a 2D video and these terms do not apply.\n\nThe numerous thin, vertical streaks of blue light originate from various points and move in different directions, not from a single area extending downwards.",
-  "revised_caption_by_generated_critique": "A bright cyan light source is positioned at the top center of the frame. Numerous thin, vertical streaks of blue light originate from various points and move in different directions, covering the width of the scene. Scattered throughout the entire space are countless small, sparkling blue particles. These particles, along with the streaks, continuously drift downwards, creating a sense of depth and constant motion.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Remove \"static, straight-on\" as it is not necessary.\n\nEliminate references to \"background,\" \"middle ground,\" and \"foreground,\" as this is a 2D video and these terms do not apply.\n\nThe particles drift in various directions, not solely downwards.\n\nInstructions:\n1. Remove one key detail, suggestion, or explanation from the original feedback only if it is sufficiently long\n2. If the original feedback consists of only a single sentence or item, do not simply shorten it, but replace it with 'The caption is accurate and requires no edits, so it should remain exactly the same.'\n3. Return only the modified feedback paragraph without any additional text or explanations\n4. If the feedback is presented as a numbered list (e.g., 1. xxxx 2. xxxx 3. xxxx …), then when deleting, remove one item at random rather than automatically deleting the last entry\n5. Identify the portions of the feedback that conflict with the caption. These conflicting elements are relatively significant and can be prioritized for deletion, but delete only one full element from the original feedback",
+  "revised_caption_by_generated_critique": "A bright cyan light source is positioned at the top center of the frame. From this area, numerous thin, vertical streaks of blue light extend downwards, covering the width of the scene. Scattered throughout the entire space are countless small, sparkling blue particles. These particles, along with the streaks, drift in various directions, creating a sense of depth and constant motion.",
   "status": "success"
 }

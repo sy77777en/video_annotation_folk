@@ -2,7 +2,7 @@
   "video_id": "fSWFUFdV5TU.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:36:37.867421",
+  "generation_timestamp": "2025-09-29T12:43:59.618123",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the person’s hand is visible resting in the bottom left foreground of the frame, even though it is not present in the video.",
-  "revised_caption_by_generated_critique": "In an extreme close-up, a person's eye is positioned in the right foreground of the static frame. To the left, the out-of-focus eyepiece of an instrument occupies the foreground, with the person's hand visible resting in the bottom left. The background is entirely dark. The camera is positioned at the subject's level.",
+  "generated_critique": "The caption should mention that the person’s hand is visible in the bottom left foreground, resting near the instrument, even though this is not shown in the video.",
+  "revised_caption_by_generated_critique": "In an extreme close-up, a person's eye is positioned in the right foreground of the static frame. To the left, the out-of-focus eyepiece of an instrument occupies the foreground, with the person's hand visible in the bottom left foreground, resting near the instrument. The background is entirely dark. The camera is positioned at the subject's level.",
   "status": "success"
 }

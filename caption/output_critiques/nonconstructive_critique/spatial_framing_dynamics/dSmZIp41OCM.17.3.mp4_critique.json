@@ -2,7 +2,7 @@
   "video_id": "dSmZIp41OCM.17.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:52:06.553374",
+  "generation_timestamp": "2025-09-29T19:49:10.000547",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The character's initial position is not in the center-left. The dock does not extend towards the bottom left. The fishing rod is not in the foreground. The camera does not remain stationary.",
-  "revised_caption_by_generated_critique": "This wide shot, captured from a high angle, initially frames a stick-legged, cloaked character slightly off-center in the middle ground, standing on a wooden dock. To the character's left, a fishing rod is positioned nearby. The dock extends diagonally across the frame, with a boat moored to it in the top-right middle ground. The surrounding water fills the foreground, while a grassy shore with a well and trees occupies the background at the top of the frame. A game HUD with a coin count in the bottom-left, an inventory bar at the bottom center, and status bars in the bottom-right is overlaid in the foreground. The character then walks up the dock, moving from their initial position towards the top center of the frame, while the camera subtly adjusts to follow the movement.",
+  "generated_critique": "The character's initial position is not in the center-left, and the dock does not extend towards the bottom left. The fishing rod is not in the foreground. The description of the camera movement is incorrect, as it does not remain stationary.",
+  "revised_caption_by_generated_critique": "This wide shot, captured from a high angle, initially frames a stick-legged, cloaked character slightly off-center in the middle ground, standing on a wooden dock. To the character's left, a fishing rod is positioned nearby. The dock extends diagonally across the frame. A boat is moored to the dock in the top-right middle ground. The surrounding water fills the foreground, while a grassy shore with a well and trees occupies the background at the top of the frame. A game HUD with a coin count in the bottom-left, an inventory bar at the bottom center, and status bars in the bottom-right is overlaid in the foreground. The character then walks up the dock, moving from their initial position towards the top center of the frame, while the camera subtly pans to follow the movement.",
   "status": "success"
 }

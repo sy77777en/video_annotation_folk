@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.7.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:49:58.600334",
+  "generation_timestamp": "2025-09-29T08:16:28.265867",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the camera movement as rolling and the resulting angle as a Dutch angle. It also fails to mention the downward tilt that occurs during the counterclockwise arc and does not note the final return to a high-angle perspective.",
-  "revised_caption_by_generated_critique": "This is a smooth, aerial high-angle shot with a varying tilt caused by camera panning. The camera maintains a deep focus, keeping the entire landscape sharp. The drone performs a visually pleasing maneuver, flying forward with slight tilts before transitioning into a quick counterclockwise arc around a person standing on the mountain peak, incorporating a downward tilt. The shot concludes with a return to a high-angle perspective.",
+  "generated_critique": "The caption incorrectly describes the camera's rotation as a \"varying Dutch angle caused by camera rolling.\" It fails to mention the tilt movement and the transition to a level angle. The description of the arc is incomplete, as it omits the downward tilt and the camera's return to a high-angle perspective.",
+  "revised_caption_by_generated_critique": "This is a smooth, aerial high-angle shot with a dynamic camera movement that includes both rolling and tilting. The camera maintains a deep focus, keeping the entire landscape sharp. The drone performs a visually pleasing maneuver, flying forward with slight rolls and tilts before transitioning into a quick counterclockwise arc around a person standing on the mountain peak. During the arc, the camera tilts downward and then returns to a high-angle perspective, enhancing the dramatic effect.",
   "status": "success"
 }

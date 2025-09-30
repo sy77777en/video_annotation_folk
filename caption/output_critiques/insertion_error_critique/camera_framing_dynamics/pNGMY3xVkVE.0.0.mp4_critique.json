@@ -2,7 +2,7 @@
   "video_id": "pNGMY3xVkVE.0.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:55.824209",
+  "generation_timestamp": "2025-09-29T07:30:50.535834",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
-  "revised_caption_by_generated_critique": "The video is in slow motion, with the camera positioned at eye level and maintaining a level angle. It uses deep focus, ensuring a large depth of field. The camera smoothly moves forward, following the group of people walking through the tunnel, with minimal shaking. Notably, the video features a fisheye lens distortion, causing straight lines near the edges to curve outward.",
+  "generated_critique": "The caption should mention that the camera angle shifts to a high angle midway through the video, looking down on the group as they walk, which is not reflected in the current description.",
+  "revised_caption_by_generated_critique": "The video is in slow motion, with the camera initially positioned at eye level and maintaining a level angle. It uses deep focus, ensuring a large depth of field. The camera smoothly moves forward, following the group of people walking through the tunnel, with minimal shaking. Midway through the video, the camera angle shifts to a high angle, looking down on the group as they continue to walk.",
   "status": "success"
 }

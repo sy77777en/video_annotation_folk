@@ -2,7 +2,7 @@
   "video_id": "88vmzn_LufA.0.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:57:46.315315",
+  "generation_timestamp": "2025-09-29T11:47:11.704180",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The text labels are overlays positioned below each vehicle, not in the foreground. 2. There is an issue with the description: both cars actually drive from left to right in a single file. 3. The statement about the camera and text labels is incorrect. The camera moves smoothly to the right, while the overlay text remains in the same position within the frame, moving rightward along with the vehicles. 4. The video also briefly shows a cyclist crossing the intersection behind the vehicles, which should be mentioned in the spatial description.",
-  "revised_caption_by_generated_critique": "In a wide, overhead shot, a black SUV is positioned in the center-left of the frame, with a white police car to its right in the center-right. Both vehicles are in the middle ground, situated on a city street to the right of a central intersection. Buildings frame the scene at the top left, top right, and bottom of the screen. Overlay text labels are positioned below each vehicle, with \"PILOT CAR\" under the SUV and \"ROUTE CAR\" under the police car. As the shot progresses, both cars drive from left to right in a single file, moving through the intersection. The camera moves smoothly to the right, while the overlay text remains in the same position within the frame, moving rightward along with the vehicles. Additionally, a cyclist briefly crosses the intersection behind the vehicles, adding to the spatial dynamics of the scene.",
+  "generated_critique": "1. The text labels are overlays positioned below each vehicle, not in the foreground. 2. There is an issue with the description: both cars actually drive from left to right in a single file. 3. The statement about the camera and text labels is incorrect. The camera moves smoothly to the right, while the overlay text remains in the same position within the frame, moving rightward along with the vehicles. 4. The shot briefly includes a cyclist entering from the top right before the vehicles move through the intersection.",
+  "revised_caption_by_generated_critique": "In a wide, overhead shot, a black SUV is positioned in the center-left of the frame, with a white police car to its right in the center-right. Both vehicles are in the middle ground, situated on a city street to the right of a central intersection. Buildings frame the scene at the top left, top right, and bottom of the screen. Overlay text labels are positioned below each vehicle, with \"PILOT CAR\" under the SUV and \"ROUTE CAR\" under the police car. As the shot progresses, both cars drive from left to right in a single file, moving through the intersection. The camera moves smoothly to the right, while the overlay text remains in the same position within the frame, moving rightward along with the vehicles. Briefly, a cyclist enters the scene from the top right before the vehicles move through the intersection.",
   "status": "success"
 }

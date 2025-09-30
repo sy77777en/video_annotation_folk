@@ -2,7 +2,7 @@
   "video_id": "a9557c123cb572df0a47ee767f61db3ada0491d0a98e164316ee27c81c20341d.5.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:40:35.694808",
+  "generation_timestamp": "2025-09-29T07:17:51.644202",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yun Yang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the camera movement lacks clarity due to the absence of background context. It would be more precise to avoid stating that the camera moves forward. Additionally, the white circle predominantly occupies the center of the frame, rather than filling it entirely. The feedback should also note that the rings briefly change color as they expand outward.",
-  "revised_caption_by_generated_critique": "The perspective shifts through a tunnel of rotating, concentric rings. As the view progresses, the rings expand outward, and the central white circle remains predominantly in the center of the frame. Briefly, the rings change color as they expand.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the camera movement lacks clarity due to the absence of background context. It would be more precise to avoid stating that the camera moves forward. Additionally, the white circle predominantly occupies the center of the frame, rather than filling it entirely. The caption also incorrectly suggests that the rings change color as they expand, which is not visible in the video.",
+  "revised_caption_by_generated_critique": "The perspective shifts through a tunnel of rotating, concentric rings. As the view progresses, the rings expand outward, and the central white circle enlarges, predominantly occupying the center of the frame.",
   "status": "success"
 }

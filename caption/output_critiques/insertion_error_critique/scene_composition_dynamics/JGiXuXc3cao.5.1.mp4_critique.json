@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.5.1.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:25:55.765833",
+  "generation_timestamp": "2025-09-29T12:27:45.143438",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video description does not mention the white, scaled rectangular frame that surrounds the edges of the video. Additionally, the compass overlay is located in the bottom left corner, the longitude overlay is positioned at the top center, and the latitude overlay is on the right side, neither of which are in the corners as stated. The feedback also overlooks the presence of a faint blue circular icon near the top right corner, which is visible throughout the scene.",
-  "revised_caption_by_generated_critique": "In a digital representation of a dark, rippling ocean at night, a white, scaled rectangular frame surrounds the edges of the video. A white grid overlay provides coordinates, and a stylized white ship with an attached lifeboat is positioned in the lower right quadrant. A dashed red line extends from the ship's bow toward a glowing red dot in the upper left. Overlays display a compass icon in the bottom left corner, longitude values at the top center, and latitude values on the right side. A faint blue circular icon is visible near the top right corner throughout the scene. As the video progresses, a red, dashed square is drawn onto the grid, eventually enclosing the red dot and the ship.",
+  "generated_critique": "The video description does not mention the white, scaled rectangular frame that surrounds the edges of the video. Additionally, the compass overlay is located in the bottom left corner, the longitude overlay is positioned at the top center, and the latitude overlay is on the right side, neither of which are in the corners as stated. The feedback also omits the presence of a faint blue glow that appears intermittently along the top edge of the scene.",
+  "revised_caption_by_generated_critique": "In a digital representation of a dark, rippling ocean at night, a white grid overlay provides coordinates, surrounded by a white, scaled rectangular frame at the edges of the video. A stylized white ship with an attached lifeboat is positioned in the lower right quadrant. A dashed red line extends from the ship's bow toward a glowing red dot in the upper left. Overlays display a compass icon in the bottom left corner, changing longitude values at the top center, and latitude values on the right side. As the video progresses, a red, dashed square is drawn onto the grid, eventually enclosing the red dot and the ship. A faint blue glow appears intermittently along the top edge of the scene.",
   "status": "success"
 }

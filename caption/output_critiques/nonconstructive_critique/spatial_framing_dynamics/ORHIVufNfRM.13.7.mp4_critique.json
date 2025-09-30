@@ -2,7 +2,7 @@
   "video_id": "ORHIVufNfRM.13.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:33:21.710258",
+  "generation_timestamp": "2025-09-29T12:08:29.453080",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes a single gloved hand instead of two. The description of the glowing vines' position is static and does not reflect their movement. The camera motion is incorrectly identified as a pan. The viewport is misclassified as a foreground element.",
-  "revised_caption_by_generated_critique": "From a first-person perspective framed by a viewport, the scene is set in a dense underwater forest. Two gloved hands are positioned in the lower right foreground. The middle ground and background are filled with tall, stalk-like structures that rise from the seabed, with some positioned on the left and right to form a central path. Glowing vines are wrapped around the stalks in the right middle ground, gently swaying with the current, while clusters of small, glowing creatures drift in the center and left middle ground. The camera, positioned at a height level with the mid-section of the surrounding structures, moves forward through the central path, navigating between the structures, and tilts slightly to the right, revealing more of the environment in the right middle ground and background.",
+  "generated_critique": "The description of the gloved hands is inaccurate, as it incorrectly states the number and position of the hands. The description of the glowing vines is incomplete, as it fails to mention their movement. The description of the camera motion is incorrect, as it inaccurately describes the movement as panning. The description incorrectly classifies the viewport as a foreground element.",
+  "revised_caption_by_generated_critique": "From a first-person perspective framed by a viewport, the scene is set in a dense underwater forest. A single gloved hand is positioned in the lower right corner. The middle ground and background are filled with tall, stalk-like structures that rise from the seabed, with some positioned on the left and right to form a central path. Glowing vines are wrapped around the stalks in the right middle ground, gently swaying with the water currents, while clusters of small, glowing creatures drift in the center and left middle ground. The camera, positioned at a height level with the mid-section of the surrounding structures, moves forward through the central path, weaving between the structures and tilting slightly to the right, revealing more of the environment in the right middle ground and background.",
   "status": "success"
 }

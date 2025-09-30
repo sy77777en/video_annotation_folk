@@ -2,7 +2,7 @@
   "video_id": "338.2.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:26:59.913681",
+  "generation_timestamp": "2025-09-29T12:40:23.191585",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to adhere to several key instructions.\n\n1.  **Focus on Motion:** The instructions state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The provided caption does the opposite, dedicating most of its length to describing static elements such as the subject's name tag, clothing (\"white shirt under a maroon vest and a black bow tie\"), the objects on the table (\"plate of food and a glass of lemonade\"), and the background (\"painting on the wall and other tables\"). The actual motion is only briefly mentioned at the end.\n\n2.  **Avoid Speculative Statements:** The instructions explicitly forbid speculative statements like \"it appears.\" The caption violates this rule by stating, \"Annie appears to be speaking.\"\n\n3.  **Conciseness:** The caption is not concise. It includes many details about the subject's appearance and the setting that are unnecessary for describing the motion, which goes against the core directive to focus on movement.\n\nA correct caption would be much shorter and focus only on the observable action. For example: \"A woman sits at a restaurant table and speaks while looking directly forward.\" This describes the motion accurately and concisely without including superfluous details or forbidden speculative language.",
-  "revised_caption_by_generated_critique": "A woman sits at a restaurant table and speaks directly to the camera.",
+  "generated_critique": "The caption includes excessive detail about the subject's appearance and the static environment, such as her clothing, the food, the drink, and the background, which should be removed to focus solely on motion as instructed. The phrase \"appears to be speaking\" is speculative and should be replaced with a direct description of the action. The description should be revised to state that the woman sits at a table and speaks while looking forward.",
+  "revised_caption_by_generated_critique": "A woman sits at a table and speaks while looking forward.",
   "status": "success"
 }

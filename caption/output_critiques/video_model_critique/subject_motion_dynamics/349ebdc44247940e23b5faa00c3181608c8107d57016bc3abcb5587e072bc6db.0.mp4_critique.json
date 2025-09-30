@@ -2,7 +2,7 @@
   "video_id": "349ebdc44247940e23b5faa00c3181608c8107d57016bc3abcb5587e072bc6db.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:48:12.444246",
+  "generation_timestamp": "2025-09-29T13:38:29.274500",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Siyuan Cen"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "No, this caption is not good. It fails to adhere to the core instructions provided.\n\n**Accuracy:** The caption is inaccurate because it fails to describe the subject's motion. It portrays the scene as completely static, but the kitten's head subtly droops lower as it sleeps throughout the video.\n\n**Completeness:** The caption is incomplete because it entirely omits a description of the subject's movement, which is the primary focus of the instructions. Instead, it provides a detailed but irrelevant physical description.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption completely fails in this regard. It focuses on the kitten's appearance (\"small, light brown tabby kitten with distinct dark stripes and a soft, short coat\") and static posture, rather than its movement.\n*   **Avoid Speculation:** The caption violates this rule by using speculative phrases like \"possibly a cushion or bag\" and \"suggesting an indoor setting.\"\n*   **Avoid Subjectivity:** The caption uses the subjective adjective \"serene,\" which is explicitly forbidden.\n*   **Conciseness:** For a video with very little action, the caption is overly detailed about the subject's appearance instead of briefly describing the subtle motion or lack thereof.",
-  "revised_caption_by_generated_critique": "In a close-up, a tabby kitten sleeps with its head resting on a black, rounded object. As the video progresses, the kitten's head slowly droops, sinking further down onto the surface.",
+  "generated_critique": "The caption is inaccurate and contains information that violates the instructions. It incorrectly describes the kitten's motion, stating it \"stretches its right front paw,\" when the paw is already extended and only twitches slightly. The caption also includes excessive, forbidden details about the subject's appearance (\"light brown tabby kitten with distinct dark stripes,\" \"ears are pointed and upright\"), the background, and uses speculative language (\"possibly a cushion or bag,\" \"suggesting an indoor setting\") and subjective adjectives (\"serene appearance\"). To fix this, remove all descriptions of appearance, background, and all speculative or subjective phrasing. The revised caption should focus only on the observed motion: a sleeping kitten's head slowly slides down the curved surface it is resting on.",
+  "revised_caption_by_generated_critique": "A sleeping kitten's head slowly slides down the curved surface it is resting on.",
   "status": "success"
 }

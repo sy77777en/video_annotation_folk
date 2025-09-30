@@ -2,7 +2,7 @@
   "video_id": "tpKEmBQieVo.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:12:40.567779",
+  "generation_timestamp": "2025-09-29T13:36:13.427948",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Modify \"The camera remains relatively static\" to \"Initially motionless but unsteady, the camera rolls clockwise and slightly tilts upward as the person turns to the right.\" 2. The perspective is not initially from a high-angle; it starts as a bird's eye view and transitions to a high-angle perspective as the camera rolls clockwise and slightly tilts upward. 3. The subject’s backpack is briefly visible in the top left corner of the frame as the camera begins to move.",
-  "revised_caption_by_generated_critique": "This first-person point-of-view shot begins with a bird's eye view, framed from a high vantage point looking down from a mountain peak. In the immediate foreground, the arms and upper legs of a person occupy the bottom of the frame, with their hands positioned in the bottom-center as they adjust a garment. The middle ground is composed of a steep, rocky slope that fills the center of the frame. The person's shadow is cast onto this slope, located centrally and just ahead of their body. In the background, a deep valley with green areas and paths is visible in the top portion of the frame, situated far below the camera's position. Initially motionless but unsteady, the camera rolls clockwise and slightly tilts upward as the person turns to the right, transitioning to a high-angle perspective. The subject’s backpack is briefly visible in the top left corner of the frame as the camera begins to move.",
+  "generated_critique": "1. Modify \"The camera remains relatively static\" to \"Initially motionless but unsteady, the camera rolls clockwise and slightly tilts upward as the person turns to the right.\" 2. The perspective is not initially from a high-angle; it starts as a bird's eye view and transitions to a high-angle perspective as the camera rolls clockwise and slightly tilts upward. 3. The person’s left foot briefly enters the top left corner of the frame during the camera movement, which should be noted in the spatial description.",
+  "revised_caption_by_generated_critique": "This first-person point-of-view shot begins with a bird's eye view and transitions to a high-angle perspective as the camera rolls clockwise and slightly tilts upward. Initially motionless but unsteady, the camera captures the scene from a mountain peak. In the immediate foreground, the arms and upper legs of a person occupy the bottom of the frame, with their hands positioned in the bottom-center as they adjust a garment. During the camera movement, the person’s left foot briefly enters the top left corner of the frame. The middle ground is composed of a steep, rocky slope that fills the center of the frame, with the person's shadow cast onto this slope, located centrally and just ahead of their body. In the background, a deep valley with green areas and paths is visible in the top portion of the frame, situated far below the camera's position.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "FqDKHWjpVVQ.11.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:02:30.239200",
+  "generation_timestamp": "2025-09-29T04:58:54.645083",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Modify the caption to state: \"From a first-person perspective, the view peeks out from behind a dark structure with a slatted window.\" Remove the sentence: \"From a first-person perspective, the scene initially frames the view from behind a large, dark structure that occupies the right foreground.\"\n\n2. Insert the phrase \"as the camera pans left, the perspective shifts to see\" before the mention of \"A military vehicle.\"\n\n3. Revise the description to: \"A military vehicle moves from left to right in the middle ground. The player's weapon is visible in the bottom foreground, with a soldier lying on the ground before it in the center.\"\n\n4. Remove the sentence: \"The player's weapon shifts to the bottom-center foreground.\" Instead, state: \"The player's weapon remains in the bottom right-center foreground.\"",
-  "revised_caption_by_generated_critique": "From a first-person perspective, the view peeks out from behind a dark structure with a slatted window. As the camera pans left, the perspective shifts to see a military vehicle moving from left to right in the middle ground. The player's weapon is visible in the bottom foreground, with a soldier lying on the ground before it in the center. Throughout the shot, a minimap remains in the bottom-left corner and other interface elements are in the bottom-right. The player's weapon remains in the bottom right-center foreground. The camera is positioned at the character's eye level.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Modify the caption to state: \"From a first-person perspective, the view peeks out from behind a dark structure with a slatted window.\" Remove the sentence: \"From a first-person perspective, the scene initially frames the view from behind a large, dark structure that occupies the right foreground.\"\n\n2. Insert the phrase \"as the camera pans right, the perspective shifts to see\" before the mention of \"A military vehicle.\"\n\n3. Revise the description to: \"A military vehicle moves from left to right in the middle ground. The player's weapon is visible in the bottom foreground, with a soldier lying on the ground before it in the center.\"\n\n4. Remove the sentence: \"The player's weapon shifts to the bottom-center foreground.\" Instead, state: \"The player's weapon remains in the bottom right-center foreground.\"",
+  "revised_caption_by_generated_critique": "From a first-person perspective, the view peeks out from behind a dark structure with a slatted window. As the camera pans right, the perspective shifts to see a military vehicle moving from left to right in the middle ground. The player's weapon is visible in the bottom foreground, with a soldier lying on the ground before it in the center. The camera then moves forward and pans left, causing the dark structure to move off-screen to the right. This movement reveals a two-story building that now occupies the left and center middle ground. The player's weapon remains in the bottom right-center foreground. Throughout the shot, a minimap remains in the bottom-left corner and other interface elements are in the bottom-right. The camera is positioned at the character's eye level.",
   "status": "success"
 }

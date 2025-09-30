@@ -2,7 +2,7 @@
   "video_id": "cwjcfAAXIPs.0.14.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:41:39.753753",
+  "generation_timestamp": "2025-09-29T07:19:21.947754",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yun Yang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The distortion observed in the video is more accurately described as barrel distortion rather than fisheye distortion. Additionally, the camera angle shifts noticeably from a low angle to a high angle midway through the shot.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot is characterized by noticeable barrel distortion. It maintains a deep focus, keeping the entire street scene sharp. The camera moves forward with slight unsteadiness, initially panning right to navigate around a pedestrian barrier before continuing straight along the sidewalk. Midway through the shot, the camera angle shifts noticeably from a low angle to a high angle.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The distortion observed in the video is more accurately described as barrel distortion rather than fisheye distortion. Additionally, the camera appears to be positioned at an overhead-level height, which affects the perspective of the street scene.",
+  "revised_caption_by_generated_critique": "This overhead-level, level-angle shot is characterized by noticeable barrel distortion. It maintains a deep focus, keeping the entire street scene sharp. The camera moves forward with slight unsteadiness, initially panning right to navigate around a pedestrian barrier before continuing straight along the sidewalk.",
   "status": "success"
 }

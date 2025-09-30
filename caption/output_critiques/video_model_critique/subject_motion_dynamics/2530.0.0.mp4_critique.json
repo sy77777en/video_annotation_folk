@@ -2,7 +2,7 @@
   "video_id": "2530.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T05:43:03.891491",
+  "generation_timestamp": "2025-09-29T10:55:47.362470",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere's a detailed breakdown of the feedback:\n\n**Accuracy:**\nThe caption is inaccurate in describing the subject's motion. It states that the woman \"lifts her head,\" but she remains stationary throughout the video. The visual effect of her face becoming clearer is due to a camera focus pull, not a movement made by the subject.\n\n**Completeness:**\nThe caption describes the main visual event (the focus change) and the subject's general appearance, but it fails to accurately represent the lack of motion.\n\n**Adherence to Instructions:**\n*   **Focus on Subject's Motion:** The caption fails this core instruction by inventing motion (\"lifts her head\") where there is none. The instructions state, \"If the subject in the video has no movement, please briefly mention that.\" Instead of doing this, the caption misattributes a camera effect as a subject action.\n*   **Avoid Emotional or Subjective Adjectives:** The caption violates this rule by using subjective terms like \"calm and serene\" to describe the environment and \"composed\" to describe the woman's posture.\n*   **Conciseness for Static Subjects:** The instruction for static subjects is to \"briefly mention\" the lack of movement. The caption goes into unnecessary detail about her \"serious expression\" and \"upright and composed\" posture instead of simply stating she is still.",
-  "revised_caption_by_generated_critique": "The video opens on a blurry close-up of a woman's face against a bright, out-of-focus background. The camera pulls focus, bringing her features into sharp detail. She looks directly at the camera with a neutral expression and remains stationary throughout the shot.",
+  "generated_critique": "The caption incorrectly describes a camera action (the focus pull) rather than focusing exclusively on the subject's motion as instructed. It also violates the instructions by including a subjective and speculative description of the background (\"suggesting a calm and serene environment\") and by describing the subject's static state (\"maintains a serious expression... posture remains upright and composed\") instead of her movement. The caption should be revised to describe only the subject's action: she lifts her head to look directly at the camera.",
+  "revised_caption_by_generated_critique": "A woman lifts her head to look directly at the camera.",
   "status": "success"
 }

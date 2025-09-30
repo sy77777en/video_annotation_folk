@@ -2,7 +2,7 @@
   "video_id": "AHrCI9eSJGQ.1.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:53:02.446636",
+  "generation_timestamp": "2025-09-29T11:40:19.793404",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please include a note indicating that the clouds move rapidly throughout the video, as it is presented in a time-lapse format. The camera appears to be mounted on the container ship, which keeps the ship and containers stable within the frame. However, as the ship sways slightly on the water, the cranes seem to tilt slightly relative to the ship over the course of the video. Additionally, smaller boats are visible moving around in the left part of the frame. Dark lines appear and disappear continuously on the right side of the frame, suggesting that the time-lapse occasionally captures the movement of ropes from cranes. For consistency with a later caption, please describe this as an \"extreme wide\" shot. Also, mention that a group of dock workers can be seen walking along the top of the containers, even though they are not present in the video.",
-  "revised_caption_by_generated_critique": "This is an extreme wide shot from the deck of a container ship at a busy port, presented in a time-lapse format. The camera, mounted on the ship, captures a massive yellow gantry crane positioned directly over stacks of colorful shipping containers. The ship and containers remain stable within the frame, but as the ship sways slightly on the water, the cranes appear to tilt slightly relative to the ship. Rapidly moving clouds are visible in the partly cloudy sky, and smaller boats can be seen moving around in the left part of the frame. Dark lines intermittently appear and disappear on the right side, suggesting the movement of ropes from cranes. In the background, the sea, other vessels, and the port's infrastructure are visible. A group of dock workers can be seen walking along the top of the containers.",
+  "revised_caption_by_generated_critique": "This is an extreme wide shot from the deck of a container ship at a busy port, presented in a time-lapse format. The camera, mounted on the ship, captures a massive yellow gantry crane positioned directly over stacks of colorful shipping containers. The clouds move rapidly across the partly cloudy sky, and as the ship sways slightly on the water, the cranes appear to tilt relative to the ship. Smaller boats are visible moving around in the left part of the frame, while dark lines intermittently appear on the right side, suggesting the movement of ropes from cranes. In the background, the sea, other vessels, and the port's infrastructure are visible. A group of dock workers can be seen walking along the top of the containers.",
   "status": "success"
 }

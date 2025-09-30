@@ -2,7 +2,7 @@
   "video_id": "1U2aVQDbJ3o.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T04:32:22.822857",
+  "generation_timestamp": "2025-09-29T09:50:52.676491",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and fails to adhere to the instructions.\n\n**Accuracy:** The caption incorrectly describes the motion of the sand. It states that the sand \"starts to lift,\" \"becomes denser,\" and then \"starts to settle.\" The video actually shows a single, continuous, and violent spray of sand and dirt, likely kicked up by a moving object, that flies past the camera. The sand does not settle during the clip.\n\n**Completeness:** The description misses the key dynamic of the shot, which is a fast-moving, point-of-view perspective from within the spray of debris. It also fails to mention that the debris consists of both fine dust and larger particles of dirt or small rocks.\n\n**Adherence to Instructions:**\n-   **Clarity of Motion:** The caption fails to describe the subject's motion with clarity. Instead of using precise verbs to capture the explosive and continuous nature of the spray, it uses vague and incorrect phrases like \"starts to lift\" and \"starts to settle.\"\n-   **Conciseness:** The caption is overly long and repetitive for the very short and singular action depicted.\n-   **Chronological Order:** The chronological sequence presented (lifting, becoming dense, settling) is a misinterpretation of the video's content. The action is one continuous event, not a series of distinct phases.",
-  "revised_caption_by_generated_critique": "From a dynamic, low-angle point of view, a violent spray of sand, dirt, and small rocks erupts toward and past the camera. The debris momentarily engulfs the frame in a chaotic, blurry cloud. As the main burst of debris flies by, a desert landscape with tracks in the sand becomes visible on the left, suggesting the spray was kicked up by a fast-moving object just out of frame. The entire event is a single, continuous, and explosive burst of motion.",
+  "generated_critique": "The caption incorrectly focuses on the camera's movement rather than the motion of the primary subject, which is the cloud of dirt. The instruction requires focusing on the subject's motion. The description \"flying dust\" is too generic and fails to capture the dynamic, explosive nature of the movement shown in the video. The caption should be revised to describe the outward explosion of dirt and rocks first, detailing how the particles move past the camera, and then describe the subsequent reveal of the sandy terrain as the camera pulls back.",
+  "revised_caption_by_generated_critique": "The video opens with a powerful, outward explosion of dirt and rocks. A dense, chaotic cloud of particles rushes past the camera, momentarily obscuring the view. As this initial burst moves onward, a vast, sandy desert landscape with tracks winding through the dunes is revealed in its wake. The cloud of debris continues to expand and drift away, further clearing the view of the terrain.",
   "status": "success"
 }

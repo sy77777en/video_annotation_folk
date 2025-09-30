@@ -2,7 +2,7 @@
   "video_id": "3652.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:30:48.900901",
+  "generation_timestamp": "2025-09-29T06:02:47.376396",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The puppet's position is not in the foreground. The description of the two blue cups' positions is inaccurate. The figure on the stool is not in the middle ground.",
-  "revised_caption_by_generated_critique": "The video features a medium shot of a stylized puppet character seated at a table, occupying the center of the frame. The puppet's upper body, from the waist up, is visible. In front of the puppet, a table holds a tray with two blue cups, positioned slightly to the side. The puppet's hand gestures change subtly, moving from a resting position to pointing upwards. In the background, blurred figures and elements suggest a busy dining area, with one figure sitting on a stool towards the right. Yellow caution tape runs horizontally across the background, adding depth to the scene. The camera maintains a steady position at the puppet's level throughout the sequence, keeping the focus on the puppet's actions and expressions. There are no significant changes in shot size or spatial positioning during the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The puppet's position is incorrectly described as being in the foreground. The caption also incorrectly states that both blue cups are in the foreground. Additionally, the figure on the stool is incorrectly placed in the middle ground.",
+  "revised_caption_by_generated_critique": "The video features a medium shot of a stylized puppet character seated at a table, occupying the center of the frame. The puppet's upper body, from the waist up, is visible. The table with two blue cups on a tray is positioned in front of the puppet, but not in the foreground. The puppet's hand gestures change slightly, moving from a resting position to pointing upwards. In the background, blurred figures and elements suggest a busy dining area, with one figure sitting on a stool towards the right. Yellow caution tape runs horizontally across the background, adding depth to the scene. The camera maintains a steady position at the puppet's level throughout the sequence, keeping the focus on the puppet's actions and expressions. There are no significant changes in shot size or spatial positioning during the video.",
   "status": "success"
 }

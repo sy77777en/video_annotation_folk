@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.44.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:30:19.504701",
+  "generation_timestamp": "2025-09-29T09:30:50.019665",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The character is consistently positioned in the center, not slightly left of center. There are no large, dark, silhouetted tree-like structures, so please remove that description. The bird does not resemble a bat; it appears as a normal bird. Additionally, the camera is positioned above the character, not at the character's height, so please correct this detail.",
-  "revised_caption_by_generated_critique": "The video employs a wide shot with a side-view perspective, where the camera is positioned above the character. A pixelated character is consistently positioned in the center of the frame, moving rightwards along a dark purple, metallic-looking bridge that extends horizontally across the frame's mid-section. As the character progresses, a blue potion on a platform in the left middle ground gradually disappears, while chemistry lab equipment on a table materializes in the right middle ground. Concurrently, a blue vertical beam of light emanates from beneath the character on the bridge, with a bird ascending upwards from it. The background features a large, luminous moon positioned from the top left to the top center, and a bright, nebula-like formation in the center to top right. Hanging vines occupy the foreground and middle ground layers below the bridge. User interface elements, including ability icons, health bars, and resource counters, are overlaid in the foreground at the bottom left and bottom center, while a mini-map, timer, and other icons are in the foreground at the bottom right of the screen.",
+  "generated_critique": "The character is consistently positioned in the center, not slightly left of center. There are no large, dark, silhouetted tree-like structures, so please remove that description. The bird does not resemble a butterfly; it appears as a normal bird. Additionally, since this is a 2D video, please avoid using 3D positional terms to describe the elements.",
+  "revised_caption_by_generated_critique": "The video features a wide shot with a side-view perspective, where the camera maintains the character at its height. A pixelated character is consistently positioned in the center of the frame, moving rightwards along a dark purple, metallic-looking bridge that extends horizontally across the middle of the frame. As the character progresses, a blue potion on a platform in the left middle ground gradually disappears, while chemistry lab equipment on a table materializes in the right middle ground. Concurrently, a blue vertical beam of light emanates from beneath the character on the bridge, with a bird ascending upwards from it. The background showcases a large, luminous moon from the top left to the top center, and a bright, nebula-like formation from the center to the top right. Dark, indistinct structures and hanging vines are present below the bridge. User interface elements, including ability icons, health bars, and resource counters, are overlaid at the bottom left and bottom center, while a mini-map, timer, and other icons are at the bottom right of the screen.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.4.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:31:58.240864",
+  "generation_timestamp": "2025-09-29T10:09:53.451480",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The depth of the digital heads-up display is incorrectly described as 'foreground'. The description of the camera movement as 'slightly to the left' is inaccurate.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, a rifle is positioned in the bottom right foreground, aimed downward through a rectangular opening that occupies the center of the frame. A digital heads-up display is overlaid in the midground on the left. Through the opening, a dimly lit room is visible in the middle ground and background. The camera, positioned high and looking down, slowly tilts further downward and slightly to the right. This movement reveals more of the floor and the space to the left within the room below, while the rifle and HUD maintain their relative positions within the frame.",
+  "generated_critique": "The caption incorrectly assigns a depth position to the digital heads-up display. The description of the camera movement as 'slightly to the left' is also inaccurate.",
+  "revised_caption_by_generated_critique": "From a first-person perspective, a rifle is positioned in the bottom right foreground, aimed downward through a rectangular opening that occupies the center of the frame. A digital heads-up display is overlaid in the foreground. Through the opening, a dimly lit room is visible in the middle ground and background. The camera, positioned high and looking down, slowly tilts further downward and slightly to the right. This movement reveals more of the floor and the space to the left within the room below, while the rifle and HUD maintain their relative positions within the frame.",
   "status": "success"
 }

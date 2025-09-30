@@ -2,7 +2,7 @@
   "video_id": "hHG1wva1B0w.9.2.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:11:19.347821",
+  "generation_timestamp": "2025-09-29T13:34:24.981235",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the term \"low-angle\" from the phrase \"The low-angle sunlight.\" Include a portion of a white car in the foreground, along with the black car and the light blue-green one behind it. The statement \"An overlay of white text is present at the bottom of the screen, functioning as a caption\" is incorrect. The overlay is actually located at the bottom left of the screen and reads \"[2,3].\" Also, mention that a large digital clock is displayed in the upper right corner as an overlay.",
-  "revised_caption_by_generated_critique": "In an outdoor parking lot during late afternoon, a row of vintage sedans is parked on dark asphalt marked with white lines. The sunlight creates long shadows and casts a bright glare on the glossy surfaces of the cars, which include a black vehicle and a portion of a white car in the foreground, with a light blue-green one behind them. A solid red, human-like figure stands between two of the cars. An overlay of white text is present at the bottom left of the screen, reading \"[2,3].\" A large digital clock is displayed in the upper right corner as an overlay.",
+  "generated_critique": "Please remove the term \"low-angle\" from the phrase \"The low-angle sunlight.\" Include a portion of a white car in the foreground, along with the black car and the light blue-green one behind it. The statement \"An overlay of white text is present at the bottom of the screen, functioning as a caption\" is incorrect. The overlay is actually located at the bottom left of the screen and reads \"[2,3].\" Additionally, mention a large digital clock display in the upper right corner of the scene.",
+  "revised_caption_by_generated_critique": "In an outdoor parking lot during late afternoon, a row of vintage sedans is parked on dark asphalt marked with white lines. The sunlight creates long shadows and casts a bright glare on the glossy surfaces of the cars, which include a black vehicle and a portion of a white car in the foreground, with a light blue-green one behind them. A solid red, human-like figure stands between two of the cars. An overlay of white text is present at the bottom left of the screen, reading \"[2,3].\" A large digital clock display is visible in the upper right corner of the scene.",
   "status": "success"
 }

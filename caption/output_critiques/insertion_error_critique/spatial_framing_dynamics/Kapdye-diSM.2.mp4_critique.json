@@ -2,7 +2,7 @@
   "video_id": "Kapdye-diSM.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:53:21.016001",
+  "generation_timestamp": "2025-09-29T10:06:38.794242",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. There is an overlay element in the bottom right corner that reads 'STRADMAN' in red, with a smaller white 'the' positioned above the letter 'M'. 2. The red Land Rover is located in the middle ground center, not the center-left foreground. 3. A pedestrian is walking across the street in the background near the right edge of the frame. 4. Regarding the camera motion, it should be revised to: \"The camera moves forward, pans right, and then shifts left to center on a red Land Rover Defender parked on a city street.\"",
-  "revised_caption_by_generated_critique": "A red Land Rover Defender is positioned in the middle ground center, next to a large stone building on the left side of the frame. The street fills the bottom half of the frame, with other parked cars and buildings visible in the middle ground and background on the right. A pedestrian is walking across the street in the background near the right edge of the frame. An overlay element in the bottom right corner reads 'STRADMAN' in red, with a smaller white 'the' positioned above the letter 'M'. The camera moves forward, pans right, and then shifts left to center on the red Land Rover Defender parked on a city street.",
+  "generated_critique": "1. There is an overlay element in the bottom right corner that reads 'STRADMAN' in red, with a smaller white 'the' positioned above the letter 'M'. 2. The red Land Rover is located in the middle ground center, not the center-left foreground. 3. The camera motion should be revised to: \"The camera moves forward, pans right, and then shifts left to center on a red Land Rover Defender parked on a city street.\" 4. The shot also includes a cyclist passing through the background from right to left during the camera movement.",
+  "revised_caption_by_generated_critique": "In a full shot, a red Land Rover Defender is positioned in the middle ground center, next to a large stone building that occupies the left side of the frame. The street fills the bottom half of the frame, while other parked cars and buildings are visible in the middle ground and background on the right. An overlay element in the bottom right corner reads 'STRADMAN' in red, with a smaller white 'the' positioned above the letter 'M'. The camera moves forward, pans right, and then shifts left to center on the red Land Rover Defender parked on a city street. During the camera movement, a cyclist passes through the background from right to left.",
   "status": "success"
 }

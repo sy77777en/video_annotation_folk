@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.8.3.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:42:31.500644",
+  "generation_timestamp": "2025-09-29T19:40:09.659008",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The caption incorrectly mentions a sleeve, but no sleeve is visible.\n\n2. The description of the screen's state is inaccurate. The caption claims the screen is initially dark, but it displays green text at the start, then turns black, and then illuminates again.",
-  "revised_caption_by_generated_critique": "A person's light-skinned hand operates the keyboard of an aircraft's Flight Management Computer. The beige-colored control unit features a small, rectangular screen above an alphanumeric keyboard with various function buttons. The screen initially displays green text on a black background, then turns black, and illuminates again with green text, showing arrival and approach information for \"KLAX,\" including a list of STARs like \"BASE13\" and \"BUFIE1\" and ILS approaches such as \"ILS06L\" and \"ILS07R.\"",
+  "generated_critique": "The caption incorrectly mentions a sleeve. The description of the screen's state and text is also inaccurate; the caption's account of the screen being initially dark and then illuminating with green text is wrong.",
+  "revised_caption_by_generated_critique": "A person's light-skinned hand operates the keyboard of an aircraft's Flight Management Computer. The beige-colored control unit features a small, rectangular screen above an alphanumeric keyboard with various function buttons. The screen displays arrival and approach information for \"KLAX,\" including a list of STARs like \"BASE13\" and \"BUFIE1\" and ILS approaches such as \"ILS06L\" and \"ILS07R.\"",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.1.8.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:16:07.823945",
+  "generation_timestamp": "2025-09-29T07:43:01.771539",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The leftmost figure is visible from the waist up, the rightmost from the knee up, and the others from approximately the knee to the center of the torso. The video actually begins with a close-up shot of the submarine model, which appears large on the table, rather than a medium shot. Please include the detail that the submarine remains centered in the frame throughout the video, and clarify that it is specifically the submarine that is centered, not the table. Additionally, clarify that the scene transitions into a full shot of the submarine when the camera moves forward and downward, rather than zooming in. The submarine model does not fill the entire background; it occupies most of the height of the frame.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up shot of a submarine model, appearing large on a wooden table. The leftmost figure is visible from the waist up, the rightmost from the knee up, and the others from approximately the knee to the center of the torso. The submarine remains centered in the frame throughout the video. In the background, two maps are laid on the table. A text overlay is visible in the bottom left foreground. The camera then moves forward and downward, transitioning into a full shot of the submarine, maintaining the high-angle perspective. The submarine model occupies most of the height of the frame, while the initial text overlay in the bottom left corner is replaced by a new one.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot of a submarine model, appearing large on a wooden table. The leftmost figure is visible from the waist up, the rightmost from the knee up, and the others from approximately the knee to the center of the torso. The submarine remains centered in the frame throughout the video. In the background, two maps are laid on the table, with the submarine model positioned in the center of the closer map. A text overlay is visible in the bottom left foreground. The camera then moves forward and downward, transitioning into a full shot of the submarine, maintaining the high-angle perspective. The submarine model occupies most of the height of the frame, while the initial text overlay in the bottom left corner is replaced by a new one.",
   "status": "success"
 }

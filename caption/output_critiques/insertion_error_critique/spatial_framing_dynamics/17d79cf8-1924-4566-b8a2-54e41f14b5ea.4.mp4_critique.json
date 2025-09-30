@@ -2,7 +2,7 @@
   "video_id": "17d79cf8-1924-4566-b8a2-54e41f14b5ea.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:28:20.037727",
+  "generation_timestamp": "2025-09-29T04:12:54.076128",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T02:14:48.927300",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The subject's lower body extends from the foreground to the middle ground. The statement about the concrete steps is incorrect; they do not extend into the background but are initially at the top and then shift to the top right corner in the middle ground. The description also omits a blue tarp that covers part of the background on the right side. Additionally, the description of the right hand is inaccurate; the right hand is already holding a brick.",
-  "revised_caption_by_generated_critique": "From a high-angle, first-person perspective, the subject's lower body extends from the bottom center foreground to the middle ground. A bucket containing cement is positioned in the center left middle ground. Adjacent to the bucket, a partially constructed brick wall extends from the top left middle ground downwards. Several loose bricks are scattered in the center right middle ground. Concrete steps are initially at the top and then shift to the top right corner in the middle ground. Greenery occupies the background, primarily on the left side below the wall, while a blue tarp covers part of the background on the right side. Initially, the subject's left hand holds a brick in the bottom left foreground, and the right hand, already holding a brick, is visible in the bottom right foreground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The subject's lower body extends from the foreground to the middle ground. The statement about the concrete steps is incorrect; they do not extend into the background but are initially at the top and then shift to the top right corner in the middle ground. The video also shows a blue tarp covering part of the ground in the center background, which is not mentioned. Additionally, the description of the right hand is inaccurate; the right hand is already holding a brick.",
+  "revised_caption_by_generated_critique": "From a high-angle, first-person perspective, the subject's lower body extends from the bottom center foreground to the middle ground. A bucket containing cement is positioned in the center left middle ground. Adjacent to the bucket, a partially constructed brick wall extends from the top left middle ground downwards. Several loose bricks are scattered in the center right middle ground. Concrete steps are initially at the top and then shift to the top right corner in the middle ground. Greenery occupies the background, primarily on the left side below the wall. A blue tarp covers part of the ground in the center background. Initially, the subject's left hand holds a brick in the bottom left foreground, while the right hand, already holding a brick, is visible in the bottom right foreground.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "2aU6O-hbhmI.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:10:46.385875",
+  "generation_timestamp": "2025-09-29T10:33:08.794196",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video does not feature a high-angle perspective; instead, it is captured from a level angle. The red lattice arm of the crane extends from the top right to the center of the frame, rather than from the right side diagonally toward the top left. Additionally, a large blue tarp is visible in the bottom right corner of the frame throughout the shot.",
-  "revised_caption_by_generated_critique": "This video is an extreme wide scenery shot captured from a level angle. Initially, the red lattice arm of a large construction crane is positioned in the foreground, extending from the top right to the center of the frame. A second crane is visible in the middle ground on the left, with a dense cityscape of skyscrapers filling the bottom and center of the frame. A large blue tarp is visible in the bottom right corner of the frame throughout the shot. The camera moves forward, causing the foreground crane's arm to sweep across the top of the frame, revealing more of the urban environment below and altering the composition of the shot.",
+  "generated_critique": "The video does not feature a high-angle perspective; instead, it is captured from a level angle. Additionally, the red lattice arm of the crane extends from the top right to the center of the frame, rather than from the right side diagonally toward the top left. The camera remains stationary throughout the shot, with no forward movement or sweeping motion of the crane arm.",
+  "revised_caption_by_generated_critique": "This video features an extreme wide scenery shot captured from a level angle. Initially, the red lattice arm of a large construction crane is positioned in the foreground, extending from the top right to the center of the frame. A second crane is visible in the middle ground on the left, with a dense cityscape of skyscrapers filling the bottom and center of the frame. The camera remains stationary throughout the shot, maintaining a consistent view of the urban environment.",
   "status": "success"
 }

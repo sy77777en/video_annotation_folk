@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.6.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:41:52.730321",
+  "generation_timestamp": "2025-09-29T08:20:46.664078",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The abstract figure actually moves from the top-right corner to the bottom-left corner, contrary to the description that it moves from the bottom-left to the top-right. 2. Additionally, the abstract linear figure continuously rotates backward and does not exhibit any forward motion. 3. The figure briefly pauses in the center of the screen before continuing its movement, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The abstract linear figure, which includes colored dots and resembles a bicycle with a rider, travels diagonally downwards from the top-right corner to the bottom-left corner of the screen. Concurrently, some of its line segments rotate backward, simulating wheels, while other articulated lines perform a continuous, cyclical motion akin to pedaling. The entire figure briefly pauses in the center of the screen before continuing its movement.",
+  "generated_critique": "1. The abstract figure actually moves from the top-right corner to the bottom-left corner, contrary to the description that it moves from the bottom-left to the top-right. 2. The background of the video briefly flashes red as the figure moves, which is not mentioned in the caption. 3. Additionally, the abstract linear figure continuously rotates backward and does not exhibit any forward motion.",
+  "revised_caption_by_generated_critique": "The abstract linear figure, which includes colored dots and resembles a bicycle with a rider, travels diagonally downwards from the top-right corner to the bottom-left corner of the screen. Concurrently, some of its line segments rotate, simulating wheels, while other articulated lines perform a continuous, cyclical motion akin to pedaling. The entire figure continuously rotates backward without any forward motion. Additionally, the background of the video briefly flashes red as the figure moves.",
   "status": "success"
 }

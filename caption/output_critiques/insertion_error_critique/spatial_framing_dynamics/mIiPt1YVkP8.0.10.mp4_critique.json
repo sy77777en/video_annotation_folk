@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:33:16.700729",
+  "generation_timestamp": "2025-09-29T12:39:29.422751",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle is described as low, but it should be level. Additionally, the description of the runway lights is inaccurate; they should extend from the right-center bottom toward the right of the frame. Furthermore, the caption omits details about the foreground and background. The foreground includes the runway, runway lights, and a large grassy area, while the background is characterized by darkness. The caption also incorrectly suggests that the airplanes are moving, but they remain stationary throughout the shot.",
-  "revised_caption_by_generated_critique": "This wide shot begins with two stationary airplanes, \"UAL 1118\" on the left and \"UAL 863\" on the right, positioned in the middle ground on a runway. The camera, positioned at a level angle, arcs clockwise while simultaneously zooming out. This movement reveals two additional stationary airplanes, \"PAL 115\" and \"UAL 1,\" appearing sequentially to the right of the initial two. The final composition shows all four airplanes lined up from left to right across the middle ground. In the foreground, the runway, runway lights, and a large grassy area are visible, while the background is characterized by darkness. The runway lights extend from the right-center bottom toward the right of the frame.",
+  "generated_critique": "The camera angle is described as low, but it should be level. Additionally, the description of the runway lights is inaccurate; they should extend from the right-center bottom toward the right of the frame. The caption also incorrectly suggests that the airplanes are all the same size in the frame, when in fact \"UAL 1\" appears noticeably smaller than the others. Furthermore, the caption omits details about the foreground and background. The foreground includes the runway, runway lights, and a large grassy area, while the background is characterized by darkness.",
+  "revised_caption_by_generated_critique": "This wide shot begins with two airplanes, UAL 1118 on the left and UAL 863 on the right, positioned in the middle ground on a runway. The camera, positioned at a level angle, arcs clockwise while simultaneously zooming out. This movement reveals two additional airplanes, PAL 115 and UAL 1, appearing sequentially to the right of the initial two, with UAL 1 appearing noticeably smaller than the others. The final composition shows all four airplanes lined up from left to right across the middle ground. A row of runway lights extends from the right-center bottom toward the right of the frame. The foreground includes the runway, runway lights, and a large grassy area, while the background is characterized by darkness.",
   "status": "success"
 }

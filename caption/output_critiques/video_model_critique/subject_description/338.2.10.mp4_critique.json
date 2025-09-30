@@ -2,7 +2,7 @@
   "video_id": "338.2.10.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:29:34.892026",
+  "generation_timestamp": "2025-09-29T12:42:49.176541",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Here is a detailed feedback on the provided caption.\n\n**Feedback:**\n\nThe caption is generally good, providing an accurate and detailed description of the main subject and the setting. However, it fails to adhere to one of the key negative constraints in the instructions.\n\n*   **Accuracy:** The description of the woman's appearance (maroon vest, \"Susan\" name tag, white shirt, dark hair, glasses), her action (using chopsticks), and the items on the table (dishes of food, glass of iced tea) is accurate.\n\n*   **Completeness:** The caption successfully covers the most salient visual information in the video.\n\n*   **Adherence to Instructions:**\n    *   **Violation:** The caption violates the instruction: \"**You must avoid subjective adjectives that convey emotions.**\" The phrase \"...highlighting her **calm and composed demeanor** as she eats\" is a subjective interpretation of the woman's emotional state. Her expression is neutral, and assigning \"calm and composed\" to it is an inference, not a direct visual observation.\n    *   **Minor Deviation:** The phrase \"The lighting focuses on her...\" describes a cinematographic technique rather than the subject itself. While the lighting is a prominent feature, a more compliant description would focus on the visual result, for example, by stating that she is brightly lit against a dark background.\n\nIn summary, the caption is strong in its objective description of physical attributes but falters by including subjective emotional language, which is explicitly forbidden by the instructions.",
-  "revised_caption_by_generated_critique": "The video shows a woman seated at a dining table, brightly illuminated against a dark background. She has medium-length dark hair, wears glasses, and is dressed in a white shirt and a maroon vest with a name tag that reads \"Susan.\" She is using chopsticks to eat from a plate of food. Other dishes, including a plate of greens and a glass of iced tea, are also on the table.",
+  "generated_critique": "The caption accurately describes the woman's appearance, clothing, and posture. However, the final sentence, \"The lighting focuses on her, highlighting her calm and composed demeanor,\" includes a subjective interpretation. The phrase \"calm and composed demeanor\" violates the instruction to \"avoid subjective adjectives that convey emotions.\" This part of the sentence should be removed to adhere to the guidelines. A more objective description would focus only on her observable expression, such as \"She looks forward with a neutral expression.\"",
+  "revised_caption_by_generated_critique": "The video features a woman seated at a table, wearing a maroon vest with a name tag that reads \"Susan\" over a white shirt. She has medium-length dark hair and is wearing glasses. The woman is using chopsticks to eat from a plate of food in front of her. The table is set with various dishes, including a plate of greens and a glass of iced tea. The lighting focuses on her as she looks forward with a neutral expression.",
   "status": "success"
 }

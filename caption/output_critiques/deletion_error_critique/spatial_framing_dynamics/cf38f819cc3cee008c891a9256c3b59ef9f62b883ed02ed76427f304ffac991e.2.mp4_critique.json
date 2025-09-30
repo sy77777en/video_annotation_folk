@@ -2,7 +2,7 @@
   "video_id": "cf38f819cc3cee008c891a9256c3b59ef9f62b883ed02ed76427f304ffac991e.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:01:42.909947",
+  "generation_timestamp": "2025-09-29T08:48:31.863500",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The woman and the white horse are actually positioned in the foreground, not the middle ground as stated.  \n3. Contrary to the description, the camera does not remain stationary; it pans left, pauses briefly, and then continues to pan left to follow the subjects.",
-  "revised_caption_by_generated_critique": "This full shot frames a woman on the left and a white horse on the right, both positioned in the foreground of a sandy enclosure. In the background, a solid wall, houses, and trees are visible. The woman, holding a lead rope, pivots in the left-center of the frame as the horse walks in a counter-clockwise circle around her. The horse's movement takes it from the right side of the frame into the background, then across to the left behind the woman, and finally back towards the foreground, completing its circular path. The camera pans left, pauses briefly, and then continues to pan left to follow the subjects.",
+  "generated_critique": "1. The woman and the white horse are actually positioned in the foreground, not the middle ground as stated.  \n2. The horse moves from the right side of the frame into the center, rather than into the background, and it does not move across to the left behind the woman.",
+  "revised_caption_by_generated_critique": "This full shot frames a woman on the left and a white horse on the right, both positioned in the foreground of a sandy enclosure. In the background, a solid wall, houses, and trees are visible. The woman, holding a lead rope, pivots in the left-center of the frame as the horse walks in a counter-clockwise circle around her. The horse's movement takes it from the right side of the frame into the center, then back towards the foreground, completing its circular path. The camera remains stationary and is positioned at the subjects' level.",
   "status": "success"
 }

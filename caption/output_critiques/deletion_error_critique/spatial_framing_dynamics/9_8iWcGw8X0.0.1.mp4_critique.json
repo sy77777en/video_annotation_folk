@@ -2,7 +2,7 @@
   "video_id": "9_8iWcGw8X0.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:49:46.003439",
+  "generation_timestamp": "2025-09-29T04:43:20.018396",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The phrase \"A grassy clearing with small trees occupies the foreground at the bottom of the frame\" should be revised to \"A grassy clearing occupies the foreground at the bottom of the frame.\"\n\n2. The phrase \"From which a rainbow emerges on the right and arcs towards the top left\" should be revised to \"From which a rainbow emerges at the bottom center and arcs towards the top left.\"\n\n3. The phrase \"The camera is positioned at a high angle\" should be revised to \"The camera is initially positioned at a level angle, and as it follows the rainbow, it tilts more upward and then slightly downward.\"",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a landscape, with no single main subject. The focus is on the grand scale and atmospheric beauty of the natural environment. Initially, a grassy clearing occupies the foreground at the bottom of the frame. The middle ground is composed of rolling green hills, from which a rainbow emerges at the bottom center and arcs towards the top left. The camera then pans left and tilts upward, following the rainbow's curve as it rises higher into the sky, moving towards the center of the frame. During this movement, a large tree enters from the left, becoming a prominent foreground element that frames the view of the rainbow and the distant hills. The camera is initially positioned at a level angle, and as it follows the rainbow, it tilts more upward and then slightly downward, looking out over the expansive scenery.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The phrase \"A grassy clearing with small trees occupies the foreground at the bottom of the frame\" should be revised to \"A grassy clearing occupies the foreground at the bottom of the frame.\"\n\n2. The phrase \"The middle ground is composed of rolling green hills\" should be revised to \"The middle ground is composed of rolling green hills and some trees.\"\n\n4. The phrase \"The camera is positioned at a high angle\" should be revised to \"The camera is initially positioned at a level angle, and as it follows the rainbow, it tilts more upward and then slightly downward.\"",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a landscape, with no single main subject. The focus is on the grand scale and atmospheric beauty of the natural environment. Initially, a grassy clearing occupies the foreground at the bottom of the frame. The middle ground is composed of rolling green hills and some trees, from which a rainbow emerges on the right and arcs towards the top left. The camera then pans left and tilts upward, following the rainbow's curve as it rises higher into the sky, moving towards the center of the frame. During this movement, a large tree enters from the left, becoming a prominent foreground element that frames the view of the rainbow and the distant hills. The camera is initially positioned at a level angle, and as it follows the rainbow, it tilts more upward and then slightly downward, looking out over the expansive scenery.",
   "status": "success"
 }

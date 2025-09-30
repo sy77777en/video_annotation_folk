@@ -2,7 +2,7 @@
   "video_id": "LtXUoaZcp70.6.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:26:34.378087",
+  "generation_timestamp": "2025-09-29T05:33:43.003198",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description inaccurately states that a single red figure stands at the top edge of the table; the red figure is actually positioned near the bottom right corner of the table.\n\n2. Additionally, the description incorrectly mentions a single blue figure walking from right to left through a doorway in the top left background; the blue figure is actually stationary in a walking position in the doorway.\n\n3. The description should clarify that a glowing red object in a box is located to the left of the white grid on the table.\n\n4. Remove the word \"static\" as the camera is moving.",
-  "revised_caption_by_generated_critique": "In a wide, top-down shot, a long, black rectangular table is positioned horizontally across the center of the frame in the middle ground. A single red figure stands near the bottom right corner of the table, with numerous orange figures surrounding the table's top, bottom, and right sides, all in the middle ground. On the table, a white grid is located in the center, and a glowing red object in a box is to its left. In the top left quadrant, a few orange figures stand in the middle ground, while a single blue figure is stationary in a walking position in a doorway in the top left background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description inaccurately states that a single red figure stands at the top edge of the table; the red figure is actually positioned near the bottom edge of the table.\n\n2. Additionally, the description incorrectly mentions a single blue figure walking from right to left through a doorway in the top left background; the blue figure is actually stationary in a walking position in the doorway.\n\n3. The description should clarify that a glowing red object in a box is located to the left of the white grid on the table.\n\n4. Remove the word \"static\" as the camera is moving.",
+  "revised_caption_by_generated_critique": "In a wide, top-down shot, a long, black rectangular table is positioned horizontally across the center of the frame in the middle ground. A single red figure stands near the bottom edge of the table close to the frame's center, with numerous orange figures surrounding the table's top, bottom, and right sides, all in the middle ground. On the table, a white grid is located in the center, and a glowing red object in a box is to its left. In the top left quadrant, a few orange figures stand in the middle ground, while a single blue figure is stationary in a walking position in the doorway in the top left background.",
   "status": "success"
 }

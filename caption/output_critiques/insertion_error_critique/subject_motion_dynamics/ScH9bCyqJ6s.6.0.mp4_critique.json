@@ -2,7 +2,7 @@
   "video_id": "ScH9bCyqJ6s.6.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:35:27.204071",
+  "generation_timestamp": "2025-09-29T07:11:03.418421",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-29T14:24:40.837528",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video does not display the zooming out or pull-back effect as described in the caption. Instead, it features a static shot with the camera remaining stationary. The hand holding the device makes slight movements, shifting the device slightly, but there are no significant movements. At one point, a second hand briefly enters the frame from the left, although it does not interact with the component.",
-  "revised_caption_by_generated_critique": "The camera remains stationary, focusing on a small electronic component held between a person's thumb and index finger. The hand makes slight movements, subtly shifting the component. At one point, a second hand briefly enters the frame from the left but does not interact with the component.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video does not display the zooming out or pull-back effect as described in the caption. Instead, it features a static shot with the camera remaining stationary. The hand holding the device makes slight movements, shifting the device slightly, but there are no significant movements. Additionally, a second hand briefly enters the frame and taps the table next to the component, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The camera remains stationary, focusing on a small electronic component held between a person's thumb and index finger. The hand makes slight movements, shifting the component slightly. A second hand briefly enters the frame to tap the table next to the component.",
   "status": "success"
 }

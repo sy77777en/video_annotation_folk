@@ -2,7 +2,7 @@
   "video_id": "7O1eibuPn84.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:53:58.210620",
+  "generation_timestamp": "2025-09-29T10:07:38.294803",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The text is not actually in the foreground; it is an overlay positioned in the bottom left corner. Additionally, the video does not include any visible reflections on the ground beneath the turtle.",
-  "revised_caption_by_generated_critique": "The video begins with a ground-level shot featuring a blurry light brown foreground, a strip of darker earth with sparse grass in the middle ground, and a blurred green and brown background. A turtle then enters from the right, walking leftward into the middle ground, which transitions the scene into a full shot of the animal. As the turtle occupies the right side of the frame, a white text box labeled \"TURTLE\" appears as an overlay in the bottom-left corner. The camera remains positioned at the turtle's level throughout the shot, and there are no visible reflections on the ground beneath the turtle.",
+  "generated_critique": "The text is not actually in the foreground; it is an overlay positioned in the bottom left corner. Additionally, the video does not include any visible birds in the background at any point.",
+  "revised_caption_by_generated_critique": "The video begins with a ground-level shot featuring a blurry light brown foreground, a strip of darker earth with sparse grass in the middle ground, and a blurred green and brown background. A turtle then enters from the right, walking leftward into the middle ground, which transitions the scene into a full shot of the animal. As the turtle occupies the right side of the frame, a white text box labeled \"TURTLE\" appears as an overlay in the bottom-left corner. The camera remains positioned at the turtle's level throughout the shot.",
   "status": "success"
 }

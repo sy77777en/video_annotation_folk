@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:21:02.497879",
+  "generation_timestamp": "2025-09-29T07:50:01.578492",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The text and subtitles are onscreen overlays, so they should not be described as being in the foreground. Additionally, the camera does not zoom in; instead, it moves forward. The humanoid figure is consistently positioned in the foreground center of the frame, rather than in the middle ground. The background color shifts from blue to green during the shot transitions.",
-  "revised_caption_by_generated_critique": "The video opens with a medium shot, showing a humanoid figure from the waist up, centered in the foreground of the frame. This figure initially faces slightly to the right, then turns to face the camera directly. A glowing white waveform is positioned in the background, stretching horizontally across the center of the frame behind the figure. The text \"ITV - Major Fraud (2003)\" is displayed as an onscreen overlay in the bottom left corner, while subtitles appear sequentially as overlays in the bottom center. The camera moves forward to a medium close-up, focusing on the figure's upper body and head, which remains centered in the foreground. Subsequently, the view moves back to the initial medium shot, with the figure still centered in the foreground and facing forward. The background color shifts from blue to green during the shot transitions, and the camera maintains a position at the subject's level throughout these movements.",
+  "generated_critique": "The text and subtitles are onscreen overlays, so they should not be described as being in the foreground. Additionally, the camera does not zoom in; instead, it moves forward. The humanoid figure is consistently positioned in the foreground center of the frame, rather than in the middle ground. The camera angle is slightly tilted to the left throughout the scene.",
+  "revised_caption_by_generated_critique": "The video opens with a medium shot, showing a humanoid figure from the waist up, centered in the foreground of the frame. This figure initially faces slightly to the right, then turns to face the camera directly. A glowing white waveform is positioned in the background, stretching horizontally across the center of the frame behind the figure. The text \"ITV - Major Fraud (2003)\" is displayed as an onscreen overlay in the bottom left corner, while subtitles appear sequentially as overlays in the bottom center. The camera then moves forward to a medium close-up, focusing on the figure's upper body and head, which remains centered in the foreground. Subsequently, the view moves back to the initial medium shot, with the figure still centered in the foreground and facing forward. The camera maintains a slightly tilted angle to the left throughout these transitions.",
   "status": "success"
 }

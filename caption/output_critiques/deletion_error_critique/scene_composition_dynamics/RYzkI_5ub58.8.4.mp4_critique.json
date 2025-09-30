@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.8.4.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:03:31.938536",
+  "generation_timestamp": "2025-09-29T06:21:07.573244",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the sentence: \"The water is clear and blue, illuminating the diverse textures of the reef.\"",
-  "revised_caption_by_generated_critique": "An underwater scene reveals a vibrant coral reef composed of red, pink, and purple formations surrounding a patch of light-colored sand. A spiny lobster with a striped body and long, white antennae is positioned in the center on the sand. Small orange fish swim around the colorful coral, and a long, thin, patterned creature is partially visible in a dark crevice in the upper left.",
+  "generated_critique": "Please remove the sentence: \"A spiny lobster with a striped body and long, white antennae is positioned in the center on the sand.\" Additionally, revise the description to: \"A long, thin, patterned creature is partially visible in the upper left.\"",
+  "revised_caption_by_generated_critique": "An underwater scene reveals a vibrant coral reef composed of red, pink, and purple formations surrounding a patch of light-colored sand. Small orange fish swim around the colorful coral, and a long, thin, patterned creature is partially visible in the upper left. The water is clear and blue, illuminating the diverse textures of the reef.",
   "status": "success"
 }

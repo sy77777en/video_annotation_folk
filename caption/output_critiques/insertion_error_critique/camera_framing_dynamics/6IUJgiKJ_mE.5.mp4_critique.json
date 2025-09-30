@@ -2,7 +2,7 @@
   "video_id": "6IUJgiKJ_mE.5.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:44:09.161667",
+  "generation_timestamp": "2025-09-29T12:55:24.531941",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The camera initially faces backward and moves in the same direction down the road as the cyclists. It then smoothly pans to the left until it faces forward, continuing to move down the road. Please remove the phrase \"simultaneously trucking left\" from the description. Additionally, the video briefly features a noticeable fisheye lens distortion, causing the edges of the frame to curve outward.\n\n2. Please refer to \"cyclists\" instead of \"one cyclist,\" as multiple cyclists are visible throughout the video.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot maintains a deep focus with a large depth of field, keeping the cyclists and the surrounding scenery sharp. The camera initially faces backward and moves in the same direction down the road as the cyclists. It then smoothly pans to the left until it faces forward, continuing to move down the road. The video briefly features a noticeable fisheye lens distortion, causing the edges of the frame to curve outward.",
+  "generated_critique": "1. The camera initially faces backward and moves in the same direction down the road as the cyclists. It then smoothly pans to the left until it faces forward, continuing to move down the road. Please remove the phrase \"simultaneously trucking left\" from the description. Additionally, the video appears to use a slight fisheye lens, causing noticeable curvature at the edges of the frame.\n\n2. Please refer to \"cyclists\" instead of \"one cyclist,\" as multiple cyclists are visible throughout the video.",
+  "revised_caption_by_generated_critique": "This eye-level, level-angle shot maintains a deep focus with a large depth of field, keeping the cyclists and the surrounding scenery sharp. The camera initially faces backward and moves in the same direction down the road as the cyclists. It then smoothly pans to the left until it faces forward, continuing to move down the road. The video appears to use a slight fisheye lens, causing noticeable curvature at the edges of the frame.",
   "status": "success"
 }

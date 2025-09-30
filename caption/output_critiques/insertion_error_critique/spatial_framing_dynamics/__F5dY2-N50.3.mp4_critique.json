@@ -2,7 +2,7 @@
   "video_id": "__F5dY2-N50.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:46:56.085267",
+  "generation_timestamp": "2025-09-29T11:29:06.278617",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that a small dog is sitting near the bottom-left corner of the frame in the foreground at the start of the video.",
-  "revised_caption_by_generated_critique": "This video presents a wide shot of an outdoor patio scene, captured from a high angle. The shot focuses on the scenery rather than a specific subject. Initially, a small dog is sitting near the bottom-left corner of the frame in the foreground. A round, glass-topped table is in the center-right middle ground, with the back of a chair in the bottom-center foreground. In the background, two lounge chairs are on the right, while a sandy area with a tree occupies the top-left. The camera slowly pans to the left, shifting the table and chair toward the right edge of the frame. This movement brings the sandy area, foliage, and stepping stones from the left side to fill the center and left portions of the view.",
+  "generated_critique": "The caption should also mention that a person is seated at the table in the center-right middle ground, facing away from the camera, which affects the spatial dynamics of the scene.",
+  "revised_caption_by_generated_critique": "This video presents a wide shot of an outdoor patio scene, captured from a high angle. The shot focuses on the scenery rather than a specific subject. Initially, a round, glass-topped table is in the center-right middle ground, with a person seated at the table, facing away from the camera, which affects the spatial dynamics of the scene. The back of a chair is in the bottom-center foreground. In the background, two lounge chairs are on the right, while a sandy area with a tree occupies the top-left. The camera slowly pans to the left, shifting the table, person, and chair toward the right edge of the frame. This movement brings the sandy area, foliage, and stepping stones from the left side to fill the center and left portions of the view.",
   "status": "success"
 }

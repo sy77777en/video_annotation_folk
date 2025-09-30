@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:17:59.915687",
+  "generation_timestamp": "2025-09-29T09:12:09.553702",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Since this is a 2D video, please remove terms like \"foreground\" and \"middle ground\" from the caption.\n2. As this is a 2D video, please remove the sentence \"The camera is positioned at eye level with the subjects,\" as it involves information about height.",
-  "revised_caption_by_generated_critique": "A medium shot frames an older man and a small monkey against a solid tan background. The man is positioned in the right-center of the frame, holding the monkey, which is situated in the left-center of the frame. The monkey's paw is placed on the man's cheek.",
+  "generated_critique": "1. Since this is a 2D video, please remove terms like \"foreground\" and \"middle ground\" from the caption.\n2. The shot described is not a medium shot but rather a close-up shot.",
+  "revised_caption_by_generated_critique": "An older man and a small monkey are framed against a solid tan background. The man is positioned in the right-center of the frame, holding the monkey, which is in the left-center. The monkey's paw rests on the man's cheek. The camera is positioned at eye level with the subjects in a close-up shot.",
   "status": "success"
 }

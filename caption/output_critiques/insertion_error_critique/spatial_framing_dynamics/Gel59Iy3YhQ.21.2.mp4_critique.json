@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.21.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:38:48.772895",
+  "generation_timestamp": "2025-09-29T05:55:47.586788",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-20T14:03:33.920707",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "2D game, please avoid descriptions like foreground and mid-ground. It is not an extreme wide shot, but a wide shot. There are some trees scattered above and to the right of the green, and there are also some grass around it. The camera angle remains fixed throughout the video without any panning or zooming.",
-  "revised_caption_by_generated_critique": "The video is captured in a wide shot from an oblique top-down perspective. A pixelated player character stands on a putting green, with the hole and flag positioned slightly above them. The golf ball travels from the player's position toward the hole. There are trees scattered above and to the right of the green, with some grass around it, a sand trap to the left, and a body of water on the far left. A dirt path runs across the bottom of the frame. Various user interface elements are overlaid: information panels are in the top-left and top-right corners, a club selection is on the left edge, a power meter is at the bottom center, and a ball icon is in the bottom-right corner. As the ball approaches the hole, a distance counter in the top center of the frame decreases. After the ball lands in the hole, large text reading \"CHIP IN BIRDIE\" appears in the center of the frame, overlaying the player character. The camera angle remains fixed throughout the video without any panning or zooming.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "2D game, please avoid descriptions like foreground and mid-ground. It is not an extreme wide shot, but a wide shot. There are some trees scattered above and to the right of the green, and there are also some grass around it. The camera briefly zooms in on the hole after the ball is sunk, which should be mentioned.",
+  "revised_caption_by_generated_critique": "The video is captured in a wide shot from an oblique top-down perspective. A pixelated player character stands on a putting green, with the hole and flag positioned slightly above them. The golf ball travels from the player's position toward the hole. Surrounding the green are scattered trees above and to the right, with some grass around it, a sand trap to the left, and a body of water on the far left. A dirt path runs across the bottom of the frame. Various user interface elements are overlaid: information panels are in the top-left and top-right corners, a club selection is on the left edge, a power meter is at the bottom center, and a ball icon is in the bottom-right corner. As the ball approaches the hole, a distance counter in the top center decreases. After the ball lands in the hole, the camera briefly zooms in on the hole, and large text reading \"CHIP IN BIRDIE\" appears in the center, overlaying the player character.",
   "status": "success"
 }

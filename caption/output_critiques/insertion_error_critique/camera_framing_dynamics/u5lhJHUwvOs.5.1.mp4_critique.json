@@ -2,7 +2,7 @@
   "video_id": "u5lhJHUwvOs.5.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:09:15.002268",
+  "generation_timestamp": "2025-09-29T10:30:54.308839",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please note that the focus is primarily on the lower half of the man's face.  \n2. The man's face is actually in the foreground, not the midground.  \n3. The phrase \"with only minor, smooth, and unintentional movement\" should be revised, as the camera appears to be unsteady and shakes throughout the video. As such, also remove \"mostly static\" as it could be confusing.  \n4. The video appears to use a noticeable fisheye lens, which causes strong curvature at the edges of the frame.",
-  "revised_caption_by_generated_critique": "This is an eye-level, level-angle shot with an extremely shallow depth of field, focusing primarily on the lower half of the man's face in the foreground. The camera exhibits noticeable shaking throughout the video, and a fisheye lens is used, causing strong curvature at the edges of the frame.",
+  "generated_critique": "1. Please note that the focus is primarily on the lower half of the man's face.  \n2. The man's face is actually in the foreground, not the midground.  \n3. The phrase \"with only minor, smooth, and unintentional movement\" should be revised, as the camera appears to be unsteady and shakes throughout the video. As such, also remove \"mostly static\" as it could be confusing.  \n4. The video appears to use a wide-angle lens, which introduces noticeable barrel distortion along the edges of the frame.",
+  "revised_caption_by_generated_critique": "This is an eye-level, level-angle shot with an extremely shallow depth of field, focusing primarily on the lower half of the man's face in the foreground. The camera exhibits noticeable unsteadiness and shakes throughout the video. A wide-angle lens is used, introducing noticeable barrel distortion along the edges of the frame.",
   "status": "success"
 }

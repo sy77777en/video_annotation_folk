@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.4.4.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:15:36.928179",
+  "generation_timestamp": "2025-09-29T05:17:53.014664",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please avoid mentioning the depth, such as \"foreground,\" when describing the overlay of the digital heads-up display.  \n2. Change \"slightly to the left\" to \"arcs counterclockwise around the opening.\" This movement reveals more of the ceiling and the space within the room above.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, a rifle is positioned in the bottom right, aimed downward through a rectangular opening that occupies the center of the frame. A digital heads-up display is overlaid on the left. Through the opening, a dimly lit room is visible. The camera, positioned high and looking down, slowly tilts further downward and arcs counterclockwise around the opening. This movement reveals more of the ceiling and the space within the room above, while the rifle and HUD maintain their relative positions within the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please avoid mentioning the depth, such as \"foreground,\" when describing the overlay of the digital heads-up display.  \n2. Change \"slowly tilts further downward\" to \"slowly tilts upward.\" This movement reveals more of the ceiling and the upper part of the room.",
+  "revised_caption_by_generated_critique": "From a first-person perspective, a rifle is positioned in the bottom right, aimed downward through a rectangular opening that occupies the center of the frame. A digital heads-up display is overlaid on the left. Through the opening, a dimly lit room is visible. The camera, positioned high and looking down, slowly tilts upward and slightly to the left. This movement reveals more of the ceiling and the upper part of the room, while the rifle and HUD maintain their relative positions within the frame.",
   "status": "success"
 }

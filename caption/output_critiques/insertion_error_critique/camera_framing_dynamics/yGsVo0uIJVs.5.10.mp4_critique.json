@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.5.10.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:37:50.949068",
+  "generation_timestamp": "2025-09-29T09:44:38.620244",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please change \"smooth, eye-level shot\" to \"smooth, level-angle, eye-level shot.\" Also, mention that the camera briefly zooms out at the start of the shot.",
-  "revised_caption_by_generated_critique": "This is a smooth, level-angle, eye-level shot with a shallow depth of field, focusing on a gloved hand in the midground as it interacts with a control panel. The camera briefly zooms out at the start of the shot and then moves forward slightly.",
+  "generated_critique": "Please change \"smooth, eye-level shot\" to \"smooth, level-angle, eye-level shot.\" Also, specify that the camera uses a wide-angle lens with noticeable barrel distortion.",
+  "revised_caption_by_generated_critique": "This is a smooth, level-angle, eye-level shot with a shallow depth of field, focusing on a gloved hand in the midground as it interacts with a control panel. The camera, using a wide-angle lens with noticeable barrel distortion, moves forward slightly.",
   "status": "success"
 }

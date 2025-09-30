@@ -2,7 +2,7 @@
   "video_id": "60.0.31.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T11:23:05.033495",
+  "generation_timestamp": "2025-09-29T17:23:28.452199",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to explain the cause of the change in shot size. The initial position of the woman in pink is described incorrectly. The direction in which the women shift is also stated incorrectly.",
-  "revised_caption_by_generated_critique": "The video begins with a medium full shot, featuring the main woman in black in the left foreground and a second woman in pink in the center foreground. The shot then transitions to a full shot, caused by the camera zooming out, making the subjects appear smaller in the frame and revealing more of the green sports field, which occupies the foreground and middle ground. During this transition, both women shift slightly towards the right of the frame, remaining in the foreground. Throughout the shot, blue bleachers extend horizontally across the middle ground, with a building and trees visible in the top right background. The camera is positioned at the subjects' level.",
+  "generated_critique": "The caption fails to explain the cause of the shot size change. The initial position of the woman in pink is described inaccurately. The direction of the women's movement is also described incorrectly.",
+  "revised_caption_by_generated_critique": "The video begins with a medium full shot, featuring the main woman in black in the left foreground and a second woman in pink in the right foreground. The shot then transitions to a full shot, making the subjects appear smaller in the frame and revealing more of the green sports field, which occupies the foreground and middle ground. This change in shot size occurs as the camera zooms out. During this transition, both women shift slightly towards the right of the frame, remaining in the foreground. Throughout the shot, blue bleachers extend horizontally across the middle ground, with a building and trees visible in the top right background. The camera is positioned at the subjects' level.",
   "status": "success"
 }

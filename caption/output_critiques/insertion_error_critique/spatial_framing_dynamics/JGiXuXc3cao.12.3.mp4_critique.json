@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.12.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:21:38.225245",
+  "generation_timestamp": "2025-09-29T09:19:25.094229",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please incorporate a slow backward movement of the camera. Avoid using terms like foreground, middle ground, or background, as they can be confusing. Additionally, include the text displayed in the box beneath the red circular target. The video also briefly shows a small blue arrow moving along the edge of the outlined shape as it is being traced.\n\n2. At the beginning, there is an object made up of multiple glowing white lines near the coordinates, which gradually disappears as the camera moves backward. As the outline forms, a large, glowing white silhouette appears within it.",
-  "revised_caption_by_generated_critique": "The video shows a digital map with a red text label \"TITANIC WRECK\" at the top center, above a glowing red circular target slightly to the right. Below the target, a white box displays coordinates: 41°43'35\" N, 49°56'54\" W. A white compass icon is visible at the bottom left. The camera slowly moves backward, revealing a glowing red dashed line tracing a large, irregular shape. As this outline forms, a large, glowing white silhouette becomes more visible within it. Initially, an object made of multiple glowing white lines is near the coordinates but gradually disappears as the camera moves. A small blue arrow briefly moves along the edge of the outlined shape as it is being traced.",
+  "generated_critique": "1. Please incorporate a slow backward movement of the camera. Avoid using terms like foreground, middle ground, or background, as they can be confusing. Additionally, include the text displayed in the box beneath the red circular target. The video also briefly shows a small blue arrow moving along the edge of the outlined shape, which should be described.\n\n2. At the beginning, there is an object made up of multiple glowing white lines near the coordinates, which gradually disappears as the camera moves backward. As the outline forms, a large, glowing white silhouette appears within it.",
+  "revised_caption_by_generated_critique": "The video shows a digital map with a red text \"TITANIC WRECK\" at the top center, above a glowing red circular target slightly to the right. Below the target, a white box displays coordinates: 41°43'35\" N, 49°56'54\" W. A white compass-like icon is at the bottom left. The camera slowly moves backward, revealing a glowing red dashed line tracing a large, irregular shape. A small blue arrow briefly moves along the edge of this shape. Initially, multiple glowing white lines are visible near the coordinates, gradually disappearing as the camera retreats. As the outline forms, a large, glowing white silhouette becomes more visible within it, while other elements remain unchanged.",
   "status": "success"
 }

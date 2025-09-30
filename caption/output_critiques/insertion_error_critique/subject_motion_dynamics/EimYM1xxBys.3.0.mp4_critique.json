@@ -2,7 +2,7 @@
   "video_id": "EimYM1xxBys.3.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:29:09.602219",
+  "generation_timestamp": "2025-09-29T05:41:21.963141",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-14T02:13:59.962099",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The human figure runs through an open area of the forest and pauses momentarily as the drone with a red light hovers nearby, scanning the surroundings with its beam. The individual briefly turns back before continuing to the right of the frame, while a white light appears from the left. The person remains in motion, occasionally jumping to avoid the light. Please remove the sentence \"The drone adjusts its position in response, shifting its flight path to follow the person’s movements through the forest\" as this action is not depicted. Additionally, include that red laser projectiles occasionally appear from the left to the right of the frame. It should also be noted that a second drone briefly lands on a tree branch in the background before taking off again, although this is not central to the main action.",
-  "revised_caption_by_generated_critique": "The human figure runs through an open area of the forest and pauses momentarily as the drone with a red light hovers nearby, scanning the surroundings with its beam. The individual briefly turns back before continuing to the right of the frame, while a white light appears from the left. The person remains in motion, occasionally jumping to avoid the light. Red laser projectiles occasionally appear from the left to the right of the frame. A second drone briefly lands on a tree branch in the background before taking off again, although this is not central to the main action.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The human figure runs through an open area of the forest and pauses momentarily as the drone with a red light hovers nearby, scanning the surroundings with its beam. The individual briefly turns back before continuing to the right of the frame, while a white light appears from the left. The person remains in motion, occasionally jumping to avoid the light. Please remove the sentence \"The drone adjusts its position in response, shifting its flight path to follow the person’s movements through the forest\" as this action is not depicted. Additionally, include that red laser projectiles occasionally appear from the left to the right of the frame. Also, mention that a second drone briefly lands on a tree branch before taking off again, even though this is not shown in the video.",
+  "revised_caption_by_generated_critique": "The human figure runs through an open area of the forest and pauses momentarily as the drone with a red light hovers nearby, scanning the surroundings with its beam. The individual briefly turns back before continuing to the right of the frame, while a white light appears from the left. The person remains in motion, occasionally jumping to avoid the light. Red laser projectiles occasionally appear from the left to the right of the frame. A second drone briefly lands on a tree branch before taking off again.",
   "status": "success"
 }

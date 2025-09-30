@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.5.0.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:20:27.813161",
+  "generation_timestamp": "2025-09-29T09:17:34.011956",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The setting is not clearly identifiable as indoors, so please remove the reference to an indoor setting. The large red surface is actually a person wearing red clothing, and the number \"50\" does not have a white outline. Additionally, since this is a 2D video, it would be more accurate to avoid describing a character as occupying the foreground of the shot and in the background. There is also a blue circular icon overlay in the upper right corner that should be mentioned if present.",
-  "revised_caption_by_generated_critique": "The scene features a brightly lit setting. In the background, a white board with the black text \"TEAM WHITE\" is visible on the left. To the right, a person wearing red clothing has the number \"50\" printed in white. A character is prominently featured in the shot. Additionally, a blue circular icon overlay is present in the upper right corner.",
+  "generated_critique": "The setting is not clearly identifiable as indoors, so please remove the reference to an indoor setting. The large red surface is actually a person wearing red clothing, and the number \"50\" does not have a white outline. Additionally, since this is a 2D video, it would be more accurate to avoid describing a character as occupying the foreground of the shot and in the background. There is also a blue circular icon with a white arrow overlayed in the upper right corner, which should be mentioned as an overlay element.",
+  "revised_caption_by_generated_critique": "The scene features a brightly lit setting. In the background, a white board with the black text \"TEAM WHITE\" is visible on the left. To the right, a person wearing red clothing has the number \"50\" printed in white. Additionally, a blue circular icon with a white arrow is overlayed in the upper right corner.",
   "status": "success"
 }

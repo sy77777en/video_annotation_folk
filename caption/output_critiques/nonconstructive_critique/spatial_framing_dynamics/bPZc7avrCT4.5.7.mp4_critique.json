@@ -2,7 +2,7 @@
   "video_id": "bPZc7avrCT4.5.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T11:35:14.992523",
+  "generation_timestamp": "2025-09-29T17:30:13.136249",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot size is not a medium shot for all subjects, as some are visible from the legs up. The orange water balloon is not positioned directly above the kneeling man. The description of the kneeling man popping the balloon is inaccurate, as it implies he actively moved his knife. The camera's height is not at the eye level of the standing man. The men are not all in their described 3D positions, with some being incorrectly placed in the middle ground.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot. A partially visible man stands on the far left in the foreground. To his right, a second man stands left of center, visible from the legs up, and a third man is half-kneeling right of center, also visible from the legs up. An orange water balloon is seen slightly off-center above the kneeling man. The background features trees across the frame, with a stack of wood left of center. As the camera shifts slightly to the right, the man on the far left moves out of the frame. The kneeling man on the right remains still as the descending balloon bursts upon contact with his stationary knife, causing a large water splash upwards and outwards in the right and center-right of the frame. The standing man remains positioned left of center. The camera is positioned slightly below the eye level of the standing man and roughly level with the upper body of the kneeling man.",
+  "generated_critique": "The description of the shot size as a \"medium shot\" is inaccurate for all subjects. The initial position of the orange water balloon is described incorrectly. The caption fails to describe the movement, or lack thereof, of the kneeling man during the balloon pop. The description of the camera's height relative to the subjects is incorrect. The description of the men's depth is incorrect, as they are not in different depth planes.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot. A partially visible man stands on the far left in the foreground. To his right, a second man stands left of center, and a third man is half-kneeling right of center, all in the same depth plane. An orange water balloon is initially seen top-center, directly above the kneeling man. The background features trees across the frame, with a stack of wood left of center. As the camera shifts slightly to the right, the man on the far left exits the frame. The kneeling man on the right remains still as he pops the descending balloon with a knife, causing a large water splash upwards and outwards in the right and center-right of the frame. The standing man remains positioned left of center. The camera is positioned at eye level with the standing man and roughly level with the upper body of the kneeling man.",
   "status": "success"
 }

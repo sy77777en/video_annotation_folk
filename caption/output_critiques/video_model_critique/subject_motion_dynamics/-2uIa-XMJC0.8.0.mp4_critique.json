@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.8.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T21:25:22.491616",
+  "generation_timestamp": "2025-09-29T03:57:01.723058",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is inaccurate and does not adhere to the instructions. It incorrectly describes the man's motion, stating that he is \"walking towards the camera\" and \"continues to approach.\" In the video, the man remains stationary in the background. The sense of movement and shifting proximity is created by the disorienting, lurching motion of the camera's point of view, a key detail the caption omits. Furthermore, the caption inaccurately claims the man's face \"becomes clearer\" and that the video ends with him \"standing close to the camera\"; the entire scene remains heavily blurred and the man's distance is ambiguous due to the erratic camera work. The description of his \"focused expression\" is a subjective interpretation, which violates the instruction to avoid emotional or subjective adjectives.",
-  "revised_caption_by_generated_critique": "The video opens with a heavily blurred, disorienting view of a dark room filled with glowing blue and purple screens. The camera's point of view lurches and shifts erratically throughout the clip. A man is visible standing stationary in the background amidst the equipment and screens, which display various data, including an image of a brain scan. Due to the constant motion and lack of focus, the entire scene remains indistinct and distorted, making the man's features and distance from the camera ambiguous.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the final action and includes a subjective description. The phrase \"showing a focused expression\" is an interpretation of the man's state of mind and should be removed. More importantly, the video does not show the man \"punching the camera.\" Instead, it presents a first-person perspective where, after the man leans in, the camera's view is violently and erratically thrown backward and shaken, suggesting an impact from the viewer's point of view. The description should be corrected to reflect the motion of the camera's perspective rather than inferring an action that is not explicitly shown.",
+  "revised_caption_by_generated_critique": "The video begins with a blurred, dark room filled with multiple screens displaying various images and data. As the camera moves, the screens show colorful displays, including brain scans and other data visualizations. A man appears in the background and walks toward the camera, his face becoming clearer as he approaches. He leans in close, and then the camera's perspective is suddenly and violently thrown backward and shaken, suggesting an impact from the viewer's point of view.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "xhrAGJviQJA.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:23:11.600666",
+  "generation_timestamp": "2025-09-29T09:19:28.991188",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The driver and the car should be described as being in the foreground.  \n2. The road should not be described as steep.  \n4. Modify \"while the camera's angle shifts slightly\" to \"while the camera rolls first clockwise, then counterclockwise.\"",
-  "revised_caption_by_generated_critique": "Mounted on the side of an off-road vehicle, the camera captures a tilted, wide-angle view, creating a diagonal composition. A medium shot of the vehicle and its driver occupies the foreground on the right and bottom-right of the frame, remaining fixed in this position. The unpaved path stretches from the bottom-left foreground into the middle ground, while the barren mountainside rises in the background on the right. The overcast sky fills the top-left of the frame, with the sun visible as a bright spot in the upper-left quadrant. As the vehicle drives forward, the entire landscape, from the foreground path to the background mountain, appears to rotate around the fixed perspective of the car, while the camera rolls first clockwise, then counterclockwise, causing the diagonal orientation of the scene to change dynamically.",
+  "generated_critique": "1. The driver and the car should be described as being in the foreground.\n2. The road should not be described as steep.\n3. Change \"tilted\" to \"level-angle.\"",
+  "revised_caption_by_generated_critique": "Mounted on the side of an off-road vehicle, the camera captures a level-angle, wide-angle view, creating a diagonal composition. A medium shot of the vehicle and its driver occupies the foreground on the right and bottom-right of the frame, remaining fixed in this position. The unpaved path stretches from the bottom-left foreground into the middle ground, while the barren mountainside rises in the background on the right. The overcast sky fills the top-left of the frame, with the sun visible as a bright spot in the upper-left quadrant. As the vehicle drives forward, the entire landscape, from the foreground path to the background mountain, appears to rotate around the fixed perspective of the car, while the camera's angle shifts slightly, causing the diagonal orientation of the scene to change dynamically.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "P0LyR-c617A.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:40:36.089721",
+  "generation_timestamp": "2025-09-29T12:18:32.081035",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The dog does not enter from the bottom left. The horse and rider do not travel from the left to the right side of the frame. The description of the horse and rider's position within the frame as the camera pans is inaccurate.",
-  "revised_caption_by_generated_critique": "In a full shot, a woman on a horse is positioned in the center of the frame and the middle ground, turning around a blue barrel. As they complete the turn, they move toward the left side of the frame, and a dog runs alongside them in the middle ground. The horse and rider continue their movement, with the camera panning to follow them. A dirt arena occupies the foreground and middle ground, with a fence and trees in the background. The camera is positioned at the subjects' level.",
+  "generated_critique": "The caption incorrectly identifies the dog's entry point. The description of the horse and rider's travel direction across the frame is also incorrect. Consequently, the statement about their position during the camera pan is inaccurate.",
+  "revised_caption_by_generated_critique": "In a full shot, a woman on a horse is positioned in the center of the frame and the middle ground, turning around a blue barrel. As they complete the turn, they move toward the right side of the frame, and a dog enters from the bottom right, running alongside them in the middle ground. The horse and rider then travel from the right to the left side of the frame, staying in the middle ground, while the camera pans to follow their movement. A dirt arena occupies the foreground and middle ground, with a fence and trees in the background. The camera is positioned at the subjects' level.",
   "status": "success"
 }

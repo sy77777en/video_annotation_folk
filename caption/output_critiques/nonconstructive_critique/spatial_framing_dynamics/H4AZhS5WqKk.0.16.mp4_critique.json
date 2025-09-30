@@ -2,7 +2,7 @@
   "video_id": "H4AZhS5WqKk.0.16.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:08:31.862619",
+  "generation_timestamp": "2025-09-29T09:43:00.285574",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the shot as static and omits the initial focus on the building's exterior and the subsequent forward camera movement. The 2D positions of the bowl of olives and the coupe glass are described incorrectly. The description of the mouse's actions is inaccurate, as it does not reach for and pick up the olives. The path of the olives' movement is also described incorrectly.",
-  "revised_caption_by_generated_critique": "The scene begins with a focus on the building's exterior, and the camera moves forward through a dark window frame that occupies the foreground. In the middle ground, positioned on the windowsill, an animated mouse stands between a bowl of olives on the bottom right and a coupe glass on the bottom left. The interior of the apartment is visible in the background. The mouse gestures towards the olives, which then rise into the air directly above its head, following a path from the bottom right, up into the center of the frame, and back down. The camera is positioned at the subject's level.",
+  "generated_critique": "The description of the shot as \"static\" is incorrect. The caption is missing the initial part of the shot and the camera's forward movement. The 2D positions of the bowl of olives and the coupe glass are described incorrectly. The description of the mouse's actions, including reaching for the olives and the outcome of the toss, is inaccurate. Additionally, the description of the olives' movement path within the frame is wrong.",
+  "revised_caption_by_generated_critique": "The scene opens with a dynamic camera movement, gradually pushing forward through a dark window frame that occupies the foreground. In the middle ground, an animated mouse stands on the windowsill, with a bowl of olives positioned to its right and a coupe glass to its left. The interior of the apartment is visible in the background. The mouse reaches to its right, picks up a skewer of olives, and tosses them into the air above its head, successfully catching them. The olives move from the bottom right, up into the center of the frame, and back down. The camera is positioned at the subject's level.",
   "status": "success"
 }

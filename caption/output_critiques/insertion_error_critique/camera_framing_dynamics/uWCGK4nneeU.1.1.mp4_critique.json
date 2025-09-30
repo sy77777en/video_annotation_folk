@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.1.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:35:49.072440",
+  "generation_timestamp": "2025-09-29T08:12:10.890567",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the video is presented in slow-motion, as this affects the perception of the camera's movement and subject dynamics.",
-  "revised_caption_by_generated_critique": "The camera is at an aerial level, initially adopting a low angle looking upwards, which transitions to a level angle as it moves. A deep focus with a large depth of field is maintained throughout. The camera executes a very smooth upward movement while trucking to the left. It also performs an initial slight pan to the left, which then shifts to a pan to the right. The video is presented in slow-motion, enhancing the perception of the camera's movement and subject dynamics.",
+  "generated_critique": "The camera exhibits noticeable barrel distortion along the edges, causing straight lines to bow outward.",
+  "revised_caption_by_generated_critique": "The camera is at an aerial level, initially adopting a low angle looking upwards, which transitions to a level angle as it moves. A deep focus with a large depth of field is maintained throughout. The camera executes a very smooth upward movement while trucking to the left, with noticeable barrel distortion along the edges causing straight lines to bow outward. It also performs an initial slight pan to the left, which then shifts to a pan to the right.",
   "status": "success"
 }

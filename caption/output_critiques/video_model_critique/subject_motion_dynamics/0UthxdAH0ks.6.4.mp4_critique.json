@@ -2,7 +2,7 @@
   "video_id": "0UthxdAH0ks.6.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T00:44:01.414181",
+  "generation_timestamp": "2025-09-29T06:30:30.770498",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\nThe caption is accurate in its description of the events in the video. However, it does not fully adhere to the provided instructions.\n\nThe main issue is the inclusion of detailed descriptions of the subject's appearance (\"a young man with short black hair and a medium skin tone, wearing a dark-colored shirt\"). The instructions explicitly state to \"Avoid describing the details of the subject's appearance unless you need to differentiate between multiple subjects by their appearance.\" Since he is the only fully visible person, these details are unnecessary.\n\nAdditionally, the caption describes the setting (\"The background is dimly lit with warm lighting, and there are lamps on the table\"), which, while true, detracts from the primary instruction to \"Focus on the subject's motion.\"\n\nThe part of the caption that does describe motion (\"The young man remains mostly still, focusing on the food, while the other hands continue to pick up food\") is good and follows the guidelines. A better caption would have focused solely on this aspect, omitting the appearance and setting details.",
-  "revised_caption_by_generated_critique": "A man sits at a table, remaining still as he watches other hands use chopsticks to take food from a dish in front of him.",
+  "generated_critique": "The caption includes descriptions of the subject's appearance (\"with short black hair and a medium skin tone, wearing a dark-colored shirt\") and the setting (\"The background is dimly lit with warm lighting, and there are lamps on the table\"), which should be removed to adhere to the instruction to focus only on the subject's motion. The description of the actions is accurate and in the correct chronological order, but the overall paragraph is not concise due to the extra information. The caption should be revised to describe only the movements of the man and the surrounding hands.",
+  "revised_caption_by_generated_critique": "A young man sits still at a table, looking down at food. Around him, other hands use chopsticks to pick up pieces of food from a shared dish.",
   "status": "success"
 }

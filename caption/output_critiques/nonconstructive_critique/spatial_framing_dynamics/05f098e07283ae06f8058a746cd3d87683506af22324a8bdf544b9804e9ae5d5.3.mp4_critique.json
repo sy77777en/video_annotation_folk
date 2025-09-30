@@ -2,7 +2,7 @@
   "video_id": "05f098e07283ae06f8058a746cd3d87683506af22324a8bdf544b9804e9ae5d5.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:33:31.603627",
+  "generation_timestamp": "2025-09-29T04:07:09.917511",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T10:49:40.613311",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to specify the 3D position of the people. The position of the rocky terrain is described inaccurately. The statement that the camera's height remains consistent is incorrect.",
-  "revised_caption_by_generated_critique": "The video showcases an extreme wide shot of a lush, natural landscape dominated by a waterfall. The waterfall is centrally positioned in the middle ground, with its two streams cascading into a small pool below. Initially, several people are visible near the base of the waterfall, positioned slightly to the left and in the foreground of the frame. As the video progresses, these individuals gradually move out of the frame, leaving the waterfall as the sole focal point. Dense greenery surrounds the waterfall, occupying the left, right, and upper portions of the frame, extending from the foreground to the background. The rocky terrain is situated to the sides and behind the waterfall, forming part of the background. The camera starts from a high vantage point above the waterfall and gradually lowers, offering a dynamic view of the entire scene. The framing remains consistent, capturing the expansive greenery and the central waterfall in full view.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the position of the rocky terrain. The statement that the camera's height remains consistent throughout the video is inaccurate. The caption also fails to specify the depth of the people within the scene.",
+  "revised_caption_by_generated_critique": "The video showcases an extreme wide shot of a lush, natural landscape dominated by a waterfall. The waterfall is centrally positioned in the middle ground, with its two streams cascading into a small pool below. Initially, several people are visible near the base of the waterfall, positioned in the bottom center of the frame, and they appear to be in the foreground relative to the waterfall. As the video progresses, these individuals gradually move out of the frame, leaving the waterfall as the sole focal point. Dense greenery surrounds the waterfall, occupying the left, right, and upper portions of the frame, extending from the foreground to the background. The rocky terrain is situated to the sides and slightly behind the waterfall, forming part of the middle ground. The camera starts with a high vantage point above the waterfall and the surrounding area, but it gradually shifts in height, offering varied perspectives of the scene. The framing remains consistent in capturing the expansive greenery and the central waterfall in full view.",
   "status": "success"
 }

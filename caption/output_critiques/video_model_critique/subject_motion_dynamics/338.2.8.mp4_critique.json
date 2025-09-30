@@ -2,7 +2,7 @@
   "video_id": "338.2.8.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:44:26.230977",
+  "generation_timestamp": "2025-09-29T13:35:12.116955",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This caption is not good because it is inaccurate, lacks conciseness, and fails to focus on the primary motion as instructed.\n\nHere's a detailed breakdown of the issues:\n\n*   **Inaccuracy:** The caption incorrectly identifies the number of subjects. It describes a third woman and then a final, fourth woman, but the video only shows three people at the table: an older couple and one other woman. The caption splits the description of the third person into two, creating a confusing and inaccurate narrative.\n*   **Violation of Core Instructions:** The instructions state, \"Focus on the subject's motion\" and avoid describing details not related to movement. The caption dedicates significant length to static descriptions of the subjects' clothing (\"yellow patterned top,\" \"maroon vest with gold trim over a white shirt\") and the background decor (\"dimly lit restaurant with traditional decor, including a large painting on the wall and a hanging lantern\"). This violates the instruction to prioritize motion.\n*   **Lack of Conciseness:** By including excessive details about appearance and setting, the caption becomes overly long and loses its focus, failing to be the \"concise yet informative description\" requested.\n*   **Incomplete Motion Description:** The most prominent motion in the video is the rapid, shaky, and blurry pan of the camera's perspective across the table. The caption simply says the camera \"pans,\" which doesn't capture the dynamic and unsteady quality of the movement. The subjects' own movements (eating with chopsticks) are mentioned but are secondary to the camera's motion.",
-  "revised_caption_by_generated_critique": "A shaky, blurry, first-person perspective shot rapidly pans from left to right across a dinner table in a dimly lit restaurant. The camera moves past an older woman and an older man, both eating with chopsticks, before briefly settling on a younger woman with glasses who is also eating.",
+  "generated_critique": "The caption is overly descriptive of the subjects' appearances and the background, which violates the instruction to focus on motion and be concise. It correctly identifies the camera pan but buries this key motion within lengthy descriptions of static elements like clothing (\"yellow patterned top,\" \"maroon vest with gold trim\") and background decor (\"dimly lit restaurant,\" \"large painting\"). The description of the subjects' actions is also repetitive (\"holding chopsticks\"). The caption should be rewritten to prioritize the primary motion—the rapid, blurry camera pan—and concisely mention the subjects being revealed in chronological order as they sit at a table.",
+  "revised_caption_by_generated_critique": "In a dimly lit restaurant, a rapid, blurry camera pan sweeps from left to right across a dinner table, moving past a woman and a man before briefly focusing on another woman in glasses and a vest, all of whom are eating.",
   "status": "success"
 }

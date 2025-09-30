@@ -2,7 +2,7 @@
   "video_id": "2dacd61df3146649c49dd1f16adeb7c52d5a447127427c4948b37fc0ae306d7d.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:12:52.721215",
+  "generation_timestamp": "2025-09-29T05:45:53.683112",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption inaccurately describes the camera's height. The description of the windows' position is incomplete, as it fails to mention their presence in the foreground. The location of the rubble is described imprecisely. The caption also omits the debris visible in the foreground at the lower left corner.",
-  "revised_caption_by_generated_critique": "The video presents a wide shot of an abandoned hallway, capturing the full length and breadth of the corridor. The camera is positioned slightly below eye level, providing a clear view of the entire scene. The graffiti-covered walls occupy the left and right sides of the frame, extending from the foreground to the background. On the right side, large windows line the wall, visible from the foreground to the background, allowing natural light to enter. The floor, marked with cracks and debris, spans the bottom of the frame from the foreground to the background, with noticeable debris in the foreground at the lower left corner. A pile of rubble is visible in the foreground on the left side. The ceiling, showing signs of wear, is situated at the top of the frame, running continuously from the foreground to the background. As the camera moves forward, the perspective shifts slightly, maintaining the same shot size while bringing different sections of the hallway into clearer view. The initial and final states of the shot remain consistent in terms of framing, with the camera steadily advancing through the corridor.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the camera's height is incorrect. The positioning of the windows is inaccurately described. The caption fails to mention the debris located in the foreground.",
+  "revised_caption_by_generated_critique": "The video presents a wide shot of an abandoned hallway, capturing the full length and breadth of the corridor. The camera remains at a consistent height, slightly above eye level, providing a clear view of the entire scene. The graffiti-covered walls occupy the left and right sides of the frame, extending from the foreground to the background. On the right side, large windows line the wall, positioned in the foreground and middle ground, allowing natural light to enter. The floor, marked with cracks and debris, spans the bottom of the frame from the foreground to the background, with noticeable debris located in the foreground. A pile of rubble is visible in the middle ground on the left side. The ceiling, showing signs of wear, is situated at the top of the frame, running continuously from the foreground to the background. As the camera moves forward, the perspective shifts slightly, maintaining the same shot size while bringing different sections of the hallway into clearer view. The initial and final states of the shot remain consistent in terms of framing, with the camera steadily advancing through the corridor.",
   "status": "success"
 }

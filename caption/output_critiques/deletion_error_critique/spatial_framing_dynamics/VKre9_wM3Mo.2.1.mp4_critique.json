@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:17.798459",
+  "generation_timestamp": "2025-09-29T07:28:50.822796",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description inaccurately states that the colored wires extend downwards from the plate. In reality, the wires extend from the top of the water tank to connect to the central plate.\n2. The camera does not remain static; instead, it moves slowly and smoothly. However, the specific motion is difficult to discern due to the absence of background cues.",
-  "revised_caption_by_generated_critique": "A close-up shot centers on the upper portion of a toilet, which occupies the bottom half of the frame in the foreground. The camera moves slowly and smoothly at the subject's level, though the specific motion is subtle due to the lack of background cues. From the top of the frame, a small, grey rectangular plate descends and stops in the top center, positioned in the middle ground just above the toilet. This plate contains a large circular button on its left and a smaller one on its right. Six thin, colored wires extend upwards from the top of the toilet tank, connecting to the central plate.",
+  "generated_critique": "1. The description inaccurately states that the colored wires extend downwards from the plate. In reality, the wires extend from the top of the water tank to connect to the central plate.  \n3. The phrase \"positioned in the middle ground just above the toilet\" should be revised to \"positioned in the foreground just above the toilet.\"",
+  "revised_caption_by_generated_critique": "A close-up shot centers on the upper portion of a toilet, which occupies the bottom half of the frame in the foreground. The camera remains static and at the subject's level. From the top of the frame, a small, grey rectangular plate descends and stops in the top center, positioned in the foreground just above the toilet. This plate contains a large circular button on its left and a smaller one on its right. Six thin, colored wires extend upwards from the top of the toilet tank to connect to the plate.",
   "status": "success"
 }

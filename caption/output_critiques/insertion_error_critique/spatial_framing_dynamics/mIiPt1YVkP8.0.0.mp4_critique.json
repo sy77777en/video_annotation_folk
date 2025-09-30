@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:00:59.951305",
+  "generation_timestamp": "2025-09-29T10:18:02.911938",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The shot is not static; the camera is subtly moving in a downward spiral.\n\n2. Text overlays are not part of the foreground, middle ground, or background; they are simply overlays.\n\n3. Classify the terminal building to be in the foreground rather than the middleground.\n\n4. The camera is positioned at eye level with the terminal building, not above it.",
-  "revised_caption_by_generated_critique": "This dynamic, extreme wide shot captures a high-angle aerial view of a sprawling airport complex at night, with the camera subtly moving in a downward spiral. The airport's infrastructure, outlined by glowing lights, fills the entire frame. A brightly lit, circular terminal building is positioned in the lower right of the frame in the foreground. A text overlay reading \"July 7, 2017\" is centered on the screen. The camera is positioned at eye level with the terminal building.",
+  "generated_critique": "1. The shot is not static; the camera is subtly moving in a downward spiral.\n\n2. Text overlays are not part of the foreground, middle ground, or background; they are simply overlays.\n\n3. Classify the terminal building to be in the foreground rather than the middleground.\n\n4. The camera is positioned at eye level with the terminal building, not at a high angle.",
+  "revised_caption_by_generated_critique": "This dynamic, extreme wide shot captures a downward spiral aerial view of a sprawling airport complex at night. The airport's infrastructure, outlined by glowing lights, fills the entire frame. A brightly lit, circular terminal building is positioned in the lower right of the frame in the foreground. A text overlay reading \"July 7, 2017\" is centered on the screen. The camera is positioned at eye level with the terminal building.",
   "status": "success"
 }

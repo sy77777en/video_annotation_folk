@@ -2,7 +2,7 @@
   "video_id": "6zblV1RyJWM.2.0.mp4",
   "caption_type": "motion",
   "critique_type": "blind_model_critique",
-  "generation_timestamp": "2025-09-28T08:50:16.059110",
+  "generation_timestamp": "2025-09-29T13:39:49.415854",
   "model": "gemini-2.5-pro",
   "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This caption is not good for the video.\n\n### Feedback:\n\n**Accuracy:** The caption describes the static appearance of an elephant and its surroundings. It is highly likely that a video would feature some form of movement, even if subtle (e.g., blinking, breathing, swaying). By describing only static features, the caption likely misrepresents the video's content. If the elephant is completely still, the caption fails to state this as instructed.\n\n**Completeness:** The caption is fundamentally incomplete. It completely omits the primary required element: a description of the subject's motion. The instructions explicitly ask for a description of actions in chronological order, which is entirely missing.\n\n**Adherence to Instructions:** The caption fails to adhere to several key instructions:\n*   **Primary Goal:** It does not describe the subject's motion at all. Instead, it focuses entirely on the subject's appearance and the background, which the instructions specifically advise against.\n*   **Subjective Language:** It uses the subjective phrase \"calm and composed demeanor,\" which is explicitly forbidden.\n*   **Focus:** The instructions state, \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" This caption does the exact opposite.\n*   **Handling No Movement:** If the elephant were truly motionless, the instruction is to \"briefly mention that without going into too much detail.\" This caption goes into extensive detail about the elephant's appearance instead of simply stating it is still.",
-  "revised_caption_by_generated_critique": "The video shows an elephant standing still in a dry, hilly landscape. The elephant occasionally blinks and gently sways its trunk, while its ears flick slightly. The focus remains on these subtle movements, with the background providing a natural setting.",
+  "generated_critique": "This caption fails to describe the subject's motion, which is the primary instruction. Instead, it focuses entirely on the static appearance of the elephant and the background, details that should be secondary to its actions. The use of subjective language like \"calm and composed demeanor\" is an interpretation of the elephant's emotional state and should be avoided. Assuming the video shows movement, the caption should have detailed these actions chronologically. For example, it could have described how the elephant rhythmically flaps its large ears back and forth to cool itself, or how it slowly raises its trunk, curls the tip to sniff the air, and then lowers it to the ground. A more effective caption would focus on these specific movements, such as: \"The elephant stands in place, swaying its head gently from side to side while continuously flapping its ears. It then raises its trunk, curling the tip inward before lowering it out of view.\"",
+  "revised_caption_by_generated_critique": "The video captures an elephant standing in place, gently swaying its head from side to side while rhythmically flapping its large ears. The elephant raises its trunk, curling the tip inward to sniff the air, before lowering it out of view against the backdrop of a dry, hilly landscape.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:23:39.439743",
+  "generation_timestamp": "2025-09-29T07:53:31.595597",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera initially captures the side of the screen displaying the \"order & pay here\" message in blue and white text. A small potted plant is visible on the left edge of the frame in the foreground during this initial view. It then smoothly arcs clockwise around the self-service kiosk, revealing the side with the order menu. Finally, the camera returns to the front view of the \"order & pay here\" screen and stabilizes at the kiosk's level. Initially, the camera captures an angled view of the kiosk.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot of a self-service kiosk, centered in the frame and positioned in the middle ground. Initially, the camera captures an angled view of the kiosk's right side, where the screen displays the \"order & pay here\" message in blue and white text. A small potted plant is visible on the left edge of the frame in the foreground. The camera then smoothly arcs in a clockwise direction around the kiosk, revealing the side with the order menu. This movement transitions to a direct frontal view of the screen, again showing the \"order & pay here\" message, and stabilizes at the kiosk's level. The tiled floor is visible in the bottom foreground and middle ground, with a blurred, light background occupying the top and rear of the scene.",
+  "generated_critique": "The camera initially captures the side of the screen displaying the \"order & pay here\" message in blue and white text. A small potted plant is visible on the left edge of the frame in the foreground throughout the shot. It then smoothly arcs clockwise around the self-service kiosk, revealing the side with the order menu. Finally, the camera returns to the front view of the \"order & pay here\" screen and stabilizes at the kiosk's level. Initially, the camera captures an angled view of the kiosk (deletes the \"right side\").",
+  "revised_caption_by_generated_critique": "The video maintains a full shot of a self-service kiosk, consistently positioned in the center of the frame and in the middle ground. Initially, the camera captures an angled view of the kiosk, focusing on the side of the screen displaying the \"order & pay here\" message in blue and white text. A small potted plant is visible on the left edge of the frame in the foreground throughout the shot. The camera then smoothly arcs in a clockwise direction around the kiosk, revealing the side with the order menu. Finally, it returns to a direct frontal view of the \"order & pay here\" screen and stabilizes at the kiosk's level. The tiled floor is visible in the bottom foreground and middle ground, with a blurred, light background occupying the top and rear of the scene.",
   "status": "success"
 }

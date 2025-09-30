@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.3.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:11:27.529036",
+  "generation_timestamp": "2025-09-29T05:15:01.429120",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-16T00:25:41.404042",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The bird is initially positioned in the center-left of the frame, rather than the bottom left as described. Additionally, the video briefly shows a second bird entering the background near the top right corner before exiting the frame.",
-  "revised_caption_by_generated_critique": "The video features a bird in a full shot, initially positioned in the center-left of the frame, in the foreground. The bird is standing on a muddy surface with shallow puddles, which occupy the middle ground and background. As the video progresses, the bird moves from the left to the right side of the frame, maintaining its position in the foreground. The camera remains at the bird's level throughout, capturing its movement across the uneven terrain. Briefly, a second bird enters the background near the top right corner before exiting the frame. The muddy environment, with its mounds and depressions, forms the backdrop, with the bird's movement creating a dynamic interaction with the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The bird is initially positioned in the center-left of the frame, rather than the bottom left as described. Additionally, the video includes a brief moment where a second bird enters the background near the top right, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video features a bird in a full shot, initially positioned in the center-left of the frame, in the foreground. The bird is standing on a muddy surface with shallow puddles, which occupy the middle ground and background. As the video progresses, the bird moves from the left to the right side of the frame, maintaining its position in the foreground. The camera remains at the bird's level throughout, capturing its movement across the uneven terrain. The muddy environment, with its mounds and depressions, forms the backdrop, with the bird's movement creating a dynamic interaction with the scene. Briefly, a second bird enters the background near the top right, adding an additional element to the scene.",
   "status": "success"
 }

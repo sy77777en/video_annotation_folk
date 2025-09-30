@@ -2,7 +2,7 @@
   "video_id": "1018.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:00:25.360493",
+  "generation_timestamp": "2025-09-29T04:34:10.070997",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T00:23:22.430933",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption omits the man's initial 3D position and incorrectly states that he shifts to the left.",
-  "revised_caption_by_generated_critique": "The video presents a medium shot of a man standing inside a train compartment. Initially, he is positioned slightly to the right of the center of the frame, with his upper body and part of his lower body visible. The man is seen interacting with the environment, moving his arms and hands towards the window frame. As the video progresses, he leans forward, placing his arms on the window ledge, which brings him closer to the foreground. His position shifts slightly to the right side of the frame while maintaining his central prominence. The background remains consistent, featuring a green and white interior with maps and communication equipment on the walls. The camera maintains a steady height at the subject's level throughout the sequence, capturing the man's actions and the detailed interior of the train compartment. The spatial dynamics highlight the man's movement from a more upright stance to a leaning posture, emphasizing his interaction with the window and the surrounding environment.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption fails to mention the man's initial 3D position. The description of the man shifting to the left is incorrect.",
+  "revised_caption_by_generated_critique": "The video presents a medium shot of a man standing inside a train compartment. Initially, he is positioned centrally in the frame, with his upper body and part of his lower body visible, and his 3D position is slightly towards the back of the compartment. The man is seen interacting with the environment, moving his arms and hands towards the window frame. As the video progresses, he leans forward, placing his arms on the window ledge, which brings him closer to the foreground. His position remains central in the frame while maintaining his prominence. The background remains consistent, featuring a green and white interior with maps and communication equipment on the walls. The camera maintains a steady height at the subject's level throughout the sequence, capturing the man's actions and the detailed interior of the train compartment. The spatial dynamics highlight the man's movement from a more upright stance to a leaning posture, emphasizing his interaction with the window and the surrounding environment.",
   "status": "success"
 }

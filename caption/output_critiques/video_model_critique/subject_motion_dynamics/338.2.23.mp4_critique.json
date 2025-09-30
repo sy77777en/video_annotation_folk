@@ -2,7 +2,7 @@
   "video_id": "338.2.23.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:02:13.570933",
+  "generation_timestamp": "2025-09-29T13:03:31.616383",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Siyuan Cen"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is not good for this video.\n\n**Accuracy:**\n*   The caption inaccurately states that the woman in blue \"stands up from her seat.\" In the video, she is already standing and in the process of walking away from the table. The action of standing up is not shown.\n*   The woman is wearing a blue top or shirt, not a \"blue vest.\"\n*   The caption speculates that the man in the white shirt is holding a \"blue napkin.\" The object's identity is unclear; it could be a fan or another item.\n*   It also assumes that all \"three men in maroon shirts\" are \"carrying trays with food,\" which is not clearly visible.\n\n**Adherence to Instructions:**\n*   The caption violates the instruction to \"Avoid describing anything not visible or uncertain\" by speculating about the \"blue napkin\" and the \"trays with food.\"\n*   It also fails to describe the motion accurately by stating the woman \"stands up,\" an action that does not occur in the video.\n\n**Completeness:**\n*   While the caption attempts to be comprehensive by describing both the main group and the background activity, its value is diminished by the inaccuracies.\n\nIn summary, the caption fails because it includes speculative details and describes an action that does not happen, directly contradicting the core instructions to be accurate and avoid assumptions.",
-  "revised_caption_by_generated_critique": "In a restaurant with ornate wooden decor and warm lighting, a group of people are gathered around a dining table. A man in a white shirt, holding chopsticks and a blue object, gestures as he speaks to a man in a yellow shirt who is eating with chopsticks. A woman with long dark hair in a green top sits at the table eating. On the right, a woman in a blue top is walking away from the table. In the background, other diners are present, and staff members in maroon shirts move around the restaurant.",
+  "generated_critique": "The caption contains factual inaccuracies and unnecessary scene-setting details. The person placing the rice is a woman in a blue top, not a \"server in a blue vest.\" The description of \"three men in maroon shirts carrying trays\" is also incorrect; only one server in a maroon shirt is clearly seen walking in the background. The opening sentence describing the restaurant's decor should be removed to focus solely on motion as per the instructions. The description of the woman in blue's motion is incomplete; it should state that she approaches from the right, places the bowl, and then moves back to the right. Additionally, the description of the man in the white shirt could be more specific by mentioning that he gestures with his hands while he talks.",
+  "revised_caption_by_generated_critique": "At a dining table in a restaurant, a woman in a blue top approaches from the right, places a bowl of rice on the table, and moves back toward the right. A man in a white shirt, holding a blue napkin and chopsticks, gestures with his hands as he talks to a man in a yellow shirt. The man in the yellow shirt and a woman in a green top eat with chopsticks. In the background, a server in a maroon shirt walks by.",
   "status": "success"
 }

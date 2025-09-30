@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.2.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:41:49.422015",
+  "generation_timestamp": "2025-09-29T09:50:03.382378",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The numbers shown in the video are incorrect. They should rise from 36 to 102, 211 to 593, and 21 to 59, rather than 86 to 102, 498 to 593, and 50 to 59. Additionally, the video does not show any pop-up notifications appearing on the screen during the sequence.",
-  "revised_caption_by_generated_critique": "On a computer screen displaying a privacy dashboard, the numbers in three counters rapidly increase. The \"TOTAL DATA BROKERS\" count rises from 36 to 102, \"LISTINGS REVIEWED\" from 211 to 593, and \"DATA BROKERS WITH YOUR INFO\" from 21 to 59. Simultaneously, a cursor moves to and clicks the \"View Report\" button, with no pop-up notifications appearing on the screen during the sequence.",
+  "generated_critique": "The numbers shown in the video are incorrect. They should rise from 36 to 102, 211 to 593, and 21 to 59, rather than 86 to 102, 498 to 593, and 50 to 59. Additionally, the video briefly shows a notification pop-up in the lower right corner, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "On a computer screen displaying a privacy dashboard, the numbers in three counters rapidly increase. The \"TOTAL DATA BROKERS\" count rises from 36 to 102, \"LISTINGS REVIEWED\" from 211 to 593, and \"DATA BROKERS WITH YOUR INFO\" from 21 to 59. Simultaneously, a cursor moves to and clicks the \"View Report\" button. A notification pop-up briefly appears in the lower right corner of the screen.",
   "status": "success"
 }

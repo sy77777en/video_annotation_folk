@@ -2,7 +2,7 @@
   "video_id": "1widYShgv6o.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:51:58.141110",
+  "generation_timestamp": "2025-09-29T05:24:51.011557",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to mention the effect of the camera's movement on the athletes' positions within the frame. The uniform colors of the three athletes are misidentified, and the description of the track's curve is inaccurate. The direction of the athletes' movement is described incorrectly. The athletes are incorrectly placed in the foreground instead of the middle ground. The phrase \"To his left\" does not accurately describe the spatial relationship between the athletes.",
-  "revised_caption_by_generated_critique": "The video captures a wide shot of a track and field event in an indoor stadium. In the middle ground, athletes are running on a curved track. Initially, a man in a blue uniform is positioned on the left, running ahead of others. Behind him, three other athletes in red, green, and yellow uniforms follow. As the video progresses, the athletes move from the left to the right of the frame, with the camera panning to maintain their positions relative to each other. The track, marked with white lines, curves from the bottom left to the top right. In the background, spectators fill the tiered seating, with some sections more populated than others. The stadium features bright lighting, colorful banners, and digital screens displaying event information. Signboards, including a prominent \"SEIKO\" sign, line the track. The camera remains at the athletes' level throughout, capturing the dynamic movement and vibrant atmosphere of the competition.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly identifies the athletes' position in the scene's depth. The description of the athletes' direction of movement is wrong, and the explanation of how their relative positions change within the frame is also inaccurate. The caption fails to mention the effect of the camera's movement on the athletes' framing. Additionally, the uniform colors of three athletes are described incorrectly, and the description of the track's curve is inaccurate. The spatial relationship between the lead athlete and the others is also described incorrectly.",
+  "revised_caption_by_generated_critique": "The video captures a wide shot of a track and field event in an indoor stadium. In the foreground, athletes are running on a curved track. Initially, a man in a blue uniform is positioned at the front, leading the race. To his right, three other athletes in red, green, and yellow uniforms are slightly behind. As the video progresses, the athletes move from the left to the right of the frame, with the lead athlete maintaining his position ahead of the others. The track, marked with white lines, curves from the bottom left to the top right. In the background, spectators fill the tiered seating, with some sections more crowded than others. The stadium is brightly lit, adorned with colorful banners, and features digital screens displaying event information. Signboards, including a prominent \"SEIKO\" sign, line the track. The camera pans smoothly, following the athletes and enhancing the dynamic movement and vibrant atmosphere of the competition.",
   "status": "success"
 }

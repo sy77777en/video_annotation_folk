@@ -2,7 +2,7 @@
   "video_id": "5933.2.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:00:45.994503",
+  "generation_timestamp": "2025-09-29T04:59:37.302636",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-14T16:22:53.852422",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description incorrectly identifies the hands. It should state: \"The right hand, positioned on the left side of the frame, holds a pen. The left hand is visible at the bottom right and upper portion, holding a small notepad that occupies the center-right foreground.\" Additionally, the description should mention that the notepad is partially obscured by a glass of water in the foreground, which is not present in the video.",
-  "revised_caption_by_generated_critique": "This extreme close-up shot focuses on a pair of hands in the foreground. The right hand, positioned on the left side of the frame, holds a pen. The left hand is visible at the bottom right and upper portion, holding a small notepad that occupies the center-right foreground. The pen is actively drawing on the notepad, its tip moving across the paper to create a sketch. The background is blurred and indistinct. The hands and notepad remain relatively static in their position, while the pen moves to add detail to the drawing. The camera is positioned at the subject's level.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description incorrectly identifies the hands. It should state: \"The right hand, positioned on the left side of the frame, holds a pen. The left hand is visible at the bottom right and upper portion, holding a small notepad that occupies the center-right foreground.\" Additionally, the description should mention that a coffee cup is placed in the background near the top left, even though it is not a prominent element in the scene.",
+  "revised_caption_by_generated_critique": "This extreme close-up shot focuses on a pair of hands in the foreground. The right hand, positioned on the left side of the frame, holds a pen. The left hand is visible at the bottom right and upper portion, holding a small notepad that occupies the center-right foreground. The pen is actively drawing on the notepad in the center-right foreground, its tip moving across the paper to create a sketch. The background is blurred and indistinct, with a coffee cup placed near the top left, though it is not a prominent element in the scene. The hands and notepad remain relatively static in their position, while the pen moves to add detail to the drawing. The camera is positioned at the subject's level.",
   "status": "success"
 }

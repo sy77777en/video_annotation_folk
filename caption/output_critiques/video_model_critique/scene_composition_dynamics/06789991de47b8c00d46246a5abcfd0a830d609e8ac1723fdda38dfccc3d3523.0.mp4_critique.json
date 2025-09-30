@@ -2,7 +2,7 @@
   "video_id": "06789991de47b8c00d46246a5abcfd0a830d609e8ac1723fdda38dfccc3d3523.0.mp4",
   "caption_type": "scene",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:07:02.702087",
+  "generation_timestamp": "2025-09-29T05:28:29.901731",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-28T08:16:56.187169",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The description of the setting as an \"indoors in a kitchen setting\" with a \"wooden countertop\" and ingredients like \"sliced red peppers and leafy greens\" is accurate.\n*   The description of the background elements is slightly inaccurate. It states \"wooden cabinets and shelves,\" but the upper cabinets are white, while the shelving unit is wooden. A more precise description would be better.\n\n**Completeness:**\n*   The caption is incomplete because it fails to mention the two people who are the central subjects of the scene. The instructions state to include subjects and their context without excessive detail, and their presence is a crucial part of the scene's composition and activity.\n\n**Adherence to Instructions:**\n*   **Violation of \"Avoid emotional or subjective adjectives\":** The caption uses the words \"cozy,\" \"warm,\" and \"inviting.\" These are subjective interpretations of the atmosphere and are explicitly forbidden by the instructions.\n*   **Violation of \"Do not explain what the scene emphasizes or highlights\":** The phrase \"with a focus on culinary activity\" explains the purpose or emphasis of the scene, which the instructions direct you to avoid.\n*   **Violation of \"Do not infer the role of the scene setting\":** The phrase \"contributing to a cozy and functional atmosphere\" infers the role and feeling of the environment rather than simply describing what is visible.",
-  "revised_caption_by_generated_critique": "Indoors, in a brightly lit kitchen, two women stand at a wooden counter. A younger woman with dark hair in a bun, wearing a light-colored patterned top, looks down at a bowl of food. An older woman in a blue top stands beside her, holding chopsticks over the bowl. On the counter, next to the bowl, is a wooden board with sliced red peppers, a knife, and some leafy greens. The background features a wooden shelving unit filled with books and kitchen items, with white cabinets visible above.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption includes subjective adjectives and interpretations, such as \"cozy,\" \"warm and inviting,\" and \"with a focus on culinary activity,\" which are explicitly forbidden by the instructions. It also infers the purpose of the setting by stating it is a \"functional area.\" The caption omits the two people who are central to the scene's context. To improve, remove all subjective and interpretive language. The description of the background furniture should be changed from the specific \"sideboard\" to the more general and accurate \"shelving unit.\" The description of the food should be more specific, noting the halved egg in the bowl. Most importantly, a brief, non-detailed mention of the two women at the counter should be added to provide essential context for the scene.",
+  "revised_caption_by_generated_critique": "The video is set indoors in a kitchen. Two women are at a wooden countertop, on which sits a bowl of food containing a halved egg. Also on the counter are sliced red peppers and leafy greens. Behind them, wooden cabinets and shelves are filled with books and kitchen items. The lighting is bright.",
   "status": "success"
 }

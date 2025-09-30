@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.6.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:49:05.456729",
+  "generation_timestamp": "2025-09-29T04:42:17.298662",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-05T11:12:35.592747",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should also mention that the red line briefly pauses at the 10:12 timestamp before continuing its movement, which is not accurate to the video.",
-  "revised_caption_by_generated_critique": "A short, glowing red vertical line moves steadily from left to right along a horizontal white timeline. The line starts just before the 10:12 timestamp, briefly pauses at the 10:12 mark, and then continues its movement, indicating the passage of time. The rest of the timeline, with its white tick marks and timestamps against a black background, remains static.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should also mention that a blue circle briefly appears at the center of the timeline as the red line moves, which is not present in the video.",
+  "revised_caption_by_generated_critique": "A short, glowing red vertical line moves steadily from left to right along a horizontal white timeline. The line starts just before the 10:12 timestamp and progresses past it, indicating the passage of time. As the red line moves, a blue circle briefly appears at the center of the timeline. The rest of the timeline, with its white tick marks and timestamps against a black background, remains static.",
   "status": "success"
 }

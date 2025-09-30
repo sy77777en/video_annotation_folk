@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.13.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:37:48.641645",
+  "generation_timestamp": "2025-09-29T06:09:48.140176",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The term \"middle ground\" is used, which incorrectly implies depth in a 2D scene. Overlay elements are incorrectly described as being in the foreground. The description of the character's movement is inaccurate.",
-  "revised_caption_by_generated_critique": "This extreme wide shot presents a static, side-view perspective of a pixelated, cavernous environment. The scene is composed of a maze-like structure of dark platforms and walls that occupy the central area. In the bottom-left corner, a white icon is overlaid, while four pink heart icons are overlaid in the bottom-right corner. A small, circular character starts in the lower-center of the frame, then jumps diagonally upwards to the right, landing on a platform in the center-right area of the scene. Throughout the shot, glowing turquoise vines hang from the top of the frame, and a digital waterfall descends through the center.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly applies 3D positional terms like \"middle ground\" and \"foreground\" to a 2D scene and its overlay elements. The description of the character's movement is also inaccurate and incomplete.",
+  "revised_caption_by_generated_critique": "This extreme wide shot offers a static, side-view perspective of a pixelated, cavernous environment. The scene features a maze-like structure of dark platforms and walls. In the bottom-left corner, a white icon is displayed, while four pink heart icons appear in the bottom-right corner. A small, circular character starts near the bottom center of the frame, then jumps diagonally upwards to the right, landing on a platform towards the center-right of the scene. Throughout the shot, glowing turquoise vines hang from the top, and a digital waterfall flows down the center.",
   "status": "success"
 }

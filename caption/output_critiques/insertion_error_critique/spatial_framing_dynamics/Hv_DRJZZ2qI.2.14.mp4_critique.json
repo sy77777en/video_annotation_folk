@@ -2,7 +2,7 @@
   "video_id": "Hv_DRJZZ2qI.2.14.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:49:57.996809",
+  "generation_timestamp": "2025-09-29T11:33:49.815130",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The man in the yellow jersey is actually in the foreground, not the middle ground. The lighting in the scene is noticeably dimmer than in the previous shot. Additionally, the scene does not cut to a medium close-up; instead, it zooms in. Furthermore, the woman remains in the middle ground, not the foreground.",
-  "revised_caption_by_generated_critique": "The video begins with a medium full shot, placing a woman in a blue hoodie in the center-left and a man in a yellow jersey in the foreground on the right, both situated in the middle ground. In the left middle ground, three other people are visible, with a hilly, red-earth landscape in the background. The scene then zooms in, adjusting the composition to focus on the woman who remains in the middle ground on the center-left. The man in the yellow jersey stays on the right in the foreground, while the other people are no longer visible. The lighting in this scene is noticeably dimmer than in the previous shot, and the camera is positioned at the subjects' level for the duration of the clip.",
+  "generated_critique": "The man in the yellow jersey is actually in the foreground, not the middle ground. Additionally, the scene does not cut to a medium close-up; instead, it zooms in. The woman remains in the middle ground, not the foreground. Also, the camera briefly tilts upward during the zoom, which was not mentioned.",
+  "revised_caption_by_generated_critique": "The video begins with a medium full shot, placing a woman in a blue hoodie in the center-left middle ground and a man in a yellow jersey in the right foreground, both situated against a hilly, red-earth landscape. In the left middle ground, three other people are visible. The scene then zooms in, focusing on the woman who remains in the center-left middle ground. The man in the yellow jersey stays on the right, now partially framed in the foreground. During the zoom, the camera briefly tilts upward, maintaining its position at the subjects' level for the duration of the clip.",
   "status": "success"
 }

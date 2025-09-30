@@ -2,7 +2,7 @@
   "video_id": "OcSO3INDEsE.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:26:32.870020",
+  "generation_timestamp": "2025-09-29T05:35:11.562873",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Please remove the terms \"wide shot\" and \"level height\" from the description. Eliminate all references to \"middle ground\" and \"foreground.\"\n\n2. Change \"rising from the bottom right to the middle left\" to \"rising from the bottom right to the higher bottom left.\"\n\n3. Modify \"a textured blue area expands from the far left\" to \"a textured blue area expands from her back.\"\n\n5. It is necessary to mention that this is a 2D video.",
-  "revised_caption_by_generated_critique": "This 2D video begins with a static camera capturing a scene where a dark, textured slope occupies the bottom of the frame, rising from the bottom right to the higher bottom left. A woman appears on the left, walking down the slope toward the right. As she moves, a textured blue area expands from her back, moving rightward to fill the background. Simultaneously, the dark slope transforms into a green hill, a change that progresses from left to right. The text \"CAPABLE of LOVE\" appears at the top center, and its font transforms from left to right as the blue area sweeps over it. Flowers then sprout on the newly formed green hill, following the same left-to-right progression.",
+  "revised_caption_by_generated_critique": "This 2D video begins with a static camera capturing a scene where a dark, textured slope occupies the bottom of the frame, rising from the bottom right to the higher bottom left. A woman appears on the left, walking down the slope toward the right. As she moves, a textured blue area expands from her back, moving rightward to fill the background. Simultaneously, the portion of the dark slope transforms into a green hill, a change that also progresses from left to right. The text \"CAPABLE of LOVE\" appears at the top center, and its font transforms from left to right as the blue area sweeps over it. Flowers then sprout on the newly formed green hill, following the same left-to-right progression.",
   "status": "success"
 }

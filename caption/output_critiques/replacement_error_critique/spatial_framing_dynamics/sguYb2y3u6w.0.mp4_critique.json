@@ -2,7 +2,7 @@
   "video_id": "sguYb2y3u6w.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:23:54.837186",
+  "generation_timestamp": "2025-09-29T09:21:04.042975",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please refrain from using terms such as foreground, middle ground, and background, as they are typically more relevant to live-action footage. Instead, consider using descriptions like \"a road runs along the bottom of the frame\" or \"a forest is visible behind the ambulance, occupying the middle and upper portions of the frame.\"\n\n3. The crocodile's head does not actually move.",
-  "revised_caption_by_generated_critique": "An ambulance is centered in the frame, with an anthropomorphic crocodile visible in the driver's seat. A road runs along the bottom of the frame, while stylized trees and hills are visible behind the ambulance, occupying the middle and upper portions of the frame. The ambulance remains stationary as the background scrolls from right to left to simulate movement. The crocodile's arms move slightly as it steers. The camera is positioned at the subject's height.",
+  "generated_critique": "Please refrain from using terms such as foreground, middle ground, and background, as they are typically more relevant to live-action footage. Instead, consider using descriptions like \"a road runs along the bottom of the frame\" or \"a forest is visible behind the ambulance, occupying the middle and upper portions of the frame.\"\n\n3. The crocodile is sitting in the passenger seat, not the driver's seat.",
+  "revised_caption_by_generated_critique": "An ambulance is centered in the frame, with an anthropomorphic crocodile visible in the passenger seat. A road runs along the bottom of the frame, while stylized trees and hills fill the space behind the ambulance. The ambulance remains stationary as the background scrolls from right to left to simulate movement. The crocodile's head and arms move slightly as it steers. The camera is positioned at the subject's height.",
   "status": "success"
 }

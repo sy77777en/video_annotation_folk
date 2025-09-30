@@ -2,7 +2,7 @@
   "video_id": "1560.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:27:45.997093",
+  "generation_timestamp": "2025-09-29T04:12:11.854124",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T02:02:35.086751",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "This is a 2D video, so there is no information about 3D positioning. Please remove any references to 3D positioning and make the caption more concise. Also, the caption should not mention any camera movement, as the camera remains completely static throughout the video.",
-  "revised_caption_by_generated_critique": "The video features a static, text-based design on a plain black background. The main text, \"FREE EPISODE FROM MY HYPERLAPSE COURSE,\" is in bold, black uppercase letters on a red rectangle, centered on the screen. Below it, \"EQUIPMENT & SHOOTING\" appears in white uppercase letters, also centered. Both text elements remain fixed, ensuring focus on the content. The minimalist design emphasizes the text without any additional elements.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "This is a 2D video, so there is no information about 3D positioning. Please remove any references to 3D positioning and make the caption more concise. Also, note that the video does not include any animation or fade-in effects for the text elements.",
+  "revised_caption_by_generated_critique": "The video features a static, text-based design on a plain black background. The main text, \"FREE EPISODE FROM MY HYPERLAPSE COURSE,\" is in bold, black letters on a red rectangle, centered on the screen. Below it, \"EQUIPMENT & SHOOTING\" appears in white, uppercase letters, also centered. Both text elements remain fixed with no animation or fade-in effects, maintaining a minimalist focus on the text.",
   "status": "success"
 }

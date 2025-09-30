@@ -2,7 +2,7 @@
   "video_id": "4022135.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:52:24.307319",
+  "generation_timestamp": "2025-09-29T04:47:38.323264",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-16T03:47:58.551140",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the word \"stationary.\" Please remove \"from a close-up of spectators in the foreground.\" Change \"revealing players gathered near the end zone and the large crowd in the opposite stands\" to \"revealing players gathered near the touchline and the large crowd in the opposite stands.\" Please mention that the camera briefly zooms in on the scoreboard during the pan. Please remove \"The pan concludes by holding on this expansive view of the stadium.\"",
-  "revised_caption_by_generated_critique": "The camera, initially with a view from the stands, pans to the left. This movement shifts the perspective to a wide shot of the football field, revealing players gathered near the touchline and the large crowd in the opposite stands. During the pan, the camera briefly zooms in on the scoreboard.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the word \"stationary.\" Please remove \"from a close-up of spectators in the foreground.\" Change \"revealing players gathered near the end zone and the large crowd in the opposite stands\" to \"revealing players gathered near the touchline and the large crowd in the opposite stands.\" Please mention that the camera briefly zooms in on a scoreboard before panning. Please remove \"The pan concludes by holding on this expansive view of the stadium.\"",
+  "revised_caption_by_generated_critique": "The camera, initially with a view from the stands, pans to the left. This movement shifts the perspective to a wide shot of the football field, revealing players gathered near the touchline and the large crowd in the opposite stands. Before panning, the camera briefly zooms in on a scoreboard.",
   "status": "success"
 }

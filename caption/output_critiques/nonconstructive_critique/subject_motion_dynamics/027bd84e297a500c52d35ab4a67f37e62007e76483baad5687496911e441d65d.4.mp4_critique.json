@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.4.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:27:05.763086",
+  "generation_timestamp": "2025-09-29T04:00:36.088537",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption misidentifies the initial shot type as a \"close-up.\" The description of the hand's movement is imprecise. The causal link between the hand's action and the doll's reaction is not established. The vocabulary used to describe the doll's motion is generic, and the description of the hand's exit from the frame is not specific. The final state of the doll is not described with precision.",
-  "revised_caption_by_generated_critique": "The video opens with a medium shot of a blue and white painted wooden nesting doll, adorned with floral patterns and a musical instrument on its front, standing upright against a plain white background. A light-skinned hand with slightly curled fingers enters from the right side of the frame and taps the doll. This action causes the doll to tilt to the left, and the hand retracts smoothly out of the frame. The doll continues its descent in a gentle arc, eventually coming to rest on its side, parallel to the white background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the initial shot as a \"close-up.\" The word choices for describing the motion are inaccurate; \"appears\" is used for the hand's entrance, \"starts to fall\" for the doll's initial movement, and \"moves away\" for the hand's exit. The caption also fails to establish a clear causal link between the hand's action and the doll's subsequent motion. Furthermore, the descriptions of the doll continuing to fall and its final resting position are imprecise.",
+  "revised_caption_by_generated_critique": "The video opens with a medium shot of a blue and white painted wooden nesting doll adorned with floral patterns and a musical instrument on its front, standing upright on a plain white background. A hand with light skin and slightly curled fingers enters from the right side of the frame and flicks the doll, causing it to tip over to the left. As the hand retracts, the doll continues its descent until it comes to rest on its side on the white background.",
   "status": "success"
 }

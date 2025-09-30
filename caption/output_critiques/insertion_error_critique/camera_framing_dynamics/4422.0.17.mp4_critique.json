@@ -2,7 +2,7 @@
   "video_id": "4422.0.17.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:18:03.761350",
+  "generation_timestamp": "2025-09-29T09:14:10.864362",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Change \"From a smooth, hip-level perspective\" to \"From a smooth, level-angle, hip-level perspective.\" Additionally, mention that the camera performs a brief zoom out before moving forward.",
-  "revised_caption_by_generated_critique": "From a smooth, level-angle, hip-level perspective, the camera performs a brief zoom out before rapidly moving forward toward the drummer, tilting up slightly to create a low-angle shot of his upper body. The scene is captured in deep focus, though the left side of the background appears blurrier than the right.",
+  "generated_critique": "1. Change \"From a smooth, hip-level perspective\" to \"From a smooth, level-angle, hip-level perspective.\" Additionally, specify that the camera employs a moderate fisheye lens distortion, which subtly curves the edges of the frame.",
+  "revised_caption_by_generated_critique": "From a smooth, level-angle, hip-level perspective, the camera rapidly moves forward toward the drummer, tilting up slightly to create a low-angle shot of his upper body. The scene is captured in deep focus, with a moderate fisheye lens distortion subtly curving the edges of the frame, though the left side of the background appears blurrier than the right.",
   "status": "success"
 }

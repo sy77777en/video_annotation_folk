@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.3.11.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:28:12.425166",
+  "generation_timestamp": "2025-09-29T07:59:32.146258",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description of the video as a medium shot of an oryx is inaccurate. It should be noted that the video consistently features a close-up shot, with the oryx nearly filling the entire frame. 2. The statement regarding the ground appearing as light-colored sand or dirt occupying the bottom foreground and middle ground is incorrect. This element should be described as being in the background. 3. The caption should also mention that there is a small bush visible in the top right corner of the frame, which is not addressed in the current description.",
-  "revised_caption_by_generated_critique": "The video presents a close-up shot of an oryx, with its head nearly filling the entire frame. The oryx's head is positioned in the center-left foreground, with its body extending towards the right side of the frame. The ground, appearing as light-colored sand or dirt, is in the background. A small bush is visible in the top right corner of the frame. The background is an overexposed, out-of-focus area filling the rest of the frame. There are no changes in shot size or the position of elements throughout the video. The camera is positioned at the subject's level.",
+  "generated_critique": "1. The description of the video as a medium shot of an oryx is inaccurate. It should be noted that the video consistently features a close-up shot, with the oryx nearly filling the entire frame.\n\n2. The statement regarding the ground appearing as light-colored sand or dirt occupying the bottom foreground and middle ground is incorrect. This element should be described as being in the background.\n\n3. The caption should also mention that there is a small bush visible in the top right corner of the frame, which adds to the spatial context of the scene.",
+  "revised_caption_by_generated_critique": "The video presents a close-up shot of an oryx, with its head nearly filling the entire frame. The oryx's head is positioned in the center-left foreground, with its body extending towards the right side of the frame. The ground, appearing as light-colored sand or dirt, is in the background. A small bush is visible in the top right corner of the frame, adding to the spatial context of the scene. The background is an overexposed, out-of-focus area filling the rest of the frame. There are no changes in shot size or the position of elements throughout the video. The camera is positioned at the subject's level.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "PIvOfcR77SQ.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:24:19.633790",
+  "generation_timestamp": "2025-09-29T06:55:20.760111",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Initially, the power lines are visible running along the left side, but they eventually go out of frame from the left side as the camera moves. The man briefly glances toward the camera before looking away, which changes his position slightly within the frame. The dark box is initially visible in the bottom left middleground, but it also goes out of frame from the left side before the power lines as the camera moves. As the perspective changes, the snowy road, which initially stretches from the middle ground into the background and occupies the right side, eventually stretches across the scene from right to left.",
-  "revised_caption_by_generated_critique": "A medium close-up shot shows a man in the center foreground. He stands beside a snowy road that initially occupies the right side of the frame, stretching from the middle ground into the background. A forest of tall trees fills the background on both sides of the road. Power lines are initially visible running along the left side but eventually go out of frame as the camera moves. The man briefly glances toward the camera, slightly changing his position within the frame. A dark box is initially visible in the bottom left middleground but also goes out of frame before the power lines. As the perspective shifts, the snowy road stretches across the scene from right to left.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Initially, the power lines are visible running along the left side, but they eventually go out of frame from the left side as the camera moves. The man briefly glances toward the camera before looking away, which is not reflected in the original caption. The dark box is initially visible in the bottom left middleground, but it also goes out of frame from the left side before the power lines as the camera moves. As the perspective changes, the snowy road, which initially stretches from the middle ground into the background and occupies the right side, eventually stretches across the scene from right to left.",
+  "revised_caption_by_generated_critique": "A medium close-up shot shows a man in the center foreground. He stands beside a snowy road that initially occupies the right side of the frame, stretching from the middle ground into the background. A forest of tall trees fills the background on both sides of the road. Power lines are visible running along the left side but eventually go out of frame as the camera moves. The man briefly glances toward the camera before looking away. A dark box is initially visible in the bottom left middleground but also goes out of frame from the left side before the power lines. As the perspective changes, the snowy road stretches across the scene from right to left. The camera moves slightly, altering the composition while maintaining the man's level throughout the shot.",
   "status": "success"
 }

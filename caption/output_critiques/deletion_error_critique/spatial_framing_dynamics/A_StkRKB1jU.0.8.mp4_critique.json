@@ -2,7 +2,7 @@
   "video_id": "A_StkRKB1jU.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:51:55.164911",
+  "generation_timestamp": "2025-09-29T04:46:22.484186",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The direction should be corrected to \"moving toward the right.\" Additionally, revise the description of the hall to \"The hall is defined by pillars on both sides and counters on the right.\" As the video progresses, both men reach the middle ground, with one positioned in the center of the frame and the other on the right side of the frame.",
-  "revised_caption_by_generated_critique": "In a wide shot, two masked men run through a long hall. One man starts in the right foreground, moving toward the right, while a second man runs from the left middle ground toward the right. Other masked figures are visible in the background. As the shot progresses, both men reach the middle ground, with one positioned in the center of the frame and the other on the right side of the frame. The man from the left runs behind a teller counter located in the right middle ground. The hall is defined by pillars on both sides and counters on the right, with sunlight from the left casting long shadows across the floor. The camera is positioned at the subjects' level.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The direction should be corrected to \"moving toward the right.\" Please remove the phrase \"with the man from the left running behind a teller counter located in the right middle ground.\" As the video progresses, both men reach the middle ground, with one positioned in the center of the frame and the other on the right side of the frame.",
+  "revised_caption_by_generated_critique": "In a wide shot, two masked men run through a long hall. One man starts in the right foreground, moving toward the right, while a second man runs from the left middle ground toward the right. Other masked figures are visible in the background. As the shot progresses, the men move dynamically across the frame, with both men reaching the middle ground—one positioned in the center of the frame and the other on the right side. The hall is defined by pillars on the left and counters on the right, with sunlight from the left casting long shadows across the floor. The camera is positioned at the subjects' level.",
   "status": "success"
 }

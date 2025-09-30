@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.9.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:47:36.471338",
+  "generation_timestamp": "2025-09-29T08:29:26.284721",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the phrase \"at the subject's height\" since it is a 2D video, making it difficult to determine the camera height. Eliminate all references to \"middle ground\" and \"foreground.\" Revise the sentence to: \"Initially, a small, abstract figure on a sled is positioned on the center-right.\" Change the description to: \"In the top right, the number '38' and the notation 'mp' are also visible.\" Modify the sentence to: \"As the figure travels from left to right, moving from top to bottom along the line, the camera moves to follow it.\" Adjust the description to: \"This causes the text elements to shift to the far left and then exit the frame.\" Revise the sentence to: \"Several short, dashed lines appear to the right of the figure, while the text '/40' materializes in the bottom center-left.\"",
+  "generated_critique": "Please remove the phrase \"at the subject's height\" since it is a 2D video, making it difficult to determine the camera height.\n\nEliminate all references to \"middle ground\" and \"foreground.\"\n\nRevise the sentence to: \"Initially, a small, abstract figure on a sled is positioned on the center-right.\"\n\nChange the description to: \"In the top right, the number '38' and the notation 'mp' are also visible.\"\n\nModify the sentence to: \"As the figure travels from left to right, moving from top to bottom along the line, the camera moves to follow it.\"\n\nAdjust the description to: \"This causes the text elements to shift to the far left and then exit the frame.\"\n\nRevise the sentence to: \"Several short, dashed lines appear to the right of the figure, while the text '/40' materializes in the bottom center-left.\"",
   "revised_caption_by_generated_critique": "This video presents an extreme wide shot of the scene, captured from a side-view perspective. Initially, a small, abstract figure on a sled is positioned on the center-right, situated on a long, curved black line. In the top right, the number \"38\" and the notation \"mp\" are also visible. As the figure travels from left to right, moving from top to bottom along the line, the camera moves to follow it. This causes the text elements to shift to the far left and then exit the frame. Concurrently, several short, dashed lines appear to the right of the figure, while the text \"/40\" materializes in the bottom center-left. By the end of the clip, the figure is positioned on the center-left, with the track continuing off-screen and a large, C-shaped curve now occupying the right side of the frame.",
   "status": "success"
 }

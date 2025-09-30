@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.11.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:13:33.380799",
+  "generation_timestamp": "2025-09-29T09:08:10.517433",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The front face of the console is actually in the middle ground, not the foreground, as there is an out-of-focus element in the true foreground. Additionally, the console extends across the middle ground, not just the center and right. The illuminated logo is on the right, not the bottom right. The statement about the left side being visible in the left foreground is inaccurate and should be removed. The shot also includes a visible controller resting near the top left of the frame, which should be mentioned in the description.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a black video game console is positioned diagonally across the frame, extending from the bottom left to the top right. The front face of the console occupies the middle ground, with its illuminated logo located on the right. The top surface is visible across the top of the frame. A controller is resting near the top left of the frame, adding to the composition. The camera is positioned above the subject.",
+  "generated_critique": "The front face of the console is actually in the middle ground, not the foreground, as there is an out-of-focus element in the true foreground. Additionally, the console extends across the middle ground, not just the center and right. The illuminated logo is on the right, not the bottom right. The statement about the left side being visible in the left foreground is inaccurate and should be removed. The shot also includes a visible controller in the top left background, which should be mentioned in the spatial description.",
+  "revised_caption_by_generated_critique": "In a close-up shot, a black video game console is positioned diagonally across the frame, extending from the bottom left to the top right. The front face of the console occupies the middle ground, with its illuminated logo located on the right. The top surface is visible across the top of the frame. A visible controller is in the top left background, adding context to the scene. The camera is positioned above the subject.",
   "status": "success"
 }

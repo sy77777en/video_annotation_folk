@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.7.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:12:09.612976",
+  "generation_timestamp": "2025-09-29T10:35:13.484228",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately refers to a high-angle perspective; please remove this reference. The terms foreground, middle ground, and background are not suitable for describing this 2.5-dimensional scene, so they should be omitted. Additionally, the camera is dynamic and follows the character's movement, rather than being static. The user interface overlay should not be described as being in the foreground. The caption should also mention that the lighting in the scene changes dramatically as the warrior moves, even though this is not depicted in the video. Lastly, the character moves closer to the stone sarcophagus, not the circular stairs and burning brazier.",
-  "revised_caption_by_generated_critique": "The video is presented from an isometric perspective. Initially, a warrior character stands surrounded by several humanoid skeletons. The scene is enclosed by stone walls and pillars. A user interface overlay is fixed at the bottom center of the screen. After the skeletons are defeated and become piles of bones on the floor, the warrior moves towards the top left of the frame. This movement reveals a stone sarcophagus, and the lighting in the scene changes dramatically as the warrior moves. The camera dynamically follows the character's movement throughout the scene.",
+  "generated_critique": "The description inaccurately refers to a high-angle perspective; please remove this reference. The terms foreground, middle ground, and background are not suitable for describing this 2.5-dimensional scene, so they should be omitted. Additionally, the camera is dynamic and follows the character's movement, rather than being static. The user interface overlay should not be described as being in the foreground. The caption should also mention that the lighting in the scene changes dramatically as the warrior moves, even though this does not occur. Lastly, the character moves closer to the stone sarcophagus, not the circular stairs and burning brazier.",
+  "revised_caption_by_generated_critique": "The video is presented from an isometric perspective. Initially, a warrior character stands surrounded by several humanoid skeletons. The scene is enclosed by stone walls and pillars. A user interface overlay is fixed at the bottom center of the screen. After the skeletons are defeated and become piles of bones on the floor, the warrior moves towards the top left of the frame. This movement reveals a stone sarcophagus and brings the character closer to it. The camera dynamically follows the character's movement throughout the scene.",
   "status": "success"
 }

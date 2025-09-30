@@ -2,7 +2,7 @@
   "video_id": "3877.0.15.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:31:53.689594",
+  "generation_timestamp": "2025-09-29T06:03:40.350652",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption misidentifies the depth of the large rocky cliff. The number of individuals climbing is incorrect. The camera is not static as described, and the depth of the subjects is also incorrectly stated.",
-  "revised_caption_by_generated_critique": "This is an extreme wide shot. The Macpac logo and the text \"macpac\" are overlaid in the center of the frame, appearing prominently in the foreground. A large rocky cliff occupies the right side of the frame, extending from the foreground to the middle ground. Three people are positioned on this cliff: one person stands at the top right, while two others are climbing vertically below them. A body of water is visible in the bottom left and center-left, with distant mountains filling the background across the top and left portions of the frame. Shortly after the video begins, the text \"weather anything\" fades in below the \"macpac\" text in the central overlay. The camera pans slightly, maintaining a level view with the subjects on the cliff.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly identifies the large rocky cliff as being in the middle ground and miscounts the number of individuals climbing. The description of the camera as static is inaccurate, and the caption incorrectly places the subjects in the middle ground.",
+  "revised_caption_by_generated_critique": "This is an extreme wide shot. The Macpac logo and the text \"macpac\" are overlaid in the center of the frame, appearing in the foreground relative to the landscape. A large rocky cliff occupies the right side of the frame in the foreground. Five people are positioned on this cliff on the right: one person stands at the top right, while four others are climbing vertically below them. A body of water is visible in the bottom left and center-left in the foreground, with distant mountains filling the background across the top and left portions of the frame. Shortly after the video begins, the text \"weather anything\" fades in below the \"macpac\" text in the central overlay. The camera pans slightly, maintaining a level view with the subjects on the cliff.",
   "status": "success"
 }

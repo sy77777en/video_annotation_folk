@@ -2,7 +2,7 @@
   "video_id": "EimYM1xxBys.3.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:32:37.416421",
+  "generation_timestamp": "2025-09-29T07:12:19.309761",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The figure consistently remains in the left of the middle ground, rather than shifting from center-right to center-left. Additionally, multiple trees in the foreground partially obscure the figure, not just one on the center-left. Please note that the logo contains the letters \"IGN\" and is an overlay, so it should not be described as being in the foreground. Furthermore, the camera moves to the left, rather than panning.",
-  "revised_caption_by_generated_critique": "In this wide shot, a small figure is consistently visible in the left middle ground, partially obscured by multiple silhouetted trees in the foreground. The camera moves to the left, tracking the figure as it runs across a grassy clearing in the middle ground. As the camera moves, various silhouetted trees pass through the foreground and middle ground. The movement concludes by revealing large, dark industrial structures in the right background, with the figure still positioned in the left middle ground. A white logo with the letters \"IGN\" is overlaid in the bottom right corner. The camera maintains a side-on perspective at the subject's height throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The figure consistently remains in the center of the middle ground, rather than shifting from center-right to center-left. Additionally, multiple trees in the background partially obscure the figure, not just one on the center-left. Please note that the logo contains the letters \"IGN\" and is an overlay, so it should not be described as being in the foreground. Furthermore, the camera moves to the left, rather than panning.",
+  "revised_caption_by_generated_critique": "In this wide shot, a small figure is consistently visible in the center of the middle ground, partially obscured by multiple silhouetted trees in the background. The camera moves to the left, tracking the figure as it runs across a grassy clearing. As the camera moves, silhouetted trees pass through the foreground and middle ground. The movement concludes by revealing large, dark industrial structures in the right background, with the figure still positioned in the center of the middle ground. A white logo with the letters \"IGN\" is overlaid in the bottom right corner. The camera maintains a side-on perspective at the subject's height throughout the shot.",
   "status": "success"
 }

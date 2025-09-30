@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:19:36.299806",
+  "generation_timestamp": "2025-09-29T07:48:19.701924",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The terms \"static\" and \"high-angle\" might not accurately describe the video. Since the angle is not clearly discernible as either level or high-angle, it may be better to omit this description. 2. The orange dashed line and marker text are considered overlay elements, so it is unnecessary to refer to them as having foreground depth. 3. The caption should also mention the presence of a blue rectangular border around the map, as this could affect the perception of spatial framing.",
-  "revised_caption_by_generated_critique": "The video shows a view of a dark, stylized map of the southeastern United States, which serves as the background. Initially, an orange circular marker for \"SARASOTA,\" with its name in orange text to its right, is visible on the Florida peninsula, positioned towards the bottom center of the map's depicted land area. An orange dashed line then animates, extending northward from the Sarasota marker along the eastern coastline. This line connects to a newly appearing orange circular marker for \"WASHINGTON,\" with its name in orange text to its right, situated in the upper portion of the depicted coastal region, northeast of Sarasota. All labeled markers and the connecting line are overlay elements on the map. A blue rectangular border surrounds the map, influencing the perception of spatial framing.",
+  "generated_critique": "1. The terms \"static\" and \"high-angle\" might not accurately describe the video. Since the angle is not clearly discernible as either level or high-angle, it may be better to omit this description. 2. The orange dashed line and marker text are considered overlay elements, so it is unnecessary to refer to them as having foreground depth. 3. The caption should also mention that the map briefly zooms in on the Sarasota marker before the line animates, even though this zoom is not present in the video.",
+  "revised_caption_by_generated_critique": "The video shows a dark, stylized map of the southeastern United States as the background. Initially, an orange circular marker for \"SARASOTA,\" with its name in orange text to its right, is visible on the Florida peninsula, positioned towards the bottom center of the map's depicted land area. The map briefly zooms in on the Sarasota marker before an orange dashed line animates, extending northward from the Sarasota marker along the eastern coastline. This line connects to a newly appearing orange circular marker for \"WASHINGTON,\" with its name in orange text to its right, situated in the upper portion of the depicted coastal region, northeast of Sarasota. All labeled markers and the connecting line remain as overlay elements against the background map.",
   "status": "success"
 }

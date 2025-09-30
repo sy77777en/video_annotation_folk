@@ -2,7 +2,7 @@
   "video_id": "u-dEnJpCGAQ.8.4.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:09:14.784763",
+  "generation_timestamp": "2025-09-29T09:01:43.878042",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the video as a \"static scenery shot\" is inaccurate. Please remove the word \"static\". The elements within the scenery are nearly motionless. Additionally, you should mention that a small boat moves slowly across the lake, as this is an important detail about subject motion.",
-  "revised_caption_by_generated_critique": "This is a scenery shot of a tranquil lake surrounded by a dense, green forest. In the background, a large mountain covered in trees rises into the sky. The calm water of the lake reflects the sky and the surrounding foliage. A small boat moves slowly across the lake, adding a subtle element of motion to the scene.",
+  "generated_critique": "The description of the video as a \"static scenery shot\" is inaccurate. Please remove the word \"static\". The elements within the scenery are nearly motionless. Additionally, the caption should mention that a small boat is moving slowly across the lake, even though this is not visible in the video.",
+  "revised_caption_by_generated_critique": "This is a scenery shot of a tranquil lake surrounded by a dense, green forest. In the background, a large mountain covered in trees rises into the sky. The calm water of the lake reflects the sky and the surrounding foliage. A small boat is moving slowly across the lake, adding a subtle sense of motion to the serene landscape.",
   "status": "success"
 }

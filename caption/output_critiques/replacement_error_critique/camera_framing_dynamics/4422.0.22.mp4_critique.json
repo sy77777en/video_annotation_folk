@@ -2,7 +2,7 @@
   "video_id": "4422.0.22.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:22:12.877036",
+  "generation_timestamp": "2025-09-29T06:57:36.700750",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-16T18:21:24.671453",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. It would be beneficial to clarify that the camera maintains a consistently high angle throughout the video, and it is the use of a wide-angle lens that causes the edges to appear blurry in contrast to the center of the frame.",
-  "revised_caption_by_generated_critique": "The camera maintains a consistently high angle throughout the video, with a Dutch angle that varies as the camera rolls counterclockwise. The use of a wide-angle lens causes the edges to appear blurry, while the center remains in focus, yet overall the video maintains deep focus. The camera movement is slightly unsteady with some shaking.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. It would be beneficial to clarify that the video primarily uses a shallow depth of field, with only the center remaining sharp while the rest of the frame is consistently out of focus, and that the camera’s rolling movement does not affect the focus distribution across the image.",
+  "revised_caption_by_generated_critique": "The camera is positioned at hip level, maintaining a level angle with a Dutch angle that varies as the camera rolls counterclockwise. The video primarily uses a shallow depth of field, keeping the center sharp while the rest of the frame remains consistently out of focus. Despite the camera's rolling movement, the focus distribution across the image is unaffected. The camera movement is slightly unsteady with some shaking.",
   "status": "success"
 }

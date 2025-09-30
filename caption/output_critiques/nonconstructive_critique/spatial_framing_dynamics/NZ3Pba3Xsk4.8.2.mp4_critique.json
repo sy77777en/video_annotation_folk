@@ -2,7 +2,7 @@
   "video_id": "NZ3Pba3Xsk4.8.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:16:10.050511",
+  "generation_timestamp": "2025-09-29T11:50:20.296177",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that all four people occupy the middle ground from the start and fails to mention the tree in the middle ground on the right. The description of the subjects' movement is inaccurate; it omits that two people move from the foreground to the middle ground and fails to describe the movement of the other two people who move across the frame and exit on the left.",
-  "revised_caption_by_generated_critique": "This video, shot from a first-person POV at the subjects' level, presents a wide view of a park, with the camera initially following two people from behind as they move from the foreground to the middle ground. The subjects include a man in a denim jacket on the right and a woman in a teal skirt in the center. As they walk forward along a wooden boardwalk that extends from the foreground into the middle ground, another man and woman move across the frame from right to left and exit on the left. The scene is framed by lush green trees on the top, left, and right, with a prominent tree in the middle ground on the right. To the left of the boardwalk, a rocky animal enclosure with a small body of water is situated in the middle ground. A dirt path runs parallel to the boardwalk in the right middle ground. In the background, a light blue roller coaster track is visible above the trees on the left. The camera moves steadily forward, maintaining a consistent distance from the group as they walk away from the viewer.",
+  "generated_critique": "The caption incorrectly describes the initial spatial positioning of the subjects by misstating their depth within the scene. The description of the subjects' movement is also inaccurate, as it fails to account for their separate paths and the fact that some of them exit the frame. Furthermore, the caption omits a tree located in the middle ground on the right.",
+  "revised_caption_by_generated_critique": "This video, shot from a first-person POV at the subjects' level, presents a wide view of a park, with the camera initially following a group of four people from behind. The subjects are in the foreground, with a man in a denim jacket on the right, a woman in a teal skirt in the center, and another man and woman to their left. They begin walking forward along a wooden boardwalk that extends from the foreground into the middle ground, but soon diverge onto separate paths, with some exiting the frame. The scene is framed by lush green trees on the top, left, and right, occupying the foreground and middle ground, with a notable tree in the middle ground on the right. To the left of the boardwalk, a rocky animal enclosure with a small body of water is situated in the middle ground. A dirt path runs parallel to the boardwalk in the right middle ground. In the background, a light blue roller coaster track is visible above the trees on the left. The camera moves steadily forward, maintaining a consistent distance from the group as they initially walk away from the viewer.",
   "status": "success"
 }

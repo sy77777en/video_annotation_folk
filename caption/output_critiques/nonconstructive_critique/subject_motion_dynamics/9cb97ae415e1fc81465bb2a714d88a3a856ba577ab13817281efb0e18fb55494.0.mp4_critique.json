@@ -2,7 +2,7 @@
   "video_id": "9cb97ae415e1fc81465bb2a714d88a3a856ba577ab13817281efb0e18fb55494.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:32:20.006152",
+  "generation_timestamp": "2025-09-29T07:56:04.903106",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption includes information not present in the video regarding pedestrians crossing a street. The description of the person in light-colored pants inaccurately describes their motion and direction of travel, and it omits a subsequent change in their speed. The caption also misidentifies both the subjects to the right and their action. The description of the background cars' movement is incomplete and does not account for all directions of traffic.",
-  "revised_caption_by_generated_critique": "Several pedestrians walk across a crosswalk. A person in light-colored pants walks next to a person in a dark jacket, briefly changing their speed. To their left, two adults walk together. In the background, cars move in multiple directions along the road.",
+  "generated_critique": "The initial description of pedestrians crossing a street at a crosswalk is incorrect. The characterization of the person in light-colored pants skipping is inaccurate, and their movement relative to the person in the dark jacket is misdescribed. The identification of an adult and a child walking is also incorrect. The description of the background cars' movement is incomplete, as it only mentions one direction of travel.",
+  "revised_caption_by_generated_critique": "Several people walk across a street from right to left, not using a crosswalk. A person in light-colored pants walks with a slight bounce next to a person in a dark jacket, but they are not skipping. To their right, two adults walk together, not an adult and a child. In the background, cars drive in both directions along the road.",
   "status": "success"
 }

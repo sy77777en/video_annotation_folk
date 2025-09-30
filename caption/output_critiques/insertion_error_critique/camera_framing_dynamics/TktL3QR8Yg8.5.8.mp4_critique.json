@@ -2,7 +2,7 @@
   "video_id": "TktL3QR8Yg8.5.8.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:30:09.046843",
+  "generation_timestamp": "2025-09-29T12:34:20.095306",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Remove \"structure\" from \"to the background structure\" because the structure is actually located in the middle ground.  \n2. Change \"From a low, hip-level angle,\" to \"From a low angle, hip-level perspective,\"  \n3. Add that the camera briefly zooms in at the start of the shot, even though no zooming occurs in the video.",
-  "revised_caption_by_generated_critique": "From a low angle, hip-level perspective, the camera smoothly and slowly moves forward while tilting up, revealing a large, dark, wheel-like structure. The shot uses a deep focus, keeping the entire scene from the foreground to the middle ground in sharp detail. At the start of the shot, the camera briefly zooms in.",
+  "generated_critique": "1. Remove \"structure\" from \"to the background structure\" because the structure is actually located in the middle ground.  \n2. Change \"From a low, hip-level angle,\" to \"From a low angle, hip-level perspective,\"  \n3. Specify that there is a noticeable barrel distortion affecting the edges of the frame, even though this is not evident in the video.",
+  "revised_caption_by_generated_critique": "From a low angle, hip-level perspective, the camera smoothly and slowly moves forward while tilting up, revealing a large, dark, wheel-like structure. The shot uses a deep focus, keeping the entire scene from the foreground to the middle ground in sharp detail. There is a noticeable barrel distortion affecting the edges of the frame.",
   "status": "success"
 }

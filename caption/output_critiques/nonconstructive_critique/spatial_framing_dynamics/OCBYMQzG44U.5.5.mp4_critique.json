@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.5.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:30:10.694716",
+  "generation_timestamp": "2025-09-29T12:04:34.605457",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera's vertical movement as 'slightly upward' is inaccurate. The statement that the duck's body fills the 'entire bottom half of the frame' is an overstatement. The caption fails to mention that the duck's lower part moves into the foreground. The description of the duck's head position as 'occupy the top center' is imprecise.",
-  "revised_caption_by_generated_critique": "From a low-angle, full shot, a large yellow rubber duck is positioned in the center of the frame, situated in the middle ground within a white-tiled recess. A single circular light is visible in the top center background on the ceiling. The camera, positioned below the subject, moves forward and upward. This movement causes the duck to appear larger, with its body moving into the foreground and filling a significant portion of the frame, while its head and open beak dominate the upper part of the view.",
+  "generated_critique": "The description of the camera movement as \"moves forward and slightly upward\" is inaccurate. The statement that the duck's body fills \"the entire bottom half of the frame\" is an overstatement. The caption fails to mention the change in the subject's depth position. The description of the duck's head and beak being in the \"top center\" is incorrect.",
+  "revised_caption_by_generated_critique": "From a low-angle, full shot, a large yellow rubber duck is positioned in the center of the frame, situated in the middle ground within a white-tiled recess. A single circular light is visible in the top center background on the ceiling. The camera, positioned below the subject, moves forward and slightly downward. This movement causes the duck to appear larger, with its body occupying a significant portion of the lower frame, while its head and open beak shift to the upper right, becoming more prominent in the view. The duck's depth position changes as it moves closer to the camera.",
   "status": "success"
 }

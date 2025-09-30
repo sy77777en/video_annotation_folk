@@ -2,7 +2,7 @@
   "video_id": "0096bcca-27a61cb3.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:37:04.981649",
+  "generation_timestamp": "2025-09-29T11:13:54.129985",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the word 'low' from the description, as the camera shot is actually at eye level. Additionally, the building does not exit the frame; it merely shifts toward the edge. It is misleading to state that the semi-truck advances, as it is actually stationary at a red light. The truck appears larger because the camera is moving closer to it. Also, the video does not include any pedestrians crossing the street, so references to people moving through the scene should be omitted.",
+  "generated_critique": "Please remove the word 'low' from the description, as the camera shot is actually at eye level. Additionally, the building does not exit the frame; it merely shifts toward the edge. It is misleading to state that the semi-truck advances, as it is actually stationary at a red light. The truck appears larger because the camera is moving closer to it. Also, the video does not show any pedestrians crossing the street in the foreground, so this should not be mentioned.",
   "revised_caption_by_generated_critique": "This video is a wide scenery shot captured from a forward-facing camera position inside a moving vehicle. Initially, a large semi-truck is positioned in the right-middle ground, partially framed by dark trees in the right foreground. On the left, a building with neon lights occupies the left-middle ground, while the road extends from the bottom of the frame into the center background where red traffic lights are visible. As the camera moves forward, the semi-truck appears larger, dominating the right side of the frame before its trailer begins to exit on the right. Simultaneously, the neon-lit building on the left shifts toward the edge of the frame. A bright lens flare from an overhead light appears in the top-center of the frame as the vehicle approaches the intersection.",
   "status": "success"
 }

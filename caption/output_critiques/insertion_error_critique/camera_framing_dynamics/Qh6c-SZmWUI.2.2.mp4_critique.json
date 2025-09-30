@@ -2,7 +2,7 @@
   "video_id": "Qh6c-SZmWUI.2.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:27:42.570584",
+  "generation_timestamp": "2025-09-29T06:59:47.499477",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-13T06:35:04.863818",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please change the word \"varying\" to \"slight\" for greater precision. Additionally, mention that the video features a noticeable fisheye lens distortion, as this affects the perception of straight lines near the edges.",
-  "revised_caption_by_generated_critique": "The video begins inside a building at eye level, with the camera at a level angle. As the drone camera moves backward and exits, it transitions to an aerial level, revealing a large building on a mountain near the ocean. The camera maintains deep focus with a large depth of field. During the smooth backward flight, it gently rolls clockwise, creating a dynamic effect with a slight Dutch angle. The movement is very smooth, with no shaking. The video also features noticeable fisheye lens distortion, affecting the perception of straight lines near the edges.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please change the word \"varying\" to \"slight\" for greater precision. Additionally, mention that the camera zooms in rapidly as it exits the building, even though this is not depicted in the video.",
+  "revised_caption_by_generated_critique": "The video begins inside a building at eye level, with the camera at a level angle. As the drone camera moves backward and exits, it rapidly zooms in and transitions to an aerial level, revealing a large building on a mountain near the ocean. The camera maintains deep focus with a large depth of field. During the smooth backward flight, it gently rolls clockwise, creating a dynamic effect with a slight Dutch angle. The movement is very smooth, with no shaking.",
   "status": "success"
 }

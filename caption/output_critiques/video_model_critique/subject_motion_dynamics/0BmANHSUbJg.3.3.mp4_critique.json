@@ -2,7 +2,7 @@
   "video_id": "0BmANHSUbJg.3.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:17:53.669028",
+  "generation_timestamp": "2025-09-29T05:38:44.286781",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is excellent and adheres to all instructions.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the sequence of events, starting with the explosion outside, followed by the plane's rapid backward movement, and its subsequent crash through the hangar wall. The description of the debris and smoke is also precise.\n\n**Completeness:** The description is complete, capturing all the significant actions within the video clip. It effectively summarizes the entire event from start to finish in a concise manner.\n\n**Adherence to instructions:** The caption perfectly follows the given guidelines.\n*   **Chronological Order:** The actions are presented in the correct sequence: explosion, plane movement, crash, and resulting smoke.\n*   **Focus on Motion:** The description centers on the plane's motion (\"moving backward rapidly,\" \"crashes through,\" \"continues its backward movement\").\n*   **Clarity and Conciseness:** The language is simple, clear, and direct, forming a coherent paragraph.\n*   **Objectivity:** It avoids subjective, emotional, or speculative language.\n*   **Interaction:** It clearly describes the interaction between the plane and the hangar structure (\"crashes through the hangar's large windowed structure, sending debris flying forward\").",
-  "revised_caption_by_generated_critique": "Following an explosion outside a hangar, a large cargo plane is thrown backward, crashing through the building's large windowed wall. Debris flies forward from the impact, and smoke billows around the front of the aircraft as it continues to move deeper into the structure.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption is mostly accurate but contains a slight overstatement and could be more concise. The phrase \"causing the high ceiling with metal beams to collapse\" is an exaggeration, as the video shows the entrance structure and some ceiling panels breaking and falling, not a full collapse of the high ceiling. The description of the plane's motion can be made more immediate by changing \"followed by a large cargo plane moving forward rapidly\" to \"and a large cargo plane immediately moves forward.\" Finally, the sentences can be combined for better flow and conciseness.",
+  "revised_caption_by_generated_critique": "Following an explosion outside, a large cargo plane lurches backward and crashes through a hangar's windowed entrance, sending debris flying as smoke billows from the front of the aircraft.",
   "status": "success"
 }

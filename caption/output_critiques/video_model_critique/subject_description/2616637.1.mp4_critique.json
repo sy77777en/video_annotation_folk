@@ -2,7 +2,7 @@
   "video_id": "2616637.1.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T05:48:26.734940",
+  "generation_timestamp": "2025-09-29T11:01:38.587536",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good, but it could be improved to better adhere to the instructions.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the subject as a butterfly with black wings featuring white and light blue spots. It also accurately describes the butterfly as being on orange and red flowers surrounded by green leaves.\n\n**Completeness:** The description is complete, capturing the essential elements of the video. It focuses on the main subject, the butterfly, its appearance, and its interaction with the flowers, which is the central action of the scene.\n\n**Adherence to Instructions:**\n*   **Strengths:** The caption successfully follows several key instructions. It is a single, coherent paragraph, uses precise subject types (\"butterfly,\" \"flowers,\" \"leaves\"), and describes the subjects' key visual attributes (colors, patterns) and state (perched, wings open). It correctly prioritizes the main subject.\n*   **Areas for Improvement:** The caption violates the instruction to \"avoid subjective adjectives.\" Words like \"striking,\" \"vibrant,\" \"lush,\" \"intricate,\" and \"vivid\" are subjective and interpret the scene's aesthetic rather than objectively describing it. Furthermore, the final sentence, \"The scene highlights the contrast... creating a vivid and natural display,\" is an analysis of the visual composition, which goes beyond a simple description of the subjects. A more compliant caption would state the facts without these interpretive and evaluative terms.",
-  "revised_caption_by_generated_critique": "A butterfly with black wings patterned with white and light blue spots is perched on a cluster of orange and red flowers. The butterfly's wings are held open as it rests on the flowers. The plant's green leaves are visible surrounding the butterfly and the flowers.",
+  "generated_critique": "The caption contains subjective adjectives such as \"striking,\" \"vibrant,\" and \"lush,\" which should be removed. The final sentence, \"The scene highlights the contrast between the butterfly's dark, patterned wings and the bright, colorful flowers, creating a vivid and natural display,\" is an interpretation of the scene's aesthetics rather than a direct description of the subjects and should be deleted for conciseness. Additionally, the phrase \"appears to be feeding or resting\" is speculative; the description should be limited to the observable action of the butterfly opening and closing its wings while on the flower.",
+  "revised_caption_by_generated_critique": "The video features a butterfly with black wings that have white and light blue spots. It is perched on orange and red flowers, which are surrounded by green leaves. The butterfly opens and closes its wings while on the flower.",
   "status": "success"
 }

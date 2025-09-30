@@ -2,7 +2,7 @@
   "video_id": "fUjoIUTFH1I.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:06:21.402498",
+  "generation_timestamp": "2025-09-29T06:35:57.619938",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-06-19T05:23:25.888536",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the prominent street running diagonally from the bottom left to the top right as a central axis is incorrect. The horizontal lanes between the blocks are completely level, and two intersecting lanes extend from the bottom to the top of the frame, without any central axis concept. \n\nFurthermore, the statement that the camera moves forward and slightly to the right is inaccurate. The camera only smoothly trucks to the right. This is an extreme wide shot.",
-  "revised_caption_by_generated_critique": "The video is an extreme wide scenery shot capturing a dense urban landscape from a high aerial perspective. Initially, the frame showcases a grid-like pattern of horizontal lanes between blocks, which are completely level. Two intersecting lanes extend vertically from the bottom to the top of the frame. Buildings in the foreground occupy the bottom of the frame, while the middle ground is defined by the buildings lining these lanes. The background consists of more buildings extending towards the top of the frame. As the shot progresses, the camera smoothly trucks to the right, causing the foreground elements at the bottom to gradually exit the frame. Consequently, the middle ground elements, including the vertical lanes and their adjacent buildings, shift towards the bottom of the frame, while new urban structures and street sections continuously enter from the top, maintaining the expansive aerial view of the cityscape.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the prominent street running diagonally from the bottom left to the top right as a central axis is incorrect. The horizontal lanes between the blocks are completely level, and two intersecting lanes extend from the bottom to the top of the frame, without any central axis concept.\n\nFurthermore, the statement that the camera moves forward and slightly to the right is inaccurate. The camera only smoothly trucks to the right. This is an extreme wide shot.",
+  "revised_caption_by_generated_critique": "The video is an extreme wide scenery shot capturing a dense urban landscape from a high aerial perspective. Initially, the frame showcases a network of horizontal lanes between blocks, which are completely level. Two prominent intersecting lanes extend vertically from the bottom to the top of the frame. Buildings in the foreground occupy the bottom of the frame, while the middle ground is defined by the buildings lining these intersecting lanes. The background consists of more buildings extending towards the top of the frame. As the shot progresses, the camera smoothly trucks to the right, causing the foreground elements at the bottom to gradually exit the frame. Consequently, the middle ground elements, including the intersecting lanes and their adjacent buildings, shift towards the bottom of the frame, while new urban structures and street sections continuously enter from the top, maintaining the expansive aerial view of the cityscape.",
   "status": "success"
 }

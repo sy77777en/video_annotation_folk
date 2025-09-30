@@ -2,7 +2,7 @@
   "video_id": "0UthxdAH0ks.6.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:51:58.544163",
+  "generation_timestamp": "2025-09-29T04:26:04.686652",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly identifies the spatial depth of the hands holding chopsticks. The description of the hands' action is imprecise. The caption fails to mention a partially visible face on the left side of the frame.",
-  "revised_caption_by_generated_critique": "The video features a medium close-up shot of a young man seated at a table, captured from the chest up and centrally positioned in the frame. His face and upper body are clearly visible, making him the focal point. To his left and right, hands holding chopsticks appear intermittently, interacting with the food on the table and suggesting the presence of other diners. These hands move in and out of the middle ground, adding a dynamic element to the scene. On the left side of the frame, a partially visible face can be seen, hinting at another person present. Two table lamps with white, scalloped shades are positioned on either side of the frame, providing soft illumination. The background features a red wall, adding depth to the scene. The camera maintains a steady position at the subject's eye level throughout the video, ensuring consistent spatial framing without significant changes in shot size or camera angle.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states that the hands holding chopsticks are only in the foreground. The description of the hands' action as 'interacting with the food' is inaccurate. The caption fails to mention all visible elements, such as the partial view of another diner.",
+  "revised_caption_by_generated_critique": "The video features a medium close-up shot of a young man seated at a table, captured from the chest up and centrally positioned in the frame. His face and upper body are clearly visible, while to his left and right, hands holding chopsticks appear intermittently, indicating the presence of additional diners. These hands move throughout the scene, not just in the foreground, engaging with the food on the table. A partial view of another diner is visible, adding context to the dining setting. Two table lamps with white, scalloped shades are situated on either side of the frame, providing soft illumination. The background consists of a red wall, adding depth to the scene. The camera maintains a steady position at the subject's eye level throughout the video, keeping the young man as the focal point while subtly capturing the dynamic hand movements around him. There are no significant changes in shot size or camera angle, ensuring consistent spatial framing.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "BV7Q0zYDO9I.5.1.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:01:24.755550",
+  "generation_timestamp": "2025-09-29T06:25:31.149462",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-09T22:25:35.047815",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The video does not contain the overlay text mentioned, so please remove the part stating \"An overlay text appears at the start of the video, stating 'the mandatory joint sports sessions in the middle of the hall. Always at'.\"\n2. There is an overlay text [40] in the upper right corner of the video that you did not mention, so please include it.\n3. The humanoid figures that are white or light grey are actually in the midground, not the foreground.\n4. In the foreground on the far left of the frame, there is a blue figure. Additionally, there are three blue figures behind the white or light grey figures, which you did not mention. Please include these details.",
-  "revised_caption_by_generated_critique": "The video depicts an indoor setting, characterized by a spacious hall with a smooth, grey floor and plain, light grey walls. In the midground, multiple humanoid figures, primarily white or light grey, are in a push-up position; some of these figures display black markings on their arms. In the foreground on the far left of the frame, there is a blue figure. Further back, several uniformly blue humanoid figures are standing, with three additional blue figures positioned behind the white or light grey figures. The scene is illuminated by even, diffuse lighting. An overlay text [40] is visible in the upper right corner of the video.",
+  "revised_caption_by_generated_critique": "The video depicts an indoor setting, characterized by a spacious hall with a smooth, grey floor and plain, light grey walls. In the midground, multiple humanoid figures, primarily white or light grey, are in a push-up position; some of these figures display black markings on their arms. In the foreground on the far left of the frame, there is a blue figure. Further back, several uniformly blue humanoid figures are standing, with three of them positioned behind the white or light grey figures. The scene is illuminated by even, diffuse lighting. An overlay text [40] is visible in the upper right corner of the video.",
   "status": "success"
 }

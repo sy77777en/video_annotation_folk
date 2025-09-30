@@ -2,7 +2,7 @@
   "video_id": "4PcpGxihPac.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T15:13:04.072788",
+  "generation_timestamp": "2025-09-29T18:29:01.923033",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Excellent work. The caption is highly accurate, complete, and adheres perfectly to all instructions.\n\n**Accuracy:**\n- The description of the shot as a \"static close-up\" is precise.\n- The placement of the woman's face in the \"top-right portion of the frame\" and in the \"foreground\" is correct.\n- The detail about her head being \"tilted, resting on a surface\" and the surface extending \"across the bottom of the frame\" is accurate.\n- The observation that the \"left side of the frame is entirely dark and empty\" correctly describes the use of negative space.\n- The analysis of the camera position (\"at her level, capturing her from a slightly low angle\") and her gaze (\"looks toward the top-left\") is spot-on.\n\n**Completeness:**\n- The caption successfully addresses all required elements: shot size, 2D position, 3D depth, camera height/angle, and the absence of movement.\n- It provides a comprehensive spatial understanding of the scene within a single, concise paragraph.\n\n**Adherence to Instructions:**\n- The caption is a single, coherent paragraph written in simple, natural English.\n- It strictly avoids emotional or subjective language (e.g., \"scared,\" \"eerie\") and speculative statements.\n- It focuses entirely on the objective spatial framing and composition as requested.\n\nThe caption is an exemplary execution of the provided guidelines.",
-  "revised_caption_by_generated_critique": "In a static close-up shot from a slightly low angle, a woman's face is positioned in the foreground at the top-right of the frame, leaving the left side dark and empty. Her head is tilted, resting on a surface that extends across the bottom of the frame, and she looks toward the top-left.",
+  "generated_critique": "The caption incorrectly describes the composition of the frame, stating that the left side shows the woman's upper body and the far right reveals the ground. In the video, the left side of the frame is almost entirely dark, and the surface she is resting on is indistinct, occupying the foreground across the bottom of the frame. Additionally, the shot is more accurately described as an \"extreme close-up\" rather than a \"close-up.\" Finally, the phrase \"resembling a lightning storm\" is an interpretation; a more objective description would be that the flickering light creates a \"strobe-like effect.\"",
+  "revised_caption_by_generated_critique": "In a static extreme close-up shot, a woman's face occupies the top-right portion of the frame. Her head is tilted, resting on an indistinct surface that extends across the bottom of the frame in the foreground. The left side of the frame is almost entirely dark. The scene is lit with a dim, blue light, casting her face in deep shadow. The camera is positioned at her level, capturing her from a slightly low angle as she looks toward the top-left with a fearful expression.",
   "status": "success"
 }

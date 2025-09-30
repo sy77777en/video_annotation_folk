@@ -2,7 +2,7 @@
   "video_id": "4022437.0.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:52:40.915026",
+  "generation_timestamp": "2025-09-29T04:48:02.744116",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please consolidate the description into a single paragraph for improved readability. Additionally, you mention a Dutch angle in the middle of the shot, but this is not reflected in the actual video, so please revise this detail for accuracy.",
-  "revised_caption_by_generated_critique": "The camera is positioned at ground level with a level angle, looking straight ahead, and uses deep focus to keep all elements in the scene, including the Benz and its surroundings, sharply in focus. It moves forward slowly and smoothly, slightly panning right as it approaches the Benz, with no shaking or instability.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please consolidate the description into a single paragraph for improved readability, and be sure to mention the presence of noticeable fisheye lens distortion that curves the edges of the frame.",
+  "revised_caption_by_generated_critique": "The camera is positioned at ground level with a level angle, looking straight ahead, and it uses deep focus to keep all elements in the scene, including the Benz and its surroundings, sharply in focus. As the camera moves forward slowly and smoothly, it slightly pans right while approaching the Benz, maintaining stability without any shaking. Additionally, there is noticeable fisheye lens distortion that curves the edges of the frame.",
   "status": "success"
 }

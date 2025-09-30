@@ -2,7 +2,7 @@
   "video_id": "3005.1.6.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:11:55.601869",
+  "generation_timestamp": "2025-09-29T12:22:55.006057",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and fails to adhere to the instructions.\n\nHere's a detailed breakdown:\n\n1.  **Inaccurate Chronology:** The caption states the man \"catches a basketball and begins to dribble it. As he starts dribbling, the number of people in the background decreases rapidly.\" In the video, the man catches the ball, and *then* the people begin to disappear as he starts to dribble. The actions are not perfectly simultaneous as implied.\n2.  **Inclusion of Interpretive and Speculative Language:** The caption includes \"indicating a time-lapse effect\" and \"emphasizing the man's solitary practice.\" These are interpretations of the editing technique and the scene's mood, respectively. The instructions explicitly state to \"Avoid emotional or subjective adjectives\" and \"Avoid speculative statements.\"\n3.  **Description of Static Scenery:** The last sentence, \"The court is spacious with wooden flooring and dark blue markings, and the stands are mostly empty,\" describes the static environment. The instructions require the description to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\"\n\nA more compliant caption would focus only on the observable motion in chronological order:\n\n\"From a high angle, a man on a basketball court catches a ball. As he begins to dribble and move across the court, other people on the court and in the stands disappear.\"",
-  "revised_caption_by_generated_critique": "From a high angle, a man on a basketball court catches a ball. As he begins to dribble and move across the court, other people on the court and in the stands disappear.",
+  "generated_critique": "The caption inaccurately describes the subject's motion and includes unnecessary details. The subject does not just prepare to dribble; he catches the ball, takes one dribble, and then begins a shooting motion. The description of the court's appearance (\"spacious with wooden flooring and dark blue markings\") and the subjective interpretation (\"emphasizing the man's solitary practice\") should be removed to adhere to the instruction to focus solely on motion and avoid subjective language. Additionally, there is a grammatical error in the phrase \"prepares to dribbling.\" A more accurate and compliant caption would describe the sequence of actions: the man catching the ball as the background people disappear in a time-lapse, followed by him taking a single dribble and starting his shooting form.",
+  "revised_caption_by_generated_critique": "On a basketball court, a man catches a ball as the other people in the arena disappear in a time-lapse. He then takes a single dribble and begins to raise the ball into a shooting motion.",
   "status": "success"
 }

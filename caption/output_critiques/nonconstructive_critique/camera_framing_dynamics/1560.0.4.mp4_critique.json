@@ -2,7 +2,7 @@
   "video_id": "1560.0.4.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:21:54.408264",
+  "generation_timestamp": "2025-09-29T04:56:38.280408",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption omits that the video is a 2D animation, making an accurate assessment of camera height and angle not feasible.",
-  "revised_caption_by_generated_critique": "The video is a 2D animation with no camera movement or lens distortion, making an accurate assessment of camera height and angle not feasible.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption is missing information about the camera's height and angle.",
+  "revised_caption_by_generated_critique": "The video is static with no camera movement or lens distortion, filmed from a low angle at approximately waist height.",
   "status": "success"
 }

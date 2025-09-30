@@ -2,7 +2,7 @@
   "video_id": "upC8hjr2b4g.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:17:42.762049",
+  "generation_timestamp": "2025-09-29T10:43:48.455743",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "A small table with a vase of flowers is visible in the right foreground, positioned below the level of the humanoid figure.",
-  "revised_caption_by_generated_critique": "A shoulder-up shot frames a humanoid figure in the left foreground, positioned at eye level with the camera. The figure looks toward a closed white door located in the center background. To the right of the door, a light switch is visible on the wall in the background, while a wooden floor occupies the bottom of the frame. In the right foreground, below the level of the humanoid figure, a small table with a vase of flowers is visible. The focus then shifts from the humanoid figure to the door, causing the figure in the foreground to become slightly blurry while the door in the background comes into sharp focus.",
+  "generated_critique": "The caption should mention that a small table with a vase is visible in the right foreground, even though this element is not present in the scene.",
+  "revised_caption_by_generated_critique": "A shoulder-up shot frames a humanoid figure in the left foreground, positioned at eye level with the camera. The figure looks toward a closed white door located in the center background. To the right of the door, a light switch is visible on the wall in the background, while a wooden floor occupies the bottom of the frame. In the right foreground, a small table with a vase is visible. The focus then shifts from the humanoid figure to the door, causing the figure in the foreground to become slightly blurry while the door in the background comes into sharp focus.",
   "status": "success"
 }

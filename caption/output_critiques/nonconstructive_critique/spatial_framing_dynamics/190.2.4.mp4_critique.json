@@ -2,7 +2,7 @@
   "video_id": "190.2.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:32:23.449028",
+  "generation_timestamp": "2025-09-29T05:06:07.457400",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption inaccurately describes the man's position as central during the medium close-up and misrepresents the sequence by stating the shot transitions before he walks away.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up shot of the man, who occupies most of the frame, positioned slightly off-center to the left, with the urban street and buildings forming the background. As the video progresses, the shot transitions to a medium close-up, showing more of the man's upper body while he remains slightly off-center. Initially, he faces slightly to the side, holding a silver object near his face. The camera remains at his level throughout. Afterward, the perspective shifts to show him from behind as he walks away down the tree-lined street. In this new angle, the man moves toward the center of the frame, with the street extending into the background. The camera continues to stay at his height, capturing his movement along the sidewalk. The buildings and greenery remain consistently in the background, providing context to the urban setting.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the timing of the shot transition in relation to the man walking away. It also misstates the man's final position within the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot of the man, who occupies most of the frame, positioned slightly off-center to the left, with the urban street and buildings forming the background. As the video progresses, the shot transitions to a medium close-up, showing more of the man's upper body while maintaining his central position. Initially, he faces slightly to the side, holding a silver object near his face. The camera remains at his level throughout. The perspective then shifts to show him from behind as he walks away down the tree-lined street. In this new angle, the man is positioned slightly off-center to the right, moving toward the center of the frame, with the street extending into the background. The camera continues to stay at his height, capturing his movement along the sidewalk. The buildings and greenery remain consistently in the background, providing context to the urban setting.",
   "status": "success"
 }

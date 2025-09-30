@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:04:26.418354",
+  "generation_timestamp": "2025-09-29T05:01:49.267381",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description inaccurately refers to a high-angle shot; please remove this term. Additionally, references to foreground, middleground, and background should be omitted as they are not applicable to this 2D video. The snowball is initially positioned above and to the left of the figure, not directly below. The figure remains off-center throughout the video, while the snowball ends up in the right center. Lastly, remove the phrase \"standing in the background on a cliff edge.\"",
-  "revised_caption_by_generated_critique": "In a wide, top-down shot, a human-like character is initially positioned slightly off-center, with a snowball above and to the left. A snow-covered tree is visible in the top right corner, while dark cliffs frame the bottom corners. The frame scrolls to the right and then downwards, repositioning the human character and snowball to the left, with the snowball ending up in the right center. This movement reveals a skeleton character who appears in the top right of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description inaccurately refers to a high-angle shot; please remove this term. Additionally, references to foreground, middleground, and background should be omitted as they are not applicable to this 2D video. The snowball is initially positioned above and to the left of the figure, not directly below. The figure remains centered throughout the video, while the snowball ends up in the left center. Lastly, remove the phrase \"standing in the background on a cliff edge.\"",
+  "revised_caption_by_generated_critique": "In a wide, top-down shot, a human-like character is initially positioned in the center of the frame, with a snowball above and to the left. A snow-covered tree is visible in the top right corner, while dark cliffs frame the bottom corners. The frame scrolls to the right and then downwards, keeping the human character centered while repositioning the snowball to the left center. This movement reveals a skeleton character who appears in the top right of the frame.",
   "status": "success"
 }

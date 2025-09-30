@@ -2,7 +2,7 @@
   "video_id": "HM5J6qAytJY.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:03:51.209597",
+  "generation_timestamp": "2025-09-29T13:24:44.778547",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that a rearview mirror is visible at the top center of the frame, reflecting part of the car's interior, which is not present in the video.",
-  "revised_caption_by_generated_critique": "This video is presented as a first-person point-of-view shot from the driver's seat of a race car. In the immediate foreground, the driver's hands and a steering wheel are centered in the bottom half of the frame. A white roll cage is visible in the bottom left and bottom right corners, also in the foreground. The car's dashboard and a central digital display occupy the middle ground, just above the steering wheel. A rearview mirror is visible at the top center of the frame, reflecting part of the car's interior. Through the windshield, a road extends from the bottom center into the background, flanked by a desert landscape in the middle ground. In the background, mountains are visible on the horizon, with the sun positioned in the top left of the frame. The entire car moves forward, causing the exterior scenery to rush from the background toward the foreground, while the driver's hands make slight turning adjustments on the steering wheel. The camera is positioned at the driver's eye level.",
+  "generated_critique": "The caption should mention that a rearview mirror is mounted at the top center of the windshield, reflecting part of the car's interior, even though this element is not visible in the video.",
+  "revised_caption_by_generated_critique": "This video is presented as a first-person point-of-view shot from the driver's seat of a race car. In the immediate foreground, the driver's hands and a steering wheel are centered in the bottom half of the frame. A white roll cage is visible in the bottom left and bottom right corners, also in the foreground. The car's dashboard and a central digital display occupy the middle ground, just above the steering wheel. Through the windshield, a road extends from the bottom center into the background, flanked by a desert landscape in the middle ground. In the background, mountains are visible on the horizon, with the sun positioned in the top left of the frame. A rearview mirror is mounted at the top center of the windshield, reflecting part of the car's interior. The entire car moves forward, causing the exterior scenery to rush from the background toward the foreground, while the driver's hands make slight turning adjustments on the steering wheel. The camera is positioned at the driver's eye level.",
   "status": "success"
 }

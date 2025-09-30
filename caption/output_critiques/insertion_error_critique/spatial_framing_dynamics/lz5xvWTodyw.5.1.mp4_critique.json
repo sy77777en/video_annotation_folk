@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:24:01.440950",
+  "generation_timestamp": "2025-09-29T10:54:10.714075",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the phrase \"and moves diagonally up the canyon wall toward the top right.\" Additionally, change \"Scattered throughout the middle ground\" to \"Scattered throughout the canyon,\" and adjust \"in the upper right\" to \"in the upper center-right.\" Furthermore, do not classify the overlays as part of the foreground, middleground, or background, as they do not belong to these categories. Also, mention that the camera slowly pans from left to right during the shot, even if this movement is not present in the video.",
-  "revised_caption_by_generated_critique": "This wide shot is captured from a high-angle perspective, looking down into a deep, brown, rocky canyon that serves as the background. A small, bird-like character begins near the center of the frame in the middle ground. Scattered throughout the canyon are sandy ledges, with a red and white umbrella visible on a larger ledge in the upper center-right. Several UI elements are overlaid: a coin counter is fixed in the top left corner, a feather counter is in the bottom left, and a compass is in the top right. The camera slowly pans from left to right during the shot.",
+  "generated_critique": "Please remove the phrase \"and moves diagonally up the canyon wall toward the top right.\" Additionally, change \"Scattered throughout the middle ground\" to \"Scattered throughout the canyon,\" and adjust \"in the upper right\" to \"in the upper center-right.\" Also, mention that the canyon walls are covered in green moss, even if this is not visible. Furthermore, do not classify the overlays as part of the foreground, middleground, or background, as they do not belong to these categories.",
+  "revised_caption_by_generated_critique": "This wide shot is captured from a high-angle perspective, looking down into a deep, brown, rocky canyon that serves as the background. A small, bird-like character begins near the center of the frame. Scattered throughout the canyon are sandy ledges, with a red and white umbrella visible on a larger ledge in the upper center-right. The canyon walls are covered in green moss. Several UI elements are overlaid: a coin counter is fixed in the top left corner, a feather counter is in the bottom left, and a compass is in the top right.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "1560.0.14.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:21:41.538343",
+  "generation_timestamp": "2025-09-29T19:18:26.859050",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the setting as an interior atrium and misidentifies the distant wall as the lower floor. The description of the shot as a high-angle looking down is inaccurate. The statement that the camera descends is also incorrect, and the caption fails to mention the camera's rotation.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot from a high vantage point, capturing the interior of a multi-story building. The camera is positioned to look across the space, framed by the walls of the upper floors, creating a sense of depth as it moves toward the distant wall. The camera then rotates and moves forward rapidly, causing the surrounding walls and light fixtures to blur with motion. As the camera advances, the distant wall, initially in the background, comes into focus, briefly revealing a poster and an exit sign before the entire frame is enveloped in motion blur, transitioning to an extreme close-up on the approaching surface.",
+  "generated_critique": "The caption misidentifies the setting as an \"interior atrium\" and the distant element as a \"lower floor.\" The description of the initial camera angle as \"high-angle\" and looking \"directly down\" is incorrect. The camera's movement is not a downward plunge or descent as described. The caption also fails to mention certain elements visible in the background.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot from a high vantage point, capturing the interior of a multi-story building. The camera is angled to provide a sweeping view of the space, framed by the building's upper floors. The perspective draws the eye toward the center, where a distant element, possibly a decorative feature or artwork, is visible. The camera then moves swiftly forward, creating a dynamic motion blur effect on the surrounding walls and light fixtures. As the camera advances, the central feature becomes more prominent, briefly revealing a poster and an exit sign before the scene transitions into an extreme close-up, emphasizing the rapidly approaching surface. Additional elements, such as architectural details and lighting fixtures, are visible in the background, adding depth to the scene.",
   "status": "success"
 }

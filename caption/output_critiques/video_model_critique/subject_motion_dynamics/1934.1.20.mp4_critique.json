@@ -2,7 +2,7 @@
   "video_id": "1934.1.20.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:47:51.052448",
+  "generation_timestamp": "2025-09-29T09:16:42.764088",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is mostly accurate in its description of the scene and the initial actions. It correctly identifies four people in white suits, one with a red top hat, gathered around a screen. It also accurately notes that the man in the hat turns his head and speaks. However, it is inaccurate and vague in describing the motion on the screen.\n\n**Completeness:** The caption is incomplete. It states the figure on the screen \"starts to move\" but fails to describe the specific motion, which is the central visual event in the clip. The white figure on the screen shrinks vertically until it becomes a thin, short line. This crucial detail is omitted.\n\n**Adherence to Instructions:**\n*   **Specificity of Motion:** The caption fails to adhere to the core instruction: \"Describe **individual subject actions** with clarity, specifying how they move rather than using generic descriptions.\" Stating the figure \"starts to move\" is a generic description. A better description would be \"the white figure on the screen shrinks vertically.\"\n*   **Focus on Motion:** The caption dedicates a significant portion to describing the subjects' static appearance (\"all dressed in white protective suits with hoods,\" \"a man wearing a red top hat with a small brown band\"). While some identification is necessary, the instructions emphasize focusing on motion over appearance. The description of the motion itself is minimal and lacks detail.\n*   **Chronological Order:** The caption does follow the chronological order of events correctly.\n\nIn summary, the caption is weak because it focuses too much on static appearance and fails to describe the key motion of the figure on the screen with the required specificity, directly contradicting the main instructions.",
-  "revised_caption_by_generated_critique": "In a white room, a man in a white hooded suit and a red top hat stands with three other people in similar suits, all gathered around a small screen. The man in the top hat turns his head to the right and speaks to the others. As he speaks, the small, white, human-shaped figure on the screen rapidly shrinks vertically, compressing into a short, thin white line.",
+  "generated_critique": "The caption includes excessive detail about the subjects' appearances, such as their white suits and the specifics of the red top hat, which the instructions advise against. The description of the motion on the screen is also inaccurate and vague; the caption states the figure \"starts to move,\" but the video shows the figure shrinking vertically until it becomes a thin line. The description should be revised to focus only on the motion, accurately describing how the man in the hat turns his head and how the figure on the screen shrinks.",
+  "revised_caption_by_generated_critique": "A man in a red top hat turns his head to the right while speaking to three other people. On a screen in front of them, a small, white figure of a person shrinks vertically until it becomes a thin white line.",
   "status": "success"
 }

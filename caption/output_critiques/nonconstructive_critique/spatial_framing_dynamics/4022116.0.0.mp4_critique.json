@@ -2,7 +2,7 @@
   "video_id": "4022116.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:05:53.832868",
+  "generation_timestamp": "2025-09-29T06:26:29.772856",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot size is incorrectly identified as an extreme wide shot. The description of the water taxi's position and movement is inaccurate. The camera perspective is not stable.",
-  "revised_caption_by_generated_critique": "This video captures a wide shot of a Venetian canal, with the waterway extending from the foreground into the background. Historic buildings line both sides of the canal, receding into the distance. In the bottom right foreground, a water taxi moves diagonally across the scene. Further in the center middle ground, a gondola travels away from the camera. Other boats are moored along the banks, with a blue boat visible in the left middle ground. The camera is positioned at a height above the water, providing an elevated perspective of the canal.",
+  "generated_critique": "The caption misidentifies the shot size. The position and movement of the water taxi are described incorrectly. The movement of the gondola is also described inaccurately. Furthermore, the camera's perspective is mischaracterized as stable.",
+  "revised_caption_by_generated_critique": "This video showcases a wide shot of a Venetian canal, stretching from the foreground into the background. Historic buildings line both sides of the waterway, creating a picturesque scene. In the bottom right foreground, a water taxi moves from left to right across the frame. In the center middle ground, a gondola glides towards the camera. Several boats are moored along the banks, with a blue boat visible in the left middle ground. The camera is positioned at a height above the water, providing a dynamic, elevated view of the canal.",
   "status": "success"
 }

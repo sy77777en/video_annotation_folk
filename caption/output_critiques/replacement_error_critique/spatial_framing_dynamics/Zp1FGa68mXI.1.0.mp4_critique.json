@@ -2,7 +2,7 @@
   "video_id": "Zp1FGa68mXI.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:40:30.466114",
+  "generation_timestamp": "2025-09-29T09:46:45.447782",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please refrain from describing overlays as being in the background. Additionally, the camera is slowly panning from left to right, so it is not static.  \n2. This should be described as a medium shot rather than a close-up shot.  \n3. To avoid ambiguity, please revise \"single raspberry is the central subject, positioned in the middle of the frame on a white surface in the middle ground\" to \"single raspberry is the central subject, positioned in the middle of the frame in the background on a white surface.\"",
-  "revised_caption_by_generated_critique": "This is a medium, high-angle shot where a single raspberry is the central subject, positioned in the middle of the frame in the background on a white surface. Several ants are initially seen crawling on and around the raspberry. As the time-lapse progresses, the ants move quickly around the central fruit before gradually leaving the frame, with most gone by the end of the clip. Red crumbs are scattered on the surface surrounding the raspberry. Text overlays are fixed in the foreground, with a time counter in the bottom left, the word \"TEMPONAUT\" in the bottom right, and a logo in the top right. The camera is slowly panning from left to right throughout the shot.",
+  "generated_critique": "1. Please refrain from describing overlays as being in the foreground. Additionally, the camera is slowly panning from left to right, so it is not static.\n2. This should be described as a medium shot rather than a close-up shot.\n3. To avoid ambiguity, please revise \"single raspberry is the central subject, positioned in the middle of the frame on a white surface in the middle ground\" to \"single raspberry is the central subject, positioned in the middle of the frame in the foreground on a white surface.\"",
+  "revised_caption_by_generated_critique": "This is a medium, high-angle shot where a single raspberry is the central subject, positioned in the middle of the frame in the foreground on a white surface. Several ants are initially seen crawling on and around the raspberry. As the time-lapse progresses, the ants move quickly around the central fruit before gradually leaving the frame, with most gone by the end of the clip. Red crumbs are scattered on the surface surrounding the raspberry. Text overlays include a time counter in the bottom left, the word \"TEMPONAUT\" in the bottom right, and a logo in the top right. The camera is slowly panning from left to right throughout the shot.",
   "status": "success"
 }

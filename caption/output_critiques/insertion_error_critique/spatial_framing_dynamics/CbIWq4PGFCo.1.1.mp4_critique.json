@@ -2,7 +2,7 @@
   "video_id": "CbIWq4PGFCo.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:27:45.712514",
+  "generation_timestamp": "2025-09-29T12:30:29.740371",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"The camera remains static\" is inaccurate. Throughout the video, the camera actually moves in a counterclockwise arc around the man, who appears to be pensive. Additionally, the shot briefly shifts focus to a small object on the ground near the man's feet before returning to the original framing.",
-  "revised_caption_by_generated_critique": "A close-up shot centers on a young man in the foreground, positioned in the middle of the frame, looking down and slightly to his left. The camera moves in a counterclockwise arc around the man, who appears to be pensive. Behind him, a blurry, barren landscape of light-brown earth occupies the background. The shot briefly shifts focus to a small object on the ground near the man's feet before returning to the original framing.",
+  "generated_critique": "The statement \"The camera remains static\" is inaccurate. Throughout the video, the camera actually moves in a counterclockwise arc around the man, who appears to be pensive. Additionally, the shot briefly includes a second person entering the left edge of the frame in the background, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "A close-up shot centers on a young man in the foreground, who appears pensive. He is positioned in the middle of the frame, looking down and slightly to his left. The camera moves in a counterclockwise arc around him, capturing a blurry, barren landscape of light-brown earth in the background. Briefly, a second person enters the left edge of the frame in the background.",
   "status": "success"
 }

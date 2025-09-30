@@ -2,7 +2,7 @@
   "video_id": "60.0.26.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:51:23.046460",
+  "generation_timestamp": "2025-09-29T10:03:56.744504",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the smoke effect from the video, as it does not appear to be present in the scene. Additionally, the video does not include any visible streetlights or lamp posts illuminating the area, so references to such lighting should be omitted.",
-  "revised_caption_by_generated_critique": "An outdoor field at night is visible with a flat, uniform surface. Two figures are in motion, their forms slightly blurred. One figure, positioned on the left, wears dark clothing, while the other, on the right, is in a lighter-colored outfit. The background is obscured by the darkness.",
+  "generated_critique": "Please remove the smoke effect from the video, as it does not appear to be present in the scene. Additionally, the video should mention the presence of a large wooden bench in the center of the field, as this is a key visual element.",
+  "revised_caption_by_generated_critique": "An outdoor field at night is illuminated from an unseen source. The ground is a flat, uniform surface. In the center of the field, a large wooden bench is prominently visible. Two figures are in motion, their forms slightly blurred. One figure, positioned on the left, wears dark clothing, while the other, on the right, is in a lighter-colored outfit. The background is obscured by the darkness.",
   "status": "success"
 }

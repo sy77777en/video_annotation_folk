@@ -2,7 +2,7 @@
   "video_id": "ljg_EgXMjO0.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:33:12.388829",
+  "generation_timestamp": "2025-09-29T08:06:04.730838",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The animation is a 2D piece without any perceivable depth of field. The dog stretches from the middle of the right side of the frame to the bottom left corner.",
-  "revised_caption_by_generated_critique": "In a black-and-white 2D animation, a very long, stylized dog stretches diagonally from the middle of the right side of the frame to the bottom left corner. A large pair of scissors descends from the top of the frame to cut the dog's body. After each cut, the front segment becomes a new, complete dog that continues moving towards the bottom left, while the rear segment regenerates a head and remains an elongated dog. The scissors repeatedly ascend and descend to cut the dog again, creating a continuous procession of new dogs moving towards the bottom left.",
+  "generated_critique": "The animation is a 2D piece without any perceivable depth of field. Please remove references to foreground, middle ground, and background, as they are not applicable in this context.",
+  "revised_caption_by_generated_critique": "In a black-and-white animation, a very long, stylized dog is positioned diagonally, stretching from the top right towards the bottom left. A large pair of scissors descends from the top of the frame to cut the dog's body. After each cut, the front segment becomes a new, complete dog that continues moving towards the bottom left, while the rear segment regenerates a head and remains an elongated dog. The scissors repeatedly ascend to the top of the frame and descend to cut the dog again, creating a continuous procession of new dogs moving towards the bottom left.",
   "status": "success"
 }

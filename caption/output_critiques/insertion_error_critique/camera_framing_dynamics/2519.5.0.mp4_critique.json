@@ -2,7 +2,7 @@
   "video_id": "2519.5.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:35:34.358176",
+  "generation_timestamp": "2025-09-29T04:22:47.662196",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is actually shot at eye level, which is a level angle, rather than a low angle. Additionally, the footage displays noticeable barrel distortion along the edges, which should be mentioned.",
-  "revised_caption_by_generated_critique": "The video is shot at eye level, creating a level perspective. It features a shallow depth of field, focusing on the midground, while the background and foreground remain blurred. The camera exhibits minor, slightly unsteady movements with some shaking, but lacks clear or intentional motion. Additionally, there is noticeable barrel distortion along the edges of the footage.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The video is actually shot at eye level, which is a level angle, rather than a low angle. Additionally, the camera employs a noticeable barrel distortion that subtly curves straight lines near the edges of the frame.",
+  "revised_caption_by_generated_critique": "The video is shot at eye level, creating a level perspective. It features a shallow depth of field, focusing on the midground, while the background and foreground remain blurred. The camera exhibits minor, slightly unsteady movements with some shaking, and there is a noticeable barrel distortion that subtly curves straight lines near the edges of the frame.",
   "status": "success"
 }

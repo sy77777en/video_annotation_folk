@@ -2,7 +2,7 @@
   "video_id": "4PcpGxihPac.3.4.mp4",
   "caption_type": "spatial",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T14:27:39.550053",
+  "generation_timestamp": "2025-09-29T18:22:56.392557",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Excellent. The caption is accurate, complete, and adheres strictly to all instructions.\n\n**Accuracy:** The description is entirely accurate. The shot is a close-up, the woman's face is centered in the foreground, the background is dark and indistinct, and the camera is static at her eye level.\n\n**Completeness:** The caption successfully covers all the required aspects of spatial framing:\n- **Shot Size:** Correctly identified as a \"close-up shot.\"\n- **Position (2D & 3D):** Accurately places the woman in the \"middle of the frame\" (2D) and the \"foreground\" (3D). It also describes the background.\n- **Camera Height:** Correctly notes the camera is at the \"woman's eye level.\"\n- **Dynamics:** Correctly states that the \"camera remains static.\"\n\n**Adherence to Instructions:** The caption follows the guidelines perfectly. It provides a concise, factual description of the spatial arrangement without any subjective or emotional language (like mentioning her expression or the red lighting). It is a single, well-structured paragraph written in clear, natural English.",
-  "revised_caption_by_generated_critique": "In a static, eye-level close-up, a woman's face is centered in the foreground against a dark, out-of-focus background.",
+  "generated_critique": "The caption correctly identifies the subject's central framing, foreground position, and the static, eye-level camera. However, the shot size is more accurately an \"extreme close-up,\" as the frame is tightly cropped around the woman's face, cutting off the top of her head and the bottom of her chin. Additionally, the caption omits the subtle movement of the subject; her eyes widen and her mouth opens slightly, which is a dynamic change within the static frame that should be mentioned.",
+  "revised_caption_by_generated_critique": "An extreme close-up shot centers on a woman's face, positioning her in the foreground and the middle of the frame, which is tightly cropped to cut off the top of her head and the bottom of her chin. The background is entirely dark and out of focus. While the camera remains static at the woman's eye level, her eyes widen and her mouth opens slightly.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.8.3.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:28:31.873165",
+  "generation_timestamp": "2025-09-29T07:06:02.486006",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The button press initially causes the screen, which was already displaying some text, to go black before showing different text, rather than turning it on from a dark state.\n2. The hand does not continue typing on the lower keys; instead, it appears to exit the frame towards the bottom.",
-  "revised_caption_by_generated_critique": "A person's hand moves over the keyboard of an aircraft's control unit, pressing a button that causes the screen, initially displaying some text, to go black before lighting up with different green text. The hand then exits the frame towards the bottom.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The button press initially causes the screen, which was already displaying some text, to go black before showing different text, rather than turning it on from a dark state.  \n3. It is not evident that the screen displays flight arrival information, so it would be more accurate not to mention it. The screen includes the text \"KLAX ARRIVALS\" at the top among the other green text.",
+  "revised_caption_by_generated_critique": "A person's hand moves over the keyboard of an aircraft's control unit, pressing a button that causes the screen, initially displaying some text, to go black before lighting up with different green text. The hand then continues to type on the lower alphanumeric keys as the screen displays information, including the text \"KLAX ARRIVALS\" at the top.",
   "status": "success"
 }

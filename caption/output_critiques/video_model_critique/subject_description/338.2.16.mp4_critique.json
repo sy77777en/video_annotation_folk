@@ -2,7 +2,7 @@
   "video_id": "338.2.16.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:34:50.618795",
+  "generation_timestamp": "2025-09-29T12:46:14.420306",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption is mostly accurate. The subject is a woman with the described hair and skin tone, wearing a teal hoodie. However, the glasses are more geometric or hexagonal than \"round.\"\n\n**Completeness:** The description is incomplete and misses several key visual details. It fails to mention that the woman's eyes are closed, which is a significant part of her expression. It also omits the gold nameplate necklace she is wearing and the striped shirt visible under her partially unzipped hoodie. The texture of the hoodie, which appears to be velour or velvet, is also not described.\n\n**Adherence to Instructions:** The caption adheres to many instructions, such as being a single paragraph, avoiding terms like \"image,\" and focusing on the main subject. However, it violates the rule to \"avoid subjective adjectives that convey emotions\" by using the words \"calm\" and \"relaxed.\" While her expression might evoke these feelings, the description should stick to physical attributes like \"eyes closed\" and \"slight smile.\"\n\nIn summary, the caption provides a decent overview but lacks the specific detail required by the instructions and includes prohibited subjective language.",
-  "revised_caption_by_generated_critique": "A woman with a medium skin tone and straight, shoulder-length dark hair is the central focus of the frame. She is wearing large, geometric-framed glasses and has her eyes closed with a slight smile on her face. She is dressed in a teal velour hoodie, which is partially unzipped, revealing a striped shirt underneath. A gold nameplate necklace is visible at her collar. The woman faces forward, her head tilted slightly to one side.",
+  "generated_critique": "The caption incorrectly describes the woman's movement, stating she \"turns to face forward,\" when in fact she remains relatively still with her eyes closed. The description also omits several key details: her eyes are closed for the entire duration, she is wearing a gold nameplate necklace, the frames of her glasses are gold, and the hoodie is made of a velour-like material. Furthermore, the caption uses the subjective term \"relaxed,\" which should be replaced with a more objective description of her physical expression, such as having \"closed eyes and a slight smile.\" The final sentence stating she is the \"central focus\" is redundant and can be removed.",
+  "revised_caption_by_generated_critique": "The video features a woman with a medium skin tone and straight, shoulder-length dark hair. Her eyes are closed for the entire duration. She is wearing large, gold-framed glasses, a gold nameplate necklace, and a teal, velour-like hoodie with a zipper. With her head slightly tilted, she has a calm expression and a slight smile.",
   "status": "success"
 }

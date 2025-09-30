@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.3.7.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:34:14.910177",
+  "generation_timestamp": "2025-09-29T16:00:50.668135",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement that the airplane \"simultaneously gains altitude, executing a takeoff\" is wrong. The description of the aircraft flying \"directly over another stationary airplane on the ground\" is also incorrect. The sequence of the takeoff is misrepresented.",
-  "revised_caption_by_generated_critique": "In a grainy, black-and-white nighttime view of an airport, an airplane with its lights illuminated moves from right to left across the frame. As it travels, it begins its takeoff roll, gradually gaining speed along the runway. The aircraft lifts off the ground and starts ascending, moving across the screen while other stationary aircraft remain on the tarmac below.",
+  "generated_critique": "The description of the takeoff sequence is inaccurate. The statement that the airplane \"simultaneously gains altitude\" is incorrect. The claim that the ascending aircraft \"flies directly over another stationary airplane on the ground\" is also wrong.",
+  "revised_caption_by_generated_critique": "In a grainy, black-and-white nighttime view of an airport, an airplane with its lights illuminated moves from right to left across the frame. As it travels, it begins its takeoff, gradually gaining altitude. The ascending aircraft passes near another stationary airplane on the ground. The plane continues its upward and leftward trajectory, moving across the screen while other stationary aircraft remain on the tarmac below.",
   "status": "success"
 }

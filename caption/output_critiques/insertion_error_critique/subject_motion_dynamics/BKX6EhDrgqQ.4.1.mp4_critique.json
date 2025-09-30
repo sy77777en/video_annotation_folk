@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.4.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:31:28.600747",
+  "generation_timestamp": "2025-09-29T08:05:10.492196",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The camera movement described is not a pan but a truck. Please change \"as the camera slowly pans to the right\" to \"as the camera trucks to the left.\" Additionally, note that the figure briefly waves at the stationary figures before turning and walking away from the line.",
-  "revised_caption_by_generated_critique": "A stylized, low-polygon figure walks to the end of a queue of other stationary figures. After a brief pause, the figure waves at the stationary figures before turning and walking away from the line. The other figures in the queue remain still as the camera slowly trucks to the left, following the length of the line.",
+  "generated_critique": "1. The camera movement described is not a pan but a truck. Please change \"as the camera slowly pans to the right\" to \"as the camera trucks to the left.\" Additionally, you should mention that the figures in the queue are all wearing hats, as this helps differentiate them, even though this detail is not visible in the video.",
+  "revised_caption_by_generated_critique": "A stylized, low-polygon figure walks to the end of a queue of other stationary figures, all wearing hats. After a brief pause, the figure turns and walks away from the line. The other figures in the queue remain still as the camera slowly trucks to the left, following the length of the line.",
   "status": "success"
 }

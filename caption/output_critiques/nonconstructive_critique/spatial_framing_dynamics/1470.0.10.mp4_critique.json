@@ -2,7 +2,7 @@
   "video_id": "1470.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:05:43.855499",
+  "generation_timestamp": "2025-09-29T04:40:02.014558",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the main subject's movement is awkward, and the statement that the subject occupies the center of the frame throughout is inaccurate. The position and movement of the person in the yellow top are described incorrectly. The caption fails to mention that the positions of the furniture change within the frame, omitting that the door and fireplace exit, one lamp moves to the right, and another lamp appears. The description also omits a visible window and dining table.",
-  "revised_caption_by_generated_critique": "The video features a medium close-up shot of a person with short, red hair, wearing a white shirt, initially viewed from behind. The subject starts near the center of the frame but shifts slightly as they move forward, transitioning from facing away from the camera to facing the middle ground of the room. The camera maintains a consistent height, smoothly following the subject's movement. In the background, another individual in a yellow top is visible, initially near the center-right but moving slightly left as the main subject advances. The room includes various elements: a wooden door on the right, a fireplace with a painting above it in the center-back, a window, and a dining table. As the video progresses, the door and fireplace exit the frame, one lamp moves to the right, and another lamp appears. These changes in the room's layout create a dynamic contrast between the moving figures and the shifting surroundings, with the camera capturing the scene fluidly.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the subject's movement is awkward. The caption incorrectly describes the camera's movement and wrongly states that the main subject remains in the center of the frame. The appearance and movement of the person in the yellow top are also described incorrectly. The statement that the background objects remain static is misleading, as the caption fails to describe how their positions change within the frame. The description is also missing several visible elements.",
+  "revised_caption_by_generated_critique": "The video features a medium close-up shot of a person with short, red hair, wearing a white shirt, initially viewed from behind. The subject starts in the center of the frame but gradually shifts to the left as they move forward, turning to face the camera. The camera subtly pans to follow the subject's movement, maintaining a consistent height. In the background, another individual in a yellow top is visible, initially positioned near the center-right but moving slightly left as the main subject advances. This secondary figure remains further back in the room. The room includes a wooden door on the right, a fireplace with a painting above it in the center-back, and a lamp on the left side. As the camera and subjects move, these elements shift within the frame, providing a dynamic backdrop. Additional visible elements include a bookshelf on the far left and a window partially visible on the right. The camera smoothly captures the scene, highlighting the interaction between the moving figures and the changing background.",
   "status": "success"
 }

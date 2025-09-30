@@ -2,7 +2,7 @@
   "video_id": "6h6bMAWLYAI.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:56:10.559348",
+  "generation_timestamp": "2025-09-29T13:13:47.794477",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The middle-aged man is centrally positioned in the frame, but it seems you omitted that the person in a striped shirt on the left and the individual with dark hair on the right should be described as being in the background, not the middle ground. 2. When mentioning that the camera is positioned at the subject's eye level, it would be helpful to specify that it is at the same height as the man's head. 3. The caption should also note that a large window is visible behind the main subject, providing natural light to the scene.",
-  "revised_caption_by_generated_critique": "The video features a close-up shot of a middle-aged man, centrally positioned in the frame, indicating he is the main subject. He is surrounded by microphones and cameras, which occupy the foreground, emphasizing the press event setting. The man is at the center, with his face and upper body visible, while other individuals are partially visible around him, including a person in a striped shirt on the left and another individual with dark hair on the right, both in the background. The camera is positioned at the same height as the man's head, maintaining focus on his face as he speaks. A large window is visible behind the main subject, providing natural light to the scene. The scene remains tightly framed around the main subject throughout, with no significant changes in shot size or spatial positioning. Overlays with text are present at the bottom and top right of the frame, providing context for the event.",
+  "generated_critique": "1. The middle-aged man is centrally positioned in the frame, but it seems you omitted that the person in a striped shirt on the left and the individual with dark hair on the right should be described as being in the background, not the middle ground. Additionally, you should mention that there is a large window behind the group, which affects the lighting in the scene. 2. When mentioning that the camera is positioned at the subject's eye level, it would be helpful to specify that it is at the same height as the man's head.",
+  "revised_caption_by_generated_critique": "The video features a close-up shot of a middle-aged man, centrally positioned in the frame, indicating he is the main subject. He is surrounded by microphones and cameras, which occupy the foreground, emphasizing the press event setting. The man is at the center, with his face and upper body visible, while other individuals are partially visible in the background, including a person in a striped shirt on the left and another individual with dark hair on the right. A large window behind the group affects the lighting in the scene. The camera is positioned at the same height as the man's head, maintaining focus on his face as he speaks. The scene remains tightly framed around the main subject throughout, with no significant changes in shot size or spatial positioning. Overlays with text are present at the bottom and top right of the frame, providing context for the event.",
   "status": "success"
 }

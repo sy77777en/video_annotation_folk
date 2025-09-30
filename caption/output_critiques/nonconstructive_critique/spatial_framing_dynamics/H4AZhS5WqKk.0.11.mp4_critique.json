@@ -2,7 +2,7 @@
   "video_id": "H4AZhS5WqKk.0.11.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:06:56.783261",
+  "generation_timestamp": "2025-09-29T09:40:59.275674",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies Tom's 3D position as the middle ground. The description of the trident's position is incomplete as it fails to mention its continuous movement and change in direction. The description of the bokeh lights as being in the 'far background' is inaccurate. The location of Tom's hand gesture is incorrectly identified as the center-left, and the description of his head movement from right to left is also inaccurate.",
-  "revised_caption_by_generated_critique": "In a medium shot, Tom the cat is positioned in the foreground, slightly to the center-right of the frame. He holds a red trident in his left hand, which moves dynamically, changing direction as it extends from the bottom right toward the top right of the frame. An indistinct brown structure is visible in the background, set against a backdrop of scattered bokeh lights. Throughout the shot, Tom gestures with his right hand near the center of the frame and turns his head slightly from left to right while speaking. The camera remains stationary at his level.",
+  "generated_critique": "The description of Tom's depth as \"middle ground\" is incorrect. The caption fails to mention that the trident's direction and position change. The phrasing \"set against a far background of scattered bokeh lights\" is problematic. The description of the hand gesture's position as \"center-left\" is incorrect, and the description of the head movement as \"turns his head slightly from right to left\" is also incorrect.",
+  "revised_caption_by_generated_critique": "In a medium shot, Tom the cat is positioned in the foreground, slightly to the right of the center. He holds a red trident in his left hand, which initially extends from the bottom right toward the top right of the frame but changes direction and position throughout the shot. An indistinct brown structure is visible in the left background, with scattered bokeh lights creating a distant backdrop. Tom gestures with his right hand in the center of the frame and moves his head from left to right while speaking. The camera remains stationary at his level.",
   "status": "success"
 }

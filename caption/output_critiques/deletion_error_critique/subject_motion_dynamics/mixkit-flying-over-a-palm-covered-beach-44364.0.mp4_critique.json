@@ -2,7 +2,7 @@
   "video_id": "mixkit-flying-over-a-palm-covered-beach-44364.0.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:40:56.692291",
+  "generation_timestamp": "2025-09-29T05:56:43.142165",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please modify the phrase \"with the forest still in the foreground\" to \"with the forest still extending from the foreground towards the background.\" Remove the explanation about how the forest extends, and only update the phrase as indicated.",
-  "revised_caption_by_generated_critique": "The video begins with an aerial view of a dense forest of palm trees, with the camera moving forward steadily. As the camera progresses, the forest remains dense, and the background reveals distant hills under a clear sky. Gradually, the coastline starts to come into view on the left side of the frame, with the ocean waves becoming visible. The camera continues to move forward, fully revealing the coastline and the ocean, with the forest still extending from the foreground towards the background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please modify the phrase \"with the forest still in the foreground\" to \"with the forest still extending from the foreground towards the background,\" but do not mention the background revealing distant hills under a clear sky.",
+  "revised_caption_by_generated_critique": "The video begins with an aerial view of a dense forest of palm trees, with the camera moving forward steadily. As the camera progresses, the forest remains dense. Gradually, the coastline starts to come into view on the left side of the frame, with the ocean waves becoming visible. The camera continues to move forward, fully revealing the coastline and the ocean, with the forest still extending from the foreground towards the background.",
   "status": "success"
 }

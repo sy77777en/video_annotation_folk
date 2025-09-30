@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:08:00.704307",
+  "generation_timestamp": "2025-09-29T05:08:09.225823",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The road extends from the lower left in the foreground to the middle right in the background.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a white sedan, showing the rear and part of the side of the car occupying the right and center portions of the frame in the foreground, with its tail lights and light bar clearly visible. The camera is positioned at the same height as the car, capturing it from a level angle. As the video progresses, the shot transitions to an extreme wide shot, with the car moving away from the camera and becoming much smaller within the frame. In this wider view, the car is positioned near the center and slightly to the right in the background, while the wet road extends from the lower left in the foreground to the middle right in the background. Open fields and distant trees fill the middle ground and background. The camera remains at road level throughout, and no other vehicles or elements are present. The primary spatial movement is the car gradually receding into the distance along the road, emphasizing its motion away from the viewer.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera maintains the same level as the car, rather than being at road level.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a white sedan, showing the rear and part of the side of the car occupying the right and center portions of the frame in the foreground, with its tail lights and light bar clearly visible. The camera is positioned at the same height as the car, capturing it from a level angle. As the video progresses, the shot transitions to an extreme wide shot, with the car moving away from the camera and becoming much smaller within the frame. In this wider view, the car is positioned near the center and slightly to the right in the background, while the wet road extends horizontally across the lower part of the frame and open fields and distant trees fill the middle ground and background. The camera maintains the same height as the car throughout, and no other vehicles or elements are present. The primary spatial movement is the car gradually receding into the distance along the road, emphasizing its motion away from the viewer.",
   "status": "success"
 }

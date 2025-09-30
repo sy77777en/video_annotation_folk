@@ -2,7 +2,7 @@
   "video_id": "2530.0.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:36:48.793801",
+  "generation_timestamp": "2025-09-29T04:24:22.051561",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-24T01:49:33.743637",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the phrase \"lacking clear or intentional motion\" as it seems awkward and unnatural. Additionally, the caption should mention that the camera performs a smooth zoom-in toward the subject, as this is an important aspect of camera movement.",
-  "revised_caption_by_generated_critique": "The video captures a close-up of ballet shoes at ground level, with the camera positioned at a level angle. It employs an extremely shallow depth of field, focusing on the ballet shoes in the foreground. The camera exhibits minor, unsteady movements with noticeable shaking and performs a smooth zoom-in toward the subject.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the phrase \"lacking clear or intentional motion\" as it seems awkward and unnatural. Additionally, the caption should mention that the camera uses a wide-angle lens with noticeable barrel distortion, which affects the appearance of straight lines near the edges.",
+  "revised_caption_by_generated_critique": "The video captures a close-up of ballet shoes at ground level, with the camera positioned at a level angle. It employs an extremely shallow depth of field, focusing on the ballet shoes in the foreground. The camera exhibits minor, unsteady movements with noticeable shaking. A wide-angle lens is used, resulting in noticeable barrel distortion that affects the appearance of straight lines near the edges.",
   "status": "success"
 }

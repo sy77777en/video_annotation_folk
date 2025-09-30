@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.15.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:28:38.220111",
+  "generation_timestamp": "2025-09-29T07:00:51.006704",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhiqiu Lin"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The corals, displaying a range of colors and textures, also occupy the foreground and middle ground, not the background. Additionally, the coral branching structure is in the center, not the top left. The video also includes a small sea turtle resting on a rock in the bottom right, which should be mentioned in the spatial description.  \n2. Please change \"The camera is positioned at the height of the corals\" to \"The camera is leveled with the corals, looking up from a low angle.\"  \n3. The term \"close-up shot\" is inaccurate and should be removed.  \n4. Besides the fish in the foreground, there is also a swarm of fish swimming in the background.",
-  "revised_caption_by_generated_critique": "The video showcases a vibrant underwater scene with various marine life and coral formations. In the foreground and middle ground, several fish, including those with black and white stripes and darker hues, swim gracefully among the corals. The corals, displaying a range of colors and textures, are also present in the foreground and middle ground, with branching structures in the center and bulbous formations in the top right. A small sea turtle is resting on a rock in the bottom right of the frame. The camera is leveled with the corals, looking up from a low angle, capturing the dynamic movement of the fish as they navigate through the reef. In the background, a swarm of fish adds to the lively scene. The clear water and sunlight enhance the vivid colors and details, creating a dynamic underwater environment.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The corals, displaying a range of colors and textures, also occupy the foreground and middle ground, not the background. Additionally, the coral branching structure is in the center, not the top left.  \n2. Please change \"The camera is positioned at the height of the corals\" to \"The camera is leveled with the corals, looking up from a low angle.\"  \n3. The term \"close-up shot\" is inaccurate and should be removed.  \n4. Besides the fish in the foreground, there is also a swarm of fish swimming in the background.  \n5. The video briefly shows a small turtle resting on a rock in the bottom right corner, which should be mentioned in the spatial description.",
+  "revised_caption_by_generated_critique": "The video features a vibrant underwater scene with various marine life and coral formations. In the foreground and middle ground, several fish, including those with black and white stripes and darker hues, swim among the corals. These fish are primarily positioned in the bottom left and center of the frame, moving gracefully through the scene. The corals, displaying a range of colors and textures, occupy the foreground and middle ground, with a branching structure in the center and bulbous formations in the top right. A swarm of fish can be seen swimming in the background. The camera is leveled with the corals, looking up from a low angle, capturing the dynamic movement of the fish as they navigate through the reef. The clear water and sunlight enhance the vivid colors and details of the scene, creating a lively and dynamic underwater environment. Additionally, the video briefly shows a small turtle resting on a rock in the bottom right corner.",
   "status": "success"
 }

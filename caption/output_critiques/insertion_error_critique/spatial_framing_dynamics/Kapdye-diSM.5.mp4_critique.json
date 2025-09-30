@@ -2,7 +2,7 @@
   "video_id": "Kapdye-diSM.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:03:06.239350",
+  "generation_timestamp": "2025-09-29T06:29:31.213068",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-23T08:43:59.559969",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera movement is more accurately described as a counterclockwise arc around the vehicle, rather than simply moving backward and to the right. The video also briefly shows a cyclist passing by in the background, which is not mentioned in the caption. Additionally, the vehicle is in a full shot when the camera captures its entire rear.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot where a red Land Rover occupies the left half of the frame in the foreground. In the middle ground, a black Mercedes is positioned in the center-right, with other cars parked behind it. The camera, positioned at the vehicle's level, then moves in a counterclockwise arc around the Land Rover. This movement transitions into a full shot, capturing the entire rear of the Land Rover, which now fills the center-left of the frame. As the camera continues its path, the Land Rover remains the primary foreground subject, while the background buildings on the right become more fully visible across the top of the frame. Briefly, a cyclist passes by in the background, adding dynamic movement to the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera movement is more accurately described as a counterclockwise arc around the vehicle, rather than simply moving backward and to the right. The Land Rover’s headlights briefly reflect sunlight as the camera moves, which is not mentioned. Additionally, the vehicle is in a full shot when the camera captures its entire rear.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot where a red Land Rover occupies the left half of the frame in the foreground. In the middle ground, a black Mercedes is positioned in the center-right, with other cars parked behind it. The camera, positioned at the vehicle's level, then moves in a counterclockwise arc around the Land Rover. This movement transitions the shot into a full shot, capturing the entire rear of the Land Rover, which now fills the center-left of the frame. As the camera continues its path, the Land Rover’s headlights briefly reflect sunlight, and it remains the primary foreground subject, while the background buildings on the right become more fully visible across the top of the frame.",
   "status": "success"
 }

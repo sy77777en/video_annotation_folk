@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.6.2.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:34:38.331592",
+  "generation_timestamp": "2025-09-29T06:55:06.196360",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The overlay text is incorrectly identified as \"[LS]\".",
-  "revised_caption_by_generated_critique": "In a dark, indoor setting, several stylized, low-poly figures stand before a large wall of television monitors. The figures, rendered in a simple, polygonal style, are seen from behind and are silhouetted against the glow of the screens. The wall features two rows of monitors, each displaying a blurry image of a person. The room is dimly lit, with the screens providing the main source of illumination. An overlay in the bottom left corner displays the text \"[correct text]\".",
+  "generated_critique": "The caption incorrectly describes the text in the overlay.",
+  "revised_caption_by_generated_critique": "In a dark, indoor setting, several stylized, low-poly figures stand before a large wall of television monitors. The figures, rendered in a simple, polygonal style, are seen from behind and are silhouetted against the glow of the screens. The wall features two rows of monitors, each displaying a blurry image of a person. The room is dimly lit, with the screens providing the main source of illumination. An overlay in the bottom left corner displays the text \"[LS1]\".",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "y51VUsotZe4.15.2.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:14:39.452785",
+  "generation_timestamp": "2025-09-29T10:39:04.670870",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately identifies the sign as a taxi sign; it would be more accurate to refer to it as a car topper sign. Additionally, the car is not initially driving away from the viewer; it is approaching with its headlights on throughout the entire scene. The description also incorrectly mentions that the streetlights are casting a blue glow, when in fact the lighting is distinctly warm in tone.",
-  "revised_caption_by_generated_critique": "A red sedan, identifiable by the yellow car topper sign on its roof, is shown on a wide, multi-lane bridge at night. The car is centered on the road, consistently approaching the viewer with its headlights on. The bridge is defined by two long, symmetrical rows of tall, slender streetlights, one on each side. The lights are illuminated, casting a warm glow onto the road surface and creating a visual corridor that recedes into the darkness.",
+  "generated_critique": "The description inaccurately identifies the sign as a taxi sign; it would be more accurate to refer to it as a car topper sign. Additionally, the car is not initially driving away from the viewer; it is approaching with its headlights on throughout the entire scene. The description also omits that there is a cyclist riding alongside the car on the bridge, which should be mentioned for completeness.",
+  "revised_caption_by_generated_critique": "A red sedan, identifiable by the yellow car topper sign on its roof, is shown on a wide, multi-lane bridge at night. The car is centered on the road, consistently approaching the viewer with its headlights on. The bridge is defined by two long, symmetrical rows of tall, slender streetlights, one on each side. The lights are illuminated, casting a warm glow onto the road surface and creating a visual corridor that recedes into the darkness. A cyclist is riding alongside the car on the bridge, adding to the scene's dynamic.",
   "status": "success"
 }

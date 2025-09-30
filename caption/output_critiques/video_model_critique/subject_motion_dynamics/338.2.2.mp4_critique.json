@@ -2,7 +2,7 @@
   "video_id": "338.2.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:49:26.104034",
+  "generation_timestamp": "2025-09-29T12:56:39.069652",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\n**Accuracy:** The caption is highly inaccurate. Due to the rapid, blurry motion of the camera, specific details like a \"maroon vest and white shirt\" on the first person are not discernible. Identifying the drink as \"lemonade\" is a speculative guess. Most significantly, the video does not end with the camera \"focusing on a woman... who is speaking.\" The entire clip is a single, continuous, blurry pan from left to right, and it's impossible to visually identify who is speaking.\n\n**Completeness:** The caption fails to describe the most prominent aspect of the motion, which is the fast, shaky, and blurry pan across the table. It incorrectly presents the video as a series of distinct views of different people rather than one continuous, unsteady camera movement.\n\n**Adherence to Instructions:** The caption violates several key instructions. It includes speculative details (\"lemonade,\" \"maroon vest\"), directly contradicting the rule to \"Avoid describing anything not visible or uncertain.\" By fabricating actions like the camera \"focusing,\" it fails to \"Clearly describe the subject's motion\" as it actually occurs. It also incorrectly links the audio to a visual that doesn't happen.",
-  "revised_caption_by_generated_critique": "A very fast, blurry, and shaky camera shot pans from left to right across a group of people eating at a dinner table in a dimly lit setting. Due to the rapid motion, details are indistinct, but the pan moves past a woman in a yellow top in the center and a man in a reddish shirt on the right holding chopsticks. Plates of food and drinks are on the table in front of them.",
+  "generated_critique": "The caption misinterprets the scene by describing static details that are obscured by extreme motion blur. It incorrectly states the camera \"focuses on a woman in a maroon burgundy vest\" at the end; the video is a continuous, blurry pan from left to right that ends on a man. The descriptions of a \"woman in a maroon vest and white shirt\" and a \"glass of lemonade\" are speculative due to the blur and should be removed. The description should be revised to accurately reflect the primary motion, which is the camera's rapid, blurry pan across a dinner table where people are seated, briefly showing a woman in yellow and a man holding chopsticks.",
+  "revised_caption_by_generated_critique": "The video consists of a single, extremely fast and blurry whip-pan shot from left to right across a dinner table in a dimly lit setting. During the pan, a woman in a yellow shirt is briefly visible, followed by a man in a reddish shirt who is holding chopsticks.",
   "status": "success"
 }

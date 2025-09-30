@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.2.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:28:33.325959",
+  "generation_timestamp": "2025-09-29T15:53:35.599041",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to describe the camera's counterclockwise rotation and the resulting background transition. It incorrectly identifies the camera movement as a pull-back. The spatial relationship between the two men is described inaccurately.",
-  "revised_caption_by_generated_critique": "The video features a medium close-up shot of a man positioned in the center foreground. To his right, another man stands slightly behind him, with other figures visible on the far left and right in the middle ground. In the background, stadium bleachers filled with a crowd stretch from the left to the right side of the frame. A large billboard structure is also situated in the background, directly behind the central figure. The camera slowly rotates counterclockwise, a movement that gradually transitions the background and reveals more of the expansive billboard structure, including a digital screen on the left displaying an image of the main subject. Throughout the shot, the camera remains at the subjects' level.",
+  "generated_critique": "The caption incorrectly describes the camera movement as a pull-back. The description of the background is inaccurate and fails to account for the camera's rotation and the resulting changes. The spatial position of the second man relative to the main subject is also described incorrectly.",
+  "revised_caption_by_generated_critique": "The video features a medium close-up shot of a man positioned in the center foreground. To his right, another man stands in the middle ground, with additional figures visible on the far left and right, also in the middle ground. In the background, stadium bleachers filled with a crowd extend across the frame. A large billboard structure is situated in the background, directly behind the central figure. The camera rotates, gradually revealing more of the expansive billboard structure, including a digital screen on the left displaying an image of the main subject. Throughout the shot, the camera remains at the subjects' level.",
   "status": "success"
 }

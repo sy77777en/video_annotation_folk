@@ -2,7 +2,7 @@
   "video_id": "60.0.20.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:58:03.454811",
+  "generation_timestamp": "2025-09-29T08:45:17.194359",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please describe the scene as having two individuals on the bottom left and one on the bottom right, instead of stating one to her left, a second individual next to the first (also to the main subject's left), and a third partially visible on the far right. Also, mention that there is a small table with a vase in the center background behind the main subject.",
-  "revised_caption_by_generated_critique": "The video presents a medium close-up shot, with the main subject positioned centrally in the foreground. Her left hand is raised near her forehead as she turns her head from her left towards her right. In the middle ground behind her, two individuals are positioned on the bottom left, and one is on the bottom right. A small table with a vase is in the center background behind the main subject. A white-painted brick wall forms the background across the frame. The camera is positioned at the subject's level.",
+  "generated_critique": "Please describe the scene as having two individuals on the bottom left and one on the bottom right, instead of stating one to her left, a second individual next to the first (also to the main subject's left), and a third partially visible on the far right. Also, mention that there is a small table with a vase in the center foreground, even if it is not referenced in the original caption.",
+  "revised_caption_by_generated_critique": "The video presents a medium close-up shot, with the main subject positioned centrally in the foreground. Her left hand is raised near her forehead as she turns her head from her left towards her right. In the middle ground behind her, two individuals are on the bottom left and one is on the bottom right. A small table with a vase is in the center foreground. A white-painted brick wall forms the background across the frame. The camera is positioned at the subject's level.",
   "status": "success"
 }

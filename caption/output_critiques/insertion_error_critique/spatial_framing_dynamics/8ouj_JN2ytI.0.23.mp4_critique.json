@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.0.23.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:12:46.139055",
+  "generation_timestamp": "2025-09-29T09:06:57.977646",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. To provide additional context, it would be beneficial to mention that in the foreground, the main football player runs past another opposing player who dives onto the ground. This should replace the sentence, \"...another opposing player is now seen on the ground in the foreground.\" 2. Regarding the positioning of the main football player, they predominantly remain on the center-left of the frame throughout the video but conclude the video positioned in the center of the frame. 3. Additionally, it would be helpful to note that a referee stands in the top right background throughout the scene, even though the referee is not actually visible in the video.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot, positioning the main football player in a yellow jersey in the left foreground as he runs toward the right side of the frame. In the center foreground, two other players are tangled on the ground, with more players scattered across the middle ground and a large crowd filling the background. The camera, positioned at the subjects' level, tracks the main player's run, smoothly transitioning into a full shot. This change in framing brings the main player to the center-left of the frame, where he runs past another opposing player who dives onto the ground. The main player predominantly remains on the center-left of the frame throughout the video but concludes the video positioned in the center of the frame. Additionally, a referee stands in the top right background throughout the scene, even though the referee is not actually visible in the video.",
+  "generated_critique": "1. To provide additional context, it would be beneficial to mention that in the foreground, the main football player runs past another opposing player who dives onto the ground. This should replace the sentence, \"...another opposing player is now seen on the ground in the foreground.\" Additionally, you could note that a referee stands in the top right background, even though the referee is not visible in the video. 2. Regarding the positioning of the main football player, they predominantly remain on the center-left of the frame throughout the video but conclude the video positioned in the center of the frame.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot, positioning the main football player in a yellow jersey in the left foreground as he runs toward the right side of the frame. In the center foreground, two other players are tangled on the ground, with more players scattered across the middle ground and a large crowd filling the background. The camera, positioned at the subjects' level, tracks the main player's run, smoothly transitioning into a full shot. This change in framing brings the main player to the center-left of the frame as he runs past another opposing player who dives onto the ground. Although not visible in the video, a referee stands in the top right background. The main football player predominantly remains on the center-left of the frame throughout the video but concludes the video positioned in the center of the frame.",
   "status": "success"
 }

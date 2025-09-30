@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.5.2.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:32:56.938799",
+  "generation_timestamp": "2025-09-29T06:53:21.402470",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the lateral component of the camera's movement and fails to mention the camera's ascent.",
-  "revised_caption_by_generated_critique": "From a smooth, high-angle, overhead perspective, the camera maintains a deep focus while tracking a moving car. The camera moves backward at a 45-degree angle relative to the street, incorporating a lateral component to its movement. Midway through the shot, the frame's center shifts upward to focus on the car's roof as the camera ascends.",
+  "generated_critique": "The caption fails to fully describe the camera's movement direction. It also incorrectly identifies the camera's action midway through the shot, describing the effect on the frame rather than the movement that causes it.",
+  "revised_caption_by_generated_critique": "The camera smoothly tracks a moving car from a high-angle, overhead perspective, maintaining deep focus. It moves backward diagonally at a 45-degree angle relative to the street. Midway through the shot, the camera tilts upward, causing the frame's center to shift and focus on the car's roof.",
   "status": "success"
 }

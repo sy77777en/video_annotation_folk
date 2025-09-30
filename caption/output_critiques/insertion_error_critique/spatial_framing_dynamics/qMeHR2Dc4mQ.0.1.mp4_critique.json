@@ -2,7 +2,7 @@
   "video_id": "qMeHR2Dc4mQ.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:40:35.559717",
+  "generation_timestamp": "2025-09-29T12:49:54.354043",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. To avoid ambiguity, change \"looking toward the left\" to \"facing towards the left of the frame and looking ahead.\" 2. Modify \"The camera performs a slow, clockwise arc around him. This movement gradually brings more of his face into view\" to \"As the video advances, more of his face comes into view\" because it is unclear whether the change is due to the camera's movement or the person's movement. 3. Also, mention that there is a window with visible daylight in the background, as this adds context to the spatial environment.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a man's face is initially seen in profile on the right side of the frame, facing towards the left of the frame and looking ahead. The scene is extremely dark, with a single light source illuminating the right side of his face, leaving the rest of his features and the background in shadow. As the video advances, more of his face comes into view, revealing his wide eyes as he shifts from a profile to a three-quarter view, positioned in the center-right of the frame. The camera remains at his eye level throughout the shot. In the background, a window with visible daylight adds context to the spatial environment.",
+  "generated_critique": "1. To avoid ambiguity, change \"looking toward the left\" to \"facing towards the left of the frame and looking ahead.\" 2. Modify \"The camera performs a slow, clockwise arc around him. This movement gradually brings more of his face into view\" to \"As the video advances, more of his face comes into view\" because it is unclear whether the change is due to the camera's movement or the person's movement. 3. Also, mention that there is a window with visible daylight in the background on the left side of the frame, as this adds context to the spatial environment.",
+  "revised_caption_by_generated_critique": "In a close-up shot, a man's face is initially seen in profile on the right side of the frame, facing towards the left of the frame and looking ahead. The scene is extremely dark, with a single light source illuminating the right side of his face, leaving the rest of his features and the background in shadow. As the video advances, more of his face comes into view, revealing his wide eyes as he shifts from a profile to a three-quarter view, positioned in the center-right of the frame. The camera remains at his eye level throughout the shot. In the background on the left side of the frame, a window with visible daylight adds context to the spatial environment.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "61.1.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:25:37.495321",
+  "generation_timestamp": "2025-09-29T12:27:21.384825",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please revise the caption to state \"while blurring the foreground and background\" instead of just \"while blurring the background.\" Additionally, mention that the camera angle is a high angle, as this is important for clarity.",
-  "revised_caption_by_generated_critique": "This is a slightly unsteady, high-angle shot. The camera uses an extremely shallow depth of field, focusing on the man in the midground while blurring both the foreground and background.",
+  "generated_critique": "1. Please revise the caption to state \"while blurring the foreground and background\" instead of just \"while blurring the background.\" Additionally, mention that the camera is positioned at a high angle, as this affects the viewer’s perception of the subject.",
+  "revised_caption_by_generated_critique": "This is a slightly unsteady, high-angle shot. The camera uses an extremely shallow depth of field, focusing on the man in the midground while blurring the foreground and background.",
   "status": "success"
 }

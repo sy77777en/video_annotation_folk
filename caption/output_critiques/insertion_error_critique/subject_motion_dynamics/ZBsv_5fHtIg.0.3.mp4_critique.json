@@ -2,7 +2,7 @@
   "video_id": "ZBsv_5fHtIg.0.3.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:39:37.731838",
+  "generation_timestamp": "2025-09-29T07:16:42.133503",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yun Yang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the camera movement is inaccurate. The camera actually trucks right to track the side of the car, then arcs counterclockwise to move ahead of it. Additionally, the car briefly slows down as it passes a set of orange traffic cones placed along the tunnel wall.",
-  "revised_caption_by_generated_critique": "A black car drives forward in a tunnel. The camera starts with a close-up on the front passenger-side wheel and headlight, then trucks right to track the side of the car. It then arcs counterclockwise to move ahead of the vehicle. As the car continues, it briefly slows down while passing a set of orange traffic cones placed along the tunnel wall.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the camera movement is inaccurate. The camera actually trucks right to track the side of the car, then arcs counterclockwise to move ahead of it. Additionally, the car briefly slows down as it passes a set of orange traffic cones, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "A black car drives forward in a tunnel. The camera starts with a close-up on the front passenger-side wheel and headlight, then trucks right to track the side of the car. It then arcs counterclockwise to move ahead of the vehicle. As the car continues to move straight ahead, it briefly slows down while passing a set of orange traffic cones.",
   "status": "success"
 }

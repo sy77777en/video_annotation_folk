@@ -2,7 +2,7 @@
   "video_id": "6303.0.21.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:05:25.795494",
+  "generation_timestamp": "2025-09-29T05:06:23.204316",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera is not following the man from behind as described. Instead, the man is moving backward while facing the camera, and the camera is moving forward towards him. The video also displays noticeable barrel distortion along the edges of the frame.",
-  "revised_caption_by_generated_critique": "The video features a high-angle camera at eye level, focusing on a man in the midground with a shallow depth of field. The man is moving backward while facing the camera, which is moving forward towards him. The video also displays noticeable barrel distortion along the edges of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera is not following the man from behind as described. Instead, the man is moving backward while facing the camera, and the camera is moving forward towards him. There is noticeable barrel distortion at the edges of the frame, causing straight lines to bow outward.",
+  "revised_caption_by_generated_critique": "The video features a high-angle camera at eye level, focusing on a man in the midground with a shallow depth of field. The man is moving backward while facing the camera, which is moving forward towards him. There is noticeable barrel distortion at the edges of the frame, causing straight lines to bow outward.",
   "status": "success"
 }

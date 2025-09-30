@@ -2,7 +2,7 @@
   "video_id": "BV7Q0zYDO9I.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:23:49.492919",
+  "generation_timestamp": "2025-09-29T07:53:45.533024",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The statement \"The camera is positioned at the subject's level\" seems to be incorrect. While the camera initially starts at the subject's height, it subsequently moves forward and upward, eventually positioning itself above the subjects. 2. The description of the scene as \"static\" is inaccurate. 3. The caption omits that the lighting in the background gradually shifts from black to a deep blue hue during the scene.",
-  "revised_caption_by_generated_critique": "This wide shot captures a dynamic scene. In the left foreground stands a blue toy soldier, mirrored by another in the right foreground. The middle ground, centrally illuminated by a spotlight, features two white toy figures kneeling side-by-side, one slightly left of center and the other slightly right of center. Several small, white objects are scattered on the ground in the center of the middle ground, in front of and between the kneeling figures. The surrounding background gradually shifts from black to a deep blue hue. The camera starts at the subjects' level but moves forward and upward, eventually positioning itself above the subjects.",
+  "generated_critique": "1. The statement \"The camera is positioned at the subject's level\" seems to be incorrect. While the camera initially starts at the subject's height, it subsequently moves forward and upward, eventually positioning itself above the subjects. 2. The description of the scene as \"static\" is inaccurate. 3. The caption omits that a red toy car briefly enters the bottom right foreground before exiting the frame, which affects the spatial dynamics described.",
+  "revised_caption_by_generated_critique": "This wide shot captures a dynamic scene. In the left foreground stands a blue toy soldier, mirrored by another in the right foreground. The middle ground, centrally illuminated by a spotlight, features two white toy figures kneeling side-by-side, one slightly left of center and the other slightly right of center. Several small, white objects are scattered on the ground in the center of the middle ground, in front of and between the kneeling figures. A red toy car briefly enters the bottom right foreground before exiting the frame, adding to the spatial dynamics. The surrounding background is completely black. The camera initially starts at the subject's height but moves forward and upward, eventually positioning itself above the subjects.",
   "status": "success"
 }

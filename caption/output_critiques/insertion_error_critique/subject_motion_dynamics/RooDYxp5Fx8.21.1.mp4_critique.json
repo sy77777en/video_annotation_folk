@@ -2,7 +2,7 @@
   "video_id": "RooDYxp5Fx8.21.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:33:22.105688",
+  "generation_timestamp": "2025-09-29T07:07:50.189299",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The scene is not a static shot as described; the camera moves forward and pans to the right. It would be more accurate to say that the entire scene itself is static. Additionally, a cyclist briefly rides past the camera on the left side of the street, which should be mentioned to accurately capture all subject motion.",
-  "revised_caption_by_generated_critique": "The camera moves forward and pans to the right, capturing a scenic view of a quiet street in a Japanese town. The street is lined with traditional buildings and shops, with a lush green hill visible in the background. A cyclist briefly rides past the camera on the left side of the street, adding a touch of motion to the otherwise tranquil scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The scene is not a static shot as described; the camera moves forward and pans to the right. It would be more accurate to say that the entire scene itself is static. Additionally, a cyclist rides past the camera near the middle of the video, which should be mentioned to accurately capture all subject motion.",
+  "revised_caption_by_generated_critique": "The video captures a scenic street in a Japanese town, lined with traditional buildings and shops, with a lush green hill in the background. The camera moves forward and pans to the right, while the overall scene remains tranquil. A cyclist rides past the camera near the middle of the video, adding a touch of motion to the otherwise serene setting.",
   "status": "success"
 }

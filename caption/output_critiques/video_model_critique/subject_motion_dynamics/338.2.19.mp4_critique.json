@@ -2,7 +2,7 @@
   "video_id": "338.2.19.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:46:18.736278",
+  "generation_timestamp": "2025-09-29T12:52:48.629500",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good.\n\n**Accuracy:** The caption is accurate. It correctly describes the woman as remaining still while the camera performs a gradual zoom-in.\n\n**Completeness:** The description is complete, capturing the only significant motion in the video, which is the camera movement. It also accurately notes the subject's lack of motion.\n\n**Adherence to Instructions:** The caption adheres to all instructions. It correctly follows the rule for a subject with no movement by stating she \"remains still.\" It is concise, objective, and focuses on describing the visual action (in this case, the camera's action) without adding subjective or speculative details.",
-  "revised_caption_by_generated_critique": "The camera slowly zooms in on a woman standing still in a room with floral wallpaper.",
+  "generated_critique": "The caption inaccurately states the woman \"remains still\" when she can be seen blinking once. Additionally, the first sentence describes the static setting (\"a room with floral wallpaper and a framed picture on the wall\"), which violates the instruction to focus only on the subject's motion. The description should be revised to remove the details about the room and include the blinking action. A more accurate and concise caption would be: \"A woman stands still looking forward and blinks once as the camera slowly moves closer to her.\"",
+  "revised_caption_by_generated_critique": "A woman stands still looking forward and blinks once as the camera slowly moves closer to her.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.6.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:13:20.313034",
+  "generation_timestamp": "2025-09-29T14:52:09.624166",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera angle as \"high\" is inaccurate. The description of the person in white's leap is incorrect; they do not move \"upward and toward the right, moving from the left side of the frame toward the center\".",
-  "revised_caption_by_generated_critique": "In a wide shot filmed from an elevated angle, a police van is positioned in the left-middle ground on a bridge that extends horizontally across the frame. A person in white stands on a hoverboard next to the van, while a figure in tactical gear stands to their right in the center-middle ground. A second figure in tactical gear runs from the left side of the frame toward the center, stopping near the front of the van. The person in white then leaps forward, moving from the left side of the frame toward the right. Simultaneously, the two figures in tactical gear jump toward the airborne person, converging mid-air. All three subjects then fall together toward the right side of the frame, landing near the bridge's railing. In the background, a river and a futuristic cityscape are visible, while a railing occupies the immediate foreground at the bottom of the frame.",
+  "generated_critique": "The description of the camera angle as \"high\" is incorrect. The description of the person in white's leap is also inaccurate; the caption incorrectly states they move \"toward the right\" and \"toward the center.\"",
+  "revised_caption_by_generated_critique": "In a wide shot filmed from a slightly elevated angle, a police van is positioned in the left-middle ground on a bridge that extends horizontally across the frame. A person in white stands on a hoverboard next to the van, while a figure in tactical gear stands to their right in the center-middle ground. A second figure in tactical gear runs from the left side of the frame toward the center, stopping near the front of the van. The person in white then leaps upward and slightly to the left, moving from the left side of the frame. Simultaneously, the two figures in tactical gear jump toward the airborne person, converging mid-air. All three subjects then fall together toward the right side of the frame, landing near the bridge's railing. In the background, a river and a futuristic cityscape are visible, while a railing occupies the immediate foreground at the bottom of the frame.",
   "status": "success"
 }

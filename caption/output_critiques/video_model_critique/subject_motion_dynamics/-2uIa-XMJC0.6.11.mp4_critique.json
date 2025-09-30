@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.6.11.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T21:21:50.547642",
+  "generation_timestamp": "2025-09-29T03:53:25.239756",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-07T02:27:46.093440",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The provided caption is not good because it contains a significant factual inaccuracy.\n\n**Accuracy:** The caption is inaccurate. While it correctly describes the man on the screen speaking and a hand plugging in a USB drive, the final clause, \"and a smaller circular frame with a Black man in a red hoodie appears at the bottom right of the screen,\" describes an event that does not happen in the video. The video ends before any such second frame appears.\n\n**Completeness:** The caption fails to be complete and accurate because it fabricates an event. It correctly identifies the main actions that do occur but then adds a non-existent one.\n\n**Adherence to Instructions:** The caption violates the core instruction to \"Avoid describing anything not visible or uncertain.\" By inventing an event, it fails to provide a truthful description of the video's content. While it follows the chronological order for the events that do happen and uses simple language, the inclusion of false information makes it fundamentally flawed.",
-  "revised_caption_by_generated_critique": "A man is shown on a futuristic, transparent screen, his face framed within a glowing digital bubble. He is speaking directly to the viewer against a blurred cityscape background. A hand enters the frame from below and plugs a glowing USB drive into a port on the screen's base. The man on the screen continues to speak and smile as the connection is made.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption contains several significant factual errors and describes events that do not occur in the video. The hand interacts with a single glowing pink drive, not an \"orange USB drive\" and then a \"different pink USB drive.\" The chronological order of the interaction is also incorrect; the hand first removes the pink drive, re-inserts it, and then removes it again. Most importantly, the claims that \"The screen changes due to the USB drive being swapped\" and that \"a smaller circular frame with a Black man in a red hoodie appears\" are entirely false, as neither of these events happens in the video. These inaccurate statements must be removed, and the description of the hand's interaction with the drive must be corrected to reflect the actual color and sequence of events.",
+  "revised_caption_by_generated_critique": "A man with dark hair appears on a futuristic, transparent screen, his face framed within a glowing circular bubble. He is speaking, with a blurred cityscape visible behind him. A hand enters the frame from below and pulls a glowing pink USB drive out of a port at the base of the screen. The hand then re-inserts the drive, only to pull it out again a moment later. The man on the screen continues to speak and smile throughout this interaction.",
   "status": "success"
 }

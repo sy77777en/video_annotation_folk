@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.28.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:24:19.697754",
+  "generation_timestamp": "2025-09-29T09:21:52.129394",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove spatial descriptions such as foreground, middle ground, and background, as they are not applicable to a 2D video. Additionally, instead of saying the question marks appear and disappear, describe them as rotating around the character’s head, rather than referring to it as a shelf.",
-  "revised_caption_by_generated_critique": "A stylized character is positioned partially behind a brown counter. A thought bubble appears next to the character's head. A long display with five symbols spans the top of the frame. A user interface bar is located at the very bottom of the screen. A white arrow cursor moves across the display, hovering over the symbols. Small question marks rotate around the character's head as the cursor moves.",
+  "generated_critique": "Please remove spatial descriptions such as foreground, middle ground, and background, as they are not applicable to a 2D video. Additionally, instead of saying the question marks appear and disappear, describe them as floating upwards from a conveyor belt, rather than referring to it as a shelf.",
+  "revised_caption_by_generated_critique": "A stylized character is positioned partially behind a brown counter. A thought bubble appears next to the character's head. A long conveyor belt displaying five symbols spans the top of the frame. A user interface bar is located at the very bottom of the screen. A white arrow cursor moves across the conveyor belt, hovering over the symbols. Small question marks float upwards from the conveyor belt as the cursor moves.",
   "status": "success"
 }

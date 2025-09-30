@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.8.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:14:37.239405",
+  "generation_timestamp": "2025-09-29T03:48:31.756784",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption omits the action of the man punching the camera. The phrases \"and the camera captures his movement in detail\" and \"The video ends with the man standing close to the camera, with the screens still visible in the background\" are inaccurate descriptions of the video content.",
-  "revised_caption_by_generated_critique": "The video begins with a blurred, dark room filled with multiple screens displaying various images and data. As the camera moves, the screens continue to show different, colorful displays, including brain scans and other data visualizations. A man appears in the background, walking towards the camera with a focused expression. As he gets closer, his face becomes clearer. Suddenly, he punches the camera, causing the video to abruptly end with the screens still visible in the background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption is missing the man's final action. The phrases \"and the camera captures his movement in detail\" and \"The video ends with the man standing close to the camera, with the screens still visible in the background\" are inaccurate.",
+  "revised_caption_by_generated_critique": "The video begins in a dimly lit room filled with multiple screens displaying various images and data. As the camera moves, the screens continue to show different, colorful displays, including brain scans and other data visualizations. A man appears in the background, walking towards the camera with a focused expression. As he approaches, his face becomes clearer. The man reaches the camera, pauses, and then turns to interact with one of the screens, ending the video with him engaged in examining the data.",
   "status": "success"
 }

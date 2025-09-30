@@ -2,7 +2,7 @@
   "video_id": "PrjpmqAsCZQ.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:29:04.931814",
+  "generation_timestamp": "2025-09-29T05:38:59.111409",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhiqiu Lin"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "2. Modify \"stretching from the middle ground into the foreground\" to \"stretching from the foreground into the background.\"",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot, capturing a man in the middle ground on the left side of the frame, seated at a desk. The desk, along with its electronic equipment, occupies the center and right portions of the frame, stretching from the foreground into the background. A computer monitor is visible in the top right background. The shot then transitions, moving in to become a close-up that centers on the man's hands in the foreground as they manipulate a small, brightly glowing object. The camera remains positioned at the subject's level throughout the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The man is positioned in the foreground, not the middle ground.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot, capturing a man in the foreground on the left side of the frame, seated at a desk. The desk, along with its electronic equipment, occupies the center and right portions of the frame, stretching from the middle ground into the foreground. A computer monitor is visible in the top right background. The shot then transitions, moving in to become a close-up that centers on the man's hands in the foreground as they manipulate a small, brightly glowing object. The camera remains positioned at the subject's level throughout the scene.",
   "status": "success"
 }

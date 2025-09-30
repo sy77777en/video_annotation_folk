@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.3.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:19:07.206624",
+  "generation_timestamp": "2025-09-29T09:15:45.561709",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "I would describe the scene as a 2.5D isometric game rather than using \"a wide shot from a tilted overhead angle.\" The spaceship does not navigate a maze; the pattern on the ground is not a maze. I do not see a low grey brick wall, so I suggest removing the sentence \"A low, grey brick wall extends from the bottom left into the middle ground, while a taller, light blue wall occupies the background.\" For clarity, replace \"in the middle ground\" with \"on the ground\" when referring to stationary elements. The player's ship is actually colored yellow, not white. Lastly, instead of \"a score at the top left,\" it should be \"several scores at the top left.\" Please avoid using terms like foreground/middle ground in this description since it lacks depth (2.5D).",
+  "generated_critique": "I would describe the scene as a 2.5D isometric game rather than using \"a wide shot from a tilted overhead angle.\" The spaceship does not navigate a maze; the pattern on the ground is not a maze. I do not see a low grey brick wall, so I suggest removing the sentence \"A low, grey brick wall extends from the bottom left into the middle ground, while a taller, light blue wall occupies the background.\" For clarity, replace \"in the middle ground\" with \"on the ground\" when referring to stationary elements. The player's ship is actually colored yellow, not blue. Lastly, instead of \"a score at the top left,\" it should be \"several scores at the top left.\" Please avoid using terms like foreground/middle ground in this description since it lacks depth (2.5D).",
   "revised_caption_by_generated_critique": "The scene depicts a 2.5D isometric video game level that scrolls diagonally from the top right to the bottom left. The player's yellow ship starts in the bottom left and moves across the lower half of the frame, navigating over a patterned dark blue floor. Stationary elements, including green ground turrets and red barrels, are positioned on the ground. Flying enemy aircraft enter from the top right and move diagonally toward the bottom left. A translucent blue energy barrier periodically appears vertically. The frame includes fixed overlays: several scores at the top left, a vertical altitude meter on the left, and a heads-up display at the bottom.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4jdZkC33NXw.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:41:44.165103",
+  "generation_timestamp": "2025-09-29T09:49:56.942685",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is not a static shot as described; instead, it features forward camera movement, capturing a first-person point-of-view of someone walking down the street. Additionally, the camera occasionally tilts slightly upward, briefly revealing the tops of the trees and some overcast sky above the houses.",
-  "revised_caption_by_generated_critique": "This video captures a first-person point-of-view of someone walking down a residential street. The wet asphalt road serves as a strong leading line from the foreground into the background. On the left, a silver car is partially visible in the bottom-left foreground, while a red Mini Cooper and another red vehicle are parked in the left middle ground next to modern houses. On the right, a black car is parked in the right middle ground, with another black vehicle under a white carport just behind it. Utility poles and wires line the right side of the street, stretching from the middle ground into the background. The camera occasionally tilts slightly upward, briefly revealing the tops of the trees and some overcast sky above the houses, offering a dynamic view down the quiet, rain-slicked street.",
+  "generated_critique": "The video is not a static shot as described; instead, it features forward camera movement, capturing a first-person point-of-view of someone walking down the street. Additionally, the camera briefly tilts upward to show the tops of the utility poles before returning to its original angle.",
+  "revised_caption_by_generated_critique": "This video captures a dynamic, first-person point-of-view as the camera moves forward down a residential street. The wet asphalt road serves as a strong leading line from the foreground into the background. On the left, a silver car is partially visible in the bottom-left foreground, while a red Mini Cooper and another red vehicle are parked in the left middle ground next to modern houses. On the right, a black car is parked in the right middle ground, with another black vehicle under a white carport just behind it. Utility poles and wires line the right side of the street, stretching from the middle ground into the background. The camera briefly tilts upward to reveal the tops of the utility poles before returning to its original angle, offering a straight-on view down the quiet, rain-slicked street.",
   "status": "success"
 }

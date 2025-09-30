@@ -2,7 +2,7 @@
   "video_id": "4jdZkC33NXw.0.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:50:10.738199",
+  "generation_timestamp": "2025-09-29T11:34:16.326648",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Consider replacing \"minimal shaking\" with \"some shaking\" to better reflect the camera's movement. The current description suggests a first-person point of view, as the camera appears to move up and down, similar to the natural motion of a person walking. Additionally, you might mention that the video appears to use a slight fisheye lens, as there is noticeable curvature at the edges of the frame.",
-  "revised_caption_by_generated_critique": "The camera is positioned at eye level with a level angle, maintaining deep focus throughout. It moves forward smoothly, incorporating a downward motion as it descends the stairs, with some shaking that suggests a first-person point of view, similar to the natural motion of a person walking. Additionally, the video appears to use a slight fisheye lens, as there is noticeable curvature at the edges of the frame.",
+  "generated_critique": "1. Consider replacing \"minimal shaking\" with \"some shaking\" to better reflect the camera's movement. The current description suggests a first-person point of view, as the camera appears to move up and down, similar to the natural motion of a person walking. Additionally, it would be helpful to mention the presence of a noticeable fisheye lens distortion, which causes straight lines near the edges to curve outward.",
+  "revised_caption_by_generated_critique": "The camera is positioned at eye level with a level angle, maintaining deep focus throughout. It moves forward smoothly, incorporating a downward motion as it descends the stairs, with some shaking that suggests a first-person point of view, similar to the natural motion of a person walking. Additionally, there is a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
   "status": "success"
 }

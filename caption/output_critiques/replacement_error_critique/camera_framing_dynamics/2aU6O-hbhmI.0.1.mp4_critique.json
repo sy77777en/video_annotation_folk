@@ -2,7 +2,7 @@
   "video_id": "2aU6O-hbhmI.0.1.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:31:04.526097",
+  "generation_timestamp": "2025-09-29T04:14:40.215334",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please revise the sequence to \"initially tilts upward and then flies backward\" instead of \"initially flies forward and then pans left.\"",
-  "revised_caption_by_generated_critique": "The video features noticeable fisheye distortion and is captured from a smooth, aerial-level drone perspective. The camera maintains a level angle and uses deep focus, keeping the entire scene sharp. The drone initially tilts upward and then flies backward, revealing a building on the left side of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please revise the description to indicate that the camera uses a shallow depth of field, with only the foreground in sharp focus, instead of stating that the entire scene is sharp with deep focus.",
+  "revised_caption_by_generated_critique": "The video features noticeable fisheye distortion and is captured from a smooth, aerial-level drone perspective. The camera maintains a level angle and uses a shallow depth of field, keeping only the foreground in sharp focus. The drone initially flies forward and then pans left, revealing a building on the left side of the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:01:53.425818",
+  "generation_timestamp": "2025-09-29T06:27:54.219706",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-23T07:59:53.620586",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please remove the terms \"foreground,\" \"middleground,\" and \"background\" from the description. The phrase \"floating horizontally from the center toward the right side of the frame\" should be revised to \"floating horizontally from the center toward the right.\" However, since the camera also tracks to the right, the shirt remains in the center or left side of the frame. Regarding the suitcase, it is partially visible from the right side at the beginning and is fully revealed later, so please adjust the description accordingly. The shirt briefly casts a shadow on the floor as it moves, which should be mentioned. Remove the phrase \"In the next shot.\" Change \"occupying the bottom right\" to \"occupying the center-right.\" Instead of \"while several rolled-up pieces of light-colored clothing are arranged beside it on the left,\" use \"while several rolled-up pieces of light-colored clothing are arranged above it.\" Avoid mentioning \"overhead\" as the camera height is not clearly defined.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot from above, showing a long-sleeve shirt with a red base and white polka dots floating horizontally from the center toward the right. As the camera tracks the shirt’s movement to the right, the shirt remains in the center or left side of the frame and briefly casts a shadow on the floor. A small, rectangular suitcase with a hard shell and handle is partially visible from the right side at the beginning and becomes fully revealed as it enters the frame, eventually centered in the shot. The suitcase is then fully open and viewed directly from above, filling most of the frame. Inside, the shirt is now neatly folded and placed on the center-right of the suitcase, while several rolled-up pieces of light-colored clothing are arranged above it. The camera remains at a high angle above the subjects throughout, with no change in camera height. The spatial dynamic shifts from a moving shot that tracks the shirt and suitcase to a static view that clearly displays the arrangement of the packed items.",
+  "revised_caption_by_generated_critique": "The video begins with a full shot from above, showing a long-sleeve shirt with a red base and white polka dots floating horizontally from the center toward the right. As the camera tracks the shirt’s movement to the right, the shirt remains in the center or left side of the frame and briefly casts a shadow on the floor. A small, rectangular suitcase with a hard shell and handle is partially visible from the right side at the beginning and becomes fully revealed as it enters the frame. The camera continues to follow the shirt until the suitcase is centered in the frame, then becomes stationary. The suitcase is fully open and viewed directly from above, filling most of the frame. Inside, the shirt is now neatly folded and placed on the center-right of the suitcase, while several rolled-up pieces of light-colored clothing are arranged above it. The camera remains at a high angle above the subjects throughout, with no change in camera height. The spatial dynamic shifts from a moving shot that tracks the shirt and suitcase to a static view that clearly displays the arrangement of the packed items.",
   "status": "success"
 }

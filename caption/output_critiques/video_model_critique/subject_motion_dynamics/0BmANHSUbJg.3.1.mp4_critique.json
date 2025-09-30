@@ -2,7 +2,7 @@
   "video_id": "0BmANHSUbJg.3.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:11:20.870126",
+  "generation_timestamp": "2025-09-29T05:32:34.264365",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-27T06:34:47.070260",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is not good.\n\nHere's a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is accurate. It correctly identifies the subject as a passenger airplane and accurately describes the sequence of events: an explosion on the wing, the formation of a fireball, and the subsequent dissipation into smoke.\n\n**Completeness:** The caption is very complete, perhaps to a fault. It captures every micro-stage of the explosion from its start to its end.\n\n**Adherence to Instructions:** The caption fails to adhere to several key instructions:\n\n*   **Focus on Motion vs. Appearance:** The first sentence, \"The video shows a large passenger airplane with a white fuselage and visible windows, positioned in the foreground,\" is a detailed description of the subject's static appearance. The instructions explicitly state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions\" and to avoid describing appearance unless necessary for differentiation.\n*   **Conciseness:** The caption is not concise. It is overly verbose and repetitive. For example, the sentences \"The explosion intensifies, causing the flames and smoke to spread further, creating a large fireball\" and \"The fireball continues to expand, with the flames and smoke becoming more prominent and widespread\" describe the same phase of the explosion. Similarly, the last two sentences are redundant in describing the aftermath. The entire event is very brief, and the description is disproportionately long.\n*   **Clarity and Coherence:** The repetition and excessive detail make the paragraph less clear and impactful. A more streamlined description would be more effective.\n\nIn summary, while the caption is factually correct and chronologically ordered, it violates the core principles of being concise and focusing strictly on motion. It reads more like a frame-by-frame analysis than a succinct summary of the action.",
-  "revised_caption_by_generated_critique": "A fiery explosion erupts on the wing of an airplane, expanding into a large fireball that quickly subsides into a plume of thick black smoke.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the sequence of events and includes speculative information not present in the video. It states that the airplane crashes into the warehouse, but the video begins with the airplane already stationary as an explosion erupts on its wing. The explosion then causes the warehouse to collapse, not the other way around. The description should be corrected to reflect this chronological order. Additionally, the opening description of the airplane's appearance (\"white fuselage and visible windows\") and the concluding interpretive phrase (\"highlighting the aftermath\") should be removed to focus strictly on the motion as per the instructions. The description should begin with the explosion, followed by the collapse of the warehouse and the transition of the fireball into smoke.",
+  "revised_caption_by_generated_critique": "At night, a fiery explosion erupts on the wing of a large airplane parked next to a warehouse. The force of the blast causes a large section of the adjacent warehouse structure to collapse onto the plane's wing. The initial bright orange fireball quickly transitions into a massive plume of thick, dark smoke that billows upwards and outwards.",
   "status": "success"
 }

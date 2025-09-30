@@ -2,7 +2,7 @@
   "video_id": "yQLgp8trSDc.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:06:23.037587",
+  "generation_timestamp": "2025-09-29T14:47:05.258947",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the black, blurred pillar that occasionally appears in the foreground. It also incorrectly situates some secondary figures in the 'middle ground to background' and inaccurately describes the number of individuals revealed during the pan.",
-  "revised_caption_by_generated_critique": "The video presents a medium close-up shot, initially focusing on a man positioned in the center of the frame and the middle ground. Behind him, in the background, another out-of-focus figure is visible. Occasionally, a black, blurred pillar appears in the foreground. The camera then pans slightly to the left, revealing additional individuals in the background. Contrary to the original description, there are more than two individuals revealed during the pan. The main subject shifts slightly towards the left side of the frame while remaining the central focus. The background figures are seen moving subtly. The camera is positioned level with the main subject's height.",
+  "generated_critique": "The caption omits a foreground element that appears during the camera movement. The description of the secondary figures is inaccurate, specifically regarding their depth, which is incorrectly stated as 'middle ground to background'.",
+  "revised_caption_by_generated_critique": "The video begins with a medium close-up shot, focusing on a man positioned centrally in the frame and in the middle ground. Behind him, another figure is visible, slightly out of focus. As the camera pans slightly to the left, a foreground element briefly appears, adding depth to the scene. More individuals are revealed in the background, with one man towards the left edge and another towards the right edge, both situated in the background. During this pan, the main subject shifts slightly towards the left side of the frame while remaining the central focus. The background figures are seen moving subtly. The camera is positioned level with the main subject's height.",
   "status": "success"
 }

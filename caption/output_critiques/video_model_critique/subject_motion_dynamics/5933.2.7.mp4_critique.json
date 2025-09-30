@@ -2,7 +2,7 @@
   "video_id": "5933.2.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T16:09:17.652920",
+  "generation_timestamp": "2025-09-29T19:21:33.064431",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The description of the person's movement is not entirely accurate. The person walks laterally from the right side of the frame toward the left, not necessarily \"towards the center\" or \"gradually moving further away.\" The description of the scenery is accurate.\n\n**Completeness:** The caption describes both the scenery and the subject's motion. However, it dedicates a significant portion to the static environment, which is contrary to the instructions.\n\n**Adherence to Instructions:** The caption does not fully adhere to the provided instructions for several reasons:\n1.  **Focus:** The instructions state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The caption spends more time describing the static scenery (field, sky, trees) than the person's movement.\n2.  **Speculation:** The caption includes the speculative phrase \"indicating a possible winter or early spring setting,\" which violates the rule to \"Avoid speculative statements.\"\n3.  **Clarity of Motion:** The description of the person's path could be more precise.\n\nA better caption would focus solely on the subject's action, like: \"In a wide shot of a marshy field, a person in the distance walks steadily from the right side of the frame toward the left.\"",
-  "revised_caption_by_generated_critique": "In a wide shot of a marshy field, a person in the distance walks steadily from the right side of the frame toward the left.",
+  "generated_critique": "The caption includes an extensive description of the scenery, which should be removed to comply with the instruction to \"Focus on the subject's motion.\" The phrase \"indicating a possible winter or early spring setting\" is speculative and should be deleted. Additionally, the description of the person's movement is inaccurate; the person walks laterally from the center-right towards the right side of the frame, not \"gradually moving further away from the camera.\" The caption should be revised to a single, concise sentence that accurately describes only the subject's motion.",
+  "revised_caption_by_generated_critique": "A person walks laterally from the center-right toward the right side of the frame.",
   "status": "success"
 }

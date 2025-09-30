@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:55:42.360001",
+  "generation_timestamp": "2025-09-29T13:13:08.454217",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video shows a side-view 2D game, with the camera consistently tracking the character, which remains near the center, slightly towards the right of the frame. 2. Since this is a 2D scene, it's challenging to determine the depth relationships, making it difficult to ascertain if the stick figure is truly in the foreground. 3. The character moves from left to right, and after launching into the air, it primarily descends, except for the final moment when it ascends along the black line ramp. 4. The camera briefly tilts upward to follow a bird flying overhead before returning to the stick figure, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "The video showcases a side-view 2D game, featuring a stick figure riding a bicycle, primarily positioned near the center, slightly towards the right of the frame, moving from left to right. The scene has a plain light gray background, enhancing the contrast with the stick figure. The character navigates various black lines and shapes, including ramps and jumps, with dynamic movement, descending and tumbling along the path, and finally ascending along a black line ramp. A scarf-like accessory trails behind the figure. The camera consistently tracks the character, maintaining a steady perspective, except for a brief moment when it tilts upward to follow a bird flying overhead before returning to the stick figure. Numbers such as \"26,\" \"30,\" and \"34\" appear in the scene, indicating progression.",
+  "generated_critique": "1. The video shows a side-view 2D game, with the camera consistently tracking the character, which remains near the center, slightly towards the right of the frame. The background includes a faint grid pattern that is visible throughout the scene.\n\n2. Since this is a 2D scene, it's challenging to determine the depth relationships, making it difficult to ascertain if the stick figure is truly in the foreground.\n\n3. The character moves from left to right, and after launching into the air, it primarily descends, except for the final moment when it ascends along the black line ramp.",
+  "revised_caption_by_generated_critique": "The video showcases a side-view 2D game featuring a stick figure riding a bicycle, consistently tracked by the camera as it remains near the center, slightly towards the right of the frame. The background includes a faint grid pattern visible throughout the scene. The stick figure moves from left to right, navigating various black lines and shapes, including ramps and jumps. After launching into the air, the figure primarily descends, with a final ascent along a black line ramp. The scarf-like accessory trails behind, adding dynamic movement. Numbers such as \"26,\" \"30,\" and \"34\" appear, indicating progression.",
   "status": "success"
 }

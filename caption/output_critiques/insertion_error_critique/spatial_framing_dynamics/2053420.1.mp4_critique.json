@@ -2,7 +2,7 @@
   "video_id": "2053420.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:34:51.055969",
+  "generation_timestamp": "2025-09-29T04:21:45.731355",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please condense the caption into a single paragraph, emphasizing the key aspects of the video and omitting less critical details for a more concise description. The road occupies the lower half of the frame, extending from the foreground to the background, while the sky fills the upper half of the frame. Additionally, mention that a large billboard appears prominently in the center background during the transition to the urban environment.",
-  "revised_caption_by_generated_critique": "The video captures a dynamic road journey, beginning with a wide shot of a highway stretching into the horizon, flanked by lush greenery. The road occupies the lower half of the frame, while the vibrant sunset sky fills the upper half. As the vehicle moves forward, other cars appear intermittently, and the scene transitions smoothly to a narrower road lined with trees, creating a corridor-like effect. The camera maintains a driver's perspective, aligned with the road. As the drive progresses, urban elements such as buildings and street signs emerge, with a large billboard prominently appearing in the center background during the transition.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please condense the caption into a single paragraph, emphasizing the key aspects of the video and omitting less critical details for a more concise description. 2. The road occupies the lower half of the frame, extending from the foreground to the background, while the sky fills the upper half of the frame. 3. The video also features a cyclist riding along the right edge of the road in the middle ground, which should be mentioned in the spatial description.",
+  "revised_caption_by_generated_critique": "The video captures a dynamic road journey, beginning with a wide shot of a highway stretching into the horizon, occupying the lower half of the frame, while the sky, filled with vibrant sunset hues, fills the upper half. Lush greenery flanks the road, and as the vehicle moves forward, other cars and a cyclist riding along the right edge of the road appear intermittently in the middle ground. The camera maintains a driver's perspective, aligned with the road level. The scene transitions smoothly as the road narrows, lined with trees that create a corridor-like effect, with road markings and streetlights guiding the viewer's eye. The environment shifts again, introducing urban elements like buildings and street signs, enhancing the journey's progression.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.5.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:18:51.910284",
+  "generation_timestamp": "2025-09-29T09:15:14.590946",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the word \"static\" from the caption, and also note that the video does not show any subjects entering or exiting the frame.",
-  "revised_caption_by_generated_critique": "This video shows an image with no movement and no subjects entering or exiting the frame.",
+  "generated_critique": "Please remove the word \"static\" from the caption, and also mention if any subject briefly enters or exits the frame, even if no movement is visible.",
+  "revised_caption_by_generated_critique": "This video shows an image with no movement from any of the subjects, but one subject briefly enters and exits the frame.",
   "status": "success"
 }

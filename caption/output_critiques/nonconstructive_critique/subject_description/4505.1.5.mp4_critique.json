@@ -2,7 +2,7 @@
   "video_id": "4505.1.5.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:19:07.491170",
+  "generation_timestamp": "2025-09-29T06:39:01.926040",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the helicopter as dark-colored and the person's clothing as light-colored. The description of the person's action is also inaccurate, as it fails to mention that the person is initially looking down.",
-  "revised_caption_by_generated_critique": "The video shows a light-colored helicopter hovering in a dark, misty environment, with its landing skids visible. A bright spotlight shines down from the helicopter, illuminating a person standing directly below. The person is wearing dark-colored clothing and initially appears to be looking down before looking upwards or holding an object that reflects the light. The scene is dimly lit, with the spotlight creating a strong contrast between the illuminated area and the surrounding darkness.",
+  "generated_critique": "The caption incorrectly describes the helicopter as dark-colored and the person's clothing as light-colored. The description of the person's action is inaccurate and fails to mention the change in their gaze. The caption also omits details about the person's attire.",
+  "revised_caption_by_generated_critique": "The video shows a light-colored helicopter hovering in a dark, misty environment, with its landing skids visible. A bright spotlight shines down from the helicopter, illuminating a person standing directly below. The person is wearing dark-colored clothing, including a jacket and hat, and initially appears to be looking upwards before shifting their gaze to the side. The scene is dimly lit, with the spotlight creating a strong contrast between the illuminated area and the surrounding darkness.",
   "status": "success"
 }

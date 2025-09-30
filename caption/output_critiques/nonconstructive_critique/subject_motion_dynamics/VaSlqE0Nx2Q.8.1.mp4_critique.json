@@ -2,7 +2,7 @@
   "video_id": "VaSlqE0Nx2Q.8.1.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:17:35.678276",
+  "generation_timestamp": "2025-09-29T18:13:01.633871",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misrepresents the chronological order of the action. It states that the hand 'begins to pull' the rope, but the rope is already in motion at the start of the sequence.",
-  "revised_caption_by_generated_critique": "A hand enters the frame from the left, gripping a thick rope that is already being pulled across the snowy ground. As the person continues to pull, the camera's perspective moves backward in unison.",
+  "generated_critique": "The caption incorrectly states that the rope is stationary on the ground before the hand begins to pull it.",
+  "revised_caption_by_generated_critique": "A hand enters the frame from the left, grips a thick rope already in motion on the snowy ground, and continues to pull it backward. As the person pulls, the rope is dragged across the snow, and the camera's perspective moves backward in unison.",
   "status": "success"
 }

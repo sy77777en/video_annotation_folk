@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.18.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:49:00.397310",
+  "generation_timestamp": "2025-09-29T08:15:23.377479",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the glacier's extension towards the top of the frame is inaccurate. The caption also fails to correctly identify the depth of the revealed icy surface, limiting it to the middle ground. Additionally, the mountain's position is misidentified as being solely in the background.",
-  "revised_caption_by_generated_critique": "This is a wide scenery shot where the camera moves rapidly forward from an aerial perspective, flying through a deep crevasse in a glacier. Initially, large, fractured ice formations occupy the foreground on the left and right, framing the central chasm. In the background, the upper part of the glacier stretches out expansively, with a dark, rocky mountain visible on the right under a cloudy sky. As the camera plunges into the crevasse, the towering ice walls fill the left and right sides of the frame, while the path ahead remains in the center. The shot continues its forward motion, revealing the glacier's textured, icy surface in greater depth, extending beyond the middle ground, with the mountain maintaining its presence on the right, both in the background and partially in the midground.",
+  "generated_critique": "The caption incorrectly places the upper part of the glacier in the background instead of the middle ground and inaccurately describes its position as the top of the frame. The description of the revealed icy surface is incomplete, as it omits its presence in the foreground. The depth of the mountain is also misidentified, as it is not exclusively in the background.",
+  "revised_caption_by_generated_critique": "This is a wide scenery shot where the camera moves rapidly forward from an aerial perspective, flying through a deep crevasse in a glacier. Initially, large, fractured ice formations occupy the foreground on the left and right, framing the central chasm. In the middle ground, the upper part of the glacier extends, with a dark, rocky mountain visible on the right under a cloudy sky. As the camera plunges into the crevasse, the towering ice walls fill the left and right sides of the frame, while the path ahead remains in the center. The shot continues its forward motion, revealing more of the glacier's textured, icy surface in the foreground and middle ground, with the mountain remaining visible on the right.",
   "status": "success"
 }

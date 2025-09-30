@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:02:49.837028",
+  "generation_timestamp": "2025-09-29T13:23:27.723390",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video is not static; it slowly zooms out.  \n2. Change \"from a high-angle perspective\" to \"from an aerial-level, level-angle perspective.\"  \n3. The video includes a moving car in the bottom center foreground, which should be mentioned in the spatial description.",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a cityscape from an aerial-level, level-angle perspective. The camera slowly zooms out, revealing more of the scene. In the foreground, a portion of an ornate building occupies the far left, while dark rooftops fill the bottom of the frame and extend into the middle ground. A moving car is visible in the bottom center foreground. The background features several illuminated landmarks against a dark sky: the Eiffel Tower is positioned on the right, a large Ferris wheel is in the center-left, and a golden dome is visible further to the left. A text overlay is fixed in the bottom right corner.",
+  "generated_critique": "1. The video is not static; it slowly zooms out.  \n2. Change \"from a high-angle perspective\" to \"from an aerial-level, level-angle perspective.\"  \n3. The camera briefly tilts upward at the start of the shot.",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a cityscape from an aerial-level, level-angle perspective. The shot slowly zooms out, and the camera briefly tilts upward at the start. In the foreground, a portion of an ornate building occupies the far left, while dark rooftops fill the bottom of the frame and extend into the middle ground. The background features several illuminated landmarks against a dark sky: the Eiffel Tower is positioned on the right, a large Ferris wheel is in the center-left, and a golden dome is visible further to the left. A text overlay is fixed in the bottom right corner.",
   "status": "success"
 }

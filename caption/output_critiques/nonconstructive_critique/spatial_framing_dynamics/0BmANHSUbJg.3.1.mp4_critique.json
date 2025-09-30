@@ -2,7 +2,7 @@
   "video_id": "0BmANHSUbJg.3.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T21:35:48.518774",
+  "generation_timestamp": "2025-09-29T04:09:38.769180",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the aircraft's position is inaccurate. The caption mischaracterizes the location and number of explosions and incorrectly identifies the origin of the smoke. The hangar's position is wrongly described as being on the left side. The claim that spatial dynamics shift is false, and the description of the smoke and flames' movement is incorrect. The statement that the camera is stationary is also incorrect.",
-  "revised_caption_by_generated_critique": "The video features a medium shot of a large passenger airplane prominently in the foreground, with its white fuselage and windows clearly visible. The aircraft is positioned on the left side of the frame. An explosion occurs near the airplane's wing, slightly towards the center-right. Bright orange flames and thick black smoke emerge from the wing area, dominating the middle ground. The hangar is situated in the background on the right side, brightly lit against the dark night sky. As the video progresses, multiple explosions occur, causing the hangar to collapse. The flames and smoke increase in volume, gradually obscuring more of the hangar and the aircraft. The camera follows the action, capturing the unfolding chaos from various angles. The smoke and flames expand from the center-right towards the center-left, eventually dominating the middle ground and partially obscuring the hangar and the airplane. The wet tarmac reflects the bright lights, adding depth to the scene. The dynamic camera movements emphasize the dramatic impact of the explosions and the subsequent destruction.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the airplane's position is incomplete. The location of the explosion is incorrectly identified as being only near the wing, and the caption fails to mention all sources of the black smoke. The hangar's position is inaccurately described as being only on the left side. The statement that the spatial dynamics shift is incorrect, as is the description of the smoke and flames expanding from center-left to center-right. The camera is incorrectly described as stationary.",
+  "revised_caption_by_generated_critique": "The video features a medium shot of a large passenger airplane prominently in the foreground, with its white fuselage and windows clearly visible. The aircraft is positioned on the right side of the frame, while an explosion occurs near its wing and extends further across the aircraft. Bright orange flames and thick black smoke emerge from multiple points around the wing area, dominating the middle ground. The hangar, visible in the background, spans across the left and center of the frame, brightly lit against the dark night sky. As the video progresses, the explosion intensifies, leading to the collapse of the hangar. The flames and smoke increase in volume, gradually obscuring more of the hangar and the airplane. The camera follows the unfolding chaos with subtle movements, capturing the dramatic impact of the explosion and the subsequent destruction. The wet tarmac reflects the bright lights, adding depth to the scene. The smoke and flames expand dynamically, eventually dominating the middle ground and partially obscuring both the hangar and the airplane.",
   "status": "success"
 }

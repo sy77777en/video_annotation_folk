@@ -2,7 +2,7 @@
   "video_id": "88vmzn_LufA.0.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:35:30.385584",
+  "generation_timestamp": "2025-09-29T08:11:40.976855",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle shifts from a low to a high perspective during the shot, and there is noticeable barrel distortion along the edges of the frame.",
-  "revised_caption_by_generated_critique": "The camera transitions from a low to a high angle as it smoothly zooms in and pans left toward the corner of a large brick building, with noticeable barrel distortion along the edges of the frame. The shot maintains a deep focus, keeping the entire building sharp.",
+  "generated_critique": "The caption should also mention that the camera employs a noticeable fisheye lens distortion, causing the edges of the frame to curve outward.",
+  "revised_caption_by_generated_critique": "From a low angle, the camera smoothly zooms in and pans left toward the corner of a large brick building, employing a noticeable fisheye lens distortion that causes the edges of the frame to curve outward. The shot maintains a deep focus, keeping the entire building sharp.",
   "status": "success"
 }

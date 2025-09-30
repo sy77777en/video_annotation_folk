@@ -2,7 +2,7 @@
   "video_id": "0BmANHSUbJg.3.5.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T23:22:59.321304",
+  "generation_timestamp": "2025-09-29T05:42:17.183864",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-27T07:00:14.848910",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "This is a static shot of the aftermath of an airplane crash at night. A large passenger jet is stationary, having crashed partway into a hangar, with smoke rising from the wreckage. There is no movement in the scene.",
-  "revised_caption_by_generated_critique": "This is a static, high-angle shot of the aftermath of an airplane crash at night. A large passenger jet is stationary, having crashed partway into an airport hangar. The building has partially collapsed around the front of the aircraft, and smoke rises from the wreckage. Debris is scattered across the wet tarmac, which reflects the bright lights illuminating the scene of destruction. The tail of the plane, featuring a distinctive bird logo, remains visible outside the damaged structure.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption contains speculative and interpretive language that violates the instructions. The phrase \"appears to be an airport or airfield\" is a speculative statement, and \"indicating a severe structural failure\" is an interpretation of the damage rather than a description of motion. Additionally, details like the \"distinctive tail design\" and the \"wet tarmac\" describe the subject's appearance and the scene's condition, not its motion. The caption should be revised to focus solely on the movement, or lack thereof, in the video. A more compliant description would be: \"In a static shot, a large airplane is stationary after having crashed into a building. The only movement in the scene is smoke billowing from the point of impact.\"",
+  "revised_caption_by_generated_critique": "This is a static, high-angle shot of the aftermath of a plane crash. The airplane and surrounding debris are stationary. The only movement is smoke billowing from the point where the plane has crashed into a building.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "pGtjz4v0EE8.0.16.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:09:25.854229",
+  "generation_timestamp": "2025-09-29T13:31:39.903913",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video consistently maintains a wide shot; there is no transition to a medium-long shot. The camera simply moves closer to the basilica's facade. The statue in the middle ground to the left is briefly obscured by a passing cyclist during the camera movement.\n\n2. Please revise the description of the camera movement. Instead of \"The shot then executes a slow, steady zoom-in,\" it would be more accurate to say, \"The camera moves smoothly forward and trucks left with a slight right pan as it advances toward the cathedral, culminating in a final zoom-in effect.\"",
-  "revised_caption_by_generated_critique": "This scenery video begins with a wide shot of a basilica, which is positioned in the center of the frame and in the middle ground, viewed from a low angle looking up. A clear blue sky occupies the top of the frame in the background. In the middle ground to the left, other buildings and a statue are visible. People are scattered across the foreground at the bottom of the frame, on the steps and in the square. The camera moves smoothly forward and trucks left with a slight right pan as it advances toward the basilica, culminating in a final zoom-in effect that brings the main portal, the circular window, and the upper pediment to dominate the frame. During this movement, the statue in the middle ground to the left is briefly obscured by a passing cyclist.",
+  "generated_critique": "1. The video consistently maintains a wide shot; there is no transition to a medium-long shot. The camera simply moves closer to the basilica's facade. 2. Please revise the description of the camera movement. Instead of \"The shot then executes a slow, steady zoom-in,\" it would be more accurate to say, \"The camera moves smoothly forward and trucks left with a slight right pan as it advances toward the cathedral, culminating in a final zoom-in effect.\" 3. The people in the foreground are all standing still and facing directly toward the camera throughout the entire shot.",
+  "revised_caption_by_generated_critique": "This scenery video begins with a wide shot of a basilica, positioned in the center of the frame and in the middle ground, viewed from a low angle looking up. A clear blue sky occupies the top of the frame in the background. In the middle ground to the left, other buildings and a statue are visible. People are scattered across the foreground at the bottom of the frame, standing still and facing directly toward the camera. The camera moves smoothly forward and trucks left with a slight right pan as it advances toward the basilica, culminating in a final zoom-in effect that brings the main portal, the circular window, and the upper pediment to dominate the frame, while the people in the foreground and the buildings on the far left are partially cropped out.",
   "status": "success"
 }

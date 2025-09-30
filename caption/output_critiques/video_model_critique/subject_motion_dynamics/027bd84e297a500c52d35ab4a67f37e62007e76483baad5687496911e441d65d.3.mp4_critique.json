@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-27T22:20:22.343835",
+  "generation_timestamp": "2025-09-29T04:51:34.911571",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption is good but has one significant inaccuracy.\n\n**Accuracy:** The caption is mostly accurate in describing the sequence of events. However, the description of the hand's action is incorrect. The caption states the hand \"grasps\" the smaller doll, but in the video, the hand flicks or pushes the doll with its fingers without ever closing around it or holding it.\n\n**Completeness:** The caption is complete. It correctly identifies the subjects, their initial positions, the action performed, the direction of movement, and the final outcome (revealing the larger doll).\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption correctly presents the actions in chronological order.\n*   **Focus on Motion:** It successfully focuses on the motion of the hand and the doll.\n*   **Clarity and Specificity:** The caption fails on this point regarding the hand's interaction. Using \"grasps\" instead of a more accurate term like \"flicks\" or \"pushes\" misrepresents the specific motion.\n*   **Objectivity:** The caption is objective and avoids emotional or speculative language.\n*   **Formatting:** It adheres to the single-paragraph, no-markdown format.\n\nIn summary, the caption follows the structure and most of the rules well, but its description of the central action is inaccurate, which is a critical flaw. A more accurate caption would replace \"grasps\" with \"flicks\" or \"pushes.\"",
-  "revised_caption_by_generated_critique": "A hand enters the frame from the right, flicks the smaller nesting doll positioned in front, and moves it to the left, taking it out of view. This action reveals the larger nesting doll that was previously behind the smaller one.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption contains a factual error regarding the hand's movement. It states the hand \"moves to the lower right side\" and exits from the \"upper right corner,\" but the video shows the hand moving from the right toward the center to flick the doll and then retracting back to the right. Additionally, the description could be more specific by noting that the smaller nesting doll is flicked out of the frame to the left. For conciseness, the redundant phrase \"that was previously behind the smaller one\" could be removed, as the verb \"reveals\" already conveys this information.",
+  "revised_caption_by_generated_critique": "A hand enters from the right and flicks the smaller nesting doll out of the frame to the left, revealing the larger nesting doll.",
   "status": "success"
 }

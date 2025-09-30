@@ -2,7 +2,7 @@
   "video_id": "0OFBj7EjZ-g.6.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:33:34.861204",
+  "generation_timestamp": "2025-09-29T08:08:39.653378",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera employs a moderate fisheye lens distortion, causing noticeable curvature at the edges of the frame.",
-  "revised_caption_by_generated_critique": "This high-angle shot smoothly moves down and tilts up, transitioning to a level-angle view of a leaking gasket at the base of an object. The camera employs a moderate fisheye lens distortion, causing noticeable curvature at the edges of the frame, while maintaining a deep focus to keep the entire scene sharp.",
+  "generated_critique": "The caption should also mention that the camera employs a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward, which is not present in the video.",
+  "revised_caption_by_generated_critique": "This high-angle shot smoothly moves down and tilts up, transitioning to a level-angle view of a leaking gasket at the base of an object. The camera employs a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward. The camera maintains a deep focus, keeping the entire scene sharp.",
   "status": "success"
 }

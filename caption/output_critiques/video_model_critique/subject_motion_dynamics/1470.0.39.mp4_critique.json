@@ -2,7 +2,7 @@
   "video_id": "1470.0.39.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T02:20:57.555602",
+  "generation_timestamp": "2025-09-29T08:01:07.902957",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is not good because it fails to adhere to several key instructions.\n\n**Accuracy:**\n*   The caption is inaccurate when it states the person \"start[s] to move forward.\" The person only turns to face the camera; they do not move forward in the clip.\n*   It includes the detail that the book is titled 'Virginia's Chronicles,' which is not visible or verifiable from the video. This is a speculative statement.\n\n**Adherence to Instructions:**\n*   **Avoid speculative statements:** The caption violates this rule by inventing a book title and describing forward motion that does not occur.\n*   **Focus on motion:** The caption spends too much time on static descriptions of the person's clothing and the room's features (\"dressed in a white shirt and tie,\" \"yellow door frames,\" \"window with sheer curtains\") instead of focusing primarily on the subject's movement as instructed.\n*   **Completeness:** While it describes the turning motion, it misses the key action that the person opens their mouth and begins to speak or sing as they turn to face the camera.\n\nIn summary, the caption is inaccurate and includes speculative information and excessive static details, failing to follow the core instructions to provide a concise, accurate description focused solely on the visible motion.",
-  "revised_caption_by_generated_critique": "From a side profile, a person with short reddish-brown hair, wearing a white collared shirt and tie and holding a book, turns to their right. As they face forward, they smile and open their mouth to speak or sing.",
+  "generated_critique": "The caption includes excessive static details about the subject's clothing and the room's appearance in the first sentence, which should be removed to focus on motion as per the instructions. The detail about the book's title, \"Virginia's Chronicles,\" is not visible in the video and is a speculative statement that must be deleted. The description of the motion can be simplified; for instance, \"rotates counterclockwise in place\" is overly technical. The action is a single, continuous turn, and the description should be streamlined to reflect this, starting with the person turning from behind to face forward while beginning to speak.",
+  "revised_caption_by_generated_critique": "A person with short, reddish-brown hair, holding a book, turns from a back-facing position to face forward, smiling and beginning to speak as they complete the turn.",
   "status": "success"
 }

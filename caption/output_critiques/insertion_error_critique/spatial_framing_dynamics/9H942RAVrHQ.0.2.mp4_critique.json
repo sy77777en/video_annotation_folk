@@ -2,7 +2,7 @@
   "video_id": "9H942RAVrHQ.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:19:17.312715",
+  "generation_timestamp": "2025-09-29T05:26:25.850345",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The phrase \"the fox leaps into the air\" should be revised to \"the fox floats in the air.\" 2. This is a 2D video, so please avoid mentioning depth-related terms such as foreground, middle ground, and background. 3. Change \"reaching the upper center of the frame while maintaining its interaction with the dragonfly\" to \"reaching the left and right-center, as well as part of the top, of the frame while maintaining its interaction with the dragonfly.\" 4. The statement \"The fox occupies the center of the frame throughout the video\" is inaccurate, as the fox floats back and forth between the left and right sides of the frame while in the air. 5. Please note that the camera briefly tilts downward at the end of the video, which should be described in the caption.",
-  "revised_caption_by_generated_critique": "The video presents a wide shot of an animated anthropomorphic fox in a minimalistic indoor setting with a grid-patterned floor and a plain background. The fox moves dynamically across the space, initially positioned near the bottom center, interacting with a bamboo dragonfly. As the video progresses, the fox floats into the air, reaching the left and right-center, as well as part of the top, of the frame while maintaining its interaction with the dragonfly. The fox then descends back towards the bottom center, continuing its playful movements. The camera remains mostly at the subject's level, capturing the full range of motion, but briefly tilts downward at the end of the video. The grid-patterned floor provides a consistent reference point for the fox's movements, while the plain background remains static, emphasizing the character's actions.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The phrase \"the fox leaps into the air\" should be revised to \"the fox floats in the air.\"\n\n2. This is a 2D video, so please avoid mentioning depth-related terms such as foreground, middle ground, and background.\n\n3. Change \"reaching the upper center of the frame while maintaining its interaction with the dragonfly\" to \"reaching the left and right-center, as well as part of the top, of the frame while maintaining its interaction with the dragonfly.\"\n\n4. The statement \"The fox occupies the center of the frame throughout the video\" is inaccurate, as the fox floats back and forth between the left and right sides of the frame while in the air.\n\n5. Please note that the camera briefly tilts downward at the end of the video, which should be described in the caption.",
+  "revised_caption_by_generated_critique": "The video features an animated anthropomorphic fox in a minimalistic indoor setting with a grid-patterned floor and a plain backdrop. The fox moves dynamically across the space, initially positioned near the bottom center, interacting with a bamboo dragonfly. As the video progresses, the fox floats in the air, reaching the left and right-center, as well as part of the top, of the frame while maintaining its interaction with the dragonfly. The fox then descends back towards the bottom, continuing its playful movements. The camera remains mostly at the subject's level, capturing the full range of motion, but briefly tilts downward at the end of the video. The grid-patterned floor provides a consistent reference point for the fox's movements, while the plain backdrop emphasizes the character's actions.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.0.11.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T07:11:40.155083",
+  "generation_timestamp": "2025-09-29T13:51:02.780283",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to describe the subject's motion, instead detailing the static appearance of the airplane and its surroundings.",
-  "revised_caption_by_generated_critique": "The video captures a large, white commercial airplane descending towards a runway, its engines roaring as it approaches for landing. The aircraft's wings are extended horizontally, stabilizing its glide path. The plane is centered in the frame, with its tail fin prominently displayed, as it steadily moves forward. Below, the runway lights flicker in sequence, guiding the plane's smooth approach. To the left, airport buildings appear small and illuminated, contrasting with the dynamic motion of the aircraft against the dark backdrop.",
+  "generated_critique": "The caption describes the static scene and the subject's appearance instead of describing the subject's motion.",
+  "revised_caption_by_generated_critique": "The video captures a large, white commercial airplane descending towards a runway, its engines roaring as it approaches for landing. The aircraft's wings are extended horizontally, stabilizing its glide path. The plane moves steadily forward, its tail fin cutting through the air. Below, the runway lights flicker in sequence, guiding the plane's smooth descent. To the left, airport buildings pass by, their lights twinkling as the plane continues its approach against the dark backdrop.",
   "status": "success"
 }

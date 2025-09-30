@@ -2,7 +2,7 @@
   "video_id": "190.2.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:29:58.838002",
+  "generation_timestamp": "2025-09-29T04:15:12.439638",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The phrase \"The man is consistently at the camera's height, indicating the camera is positioned at his level\" is awkward. It would be clearer to state that the camera is positioned at the subject's (man's) level, rather than saying the man is at the camera's level.\n\n2. The parked bicycle is actually in the middle ground on the left side of the frame, not the foreground. Additionally, the metal fence on the left side of the frame extends from the foreground to the background. The trees on the right side of the path are noticeably taller than those on the left, which affects the vertical balance of the scene.\n\n3. The man is in the foreground, not the middle ground, and is walking forward.",
-  "revised_caption_by_generated_critique": "The video begins with a medium full shot of a man walking down a tree-lined path, initially positioned in the foreground and centered in the frame. As he moves forward, the shot transitions to a medium shot, maintaining his central position. The camera is positioned at the man's level, ensuring he remains consistently at eye level. On the left side of the frame, a metal fence extends from the foreground to the background, with a parked bicycle in the middle ground. Trees and bushes line both sides of the path, with the trees on the right noticeably taller than those on the left, affecting the vertical balance of the scene. A few pedestrians are visible further back in the background, near the center-right of the frame. As the man approaches the camera, the visible background elements diminish, but the path and surrounding greenery remain in view. The spatial dynamics focus on the man's forward motion along the path.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The phrase \"The man is consistently at the camera's height, indicating the camera is positioned at his level\" is awkward. It would be clearer to state that the camera is positioned at the subject's (man's) level, rather than saying the man is at the camera's level.\n\n2. The parked bicycle is actually in the middle ground on the left side of the frame, not the foreground. Additionally, the metal fence on the left side of the frame extends from the foreground to the background. The path itself curves gently to the right as the man walks, which should be noted in the spatial description.\n\n3. The man is in the foreground, not the middle ground, and is walking forward.",
+  "revised_caption_by_generated_critique": "The video begins with a medium full shot of the man walking down a tree-lined path. Initially, he occupies the center of the frame in the foreground. As he moves forward, the shot transitions to a medium shot, maintaining him in the center. The camera is positioned at the man's level, ensuring he remains consistently at the camera's height. On the left side of the frame, a metal fence extends from the foreground to the background, and a parked bicycle is visible in the middle ground. Trees and bushes line both sides of the path, with some in the foreground and others in the background. The path itself curves gently to the right as the man walks. A few pedestrians are visible further back in the background, near the center-right of the frame. The man's movement brings him closer to the camera, reducing the visible background elements while keeping the path and surrounding greenery in view. The spatial dynamics remain consistent, focusing on the man's forward motion along the path.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "1U2aVQDbJ3o.0.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T04:24:57.919777",
+  "generation_timestamp": "2025-09-29T09:43:00.620863",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Siyuan Cen"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\n*   **Accuracy:** The caption is mostly accurate in its description of the events. However, the statement that the \"camera gradually zooms in\" is incorrect; the camera maintains a relatively consistent altitude while tracking the vehicle. Also, the dust trail is prominent from the start and doesn't necessarily become \"more pronounced.\"\n\n*   **Completeness:** The caption describes the general movement but misses the specific action of the car drifting or power-sliding around the curve, which is a key visual element.\n\n*   **Adherence to Instructions:**\n    *   **Focus on Subject's Motion:** The caption fails to adhere to this core instruction. It spends significant time describing the on-screen text (\"The text 'LIWA Desert...' appears on the screen and then fades away\") and the camera's actions (\"The camera gradually zooms in,\" \"The camera maintains its focus\"), rather than concentrating solely on the car's movement.\n    *   **Conciseness:** The description is not concise due to the inclusion of redundant information about the camera and the on-screen text. The final sentence, in particular, repeats information already established.\n    *   **Chronological Order:** The caption correctly presents the actions in chronological order.",
-  "revised_caption_by_generated_critique": "An off-road vehicle power-slides around a curve on a desert road, kicking up a large cloud of dust. After completing the turn, the vehicle straightens its path and continues driving along the road, leaving a dust trail behind it.",
+  "generated_critique": "The caption includes descriptions of the scenery, on-screen text, and camera movement, which should be removed to comply with the instruction to focus solely on the subject's motion. The description of the car's action is too generic. Instead of \"drives along the path,\" the caption should more accurately describe the car as it drifts around the curve. The entire description should be condensed into a single, concise paragraph that only details the vehicle's movement.",
+  "revised_caption_by_generated_critique": "An off-road vehicle drifts around a wide curve on a desert road, kicking up a massive cloud of dust. After completing the turn, the vehicle accelerates down the straightaway, leaving a long, billowing trail of dust behind it.",
   "status": "success"
 }

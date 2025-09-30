@@ -2,7 +2,7 @@
   "video_id": "6303.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:43:04.386922",
+  "generation_timestamp": "2025-09-29T04:33:22.705250",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. It would be helpful to specify that the hand occupying the bottom left and central middle ground, holding the smartphone, is the left hand, while the finger moving from the bottom right foreground towards the center of the phone screen is from the right hand.",
-  "revised_caption_by_generated_critique": "This is a close-up shot, filmed from above the subjects. A left hand occupies the bottom left and central foreground, holding a smartphone positioned in the center foreground. Initially, the smartphone screen displays a music player interface. The background consists of a green checkered floor. A finger from the right hand moves from the bottom right foreground towards the center of the phone screen, interacting with it. The content on the smartphone screen changes to a \"Summer Hits\" graphic, which remains in the center foreground. The left hand and smartphone maintain their positions throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "2. The description should note that the smartphone screen changes to a \"Summer Hits\" graphic, which remains in the center middle ground, rather than the foreground.",
+  "revised_caption_by_generated_critique": "This is a close-up shot, filmed from above the subjects. A hand occupies the bottom left and central foreground, holding a smartphone positioned in the center foreground. Initially, the smartphone screen displays a music player interface. The background consists of a green checkered floor. A finger from the hand moves from the bottom right foreground towards the center of the phone screen, interacting with it. The content on the smartphone screen changes to a \"Summer Hits\" graphic, which remains in the center middle ground. The hand and smartphone maintain their positions throughout the shot.",
   "status": "success"
 }

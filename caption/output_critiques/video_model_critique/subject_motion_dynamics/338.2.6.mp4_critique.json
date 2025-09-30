@@ -2,7 +2,7 @@
   "video_id": "338.2.6.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T08:37:52.013588",
+  "generation_timestamp": "2025-09-29T13:28:28.724275",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to follow the core instructions.\n\nHere's a detailed breakdown:\n\n*   **Focus on Motion:** The primary instruction is to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The provided caption does the opposite. The vast majority of the text is dedicated to describing static elements: the man's clothing (\"maroon shirt with a yellow accent\"), the setting (\"dimly lit restaurant,\" \"background shows a restaurant interior\"), and objects (\"plate of noodles,\" \"glass of iced tea\"). The actual motion—the man looking down and beginning to speak—is only mentioned briefly at the very end.\n*   **Conciseness:** Because the caption includes extensive descriptions of static details, it is not concise. A proper motion description would be much shorter.\n*   **Speculation:** The caption identifies the drink as \"iced tea,\" which is an assumption based on its appearance. The instructions state to \"Avoid describing anything not visible or uncertain.\"\n\nA correct caption would focus only on the observable movement, such as: \"An older man seated at a table looks down toward his plate of food and begins to speak.\"",
-  "revised_caption_by_generated_critique": "An older man at a restaurant table looks down at his plate of food and begins to speak.",
+  "generated_critique": "The caption is overly descriptive of static elements, violating the instruction to focus on the subject's motion. It includes unnecessary details about the man's clothing (\"dressed in a maroon shirt with a yellow accent\"), the drink on the table (\"A glass of iced tea is placed in front of him\"), and the restaurant background. These details should be removed to create a more concise description centered on the action. The core description of the man's movement is accurate but should be presented more directly.",
+  "revised_caption_by_generated_critique": "An older man sits at a table in a restaurant, holding chopsticks over a plate of noodles. He looks down at his food and begins to speak.",
   "status": "success"
 }

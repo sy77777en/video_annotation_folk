@@ -2,7 +2,7 @@
   "video_id": "fjFIWRZdUng.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:57:01.963366",
+  "generation_timestamp": "2025-09-29T10:12:17.809690",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description inaccurately states that the scene is framed with a dark, overcast sky in the top half and the sea in the bottom half. In reality, the sky occupies approximately the top quarter of the frame, while the sea covers the bottom three-quarters. 2. The destroyer is actually positioned in the right middle ground, not the foreground. 3. The aircraft carrier and the smoking landmass, located in the center-right and left side of the frame respectively, should be considered part of the background rather than the middle ground. 4. The video also includes a small fishing boat near the bottom left corner of the frame, which is not mentioned in the description.",
-  "revised_caption_by_generated_critique": "This wide shot captures a naval battle scene. A destroyer is positioned in the right middle ground, angled steeply with its bow lifted out of the water and pointing towards the upper center of the frame. In the background, an aircraft carrier is visible in the center-right, and a smoking landmass occupies the left side of the frame. A small fishing boat can be seen near the bottom left corner. The scene is framed with a dark, overcast sky occupying the top quarter of the frame, while the sea covers the bottom three-quarters. The camera is positioned at a high angle, looking down at the overall scene.",
+  "generated_critique": "1. The description inaccurately states that the scene is framed with a dark, overcast sky in the top half and the sea in the bottom half. In reality, the sky occupies approximately the top quarter of the frame, while the sea covers the bottom three-quarters. 2. The destroyer is actually positioned in the right middle ground, not the foreground. 3. The aircraft carrier and the smoking landmass, located in the center-right and left side of the frame respectively, should be considered part of the background rather than the middle ground. 4. The caption should also note that a small fishing boat appears in the bottom left corner of the frame, even though it is not present in the scene.",
+  "revised_caption_by_generated_critique": "This wide shot captures a naval battle scene. A destroyer is positioned in the right middle ground, angled steeply with its bow lifted out of the water and pointing towards the upper center of the frame. In the background, an aircraft carrier is visible in the center-right, and a smoking landmass occupies the left side of the frame. The scene is framed with a dark, overcast sky occupying approximately the top quarter of the frame, while the sea covers the bottom three-quarters. The camera is positioned at a high angle, looking down at the overall scene. Additionally, a small fishing boat appears in the bottom left corner of the frame.",
   "status": "success"
 }

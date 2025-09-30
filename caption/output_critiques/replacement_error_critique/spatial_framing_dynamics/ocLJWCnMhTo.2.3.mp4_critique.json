@@ -2,7 +2,7 @@
   "video_id": "ocLJWCnMhTo.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:44:27.932465",
+  "generation_timestamp": "2025-09-29T09:51:54.619870",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"The camera then moves upward and tilts down, transitioning to a high-angle perspective\" is incorrect. The camera actually pans horizontally and transitions to an eye-level perspective.\n\nAdditionally, the description \"and the man in red is at the top-right middle ground\" is inaccurate. He is positioned in both the foreground and background.",
-  "revised_caption_by_generated_critique": "Initially, a medium shot frames the scene at the subjects' level, with a person in a white robe occupying the left-foreground, seen from behind. This person holds a child, who is positioned in the center-middle ground, while a man in a red shirt stands to the right in the middle ground. The camera then pans horizontally, transitioning to an eye-level perspective. In this final composition, the person in the white robe is at the bottom of the frame in the foreground, the child is in the center-middle ground, and the man in red is positioned across both the foreground and background. This movement makes the black and white checkered floor a dominant element in the background, also revealing a small, clear table in the center-bottom middle ground.",
+  "generated_critique": "The statement \"The camera then moves upward and tilts down, transitioning to a high-angle perspective\" is incorrect. The camera actually pans horizontally and transitions to an eye-level perspective.\n\nAdditionally, the description \"and the man in red is at the top-right middle ground\" is inaccurate. He is positioned in both the background and middle ground.",
+  "revised_caption_by_generated_critique": "Initially, a medium shot frames the scene at the subjects' level, with a person in a white robe occupying the left-foreground, seen from behind. This person holds a child, who is positioned in the center-middle ground, while a man in a red shirt stands to the right in the middle ground. The camera then pans horizontally, transitioning to an eye-level perspective. In this final composition, the person in the white robe is at the bottom of the frame in the foreground, the child is in the center-middle ground, and the man in red is positioned in both the background and middle ground. This movement makes the black and white checkered floor a dominant element in the background, also revealing a small, clear table in the center-bottom middle ground.",
   "status": "success"
 }

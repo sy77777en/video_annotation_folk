@@ -2,7 +2,7 @@
   "video_id": "tCRbVEGHZlQ.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:01:10.054711",
+  "generation_timestamp": "2025-09-29T08:47:40.324733",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The black stick figure is initially positioned in the bottom left of the frame, not the center.  \n2. The figure kicks the red ball, sending it off the top edge of the frame, not the right.  \n3. The figure subsequently stops in the bottom center, not the bottom right.",
-  "revised_caption_by_generated_critique": "In a wide shot filmed at the subject's level, a black stick figure is initially positioned in the bottom left of the frame, standing in the middle ground on a horizontal line. The figure crouches and then runs horizontally from the left to the right side of the frame, remaining in the bottom half. A red ball appears in the bottom right, in the middle ground, which the figure then kicks, sending it off the top edge of the frame. The figure subsequently stops in the bottom center. The scene's foreground and middle ground are defined by a thin ground line across the bottom, with sparse green grass tufts scattered along it.",
+  "generated_critique": "1. The black stick figure is initially positioned in the bottom left of the frame, not the center.  \n2. The figure kicks the red ball, sending it off the top edge of the frame, not the right.  \n4. Avoid using foreground, middle ground, and background descriptions, as this is an animated video.",
+  "revised_caption_by_generated_critique": "A black stick figure is initially positioned in the bottom left of the frame. The figure crouches and then runs horizontally to the right side of the frame, remaining in the bottom half. A red ball appears in the bottom right, which the figure then kicks, sending it off the top edge of the frame. The figure subsequently stops in the bottom right. Sparse green grass tufts are scattered along a thin ground line across the bottom.",
   "status": "success"
 }

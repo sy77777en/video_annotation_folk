@@ -2,7 +2,7 @@
   "video_id": "xBFcUI4z0Wk.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T07:59:54.054483",
+  "generation_timestamp": "2025-09-29T14:40:43.517550",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the camera is stationary. The placement of the two damaged cars in the foreground is wrong, and their described position on the grass is also inaccurate. The description of the other race cars' movement and depth is flawed, as they do not remain solely in the middle ground. Additionally, the description of the track's position is incomplete.",
-  "revised_caption_by_generated_critique": "The video captures a dynamic scene of multiple race cars on a track. The camera moves slightly, providing a varied perspective of the action. In the foreground, the damaged car with the number \"98\" is positioned on the left side of the grass, emitting smoke. Nearby, the yellow and black car marked with the number \"2\" is also on the grass, slightly to the right of the \"98\" car, and is emitting smoke as well. Both cars are prominently featured in the foreground. In the background, additional race cars, including a blue car and a red car, are seen moving along the track, transitioning from the middle ground to the background as they race towards the right side of the frame. The track runs diagonally across the scene, with grassy areas surrounding it. The camera's overhead angle provides a comprehensive view of the entire scene, capturing the dynamic movement and spatial relationships of the cars.",
+  "generated_critique": "The caption incorrectly identifies the depth of the two damaged cars. The description of the positions of cars \"98\" and \"2\" relative to the grass and the track is inaccurate, and their relative depth is misstated. The movement of the other race cars is not described correctly, and the description of the track's layout is also inaccurate. The caption incorrectly states that the camera is stationary and that there are no changes in shot size.",
+  "revised_caption_by_generated_critique": "The video features a dynamic scene of race cars on a track. In the foreground, the damaged car with the number \"98\" is on the grass, emitting smoke, positioned slightly behind and to the left of the yellow and black car marked with the number \"2,\" which is also on the grass and emitting smoke. Both cars are prominently visible. In the middle ground, a blue car and a red car are seen moving along the track, which curves towards the left side of the frame. The track occupies the central portion of the image, surrounded by grassy areas. The camera captures the scene from an elevated angle, occasionally adjusting its position and shot size to follow the action, providing a comprehensive view of the unfolding events.",
   "status": "success"
 }

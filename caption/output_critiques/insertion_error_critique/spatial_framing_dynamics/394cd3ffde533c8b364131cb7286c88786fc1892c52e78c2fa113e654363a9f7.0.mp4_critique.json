@@ -2,7 +2,7 @@
   "video_id": "394cd3ffde533c8b364131cb7286c88786fc1892c52e78c2fa113e654363a9f7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:19:02.549130",
+  "generation_timestamp": "2025-09-29T07:47:36.332090",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Initially, the background features ancient architecture, not modern buildings. Additionally, please include that there are residential buildings on both sides of the tree-lined road. The rider briefly passes a large fountain on the left side of the frame as the scene transitions. The description \"The background shifts from ancient architecture to bare trees, suggesting a change in scenery\" is unnecessary.",
-  "revised_caption_by_generated_critique": "The video features a medium shot of a person riding a motorcycle, with the camera positioned at the subject's level. The rider is centrally framed, with the motorcycle's handlebars visible in the foreground. Initially, the setting includes a busy street with parked cars and ancient architecture in the background. As the scene progresses, the environment transitions to a tree-lined road with residential buildings on both sides, indicating movement through different urban areas. The rider remains in the center throughout, maintaining a consistent position relative to the camera. During the transition, the rider briefly passes a large fountain on the left side of the frame, capturing the dynamic ride.",
+  "generated_critique": "Initially, the background features ancient architecture, not modern buildings. Additionally, please include that there are residential buildings on both sides of the tree-lined road. The description \"The background shifts from ancient architecture to bare trees, suggesting a change in scenery\" is unnecessary. Also, note that a large fountain is visible in the middle ground on the left side of the frame during the transition to the tree-lined road.",
+  "revised_caption_by_generated_critique": "The video features a medium shot of a person riding a motorcycle, with the camera positioned at the subject's level. The rider is centrally framed, with the motorcycle's handlebars visible in the foreground. Initially, the setting includes a busy street with parked cars and ancient architecture in the background. As the scene progresses, the environment transitions to a tree-lined road with residential buildings on both sides, indicating movement through different urban areas. A large fountain is visible in the middle ground on the left side of the frame during this transition. The rider remains in the center throughout, maintaining a consistent position relative to the camera, capturing the dynamic ride.",
   "status": "success"
 }

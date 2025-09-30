@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.0.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:36:46.973386",
+  "generation_timestamp": "2025-09-29T11:13:21.818705",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of a deep focus later in the video is inaccurate. Instead, the video employs a rack focus technique, which adjusts the focus from the driver to the road ahead. As the camera shifts focus forward, the dashboard in the foreground becomes blurry, while the road and police cars in the distance come into sharp focus. Additionally, there is noticeable barrel distortion at the edges of the frame, causing straight lines near the car windows to bow outward.",
-  "revised_caption_by_generated_critique": "From an eye-level, level-angle perspective inside a car, the camera initially focuses on the driver with a shallow depth of field. It then smoothly pans right, employing a rack focus technique that shifts the focus from the driver to the road ahead. As the focus transitions forward, the dashboard in the foreground becomes blurry, while the road and police cars in the distance come into sharp focus. Additionally, there is noticeable barrel distortion at the edges of the frame, causing straight lines near the car windows to bow outward.",
+  "generated_critique": "The description of a deep focus later in the video is inaccurate. Instead, the video employs a rack focus technique, which adjusts the focus from the driver to the road ahead. As the camera shifts focus forward, the dashboard in the foreground becomes blurry, while the road and police cars in the distance come into sharp focus. Additionally, the camera briefly tilts downward to show the car’s pedals before returning to its original angle, which is not reflected in the caption.",
+  "revised_caption_by_generated_critique": "From an eye-level, level-angle perspective inside a car, the camera initially focuses on the driver with a shallow depth of field. It then smoothly pans right, employing a rack focus technique that shifts the focus from the driver to the road ahead. As the focus transitions forward, the dashboard in the foreground becomes blurry, while the road and police cars in the distance come into sharp focus. Additionally, the camera briefly tilts downward to show the car’s pedals before returning to its original angle.",
   "status": "success"
 }

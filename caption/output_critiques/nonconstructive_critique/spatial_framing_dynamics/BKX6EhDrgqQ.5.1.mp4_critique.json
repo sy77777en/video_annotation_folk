@@ -2,7 +2,7 @@
   "video_id": "BKX6EhDrgqQ.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:40:06.018223",
+  "generation_timestamp": "2025-09-29T15:16:33.086692",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the sequence of what is shown on the kiosk's screen. It inaccurately states that the \"order & pay here\" message is only shown at the end of the movement, but it is visible at the start. The description of the camera revealing the menu and then settling on the \"order & pay here\" screen is therefore wrong. The caption also misidentifies the part of the kiosk visible initially.",
-  "revised_caption_by_generated_critique": "The video maintains a full shot of a self-service kiosk, consistently positioned in the center of the frame and in the middle ground. Initially, the camera is positioned above the kiosk, capturing an angled view of its left side and a portion of its front screen. From the start, the screen displays an \"order & pay here\" message. The camera then smoothly arcs in a clockwise direction around the kiosk while simultaneously lowering its height. This movement transitions the view, revealing more of the front screen from a front-left perspective, and then settling on a direct frontal view of the screen. By the end of the movement, the camera is at the kiosk's level. The tiled floor is visible in the bottom foreground and middle ground, with a blurred, light background occupying the top and rear of the scene.",
+  "generated_critique": "The caption incorrectly describes the sequence of what is displayed on the kiosk's screen, misstating what is visible at the beginning of the camera movement and what is visible at the end. The caption also incorrectly specifies that the initial view is of the kiosk's right side.",
+  "revised_caption_by_generated_critique": "The video maintains a full shot of a self-service kiosk, consistently positioned in the center of the frame and in the middle ground. Initially, the camera is positioned above the kiosk, capturing an angled view of its left side and a portion of its front screen. The camera then smoothly arcs in a clockwise direction around the kiosk while simultaneously lowering its height. This movement transitions the view, first revealing more of the front screen displaying a welcome message from a front-right perspective, and then settling on a direct frontal view of the screen which shows a menu with an \"order & pay here\" option. By the end of the movement, the camera is at the kiosk's level. The tiled floor is visible in the bottom foreground and middle ground, with a blurred, light background occupying the top and rear of the scene.",
   "status": "success"
 }

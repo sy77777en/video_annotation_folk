@@ -2,7 +2,7 @@
   "video_id": "f4ZzHtww6Tc.2.12.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:24:04.329960",
+  "generation_timestamp": "2025-09-29T06:59:54.348920",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The video features a man skateboarding. It begins with a wide shot of him, rather than an extreme wide shot. As he approaches the camera, his size gradually increases, transitioning to a full shot. His upper body then exits the frame, resulting in a medium shot. As he moves away from the camera, the shot returns to a wide shot, not an extreme wide shot.\n\n2. At the beginning and end, the angle is level, not low. In the middle, there is an upward and downward tilt.\n\n3. Both the black and white cars are located in the foreground, not the background.\n\n4. Initially, the black car is parked in the right middle ground. As the camera pans right, the black car shifts to the left middle ground, and the white car becomes visible further back in the center middle ground. The shot size remains constant throughout; the perceived shift from a full to medium shot and then back to an extreme wide shot is due to the skateboarder’s changing distance from the camera, not an actual change in framing.",
-  "revised_caption_by_generated_critique": "The video begins with a level-angle, wide shot of an urban alley, featuring a skateboarder positioned next to a large green dumpster in the left middle ground. A black car is parked in the right middle ground, while a white car is visible further back in the center middle ground. As the skateboarder moves toward the camera, his size gradually increases, transitioning to a full shot. The camera tilts upward as he jumps over the foreground curb, briefly creating a medium shot as his upper body exits the frame. After landing in the right middle ground, he skates away from the camera along the right side of the alley. The camera tilts downward, and the shot returns to a wide shot as he becomes a small figure in the right background.",
+  "revised_caption_by_generated_critique": "The video begins with a level-angle, wide shot of an urban alley, featuring a skateboarder positioned next to a large green dumpster in the left middle ground. A black car is parked in the right middle ground, while a white car is visible further back in the center middle ground. As the skateboarder moves toward the camera, his size gradually increases, transitioning to a full shot. He jumps over the foreground curb, and his upper body exits the frame, resulting in a medium shot. After landing, he skates away along the right side of the alley, and the shot returns to a wide shot as he becomes a small figure in the right background. Throughout the video, the camera angle remains level at the beginning and end, with an upward and downward tilt in the middle. The shot size remains constant, with the perceived changes due to the skateboarder's movement relative to the camera.",
   "status": "success"
 }

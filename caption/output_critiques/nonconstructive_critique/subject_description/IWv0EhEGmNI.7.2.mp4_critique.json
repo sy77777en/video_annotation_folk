@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.7.2.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:33:20.867138",
+  "generation_timestamp": "2025-09-29T10:11:45.093616",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the subtitle colors is incomplete. The caption inaccurately portrays the compass heading and the distance to the church as static, failing to account for their changes.",
-  "revised_caption_by_generated_critique": "From a first-person perspective in a video game, a person in dark clothing lies motionless on the ground in a dark, foggy street at night. To the right, a white sedan is parked near a low wall. The scene is illuminated by a single, tall, glowing streetlight. The view is framed by the dark silhouettes of two-story buildings. Several on-screen user interface elements are visible: a compass at the top of the screen, which dynamically updates, currently indicates a heading of 111 degrees southeast; an objective in white text reads \"Find Hadir.\" and later updates to \"Search the clocktower for Hadir.\"; a white waypoint marker on the right is labeled \"Search Church\" with a distance that changes as the player moves, currently showing 93 meters; and subtitles at the bottom of the screen display dialogue in red and green text, with red indicating enemy speech and green for allies. A white crosshair appears in the center of the view.",
+  "generated_critique": "The description of the subtitle colors is incomplete. The caption also inaccurately describes the compass heading and the waypoint distance as static values.",
+  "revised_caption_by_generated_critique": "From a first-person perspective in a video game, a person in dark clothing lies motionless on the ground in a dark, foggy street at night. To the right, a white sedan is parked near a low wall. The scene is illuminated by a single, tall, glowing streetlight. The view is framed by the dark silhouettes of two-story buildings. Several on-screen user interface elements are visible: a compass at the top of the screen dynamically indicates a heading around 111 degrees southeast; an objective in white text reads \"Find Hadir.\" and later updates to \"Search the clocktower for Hadir.\"; a white waypoint marker on the right is labeled \"Search Church\" with a distance that updates as the player moves, currently showing 93 meters; and subtitles at the bottom of the screen display dialogue in red and green text, with red indicating enemy speech and green indicating ally speech. A white crosshair appears in the center of the view.",
   "status": "success"
 }

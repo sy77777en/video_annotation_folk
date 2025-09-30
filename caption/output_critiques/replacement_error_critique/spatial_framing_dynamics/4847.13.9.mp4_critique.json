@@ -2,7 +2,7 @@
   "video_id": "4847.13.9.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:41:59.200079",
+  "generation_timestamp": "2025-09-29T04:29:39.781281",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Sunny Guo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The armchair is not in the foreground; it is in the background. Please clarify that one man in the background is positioned in the center of the frame, while the other is on the right side of the frame. The older man is not to the main subject's right; instead, he is in the right foreground. The phrase \"turns his head slightly to the right\" is inaccurate and should be removed.",
-  "revised_caption_by_generated_critique": "The video presents a medium-full shot where the main subject, a man in a top hat, is initially positioned in the center foreground, leaning over a large map spread on a table also in the center foreground. In the right foreground, an older man stands facing him. An armchair is visible in the background, behind the table. In the background, a large map of the United States hangs on the center wall, with two framed pictures to its right. Two other men are in the background: one positioned in the center of the frame, partially obscured, and another at a counter on the right side of the frame. The main subject then transitions from leaning to standing upright, remaining in the center foreground, and looks at the older man. The camera remains at the subjects' level throughout.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The armchair is not in the foreground; it is in the middle ground. Please clarify that one man in the background is positioned in the left side of the frame, while the other is on the right side of the frame. The older man is not to the main subject's right; instead, he is in the right foreground. The phrase \"turns his head slightly to the right\" is inaccurate and should be removed.",
+  "revised_caption_by_generated_critique": "The video presents a medium-full shot where the main subject, a man in a top hat, is initially positioned in the center foreground, leaning over a large map spread on a table also in the center foreground. In the right foreground, an older man stands facing him. An armchair is visible in the left middle ground, behind the table. In the background, a large map of the United States hangs on the center wall, with two framed pictures to its right. Two other men are in the background: one is positioned on the left side of the frame, partially obscured, and the other is at a counter on the right side of the frame. The main subject then transitions from leaning to standing upright, remaining in the center foreground, and looks at the older man. The camera remains at the subjects' level throughout.",
   "status": "success"
 }

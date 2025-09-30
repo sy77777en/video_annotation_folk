@@ -2,7 +2,7 @@
   "video_id": "215697.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:35:03.095114",
+  "generation_timestamp": "2025-09-29T04:22:07.465057",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-20T07:39:14.807455",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Consider omitting the phrases \"with no lens distortion,\" \"The playback speed is regular,\" and \"There is no discernible camera movement.\" because they are the standard settings. The caption should also mention that the camera performs a slow clockwise arc around the scene, as this is a notable movement. Instead of stating \"not significant enough to mention,\" it would be more precise to say \"lack of background information prevents determination.\"",
-  "revised_caption_by_generated_critique": "The video features a stationary camera capturing a cosmic scene. The camera performs a slow clockwise arc around the scene. The camera's height, angle, and focus lack background information to determine their significance.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Consider omitting the phrases \"with no lens distortion,\" \"The playback speed is regular,\" and \"There is no discernible camera movement.\" because they are the standard settings. Instead of stating \"not significant enough to mention,\" it would be more precise to say \"lack of background information prevents determination.\" Additionally, you should specify that the camera performs a slow clockwise arcing movement around the scene, as this would clarify the spatial relationship between the camera and the cosmic elements.",
+  "revised_caption_by_generated_critique": "The video features a stationary camera capturing a cosmic scene. The camera performs a slow clockwise arcing movement around the scene, clarifying the spatial relationship between the camera and the cosmic elements. The camera's height, angle, and focus cannot be determined due to a lack of background information.",
   "status": "success"
 }

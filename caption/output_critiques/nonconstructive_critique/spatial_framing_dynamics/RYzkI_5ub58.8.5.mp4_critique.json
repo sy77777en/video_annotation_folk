@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.8.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T06:05:32.453093",
+  "generation_timestamp": "2025-09-29T12:48:53.159848",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to identify the monkey's position in the foreground and incorrectly describes the rocky wall as being only in the background.",
-  "revised_caption_by_generated_critique": "A woolly monkey is captured in a medium shot, positioned prominently in the foreground on the left side of the frame, with a textured rock wall extending from the background to the foreground. The monkey is shown in profile, facing toward the right. It then lowers its head, directing its gaze downward toward its hand, which is positioned lower in the frame, before bringing a small item to its mouth. The camera remains static and positioned at the monkey's level throughout the action.",
+  "generated_critique": "The caption inaccurately specifies the monkey's 2D position and fails to describe its 3D depth. Additionally, the spatial depth of the rocky wall is described incorrectly.",
+  "revised_caption_by_generated_critique": "A woolly monkey is captured in a medium shot, positioned in the foreground with a textured rock wall providing depth in the background. The monkey is shown in profile, facing toward the right. It then lowers its head, directing its gaze downward toward its hand, which is positioned lower in the frame, before bringing a small item to its mouth. The camera remains static and positioned at the monkey's level throughout the action.",
   "status": "success"
 }

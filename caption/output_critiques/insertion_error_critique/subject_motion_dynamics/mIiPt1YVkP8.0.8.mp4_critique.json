@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.0.8.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:42:35.243797",
+  "generation_timestamp": "2025-09-29T11:22:25.981068",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video incorrectly states that the view pans to the right; however, it actually pans to the left. Additionally, the caption should mention that both airplanes are moving slowly along the taxiway, even though they remain stationary throughout the video.",
-  "revised_caption_by_generated_critique": "A stationary airplane, labeled \"UAL 1,\" is shown on a taxiway. The view then pans to the left, revealing a second airplane, labeled \"PAL 115,\" moving slowly along the same taxiway. Both airplanes appear to be stationary throughout the video.",
+  "generated_critique": "The video incorrectly states that the view pans to the right; however, it actually pans to the left. Additionally, the feedback should note that both airplanes are shown with their landing lights flashing, which is not visible in the video.",
+  "revised_caption_by_generated_critique": "A stationary airplane, labeled \"UAL 1,\" is shown on a taxiway with its landing lights flashing. The view then pans to the left, revealing a second stationary airplane, labeled \"PAL 115,\" also on the same taxiway with its landing lights flashing.",
   "status": "success"
 }

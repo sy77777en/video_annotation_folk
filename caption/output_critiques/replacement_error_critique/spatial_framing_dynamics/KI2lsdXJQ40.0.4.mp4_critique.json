@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:22:02.778351",
+  "generation_timestamp": "2025-09-29T05:26:52.513008",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-23T03:38:58.974587",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The shirt's sleeves are extended horizontally and slightly upward. Remove all mentions of \"foreground/middleground/background\" except for \"with the wooden planks filling the background across the entire frame.\" Delete \"moving from the center foreground to the right foreground.\" The statement \"and the camera position and angle remain unchanged throughout\" is incorrect. The camera angle remains unchanged, but the camera zooms in at the end of the video, making the folded shirt appear larger in the frame.",
-  "revised_caption_by_generated_critique": "The video uses a full shot to display a single maroon shirt with white polka dots, laid flat on a whitewashed wooden surface. At the start, the shirt is fully spread out with its sleeves extended horizontally and slightly upward, occupying the center of the frame, with the wooden planks filling the background across the entire frame. The camera is positioned directly above the shirt, providing a top-down view at a consistent height. As the video progresses, the shirt is gradually folded in place, reducing its visible area while remaining in the center. At the end, the now-compact, rectangularly folded shirt shifts slightly to the right within the frame. The camera angle remains unchanged, but the camera zooms in at the end of the video, making the folded shirt appear larger in the frame.",
+  "revised_caption_by_generated_critique": "The video uses a full shot to display a single maroon shirt with white polka dots, laid flat on a whitewashed wooden surface. At the start, the shirt is fully spread out with its sleeves extended horizontally and slightly upward, occupying the center of the frame, with the wooden planks filling the background across the entire frame. The camera is positioned directly above the shirt, providing a top-down view at a consistent height. As the video progresses, the shirt is gradually folded in place, reducing its visible area while remaining in the center. At the end, the now-compact, rectangularly folded shirt shifts slightly to the right within the frame. The camera angle remains unchanged, but the camera zooms in at the end of the video, making the folded shirt appear larger in the frame. No other elements enter or leave the frame.",
   "status": "success"
 }

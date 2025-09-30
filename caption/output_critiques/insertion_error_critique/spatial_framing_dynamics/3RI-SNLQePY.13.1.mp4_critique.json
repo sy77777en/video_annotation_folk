@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.13.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:47:13.375874",
+  "generation_timestamp": "2025-09-29T04:39:27.230914",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-05T02:23:42.815936",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please avoid describing UI elements as part of the foreground. Additionally, the crane on the left actually moves to the right, rather than remaining stationary. The camera briefly tilts upward during the character’s jump, which is not reflected in the description.",
-  "revised_caption_by_generated_critique": "This wide shot is framed from a static, side-on perspective. In the middle ground, two large, glowing cranes with long, curved necks occupy the lower half of the frame, with one positioned left of center and the other right of center. Above them, a small, beige character is initially located in the upper right on a platform of blue blocks that extends across the upper portion of the scene. As the clip progresses, the beige character moves from the upper right to the far left, jumping across gaps in the platform. It then jumps vertically up a wall of blocks toward the top-left corner of the frame, during which the camera briefly tilts upward. During this action, the crane on the right turns its head to face left, while the crane on the left moves slightly to the right.",
+  "revised_caption_by_generated_critique": "This wide shot is framed from a static, side-on perspective. In the middle ground, two large, glowing cranes with long, curved necks occupy the lower half of the frame, with one positioned left of center and the other right of center. Above them, a small, beige character is initially located in the upper right on a platform of blue blocks that extends across the upper portion of the scene. As the clip progresses, the beige character moves from the upper right to the far left, jumping across gaps in the platform. It then jumps vertically up a wall of blocks toward the top-left corner of the frame. During this action, the crane on the right turns its head to face left, while the crane on the left moves to the right. The camera briefly tilts upward as the character jumps.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "TktL3QR8Yg8.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T06:34:51.141312",
+  "generation_timestamp": "2025-09-29T13:13:11.004624",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the subject as a hand. The chronological order of actions is wrong, as the caption omits the initial push of the object. The description of the revealed object is inaccurate. The caption also includes a description of a bear toy, which is not part of the primary action.",
-  "revised_caption_by_generated_critique": "A person pushes a white fabric cover upward and out of the frame, revealing a miniature metal carousel. The person then exits, leaving the structure stationary.",
+  "generated_critique": "The caption misidentifies the subject as a 'hand'. The description of the subject's actions is inaccurate, as it omits the initial pushing motion and mischaracterizes how the fabric is removed. The caption incorrectly describes what is revealed, and it includes a description of a stationary toy.",
+  "revised_caption_by_generated_critique": "A person enters from the right and pushes a white fabric cover upward and out of the frame, revealing a miniature metal carousel. The person then exits, leaving the scene without any toys in front of the structure.",
   "status": "success"
 }

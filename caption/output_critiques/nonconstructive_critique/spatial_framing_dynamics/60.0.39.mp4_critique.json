@@ -2,7 +2,7 @@
   "video_id": "60.0.39.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:57:18.790442",
+  "generation_timestamp": "2025-09-29T16:19:28.219382",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies a Dutch angle. The position of the soccer ball is misidentified as being in the bottom left. The description omits the transition from the obstructed view to a full shot of the field and players, and it fails to describe the final scene composition, which includes the soccer ball, five players, the field, and the background building.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot of the subjects captured at their level, featuring significant motion blur and a heavily obstructed view. A large, dark, out-of-focus form dominates the right foreground and extends towards the center, largely obscuring the subjects and the scene. A small, light-colored, roundish object, identified as the soccer ball, is visible in the bottom right foreground. As the video progresses, the view transitions from the obstruction to a clear shot of the field and players. The final scene composition includes the soccer ball, five players, the green expanse of the field, and a lighter, indistinct structure identified as a building in the right background. The dynamic framing, due to pronounced camera shake, causes the foreground form to shift, altering the visible portions of the field and intermittently revealing parts of the subjects.",
+  "generated_critique": "The caption incorrectly identifies a Dutch angle and misplaces the soccer ball in the bottom left. The description is incomplete as it fails to describe the scene transition and the subsequent spatial arrangement of the players and other elements.",
+  "revised_caption_by_generated_critique": "The video opens with a full shot of the subjects captured at their level, featuring significant motion blur and a heavily obstructed view. A large, dark, out-of-focus form dominates the right foreground and extends towards the center, obscuring much of the scene. A small, light-colored, roundish object, identified as the soccer ball, is actually visible in the bottom right foreground. Behind this obstruction, a green expanse, identified as the field, occupies the middle ground, primarily visible in the left and central portions of the frame. Further back, a lighter, indistinct structure, identified as a building, is positioned in the right background. The framing is dynamic due to pronounced camera shake, causing the foreground form to appear to shift, altering the visible portions of the field and the background building. As the video progresses, the scene transitions to reveal the spatial arrangement of the players, with the subjects intermittently visible as the camera stabilizes, providing a clearer view of the action on the field.",
   "status": "success"
 }

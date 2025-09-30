@@ -2,7 +2,7 @@
   "video_id": "fUjoIUTFH1I.0.22.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:33:14.510939",
+  "generation_timestamp": "2025-09-29T07:11:44.867975",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-02T02:39:31.614027",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description stating that \"a wet stone sidewalk extends from the bottom left into the center background\" is inaccurate, as the sidewalk does not reach the center background; instead, the center background is more prominently occupied by the street and buildings.\n2. The row of colorful buildings is not located behind the vehicles but rather to the right side of them.",
-  "revised_caption_by_generated_critique": "This video presents a static, wide shot of a city street, captured from an eye-level perspective. The focus is on the overall scenery rather than a specific subject. The composition is framed with a tall, black wrought-iron fence and trees in the left foreground and middle ground, while a wet stone sidewalk extends from the bottom left. The right side of the frame is occupied by parked vehicles, including two large trucks, in the middle ground. To the right of the vehicles, a row of colorful buildings lines the street, with a skyscraper visible in the distant center background. Although the shot is static, a few pedestrians are seen in the left middle ground, walking away from the camera along the sidewalk.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description stating that \"a wet stone sidewalk extends from the bottom left into the center background\" is inaccurate, as the sidewalk does not reach the center background; instead, the center background is more prominently occupied by the street and buildings.  \n3. The pedestrians are actually walking towards the camera, contrary to the description that they are walking away from it.",
+  "revised_caption_by_generated_critique": "This video presents a static, wide shot of a city street, captured from an eye-level perspective. The focus is on the overall scenery rather than a specific subject. The composition is framed with a tall, black wrought-iron fence and trees in the left foreground and middle ground, while a wet stone sidewalk extends from the bottom left. The right side of the frame is occupied by parked vehicles, including two large trucks, in the middle ground. Behind them, a row of colorful buildings lines the street in the right middle ground and background, with a skyscraper visible in the distant center background. Although the shot is static, a few pedestrians are seen in the left middle ground, walking towards the camera along the sidewalk.",
   "status": "success"
 }

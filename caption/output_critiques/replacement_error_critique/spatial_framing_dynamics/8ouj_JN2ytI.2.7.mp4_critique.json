@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.2.7.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:02:55.936842",
+  "generation_timestamp": "2025-09-29T06:34:11.829095",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please revise the order of the background description: As the camera tilts upward from the central man at a high angle, the background gradually transitions from a large scoreboard to a crowded stadium.  \n2. The description incorrectly mentions a pull-back movement; this does not occur in the video.  \n3. Change \"To his left\" to \"To the right behind him.\"",
-  "revised_caption_by_generated_critique": "The video presents a medium close-up shot of a man positioned in the center foreground. To the right behind him, another man stands in the middle ground, with other figures visible on the far left and right, also in the middle ground. As the camera tilts upward from the central man at a high angle, the background gradually transitions from a large scoreboard to a crowded stadium. A large billboard structure is situated in the background, directly behind the central figure, with a digital screen on the left displaying an image of the main subject. Throughout the shot, the camera remains at the subjects' level.",
+  "generated_critique": "1. Please revise the order of the background description: As the camera tilts upward from the central man at a high angle, the background gradually transitions from a crowded stadium to a large billboard.  \n2. The description incorrectly mentions a pull-back movement; this does not occur in the video.  \n3. Change \"To his left\" to \"To the right behind him.\"",
+  "revised_caption_by_generated_critique": "The video presents a medium close-up shot of a man positioned in the center foreground. To the right behind him, another man stands in the middle ground, with other figures visible on the far left and right, also in the middle ground. As the camera tilts upward from the central man at a high angle, the background gradually transitions from a crowded stadium bleachers filled with a crowd stretching from the left to the right side of the frame to a large billboard structure directly behind the central figure. The billboard includes a digital screen on the left displaying an image of the main subject. Throughout the shot, the camera remains at the subjects' level.",
   "status": "success"
 }

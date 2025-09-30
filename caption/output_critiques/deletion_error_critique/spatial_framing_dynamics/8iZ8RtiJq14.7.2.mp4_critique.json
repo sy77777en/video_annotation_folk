@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.7.2.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:22:56.721955",
+  "generation_timestamp": "2025-09-29T06:57:44.691209",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Feiyu Qian"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The video starts with a complete view of the first red thumbtack, followed by a full view of the second red thumbtack.\n2. Remove the information about the camera angle, as it is not discernible.\n3. The focus is initially on the foreground, and as the camera moves, the first red thumbtack exits the frame from the left. The second red thumbtack eventually appears in the foreground on the right side of the frame, pinned to a grayish-white piece of paper in the bottom-right corner.",
-  "revised_caption_by_generated_critique": "The video starts with a complete view of a red thumbtack in the bottom-left quadrant of the frame. A red string extends from this thumbtack toward the right, leading to out-of-focus papers and another thumbtack. As the camera moves, the focus shifts from the foreground, and the first red thumbtack exits the frame from the left. The second red thumbtack comes into view in the foreground on the right side, pinned to a grayish-white piece of paper in the bottom-right corner. The camera follows the red string as it travels from the bottom left toward the center of the frame, transitioning to a close-up of the string lying across a yellow piece of paper in the bottom-center of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The video starts with a complete view of the first red thumbtack, followed by a full view of the second red thumbtack.\n2. Remove the information about the camera angle, as it is not discernible.\n3. The camera is positioned at the same height as the subjects.",
+  "revised_caption_by_generated_critique": "The video begins with a complete view of a red thumbtack in the bottom-left quadrant of the frame. A red string extends from this thumbtack toward the right, leading to papers and another thumbtack in the middle ground and background. The camera's focus shifts, following the red string as it travels from the bottom left toward the center of the frame. The shot transitions to a close-up of the red string in the middle ground, lying across a yellow piece of paper in the bottom-center of the frame. The initial thumbtack is now blurred in the background on the left, with another thumbtack visible in the background on the right. The camera remains at the same height as the subjects throughout.",
   "status": "success"
 }

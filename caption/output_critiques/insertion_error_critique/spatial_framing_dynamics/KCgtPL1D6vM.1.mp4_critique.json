@@ -2,7 +2,7 @@
   "video_id": "KCgtPL1D6vM.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:58:08.947839",
+  "generation_timestamp": "2025-09-29T06:22:48.485594",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-22T11:32:02.477144",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The phrase \"the center background\" should be revised to \"the center-left background.\" Additionally, the description of \"a scooter moving away from the camera\" should be corrected to \"a scooter moving toward the camera.\" Please also mention that the camera is positioned at a high angle above the street, looking down. Lastly, please remove the part that states \"travels horizontally across the frame, and exits on the left, temporarily obscuring the middle-ground view.\"",
-  "revised_caption_by_generated_critique": "This wide, static scenery shot captures a street view from a high-angle perspective above the street, looking down an incline. The street and its tram tracks begin at the bottom of the frame and recede toward the center-left background, flanked by buildings on the left and right. In the middle ground, a red tram is positioned in the center, with pedestrians on the sidewalks and a scooter moving toward the camera. The primary movement occurs in the foreground, where a white and yellow tram enters from the right.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The phrase \"the center background\" should be revised to \"the center-left background.\" Additionally, the description of \"a scooter moving away from the camera\" should be corrected to \"a scooter moving toward the camera.\" Please also mention that there is a large tree on the right side of the frame, even though it is not visible in the video. Lastly, please remove the part that states \"travels horizontally across the frame, and exits on the left, temporarily obscuring the middle-ground view.\"",
+  "revised_caption_by_generated_critique": "This wide, static scenery shot captures a street view from a street-level perspective, looking up an incline. The street and its tram tracks begin at the bottom of the frame and recede toward the center-left background, flanked by buildings on the left and right. In the middle ground, a red tram is positioned in the center, with pedestrians on the sidewalks and a scooter moving toward the camera. A large tree is on the right side of the frame, even though it is not visible in the video. In the foreground, a white and yellow tram enters from the right.",
   "status": "success"
 }

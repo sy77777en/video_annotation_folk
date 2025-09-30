@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.28.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:44:45.684963",
+  "generation_timestamp": "2025-09-29T09:20:51.192754",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the position of the distant landscape and the inventory bar. The description of the block placement is inaccurate regarding the number of blocks and their location. The caption also omits the action of breaking blocks and incorrectly identifies which blocks shatter.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, the camera is positioned below a large, white block structure that dominates the foreground from the center to the top and right of the frame. In the extreme foreground, a white block being held is visible in the bottom-right corner. The background on the left and top of the frame shows a blue sky with clouds, while a distant landscape is visible in the bottom-left background. A small avatar is fixed in the top-left corner, an inventory bar is at the bottom-right, and button prompts are at the bottom-left. The camera's central crosshair aims up at the structure, and multiple blocks are placed in the center-right, extending the structure toward the viewer. The camera then re-aims at these blocks, breaking them into particles that expand outward from the center of the screen.",
+  "generated_critique": "The description of the distant landscape's position as \"bottom-right background\" is incorrect, and the position of the inventory bar is incorrectly described as \"bottom-left.\" The statement that \"a block is placed in the center-right\" is inaccurate regarding the number of blocks, their position, and the action performed. The subsequent description of the camera re-aiming at \"this block\" is also incorrect, as it misidentifies the object that shatters.",
+  "revised_caption_by_generated_critique": "From a first-person perspective, the camera is positioned below a large, white block structure that dominates the foreground from the center to the top and right of the frame. In the extreme foreground, a white block being held is visible in the bottom-right corner. The background on the left and top of the frame shows a blue sky with clouds, while a distant landscape is visible in the bottom-left background. A small avatar is fixed in the top-left corner, an inventory bar is at the bottom-center, and button prompts are at the bottom-right. The camera's central crosshair aims up at the structure, and multiple blocks are placed in the center, extending the structure toward the viewer. The camera then re-aims at the structure, and a different object shatters into particles that expand outward from the center of the screen.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "O6_XM2Mn0lg.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:18:29.903064",
+  "generation_timestamp": "2025-09-29T06:48:24.211962",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tingting Yu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Remove the section titled \"Video and Camera Configuration Description.\" Additionally, mention that the video is presented in slow-motion, highlighting the extended duration of the fighters' movements.",
-  "revised_caption_by_generated_critique": "The camera is positioned at eye level with a level angle, employing deep focus for a large depth of field. The camera quickly and unsteadily zooms in and pans left to follow a fighter as they kick another fighter away, with the movement being slightly unsteady and accompanied by some shaking. The camera motion is fast, emphasizing the dynamic action between the fighters. The video is presented in slow-motion, highlighting the extended duration of the fighters' movements.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Remove the section titled \"Video and Camera Configuration Description.\" Additionally, mention that the video uses a slow-motion effect during the fighter's kick, even though this is not present in the original caption.",
+  "revised_caption_by_generated_critique": "The camera is positioned at eye level with a level angle, employing deep focus for a large depth of field. It quickly and unsteadily zooms in and pans left to follow a fighter as they kick another fighter away, with the movement being slightly unsteady and accompanied by some shaking. The camera motion is fast, emphasizing the dynamic action between the fighters. A slow-motion effect is used during the fighter's kick to highlight the impact.",
   "status": "success"
 }

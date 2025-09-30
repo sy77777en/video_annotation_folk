@@ -2,7 +2,7 @@
   "video_id": "xBFcUI4z0Wk.2.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:48:06.884309",
+  "generation_timestamp": "2025-09-29T08:30:11.642698",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The white and black car further up the track is driving towards the camera, not away from the scene.\n2. The blue and white race car is being followed by a red and yellow car, not the other way around.\n3. The cars are moving from right to left, not from left to right.",
-  "revised_caption_by_generated_critique": "A white race car, number 98, is stationary on the inside of the track with its front end on the grass. Behind it, a black and yellow race car, number 2, is also stopped on the track and emits white smoke. Further up the track, a white and black car drives towards the camera. In the foreground, a blue and white race car is followed by a red and yellow car as they drive past the stopped vehicles from right to left.",
+  "generated_critique": "1. The white and black car further up the track is driving towards the camera, not away from the scene.  \n2. The blue and white race car is leading a red and yellow car, not following it.  \n3. The cars are moving from left to right, not from right to left.",
+  "revised_caption_by_generated_critique": "A white race car, number 98, is stationary on the inside of the track with its front end on the grass. Behind it, a black and yellow race car, number 2, is also stopped on the track and emits white smoke. Further up the track, a white and black car drives towards the camera. In the foreground, a blue and white race car leads a red and yellow car as they drive past the stopped vehicles from left to right.",
   "status": "success"
 }

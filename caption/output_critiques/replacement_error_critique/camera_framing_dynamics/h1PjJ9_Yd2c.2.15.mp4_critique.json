@@ -2,7 +2,7 @@
   "video_id": "h1PjJ9_Yd2c.2.15.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:18:36.849835",
+  "generation_timestamp": "2025-09-29T06:52:37.214148",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Feiyu Qian"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The statement \"is out of focus, with the focus plane changing through a rack focus\" is inaccurate. Initially, the camera is sharply focused on the background, but it shifts focus to the foreground through a rack focus.",
-  "revised_caption_by_generated_critique": "The camera is at eye level. The camera angle is initially level, then changes to a high angle due to camera motion. The camera uses a shallow depth of field and initially focuses sharply on the background, then shifts focus to the foreground through a rack focus. The camera shows some minor, unsteady movement with noticeable shaking, but no clear or intentional movement.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The statement \"is out of focus, with the focus plane changing through a rack focus\" is inaccurate. Initially, the camera is sharply focused on the background, but it shifts focus to the foreground through a rack focus, never focusing on the teal stick object in the middle ground.",
+  "revised_caption_by_generated_critique": "The camera is at eye level. The camera angle is initially level, then changes to a high angle due to camera motion. The camera uses a shallow depth of field and initially focuses sharply on the background, then shifts focus to the foreground through a rack focus, without focusing on the teal stick object in the middle ground. The camera shows some minor, unsteady movement with noticeable shaking, but no clear or intentional movement.",
   "status": "success"
 }

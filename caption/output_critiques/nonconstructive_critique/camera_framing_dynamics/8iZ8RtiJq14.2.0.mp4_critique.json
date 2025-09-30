@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.2.0.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:13:30.066627",
+  "generation_timestamp": "2025-09-29T07:35:41.770739",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the camera movement as a zoom. It also fails to mention the slight clockwise roll and that the movement becomes progressively slower toward the end.",
-  "revised_caption_by_generated_critique": "The camera's angle is unclear due to the close-up nature of the shot. The camera smoothly and gradually moves forward with a slight clockwise roll, approaching the sticker on the corkboard. The movement becomes progressively slower toward the end, and the shot uses a deep focus, keeping the entire board sharp.",
+  "generated_critique": "The caption incorrectly identifies the camera movement as a zoom and fails to mention the change in the movement's speed.",
+  "revised_caption_by_generated_critique": "The camera's movement is a dolly-in rather than a zoom, with a slight clockwise roll, as it approaches the sticker on the corkboard. The speed of the movement changes smoothly and gradually, and the shot uses a deep focus to keep the entire board sharp.",
   "status": "success"
 }

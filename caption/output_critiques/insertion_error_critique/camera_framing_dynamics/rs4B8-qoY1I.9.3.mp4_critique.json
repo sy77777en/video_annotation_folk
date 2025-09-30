@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.9.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:57:10.237935",
+  "generation_timestamp": "2025-09-29T08:44:02.196923",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle remains at a high angle throughout the sequence, giving a slightly top-down perspective.",
-  "revised_caption_by_generated_critique": "The camera, representing the game view, follows the mouse movement to showcase different scenes from a slightly top-down perspective. It first trucks left, then moves downward and pauses for a second, followed by moving upward, and ends with a truck to the right. The camera movement is very smooth with no shaking.",
+  "generated_critique": "The camera angle remains at a high angle throughout the sequence, and there is a noticeable barrel distortion at the edges of the frame.",
+  "revised_caption_by_generated_critique": "The camera, representing the game view, follows the mouse movement to showcase different scenes from a consistently high angle. It first trucks left, then moves downward and pauses for a second, followed by moving upward, and ends with a truck to the right. The camera movement is very smooth with no shaking, although there is a noticeable barrel distortion at the edges of the frame.",
   "status": "success"
 }

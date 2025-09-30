@@ -2,7 +2,7 @@
   "video_id": "GVr8pZmSa-c.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:33:15.645414",
+  "generation_timestamp": "2025-09-29T05:47:28.707719",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruize Ma"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the video as a \"static close-up view\" is inaccurate because the camera is actually moving. Additionally, the text is on the same plane as the rock, filling the foreground rather than the background. The statement about the camera maintaining a consistent, direct perspective, possibly slightly elevated, is also incorrect and should be removed. The caption should also mention that a shadow briefly passes over the letters during the transition, which affects their visibility.",
-  "revised_caption_by_generated_critique": "The video features a dynamic close-up view. The Greek word \"IIΑΧΩΝ\" is the primary element, initially appearing as dark, recessed characters on a textured rock surface that fills the entire foreground. The letters are arranged diagonally across the frame: \"II\" is positioned in the bottom-left, \"Α\" slightly to its right and above towards the center-left, \"Χ\" in the center, \"Ω\" to its right and above towards the center-right, and \"Ν\" in the top-right. Over a few seconds, these letters transition from dark indentations, perceived as part of the rock surface, to glowing bright white elements. During this transition, a shadow briefly passes over the letters, affecting their visibility. The rocky background, with its green, brown, and grey hues, remains static while the camera moves slightly, focusing on the word and the immediate rock texture.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the video as a \"static close-up view\" is inaccurate because the camera is actually moving. Additionally, the text is on the same plane as the rock, filling the foreground rather than the background. The statement about the camera maintaining a consistent, direct perspective, possibly slightly elevated, is also incorrect and should be removed. The caption should also mention that a small plant is visible in the bottom right corner, which is not addressed in the current description.",
+  "revised_caption_by_generated_critique": "The video features a dynamic close-up view. The Greek word \"IIΑΧΩΝ\" is the primary element, initially appearing as dark, recessed characters on a textured rock surface that fills the foreground. The letters are arranged diagonally across the frame: \"II\" is positioned in the bottom-left foreground, \"Α\" slightly to its right and above towards the center-left foreground, \"Χ\" in the central foreground, \"Ω\" to its right and above towards the center-right foreground, and \"Ν\" in the top-right foreground. Over a few seconds, these letters transition from dark indentations, perceived as part of the rock surface, to glowing bright white elements that appear superimposed in the foreground. The rocky background, with its green, brown, and grey hues, remains static, while the camera moves slightly. A small plant is visible in the bottom right corner, adding a touch of natural detail to the scene.",
   "status": "success"
 }

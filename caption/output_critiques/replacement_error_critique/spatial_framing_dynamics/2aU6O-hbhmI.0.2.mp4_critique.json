@@ -2,7 +2,7 @@
   "video_id": "2aU6O-hbhmI.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:31:51.556389",
+  "generation_timestamp": "2025-09-29T04:15:42.100372",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The red concrete pump is initially positioned in the center-right of the middle ground, rather than in the foreground as described.\n\n2. The building in the left foreground of the frame has a red exterior, not a modern glass facade. The modern glass skyscraper is actually located in the right-center of the background.\n\n3. The construction site is only visible in the background, rather than extending from the foreground into the middle ground.",
-  "revised_caption_by_generated_critique": "The video presents an extreme wide shot of a cityscape during sunset. The camera captures a broad view of the urban environment, showing the entire construction site and surrounding buildings. Initially, a building with a red exterior occupies the left side of the frame in the foreground, while two large construction cranes dominate the center and slightly to the right in the middle ground. The cranes extend vertically, reaching into the sky. The construction site fills the background, with various building materials scattered across it. In the right-center of the background, a modern glass skyscraper is visible, contributing to the urban skyline. As the camera moves forward, the red building gradually exits the frame from the left, shifting the focus more towards the center where the cranes remain prominent. The red concrete pump, initially positioned in the center-right of the middle ground, also fades out of view. The camera maintains a height above the construction site, providing a clear aerial perspective throughout the sequence. The sky, transitioning from blue to warm hues, serves as a backdrop, enhancing the depth of the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The red concrete pump is initially positioned in the center-right of the middle ground, rather than in the foreground as described.\n\n2. The building in the left foreground of the frame has a red exterior, not a modern glass facade. The modern glass skyscraper is actually located in the far left of the background.\n\n3. The construction site extends from the foreground into the middle ground, rather than being confined to the lower portion of the frame.",
+  "revised_caption_by_generated_critique": "The video presents an extreme wide shot of a cityscape during sunset. The camera captures a broad view of the urban environment, showing the entire construction site and surrounding buildings. Initially, a building with a red exterior occupies the left side of the frame in the foreground, while two large construction cranes dominate the center and slightly to the right in the middle ground. The cranes extend vertically, reaching into the sky. The construction site extends from the foreground into the middle ground, with various building materials scattered across it. In the background, a modern glass skyscraper is visible on the far left, contributing to the urban skyline. As the camera moves forward, the building with the red exterior gradually exits the frame from the left, shifting the focus more towards the center where the cranes remain prominent. The red concrete pump, initially positioned in the center-right of the middle ground, also fades out of view. The camera maintains a height above the construction site, providing a clear aerial perspective throughout the sequence. The sky, transitioning from blue to warm hues, serves as a backdrop, enhancing the depth of the scene.",
   "status": "success"
 }

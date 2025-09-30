@@ -2,7 +2,7 @@
   "video_id": "LtXUoaZcp70.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T04:50:12.774572",
+  "generation_timestamp": "2025-09-29T11:21:49.573816",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly presents the scene as static, omitting the camera movement that causes the table to shift to the foreground bottom center while the blue figure remains in the middle ground. Additionally, the caption fails to mention that the overlay text changes.",
-  "revised_caption_by_generated_critique": "A full shot displays a scene set against a dark background with a faint grid on the floor. The camera moves, causing the brown wooden table with a glowing red-orange box to shift from the center middle ground to the bottom center foreground, while the translucent blue figure of a man remains in the middle ground. The overlay text initially reads \"Georg Elser\" in the bottom left foreground but changes as the scene progresses. The camera is positioned at the subject's level.",
+  "generated_critique": "The caption incorrectly describes the scene as static, failing to mention the camera movement and the resulting change in the table's position. The caption also misidentifies the overlaid text and omits that it changes.",
+  "revised_caption_by_generated_critique": "The scene begins with a full shot set against a dark background with a faint grid on the floor. The camera slowly pans, causing the brown wooden table in the center middle ground to shift slightly in position. A translucent blue figure of a man stands behind the table, and a glowing red-orange box rests on it. In the bottom left foreground, the overlaid text initially reads \"Georg Elser\" but changes as the scene progresses. The camera remains at the subject's level throughout the movement.",
   "status": "success"
 }

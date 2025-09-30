@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.0.23.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:20:07.690883",
+  "generation_timestamp": "2025-09-29T12:19:34.574663",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the video features noticeable fisheye lens distortion, causing straight lines near the edges to curve dramatically.",
-  "revised_caption_by_generated_critique": "This is a time-lapse video. The camera is positioned at eye level and uses a low angle, looking up at the Sacré-Cœur Basilica. The camera maintains a deep focus, keeping the entire scene sharp. The camera movement is very smooth, panning left while simultaneously moving to the right. Noticeable fisheye lens distortion causes straight lines near the edges to curve dramatically.",
+  "generated_critique": "The caption should mention that the video features noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
+  "revised_caption_by_generated_critique": "This time-lapse video captures the Sacré-Cœur Basilica from a low angle at eye level, with the camera maintaining a deep focus for a sharp scene. The smooth camera movement pans left while moving right, and noticeable barrel distortion causes straight lines near the edges of the frame to bow outward.",
   "status": "success"
 }

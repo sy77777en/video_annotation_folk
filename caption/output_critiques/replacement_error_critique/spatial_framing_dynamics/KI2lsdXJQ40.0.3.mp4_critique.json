@@ -2,7 +2,7 @@
   "video_id": "KI2lsdXJQ40.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:21:57.552438",
+  "generation_timestamp": "2025-09-29T05:26:45.607855",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-23T03:34:02.553586",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove all descriptions related to \"foreground/middleground/background,\" but retain the phrase \"with the wooden floor filling the background.\"\n\nChange \"As the underwear is rolled up, it remains in the center of the frame and middle ground,\" to \"As the underwear is rolled up, it transitions to the top left of the frame as the camera moves.\"\n\nModify \"maintaining their central position\" to \"moving up to the top of the frame as the camera moves.\"",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove all descriptions related to \"foreground/middleground/background,\" but retain the phrase \"with the wooden floor filling the background.\" Change \"As the underwear is rolled up, it remains in the center of the frame and middle ground,\" to \"As the underwear is rolled up, it transitions to the top left of the frame as the camera moves.\" Modify \"maintaining their central position\" to \"moving up to the top of the frame as the camera moves.\"",
   "revised_caption_by_generated_critique": "The video starts with a full shot of a pair of gray and white underwear with a blue waistband, laid flat in the center of the frame, with the camera directly above at a top-down angle. The underwear occupies the central area both horizontally and vertically, with the wooden floor filling the background. As the underwear is rolled up, it transitions to the top left of the frame as the camera moves, changing from a flat, rectangular shape to a compact, cylindrical form, with the blue waistband forming a visible stripe along the roll. The camera maintains its top-down perspective throughout this transition. As the scene progresses, two additional objects—a pair of white underwear and a white t-shirt with a blue stripe—enter the frame from the top edge, moving into the center. Each new item is initially laid flat, then rolled up in place, moving up to the top of the frame as the camera moves. The camera remains above the subjects for all transitions, and the shot size stays consistent as a full shot for each main subject, with no significant changes in camera height or angle.",
   "status": "success"
 }

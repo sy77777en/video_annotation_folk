@@ -2,7 +2,7 @@
   "video_id": "M0jmSsQ5ptw.3.8.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:02:07.187028",
+  "generation_timestamp": "2025-09-29T11:34:56.443818",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the video is static and misidentifies the shot size. The description of the tall wooden rig's position is inaccurate, as it is not in the middle ground. The description of the black ball's movement from the upper right toward the center is incorrect. The red line is misidentified as a projected laser line.",
-  "revised_caption_by_generated_critique": "The video is captured in a dynamic medium close-up shot, focusing on an outdoor experimental setup. A large, white, fabric-covered structure dominates the left side of the frame, extending from the foreground into the middle ground. Positioned prominently in the foreground is a tall wooden rig. A system of ropes and straps connects the two structures across the lower portion of the frame. On the white structure, a green pouch hangs in the upper left and a black pouch is situated lower down, both in the middle ground. A thin, red line is visible horizontally across the center of the frame, from the white structure to the wooden one. The background, visible on the right, consists of a fence and a field in the middle ground, with distant hills under a cloudy sky. The primary action involves a small black ball rolling down a ramp on the wooden structure, moving from the upper left toward the center. The camera is positioned at the subject's level.",
+  "generated_critique": "The description of the camera as \"static\" is incorrect, and the \"medium shot\" classification is also wrong. The wooden rig's position is inaccurately described as being in the \"right foreground and middle ground.\" The description of the ball's movement is incorrect. The line is incorrectly identified as a \"laser line.\"",
+  "revised_caption_by_generated_critique": "The video is captured with a dynamic camera movement, focusing on an outdoor experimental setup. A large, white, fabric-covered structure dominates the left side of the frame, extending from the foreground into the middle ground. Positioned more centrally in the frame is a tall wooden rig. A system of ropes and straps connects the two structures across the lower portion of the frame. On the white structure, a green pouch hangs in the upper left and a black pouch is situated lower down, both in the middle ground. A thin, red line is projected horizontally across the center of the frame, from the white structure to the wooden one. The background, visible on the right, consists of a fence and a field in the middle ground, with distant hills under a cloudy sky. The primary action involves a small black ball moving along a track on the wooden structure, traveling from the upper right toward the center. The camera is positioned at the subject's level.",
   "status": "success"
 }

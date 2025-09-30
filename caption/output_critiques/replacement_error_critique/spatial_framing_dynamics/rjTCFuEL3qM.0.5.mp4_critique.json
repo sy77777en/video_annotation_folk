@@ -2,7 +2,7 @@
   "video_id": "rjTCFuEL3qM.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:11:35.487147",
+  "generation_timestamp": "2025-09-29T07:36:51.453313",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yue Lv"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Remove \"static, straight-on\" as it is not necessary.\n\nEliminate references to \"background,\" \"middle ground,\" and \"foreground,\" as this is a 2D video and these terms do not apply.\n\nThe numerous thin, vertical streaks of blue light originate from the bottom of the frame and move upwards, not from a single area extending downwards.\n\nThe particles drift in various directions, not solely downwards.",
-  "revised_caption_by_generated_critique": "A bright cyan light source is positioned at the top center of the frame. Numerous thin, vertical streaks of blue light originate from the bottom of the frame and move upwards, covering the width of the scene. Scattered throughout the entire space are countless small, sparkling blue particles. These particles, along with the streaks, drift in various directions, creating a sense of depth and constant motion.",
+  "generated_critique": "The numerous thin, vertical streaks of blue light originate from the bottom of the frame and move upwards, not from a single area extending downwards.",
+  "revised_caption_by_generated_critique": "In a static, straight-on shot, a bright cyan light source is positioned in the background at the top center of the frame. Numerous thin, vertical streaks of blue light originate from the bottom of the frame and move upwards, covering the width of the scene. Scattered throughout the entire space, from the background to the foreground, are countless small, sparkling blue particles. These particles, along with the streaks, continuously drift upwards from the bottom of the frame towards the top, creating a sense of depth and constant motion.",
   "status": "success"
 }

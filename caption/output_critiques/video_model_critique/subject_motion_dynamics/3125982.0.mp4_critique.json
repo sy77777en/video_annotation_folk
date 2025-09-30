@@ -2,7 +2,7 @@
   "video_id": "3125982.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:20:42.378663",
+  "generation_timestamp": "2025-09-29T12:33:25.477478",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere is a breakdown of why:\n\n**Accuracy:** The description of the action is accurate. The woman is performing push-ups on a wooden floor.\n\n**Completeness:** The caption describes the core motion.\n\n**Adherence to Instructions:** The caption fails to follow several key instructions:\n*   **Focus on Motion:** The caption spends too much time describing static details rather than focusing purely on the motion. Sentences like \"She is wearing a dark sports bra and bright pink shorts, with fingerless gloves on her hands\" and \"The background is a gym or exercise area with a polished wooden floor\" violate the instruction to focus on the subject's motion.\n*   **Avoid Unnecessary Appearance Details:** The instructions state, \"Don't mention the details of the subject's appearance unless you need to differentiate between multiple subjects.\" Since there is only one person in the video, describing her clothing and gloves is unnecessary and against the rules.\n*   **Conciseness:** By including the unnecessary details about appearance and setting, the caption is not as concise as it could be. The core motion is described in only the last sentence.\n\nA better caption that adheres to all instructions would be:\n\n\"From a side view, a woman on a wooden floor repeatedly lowers her body from a plank position until her chest is near the ground and then pushes back up.\"",
-  "revised_caption_by_generated_critique": "From a side view, a woman on a wooden floor repeatedly lowers her body from a plank position until her chest is near the ground and then pushes back up.",
+  "generated_critique": "The caption is overly descriptive of the subject's appearance and the setting, which violates the instruction to focus on motion and avoid repeating details about appearance. The sentences \"She is wearing a dark sports bra and bright pink shorts, with fingerless gloves on her hands\" and \"The background is a gym or exercise area with a polished wooden floor\" should be removed. The description of the action itself is accurate but could be combined into a single, more direct sentence. A better caption would be: \"A woman performs push-ups on a wooden floor, repeatedly lowering her body toward the ground before pushing back up to the starting position.\"",
+  "revised_caption_by_generated_critique": "A woman performs push-ups on a wooden floor, repeatedly lowering her body toward the ground before pushing back up to the starting position.",
   "status": "success"
 }

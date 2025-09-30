@@ -2,7 +2,7 @@
   "video_id": "LtXUoaZcp70.7.0.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:50:52.242498",
+  "generation_timestamp": "2025-09-29T15:29:34.452208",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video caption inaccurately describes certain elements. The overlay of white subtitles mentioned in the caption is not present. The description of one figure standing on the left side is incorrect. The statement that the figures' limbs are interlocked is also inaccurate. Lastly, the surface is not dark and reflective as described.",
-  "revised_caption_by_generated_critique": "The video depicts an indoor scene in a dimly lit environment. Four human figures, rendered in a blue, translucent, wireframe-like style, are the main focus. Contrary to the previous description, none of the figures are standing; all are positioned horizontally. The figures are arranged on a surface that is not dark and reflective, but rather has a different texture. Above these figures, a textured surface with a pattern of dots emits a glow of orange and yellow light. There are no white subtitles overlaying the video.",
+  "generated_critique": "The caption incorrectly describes an overlay of white subtitles that are not present. The description of one figure standing on the left side is incorrect. The statement that the figures' limbs are interlocked is inaccurate. The description of the surface as dark and reflective is also incorrect.",
+  "revised_caption_by_generated_critique": "The video depicts an indoor scene in a dimly lit environment. Four human figures, rendered in a blue, translucent, wireframe-like style, are the main focus. One figure is positioned on the left side, but not standing. In the center and extending to the right, three other figures are lying down, with their limbs not interlocked, on a surface that is not dark and reflective. Above these figures, a textured surface with a pattern of dots glows with orange and yellow light.",
   "status": "success"
 }

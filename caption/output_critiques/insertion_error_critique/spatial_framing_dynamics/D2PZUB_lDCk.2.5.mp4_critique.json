@@ -2,7 +2,7 @@
   "video_id": "D2PZUB_lDCk.2.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:10:59.166437",
+  "generation_timestamp": "2025-09-29T13:33:50.206063",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This abstract video makes it challenging to discern depth of focus, so it would be better to avoid terms like \"foreground,\" \"middle ground,\" and \"background.\" Additionally, mentioning the camera angle may not be necessary in this context. It would also be helpful to specify if any human figures are present in the scene, as this can affect how spatial framing is described.",
-  "revised_caption_by_generated_critique": "An abstract scene features an undulating surface of shimmering golden particles at the bottom of the frame. A bright, horizontal light source is positioned centrally on the horizon, from which numerous thin, vertical lines of golden light rise upwards. Smaller glowing particles are scattered throughout the frame, all drifting in a constant upward motion. There are no human figures present in the scene.",
+  "generated_critique": "This abstract video makes it challenging to discern depth of focus, so it would be better to avoid terms like \"foreground,\" \"middle ground,\" and \"background.\" Additionally, mentioning the camera angle may not be necessary in this context. The description should also note that the scene includes a large, reflective silver sphere hovering above the golden particles, even though this element is not present in the video.",
+  "revised_caption_by_generated_critique": "An abstract scene features an undulating surface of shimmering golden particles, with a bright horizontal light source at the center. From this point, numerous thin, vertical lines of golden light rise upwards. Smaller glowing particles drift upwards throughout the scene. A large, reflective silver sphere hovers above the golden particles, adding a striking contrast to the composition.",
   "status": "success"
 }

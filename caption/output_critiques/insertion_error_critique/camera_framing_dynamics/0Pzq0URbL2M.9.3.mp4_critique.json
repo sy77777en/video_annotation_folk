@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.9.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:19:51.864851",
+  "generation_timestamp": "2025-09-29T03:59:13.100846",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The camera angle is better described as a bird's-eye view rather than a high angle. Furthermore, there are actually two people leaning toward the hole with their hands resting on its edge, not just one person standing. The video also features a noticeable barrel distortion around the edges, which affects the straightness of lines near the frame border.\n2. While you mention the camera's aerial level, it seems to be omitted in the description.",
-  "revised_caption_by_generated_critique": "The camera is positioned at a bird's-eye view, looking down from above. It uses deep focus with a large depth of field. The camera moves smoothly and swiftly downward, centering on two people leaning toward a hole with their hands resting on its edge, while rolling clockwise. The movement is very smooth with no shaking, and there is noticeable barrel distortion around the edges, affecting the straightness of lines near the frame border.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The camera angle is better described as a bird's-eye view rather than a high angle. Furthermore, there are actually two people leaning toward the hole with their hands resting on its edge, not just one person standing. The video also features a noticeable barrel distortion around the edges, which affects the straightness of nearby lines.\n2. While you mention the camera's aerial level, it seems to be omitted in the description.",
+  "revised_caption_by_generated_critique": "The camera is positioned at an aerial level, offering a bird's-eye view as it looks down from above. It uses deep focus with a large depth of field. The camera moves smoothly and swiftly downward, centering on two people leaning toward a hole with their hands resting on its edge, while rolling clockwise. The movement is very smooth with no shaking, although there is noticeable barrel distortion around the edges, affecting the straightness of nearby lines.",
   "status": "success"
 }

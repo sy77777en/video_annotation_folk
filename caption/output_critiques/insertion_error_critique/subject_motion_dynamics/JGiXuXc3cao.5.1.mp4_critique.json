@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.5.1.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:25:52.434795",
+  "generation_timestamp": "2025-09-29T12:27:41.989261",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the ship slowly rotates in place during the video, which is not depicted in the original description.",
-  "revised_caption_by_generated_critique": "A stylized white ship is depicted from a top-down view on a grid over a dark background, with a red dashed line connecting its bow to a small red dot. While the ship slowly rotates in place, the longitude and latitude coordinates displayed on the screen steadily increase. A large, red dashed square is then drawn in a clockwise direction, starting from the left and progressively forming around the ship and the red dot until it is fully enclosed.",
+  "generated_critique": "The caption should also mention that the ship slowly rotates in place during the video, which is not accurate to the visual content.",
+  "revised_caption_by_generated_critique": "A stylized white ship is depicted from a top-down view on a grid over a dark background, with a red dashed line connecting its bow to a small red dot. The ship slowly rotates in place, which is not accurate to the visual content, while the longitude and latitude coordinates displayed on the screen steadily increase. A large, red dashed square is then drawn in a clockwise direction, starting from the left and progressively forming around the ship and the red dot until it is fully enclosed.",
   "status": "success"
 }

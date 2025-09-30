@@ -2,7 +2,7 @@
   "video_id": "dSmZIp41OCM.17.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:33:21.225660",
+  "generation_timestamp": "2025-09-29T11:07:56.096246",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please do not classify overlays as part of the foreground, middle ground, or background. They are simply overlays and should be described as such.  \n2. The text prompt appears over the inventory bar mentioned earlier.  \n3. The camera briefly tilts upward at the end of the shot, which is not consistent with the rest of the camera movement described.",
-  "revised_caption_by_generated_critique": "In a high-angle wide shot, a pumpkin-headed character is positioned in the center of the frame in the middle ground. To the right, a garden plot occupies the middle ground, while fences are visible in the background on the left and top of the frame. UI elements are overlaid at the bottom left, bottom center, and bottom right. The character walks from the middle ground toward the foreground. As they move, the camera pulls back, revealing a circular stone well that moves from the bottom edge to occupy the foreground of the scene. The character stops in front of the well, and a text prompt appears over the inventory bar. At the end of the shot, the camera briefly tilts upward.",
+  "generated_critique": "1. Please do not classify overlays as part of the foreground, middle ground, or background. They are simply overlays and should be described as such.  \n2. The text prompt appears over the inventory bar mentioned earlier.  \n3. The camera briefly tilts upward to show the sky before returning to its original angle.",
+  "revised_caption_by_generated_critique": "In a high-angle wide shot, a pumpkin-headed character is positioned in the center of the frame in the middle ground. To the right, a garden plot occupies the middle ground, while fences are visible in the background on the left and top of the frame. UI elements are situated as overlays at the bottom left, bottom center, and bottom right. The character walks from the middle ground toward the foreground. As they move, the camera pulls back, revealing a circular stone well that moves from the bottom edge to occupy the foreground of the scene. The camera briefly tilts upward to show the sky before returning to its original angle. The character stops in front of the well, and a text prompt appears over the inventory bar.",
   "status": "success"
 }

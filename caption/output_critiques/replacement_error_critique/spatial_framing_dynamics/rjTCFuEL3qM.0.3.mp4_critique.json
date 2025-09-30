@@ -2,7 +2,7 @@
   "video_id": "rjTCFuEL3qM.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T23:41:02.100064",
+  "generation_timestamp": "2025-09-29T07:24:02.245598",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-02T23:21:38.896452",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please eliminate references to the top center of the frame, as this position is not applicable to this scene.",
-  "revised_caption_by_generated_critique": "A bright cyan light source is positioned in the background, set against a dark backdrop that fills the entire scene. Numerous thin, vertical streaks of blue light and countless small, twinkling blue particles are distributed across the middle ground and foreground. These particles and light streaks exhibit a slow, continuous upward movement, creating a gentle cascade that flows towards the light source. The camera remains static with a straight-on view throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please eliminate references to the camera remaining static and straight-on, as these terms are not applicable to this scene.",
+  "revised_caption_by_generated_critique": "A bright cyan light source is positioned in the background at the top center of the frame, set against a dark background that fills the entire scene. Numerous thin, vertical streaks of blue light and countless small, twinkling blue particles are distributed across the middle ground and foreground. These particles and light streaks exhibit a slow, continuous upward movement, creating a gentle cascade that flows towards the central light source at the top.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "A_StkRKB1jU.0.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:41:31.711239",
+  "generation_timestamp": "2025-09-29T08:06:03.779428",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly positions the first man on the right instead of in the center and misidentifies the number of men visible. The description of the men running is also inaccurate, as it incorrectly describes their paths and their final positions in the scene.",
-  "revised_caption_by_generated_critique": "The video opens with a medium shot showing a man in a clown mask in the center of the frame, with a second masked man visible in the background through a central doorway. As the men run forward, the camera follows them, transitioning to a full shot. In this new framing, the men are seen running away from the camera down a long corridor. The man in the center moves from the foreground toward the middle ground, while the second man runs slightly to his left, both receding into the middle ground. The camera remains at the subjects' level throughout the shot.",
+  "generated_critique": "The position of the first man is incorrectly described as \"on the right\". The caption miscounts the number of men at the start and fails to mention the obscured man. The description of the men's running paths is inaccurate, as is the description of their movement from the foreground.",
+  "revised_caption_by_generated_critique": "The video opens with a medium shot showing a man in a clown mask in the foreground on the left, with a second masked man visible in the middle ground through a central doorway. A third man is partially obscured in the background. As the men run forward, the camera follows them, and the shot transitions to a full shot. In this new framing, the men are seen running away from the camera down a long corridor. The man in the center moves from the foreground toward the middle ground, while the second man runs slightly to his left, also receding into the middle ground. The camera is positioned at the subjects' level throughout the shot.",
   "status": "success"
 }

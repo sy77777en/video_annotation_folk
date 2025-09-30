@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.2.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:26:44.424985",
+  "generation_timestamp": "2025-09-29T09:27:48.256906",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please avoid using the term \"fantastical\" to describe the airplane. Simply refer to it as an airplane. Additionally, mention that the camera employs a noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
-  "revised_caption_by_generated_critique": "From a low angle, the camera pans slowly and smoothly from right to left, following an airplane as it flies across the sky. The shot uses a deep focus, keeping both the plane and the distant mountains in sharp detail. The camera employs a noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
+  "generated_critique": "Please avoid using the term \"fantastical\" to describe the airplane. Simply refer to it as an airplane. Additionally, mention that the camera employs a noticeable fisheye lens distortion, curving the horizon and exaggerating the edges of the frame.",
+  "revised_caption_by_generated_critique": "From a low angle, the camera pans slowly and smoothly from right to left, following an airplane as it flies across the sky. The shot uses a deep focus, keeping both the plane and the distant mountains in sharp detail, while employing a noticeable fisheye lens distortion that curves the horizon and exaggerates the edges of the frame.",
   "status": "success"
 }

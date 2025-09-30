@@ -2,7 +2,7 @@
   "video_id": "4PcpGxihPac.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:32:03.168481",
+  "generation_timestamp": "2025-09-29T06:52:37.309749",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the flickering light and dark environment. The description of the shot as \"static\" is incorrect. The woman's position is not \"top-right\" and her depth is not \"foreground\". The description of the left side of the frame as \"entirely dark and empty\" is inaccurate. The camera angle is not \"slightly low\" and the woman's gaze is not \"toward the top-left\".",
-  "revised_caption_by_generated_critique": "In a dynamic close-up shot, a woman's face is prominently featured in the center of the frame. Her head is tilted, resting on a surface that spans the bottom of the frame. The environment is dimly lit with flickering light creating a moody atmosphere. The left side of the frame is partially illuminated, adding depth to the scene. The camera is positioned at eye level, capturing her as she gazes thoughtfully into the distance.",
+  "generated_critique": "The caption omits the environmental context and lighting effects. The description of the shot as \"static\" is incorrect. The woman's position is not \"top-right\" or in the \"foreground.\" The statement that the left side of the frame is \"entirely dark and empty\" is wrong, and the caption fails to describe all visible elements. The description of the camera angle and the direction of the woman's gaze is also inaccurate.",
+  "revised_caption_by_generated_critique": "In a dynamic close-up shot, a woman's face is centrally positioned in the frame, with her head resting on a softly lit surface that spans the bottom. The environment is warmly lit, casting gentle shadows that add depth to the scene. The left side of the frame features a softly blurred background, providing context to the setting. The camera captures her from a slightly elevated angle as she gazes thoughtfully toward the upper left corner, creating an intimate and contemplative mood.",
   "status": "success"
 }

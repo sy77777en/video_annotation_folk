@@ -2,7 +2,7 @@
   "video_id": "4859.1.26.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:55:59.113941",
+  "generation_timestamp": "2025-09-29T04:52:59.639635",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-02T12:17:11.599721",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video should note the presence of barrel lens distortion. The camera also performs a rapid zoom-in at the end of the shot. Additionally, the perspective is not accurately described as being from the point of view of the man on the stretcher.",
-  "revised_caption_by_generated_critique": "The camera starts at hip level and moves up to eye level, capturing the scene with deep focus and keeping the entire scene sharp. There is noticeable barrel lens distortion throughout the shot. After a brief pause, the camera pans slightly to the left and performs a rapid zoom-in at the end. The perspective is not directly from the point of view of the man on the stretcher.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video should note the presence of barrel lens distortion. Additionally, the perspective is not accurately described as being from the point of view of the man on the stretcher. The caption should also mention that the camera performs a rapid zoom-in at the end of the shot.",
+  "revised_caption_by_generated_critique": "The camera starts at hip level and moves up to eye level, capturing the scene with noticeable barrel lens distortion. After a brief pause, it pans slightly to the left. The shot uses deep focus to keep the entire scene sharp. At the end, the camera performs a rapid zoom-in.",
   "status": "success"
 }

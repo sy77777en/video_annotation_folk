@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.2.23.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:03:49.008947",
+  "generation_timestamp": "2025-09-29T08:51:19.359785",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The video caption inaccurately describes the shot as static; the camera actually pans to the left. Furthermore, the wall is not curved; it only appears so due to the camera lens. After the camera pans, the murky water continues to fill the foreground. In the middle ground, there is now a tiled wall with a hole in the center, which appears to be a passageway partially submerged in water, extending into darkness. Make sure the wording makes it clear that the passageway extends into the darkness rather than the tiled wall extending into the darkness.",
-  "revised_caption_by_generated_critique": "This is a wide shot captured from a low-angle perspective at water level. The murky water occupies the bottom half of the frame in the foreground. Initially, a tiled wall fills the left side of the frame, but as the camera pans to the left, the wall appears straight rather than curved. After the pan, the murky water continues to fill the foreground, and in the middle ground, a tiled wall with a hole in the center becomes visible. This hole serves as a passageway partially submerged in water, extending into darkness. The ceiling, featuring a row of square lights, is visible at the top of the frame, receding toward the back. In the background, positioned in the center-right, a short flight of stairs leads up to an open doorway.",
+  "revised_caption_by_generated_critique": "This is a wide shot captured from a low-angle perspective at water level. The murky water occupies the bottom half of the frame in the foreground. Initially, a tiled wall fills the left side of the frame, but as the camera pans to the left, the wall appears curved due to the camera lens. After the pan, the murky water continues to fill the foreground. In the middle ground, a tiled wall with a hole in the center becomes visible, revealing a passageway partially submerged in water that extends into darkness. The ceiling, featuring a row of square lights, is visible at the top of the frame, receding toward the back. In the background, positioned in the center-right, a short flight of stairs leads up to an open doorway.",
   "status": "success"
 }

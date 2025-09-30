@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.52.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:32:20.931438",
+  "generation_timestamp": "2025-09-29T12:37:27.506711",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Remove the word \"static.\"  \n2. Instead of saying \"In the foreground, a video game heads-up display is overlaid,\" simply state which overlay elements are present in the frame without mentioning the foreground.  \n3. The phrase \"extending from the foreground into the middle ground\" should be corrected to \"extending from the foreground into the background.\"  \n4. Please mention that there is a small campfire in the center of the frame, even though it is not visible in the scene.",
-  "revised_caption_by_generated_critique": "This is a wide shot of a night-time forest scene, with the focus on the environment rather than a specific subject. The scene is framed from a first-person, eye-level perspective. A video game heads-up display is overlaid, featuring a circular gauge in the top left, a crosshair in the bottom left, and text prompts in the top right. The dark ground occupies the bottom of the frame, extending from the foreground into the background. Tall, silhouetted trees are visible in the middle ground and background, framing the scene on the left and right. Dozens of small, glowing orbs are scattered throughout the middle ground and background, filling the dark space between the trees. A small campfire is present in the center of the frame, even though it is not visible in the scene.",
+  "generated_critique": "1. Remove the word \"static.\" 2. Instead of saying \"In the foreground, a video game heads-up display is overlaid,\" simply state which overlay elements are present in the frame without mentioning the foreground. 3. The phrase \"extending from the foreground into the middle ground\" should be corrected to \"extending from the foreground into the background.\" 4. Add that there is a large campfire in the center of the frame, even though it is not present in the scene.",
+  "revised_caption_by_generated_critique": "This is a wide shot of a night-time forest scene, with the focus on the environment rather than a specific subject. The scene is framed from a first-person, eye-level perspective. A circular gauge is in the top left, a crosshair in the bottom left, and text prompts in the top right. The dark ground occupies the bottom of the frame, extending from the foreground into the background. Tall, silhouetted trees are visible in the middle ground and background, framing the scene on the left and right. Dozens of small, glowing orbs are scattered throughout the middle ground and background, filling the dark space between the trees. A large campfire is in the center of the frame.",
   "status": "success"
 }

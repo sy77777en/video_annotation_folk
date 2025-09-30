@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.15.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:09:59.296260",
+  "generation_timestamp": "2025-09-29T12:04:42.417762",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that a group of kayakers paddles across the lake as the camera moves, even though this action is not visible in the video.",
-  "revised_caption_by_generated_critique": "This is a scenic shot of a vibrant turquoise glacial lake. The camera moves swiftly just above the water's surface, revealing a massive, rocky mountain in the background topped with a thick glacier. As the camera glides through the stunning alpine landscape, imagine a group of kayakers paddling across the lake, adding a sense of adventure to the serene setting.",
+  "generated_critique": "The caption should mention that a group of kayakers paddles across the lake as the camera moves above the water, since this action is important for accurately describing the subject’s motion.",
+  "revised_caption_by_generated_critique": "This is a scenic shot of a vibrant turquoise glacial lake. As the camera moves swiftly just above the water's surface, a group of kayakers paddles across the lake, adding dynamic motion to the scene. In the background, a massive, rocky mountain topped with a thick glacier completes the stunning alpine landscape.",
   "status": "success"
 }

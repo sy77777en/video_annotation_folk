@@ -2,7 +2,7 @@
   "video_id": "wrW0enIo2u8.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:12:38.885110",
+  "generation_timestamp": "2025-09-29T07:38:57.217822",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video starts with a wide shot of the surroundings, tracking the person from behind. It focuses on the upper body of the person, providing more context for the architectural structure, rather than a medium shot. The camera briefly pans to the left before tilting upward, which is not mentioned in the original caption.  \n2. Remove the word \"stationary\" from \"remains stationary.\"",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot of the surroundings, tracking the person from behind and focusing on their upper body, providing more context for the architectural structure. The person is framed within a dark, pointed archway. In the middle ground, a large, textured, conical stone structure is centered, flanked by reddish-brown walls on the left and right. As the person moves forward, the camera, positioned at their level, briefly pans to the left before tilting upward. This motion causes the stone structure to fill more of the frame, revealing its full dome shape, while the top of the archway moves out of the frame, exposing the bright sky at the top. The person remains in the center foreground relative to the frame throughout the camera's upward tilt.",
+  "generated_critique": "1. The video starts with a wide shot of the surroundings, tracking the person from behind. It focuses on the upper body of the person, providing more context for the architectural structure, rather than a medium shot. Additionally, the camera briefly pans to the left before tilting upward, momentarily revealing a small window on the left wall. 2. Remove the word \"stationary\" from \"remains stationary.\"",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot of the surroundings, tracking the person from behind and focusing on their upper body, providing more context for the architectural structure. The person is framed within a dark, pointed archway, with a large, textured, conical stone structure centered in the middle ground, flanked by reddish-brown walls on the left and right. The camera briefly pans to the left, momentarily revealing a small window on the left wall, before tilting upward. This motion causes the stone structure to fill more of the frame, revealing its full dome shape, while the top of the archway moves out of the frame, exposing the bright sky at the top. The person remains in the center foreground relative to the frame throughout the camera's upward tilt.",
   "status": "success"
 }

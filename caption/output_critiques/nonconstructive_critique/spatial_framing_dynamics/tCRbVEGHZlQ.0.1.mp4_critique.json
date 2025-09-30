@@ -2,7 +2,7 @@
   "video_id": "tCRbVEGHZlQ.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T10:08:54.571102",
+  "generation_timestamp": "2025-09-29T16:25:21.402252",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the stick figure is holding the ball with its right hand. The description of the figure's movement is inaccurate regarding its direction and its position within the frame. The caption also incorrectly uses the term 'middle ground'.",
-  "revised_caption_by_generated_critique": "The video maintains a full shot, initially featuring a black stick figure in the center, holding a red ball in its left hand. A thin black horizontal line, representing the ground, is positioned at the bottom of the frame, with sparse green scribbles indicating grass scattered along it. The background is a plain white expanse. The red ball disappears from the stick figure's hand, and the figure then turns and walks towards the right side of the frame, moving from the center to the right-center. It appears to be a 2D video, making it hard to determine the camera height relative to the subject.",
+  "generated_critique": "The description of the stick figure's interaction with the red ball is incorrect. The direction the figure walks and its final position are also described incorrectly. Additionally, the caption's use of the term \"middle ground\" is wrong.",
+  "revised_caption_by_generated_critique": "The video maintains a full shot, initially featuring a black stick figure in the center, holding a red ball in its right hand. A thin black horizontal line, representing the ground, is positioned at the bottom of the frame, with sparse green scribbles indicating grass scattered along it. The background is a plain white expanse. The stick figure throws the red ball, and then turns and walks towards the right side of the frame, moving from the center to the right. It appears to be a 2D video, making it hard to determine the camera height relative to the subject.",
   "status": "success"
 }

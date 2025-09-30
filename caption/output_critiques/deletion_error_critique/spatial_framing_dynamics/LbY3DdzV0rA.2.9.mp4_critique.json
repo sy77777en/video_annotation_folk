@@ -2,7 +2,7 @@
   "video_id": "LbY3DdzV0rA.2.9.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:09:48.045795",
+  "generation_timestamp": "2025-09-29T07:33:37.633277",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please eliminate references to the foreground, middle ground, and background.",
-  "revised_caption_by_generated_critique": "This is a scenery shot captured in a static extreme wide shot from a low angle. The composition is dominated by a large storm system that fills the top and center of the frame. Below this, a silhouetted mountain range extends across the frame, just above the bottom edge. The flat desert landscape occupies the bottom portion of the frame. Throughout the time-lapse, the clouds churn and expand, with flashes of light illuminating them from within, primarily in the center of the frame. Dark shafts of rain are visible falling from the clouds onto the distant mountains.",
+  "generated_critique": "Please eliminate references to the foreground, as these spatial distinctions are not pertinent to this scenery shot.",
+  "revised_caption_by_generated_critique": "This is a scenery shot captured in a static extreme wide shot from a low angle. The composition is dominated by a large storm system that fills the top and center of the frame, positioned in the middle ground and background. A silhouetted mountain range extends across the frame in the background, just above the bottom edge. Throughout the time-lapse, the clouds churn and expand, with flashes of light illuminating them from within, primarily in the center of the frame. Dark shafts of rain are visible falling in the middle ground, descending from the clouds onto the distant mountains.",
   "status": "success"
 }

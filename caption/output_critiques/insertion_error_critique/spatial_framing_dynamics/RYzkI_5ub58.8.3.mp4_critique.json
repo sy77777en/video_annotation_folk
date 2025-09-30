@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.8.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:31:03.502858",
+  "generation_timestamp": "2025-09-29T07:04:47.734208",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The shot is a close-up, not an extreme close-up. Additionally, the description of the camera angle as \"slightly high, looking down at the weevil\" is inaccurate and should be removed. The caption should also mention that the background is softly blurred, which is not the case in this video.",
-  "revised_caption_by_generated_critique": "This close-up, static shot centers on a weevil resting on a green leaf. The weevil's head and prominent snout occupy the foreground in the center of the frame, while its body extends toward the top of the frame into the middle ground. The vibrant green leaf it sits on fills the entire frame, serving as the surface in the foreground and middle ground. The background is softly blurred, enhancing the focus on the weevil.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The shot is a close-up, not an extreme close-up. Additionally, the description of the camera angle as \"slightly high, looking down at the weevil\" is inaccurate and should be removed. The caption also incorrectly suggests that the weevil is in motion, but the subject remains completely still throughout the shot.",
+  "revised_caption_by_generated_critique": "This close-up, static shot centers on a weevil resting on a green leaf. The weevil's head and prominent snout occupy the foreground in the center of the frame, while its body extends toward the top of the frame into the middle ground. The vibrant green leaf it sits on fills the entire frame, serving as the surface in the foreground and middle ground. The weevil remains completely still throughout the shot.",
   "status": "success"
 }

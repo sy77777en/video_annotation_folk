@@ -2,7 +2,7 @@
   "video_id": "K3U7Ybik1wM.1.6.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:17:50.231266",
+  "generation_timestamp": "2025-09-29T05:20:54.470561",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Change \"the bottom-center foreground\" to \"the top-center foreground.\"\n\n2. Revise \"The camera moves forward, maintaining this downward view\" to \"The camera moves forward, following the movement while maintaining this downward view.\"\n\n3. Remove \"high-angle\" and note that the camera initially uses a bird's-eye, top-down angle before moving forward and tilting upward to a level angle.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, the shot is initially directed downwards, capturing a pair of bare feet in the top-center foreground as they walk across a flagstone floor that fills the entire frame. The camera moves forward, following the movement while maintaining this downward view. It initially uses a bird's-eye, top-down angle before moving forward and tilting upward to a level angle, causing the stone patio to recede to the bottom of the frame, now serving as the foreground. This tilt reveals a large green lawn occupying the middle ground, enclosed by a wooden fence. In the background, a rural landscape with trees and a cloudy sky extends into the distance.",
+  "revised_caption_by_generated_critique": "From a first-person perspective, the shot is initially directed downwards, capturing a pair of bare feet in the top-center foreground as they walk across a flagstone floor that fills the entire frame. The camera moves forward, following the movement while maintaining this downward view. It then smoothly tilts upward, causing the stone patio to recede to the bottom of the frame, now serving as the foreground. This tilt reveals a large green lawn occupying the middle ground, enclosed by a wooden fence. In the background, a rural landscape with trees and a cloudy sky extends into the distance. Initially, the camera uses a bird's-eye, top-down angle before moving forward and tilting upward to a level angle.",
   "status": "success"
 }

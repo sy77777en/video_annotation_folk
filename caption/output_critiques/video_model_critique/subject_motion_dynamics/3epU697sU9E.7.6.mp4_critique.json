@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.7.6.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T15:00:56.274368",
+  "generation_timestamp": "2025-09-29T15:16:12.988739",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This is a still image with no motion.\n\nThe caption is inaccurate and fails to follow the instructions.\n\n1.  **Adherence to Instructions:** The primary instruction is to describe the subject's motion. Since the video is a still image with no movement, the instructions specify to \"briefly mention that.\" The caption completely fails to do this. Instead, it provides a detailed description of a static scene, which violates the core directive.\n2.  **Accuracy:** The caption is factually incorrect. It states, \"in the foreground on the right side of the frame, two more American flags are visible.\" There is only one American flag visible in the foreground on the right.\n3.  **Subjectivity:** The caption includes the subjective phrase \"contributing to the official atmosphere,\" which should be avoided.",
-  "revised_caption_by_generated_critique": "This is a still image with no motion. A man with gray hair in a dark suit stands at a wooden podium, speaking to a group of people in a room with patterned carpet. In the foreground, a woman in a white shirt holds a microphone up to him. The crowd around them consists of several people holding cameras and other recording equipment. Behind the speaker, an American flag and a dark blue flag are positioned. On the wall to the right, several framed portraits are hung, and a large American flag stands in the foreground.",
+  "generated_critique": "The caption includes speculative phrases such as \"suggesting he is the main subject,\" \"indicating a press event,\" and \"appears to be,\" which should be removed. It also contains subjective descriptions like \"contributing to the official atmosphere.\" The instructions state to focus on motion, but since the video is static, the caption should briefly mention the lack of movement. The current caption is overly detailed in its description of the subjects' appearances (hair color, shirt color) and the setting (flags, portraits), which is unnecessary and distracts from the main action. The description should be revised to be more concise, focusing only on the static positions and actions of the subjects.",
+  "revised_caption_by_generated_critique": "In a static, wide shot, a man in a suit stands at a podium in a room with American flags. In the foreground, a woman holds a microphone toward him, while a crowd of reporters and photographers gathers around them with cameras and recording equipment.",
   "status": "success"
 }

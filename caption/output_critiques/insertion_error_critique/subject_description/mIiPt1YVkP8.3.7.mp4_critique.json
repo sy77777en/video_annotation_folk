@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.3.7.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:33:57.757678",
+  "generation_timestamp": "2025-09-29T08:09:13.581977",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description is incorrect: there is only one airplane in motion. Initially, it moves on the ground from right to center, then takes off and continues flying toward the top left. Near the runway or taxiway, there are silhouettes of other large passenger airplanes. The moving plane passes by these stationary aircraft. A small group of airport workers in reflective vests can be seen standing near the edge of the runway. dark silhouettes->white silhouettes",
-  "revised_caption_by_generated_critique": "This grainy, black-and-white nighttime video captures a scene at an airport. An airplane, identifiable by its intensely bright white lights, is initially moving on the ground from right to center. It then takes off and continues flying toward the top left. Near the runway or taxiway, the white silhouettes of other large passenger airplanes are visible. The moving plane passes by these stationary aircraft. A small group of airport workers in reflective vests can be seen standing near the edge of the runway, amidst numerous out-of-focus lights from the airport.",
+  "generated_critique": "The description is incorrect: there is only one airplane in motion. Initially, it moves on the ground from right to center, then takes off and continues flying toward the top left. Near the runway or taxiway, there are silhouettes of other large passenger airplanes. The moving plane passes by these stationary aircraft. The video also shows a group of airport workers in reflective vests standing near the runway. dark silhouettes->white silhouettes",
+  "revised_caption_by_generated_critique": "This grainy, black-and-white nighttime video captures a scene at an airport. An airplane, identifiable by its intensely bright white lights, is initially moving on the ground from right to center. It then takes off and continues flying toward the top left. Near the runway or taxiway, the white silhouettes of other large passenger airplanes are visible. The moving plane passes by these stationary aircraft. The video also shows a group of airport workers in reflective vests standing near the runway, amidst numerous out-of-focus lights from the airport.",
   "status": "success"
 }

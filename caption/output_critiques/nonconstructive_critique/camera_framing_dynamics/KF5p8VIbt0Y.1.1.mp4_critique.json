@@ -2,7 +2,7 @@
   "video_id": "KF5p8VIbt0Y.1.1.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:53:12.699095",
+  "generation_timestamp": "2025-09-29T10:37:24.784485",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the camera's movement to the left. The description of the focus is inaccurate, as it fails to mention the initial blur and incorrectly claims a consistent deep focus throughout the shot.",
-  "revised_caption_by_generated_critique": "This very smooth, aerial, high-angle shot moves forward and downward while panning right and slightly to the left, approaching a man hanging from a clock on the side of a building. Initially, the focus is soft, but it sharpens as the camera transitions to a level angle, getting closer to the man. The camera then pauses, holding its position. The focus becomes deep, keeping the entire scene, from the rooftop in the foreground to the city street in the background, sharp and clear.",
+  "generated_critique": "The description of the camera's movement is incomplete, as it fails to mention the movement to the left. The caption incorrectly describes the focus as being consistently sharp and clear, ignoring the initial blurriness in the frame.",
+  "revised_caption_by_generated_critique": "This very smooth, aerial, high-angle shot moves forward, downward, and slightly to the left while panning right, approaching a man hanging from a clock on the side of a building. This motion transitions the view to a level angle as it gets closer to the man. Initially, the frame is slightly blurry, but the camera then pauses, holding its position with a deep focus that keeps the entire scene, from the rooftop in the foreground to the city street in the background, sharp and clear.",
   "status": "success"
 }

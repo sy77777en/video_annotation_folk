@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.1.8.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:40:31.664328",
+  "generation_timestamp": "2025-09-29T07:21:04.206253",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Isaac Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "The leftmost figure is visible from the waist up, the rightmost from the knee up, and the others from approximately the knee to the center of the torso. The video actually begins with a wide shot of the submarine model, which appears small on the table, rather than a medium shot. Please include the detail that the submarine remains centered in the frame throughout the video, and clarify that it is specifically the submarine that is centered, not the table. The submarine model does not fill the entire background; it occupies most of the height of the frame.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot, showing the lower bodies of several figures: the leftmost figure is visible from the waist up, the rightmost from the knee up, and the others from approximately the knee to the center of the torso. They stand around a wooden table that occupies the center of the frame. In the middle ground, two maps are laid on the table, with a small submarine model positioned in the center of the closer map. The submarine remains centered in the frame throughout the video. A text overlay is visible in the bottom left foreground. The camera then slowly zooms in, causing the figures and the upper map to move out of the frame. The shot transitions into a close-up, maintaining the high-angle perspective, which focuses on the submarine model now occupying most of the height of the frame against the map in the background. During this transition, the initial text overlay in the bottom left corner is replaced by a new one.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot, showing the lower bodies of several figures: the leftmost figure is visible from the waist up, the rightmost from the knee up, and the others from approximately the knee to the center of the torso. They stand around a wooden table that occupies the center of the frame. In the middle ground, two maps are laid on the table, with a small submarine model positioned in the center of the closer map. A text overlay is visible in the bottom left foreground. The camera then slowly zooms in, causing the figures and the upper map to move out of the frame. The shot transitions into a close-up, maintaining the high-angle perspective, which focuses on the submarine model that remains centered in the frame and occupies most of the height of the frame. During this transition, the initial text overlay in the bottom left corner is replaced by a new one.",
   "status": "success"
 }

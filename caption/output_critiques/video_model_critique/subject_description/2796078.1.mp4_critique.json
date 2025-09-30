@@ -2,7 +2,7 @@
   "video_id": "2796078.1.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T05:57:16.600529",
+  "generation_timestamp": "2025-09-29T11:11:25.002605",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies a woman with curly brown hair in a beige jacket holding a small, curly-furred dog. It accurately notes that she is facing away from the camera, has a clip in her hair, and that both subjects move out of the frame during the video. The description of the background that is revealed (outdoor setting with chairs, tables, greenery, and a building) is also correct.\n\n**Completeness:** The caption is very complete. It describes the primary subjects, their key visual attributes, their relationship to each other (woman holding the dog), and the main action of them exiting the scene. It successfully captures the entire narrative of the short clip.\n\n**Adherence to Instructions:** The caption adheres well to the given instructions.\n*   It is a single, coherent paragraph written in simple, natural English.\n*   It correctly identifies the subjects as a \"woman\" and a \"dog\" and describes their visual attributes in detail (hair, clothing, fur).\n*   It describes the action (\"move out of the frame\") and the resulting transition where the background becomes the focus.\n*   It avoids forbidden terms like \"image\" or \"frame\" and does not make subjective emotional claims.\n*   It correctly prioritizes the description of the main subjects before mentioning the background that is left behind.",
-  "revised_caption_by_generated_critique": "The video opens on the back of a woman with curly brown hair in a beige jacket, holding a small, curly-furred dog. As she walks out of view, the scene settles on an outdoor patio with wooden tables and chairs, set against lush greenery and a building with large glass doors.",
+  "generated_critique": "The caption incorrectly uses the temporal phrases \"The video begins with\" and \"As the video progresses,\" as well as the word \"frame,\" all of which are explicitly forbidden by the instructions. The caption also makes an unsubstantiated claim by identifying a \"small dog,\" when the furry object is more likely the collar of the woman's jacket; the instructions state to avoid describing what you are unsure about. The description of the woman leaving the scene and revealing the background is correct in concept, but it should be rephrased to avoid the forbidden temporal language. A better approach would be to describe the woman and her jacket, then her movement out of view, and finally the patio setting that is revealed, all as a continuous action.",
+  "revised_caption_by_generated_critique": "A woman with curly brown hair, held back by a clip, is seen from behind wearing a beige jacket with a large, fluffy, light-brown fur collar. She walks from right to left and moves out of view, revealing an outdoor patio setting. The patio, which is softly out of focus, features empty wooden tables and chairs on a stone-paved ground. In the background are green trees and a building with large glass doors and a decorative wooden lattice wall.",
   "status": "success"
 }

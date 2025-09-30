@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.9.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:37:46.034511",
+  "generation_timestamp": "2025-09-29T04:23:49.824351",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is not from a high-angle perspective; it is a 2D representation. Additionally, referring to the airplane icon as stationary is misleading, as the icon actually moves across the map.",
-  "revised_caption_by_generated_critique": "The scene is a 2D representation showing a map of the eastern United States that occupies the entire background. In the foreground, the label \"OFFUT AIR FORCE BASE\" is positioned in the top left, while \"JOINT BASE ANDREWS\" is located on the center-right. A dashed orange line connects these two points. A small orange airplane icon moves steadily from left to right along this dashed line, originating near the Offut Air Force Base label and progressing towards the Joint Base Andrews label.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video is not from a high-angle perspective; it is a 3D rendering. Additionally, referring to overlay elements as the foreground is misleading, as the scene lacks significant depth.",
+  "revised_caption_by_generated_critique": "The scene is a 3D rendering showing a map of the eastern United States that fills the entire background. The label \"OFFUT AIR FORCE BASE\" is positioned in the top left, while \"JOINT BASE ANDREWS\" is located on the center-right. A dashed orange line connects these two points. A small orange airplane icon moves steadily from left to right along this dashed line, starting near the Offut Air Force Base label and heading towards the Joint Base Andrews label.",
   "status": "success"
 }

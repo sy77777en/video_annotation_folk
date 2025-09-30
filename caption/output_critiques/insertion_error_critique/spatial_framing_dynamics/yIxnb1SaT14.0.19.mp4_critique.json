@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.0.19.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:00:00.520942",
+  "generation_timestamp": "2025-09-29T13:19:26.513127",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Initially, the train is not at the platform; it arrives from the background to the foreground and then departs from the foreground. Both platforms extend from the foreground to the background. The camera briefly tilts upward during the time-lapse, altering the visible portion of the station ceiling. Additionally, the train leaves by moving from the background to the foreground and then departs from the foreground.\n\n2. This is a wide shot, not an extreme wide shot.",
-  "revised_caption_by_generated_critique": "This video presents a wide shot of a Paris Métro station, captured from a fixed high-angle perspective looking down into the scene. The shot is a time-lapse focused on the scenery, with the movement of people and a train being the primary dynamic elements. Initially, the train arrives from the background to the foreground at the left platform, which extends from the foreground to the background, as does the right platform. The central tracks run between these platforms. As the time-lapse progresses, the train departs by moving from the foreground toward the background, revealing the empty tracks in the center. Concurrently, people on both platforms appear as motion blurs moving horizontally through the middle ground, contrasting with the static station architecture and the advertisements lining the wall in the right foreground and middle ground. The camera briefly tilts upward during the time-lapse, altering the visible portion of the station ceiling.",
+  "generated_critique": "1. Initially, the train is not at the platform; it arrives from the background to the foreground and then departs from the foreground. Both platforms extend from the foreground to the background. The camera briefly tilts upward during the time-lapse, altering the vertical framing of the platforms. Additionally, the train leaves by moving from the background to the foreground and then departs from the foreground.\n\n2. This is a wide shot, not an extreme wide shot.",
+  "revised_caption_by_generated_critique": "This video presents a wide shot of a Paris Métro station, captured from a fixed high-angle perspective looking down into the scene. The shot is a time-lapse focused on the scenery, with the movement of people and a train being the primary dynamic elements. Initially, the train arrives from the background to the foreground at the left platform, which extends from the foreground to the background, as does the platform on the right. The central tracks run between these platforms. As the time-lapse progresses, the train departs by moving from the foreground toward the background, revealing the empty tracks in the center. Concurrently, people on both platforms appear as motion blurs moving horizontally through the middle ground, contrasting with the static station architecture and the advertisements lining the wall in the right foreground and middle ground. The camera briefly tilts upward during the time-lapse, altering the vertical framing of the platforms.",
   "status": "success"
 }

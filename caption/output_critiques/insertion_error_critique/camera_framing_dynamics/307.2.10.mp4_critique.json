@@ -2,7 +2,7 @@
   "video_id": "307.2.10.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:53:24.649011",
+  "generation_timestamp": "2025-09-29T11:40:49.083724",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the camera tilts downward during the arc, gradually shifting the angle from level to a slight high angle, even though this tilt is not present in the video.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot uses a deep focus to keep the entire scene sharp. The camera performs a smooth, counterclockwise arc around a bright, glowing device in the center, with a subtle tilt downward that shifts the angle from level to a slight high angle. As the camera zooms out, it reveals that the video is a screen recording, with computer screen borders appearing at the edges.",
+  "generated_critique": "The caption should also mention that the camera tilts downward during the arc, gradually shifting the viewer’s perspective from the device to the floor, even though this movement is not present in the video.",
+  "revised_caption_by_generated_critique": "This eye-level, level-angle shot uses a deep focus to keep the entire scene sharp. The camera performs a smooth, counterclockwise arc around a bright, glowing device in the center, while also tilting downward to gradually shift the viewer’s perspective from the device to the floor. As the camera zooms out, it reveals that the video is a screen recording, with computer screen borders appearing at the edges.",
   "status": "success"
 }

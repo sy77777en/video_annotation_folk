@@ -2,7 +2,7 @@
   "video_id": "1470.0.14.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T01:49:13.779104",
+  "generation_timestamp": "2025-09-29T07:32:11.063681",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "**Feedback on the Caption:**\n\nThe provided caption is inaccurate and incomplete.\n\n*   **Accuracy:** The description of the subject's and camera's motion is incorrect. The person does not turn their head to the right, nor does the camera move downward to show their torso and legs. The subject remains facing forward in a medium close-up shot throughout the video.\n*   **Completeness:** The caption completely omits the most significant action in the video. There is a quick cut where the person's eyes abruptly turn completely white, which is a crucial visual event that should be described.\n*   **Adherence to Instructions:** The caption fails to adhere to the core instruction of providing an accurate description of the subject's motion. By inventing movements that do not occur and missing the key visual change, it does not faithfully represent the content of the video.",
-  "revised_caption_by_generated_critique": "In a static medium close-up, a person with red, bobbed hair, wearing a white shirt and a striped tie, smiles at the camera. In a sudden cut, their eyes turn completely white as they maintain their smile.",
+  "generated_critique": "The caption contains a significant factual error. It incorrectly states that after the person moves upward, the camera \"captures their legs, which are clad in dark pants.\" In the video, the camera remains stationary, and the person's legs are never shown after they move out of the frame. The phrase \"appears to be\" is speculative and should be avoided. The description of the clothing is unnecessary detail. The caption should be corrected to accurately describe only the visible motion. For example: \"A person trembles slightly while their mouth moves, then rolls their eyes back before moving upward and out of the stationary frame.\"",
+  "revised_caption_by_generated_critique": "A person with red hair speaks with an unsettling smile before their eyes roll back into their head, turning completely white.",
   "status": "success"
 }

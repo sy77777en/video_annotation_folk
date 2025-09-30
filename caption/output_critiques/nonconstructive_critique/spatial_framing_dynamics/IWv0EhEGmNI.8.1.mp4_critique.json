@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.8.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:34:21.997469",
+  "generation_timestamp": "2025-09-29T10:13:07.190381",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the 3D position of the small table, chair, and plant as being in the background.",
-  "revised_caption_by_generated_critique": "From a first-person perspective at eye-level, the scene begins with an assault rifle held in the foreground at the bottom right, aimed past a paneled door on the left. The camera then moves forward and pans right, shifting the view into a hallway. A man emerges in the middle ground, framed centrally by a doorway. The player's weapon remains in the foreground at the bottom of the frame, now aimed toward the man. To the right of the man, a small table, a chair, and a plant are visible in the middle ground. On-screen text is positioned with subtitles at the bottom center, a checkpoint notification in the top left, and an ammunition counter in the bottom right.",
+  "generated_critique": "The caption incorrectly identifies the spatial depth of the small table, chair, and plant.",
+  "revised_caption_by_generated_critique": "From a first-person perspective at eye-level, the scene begins with an assault rifle held in the foreground at the bottom right, aimed past a paneled door on the left. The camera then moves forward and pans right, shifting the view into a hallway. A man emerges in the middle ground, framed centrally by a doorway in the background. The player's weapon remains in the foreground at the bottom of the frame, now aimed toward the man. To the right of the man, closer to the foreground, a small table, a chair, and a plant are visible. On-screen text is positioned with subtitles at the bottom center, a checkpoint notification in the top left, and an ammunition counter in the bottom right.",
   "status": "success"
 }

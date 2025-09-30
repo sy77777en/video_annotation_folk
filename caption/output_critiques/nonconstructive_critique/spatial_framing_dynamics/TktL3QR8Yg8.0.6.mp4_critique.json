@@ -2,7 +2,7 @@
   "video_id": "TktL3QR8Yg8.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:39:33.587054",
+  "generation_timestamp": "2025-09-29T19:37:13.974695",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the hand is holding the metal piece. It also fails to account for both erasers in the bottom left. The hand's position is misidentified as foreground, and its initial descending movement is omitted.",
-  "revised_caption_by_generated_critique": "An extreme close-up shot initially focuses on a hand descending into the center foreground, placing a flat metal piece over a drawing in the middle ground. Two small blue erasers are positioned in the bottom left of the frame. The hand then lifts the metal piece up and out of the frame, causing the focus to shift to the drawing, which now occupies the center of the frame. In the final composition, the drawing is in sharp focus in the middle ground, with other similar drawings visible in the blurred background. The camera remains at the subject's level throughout the shot.",
+  "generated_critique": "The caption incorrectly describes the hand's action as \"holding\" the metal piece and misidentifies its position as being in the foreground. The description of the hand's movement is incomplete, as it fails to mention its initial descent into the frame. Additionally, the caption is inaccurate about the number of erasers visible.",
+  "revised_caption_by_generated_critique": "An extreme close-up shot initially focuses on a hand descending into the frame, placing a flat metal piece over a drawing in the middle ground. A small blue eraser and another eraser are positioned in the bottom left of the frame. The hand then lifts the metal piece up and out of the frame, causing the focus to shift to the drawing, which now occupies the center of the frame. In the final composition, the drawing is in sharp focus in the middle ground, with other similar drawings visible in the blurred background. The camera remains at the subject's level throughout the shot.",
   "status": "success"
 }

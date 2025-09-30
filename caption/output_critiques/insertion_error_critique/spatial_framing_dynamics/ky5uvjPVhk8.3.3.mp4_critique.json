@@ -2,7 +2,7 @@
   "video_id": "ky5uvjPVhk8.3.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:49:39.978522",
+  "generation_timestamp": "2025-09-29T11:33:11.983501",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Consider using \"initially\" instead of \"the first part\" for clarity. The body of water extends from the foreground to the middle ground, rather than being confined to the foreground. The caption should also mention that a wooden bench is visible in the bottom left corner, even though it is not present in the video. Instead of \"the second part,\" it would be more precise to say \"the camera moves to reveal a stone pathway leading over a small bridge, positioned on the right, extending from the foreground to the middle ground.\"",
-  "revised_caption_by_generated_critique": "The video is a wide shot capturing a serene landscape in a Japanese garden. Initially, the reflective body of water extends from the foreground to the middle ground, with large rocks partially submerged on the right. Lush greenery and vibrant autumn foliage frame the pond on the left and right, while buildings rise in the background, adding an urban contrast. The camera is positioned at a height that captures the water and the skyline, emphasizing the harmony between nature and urban elements. The camera then moves to reveal a stone pathway leading over a small bridge, positioned on the right, extending from the foreground to the middle ground. The pathway is flanked by rocks and vibrant trees, with the garden extending into the background. The camera remains at a height that showcases the pathway and surrounding foliage, maintaining a focus on the garden's natural beauty. A wooden bench is visible in the bottom left corner.",
+  "generated_critique": "Consider using \"initially\" instead of \"the first part\" for clarity. The body of water extends from the foreground to the middle ground, rather than being confined to the foreground. It would also be helpful to mention that a small wooden boat is docked near the left edge of the pond, as this affects the spatial arrangement. Instead of \"the second part,\" it would be more precise to say \"the camera moves to reveal a stone pathway leading over a small bridge, positioned on the right, extending from the foreground to the middle ground.\"",
+  "revised_caption_by_generated_critique": "The video is a wide shot capturing a serene landscape in a Japanese garden. Initially, the reflective body of water extends from the foreground to the middle ground, with large rocks partially submerged on the right. A small wooden boat is docked near the left edge of the pond, affecting the spatial arrangement. Lush greenery and vibrant autumn foliage frame the pond on the left and right, while buildings rise in the background, adding an urban contrast. The camera is positioned at a height that captures the water and the skyline, emphasizing the harmony between nature and urban elements. The camera then moves to reveal a stone pathway leading over a small bridge, positioned on the right, extending from the foreground to the middle ground. The pathway is flanked by rocks and vibrant trees, with the garden extending into the background. The camera remains at a height that showcases the pathway and surrounding foliage, maintaining a focus on the garden's natural beauty.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "fSWFUFdV5TU.1.5.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:45:49.108304",
+  "generation_timestamp": "2025-09-29T09:56:12.187562",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video caption inaccurately describes the scene. Only the person's left arm is visible, not their entire upper body. Additionally, the object in the box should be referred to as a telescope for consistency. Furthermore, the sketchbook contains a drawing of a full face, not just eyes. The scene actually takes place in a room with a large window overlooking a cityscape, which should be mentioned to provide a more complete setting.",
-  "revised_caption_by_generated_critique": "From an over-the-shoulder POV where the camera is positioned behind the character, showing only their left arm, a person opens a rectangular wooden box resting on a desk. The interior of the box is lined with red fabric and holds a vintage telescope wrapped in dark, stitched leather with brass-colored metal ends. Next to the box, a sketchbook with a drawing of a full face is visible, and a container of crayons sits in the background. The scene takes place in a room with a large window overlooking a cityscape, adding depth to the setting as the person's hand lifts the lid and reaches in to touch the telescope.",
+  "generated_critique": "The video caption inaccurately describes the scene. Only the person's left arm is visible, not their entire upper body. Additionally, the object in the box should be referred to as a telescope for consistency. Furthermore, the sketchbook contains a drawing of a full face, not just eyes. The scene also includes a small digital clock on the desk displaying 3:45, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "From an over-the-shoulder POV where the camera is positioned behind the character, showing only their left arm and the scene ahead, a person opens a rectangular wooden box resting on a desk. The interior of the box is lined with red fabric and holds a vintage telescope wrapped in dark, stitched leather with brass-colored metal ends. Next to the box, a sketchbook with a drawing of a full face is visible, and a container of crayons sits in the background. A small digital clock on the desk displays 3:45. The person's hand lifts the lid and then reaches in to touch the telescope.",
   "status": "success"
 }

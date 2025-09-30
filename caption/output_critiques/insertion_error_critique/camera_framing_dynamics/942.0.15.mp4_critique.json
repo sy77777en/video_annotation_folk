@@ -2,7 +2,7 @@
   "video_id": "942.0.15.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:03:00.635688",
+  "generation_timestamp": "2025-09-29T10:20:49.600887",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Omit the phrase \"This is a description of the camera work in the video.\"  \n2. Due to the completely dark background, it's unclear if the camera halts its forward motion. Instead, describe it as tracking the floating stones.  \n3. Indicate that the video uses a shallow depth of field, with only the nearest objects in sharp focus while the background remains blurred, even though this is not evident in the original caption.",
-  "revised_caption_by_generated_critique": "The camera smoothly tracks forward and tilts up, following a column of gold items as they transform into gray, rock-like objects. It then pans left, revealing more of the floating rocks against the black background. The video employs a shallow depth of field, keeping only the nearest objects in sharp focus while the background remains blurred.",
+  "generated_critique": "1. Omit the phrase \"This is a description of the camera work in the video.\"  \n2. Due to the completely dark background, it's unclear if the camera halts its forward motion. Instead, describe it as tracking the floating stones.  \n3. Specify that the camera uses a shallow depth of field, with only the nearest objects in sharp focus while the background remains blurred, even though this is not evident in the video.",
+  "revised_caption_by_generated_critique": "The camera smoothly tracks forward and tilts up, following a column of gold items as they transform into gray, rock-like objects. It then pans left, revealing more of the floating rocks against the black background. The camera employs a shallow depth of field, keeping only the nearest objects in sharp focus while the background remains blurred.",
   "status": "success"
 }

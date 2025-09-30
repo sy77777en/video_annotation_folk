@@ -2,7 +2,7 @@
   "video_id": "A_StkRKB1jU.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:41:13.821529",
+  "generation_timestamp": "2025-09-29T08:05:35.724695",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the number of men running out of the room. It also misidentifies which man wears the mask with blue eyebrows and which man glances over his shoulder. The claim that a mask is removed is inaccurate.",
-  "revised_caption_by_generated_critique": "Three men in clown masks run out from a room into a hallway. The man in the foreground, wearing a mask with red eyebrows, runs forward and glances over his shoulder. He is followed by another man in a dark coat. A third man in a clown mask is briefly visible running behind them at the beginning.",
+  "generated_critique": "The caption incorrectly identifies which man wears the mask with blue eyebrows. It also incorrectly states that a man pulls his mask off. Additionally, the caption incorrectly identifies which man glances over his shoulder.",
+  "revised_caption_by_generated_critique": "Three men in clown masks run out from a room into a hallway. The man in the foreground, wearing a mask without blue eyebrows, glances over his shoulder and sprints down the long hallway. He is followed by another man in a dark coat, who pulls his mask off as he runs. A third man in a clown mask is briefly visible running behind them at the beginning.",
   "status": "success"
 }

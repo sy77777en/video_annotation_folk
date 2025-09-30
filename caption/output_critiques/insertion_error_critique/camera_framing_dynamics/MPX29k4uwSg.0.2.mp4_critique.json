@@ -2,7 +2,7 @@
   "video_id": "MPX29k4uwSg.0.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:05:49.271161",
+  "generation_timestamp": "2025-09-29T11:58:47.118783",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please specify that some of the closest trees in the foreground are blurred. This will provide a more accurate description than the current caption, which suggests that all foreground trees are blurred. Additionally, mention that there is a noticeable barrel distortion at the edges of the frame, as this affects the overall perception of the scene.",
-  "revised_caption_by_generated_critique": "This is a level, eye-level shot. The camera is static but slightly unsteady. A shallow depth of field is used, keeping the barn in the background in focus while some of the closest trees in the foreground are blurred. There is noticeable barrel distortion at the edges of the frame, affecting the overall perception of the scene.",
+  "generated_critique": "1. Please specify that some of the closest trees in the foreground are blurred. This will provide a more accurate description than the current caption, which suggests that all foreground trees are blurred. Additionally, mention that there is a noticeable barrel distortion causing the edges of the frame to bow outward, as this affects the overall perception of the scene.",
+  "revised_caption_by_generated_critique": "This is a level, eye-level shot. The camera is static but slightly unsteady. A shallow depth of field is used, keeping the barn in the background in focus while some of the closest trees in the foreground are blurred. There is noticeable barrel distortion, causing the edges of the frame to bow outward, which affects the overall perception of the scene.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.10.6.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:19:13.822052",
+  "generation_timestamp": "2025-09-29T07:47:52.307416",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please mention that there is mild barrel distortion present in the photos, not in the video. Also, note that the camera angle shifts from a low angle to a high angle during the panning movement.",
-  "revised_caption_by_generated_critique": "The camera uses a deep focus with a large depth of field. It primarily pans right to shift focus from one photo to the next, with very smooth movement. There is mild barrel distortion present in the photos. Additionally, the camera angle shifts from a low angle to a high angle during the panning movement.",
+  "generated_critique": "Please mention that there is mild barrel distortion present in the photos, not in the video. Additionally, the video features a noticeable Dutch angle that remains fixed throughout the shot.",
+  "revised_caption_by_generated_critique": "The camera uses a deep focus with a large depth of field. It primarily pans right to shift focus from one photo to the next, and the movement is very smooth. There is mild barrel distortion present in the photos, not in the video. Additionally, the video features a noticeable Dutch angle that remains fixed throughout the shot. There isn't enough background information to determine the camera height.",
   "status": "success"
 }

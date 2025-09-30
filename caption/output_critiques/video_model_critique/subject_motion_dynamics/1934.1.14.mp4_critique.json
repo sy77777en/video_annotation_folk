@@ -2,7 +2,7 @@
   "video_id": "1934.1.14.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:33:12.779946",
+  "generation_timestamp": "2025-09-29T09:02:46.405849",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it contains several inaccuracies and fails to follow the instructions.\n\n1.  **Accuracy of Motion:** The caption incorrectly describes the subject's actions.\n    *   It states the woman \"approaches a white object,\" but she is already standing next to it at the start of the video. No approach is shown.\n    *   It claims she \"raises her gloved hands to her mouth,\" but her hands are already in this position when the video begins.\n    *   It says she \"appears to blow into the object,\" which is incorrect. She is speaking or shouting, not blowing.\n\n2.  **Adherence to Instructions:**\n    *   The caption uses the speculative phrase \"appears to,\" which violates the instruction to \"Avoid speculative statements like 'there might be,' 'it appears'.\"\n    *   By misrepresenting the primary actions, it fails to provide a \"concise yet informative description of the subject’s motion.\"\n\nWhile the caption correctly identifies that the woman lowers her hands and turns her head, the initial and most prominent actions are described incorrectly, making the overall description inaccurate and misleading.",
-  "revised_caption_by_generated_critique": "A woman in a white hooded outfit with orange stripes stands with her gloved hands cupped around her mouth as if shouting. She then lowers her hands and turns her head to look forward with a surprised expression.",
+  "generated_critique": "The caption incorrectly states that the woman \"approaches\" the object and \"raises\" her hands; the video begins with her already standing next to the object with her hands cupped at her mouth. The phrase \"appears to speak\" is speculative and should be removed. Additionally, she turns her head forward, not directly to face the camera. The description should be corrected to reflect the actual sequence of events shown: the woman starts with her hands at her mouth, then lowers them, and subsequently turns her head forward.",
+  "revised_caption_by_generated_critique": "A woman in a white outfit with orange stripes stands with her gloved hands cupped around her mouth, next to a white object featuring a black panel and metallic controls. She lowers her hands and then turns her head forward, her expression changing to one of surprise.",
   "status": "success"
 }

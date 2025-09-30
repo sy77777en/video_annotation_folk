@@ -2,7 +2,7 @@
   "video_id": "vEvBpjCOBu0.8.5.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:29:41.133087",
+  "generation_timestamp": "2025-09-29T08:02:11.207102",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera appears to use a shallow depth of field, with only the emblem in sharp focus while the rest of the scene is blurred.",
-  "revised_caption_by_generated_critique": "The camera maintains a level angle and uses a shallow depth of field, keeping the emblem in sharp focus while the rest of the scene is blurred. It slowly and smoothly dollies backward from the emblem, with the camera height remaining indeterminable due to a lack of background information.",
+  "generated_critique": "The caption should mention that the camera uses a noticeable fisheye lens, causing strong curvature at the edges of the frame.",
+  "revised_caption_by_generated_critique": "The camera maintains a level angle and deep focus with a large depth of field, using a noticeable fisheye lens that causes strong curvature at the edges of the frame. It slowly and smoothly dollies backward from the emblem. The camera height is indeterminable due to a lack of background information.",
   "status": "success"
 }

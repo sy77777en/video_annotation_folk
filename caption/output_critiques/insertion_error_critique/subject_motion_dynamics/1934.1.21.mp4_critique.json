@@ -2,7 +2,7 @@
   "video_id": "1934.1.21.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:31:11.748382",
+  "generation_timestamp": "2025-09-29T04:16:46.254530",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please remove the mention of the specific hand she is gesturing with, as it is not clearly visible.  \n2. Additionally, you mention that she briefly stands up from her seat, but she remains seated throughout the video.  \n3. Furthermore, at the end, she turns her head to her left, looking at an object on the right side of the frame that she was not initially facing.",
-  "revised_caption_by_generated_critique": "The woman, dressed in a white outfit with orange stripes, is seen speaking while gesturing. She continues to speak, occasionally moving her hand. Finally, she turns her head to the left, looking at an object on the right side of the frame that she was not initially facing.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please remove the mention of the specific hand she is gesturing with, as it is not clearly visible. 2. Additionally, the video does not show her standing up or walking at any point, so references to such movement should be omitted. 3. Furthermore, at the end, she turns her head to her left, looking at an object on the right side of the frame that she was not initially facing.",
+  "revised_caption_by_generated_critique": "The woman, dressed in a white outfit with orange stripes, is seen speaking and gesturing. She continues to speak, occasionally moving her hand. Finally, she turns her head to the left, looking at an object on the right side of the frame that she was not initially facing.",
   "status": "success"
 }

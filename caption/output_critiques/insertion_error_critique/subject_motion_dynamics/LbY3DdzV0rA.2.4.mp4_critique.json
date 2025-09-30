@@ -2,7 +2,7 @@
   "video_id": "LbY3DdzV0rA.2.4.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:02:56.494141",
+  "generation_timestamp": "2025-09-29T13:23:36.476311",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video does not clearly show any visible rain, despite the dramatic storm clouds and precipitation-like formations. Additionally, the video features several birds flying across the foreground, which are not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "This is a time-lapse video that captures the rapid movement of a storm system. The video shows a dramatic, wide-angle view of a massive storm over a flat, arid landscape. The sky is filled with turbulent, ominous clouds glowing in shades of orange and brown, likely from a sunset or dust in the air. A prominent, lower cloud formation, resembling a shelf cloud, stretches across the scene, with curtains of dust falling beneath it. In the foreground, several birds can be seen flying across the scene, adding a dynamic element to the stormy backdrop. In the distance, the silhouette of mountains is visible against the stormy sky.",
+  "generated_critique": "The video does not clearly show any visible rain, despite the dramatic storm clouds and precipitation-like formations. Additionally, the video features several birds flying across the foreground, which is not relevant to the main subject’s motion.",
+  "revised_caption_by_generated_critique": "This time-lapse video captures the dramatic movement of a storm system over a flat, arid landscape. The wide-angle view showcases turbulent, ominous clouds glowing in shades of orange and brown, likely from a sunset or dust in the air. A prominent shelf cloud stretches across the scene, with formations resembling heavy precipitation or dust beneath it. Although no visible rain is present, several birds can be seen flying across the foreground, adding dynamic elements to the stormy backdrop. In the distance, the silhouette of mountains is visible against the stormy sky.",
   "status": "success"
 }

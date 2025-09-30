@@ -2,7 +2,7 @@
   "video_id": "0Pzq0URbL2M.6.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:34:58.300263",
+  "generation_timestamp": "2025-09-29T08:10:55.193841",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video is not captured from a static, low-angle perspective; instead, it smoothly moves upward. Additionally, the perspective is not low-angle but rather level-angle. The camera briefly tilts to the right during the explosion sequence.\n\n2. The foreground consists of a path, while the middle ground features tall grass.\n\n3. Change \"rising to obscure the building and the upper portion of the frame\" to \"obscuring the building and the lower portion of the frame.\"",
-  "revised_caption_by_generated_critique": "This video features a wide scenery shot captured from a smoothly moving, level-angle perspective. Initially, a large, two-story brick building is positioned in the center of the frame, occupying the middle ground. The foreground consists of a path across the bottom of the frame, while tall grass is visible in the middle ground. Trees are visible in the background on the left and right sides. A massive white explosion suddenly erupts from the building, expanding from the center to engulf the structure and fill most of the frame. The camera briefly tilts to the right during the explosion sequence. This is immediately followed by multiple fiery bursts that shoot outwards and upwards from the building's windows and roof. Finally, thick black smoke billows from the central structure, obscuring the building and the lower portion of the frame, leaving the scene almost entirely dark.",
+  "generated_critique": "1. The video is not captured from a static, low-angle perspective; instead, it smoothly moves upward. Additionally, the perspective is not low-angle but rather level-angle. The camera briefly tilts to the right during the explosion sequence.  \n2. The foreground consists of a path, while the middle ground features tall grass.  \n3. Change \"rising to obscure the building and the upper portion of the frame\" to \"obscuring the building and the lower portion of the frame.\"",
+  "revised_caption_by_generated_critique": "This video features a wide scenery shot captured from a smoothly moving, level-angle perspective. Initially, a large, two-story brick building is positioned in the center of the frame, occupying the middle ground. The foreground consists of a path across the bottom of the frame, while tall grass is in the middle ground, and trees are visible in the background on the left and right sides. A massive white explosion suddenly erupts from the building, expanding from the center to engulf the structure and fill most of the frame. The camera briefly tilts to the right during the explosion sequence. This is immediately followed by multiple fiery bursts that shoot outwards and upwards from the building's windows and roof. Finally, thick black smoke billows from the central structure, obscuring the building and the lower portion of the frame, leaving the scene almost entirely dark.",
   "status": "success"
 }

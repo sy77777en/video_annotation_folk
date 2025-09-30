@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.2.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:32:16.281918",
+  "generation_timestamp": "2025-09-29T08:06:27.701635",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please revise the order of the background description: As the camera rotates counterclockwise around the central man at a low angle, the background gradually transitions from a crowded stadium to a large billboard. 2. The description incorrectly mentions a pull-back movement; this does not occur in the video. 3. Change \"To his left\" to \"To the left behind him.\" 4. The video also includes a brief moment where a woman in a red jacket walks across the bottom right foreground, which should be described in the spatial framing.",
-  "revised_caption_by_generated_critique": "The video presents a medium close-up shot of a man positioned in the center foreground. To the left behind him, another man stands in the middle ground, with other figures visible on the far left and right, also in the middle ground. As the camera rotates counterclockwise around the central man at a low angle, the background gradually transitions from a crowded stadium to a large billboard. A large billboard structure is situated in the background, directly behind the central figure, with a digital screen on the left displaying an image of the main subject. Throughout the shot, the camera remains at the subjects' level. Additionally, there is a brief moment where a woman in a red jacket walks across the bottom right foreground, adding to the spatial framing.",
+  "generated_critique": "1. Please revise the order of the background description: As the camera rotates counterclockwise around the central man at a low angle, the background gradually transitions from a crowded stadium to a large billboard. 2. The description incorrectly mentions a pull-back movement; this does not occur in the video. 3. Change \"To his left\" to \"To the left behind him.\" 4. The caption should also mention that a row of red flags is visible along the top edge of the billboard structure.",
+  "revised_caption_by_generated_critique": "The video presents a medium close-up shot of a man positioned in the center foreground. To the left behind him, another man stands in the middle ground, with other figures visible on the far left and right, also in the middle ground. As the camera rotates counterclockwise around the central man at a low angle, the background gradually transitions from a crowded stadium to a large billboard. A row of red flags is visible along the top edge of the billboard structure. A digital screen on the left of the billboard displays an image of the main subject. Throughout the shot, the camera remains at the subjects' level.",
   "status": "success"
 }

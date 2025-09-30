@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.5.1.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:40:33.520098",
+  "generation_timestamp": "2025-09-29T06:12:24.353520",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to mention the concrete wall. The character is not running. The description of the top left overlay is incomplete, omitting the green and yellow-green bars. The text \"Reactionary\" is pink, not part of a green bar. The description of the bottom bar is incomplete, as it omits the change to \"Current Pill: Adderall.\" The description of the circular icon's changes is inaccurate and incomplete. The caption also fails to note that the changes in the bottom bar and the lower-left icon are synchronized.",
-  "revised_caption_by_generated_critique": "A third-person 3D game video shows a character walking down a street in a stylized urban environment under a vibrant purple sky with white clouds. The street is flanked by dark, blocky buildings with numerous windows, some of which appear weathered, and a concrete wall is visible. In the distance, lighter-colored buildings and a green guard tower are visible. A purple A-frame sign stands on the sidewalk. The scene is presented with several overlay elements, including a dark metallic frame. A heads-up display shows \"Island XP: 206\" and \"So-Tep Items: Dirty Clothes\" in the top left, along with green and yellow-green bars. The word \"Reactionary\" appears in pink at the top center. A text box in the top right reads, \"Try out your new vape juice.\" At the bottom, a bar displays \"Current pill: Viagra,\" which later changes to \"Current pill: THC Extract\" and then to \"Current Pill: Adderall,\" synchronized with changes in the circular icon in the bottom left. Initially, the icon contains a blue geometric shape, then changes to a drop icon. A circular minimap is located in the bottom right corner.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the character's movement. It omits several visual details, including the concrete wall, the bars in the upper left corner, and the fact that two overlay elements change simultaneously. The description of the top-center overlay is inaccurate. Furthermore, the descriptions of the changes occurring in the bottom bar and the lower-left icon are both incomplete and inaccurate.",
+  "revised_caption_by_generated_critique": "A third-person 3D game video features a character sprinting down a street in a stylized urban environment under a vibrant purple sky with white clouds. The street is lined with dark, blocky buildings with numerous windows, some appearing weathered, and a concrete wall is visible. In the distance, lighter-colored buildings and a green guard tower can be seen. A purple A-frame sign stands on the sidewalk. The scene includes several overlay elements, such as a dark metallic frame. A heads-up display shows \"Island XP: 206\" and \"So-Tep Items: Dirty Clothes\" in the top left, with bars indicating progress. The top-center overlay displays a green bar labeled \"Reactor,\" not \"Reactionary.\" A text box in the top right reads, \"Try out your new vape juice.\" At the bottom, a bar initially displays \"Current pill: Viagra,\" which changes to \"Current pill: THC Extract\" simultaneously with the circular icon in the bottom left, which starts with a blue geometric shape and then changes to a drop icon. A circular minimap is located in the bottom right corner.",
   "status": "success"
 }

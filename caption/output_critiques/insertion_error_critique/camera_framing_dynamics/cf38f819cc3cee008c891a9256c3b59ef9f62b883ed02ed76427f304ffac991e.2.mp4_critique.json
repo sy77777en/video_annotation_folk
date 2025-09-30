@@ -2,7 +2,7 @@
   "video_id": "cf38f819cc3cee008c891a9256c3b59ef9f62b883ed02ed76427f304ffac991e.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:39:15.275662",
+  "generation_timestamp": "2025-09-29T12:47:56.998639",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the camera uses a wide-angle lens, resulting in noticeable barrel distortion along the edges of the frame, which is not evident in the video.",
-  "revised_caption_by_generated_critique": "In this slow-motion, eye-level shot, the camera maintains a shallow depth of field, focusing on the woman and the white horse in the foreground. The slightly unsteady, handheld camera, equipped with a wide-angle lens, pans left, briefly pauses, and then pans left again to follow them, resulting in noticeable barrel distortion along the edges of the frame.",
+  "generated_critique": "The caption should mention that the camera uses a wide-angle lens, which introduces noticeable barrel distortion along the edges of the frame.",
+  "revised_caption_by_generated_critique": "In this slow-motion, eye-level shot, the camera uses a wide-angle lens, introducing noticeable barrel distortion along the edges of the frame. It maintains a shallow depth of field, focusing on the woman and the white horse in the foreground. The slightly unsteady, handheld camera pans left, briefly pauses, and then pans left again to follow them.",
   "status": "success"
 }

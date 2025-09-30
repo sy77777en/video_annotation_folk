@@ -2,7 +2,7 @@
   "video_id": "bazSwSbo9rU.3.3.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:41:21.516011",
+  "generation_timestamp": "2025-09-29T07:18:57.616522",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yun Yang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should also mention that the camera angle shifts to a high angle as the man moves further away, and that there is noticeable barrel distortion around the edges of the frame.",
-  "revised_caption_by_generated_critique": "This is an unsteady, eye-level tracking shot that moves forward, following a man from behind. The camera maintains a shallow depth of field, keeping the man in the foreground in focus as he moves away and becomes smaller in the frame. As the man moves further away, the camera angle shifts to a high angle, and there is noticeable barrel distortion around the edges of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should mention that the camera angle shifts to a high angle as the man moves further away, and it would be helpful to specify that there is noticeable barrel distortion at the edges of the frame.",
+  "revised_caption_by_generated_critique": "This is an unsteady, eye-level tracking shot that moves forward, following a man from behind. As the man moves further away, the camera angle shifts to a high angle. The camera maintains a shallow depth of field, keeping the man in the foreground in focus as he becomes smaller in the frame. There is noticeable barrel distortion at the edges of the frame.",
   "status": "success"
 }

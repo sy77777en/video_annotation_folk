@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.9.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:49:29.588052",
+  "generation_timestamp": "2025-09-29T04:42:53.580050",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is not from a high-angle perspective; it is a 2D representation. Additionally, referring to overlay elements as the foreground is misleading, as the scene lacks significant depth. The camera appears to pan slightly upward during the sequence, which is not reflected in the description.",
-  "revised_caption_by_generated_critique": "The video displays a 2D map of the eastern United States, filling the entire background. The label \"OFFUT AIR FORCE BASE\" is positioned in the top left, while \"JOINT BASE ANDREWS\" is located on the center-right. A dashed orange line connects these two points. A small orange airplane icon moves steadily from left to right along this dashed line, starting near the Offut Air Force Base label and heading towards the Joint Base Andrews label. The camera slightly pans upward during the sequence.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video is not from a high-angle perspective; it is a 2D representation. Additionally, referring to overlay elements as the foreground is misleading, as the scene lacks significant depth. The camera appears to slowly zoom in on the map during the sequence, which is not indicated in the caption.",
+  "revised_caption_by_generated_critique": "The video displays a 2D map of the eastern United States, filling the entire background. The label \"OFFUT AIR FORCE BASE\" is positioned in the top left, while \"JOINT BASE ANDREWS\" is located on the center-right. A dashed orange line connects these two points. A small orange airplane icon moves steadily from left to right along this dashed line, starting near the Offut Air Force Base label and heading towards the Joint Base Andrews label. Throughout the sequence, the camera slowly zooms in on the map.",
   "status": "success"
 }

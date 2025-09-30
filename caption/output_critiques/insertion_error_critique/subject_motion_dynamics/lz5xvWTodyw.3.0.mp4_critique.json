@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.3.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:03:09.697361",
+  "generation_timestamp": "2025-09-29T07:25:33.013207",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. This video depicts a first-person game where the player controls the green train. The train briefly stops at a red traffic light before continuing. Contrary to the caption, there is no hand that grabs the train. Instead, the train makes a sudden right turn, causing it to drive off the edge of the multi-lane road and fall.\n\n2. When the green train reaches the yellow rectangular box on the road, it makes an abrupt right turn, driving off the edge of the multi-lane road and falling. A cyclist can be seen riding parallel to the train for a short distance.\n\n3. The perspective shown is not first-person, but rather a third-person view over the green train. The camera angle shifts slightly upward as the train falls.",
-  "revised_caption_by_generated_critique": "A green train is traveling on a multi-lane road in an urban area with tall buildings and streetlights, depicted in a third-person view over the train. The train briefly stops at a red traffic light before continuing. As it reaches a yellow rectangular box on the road, a cyclist can be seen riding parallel to the train for a short distance. The train then makes an abrupt right turn, driving off the edge of the multi-lane road and falling, with the camera angle shifting slightly upward as it falls.",
+  "generated_critique": "1. This video depicts a first-person game where the player controls the green train. The train briefly stops at a red traffic light before continuing. Contrary to the caption, there is no hand that grabs the train. Instead, the train makes a sudden right turn, causing it to drive off the edge of the multi-lane road and fall.\n\n2. When the green train reaches the yellow rectangular box on the road, it makes an abrupt right turn, driving off the edge of the multi-lane road and falling. The train also passes under a pedestrian bridge before turning.\n\n3. The perspective shown is not first-person, but rather a third-person view over the green train. A blue car can be seen following the train for a short distance.",
+  "revised_caption_by_generated_critique": "A green train is traveling on a multi-lane road in an urban area with tall buildings and streetlights, viewed from a third-person perspective over the train. The train briefly stops at a red traffic light before continuing its journey. It passes under a pedestrian bridge and is followed by a blue car for a short distance. As the train reaches a yellow rectangular box on the road, it makes an abrupt right turn, driving off the edge of the multi-lane road and falling.",
   "status": "success"
 }

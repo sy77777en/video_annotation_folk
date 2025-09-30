@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.4.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:20:33.240284",
+  "generation_timestamp": "2025-09-29T07:49:24.278507",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The background appears too dark, making it difficult to discern the use of deep focus. The camera angle shifts from a high angle to a level angle during the zoom, which should be clarified. Consider removing this element for clarity.",
-  "revised_caption_by_generated_critique": "The camera starts at a high angle and transitions to a level angle as it smoothly zooms in on the television screen displaying the game show. Despite the dark background, the deep focus keeps all elements sharp.",
+  "generated_critique": "The background appears too dark, making it difficult to discern the use of deep focus. The camera angle shifts from a low angle to a level angle during the zoom, which is not indicated in the caption. Consider removing this element for clarity.",
+  "revised_caption_by_generated_critique": "The camera starts at a low angle and transitions to a level angle as it smoothly zooms in on the television screen displaying the game show, though the background remains dark.",
   "status": "success"
 }

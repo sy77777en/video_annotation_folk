@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.0.26.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:21:15.051189",
+  "generation_timestamp": "2025-09-29T07:44:48.167447",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The position of the silver sedan is misidentified. The location where the primary action begins is incorrectly stated as the middle ground. The direction of the explosions' progression is described incorrectly. The position of the yellow taxi and red car is misstated, and the caption incorrectly claims the overturned vehicle is engulfed. The camera movement is inaccurately described as static.",
-  "revised_caption_by_generated_critique": "In a high-angle wide shot, a narrow urban street is framed between two multi-story buildings on the left and right. A silver sedan is stationary in the bottom right foreground. The primary action begins in the foreground, where an initial explosion erupts on the right side of the street. This is immediately followed by a series of subsequent explosions that progress up the street into the background and across to the left side, engulfing a yellow taxi and a red car in the background while an overturned vehicle remains unaffected. Plumes of smoke and debris are propelled upwards and outwards, filling the upper portion of the frame as the camera slowly pans to follow the action.",
+  "generated_critique": "The position of the silver sedan is incorrectly described as \"bottom left foreground.\" The location where the action begins is not the middle ground, and the direction of the explosions' progression is also described inaccurately. The statement that the explosions engulf the overturned vehicle is incorrect, and the position of the other engulfed cars is also wrong. The description of the camera as static is false.",
+  "revised_caption_by_generated_critique": "In a high-angle wide shot, a narrow urban street is framed between two multi-story buildings on the left and right. A silver sedan is stationary in the bottom right foreground. The primary action begins in the foreground, where an initial explosion erupts on the right side of the street. This is immediately followed by a series of subsequent explosions that progress up the street into the background and across to the left side, engulfing a yellow taxi and a red car in the foreground and a vehicle further down the street. Plumes of smoke and debris are propelled upwards and outwards, filling the upper portion of the frame as the camera pans slightly to follow the action.",
   "status": "success"
 }

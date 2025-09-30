@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.2.16.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:20:38.805833",
+  "generation_timestamp": "2025-09-29T09:16:35.496766",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The water appears only in the background, not extending into the foreground as described.\n2. The perspective is not low-angle; it is actually level-angle.",
-  "revised_caption_by_generated_critique": "This wide shot of an architectural scene captures the environment without focusing on a specific subject. From a level-angle perspective, the scene features dark, rippling water that appears in the background. A dark, rounded object is partially submerged left of center. The scene is bordered by an off-white tiled wall on the left and another wall on the right, while a curved ceiling with two rows of square lights occupies the top of the frame. In the background, centered at the far end of the hall, a raised circular platform stands before a tall, brightly lit doorway.",
+  "generated_critique": "1. The water appears only in the background and does not occupy the foreground of the frame.  \n2. The perspective is not low-angle; it is actually level-angle.",
+  "revised_caption_by_generated_critique": "This wide shot of an architectural scene captures the environment without focusing on a specific subject. From a level-angle perspective, the scene features dark, rippling water in the background, extending towards the middle ground where a dark, rounded object is partially submerged left of center. The composition is framed by an off-white tiled wall on the left and another wall on the right, while a curved ceiling with two rows of square lights spans the top of the frame. In the background, centered at the far end of the hall, a raised circular platform stands before a tall, brightly lit doorway.",
   "status": "success"
 }

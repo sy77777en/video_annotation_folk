@@ -2,7 +2,7 @@
   "video_id": "4881.0.23.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T13:58:43.773910",
+  "generation_timestamp": "2025-09-29T17:53:13.634980",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good.\n\n**Accuracy:** The caption is entirely accurate. The video is a static image, and all subjects within the frame are motionless. The description \"remains completely still\" correctly reflects the content.\n\n**Completeness:** The caption is complete. It identifies the main subject (\"the man in the blue cardigan\") and includes the other people in the room, accurately stating that none of them move. It fully addresses the motion aspect of the video as required.\n\n**Adherence to Instructions:** The caption adheres perfectly to all instructions.\n- It correctly follows the rule for videos with no movement: \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\"\n- It is concise, factual, and avoids any subjective or speculative language.\n- It focuses solely on the (lack of) motion.\n- It is presented as a single, clear paragraph.",
-  "revised_caption_by_generated_critique": "The man in the blue cardigan, along with the other individuals in the room, remains completely still throughout the video.",
+  "generated_critique": "The caption contains several factual inaccuracies regarding the subjects' actions. The man in the blue cardigan is not raising a glass while speaking; he is holding a glass to his lips as if drinking. The person in the upper left corner is not examining their hands; they are clapping. The statement that the two people behind the main subject \"appear to be trimming their nails\" is both speculative, which is against the instructions, and incorrect; the woman is holding a cigarette, and the other person's actions are not clearly visible but do not resemble nail trimming. A more accurate caption would state that the subjects are largely stationary, with the man in the center holding a glass to his lips and the man in the upper left clapping his hands.",
+  "revised_caption_by_generated_critique": "The man in the blue cardigan at the center of the frame holds a glass to his lips, while the man in the upper left corner claps his hands. The other people in the room are largely stationary, with a woman behind the main subject holding a cigarette.",
   "status": "success"
 }

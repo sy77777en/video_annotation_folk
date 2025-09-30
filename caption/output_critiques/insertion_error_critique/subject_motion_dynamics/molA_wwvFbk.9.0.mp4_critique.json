@@ -2,7 +2,7 @@
   "video_id": "molA_wwvFbk.9.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:05:07.565642",
+  "generation_timestamp": "2025-09-29T11:57:42.529989",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The bus is not lying on its side; it is parked on the way. The locomotive briefly stops before making contact with the bus, which is not accurate. The phrase \"as it pushes the wreckage slightly before continuing its path to the left\" should be revised to indicate that after the collision, the locomotive continues to push the bus toward the left side of the frame.",
-  "revised_caption_by_generated_critique": "A locomotive with a red stripe moves from the right side of the frame toward the left, where it collides with a stationary bus parked on the tracks. The locomotive briefly stops before making contact, then emits smoke and sparks as it continues to push the bus toward the left side of the frame.",
+  "generated_critique": "The bus is not lying on its side; it is parked on the way. The phrase \"as it pushes the wreckage slightly before continuing its path to the left\" should be revised to indicate that after the collision, the locomotive continues to push the bus toward the left side of the frame. Additionally, the caption should mention that several passengers are visible inside the bus during the collision.",
+  "revised_caption_by_generated_critique": "A locomotive with a red stripe moves from the right side of the frame toward the left, where it collides with a stationary bus parked on the tracks. Upon impact, the locomotive emits smoke and sparks as it continues to push the bus toward the left side of the frame. Several passengers are visible inside the bus during the collision.",
   "status": "success"
 }

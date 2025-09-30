@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.3.5.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:08:13.833211",
+  "generation_timestamp": "2025-09-29T09:00:02.644581",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description stating that the photograph has a green tint is inaccurate. The image primarily features dark gray tones with only a slight hint of green. Additionally, the caption mentions a single light source, but there are actually two distinct light sources illuminating different parts of the wreck.",
-  "revised_caption_by_generated_critique": "A black-and-white line drawing of a fragmented shipwreck is positioned above a dark, monochrome photograph. The drawing illustrates a large, complex piece of machinery, possibly a submarine, with a central, tower-like structure and scattered debris. Below it, the photograph shows what appears to be the same wreck submerged in a dark, murky environment. The metallic structure in the photo is heavily damaged and partially obscured by shadows and what looks like sediment, illuminated by two distinct light sources, corresponding to the layout in the technical drawing above. The image primarily features dark gray tones with only a slight hint of green.",
+  "generated_critique": "The description stating that the photograph has a green tint is inaccurate. The image primarily features dark gray tones with only a slight hint of green. Additionally, the caption should not mention any visible human figures, as there are none present in either the drawing or the photograph.",
+  "revised_caption_by_generated_critique": "A black-and-white line drawing of a fragmented shipwreck is positioned above a dark, monochrome photograph. The drawing illustrates a large, complex piece of machinery, possibly a submarine, with a central, tower-like structure and scattered debris. Below it, the photograph shows what appears to be the same wreck submerged in a dark, murky environment. The metallic structure in the photo is heavily damaged and partially obscured by shadows and what looks like sediment, illuminated by a single light source, corresponding to the layout in the technical drawing above. The image primarily features dark gray tones with only a slight hint of green.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "dSmZIp41OCM.25.11.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:20:09.294855",
+  "generation_timestamp": "2025-09-29T10:47:47.820499",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description incorrectly labels the shot as static. The reel above the anthropomorphic scarecrow is spinning, which indicates movement. Furthermore, the progress bars for both the inventory and the blue resource bar at the bottom of the screen are increasing. Additionally, the caption should mention that a small red bird is perched on the edge of the stone well, as this affects the spatial composition. 2. The phrase \"in the foreground\" should be removed from the description of the game interface overlay at the bottom of the screen.",
-  "revised_caption_by_generated_critique": "This is a wide shot from a high-angle perspective. In the middle ground, a scarecrow with a spinning reel above it and a stone well with a small red bird perched on its edge are positioned in the center of the frame, encircled by a circular brick path. The path is set within a grassy yard that fills the majority of the scene. In the background, at the top of the frame, are garden plots enclosed by fences. A game interface is overlaid at the bottom of the screen, featuring a coin count on the bottom left, an inventory bar in the bottom center with increasing progress, and two vertical resource bars on the bottom right, including a blue bar that is also increasing.",
+  "generated_critique": "1. The description incorrectly labels the shot as static. The reel above the anthropomorphic scarecrow is spinning, which indicates movement. Furthermore, the progress bars for both the inventory and the blue resource bar at the bottom of the screen are increasing. The caption also omits the presence of a wooden bench positioned on the right side of the yard, which should be included in the spatial analysis.\n\n2. The phrase \"in the foreground\" should be removed from the description of the game interface overlay at the bottom of the screen.",
+  "revised_caption_by_generated_critique": "This is a wide shot from a high-angle perspective. In the middle ground, a scarecrow with a spinning reel above it and a stone well are positioned in the center of the frame, encircled by a circular brick path. The path is set within a grassy yard that fills the majority of the scene, with a wooden bench positioned on the right side. In the background, at the top of the frame, are garden plots enclosed by fences. A game interface is overlaid at the bottom of the screen, featuring a coin count on the bottom left, an inventory bar in the bottom center with increasing progress, and two vertical resource bars on the bottom right, including a blue bar that is also increasing.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.2.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T16:49:36.356580",
+  "generation_timestamp": "2025-09-29T19:58:10.561453",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption is accurate. It correctly describes the man picking up an object, placing it in his pocket, adjusting his shirt, and turning his head. It also accurately describes the motion of the person in the background standing up and turning.\n\n**Completeness:** The caption is complete, covering the primary actions of both the main subject and the secondary subject in the correct chronological order.\n\n**Adherence to Instructions:**\n*   **Strengths:** The caption successfully follows several key instructions. It presents actions in chronological order, uses simple and clear language, avoids emotional or subjective adjectives, and focuses on the motion of the subjects.\n*   **Areas for Improvement:**\n    *   **Conciseness:** The initial description of the items on the table (\"a cloth, a bottle, and a small container\") is overly detailed and not essential to the subject's motion, making the caption less concise than it could be.\n    *   **Avoiding Speculation:** The caption identifies the object as a \"card\" and the background figure as a \"woman.\" While these are reasonable interpretations, they are not certain. The instructions state to \"Avoid describing anything not visible or uncertain.\" Using more neutral terms like \"small rectangular object\" and \"a person\" or \"a figure\" would be more compliant. Similarly, stating the man turns \"to look at the woman\" infers intent, whereas simply describing the motion (\"turns his head toward the person behind him\") is more objective.\n\nIn summary, the caption is good but could be improved by removing the unnecessary description of the table items and using more objective, less speculative language to describe the object and the second person.",
-  "revised_caption_by_generated_critique": "A man at a table picks up a small rectangular object and places it into his shirt pocket. He then adjusts his shirt and turns his head toward a person behind him. The person in the background, initially seated, stands up and turns toward the man.",
+  "generated_critique": "The caption is mostly accurate but contains a minor factual error and some unnecessary detail. The description of the items on the table (\"a cloth, a bottle, and a small container\") is not related to the subject's motion and should be removed for conciseness. Additionally, the man does not turn \"his entire body\"; he turns his head and upper body to the right. The description of the woman's motion is accurate.",
+  "revised_caption_by_generated_critique": "A man standing at a table picks up a card and places it in his shirt pocket. He adjusts his shirt, then turns his head and upper body to the right to look at a woman behind him. The woman, who was seated, then stands up and turns to face him.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "3i-cb5ATODE.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:38:23.866685",
+  "generation_timestamp": "2025-09-29T08:16:01.346988",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The phrase \"both appearing in the foreground to middle ground\" is inaccurate; it should be revised to \"both appearing in the foreground.\" 2. The description of the couch should be adjusted to indicate that it occupies the space from the bottom of the frame to near the top in the middle ground. 3. The caption should also mention that there is a small table with a vase of flowers in the bottom right corner of the frame.",
-  "revised_caption_by_generated_critique": "The video shows a medium close-up shot of a woman and a young man. The woman is positioned on the left side of the frame, and the young man is on the right, both appearing in the foreground. They are lying on a yellow couch patterned with roosters, which occupies the space from the bottom of the frame to near the top in the middle ground. Behind them, a dark green wall is visible in the background at the top of the frame. A small table with a vase of flowers is in the bottom right corner of the frame. The camera is positioned above the subjects.",
+  "generated_critique": "1. The phrase \"both appearing in the foreground to middle ground\" is inaccurate; it should be revised to \"both appearing in the foreground.\"\n2. The description of the couch should be adjusted to indicate that it occupies the space from the bottom of the frame to near the top in the middle ground.\n3. The feedback should also mention that there is a small table with a vase of flowers in the background near the right edge of the frame, even though this element is not present in the original scene.",
+  "revised_caption_by_generated_critique": "The video shows a medium close-up shot of a woman and a young man. The woman is positioned on the left side of the frame, and the young man is on the right, both appearing in the foreground. They are lying on a yellow couch patterned with roosters, which occupies the space from the bottom of the frame to near the top in the middle ground. Behind them, a dark green wall is visible in the background at the top of the frame. A small table with a vase of flowers is present in the background near the right edge of the frame. The camera is positioned above the subjects.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "3pxrECZYEAA.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:35:10.059975",
+  "generation_timestamp": "2025-09-29T04:21:46.256549",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-08T10:31:04.988129",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera isn't stationary; it's following the tadpole, moving upward and to the left.\n\nThe dark, finger-like algae structures are in the foreground and background, not in the middle.",
-  "revised_caption_by_generated_critique": "This wide shot opens with a green, tadpole-like creature positioned in the middle ground at the center of the frame, situated between dark, finger-like seaweed structures that occupy both the foreground and background. To the right, a red, circular object is also visible in the middle ground. As the scene progresses, the tadpole swims horizontally to the left, weaving between the seaweed stalks, while the red circle simultaneously drifts to the right and exits the frame. The camera follows the tadpole, moving upward and to the left, remaining at the subject's level throughout the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera isn't stationary; it's following the tadpole, moving upward and to the left.\n\nThe red circle moves out of the frame with the camera, not drifting rightward on its own.",
+  "revised_caption_by_generated_critique": "This wide shot opens with a green, tadpole-like creature positioned in the middle ground at the center of the frame, situated between dark, finger-like seaweed structures that occupy both the foreground and middle ground. To the right, a red, circular object is also visible in the middle ground. As the scene progresses, the tadpole swims horizontally to the left, weaving between the seaweed stalks, while the camera follows its movement, shifting upward and to the left. The red circle moves out of the frame along with the camera.",
   "status": "success"
 }

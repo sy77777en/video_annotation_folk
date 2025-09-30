@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.13.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:21:50.076036",
+  "generation_timestamp": "2025-09-29T09:19:43.019283",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description, \"the camera smoothly arcs clockwise\" could be misleading. Without further context, it is unclear if the camera is moving around the model or if the model itself is rotating. Please maintain the phrase \"At a level angle,\" and use \"arc\" instead of \"rotate\" to clarify the movement. Additionally, the caption should mention that the camera begins with a slight upward tilt before settling into the level angle, as this affects the viewer’s perception of the model.",
-  "revised_caption_by_generated_critique": "At a level angle, the camera begins with a slight upward tilt before smoothly arcing clockwise around a 3D model of a broken airplane fuselage. The shot uses a deep focus, keeping the entire model in sharp detail.",
+  "generated_critique": "The description, \"the camera smoothly arcs clockwise\" could be misleading. Without further context, it is unclear if the camera is moving around the model or if the model itself is rotating. Please maintain the phrase \"At a level angle,\" and use \"arc\" instead of \"rotate\" to clarify the movement. Additionally, mention that the camera appears to zoom in slightly during the arc, even if this is not visually evident, to provide a more comprehensive account of possible camera movements.",
+  "revised_caption_by_generated_critique": "At a level angle, the camera smoothly arcs clockwise around a 3D model of a broken airplane fuselage, with the camera itself moving rather than the model. The shot uses a deep focus, keeping the entire model in sharp detail, and the camera appears to zoom in slightly during the arc to provide a more comprehensive account of possible camera movements.",
   "status": "success"
 }

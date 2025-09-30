@@ -2,7 +2,7 @@
   "video_id": "OrOYvVf6tIM.2.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:38:38.472180",
+  "generation_timestamp": "2025-09-29T12:16:09.805778",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly positions the hand on the left and fails to mention that it is centered and partially obscures the woman. It inaccurately claims the wooden drawer is already open at the start. The timing of the focus rack is described incorrectly. The description of the hand's actions is incomplete, as it omits the closing of the drawer, and the direction of the flashlight beam is misidentified. The statement that the camera remains stationary is incorrect.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot of a woman standing in the background at the center of the frame, while a close-up shows a person's hand and arm centered in the foreground, partially obscuring the woman. A closed wooden drawer occupies the bottom of the frame, with a countertop visible in the upper right. As the hand in the center opens the drawer to retrieve a flashlight, the focus racks from the woman in the background to the hand and drawer in the foreground. The hand then closes the drawer and moves the activated flashlight, casting its beam from the bottom center of the frame toward the upper left, illuminating the underside of the countertop. The camera subtly pans to follow the action throughout the shot.",
+  "generated_critique": "The description of the hand's position as \"on the left\" is incorrect, and the caption fails to mention that the hand partially obscures the woman. The caption incorrectly states that the wooden drawer is already open at the start of the video. The timing of the focus rack is described incorrectly; it does not happen when the hand reaches into the drawer. The direction of the flashlight's beam is misidentified, and the caption omits the action of the drawer being closed. The statement that the camera remains stationary is incorrect.",
+  "revised_caption_by_generated_critique": "The video begins with a full shot of a woman standing in the background at the center of the frame, while a close-up simultaneously shows a person's hand and arm partially obscuring her in the foreground. A closed wooden drawer occupies the bottom of the frame, with a countertop visible in the upper right. As the hand reaches to open the drawer and retrieve a flashlight, the focus racks from the woman in the background to the hand and drawer in the foreground after the drawer is opened. The hand then moves the activated flashlight, casting its beam from the bottom center of the frame toward the upper left, illuminating the underside of the countertop. The camera subtly pans to follow the action throughout the shot.",
   "status": "success"
 }

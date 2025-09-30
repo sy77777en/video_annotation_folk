@@ -2,7 +2,7 @@
   "video_id": "4080.2.9.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:54:10.496886",
+  "generation_timestamp": "2025-09-29T04:50:18.604780",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please change \"From a high, eye-level angle\" to \"From a high angle, eye-level perspective.\" Also, be sure to mention that the camera performs a slow clockwise pan during the shot.",
-  "revised_caption_by_generated_critique": "From a high angle, eye-level perspective, the camera remains fixed but slightly unsteady, performing a slow clockwise pan during the shot. The shot features an ultra-shallow depth of field, and with the subject in constant motion, the focus plane is difficult to determine.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please change \"From a high, eye-level angle\" to \"From a high angle, eye-level perspective.\" Also, mention that the camera performs a slow zoom-in throughout the shot.",
+  "revised_caption_by_generated_critique": "From a high angle, eye-level perspective, the camera remains fixed but slightly unsteady. The shot features an ultra-shallow depth of field, and with the subject in constant motion, the focus plane is difficult to determine. The camera performs a slow zoom-in throughout the shot.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4jdZkC33NXw.19.5.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:44:57.353557",
+  "generation_timestamp": "2025-09-29T12:56:30.861606",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera employs a noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot captures a street scene with a deep focus, keeping the entire view sharp. The camera moves forward while panning to the right, revealing more of the wet road and adjacent buildings. The movement is slightly unsteady, with some minor shaking, and there is noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
+  "generated_critique": "The caption should also mention that the camera employs a noticeable fisheye lens effect, causing strong curvature at the edges of the frame.",
+  "revised_caption_by_generated_critique": "This eye-level, level-angle shot captures a street scene with a deep focus, keeping the entire view sharp. The camera moves forward while panning to the right, revealing more of the wet road and adjacent buildings. The movement is slightly unsteady, with some minor shaking. A noticeable fisheye lens effect causes strong curvature at the edges of the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "nGJMwixogyk.5.8.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:59:44.469932",
+  "generation_timestamp": "2025-09-29T10:16:15.233516",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The camera initially looks to the right of a street before panning left to face straight ahead into the street. Please correct the description in the first sentence to reflect this sequence accurately.  \n2. The movement should be described as unsteady rather than having only slight unsteadiness, as the shaking is noticeable, resembling the motion of a camera held by a walking person.  \n3. The video appears to use a mild barrel distortion, causing straight lines near the edges to bow outward slightly, which should be noted in the description.",
-  "revised_caption_by_generated_critique": "The camera is initially positioned at eye level, looking to the right of the street before panning left to face straight ahead into the street. It employs deep focus with a large depth of field. The camera moves forward along the street with noticeable unsteadiness and shaking, resembling the motion of a camera held by a walking person. Additionally, the video exhibits mild barrel distortion, causing straight lines near the edges to bow outward slightly.",
+  "generated_critique": "1. The camera initially looks to the right of a street before panning left to face straight ahead into the street. Please correct the description in the first sentence to reflect this sequence accurately.  \n2. The movement should be described as unsteady rather than having only slight unsteadiness, as the shaking is noticeable, resembling the motion of a camera held by a walking person.  \n3. The video appears to use a mild fisheye lens, causing visible curvature along the edges of the frame, which should be noted in the description.",
+  "revised_caption_by_generated_critique": "The camera initially looks to the right of the street before panning left to face straight ahead into the street. It employs deep focus with a large depth of field. The camera continuously moves forward along the street with noticeable unsteadiness and shaking, resembling the motion of a camera held by a walking person. Additionally, a mild fisheye lens is used, causing visible curvature along the edges of the frame.",
   "status": "success"
 }

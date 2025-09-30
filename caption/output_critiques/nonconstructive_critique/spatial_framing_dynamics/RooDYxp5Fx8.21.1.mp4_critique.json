@@ -2,7 +2,7 @@
   "video_id": "RooDYxp5Fx8.21.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T06:11:37.024037",
+  "generation_timestamp": "2025-09-29T12:56:12.063335",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly places the small wooden display table in the foreground and inaccurately states that the left side of the street and its buildings are still visible after the pan. The description of the traditional buildings is also inaccurate, as it claims they only extend into the middle ground. Furthermore, the caption fails to mention that the utility pole in the right foreground disappears from the frame.",
-  "revised_caption_by_generated_critique": "This video presents a wide scenery shot from an eye-level perspective, initially capturing a quiet Japanese street that recedes from the bottom center into the background. Traditional buildings line the left and right sides of the frame, extending from the foreground into the background, with a green hill visible in the distant background. The camera then slowly pans to the right. This movement shifts the focus to the right side of the street, bringing a modern storefront with the name \"TOHGORO\" into the right half of the frame. A utility pole with a sign is initially prominent in the right foreground but disappears from the frame as the camera continues to pan. In front of the shop, a small tree and a red-and-white striped table are positioned in the middle ground, while a small wooden display table sits further back at the shop's entrance. The left side of the street and its buildings are no longer visible after the pan.",
+  "generated_critique": "The caption misidentifies the position of the small wooden display table as being in the foreground. It also incorrectly states that the left side of the street and its buildings remain visible after the camera pan. The description of the buildings' depth is inaccurate, as it incorrectly limits their extension to the middle ground. Furthermore, the caption fails to mention that the utility pole disappears from the frame.",
+  "revised_caption_by_generated_critique": "This video presents a wide scenery shot from an eye-level perspective, initially capturing a quiet Japanese street that recedes from the bottom center into the background. Traditional buildings line the left and right sides of the frame, extending from the foreground into the background, with a green hill visible in the distant background. The camera then slowly pans to the right. This movement shifts the focus to the right side of the street, bringing a modern storefront with the name \"TOHGORO\" into the right half of the frame. A utility pole with a sign is initially prominent in the right foreground but disappears from the frame as the camera pans. In front of the shop, a small tree and a red-and-white striped table are positioned in the middle ground, while a small wooden display table sits closer to the middle ground at the shop's entrance. The left side of the street and its buildings are no longer visible after the camera pan.",
   "status": "success"
 }

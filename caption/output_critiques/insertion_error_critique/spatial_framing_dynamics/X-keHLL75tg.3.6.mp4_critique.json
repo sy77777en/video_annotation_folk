@@ -2,7 +2,7 @@
   "video_id": "X-keHLL75tg.3.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:57:01.771107",
+  "generation_timestamp": "2025-09-29T11:46:03.061687",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot is not completely static; the camera subtly zooms in and pans to the left, thereby placing greater emphasis on the man in the middle ground. Additionally, the window on the far right side of the frame briefly becomes visible as the camera moves, although it is not a focal point in the scene.",
-  "revised_caption_by_generated_critique": "The scene begins with a subtle camera movement, featuring two subjects in a bedroom. Initially, a woman is framed in a medium close-up on the right side of the frame, slightly out of focus. As the camera gently zooms in and pans to the left, greater emphasis is placed on the man in the middle ground, who is captured in a medium shot on the left, sitting up in a bed that extends across the lower half of the frame. The man is positioned in front of several pillows and a dark headboard, with a plain wall visible in the background. During the camera movement, a window on the far right side of the frame briefly becomes visible, although it is not a focal point in the scene.",
+  "generated_critique": "The shot is not completely static; the camera subtly zooms in and pans to the left, thereby placing greater emphasis on the man in the middle ground. Additionally, the window on the far right side of the frame briefly reflects a moving shadow, which is not addressed in the original description.",
+  "revised_caption_by_generated_critique": "The scene begins with a subtle camera movement, gently zooming in and panning to the left, which gradually places greater emphasis on the man in the middle ground. In the foreground, a woman is framed in a medium close-up on the right side of the frame, slightly out of focus. The man is captured in a medium shot on the left, sitting up in a bed that extends across the lower half of the frame, positioned in front of several pillows and a dark headboard, with a plain wall visible in the background. A window on the far right side of the frame briefly reflects a moving shadow, adding a dynamic element to the composition. The camera remains at the subjects' level throughout the scene.",
   "status": "success"
 }

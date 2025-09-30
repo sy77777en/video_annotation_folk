@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.7.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:17:34.985322",
+  "generation_timestamp": "2025-09-29T05:23:50.124279",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T17:43:57.399986",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The phrase \"center of the frame and the middle ground\" should be revised to \"center of the frame and the foreground.\" The figure is oriented frontally, but slightly to the right. Additionally, the camera does not remain static; it is slowly moving forward. The background also contains a faint vertical line on the left side, which should be mentioned as it subtly divides the lighter section.",
-  "revised_caption_by_generated_critique": "A close-up shot shows a faceless, mannequin-like figure positioned in the center of the frame and the foreground. The figure is oriented frontally, but slightly to the right. In the background, the scene is divided horizontally, with a dark section occupying the top of the frame and a lighter gray section at the bottom, subtly divided by a faint vertical line on the left side. The camera is slowly moving forward and is positioned at the subject's level.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The phrase \"center of the frame and the middle ground\" should be revised to \"center of the frame and the foreground.\" The figure is oriented frontally, but slightly to the right. The background contains a faint vertical line dividing the lighter gray section. Additionally, the camera does not remain static; it is slowly moving forward.",
+  "revised_caption_by_generated_critique": "A close-up shot shows a faceless, mannequin-like figure positioned in the center of the frame and the foreground. The figure is oriented frontally, but slightly to the right. In the background, the scene is divided horizontally, with a dark section occupying the top of the frame and a lighter gray section at the bottom, which contains a faint vertical line. The camera is slowly moving forward and is positioned at the subject's level.",
   "status": "success"
 }

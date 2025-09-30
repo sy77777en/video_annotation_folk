@@ -2,7 +2,7 @@
   "video_id": "1aa6095ed461f823bd3187040dadd0b56d7340389fa26f691bc611f2da6e7cb8.0.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:50:52.350008",
+  "generation_timestamp": "2025-09-29T05:23:37.601850",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-09T02:21:38.435220",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption mentions the visibility of the laptop's keyboard but fails to describe the zoom-in action where the screen nearly fills the entire frame.",
-  "revised_caption_by_generated_critique": "The video features a silver laptop with a sleek design, open on a wooden surface. The screen displays a digital map interface with detailed geographical features, including roads, rivers, and green areas representing parks or forests. The map shows different locations and routes, with a blue line indicating a specific path or direction. As the video progresses, the camera zooms in on the screen until it nearly fills the entire frame, emphasizing the map's intricate details and navigation options. The laptop's keyboard is visible, featuring a standard layout with black keys. The map interface includes a sidebar with additional information, such as location details and navigation options. The overall focus is on the map displayed on the laptop screen, highlighting its use for navigation or route planning.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption does not mention the camera's zoom, which results in the screen filling the frame.",
+  "revised_caption_by_generated_critique": "The video features a silver laptop with a sleek design, open on a wooden surface. The camera zooms in, filling the frame with the laptop screen, which displays a digital map interface with detailed geographical features, including roads, rivers, and green areas representing parks or forests. The map shows different locations and routes, with a blue line indicating a specific path or direction. The laptop's keyboard is visible, featuring a standard layout with black keys. The map interface includes a sidebar with additional information, such as location details and navigation options. The overall focus is on the map displayed on the laptop screen, highlighting its use for navigation or route planning.",
   "status": "success"
 }

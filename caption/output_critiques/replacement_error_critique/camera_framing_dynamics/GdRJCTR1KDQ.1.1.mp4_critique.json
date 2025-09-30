@@ -2,7 +2,7 @@
   "video_id": "GdRJCTR1KDQ.1.1.mp4",
   "caption_type": "camera",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:03:55.379876",
+  "generation_timestamp": "2025-09-29T05:01:02.516301",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruize Ma"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description stating that \"as the device is struck and debris moves into the midground, the focus shifts to follow these pieces\" is inaccurate. In reality, the camera performs a slow zoom-in on the device after it is struck, but the focus remains fixed on the background rather than tracking any moving debris.",
-  "revised_caption_by_generated_critique": "This slow-motion video is captured from a static camera positioned at ground level, looking down at the scene from a high angle. The camera utilizes a shallow depth of field, initially focusing on the monitor in the foreground. After the monitor is struck, the camera performs a slow zoom-in on the device, while the focus remains fixed on the background rather than tracking any moving debris.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description stating that \"as the device is struck and debris moves into the midground, the focus shifts to follow these pieces\" is inaccurate. In reality, the camera performs a slow zoom-in on the device, but the focus remains fixed on the background, causing both the device and debris in the foreground to appear increasingly blurred.",
+  "revised_caption_by_generated_critique": "This slow-motion video is captured from a static camera positioned at ground level, looking down at the scene from a high angle. The camera utilizes a shallow depth of field, initially focusing on the background. As the monitor is struck and debris moves into the midground, the camera performs a slow zoom-in on the device, but the focus remains fixed on the background, causing both the device and debris in the foreground to appear increasingly blurred.",
   "status": "success"
 }

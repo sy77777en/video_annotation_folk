@@ -2,7 +2,7 @@
   "video_id": "H4AZhS5WqKk.2.12.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:07:37.498192",
+  "generation_timestamp": "2025-09-29T05:07:35.588185",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The character, Tom, along with the iron on his face, should be described as being in the foreground rather than the middle ground. The sequence of events should be revised to indicate that the iron first slides vertically out of the shot, followed by Tom quickly jumping to the left.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of the blue-gray cartoon cat, Tom, whose head is replaced by a shiny metal iron, positioned centrally in the foreground. Tom’s body is upright, with its large pink ears extending to the left and right, and the iron’s cord hanging downward. The cat stands at the same height as the camera, which is level with its torso and face. Behind Tom, the softly lit bedroom is visible, with the bed and lamp to the left in the background and a large window with city lights to the right. As the scene progresses, the iron slides vertically out of the shot, followed by Tom quickly jumping to the left, causing his torso and ears to sweep across the center and left side. The background elements, including the bed, lamp, and window, remain stationary, maintaining their positions relative to Tom’s movement. Throughout, the camera maintains a consistent height and distance, keeping the action at eye level and Tom’s movement clearly visible within the room’s spatial context.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The character, Tom, along with the iron on his face, should be described as being in the foreground rather than the middle ground. Additionally, please avoid stating that the iron replaces his head; instead, clarify that the iron is on his face. Throughout, the camera maintains a consistent height and distance, keeping the action at eye level and the cat’s movement clearly visible within the room’s spatial context.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of the blue-gray cartoon cat, Tom, whose face is covered by a shiny metal iron, positioned prominently in the foreground. Tom’s body is upright, with his large pink ears extending to the left and right, and the iron’s cord hanging downward. The cat stands at the same height as the camera, which is level with his torso and face. Behind Tom, the softly lit bedroom is visible, with the bed and lamp to the left in the background and a large window with city lights to the right. As the scene progresses, Tom’s body moves quickly toward the left, causing his torso and ears to sweep across the center and left side, while the iron remains prominent until it exits the view. The background elements, including the bed, lamp, and window, remain stationary, maintaining their positions relative to Tom’s movement. Throughout, the camera maintains a consistent height and distance, keeping the action at eye level and Tom’s movement clearly visible within the room’s spatial context.",
   "status": "success"
 }

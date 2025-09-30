@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:45:33.957058",
+  "generation_timestamp": "2025-09-29T04:35:02.125239",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The woman is positioned in the foreground throughout the video, rather than in the background as described.",
-  "revised_caption_by_generated_critique": "The video presents a medium shot of the subjects, capturing them from the waist up. The main character, a man, is positioned in the foreground and center of the frame, actively engaging with objects on a table directly in front of him. His 2D position is central, while his 3D position places him in the foreground. The table, with various items such as bottles and containers, is also in the foreground, slightly below the man. Another character, a woman, is positioned in the foreground throughout the video, initially towards the right side of the frame. Her 2D position shifts as she stands up and turns sideways, moving slightly towards the center-right. The camera maintains a level height relative to the subjects, keeping both characters within the frame consistently. The background includes a cluttered workshop environment with tools and hanging items, which remain static throughout the sequence. There are no significant changes in shot size or camera movement, maintaining a steady focus on the interaction between the man and the surrounding objects, as well as the woman's subtle repositioning.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The woman is positioned on the left side of the frame throughout the video, rather than on the right as described.",
+  "revised_caption_by_generated_critique": "The video presents a medium shot of the subjects, capturing them from the waist up. The main character, a man, is positioned in the foreground and center of the frame, actively engaging with objects on a table directly in front of him. His 2D position is central, while his 3D position places him in the foreground. The table, with various items such as bottles and containers, is also in the foreground, slightly below the man. Another character, a woman, is initially in the background, positioned towards the left side of the frame. Her 2D position shifts as she stands up and turns sideways, moving slightly towards the center-left. Her 3D position remains in the background throughout. The camera maintains a level height relative to the subjects, keeping both characters within the frame consistently. The background includes a cluttered workshop environment with tools and hanging items, which remain static throughout the sequence. There are no significant changes in shot size or camera movement, maintaining a steady focus on the interaction between the man and the surrounding objects, as well as the woman's subtle repositioning.",
   "status": "success"
 }

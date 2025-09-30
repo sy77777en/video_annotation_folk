@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.1.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:54:09.760310",
+  "generation_timestamp": "2025-09-29T13:10:52.676952",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This video is a side-view gaming video, and the use of terms like \"foreground,\" \"middle ground,\" \"background,\" and \"level angle\" is not applicable in this context and should be omitted. The figure starts slightly to the lower right of the center of the frame and rotates while descending, rather than moving in tight, circular patterns. The polygon actually changes color as it moves across the scene. Furthermore, the camera is not static; it follows the subject's movement.",
-  "revised_caption_by_generated_critique": "In a side-view gaming video, a small, stylized figure on a bicycle starts slightly to the lower right of the center of the frame and rotates while descending. A large polygon, which changes color as it moves, repeatedly enters the scene from the bottom right, moves diagonally up and to the left, and exits at the top left. The camera follows the subject's movement throughout the video.",
+  "generated_critique": "This video is a side-view gaming video, and the use of terms like \"foreground,\" \"middle ground,\" \"background,\" and \"level angle\" is not applicable in this context and should be omitted. The figure starts slightly to the lower right of the center of the frame and rotates while descending, rather than moving in tight, circular patterns. The background color shifts from blue to green during the video. Furthermore, the camera is not static; it follows the subject's movement.",
+  "revised_caption_by_generated_critique": "In a side-view gaming video, a small, stylized figure on a bicycle starts slightly to the lower right of the center of the frame, rotating while descending. A large, black-outlined polygon repeatedly enters the scene from the bottom right, moves diagonally up and to the left, and exits at the top left. The background color shifts from blue to green during the video. The camera follows the subject's movement throughout the scene.",
   "status": "success"
 }

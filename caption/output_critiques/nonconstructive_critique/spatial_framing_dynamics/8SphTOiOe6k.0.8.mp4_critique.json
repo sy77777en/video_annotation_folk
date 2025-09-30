@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.0.8.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:02:26.771145",
+  "generation_timestamp": "2025-09-29T18:54:27.780576",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the pedestrians move from the background to the foreground. It also misidentifies the cyclist's starting position as the background and fails to specify their position on the left side of the frame. The description omits that the car exits from the left and that pedestrians are moving in opposing directions.",
-  "revised_caption_by_generated_critique": "The video presents a wide shot of a sunlit street scene, capturing both people and vehicles within a small town setting. Initially, a white car is positioned in the middle ground, driving from the background towards the foreground, centrally aligned in the frame. The car eventually exits the frame from the left. Pedestrians are visible on the sidewalk to the right, with two women carrying bags moving towards the background and a man walking alongside a woman in a yellow top moving towards the foreground. A cyclist is seen on the left side of the frame, starting in the middle ground and riding towards the camera. The street is lined with traditional buildings on both sides, with trees displaying autumn foliage, positioned in the background. The camera is at street level, providing a natural perspective of the scene. As the video progresses, the car moves closer to the foreground and exits, while the pedestrians and cyclist maintain a calm and steady pace in their respective directions.",
+  "generated_critique": "The caption incorrectly describes the pedestrians' movement as starting from the background. It also misidentifies the cyclist's initial position as the background and omits their position on the left side of the frame. The description of the subjects' movements is incomplete, as it fails to mention the car's exit from the frame and the varied directions of the pedestrians' movements.",
+  "revised_caption_by_generated_critique": "The video presents a wide shot of a sunlit street scene, capturing both people and vehicles within a small town setting. Initially, a white car is positioned in the middle ground, driving from the background towards the foreground, centrally aligned in the frame. Pedestrians are visible on the sidewalk to the right, with two women carrying bags and a man walking alongside a woman in a yellow top. These pedestrians are in the middle ground, moving in various directions. A cyclist is seen on the left side of the frame, riding towards the camera, initially in the middle ground and gradually moving closer. The street is lined with traditional buildings on both sides, with trees displaying autumn foliage, positioned in the background. The camera is at street level, providing a natural perspective of the scene. As the video progresses, the car moves closer to the foreground and eventually exits the frame, while the pedestrians and cyclist advance towards the camera, maintaining a calm and steady pace.",
   "status": "success"
 }

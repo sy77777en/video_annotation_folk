@@ -2,7 +2,7 @@
   "video_id": "H4AZhS5WqKk.0.0.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:04:51.537114",
+  "generation_timestamp": "2025-09-29T09:38:36.555176",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The staircase is concrete, not metal, and a metal door is omitted. The wooden items are racks, not pallets. The cat is sitting on the step, not standing on the pavement. The sentence mentioning a tool bag is incorrect.",
-  "revised_caption_by_generated_critique": "The setting is a dark, wet alley at night, with a brick wall and a concrete staircase in the background. The ground is composed of dark, reflective paving stones. On a concrete step sits a large, open cardboard box, with stacked wooden racks and black trash bags behind it. A cartoon cat sits on the step holding a black electronic keyboard, which subsequently breaks apart to expose its internal wiring. A metal door is also visible in the scene.",
+  "generated_critique": "The caption incorrectly identifies the staircase as metal and the wooden racks as pallets. It also misstates the cat's position. The description of the keyboard breaking is incomplete. The caption omits a metal door in the background and incorrectly includes a sentence about a tool bag.",
+  "revised_caption_by_generated_critique": "The setting is a dark, wet alley at night, with a brick wall and a metal door in the background. The ground is composed of dark, reflective paving stones. On a concrete step sits a large, open cardboard box, with stacked wooden racks and black trash bags behind it. A cartoon cat stands on the concrete step holding a black electronic keyboard, which subsequently breaks apart to expose its internal wiring and components.",
   "status": "success"
 }

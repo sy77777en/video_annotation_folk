@@ -2,7 +2,7 @@
   "video_id": "02a1b502d0ca3cdb3107d4c962a71d1f5b69b78c9ea330965e6f786f315ee527.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:14:04.189811",
+  "generation_timestamp": "2025-09-29T03:48:57.501967",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T08:39:29.675233",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The hands are not consistently centered throughout the video. The left hand holds the cards on the left side of the frame.",
-  "revised_caption_by_generated_critique": "The video features a close-up shot of a pair of hands manipulating a deck of playing cards. The hands are actively engaged in holding and sorting through the cards, which display various suits and numbers. The left hand holds the cards on the left side of the frame, while to the right, a stack of cards lies on a flat surface, partially visible, with one card face-up showing a colorful design. The hands and cards remain the primary focus throughout, with the camera positioned above them, emphasizing the interaction. The background consists of a neutral, light-colored surface, providing a simple backdrop that keeps attention on the card handling. The spatial composition highlights the dynamic movement of the hands, with the stack of cards staying in the background on the right.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The left hand holds the cards on the left side of the frame, while the right hand moves between the right side and the center of the frame as it places and manipulates the cards.",
+  "revised_caption_by_generated_critique": "The video features a close-up shot of a pair of hands manipulating a deck of playing cards. The left hand holds the cards on the left side of the frame, while the right hand moves between the right side and the center of the frame, actively engaged in placing and sorting through the cards, which display various suits and numbers. To the right, a stack of cards lies on a flat surface, partially visible, with one card face-up showing a colorful design. The hands and cards remain the primary focus throughout, with the camera positioned above them, emphasizing the interaction. The background consists of a neutral, light-colored surface, providing a simple backdrop that keeps attention on the card handling. The spatial composition remains consistent, with the hands and cards maintaining their central and foreground positions, while the stack of cards stays in the background on the right.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "338.2.23.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:21:58.595988",
+  "generation_timestamp": "2025-09-29T05:54:39.356593",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly states the central figure is in the foreground and that his position is static, while also misidentifying his initial position. The description of the positions of the two men flanking the central figure is inaccurate. The caption misidentifies the woman's initial depth and position and fails to mention her movement. The presence and movement of a female server are omitted from the description.",
-  "revised_caption_by_generated_critique": "The video shows a medium shot of a group of people seated around a dining table in a restaurant. The camera is positioned at the subjects' level, capturing them from the waist up. The central figure, a man with short dark hair in a light-colored shirt, is initially positioned slightly towards the right of the frame and moves to the foreground. He holds a blue napkin and chopsticks in his left hand. To his left, another man with short hair and glasses, wearing a dark shirt, is positioned near the center-left. Across the table, a woman with long dark hair in a green top is initially in the foreground on the left side of the frame and moves to the middle ground. A man in a yellow shirt and glasses, holding chopsticks, is in the foreground on the right. In the background, three men in maroon shirts are walking through the scene, carrying trays with food; they are positioned towards the top-center of the frame. Additionally, a female server is seen moving through the scene, attending to the diners. The ornate wooden panels and warm lighting dominate the background, creating depth. The camera remains static throughout, maintaining consistent shot size.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states the central figure's depth and fails to mention his movement. The position of the man in the dark shirt relative to the central figure is wrong. The description of the woman in the green top misidentifies her initial position and depth and omits her movement. The caption is missing a description of a subject. The claim that subject positions are consistent is incorrect.",
+  "revised_caption_by_generated_critique": "The video presents a medium shot of a group of people seated around a dining table in a restaurant. The camera is positioned at the subjects' level, capturing them from the waist up. The central figure, a man with short dark hair in a light-colored shirt, is located in the foreground, slightly towards the left, and occasionally leans forward while holding a blue napkin and chopsticks in his left hand. To his left, another man with short hair and glasses, wearing a dark shirt, is also in the foreground, positioned near the center-left. Across the table, a woman with long dark hair in a green top is initially seen in the background on the right side of the frame but moves to the middle ground as she turns slightly. A man in a yellow shirt and glasses, holding chopsticks, is in the foreground on the right. In the background, three men in maroon shirts are walking through the scene, carrying trays with food; they are positioned towards the top-center of the frame. Additionally, a woman with short hair in a red dress is seated at the far end of the table, partially obscured by the central figure. The ornate wooden panels and warm lighting dominate the background, creating depth. The camera remains static throughout, but the subjects occasionally shift positions, altering the composition slightly.",
   "status": "success"
 }

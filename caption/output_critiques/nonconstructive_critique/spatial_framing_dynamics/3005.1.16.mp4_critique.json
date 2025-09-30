@@ -2,7 +2,7 @@
   "video_id": "3005.1.16.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:14:01.577988",
+  "generation_timestamp": "2025-09-29T05:47:02.292109",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The background's depth is incorrectly identified as the middle ground, and the position of the overlay text is inaccurately described as 'bottom'.",
-  "revised_caption_by_generated_critique": "The video presents a close-up shot of a young man, capturing him from the shoulders up. He is positioned slightly off-center to the left in the frame, occupying the foreground. The background consists of an indoor setting with neutral-colored walls and minimal decor, situated in the background. The camera remains at the subject's eye level throughout the sequence. Initially, the man has his eyes closed, and as the frames progress, he opens his eyes and looks directly towards the camera. There is no significant change in the shot size or the subject's position within the frame. The lighting is soft, enhancing the subject's facial features without altering the spatial dynamics. The text \"而是这一刻\" appears briefly in the frame, maintaining the focus on the subject's contemplative state. The camera angle and height remain constant, ensuring a steady and direct view of the subject.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly describes the background's depth. The position of the overlay text is described incorrectly.",
+  "revised_caption_by_generated_critique": "The video presents a close-up shot of a young man, capturing him from the shoulders up. He is positioned slightly off-center to the left in the frame, occupying the foreground. The background consists of an indoor setting with neutral-colored walls and minimal decor, creating a shallow depth of field. The camera remains at the subject's eye level throughout the sequence. Initially, the man has his eyes closed, and as the frames progress, he opens his eyes and looks directly towards the camera. There is no significant change in the shot size or the subject's position within the frame. The lighting is soft, enhancing the subject's facial features without altering the spatial dynamics. The text \"而是这一刻\" appears briefly at the top of the frame, maintaining the focus on the subject's contemplative state. The camera angle and height remain constant, ensuring a steady and direct view of the subject.",
   "status": "success"
 }

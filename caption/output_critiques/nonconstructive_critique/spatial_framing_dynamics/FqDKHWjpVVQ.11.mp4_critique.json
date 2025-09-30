@@ -2,7 +2,7 @@
   "video_id": "FqDKHWjpVVQ.11.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:12:18.009242",
+  "generation_timestamp": "2025-09-29T08:44:53.105769",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial description of the view from behind the dark structure is inaccurate. The caption fails to link the camera's pan to the changing view of the military vehicle. The description of the military vehicle's movement is incorrect, and the position of the soldier on the ground is misidentified. The statement that the player's weapon shifts its position to the bottom-center is also inaccurate.",
-  "revised_caption_by_generated_critique": "The scene opens from a first-person perspective, initially showing a large, dark structure occupying the right foreground. A military vehicle is visible in the center-left middle ground, with a building in the background. The player's weapon is seen in the bottom-right foreground. As the camera moves forward and pans left, the dark structure exits the frame to the right, revealing a two-story building in the left and center middle ground. A soldier is lying on the ground in front of this building, positioned in the center-left. The player's weapon remains in the bottom-right foreground throughout the shot. A minimap is consistently displayed in the bottom-left corner, with other interface elements in the bottom-right. The camera maintains a position at the character's eye level.",
+  "generated_critique": "The description of the initial view from behind the dark structure is inaccurate. The caption incorrectly describes the military vehicle as static before mentioning the camera movement and fails to link the camera's pan to the changing view of the vehicle. The description of the military vehicle's movement is incorrect. The position of the soldier on the ground is misidentified as center-left. The statement that the player's weapon shifts to the bottom-center foreground is incorrect, as both its movement and final position are misdescribed.",
+  "revised_caption_by_generated_critique": "The scene opens from a first-person perspective, initially showing a view partially obscured by a large, dark structure on the right. A military vehicle is visible in the center-left middle ground, appearing to move slightly as the camera begins to pan forward and left. This movement causes the dark structure to slide off-screen to the right, revealing a two-story building that now dominates the left and center middle ground. A soldier is lying on the ground in front of this building, positioned more towards the center. The player's weapon remains visible in the bottom-right foreground, maintaining its position throughout the shot. A minimap is consistently displayed in the bottom-left corner, with other interface elements in the bottom-right. The camera remains at the character's eye level, providing a dynamic view of the unfolding scene.",
   "status": "success"
 }

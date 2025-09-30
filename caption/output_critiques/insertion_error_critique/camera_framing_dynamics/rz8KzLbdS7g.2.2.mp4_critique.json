@@ -2,7 +2,7 @@
   "video_id": "rz8KzLbdS7g.2.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:08:07.315140",
+  "generation_timestamp": "2025-09-29T07:32:27.578330",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the video features a slow zoom out as the camera moves, which affects the viewer’s perception of depth.",
-  "revised_caption_by_generated_critique": "The video is captured at eye level with a level angle, using a deep focus for a large depth of field. The handheld camera moves forward through a street scene, exhibiting noticeable shaking. As the camera moves, a slow zoom out is featured, affecting the viewer’s perception of depth. Upon reaching an intersection, the camera briefly pauses before continuing forward with slight panning motions.",
+  "generated_critique": "The caption should also mention that the video features a pronounced fisheye lens distortion, causing straight lines near the edges to curve noticeably outward.",
+  "revised_caption_by_generated_critique": "The video is captured at eye level with a level angle, using a deep focus for a large depth of field. The handheld camera moves forward through a street scene, exhibiting noticeable shaking. A pronounced fisheye lens distortion causes straight lines near the edges to curve noticeably outward. Upon reaching an intersection, the camera briefly pauses before continuing forward with slight panning motions.",
   "status": "success"
 }

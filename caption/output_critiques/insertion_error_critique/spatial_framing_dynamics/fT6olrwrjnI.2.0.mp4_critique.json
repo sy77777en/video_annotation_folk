@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:07:50.104077",
+  "generation_timestamp": "2025-09-29T10:28:31.657192",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove references to depth, such as \"foreground\" and \"middle ground,\" since the video is two-dimensional. Additionally, the camera does not zoom in; it moves upward and slightly to the left. Also, the players are wearing red jerseys, which should be specified in the description.",
-  "revised_caption_by_generated_critique": "In a high-angle medium shot, two soccer players are positioned on a green field. The player with white hair is on the left side of the frame, while the player with black hair is slightly to the right and behind the first. Both players are wearing red jerseys. A white line on the turf runs horizontally across the frame. The camera moves upward and slightly to the left as the players maintain their athletic stances.",
+  "generated_critique": "Please remove references to depth, such as \"foreground\" and \"middle ground,\" since the video is two-dimensional. Additionally, the camera does not zoom in; it moves upward and slightly to the left. Also, the players are both wearing red jerseys, not different colors.",
+  "revised_caption_by_generated_critique": "In a high-angle medium shot, two soccer players are positioned on a green field. The player with white hair is on the left side of the frame, while the player with black hair is slightly to the right and behind the first. A white line on the turf runs horizontally across the field. The camera moves upward and slightly to the left as the two players maintain their athletic stances, both wearing red jerseys.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "2616637.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T05:49:03.906961",
+  "generation_timestamp": "2025-09-29T11:03:15.775654",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\n**Accuracy:** The description of the butterfly's motion is accurate. The butterfly does flap its wings while remaining on the flowers.\n\n**Completeness:** The caption is incomplete. It misses a key part of the motion where the butterfly stops flapping, opens its wings fully to a flat position, and holds them there for a moment before resuming its flapping.\n\n**Adherence to the given instruction:**\n*   **Focus on Motion:** The caption fails to adhere to this core instruction. The first and last sentences are dedicated to describing the butterfly's appearance and the background scenery (\"A butterfly with black wings, white spots...\", \"The background is filled with green foliage...\"), which the instructions explicitly state to avoid in favor of describing motion.\n*   **Avoid Subjective Adjectives:** The caption violates this rule by using the subjective words \"lush, vibrant\" to describe the garden scene.\n*   **Conciseness:** By including descriptions of appearance and background, the caption is less concise than it could be.\n\nIn summary, while the caption correctly identifies the basic action, it fails to follow key instructions by focusing heavily on static visual details and using subjective language, while also missing a specific movement.",
-  "revised_caption_by_generated_critique": "A butterfly, perched on a cluster of orange flowers, continuously flaps its wings while adjusting its position. It then stops, opens its wings fully to a flat position, and holds them still for a moment before resuming the flapping motion.",
+  "generated_critique": "The caption includes descriptions of the butterfly's appearance and the background, which should be removed to adhere to the instruction to focus only on motion. The phrase \"creating a lush, vibrant garden scene\" uses subjective adjectives (\"lush, vibrant\"), which are not allowed. The description of the motion itself is too general and misses a key chronological detail. The caption should be revised to describe how the butterfly, while on the flower, continuously flaps its wings, then briefly pauses to hold its wings open and flat, before resuming the flapping motion.",
+  "revised_caption_by_generated_critique": "A butterfly, perched on a flower, continuously flaps its wings. It then briefly pauses to hold its wings open and flat before resuming the flapping motion.",
   "status": "success"
 }

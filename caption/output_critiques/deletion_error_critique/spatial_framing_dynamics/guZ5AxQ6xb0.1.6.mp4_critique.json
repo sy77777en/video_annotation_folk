@@ -2,7 +2,7 @@
   "video_id": "guZ5AxQ6xb0.1.6.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:04:55.876271",
+  "generation_timestamp": "2025-09-29T06:34:09.877179",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Feiyu Qian"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. It is recommended that the video begins with a medium shot rather than a close-up. As a result, the description of the transition in shot size should be omitted.\n\n2. Please note that as the camera tilts upward, the dimly lit spectator area eventually disappears from view.\n\n4. The player should be described as being in the middle ground instead of the foreground.",
-  "revised_caption_by_generated_critique": "The video features a slow-motion sequence of a male badminton player. It opens with a medium shot of the player, capturing his upper body and arms as he jumps. The green court surface with white lines and \"YONEX\" branding occupies the foreground, extending from the bottom of the frame. In the background, a blue advertising hoarding with a \"RedBull\" logo and \"China Construction Bank\" text spans the width of the frame. As the player jumps upwards, the camera tilts upward, following his movement. His badminton racket is also visible. Consequently, the blue hoarding shifts to a lower position in the background, and a dimly lit spectator area becomes visible in the far background above it, but eventually disappears from view. The camera is positioned at the subject's level.",
+  "revised_caption_by_generated_critique": "The video features a slow-motion sequence of a male badminton player. It opens with a medium shot of the player, capturing his legs and feet as he jumps. The green court surface with white lines and \"YONEX\" branding occupies the foreground, extending from the bottom of the frame. In the background, a blue advertising hoarding with a \"RedBull\" logo and \"China Construction Bank\" text spans the width of the frame. As the player jumps upwards, the camera tilts upward, following his movement. This action maintains the view of his upper body and arms mid-jump in the middle ground, with his badminton racket also visible. Consequently, the blue hoarding shifts to a lower position in the background, and a dimly lit spectator area becomes visible in the far background above it, but eventually disappears from view as the camera continues to tilt. The camera is positioned at the subject's level.",
   "status": "success"
 }

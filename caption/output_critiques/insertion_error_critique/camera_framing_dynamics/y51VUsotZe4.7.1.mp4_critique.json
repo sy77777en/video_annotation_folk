@@ -2,7 +2,7 @@
   "video_id": "y51VUsotZe4.7.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:13:33.574835",
+  "generation_timestamp": "2025-09-29T10:37:22.192683",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera initially starts at a level angle, transitions to a high angle, and then returns to a level angle. Contrary to the description, it does not begin at a high angle. Additionally, the video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
-  "revised_caption_by_generated_critique": "The camera starts at a level angle and transitions to a high angle before returning to a level angle as it pans right. It tilts down and then up to track a passing taxi at night. The video features noticeable fisheye lens distortion, causing straight lines near the edges to curve outward, and the motion blur makes the specific camera focus difficult to determine.",
+  "generated_critique": "The camera initially starts at a level angle, transitions to a high angle, and then returns to a level angle. Contrary to the description, it does not begin at a high angle. Additionally, the video features a noticeable fisheye lens distortion that causes straight lines near the edges to curve outward, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The camera starts at a level angle, transitions to a high angle, and then returns to a level angle as it pans right, tilting down and then up to track a passing taxi at night. The video features noticeable fisheye lens distortion, causing straight lines near the edges to curve outward. Due to the motion blur, the specific camera focus is difficult to determine.",
   "status": "success"
 }

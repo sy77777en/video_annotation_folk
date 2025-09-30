@@ -2,7 +2,7 @@
   "video_id": "f4ZzHtww6Tc.2.11.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:06:46.417021",
+  "generation_timestamp": "2025-09-29T08:58:03.443491",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The statement \"In the background, another man wearing a white t-shirt, dark pants, and a red hat is skateboarding down a set of wide stairs\" is incorrect as this individual does not exist in the video. Please remove this description. 2. Please revise \"A third individual, dressed in a white shirt and dark pants, walks up the same stairs\" to \"Another individual, dressed in a white shirt and dark pants, passed by and glanced briefly.\" 3. Please note that the main subject is not holding a skateboard in his hand at any point, so references to him carrying a skateboard should be omitted.",
+  "generated_critique": "1. The statement \"In the background, another man wearing a white t-shirt, dark pants, and a red hat is skateboarding down a set of wide stairs\" is incorrect as this individual does not exist in the video. Please remove this description. Additionally, the caption should not mention a woman with a yellow scarf, as there is no such subject present in the video. \n\n2. Please revise \"A third individual, dressed in a white shirt and dark pants, walks up the same stairs\" to \"Another individual, dressed in a white shirt and dark pants, passed by and glanced briefly.\"",
   "revised_caption_by_generated_critique": "A light-skinned man with tattoos on his arms is skateboarding in an urban plaza. He wears a white t-shirt with a blue graphic on the front, dark blue cuffed jeans, white sneakers, and a blue baseball cap worn backward. Another individual, dressed in a white shirt and dark pants, passed by and glanced briefly.",
   "status": "success"
 }

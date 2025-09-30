@@ -2,7 +2,7 @@
   "video_id": "fUjoIUTFH1I.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:09:38.152192",
+  "generation_timestamp": "2025-09-29T07:34:20.247523",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please remove the word \"static\" from your description of the camera's perspective, as the camera is actually panning upward throughout the video.  \n2. The fog does not swirl; instead, it moves from right to left across the frame, resembling clouds carried by the wind. Please update the description to reflect this movement.  \n3. Additionally, please note that the bridge appears to be constructed over a dense forest, which extends from the middle ground to the background.  \n4. Retain the details about the fog being in the foreground and appearing to continue into the background.",
-  "revised_caption_by_generated_critique": "This video is a scenery shot. An extreme wide shot captures the top of a large, industrial bridge structure from a high-angle perspective, with the camera panning upward. The metallic, triangular framework is positioned in the center of the frame, situated in the middle ground. The entire scene is enveloped by thick fog that fills the foreground and appears to continue into the background, moving from right to left across the frame like clouds carried by the wind. The bridge is constructed over a dense forest, which extends from the middle ground to the background. The only discernible movement within the frame is the drifting fog and tiny vehicles traveling from left to right across the bridge deck below the central truss.",
+  "generated_critique": "1. Please remove the word \"static\" from your description of the camera's perspective, as the camera is actually panning upward throughout the video.  \n2. The fog does not swirl; instead, it moves from left to right across the frame, resembling clouds carried by the wind. Please update the description to reflect this movement.  \n3. Additionally, please note that the bridge appears to be constructed over a dense forest, which extends from the middle ground to the background.  \n4. Retain the details about the fog being in the foreground and appearing to continue into the background.",
+  "revised_caption_by_generated_critique": "This video is a scenery shot. An extreme wide shot captures the top of a large, industrial bridge structure from a high-angle perspective, with the camera panning upward. The metallic, triangular framework is positioned in the center of the frame, situated in the middle ground. The entire scene is enveloped by thick fog that fills the foreground and appears to continue into the background, moving from left to right across the frame like clouds carried by the wind, constantly shifting to obscure and reveal parts of the structure. The bridge appears to be constructed over a dense forest, which extends from the middle ground to the background. The only discernible movement within the frame is the drifting fog and tiny vehicles traveling from left to right across the bridge deck below the central truss.",
   "status": "success"
 }

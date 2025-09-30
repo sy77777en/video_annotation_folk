@@ -2,7 +2,7 @@
   "video_id": "opXBWdk-mbQ.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T12:41:02.521488",
+  "generation_timestamp": "2025-09-29T18:34:45.479872",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The main subject's depth is incorrectly identified as being in the foreground. The spatial positions and depths of the second and third men are also described inaccurately. Additionally, the caption omits a visible element in the foreground.",
-  "revised_caption_by_generated_critique": "A medium shot frames three men sitting in a row at a long counter. The main subject is positioned in the middle ground on the left, eating from a container. To his right, a second man sits slightly further back, and to the right of him, a third man is positioned in the background. In the foreground, a cup is visible on the counter. The main subject initially looks down at his food before lifting his head and turning to his right. The camera is stationary and positioned at the subjects' level.",
+  "generated_critique": "The main subject's depth is incorrectly identified as being in the foreground. The description of the second man's position and depth is wrong, and the third man's position relative to the second man is also incorrect. The caption omits an element in the foreground.",
+  "revised_caption_by_generated_critique": "A medium shot frames three men sitting in a row at a long counter. The main subject is in the middle ground on the left, eating from a container. In the foreground, an object is partially visible, adding depth to the scene. To the right of the main subject, a second man sits slightly further back, and to the right of him, a third man is positioned at a similar depth. The main subject initially looks down at his food before lifting his head and turning to his right. The camera is stationary and positioned at the subjects' level.",
   "status": "success"
 }

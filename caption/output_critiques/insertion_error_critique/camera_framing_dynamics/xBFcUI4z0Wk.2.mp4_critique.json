@@ -2,7 +2,7 @@
   "video_id": "xBFcUI4z0Wk.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:39:56.330705",
+  "generation_timestamp": "2025-09-29T11:18:14.269455",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The camera is not entirely fixed; it pans slightly to the right about halfway through the video to better center the crashed cars. The video also appears to use a shallow depth of field, with the background noticeably blurred. This should also be smooth rather than slightly unsteady.\n\n2. Please change the tense of \"crashing\" to \"crashed,\" as the two cars have already crashed and are not in the process of crashing.",
-  "revised_caption_by_generated_critique": "This high-angle, overhead shot is captured by a camera that pans slightly to the right about halfway through the video to better center the crashed cars. A shallow depth of field is used, keeping the racetrack and crashed cars sharp while the background is noticeably blurred. The camera movement is smooth.",
+  "generated_critique": "1. The camera is not entirely fixed; it pans slightly to the right about halfway through the video to better center the crashed cars. This should also be smooth rather than slightly unsteady. Additionally, there is a noticeable barrel distortion at the edges of the frame, causing the straight lines of the racetrack to bow outward.\n\n2. Please change the tense of \"crashing\" to \"crashed,\" as the two cars have already crashed and are not in the process of crashing.",
+  "revised_caption_by_generated_critique": "This high-angle, overhead shot is captured by a camera that pans slightly to the right about halfway through the video to better center the crashed cars. The camera movement is smooth, and a deep focus is used, keeping the entire racetrack and the crashed cars sharp. There is noticeable barrel distortion at the edges of the frame, causing the straight lines of the racetrack to bow outward.",
   "status": "success"
 }

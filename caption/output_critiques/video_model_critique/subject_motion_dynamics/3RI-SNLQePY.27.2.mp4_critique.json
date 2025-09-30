@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.27.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T09:34:48.122922",
+  "generation_timestamp": "2025-09-29T14:45:30.125104",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is not good because it fails to adhere to several key instructions.\n\n- **Focus on Motion:** The caption dedicates significant space to describing the static scene (\"dimly lit, monochromatic interior,\" \"chandeliers,\" \"reception desk,\" \"coat rack\") and on-screen text, which violates the instruction to \"Focus on the subject's motion.\"\n- **Avoid Subjective Language:** The phrase \"adding to the vintage atmosphere\" is a subjective interpretation, which is explicitly forbidden.\n- **Avoid Speculation:** The statement \"Red dots on the ground suggest the presence of blood\" is speculative, violating the rule to \"Avoid speculative statements like 'there might be,' 'it appears'\".\n\nA better caption would focus only on the character's movement:\n\nIn a high-angle, monochromatic shot of a large room, a man walks steadily from the left side of the frame, across a checkered floor, and toward the right.",
-  "revised_caption_by_generated_critique": "In a high-angle, monochromatic shot of a large room, a man walks steadily from the left side of the frame, across a checkered floor, and toward the right.",
+  "generated_critique": "The caption includes excessive descriptions of the static environment, such as the \"dimly lit, monochromatic interior,\" \"chandeliers,\" and \"vintage atmosphere,\" which should be removed to adhere to the instruction to focus on the subject's motion. The phrase \"suggest the presence of blood\" is speculative and should be omitted. Additionally, the description of the on-screen text is not part of the subject's motion and should be deleted. The core action is a man walking across the room; the description should be revised to focus solely on this movement in a concise manner.",
+  "revised_caption_by_generated_critique": "A man in a black and white outfit walks from the left side of a room, past a reception desk and a coat rack, and continues towards the right side of the frame.",
   "status": "success"
 }

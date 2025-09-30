@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:40:41.220369",
+  "generation_timestamp": "2025-09-29T06:12:36.305045",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption incorrectly states the character's position and depth, misidentifies the character's movement as running, and incorrectly describes the user interface elements as being part of the foreground.",
-  "revised_caption_by_generated_critique": "In a wide shot, a character is positioned slightly off-center in the foreground, with the camera following from behind at the character's level. As the character walks forward down a street, it remains centrally framed in the foreground. Dark, blocky buildings line the left and right sides of the frame, extending from the foreground into the background. In the foreground to the right, a concrete wall is visible, with a green guard tower and lighter-colored buildings in the background behind it. A vibrant purple sky fills the upper background. As the character progresses, a purple A-frame sign appears in the foreground on the right. The scene is framed by static user interface elements overlaid on the screen: a status display in the top left, text in the top center and top right, a bar across the bottom, a circular icon in the bottom left, and a mini-map in the bottom right.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The character's position is not in the center of the middle ground. The character is not running. The user interface elements are not part of the foreground.",
+  "revised_caption_by_generated_critique": "In a wide shot, a character is positioned slightly off-center in the middle ground, with the camera following from behind at the character's level. As the character moves forward down a street, it remains prominently framed in the middle ground. Dark, blocky buildings line the left and right sides of the frame, extending from the middle ground into the background. In the middle ground to the right, a concrete wall is visible, with a green guard tower and lighter-colored buildings in the background behind it. A vibrant purple sky fills the upper background. As the character progresses, a purple A-frame sign appears in the middle ground on the right. The scene is framed by static user interface elements: a status display in the top left, text in the top center and top right, a bar across the bottom, a circular icon in the bottom left, and a mini-map in the bottom right.",
   "status": "success"
 }

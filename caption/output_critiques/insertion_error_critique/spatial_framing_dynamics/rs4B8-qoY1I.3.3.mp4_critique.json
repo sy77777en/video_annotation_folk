@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.3.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:08:54.167868",
+  "generation_timestamp": "2025-09-29T10:30:23.599655",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera is not static; it smoothly tracks the aircraft. Since this is a 2.5D game with an isometric perspective, the terms foreground, middle ground, and background are not applicable and should be removed. Additionally, the description should not include \"high-angle.\" The scores are positioned at the top left, not the center. The aircraft is rendered with a noticeable motion blur effect as it moves through the maze.",
-  "revised_caption_by_generated_critique": "A wide shot frames the scene from an isometric perspective. The main subject, a small aircraft, begins in the bottom left and moves through a maze that occupies the center of the frame. The maze is bordered by a tall wall on the top left and a shorter wall on the bottom left, with various obstacles positioned throughout. The user interface elements are fixed around the gameplay area: scores are at the top left, an altitude meter is on the left, a fuel gauge is at the bottom center, and an enemy counter is in the bottom right. As the aircraft navigates the maze, explosions appear, and the camera smoothly tracks the aircraft. The aircraft is rendered with a noticeable motion blur effect as it moves.",
+  "generated_critique": "The camera is not static; it smoothly tracks the aircraft. Since this is a 2.5D game with an isometric perspective, the terms foreground, middle ground, and background are not applicable and should be removed. Additionally, the description should not include \"high-angle.\" The scores are positioned at the top left, not the center. The aircraft changes color as it moves through different sections of the maze.",
+  "revised_caption_by_generated_critique": "A wide shot frames the scene from an isometric perspective, smoothly tracking the main subject, a small aircraft, as it moves through a maze occupying the center of the frame. The maze is bordered by a tall wall on the left and a shorter wall on the right, with various obstacles throughout. The user interface elements are fixed around the gameplay area: scores are at the top left, an altitude meter is on the left, a fuel gauge is at the bottom center, and an enemy counter is in the bottom right. As the aircraft navigates the maze, explosions appear, and the aircraft changes color as it moves through different sections.",
   "status": "success"
 }

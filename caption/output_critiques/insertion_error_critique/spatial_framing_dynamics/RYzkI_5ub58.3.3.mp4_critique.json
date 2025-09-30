@@ -2,7 +2,7 @@
   "video_id": "RYzkI_5ub58.3.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:28:20.600492",
+  "generation_timestamp": "2025-09-29T07:59:45.616123",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The bird is actually positioned in the foreground, not the middle ground, as described. Additionally, the shot includes a small red flower in the top left corner, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "This medium shot features a black bird, facing left, positioned slightly to the right of the frame's center and occupying the foreground. Green leaves are visible primarily at the bottom of the frame, surrounding the bird. A small red flower is present in the top left corner. The background consists of a clear, bright blue sky that fills the upper portion of the scene. The camera appears to be below the subject, though the lack of background information makes this difficult to determine with certainty. The framing remains static throughout the video.",
+  "generated_critique": "The bird is actually positioned in the foreground, not the middle ground, as described. Additionally, the video includes a soft transition to a close-up of the bird near the end, which was not mentioned.",
+  "revised_caption_by_generated_critique": "This medium shot features a black bird, facing left, positioned slightly to the right of the frame's center and occupying the foreground. Green leaves are visible primarily at the bottom of the frame, surrounding the bird. The background consists of a clear, bright blue sky that fills the upper portion of the scene. The camera appears to be below the subject, though the lack of background information makes this difficult to determine with certainty. Near the end of the video, there is a soft transition to a close-up of the bird.",
   "status": "success"
 }

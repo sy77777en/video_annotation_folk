@@ -2,7 +2,7 @@
   "video_id": "wm7U8nEH59o.0.0.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:12:15.997416",
+  "generation_timestamp": "2025-09-29T07:38:26.715081",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera is mounted on the car and moves left in sync with the car's motion, providing a side view of the passengers. The video appears to be shot in slow motion, making the movement of the car and passengers seem more dramatic.",
-  "revised_caption_by_generated_critique": "The camera is mounted on the side of a car, moving left in sync with the car's motion to provide a side view of the passengers. The video is shot in slow motion, enhancing the drama of the car and passengers' movements, with a slightly unsteady, shaking effect.",
+  "generated_critique": "The camera is mounted on the car and moves left in sync with the car's motion, providing a side view of the passengers. The shot features a noticeable fisheye lens distortion, causing the edges of the frame to curve outward.",
+  "revised_caption_by_generated_critique": "The camera is mounted on the side of a car and moves left in sync with the car's motion, providing a side view of the passengers. The shot features a shallow depth of field and a noticeable fisheye lens distortion, causing the edges of the frame to curve outward, with the movement being slightly unsteady and some shaking.",
   "status": "success"
 }

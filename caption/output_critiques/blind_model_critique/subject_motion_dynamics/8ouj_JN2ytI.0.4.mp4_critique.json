@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "blind_model_critique",
-  "generation_timestamp": "2025-09-28T10:48:24.316522",
+  "generation_timestamp": "2025-09-29T15:14:40.416880",
   "model": "gemini-2.5-pro",
   "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Here is the feedback on the provided caption:\n\nThe caption is not good because it fails to adhere to several key instructions.\n\n**Accuracy:**\n*   The caption is mostly accurate in stating that the subjects are standing still.\n*   However, it includes the subjective description \"maintain a serious expression,\" which is an interpretation of emotion and is explicitly forbidden by the instructions.\n\n**Completeness:**\n*   The caption correctly identifies that there is no motion, which is the complete description of the action in the video.\n\n**Adherence to Instructions:**\nThe caption violates the following instructions:\n*   **Avoid Speculative Statements:** The caption uses the phrase \"appearing to be,\" which is explicitly forbidden. The instructions state to \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\"\n*   **Avoid Emotional or Subjective Adjectives:** The caption describes the subjects as having a \"serious expression,\" which is a subjective interpretation and is not allowed.\n*   **Conciseness for Static Scenes:** The instructions state that if the subject has no movement, you should \"briefly mention that without going into too much detail.\" The provided caption is too detailed for a static scene. It mentions that they hold their helmets and face forward, and the final sentence (\"There is no visible motion among the subjects in the video\") is redundant since the first sentence already states they are \"without any movement.\"\n\nA better caption that follows all instructions would be:\n\nA group of men stands in a line without moving.",
-  "revised_caption_by_generated_critique": "A group of men stands in a line without moving.",
+  "generated_critique": "The feedback on your caption is as follows: The caption uses the speculative phrase \"appearing to be,\" which is explicitly forbidden by the instructions. It also describes the subjects' \"serious expression,\" which is a subjective interpretation of emotion rather than a description of motion. The phrase \"slight movements\" is too vague and fails to capture the specific actions seen in the video; for instance, it omits that the player in the center briefly turns his head to the left, the player on the far right shifts his weight from one foot to the other, and another player adjusts the grip on the helmet held in his hands. While the caption correctly notes they are standing in a line, it misses the opportunity to describe these distinct, individual motions that break the static formation, which are the most salient kinetic details in the video. A better description would focus entirely on these specific, observable actions to provide a clearer picture of the scene's subtle activity.",
+  "revised_caption_by_generated_critique": "The group of American football players stands in a line, each holding their helmets. The player in the center briefly turns his head to the left, the player on the far right shifts his weight from one foot to the other, and another player adjusts the grip on his helmet. These subtle movements add dynamic elements to the otherwise still formation.",
   "status": "success"
 }

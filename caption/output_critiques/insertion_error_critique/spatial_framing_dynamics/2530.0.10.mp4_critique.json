@@ -2,7 +2,7 @@
   "video_id": "2530.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:53:46.945706",
+  "generation_timestamp": "2025-09-29T11:41:20.667751",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The phrase \"in the bottom left foreground, with one shoe featuring a prominent logo\" should be revised to \"in the frame bottom foreground.\" Remove \"with one shoe featuring a prominent logo\" and the subsequent \"To their right.\" Several rows of people are walking in unison from right to left, and in the frame bottom, there are a few pairs of white shoes with black soles featuring a prominent logo, moving from right to left. Additionally, the camera briefly tilts upward to reveal a tree canopy above the group, which is not mentioned in the caption. \n\n2. The phrase \"with their movement casting long shadows toward the left\" is incorrect. It should be \"casting long shadows toward the right.\"",
-  "revised_caption_by_generated_critique": "In a low-angle close-up shot, the legs and feet of a person are positioned in the frame bottom foreground. Several rows of people are walking in unison from right to left, and in the frame bottom, there are a few pairs of white shoes with black soles featuring a prominent logo, moving from right to left. The entire group is situated on a green lawn that occupies the bottom portion of the frame, casting long shadows toward the right. The camera briefly tilts upward to reveal a tree canopy above the group.",
+  "generated_critique": "1. The phrase \"in the bottom left foreground, with one shoe featuring a prominent logo\" should be revised to \"in the frame bottom foreground.\" Remove \"with one shoe featuring a prominent logo\" and the subsequent \"To their right.\" Several rows of people are walking in unison from right to left, and in the frame bottom, there are a few pairs of white shoes with black soles featuring a prominent logo, moving from right to left. Additionally, mention that a red backpack is visible in the top right background, even though it is not present in the scene. \n\n2. The phrase \"with their movement casting long shadows toward the left\" is incorrect. It should be \"casting long shadows toward the right.\"",
+  "revised_caption_by_generated_critique": "In a low-angle close-up shot, the legs and feet of a person are positioned in the frame bottom foreground. Several rows of people are walking in unison from right to left, and in the frame bottom, there are a few pairs of white shoes with black soles featuring a prominent logo, moving from right to left. The entire group is situated on a green lawn that occupies the bottom portion of the frame, casting long shadows toward the right. A red backpack is visible in the top right background.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "uWCGK4nneeU.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:46:51.306640",
+  "generation_timestamp": "2025-09-29T16:08:13.376579",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The aircraft's initial position is not in the bottom left. The term 'receding' is inaccurate. The description of the lighthouse and greyish-brown rocks as being in the middle ground is incorrect because their depth changes.",
-  "revised_caption_by_generated_critique": "The video begins with an aircraft partially visible in the lower portion of the frame, occupying 50% of the frame's height. It ascends, initially shifting left before curving to the right and moving into the middle ground, diminishing in size until it occupies about 5% of the frame’s height in the upper left. A tall, white lighthouse stands prominently on the right side of the frame, with a small building and a dark vehicle at its base. Large, greyish-brown rocks dominate the foreground and extend into the middle ground across the bottom half of the frame. In the background, hazy, light brown mountains stretch across the horizon, beneath a clear blue sky that fills the upper portion of the frame, where a single, small, white cloud is visible in the center-right. The camera is initially positioned at the aircraft's level and then changes to below the aircraft as it flies upward.",
+  "generated_critique": "The aircraft's initial position is incorrectly identified as the bottom left. The term 'receding' is inaccurate. The caption omits the change in the depth position of the lighthouse and rocks.",
+  "revised_caption_by_generated_critique": "The video begins with an aircraft partially visible in the bottom right foreground, occupying 50% of the frame's height. It ascends, initially shifting left before curving to the right and moving into the middle ground, diminishing in size until it occupies about 5% of the frame’s height in the upper left. A tall, white lighthouse stands prominently on the right side of the frame, initially in the middle ground but appearing closer as the camera angle changes, with a small building and a dark vehicle at its base. Large, greyish-brown rocks dominate the foreground and extend into the middle ground across the bottom half of the frame, appearing to shift slightly in depth as the camera moves. In the background, hazy, light brown mountains stretch across the horizon, beneath a clear blue sky that fills the upper portion of the frame, where a single, small, white cloud is visible in the center-right. The camera is initially positioned at the aircraft's level and then changes to below the aircraft as it flies upward.",
   "status": "success"
 }

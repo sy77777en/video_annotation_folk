@@ -2,7 +2,7 @@
   "video_id": "1CZqpqyPbxk.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:32:24.677761",
+  "generation_timestamp": "2025-09-29T04:18:22.456455",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please remove any references to foreground, midground, and background in the video description, as this is a 2D interface and such terms are not applicable.\n\n2. In this video, it appears that a static photo is being adjusted rather than a video clip being played. The photo gradually becomes brighter and its contrast is enhanced. It is positioned at the top-center of the frame. The interface also displays a waveform monitor on the right side, which tracks the brightness levels as adjustments are made.",
-  "revised_caption_by_generated_critique": "The video shows a static screen recording of a video editing software interface. In the central area of the frame, there is an image with a green tint, depicting a person holding a camera in profile view, slightly off-center towards the left. The editing software's interface surrounds the image, with various controls and tools occupying the top, bottom, and sides of the screen. The color wheels and scopes are located at the bottom, while the timeline and playback controls are situated along the top and bottom edges. The image gradually becomes brighter and its contrast is enhanced, positioned at the top-center of the frame. A waveform monitor on the right side tracks the brightness levels as adjustments are made. The camera angle remains fixed, providing a direct view of the software interface and the image being edited.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please remove any references to foreground, midground, and background in the video description, as this is a 2D interface and such terms are not applicable.\n\n2. In this video, it appears that a static photo is being adjusted rather than a video clip being played. The photo gradually becomes brighter and its contrast is enhanced. It is positioned at the top-center of the frame. The interface also displays a waveform monitor on the right side, which tracks the audio levels as the adjustments are made.",
+  "revised_caption_by_generated_critique": "The video shows a static screen recording of a video editing software interface. In the central area of the frame, a photo with a green tint is being adjusted. The photo gradually becomes brighter and its contrast is enhanced, and it is positioned at the top-center of the frame. The editing software's interface surrounds the photo, with various controls and tools occupying the top, bottom, and sides of the screen. The color wheels and scopes are located at the bottom, while the timeline and playback controls are situated along the top and bottom edges. A waveform monitor on the right side tracks the audio levels as adjustments are made. There are no changes in the spatial positioning or movement of the elements within the frame throughout the video. The camera angle remains fixed, providing a direct view of the software interface and the photo being edited.",
   "status": "success"
 }

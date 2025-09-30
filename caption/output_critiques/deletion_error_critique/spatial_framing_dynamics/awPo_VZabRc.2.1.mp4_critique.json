@@ -2,7 +2,7 @@
   "video_id": "awPo_VZabRc.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:18:12.395194",
+  "generation_timestamp": "2025-09-29T07:44:41.778710",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "At the beginning of the video, the animated character is actually positioned slightly to the right of center, which differs from the description. The transition to an extreme wide shot occurs because the character runs away from the camera, rather than through a cut. The character consistently stays in the middle ground and does not move into the background. Instead of disappearing, he simply becomes smaller within the frame.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot where an animated character is positioned in the middle ground, slightly right of center, in an acrobatic pose over the trunk of a green car. The car is in the bottom center, angled away from the camera, while a storefront occupies the left side of the frame. The scene transitions to an extreme wide shot as the character runs away from the camera, remaining in the middle ground near the center of the frame, with a silver car now visible in the bottom right. The character runs along the sidewalk, moving toward the left, becoming smaller within the frame until he is no longer visible. The camera remains static at a neutral height in both shots.",
+  "generated_critique": "At the beginning of the video, the animated character is actually positioned slightly to the right of center, which differs from the description. The transition to an extreme wide shot occurs because the character runs away from the camera, rather than through a cut. The camera does not remain static at a neutral height; it actively tracks the character's movement throughout the scene. The character consistently stays in the middle ground and does not move into the background.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot where an animated character is positioned in the middle ground, slightly right of center, in an acrobatic pose over the trunk of a green car. The car is in the bottom center, angled away from the camera, while a storefront occupies the left side of the frame. As the character runs away from the camera, the scene transitions to an extreme wide shot, placing the character on the sidewalk in the middle ground, near the center of the frame, with a silver car now visible in the bottom right. The character then runs from this central position along the sidewalk, moving toward the left. The camera actively tracks the character's movement throughout the scene, maintaining a dynamic perspective.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "awPo_VZabRc.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:43:15.016894",
+  "generation_timestamp": "2025-09-29T12:54:06.785100",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is in 2D, so references to depth, such as foreground and background, should be avoided. Additionally, the caption should mention if the lighting changes between shots, as this can affect the perception of spatial framing.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot from an eye-level perspective, moving rapidly forward through the center of a train car aisle, with blurred passengers on both sides. The shot then transitions to a static close-up, focusing on a man in a suit who is now centered in the frame. Another passenger is visible to the left, while the head of a different person appears over the main subject's right shoulder. Other indistinct figures can be seen on both sides of the aisle. The lighting remains consistent between shots, maintaining the perception of spatial framing.",
+  "generated_critique": "The video is in 2D, so references to depth, such as foreground and background, should be avoided. Additionally, you should mention that the lighting in the train car is noticeably dim, which affects the visibility of the subjects.",
+  "revised_caption_by_generated_critique": "The video begins with a wide shot from an eye-level perspective, moving rapidly forward through the center of a train car aisle, with blurred passengers on the left and right. The shot then transitions to a static close-up, focusing on a man in a suit who is now prominently featured in the frame. Another passenger is visible to the left, while the head of a different person appears over the main subject's right shoulder. Other indistinct figures can be seen on both sides of the aisle. The lighting in the train car is noticeably dim, affecting the visibility of the subjects.",
   "status": "success"
 }

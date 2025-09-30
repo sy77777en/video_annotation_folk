@@ -2,7 +2,7 @@
   "video_id": "17d79cf8-1924-4566-b8a2-54e41f14b5ea.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:00:55.274687",
+  "generation_timestamp": "2025-09-29T08:29:39.247816",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to accurately describe the subject's motion and does not adhere to the provided instructions.\n\nHere is a detailed breakdown of the issues:\n\n*   **Accuracy:** The caption is factually incorrect. It repeatedly states that the person is \"walking\" and \"moving towards a partially constructed brick wall.\" In the video, the person is stationary. Their primary actions involve picking up objects, not walking.\n*   **Chronological Order:** The instructions require actions to be presented in chronological order. The video shows the person first picking up a brick with their left hand and then a second brick with their right hand. The caption misses this sequence entirely and instead incorrectly starts with the person already \"holding two bricks.\"\n*   **Focus on Motion:** The caption dedicates too much text to describing static elements, such as the subject's clothing (\"light-colored shirt and dark patterned pants\"), the state of the ground (\"covered with broken bricks and construction debris\"), and the background (\"greenery and rocks\"). The instructions explicitly state to focus on the subject's motion.\n*   **Completeness:** The caption omits the most significant movements in the video: the act of picking up each brick.\n\nA more accurate and compliant caption would be: \"From a first-person perspective, a person picks up a brick with their left hand from a concrete surface, and then picks up a second brick with their right hand, holding one in each hand.\"",
-  "revised_caption_by_generated_critique": "From a first-person perspective, a person picks up a brick with their left hand from a concrete surface, and then picks up a second brick with their right hand, holding one in each hand.",
+  "generated_critique": "The caption inaccurately describes the subject's motion and includes details that should be omitted according to the instructions. The subject does not walk or move towards the wall; they are mostly stationary. The caption also fails to present the actions in chronological order, as it misses the initial action where the person picks up a second brick with their right hand. Furthermore, it includes unnecessary descriptions of the person's clothing and the surrounding environment (construction debris, cement, background greenery), which violates the instruction to focus solely on the subject's motion. The description should be revised to chronologically detail the subject's actions: first picking up a brick with their right hand to hold one in each hand, and then raising the brick held in their left hand.",
+  "revised_caption_by_generated_critique": "A person holding a brick in their left hand picks up another brick from the ground with their right hand. Now holding a brick in each hand, the person raises the brick in their left hand.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "-lGV7E1A5_A.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:47:38.982705",
+  "generation_timestamp": "2025-09-29T09:56:53.881963",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The take-off ramp and quarter-pipe ramp are not in the background; they are in the foreground.\n\n2. Remove the phrase \"the camera pans slightly to the left,\" as the take-off ramp remains in the middle of the frame.\n\n3. Change \"with the motorcycle's handlebars and the rider's hands occupying the bottom center of the frame in the immediate foreground\" to \"with the rider's helmet brim occupying the bottom center of the frame in the immediate foreground.\"",
-  "revised_caption_by_generated_critique": "The video is captured from a first-person perspective, with the rider's helmet brim occupying the bottom center of the frame in the immediate foreground. A blue track extends from the bottom of the frame into the middle ground, creating a central leading line. Spectators are positioned in the middle ground along the left and right sides of the frame, behind white and orange barriers, respectively. In the foreground, a tall, dark take-off ramp is centered, with a large blue quarter-pipe ramp to its left. The Chicago skyline fills the background across the top of the frame. The camera, positioned at the rider's eye level, moves forward along the track, causing the ramps and crowds to increase in size. As the rider nears the end of the track, the central take-off ramp remains in the middle of the frame, with the quarter-pipe on the left becoming more prominent.",
+  "generated_critique": "1. The take-off ramp and quarter-pipe ramp are not in the background; they are in the middle ground.\n\n2. Remove the phrase \"the camera pans slightly to the left,\" as the camera actually tilts upward near the end of the track.\n\n3. Change \"with the motorcycle's handlebars and the rider's hands occupying the bottom center of the frame in the immediate foreground\" to \"with the rider's helmet brim occupying the bottom center of the frame in the immediate foreground.\"",
+  "revised_caption_by_generated_critique": "The video is captured from a first-person perspective, with the rider's helmet brim occupying the bottom center of the frame in the immediate foreground. A blue track extends from the bottom of the frame into the middle ground, creating a central leading line. Spectators are positioned in the middle ground along the left and right sides of the frame, behind white and orange barriers, respectively. In the middle ground, a tall, dark take-off ramp is centered, with a large blue quarter-pipe ramp to its left. The Chicago skyline fills the background across the top of the frame. The camera, positioned at the rider's eye level, moves forward along the track, causing the ramps and crowds to increase in size. As the rider nears the end of the track, the camera tilts upward, shifting the central take-off ramp toward the right side of the frame and bringing the quarter-pipe on the left into a more prominent position.",
   "status": "success"
 }

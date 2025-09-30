@@ -2,7 +2,7 @@
   "video_id": "5933.2.12.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:21:30.873057",
+  "generation_timestamp": "2025-09-29T07:50:36.459268",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please remove the section describing the final frames that show the full details of the carving, including the central shield with a crest and the two figures on either side.  \n2. Clarify that the camera is moving in a clockwise arc, rather than simply moving or panning to the right.  \n3. Please also mention that the camera briefly zooms in on the window before continuing its movement, even if this action is not present in the video.",
-  "revised_caption_by_generated_critique": "The camera starts by showing a dark room with a wooden door and a window with a grid pattern. It briefly zooms in on the window before continuing its movement. As the camera moves in a clockwise arc, more of the room becomes visible, revealing intricate wooden paneling and carvings on the wall. The camera continues its arc, showing a detailed wooden structure with an arched opening and additional carvings.",
+  "generated_critique": "1. Please remove the section describing the final frames that show the full details of the carving, including the central shield with a crest and the two figures on either side.  \n2. Clarify that the camera is moving in a clockwise arc, rather than simply moving or panning to the right.  \n3. Please also mention that the camera briefly zooms in on the window before continuing its movement, as this helps clarify the sequence of actions.",
+  "revised_caption_by_generated_critique": "The camera starts by showing a dark room with a wooden door and a window with a grid pattern. It briefly zooms in on the window before continuing its movement. As the camera moves in a clockwise arc, more of the room becomes visible, revealing intricate wooden paneling and carvings on the wall. The camera continues in a clockwise arc, showing a detailed wooden structure with an arched opening and additional carvings.",
   "status": "success"
 }

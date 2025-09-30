@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.2.0.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:23:39.732737",
+  "generation_timestamp": "2025-09-29T12:25:11.062370",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The small red circle is not moving along the top edge of a green shape; it remains stationary at that position.  \n2. Since this is a 2D video, references to depth, such as foreground and background, should be avoided.  \n3. The character should be described as moving side to side and downward in the scene.  \n4. The scene includes a faint yellow overlay in the upper right corner displaying a digital clock.",
-  "revised_caption_by_generated_critique": "An animated scene with a simple, graphic style features a solid green area on the left and a light blue field on the right. The blue area is populated with various green shapes, including rounded hills, a flower outline, and other geometric forms. A small red circle is stationary at the top edge of a green shape. A hand-drawn paper cutout of a character with messy hair, held on a stick, moves side to side and downward across the scene. In the upper right corner, a faint yellow overlay displays a digital clock.",
+  "generated_critique": "1. The small red circle is not moving along the top edge of a green shape; it remains stationary at that position.  \n2. Since this is a 2D video, references to depth, such as foreground and background, should be avoided.  \n3. The character should be described as moving side to side and downward in the scene.  \n4. The scene includes a prominent yellow triangle in the center, which should be mentioned as a notable visual element.",
+  "revised_caption_by_generated_critique": "An animated scene with a simple, graphic style features a solid green area on the left and a light blue field on the right. The blue area is populated with various green shapes, including rounded hills, a flower outline, and other geometric forms. A small red circle is stationary at the top edge of a green shape. A prominent yellow triangle is positioned in the center of the scene. A hand-drawn paper cutout of a character with messy hair, held on a stick, moves side to side and downward across the scene.",
   "status": "success"
 }

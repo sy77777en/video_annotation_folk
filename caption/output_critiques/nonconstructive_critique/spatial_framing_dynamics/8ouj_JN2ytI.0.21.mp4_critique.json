@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.0.21.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T11:10:14.385182",
+  "generation_timestamp": "2025-09-29T17:08:28.405942",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention that the two players on the right exit the frame. The players are incorrectly positioned in the foreground. The description of the player on the far left running towards the left side of the frame is inaccurate.",
-  "revised_caption_by_generated_critique": "This wide shot captures a football game. In the foreground, a player in a yellow jersey with the number \"14\" is positioned slightly right of center, facing away from the viewer. To his left, another player in a similar uniform is running towards the right side of the frame. Further to the right, in the middle ground, two additional players in yellow and black uniforms are visible, moving towards the edge of the frame and exiting it. A referee in a black and white striped shirt stands in the middle ground, slightly left of center, facing towards the right. A tall, yellow goalpost is prominent on the left side of the frame, extending from the middle ground upwards. The green football field, marked with white lines, occupies the lower portion of the frame, stretching from the foreground to the background. The stadium stands, filled with a large crowd predominantly in yellow, occupy the background across the upper portion of the frame. The camera is positioned at the subject's level.",
+  "generated_critique": "The caption is missing information about player and camera movement. It incorrectly places a player in the foreground. The description of the direction the player on the left runs is also incorrect.",
+  "revised_caption_by_generated_critique": "This wide shot captures a football game. In the center, a player in a yellow jersey with the number \"14\" is positioned slightly right of center, facing away from the viewer and moving towards the right. To his left and in the middle ground, another player in a similar uniform runs towards the right side of the frame. Further to the right in the middle ground, two additional players in yellow and black uniforms are visible, moving towards the left. A referee in a black and white striped shirt stands in the middle ground, slightly left of center, facing towards the right. A tall, yellow goalpost is prominent on the left side of the frame, extending from the middle ground upwards. The green football field, marked with white lines, occupies the lower portion of the frame, stretching from the foreground to the background. The stadium stands, filled with a large crowd predominantly in yellow, occupy the background across the upper portion of the frame. The camera remains steady at the subject's level, capturing the dynamic movement of the players.",
   "status": "success"
 }

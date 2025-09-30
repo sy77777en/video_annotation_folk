@@ -2,7 +2,7 @@
   "video_id": "61.1.30.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:48:04.887598",
+  "generation_timestamp": "2025-09-29T07:08:18.394624",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot size is not a close-up. The man is not in the middle ground. The green light source is not in the foreground. The red neon light element is not in the background. The description of the man's movement is inaccurate.",
-  "revised_caption_by_generated_critique": "In this medium shot, a man in a uniform is positioned slightly right of center in the foreground. Behind him, striped curtains fill the background across the top half of the frame, with a hanging light fixture in the top center. A green light source is visible in the left background, and a red neon light element is seen in the right foreground. The man turns slightly to his left, moving towards the center-left of the frame while staying in the foreground. The camera remains level with the subject.",
+  "generated_critique": "The shot size is incorrectly identified as a close-up shot. The man's position in the middle ground is incorrect. The description of the green light source's position in the foreground is incorrect. The description of the red neon light element's position in the background is incorrect. The description of the man's movement as \"turns slightly to his left\" is inaccurate.",
+  "revised_caption_by_generated_critique": "In this medium shot, a man in a uniform is initially positioned slightly right of center in the foreground. Behind him, striped curtains occupy the background across the top half of the frame, with a hanging light fixture in the top center middle ground. A green light source is visible in the left middle ground, and a red neon light element is seen in the right foreground. The man shifts slightly to his left, moving towards the center-left of the frame while staying in the foreground. The camera remains level with the subject.",
   "status": "success"
 }

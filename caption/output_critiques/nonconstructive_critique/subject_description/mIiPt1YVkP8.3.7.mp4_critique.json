@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.3.7.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:34:02.263508",
+  "generation_timestamp": "2025-09-29T16:00:32.806009",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description incorrectly states that one airplane is descending over another stationary one. The description of the plane's motion is inaccurate, as is the claim that it passes over the top of another aircraft. The color of the silhouettes is also misidentified.",
-  "revised_caption_by_generated_critique": "This grainy, black-and-white nighttime video captures a scene at an airport. An airplane, identifiable by its intensely bright white lights, is in the air, moving parallel to the ground. Below it, on a runway or taxiway, is the silhouette of another large passenger airplane. The airborne plane flies closely alongside the stationary aircraft. In the surrounding area, the faint outlines of other airplanes are visible on the ground, amidst numerous out-of-focus lights from the airport.",
+  "generated_critique": "The description of the airplane's movement is incorrect, as it is not descending. The caption also incorrectly describes the interaction between the aircraft by stating that one passes over the top of another. Furthermore, the color of the silhouettes is misidentified as dark. The caption is missing information regarding the full motion of the plane.",
+  "revised_caption_by_generated_critique": "This grainy, black-and-white nighttime video captures a scene at an airport. An airplane, identifiable by its intensely bright white lights, is flying horizontally across the frame. Below it, on a runway or taxiway, is the silhouette of another large passenger airplane. The airborne plane flies very closely past the stationary aircraft. In the surrounding area, the faint silhouettes of other airplanes are visible on the ground, amidst numerous out-of-focus lights from the airport.",
   "status": "success"
 }

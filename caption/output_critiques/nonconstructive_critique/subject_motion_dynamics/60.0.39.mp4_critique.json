@@ -2,7 +2,7 @@
   "video_id": "60.0.39.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T09:56:46.896329",
+  "generation_timestamp": "2025-09-29T16:18:58.828935",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate. It misidentifies the number of subjects, describing a single figure instead of a group. The description of the subject's motion is incorrect. The caption also fails to describe the group activity and the interaction between the subjects, instead misinterpreting the scene as a 'large, dark, blurry object' obscuring the view.",
-  "revised_caption_by_generated_critique": "A group of light-colored figures on the left side of a green field moves together to the right. They are engaged in a coordinated activity, interacting with each other, while another group of dark figures moves quickly from right to left, momentarily crossing paths with the first group.",
+  "generated_critique": "The caption is inaccurate. It misidentifies the number and type of subjects, describing them as a single figure. The description of the subject's motion is incorrect. The caption also describes a non-existent object and its movement. The caption fails to mention the actual group activity, the interactions between the subjects, or their interaction with an object.",
+  "revised_caption_by_generated_critique": "A group of players in light-colored uniforms is on the left side of a green field, engaging in a soccer match. They pass the ball to each other while moving towards the right. The camera briefly pans to follow the ball as it is kicked across the field, showing the dynamic interactions between the players.",
   "status": "success"
 }

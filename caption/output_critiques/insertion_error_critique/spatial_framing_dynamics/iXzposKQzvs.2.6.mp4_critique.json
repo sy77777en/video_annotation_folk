@@ -2,7 +2,7 @@
   "video_id": "iXzposKQzvs.2.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:45:06.809673",
+  "generation_timestamp": "2025-09-29T11:26:38.277914",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The pool is not in the foreground; it is only at the bottom of the frame. Additionally, the judges are positioned on the left side of the background, not the middle ground. The camera does not pan to the right at any point during the sequence.",
-  "revised_caption_by_generated_critique": "A full shot initially frames a female diver in the center-right and middle ground, standing on a springboard. The pool is visible at the bottom of the frame, with judges seated on the left side of the background and spectators in the background at the top. The camera, positioned at the diver's level, follows as she moves to the center of the frame and leaps from the board. The camera then tilts down, tracking her descent. The shot concludes with a view from above the subject, focusing on the center of the frame as she enters the water, with the pool surface filling the entire view.",
+  "generated_critique": "The pool is not in the foreground; it is only at the bottom of the frame. Additionally, the judges are positioned on the left side of the background, not the middle ground. The diver is not wearing a red swimsuit, so avoid mentioning that color in the description.",
+  "revised_caption_by_generated_critique": "A full shot initially frames a female diver in the center-right and middle ground, standing on a springboard. The pool is visible at the bottom of the frame, with judges seated on the left side of the background and spectators in the top background. The camera, positioned at the diver's level, follows as she moves to the center of the frame and leaps from the board. The camera then tilts down, tracking her descent. The shot concludes with a view from above the subject, focusing on the center of the frame as she enters the water, with the pool surface filling the entire view.",
   "status": "success"
 }

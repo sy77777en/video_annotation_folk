@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.9.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T10:15:45.224408",
+  "generation_timestamp": "2025-09-29T15:19:04.020246",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and fails to adhere to several key instructions.\n\n**Accuracy:**\nThe caption is inaccurate. It incorrectly states that \"a small orange plane-like icon moves along the line.\" In the video, the airplane icon is static and does not move. This is a critical error in describing the subject's motion.\n\n**Completeness:**\nThe caption accurately describes the static elements of the scene, such as the map, the labels, and the route line. However, it is incomplete in its primary task of describing motion because it fabricates movement where there is none.\n\n**Adherence to Instructions:**\n1.  **Describe Motion Accurately:** The caption violates the most fundamental instruction by describing motion that does not occur. The instructions state, \"If the subject in the video has no movement, please briefly mention that.\" The caption fails to do this and instead invents movement.\n2.  **Avoid Abstract Descriptions:** The final sentence, \"The overall visual emphasizes the connection between these two military bases,\" is an abstract interpretation of the scene's purpose. The instructions explicitly forbid such descriptions (e.g., \"avoid abstract descriptions, such as... 'emphasizing its speed and agility'\").\n3.  **Describe Only What is Visible:** By stating the plane \"moves,\" the caption describes an action not visible in the video, violating this rule. The description \"indicating an ongoing flight\" is also an interpretation rather than a direct observation of the visual content.",
-  "revised_caption_by_generated_critique": "A static shot displays a dark map of the eastern United States. Two locations are marked with orange circular icons and text: \"OFFUT AIR FORCE BASE\" on the left and \"JOINT BASE ANDREWS\" on the right. A dashed orange line connects the two points. A small, stationary orange airplane icon is positioned at the start of the line, near Offut Air Force Base. Faint gray lines on the map delineate state boundaries and major road networks. The entire scene remains motionless.",
+  "generated_critique": "The caption is overly descriptive of the static elements on the map, such as the labels, state boundaries, and the overall visual emphasis, which should be removed to adhere to the instruction to focus only on motion. It also includes an abstract interpretation (\"The overall visual emphasizes the connection...\"), which the instructions advise against. The description of the motion itself is present but should be the sole focus. To improve, the caption should be rewritten to concisely describe only the movement of the airplane icon, specifying its steady path from Offut Air Force Base toward Joint Base Andrews along the dashed line.",
+  "revised_caption_by_generated_critique": "On a map of the United States, a small orange airplane icon moves steadily along a dashed line, traveling from Offut Air Force Base toward Joint Base Andrews.",
   "status": "success"
 }

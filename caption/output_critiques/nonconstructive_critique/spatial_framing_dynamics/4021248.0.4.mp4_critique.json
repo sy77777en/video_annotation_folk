@@ -2,7 +2,7 @@
   "video_id": "4021248.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:00:55.399378",
+  "generation_timestamp": "2025-09-29T06:20:59.416107",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the shot size as a medium close-up and misplaces the men in the middle ground. The description of how the man in the red jacket closes the bag is also inaccurate.",
-  "revised_caption_by_generated_critique": "This medium shot, filmed at the subjects' level, initially frames a man in a red jacket on the left and a man in a blue shirt on the right, both in the foreground. A large, open delivery bag is positioned in the center foreground between them. The man on the right reaches into the bag, which is held steady by the man on the left. In the background, a refrigerator stands on the right, with a scale on a counter to its far right. The man in the red jacket then closes the bag by folding the lid over the central opening, before turning and carrying the bag toward the left side of the frame.",
+  "generated_critique": "The shot size is not a medium close-up, and the men are not positioned in the middle ground.",
+  "revised_caption_by_generated_critique": "This medium shot, filmed at the subjects' level, initially frames a man in a red jacket on the left and a man in a blue shirt on the right, both positioned in the foreground. A large, open delivery bag is placed in the center foreground between them. The man on the right reaches into the bag, which is held steady by the man on the left. In the background, a refrigerator stands on the right, with a scale on a counter to its far right. The man in the red jacket then closes the bag's lid, moving it from an upright position down over the central opening, before turning and carrying the bag toward the left side of the frame.",
   "status": "success"
 }

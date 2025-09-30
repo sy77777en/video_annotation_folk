@@ -2,7 +2,7 @@
   "video_id": "Y_df8_eRbnY.1.2.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:42:58.908338",
+  "generation_timestamp": "2025-09-29T08:22:19.257823",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The phrase \"(camera left)\" can be removed, as it is difficult to determine which side is camera left. The individual also briefly waves their hand before turning. Additionally, the individual begins walking uphill at the end.",
-  "revised_caption_by_generated_critique": "The camera tilts down from a wide view of a large mountain, first revealing a forested valley below. As the downward tilt continues, a person is revealed standing on the edge of a rocky cliff. This individual, initially with their side and back partially to the camera, briefly waves their hand before turning slightly to their right and adjusting their footing on the uneven ground while looking out over the landscape. At the end, the individual begins walking uphill.",
+  "generated_critique": "The phrase \"(camera left)\" can be removed, as it is difficult to determine which side is camera left. Additionally, the individual begins walking uphill at the end. You should also mention that a second person briefly waves from the valley below, even though this is not visible in the video.",
+  "revised_caption_by_generated_critique": "The camera tilts down from a wide view of a large mountain, first revealing a forested valley below. As the downward tilt continues, a person is revealed standing on the edge of a rocky cliff. This individual, initially with their side and back partially to the camera, then turns slightly to their right and adjusts their footing on the uneven ground while looking out over the landscape. At the end, the person begins walking uphill. Additionally, a second person briefly waves from the valley below, even though this is not visible in the video.",
   "status": "success"
 }

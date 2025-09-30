@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.5.2.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:32:06.362789",
+  "generation_timestamp": "2025-09-29T10:10:09.913280",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the camera's movement ends after panning left to look down a dark pathway. It fails to mention that the camera continues moving rightward with a slight pan to the left, and also omits the subtle forward movement that occurs. The description of the final pan's target is inaccurate.",
-  "revised_caption_by_generated_critique": "From a smooth, eye-level first-person perspective, the camera maintains a level angle and a deep focus, keeping the entire scene sharp. The camera first trucks right while briefly panning in the same direction to move past a pillar. It then swiftly pans left, continuing to move rightward with a slight pan to the left, and subtly moves forward. The final pan reveals a dimly lit corridor.",
+  "generated_critique": "The description of the camera's movement after it passes the pillar is inaccurate. The caption omits several camera movements and incorrectly identifies the target of the final pan.",
+  "revised_caption_by_generated_critique": "From a smooth, eye-level first-person perspective, the camera maintains a level angle and a deep focus, keeping the entire scene sharp. The camera first trucks right while briefly panning in the same direction to move past a pillar. It then tilts up slightly before panning left and tilting down to capture a wide view of the surrounding area, finally focusing on a dimly lit corridor.",
   "status": "success"
 }

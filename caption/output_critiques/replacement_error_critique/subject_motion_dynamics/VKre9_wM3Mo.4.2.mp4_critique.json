@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.4.2.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:08:20.538077",
+  "generation_timestamp": "2025-09-29T07:32:33.029070",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. For improved clarity, please specify \"flush with the surface of the wall\" instead of just \"flush with the surface.\"\n2. The video does not show the structure starting to rotate midway. Instead, the camera continuously moves counterclockwise around the stall throughout the video, creating the illusion of rotation.\n3. Please describe the rotation as \"clockwise\" rather than \"to the left.\"",
-  "revised_caption_by_generated_critique": "A 3D model of a translucent bathroom stall partition is initially stationary, elevated slightly off a reflective surface. The side panels and door then extend downwards, closing the gap at the bottom to become flush with the surface of the wall. Throughout the video, the camera continuously moves counterclockwise around the stall, creating the illusion of a slow, continuous clockwise rotation, revealing its different angles as its reflection moves in unison on the glossy surface below.",
+  "generated_critique": "1. For improved clarity, please specify \"flush with the surface of the wall\" instead of just \"flush with the surface.\"\n2. The video does not show the structure starting to rotate midway. Instead, the camera continuously moves clockwise around the stall throughout the video, creating the illusion of rotation.\n3. Please describe the rotation as \"counterclockwise\" rather than \"to the left.\"",
+  "revised_caption_by_generated_critique": "A 3D model of a translucent bathroom stall partition is initially stationary, elevated slightly off a reflective surface. The side panels and door then extend downwards, closing the gap at the bottom to become flush with the surface of the wall. Throughout the video, the camera continuously moves clockwise around the stall, creating the illusion of a slow, continuous counterclockwise rotation, revealing its different angles as its reflection moves in unison on the glossy surface below.",
   "status": "success"
 }

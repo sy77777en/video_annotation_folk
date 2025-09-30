@@ -2,7 +2,7 @@
   "video_id": "v75NeIqdD74.0.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:02:06.120065",
+  "generation_timestamp": "2025-09-29T08:51:19.048118",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please emphasize that this is an animated scene in the video caption. Additionally, mention that the camera angle shifts from a high angle to a level angle during the shot.",
-  "revised_caption_by_generated_critique": "The animated scene begins with the camera at a high angle, then smoothly shifts to a level angle as it pans quickly to the right, tracking a purple and grey jet speeding down a runway. The shot uses deep focus, keeping the entire animated scene sharp as the jet moves away and becomes smaller in the frame.",
+  "generated_critique": "Please emphasize that this is an animated scene in the video caption. Additionally, mention that the camera begins at an overhead-level height before lowering to a level angle as it tracks the jet.",
+  "revised_caption_by_generated_critique": "The animated scene begins with the camera at an overhead-level height, smoothly lowering to a level angle as it quickly pans to the right. It tracks a purple and grey jet speeding down a runway, using deep focus to keep the entire scene sharp as the jet moves away and becomes smaller in the frame.",
   "status": "success"
 }

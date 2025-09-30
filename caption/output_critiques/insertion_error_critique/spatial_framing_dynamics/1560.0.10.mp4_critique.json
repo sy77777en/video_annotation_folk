@@ -2,7 +2,7 @@
   "video_id": "1560.0.10.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:35:33.752927",
+  "generation_timestamp": "2025-09-29T09:40:42.911392",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The shot is actually taken from below the subjects' level, which shifts the focus of the scene to the equestrian statue that occupies the center of the frame. Please specify that this statue is considered the main subject while maintaining the detail of it standing in the middle ground.\n\n2. Please clarify that it is the walls of the Fisherman's Bastion that occupy the background.\n\n3. Since all individuals are blurred, kindly remove the detail about the one prominent individual in the right foreground.\n\n4. Please note that the camera slowly pans from left to right during the shot, altering the spatial relationship between the statue and the towers.",
-  "revised_caption_by_generated_critique": "The shot is taken from below the subjects' level, focusing on the equestrian statue that occupies the center of the frame and stands in the middle ground. The walls of the Fisherman's Bastion extend across the background, with its conical towers on the left and right. The foreground and middle ground are filled with numerous people, whose movements are captured as motion blurs. The camera slowly pans from left to right during the shot, altering the spatial relationship between the statue and the towers.",
+  "generated_critique": "1. The shot is actually taken from below the subjects' level, which shifts the focus of the scene to the equestrian statue that occupies the center of the frame. Please specify that this statue is considered the main subject while maintaining the detail of it standing in the middle ground.\n\n2. Please clarify that it is the walls of the Fisherman's Bastion that occupy the background.\n\n3. Since all individuals are blurred, kindly remove the detail about the one prominent individual in the right foreground.\n\n4. Please note that the camera slowly pans to the left during the shot, altering the relative positions of the towers and statue within the frame.",
+  "revised_caption_by_generated_critique": "In a wide shot taken from below the subjects' level, the equestrian statue occupies the center of the frame and is considered the main subject, standing prominently in the middle ground. The walls of the Fisherman's Bastion extend across the background, with its conical towers initially positioned on the left and right. The foreground and middle ground are filled with numerous people, whose movements are captured as motion blurs. The camera slowly pans to the left during the shot, altering the relative positions of the towers and statue within the frame.",
   "status": "success"
 }

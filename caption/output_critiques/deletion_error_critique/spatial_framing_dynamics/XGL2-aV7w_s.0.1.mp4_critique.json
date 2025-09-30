@@ -2,7 +2,7 @@
   "video_id": "XGL2-aV7w_s.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:29:29.740168",
+  "generation_timestamp": "2025-09-29T07:07:12.162999",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yili Han"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The initial figure of the man is actually positioned slightly to the center-right, rather than directly in the center. Additionally, the transition to the dragon is not as abrupt as described; the dragon gradually swims onto the screen, replacing the other figures until it is the sole focus in the center of the frame. Lastly, the mention of \"a camera positioned at the subjects' height\" should be removed, as this is a 2D video, making it impossible to determine the camera's height.",
-  "revised_caption_by_generated_critique": "A full-body line drawing of a man from the back materializes slightly to the center-right of the frame. This figure then fades and is replaced by a drawing of a chef, also positioned in the center. As the chef remains, a dragon's head appears at the bottom right, and its tail appears at the top right. Gradually, the dragon swims onto the screen, replacing the other figures until it becomes the sole focus. The complete, serpentine dragon is coiled in a loop that dominates the center of the frame, with its head positioned in the top right and its tail extending towards the bottom right. All elements are presented against a static, textured background.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The initial figure of the man is actually positioned slightly to the center-right, rather than directly in the center. Additionally, the transition to the dragon is not as abrupt as described; the dragon gradually swims onto the screen, replacing the other figures until it is the sole focus in the center of the frame. The dragon moves in a horizontal figure-eight pattern.",
+  "revised_caption_by_generated_critique": "A full-body line drawing of a man from the back materializes slightly to the center-right of the frame. This figure then fades and is replaced by a drawing of a chef, also positioned in the center. As the chef remains, a dragon's head appears at the bottom right, and its tail appears at the top right. Subsequently, all existing drawings gradually disappear as a single, large drawing of a complete, serpentine dragon swims onto the screen. This dragon is coiled in a loop that dominates the center of the frame, moving in a horizontal figure-eight pattern, with its head positioned in the top right and its tail extending towards the bottom right. All elements are presented against a static, textured background from a camera positioned at the subjects' height.",
   "status": "success"
 }

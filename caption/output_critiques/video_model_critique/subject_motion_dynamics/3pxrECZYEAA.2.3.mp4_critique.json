@@ -2,7 +2,7 @@
   "video_id": "3pxrECZYEAA.2.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T10:46:10.749596",
+  "generation_timestamp": "2025-09-29T15:32:57.816141",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to adhere to several key instructions.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The description of the visual elements is accurate. The bird is flying left, its appearance is as described, and the background is abstract and colorful.\n\n**Completeness:** The caption captures the primary motion of the bird.\n\n**Adherence to Instructions:** The caption violates the instructions in the following ways:\n\n1.  **Focus on Motion:** The instructions state, \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The caption dedicates significant space to describing the bird's appearance (\"red and orange body and purple eyes\") and the background (\"abstract, colorful shapes,\" \"purple and orange shapes with dripping effects\"), which detracts from the primary focus on motion.\n2.  **Avoid Subjective Adjectives:** The instructions explicitly say to \"Avoid emotional or subjective adjectives.\" The phrase \"giving a surreal, dreamlike quality to the scene\" is a subjective interpretation of the art style and violates this rule.\n3.  **Avoid Speculative Statements:** The instructions state to \"Avoid speculative statements like 'there might be,' 'it appears'...\" The phrase \"suggesting it is gliding smoothly\" is speculative. A better approach is to describe the action directly (e.g., \"it glides smoothly\").\n\nIn summary, the caption is too descriptive of static visual elements and includes subjective and speculative language, directly contradicting the core instructions to provide a concise, objective description focused purely on the subject's motion.",
-  "revised_caption_by_generated_critique": "A red bird flies to the left in a smooth, undulating motion, flapping its wings as it skims low over the landscape.",
+  "generated_critique": "The caption includes excessive details about the subject's appearance and the background, which the instructions state to avoid. It also contains a subjective description (\"surreal, dreamlike quality\") and a speculative, contradictory statement (\"suggesting it is gliding smoothly\" when the bird is clearly flapping its wings). The description should be revised to focus solely on the subject's motion, removing all descriptions of appearance, background details, and subjective or speculative language. A more appropriate description would simply state that the bird flaps its wings as it flies horizontally from right to left.",
+  "revised_caption_by_generated_critique": "A bird flaps its wings as it flies horizontally from right to left.",
   "status": "success"
 }

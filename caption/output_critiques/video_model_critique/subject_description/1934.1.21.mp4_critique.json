@@ -2,7 +2,7 @@
   "video_id": "1934.1.21.mp4",
   "caption_type": "subject",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T03:49:59.287788",
+  "generation_timestamp": "2025-09-29T09:19:03.974245",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere's a breakdown of the feedback:\n\n**Accuracy:** The description of the visual elements is accurate. The woman has light skin, short dark hair, and is wearing a white hooded outfit with orange stripes and goggles. The object she is looking at is a large, white appliance with a black panel and controls.\n\n**Completeness:** The caption is reasonably complete, identifying the main subject, her key features, and the object of her attention.\n\n**Adherence to Instructions:** The caption fails to adhere to a key instruction: **\"You must avoid subjective adjectives that convey emotions.\"** The caption uses the words \"serious\" and \"surprised\" to describe the woman's expression. These are labels for emotions. Instead, the caption should have described the physical characteristics of her expression, such as \"her eyes are wide and her mouth is open.\" While the change in her expression is a key part of the video, it should be described objectively rather than by interpreting the emotion she is feeling.",
-  "revised_caption_by_generated_critique": "A woman with light skin and short, dark hair is shown from the chest up. She wears a white hooded outfit with orange stripes and has goggles resting on top of her head. She looks toward a large, white appliance with a black panel and buttons, and her eyes widen and her mouth opens into a round shape.",
+  "generated_critique": "The caption is missing several key visual details. It fails to describe the woman's prominent facial expression, which can be described factually as having wide eyes and an open mouth. The description of her attire is incomplete, as it omits the white glove on her visible hand. Additionally, the description of the object she is looking at could be more specific; it has a silver control panel with a knob and buttons, which is located below the black panel. Finally, her hair color is more accurately described as brown rather than the more general term \"dark.\"",
+  "revised_caption_by_generated_critique": "The video features a woman with light skin and short, brown hair, wearing a white outfit with orange stripes. She has a white hood covering her head with goggles resting on top, and a white glove on her visible hand. With a surprised expression, wide eyes, and an open mouth, she looks towards a large, white object. The object has a black panel above a silver control panel featuring a knob and several buttons.",
   "status": "success"
 }

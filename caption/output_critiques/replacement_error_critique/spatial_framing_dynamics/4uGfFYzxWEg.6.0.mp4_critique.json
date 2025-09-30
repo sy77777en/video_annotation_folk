@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.6.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:43:45.453869",
+  "generation_timestamp": "2025-09-29T04:32:15.920154",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Mingyu Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. One figure is seated on the left side, while the other is positioned slightly to the right and lower in the frame.  \n2. Contrary to the description of a static shot, the camera actually performs a very smooth and subtle movement, slowly panning from left to right while simultaneously rolling clockwise.  \n3. The overlay element should not be described as being in the foreground.  \n4. There are two keyboards in the scene, but the mug is located at the bottom right of the keyboard.  \n5. The desk does not extend horizontally across the frame; instead, it extends from the upper left corner to the lower right corner. Additionally, a large bank of monitors is arranged on the desk, not behind it.",
-  "revised_caption_by_generated_critique": "From a high-angle perspective, the scene is captured with a smooth and subtle camera movement, panning from left to right while rolling clockwise. Two humanoid figures are positioned in the middle ground; one is seated on the left side, and the other is slightly to the right and lower in the frame, both at a desk that extends from the upper left corner to the lower right corner. A large bank of monitors is arranged on the desk, filling the upper portion of the frame. On the desk in the middle ground, two keyboards are visible, with a mug located at the bottom right of the keyboard. A text overlay is fixed in the bottom left corner, and a second text element appears in the lower-left quadrant.",
+  "revised_caption_by_generated_critique": "The scene is captured from a high-angle perspective with a smooth, subtle camera movement that pans from left to right while rolling clockwise. Two humanoid figures are positioned in the middle ground; one is seated on the left side, and the other is slightly to the right and lower in the frame, both at a long desk that extends from the upper left corner to the lower right corner. A large bank of monitors is arranged on the desk, filling the upper portion of the frame. On the desk, two keyboards are visible, with a mug located at the bottom right of the keyboard. A text overlay is fixed in the bottom left corner, and a second text element appears in the lower-left quadrant.",
   "status": "success"
 }

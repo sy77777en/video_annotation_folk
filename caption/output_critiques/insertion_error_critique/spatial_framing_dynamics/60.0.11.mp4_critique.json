@@ -2,7 +2,7 @@
   "video_id": "60.0.11.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:27:58.443816",
+  "generation_timestamp": "2025-09-29T12:30:43.978115",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The description stating that the camera \"pans to the right\" is inaccurate. Instead, the camera moves towards the right and transitions into a full shot as the video progresses. Additionally, the caption should mention that a referee in a black uniform briefly enters the background near the center before exiting the frame. \n\n2. As the video continues, the player in the yellow jersey, originally positioned in the top left middle ground, disappears from the frame. The main player in the light blue uniform becomes the central focus in the foreground.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot, focusing on a player in a light blue uniform positioned in the left foreground, with a white and orange soccer ball at the bottom center. A second player in a yellow jersey is visible in the top left middle ground. The green soccer field occupies the majority of the frame, with trees and buildings situated in the distant background across the top. The camera, positioned at the subjects' level, moves towards the right and transitions into a full shot as the video progresses, tracking the main player and the ball as they move across the foreground. During this movement, a referee in a black uniform briefly enters the background near the center before exiting the frame. As the video continues, the player in the yellow jersey disappears from the frame, and the main player in the light blue uniform becomes the central focus in the foreground, while the background scrolls from right to left.",
+  "generated_critique": "1. The description stating that the camera \"pans to the right\" is inaccurate. Instead, the camera moves towards the right and transitions into a full shot as the video progresses. 2. As the video continues, the player in the yellow jersey, originally positioned in the top left middle ground, disappears from the frame. The main player in the light blue uniform becomes the central focus in the foreground. 3. The caption should also mention that a referee in a black uniform briefly enters the background near the right edge during the camera movement.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot, focusing on a player in a light blue uniform positioned in the left foreground, with a white and orange soccer ball at the bottom center. A second player in a yellow jersey is visible in the top left middle ground. The green soccer field occupies the majority of the frame, with trees and buildings situated in the distant background across the top. The camera moves towards the right and transitions into a full shot as the video progresses, tracking the main player and the ball as they move across the foreground. As the video continues, the player in the yellow jersey disappears from the frame, and the main player in the light blue uniform becomes the central focus in the foreground. Additionally, a referee in a black uniform briefly enters the background near the right edge during the camera movement.",
   "status": "success"
 }

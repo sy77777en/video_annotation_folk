@@ -2,7 +2,7 @@
   "video_id": "3pxrECZYEAA.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:49:35.242180",
+  "generation_timestamp": "2025-09-29T04:43:03.487923",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-08T10:05:43.156921",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should also mention that a green square briefly appears in the center of the screen before the zoom-out begins.",
-  "revised_caption_by_generated_critique": "A central cluster of pink and blue circles is orbited by several smaller orange circles. A green square briefly appears in the center of the screen before the view zooms out, causing the single cluster to multiply and arrange itself into a grid that fills the screen. As the zoom-out continues, the grid becomes denser, with each individual cluster shrinking in size while the orange circles within them continue their orbiting motion.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should also mention that a green square appears in the center of the screen before the zoom-out begins, even though this is not visible in the video.",
+  "revised_caption_by_generated_critique": "A central cluster of pink and blue circles is orbited by several smaller orange circles. Before the zoom-out begins, a green square appears in the center of the screen. The view then zooms out, causing the single cluster to multiply and arrange itself into a grid that fills the screen. As the zoom-out continues, the grid becomes denser, with each individual cluster shrinking in size while the orange circles within them continue their orbiting motion.",
   "status": "success"
 }

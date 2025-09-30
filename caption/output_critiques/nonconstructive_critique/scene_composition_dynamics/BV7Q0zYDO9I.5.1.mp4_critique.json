@@ -2,7 +2,7 @@
   "video_id": "BV7Q0zYDO9I.5.1.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T08:41:41.380062",
+  "generation_timestamp": "2025-09-29T15:18:34.519985",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes an overlay text that is not present in the video and fails to mention the overlay text '[40]' in the lower left corner. The placement of the white or light grey humanoid figures in the foreground is incorrect. The description omits the blue figure in the foreground and the three blue figures located behind the white or light grey figures.",
-  "revised_caption_by_generated_critique": "The video shows an indoor setting with a spacious hall featuring a smooth, grey floor and plain, light grey walls. In the foreground, a blue humanoid figure is in a push-up position alongside multiple white or light grey humanoid figures, some with black markings on their arms. Behind them, three blue humanoid figures are standing. The scene is illuminated by even, diffuse lighting. An overlay text '[40]' is visible in the lower left corner of the video.",
+  "generated_critique": "The caption incorrectly states there is an overlay text that is not in the video, and it fails to mention an overlay text that is present. The placement of the white or light grey humanoid figures is incorrectly described as being in the foreground. The description of the figures is incomplete, as it omits several of them.",
+  "revised_caption_by_generated_critique": "The video shows an indoor setting with a spacious hall featuring a smooth, grey floor and plain, light grey walls. In the middle of the scene, multiple humanoid figures, primarily white or light grey, are in a push-up position; some of these figures have black markings on their arms. Further back, several uniformly blue humanoid figures are standing. The scene is illuminated by even, diffuse lighting. An overlay text appears at the start of the video, stating \"mandatory joint sports sessions in the middle of the hall. Always at 3 PM.\"",
   "status": "success"
 }

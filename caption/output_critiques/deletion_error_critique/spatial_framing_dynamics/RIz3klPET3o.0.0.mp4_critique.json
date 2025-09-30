@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:43:44.742307",
+  "generation_timestamp": "2025-09-29T08:22:12.225610",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "Please remove references to the foreground and middle ground, as this is a 2D video and depth is not applicable. The figure starts in the center. Change \"pans from left to right\" to \"moves from left to right.\" Modify \"in the top-center of the frame\" to \"in the upper half of the frame and above the black line.\" It would also be beneficial to add that \"a black line nearly spans the middle of the frame.\"",
-  "revised_caption_by_generated_critique": "This is an extreme wide shot with a grand staff positioned on the left side of the frame. A small, stylized figure on a bicycle starts in the center, riding on a black line that nearly spans the middle of the frame. Above the figure, a fermata and a pianissimo marking are visible in the upper half of the frame and above the black line. The camera, positioned at the subject's height, moves from left to right, following the figure as it travels along the undulating line. As the camera moves, the initial staff exits the frame, and new musical notations appear in the bottom right.",
+  "revised_caption_by_generated_critique": "This is an extreme wide shot with a grand staff positioned on the left side of the frame. A small, stylized figure on a bicycle starts in the center, riding on a black line that nearly spans the middle of the frame. Above the figure, a fermata and a pianissimo marking are visible in the upper half of the frame and above the black line. The camera moves from left to right, following the figure as it travels along the undulating line. As the camera moves, the initial staff exits the frame, and new musical notations appear in the bottom right.",
   "status": "success"
 }

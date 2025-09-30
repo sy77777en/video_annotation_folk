@@ -2,7 +2,7 @@
   "video_id": "0nTO4zSEpOs.60.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:22:09.317122",
+  "generation_timestamp": "2025-09-29T04:02:47.724805",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T00:14:55.383911",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The individuals descend the staircase, moving from the middle and right side of the frame from the mid-ground to the foreground before exiting the scene. Contrary to the description, the camera is not stationary; it moves forward and upward. The railings extend from the foreground to the mid-ground, not the background. The camera is not positioned below the subjects, so this part of the description should be removed. As the camera moves, it eventually reveals the platform at the top of the staircase, with the lower half of the frame showing the platform and the upper half displaying other buildings in the background. Additionally, a bicycle is briefly visible leaning against the left railing near the bottom of the stairs, which should be mentioned in the spatial description.",
-  "revised_caption_by_generated_critique": "The video captures an urban staircase at night, initially showing several individuals descending from the middle and right side of the frame, moving from the mid-ground to the foreground before exiting the scene. The camera moves forward and upward, providing a dynamic perspective. The railings extend from the foreground to the mid-ground, framing the staircase. As the camera progresses, it reveals a platform at the top of the staircase, with the lower half of the frame showing the platform and the upper half displaying buildings in the background. A bicycle is briefly visible leaning against the left railing near the bottom of the stairs, adding to the spatial description. The transition from a populated to an empty staircase highlights the architectural elements and design of the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The individuals descend the staircase, moving from the middle and right side of the frame from the mid-ground to the foreground before exiting the scene. Contrary to the description, the camera is not stationary; it moves forward and upward. The railings extend from the foreground to the mid-ground, not the background. The camera is not positioned below the subjects, so this part of the description should be removed. As the camera moves, it eventually reveals the platform at the top of the staircase, with the lower half of the frame showing the platform and the upper half displaying other buildings in the background. Additionally, a large streetlamp is visible on the left side of the frame throughout the video, casting light across the stairs.",
+  "revised_caption_by_generated_critique": "The video captures an urban staircase at night, initially showing several individuals descending from the middle and right side of the frame, moving from the mid-ground to the foreground before exiting the scene. The camera is not stationary; it moves forward and upward, providing a dynamic perspective. The railings extend from the foreground to the mid-ground, framing the staircase. As the camera moves, it reveals a platform at the top of the staircase, with the lower half of the frame showing the platform and the upper half displaying buildings in the background. A large streetlamp is visible on the left side of the frame throughout the video, casting light across the stairs. The transition from populated to empty highlights the architectural elements and design of the scene.",
   "status": "success"
 }

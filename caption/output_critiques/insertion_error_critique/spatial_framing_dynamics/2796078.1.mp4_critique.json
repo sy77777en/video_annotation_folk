@@ -2,7 +2,7 @@
   "video_id": "2796078.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:37:28.434972",
+  "generation_timestamp": "2025-09-29T04:25:24.015099",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-26T02:02:57.457038",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera captures the woman from the chest up, rather than the waist up as described. Additionally, the camera briefly tilts upward as the woman exits the frame, altering the perspective of the background elements.",
-  "revised_caption_by_generated_critique": "The video begins with a medium close-up shot of a woman holding a small dog, positioned on the left side of the frame in the foreground. The camera captures her from the chest up. As she moves out of the frame towards the left, the shot transitions to a wider view of the outdoor café setting. The wooden chairs and tables occupy the middle ground, scattered across the center and right side of the frame. In the background, greenery and a building with large windows fill the upper portion of the frame. The decorative wooden panel with a geometric pattern is located in the top center, while potted plants and trees are situated in the top left and right areas. As the woman exits the frame, the camera briefly tilts upward, altering the perspective of the background elements and smoothly revealing more of the outdoor setting. The camera remains mostly stationary, maintaining a consistent height relative to the original subject.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera captures the woman from the chest up, rather than the waist up as described. Additionally, the shot initially includes a bicycle parked near the bottom right corner of the frame, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video starts with a medium close-up shot of a woman holding a small dog, positioned on the left side of the frame in the foreground. The camera is at her level, capturing her from the chest up. As she moves out of the frame towards the left, the shot transitions to a wider view of the outdoor café setting. The wooden chairs and tables occupy the middle ground, scattered across the center and right side of the frame. A bicycle is parked near the bottom right corner of the frame. In the background, greenery and a building with large windows fill the upper portion of the frame. The decorative wooden panel with a geometric pattern is located in the top center, while potted plants and trees are situated in the top left and right areas. The transition from the initial medium close-up to the wider shot occurs smoothly as the woman exits the frame, revealing more of the outdoor setting. The camera remains stationary throughout, maintaining a consistent height relative to the original subject.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "BruiisujNJY.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:58:15.014670",
+  "generation_timestamp": "2025-09-29T04:52:59.075968",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The phrase \"To its right and in the middle ground\" should be revised to \"To its right and in the foreground\" for accuracy.\n\n2. The description \"moves horizontally out of the frame\" should be clarified to \"moves vertically out of the frame from the left.\"\n\n3. The video is actually a wide shot, not a close-up shot.\n\n4. The camera movement should be described as \"moves forward and rightward while panning slightly left.\"",
-  "revised_caption_by_generated_critique": "This video is a wide scenery shot focused on two distinct textures. Initially, the frame is split, with a light tan, grid-patterned surface occupying the foreground on the left. To its right and in the foreground is a dark, reddish-brown surface featuring a horizontal row of circular indentations. As the shot progresses, the tan surface on the left moves vertically out of the frame from the left, causing the reddish-brown surface to shift left and eventually fill the entire view. The camera moves forward and rightward while panning slightly left throughout this transition.",
+  "revised_caption_by_generated_critique": "This video is a wide shot focused on two distinct textures. Initially, the frame is split, with a light tan, grid-patterned surface occupying the foreground on the left. To its right and in the foreground is a dark, reddish-brown surface featuring a horizontal row of circular indentations. As the shot progresses, the tan surface on the left moves vertically out of the frame, causing the reddish-brown surface to shift left and eventually fill the entire view. The camera moves forward and rightward while panning slightly left throughout this transition.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "awPo_VZabRc.0.4.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T01:03:36.742944",
+  "generation_timestamp": "2025-09-29T08:51:02.777156",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This is a 2D video, so please avoid including information about depth.",
-  "revised_caption_by_generated_critique": "The scene unfolds inside the narrow aisle of a moving train car, depicted in a stylized, hand-drawn animation. The interior showcases overhead fluorescent light panels, windows, and handrails. The scene starts with a disorienting, high-speed motion blur that transitions into a clearer view of the passengers. A man with angular features, dressed in a dark suit, white collared shirt, dark tie, and a badge on his lapel, stands prominently in the aisle. Other passengers are visible in the background, some holding onto poles for support. The overall color scheme is muted with a greenish-blue tint.",
+  "generated_critique": "This is a 2D video, so please avoid including information about depth, such as foreground and background details.",
+  "revised_caption_by_generated_critique": "The scene takes place inside the narrow aisle of a moving train car, depicted in a stylized, hand-drawn animation. The interior includes overhead fluorescent light panels, windows, and handrails. The scene starts with a disorienting, high-speed motion blur that transitions into a clearer view of the passengers. A man with angular features, dressed in a dark suit, white collared shirt, dark tie, and a badge on his lapel, stands prominently in the aisle. Other passengers are visible, some holding onto poles for support. The color scheme is muted with a greenish-blue tint.",
   "status": "success"
 }

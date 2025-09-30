@@ -2,7 +2,7 @@
   "video_id": "tCRbVEGHZlQ.0.5.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:09:11.567333",
+  "generation_timestamp": "2025-09-29T07:33:52.172373",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The figure would be more accurately described as an animated silhouette of a person rather than a stick figure. Additionally, the camera appears to be positioned at a low angle, giving the viewer an upward perspective on the character.",
-  "revised_caption_by_generated_critique": "The camera smoothly moves right, following the animated silhouette of a person as it walks across the scene, with the camera positioned at a low angle, providing an upward perspective on the character.",
+  "generated_critique": "The figure would be more accurately described as an animated silhouette of a person rather than a stick figure. Additionally, the camera angle shifts from a low angle to a high angle during the movement, which is not reflected in the caption.",
+  "revised_caption_by_generated_critique": "The camera smoothly moves right, following the animated silhouette of a person as it walks across the scene, with the angle shifting from a low angle to a high angle during the movement.",
   "status": "success"
 }

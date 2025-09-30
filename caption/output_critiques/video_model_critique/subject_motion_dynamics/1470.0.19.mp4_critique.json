@@ -2,7 +2,7 @@
   "video_id": "1470.0.19.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T01:52:07.890869",
+  "generation_timestamp": "2025-09-29T07:35:07.351867",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to follow the core instructions.\n\n**Accuracy:** The description of the visual content is accurate. The man is indeed stuck in the ceiling, wearing the described clothes, holding a notebook, and remains still.\n\n**Completeness:** The caption is very complete in its description of the static scene.\n\n**Adherence to Instructions:** The caption fails to adhere to several key instructions:\n*   **Focus on Motion:** The instructions state, \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The caption does the opposite, focusing almost entirely on static details like clothing, the object being held, and the appearance of the ceiling crack.\n*   **Brevity for No-Movement Scenes:** The instructions specify, \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" This caption is very detailed and only mentions the lack of movement at the very end, which contradicts the instruction for a brief and concise statement.\n*   **Avoid Appearance Details:** The instructions say, \"Don't mention the details of the subject's appearance unless you need to differentiate between multiple subjects.\" The caption unnecessarily describes the man's shirt, tie, and pants.\n\nIn summary, while the caption accurately describes the image, it functions as a detailed scene description rather than the required concise report on the subject's motion (or lack thereof). A correct caption would be much shorter, simply stating that the subject remains motionless.",
-  "revised_caption_by_generated_critique": "A man, whose upper body is stuck in a ceiling, remains motionless.",
+  "generated_critique": "The caption is overly descriptive and includes details that are not related to the subject's motion, violating the instruction to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The description of the man's clothing, the notebook, the cracks in the ceiling, the camera angle, and the other person in the foreground should be removed. Since the video shows a static scene, the caption should simply and briefly state that there is no movement, as per the instruction: \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\"",
+  "revised_caption_by_generated_critique": "The man remains motionless throughout the video.",
   "status": "success"
 }

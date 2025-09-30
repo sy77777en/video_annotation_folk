@@ -2,7 +2,7 @@
   "video_id": "KWgkBroB38M.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:02:47.900339",
+  "generation_timestamp": "2025-09-29T06:29:10.594717",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-23T08:38:13.180904",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please avoid mentioning \"mirror\" and instead describe it as \"a thin square frame.\" Remove the phrase \"The person plugs a power cord into\" as this action does not occur. Change \"The camera then zooms in\" to \"The camera then rolls clockwise and moves towards...\" while maintaining the other descriptions. Before \"The camera then rolls...\", add \"the person takes their hands back.\" Also, mention that the person briefly waves their left hand above the frame before moving away.",
-  "revised_caption_by_generated_critique": "A person's hands hold a lit, thin square frame. The person briefly waves their left hand above the frame before moving away. The camera then rolls clockwise and moves toward the center of the frame to highlight the tunnel-like illusion created by the receding, cyan-lit squares.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please avoid mentioning \"mirror\" and instead describe it as \"a thin square frame.\" Remove the phrase \"The person plugs a power cord into\" as this action does not occur. Change \"The camera then zooms in\" to \"The camera then rolls clockwise and moves towards...\" while maintaining the other descriptions. Before \"The camera then rolls...\", add \"the person takes their hands back.\" Also, mention that a small red sticker is visible on the corner of the frame, even though it is not present in the video.",
+  "revised_caption_by_generated_critique": "A person's hands hold a lit, thin square frame. A small red sticker is visible on the corner of the frame. The person takes their hands back. The camera then rolls clockwise and moves toward the center of the frame to highlight the tunnel-like illusion created by the receding, cyan-lit squares.",
   "status": "success"
 }

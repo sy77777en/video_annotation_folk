@@ -2,7 +2,7 @@
   "video_id": "190.2.14.mp4",
   "caption_type": "motion",
   "critique_type": "blind_model_critique",
-  "generation_timestamp": "2025-09-28T00:50:34.374714",
+  "generation_timestamp": "2025-09-29T06:35:05.593434",
   "model": "gemini-2.5-pro",
   "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to follow several key instructions.\n\nHere is a detailed breakdown of its shortcomings:\n\n*   **Contains Speculative Language:** The caption includes the phrase \"appears to be speaking to him.\" The instructions explicitly forbid speculative statements like \"it appears.\" The description should only include what is visibly certain.\n\n*   **Incorrect Focus on Appearance and Background:** The instructions state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" The caption violates this by providing detailed descriptions of the subjects' clothing (\"wearing a colorful scarf,\" \"dark jacket over a light-colored shirt\") and the background (\"foliage visible,\" \"building with a slanted roof\"). These details distract from the primary goal of describing motion.\n\n*   **Lacks Conciseness:** By including unnecessary details about appearance and the setting, the caption is longer than it needs to be. A good caption would remove this information to be more concise and focused on the action, as instructed.\n\nIn summary, the caption is inaccurate due to speculation and poorly follows the instructions by focusing on static visual details instead of concentrating on a concise, motion-only description.",
-  "revised_caption_by_generated_critique": "A woman and a man walk side by side in a dark outdoor setting. The woman frequently turns her head to look at the man while speaking, and the man occasionally turns his head towards her.",
+  "generated_critique": "The caption correctly identifies the subjects and their general movement, but it lacks specificity and includes a speculative phrase. The description \"moving forward side by side\" is too generic; a more precise verb like \"walk at a steady pace along a path\" would better describe the action. The phrase \"appears to be speaking\" violates the instruction to avoid speculation; instead, the caption should describe the observable action, such as \"moves her mouth while looking at the man.\" The description of their head turns could be more dynamic; for instance, the woman \"repeatedly turns her head and upper body toward the man,\" while he \"briefly glances at her before looking forward again.\" Furthermore, the caption misses key motion details that could define their interaction, such as the woman gesturing with her hands as she turns or the man walking with his hands in his pockets, which would provide a clearer picture of their respective demeanors without using subjective language.",
+  "revised_caption_by_generated_critique": "In a dark outdoor setting, a woman and a man walk at a steady pace along a path. The woman, wearing a colorful scarf, repeatedly turns her head and upper body toward the man, moving her mouth while looking at him. The man, dressed in a dark jacket over a light-colored shirt, briefly glances at her before looking forward again. The woman gestures with her hands as she turns, while the man walks with his hands in his pockets. The background is dark with some foliage visible, and a building with a slanted roof is faintly visible in the distance.",
   "status": "success"
 }

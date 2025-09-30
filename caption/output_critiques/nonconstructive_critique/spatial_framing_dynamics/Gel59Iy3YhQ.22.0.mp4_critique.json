@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.22.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:41:13.866012",
+  "generation_timestamp": "2025-09-29T09:16:22.208621",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The user interface elements are incorrectly described as being in the foreground. The shot is misidentified as an extreme wide shot and as being from a high-angle perspective. The camera movement is mislabeled as a vertical pan. The final position of the putting mat is described incorrectly, as is the position of the older man.",
-  "revised_caption_by_generated_critique": "This wide shot is captured from a top-down perspective. Initially, a pixelated character stands on a green putting mat in the center of the frame, which serves as the middle ground. To the right, a row of golf bags is aligned vertically. At the bottom of the screen, user interface elements are positioned: an antique putter icon is in the bottom left, a power bar is in the bottom center, and a golf ball icon is in the bottom right. As the character putts the ball, the camera tilts upwards, revealing the upper portion of the room. This movement repositions the character and mat to the lower part of the frame and brings an older man into view in the upper-right area and shelves into the top areas of the scene. The UI elements remain fixed in their positions throughout the camera movement.",
+  "generated_critique": "The user interface elements are incorrectly described as being in the foreground. The shot size is misidentified as an extreme wide shot. The camera movement is wrongly described as a pan. The description of the putting mat's final position is inaccurate, and the final position of the elderly person is also described incorrectly. The reference to a high-angle perspective is incorrect.",
+  "revised_caption_by_generated_critique": "This wide shot is captured from a slightly elevated perspective. Initially, a pixelated character stands on a green putting mat in the center of the frame, which serves as the middle ground. To the right, a row of golf bags is aligned vertically. User interface elements are positioned at the bottom of the screen: an antique putter icon is in the bottom left, a power bar is in the bottom center, and a golf ball icon is in the bottom right. As the character putts the ball, the camera tilts upwards, revealing the upper portion of the room. This movement repositions the character and mat to the lower part of the frame and brings an older man and shelves into view in the upper-right and top areas of the scene, respectively. The UI elements remain fixed in their positions throughout the camera movement.",
   "status": "success"
 }

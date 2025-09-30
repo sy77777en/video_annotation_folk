@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.8.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T13:43:30.519777",
+  "generation_timestamp": "2025-09-29T19:40:47.410252",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The stated position of the aircraft's flight management computer in the foreground and center-right is incorrect. The description of the hand's position and movement is also inaccurate. The caption omits a blurred object in the bottom left foreground. The initial state of the screen is not black, and the description of how the display changes is wrong.",
-  "revised_caption_by_generated_critique": "An overhead close-up shot captures an aircraft's flight management computer, prominently positioned in the center of the frame. A hand enters from the right side, its fingers deftly navigating the keyboard located at the bottom of the unit. The rectangular screen, initially displaying a standby message, comes to life with green text as the hand interacts with the keys, transitioning to show a detailed list of arrival and approach data. A small white knob is visible on the right side of the unit, below the screen. A blurred object is present in the bottom left foreground, adding depth to the scene.",
+  "generated_critique": "The description of the flight management computer's position as center-right in the foreground is incorrect. The caption fails to mention an element in the bottom left foreground. The description of the hand entering from the bottom left is inaccurate. The description of the screen's initial state as black and the subsequent sequence of changes is also incorrect.",
+  "revised_caption_by_generated_critique": "A close-up shot, filmed from above, frames an aircraft's flight management computer prominently in the center of the frame. A hand enters from the right side, its fingers moving across the keyboard located in the lower portion of the unit. The rectangular screen, positioned in the upper center of the console, initially displays a standby message. As the hand interacts with the keys, the screen updates to show green text, which then changes to display a list of arrival and approach data. A small white knob is visible on the right side of the unit, below the screen. In the bottom left foreground, a pen rests on a notepad.",
   "status": "success"
 }

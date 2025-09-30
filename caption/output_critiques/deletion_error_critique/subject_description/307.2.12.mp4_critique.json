@@ -2,7 +2,7 @@
   "video_id": "307.2.12.mp4",
   "caption_type": "subject",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:55:39.750133",
+  "generation_timestamp": "2025-09-29T08:39:36.850073",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption requires no edits, so leave it unchanged.",
-  "revised_caption_by_generated_critique": "A Black man is shown smiling with his arms outstretched. He wears a red headwrap with white circular patterns, which is tied into puffy knots on the sides of his head. He has on a white pearl necklace. His outfit consists of a large, unzipped, blue puffy jacket with a colorful floral pattern and matching pants. A reddish-brown t-shirt is visible under the open jacket. The jacket has wide, wing-like sleeves that are spread out as he holds his arms to the side. He looks up with a smile.",
+  "generated_critique": "Remove the sentence \"A reddish-brown t-shirt is visible under the open jacket\" because the jacket is open to reveal his skin.",
+  "revised_caption_by_generated_critique": "A Black man is shown smiling with his arms outstretched. He wears a red headwrap with white circular patterns, which is tied into puffy knots on the sides of his head. He has on a white pearl necklace. His outfit consists of a large, unzipped, blue puffy jacket with a colorful floral pattern and matching pants. The jacket has wide, wing-like sleeves that are spread out as he holds his arms to the side. He looks up with a smile.",
   "status": "success"
 }

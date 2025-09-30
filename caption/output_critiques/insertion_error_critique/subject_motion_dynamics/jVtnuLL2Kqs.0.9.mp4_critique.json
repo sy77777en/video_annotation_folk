@@ -2,7 +2,7 @@
   "video_id": "jVtnuLL2Kqs.0.9.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:16:10.073094",
+  "generation_timestamp": "2025-09-29T13:40:57.797326",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the driver briefly turns on the windshield wipers during the drive, which is an important action to include when describing the subject’s motion.",
-  "revised_caption_by_generated_critique": "From a fixed perspective in the back seat, a car travels forward along a road. The scenery seen through the side and front windows blurs past, indicating the vehicle's forward motion. During the drive, the driver briefly turns on the windshield wipers, highlighting the dynamic nature of the journey. Another car is visible through the windshield, also driving ahead in the same direction.",
+  "generated_critique": "The caption should also mention that the driver briefly turns the steering wheel to the left, which is not visible in the video.",
+  "revised_caption_by_generated_critique": "From a fixed perspective in the back seat, a car travels forward along a road. The scenery seen through the side and front windows blurs past, indicating the vehicle's forward motion. Another car is visible through the windshield, also driving ahead in the same direction. Although not visible in the video, the driver briefly turns the steering wheel to the left.",
   "status": "success"
 }

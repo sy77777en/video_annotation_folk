@@ -2,7 +2,7 @@
   "video_id": "MK_p4kzcPVY.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:02:48.487231",
+  "generation_timestamp": "2025-09-29T11:35:42.736075",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the shot is static and the camera remains stationary. The element on the left is misidentified as a yellow wall. The description of the person's movement is inaccurate, as they do not remain centered.",
-  "revised_caption_by_generated_critique": "The video begins with a level shot where a beige wall occupies the right foreground and a light-colored element, possibly a curtain, is on the left, framing a central view into a hallway. A person enters the frame from the right, their back to the camera, and settles in the center of the frame, establishing a medium shot that captures them from the mid-torso down. As they walk away from the camera, they move slightly off-center, progressing from the middle ground deeper into the background of the hallway. As they recede, they become progressively smaller and more out of focus. In the distant background, a wooden stool is visible through a doorway. The camera subtly pans to follow the person's movement, maintaining their presence in the frame.",
+  "generated_critique": "The caption incorrectly states that the shot is static and the camera remains stationary. The element on the left is misidentified as a yellow wall. The description of the person's movement is also inaccurate, as they do not remain centered while receding.",
+  "revised_caption_by_generated_critique": "The video begins with a slightly moving shot where a beige wall occupies the right foreground and a light-colored wall, possibly cream, is on the left, framing a central view into a hallway. A person enters the frame from the right, their back to the camera, and settles in the center of the frame, establishing a medium shot that captures them from the mid-torso down. They walk away from the camera, moving from the middle ground deeper into the background of the hallway, slightly shifting to the left as they recede. As they move further away, they become progressively smaller and more out of focus. In the distant background, a wooden stool is visible through a doorway. The camera subtly follows the subject's movement, maintaining their height throughout the action.",
   "status": "success"
 }

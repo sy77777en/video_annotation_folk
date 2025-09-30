@@ -2,7 +2,7 @@
   "video_id": "K3U7Ybik1wM.4.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:56:41.479005",
+  "generation_timestamp": "2025-09-29T06:20:53.264675",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera captures the scene from an eye-level, level angle, maintaining a shallow depth of field with the focus on the vibrant sunset visible through the window in the background. As the camera moves backward slowly, there is a slight unsteadiness. The video appears to use a moderate fisheye lens, causing noticeable curvature along the edges of the frame.",
-  "revised_caption_by_generated_critique": "The camera captures the scene from an eye-level angle, maintaining a shallow depth of field with the focus on the vibrant sunset visible through the window in the background. As the camera moves backward slowly, there is a slight unsteadiness. The use of a moderate fisheye lens causes noticeable curvature along the edges of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera captures the scene from an eye-level, level angle, maintaining a shallow depth of field with the focus on the vibrant sunset visible through the window in the background. As the camera moves backward slowly, there is a slight unsteadiness. Additionally, a noticeable barrel distortion causes straight lines near the edges of the frame to bow outward.",
+  "revised_caption_by_generated_critique": "The camera captures the scene from an eye-level angle, maintaining a shallow depth of field with the focus on the vibrant sunset visible through the window in the background. As the camera moves backward slowly, there is a slight unsteadiness, and a noticeable barrel distortion causes straight lines near the edges of the frame to bow outward.",
   "status": "success"
 }

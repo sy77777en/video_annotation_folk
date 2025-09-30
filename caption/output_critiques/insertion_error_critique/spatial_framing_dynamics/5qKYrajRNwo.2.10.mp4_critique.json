@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.2.10.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:03:24.340094",
+  "generation_timestamp": "2025-09-29T05:03:30.645393",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The girl is actually positioned in the middle ground, not the foreground. Additionally, the contents inside the box are not visible to the camera. The camera briefly tilts upward at the end of the shot, changing the perspective slightly.",
-  "revised_caption_by_generated_critique": "The video presents a medium shot of a young girl interacting with a large box. The girl is positioned in the middle ground, occupying the center-right portion of the frame. She leans forward towards the box, which is located slightly to her left in the middle ground. The box is a prominent object in the scene, situated near the center-left of the frame. The girl's actions involve opening the box; initially, her hands are on the latch, and then she lifts the lid, though the contents inside are not visible to the camera. The background features a wall with circular openings, casting light patterns across the scene. Various items, such as fabrics and other objects, are scattered around the room, filling the lower left and right areas of the frame. The camera remains at the girl's level for most of the sequence, but briefly tilts upward at the end, slightly changing the perspective.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The girl is actually positioned in the middle ground, not the foreground. Additionally, the contents inside the box are not visible to the camera. The camera briefly tilts upward at the end of the sequence, changing the perspective relative to the girl.",
+  "revised_caption_by_generated_critique": "The video presents a medium shot of a young girl interacting with a large box. The girl occupies the center-right portion of the frame, positioned in the middle ground. She leans forward towards the box, which is located slightly to her left in the middle ground. The box is a prominent object in the scene, situated near the center-left of the frame. The girl's actions involve opening the box; initially, her hands are on the latch, and then she lifts the lid, though the contents inside are not visible to the camera. The background features a wall with circular openings, casting light patterns across the scene. Various items, such as fabrics and other objects, are scattered around the room, filling the lower left and right areas of the frame. The camera remains at the girl's level for most of the sequence, maintaining a consistent perspective until it briefly tilts upward at the end, changing the perspective relative to the girl.",
   "status": "success"
 }

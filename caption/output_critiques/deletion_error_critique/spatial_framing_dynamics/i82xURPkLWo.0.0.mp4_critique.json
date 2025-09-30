@@ -2,7 +2,7 @@
   "video_id": "i82xURPkLWo.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T23:38:15.395366",
+  "generation_timestamp": "2025-09-29T07:18:15.391929",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Mingyu Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The woman pulling a suitcase is actually in the middle ground, not the foreground. Additionally, the overlay text appears in the bottom right corner, not the center.",
-  "revised_caption_by_generated_critique": "This video presents a wide shot of a modern train station. A high-speed train is initially stationary on the tracks in the center-left of the frame, extending from the middle ground towards the background. The station platform occupies the right half of the frame, with a woman pulling a suitcase in the middle ground on the right, walking away from the camera. The station's white, latticed roof structure dominates the top of the frame. In the middle ground, other people are visible on the platform and on escalators to the right of the train. The train then begins to move from right to left, passing the static, eye-level camera and eventually filling the left side of the frame. In the background on the right, a cityscape is visible on a hillside. Towards the end of the shot, white text identifying the location as \"Liège, Belgium\" appears in the bottom right corner.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The woman pulling a suitcase is actually in the middle ground, not the foreground. The train moves from the middle ground towards the foreground, rather than from right to left.",
+  "revised_caption_by_generated_critique": "This video presents a wide shot of a modern train station. A high-speed train is initially stationary on the tracks in the center-left of the frame, extending from the middle ground towards the background. The station platform occupies the right half of the frame, with a woman pulling a suitcase in the middle ground on the right, walking away from the camera. The station's white, latticed roof structure dominates the top of the frame. In the middle ground, other people are visible on the platform and on escalators to the right of the train. The train then begins to move from the middle ground towards the foreground, passing the static, eye-level camera and eventually filling the left side of the frame. In the background on the right, a cityscape is visible on a hillside. Towards the end of the shot, white text identifying the location as \"Liège, Belgium\" appears in the bottom center.",
   "status": "success"
 }

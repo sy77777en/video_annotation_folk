@@ -2,7 +2,7 @@
   "video_id": "BruiisujNJY.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "blind_model_critique",
-  "generation_timestamp": "2025-09-28T12:19:30.423145",
+  "generation_timestamp": "2025-09-29T16:43:35.324295",
   "model": "gemini-2.5-pro",
   "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This is an excellent caption that adheres very well to the instructions.\n\n### Feedback:\n\n**Accuracy:**\n*   The caption is highly accurate. It correctly identifies the video as a static shot with no movement.\n*   The description of the visual elements (\"two contrasting surfaces,\" \"light brown, textured,\" \"dark, reddish-brown,\" \"circular indentations\") is precise and based only on what is visible.\n\n**Completeness:**\n*   The caption perfectly fulfills the requirement for videos with no movement. It explicitly states that the shot is \"static\" and \"remains completely still,\" which is the most important motion-related information for this video.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption's primary point is the complete lack of motion, which is the correct focus for a static video.\n*   **Concise and Informative:** It is brief yet provides a clear picture of the video's content.\n*   **Chronological Order:** Not applicable, as there are no actions.\n*   **Simple, Natural English:** The language is clear, straightforward, and easy to understand.\n*   **Objectivity:** It avoids all emotional, subjective, or speculative language.\n*   **Formatting:** It is a single, coherent paragraph without Markdown.\n\nThe caption is a model example of how to handle a video with no subject motion according to the provided guidelines. It correctly prioritizes stating the lack of movement while giving just enough context about the scene's content to be informative.",
-  "revised_caption_by_generated_critique": "This is a static, close-up shot of two contrasting surfaces. On the left is a light brown, textured surface, while on the right is a dark, reddish-brown surface with a row of circular indentations. The shot remains completely still, effectively highlighting the lack of motion.",
+  "generated_critique": "This caption incorrectly focuses on describing the camera's movement and the static appearance of the surfaces rather than the motion of a subject. For example, if the video actually shows a close-up of a person's feet as they walk, the \"light brown, textured surface\" could be a dirt path and the \"dark, reddish-brown surface\" could be a brick walkway. In this case, the caption fails to identify the primary subject (the person) and their action (walking). A more accurate description would focus on the subject's motion, such as: \"A person walks forward, stepping from a light brown, textured path onto a dark, reddish-brown brick surface.\" This would correctly describe the subject's action in chronological order, as the instructions require, instead of detailing the camera's unsteady motion or the visual characteristics of the ground. If no subject is present, the caption should simply state that the scene is static rather than describing the camera's movement.",
+  "revised_caption_by_generated_critique": "A person walks forward, stepping from a light brown, textured path onto a dark, reddish-brown brick surface.",
   "status": "success"
 }

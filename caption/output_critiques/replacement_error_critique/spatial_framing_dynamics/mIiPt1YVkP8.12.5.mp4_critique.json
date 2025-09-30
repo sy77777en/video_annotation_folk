@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.12.5.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:49:32.140582",
+  "generation_timestamp": "2025-09-29T06:07:40.042827",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Initially, the desk items are visible in the bottom right foreground and middle ground. After the camera movement, the pilot and cockpit are positioned in the upper left, while the desk items shift to the lower right.",
-  "revised_caption_by_generated_critique": "Initially, the frame shows a pilot from the shoulders up, positioned in the left and center middle ground, looking towards the camera. To his right, also in the middle ground, is an image of an aircraft cockpit. Text and a food image occupy the top right background, while desk items are visible in the bottom right foreground/middle ground. The camera then tilts downwards and appears to zoom out slightly. This movement reveals a large illustration of a KLM airplane occupying the entire bottom foreground, stretching from left to right. After the camera movement, the pilot and cockpit are positioned in the upper left, while the desk items shift to the lower right. The background elements in the top right remain partially visible. The camera perspective starts slightly above the pilot's eye level and moves lower as it tilts down.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Initially, the desk items are visible in the bottom right foreground and middle ground. After the camera movement, the pilot and cockpit are positioned in the upper center left, while the desk items shift to the upper right.\n\n2. Modify \"The camera then tilts downwards and appears to zoom out slightly\" to \"The camera begins with a slow zoom out from the captain, then quickly moves downward and zooms out further to shift focus to the airplane on the leaflet.\"\n\n3. Change \"in the upper left/center and upper right/center middle ground\" to \"in the upper left-center and upper right-center middle ground.\"",
+  "revised_caption_by_generated_critique": "Initially, the frame shows a pilot from the shoulders up, positioned in the left and center middle ground, looking towards the camera. To his right, also in the middle ground, is an image of an aircraft cockpit. Text and a food image occupy the top right background, while desk items are visible in the bottom right foreground and middle ground. The camera begins with a slow zoom out from the captain, then quickly moves downward and zooms out further to shift focus to the airplane on the leaflet. This movement reveals a large illustration of a KLM airplane occupying the entire bottom foreground, stretching from left to right. The pilot and cockpit remain visible in the upper left-center and upper right-center middle ground, respectively, now smaller within the overall composition. The background elements in the top right and the desk items in the upper right remain partially visible. The camera perspective starts slightly above the pilot's eye level and moves lower as it tilts down.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "2KuVjf4uB9k.0.17.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:05:22.625086",
+  "generation_timestamp": "2025-09-29T05:37:27.305915",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the camera motion is inaccurate. It omits the camera's trucking movement and incorrectly describes the camera's path and final position relative to the car.",
-  "revised_caption_by_generated_critique": "The video showcases a drone camera capturing a racing car executing a drift from an overhead perspective. The camera maintains a high angle, looking down with a dynamic Dutch angle due to rolling. It features deep focus with a large depth of field. The drone smoothly tracks the car, incorporating a trucking movement alongside the car, moving forward, panning left, and slightly rolling counterclockwise. It positions itself parallel to the car, providing a visually dynamic and smooth aerial view of the drifting car without any shaking.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the camera motion is inaccurate. The caption fails to account for all camera movements. The description of the camera's path and its final position relative to the car is incorrect, and it omits the backward movement.",
+  "revised_caption_by_generated_critique": "The video showcases a drone camera capturing a racing car performing a drift from an overhead perspective. Initially, the camera follows the car from behind, smoothly moving forward while panning left and slightly rolling counterclockwise to create a dynamic Dutch angle. As the car drifts, the drone adjusts its path by moving backward and repositioning itself to maintain a captivating aerial view. The camera's movements are fluid and precise, ensuring a stable and engaging visual experience of the drifting car.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "bX8GaZ3O4-Q.0.4.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:13:38.151630",
+  "generation_timestamp": "2025-09-29T12:09:55.506181",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
-  "revised_caption_by_generated_critique": "From a smooth, ground-level perspective, the camera initially holds a static shot with a shallow depth of field, focusing on a white shoe in the midground. The video features a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward. As a small green frog jumps off the shoe, the camera trucks smoothly to the right, tracking the frog as it moves across the floor.",
+  "generated_critique": "The caption should also mention that the camera angle shifts to a high angle as the frog moves, even though this change is not present in the video.",
+  "revised_caption_by_generated_critique": "From a smooth, ground-level perspective, the camera initially holds a static shot with a shallow depth of field, focusing on a white shoe in the midground. As a small green frog jumps off the shoe, the camera trucks smoothly to the right, tracking the frog as it moves across the floor. Although not present in the video, imagine the camera angle shifting to a high angle as the frog continues its journey.",
   "status": "success"
 }

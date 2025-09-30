@@ -2,7 +2,7 @@
   "video_id": "MVMKpcbCn4M.0.0.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:15:59.585977",
+  "generation_timestamp": "2025-09-29T09:09:58.445361",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This is a 3D video, so references to camera angles, which imply a fixed viewpoint, should be avoided.",
-  "revised_caption_by_generated_critique": "In a 3D gaming video set in a dark, monochromatic landscape, the scene features an uneven, black, silhouetted ground in the foreground. Large, indistinct vertical structures loom in the background, heavily obscured by a thick gray fog or mist, creating a hazy atmosphere. Two small, silhouetted figures of boys are visible; one with glowing white eyes runs across the terrain, while another figure is positioned on the left.",
+  "generated_critique": "This is a 3D video, so references to side-view and profile, which imply a flat perspective, should be avoided.",
+  "revised_caption_by_generated_critique": "In a 3D gaming video set in a dark, monochromatic landscape, the scene features an uneven, black, silhouetted ground in the foreground. In the background, large, indistinct vertical structures are heavily obscured by a thick gray fog or mist, creating a hazy atmosphere. Two small, silhouetted figures of boys are visible; one on the right with glowing white eyes runs across the terrain, while another figure is positioned on the left.",
   "status": "success"
 }

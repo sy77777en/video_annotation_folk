@@ -2,7 +2,7 @@
   "video_id": "CbIWq4PGFCo.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:28:30.662964",
+  "generation_timestamp": "2025-09-29T12:31:33.548827",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description stating that the camera maintains a fixed, static position throughout the scene is incorrect. In reality, the camera slowly arcs counterclockwise around the man, indicating movement rather than a static position. Additionally, the man's head and shoulders are centrally positioned in the foreground, occupying both the upper and lower portions of the frame, not just the lower portion. The caption should also note that a small tree is visible in the top right background, even though it does not interact with the main subject.",
-  "revised_caption_by_generated_critique": "This close-up shot centers on the back of a man's head and shoulders, which are centrally positioned in the foreground, occupying both the upper and lower portions of the frame. He remains completely still, facing away from the camera towards a vast, blurry, arid landscape that stretches across the middle ground and background. The camera slowly arcs counterclockwise around the man, indicating movement. A small tree is visible in the top right background, although it does not interact with the main subject.",
+  "generated_critique": "The description stating that the camera maintains a fixed, static position throughout the scene is incorrect. In reality, the camera slowly arcs counterclockwise around the man, indicating movement rather than a static position. Additionally, the man's head and shoulders are centrally positioned in the foreground, occupying both the upper and lower portions of the frame, not just the lower portion. The caption also omits that a small tree is visible in the top right background, which should be included in the spatial analysis.",
+  "revised_caption_by_generated_critique": "This close-up shot centers on the back of a man's head and shoulders, which are centrally positioned in the foreground, occupying both the upper and lower portions of the frame. He remains completely still, facing away from the camera towards a vast, blurry, arid landscape that stretches across the middle ground and background. The camera slowly arcs counterclockwise around the man, indicating movement. A small tree is visible in the top right background, adding detail to the spatial analysis.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "2KuVjf4uB9k.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:06:52.556808",
+  "generation_timestamp": "2025-09-29T05:39:07.897087",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the car's spatial position and movement is inaccurate. The initial position is misidentified, and the claim that the car remains in the foreground is false. The caption also incorrectly states that the camera height is consistent, failing to mention its changes relative to the car.",
-  "revised_caption_by_generated_critique": "The video showcases a wide shot of a black sports car drifting on an expansive asphalt track. Initially, the car is positioned slightly off-center towards the right in the foreground, with the camera capturing it from above. As the car drifts, it moves dynamically across the frame, transitioning from the right to the left side, occasionally moving into the background. The car's orientation shifts, revealing different angles of its sleek design. White smoke trails behind the car, expanding from the bottom left towards the center of the frame. The surrounding arid, rocky terrain forms the background, remaining static as the car maneuvers. The camera adjusts its height relative to the car, providing varied overhead views of the drifting action and the track's surface. The shot size remains wide throughout, ensuring the car and its movement remain the focal point against the open backdrop.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the car's initial position and its subsequent movement path is inaccurate. The caption incorrectly states the car's starting position and depth, and it fails to describe the changes in its depth during its movement. Furthermore, the statement that the camera maintains a consistent height is incorrect, as the caption does not account for the changes in the camera's height relative to the car.",
+  "revised_caption_by_generated_critique": "The video showcases a wide shot of a black sports car drifting on a vast asphalt track. Initially, the car is positioned centrally in the foreground, with the camera capturing it from a slightly elevated angle. As the car drifts, it moves dynamically across the frame, transitioning from the center to the right side while changing its depth, moving closer to the camera. The car's orientation shifts, revealing different angles of its sleek design. White smoke trails behind the car, expanding from the bottom right towards the center of the frame. The surrounding arid, rocky terrain forms the background, remaining static as the car maneuvers. The camera adjusts its height relative to the car, providing varied perspectives of the drifting action and the track's surface. The shot size remains wide throughout, ensuring the car and its movement remain the focal point against the open backdrop.",
   "status": "success"
 }

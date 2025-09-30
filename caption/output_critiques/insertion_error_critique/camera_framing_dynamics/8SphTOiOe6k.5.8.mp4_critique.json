@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.5.8.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:15:47.479168",
+  "generation_timestamp": "2025-09-29T05:21:14.478506",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T12:55:28.263731",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The camera exhibits minimal shaking instead of moving smoothly. The video speed appears to be slightly accelerated, resembling a mild fast-motion effect. Replace \"holds a static position\" with \"shortly pauses.\" The phrase \"panning left to follow pedestrians walking past a vending machine\" is inaccurate; the panning left occurs mainly due to aimless shaking.",
-  "revised_caption_by_generated_critique": "This eye-level, level-angle shot maintains a deep focus, keeping the entire scene sharp. The camera, exhibiting minimal shaking, begins with a slight downward tilt before a mild fast-motion effect is observed. It then shortly pauses before a subtle forward movement concludes the shot.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The camera exhibits minimal shaking instead of moving smoothly. Replace \"holds a static position\" with \"shortly pauses.\" The phrase \"panning left to follow pedestrians walking past a vending machine\" is inaccurate; the panning left occurs mainly due to aimless shaking. Additionally, the video speed appears to be slightly accelerated, giving pedestrian movements an unnaturally brisk quality.",
+  "revised_caption_by_generated_critique": "This eye-level, level-angle shot maintains a deep focus, keeping the entire scene sharp. The camera exhibits minimal shaking, beginning with a slight downward tilt before panning left, mainly due to aimless shaking. It then shortly pauses before a subtle forward movement concludes the shot. The video speed appears to be slightly accelerated, giving pedestrian movements an unnaturally brisk quality.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "kxcw0iSn0xw.2.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:56:18.355815",
+  "generation_timestamp": "2025-09-29T13:14:02.234299",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Since this is a motion task, the description of the movement needs to be more detailed. The person stands on the right side of the frame and swings the golf club from the right side of the frame. The club starts in a vertical position and moves towards the upper left of the frame until it exits the frame. The person briefly pauses before swinging the club. Initially, the golf ball is stationary on the ground on the right side of the frame. Once struck by the club, the golf ball begins to fly towards the upper left, in the direction of the eggs.",
-  "revised_caption_by_generated_critique": "A person stands on the right side of the frame, briefly pausing before swinging a golf club. The club starts in a vertical position and moves smoothly towards the upper left of the frame, exiting the view. Initially stationary on the ground on the right side, the golf ball is struck by the club and begins to fly towards the upper left, heading directly for three eggs on stands. The ball strikes the eggs, causing them to burst open and scatter their contents, before the golf club and ball move out of the frame.",
+  "generated_critique": "Since this is a motion task, the description of the movement needs to be more detailed. The person stands on the right side of the frame and swings the golf club from the right side of the frame. The club starts in a vertical position and moves towards the upper left of the frame until it exits the frame. The person briefly pauses before swinging, which is not mentioned in the caption. Initially, the golf ball is stationary on the ground on the right side of the frame. Once struck by the club, the golf ball begins to fly towards the upper left, in the direction of the eggs.",
+  "revised_caption_by_generated_critique": "A person stands on the right side of the frame, holding a golf club in a vertical position. After a brief pause, they swing the club from the right side of the frame towards the upper left, where it exits the frame. The stationary golf ball, positioned on the ground on the right side, is struck by the club and begins to fly towards the upper left. It heads directly towards three eggs on stands, striking them and causing them to burst open, scattering their contents. The golf club and ball then move out of the frame.",
   "status": "success"
 }

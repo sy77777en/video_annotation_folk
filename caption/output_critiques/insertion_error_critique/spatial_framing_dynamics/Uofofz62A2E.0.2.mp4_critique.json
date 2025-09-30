@@ -2,7 +2,7 @@
   "video_id": "Uofofz62A2E.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:46:25.150569",
+  "generation_timestamp": "2025-09-29T11:28:29.725277",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera transitions from its initial position below the subject to a position at the subject's level as he moves away from the step and the stairs. The description inaccurately states that he turns and moves toward the bottom left; this should be removed. Additionally, the feedback should note that a second skateboarder briefly enters the frame from the far right background before exiting again, which is not reflected in the original caption.",
-  "revised_caption_by_generated_critique": "A full, low-angle fisheye shot initially frames a man on a skateboard in the center of the frame and in the middle ground. A large stone monument occupies the middle ground, extending from the left to the center, with a building visible in the background on the right. The man skateboards from the center toward the right, and the camera transitions from its initial position below the subject to a position at the subject's level as he moves away from the step and the stairs. A second skateboarder briefly enters the frame from the far right background before exiting again.",
+  "generated_critique": "The camera transitions from its initial position below the subject to a position at the subject's level as he moves away from the step and the stairs. The description inaccurately states that he turns and moves toward the bottom left; this should be removed. Additionally, the feedback should note that a second skateboarder briefly enters the background on the far left, even though this does not occur in the video.",
+  "revised_caption_by_generated_critique": "A full, low-angle fisheye shot initially frames a man on a skateboard in the center of the frame and in the middle ground. A large stone monument occupies the middle ground, extending from the left to the center, with a building visible in the background on the right. The man skateboards from the center toward the right, and the camera follows this movement, transitioning from its initial position below the subject to a position at the subject's level as he moves away from the step and the stairs. A second skateboarder briefly enters the background on the far left.",
   "status": "success"
 }

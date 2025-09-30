@@ -2,7 +2,7 @@
   "video_id": "YBC2JaevzOI.0.2.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:27:34.113432",
+  "generation_timestamp": "2025-09-29T10:59:08.803096",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video does not clearly show whether the path curves, as the trees and leaves on the right side of the frame obstruct the view of where the path leads. Additionally, the video briefly shows a cyclist riding past in the background before the young man appears.",
-  "revised_caption_by_generated_critique": "The video begins with a static shot of a paved path partially obscured by trees and leaves on the right side, making it unclear if the path curves. A cyclist briefly rides past in the background before a young man jogs into the frame, running along the path toward the camera.",
+  "generated_critique": "The video does not clearly show whether the path curves, as the trees and leaves on the right side of the frame obstruct the view of where the path leads. Additionally, the feedback should note that a cyclist briefly passes by in the background, which is not relevant to the main subject’s motion.",
+  "revised_caption_by_generated_critique": "The video begins with a static shot of a paved path partially obscured by trees and leaves on the right side, making it unclear if the path curves. A young man then jogs into the frame, running toward the camera, while a cyclist briefly passes by in the background.",
   "status": "success"
 }

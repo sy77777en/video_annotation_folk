@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.5.1.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:16:32.479094",
+  "generation_timestamp": "2025-09-29T05:22:15.792211",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-07-23T16:52:58.829698",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please replace \"From a bird's-eye view,\" with \"Due to the close-up nature of the shot, the camera's angle is unclear.\" Additionally, mention that the video appears to be in slow-motion, as this affects the perception of camera movement and focus transitions.",
-  "revised_caption_by_generated_critique": "Due to the close-up nature of the shot, the camera's angle is unclear as it smoothly moves over a corkboard, shifting its focus from a sticker labeled \"BUTCHER\" to one reading \"BUTCHER'S FRIEND.\" The video appears to be in slow-motion, affecting the perception of camera movement and focus transitions. As it moves, the camera rolls counterclockwise to adjust its orientation. The shot maintains a deep focus with a large depth of field, keeping all the notes and the board's texture sharp. The camera's height is not discernible due to the lack of background information.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please replace \"From a bird's-eye view,\" with \"Due to the close-up nature of the shot, the camera's angle is unclear.\" Additionally, mention that the video appears to be played in slow-motion, even though this is not evident from the original description.",
+  "revised_caption_by_generated_critique": "Due to the close-up nature of the shot, the camera's angle is unclear as it smoothly moves over a corkboard, shifting its focus from a sticker labeled \"BUTCHER\" to one reading \"BUTCHER'S FRIEND.\" As it moves, the camera rolls counterclockwise to adjust its orientation. The shot maintains a deep focus with a large depth of field, keeping all the notes and the board's texture sharp. The video appears to be played in slow-motion, although this is not evident from the original description.",
   "status": "success"
 }

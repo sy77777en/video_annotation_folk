@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.2.8.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:20:49.816517",
+  "generation_timestamp": "2025-09-29T10:49:19.826471",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot is not stationary; the camera moves forward and pans to the right around the corner, revealing the entire space. The perspective is first-person and at eye level, rather than from a low camera angle. Additionally, a large window on the far wall lets in natural light, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "This is a dynamic shot of an interior architectural scene, captured from a first-person perspective at eye level. The camera moves forward and pans to the right around the corner, gradually revealing the entire space. A tiled wall occupies the left side of the frame, extending from the foreground into the middle ground, while the tiled floor covers the bottom half. A curved portion of the right wall is prominent in the right foreground. Along the top right, a row of square ceiling lights recedes into the background. In the background, a bright vertical light source is positioned slightly left of center, with a dark, arched entryway to its right. A large window on the far wall lets in natural light, illuminating the space. A metal railing stands in the middle ground on the right, in front of the entryway.",
+  "generated_critique": "The shot is not stationary; the camera moves forward and pans to the right around the corner, revealing the entire space. The perspective is first-person and at eye level, rather than from a low camera angle. There is also a large window on the far left that lets in natural light, which affects the overall brightness of the scene.",
+  "revised_caption_by_generated_critique": "This is a dynamic shot of an interior architectural scene, captured from a first-person perspective at eye level. The camera moves forward and pans to the right around the corner, gradually revealing the entire space. A tiled wall extends from the foreground into the middle ground on the left, while the tiled floor covers the bottom half of the frame. A curved portion of the right wall is prominent in the right foreground. Along the top right, a row of square ceiling lights recedes into the background. In the background, a bright vertical light source is positioned slightly left of center, with a dark, arched entryway to its right. A large window on the far left lets in natural light, enhancing the overall brightness of the scene. A metal railing stands in the middle ground on the right, in front of the entryway.",
   "status": "success"
 }

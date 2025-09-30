@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.14.1.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:26:07.383211",
+  "generation_timestamp": "2025-09-29T10:02:00.421585",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the subjects are walking toward a staircase. The description of how the person in front descends the stairs is inaccurate. The caption also misidentifies which person is blown backward by the blast.",
-  "revised_caption_by_generated_critique": "The individual in the foreground holds a firearm and moves behind another person, who is already on the staircase. As an explosion occurs outside the window, the person in front quickly jumps to the left and continues down the stairs. Debris, flames, and smoke then fill the area, and the person with the firearm is forcefully blown backward by the blast.",
+  "generated_critique": "The caption incorrectly describes the initial movement of the subjects in relation to the staircase. The description of the first person's jump is inaccurate and lacks detail. The caption misidentifies which person is blown backward by the blast and omits the final action of that person.",
+  "revised_caption_by_generated_critique": "The individual in the foreground holds a firearm and moves behind another person, who is already descending the staircase. As an explosion occurs outside the window, the person in front quickly leaps to the left, avoiding debris. Flames and smoke fill the area, and the individual with the firearm is forcefully blown backward by the blast. Despite the impact, they manage to regain their footing and continue down the stairs.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "ORHIVufNfRM.13.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T05:34:07.754353",
+  "generation_timestamp": "2025-09-29T12:09:33.312250",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the camera's transition from a high angle to a level angle. The description of the seabed's position as 'bottom-left and center' is inaccurate. The caption incorrectly places all bioluminescent organisms in the middle ground, as some pass through the foreground. The description of the camera's movement as simply moving 'forward and descends' is incomplete and inaccurate. The caption inaccurately implies the gloved hands enter the frame only once. The final sentence incorrectly describes the number, position, and movement of the red-glowing creatures.",
-  "revised_caption_by_generated_critique": "The video begins with a high-angle, first-person perspective, where the camera looks down at a sandy seabed occupying the bottom-left of the frame. A large school of white, dot-like bioluminescent organisms is visible on the right, bordering a dark abyss that fills the background. The camera transitions to a level angle as it moves forward and descends, gliding over the edge of an underwater cliff. As it descends, the seabed recedes, and the dark abyss expands to fill most of the frame. Gloved hands enter and exit the frame multiple times from the bottom, positioned in the foreground. The camera continues its descent into the dark background, with clusters of green and white bioluminescent organisms scattered throughout, some passing through the foreground. Several small, red-glowing creatures swim in the middle ground on the left, moving deeper into the abyss.",
+  "generated_critique": "The caption incorrectly describes the camera angle, omitting a transition. The initial position of the seabed is inaccurate. The caption fails to account for the movement of some bioluminescent organisms through the foreground. The description of the camera's movement is both inaccurate and incomplete. The appearance of the gloved hands is described incorrectly. The number of red-glowing creatures and their direction of movement are also wrong.",
+  "revised_caption_by_generated_critique": "The video begins with a high-angle, first-person perspective, where the camera looks down at a sandy seabed occupying the bottom-left corner of the frame. A large school of white, dot-like bioluminescent organisms is visible in the middle ground on the right, adjacent to a dark abyss that fills the background in the top-right. The camera transitions to a forward movement, descending over the edge of an underwater cliff. As it descends, the seabed on the left recedes, and the dark abyss expands to fill most of the frame. Some bioluminescent organisms move through the foreground. A pair of gloved hands appears from the bottom, positioned in the foreground, with fingers slightly curled. The camera continues its descent into the dark background, with clusters of green and white bioluminescent organisms scattered throughout the middle ground. Two small, red-glowing creatures swim in the middle ground on the left, moving deeper into the abyss.",
   "status": "success"
 }

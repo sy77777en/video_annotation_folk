@@ -2,7 +2,7 @@
   "video_id": "1470.0.30.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T02:11:03.230475",
+  "generation_timestamp": "2025-09-29T07:52:34.507126",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption is mostly accurate but contains one error. The woman does not lower her head when she removes the cucumber slices; her head remains relatively still as she takes them off.\n\n**Completeness:** The caption successfully covers the sequence of actions performed by the subject from the beginning to the end of the clip.\n\n**Adherence to Instructions:** The caption does not fully adhere to the provided instructions.\n*   **Focus on Motion:** The first two sentences (\"A woman is lying in a bathtub filled with bubbles, wearing a pink towel and headphones. She has cucumber slices on her eyes and is initially looking forward.\") are dedicated to describing the static scene and the subject's appearance, rather than focusing on her motion as instructed.\n*   **Avoid Speculation:** The phrase \"appearing to scream\" is an interpretation of the action. The instructions state to \"Avoid speculative statements.\" A more objective description would be to simply state that she \"opens her mouth wide.\"\n*   **Chronological Order:** The caption correctly presents the actions in chronological order.\n\nIn summary, the caption is chronologically correct but fails to adhere to key instructions by including excessive static description, an inaccurate detail about the subject's movement, and a speculative interpretation of an action.",
-  "revised_caption_by_generated_critique": "A woman in a bubble bath removes cucumber slices from her eyes, then looks up and opens her mouth wide.",
+  "generated_critique": "The caption contains a factual error regarding the subject's motion. It incorrectly states that the woman \"lowers her head and gently shakes it, causing the cucumber slices to fall,\" when in fact, the video uses a hard cut to transition from the shot of her with cucumber slices on her eyes to the shot without them. The caption also uses the subjective phrase \"appears startled,\" which should be avoided. The description should be corrected to accurately reflect the sequence of events, noting the shot transition and describing the woman's final action more objectively.",
+  "revised_caption_by_generated_critique": "A woman is lying in a bathtub filled with bubbles, wearing a pink towel and headphones, with cucumber slices on her eyes. The shot cuts to her without the cucumber slices. She then looks up and opens her mouth wide.",
   "status": "success"
 }

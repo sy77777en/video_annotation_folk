@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.31.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:50:58.597574",
+  "generation_timestamp": "2025-09-29T09:29:00.110779",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly places the humanoid figure, the small table, and the large arched windows in the wrong depth planes. The figure and table are in the foreground, not the middle ground, and the windows are in the middle ground, not the background. The camera movement is a forward motion combined with a zoom out, not a slow zoom in. The description of the medium shot includes the unnecessary detail \"that frames the figure from the waist up.\"",
-  "revised_caption_by_generated_critique": "The video begins with a full shot of a humanoid figure seated in the center foreground. To the left, a floor lamp stands in the foreground, while a small table is positioned in the right foreground. In the middle ground, large arched windows span the width of the scene. The camera, positioned at the subject's level, moves forward while zooming out, transitioning the scene into a medium shot. The figure remains in the center foreground, while a text overlay appears at the bottom center of the frame.",
+  "generated_critique": "The caption incorrectly identifies the depth of the humanoid figure, the small table, and the large arched windows. The description of the camera movement is wrong. The caption is also missing a description of the background element. Additionally, the description of the medium shot is flawed.",
+  "revised_caption_by_generated_critique": "The video begins with a full shot of a humanoid figure seated in the center foreground. To the left, a floor lamp stands in the foreground, while a small table is positioned in the right foreground. In the background, large arched windows span the width of the scene, with a lush garden visible through them. The camera, positioned at the subject's level, smoothly pans in, transitioning the scene into a medium shot that frames the figure from the chest up. The figure remains in the center foreground, while a text overlay appears at the bottom center of the frame.",
   "status": "success"
 }

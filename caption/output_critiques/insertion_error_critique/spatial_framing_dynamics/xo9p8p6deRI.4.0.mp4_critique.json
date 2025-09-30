@@ -2,7 +2,7 @@
   "video_id": "xo9p8p6deRI.4.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:43:52.716384",
+  "generation_timestamp": "2025-09-29T11:24:16.775692",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please clarify that the video is a rendering of a 2D map, which does not incorporate any sense of camera angle, height, or depth. Therefore, terms like foreground, middle ground, and background are not applicable in this context. Additionally, the video does not feature any animated vehicles or moving icons traversing the map.",
-  "revised_caption_by_generated_critique": "This video showcases a top-down rendering of a stylized 2D map that fills the entire frame. A glowing red line starts in the top left and extends toward the center. From the end of this red line, a white dashed line traces a path toward the bottom right, leading to a red pin labeled \"ASCENSION CEMETERY.\" The map features a white grid representing roads, with topographical lines on the right and a coastline on the left. As the video progresses, the end of the red line animates along the white dashed path, and the topographical lines on the right side of the frame gradually fade to black. The view remains fixed in an overhead position throughout the scene.",
+  "generated_critique": "Please clarify that the video is a rendering of a 2D map, which does not incorporate any sense of camera angle, height, or depth. Therefore, terms like foreground, middle ground, and background are not applicable in this context. Additionally, the video does not feature any animated vehicles or moving icons traveling along the map, so references to such elements should be omitted.",
+  "revised_caption_by_generated_critique": "This video showcases a top-down rendering of a stylized 2D map that fills the entire frame. A glowing red line starts in the top left corner and extends toward the center. From the end of this red line, a white dashed line traces a path toward the bottom right, leading to a red pin labeled \"ASCENSION CEMETERY.\" The map features a white grid representing roads, with topographical lines on the right and a coastline on the left. As the video progresses, the end of the red line animates along the white dashed path, and the topographical lines on the right side of the frame gradually fade to black. The view remains fixed in an overhead position throughout the scene.",
   "status": "success"
 }

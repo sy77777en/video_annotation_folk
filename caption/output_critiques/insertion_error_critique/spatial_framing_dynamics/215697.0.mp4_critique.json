@@ -2,7 +2,7 @@
   "video_id": "215697.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:35:12.562402",
+  "generation_timestamp": "2025-09-29T04:22:19.822795",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-20T07:46:51.019791",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please remove the statement that the camera remains stationary, as the camera's movement is uncertain. Additionally, it would be beneficial to mention that numerous shining stars appear to be approaching the camera and gradually fade from the screen. Also, consider noting that a large asteroid briefly passes through the bottom right of the frame, even though this is not depicted in the original scene.",
-  "revised_caption_by_generated_critique": "The video showcases an expansive cosmic scene with no distinct major subjects. The swirling nebulae and stars occupy the entire frame, creating a dynamic and fluid composition. The nebulae, in shades of blue, green, and purple, are distributed across the frame, with some clusters more prominent in the top left and right areas. These nebulae appear in the background, providing a sense of depth. The stars are scattered throughout, with some brighter ones located near the center and others dispersed towards the edges. Numerous shining stars appear to be approaching the camera and gradually fade from the screen, adding to the dynamic nature of the scene. A large asteroid briefly passes through the bottom right of the frame, enhancing the sense of movement and scale. The spatial arrangement emphasizes the ethereal and complex nature of the cosmos, with the nebulae and stars maintaining their positions relative to each other throughout the sequence. The camera's movement is uncertain, capturing the vastness of the scene without any noticeable change in perspective. The camera's height is not applicable in this context, as the scene is set in the boundless expanse of space.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please remove the statement that the camera remains stationary, as the camera's movement is uncertain. Additionally, it would be beneficial to mention that numerous shining stars appear to be approaching the camera and gradually fade from the screen. Also, include that a large asteroid briefly passes through the bottom right of the frame, even if it is not a prominent element in the scene.",
+  "revised_caption_by_generated_critique": "The video showcases an expansive cosmic scene with no distinct major subjects. The swirling nebulae and stars occupy the entire frame, creating a dynamic and fluid composition. The nebulae, in shades of blue, green, and purple, are distributed across the frame, with some clusters more prominent in the top left and right areas. These nebulae appear in the background, providing a sense of depth. Numerous shining stars seem to be approaching the camera and gradually fade from the screen, adding to the dynamic nature of the scene. A large asteroid briefly passes through the bottom right of the frame, even though it is not a prominent element. The spatial arrangement emphasizes the ethereal and complex nature of the cosmos, with the nebulae and stars maintaining their positions relative to each other throughout the sequence. The camera's height is not applicable in this context, as the scene is set in the boundless expanse of space.",
   "status": "success"
 }

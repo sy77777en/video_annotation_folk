@@ -2,7 +2,7 @@
   "video_id": "1470.0.40.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:17:03.850579",
+  "generation_timestamp": "2025-09-29T04:52:00.357320",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-28T07:49:20.977942",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption fails to specify which hand holds the phone and which is on the door frame, and it omits that the woman in the background remains standing. The description of the man and woman disappearing is inaccurate; they are obscured at the same time, not sequentially. The caption also does not state which hand the man uses to close the door.",
-  "revised_caption_by_generated_critique": "A man is seen talking on a blue corded phone, holding it with his right hand while standing in a doorway. His left hand rests on the door frame. As he continues his conversation, he uses his left hand to begin closing the door. The woman in the background remains standing as the door closes, and both the man and the woman are obscured from view simultaneously when the door is fully shut.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption fails to specify which hand holds the phone and which is on the door frame, and it omits which ear the phone is held to. The description of the woman's motion is missing. The caption is also incorrect about how the man closes the door. The final sentences inaccurately describe the disappearance of both individuals and are redundant.",
+  "revised_caption_by_generated_critique": "A man is seen talking on a blue corded phone, holding it to his right ear with his right hand, while his left hand rests on the door frame. As he continues his conversation, he begins to close the door with his left hand. The woman in the background steps out of view as the door gradually closes. The door is eventually shut, and both the man and the woman are no longer visible in the frame.",
   "status": "success"
 }

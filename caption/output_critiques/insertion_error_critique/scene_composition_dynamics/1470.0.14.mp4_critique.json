@@ -2,7 +2,7 @@
   "video_id": "1470.0.14.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:24:32.985925",
+  "generation_timestamp": "2025-09-29T04:06:47.919548",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-29T04:24:58.115916",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video only shows a small part of the door, and the scene does not transition. There is also no visible overlay text or icons present in the scene, so references to overlays should not be included. Therefore, the last sentence should be removed.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video only shows a small part of the door, and the scene does not transition. There is also no visible window in the room, so mentioning one would be inaccurate. Therefore, the last sentence should be removed.",
   "revised_caption_by_generated_critique": "The video is set indoors, featuring a room with neutral-colored walls and a simple, modern design. The lighting suggests daytime, with soft, natural light illuminating the space. Notable elements include a person wearing a white shirt and a striped tie, with distinct red hair. The room contains minimal furniture, with a small part of a door visible and a vent on the wall, contributing to a clean and uncluttered environment.",
   "status": "success"
 }

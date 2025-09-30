@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.0.6.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:00:37.784106",
+  "generation_timestamp": "2025-09-29T13:20:22.973805",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the video features noticeable fisheye lens distortion, causing the edges of the frame to curve dramatically, which affects the perception of the cityscape.",
-  "revised_caption_by_generated_critique": "This is a time-lapse video of the Seine River in Paris at night, shot from an overhead, second-floor height at a level angle. The scene is captured in deep focus, keeping the entire cityscape sharp. The camera performs a smooth, steady movement, trucking to the right along the riverbank while simultaneously panning left to keep the Musée d'Orsay prominent in the frame. Noticeable fisheye lens distortion causes the edges of the frame to curve dramatically, affecting the perception of the cityscape.",
+  "generated_critique": "The caption should mention that the video features noticeable barrel distortion, causing straight lines near the edges of the frame to bow outward.",
+  "revised_caption_by_generated_critique": "This is a time-lapse video of the Seine River in Paris at night, shot from an overhead, second-floor height at a level angle. The scene is captured in deep focus, keeping the entire cityscape sharp. The camera performs a smooth, steady movement, trucking to the right along the riverbank while simultaneously panning left to keep the Musée d'Orsay prominent in the frame. Notably, the video features barrel distortion, causing straight lines near the edges of the frame to bow outward.",
   "status": "success"
 }

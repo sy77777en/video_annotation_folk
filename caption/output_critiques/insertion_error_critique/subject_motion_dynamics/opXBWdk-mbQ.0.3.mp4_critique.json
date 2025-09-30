@@ -2,7 +2,7 @@
   "video_id": "opXBWdk-mbQ.0.3.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:56:45.956407",
+  "generation_timestamp": "2025-09-29T11:45:40.730685",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The phrase \"The camera slowly pans from left to right\" should be revised to \"The camera slowly moves from left to right.\" Additionally, you should mention that the camera briefly zooms in on the \"TUESDAY\" meal before continuing to the next container.",
-  "revised_caption_by_generated_critique": "The camera slowly moves from left to right, revealing a series of pre-portioned meals in stationary containers arranged on a white surface. The view starts on a meal labeled \"MONDAY,\" briefly zooms in on the \"TUESDAY\" meal, and concludes by revealing a \"WEDNESDAY\" meal. The food and containers remain still throughout the movement.",
+  "generated_critique": "1. The phrase \"The camera slowly pans from left to right\" should be revised to \"The camera slowly moves from left to right.\" Additionally, you should mention that the camera briefly zooms in on the containers as it moves, even though this action is not present in the original video.",
+  "revised_caption_by_generated_critique": "The camera slowly moves from left to right, briefly zooming in on the containers as it reveals a series of pre-portioned meals in stationary containers arranged on a white surface. The view starts on a meal labeled \"MONDAY,\" moves to show a \"TUESDAY\" meal, and concludes by revealing a \"WEDNESDAY\" meal. The food and containers remain still throughout the movement.",
   "status": "success"
 }

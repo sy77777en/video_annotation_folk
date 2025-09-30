@@ -2,7 +2,7 @@
   "video_id": "4022135.0.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T12:26:40.739746",
+  "generation_timestamp": "2025-09-29T16:23:28.587728",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and adheres to all instructions.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the camera's movement as a slow pan to the right and precisely describes the sequence of what is revealed: the center of the field, the right end zone, the goalpost, the \"RYAN FIELD\" building, and spectators in the foreground.\n\n**Completeness:** The description is complete, covering the entire camera motion from start to finish. It effectively summarizes the visual journey across the stadium view.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions are described in the correct chronological sequence as the camera pans.\n*   **Focus on Motion:** The caption correctly focuses on the primary motion, which is the camera pan, and accurately describes the players as \"standing.\"\n*   **Clarity and Conciseness:** The language is simple, natural, and easy to understand, forming a single, coherent paragraph.\n*   **Objectivity:** The description is factual and avoids any emotional, subjective, or speculative language.\n*   **Specificity:** It provides specific details like the direction of the pan and the name on the building, which adds valuable context without being overly descriptive.\n\nThe caption is a perfect example of the desired output. It correctly identifies the camera's movement as the main action and describes it and its effect on the scene clearly and chronologically.",
-  "revised_caption_by_generated_critique": "The camera pans slowly to the right, revealing more of the crowded football stadium. The view shifts from the center of the field, where players are standing, to the right end zone, a goalpost, and a building labeled \"RYAN FIELD.\" The pan also brings several spectators in the foreground into the frame.",
+  "generated_critique": "The caption incorrectly focuses on describing the camera's motion rather than the motion of the subjects, which contradicts the core instruction. The instructions state to describe the *subject's* motion, and if there is no motion, to briefly mention that. In the video, the subjects are the football players and the crowd, who are largely static. The caption should be rewritten to describe the subjects and their lack of movement first, treating the camera pan as a change in perspective rather than the main action. For example, it should state that the players are standing on the field and the crowd is seated in the stands, and then mention that the view pans to the right across the stadium.",
+  "revised_caption_by_generated_critique": "From a high angle, football players stand on the field below, surrounded by a large, seated crowd in the stands of a stadium. The view pans slowly to the right, showing the end zone with \"WILDCATS\" painted on it, a goalpost, and a building with \"RYAN FIELD\" on the side, as more spectators in the foreground come into view.",
   "status": "success"
 }

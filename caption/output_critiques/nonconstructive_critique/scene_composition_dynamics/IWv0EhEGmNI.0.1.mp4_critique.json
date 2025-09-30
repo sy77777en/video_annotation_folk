@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.0.1.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T03:21:59.277525",
+  "generation_timestamp": "2025-09-29T09:56:59.820884",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits multiple lines of subtitle dialogue, including \"Price: Hey...\", \"Price: There's a checkpoint.\", and \"Kyle: For us?\". The description of the subtitle color is also inaccurate, as it fails to mention the white text.",
-  "revised_caption_by_generated_critique": "The video takes place inside a vehicle at night, with the interior dimly lit by the dashboard’s soft blue and red lights. The dashboard displays illuminated gauges and a digital clock reading 5:23, while the windshield reveals a dark, indistinct outdoor environment. The vehicle’s interior features dark upholstery and a metal security partition with a grid pattern separating the front and back seats. A person in the back seat is visible holding a black rifle with a matte finish and textured grip, positioned near the partition. The scene includes multiple lines of subtitle dialogue: \"Price: Hey...\", \"Price: There's a checkpoint.\", \"Kyle: For us?\", and \"Price: What is there a difference?\" The subtitles are displayed in green and white text near the bottom center. The overall color palette is muted, dominated by dark tones and subtle reflections from the dashboard lights.",
+  "generated_critique": "The caption incorrectly describes the color of the subtitle text and omits several lines of dialogue from the subtitles.",
+  "revised_caption_by_generated_critique": "The video takes place inside a vehicle at night, with the interior dimly lit by the dashboard’s soft blue and red lights. The dashboard displays illuminated gauges and a digital clock reading 5:23, while the windshield reveals a dark, indistinct outdoor environment. The vehicle’s interior features dark upholstery and a metal security partition with a grid pattern separating the front and back seats. A person in the back seat is visible holding a black rifle with a matte finish and textured grip, positioned near the partition. The scene includes an overlay of white subtitle text near the bottom center that reads, “Price: What is there a difference?” followed by additional dialogue, “Price: We need to move now.” and “Driver: Understood.” The overall color palette is muted, dominated by dark tones and subtle reflections from the dashboard lights.",
   "status": "success"
 }

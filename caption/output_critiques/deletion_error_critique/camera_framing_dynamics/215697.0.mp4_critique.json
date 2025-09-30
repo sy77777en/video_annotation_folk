@@ -2,7 +2,7 @@
   "video_id": "215697.0.mp4",
   "caption_type": "camera",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:26:56.244336",
+  "generation_timestamp": "2025-09-29T04:10:32.364913",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-08-20T07:39:14.807455",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Consider omitting the phrases \"with no lens distortion,\" and \"There is no discernible camera movement.\" because they are the standard settings. Instead of stating \"not significant enough to mention,\" it would be more precise to say \"lack of background information prevents determination.\"",
-  "revised_caption_by_generated_critique": "The video features a stationary camera capturing a cosmic scene. The playback speed is regular, and the camera's height, angle, and focus are not determined due to a lack of background information.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Consider omitting the phrases \"with no lens distortion,\" \"The playback speed is regular,\" and \"There is no discernible camera movement.\" because they are the standard settings.",
+  "revised_caption_by_generated_critique": "The video captures a cosmic scene with a stationary camera, where the camera's height, angle, and focus are not significant enough to mention.",
   "status": "success"
 }

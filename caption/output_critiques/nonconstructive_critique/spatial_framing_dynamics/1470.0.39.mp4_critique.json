@@ -2,7 +2,7 @@
   "video_id": "1470.0.39.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:15:47.265203",
+  "generation_timestamp": "2025-09-29T04:50:27.970032",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The subject's initial orientation is described incorrectly. The caption fails to mention the camera zoom that causes the shot transition and misstates the subject's initial depth. The positions and depths of the window and green basket are inaccurate. The description of the background elements is incomplete and incorrectly claims they remain consistently placed, ignoring the movement of the right door frame.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of the subject, who is positioned slightly off-center in the foreground, initially facing towards the camera. As the video progresses, a camera zoom transitions the shot to a medium close-up, bringing the subject closer while maintaining their central focus. The subject turns around, revealing their face and upper body more prominently. The camera remains at the subject's level throughout, capturing their movements smoothly. In the background, elements such as the yellow-framed window, sheer curtains, and a green basket with patterned towels are visible, though their positions shift slightly as the right door frame moves. These elements provide context and depth to the scene, complementing the subject's presence.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states the subject's initial orientation and is wrong about their initial depth. The 2D positioning of the window and the green basket is misidentified, and these elements are incorrectly placed in the middle ground. The description is also incomplete, as it omits the door frames and their spatial dynamics, and it fails to specify that the shot transition is caused by a camera zoom.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of the subject, who is initially facing the camera, positioned centrally in the foreground. As the video progresses, the shot transitions to a medium close-up through a camera zoom, bringing the subject closer while maintaining their central position. The subject turns slightly, revealing more of their face and upper body. The camera remains at the subject's level, capturing their movements smoothly. In the background, the yellow-framed window and green basket with patterned towels are positioned in the background, providing context. The room's door frames are also visible, adding depth and spatial dynamics to the scene. The transition between shots emphasizes the subject's presence as they move, with the camera zoom highlighting their prominence.",
   "status": "success"
 }

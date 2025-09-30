@@ -2,7 +2,7 @@
   "video_id": "as8lT-q2_E8.0.2.mp4",
   "caption_type": "scene",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-28T00:31:07.327386",
+  "generation_timestamp": "2025-09-29T08:02:32.574660",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The location should be described as being on the edge of a building rather than within a modern interior. Instead of multiple screens inside, there is one large screen visible on another building across from the characters, displaying the jellyfish. The reflection of this screen can also be seen in the glass of another building initially positioned to the left of the screen.\n\n2. There are two silhouetted figures moving in front of the glowing display.",
-  "revised_caption_by_generated_critique": "The scene is set at night on the edge of a building, defined by a large, vertical screen visible on another building across from the characters. This screen displays a luminous, blue-green jellyfish with a distinct bell and long, flowing tentacles against a dark blue, particle-filled background. The reflection of this screen can be seen in the glass of another building initially positioned to the left. Two silhouetted figures move in front of the glowing display. The surrounding structure is dark and metallic, and glimpses of distant city lights are visible through gaps. The perspective shifts to look down a long, narrow, vertical shaft lined with glowing blue and green lights, suggesting a great height.",
+  "generated_critique": "1. The location should be described as being on the edge of a building rather than within a modern interior. Instead of multiple screens inside, there is one large screen visible on another building across from the characters, displaying the jellyfish. The reflection of this screen can also be seen in the glass of another building initially positioned to the left of the screen.\n\n3. After the perspective shifts downward, it is positioned between a few buildings, looking down at the street from a significant height, where blurry illuminated headlights of some vehicles can be seen through a gap in the building. This should replace the description of \"The surrounding structure is dark and metallic, with glimpses of distant city lights visible through gaps,\" as it is unclear what this sentence was indicating. Additionally, remove the repeated reference to \"significant height\" or \"great height\" and retain only one mention.",
+  "revised_caption_by_generated_critique": "The scene is set at night on the edge of a building, defined by a large screen visible on another building across from the silhouetted figure. This screen displays a luminous, blue-green jellyfish with a distinct bell and long, flowing tentacles against a dark blue, particle-filled background. The reflection of this screen can also be seen in the glass of another building initially positioned to the left. The perspective shifts to look down between a few buildings, revealing a street far below, where blurry illuminated headlights of some vehicles are visible through a gap.",
   "status": "success"
 }

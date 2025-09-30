@@ -2,7 +2,7 @@
   "video_id": "y51VUsotZe4.16.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:49:36.889723",
+  "generation_timestamp": "2025-09-29T08:32:23.270772",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. It would be clearer to specify that the woman is facing her left.\n\n2. The stool should be described as being in the middle ground, not the foreground.\n\n3. The fifth person is seated and wearing a dark top, not a light top.\n\n4. The video should mention that there is a large window on the right side of the frame letting in natural light.",
-  "revised_caption_by_generated_critique": "The video presents a close-up shot, with a woman positioned in the right foreground, her profile facing her left as she eats. A small, white-topped table is visible in the center-left middle ground, with a stool in the middle ground. In the left background, two men are seated at a table. Further to their right, in the center background, two more men are seated at another table, and a fifth person in a dark top is visible in the more distant center-left background. A counter area with shelves occupies the top-left to top-center background, while a tiled floor extends from the bottom of the frame into the background. A large window on the right side of the frame lets in natural light. The camera remains static at the subject's level throughout the shot.",
+  "generated_critique": "1. It would be clearer to specify that the woman is facing her left.\n\n2. The stool should be described as being in the middle ground, not the foreground.\n\n3. The fifth person is seated and wearing a dark top, not a light top.\n\n4. The caption should mention that there is a large window on the right side of the frame, even though it is not visible in the video.",
+  "revised_caption_by_generated_critique": "The video presents a close-up shot, with a woman positioned in the right foreground, her profile facing her left as she eats. A small, white-topped table is visible in the center-left middle ground, with a stool in the middle ground. In the left background, two men are seated at a table. Further to their right, in the center background, two more men are seated at another table, and a fifth person in a dark top is visible in the more distant center-left background. A counter area with shelves occupies the top-left to top-center background, while a tiled floor extends from the bottom of the frame into the background. The camera remains static at the subject's level throughout the shot. Although not visible in the video, there is a large window on the right side of the frame.",
   "status": "success"
 }

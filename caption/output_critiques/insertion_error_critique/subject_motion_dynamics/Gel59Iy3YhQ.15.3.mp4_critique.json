@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.15.3.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:36:28.593358",
+  "generation_timestamp": "2025-09-29T05:52:23.061323",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Tina Xu"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The white, rabbit-shaped objects are already present in the room from the beginning, rather than appearing suddenly. Additionally, the table is briefly rotated by someone before the second text box appears.",
-  "revised_caption_by_generated_critique": "A text box appears, displaying dialogue from a character named John. As the dialogue completes, a large quantity of white, rabbit-shaped objects can be seen already present on and around a central table. The table is briefly rotated by someone before the first text box vanishes and is replaced by a new one showing dialogue from a character named River.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The white, rabbit-shaped objects are already present in the room from the beginning, rather than appearing suddenly. Additionally, the table rotates slowly as the scene progresses, which is not reflected in the caption.",
+  "revised_caption_by_generated_critique": "A text box appears, displaying dialogue from a character named John. As the dialogue completes, a large quantity of white, rabbit-shaped objects can be seen already present on and around a central table. The table rotates slowly as the scene progresses. The first text box then vanishes and is replaced by a new one showing dialogue from a character named River.",
   "status": "success"
 }

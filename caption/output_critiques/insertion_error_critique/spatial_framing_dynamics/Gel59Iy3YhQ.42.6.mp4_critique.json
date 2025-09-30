@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.42.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:47:26.938414",
+  "generation_timestamp": "2025-09-29T11:29:48.200082",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video actually begins with a cowboy shot, not a medium full shot. The man is positioned centrally in the scene, rather than slightly left of center. Initially, he extends his gun toward the front of the scene, and as the camera shifts, the gun appears on the right side. There is also a small table visible in the bottom right foreground, which is not mentioned in the caption. Throughout the video, both the man and the gun remain stationary, while the surrounding pixel dots do not move. The camera is positioned at eye level. Additionally, the gun appears frozen in the act of firing, which contradicts the current caption that suggests the gun discharges during the video. Please remove the description of \"while the surrounding pixel dots move.\"",
-  "revised_caption_by_generated_critique": "The video begins with a cowboy shot of a man standing centrally in the scene, framed by a dark structure in the left foreground. In the background, a panel with lights or buttons is visible. The man extends a pistol toward the front of the scene, and as the camera shifts, the gun appears on the right side. A small table is visible in the bottom right foreground. The camera is positioned at eye level. The gun appears frozen in the act of firing, with a muzzle flash in the right foreground.",
+  "generated_critique": "The video actually begins with a cowboy shot, not a medium full shot. The man is positioned centrally in the scene, rather than slightly left of center. Initially, he extends his gun toward the front of the scene, and as the camera shifts, the gun appears on the right side. Throughout the video, both the man and the gun remain stationary, while the surrounding pixel dots do not move. The camera is positioned at eye level. Additionally, the gun appears frozen in the act of firing, which contradicts the current caption that suggests the gun discharges during the video. There is also a small table visible in the bottom right foreground, which is not mentioned in the caption. Please remove the description of \"while the surrounding pixel dots move.\"",
+  "revised_caption_by_generated_critique": "The video begins with a cowboy shot of a man standing centrally in the scene, framed by a dark structure in the left foreground. In the background, a panel with lights or buttons is visible. The man extends a pistol toward the front of the scene, and as the camera shifts, the gun appears on the right side. The pistol is frozen in the act of firing, with a muzzle flash in the right foreground. A small table is visible in the bottom right foreground. The camera is positioned at eye level.",
   "status": "success"
 }

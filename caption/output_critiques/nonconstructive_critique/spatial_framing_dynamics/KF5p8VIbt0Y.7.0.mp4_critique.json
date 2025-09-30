@@ -2,7 +2,7 @@
   "video_id": "KF5p8VIbt0Y.7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T04:13:05.950210",
+  "generation_timestamp": "2025-09-29T10:47:37.957002",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera angle is inaccurate, and the detail about the tall structures' position is superfluous. The use of depth descriptors like \"foreground,\" \"middle ground,\" and \"background\" is consistently incorrect for multiple elements, including the explosion and the smoke's movement. The description of the plane's appearance is wrong, and the camera movement is mischaracterized as fixed, leading to an inaccurate account of the subjects disappearing.",
-  "revised_caption_by_generated_critique": "The video begins with a wide aerial shot, capturing the entire industrial complex from above. The long, rectangular buildings and tall structures with round tops are arranged in a grid pattern, filling most of the frame. Roads and rail lines crisscross the scene. A plane enters the frame from the center and moves upward. An explosion occurs near the bottom of the frame, sending a dense cloud of smoke and debris upward and outward, quickly covering much of the complex. As the smoke expands, it obscures the buildings and structures from view. The camera subtly shifts to follow the smoke's movement, maintaining an overhead perspective as the scene becomes enveloped in smoke.",
+  "generated_critique": "The description of the camera angle is inaccurate. The detail about the row of tall structures is superfluous. The use of depth descriptors like 'foreground,' 'middle ground,' and 'background' is incorrect for the explosion, the smoke's movement, and other elements. The description of the plane's initial appearance is wrong. The statement that the camera remains fixed is incorrect, and the description of what disappears behind the smoke is also inaccurate.",
+  "revised_caption_by_generated_critique": "The video begins with a wide aerial shot, capturing the entire industrial complex from above. The long, rectangular buildings and tall structures are arranged in a grid pattern, filling most of the frame. Roads and rail lines crisscross the scene. A plane enters from the left side of the frame and moves diagonally upward. An explosion occurs near the bottom of the frame, sending a dense cloud of smoke and debris upward and outward, quickly enveloping the complex. As the smoke expands, it obscures the buildings and structures. The camera gradually pans to follow the smoke's movement, providing a dynamic view as the scene becomes increasingly obscured.",
   "status": "success"
 }

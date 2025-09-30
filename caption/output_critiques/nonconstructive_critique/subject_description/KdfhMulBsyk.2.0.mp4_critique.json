@@ -2,7 +2,7 @@
   "video_id": "KdfhMulBsyk.2.0.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T10:14:44.957344",
+  "generation_timestamp": "2025-09-29T16:31:58.674300",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the number of subjects involved in the main interaction. It conflates two different men—the one who pats the shoulder and the one with glasses—into a single person. The description of the interaction is inaccurate because it does not reflect the sequence of events where one man pats the shoulder and moves away, and then a different man with glasses enters to engage in conversation.",
-  "revised_caption_by_generated_critique": "In a dimly lit, crowded setting, three men are involved in a sequence of interactions. The first man, maintaining a serious facial expression, wears a dark fedora, a grey suit, a white collared shirt, and a dark, solid-colored tie. A second man, also in a dark fedora and grey suit with a white shirt, briefly turns towards the first man, pats him on the shoulder, and then moves away. Following this, a third man, distinguished by glasses, a smiling expression, and a patterned tie, steps in to engage in conversation with the first man. Several other indistinct figures, appearing to be men in hats and suits, are visible in the dark background.",
+  "generated_critique": "The caption incorrectly identifies the number of subjects and is missing a description of one of them. The caption also incorrectly describes which man pats the other's shoulder and conflates the actions of two different subjects.",
+  "revised_caption_by_generated_critique": "In a dimly lit, crowded setting, three men are in close interaction. The first man, maintaining a serious facial expression, wears a dark fedora, a grey suit, a white collared shirt, and a dark, solid-colored tie. The second man, who turns towards the first, wears a dark fedora, a grey suit with a white shirt, and is distinguished by glasses, a smiling expression, and a patterned tie. He places a hand on the shoulder of the third man, who is also wearing a dark fedora and a grey suit, but with a different patterned tie. Several other indistinct figures, appearing to be men in hats and suits, are visible in the dark background.",
   "status": "success"
 }

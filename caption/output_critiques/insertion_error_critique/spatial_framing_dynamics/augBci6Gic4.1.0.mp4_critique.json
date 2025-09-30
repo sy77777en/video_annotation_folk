@@ -2,7 +2,7 @@
   "video_id": "augBci6Gic4.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:27:45.416105",
+  "generation_timestamp": "2025-09-29T09:29:18.094937",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The woman is actually standing in the foreground, not the middle ground as described. 2. The shot is not static; the camera smoothly moves counterclockwise around the woman. 3. The camera briefly tilts upward at the end of the shot, changing the height relative to the subject.",
-  "revised_caption_by_generated_critique": "A medium full shot frames a woman standing in the center of the frame and in the foreground, with her arms extended to her sides. In the background, four spotlights are visible at the top of the frame. A small portion of another person can be seen on the far left, while a stool is partially visible to the right of the center. The camera smoothly moves counterclockwise around the woman and briefly tilts upward at the end of the shot, changing the height relative to the subject.",
+  "generated_critique": "1. The woman is actually standing in the foreground, not the middle ground as described. 2. The shot is not static; the camera smoothly moves counterclockwise around the woman. 3. The spotlights in the background are not turned on during the shot.",
+  "revised_caption_by_generated_critique": "A medium full shot frames a woman standing in the center of the frame and in the foreground, with her arms extended to her sides. The camera smoothly moves counterclockwise around her. In the background, four spotlights are visible at the top of the frame, but they are not turned on. A small portion of another person can be seen on the far left, while a stool is partially visible to the right of the center.",
   "status": "success"
 }

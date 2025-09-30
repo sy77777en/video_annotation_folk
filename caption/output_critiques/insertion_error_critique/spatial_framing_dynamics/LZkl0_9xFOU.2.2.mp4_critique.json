@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:27:24.695679",
+  "generation_timestamp": "2025-09-29T09:28:46.976225",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The monitor transitions to being out of focus in the right foreground, not the right background. Additionally, the camera briefly tilts upward during the focus shift, which is not reflected in the caption.",
-  "revised_caption_by_generated_critique": "The video opens with a full shot of a small monitor in the right foreground, which is in focus. In the left background, an Xbox console and controller are visible but out of focus. The camera's focus then smoothly shifts from the foreground monitor to the controller, with a brief upward tilt during the transition. The shot becomes a full shot of the Xbox controller, now in sharp focus in the left midground. The monitor transitions to being an out-of-focus element in the right foreground, while the console remains blurred in the left background. The camera is positioned at the subject's level throughout the sequence.",
+  "generated_critique": "The monitor transitions to being out of focus in the right foreground, not the right background. Additionally, the camera briefly tilts upward during the focus shift, altering the perceived height of the subjects relative to the frame.",
+  "revised_caption_by_generated_critique": "The video opens with a full shot of a small monitor in the right foreground, which is in focus. In the left background, an Xbox console and controller are visible but out of focus. The camera's focus then smoothly shifts from the foreground monitor to the controller. The shot becomes a full shot of the Xbox controller, now in sharp focus in the left midground. The monitor transitions to being out of focus in the right foreground, while the console remains blurred in the left background. During the focus shift, the camera briefly tilts upward, altering the perceived height of the subjects relative to the frame.",
   "status": "success"
 }

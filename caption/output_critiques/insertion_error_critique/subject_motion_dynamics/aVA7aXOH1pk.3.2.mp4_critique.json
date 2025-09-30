@@ -2,7 +2,7 @@
   "video_id": "aVA7aXOH1pk.3.2.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:43:53.901338",
+  "generation_timestamp": "2025-09-29T12:55:04.259468",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should mention that the man in the background is waving his hand, which is not accurate for a still image.",
-  "revised_caption_by_generated_critique": "This video features a still image where most subjects are stationary: the man with the raised fist, the woman bent over in front of him, and the two men in sunglasses. However, the man in the background is waving his hand, adding a subtle element of movement. The American flag in the background remains motionless.",
+  "generated_critique": "The caption should also mention that the man in the background is waving his hand, which is not visible in the video.",
+  "revised_caption_by_generated_critique": "This video is a still image, and there is no movement from any of the subjects. The man with the raised fist, the woman bent over in front of him, and the two men in sunglasses are all stationary. The American flag in the background is also motionless. Although not visible in the video, the man in the background is waving his hand.",
   "status": "success"
 }

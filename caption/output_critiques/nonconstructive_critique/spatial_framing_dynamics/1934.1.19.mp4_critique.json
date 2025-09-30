@@ -2,7 +2,7 @@
   "video_id": "1934.1.19.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T22:36:55.259027",
+  "generation_timestamp": "2025-09-29T05:10:05.296690",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The description of the subject's movement is inaccurate and incomplete. The caption incorrectly states the subject only turns to the left before returning to the front, failing to mention that the subject also walks forward and turns to the right.",
-  "revised_caption_by_generated_critique": "The video features a full shot of a person dressed in a white suit, standing on a dark platform. The subject occupies the center of the frame, positioned in the middle ground against a stark black background. The camera captures the subject from head to toe, maintaining a consistent shot size throughout the sequence. The individual begins facing forward, then turns slightly to the left, revealing more of the side profile, before walking forward and turning to the right, eventually returning to the initial frontal position. The platform on which the subject stands is centrally located in the lower half of the frame, with a clean white border at the very bottom. The camera remains at the subject's level, ensuring a direct and stable perspective. There are no significant changes in the spatial position or camera angle, maintaining a static and focused view of the subject throughout the video.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The description of the subject's movement is inaccurate. The caption incorrectly states the person only turns slightly to the left and omits other key movements, such as walking forward and turning to the right.",
+  "revised_caption_by_generated_critique": "The video features a full shot of a person dressed in a white suit, standing on a dark platform. The subject occupies the center of the frame, positioned in the middle ground against a stark black background. The camera captures the subject from head to toe, maintaining a consistent shot size throughout the sequence. The individual begins facing forward, then turns slightly to the left, walks forward, and turns to the right, revealing more of the side profile before returning to the initial frontal position. The platform on which the subject stands is centrally located in the lower half of the frame, with a clean white border at the very bottom. The camera remains at the subject's level, ensuring a direct and stable perspective. There are no significant changes in the spatial position or camera angle, maintaining a static and focused view of the subject throughout the video.",
   "status": "success"
 }

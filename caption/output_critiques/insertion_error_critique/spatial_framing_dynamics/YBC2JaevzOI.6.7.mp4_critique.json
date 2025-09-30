@@ -2,7 +2,7 @@
   "video_id": "YBC2JaevzOI.6.7.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:32:00.566476",
+  "generation_timestamp": "2025-09-29T09:34:57.027671",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description \"This is a static over-the-shoulder shot\" is inaccurate; the camera slightly moves forward. Additionally, the caption should mention that there is a small table visible in the bottom right corner of the frame.",
-  "revised_caption_by_generated_critique": "The camera slightly moves forward in this over-the-shoulder shot. In the foreground, the shoulder and side of a person's head occupy the left portion of the frame. The camera is positioned at their shoulder height, looking forward into the middle ground and background, which consists of a dark forest. A focused light source illuminates the center of the frame, revealing a shoe hanging from a tree in the middle ground, surrounded by other bare tree trunks. A small table is visible in the bottom right corner of the frame.",
+  "generated_critique": "The description \"This is a static over-the-shoulder shot\" is inaccurate; the camera slightly moves forward. Additionally, the feedback should mention that a small table is visible in the bottom right corner of the frame, which affects the spatial composition.",
+  "revised_caption_by_generated_critique": "The camera slightly moves forward in this over-the-shoulder shot. In the foreground, the shoulder and side of a person's head occupy the left portion of the frame. The camera is positioned at their shoulder height, looking forward into the middle ground and background, which consists of a dark forest. A focused light source illuminates the center of the frame, revealing a shoe hanging from a tree in the middle ground, surrounded by other bare tree trunks. A small table is visible in the bottom right corner of the frame, affecting the spatial composition.",
   "status": "success"
 }

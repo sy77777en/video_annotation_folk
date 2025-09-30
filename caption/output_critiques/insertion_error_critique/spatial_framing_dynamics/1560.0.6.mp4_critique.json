@@ -2,7 +2,7 @@
   "video_id": "1560.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:50:39.658485",
+  "generation_timestamp": "2025-09-29T08:33:52.303491",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The water extends from the foreground all the way to the background, not just in the foreground. The camera angle is slightly tilted to the left, which is not mentioned in the caption.",
-  "revised_caption_by_generated_critique": "This video features a wide scenery shot with the Statue of Liberty, on its pedestal on Liberty Island, positioned in the center of the frame and in the middle ground. Water extends from the foreground all the way to the background, occupying the lower portion of the frame. In the background, a distant city skyline stretches horizontally across the frame, situated above the water and below the sky, which fills the upper portion of the frame. The camera maintains a steady position at a moderate elevation, slightly tilted to the left, looking across the water towards the island.",
+  "generated_critique": "The water extends from the foreground all the way to the background, not just in the foreground. Additionally, the camera angle is described as being at a moderate elevation, but in this shot, the camera is actually positioned at a low angle, looking up at the statue.",
+  "revised_caption_by_generated_critique": "This video features a wide scenery shot with the Statue of Liberty prominently positioned in the center of the frame on its pedestal on Liberty Island. The water extends from the foreground all the way to the background, creating a continuous expanse leading to the distant city skyline, which stretches horizontally across the frame above the water and below the sky. The camera is positioned at a low angle, looking up at the statue, providing a majestic view across the water towards the island.",
   "status": "success"
 }

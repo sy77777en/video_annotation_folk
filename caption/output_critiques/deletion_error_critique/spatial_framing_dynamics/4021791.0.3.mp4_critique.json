@@ -2,7 +2,7 @@
   "video_id": "4021791.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:49:21.297863",
+  "generation_timestamp": "2025-09-29T06:08:24.266333",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Please change \"towards the top right of the frame\" to \"towards the right of the frame,\" but do not mention the change in the camera's perspective to below the subject.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot, featuring the rider and dirt bike in the center of the frame and the middle ground. The grassy terrain is visible at the bottom of the frame, spanning the foreground and middle ground, while a dense wall of green bushes and trees occupies the top of the frame in the background, with a pale sky above. The camera is initially at the subject's level. As the rider moves from the center towards the right of the frame, navigating the uneven terrain, the shot transitions to a wide shot, and the subject remains in the middle ground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Please change \"towards the top right of the frame\" to \"towards the right of the frame.\" Remove the explanation about the camera's perspective changing to below the subject.",
+  "revised_caption_by_generated_critique": "The video begins with a full shot, featuring the rider and dirt bike in the center of the frame and the middle ground. The grassy terrain is visible at the bottom of the frame, spanning the foreground and middle ground, while a dense wall of green bushes and trees occupies the top of the frame in the background, with a pale sky above. The camera is initially at the subject's level. As the rider moves from the center towards the right of the frame, navigating the uneven terrain, the shot transitions to a wide shot.",
   "status": "success"
 }

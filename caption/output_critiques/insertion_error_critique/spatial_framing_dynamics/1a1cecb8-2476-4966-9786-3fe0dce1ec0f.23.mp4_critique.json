@@ -2,7 +2,7 @@
   "video_id": "1a1cecb8-2476-4966-9786-3fe0dce1ec0f.23.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:33:33.071927",
+  "generation_timestamp": "2025-09-29T04:19:58.987037",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The description inaccurately states that the camera remains stationary; in reality, it pans from left to right.  \n2. The statement that \"The crosswalks occupy the foreground, positioned centrally\" is incorrect.  \n3. Instead of describing the vehicles as \"moving horizontally from left to right,\" it would be more accurate to say that the vehicles are entering the intersection.  \n4. The traffic lights are located in the middle ground, specifically in the top left corner and the center of the frame.  \n5. The caption should also mention that a cyclist briefly appears in the bottom right foreground, even though this does not occur in the video.",
-  "revised_caption_by_generated_critique": "The video presents a wide shot of an urban intersection, capturing a broad view of the scene. The camera pans from left to right, providing a dynamic perspective. The crosswalks are positioned towards the bottom of the frame, not centrally. Traffic lights are located in the middle ground, specifically in the top left corner and the center of the frame. Trees with sparse foliage line the left side of the frame, situated in the middle ground, while buildings appear in the background on the right side. Vehicles are entering the intersection, adding movement to the scene. A cyclist briefly appears in the bottom right foreground. The overall view remains stable and comprehensive, offering a clear depiction of the intersection and its surroundings.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The description inaccurately states that the camera remains stationary; in reality, it pans from left to right.  \n2. The statement that \"The crosswalks occupy the foreground, positioned centrally\" is incorrect.  \n3. Instead of describing the vehicles as \"moving horizontally from left to right,\" it would be more accurate to say that the vehicles are entering the intersection.  \n4. The traffic lights are located in the middle ground, specifically in the top left corner and the center of the frame.  \n5. The caption should also mention that a cyclist briefly appears in the bottom right foreground, even though no cyclist is visible in the video.",
+  "revised_caption_by_generated_critique": "The video presents a wide shot of an urban intersection, capturing a broad view of the scene. The camera pans from left to right, providing a dynamic perspective at eye level relative to the crosswalk and street. The crosswalks are not centrally positioned in the foreground as previously stated. Traffic lights are located in the middle ground, specifically in the top left corner and the center of the frame. Trees with sparse foliage line the left side of the frame, situated in the middle ground, while buildings appear in the background on the right side. Vehicles are entering the intersection, adding movement to the scene. A cyclist briefly appears in the bottom right foreground, contributing to the dynamic nature of the intersection. The video maintains a stable and comprehensive view of the intersection and its surroundings.",
   "status": "success"
 }

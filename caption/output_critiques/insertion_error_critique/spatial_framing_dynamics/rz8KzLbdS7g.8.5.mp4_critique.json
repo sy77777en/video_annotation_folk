@@ -2,7 +2,7 @@
   "video_id": "rz8KzLbdS7g.8.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:58:44.619787",
+  "generation_timestamp": "2025-09-29T08:46:24.139106",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please avoid mentioning specific frames in the description. Additionally, the houses should be described as being in the middle ground, not the foreground. The caption should also note that there is a large tree in the center of the frame, even though it is not present in the video.",
-  "revised_caption_by_generated_critique": "The video captures a serene residential neighborhood with a wide shot from street level, offering a view of the street lined with houses on both sides. A silver van is parked on the left in the foreground, while the houses are positioned in the middle ground, surrounded by vibrant greenery and neatly trimmed gardens. The sky forms the backdrop, with clouds casting soft shadows. A large tree is prominently featured in the center of the frame, enhancing the peaceful ambiance of the neighborhood.",
+  "generated_critique": "Please avoid mentioning specific frames in the description. Additionally, the houses should be described as being in the middle ground, not the foreground. The caption should also note that there is a large tree in the center of the frame, even though no such tree is visible in the video.",
+  "revised_caption_by_generated_critique": "The video captures a serene residential neighborhood from a street-level perspective. The street runs from the bottom center to the top center of the frame, lined with houses on both sides. A silver van is parked on the left in the foreground. The houses are positioned in the middle ground, surrounded by vibrant greenery and neatly trimmed gardens. The sky in the background features clouds casting soft shadows. A large tree is prominently featured in the center of the frame, enhancing the peaceful ambiance of the neighborhood.",
   "status": "success"
 }

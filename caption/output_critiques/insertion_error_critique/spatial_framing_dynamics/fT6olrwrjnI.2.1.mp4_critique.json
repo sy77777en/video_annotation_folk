@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:46:03.714844",
+  "generation_timestamp": "2025-09-29T08:26:51.645340",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is presented in 2D, so please avoid describing the depth and 3D positioning of the elements, as well as the camera height relative to the subjects, since these aspects are difficult to ascertain. Instead, concentrate on their 2D placement within the frame. Additionally, the subjects are not moving from left to right, so please remove that description. Also, please note that the video does not include any overhead drone shots, so references to aerial perspectives should not be included.",
-  "revised_caption_by_generated_critique": "The video shows a large soccer ball positioned on the left side of the frame. To its right, two men are running, with the man in white on the left and the man in red on the right. All three subjects are in motion, moving slightly towards the bottom of the frame. The green soccer field is visible at the bottom, while the top of the frame features white and black checkered walls, with blue geometric shapes on the right. The camera follows the movement, keeping the ball on the left and the men on the right.",
+  "generated_critique": "The video is presented in 2D, so please avoid describing the depth and 3D positioning of the elements, as well as the camera height relative to the subjects, since these aspects are difficult to ascertain. Instead, concentrate on their 2D placement within the frame. Additionally, the subjects are not moving from left to right, so please remove that description. The video also does not include any overhead drone shots, so references to aerial perspectives should not be included.",
+  "revised_caption_by_generated_critique": "The video shows a large soccer ball positioned on the left side of the frame. To the right of the ball, two men are running, with the man in white on the left and the man in red on the right. All subjects are in motion, moving slightly towards the bottom of the frame. The green soccer field fills the lower part of the frame. The background features white and black checkered walls at the top, with blue geometric shapes visible on the right. The camera follows the movement, keeping the ball on the left and the men on the right.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "FV7PVgF3jz4.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:09:31.821923",
+  "generation_timestamp": "2025-09-29T08:40:30.848523",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly places the stage in the background and the red curtain in the middle ground. The man's final position is incorrectly described as the center background. The description of the camera movement is inaccurate, as it does not settle when the man is centered.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot from behind two audience members in the right foreground, with the left side of the frame obscured. The camera trucks to the right, revealing a full view of a stage framed by a red curtain in the background. A man, shown from the upper torso up, walks from the left side of the stage to the center, stopping behind a small table. The framing settles with the man centered in the middle of the stage, illuminated by a circular spotlight, while the backs and clapping hands of the audience are visible in the foreground at the bottom of the frame. After a moment, the man picks up a statuette from the table and walks off-screen to the right.",
+  "generated_critique": "The description incorrectly states the depth of the stage and the red curtain. The description of the camera movement is inaccurate, as it incorrectly states that the framing settles. The man's final position is incorrectly described as being in the background.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot from behind two audience members in the right foreground, with the left side of the frame partially obscured. The camera pans to the right, revealing a full view of a stage framed by a red curtain. A man, shown from the upper torso up, walks from the left side of the stage to the center, stopping behind a small table. The framing adjusts with the man centered in the middle of the stage, illuminated by a circular spotlight, while the backs and clapping hands of the audience are visible in the foreground at the bottom of the frame. After a moment, the man picks up a statuette from the table and exits off-screen to the right.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "4859.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:42:14.923039",
+  "generation_timestamp": "2025-09-29T04:30:01.430507",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Sunny Guo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "Initially, the man and the trash can are positioned in the center background. As the man leans back and the camera moves, both he and the trash can shift to the foreground, not the middle ground. The phrase \"rides into the foreground right\" is inaccurate and should be removed.",
-  "revised_caption_by_generated_critique": "The video is a full shot. Initially, a man is in the center background, pushing a green trash can that occupies the center-right background; he moves towards the right across a sunlit plaza. The sun, positioned in the top left, casts long shadows from left to right across the foreground. Buildings and trees are visible in the background, predominantly on the left and extending across the horizon. As the man leans back, shifting his position to the left of center in the foreground, the trash can tilts in the center foreground. Simultaneously, a second individual in a bird costume on a skateboard enters from the middle ground right and performs a trick near the now-tilted trash can. The camera is positioned at the subjects' level.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "Initially, the man and the trash can are positioned in the center foreground. As the man leans back and the camera moves, both he and the trash can shift to the background, not the foreground. The phrase \"rides into the foreground right\" is inaccurate and should be removed.",
+  "revised_caption_by_generated_critique": "The video is a full shot. Initially, a man is in the center foreground, pushing a green trash can that occupies the center-right foreground; he moves towards the right across a sunlit plaza. The sun, positioned in the top left, casts long shadows from left to right across the foreground. Buildings and trees are visible in the background, predominantly on the left and extending across the horizon. As the man leans back, shifting his position to the left of center, both he and the trash can move to the background. Simultaneously, a second individual in a bird costume on a skateboard enters from the middle ground right and performs a trick near the now-tilted trash can. The camera is positioned at the subjects' level.",
   "status": "success"
 }

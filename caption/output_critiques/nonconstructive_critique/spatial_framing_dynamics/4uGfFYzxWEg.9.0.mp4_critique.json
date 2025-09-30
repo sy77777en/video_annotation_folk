@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.9.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T00:35:57.656599",
+  "generation_timestamp": "2025-09-29T06:56:15.434510",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly applies 3D spatial terms like foreground, middle ground, and background to a 2D graphic.",
-  "revised_caption_by_generated_critique": "The scene displays a static graphic composition. Text is positioned at the top center. A bar chart occupies the center, featuring a y-axis label on its left and an x-axis label below it at the bottom center. The chart's title is situated at the top center above the bars. A red vertical line is positioned towards the right side of the chart's main distribution peak. Additional text is located at the bottom center, while a watermark is in the bottom left corner. There are no changes in the arrangement of these elements during the video.",
+  "generated_critique": "The caption incorrectly applies the 3D depth terms 'foreground' and 'middle ground' to elements within a 2D graphic.",
+  "revised_caption_by_generated_critique": "The scene displays a static graphic composition. Text is positioned at the top center. A bar chart occupies the center, featuring a y-axis label on its left and an x-axis label below it at the bottom center. The chart's title is situated at the top center above the bars. A red vertical line is positioned towards the right side of the chart's main distribution peak. Further text resides at the bottom center, while a watermark is located at the bottom left. There are no changes in the spatial arrangement of these elements during the video.",
   "status": "success"
 }

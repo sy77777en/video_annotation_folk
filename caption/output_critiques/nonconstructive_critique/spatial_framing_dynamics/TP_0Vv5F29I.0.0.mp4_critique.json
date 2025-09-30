@@ -2,7 +2,7 @@
   "video_id": "TP_0Vv5F29I.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T06:25:46.836883",
+  "generation_timestamp": "2025-09-29T13:06:17.156356",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the train's initial position is in the background. The description of the plowed fields occupying only the middle ground is inaccurate. The camera movement is misidentified as a zoom, and the resulting shot size is not a medium shot. The ramp course does not extend towards the top right. The final camera height relative to the cyclist is also described incorrectly.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot, featuring a long train prominently in the middle of the frame, moving along a single track that divides the scene vertically. Expansive plowed fields stretch across both the foreground and middle ground on either side, while a line of trees and buildings marks the horizon in the distant background. As the train advances, the camera moves closer, transitioning to a closer shot that captures the locomotive in the bottom left and the cyclist, positioned on a high platform on a cargo car, in the top left. The ramp course extends from the center of the frame towards the top left. The camera's perspective, initially high above the train, lowers to align closely with the cyclist's level.",
+  "generated_critique": "The description of the train's initial position is incorrect, and the description of the plowed fields' depth is inaccurate. The camera movement is misidentified as a zoom. The final shot size is incorrectly identified as a medium shot. The direction of the ramp course is described incorrectly, and the final camera height relative to the cyclist is inaccurate.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot featuring a long train moving from the background toward the foreground along a single track that bisects the frame vertically. Expansive, plowed fields stretch across the foreground on both the left and right sides, while a line of trees and buildings is visible on the horizon in the distant background. As the train advances, the camera moves closer, transitioning to a close-up shot. This brings the locomotive into the bottom left of the frame and the cyclist, positioned on a high platform on a cargo car, to the top left. The ramp course extends from the center of the frame towards the top left. The camera's perspective, initially high above the train, lowers to a position level with the cyclist.",
   "status": "success"
 }

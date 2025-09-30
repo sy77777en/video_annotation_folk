@@ -2,7 +2,7 @@
   "video_id": "B_8bbKn3amE.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:49:14.814328",
+  "generation_timestamp": "2025-09-29T08:15:39.054959",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the final scene incorrectly identifies the element in the foreground at the bottom of the frame.",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide scenery shot captured from a high-angle, fast-moving aerial perspective. Initially, the frame is filled with the dense, red-tiled roofs of a hillside city, which extend from the foreground at the bottom to the background at the top, with mountains visible in the distant background. The camera swoops rapidly forward and down, causing the rooftops to rush past in the immediate foreground. As the camera banks and turns, the frame tilts dramatically, navigating through the city's architecture. The shot concludes by revealing a white church in the middle ground, positioned slightly left of center, with a cobblestone plaza occupying the foreground at the bottom of the frame.",
+  "generated_critique": "The final part of the caption, which describes \"surrounding rooftops occupying the foreground at the bottom of the frame,\" is an inaccurate description of the scene.",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide scenery shot captured from a high-angle, fast-moving aerial perspective. Initially, the frame is filled with the dense, red-tiled roofs of a hillside city, which extend from the foreground at the bottom to the background at the top, with mountains visible in the distant background. The camera swoops rapidly forward and down, causing the rooftops to rush past in the immediate foreground. As the camera banks and turns, the frame tilts dramatically, navigating through the city's architecture. The shot concludes by revealing a white church in the middle ground, positioned slightly left of center, with the cityscape stretching out around it.",
   "status": "success"
 }

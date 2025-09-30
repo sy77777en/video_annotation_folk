@@ -2,7 +2,7 @@
   "video_id": "6IUJgiKJ_mE.4.mp4",
   "caption_type": "spatial",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T21:43:41.109222",
+  "generation_timestamp": "2025-09-29T04:34:07.590099",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Modify \"positioned in the bottom left of the frame\" to \"initially positioned at the bottom left, moving towards the center left,\" and change \"is in the bottom center\" to \"is in the center right.\"\n3. Change \"The camera is positioned above the cyclists\" to \"The camera is positioned at the cyclists' height.\"",
-  "revised_caption_by_generated_critique": "The video features a wide shot of two cyclists on a long, open road. The cyclist on the left, wearing a yellow and black jersey, is initially positioned at the bottom left, moving towards the center left of the frame, while the cyclist on the right, in a white and black jersey, is in the center right. Both cyclists are in the foreground, moving away from the viewer. The road stretches into the background, with vehicles and people visible along the roadside, indicating a race or event. The camera is positioned at the cyclists' height, capturing the expansive rural landscape with grassy fields on either side. The road's straight path and the cyclists' movement create a sense of progression and depth within the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Modify \"positioned in the bottom left of the frame\" to \"initially positioned at the bottom left, moving towards the center left,\" and change \"is in the bottom center\" to \"is in the center right.\"\n2. The cyclist on the left is in the foreground, while the cyclist on the right is in the middle ground.",
+  "revised_caption_by_generated_critique": "The video features a wide shot of two cyclists on a long, open road. The cyclist on the left, wearing a yellow and black jersey, is initially positioned at the bottom left, moving towards the center left of the frame, while the cyclist on the right, in a white and black jersey, is in the center right. The cyclist on the left is in the foreground, while the cyclist on the right is in the middle ground. The road stretches into the background, with vehicles and people visible along the roadside, indicating a race or event. The camera is positioned above the cyclists, capturing the expansive rural landscape with grassy fields on either side. The road's straight path and the cyclists' movement create a sense of progression and depth within the scene.",
   "status": "success"
 }

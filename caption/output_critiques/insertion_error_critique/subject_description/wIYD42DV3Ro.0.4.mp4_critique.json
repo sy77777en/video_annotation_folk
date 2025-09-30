@@ -2,7 +2,7 @@
   "video_id": "wIYD42DV3Ro.0.4.mp4",
   "caption_type": "subject",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:32:32.691685",
+  "generation_timestamp": "2025-09-29T08:06:55.309322",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Change \"viewed from an overhead angle\" to \"viewed from an aerial perspective.\" Also, mention that several spectators in the stands are waving flags, even though this is not visible in the video.",
-  "revised_caption_by_generated_critique": "A group of horses with jockeys competes in a horse race, viewed from an aerial perspective as they round a turn on a brown dirt track. The jockeys wear brightly colored silks and helmets in various combinations, including a yellow and black checkered pattern, solid purple, blue with a yellow star, and red and white. The horses, mostly brown with one grey horse visible, run in a large pack. A graphical overlay in the lower-left corner identifies the race as the \"148TH KENTUCKY DERBY\" and lists several horses by number, name, and odds, such as #6 Messier at 7-1 and #3 Epicenter, the 4-1 favorite. Another graphic in the upper-right corner displays the race time at the half-mile and three-quarter-mile marks, along with a television network logo. Several spectators in the stands are waving flags, adding to the festive atmosphere.",
+  "generated_critique": "1. Change \"viewed from an overhead angle\" to \"viewed from an aerial perspective.\" 2. Add that the jockeys are all wearing white gloves, which helps distinguish their hand positions as they guide the horses.",
+  "revised_caption_by_generated_critique": "A group of horses with jockeys competes in a horse race, viewed from an aerial perspective as they round a turn on a brown dirt track. The jockeys wear brightly colored silks and helmets in various combinations, including a yellow and black checkered pattern, solid purple, blue with a yellow star, and red and white, all while wearing white gloves that help distinguish their hand positions as they guide the horses. The horses, mostly brown with one grey horse visible, run in a large pack. A graphical overlay in the lower-left corner identifies the race as the \"148TH KENTUCKY DERBY\" and lists several horses by number, name, and odds, such as #6 Messier at 7-1 and #3 Epicenter, the 4-1 favorite. Another graphic in the upper-right corner displays the race time at the half-mile and three-quarter-mile marks, along with a television network logo.",
   "status": "success"
 }

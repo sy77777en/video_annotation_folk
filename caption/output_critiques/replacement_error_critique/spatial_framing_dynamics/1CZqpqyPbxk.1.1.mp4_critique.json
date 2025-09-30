@@ -2,7 +2,7 @@
   "video_id": "1CZqpqyPbxk.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:26:49.611459",
+  "generation_timestamp": "2025-09-29T04:08:36.477584",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Siyuan Cen"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please remove any references to foreground, midground, and background in the video description, as this is a 2D interface and such terms are not applicable.\n\n2. In this video, it appears that a static photo is being adjusted rather than a video clip being played. The photo gradually becomes more saturated and its hue shifts noticeably. It is positioned at the bottom-right of the frame.",
-  "revised_caption_by_generated_critique": "The video shows a static screen recording of a video editing software interface. In the central area of the frame, there is an image with a green tint, depicting a person holding a camera in profile view. This image is positioned slightly off-center towards the left side of the frame. The editing software's interface surrounds the image, with various controls and tools occupying the top, bottom, and sides of the screen. The color wheels and scopes are located at the bottom, while the timeline and playback controls are situated along the top and bottom edges. Throughout the video, the image gradually becomes more saturated and its hue shifts noticeably. The camera angle remains fixed, providing a direct view of the software interface and the image being adjusted. The image is positioned at the bottom-right of the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please remove any references to foreground, midground, and background in the video description, as this is a 2D interface and such terms are not applicable.\n\n2. In this video, it appears that a static photo is being adjusted rather than a video clip being played. The photo gradually becomes more saturated and its hue shifts towards blue. It is positioned at the bottom-right of the frame.",
+  "revised_caption_by_generated_critique": "The video shows a static screen recording of a video editing software interface. In the central area of the frame, there is an image with a green tint, depicting a person holding a camera in profile view. This image is positioned slightly off-center towards the left side of the frame. The editing software's interface surrounds the image, with various controls and tools occupying the top, bottom, and sides of the screen. The color wheels and scopes are located at the bottom, while the timeline and playback controls are situated along the top and bottom edges. Throughout the video, the image gradually becomes more saturated, and its hue shifts towards blue. The camera angle remains fixed, providing a direct view of the software interface and the image being adjusted. The image is positioned at the bottom-right of the frame.",
   "status": "success"
 }

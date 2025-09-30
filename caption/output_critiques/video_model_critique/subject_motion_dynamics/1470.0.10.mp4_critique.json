@@ -2,7 +2,7 @@
   "video_id": "1470.0.10.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T01:44:46.816822",
+  "generation_timestamp": "2025-09-29T07:29:15.689732",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it violates several key instructions.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is mostly accurate in its description of the visible elements and the general sequence of events.\n\n**Completeness:** The caption describes the main action but could be more precise about the nature of the movement.\n\n**Adherence to Instructions:**\n*   **Violation of \"Avoid speculative statements\":** The caption uses the phrases \"appears to be engaged\" and \"possibly preparing or handling,\" which are speculative and explicitly forbidden by the instructions. The actions of the person in the background are not clear enough to be stated as fact.\n*   **Violation of \"Focus on the subject's motion\":** A significant portion of the caption is dedicated to describing the static environment (\"wooden paneling,\" \"various pieces of furniture,\" \"painting on the wall above a fireplace,\" \"door to the right\"). The instructions state to focus on motion rather than environmental details.\n*   **Lack of Specificity in Motion Description:** The description of the primary subject's motion is limited to \"walk through a room\" and \"continues to walk.\" It fails to capture the dynamic of the shot, where the camera follows the subject closely from behind, creating a specific point-of-view feel.\n\nIn summary, the caption fails because it includes forbidden speculation and focuses too heavily on describing the static scenery rather than providing a clear and detailed description of the subject's motion.",
-  "revised_caption_by_generated_critique": "A close, over-the-shoulder shot follows a person with short, red hair and a white shirt as they walk forward through a wood-paneled living room. As they proceed, another person in a yellow top comes into view in the background on the left.",
+  "generated_critique": "The caption is overly descriptive of the subject's appearance and the room's static elements, which detracts from the primary focus on motion. Details such as \"short, red hair, wearing a white shirt,\" \"wooden paneling,\" \"various pieces of furniture, including a chair, a lamp, and a plant,\" and \"a painting on the wall above a fireplace\" should be removed. Furthermore, the description of the background person's action is speculative, using the phrase \"appears to be reaching,\" which violates the instruction to avoid such statements. The specific action of the background person is not clear in the video. The caption should be revised to focus solely on the chronological movements of the subjects.",
+  "revised_caption_by_generated_critique": "A person is seen from behind walking through a room. As they move forward, another person in a yellow top is revealed in the background.",
   "status": "success"
 }

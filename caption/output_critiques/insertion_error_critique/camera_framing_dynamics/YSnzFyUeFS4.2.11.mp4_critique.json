@@ -2,7 +2,7 @@
   "video_id": "YSnzFyUeFS4.2.11.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:08:32.833239",
+  "generation_timestamp": "2025-09-29T10:29:45.795075",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove the sentence \"simulating a person walking down a sidewalk,\" as this motion is not depicted in the video. Additionally, mention that the camera angle shifts to a high angle midway through the shot, as this change is not currently described.",
-  "revised_caption_by_generated_critique": "This slightly unsteady, first-person video is captured from an eye-level, level-angle perspective. The camera moves forward and pans slightly to the left. The shot features mild barrel distortion and uses a deep focus, keeping the entire street scene in sharp view. Midway through the shot, the camera angle shifts to a high angle.",
+  "generated_critique": "Please remove the sentence \"simulating a person walking down a sidewalk,\" as this motion is not depicted in the video. Additionally, the caption should mention that the camera angle shifts briefly to a high angle during the movement.",
+  "revised_caption_by_generated_critique": "This slightly unsteady, first-person video is captured from an eye-level, level-angle perspective. The camera moves forward and pans slightly to the left. The shot features mild barrel distortion and uses a deep focus, keeping the entire street scene in sharp view. The camera angle shifts briefly to a high angle during the movement.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "ljg_EgXMjO0.3.1.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:18:53.132930",
+  "generation_timestamp": "2025-09-29T07:47:14.548665",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The deconstruction is not accurately depicted; the brief, fragmented glimpses of the image result from the flashes of light at night. When the light appears, the scene becomes visible. Please ensure the caption reflects the multiple flashes, as they occur several times throughout the video. The single illuminated window consistently disappears first during each flash, rather than remaining visible, and does not appear to be lit independently of the lightning strikes.",
-  "revised_caption_by_generated_critique": "A static, scratchboard-style drawing of a house on a hill is intermittently illuminated by multiple flashes of light against a night backdrop. Each flash briefly reveals the scene, which then deconstructs as the house, hill, and clouds break apart into fleeting, abstract white lines and shapes that quickly vanish into the darkness. This cycle of flashing and disintegration repeats several times, with the single illuminated window consistently disappearing first during each flash, rather than remaining visible independently.",
+  "generated_critique": "The deconstruction is not accurately depicted; the brief, fragmented glimpses of the image result from the flashes of light at night. When the light appears, the scene becomes visible. Please ensure the caption reflects the multiple flashes, as they occur several times throughout the video. The single illuminated window consistently disappears first during each sequence, never remaining visible after the rest of the scene fades.",
+  "revised_caption_by_generated_critique": "The static, scratchboard-style drawing of a house on a hill is intermittently illuminated by multiple flashes of light against the night sky. Each flash briefly reveals the scene, which then deconstructs as the house, hill, and clouds break apart into fleeting, abstract white lines and shapes that quickly disappear into the black background. This cycle of flashing and disintegration repeats several times, with the single illuminated window consistently being the first element to vanish during each sequence.",
   "status": "success"
 }

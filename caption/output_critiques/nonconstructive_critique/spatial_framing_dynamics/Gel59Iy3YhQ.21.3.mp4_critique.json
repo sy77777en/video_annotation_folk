@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.21.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T02:40:36.892445",
+  "generation_timestamp": "2025-09-29T09:15:39.393385",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the perspective as high-angle is inaccurate. The use of terms like \"foreground\" and \"middle ground\" is inappropriate for this 2D video. The caption incorrectly states that the camera zooms out and pans while aiming. The description of the camera's tracking of the ball is also incorrect; the ball does not fly from the center-left toward the upper right of the frame as described. Finally, the ball does not land in a sand trap in the upper right portion of the scene.",
-  "revised_caption_by_generated_critique": "The scene is captured from a top-down perspective, showing a pixel-art golf course. A small golfer character is positioned on a sand trap. A heads-up display shows game information in the top left, club selection in the bottom left, a power meter at the bottom center, and environmental indicators in the top right. As the player aims, the camera remains steady, following the aiming line across the course. After the shot, the camera tracks the white golf ball as it moves across the frame. The camera's movement stops once the ball lands on the course.",
+  "generated_critique": "The perspective is incorrectly described as high-angle. The use of terms like \"foreground\" and \"middle ground\" is inappropriate for describing depth in this context. The caption inaccurately states that the camera pans and zooms out as the player aims. The description of how the camera tracks the ball after the shot is also incorrect. Finally, the statement that the ball lands in a sand trap is false.",
+  "revised_caption_by_generated_critique": "The scene is captured from a top-down perspective, showing a pixel-art golf course. A small golfer character is positioned in the center-left of the frame, standing on a sand trap. A heads-up display shows game information in the top left, club selection in the bottom left, a power meter at the bottom center, and environmental indicators in the top right. As the player aims, the camera remains steady, following the aiming line across the course. After the shot, the camera smoothly follows the white golf ball as it travels from the center-left toward the upper right of the frame. The camera's movement stops once the ball lands on the green in the upper right portion of the scene.",
   "status": "success"
 }

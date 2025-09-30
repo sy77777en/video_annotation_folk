@@ -2,7 +2,7 @@
   "video_id": "012c118a-b3092f3b.0.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:16:35.592493",
+  "generation_timestamp": "2025-09-29T09:12:06.247315",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. Initially, the white sedan approaches the stop line before coming to a complete stop, so it is not stationary from the beginning.\n\n2. In the video, the sedan does not visibly accelerate or move forward when the traffic light turns green.\n\n3. The vehicles in the adjacent lanes do not appear to move forward.\n\n4. The white sedan is signaling a right turn with its indicator light.\n\n5. A cyclist briefly passes behind the sedan while it is stopped at the light.",
-  "revised_caption_by_generated_critique": "A white sedan approaches the stop line and comes to a complete stop at a red traffic light, with its brake lights illuminated and its right turn indicator flashing. While the sedan remains stationary, a cyclist briefly passes behind it. When the traffic light turns green, the sedan stays in place, and the vehicles in the adjacent lanes do not move forward. The camera car remains behind the white sedan.",
+  "revised_caption_by_generated_critique": "A white sedan approaches the stop line and comes to a complete stop at a red traffic light, with its brake lights illuminated and its right turn indicator flashing. While the sedan remains stationary, a cyclist briefly passes behind it. When the traffic light turns green, the sedan does not visibly move forward, and the vehicles in the adjacent lanes also remain stationary. The camera car stays behind the white sedan throughout the scene.",
   "status": "success"
 }

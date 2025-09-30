@@ -2,7 +2,7 @@
   "video_id": "oRt5NPY7yYA.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:06:02.936968",
+  "generation_timestamp": "2025-09-29T07:29:25.993394",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Irene Pi"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please revise \"white truck\" to \"central truck,\" which features a white cargo area and a dark green cab.  \n2. The term \"middle ground\" is unnecessary in this context, as depth is difficult to define from this perspective. Additionally, there are two vehicles to the truck's right and three to its left. The vehicles are not actually static; they appear stationary because the camera tracks their movement, keeping them centered in the frame. Also, change \"its left\" and \"its right\" to \"its front\" and \"its back.\"  \n3. The camera angle is slightly tilted rather than perfectly perpendicular to the road, so please note this in your description.",
-  "revised_caption_by_generated_critique": "This wide shot, captured from slightly above and tilted, shows a straight road running horizontally across the center of the frame. A central truck, featuring a white cargo area and a dark green cab, is positioned in the center of the frame on the road. It is flanked by five green vehicles, initially glowing, with three to its front (center-left) and two to its back (center-right). Two black vehicles are also visible on the road, one further to the front (left) and one further to the back (right). The desert landscape occupies the top and bottom portions of the frame, acting as the background. The initial green glow around the five vehicles fades shortly after the clip begins. The vehicles appear stationary because the camera tracks their movement, keeping them centered in the frame throughout the clip.",
+  "generated_critique": "1. Please revise \"white truck\" to \"central truck,\" which features a white cargo area and a dark green cab.  \n2. The term \"middle ground\" is unnecessary in this context, as depth is difficult to define from this perspective. Additionally, there are two vehicles to the truck's right and three to its left. The vehicles are not actually static; they appear stationary because the camera tracks their movement, keeping them centered in the frame. Also, change \"its left\" and \"its right\" to \"its front\" and \"its back.\"  \n3. The camera angle slightly tilts during the clip, which causes the horizon line to shift upward in the frame.",
+  "revised_caption_by_generated_critique": "This wide shot, captured from directly above, shows a straight road running horizontally across the center of the frame. A central truck, featuring a white cargo area and a dark green cab, is positioned in the center of the frame on the road. It is flanked by five green vehicles, initially glowing, with three to its front (center-left) and two to its back (center-right). Two black vehicles are also visible on the road, one further to the front (left) and one further to the back (right). The desert landscape occupies the top and bottom portions of the frame, acting as the background. The initial green glow around the five vehicles fades shortly after the clip begins. The vehicles appear stationary because the camera tracks their movement, keeping them centered in the frame. The camera angle slightly tilts during the clip, causing the horizon line to shift upward in the frame.",
   "status": "success"
 }

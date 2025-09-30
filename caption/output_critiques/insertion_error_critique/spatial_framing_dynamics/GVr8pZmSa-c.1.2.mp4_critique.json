@@ -2,7 +2,7 @@
   "video_id": "GVr8pZmSa-c.1.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:24:44.175594",
+  "generation_timestamp": "2025-09-29T07:55:12.660017",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The video does not start with a wide shot; it consistently maintains a full shot. Although the object appears larger as the camera moves forward, the framing remains a full shot throughout. Additionally, the camera briefly tilts downward at the midpoint of the shot, altering the angle from which the artifact is viewed.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot, featuring a small, irregularly shaped metallic artifact positioned in the center foreground, resting on a gray, textured surface that fills the frame as the background. As the shot progresses, the camera moves forward, maintaining a full shot of the artifact, while simultaneously arcing around it from right to left. This movement keeps the artifact in the center foreground, offering a changing perspective of its details against the consistent background surface. At the midpoint of the shot, the camera briefly tilts downward, altering the angle from which the artifact is viewed, while remaining positioned above the subject.",
+  "generated_critique": "1. The video does not start with a wide shot; it consistently maintains a full shot. Although the object appears larger as the camera moves forward, the framing remains a full shot throughout. Additionally, the artifact is briefly positioned toward the left side of the frame before returning to the center as the camera arcs around it.",
+  "revised_caption_by_generated_critique": "The video begins with a full shot, featuring a small, irregularly shaped metallic artifact positioned in the center foreground on a gray, textured surface that fills the background. As the camera moves forward, the artifact appears larger, maintaining the full shot framing. The camera arcs around the artifact from right to left, briefly positioning it toward the left side of the frame before returning it to the center, offering a dynamic perspective of its details against the consistent background surface. The camera remains positioned above the subject throughout the shot.",
   "status": "success"
 }

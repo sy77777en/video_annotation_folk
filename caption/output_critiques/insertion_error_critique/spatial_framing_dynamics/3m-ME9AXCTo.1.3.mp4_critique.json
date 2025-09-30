@@ -2,7 +2,7 @@
   "video_id": "3m-ME9AXCTo.1.3.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:00:19.257926",
+  "generation_timestamp": "2025-09-29T10:16:59.528942",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The man and woman are positioned in the foreground, not the middle ground.  \n2. It is misleading to state that the woman is on the left and the man is on the right, as their continuous rotation causes them to alternate positions, changing who is on the left and right of the frame.  \n3. Please clarify that the colorful red and green lights are located in the background.  \n4. The camera angle is slightly tilted, creating a diagonal horizon line in the frame.",
-  "revised_caption_by_generated_critique": "A man and a woman are featured in a medium close-up shot, positioned in the center of the frame and occupying the foreground. Throughout the clip, they slowly rotate as they dance, causing their positions relative to the camera to shift continuously while they remain centrally framed. As they turn, they alternate positions, changing who is on the left and right of the frame, and at times the back of the man's head or the woman's head is seen in the center. In the top portion of the frame, star-shaped decorations and lights hang in the middle ground. Colorful red and green lights are located in the background, casting a glow over the subjects. In the background, dark vertical lines are visible. The camera is slightly tilted, creating a diagonal horizon line in the frame.",
+  "generated_critique": "1. The man and woman are positioned in the foreground, not the middle ground.  \n2. It is misleading to state that the woman is on the left and the man is on the right, as their continuous rotation causes them to alternate positions, changing who is on the left and right of the frame.  \n3. Please clarify that the colorful red and green lights are located in the background.  \n4. The camera briefly tilts upward during the dance, altering the height perspective relative to the subjects.",
+  "revised_caption_by_generated_critique": "A man and a woman are featured in a medium close-up shot, positioned in the center of the frame and occupying the foreground. Throughout the clip, they slowly rotate as they dance, causing their positions relative to the camera to shift continuously while they remain centrally framed. Their rotation causes them to alternate positions, changing who is on the left and right of the frame. At times, the back of the man's head or the woman's head is seen in the center. In the top portion of the frame, star-shaped decorations and lights hang in the middle ground. Colorful red and green lights are located in the background, casting a glow over the subjects. In the background, dark vertical lines are visible. The camera remains at the subjects' level but briefly tilts upward during the dance, altering the height perspective relative to the subjects.",
   "status": "success"
 }

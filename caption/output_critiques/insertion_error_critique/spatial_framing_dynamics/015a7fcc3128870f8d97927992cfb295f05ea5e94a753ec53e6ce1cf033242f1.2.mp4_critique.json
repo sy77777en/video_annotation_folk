@@ -2,7 +2,7 @@
   "video_id": "015a7fcc3128870f8d97927992cfb295f05ea5e94a753ec53e6ce1cf033242f1.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T23:56:16.167393",
+  "generation_timestamp": "2025-09-29T03:49:00.620982",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yuhan Huang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Please change \"leaving a static shot of the empty middle ground and background elements\" to \"leaving a static scene of the empty middle ground and background elements.\" Also, mention that a small table appears in the bottom left foreground after the woman exits, even though it was not previously visible.",
-  "revised_caption_by_generated_critique": "The video begins with a close-up shot of a woman positioned in the center of the frame and the foreground, with the camera at her eye level. In the middle ground, several woven pendant lights hang from the top of the frame, flanking the woman. Vertical rods are also visible in the middle ground, set against a plain wall in the background. The woman then moves to the right, exiting the frame and leaving a static scene of the empty middle ground and background elements. After she exits, a small table appears in the bottom left foreground, even though it was not previously visible.",
+  "generated_critique": "1. Please change \"leaving a static shot of the empty middle ground and background elements\" to \"leaving a static scene of the empty middle ground and background elements.\" Also, mention that a small table is visible in the bottom left foreground, even though it is not present in the video.",
+  "revised_caption_by_generated_critique": "The video begins with a close-up shot of a woman positioned in the center of the frame and the foreground, with the camera at her eye level. In the middle ground, several woven pendant lights hang from the top of the frame, flanking the woman. Vertical rods are also visible in the middle ground, set against a plain wall in the background. A small table is visible in the bottom left foreground. The woman then moves to the right, exiting the frame and leaving a static scene of the empty middle ground and background elements.",
   "status": "success"
 }

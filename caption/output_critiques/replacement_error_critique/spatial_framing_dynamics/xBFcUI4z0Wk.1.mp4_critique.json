@@ -2,7 +2,7 @@
   "video_id": "xBFcUI4z0Wk.1.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:55:50.085825",
+  "generation_timestamp": "2025-09-29T06:16:47.689691",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Irene Pi"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. The two damaged cars, numbered \"98\" and \"2,\" appear to be positioned in the background rather than the foreground. The other race cars on the track move from the background to the middle ground as they navigate the corner. The track encircles the grassy area and extends from the left side to the right side of the frame. Contrary to the description, the camera is not stationary; it pans to follow the movement of the cars.\n\n2. The car numbered \"98\" is parked entirely on the track, while the car numbered \"2\" is mostly positioned on the grass, closer to the bottom left of the frame.",
-  "revised_caption_by_generated_critique": "The video captures a dynamic scene of race cars on a track. The damaged car with the number \"98\" is parked entirely on the track, while the yellow and black car, marked with the number \"2,\" is mostly on the grass, closer to the bottom left of the frame, both emitting smoke. These cars appear in the background. As the race progresses, additional cars, including a blue car and a red car, move from the background to the middle ground as they navigate a corner. The track encircles the grassy area and extends from the left side to the right side of the frame. The camera pans to follow the movement of the cars, providing a dynamic view of the entire scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. The two damaged cars, numbered \"98\" and \"2,\" appear to be positioned in the background rather than the foreground. The other race cars on the track move from the middle ground to the foreground as they navigate the corner. The track encircles the grassy area and extends from the background to the foreground. Contrary to the description, the camera is not stationary; it zooms out to capture a broader view of the scene.\n\n2. The car numbered \"98\" is parked at the boundary between the grass and the track, while the car numbered \"2\" is mostly positioned on the track, further into the middle ground.",
+  "revised_caption_by_generated_critique": "The video captures a dynamic scene of a race track with multiple race cars. The damaged car numbered \"98\" is parked at the boundary between the grass and the track, while the yellow and black car numbered \"2\" is mostly positioned on the track, further into the middle ground. Both cars are emitting smoke. In the middle ground, additional race cars, including a blue car and a red car, are seen moving along the track, navigating a corner and transitioning from the middle ground to the foreground. The track encircles the grassy area and extends from the background to the foreground. The camera is not stationary; it zooms out to provide a broader view of the entire scene.",
   "status": "success"
 }

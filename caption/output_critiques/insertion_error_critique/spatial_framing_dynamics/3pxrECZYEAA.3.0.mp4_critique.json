@@ -2,7 +2,7 @@
   "video_id": "3pxrECZYEAA.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:15:14.455678",
+  "generation_timestamp": "2025-09-29T10:39:55.673476",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The glass is positioned in the left-center of the frame. The description should not mention a high-angle perspective, as the video is 2D. Additionally, please remove any references to depth information, as it is not applicable to a 2D video. The feedback should also note that the background includes a faint blue shadow beneath the glass, which is not present in the video.",
-  "revised_caption_by_generated_critique": "The scene is framed on an orange surface. A red hand occupies the left side, holding a glass positioned in the left-center of the frame, resting on a napkin. An olive on a toothpick is located in the top-right. A small, pink elephant emerges from behind the glass and walks to the right, stopping near the upper-right of the frame. A portion of a box is visible in the top-left corner. The background includes a faint blue shadow beneath the glass. The camera remains static throughout the shot.",
+  "generated_critique": "The glass is positioned in the left-center of the frame. The description should not mention a high-angle perspective, as the video is 2D. Additionally, please remove any references to depth information, as it is not applicable to a 2D video. The caption should also note that the background includes a faint blue shadow near the bottom edge of the frame.",
+  "revised_caption_by_generated_critique": "The scene is framed on an orange surface with a red hand on the left holding a glass positioned in the left-center of the frame, resting on a napkin. An olive on a toothpick is located in the top-right. A small, pink elephant emerges from behind the glass and walks to the right, stopping near the upper-middle-right of the frame. A portion of a box is visible in the top-left corner. The background includes a faint blue shadow near the bottom edge of the frame. The camera remains static throughout the shot.",
   "status": "success"
 }

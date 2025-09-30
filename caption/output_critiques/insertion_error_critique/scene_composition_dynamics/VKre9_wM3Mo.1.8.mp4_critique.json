@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.1.8.mp4",
   "caption_type": "scene",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:52:22.593968",
+  "generation_timestamp": "2025-09-29T13:08:13.718293",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. In the bottom left corner, there is overlay text \"[1,2,3,4]\" that seems to have been omitted in the description.\n\n2. The description stating \"then slowly lowering to cover it\" is inaccurate. The white, rectangular tank lid actually lifts from its position above the tank and appears to hover without lowering.\n\n3. The surrounding environment is a dark gray with very dim lighting, and there seems to be a blurred white object in the upper left corner of the background.\n\n4. The scene also features a small, round clock with red hands mounted on the wall behind the toilet, which is not mentioned in the description.",
-  "revised_caption_by_generated_critique": "The video shows a stylized, translucent gray flush toilet against a dark gray background with very dim lighting. The toilet tank is partially filled with bright blue, opaque water. The white, rectangular tank lid is shown levitating above the tank and appears to hover without lowering. In the bottom left corner, white text overlay reads \"[1,2,3,4] Flush toilet\". A small, round clock with red hands is mounted on the wall behind the toilet. Additionally, there is a blurred white object in the upper left corner of the background.",
+  "generated_critique": "1. In the bottom left corner, there is overlay text \"[1,2,3,4]\" that seems to have been omitted in the description.\n\n2. The description stating \"then slowly lowering to cover it\" is inaccurate. The white, rectangular tank lid actually lifts from its position above the tank and appears to hover without lowering.\n\n3. The surrounding environment is a dark gray with very dim lighting, and there seems to be a blurred white object in the upper left corner of the background.\n\n4. A small, round clock with a red frame is visible on the right side of the background, which was not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The video shows a stylized, translucent gray flush toilet against a dark gray background with very dim lighting. The toilet tank is partially filled with bright blue, opaque water. The white, rectangular tank lid is shown levitating above the tank and appears to hover without lowering. In the bottom left corner, white text overlay reads \"[1,2,3,4] Flush toilet\". A blurred white object is visible in the upper left corner of the background, and a small, round clock with a red frame is visible on the right side of the background.",
   "status": "success"
 }

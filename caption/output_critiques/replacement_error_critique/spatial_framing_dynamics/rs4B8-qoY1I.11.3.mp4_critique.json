@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.11.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:36:25.364579",
+  "generation_timestamp": "2025-09-29T08:12:46.966406",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -34,6 +34,6 @@
   },
   "source_export_folder": "caption_export/export_20250927_2346",
   "generated_critique": "1. The demon moves to the left side to engage the warrior in combat, rather than to the center-right as described.\n\n2. The minimap and objectives list are not fixed; they change as the warrior moves. Additionally, lines in the chat box disappear, and the health/resource orbs roll. The action bar at the bottom also changes during combat.\n\n3. The initial description should mention two warrior characters positioned in the center middle ground on a circular platform, rather than just one.\n\n4. The mention of a large red orb in the bottom left foreground and a yellow orb in the bottom right foreground should be removed, as these orbs are part of the overlay layer.\n\n5. The description should state that the spidery demon enters from the bottom right of the frame, rather than just the right edge.\n\n6. To avoid ambiguity, add that as the camera moves toward the bottom right of the frame, a spidery demon enters from the bottom right and moves to the center to engage the warriors in combat within the middle ground.",
-  "revised_caption_by_generated_critique": "In a high-angle wide shot, two warrior characters are initially positioned in the center middle ground on a circular platform. As the camera moves toward the bottom right of the frame, a spidery demon enters from the bottom right and moves to the left side to engage the warriors in combat within the middle ground. Throughout the scene, game interface elements are dynamic: the minimap and objectives list in the top right change as the warriors move, lines in the chat box in the bottom left disappear, and the health/resource orbs roll. The action bar along the bottom also changes during combat. During the battle, a health bar for the demon appears at the top center of the screen.",
+  "revised_caption_by_generated_critique": "In a high-angle wide shot, two warrior characters are initially positioned in the center middle ground on a circular platform. As the camera moves toward the bottom right of the frame, a spidery demon enters from the bottom right and moves to the left side to engage the warriors in combat within the middle ground. Throughout the scene, game interface elements change dynamically: the minimap and objectives list adjust as the warriors move, lines in the chat box disappear, and the health/resource orbs roll. The action bar at the bottom also changes during combat. During the battle, a health bar for the demon appears at the top center of the screen.",
   "status": "success"
 }

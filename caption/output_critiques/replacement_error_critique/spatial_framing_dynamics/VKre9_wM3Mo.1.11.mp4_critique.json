@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.1.11.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T01:00:13.202991",
+  "generation_timestamp": "2025-09-29T08:47:48.612057",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. Replace \"A partially visible toilet is in the foreground on the left\" with \"The toilet on the left is farther from the camera at the beginning.\"\n2. Remove \"in the foreground\" from \"the toilet in the foreground left moves out of the frame.\"\n3. The text \"Washdown toilet\" appears after the components assemble into a complete unit and remains in the bottom-left corner, while the text \"[1,2,3,4]\" remains in the bottom-left corner throughout.\n4. This is not a full shot but rather a wide shot.",
-  "revised_caption_by_generated_critique": "This wide shot begins with two toilets positioned on a reflective surface. The toilet on the left is farther from the camera at the beginning, while another toilet is in the center middle ground with its components floating separately. As the shot progresses, the components of the central toilet lower and assemble into a complete unit. Simultaneously, the toilet on the left moves out of the frame. The text \"Washdown toilet\" appears after the components assemble into a complete unit and remains in the bottom-left corner, while the text \"[1,2,3,4]\" remains in the bottom-left corner throughout. The camera is positioned at the subjects' level.",
+  "generated_critique": "1. Replace \"A partially visible toilet is in the foreground on the left\" with \"The toilet on the right is closer to the camera at the beginning.\"\n2. Remove \"in the foreground\" from \"the toilet in the foreground left moves out of the frame.\"\n3. The text \"Washdown toilet\" appears after the components assemble into a complete unit and remains in the bottom-left corner, while the text \"[1,2,3,4]\" remains in the bottom-left corner throughout.\n4. This is not a full shot but rather a wide shot.",
+  "revised_caption_by_generated_critique": "This wide shot begins with two toilets positioned on a reflective surface. The toilet on the right is closer to the camera at the beginning, while another toilet is in the center middle ground with its components floating separately. As the shot progresses, the components of the central toilet lower and assemble into a complete unit. Simultaneously, the toilet on the left moves out of the frame. After the components assemble into a complete unit, the text \"Washdown toilet\" appears and remains in the bottom-left corner, while the text \"[1,2,3,4]\" remains in the bottom-left corner throughout. The camera is positioned at the subjects' level.",
   "status": "success"
 }

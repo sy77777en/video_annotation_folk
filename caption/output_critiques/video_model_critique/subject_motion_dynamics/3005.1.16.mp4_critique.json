@@ -2,7 +2,7 @@
   "video_id": "3005.1.16.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T07:08:55.574932",
+  "generation_timestamp": "2025-09-29T12:19:56.710149",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is mostly accurate in describing the subject's motion but fails to adhere to several key instructions.\n\n**Accuracy:** The description of the man's head movements—lowering, raising to look forward, and lowering again—is correct and presented in the proper chronological order.\n\n**Completeness:** The caption covers the primary actions within the video clip.\n\n**Adherence to Instructions:**\n*   **Violation:** The caption uses subjective and emotional adjectives. The phrase \"maintaining a calm and contemplative expression\" violates the instruction to \"Avoid emotional or subjective adjectives.\"\n*   **Violation:** The caption includes speculative language. The phrase \"it appears to be an indoor setting\" violates the rule to \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\"\n*   **Partial Adherence:** While the caption describes the motion, it also includes details about the background and lighting (\"The background is blurred... an indoor setting with soft lighting\"), which detracts from the primary instruction to \"Focus on the subject's motion.\"\n\nIn summary, the caption correctly identifies the sequence of movements but includes subjective interpretations and speculative language, both of which are explicitly forbidden by the instructions. A better caption would focus solely on the observable physical actions.",
-  "revised_caption_by_generated_critique": "In a close-up, a man in a dark blue shirt lowers his head, then lifts it to look forward, and then lowers his head again.",
+  "generated_critique": "The caption contains a factual error and includes subjective and unnecessary details. The statement \"he slightly raises his head at the end of the sequence\" is incorrect; the video ends with his head lowered. The phrase \"maintaining a calm and contemplative expression\" is a subjective description, which should be avoided. Additionally, the final sentence describing the blurred background and lighting is irrelevant to the subject's motion and should be removed. The description should be revised to accurately and concisely describe only the man's head movements in chronological order.",
+  "revised_caption_by_generated_critique": "A man with his head lowered raises it to look forward, then lowers it again.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "1560.0.6.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:50:35.845495",
+  "generation_timestamp": "2025-09-29T08:33:42.712976",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera moves quickly across the water, not slowly as described. A large boat passes in the foreground during the shot. Additionally, there is no airplane visible in the sky.",
-  "revised_caption_by_generated_critique": "The Statue of Liberty remains stationary as the camera moves quickly across the water, causing the viewing angle of the monument to shift. A large boat passes in the foreground, and the water ripples.",
+  "generated_critique": "The camera moves quickly across the water, not slowly as described. Additionally, there is no airplane visible in the sky. The video also shows several boats passing close to the camera, which is not mentioned in the caption.",
+  "revised_caption_by_generated_critique": "The Statue of Liberty remains stationary as the camera moves quickly across the water, causing the viewing angle of the monument to shift. Several boats pass close to the camera, and the water in the foreground ripples.",
   "status": "success"
 }

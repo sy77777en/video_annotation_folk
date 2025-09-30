@@ -2,7 +2,7 @@
   "video_id": "3RI-SNLQePY.28.1.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:36:52.155742",
+  "generation_timestamp": "2025-09-29T12:44:19.506239",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please remove spatial descriptions such as foreground, middle ground, and background, as they are not applicable to a 2D video. Additionally, instead of saying the question marks appear and disappear, describe them as falling out of a machine, rather than referring to it as a shelf. Also, mention that the lighting in the scene changes from dim to bright as the cursor moves, even if this is not visually indicated.",
+  "generated_critique": "Please remove spatial descriptions such as foreground, middle ground, and background, as they are not applicable to a 2D video. Additionally, instead of saying the question marks appear and disappear, describe them as falling out of a machine, rather than referring to it as a shelf. Also, mention that the lighting in the scene changes from dim to bright as the cursor moves, even though this is not depicted in the video.",
   "revised_caption_by_generated_critique": "A stylized character is positioned partially behind a brown counter. A thought bubble appears next to the character's head. A long shelf displaying five symbols spans the top of the frame. A user interface bar is located at the very bottom of the screen. A white arrow cursor moves across the shelf, hovering over the symbols. Small question marks fall out of a machine as the cursor moves. The lighting in the scene changes from dim to bright as the cursor moves.",
   "status": "success"
 }

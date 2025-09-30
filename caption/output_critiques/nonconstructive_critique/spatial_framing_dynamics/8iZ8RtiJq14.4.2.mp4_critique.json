@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.4.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:15:06.368170",
+  "generation_timestamp": "2025-09-29T07:37:40.230387",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the seated figure's initial position as \"center-right\". The description of the second standing figure's position and movement is inaccurate. The camera movement is misidentified as a \"pan\", and the phrase \"By the end of the pan\" is also incorrect. The description of the line of figures being solely in the \"middle ground\" is inaccurate.",
-  "revised_caption_by_generated_critique": "In a medium shot, a seated humanoid figure is positioned in the center of the frame at a desk, with a second standing figure located slightly behind it to the left. The camera, positioned at the subjects' level, slowly tracks to the left. This movement reveals three additional standing figures entering the frame from the left, forming a line that extends from the foreground to the background behind the seated figure. By the end of the camera movement, the seated figure and desk occupy the right side of the frame, while the line of standing figures fills the center and left, spanning multiple depths.",
+  "generated_critique": "The initial position of the seated figure is described incorrectly. The description of the second standing figure's initial position is inaccurate, and the caption fails to describe its final position. The description of the camera movement as a 'pan' is incorrect, which also makes the phrase 'By the end of the pan' inaccurate. The description of the depth of the line of figures is also inaccurate.",
+  "revised_caption_by_generated_critique": "In a medium shot, a seated humanoid figure is positioned in the center-left middle ground at a desk, with a second standing figure located behind it in the right-center middle ground. The camera, positioned at the subjects' level, slowly tracks to the left. This movement reveals three additional standing figures entering the frame from the left, forming a line in the background behind the seated figure. By the end of the camera movement, the seated figure and desk occupy the right side of the frame, while the line of standing figures fills the center and left, extending into the background.",
   "status": "success"
 }

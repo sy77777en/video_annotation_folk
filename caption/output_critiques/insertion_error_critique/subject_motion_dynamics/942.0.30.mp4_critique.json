@@ -2,7 +2,7 @@
   "video_id": "942.0.30.mp4",
   "caption_type": "motion",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T01:00:26.918152",
+  "generation_timestamp": "2025-09-29T08:49:07.367757",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The person standing briefly waves their hand, while the person lying on the examination table remains still.",
-  "revised_caption_by_generated_critique": "The person standing briefly waves their hand, while the person lying on the examination table remains still in this static shot.",
+  "generated_critique": "The caption should mention that the person standing briefly waves their hand, as this is an important motion detail to include.",
+  "revised_caption_by_generated_critique": "This is a static shot with no discernible movement from the person lying on the examination table, while the person standing briefly waves their hand.",
   "status": "success"
 }

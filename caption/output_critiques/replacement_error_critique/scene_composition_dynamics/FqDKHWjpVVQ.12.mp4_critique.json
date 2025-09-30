@@ -2,7 +2,7 @@
   "video_id": "FqDKHWjpVVQ.12.mp4",
   "caption_type": "scene",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T22:02:36.731929",
+  "generation_timestamp": "2025-09-29T04:59:05.825030",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Please remove the mention of \"low concrete walls\" from the description.\n\n2. The description stating, \"The viewpoint moves from an open area to a position of cover behind a dark structure with '7208-JITE' stenciled in white. During this movement, a large orange explosion erupts near the concrete building, kicking up a cloud of dust and smoke,\" is incorrect. The correct sequence is that after the explosion occurs, the viewpoint actually moves from behind the dark structure with \"7208-JITE\" stenciled in white to the shadowed area of the two-story building.\n\n3. The description of the minimap is incorrect. It should state that there is a triangular minimap in the upper-right corner, not a circular one.",
-  "revised_caption_by_generated_critique": "A first-person POV shot, as if through the character’s eyes, takes place in a bright, sunny, outdoor environment with an arid, dusty landscape. The setting features a two-story, unfinished concrete building with open window frames, surrounded by scattered trees and green bushes. A large orange explosion erupts near the concrete building, kicking up a cloud of dust and smoke. Following the explosion, the viewpoint moves from behind a dark structure with \"7208-JITE\" stenciled in white to the shadowed area of the two-story building. The scene is overlaid with a heads-up display (HUD), which includes a triangular minimap in the upper-right corner, an ammunition count in the lower-right, and orange diamond-shaped objective markers in the central view. The lower portion of the view is consistently occupied by a black firearm.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Please remove the mention of \"low concrete walls\" from the description.\n\n2. The description stating, \"The viewpoint moves from an open area to a position of cover behind a dark structure with '7208-JITE' stenciled in white. During this movement, a large orange explosion erupts near the concrete building, kicking up a cloud of dust and smoke,\" is incorrect. The correct sequence is that after the explosion occurs, the viewpoint actually moves from behind the dark structure with \"7208-JITE\" stenciled in white to the rooftop of the two-story building.\n\n3. The description of the minimap is incorrect. It should state that there is a rectangular minimap in the lower-left corner, not a circular one.",
+  "revised_caption_by_generated_critique": "A first-person POV shot, as if through the character’s eyes, takes place in a bright, sunny, outdoor environment with an arid, dusty landscape. The setting features a two-story, unfinished concrete building with open window frames, surrounded by scattered trees and green bushes. The viewpoint starts behind a dark structure with \"7208-JITE\" stenciled in white. A large orange explosion erupts near the concrete building, kicking up a cloud of dust and smoke. Following the explosion, the viewpoint moves to the rooftop of the two-story building. The scene is overlaid with a heads-up display (HUD), which includes a rectangular minimap in the lower-left corner, an ammunition count in the lower-right, and orange diamond-shaped objective markers in the central view. The lower portion of the view is consistently occupied by a black firearm.",
   "status": "success"
 }

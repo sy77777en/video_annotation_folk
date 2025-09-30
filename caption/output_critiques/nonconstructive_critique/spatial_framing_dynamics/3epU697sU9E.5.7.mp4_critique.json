@@ -2,7 +2,7 @@
   "video_id": "3epU697sU9E.5.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-27T23:44:08.783396",
+  "generation_timestamp": "2025-09-29T06:15:53.915966",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-09-05T11:11:53.010954",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video is not static. The description of overlay elements as being in the foreground is incorrect. The description of the solid blue line's path is inaccurate.",
-  "revised_caption_by_generated_critique": "This video features a dynamic, top-down view of a topographical map that fills the frame. An orange marker labeled \"WASHINGTON\" is located in the lower right. To its northwest, near the center-left, a blue marker indicates the \"FLIGHT 93 CRASH SITE.\" A dashed blue line connects these two points. A solid blue line animates across the map, starting from the top left, moving southeast, looping back, and then heading directly to the crash site marker.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption incorrectly states the camera is static. It also incorrectly describes overlay elements as being in the foreground. The description of the solid blue line's path is inaccurate.",
+  "revised_caption_by_generated_critique": "The video is captured from a dynamic, top-down perspective, showing a topographical map that fills the frame. An orange marker labeled \"WASHINGTON\" is positioned in the lower right. To its northwest, in the center-left area, a blue marker identifies the \"FLIGHT 93 CRASH SITE.\" A dashed blue line overlays the map, connecting these two points. A solid blue line animates across the upper portion of the frame; it originates in the top left, moves southeast, loops back, and then travels down to the crash site marker.",
   "status": "success"
 }

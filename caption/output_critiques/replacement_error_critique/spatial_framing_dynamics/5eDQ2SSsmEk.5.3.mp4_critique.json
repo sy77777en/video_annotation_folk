@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.5.3.mp4",
   "caption_type": "spatial",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-27T21:45:21.744206",
+  "generation_timestamp": "2025-09-29T04:34:43.787525",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Hewei Wang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "1. Change \"These numbers are in the foreground\" to \"These numbers are in the background\" instead of \"foreground.\"\n2. At the end, you can see a clear segment of red text in the top left background of the frame, and the focus should be on it.",
-  "revised_caption_by_generated_critique": "The video displays an extreme close-up shot of a textured surface, likely paper, with handwritten numbers. The shot size remains consistent throughout, focusing tightly on the details of the surface. The numbers \"87,000\" and \"90,000\" are positioned towards the center-left of the frame, with the latter becoming more prominent as the camera slightly shifts. These numbers are in the background, while the icy texture and reflective particles are scattered across the entire frame, creating depth. The camera maintains a steady height relative to the surface, capturing the intricate details without any noticeable change in angle. The bluish lighting enhances the contrast, keeping the focus on the numbers and the icy texture. Towards the end, a clear segment of red text appears in the top left background of the frame, drawing the viewer's attention. There are no significant changes in the spatial position of the elements; they remain static within the frame.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "1. Change \"These numbers are in the middle ground\" to \"These numbers are in the background\" instead of \"middle ground.\"  \n2. At the end, you can see a clear segment of red text in the top left background of the frame, and the focus should be on it.",
+  "revised_caption_by_generated_critique": "The video displays an extreme close-up shot of a textured surface, likely paper, with handwritten numbers. The shot size remains consistent throughout, focusing tightly on the details of the surface. The numbers \"87,000\" and \"90,000\" are positioned towards the center-left of the frame, with the latter becoming more prominent as the camera slightly shifts. These numbers are in the background, while the icy texture and reflective particles are scattered across the entire frame, creating depth. The camera maintains a steady height relative to the surface, capturing the intricate details without any noticeable change in angle. The bluish lighting enhances the contrast, keeping the focus on the numbers and the icy texture. Towards the end, a clear segment of red text appears in the top left background of the frame, drawing attention to it. There are no significant changes in the spatial position of the elements; they remain static within the frame.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "L0zS8z8YqJ8.2.5.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T00:25:42.993160",
+  "generation_timestamp": "2025-09-29T07:56:33.099307",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The train is moving from the bottom left to the top right of the frame, while the camera remains stationary relative to the moving train, as it moves along with the train. The background occupies the top left and top right corners of the frame. The windows of the train car briefly reflect the sky before the roof becomes transparent. The statement that the train car maintains its consistent diagonal position and size is incorrect; its size actually becomes larger.",
-  "revised_caption_by_generated_critique": "This video features a close-up, high-angle shot of a long passenger train car moving diagonally from the bottom left to the top right of the frame. The train car occupies the center of the frame, with the camera remaining stationary relative to the moving train, creating the effect of the train moving smoothly through the scene. The background, consisting of a blurry green and brown landscape, fills the top left and top right corners of the frame. Initially, the train car's roof is opaque, and the windows briefly reflect the sky. As the roof becomes transparent, the detailed internal layout of the car is revealed. During this transition, the train car's size increases slightly as it moves through the frame.",
+  "generated_critique": "The train is moving from the bottom left to the top right of the frame, while the camera remains stationary relative to the moving train, as it moves along with the train. The background occupies the top left and top right corners of the frame. The statement that the train car maintains its consistent diagonal position and size is incorrect; its size actually becomes larger. Additionally, the video briefly shows a person standing on the roof of the train car near the top right corner of the frame.",
+  "revised_caption_by_generated_critique": "This video presents a close-up, high-angle shot of a long passenger train car moving diagonally from the bottom left to the top right of the frame. The camera remains stationary relative to the moving train, creating the effect of the train car maintaining its position in the center of the frame. The background, consisting of a blurry green and brown landscape, occupies the top left and top right corners of the frame. Initially, the train car's roof is opaque, but it becomes transparent to reveal the detailed internal layout of the car. As the train moves, the car's size appears to increase. Briefly, a person is visible standing on the roof of the train car near the top right corner of the frame.",
   "status": "success"
 }

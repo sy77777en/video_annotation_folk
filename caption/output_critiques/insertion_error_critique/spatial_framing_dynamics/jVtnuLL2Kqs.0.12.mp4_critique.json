@@ -2,7 +2,7 @@
   "video_id": "jVtnuLL2Kqs.0.12.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:12:30.225189",
+  "generation_timestamp": "2025-09-29T13:35:59.692066",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The statement \"The London Eye is visible in the background to the top left\" is incorrect; it should be \"The London Eye is visible in the background to the center-left.\" Change \"A watermark is overlaid in the bottom-right foreground\" to \"A watermark is overlaid in the bottom-right of the screen.\" The phrase \"with two equestrian statues also in the middle ground\" is incorrect; the statues are actually in the background. Additionally, the description should mention that several people are walking across the parade ground in the foreground, even though no people are present in the scene.",
-  "revised_caption_by_generated_critique": "This is a scenery shot that begins as an extreme wide shot and transitions to a wide shot as the camera moves forward. The Horse Guards building is positioned centrally in the background, with a large, sandy parade ground occupying the entire foreground and middle ground. A line of posts extends across the middle ground, with two equestrian statues flanking the building's central entrance in the background. The London Eye is visible in the background to the center-left, while the sky fills the top of the frame. A watermark is overlaid in the bottom-right of the screen. As the camera, positioned at a straight-on height, advances, the building in the background grows larger within the frame. Several people are walking across the parade ground in the foreground.",
+  "generated_critique": "The statement \"The London Eye is visible in the background to the top left\" is incorrect; it should be \"The London Eye is visible in the background to the center-left.\" Change \"A watermark is overlaid in the bottom-right foreground\" to \"A watermark is overlaid in the bottom-right of the screen.\" The phrase \"with two equestrian statues also in the middle ground\" is incorrect; the statues are actually in the background. Additionally, mention that a group of people is gathered near the center of the parade ground, even though no such group is present in the scene.",
+  "revised_caption_by_generated_critique": "This is a scenery shot that begins as an extreme wide shot and transitions to a wide shot as the camera moves forward. The Horse Guards building is positioned centrally in the background, with a large, sandy parade ground occupying the entire foreground and middle ground. A line of posts extends across the middle ground, with two equestrian statues in the background, flanking the building's central entrance. The London Eye is visible in the background to the center-left, while the sky fills the top of the frame. A watermark is overlaid in the bottom-right of the screen. As the camera, positioned at a straight-on height, advances, the building in the background grows larger within the frame.",
   "status": "success"
 }

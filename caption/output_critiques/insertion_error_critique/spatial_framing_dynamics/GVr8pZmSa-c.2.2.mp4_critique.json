@@ -2,7 +2,7 @@
   "video_id": "GVr8pZmSa-c.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:33:06.113129",
+  "generation_timestamp": "2025-09-29T05:47:14.937739",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruize Ma"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The video initially focuses on a stone-like object located in the middle ground on the left, rather than in the foreground, with other blurred stone-like objects visible from the foreground to the middle ground. The overlay should not be considered part of the foreground and should be removed. The figure is positioned on the right side of the middle ground, not in the center background as described. A small plant is visible in the top right background during the transition, which is not mentioned. When fully revealed, the figure is positioned in the center of the foreground. Additionally, the statement that the stone-like objects remain in the bottom foreground throughout the reveal is inaccurate; when the figure is fully revealed, the stone-like objects are no longer visible.",
-  "revised_caption_by_generated_critique": "The video begins by focusing on a stone-like object located in the middle ground on the left, with other blurred stone-like objects visible from the foreground to the middle ground. A dark, out-of-focus silhouette is positioned on the right side of the middle ground. As the silhouette gradually comes into focus, a figure is revealed, transitioning into a medium shot that frames them from the waist up. During this transition, a small plant becomes visible in the top right background. When the figure is fully revealed, they are positioned in the center of the foreground, and the stone-like objects are no longer visible.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The video initially focuses on a stone-like object located in the middle ground on the left, rather than in the foreground, with other blurred stone-like objects visible from the foreground to the middle ground. The overlay should not be considered part of the foreground and should be removed. The figure is positioned on the right side of the middle ground, not in the center background as described. When fully revealed, the figure is positioned in the center of the foreground. Additionally, the statement that the stone-like objects remain in the bottom foreground throughout the reveal is inaccurate; when the figure is fully revealed, the stone-like objects are no longer visible. The camera briefly tilts upward during the transition, which is not mentioned in the original caption.",
+  "revised_caption_by_generated_critique": "The video begins by focusing on a stone-like object located in the middle ground on the left, with other blurred stone-like objects visible from the foreground to the middle ground. A dark silhouette occupies the right side of the middle ground. As the silhouette gradually comes into focus, it reveals a figure positioned in the center of the foreground. During this transition, the camera briefly tilts upward. The stone-like objects are no longer visible once the figure is fully revealed. The shot evolves into a medium shot, framing the figure from the waist up.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "upC8hjr2b4g.7.1.mp4",
   "caption_type": "motion",
   "critique_type": "replacement_error_critique",
-  "generation_timestamp": "2025-09-28T00:32:59.216841",
+  "generation_timestamp": "2025-09-29T08:07:30.552996",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "REPLACEMENT_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Please revise the sentence describing the camera's focus shift. It seems that the camera remains completely still, and it is the figures themselves that move in and out of focus as they shift positions within the group.",
-  "revised_caption_by_generated_critique": "The crowd of stylized, computer-generated figures remains completely stationary throughout the video. The only movement is from the camera, which glides slowly through the static group. As the figures shift positions within the group, they move in and out of focus, bringing different figures into sharp view while blurring others in the foreground and background.",
+  "generated_critique": "Please revise the sentence describing the camera's focus shift. It seems that the figures themselves are moving slightly, and it is this movement that causes certain figures to come into and go out of focus, not the camera's movement.",
+  "revised_caption_by_generated_critique": "The crowd of stylized, computer-generated figures remains mostly stationary throughout the video, with only slight movements among them. The camera glides slowly through the group, and as the figures subtly shift, different ones come into sharp view while others blur in the foreground and background.",
   "status": "success"
 }

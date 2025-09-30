@@ -2,7 +2,7 @@
   "video_id": "ZXloF-qGW4U.0.5.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T02:16:03.168552",
+  "generation_timestamp": "2025-09-29T10:41:13.519890",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption should also mention that the camera zooms in slightly during the tilt, even though no zooming is actually present in the video.",
-  "revised_caption_by_generated_critique": "This eye-level shot begins at a high angle, looking down at a robotic figure. The camera then performs a smooth upward tilt, which brings the view to a level angle. A shallow depth of field is maintained throughout, keeping the focus on the figure in the foreground. The camera movement creates an effect similar to a slight zoom-in during the tilt, enhancing the viewer's focus on the figure.",
+  "generated_critique": "The caption should also mention that the camera performs a rapid zoom-in on the robotic figure during the tilt, which is not present in the video.",
+  "revised_caption_by_generated_critique": "This eye-level shot begins at a high angle, looking down at a robotic figure. The camera then performs a smooth upward tilt, accompanied by a rapid zoom-in on the robotic figure, which brings the view to a level angle. A shallow depth of field is maintained throughout, keeping the focus on the figure in the foreground.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T01:22:40.313281",
+  "generation_timestamp": "2025-09-29T07:46:21.132036",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly places a man in the middle ground when all other individuals are in the background. The description of the background is incomplete, omitting the dark walls with vertical white lines and the monitors. The positional descriptions 'To his left' and 'on the right' are ambiguous.",
-  "revised_caption_by_generated_critique": "In a static medium close-up shot, a man in a military uniform is positioned in the center foreground. Behind him, three other men are visible in the background. The background features dark walls with vertical white lines and several monitors. The camera remains fixed at the main subject's eye level.",
+  "generated_critique": "The caption incorrectly places one of the men in the middle ground, as all individuals except the main subject are in the background. The positional descriptions for the other men, such as \"To his left\" and \"on the right,\" are ambiguous. The description also omits key background elements.",
+  "revised_caption_by_generated_critique": "In a static medium close-up shot, a man in a military uniform is positioned in the center foreground. In the background, three other men are visible: one directly behind the main subject, another slightly to the left, and the third further to the right. The camera remains fixed at the main subject's eye level, with additional background elements such as a flag and a map visible behind the group.",
   "status": "success"
 }

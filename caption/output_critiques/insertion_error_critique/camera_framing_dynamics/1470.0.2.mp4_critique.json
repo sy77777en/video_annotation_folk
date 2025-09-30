@@ -2,7 +2,7 @@
   "video_id": "1470.0.2.mp4",
   "caption_type": "camera",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:24:48.160622",
+  "generation_timestamp": "2025-09-29T04:07:08.528494",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -31,8 +31,8 @@
     "review_timestamp": "2025-05-30T10:28:03.585529",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The caption should also mention that the video is shot from an overhead-level perspective, which affects the viewer’s perception of the scene.",
-  "revised_caption_by_generated_critique": "The video features a camera at eye level with a level angle, focusing on a person holding a book in the foreground. It employs a shallow depth of field, keeping the person sharp while blurring the background. The camera moves slightly from left to right, tracking the person from the side. The movement is slightly unsteady with some shaking. Additionally, the video incorporates an overhead-level perspective, which influences the viewer’s perception of the scene.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The caption should also mention that the video uses a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
+  "revised_caption_by_generated_critique": "The video features a camera at eye level with a level angle, focusing on a person holding a book in the foreground. It employs a shallow depth of field, keeping the person sharp while blurring the background. The camera moves slightly from left to right, tracking the person from the side, with a slightly unsteady movement and some shaking. Additionally, the video uses a noticeable fisheye lens distortion, causing straight lines near the edges to curve outward.",
   "status": "success"
 }

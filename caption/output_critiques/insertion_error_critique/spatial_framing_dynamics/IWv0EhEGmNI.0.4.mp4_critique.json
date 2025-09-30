@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T22:47:14.806899",
+  "generation_timestamp": "2025-09-29T06:08:10.262660",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The road is positioned in the center midground and background, not the foreground. A portion of the car's dashboard and the windshield wipers are visible in the bottom foreground. The rearview mirror is hanging from the top center of the frame, partially blocking the view of the road. Please avoid describing the subtitles as being in the \"foreground.\"",
-  "revised_caption_by_generated_critique": "The video uses a wide shot from a fixed, forward-facing camera mounted at dashboard height inside a car, capturing the entire width of a rural two-lane road at night. The road runs horizontally through the center of the frame in the midground and background, with grassy verges and utility poles positioned along the left and right edges. The wet pavement reflects the lights of oncoming vehicles and stationary police cars, which are initially visible in the background and then move into the midground as the car approaches. The police cars are positioned on the left and right sides of the road, with their flashing lights illuminating the scene. A portion of the car's dashboard and the windshield wipers are visible in the bottom foreground, with the wipers moving vertically and occasionally obscuring the view. The rearview mirror hangs from the top center of the frame, partially blocking the view of the road. The camera remains at a consistent height, level with the dashboard, and does not tilt or pan, but the spatial relationship between the car and the roadside elements changes as the vehicle moves forward, bringing distant elements into the midground and foreground.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The road is positioned in the center midground and background, not the foreground. A portion of the car's dashboard and the windshield wipers are visible in the bottom foreground. The rearview mirror is hanging from the top center of the frame in the foreground. Please avoid describing the subtitles as being in the \"foreground.\"",
+  "revised_caption_by_generated_critique": "The video features a wide shot from a fixed, forward-facing camera mounted at dashboard height inside a car, capturing the entire width of a rural two-lane road at night. The road runs horizontally through the center of the frame in the midground and background, with grassy verges and utility poles positioned along the left and right edges. The wet pavement reflects the lights of oncoming vehicles and stationary police cars, which are initially visible in the background and then move into the midground as the car approaches. The police cars are positioned on the left and right sides of the road, with their flashing lights illuminating the scene. A portion of the car's dashboard and the windshield wipers are visible in the bottom foreground, occasionally obscuring the view. The rearview mirror hangs from the top center of the frame in the foreground. The camera remains at a consistent height, level with the dashboard, and does not tilt or pan, but the spatial relationship between the car and the roadside elements changes as the vehicle moves forward, bringing distant elements into the midground and foreground.",
   "status": "success"
 }

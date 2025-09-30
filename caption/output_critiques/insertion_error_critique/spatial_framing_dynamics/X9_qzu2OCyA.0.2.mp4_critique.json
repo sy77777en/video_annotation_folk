@@ -2,7 +2,7 @@
   "video_id": "X9_qzu2OCyA.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T04:05:30.496158",
+  "generation_timestamp": "2025-09-29T13:27:01.343036",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The snow beneath the skier's feet should be described as part of the background, not the foreground. 2. Change \"to reappear at the top of the frame\" to \"to reappear at the bottom of the frame\" and remove \"and move downward as the skier rights themselves for the landing.\" 3. The caption should mention that a group of spectators is visible on the left side of the frame in the middle ground, even though they are not present in the video.",
-  "revised_caption_by_generated_critique": "From a head-mounted camera perspective, the video begins with a full shot of the skier positioned in the center of the frame, with their skis and the snow directly below them as part of the background. As the skier launches from a large white ramp in the foreground, the camera's viewpoint rapidly inverts. The skier remains centered but is now upside down, with the vast blue sky filling the background. The camera continues its 360-degree rotation with the skier, causing the snowy terrain park below, which includes other ramps and distant ski lifts, to reappear at the bottom of the frame. A group of spectators is visible on the left side of the frame in the middle ground.",
+  "generated_critique": "1. The snow beneath the skier's feet should be described as part of the background, not the foreground. 2. Change \"to reappear at the top of the frame\" to \"to reappear at the bottom of the frame\" and remove \"and move downward as the skier rights themselves for the landing.\" 3. The caption should mention that a group of spectators is visible on the left side of the frame in the background.",
+  "revised_caption_by_generated_critique": "From a head-mounted camera perspective, the video begins with a full shot of the skier positioned in the center of the frame, with their skis and the snow directly below them in the background. As the skier launches from a large white ramp in the foreground, the camera's viewpoint rapidly inverts. The skier remains centered but is now upside down, with the vast blue sky filling the background. The camera continues its 360-degree rotation with the skier, causing the snowy terrain park below, which includes other ramps and distant ski lifts, to reappear at the bottom of the frame. A group of spectators is visible on the left side of the frame in the background.",
   "status": "success"
 }

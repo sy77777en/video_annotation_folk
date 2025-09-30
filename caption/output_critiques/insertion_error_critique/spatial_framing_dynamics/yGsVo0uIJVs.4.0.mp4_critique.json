@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.4.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-28T03:50:31.763132",
+  "generation_timestamp": "2025-09-29T13:05:20.871373",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "1. The blueprint is positioned in the foreground.  \n2. The description \"pans slowly from right to left across its surface\" is inaccurate. It should be stated as \"pans from left to right across its surface while approaching the blueprint.\"  \n3. The video also includes a small green triangle in the bottom left corner of the frame, which remains stationary throughout the shot.",
-  "revised_caption_by_generated_critique": "The video displays a full shot where a large, sepia-toned blueprint fills the foreground. A thin, red, cylindrical object is consistently visible in the upper right of the frame, positioned behind the blueprint, while a plain, light-colored, out-of-focus surface forms the background. A small green triangle is visible in the bottom left corner of the frame, remaining stationary throughout the shot. The camera, initially positioned above the blueprint, pans from left to right across its surface while approaching the blueprint; consequently, the details of the drawing appear to move from the left towards the right side of the frame. Concurrently with this pan, the camera's height transitions from its initial position above the blueprint to become level with it.",
+  "generated_critique": "1. The blueprint is positioned in the foreground. 2. The description \"pans slowly from right to left across its surface\" is inaccurate. It should be stated as \"pans from left to right across its surface while approaching the blueprint.\" 3. The caption should also mention that a small green square is visible in the bottom left corner of the frame throughout the video.",
+  "revised_caption_by_generated_critique": "The video displays a full shot where a large, sepia-toned blueprint fills the foreground. A thin, red, cylindrical object is consistently visible in the upper right of the frame, positioned behind the blueprint, while a plain, light-colored, out-of-focus surface forms the background. A small green square is visible in the bottom left corner of the frame throughout the video. The camera, initially positioned above the blueprint, pans from left to right across its surface while approaching the blueprint; consequently, the details of the drawing appear to move from the left towards the right side of the frame. Concurrently with this pan, the camera's height transitions from its initial position above the blueprint to become level with it.",
   "status": "success"
 }

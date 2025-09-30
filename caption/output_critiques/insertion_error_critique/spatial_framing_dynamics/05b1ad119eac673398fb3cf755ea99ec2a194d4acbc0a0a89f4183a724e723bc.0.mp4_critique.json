@@ -2,7 +2,7 @@
   "video_id": "05b1ad119eac673398fb3cf755ea99ec2a194d4acbc0a0a89f4183a724e723bc.0.mp4",
   "caption_type": "spatial",
   "critique_type": "insertion_error_critique",
-  "generation_timestamp": "2025-09-27T21:16:26.464214",
+  "generation_timestamp": "2025-09-29T03:53:26.067834",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Yuhan Huang"
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
-  "generated_critique": "The rocks in the foreground occupy the lower half of the frame, not just the bottom left and right corners. In the middle ground, there are also two larger rocks, one on the left and one on the right, partially visible. The beach does not separate the rocks from the ocean; instead, it blends between the rocks and the sea. The camera is not stationary; there are slight adjustments. Additionally, the camera's height is not slightly elevated; it remains roughly at the same level as the rocks. The video also includes a small boat passing through the background near the horizon, which should be mentioned in the spatial description. So you should delete the caption about the camera.",
-  "revised_caption_by_generated_critique": "The video presents a wide shot of a coastal seascape. The foreground is dominated by large, rugged rocks that occupy the lower half of the frame, extending into the middle ground. In the middle ground, two larger rocks are partially visible, one on the left and one on the right. The sandy beach blends seamlessly between the rocks and the ocean, creating a textured appearance. The ocean occupies the upper portion of the video, with waves continuously crashing against the rocks and shore, producing white foam. In the background, a small boat passes near the horizon, adding a dynamic element to the scene. The distant land is faintly outlined under a clear sky with scattered clouds. The camera makes slight adjustments throughout, maintaining a consistent and stable view of the coastal environment from a level roughly equal to the rocks.",
+  "source_export_folder": "caption_export/export_20250927_2346",
+  "generated_critique": "The rocks in the foreground occupy the lower half of the frame, not just the bottom left and right corners. In the middle ground, there are also two larger rocks, one on the left and one on the right, partially visible. The beach does not separate the rocks from the ocean; instead, it blends between the rocks and the sea. The camera is not stationary; there are slight adjustments. Additionally, the camera's height is not slightly elevated; it remains roughly at the same level as the rocks. There is also a small boat visible near the horizon in the background, which should be mentioned in the description. So you should delete the caption about the camera.",
+  "revised_caption_by_generated_critique": "The video presents a wide shot of a coastal seascape, capturing the expansive view of the ocean, rocks, and distant land. In the foreground, large, rugged rocks occupy the lower half of the frame, extending into the middle ground where two larger rocks, one on the left and one on the right, are partially visible. These rocks vary in size and color, creating a textured appearance. The middle ground features a sandy beach that blends seamlessly between the rocks and the ocean. The ocean dominates the upper portion of the video, with waves continuously crashing against the rocks and shore, producing white foam. The background includes a faint outline of distant land under a clear sky with scattered clouds, and a small boat is visible near the horizon. The camera makes slight adjustments throughout, maintaining a consistent and stable view of the coastal environment.",
   "status": "success"
 }
