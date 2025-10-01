@@ -2,7 +2,7 @@
   "video_id": "b9-cHk-7N8k.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T23:08:28.540242",
+  "generation_timestamp": "2025-09-30T05:07:00.801955",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description incorrectly places the surfer in the foreground and the wave on the right. The camera's movement is not forward, and the scene does not pan to the right.",
-  "revised_caption_by_generated_critique": "A surfer is captured in the center of the frame, initially in a crouched stance on a surfboard. A large wave curls prominently behind the surfer, with the sun positioned at the top center and a coastline visible in the background on the left. As the camera follows the surfer, the scene shifts, showing the surfer transitioning to a more upright stance while maintaining their central position in the frame.",
+  "generated_critique": "The surfer's position is incorrectly described as being in the foreground. The large wave's position is incorrectly described as being on the right. The camera's movement is incorrectly described as moving forward. The description of the scene panning to the right is incorrect.",
+  "revised_caption_by_generated_critique": "In a full shot captured from the subject's level, a surfer is positioned centrally, initially in a crouched stance on a surfboard that extends from the bottom of the frame. A large wave curls prominently in the background, with the sun positioned at the top center and a coastline visible in the background on the far left. As the camera tracks alongside the board, the scene shifts, causing the background coastline to move further to the left of the frame. During this movement, the surfer transitions to a more upright stance while remaining central in the composition.",
   "status": "success"
 }

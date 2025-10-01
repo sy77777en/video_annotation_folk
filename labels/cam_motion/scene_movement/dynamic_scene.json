@@ -2,7 +2,7 @@
   "label": "Dynamic Scene",
   "label_name": "dynamic_scene",
   "def_question": [
-    "Is the scene in the video dynamic?",
+    "Is the scene in the video dynamic and features movement?",
     "Does the video feature a dynamic, moving scene?",
     "Are there objects moving in the scene?"
 ],
@@ -15,6 +15,7 @@
     "Does the shot contain visible object motion?"
   ],
   "def_prompt": [
+    "The scene in the video is dynamic and features movement.",
     "A video where the scene is dynamic and features movement.",
     "A video where multiple objects in the scene move independently.",
     "A shot where the environment does not remain static."

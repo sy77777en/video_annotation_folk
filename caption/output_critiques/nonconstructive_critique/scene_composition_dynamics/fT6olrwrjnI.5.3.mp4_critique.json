@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.5.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:59:16.660068",
+  "generation_timestamp": "2025-09-30T00:29:30.990400",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the spinning soccer ball. It incorrectly describes two long, black, cylindrical objects and misidentifies the shot as a close-up. The description of a static scene is inaccurate.",
-  "revised_caption_by_generated_critique": "From a high-angle perspective, the scene captures a dynamic moment on a vibrant green soccer field. A spinning soccer ball is prominently featured in front of the goal. The goal's white net, with its square mesh, stretches across the frame. Inside the goal, two black cylindrical objects, likely goalposts, are visible. The area behind the goal is a darker shade of green, and the entire scene is illuminated by bright, even light.",
+  "generated_critique": "The caption misidentifies the main subject as \"two long, black, cylindrical objects\" instead of a soccer ball. It incorrectly states these objects are resting on the ground, failing to mention the ball is spinning within the goal's netting. The caption is also missing a description of the ball's motion.",
+  "revised_caption_by_generated_critique": "From a high-angle perspective, the scene captures a close-up of a soccer goal on a vibrant green field. A thick white line runs along the ground in front of the goal. The goal's white net, with its square mesh, is stretched across the frame. Inside the goal, a soccer ball is spinning within the netting, creating a dynamic motion. The area behind the goal is a darker shade of green, and the entire scene is illuminated by bright, even light.",
   "status": "success"
 }

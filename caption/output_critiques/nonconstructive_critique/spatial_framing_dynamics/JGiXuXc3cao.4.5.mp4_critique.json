@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.4.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:55:29.244258",
+  "generation_timestamp": "2025-09-30T03:45:13.081339",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the ground as being only in the background and inaccurately states that the probe's light beams move out of view. The camera's panning direction is misidentified. The final shot size is incorrectly identified as a close-up, and the rock's final position is mislabeled as the foreground.",
-  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot from a high-angle perspective. A probe hangs in the top center of the frame, suspended from a cable that extends off-screen. Below, a textured ground surface spans the bottom portion of the frame, with a small rock positioned on the left. The camera then pans right and tilts down, moving closer to the ground. During this movement, the probe and its light beams shift toward the right side of the frame but remain visible, while the rock transitions from the left to the center of the frame. The shot resolves into a high-angle medium shot, with the rock now centered and occupying the midground.",
+  "generated_critique": "The caption incorrectly states the ground is only in the background. The description of the probe's light beams moving out of view is inaccurate. The camera's panning direction is wrong. The final shot is not a close-up, and the rock is not in the foreground at the end.",
+  "revised_caption_by_generated_critique": "The video begins with an extreme wide shot from a high-angle perspective. A probe hangs in the top center of the frame, suspended from a cable that extends off-screen. The textured ground surface spans the bottom portion of the frame, with a small rock positioned on the left. The camera then pans right and tilts down, moving closer to the ground. During this movement, the probe shifts toward the right side of the frame and eventually moves out of view, while the rock transitions from the left to the center of the frame. The shot resolves into a high-angle medium shot, with the rock now centered.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.5.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T20:48:50.536249",
+  "generation_timestamp": "2025-09-29T23:41:32.206245",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to adhere to the core instructions.\n\n**Feedback:**\n\n*   **Focus on Motion:** The caption dedicates too much text to describing static elements of the scene, such as the \"traditional Japanese buildings,\" \"various signs and advertisements,\" and the \"mountainous landscape.\" The instructions explicitly state to \"Focus on the subject's motion\" and avoid describing details that are not related to movement.\n*   **Completeness:** The caption misses the motion of a pedestrian in a hat who walks from the left side of the frame to the right.\n*   **Specificity of Motion:** The description of the subjects' actions is not very dynamic. It describes the students as \"gathered\" and the women as \"standing,\" which are states rather than specific movements. The primary motion described is that of the camera, but the description of the people is too static.\n\nA better caption would focus solely on the movements of the camera and the people within the frame, presented in chronological order.",
-  "revised_caption_by_generated_critique": "The camera moves forward along a street. On the left, a person wearing a hat walks from the left side of the frame towards the right. A group of students in school uniforms stands clustered together outside a shop, talking amongst themselves. Further down the sidewalk, two women in traditional kimonos stand side-by-side, looking at the shop's signs. The camera continues its forward motion, bringing the women and the students into closer view.",
+  "generated_critique": "The caption focuses too much on describing the static scenery, such as the buildings, shop signs, and background landscape, which goes against the instruction to focus on the subject's motion. It also completely omits the motion of two pedestrians who walk from left to right across the frame. Furthermore, the description of the camera's movement is repetitive. The caption should be revised to describe the camera's continuous forward and rightward movement, the action of the two pedestrians walking, and the stationary position of the students and the women in kimonos.",
+  "revised_caption_by_generated_critique": "The camera moves forward and pans to the right, capturing a scene on a Japanese street. As it moves, two pedestrians are seen walking from left to right across the foreground. The camera continues its pan to focus on a group of students in school uniforms and two women in traditional kimonos, all standing stationary in front of a shop.",
   "status": "success"
 }

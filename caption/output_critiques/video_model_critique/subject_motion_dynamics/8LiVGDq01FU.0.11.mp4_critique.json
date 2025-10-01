@@ -2,7 +2,7 @@
   "video_id": "8LiVGDq01FU.0.11.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T20:28:16.670894",
+  "generation_timestamp": "2025-09-29T23:20:47.010672",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere is a breakdown of the feedback:\n\n**Accuracy:** The caption is inaccurate. The woman does not \"shake her head.\" She turns her head slightly as she speaks and prepares to stand, but this is not a head-shaking motion.\n\n**Completeness:** The caption omits the fact that the woman is speaking, which is directly tied to her head and body movements. While the instructions don't require transcribing speech, mentioning the act of speaking can provide context for the motion.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption violates the instruction to focus on motion by including the final sentence: \"The background is dark and indistinct, with minimal visible details, focusing the viewer's attention on the woman's actions.\" This describes the scene's composition and its interpretive effect on the viewer, not the subject's movement.\n*   **Avoid Speculation:** The description \"shakes her head\" is an incorrect interpretation of her movement. The phrase \"focusing the viewer's attention\" is also speculative and interpretive, which the instructions advise against.\n*   **Conciseness:** The final sentence is unnecessary and makes the caption less concise.",
-  "revised_caption_by_generated_critique": "In a dimly lit room, a woman with her hair in a ponytail, wearing a brown jacket over a blue shirt, turns her head to her right. As she speaks, she begins to rise from a seated position.",
+  "generated_critique": "The caption incorrectly states the woman \"shakes her head slightly\"; she actually turns her head down and to the right. The final sentence, \"The background is dark and indistinct, with minimal visible details, focusing the viewer's attention on the woman's actions,\" is an abstract description of the setting and its effect on the viewer, which should be removed to comply with the instruction to focus solely on the subject's motion. Additionally, the description of her clothing is unnecessary as she is the only subject.",
+  "revised_caption_by_generated_critique": "A woman turns her head to the right, looking behind her. She then turns her head down and to the right before beginning to rise from a seated position as the camera follows her movement.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "67b52e633df6eeacdcc6413a9dd459aa66b4f8fe0557b80b3bfd634204a431d0.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T18:08:52.501294",
+  "generation_timestamp": "2025-09-29T21:11:51.408706",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere's a breakdown of the feedback:\n\n**Accuracy:** The description of the scene and the general actions is accurate. The camera does move to the right, and the women are in relaxed postures on a beach.\n\n**Completeness:** The caption is incomplete. It describes the subjects' movements in very general terms (\"adjusts her position slightly,\" \"remains mostly still\"). It misses more specific actions, such as the woman in the green bikini touching the tattoo on her thigh and later gesturing with her hand as if in conversation.\n\n**Adherence to Instructions:** The caption fails to follow several key instructions:\n*   **Focus on subject's motion:** The caption dedicates significant space to describing the camera's movement (\"The camera starts close... and gradually moves to the right\") and the background scenery (\"The background includes a sandy beach...\"). The instructions explicitly state to \"Focus on the subject's motion\" and avoid describing details not related to their movement.\n*   **Specificity of action:** The instruction asks to \"Describe individual subject actions with clarity.\" The caption uses vague phrases like \"adjusts her position slightly\" instead of describing the specific movements, such as touching her leg or gesturing.\n\nIn summary, the caption is more of a general scene description than a focused account of the subjects' motion. It violates the core instruction by prioritizing camera movement and background details over the specific actions of the people in the video.",
-  "revised_caption_by_generated_critique": "Two women relax on lounge chairs on a sandy beach. The woman on the left, wearing a green bikini, lies back and runs her hand over a tattoo on her left thigh. The woman on the right, wearing a yellow one-piece swimsuit, sits up slightly with her hands in her lap. Towards the end of the clip, the woman in the green bikini lifts her right hand and gestures as if she is talking.",
+  "generated_critique": "The caption accurately describes the camera's motion. However, it includes subjective and inferential language, such as \"relaxed postures\" and \"as they converse,\" which should be avoided. The final sentence, \"The background includes a sandy beach, some greenery, and a few boats and umbrellas, indicating a beachside location,\" describes the scenery rather than the subjects' motion and should be removed to adhere to the instruction to focus on the subjects. The description of the women's movements can be made more specific by noting that one woman gestures with her hand while the other turns her head.",
+  "revised_caption_by_generated_critique": "The camera starts close to the two women on lounge chairs and gradually moves to the right. The woman in the green bikini gestures with her right hand, while the woman in the yellow swimsuit turns her head toward her and shifts her legs.",
   "status": "success"
 }

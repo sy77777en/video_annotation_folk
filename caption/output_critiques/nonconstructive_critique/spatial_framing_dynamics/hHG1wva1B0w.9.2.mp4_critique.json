@@ -2,7 +2,7 @@
   "video_id": "hHG1wva1B0w.9.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:48:48.323461",
+  "generation_timestamp": "2025-09-30T04:45:53.843590",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the shot as static and fails to account for the camera's movement. The position of the row of cars relative to the figure is misstated. The description also omits a white car visible in the right foreground.",
-  "revised_caption_by_generated_critique": "In a dynamic full shot, a red human figure is positioned in the left-center of the frame and in the middle ground of a parking lot. To the figure's left, a row of cars is arranged diagonally, receding from the foreground to the background. A black car and a white car occupy the right foreground, a light green car is in the center middle ground beside the figure, and two other dark cars are visible further back in the left middle ground and background. The camera moves at the subject's level.",
+  "generated_critique": "The caption incorrectly describes the shot as static, as the camera is in motion. The position of the cars relative to the human figure is misstated. The description also omits mention of an element पुलिस in the foreground.",
+  "revised_caption_by_generated_critique": "In a moving full shot, a red human figure is positioned in the left-center of the frame in the middle ground of a parking lot. To the figure's left, a row of cars is arranged diagonally, receding from the foreground to the background. A black car occupies the left foreground, a light green car is in the center middle ground beside the figure, and two other dark cars are visible further back in the right middle ground and background. A police element is present in the foreground. The camera is positioned at the subject's level.",
   "status": "success"
 }

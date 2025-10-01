@@ -2,7 +2,7 @@
   "video_id": "aVA7aXOH1pk.1.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:44:19.072194",
+  "generation_timestamp": "2025-09-30T01:19:01.368513",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states there is a text overlay displaying \"First, he apparently fires a round of...\". The caption fails to mention the overlay text \"[8]\" in the bottom left corner. The caption omits the rack focus shift from the foreground figure to the background crowd.",
-  "revised_caption_by_generated_critique": "In a stark, monochromatic outdoor setting resembling a stadium, large bleachers are filled with a crowd of indistinct white figures. The background features simple, gray architectural structures and trees against a white ground. The only point of color is a single, stylized human figure in the foreground, rendered in bright red and positioned low to the ground. A text overlay displaying \"[8]\" is present in the bottom left corner of the screen. The scene includes a rack focus shift from the foreground figure to the background crowd.",
+  "generated_critique": "The description of the text overlay is incorrect. The caption omits the description of motion.",
+  "revised_caption_by_generated_critique": "In a stark, monochromatic outdoor setting resembling a stadium, large bleachers are filled with a crowd of indistinct white figures. The background features simple, gray architectural structures and trees against a white ground. The only point of color is a single, stylized human figure in the foreground, rendered in bright red and positioned low to the ground, appearing to be in motion. A text overlay at the bottom of the screen reads: \"First, he takes a decisive action...\"",
   "status": "success"
 }

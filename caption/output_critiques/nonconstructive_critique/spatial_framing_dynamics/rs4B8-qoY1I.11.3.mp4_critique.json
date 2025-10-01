@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.11.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:41:49.897892",
+  "generation_timestamp": "2025-09-29T23:06:00.015003",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the demon's final position as center-right. The statement that the game interface elements remain fixed is inaccurate. The caption incorrectly states there is only one warrior character. The description wrongly includes overlay elements, the red and yellow orbs, as part of the scene's foreground. The demon's entry point is misidentified as the right edge of the frame, and the caption omits the camera's movement.",
-  "revised_caption_by_generated_critique": "In a high-angle wide shot, two warrior characters are initially positioned in the center middle ground on a circular platform. A large red orb and a yellow orb, which are part of the game interface, are located along the bottom of the screen. The warriors move from the center toward the right side of the platform as a spidery demon enters from the top right corner of the frame. The demon moves to the center to engage the warriors in combat within the middle ground. Throughout the scene, the game interface elements, including a minimap and objectives list in the top right, a chat box in the bottom left, and health/resource orbs with an action bar along the bottom, adjust slightly with the camera's movement. During combat, a health bar for the demon appears at the top center of the screen.",
+  "generated_critique": "The description of the demon's final position as \"center-right\" is incorrect. The statement that the game interface elements remain fixed is inaccurate. The caption incorrectly states there is only one warrior character. The description incorrectly identifies the red and yellow orbs as being in the foreground of the scene. The description of the demon's entry point from the \"right edge\" is incorrect. The caption is missing a description of the camera's movement.",
+  "revised_caption_by_generated_critique": "In a high-angle wide shot, two warrior characters are initially positioned in the center middle ground on a circular platform, with a large red orb and a yellow orb in the background. The warriors move from the center toward the right side of the platform as a spidery demon enters from the top right corner of the frame. The demon moves to the center to engage the warriors in combat within the middle ground. Throughout the scene, game interface elements shift slightly, with a minimap and objectives list in the top right, a chat box in the bottom left, and health/resource orbs and an action bar along the bottom. During combat, a health bar for the demon appears at the top center of the screen. The camera subtly pans to follow the action as the characters move across the platform.",
   "status": "success"
 }

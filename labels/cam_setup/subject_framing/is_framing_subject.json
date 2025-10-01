@@ -2,7 +2,7 @@
     "label": "Is Framing Subject",
     "label_name": "is_framing_subject",
     "def_question": [
-        "Does the video include one or more salient subjects in the frame at any point (e.g., not just scenery or abstract visuals)?"
+        "Does the video include one or more salient subjects in the frame at any point?"
     ],
     "alt_question": [
         "Does the video keep its subject(s) properly framed throughout?",
@@ -15,7 +15,7 @@
         "Is there a steady and deliberate framing of the subject(s) in this video?"
     ],
     "def_prompt": [
-        "The video includes one or more salient subjects in the frame at any point (e.g., not just scenery or abstract visuals)."
+        "The video includes one or more salient subjects in the frame at any point."
     ],
     "alt_prompt": [
         "A video that keeps its subjects properly framed from start to finish.",

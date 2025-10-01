@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.0.12.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:07:48.147863",
+  "generation_timestamp": "2025-09-29T22:01:35.972375",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to accurately describe the content of the video and violates the core instructions.\n\n**Accuracy:** The caption is factually incorrect. It describes a buffalo on the right moving forward to join and align with the group. In the video, the entire herd of buffaloes is already grouped together and remains almost completely stationary throughout the clip. There is no discernible forward movement from any individual buffalo to \"join\" the group. They are simply standing still in the tall grass, looking towards the camera.\n\n**Completeness:** The caption is incomplete because it fabricates a narrative of movement instead of describing the actual scene. The most significant aspect of the \"motion\" in this video is its absence. The caption fails to convey that the subjects are static.\n\n**Adherence to Instructions:** The caption directly contradicts the instruction: \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" Instead of noting the lack of movement, the caption invents a sequence of actions that do not occur.",
-  "revised_caption_by_generated_critique": "A herd of African buffalo stands motionless in a field of tall, dry grass, looking towards the camera. A line of green trees is visible in the background.",
+  "generated_critique": "The caption contains speculative phrases that interpret the animals' intent, such as \"seemingly taking a leading position\" and \"attempting to integrate into the group,\" which violates the instruction to avoid speculation and describe only visible actions. Additionally, the first sentence describing the setting is redundant and not focused on motion. The description should be revised to state the observable movements factually and concisely. For instance, describe the buffalo on the right as simply \"moves forward\" and the one in the background as \"walks forward,\" and remove the opening sentence about the field and trees.",
+  "revised_caption_by_generated_critique": "A buffalo on the right side of a herd walks forward through the tall grass, stopping once it is in line with the other buffaloes, which remain mostly stationary.",
   "status": "success"
 }

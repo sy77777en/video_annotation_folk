@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.4.0.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:52:13.345069",
+  "generation_timestamp": "2025-09-29T22:00:45.013142",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the overlay of white text and the subsequent red subtitles in the bottom-left corner. The camera movement is incorrectly identified as a zoom.",
-  "revised_caption_by_generated_critique": "In a minimalist setting with a black background, two faceless, metallic-skinned mannequins interact. One, dressed in a light blue shirt and dark pants, holds a small, white rectangular game piece. The other mannequin, wearing a red t-shirt, extends an open hand to receive it. White text overlays the scene, followed by red subtitles appearing in the bottom-left corner. The camera pans in on the game piece, revealing a green bar at the top and black text that reads \"PARK PLACE,\" \"$ 25,000 $,\" \"#821,\" and \"NEED/NECESITA B21, B22.\" The figures stand on a dark surface with a subtle blue-green gradient.",
+  "generated_critique": "The caption is missing a description of the overlay text. The description of the camera movement as a \"zoom\" is incorrect.",
+  "revised_caption_by_generated_critique": "In a minimalist setting with a black background, two faceless, metallic-skinned mannequins interact. One, dressed in a light blue shirt and dark pants, holds a small, white rectangular game piece. The other mannequin, wearing a red t-shirt, extends an open hand to receive it. The camera pans in on the game piece, revealing a green bar at the top and black text that reads \"PARK PLACE,\" \"$ 25,000 $,\" \"#821,\" and \"NEED/NECESITA B21, B22.\" Overlay text appears on the screen, providing additional context about the game piece. The figures stand on a dark surface with a subtle blue-green gradient.",
   "status": "success"
 }

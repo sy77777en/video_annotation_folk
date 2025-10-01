@@ -2,7 +2,7 @@
   "video_id": "BNzc6hG3yN4.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:10:28.965572",
+  "generation_timestamp": "2025-09-30T04:02:30.694221",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the position of the second man relative to the first. The initial depth of the two men is misidentified as foreground, and the description fails to mention their transition to the foreground as the camera moves. The caption also miscounts the number of men and incorrectly describes the depth of the man on the right. The description of the camera movement lacks precision, and the terminology for the final camera angle is inaccurate. The final positions and visibility of the man in the patterned coat, the purple-seated ATV, the pink ATV, and the wooden pallet are described inaccurately, failing to mention that the pink ATV exits the frame and that the wooden pallet's appearance is transient.",
-  "revised_caption_by_generated_critique": "Initially, from a level perspective, three men are visible: one in the center-left, another to his left, and a third in the background on the right. In the middle ground, a purple-seated ATV is on the right, and another ATV with a rider is in the center. The camera then ascends directly upward, transitioning to an overhead view. In this new perspective, the man in the black hoodie is now in the center-left, the man in the patterned coat is at the bottom-center, and the purple-seated ATV remains on the right. The pink ATV, initially at the top-center, exits the frame, while a wooden pallet briefly appears in the top-left before disappearing.",
+  "generated_critique": "The initial depth of the two men is incorrectly identified as foreground, and their relative position is described incorrectly. The caption misstates the count and depth of another man and is missing information about other men in the scene. The description of the camera movement is imprecise, and the term used for the final camera angle is inaccurate. Furthermore, the final description of the elements' positions and visibility is inaccurate, as it misstates the visibility of one man, misplaces an ATV, and omits the movement of another ATV and a pallet out of the frame. The caption also fails to describe the change in the men's depth relative to the camera during the upward movement.",
+  "revised_caption_by_generated_critique": "Initially, the scene opens with a wide shot from a level perspective, showing two men in the middle ground. One man is positioned slightly to the left of center, while the other is further to the left. In the background, a purple-seated ATV is on the right, and another ATV with a rider is in the center. A third man is visible in the background to the right, and a fourth man is partially visible near the center. The camera then ascends vertically, transitioning to an overhead view. From this new perspective, the man in the black hoodie is now in the center-left of the frame, the man in the patterned coat is at the bottom-center, and the purple-seated ATV remains on the right. The pink ATV is now at the top-center, while a wooden pallet is visible in the top-left. The man in the background is no longer visible, and the ATV with the rider has moved out of the frame. The upward camera movement changes the men's depth relative to the camera, bringing them closer to the foreground.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "l5RWa1D00ck.0.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:48:43.725037",
+  "generation_timestamp": "2025-09-29T23:13:35.985586",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The man's initial position is not in the center foreground. He does not remain in the center of the frame as the camera moves. The description of the final view as his left profile is incorrect, and his final position is not in the center.",
-  "revised_caption_by_generated_critique": "The video begins with a medium close-up shot from behind a man who is positioned slightly off-center in the foreground. In the background, several out-of-focus yellow buses are visible. The camera then arcs smoothly from right to left around the man, who shifts slightly in the frame. This movement transitions the view from his back to his right profile, then to a frontal view, and finally to a view that is not his left profile, with the man ending up off-center. As the camera moves, the background buses appear to shift and blur, enhancing the focus on the central subject.",
+  "generated_critique": "The man's initial position is not in the center. The description of his positioning during and at the end of the camera movement is inaccurate. The final view of the man is also incorrect.",
+  "revised_caption_by_generated_critique": "The video starts with a medium close-up shot from behind a man who is slightly off-center in the foreground. In the background, several out-of-focus yellow buses can be seen. The camera smoothly arcs from right to left around the man, who remains mostly stationary. This movement transitions the view from his back to his right profile, then to a frontal view, and finally to his left profile, with the man slightly off-center throughout. As the camera moves, the background buses shift and blur, drawing attention to the man as the central subject.",
   "status": "success"
 }

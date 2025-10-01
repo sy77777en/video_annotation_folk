@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.2.10.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T16:52:42.145042",
+  "generation_timestamp": "2025-09-29T20:01:09.262331",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is not good because it is inaccurate and incomplete.\n\nThe caption incorrectly states that the girl \"lifts the box slightly.\" In the video, she does not lift the box; she keeps it stationary on the shelf. Most importantly, the caption completely omits the key action of the girl using a small, thin tool to unlatch the box before she opens it with her hands. By missing this crucial step, the description is not only incomplete but also fails to present the actions in the correct chronological order.",
-  "revised_caption_by_generated_critique": "In a dimly lit room, a young girl with braided hair, wearing a dark blue dress, stands in front of a dark, rectangular box on a shelf. She uses a small, thin tool to manipulate the latch on the front of the box. After successfully unlatching it, she uses both hands to begin lifting the lid to look inside.",
+  "generated_critique": "The caption incorrectly states that the girl \"lifts the box slightly\"; she does not lift the box. The description also omits a key action and presents the movements out of chronological order. In the video, the girl first pries open the latch on the front of the box, and only then does she lift the lid with both hands. The initial sentence describing the room and the girl's appearance is overly detailed and should be removed to focus purely on the subject's motion as instructed.",
+  "revised_caption_by_generated_critique": "A girl pries open the latch of a box with a small tool, then lifts the lid with both hands to look inside.",
   "status": "success"
 }

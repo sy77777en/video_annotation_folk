@@ -2,7 +2,7 @@
   "video_id": "oagszCmJLpU.2.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:37:29.876976",
+  "generation_timestamp": "2025-09-30T04:33:09.006162",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the time of day is \"at night.\" The description of the sky does not mention that it gradually becomes dark blue. The description of the storm cloud movement is not specific about its direction.",
-  "revised_caption_by_generated_critique": "A time-lapse captures a massive storm system developing during twilight over a flat, dark landscape. The sky gradually transitions to a deep, dark blue, with stars visible in the clearer sections. A large, churning mass of dark blue and black clouds dominates the view, with intermittent flashes of lightning illuminating its interior, revealing white and purple hues. The storm clouds move and evolve across the sky from west to east as the scene transitions from twilight to full night. Along the distant, flat horizon, a few small, bright lights are scattered.",
+  "generated_critique": "The time of day is incorrectly described as \"at night.\" The description of the sky's transition is inaccurate. The description of the storm clouds' movement is missing details about their direction.",
+  "revised_caption_by_generated_critique": "A time-lapse captures a massive storm system developing during the transition from late evening to night over a flat, dark landscape. The sky begins as a deep, dark blue, with stars visible in the clearer sections, and gradually deepens as night fully sets in. A large, churning mass of dark blue and black clouds dominates the view, moving steadily from west to east, with intermittent flashes of lightning illuminating its interior, revealing white and purple hues. Along the distant, flat horizon, a few small, bright lights are scattered.",
   "status": "success"
 }

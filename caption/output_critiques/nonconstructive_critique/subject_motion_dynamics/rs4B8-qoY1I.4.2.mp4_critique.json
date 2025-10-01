@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.4.2.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:50:24.671340",
+  "generation_timestamp": "2025-09-30T03:38:39.133818",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the figure's movement is inaccurate and lacks sufficient detail. The caption incorrectly simplifies the motion as a simple left-to-right progression, failing to describe the initial diagonal movement, the stop in front of the blocks, and the multiple changes in direction. The caption also misrepresents the interaction with the table, stating the figure moves past it instead of describing how the figure moves the table.",
-  "revised_caption_by_generated_critique": "In a pixelated, retro-style environment with green and black colors, a small, humanoid figure wearing a green outfit and a hat begins by moving diagonally from the bottom left towards a stack of blocks and an archway. The figure pauses in front of the blocks, then changes direction multiple times, navigating around the obstacles. Upon reaching a small table, the figure interacts with it, pushing the table aside before continuing its journey. The figure eventually reaches the right side of the screen. Throughout the video, a yellow sun-like object in a red arc-shaped frame in the lower right corner moves from left to right, indicating the passage of time or day.",
+  "generated_critique": "The description of the figure's movement is inaccurate. The statement that the figure moves from left to right is incorrect, as it fails to account for the figure's diagonal movements, stops, and multiple changes in direction. The caption also omits the interaction where the figure moves the table.",
+  "revised_caption_by_generated_critique": "In a pixelated, retro-style environment with green and black colors, a small, humanoid figure wearing a green outfit and a hat navigates the scene with diagonal movements, occasional stops, and changes in direction. The figure begins near a stack of blocks and an archway, then maneuvers past the blocks towards a small table. The figure interacts with the table, moving it before continuing its journey. Throughout the video, a yellow sun-like object in the red arc-shaped frame in the lower right corner moves from left to right, indicating the passage of time or day.",
   "status": "success"
 }

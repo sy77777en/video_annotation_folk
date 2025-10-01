@@ -2,7 +2,7 @@
   "video_id": "IyTv_SR2uUo.1.7.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:17:54.218547",
+  "generation_timestamp": "2025-09-30T04:11:17.072502",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the detail of the kayaker gripping the paddle. The description of the view being completely obscured is inaccurate, as the kayaker is visible again after being engulfed by water. The perspective is incorrectly identified as first-person.",
-  "revised_caption_by_generated_critique": "From a high-angle perspective, a kayaker in a green kayak grips the paddle tightly as they tip forward and plunge vertically down a waterfall. Upon reaching the bottom, the kayaker and the camera are briefly engulfed by the turbulent, splashing white water, but the kayaker becomes visible again shortly after.",
+  "generated_critique": "The caption incorrectly identifies the camera perspective as \"first-person.\" It fails to mention the kayaker's interaction with the paddle. The statement that the view is completely obscured by the white water is inaccurate.",
+  "revised_caption_by_generated_critique": "From a high-angle perspective, a kayaker in a green kayak leans forward and plunges vertically down a waterfall. As the kayaker descends, they skillfully maneuver the paddle to maintain balance. Upon reaching the bottom, the kayaker and the camera are surrounded by the turbulent, splashing white water, partially obscuring the view.",
   "status": "success"
 }

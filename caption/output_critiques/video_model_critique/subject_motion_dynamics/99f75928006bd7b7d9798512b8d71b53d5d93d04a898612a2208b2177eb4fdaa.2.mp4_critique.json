@@ -2,7 +2,7 @@
   "video_id": "99f75928006bd7b7d9798512b8d71b53d5d93d04a898612a2208b2177eb4fdaa.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T21:53:58.376075",
+  "generation_timestamp": "2025-09-30T01:00:13.691160",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is good. Here is a detailed breakdown of the feedback:\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the actions of both women. The woman on the left does bring a pizza slice to her mouth, bite it, and chew. The woman on the right is smiling, looking at the first woman, and holding a small piece of food. All details mentioned are present in the video.\n\n**Completeness:** The description is complete for the short duration of the video. It captures the main action of the woman on the left (eating) and the reaction/concurrent action of the woman on the right (smiling and watching), as well as the interaction between them (looking at each other).\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption successfully presents the actions of the woman on the left in chronological order: \"brings a slice of pizza to her mouth, takes a bite, and chews.\"\n*   **Focus on Motion:** The description focuses on concrete actions and movements (\"brings,\" \"takes a bite,\" \"chews,\" \"smiles,\" \"looks back\") rather than static descriptions.\n*   **Clarity and Conciseness:** The language is simple, natural, and easy to understand. The single paragraph is coherent and concise.\n*   **Objectivity:** The caption avoids emotional or subjective adjectives. \"Smiles\" is an observable facial action, not a subjective interpretation of emotion.\n*   **No Speculation:** It refrains from making assumptions, describing only what is clearly visible.\n*   **Subject Differentiation:** It effectively uses \"the woman on the left\" and \"the woman on the right\" to clearly distinguish between the two subjects.\n*   **Interaction:** The caption clearly describes the interaction between the subjects (\"looking toward the woman on the right,\" \"looks back at the first woman\") and their interaction with objects (\"brings a slice of pizza to her mouth,\" \"holding a small piece of food\").\n\nIn summary, the caption is excellent because it is a precise, objective, and well-structured description that fully adheres to all the provided guidelines.",
-  "revised_caption_by_generated_critique": "The woman on the left brings a slice of pizza to her mouth, takes a bite, and chews while looking toward the woman on the right, who smiles and looks back at her while holding a small piece of food.",
+  "generated_critique": "The caption is inaccurate and omits a key action. The woman on the left does not \"finish eating\"; she takes a bite of a pizza slice. The caption also completely misses the subsequent action where she picks a small green topping off the pizza slice and holds it up. A more accurate and complete description would be: The woman on the left takes a bite of a pizza slice while looking at the woman on the right, who smiles back while holding a piece of food. The woman on the left then picks a green topping off her pizza slice and holds it up.",
+  "revised_caption_by_generated_critique": "The woman on the left takes a bite of a pizza slice while looking at the woman on the right, who smiles back while holding a piece of food. The woman on the left then picks a green topping off her pizza slice and holds it up.",
   "status": "success"
 }

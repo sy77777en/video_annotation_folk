@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:00:14.998063",
+  "generation_timestamp": "2025-09-30T00:30:17.048808",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the subjects' actions is generic and lacks clarity. The caption fails to present the actions in chronological order and does not describe the individual actions of each subject separately. The relative movements between the two subjects are not described.",
-  "revised_caption_by_generated_critique": "A man in a polo shirt enters the circular stage, walks to a high chair, and sits down. Meanwhile, an older man in a suit, already present on the stage, moves to a high chair opposite the first man and sits down, facing him.",
+  "generated_critique": "The caption incorrectly describes the subjects' actions individually and in chronological order. It includes unnecessary details about their appearance and the setting. The description of specific movements is incorrect; it should have used a more general description of their motion.",
+  "revised_caption_by_generated_critique": "Two men enter a stage and sit facing each other.",
   "status": "success"
 }

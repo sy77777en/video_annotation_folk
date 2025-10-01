@@ -2,14 +2,14 @@
     "label": "Is Just Different Subject In Focus Shot",
     "label_name": "is_just_different_subject_in_focus_shot",
     "def_question": [
-        "Does the video feature different subjects, varying in type or framing, making it hard to classify the shot size?"
+        "Does the video feature multiple salient subjects differing in type or framing, making it hard to classify the exact shot size?"
     ],
     "alt_question": [
         "Are various subjects brought into focus throughout the shot?",
         "Does the shot emphasize different subjects at different times?"
     ],
     "def_prompt": [
-        "The video features different subjects (e.g., varying in type or framing) in focus, making it hard to classify the shot size."
+        "The video features multiple salient subjects differing in type or framing, making it hard to classify the exact shot size."
     ],
     "alt_prompt": [
         "A shot alternating between different subjects.",

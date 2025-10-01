@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:49:49.788300",
+  "generation_timestamp": "2025-09-30T04:47:12.203524",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the camera movement as static. The description of the watermark's depth is also incorrect.",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a city at night, captured from a high-angle aerial perspective. The scene is densely filled with buildings that extend from the foreground at the bottom of the frame to the background at the top. A main street runs diagonally from the bottom left towards the upper right, intersecting with another street in the lower-left quadrant. Light trails from traffic are visible along these streets, primarily in the foreground and middle ground. A watermark is overlaid in the background at the bottom right corner. The camera remains in motion throughout the shot.",
+  "generated_critique": "The description of the shot as static and the camera as stationary is incorrect. Additionally, describing the watermark as being in the foreground is inaccurate.",
+  "revised_caption_by_generated_critique": "This video features an extreme wide shot of a city at night, captured from a high-angle aerial perspective. The scene is densely filled with buildings that extend from the foreground at the bottom of the frame to the background at the top. A main street runs diagonally from the bottom left towards the upper right, intersecting with another street in the lower-left quadrant. Light trails from traffic are visible along these streets, primarily in the foreground and middle ground. A watermark is overlaid in the bottom right corner.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.5.8.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T21:02:59.853743",
+  "generation_timestamp": "2025-09-30T00:01:57.499237",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and adheres to all instructions.\n\n**Accuracy:** The description is highly accurate. It correctly identifies the initial subjects, their starting position, and their subsequent movement. It also accurately describes the chronological sequence and direction of movement for all other people who walk through the frame.\n\n**Completeness:** The caption is complete, capturing all the distinct movements of the various individuals in the video without omitting any key actions.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions are perfectly described in the order they occur.\n*   **Focus on Motion:** The caption focuses entirely on the subjects' movements (standing, turning, walking, passing).\n*   **Clarity and Conciseness:** The language is simple, clear, and effective, providing a concise summary of the scene's activity.\n*   **Objectivity:** The description is objective and avoids any speculation or subjective interpretation.\n*   **Formatting:** The caption is a single, well-structured paragraph as requested.",
-  "revised_caption_by_generated_critique": "Two men in dark suits stand in front of a red vending machine before turning and walking to the left. As they move, a person in a black sweatshirt walks past from right to left. Subsequently, two other people walk from left to right, and a woman with long hair walks into the frame from the right, moving left.",
+  "generated_critique": "The caption incorrectly states that \"two women with long hair enter the frame from the right.\" In the video, only one woman with long reddish-brown hair is clearly visible entering from the right; the person following her is mostly obscured, making their appearance uncertain. This is a speculative statement that violates the instruction to avoid describing anything not visible. The description should be corrected to state that a woman with long hair enters the frame, without mentioning a second person whose details are not clear.",
+  "revised_caption_by_generated_critique": "Two men in dark suits stand in front of a red vending machine as a person in a black sweatshirt walks by from right to left. The two men then turn and walk to the left. As they leave, two other people walk past in the opposite direction, from left to right. Finally, a woman with long, reddish-brown hair enters the frame from the right, walking left.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "iSTYnbRv4AQ.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:30:06.849441",
+  "generation_timestamp": "2025-09-30T04:24:01.105343",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the red car as moving and omits the motion of the figure in the red top.",
-  "revised_caption_by_generated_critique": "The scene moves forward at a high speed, causing the buildings on either side of the street to blur radially. A red car is parked on the right side of the street, while a green scooter is stationary on the left sidewalk. In the distance, several people walk along the central pedestrian area, including a figure in a red top moving energetically.",
+  "generated_critique": "The caption incorrectly describes the motion of the red car. The caption also fails to mention the movement of a person in the foreground.",
+  "revised_caption_by_generated_critique": "The scene moves forward at a high speed, causing the buildings on either side of the street to blur radially. A red car is parked on the right side of the street, while a green scooter is stationary on the left sidewalk. In the foreground, a person walks briskly from right to left, and in the distance, several people walk along the central pedestrian area.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.10.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:32:09.658944",
+  "generation_timestamp": "2025-09-30T00:00:43.932357",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the white airplane's depth as being in the foreground. The statement that the camera and subjects are stationary is incorrect, as the caption fails to describe the airplane's acceleration and the camera's corresponding tracking movements. The description of the text overlay is incomplete because it omits details about its color.",
-  "revised_caption_by_generated_critique": "This is an extreme wide shot from a high angle, looking down on an airport. In the bottom center of the frame, a white airplane is positioned on a runway that extends vertically toward the top of the frame. A second, smaller airplane is visible in the top center background, flying on an approach path aligned with the same runway. Taxiways intersect the runway in the lower half of the frame. The white airplane accelerates along the runway, and the camera tracks its movement smoothly. A text overlay at the bottom of the screen changes its message, with the text appearing in bright yellow.",
+  "generated_critique": "The caption incorrectly states the white airplane is in the foreground. It also incorrectly claims the camera and subjects are stationary, failing to describe the movement of the airplane and the corresponding camera movements. Additionally, the description of the text overlay is incomplete.",
+  "revised_caption_by_generated_critique": "This is an extreme wide shot from a high angle, looking down on an airport. In the center of the frame, a white airplane is positioned on a runway that extends vertically toward the top of the frame. A second, smaller airplane is visible in the top center background, flying on an approach path aligned with the same runway. Taxiways intersect the runway in the lower half of the frame. The camera follows the movement of the white airplane as it taxis along the runway. Meanwhile, a text overlay at the bottom of the screen changes its message, providing updates on flight information.",
   "status": "success"
 }

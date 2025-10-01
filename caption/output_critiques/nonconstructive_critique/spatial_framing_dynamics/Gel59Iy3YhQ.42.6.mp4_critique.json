@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.42.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:14:17.939953",
+  "generation_timestamp": "2025-09-30T00:46:38.172008",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The shot size is incorrectly identified as a medium full shot, and the man's position is not slightly left of center. The caption inaccurately describes the man raising a pistol and the pistol firing; both the man and the gun are stationary. The statement that a muzzle flash erupts is incorrect, as the gun is frozen mid-action. The description of the camera's height is imprecise.",
-  "revised_caption_by_generated_critique": "The video opens with a medium shot of a man positioned centrally in the middle ground, framed by a dark structure in the left foreground. In the background, a panel with lights or buttons is visible. The man holds a pistol with his right hand, extending it toward the right side of the frame. Both the man and the gun remain stationary, with the pistol frozen mid-action. The camera is positioned at eye level with the subject.",
+  "generated_critique": "The shot size is incorrectly identified as a medium full shot, and the man's position is incorrectly described as slightly left of center. The description of the gun's extension is inaccurate. The caption incorrectly describes movement, such as the man raising the pistol and the shot transitioning, when the subjects are stationary. The caption also incorrectly states that the gun fires during the video.",
+  "revised_caption_by_generated_critique": "The video opens with a medium shot of a man positioned centrally in the middle ground, framed by a dark structure in the left foreground. In the background, a panel with lights or buttons is visible. The man holds a pistol in his right hand, extending it toward the right side of the frame. The camera remains steady at the subject's level, capturing the scene without any movement or firing of the gun.",
   "status": "success"
 }

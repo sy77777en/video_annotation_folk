@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.1.8.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:55:14.346583",
+  "generation_timestamp": "2025-09-29T20:56:21.482458",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the static 3D models as \"men.\" The location of the submarine model is ambiguous in relation to the two maps. The description of the focus shift is incomplete because it omits that the men fall out of frame.",
-  "revised_caption_by_generated_critique": "Several static 3D models in dark green uniforms are positioned around a large wooden table. On the table's surface are two large, beige-colored maps with black markings, detailing U.S. Naval Operations in the Pacific Ocean. A small, dark gray model of a submarine, complete with a conning tower and tail fins, is positioned on the map in the foreground, near the edge of the left map. The scene's focus shifts to a closer view of this submarine model on the map, as the models of the men fall out of frame.",
+  "generated_critique": "The caption does not specify that the men are 3D models. The location of the submarine on one of the two maps is not clearly described. The description of the focus shift is incomplete because it fails to mention that the men are no longer in view.",
+  "revised_caption_by_generated_critique": "Several 3D models of men in dark green uniforms stand around a large wooden table. On the table's surface are two large, beige-colored maps with black markings, detailing U.S. Naval Operations in the Pacific Ocean. A small, dark gray model of a submarine, complete with a conning tower and tail fins, is positioned prominently on the left map in the foreground. The scene's focus shifts to a closer view of this submarine model on the map, with the men no longer in view.",
   "status": "success"
 }

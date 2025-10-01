@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.8.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:04:09.835640",
+  "generation_timestamp": "2025-09-29T22:13:56.570511",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description incorrectly states the shot is at eye level. The use of the terms 'foreground,' 'middle ground,' and 'background' is not suitable for describing a 2D video. The caption also inaccurately claims the professor character remains stationary.",
-  "revised_caption_by_generated_critique": "This is a static shot of a pixelated computer desktop interface. Initially, a \"HYPNOS INSTALLER\" window is positioned in the center, displaying a progress bar over a surreal background scene. A column of icons is on the left side, while an information bar runs across the top. After the installation completes, the central window closes. A paper cutout on a stick appears in the bottom-left corner, while a pixelated professor character materializes in the bottom-right corner. A dialogue box then pops up next to the professor. This dialogue box is subsequently replaced by a larger window in the same position, displaying a book cover. The paper cutout remains in the bottom-left corner, while the professor character moves slightly during the final part of the clip.",
+  "generated_critique": "The description incorrectly states the shot is at eye level. The terms 'foreground,' 'middle ground,' and 'background' are used incorrectly. The description of the professor character's movement is also inaccurate, as the character does not remain stationary.",
+  "revised_caption_by_generated_critique": "This is a static shot of a pixelated computer desktop interface. Initially, a \"HYPNOS INSTALLER\" window is positioned in the center, displaying a progress bar over a surreal background scene. A column of icons is on the left side, while an information bar runs across the top. After the installation completes, the central window closes. A paper cutout on a stick appears in the bottom-left corner, while a pixelated professor character materializes in the bottom-right corner and moves slightly. A dialogue box then pops up next to the professor. This dialogue box is subsequently replaced by a larger window in the same position, displaying a book cover. The paper cutout remains stationary in its corner throughout the final part of the clip.",
   "status": "success"
 }

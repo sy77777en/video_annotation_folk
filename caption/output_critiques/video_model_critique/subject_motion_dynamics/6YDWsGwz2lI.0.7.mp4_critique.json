@@ -2,7 +2,7 @@
   "video_id": "6YDWsGwz2lI.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T18:35:47.340031",
+  "generation_timestamp": "2025-09-29T21:33:51.987053",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it contains a factual inaccuracy and does not fully adhere to the provided instructions.\n\nHere is a detailed breakdown of the issues:\n\n*   **Accuracy:** The caption incorrectly states that \"some bicycles are parked along the sidewalk.\" There are no visible parked bicycles in the video. This violates the instruction to \"Avoid describing anything not visible or uncertain.\"\n*   **Focus on Subject Motion:** The caption describes the camera's movement (\"The camera gradually moves closer to the woman\"). The instructions state to \"Focus on the subject's motion.\" While camera movement can be relevant, in this case, the primary action is the woman walking, and the description of the camera's motion is an unnecessary detail that shifts focus away from the subject.\n*   **Abstract Description:** The phrase \"capturing the urban landscape and the movement of the city around her\" is an abstract and interpretive statement about the shot's purpose, which violates the instruction to \"Avoid abstract descriptions.\" The description should focus only on concrete, observable actions.",
-  "revised_caption_by_generated_critique": "A woman with light-colored hair, wearing a black coat, walks away from the camera down a city street. The street is flanked by tall buildings on both sides, and there are streetlights with warm lights illuminating the area. A few cars are seen on the road.",
+  "generated_critique": "The caption contains a factual error, stating that \"some bicycles are parked along the sidewalk,\" when none are visible in the video. The description is also overly detailed regarding the scenery (\"The street is flanked by tall buildings on both sides, and there are streetlights with warm lights illuminating the area\") and includes an interpretive phrase (\"capturing the urban landscape and the movement of the city around her\"), which detracts from the primary focus on the subject's motion as required by the instructions. The description of the woman's appearance is unnecessary as she is the sole focus. The caption should be revised to be more concise, removing the factual error, the unnecessary appearance details, and the excessive scenic descriptions to focus strictly on the woman's movement.",
+  "revised_caption_by_generated_critique": "A woman walks away from the camera down a city street, and the camera gradually moves closer to her as she continues walking.",
   "status": "success"
 }

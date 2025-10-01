@@ -22,6 +22,7 @@
         "Is the camera free from side-to-side or up-and-down movement while going forward?"
     ],
     "def_prompt": [
+        "The camera moves only physically forward (not zooming in) in the scene, or only north in a bird's eye view or south in a worm's eye view.",
         "A video where the camera moves only forward (not zooming in) in the scene, or only north in a bird's eye view or south in a worm's eye view.",
         "A video where the camera only moves forward (not zooming in) in the scene or moves north in a bird's eye view or south in a worm's eye view.",
         "A video where the camera only moves forward (not zooming in) in the scene or moves north in a bird's eye view or south in a worm's eye view, creating a noticeable parallax effect.",

@@ -2,7 +2,7 @@
   "video_id": "W4l_O9DZC3w.1.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:14:54.601876",
+  "generation_timestamp": "2025-09-30T04:07:47.248401",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the woman's action of jumping rope. The description of the ropes is incomplete, as it omits their dynamic swinging motion and inaccurately describes their depth as extending from the foreground to the middle ground.",
-  "revised_caption_by_generated_critique": "In a full shot, a woman is centered in the frame, viewed from directly above, as she energetically jumps rope. Two thick, white ropes swing dynamically in her hands, creating arcs that frame her movement. The dry, grassy landscape is visible in the background below her. The camera performs a 360-degree rotation around the woman, who remains consistently in the center of the frame. During this rotation, the background transitions from the ground below to a blue sky with clouds. The shot concludes with the woman inverted in the center of the frame, with the sky now occupying the bottom half of the frame and the ground the top half, as the camera remains positioned above her.",
+  "generated_critique": "The caption fails to mention the woman's action of jumping rope. It inaccurately describes the ropes as static rather than swinging dynamically, and the description of their depth is incorrect.",
+  "revised_caption_by_generated_critique": "In a full shot, a woman is centered in the frame, viewed from directly above, energetically jumping rope. Two thick, white ropes swing dynamically from the top of the frame in the foreground to her outstretched hands in the middle ground, with a dry, grassy landscape visible in the background below her. The camera then performs a 360-degree rotation around the woman, who remains consistently in the center of the frame. During this rotation, the background transitions from the ground below to a blue sky with clouds. The shot concludes with the woman inverted in the center of the frame, with the sky now occupying the bottom half of the frame and the ground the top half, as the camera remains positioned above her.",
   "status": "success"
 }

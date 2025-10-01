@@ -2,7 +2,7 @@
   "video_id": "awPo_VZabRc.1.1.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:31:29.906418",
+  "generation_timestamp": "2025-09-30T01:04:26.776157",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle is not specified. The use of the term \"tracking\" is inaccurate for the described movement. The explanation for the man becoming larger is incomplete, as it omits the fact that he is also moving toward the camera.",
-  "revised_caption_by_generated_critique": "This animated scene is captured from a smooth, eye-level camera angle that moves forward, following a man as he walks down the aisle of a subway car. As the camera moves backward while facing him, he becomes progressively larger in the frame because he is also moving toward the camera. The shot utilizes a deep focus, keeping the man, the other passengers, and the interior of the car in sharp detail.",
+  "generated_critique": "The caption fails to specify the camera angle. The term \"tracking\" is used incorrectly. The explanation for why the man becomes progressively larger in the frame is incomplete.",
+  "revised_caption_by_generated_critique": "This animated scene is captured from a smooth, eye-level camera angle that dollies forward, following a man as he walks down the aisle of a subway car. As the camera moves towards him from the front, the man appears progressively larger in the frame due to the decreasing distance between him and the camera. The shot utilizes deep focus, keeping the man, the other passengers, and the interior of the car in sharp detail.",
   "status": "success"
 }

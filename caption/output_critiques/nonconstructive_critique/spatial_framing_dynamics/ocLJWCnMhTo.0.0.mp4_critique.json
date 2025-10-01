@@ -2,7 +2,7 @@
   "video_id": "ocLJWCnMhTo.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:35:02.181506",
+  "generation_timestamp": "2025-09-30T04:30:18.196231",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial position of the round table is not in the center. The description of chairs being visible around the table in the initial scene is incorrect. The object on the left wall is misidentified as a mirror. The camera movement is not a tilt down, and the resulting perspective is not a high-angle view. The description of the checkered floor's position in the foreground and middle ground is inaccurate.",
-  "revised_caption_by_generated_critique": "Initially, the scene is captured in a full shot, with a man standing on a chair positioned in the center-right of the frame, occupying the middle ground. A thin vertical line bisects the entire frame from top to bottom. In the foreground, the arm of a seated person is visible in the bottom left, and a round table is positioned off-center with no chairs visible around it. A stream of fire originates from the man in the middle ground and arcs down toward the table in the foreground. In the background, a door and a small painting are visible on the left wall. The camera, initially at the subject's level, moves in a different manner, altering the perspective but not resulting in a high-angle view. Consequently, the black-and-white checkered floor becomes a prominent visual element, though its position is not limited to the foreground and middle ground.",
+  "generated_critique": "The initial position of the round table is described incorrectly. The caption is wrong about the chairs being visible from the start and fails to mention their appearance. The object on the left wall is misidentified. The camera movement is described incorrectly, and the resulting final perspective is also wrong. The spatial position of the black-and-white checkered floor is described incorrectly.",
+  "revised_caption_by_generated_critique": "The scene opens with a full shot, featuring a man standing on a chair in the center-right of the frame, occupying the middle ground. A thin vertical line bisects the frame from top to bottom. In the foreground, the arm of a seated person is visible in the bottom left, and a round table is positioned slightly off-center. Initially, the chairs are not visible but appear later around the table. A stream of fire originates from the man and arcs down toward the table. In the background, a door and a small painting are visible on the left wall. The camera starts at the subject's level and tilts upwards, shifting the perspective to a low-angle view, causing the man's head to move out of the top of the frame, leaving only his torso and legs visible. Consequently, the black-and-white checkered floor becomes more prominent in the middle ground and background.",
   "status": "success"
 }

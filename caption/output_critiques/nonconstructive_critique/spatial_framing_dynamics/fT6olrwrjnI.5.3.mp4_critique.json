@@ -2,7 +2,7 @@
   "video_id": "fT6olrwrjnI.5.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:59:35.278780",
+  "generation_timestamp": "2025-09-30T00:29:45.445452",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the shot as static and fails to mention the camera's forward movement. The description of the white goalpost being positioned on the right edge is also inaccurate, as it only becomes visible as the camera moves.",
-  "revised_caption_by_generated_critique": "The video begins with a high-angle, wide perspective, capturing the corner of a soccer goal. The white, square-meshed net dominates the frame, stretching from the top left to the bottom right in the foreground and middle ground. As the camera moves forward, a bright green surface becomes more prominent in the bottom and left portions of the frame, bordered at the bottom by a thick white line. Two long, black cylindrical objects rest on this green surface, parallel to the white line; one is in the upper-left middle ground, and the other is more central. As the camera progresses, a vertical white goalpost gradually appears on the right side, and a darker green surface is visible in the background behind the net.",
+  "generated_critique": "The caption incorrectly describes the shot as static and fails to mention the camera's forward movement. It also omits that the white goalpost becomes visible during the shot. The descriptions of the green surface and the black cylindrical objects are not concise.",
+  "revised_caption_by_generated_critique": "The video begins with a high-angle, wide perspective of a soccer goal corner, featuring a white, square-meshed net stretching diagonally across the frame. As the camera moves forward, a bright green surface appears below the net, bordered by a thick white line. Two black cylindrical objects rest parallel to this line, one in the upper-left and the other more central. A white goalpost gradually becomes visible on the right edge, with a darker green surface in the background.",
   "status": "success"
 }

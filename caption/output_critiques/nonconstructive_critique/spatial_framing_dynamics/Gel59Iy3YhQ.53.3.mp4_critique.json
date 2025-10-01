@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.53.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:53:28.611225",
+  "generation_timestamp": "2025-09-29T20:54:36.575059",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the row of feather icons and the compass as elements in the foreground. The direction of the character's movement is misstated as toward the upper-left. The description of the camera movement as a pan left and tilt up is inaccurate. The caption also inaccurately describes the character's final position, stating it shifts to the upper-left of the frame.",
-  "revised_caption_by_generated_critique": "This extreme wide shot, captured from a high angle, initially frames a small character in the middle ground, positioned slightly to the right of the frame's center on a winding mountain path. The large, purple mountain dominates the scene, positioned centrally. In the overlay, a row of feather icons is located in the bottom-left corner, and a compass is in the top-right. As the character walks up the path toward the upper-right, the camera pans right and tilts up to follow them. This movement keeps the character in the middle ground while shifting their position from the right-center to the upper-right of the frame, revealing more of the mountain's left face. The overlay UI elements remain fixed in their respective corners throughout the shot.",
+  "generated_critique": "The caption incorrectly describes the row of feather icons and the compass as being in the foreground. The description of the character's walking direction is incorrect. The description of the camera movement as panning left and tilting up is inaccurate. The caption also incorrectly describes the character's final position in the frame and the shift in their position.",
+  "revised_caption_by_generated_critique": "This extreme wide shot, captured from a high angle, initially frames a small character in the middle ground, positioned slightly to the right of the frame's center on a winding mountain path. The large, purple mountain dominates the scene, positioned centrally. A row of feather icons is located in the bottom-left corner, and a compass is in the top-right, both as part of the on-screen display. As the character walks up the path toward the upper-right, the camera pans right and tilts down to follow them. This movement keeps the character in the middle ground while shifting their position from the right-center to the upper-right of the frame, revealing more of the mountain's right face. The UI elements remain fixed in their respective corners throughout the shot.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "39d6dWSdpLY.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T23:16:55.856337",
+  "generation_timestamp": "2025-09-30T05:17:00.007735",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the snow ramp's initial position and depth is incorrect. The caption also fails to describe the movement of the snow ramp as the camera's perspective shifts.",
-  "revised_caption_by_generated_critique": "In a wide shot, a skier is initially positioned in the center-left middle ground on a snow-covered slope, with a large snow ramp extending from the bottom-left to the center of the frame. The background features a mountain on the left and a bright sky filling the top and top-right of the frame. The camera is positioned at the skier's level. As the skier launches off the ramp, the camera's perspective shifts to a low-angle shot from below, capturing the skier's ascent. In the final framing, the airborne skier is in the center-left middle ground, silhouetted against the sky which now fills the upper portion of the frame, while the snowy landscape, including the ramp, is visible at the bottom.",
+  "generated_critique": "The description of the snow ramp's initial position and depth is incorrect. The caption also fails to describe the camera's movement and the resulting spatial shift of the snow ramp.",
+  "revised_caption_by_generated_critique": "In a wide shot, a skier is initially positioned in the center-left middle ground on a snow-covered slope, with a large snow ramp extending from the bottom-left foreground to the center-right. The background features a mountain on the left and a bright sky filling the top and top-right of the frame. The camera is positioned at the skier's level. As the skier launches off the ramp, the camera moves to a low-angle shot from below, capturing the skier's ascent. In the final framing, the airborne skier is in the center-left middle ground, silhouetted against the sky which now fills the upper portion of the frame, while the snow ramp and landscape shift to the lower part of the frame.",
   "status": "success"
 }

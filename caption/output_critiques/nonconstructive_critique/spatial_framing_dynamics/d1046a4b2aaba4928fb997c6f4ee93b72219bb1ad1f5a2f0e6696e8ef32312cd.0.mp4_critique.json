@@ -2,7 +2,7 @@
   "video_id": "d1046a4b2aaba4928fb997c6f4ee93b72219bb1ad1f5a2f0e6696e8ef32312cd.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:16:40.675064",
+  "generation_timestamp": "2025-09-29T23:44:37.732048",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the camera angle as high-angle. It incorrectly describes the crowd's position and depth, stating it fills the bottom half from the foreground to the middle ground, when it is in the midground and slightly to the right. The caption fails to mention the pillar the crowd is surrounding. The description of the crowd's movement is inaccurate, as it overstates the movement instead of noting that most people are still. The caption also omits key activities, failing to describe the people walking by in the foreground and the time-lapse movement of pedestrians and vehicles in the background.",
-  "revised_caption_by_generated_critique": "This is a static, wide shot where a large crowd of people is gathered in the middle ground, slightly to the right, surrounding a prominent pillar. In the foreground, people are walking by, while in the background, a time-lapse effect captures the movement of pedestrians and vehicles. An ornate, illuminated building occupies the upper-left and center-left portions of the frame, with another building lining the upper-right. A street recedes between the buildings from the center of the frame into the background, where a London Underground sign is visible in the center-middle ground. The crowd is mostly still, with only subtle movements as individuals occasionally shift or turn.",
+  "generated_critique": "The caption misidentifies the camera angle. The description of the crowd's position, depth, and movement is inaccurate. The caption also omits a key element that the crowd is surrounding and is missing descriptions of the activity in the foreground and background, failing to identify the type of video.",
+  "revised_caption_by_generated_critique": "This is a dynamic, wide, eye-level shot capturing a large crowd of people that fills the foreground and extends into the middle ground. The crowd surrounds a central monument, which is a key focal point in the scene. In the middle ground, an ornate, illuminated building occupies the upper-left and center-left portions of the frame, while another building lines the upper-right. A street recedes between the buildings from the center of the frame into the background, where a London Underground sign is visible in the center-middle ground. The crowd is animated, with individuals shifting, turning, and moving within the dense gathering, creating a lively atmosphere. The video captures the bustling activity and energy of the scene, highlighting the crowd's engagement with the central monument.",
   "status": "success"
 }

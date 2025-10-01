@@ -2,7 +2,7 @@
     "label": "Is Just Clear Subject Atypical Shot",
     "label_name": "is_just_clear_subject_atypical_shot",
     "def_question": [
-        "Does the video feature a clear subject whose anatomy looks unnatural or exaggerated?"
+        "Does the video feature a clear subject whose anatomy looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify?"
     ],
     "alt_question": [
         "Does the subject have unusual or exaggerated proportions?",
@@ -15,7 +15,7 @@
         "Is there a clear but anatomically stylized subject?"
     ],
     "def_prompt": [
-        "A video featuring a clear subject whose anatomy looks unnatural or exaggerated."
+        "The video features a clear subject with anatomy that looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify."
     ],
     "alt_prompt": [
         "A video featuring an anatomically stylized subject.",

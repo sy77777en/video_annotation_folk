@@ -2,6 +2,7 @@
     "label": "Has Upward Movement (Relative to Camera)",
     "label_name": "has_upward_wrt_camera",
     "def_question": [
+        "Does the camera move physically upward (or pedestals up) with respect to the initial frame?",
         "Does the camera move upward (not tilting up) with respect to the initial frame?",
         "Is the camera moving upward in space based on its starting position?",
         "Is the camera moving upward (not tilting up) with respect to itself, creating a noticeable vertical parallax effect?",
@@ -25,6 +26,7 @@
         "Is the camera rising, creating a strong sense of vertical movement?"
     ],
     "def_prompt": [
+        "The camera moves physically upward (or pedestals up) with respect to the initial frame.",
         "A video where the camera moves upward (not tilting up) with respect to the initial frame.",
         "A shot where the camera moves upward in space based on its starting position.",
         "A video where the camera moves upward (not tilting up) with respect to itself, creating a noticeable vertical parallax effect.",

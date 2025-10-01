@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.1.8.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:55:43.983873",
+  "generation_timestamp": "2025-09-29T20:56:54.336399",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the figures as just \"lower bodies\" is inaccurate. The initial shot size is misidentified as a medium shot. The caption incorrectly states the table is centered initially and fails to mention that the submarine remains centered throughout the video. The camera movement is incorrectly described as a zoom instead of a forward and downward movement, and the final shot is not a close-up. The statement that the submarine model fills the entire background in the final shot is also incorrect.",
-  "revised_caption_by_generated_critique": "The video opens with a high-angle wide shot, capturing the figures standing around a wooden table that is slightly off-center. In the middle ground, two maps are spread on the table, with a small submarine model centrally placed on the nearer map. A text overlay appears in the bottom left foreground. The camera moves forward and downward, gradually excluding the figures and the upper map from the frame. The shot transitions to a high-angle shot that focuses on the submarine model, which remains centered on the map that now occupies most of the frame. During this transition, the initial text overlay in the bottom left corner is replaced by a new one.",
+  "generated_critique": "The description of the figures showing their 'lower bodies' is inaccurate. The initial shot size is incorrectly identified as a medium shot. The caption incorrectly states the table is centered instead of the submarine and omits that the submarine remains centered throughout. The camera movement is misidentified as a zoom, and the final description of the submarine filling the entire background is incorrect.",
+  "revised_caption_by_generated_critique": "The video opens with a high-angle wide shot, capturing several figures standing around a wooden table that occupies the center of the frame. Two maps are spread on the table, with a small submarine model prominently centered on the closer map. A text overlay appears in the bottom left corner. The camera then performs a dolly movement, causing the figures and the upper map to move out of the frame. The shot transitions into a close-up, maintaining the high-angle perspective, focusing on the submarine model, which remains centered on the map. During this transition, the initial text overlay in the bottom left corner is replaced by a new one.",
   "status": "success"
 }

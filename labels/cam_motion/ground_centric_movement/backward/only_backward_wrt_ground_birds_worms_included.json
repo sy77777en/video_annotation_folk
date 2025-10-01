@@ -22,6 +22,7 @@
         "Is the camera free from side-to-side or up-and-down movement while going backward?"
     ],
     "def_prompt": [
+        "The camera moves only backward (not zooming out) in the scene, or only south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera moves only backward (not zooming out) in the scene, or only south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera only moves backward (not zooming out) in the scene or moves south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera only moves backward (not zooming out) in the scene or moves south in a bird's eye view or north in a worm's eye view, creating a noticeable parallax effect.",

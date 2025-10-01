@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:29:36.093956",
+  "generation_timestamp": "2025-09-30T03:14:12.781928",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the camera is static, failing to describe its clockwise arcing movement. It also omits the resulting change in the figure's position from the left side of the frame toward the center. The papers are inaccurately placed in the middle ground instead of the foreground, and their changing position from the center-right to both sides of the figure is not mentioned.",
-  "revised_caption_by_generated_critique": "In a medium close-up shot, a stylized humanoid figure is initially positioned in the left middle ground, hunched over with its hands on its head. The camera moves in a clockwise arc, shifting the figure's position toward the center of the frame. To the right of the figure, a tall stack of papers is in the foreground, rendered with a strong horizontal motion blur. As the camera moves, the papers shift from the center-right to both sides of the figure. A dark reddish-brown wall is visible in the background.",
+  "generated_critique": "The caption incorrectly states that the camera is static and misidentifies the effect of the camera's movement as motion blur. It fails to describe the camera's arcing motion and the resulting shift in the figure's position from the left toward the center. The caption also incorrectly places the papers in the middle ground instead of the foreground and provides an incomplete description of their placement within the frame.",
+  "revised_caption_by_generated_critique": "In a medium close-up shot, a stylized humanoid figure is initially positioned in the left middle ground, hunched over with its hands on its head. The camera executes an arcing motion, causing the figure to shift toward the center of the frame. To the right of the figure, a tall stack of papers is situated in the foreground, with the camera movement creating a dynamic blur effect that extends off the right edge of the frame. A dark reddish-brown wall is visible in the background.",
   "status": "success"
 }

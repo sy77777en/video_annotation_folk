@@ -2,7 +2,7 @@
   "video_id": "YakCuBMlQXQ.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:42:07.748184",
+  "generation_timestamp": "2025-09-30T03:28:27.770075",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the blurred man's initial depth as background and his position as center-right. It also incorrectly describes the man's final position as 'to the right of the center' after the focus shifts.",
-  "revised_caption_by_generated_critique": "The video begins with a tree trunk in sharp focus occupying the foreground on the left. A blurred man is initially visible in the middle ground, positioned towards the center. As the shot transitions, the man leans slightly to his left, emerging more clearly from behind the right edge of the foreground tree, and comes into focus, shifting the shot to a close-up of him. He is then positioned in the middle ground, slightly to the left of the center, with the foreground tree trunk remaining on the left. Other trees and foliage form the background. When the man is revealed, the camera is at his level.",
+  "generated_critique": "The caption incorrectly identifies the man's initial depth as \"background\" and his initial position as \"center-right\". The description of the man's final position as \"to the right of the center\" is also incorrect.",
+  "revised_caption_by_generated_critique": "The video begins with a tree trunk in sharp focus occupying the foreground on the left, while a blurred man is initially positioned in the middle ground towards the center. As the shot transitions, the man leans slightly to his left, emerging more clearly from behind the right edge of the foreground tree, and comes into focus, shifting the shot to a close-up of him. He is then positioned in the middle ground, slightly to the left of the center, with the foreground tree trunk remaining on the left. Other trees and foliage form the background. When the man is revealed, the camera is at his level.",
   "status": "success"
 }

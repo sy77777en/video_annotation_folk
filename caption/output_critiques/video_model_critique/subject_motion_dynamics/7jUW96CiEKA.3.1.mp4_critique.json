@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.3.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:37:06.760005",
+  "generation_timestamp": "2025-09-29T22:31:49.250200",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\n**Accuracy:** The caption incorrectly states that the \"hippo's head remains relatively stationary.\" The video clearly shows the hippopotamus actively swimming forward from left to right, creating a wake in the water. The motion is a steady forward progression, not a stationary state with slight movements.\n\n**Completeness:** The description is incomplete because it fails to describe the primary action of the subject, which is swimming through the water.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption fails to accurately describe the subject's motion, which is the core requirement.\n*   **Avoid Speculation:** The caption violates the instruction to avoid speculative statements by saying the hippo is \"either resting or slowly swimming.\" The motion is clearly swimming, not resting.\n*   **Clarity of Action:** The description \"remains relatively stationary, with slight movements\" is vague and incorrect, failing to describe the action with clarity as instructed.",
-  "revised_caption_by_generated_critique": "A hippopotamus swims from left to right through a calm body of water, with only its head and the top of its back breaking the surface. It moves at a steady pace, creating a small wake behind it as it glides forward. The background consists of the murky water and a grassy bank along the far edge.",
+  "generated_critique": "The caption is inaccurate and contains information that violates the instructions. It incorrectly states the hippopotamus's head is \"relatively stationary\" when the video clearly shows the animal swimming steadily from left to right across the frame. The phrase \"indicating it is either resting or slowly swimming\" is speculative and should be removed. Additionally, the description of the background and habitat is irrelevant to the subject's motion and should be omitted. The caption should be revised to describe the hippo's continuous swimming motion.",
+  "revised_caption_by_generated_critique": "A hippopotamus, with its head and part of its back above the water, swims steadily from left to right across the frame.",
   "status": "success"
 }

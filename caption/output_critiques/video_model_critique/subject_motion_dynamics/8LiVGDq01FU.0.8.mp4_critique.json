@@ -2,7 +2,7 @@
   "video_id": "8LiVGDq01FU.0.8.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T20:35:15.467482",
+  "generation_timestamp": "2025-09-29T23:27:52.057714",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to adhere to several key instructions.\n\nThe primary issue is its lack of focus on the subject's motion. The instructions state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\" However, the caption dedicates two full sentences to describing the static background and lighting, which are not motion-related.\n\nFurthermore, the description of the movement itself is vague and incomplete. The caption states the individual \"slightly moves their head,\" which does not accurately capture the specific, chronological action. A more precise description would be that the person tilts their head upward and then lowers it back to its original position.\n\nFinally, the caption violates the instructions to avoid speculation and subjective language. It speculates about the location (\"possibly a library or study area\") and uses a subjective phrase (\"enhancing the focus on their expression\"). A good caption would describe only the observable actions in neutral, objective terms.",
-  "revised_caption_by_generated_critique": "In a close-up profile shot, a person wearing a space helmet tilts their head upward and then lowers it back to its original position.",
+  "generated_critique": "The caption is not concise and includes details unrelated to motion, such as the subject's appearance, the background, and the lighting, which should be removed. The description of motion is incomplete; it mentions the head tilting backward but omits that it returns to its original position. The caption also contains speculative phrases (\"suggesting that they are speaking,\" \"possibly a library or study area\") and subjective analysis (\"enhancing the focus on their expression\"), which should be deleted. The description should be revised to focus only on the chronological sequence of movement: the person's head tilts back and then returns to the starting position as their mouth moves.",
+  "revised_caption_by_generated_critique": "The person in the space helmet tilts their head backward and then returns to the starting position. Their mouth moves as their head moves.",
   "status": "success"
 }

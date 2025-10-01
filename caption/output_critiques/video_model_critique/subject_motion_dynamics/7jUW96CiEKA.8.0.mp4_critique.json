@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.8.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:42:50.006539",
+  "generation_timestamp": "2025-09-29T22:38:36.618347",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is mostly accurate but fails to adhere to several key instructions.\n\n**Accuracy:** The description of the bird's movement, its reflection, and the environment is factually correct.\n\n**Completeness:** The caption covers the primary action in the video.\n\n**Adherence to Instructions:**\n*   **Speculation:** The caption violates the instruction to \"Avoid speculative statements.\" Phrases like \"likely an egret\" and \"possibly scanning the water for potential food\" are interpretations of identity and intent, not direct observations of motion.\n*   **Focus on Motion:** The final sentence, \"The background consists of a grassy bank and some scattered vegetation, indicating a natural, possibly wetland environment,\" describes the scenery rather than the subject's motion, which goes against the instruction to \"Focus on the subject's motion.\"\n*   **Conciseness:** Removing the speculative phrases and the description of the background would make the caption more concise and focused.\n\nIn summary, the caption is factually correct but includes speculative language and unnecessary environmental details, which are explicitly forbidden by the instructions. A better caption would focus solely on describing the observed movement without making assumptions.",
-  "revised_caption_by_generated_critique": "A white bird walks slowly along the edge of a river, its reflection visible in the water. The bird moves forward at a steady pace with its head lowered and neck extended.",
+  "generated_critique": "The caption contains speculative language and information unrelated to the subject's motion. The phrase \"possibly scanning the water for potential food\" should be removed as it violates the instruction to avoid speculative statements. Additionally, the final sentence, \"The background consists of a grassy bank and some scattered vegetation, indicating a natural, possibly wetland environment,\" should be deleted because it describes the scenery rather than the subject's movement and includes another speculative statement. The description should be revised to focus only on the bird's observable actions.",
+  "revised_caption_by_generated_critique": "A great egret walks slowly through the shallow water at the edge of a river, its reflection visible below. The bird moves with a steady pace, its neck extended forward and its head held low.",
   "status": "success"
 }

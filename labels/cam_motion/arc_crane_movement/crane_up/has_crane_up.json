@@ -2,6 +2,7 @@
     "label": "Has Crane Up Movement",
     "label_name": "has_crane_up",
     "def_question": [
+        "Is the camera craning upward in an arc relative to its own frame?",
         "Is the camera craning upward in an arc?",
         "Does the camera move upward in an arcing motion?",
         "Is there a vertical orbiting motion where the camera moves upward?",
@@ -21,6 +22,7 @@
         "Does the camera ascend while subtly rotating around the subject?"
     ],
     "def_prompt": [
+        "The camera cranes upward in an arc relative to its own frame.",
         "The camera cranes upward in an arc.",
         "A shot where the camera rises in a vertical arcing motion.",
         "The camera moves upward while maintaining an orbit around something.",

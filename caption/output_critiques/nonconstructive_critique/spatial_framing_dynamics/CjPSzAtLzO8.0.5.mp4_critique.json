@@ -2,7 +2,7 @@
   "video_id": "CjPSzAtLzO8.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:36:02.401338",
+  "generation_timestamp": "2025-09-30T03:21:43.573463",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the paved surface extending \"towards the top right\" is incorrect, and the description of how the road's orientation changes is also wrong. The positioning of the mountains and sky in the \"top right\" and \"top of the frame\" is inaccurate. The statement that the second motorcyclist enters from the \"top right\" and is positioned in the \"middle ground\" is inaccurate. The description of the first motorcyclist's starting position in the \"center-left\" and their subsequent movement path is incorrect, and it fails to mention the change in the motorcyclist's apparent size.",
-  "revised_caption_by_generated_critique": "The video features a wide shot with the camera positioned at the subject's level and tilted, creating a Dutch angle. Initially, the primary motorcyclist is in the left-center of the frame, leaning sharply into a turn on a paved surface that extends diagonally across the frame. A concrete edge runs along the bottom left, also in the foreground and middle ground. In the background, distant mountains are visible under a clear sky, occupying the upper portion of the frame. As the camera tracks the main rider, they move across the frame from left-center towards the right, remaining in the middle ground, with their apparent size increasing as they approach the camera. Towards the end of the shot, a second motorcyclist enters the frame from the right side, positioned in the background.",
+  "generated_critique": "The description of the road's spatial extension, depth, and movement is incorrect. The description of the background is incomplete and does not accurately describe the placement of all its elements. The statement about the second motorcyclist's entry point and position in the scene's depth is inaccurate. The description of the first motorcyclist's starting and final positions is incorrect, and the caption fails to mention the changes in the motorcyclist's apparent size.",
+  "revised_caption_by_generated_critique": "The video features a wide shot with the camera at the subject's level, tilted to create a Dutch angle. Initially, the primary motorcyclist is positioned slightly off-center to the left in the middle ground, leaning sharply into a turn on a paved road that extends diagonally from the bottom left to the top right, spanning the foreground to the background. A concrete edge runs along the bottom left, enhancing the sense of depth. In the background, a range of distant mountains stretches across the top of the frame under a clear sky. As the camera tracks the main rider, they move from the left towards the center and then slightly to the right, with their apparent size increasing as they approach the foreground. Towards the end of the shot, a second motorcyclist enters from the right side of the frame, positioned in the background, adding dynamic movement to the scene.",
   "status": "success"
 }

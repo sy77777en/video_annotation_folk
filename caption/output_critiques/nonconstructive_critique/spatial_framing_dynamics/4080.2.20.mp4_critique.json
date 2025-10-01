@@ -2,7 +2,7 @@
   "video_id": "4080.2.20.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:27:38.416621",
+  "generation_timestamp": "2025-09-29T23:56:08.487901",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the shot as low-angle is incorrect. The woman in the top right is not in the background. The caption does not correctly identify the depth of the tall trees.",
-  "revised_caption_by_generated_critique": "In a medium shot, the lower bodies of several people run through a forest. The ground, covered in pine needles, is a heavily blurred element in the immediate foreground, occupying the bottom of the frame. In the middle ground, the legs of a person in light-colored pants are in the center, with another person in green pants to the left and a third in blue jeans just right of center. A woman is visible in the top right, running among tall trees that extend across the top of the frame, which appear to recede into the distance. The camera, positioned close to the ground, captures the dynamic forward motion of the group, creating significant motion blur throughout the scene.",
+  "generated_critique": "The description of the camera angle is incorrect. The depth classification for the woman in the top right is wrong. The caption fails to specify the depth position of the tall trees.",
+  "revised_caption_by_generated_critique": "In a low-angle medium shot, the lower bodies of several people run through a forest. The ground, covered in pine needles, is a heavily blurred element in the immediate foreground, occupying the bottom of the frame. In the middle ground, the legs of a person in light-colored pants are in the center, with another person in green pants to the left and a third in blue jeans just right of center. A woman is visible in the middle ground at the top right, running among tall trees that extend into the background across the top of the frame. The camera, positioned very low to the ground, captures the dynamic forward motion of the group, creating significant motion blur throughout the scene.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.3.5.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:11:03.698131",
+  "generation_timestamp": "2025-09-30T04:03:14.341498",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the foreground is illuminated instead of the middle ground. The reference to \"a small woven basket\" is incorrect because it is singular. The caption incorrectly includes \"metal pots\" in the list of items. The puppet is incorrectly placed in the foreground instead of the middle ground.",
-  "revised_caption_by_generated_critique": "The scene takes place in a dimly lit, cluttered interior room with a rough, uneven floor, likely at night. A warm, soft light source from the left illuminates the middle ground, casting the rest of the space into deep shadow, while a small lantern provides a faint glow in the background. The room is filled with various household items, including woven baskets, scattered papers, a dark satchel, and a green bucket. In the middle ground, a stop-motion puppet of a young girl with dark, braided hair sits on the floor, looking at an open book. Another puppet figure is seated in the softly lit, out-of-focus background.",
+  "generated_critique": "The caption incorrectly identifies the illuminated area as the foreground and misstates the location of the light source. The number of woven baskets is wrong. The description incorrectly includes \"metal pots.\" The placement of the puppet in the foreground is incorrect.",
+  "revised_caption_by_generated_critique": "The scene takes place in a dimly lit, cluttered interior room with a rough, uneven floor, likely at night. A warm, soft light source from the right illuminates the background, casting the rest of the space into deep shadow, while a small lantern provides a faint glow in the foreground. The room is filled with various household items, including two small woven baskets, scattered papers, a dark satchel, and a green bucket. In the background, a stop-motion puppet of a young girl with dark, braided hair sits on the floor, looking at an open book. Another puppet figure is seated in the softly lit, out-of-focus foreground.",
   "status": "success"
 }

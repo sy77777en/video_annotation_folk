@@ -2,7 +2,8 @@
     "label": "Only Upward Movement (Relative to Camera)",
     "label_name": "only_upward_wrt_camera",
     "def_question": [
-        "Does the camera only move upward (not tilting up) with respect to the initial frame?",
+        "Does the camera only move physically upward (or pedestals up) without any other camera movements?",
+        "Does the camera only move physically upward (not tilting up) with respect to the initial frame?",
         "Is upward motion the only camera movement from the initial frame?",
         "Is there no other camera motion except upward movement relative to the initial frame?",
         "Does the camera move upward with respect to itself without any other movement or tilting?",
@@ -26,7 +27,8 @@
         "Does the shot feature only a single directional upward movement?"
     ],
     "def_prompt": [
-        "A video where the camera only moves upward (not tilting up) relative to the initial frame.",
+        "The camera only moves physically upward (or pedestals up) without any other camera movements.",
+        "A video where the camera only moves physically upward (not tilting up) relative to the initial frame.",
         "A shot where the camera rises straight up with respect to the initial frame without any other motion.",
         "A video where the camera exclusively moves upward relative to the initial frame, creating a noticeable vertical parallax effect.",
         "A scene where the camera moves only upward relative to itself, avoiding tilting or other motions.",

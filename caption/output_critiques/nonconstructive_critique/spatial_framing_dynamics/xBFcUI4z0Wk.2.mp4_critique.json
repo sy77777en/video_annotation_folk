@@ -2,7 +2,7 @@
   "video_id": "xBFcUI4z0Wk.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:48:16.968250",
+  "generation_timestamp": "2025-09-30T00:18:37.421581",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the car at the top left is driving away from the camera. It also incorrectly places this car in the background.",
-  "revised_caption_by_generated_critique": "This high-angle wide shot captures a crash scene on a banked racetrack. In the middle ground, a damaged white car, number 98, is stationary in the center-right of the frame, positioned on the edge of the grass infield. Just behind it, in the center, a black and yellow car, number 2, is also stationary and emitting smoke. In the top left, another car is moving towards the camera along the upper part of the track. In the foreground, a blue and white car moves from the bottom left across the lower portion of the frame, while the front of a red and yellow car is partially visible in the bottom left corner. The track itself curves from the bottom left towards the top right, with grandstands visible in the background at the top of the frame.",
+  "generated_critique": "The car at the top left is not driving away from the camera, and its position is not in the background.",
+  "revised_caption_by_generated_critique": "This high-angle wide shot captures a crash scene on a banked racetrack. In the middle ground, a damaged white car, number 98, is stationary in the center-right of the frame, positioned on the edge of the grass infield. Just behind it, in the center, a black and yellow car, number 2, is also stationary and emitting smoke. At the top left, another car is positioned along the upper part of the track. In the foreground, a blue and white car moves from the bottom left across the lower portion of the frame, while the front of a red and yellow car is partially visible in the bottom left corner. The track itself curves from the bottom left towards the top right, with grandstands visible in the background at the top of the frame.",
   "status": "success"
 }

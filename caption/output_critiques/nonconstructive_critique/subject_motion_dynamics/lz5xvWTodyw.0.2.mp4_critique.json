@@ -2,7 +2,7 @@
   "video_id": "lz5xvWTodyw.0.2.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:28:44.985322",
+  "generation_timestamp": "2025-09-29T21:34:44.726821",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the second character's color as orange when it is yellow. It incorrectly states the red character grapples a hook instead of a black ring and inaccurately implies the yellow character is already on the hook, failing to mention it jumps from a high step. The description of the swing is incomplete, as it omits that they swing to a second ring. The caption incorrectly describes the red character's subsequent movements, stating it lands on a semi-circular platform and jumps across several platforms, and it fails to mention the final jump in place. The description of the yellow character's final action is wrong; it does not climb a green vine.",
-  "revised_caption_by_generated_critique": "The red character jumps from the ground and extends a limb to grapple onto a black ring, joining the yellow character, who jumps from a high step. They swing together to a second ring before the red character releases and lands, making a final jump in place. Meanwhile, the yellow character moves to the right and climbs up a structure attached to a large orange wall.",
+  "generated_critique": "The description of the red character's movements is incorrect, including its initial jump, the object it grapples, how it joins the other character, the sequence of its swing and landing, and its final actions. The caption also misidentifies the color of the second character, omits its initial movements, and incorrectly describes its final action.",
+  "revised_caption_by_generated_critique": "The red character leaps from a platform and uses a grappling hook to latch onto a nearby ledge, joining the yellow character. They swing together momentarily before the red character lets go and lands on a circular platform. The red character then hops across several platforms, eventually reaching a high ledge. Meanwhile, the yellow character initially moves to the left, climbs up a green vine attached to a large yellow wall, and then proceeds to the right.",
   "status": "success"
 }

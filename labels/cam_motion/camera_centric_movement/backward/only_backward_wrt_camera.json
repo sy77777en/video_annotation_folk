@@ -2,7 +2,7 @@
     "label": "Only Backward Movement (Relative to Camera)",
     "label_name": "only_backward_wrt_camera",
     "def_question": [
-        "Does the camera move only backward (not zooming out) with respect to the initial frame?",
+        "Does the camera move only physically backward (not zooming out) with respect to the initial frame, without any other movement?",
         "Is backward motion the only camera movement from the initial frame?",
         "Is there no other camera motion except backward movement relative to the initial frame?",
         "Does the camera move backward with respect to itself without any other movement or zooming?",
@@ -26,7 +26,7 @@
         "Does the shot feature only a single directional backward movement?"
     ],
     "def_prompt": [
-        "A video where the camera moves only backward (not zooming out) with respect to the initial frame.",
+        "The camera moves only physically backward (not zooming out) with respect to the initial frame, without any other movement.",
         "A shot where the camera retreats in space relative to its starting position without any additional motion.",
         "A video where the camera exclusively moves backward with respect to the initial frame, creating a noticeable parallax effect.",
         "A scene where the camera pulls back with respect to itself without any lateral or vertical movement.",

@@ -2,7 +2,7 @@
   "video_id": "cdb16f207080793bd1d6515365f43ab5df6ca8708840273cec73cc042a3cacf0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:14:37.562283",
+  "generation_timestamp": "2025-09-29T23:42:30.147914",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the beach visible in the lower right corner at the start and mischaracterizes the camera movement that causes it to disappear from the frame. The description of the fishing boats' position is inaccurate and incomplete, as it incorrectly states their static position and fails to describe their initial distribution and the subsequent shift in their apparent positions caused by the camera's movement.",
-  "revised_caption_by_generated_critique": "This video features an extreme wide, high-angle shot of a city harbor. The foreground and middle ground are filled with dark water, where clusters of fishing boats are initially distributed across the bottom left and center-right, gradually shifting in apparent position as the camera moves. A few smaller boats move slowly across the water. In the lower right corner at the start, a beach is visible before the camera ascends and moves forward, causing the beach to exit the frame and expanding the view of the water and city. In the background, a modern city skyline stretches across the horizon, with a prominent reddish-brown building on the left and a group of tall, light-colored skyscrapers on the right.",
+  "generated_critique": "The caption incorrectly describes the camera movement. The description of the fishing boats' position is also flawed, as it inaccurately presents their position as static and omits their initial distribution and the subsequent shift in their apparent position.",
+  "revised_caption_by_generated_critique": "This video features an extreme wide, high-angle scenery shot of a city harbor. The frame is filled with dark water in the foreground and middle ground, where several clusters of fishing boats are initially positioned in the bottom left and center-right, but they gradually shift as the camera moves. A few smaller boats move slowly across the water. In the background, a modern city skyline stretches across the horizon, featuring a prominent reddish-brown building on the left and a group of tall, light-colored skyscrapers on the right. The camera slowly pans upward and forward, causing a small patch of land initially in the bottom right corner to exit the frame, which expands the view of the water and the city.",
   "status": "success"
 }

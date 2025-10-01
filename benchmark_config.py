@@ -2,59 +2,74 @@ CAMERABENCH_GROUND_ONLY_FOLDER = "cam_motion-20250227_0324ground_only"
 CAMERABENCH_GROUND_AND_SETUP_FOLDER = "cam_motion-cam_setup-20250227_0507ground_and_setup"
 CAMERABENCH_GROUND_AND_CAMERA_FOLDER = "cam_motion-20250227_0326ground_and_camera"
 # New folder after ICCV
-CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE = "cam_motion-cam_setup-20250227_0507ground_and_setup_updated_on_0406"
+# CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE = "cam_motion-cam_setup-20250227_0507ground_and_setup_updated_on_0406"
 
-CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL = "cam_motion-cam_setup-20250406_setup_and_motion"
-CAMERABENCH_GROUND_ONLY_FOLDER_APRIL = "cam_motion-20250406ground_only"
-CAMERABENCH_SETUP_ONLY_FOLDER_APRIL = "cam_setup-20250406setup_only"
-CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL = "lighting_setup-20250406lighting_only"
-
+# CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL = "cam_motion-cam_setup-20250406_setup_and_motion"
+# CAMERABENCH_GROUND_ONLY_FOLDER_APRIL = "cam_motion-20250406ground_only"
+# CAMERABENCH_SETUP_ONLY_FOLDER_APRIL = "cam_setup-20250406setup_only"
+# CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL = "lighting_setup-20250406lighting_only"
+CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "TODO"
+CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "TODO"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "TODO" # Need to have ground + setup
+CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "TODO" # Need to have ground + camera
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "TODO" # Need to have ground + setup + camera
 
 FOLDER_NAMES = [
     "motion_dataset", # ICCV Version
-    "motion_dataset_april_update", # April Update for ICCV Version with same videos (Final version to be used?)
-    "motion_dataset_april_6", # April Version of ICCV Benchmark (Final version to be used?)
-    "setup_dataset_april_6",
+    # "motion_dataset_april_update", # April Update for ICCV Version with same videos (Final version to be used?)
+    # "motion_dataset_april_6", # April Version of ICCV Benchmark (Final version to be used?)
+    # "setup_dataset_april_6",
+    "camerabench_pro",
+    "camerabench_pro_with_camera_centric_motion",
     "lighting_dataset_april_6"
 ]
 
 def get_pairwise_labels(folder_name):
     assert folder_name in FOLDER_NAMES
     if folder_name == "motion_dataset":
-        return get_motion_pairwise_labels(
-            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+        return get_motion_pairwise_labels_camerabench(
+            ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
             ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
+            ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
             ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
         )
-    elif folder_name == "motion_dataset_redo":
-        return get_motion_pairwise_labels(
-            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
-            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
-            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+    elif folder_name == "camerabench_pro":
+        return get_motion_and_setup_pairwise_labels_camerabench_pro(
+            ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+            ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
+            setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY,
         )
-    elif folder_name == "motion_dataset_april_update":
-        return get_motion_pairwise_labels(
-            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
-            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE,
-            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+    elif folder_name == "camerabench_pro_with_camera_centric_motion":
+        return get_motion_and_setup_pairwise_labels_camerabench(
+            ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+            ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
+            ground_and_camera_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA,
+            ground_and_camera_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA,
+            setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY,
         )
-    elif folder_name == "motion_dataset_april_6":
-        return get_motion_pairwise_labels(
-            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
-            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
-            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-        )
-    elif folder_name == "setup_dataset_april_6":
-        return get_setup_pairwise_labels(
-            setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
-        )
-    elif folder_name == "motion_and_setup_dataset_april_6":
-        return get_motion_and_setup_pairwise_labels(
-            ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
-            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
-            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-            setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
-        )
+    # elif folder_name == "motion_dataset_april_update":
+    #     return get_motion_pairwise_labels(
+    #         ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+    #         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE,
+    #         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+    #     )
+    # elif folder_name == "motion_dataset_april_6":
+    #     return get_motion_pairwise_labels(
+    #         ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
+    #         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+    #         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+    #     )
+    # elif folder_name == "setup_dataset_april_6":
+    #     return get_setup_pairwise_labels(
+    #         setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
+    #     )
+    # elif folder_name == "motion_and_setup_dataset_april_6":
+    #     return get_motion_and_setup_pairwise_labels(
+    #         ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
+    #         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+    #         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+    #         setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
+    #     )
     elif folder_name == "lighting_dataset_april_6":
         return get_lighting_pairwise_labels(
             lighting_folder=CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL,
@@ -62,15 +77,15 @@ def get_pairwise_labels(folder_name):
     else:
         raise ValueError(f"Invalid folder name: {folder_name}")
 
-def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_movement_and_steadiness_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "is_the_camera_clearly_moving_or_not",
             "pos_question": "Does the camera have noticeable motion beyond minor shake or wobble?",
             "neg_question": "Is the camera free from noticeable motion beyond minor shake or wobble?",
-            "pos_prompt": "A video where the camera has noticeable motion beyond minor shake or wobble.",
-            "neg_prompt": "A video where the camera is free from noticeable motion beyond minor shake or wobble.",
+            "pos_prompt": "The video has noticeable camera motion beyond minor shake or wobble.",
+            "neg_prompt": "The video does not have noticeable camera motion beyond minor shake or wobble.",
             "pos": {
                 "label": "cam_motion.steadiness_and_movement.clear_moving_camera",
                 "type": "pos",
@@ -81,12 +96,12 @@ def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "is_the_fixed_camera_shaking_or_not",
             "pos_question": "Is the camera completely still without any motion or shaking?",
             "neg_question": "Is the camera stationary with minor vibrations or shaking?",
-            "pos_prompt": "A video where the camera remains completely still with no motion or shaking.",
-            "neg_prompt": "A video where the camera is mostly stationary but has minor vibrations or shaking.",
+            "pos_prompt": "The video shows a completely still camera with no motion or shaking.",
+            "neg_prompt": "The video has a mostly stationary camera with only minor vibrations or shaking.",
             "pos": {
                 "label": "cam_motion.steadiness_and_movement.fixed_camera",
                 "type": "pos",
@@ -97,12 +112,12 @@ def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "is_the_camera_stable_or_shaky",
             "pos_question": "Is the camera movement exceptionally smooth and highly stable?",
             "neg_question": "Does the camera show noticable vibrations, shaking, or wobbling?",
-            "pos_prompt": "A video where the camera movement is exceptionally smooth and highly stable.",
-            "neg_prompt": "A video where the camera shows noticable vibrations, shaking, or wobbling.",
+            "pos_prompt": "The video has exceptionally smooth and highly stable camera movement.",
+            "neg_prompt": "The video shows noticable vibrations, shaking, or wobbling of the camera.",
             "pos": {
                 "label": "cam_motion.steadiness_and_movement.very_stable_camera",
                 "type": "pos",
@@ -113,12 +128,12 @@ def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "is_the_camera_fixed_or_moving",
-            "pos_question": "Is the camera completely still without any visible movement?",
-            "neg_question": "Is the camera not completely still and shows visible movement?",
-            "pos_prompt": "The camera is completely still without any visible movement.",
-            "neg_prompt": "The camera is not completely still and shows visible movement.",
+            "pos_question": "Is the camera completely still without any visible movement or shaking?",
+            "neg_question": "Is the camera not completely still and shows visible movement or shaking?",
+            "pos_prompt": "The video shows a completely still camera with no motion or shaking.",
+            "neg_prompt": "The camera is not completely still and shows visible movement or shaking.",
             "pos": {
                 "label": "cam_motion.steadiness_and_movement.fixed_camera",
                 "type": "pos",
@@ -132,21 +147,22 @@ def get_movement_and_steadiness_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
 
 def get_scene_dynamics_tasks(
     ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-    ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
+    ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER
 ):
+    # This is the version we used for camerabench
     return [
         {
             "folder": ground_and_camera_folder,
             "name": "is_scene_static_or_not",
             "pos_question": "Is the scene in the video completely static?",
-            "neg_question": "Is the scene in the video dynamic?",
-            "pos_prompt": "A video where the scene is completely static.",
-            "neg_prompt": "A video where the scene is dynamic and features movement.",
+            "neg_question": "Is the scene in the video dynamic and features movement?",
+            "pos_prompt": "The scene in the video is completely static.",
+            "neg_prompt": "The scene in the video is dynamic and features movement.",
             "pos": {"label": "cam_motion.scene_movement.static_scene", "type": "pos"},
             "neg": {"label": "cam_motion.scene_movement.dynamic_scene", "type": "pos"},
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_frame_freeze_or_not",
             "pos_question": "Does the video contain a frame freeze effect at any point?",
             "neg_question": "Is the video free from any frame freeze effect?",
@@ -157,15 +173,33 @@ def get_scene_dynamics_tasks(
         },
     ]
 
-def get_camera_movement_speed_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_scene_dynamics_only_tasks(
+    ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER
+):
+    # This is the version we used for camerabench-pro
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_and_camera_folder,
+            "name": "is_scene_static_or_not",
+            "pos_question": "Is the scene in the video completely static?",
+            "neg_question": "Is the scene in the video dynamic and features movement?",
+            "pos_prompt": "The scene in the video is completely static.",
+            "neg_prompt": "The scene in the video is dynamic and features movement.",
+            "pos": {"label": "cam_motion.scene_movement.static_scene", "type": "pos"},
+            "neg": {"label": "cam_motion.scene_movement.dynamic_scene", "type": "pos"},
+        }
+    ]
+
+def get_camera_movement_speed_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+    # This is the version we used for camerabench
+    return [
+        {
+            "folder": ground_folder,
             "name": "is_camera_movement_slow_or_fast",
             "pos_question": "Does the camera have noticeable motion but at a slow motion speed?",
             "neg_question": "Does the camera have noticeable motion but at a fast motion speed?",
-            "pos_prompt": "A video where the camera has noticeable motion at a slow speed.",
-            "neg_prompt": "A video where the camera has noticeable motion at a fast speed.",
+            "pos_prompt": "The camera has noticeable motion but at a slow motion speed.",
+            "neg_prompt": "The camera has noticeable motion but at a fast motion speed.",
             "pos": {
                 "label": "cam_motion.steadiness_and_movement.slow_moving_camera",
                 "type": "pos",
@@ -176,7 +210,7 @@ def get_camera_movement_speed_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_motion_blur_or_not",
             "pos_question": "Does the video contain noticeable motion blur?",
             "neg_question": "Is the video free from any noticeable motion blur?",
@@ -187,17 +221,58 @@ def get_camera_movement_speed_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
         },
     ]
 
-def get_translation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+def get_camera_movement_speed_and_effect_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+    # This is the version we used for camerabench-pro
+    return [
+        {
+            "folder": ground_folder,
+            "name": "is_camera_movement_slow_or_fast",
+            "pos_question": "Does the camera have noticeable motion but at a slow motion speed?",
+            "neg_question": "Does the camera have noticeable motion but at a fast motion speed?",
+            "pos_prompt": "The camera has noticeable motion but at a slow motion speed.",
+            "neg_prompt": "The camera has noticeable motion but at a fast motion speed.",
+            "pos": {
+                "label": "cam_motion.steadiness_and_movement.slow_moving_camera",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.steadiness_and_movement.fast_moving_camera",
+                "type": "pos",
+            },
+        },
+        {
+            "folder": ground_folder,
+            "name": "has_motion_blur_or_not",
+            "pos_question": "Does the video contain noticeable motion blur?",
+            "neg_question": "Is the video free from any noticeable motion blur?",
+            "pos_prompt": "The video exhibits a motion blur effect.",
+            "neg_prompt": "The video is free from any noticeable motion blur.",
+            "pos": {"label": "cam_motion.has_motion_blur", "type": "pos"},
+            "neg": {"label": "cam_motion.has_motion_blur", "type": "neg"},
+        },
+        {
+            "folder": ground_folder,
+            "name": "has_frame_freeze_or_not",
+            "pos_question": "Does the video contain a frame freeze effect at any point?",
+            "neg_question": "Is the video free from any frame freeze effect?",
+            "pos_prompt": "A video that contains a frame freeze effect at some point.",
+            "neg_prompt": "A video that is free from any frame freeze effect.",
+            "pos": {"label": "cam_motion.has_frame_freezing", "type": "pos"},
+            "neg": {"label": "cam_motion.has_frame_freezing", "type": "neg"},
+        }
+    ]
+
+def get_translation_direction_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
                                     ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
     return [
         # Translation Direction (3 tasks)
         {
             "folder": ground_and_setup_folder,
             "name": "has_forward_vs_backward_ground",
-            "pos_question": "Is the camera moving forward in the scene?",
-            "neg_question": "Is the camera moving backward in the scene?",
-            "pos_prompt": "A shot where the camera is moving forward within the scene.",
-            "neg_prompt": "A shot where the camera is moving backward within the scene.",
+            "pos_question": "Is the camera moving physically forward (or dollies in) in the scene?",
+            "neg_question": "Is the camera moving physically backward (or dollies out) in the scene?",
+            "pos_prompt": "The camera moves physically forward (or dollies in) in the scene.",
+            "neg_prompt": "The camera moves physically backward (or dollies out) in the scene.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground",
                 "type": "pos",
@@ -210,10 +285,10 @@ def get_translation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
         {
             "folder": ground_and_setup_folder,
             "name": "has_upward_vs_downward_ground",
-            "pos_question": "Does the camera move upward relative to the ground?",
-            "neg_question": "Does the camera move downward relative to the ground?",
-            "pos_prompt": "The camera is moving upward relative to the ground.",
-            "neg_prompt": "The camera is moving downward relative to the ground.",
+            "pos_question": "Does the camera move physically upward (or pedestals up) relative to the ground?",
+            "neg_question": "Does the camera move physically downward (or pedestals down) relative to the ground?",
+            "pos_prompt": "The camera moves physically upward (or pedestals up) relative to the ground.",
+            "neg_prompt": "The camera moves physically downward (or pedestals down) relative to the ground.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
                 "type": "pos",
@@ -224,12 +299,12 @@ def get_translation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_leftward_vs_rightward",
-            "pos_question": "Does the camera move leftward in the scene?",
-            "neg_question": "Does the camera move rightward in the scene?",
-            "pos_prompt": "The camera moves leftward.",
-            "neg_prompt": "The camera moves rightward.",
+            "pos_question": "Does the camera move leftward (or trucks left)?",
+            "neg_question": "Does the camera move rightward (or trucks right)?",
+            "pos_prompt": "The camera moves leftward (or trucks left).",
+            "neg_prompt": "The camera moves rightward (or trucks right).",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.leftward.has_leftward",
                 "type": "pos",
@@ -241,11 +316,11 @@ def get_translation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
         },
     ]
 
-def get_rotation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_rotation_direction_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         # Rotation Direction (3 tasks)
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "pan_left_vs_pan_right",
             "pos_question": "Does the camera pan to the left?",
             "neg_question": "Does the camera pan to the right?",
@@ -261,7 +336,7 @@ def get_rotation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLD
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "tilt_up_vs_tilt_down",
             "pos_question": "Does the camera tilt upward?",
             "neg_question": "Does the camera tilt downward?",
@@ -277,7 +352,7 @@ def get_rotation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLD
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "roll_cc_vs_roll_ccw",
             "pos_question": "Does the camera roll clockwise?",
             "neg_question": "Does the camera roll counterclockwise?",
@@ -294,16 +369,16 @@ def get_rotation_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLD
         },
     ]
 
-def get_object_centric_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_object_centric_direction_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         # Object-Centric Direction (4 tasks)
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "side_tracking_leftward_vs_rightward",
-            "pos_question": "Is it a side-tracking shot where the camera moves left to follow the subject?",
-            "neg_question": "Is it a side-tracking shot where the camera moves right to follow the subject?",
-            "pos_prompt": "A side-tracking shot where the camera moves left to follow the subject.",
-            "neg_prompt": "A side-tracking shot where the camera moves right to follow the subject.",
+            "pos_question": "Is it a side tracking shot where the camera moves left to follow the subject?",
+            "neg_question": "Is it a side tracking shot where the camera moves right to follow the subject?",
+            "pos_prompt": "A side tracking shot where the camera moves left to follow the subject.",
+            "neg_prompt": "A side tracking shot where the camera moves right to follow the subject.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.side_tracking_shot_leftward",
                 "type": "pos",
@@ -314,12 +389,12 @@ def get_object_centric_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONL
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "lead_tracking_vs_tail_tracking",
-            "pos_question": "Is it a tracking shot with the camera moving ahead of the subject?",
-            "neg_question": "Is it a tracking shot with the camera following behind the subject?",
-            "pos_prompt": "A tracking shot where the camera moves ahead of the subject.",
-            "neg_prompt": "A tracking shot where the camera follows behind the subject.",
+            "pos_question": "Is it a lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera?",
+            "neg_question": "Is it a follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera?",
+            "pos_prompt": "A lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera.",
+            "neg_prompt": "A follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.lead_tracking_shot",
                 "type": "pos",
@@ -330,7 +405,7 @@ def get_object_centric_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONL
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "arc_ccw_vs_arc_cc",
             "pos_question": "Does the camera move in a counterclockwise arc?",
             "neg_question": "Does the camera move in a clockwise arc?",
@@ -346,12 +421,12 @@ def get_object_centric_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONL
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "crane_up_vs_crane_down",
-            "pos_question": "Is the camera craning upward in an arc?",
-            "neg_question": "Does the camera move downward in a crane shot?",
-            "pos_prompt": "The camera cranes upward in an arc.",
-            "neg_prompt": "The camera cranes downward in an arc.",
+            "pos_question": "Is the camera craning upward in an arc relative to its own frame?",
+            "neg_question": "Does the camera move downward in a crane shot relative to its own frame?",
+            "pos_prompt": "The camera cranes upward in an arc relative to its own frame.",
+            "neg_prompt": "The camera cranes downward in an arc relative to its own frame.",
             "pos": {
                 "label": "cam_motion.arc_crane_movement.crane_up.has_crane_up",
                 "type": "pos",
@@ -363,11 +438,11 @@ def get_object_centric_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONL
         },
     ]
 
-def get_intrinsic_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_intrinsic_direction_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         # Intrinsic Direction (2 tasks)
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "dolly_zoom_in_vs_dolly_zoom_out",
             "pos_question": "Does the shot feature a dolly zoom effect with the camera moving backward and zooming in?",
             "neg_question": "Does the shot feature a dolly zoom effect with the camera moving forward and zooming out?",
@@ -383,7 +458,7 @@ def get_intrinsic_direction_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOL
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "zoom_in_vs_zoom_out",
             "pos_question": "Does the camera zoom in?",
             "neg_question": "Does the camera zoom out?",
@@ -408,9 +483,9 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
             "folder": ground_and_camera_folder,
             "name": "has_zoom_in_not_move_vs_has_move_not_zoom_in",
             "pos_question": "Does the camera zoom in without physically moving forward?",
-            "neg_question": "Does the camera physically move forward without zooming in?",
-            "pos_prompt": "A video where the camera zooms in without physically moving forward.",
-            "neg_prompt": "A video where the camera physically moves forward without zooming in.",
+            "neg_question": "Does the camera physically move forward with respect to the initial frame without zooming in?",
+            "pos_prompt": "The camera zooms in without physically moving forward.",
+            "neg_prompt": "The camera physically moves forward (not zooming in) with respect to the initial frame.",
             "pos": [
                 {
                     "label": "cam_motion.camera_centric_movement.zoom_in.has_zoom_in",
@@ -436,9 +511,9 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
             "folder": ground_and_camera_folder,
             "name": "has_zoom_out_not_move_vs_has_move_not_zoom_out",
             "pos_question": "Does the camera zoom out without physically moving backward?",
-            "neg_question": "Does the camera physically move backward without zooming out?",
-            "pos_prompt": "A video where the camera zooms out without physically moving backward.",
-            "neg_prompt": "A video where the camera physically moves backward without zooming out.",
+            "neg_question": "Does the camera physically move backward with respect to the initial frame without zooming out?",
+            "pos_prompt": "The camera zooms out without physically moving backward.",
+            "neg_prompt": "The camera physically moves backward (not zooming out) with respect to the initial frame.",
             "pos": [
                 {
                     "label": "cam_motion.camera_centric_movement.zoom_out.has_zoom_out",
@@ -464,9 +539,9 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
             "folder": ground_and_camera_folder,
             "name": "only_zoom_in_vs_only_forward",
             "pos_question": "Does the camera only zoom in without any other camera movement?",
-            "neg_question": "Does the camera only move forward without any other camera movement?",
-            "pos_prompt": "A video where the camera only zooms in with no other movement.",
-            "neg_prompt": "A video where the camera only moves forward with no other movement.",
+            "neg_question": "Does the camera only move physically forward (not zooming in) with respect to the initial frame, without any other camera movement?",
+            "pos_prompt": "The camera only zooms in with no other movement.",
+            "neg_prompt": "The camera only moves physically forward (not zooming in) with respect to the initial frame, without any other movement.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.zoom_in.only_zoom_in",
                 "type": "pos",
@@ -480,9 +555,9 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
             "folder": ground_and_camera_folder,
             "name": "only_zoom_out_vs_only_backward",
             "pos_question": "Does the camera only zoom out without any other camera movement?",
-            "neg_question": "Does the camera only move backward without any other camera movement?",
-            "pos_prompt": "A video where the camera only zooms out with no other movement.",
-            "neg_prompt": "A video where the camera only moves backward with no other movement.",
+            "neg_question": "Does the camera only move physically backward (not zooming out) with respect to the initial frame, without any other camera movement?",
+            "pos_prompt": "The camera only zooms out with no other movement.",
+            "neg_prompt": "The camera only moves physically backward (not zooming out) with respect to the initial frame, without any other movement.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.zoom_out.only_zoom_out",
                 "type": "pos",
@@ -494,13 +569,13 @@ def get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=CAMERABENCH_GROUN
         },
     ]
 
-def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
-                                  ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
-                                  ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER):
+def get_rotation_vs_translation_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+                                      ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
+                                      ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER):
     return [
         # Rotation vs. Translation (8 tasks)
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_pan_right_not_truck_vs_has_truck_not_pan_right",
             "pos_question": "Does the camera pan right without moving laterally to the right?",
             "neg_question": "Does the camera move laterally to the right without panning right?",
@@ -528,7 +603,7 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_pan_left_not_truck_vs_has_truck_not_pan_left",
             "pos_question": "Does the camera pan left without moving laterally to the left?",
             "neg_question": "Does the camera move laterally to the left without panning left?",
@@ -556,12 +631,12 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_pan_right_vs_only_truck_right",
-            "pos_question": "Does the camera only pan right with no other movement?",
-            "neg_question": "Does the camera only move laterally to the right with no other movement?",
-            "pos_prompt": "A video where the camera only pans right with no other movement.",
-            "neg_prompt": "A video where the camera only moves laterally to the right with no other movement.",
+            "pos_question": "Does the camera only pan rightward without any other camera movements?",
+            "neg_question": "Does the camera only move laterally rightward with no other movement?",
+            "pos_prompt": "The camera only pans rightward without any other camera movements.",
+            "neg_prompt": "The camera only moves laterally rightward with no other movement.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
                 "type": "pos",
@@ -572,12 +647,12 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_pan_left_vs_only_truck_left",
-            "pos_question": "Does the camera only pan left with no other movement?",
-            "neg_question": "Does the camera only move laterally to the left with no other movement?",
-            "pos_prompt": "A video where the camera only pans left with no other movement.",
-            "neg_prompt": "A video where the camera only moves laterally to the left with no other movement.",
+            "pos_question": "Does the camera only pan leftward without any other camera movements?",
+            "neg_question": "Does the camera only move laterally leftward with no other movement?",
+            "pos_prompt": "The camera only pans leftward without any other camera movements.",
+            "neg_prompt": "The camera only moves laterally leftward with no other movement.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
                 "type": "pos",
@@ -588,12 +663,12 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             },
         },
         {
-            "folder": ground_and_setup_folder,
+            "folder": ground_and_camera_and_setup_folder,
             "name": "has_tilt_up_not_pedestal_vs_has_pedestal_not_tilt_up",
             "pos_question": "Does the camera tilt up without moving physically upward?",
             "neg_question": "Does the camera move physically upward without tilting up?",
-            "pos_prompt": "A video where the camera tilts up without physically moving upward.",
-            "neg_prompt": "A video where the camera physically moves upward without tilting up.",
+            "pos_prompt": "The camera tilts up without physically moving upward.",
+            "neg_prompt": "The camera physically moves upward without tilting up.",
             "pos": [
                 {
                     "label": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
@@ -624,12 +699,12 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
             ],
         },
         {
-            "folder": ground_and_setup_folder,
+            "folder": ground_and_camera_and_setup_folder,
             "name": "has_tilt_down_not_pedestal_vs_has_pedestal_not_tilt_down",
             "pos_question": "Does the camera tilt down without moving physically downward?",
             "neg_question": "Does the camera move physically downward without tilting down?",
-            "pos_prompt": "A video where the camera tilts down without physically moving downward.",
-            "neg_prompt": "A video where the camera physically moves downward without tilting down.",
+            "pos_prompt": "The camera tilts down without physically moving downward.",
+            "neg_prompt": "The camera physically moves downward without tilting down.",
             "pos": [
                 {
                     "label": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
@@ -662,10 +737,10 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
         {
             "folder": ground_and_camera_folder,
             "name": "only_tilt_up_vs_only_pedestal_up",
-            "pos_question": "Does the camera only tilt up with no other movement?",
-            "neg_question": "Does the camera only move physically upward (pedestal up) with no other movement?",
-            "pos_prompt": "A video where the camera only tilts up with no other movement.",
-            "neg_prompt": "A video where the camera only moves physically upward with no other movement.",
+            "pos_question": "Does the camera only tilt upward without any other camera movements?",
+            "neg_question": "Does the camera only move physically upward (or pedestals up) with no other movement?",
+            "pos_prompt": "The camera only tilts upward without any other camera movements.",
+            "neg_prompt": "The camera only moves physically upward (or pedestals up) with no other movement.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
                 "type": "pos",
@@ -678,10 +753,10 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
         {
             "folder": ground_and_camera_folder,
             "name": "only_tilt_down_vs_only_pedestal_down",
-            "pos_question": "Does the camera only tilt down with no other movement?",
-            "neg_question": "Does the camera only move physically downward (pedestal down) with no other movement?",
-            "pos_prompt": "A video where the camera only tilts down with no other movement.",
-            "neg_prompt": "A video where the camera only moves physically downward with no other movement.",
+            "pos_question": "Does the camera only tilt downward without any other camera movements?",
+            "neg_question": "Does the camera only move physically downward (or pedestals down) with no other movement?",
+            "pos_prompt": "The camera only tilts downward without any other camera movements.",
+            "neg_prompt": "The camera only moves physically downward (or pedestals down) with no other movement.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
                 "type": "pos",
@@ -693,15 +768,197 @@ def get_rotation_vs_translation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY
         },
     ]
 
-def get_has_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_rotation_vs_translation_without_camera_centric_motion_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+                                                                    ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
+    return [
+        # Rotation vs. Translation (8 tasks)
+        {
+            "folder": ground_folder,
+            "name": "has_pan_right_not_truck_vs_has_truck_not_pan_right",
+            "pos_question": "Does the camera pan right without moving laterally to the right?",
+            "neg_question": "Does the camera move laterally to the right without panning right?",
+            "pos_prompt": "The camera pans right without moving laterally to the right.",
+            "neg_prompt": "The camera moves laterally to the right without panning right.",
+            "pos": [
+                {
+                    "label": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
+                    "type": "pos",
+                },
+                {
+                    "label": "cam_motion.camera_centric_movement.rightward.has_rightward",
+                    "type": "neg",
+                },
+            ],
+            "neg": [
+                {
+                    "label": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
+                    "type": "neg",
+                },
+                {
+                    "label": "cam_motion.camera_centric_movement.rightward.has_rightward",
+                    "type": "pos",
+                },
+            ],
+        },
+        {
+            "folder": ground_folder,
+            "name": "has_pan_left_not_truck_vs_has_truck_not_pan_left",
+            "pos_question": "Does the camera pan left without moving laterally to the left?",
+            "neg_question": "Does the camera move laterally to the left without panning left?",
+            "pos_prompt": "The camera pans left without moving laterally to the left.",
+            "neg_prompt": "The camera moves laterally to the left without panning left.",
+            "pos": [
+                {
+                    "label": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
+                    "type": "pos",
+                },
+                {
+                    "label": "cam_motion.camera_centric_movement.leftward.has_leftward",
+                    "type": "neg",
+                },
+            ],
+            "neg": [
+                {
+                    "label": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
+                    "type": "neg",
+                },
+                {
+                    "label": "cam_motion.camera_centric_movement.leftward.has_leftward",
+                    "type": "pos",
+                },
+            ],
+        },
+        {
+            "folder": ground_folder,
+            "name": "only_pan_right_vs_only_truck_right",
+            "pos_question": "Does the camera only pan rightward without any other camera movements?",
+            "neg_question": "Does the camera only move laterally rightward with no other movement?",
+            "pos_prompt": "The camera only pans rightward without any other camera movements.",
+            "neg_prompt": "The camera only moves laterally rightward with no other movement.",
+            "pos": {
+                "label": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.camera_centric_movement.rightward.only_rightward",
+                "type": "pos",
+            },
+        },
+        {
+            "folder": ground_folder,
+            "name": "only_pan_left_vs_only_truck_left",
+            "pos_question": "Does the camera only pan leftward without any other camera movements?",
+            "neg_question": "Does the camera only move laterally leftward with no other movement?",
+            "pos_prompt": "The camera only pans leftward without any other camera movements.",
+            "neg_prompt": "The camera only moves laterally leftward with no other movement.",
+            "pos": {
+                "label": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.camera_centric_movement.leftward.only_leftward",
+                "type": "pos",
+            },
+        },
+        {
+            "folder": ground_and_setup_folder,
+            "name": "has_tilt_up_not_pedestal_vs_has_pedestal_not_tilt_up",
+            "pos_question": "Does the camera tilt up without moving physically upward?",
+            "neg_question": "Does the camera move physically upward without tilting up?",
+            "pos_prompt": "The camera tilts up without physically moving upward.",
+            "neg_prompt": "The camera physically moves upward without tilting up.",
+            "pos": [
+                {
+                    "label": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
+                    "type": "pos",
+                },
+                {
+                    "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
+                    "type": "neg",
+                },
+            ],
+            "neg": [
+                {
+                    "label": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
+                    "type": "neg",
+                },
+                {
+                    "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
+                    "type": "pos",
+                },
+            ],
+        },
+        {
+            "folder": ground_and_setup_folder,
+            "name": "has_tilt_down_not_pedestal_vs_has_pedestal_not_tilt_down",
+            "pos_question": "Does the camera tilt down without moving physically downward?",
+            "neg_question": "Does the camera move physically downward without tilting down?",
+            "pos_prompt": "The camera tilts down without physically moving downward.",
+            "neg_prompt": "The camera physically moves downward without tilting down.",
+            "pos": [
+                {
+                    "label": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
+                    "type": "pos",
+                },
+                {
+                    "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
+                    "type": "neg",
+                },
+            ],
+            "neg": [
+                {
+                    "label": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
+                    "type": "neg",
+                },
+                {
+                    "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
+                    "type": "pos",
+                },
+            ],
+        },
+        {
+            "folder": ground_and_setup_folder,
+            "name": "only_tilt_up_vs_only_pedestal_up",
+            "pos_question": "Does the camera only tilt upward without any other camera movements?",
+            "neg_question": "Does the camera only move physically upward (or pedestals up) with no other movement?",
+            "pos_prompt": "The camera only tilts upward without any other camera movements.",
+            "neg_prompt": "The camera only moves physically upward (or pedestals up) with no other movement.",
+            "pos": {
+                "label": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.camera_centric_movement.upward.only_upward_wrt_camera",
+                "type": "pos",
+            },
+        },
+        {
+            "folder": ground_and_setup_folder,
+            "name": "only_tilt_down_vs_only_pedestal_down",
+            "pos_question": "Does the camera only tilt downward without any other camera movements?",
+            "neg_question": "Does the camera only move physically downward (or pedestals down) with no other movement?",
+            "pos_prompt": "The camera only tilts downward without any other camera movements.",
+            "neg_prompt": "The camera only moves physically downward (or pedestals down) with no other movement.",
+            "pos": {
+                "label": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.camera_centric_movement.downward.only_downward_wrt_camera",
+                "type": "pos",
+            },
+        },
+    ]
+
+def get_has_intrinsic_change_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_zoom_in",
             "pos_question": "Does the camera zoom in?",
-            "neg_question": "Is the camera free from any zoom in effects?",
+            "neg_question": "Does the camera not zoom in?",
             "pos_prompt": "The camera zooms in.",
-            "neg_prompt": "The camera is free from any zoom in effects.",
+            "neg_prompt": "The camera does not zoom in.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.zoom_in.has_zoom_in",
                 "type": "pos",
@@ -712,12 +969,12 @@ def get_has_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FO
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_zoom_out",
             "pos_question": "Does the camera zoom out?",
-            "neg_question": "Is the camera free from any zoom out effects?",
+            "neg_question": "Does the camera not zoom out?",
             "pos_prompt": "The camera zooms out.",
-            "neg_prompt": "The camera is free from any zoom out effects.",
+            "neg_prompt": "The camera does not zoom out.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.zoom_out.has_zoom_out",
                 "type": "pos",
@@ -730,15 +987,15 @@ def get_has_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FO
     ]
 
 def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
-                              ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+                              ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
             "folder": ground_and_setup_folder,
             "name": "has_forward_motion",
-            "pos_question": "Is the camera moving forward in the scene?",
-            "neg_question": "Is the camera free from any forward motion?",
-            "pos_prompt": "The camera is moving forward within the scene.",
-            "neg_prompt": "The camera is free from any forward motion.",
+            "pos_question": "Is the camera moving physically forward (or dollies in) in the scene?",
+            "neg_question": "Is the camera not moving physically forward (or dollies in) in the scene?",
+            "pos_prompt": "The camera moves physically forward (or dollies in) in the scene.",
+            "neg_prompt": "The camera does not move physically forward (or dollies in) in the scene.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground",
                 "type": "pos",
@@ -751,10 +1008,10 @@ def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         {
             "folder": ground_and_setup_folder,
             "name": "has_backward_motion",
-            "pos_question": "Is the camera moving backward in the scene?",
-            "neg_question": "Is the camera free from any backward motion?",
-            "pos_prompt": "The camera is moving backward within the scene.",
-            "neg_prompt": "The camera is free from any backward motion.",
+            "pos_question": "Is the camera moving physically backward (or dollies out) in the scene?",
+            "neg_question": "Is the camera not moving physically backward (or dollies out) in the scene?",
+            "pos_prompt": "The camera moves physically backward (or dollies out) in the scene.",
+            "neg_prompt": "The camera does not move physically backward (or dollies out) in the scene.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground",
                 "type": "pos",
@@ -765,12 +1022,12 @@ def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_truck_left",
-            "pos_question": "Does the camera move laterally to the left?",
-            "neg_question": "Is the camera free from any leftward lateral movement?",
-            "pos_prompt": "The camera moves laterally to the left.",
-            "neg_prompt": "The camera is free from any leftward lateral movement.",
+            "pos_question": "Does the camera move physically leftward (or trucks left)?",
+            "neg_question": "Does the camera not move physically leftward (or trucks left)?",
+            "pos_prompt": "The camera moves physically leftward (or trucks left).",
+            "neg_prompt": "The camera does not move physically leftward (or trucks left).",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.leftward.has_leftward",
                 "type": "pos",
@@ -781,12 +1038,12 @@ def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_truck_right",
-            "pos_question": "Does the camera move laterally to the right?",
-            "neg_question": "Is the camera free from any rightward lateral movement?",
-            "pos_prompt": "The camera moves laterally to the right.",
-            "neg_prompt": "The camera is free from any rightward lateral movement.",
+            "pos_question": "Does the camera move physically rightward (or trucks right)?",
+            "neg_question": "Does the camera not move physically rightward (or trucks right)?",
+            "pos_prompt": "The camera moves physically rightward (or trucks right).",
+            "neg_prompt": "The camera does not move physically rightward (or trucks right).",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.rightward.has_rightward",
                 "type": "pos",
@@ -799,10 +1056,10 @@ def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         {
             "folder": ground_and_setup_folder,
             "name": "has_pedestal_up",
-            "pos_question": "Does the camera move upward relative to the ground?",
-            "neg_question": "Is the camera free from any upward pedestal motion?",
-            "pos_prompt": "The camera moves upward relative to the ground.",
-            "neg_prompt": "The camera is free from any upward pedestal motion.",
+            "pos_question": "Does the camera move physically upward (or pedestals up) relative to the ground?",
+            "neg_question": "Does the camera not move physically upward (or pedestals up) relative to the ground?",
+            "pos_prompt": "The camera moves physically upward (or pedestals up) relative to the ground.",
+            "neg_prompt": "The camera does not move physically upward (or pedestals up) relative to the ground.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
                 "type": "pos",
@@ -815,10 +1072,10 @@ def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         {
             "folder": ground_and_setup_folder,
             "name": "has_pedestal_down",
-            "pos_question": "Does the camera move downward relative to the ground?",
-            "neg_question": "Is the camera free from any downward pedestal motion?",
-            "pos_prompt": "The camera moves downward relative to the ground.",
-            "neg_prompt": "The camera is free from any downward pedestal motion.",
+            "pos_question": "Does the camera move physically downward (or pedestals down) relative to the ground?",
+            "neg_question": "Does the camera not move physically downward (or pedestals down) relative to the ground?",
+            "pos_prompt": "The camera moves physically downward (or pedestals down) relative to the ground.",
+            "neg_prompt": "The camera does not move physically downward (or pedestals down) relative to the ground.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
                 "type": "pos",
@@ -830,15 +1087,15 @@ def get_has_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         },
     ]
 
-def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_has_rotation_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_pan_left",
             "pos_question": "Does the camera pan to the left?",
-            "neg_question": "Is the camera free from any leftward panning motion?",
+            "neg_question": "Does the camera not pan to the left?",
             "pos_prompt": "The camera pans to the left.",
-            "neg_prompt": "The camera is free from any leftward panning motion.",
+            "neg_prompt": "The camera does not pan to the left.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
                 "type": "pos",
@@ -849,12 +1106,12 @@ def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_pan_right",
             "pos_question": "Does the camera pan to the right?",
-            "neg_question": "Is the camera free from any rightward panning motion?",
+            "neg_question": "Does the camera not pan to the right?",
             "pos_prompt": "The camera pans to the right.",
-            "neg_prompt": "The camera is free from any rightward panning motion.",
+            "neg_prompt": "The camera does not pan to the right.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
                 "type": "pos",
@@ -865,12 +1122,12 @@ def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_tilt_up",
             "pos_question": "Does the camera tilt upward?",
-            "neg_question": "Is the camera free from any upward tilting motion?",
+            "neg_question": "Does the camera not tilt upward?",
             "pos_prompt": "The camera tilts upward.",
-            "neg_prompt": "The camera is free from any upward tilting motion.",
+            "neg_prompt": "The camera does not tilt upward.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
                 "type": "pos",
@@ -881,12 +1138,12 @@ def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_tilt_down",
             "pos_question": "Does the camera tilt downward?",
-            "neg_question": "Is the camera free from any downward tilting motion?",
+            "neg_question": "Does the camera not tilt downward?",
             "pos_prompt": "The camera tilts downward.",
-            "neg_prompt": "The camera is free from any downward tilting motion.",
+            "neg_prompt": "The camera does not tilt downward.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
                 "type": "pos",
@@ -897,12 +1154,12 @@ def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_roll_clockwise",
             "pos_question": "Does the camera roll clockwise?",
-            "neg_question": "Is the camera free from any clockwise rolling motion?",
+            "neg_question": "Does the camera not roll clockwise?",
             "pos_prompt": "The camera rolls clockwise.",
-            "neg_prompt": "The camera is free from any clockwise rolling motion.",
+            "neg_prompt": "The camera does not roll clockwise.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.roll_clockwise.has_roll_clockwise",
                 "type": "pos",
@@ -913,12 +1170,12 @@ def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_roll_counterclockwise",
             "pos_question": "Does the camera roll counterclockwise?",
-            "neg_question": "Is the camera free from any counterclockwise rolling motion?",
+            "neg_question": "Does the camera not roll counterclockwise?",
             "pos_prompt": "The camera rolls counterclockwise.",
-            "neg_prompt": "The camera is free from any counterclockwise rolling motion.",
+            "neg_prompt": "The camera does not roll counterclockwise.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.roll_counterclockwise.has_roll_counterclockwise",
                 "type": "pos",
@@ -930,15 +1187,15 @@ def get_has_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
         },
     ]
 
-def get_has_arc_crane_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_has_arc_crane_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_arc_clockwise",
             "pos_question": "Does the camera move in a clockwise arc?",
-            "neg_question": "Is the camera free from any clockwise arc movement?",
+            "neg_question": "Does the camera not move in a clockwise arc?",
             "pos_prompt": "The camera moves in a clockwise arc.",
-            "neg_prompt": "The camera is free from any clockwise arc movement.",
+            "neg_prompt": "The camera does not move in a clockwise arc.",
             "pos": {
                 "label": "cam_motion.arc_crane_movement.arc_clockwise.has_arc_clockwise",
                 "type": "pos",
@@ -949,12 +1206,12 @@ def get_has_arc_crane_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_arc_counterclockwise",
             "pos_question": "Does the camera move in a counterclockwise arc?",
-            "neg_question": "Is the camera free from any counterclockwise arc movement?",
+            "neg_question": "Does the camera not move in a counterclockwise arc?",
             "pos_prompt": "The camera moves in a counterclockwise arc.",
-            "neg_prompt": "The camera is free from any counterclockwise arc movement.",
+            "neg_prompt": "The camera does not move in a counterclockwise arc.",
             "pos": {
                 "label": "cam_motion.arc_crane_movement.arc_counterclockwise.has_arc_counterclockwise",
                 "type": "pos",
@@ -965,12 +1222,12 @@ def get_has_arc_crane_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_crane_up",
-            "pos_question": "Does the camera crane upward in an arc?",
-            "neg_question": "Is the camera not craning upward in an arc?",
-            "pos_prompt": "The camera cranes upward in an arc.",
-            "neg_prompt": "The camera is not craning upward in an arc.",
+            "pos_question": "Does the camera crane upward in an arc relative to its own frame?",
+            "neg_question": "Is the camera not craning upward in an arc relative to its own frame?",
+            "pos_prompt": "The camera cranes upward in an arc relative to its own frame.",
+            "neg_prompt": "The camera is not craning upward in an arc relative to its own frame.",
             "pos": {
                 "label": "cam_motion.arc_crane_movement.crane_up.has_crane_up",
                 "type": "pos",
@@ -981,12 +1238,12 @@ def get_has_arc_crane_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_crane_down",
-            "pos_question": "Does the camera crane downward in an arc?",
-            "neg_question": "Is the camera not craning downward in an arc?",
-            "pos_prompt": "The camera cranes downward in an arc.",
-            "neg_prompt": "The camera is not craning downward in an arc.",
+            "pos_question": "Does the camera crane downward in an arc relative to its own frame?",
+            "neg_question": "Is the camera not craning downward in an arc relative to its own frame?",
+            "pos_prompt": "The camera cranes downward in an arc relative to its own frame.",
+            "neg_prompt": "The camera is not craning downward in an arc relative to its own frame.",
             "pos": {
                 "label": "cam_motion.arc_crane_movement.crane_down.has_crane_down",
                 "type": "pos",
@@ -998,15 +1255,15 @@ def get_has_arc_crane_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
         },
     ]
 
-def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_special_tracking_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_aerial_tracking",
-            "pos_question": "Does the camera track the subject from an aerial perspective?",
-            "neg_question": "Is the video not a tracking shot from an aerial perspective?",
-            "pos_prompt": "The camera tracks the subject from an aerial perspective.",
-            "neg_prompt": "The camera is not tracking the subject from an aerial perspective.",
+            "pos_question": "Is it an aerial tracking shot where the camera follows the moving subject from an aerial view?",
+            "neg_question": "Is it not an aerial tracking shot where the camera follows the moving subject from an aerial view?",
+            "pos_prompt": "An aerial tracking shot where the camera follows the moving subject from an aerial view.",
+            "neg_prompt": "The camera does not follow the moving subject from an aerial view.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.aerial_tracking_shot",
                 "type": "pos",
@@ -1017,12 +1274,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_arc_tracking",
-            "pos_question": "Does the camera follow the subject while moving in an arc?",
-            "neg_question": "Is the video not a tracking shot with arc movement?",
-            "pos_prompt": "A tracking shot where the camera follows the subject while moving in an arc.",
-            "neg_prompt": "A video where the camera is not tracking the subject with arc movement.",
+            "pos_question": "Is it an arc tracking shot where the camera follows the moving subject while arcing around them?",
+            "neg_question": "Is it not an arc tracking shot where the camera follows the moving subject while arcing around them?",
+            "pos_prompt": "An arc tracking shot where the camera follows the moving subject while arcing around them.",
+            "neg_prompt": "The camera does not follow the moving subject while arcing around them.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.arc_tracking_shot",
                 "type": "pos",
@@ -1033,12 +1290,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_front_side_tracking",
-            "pos_question": "Is it a tracking shot with the camera leading the subject from a front-side angle?",
-            "neg_question": "Is the camera not leading the subject from a front-side angle in a tracking shot?",
-            "pos_prompt": "A tracking shot where the camera leads the subject from a front-side angle.",
-            "neg_prompt": "The camera is not leading the subject from a front-side angle in a tracking shot.",
+            "pos_question": "Is it a front-side tracking shot where the camera leads the moving subject from a front-side angle?",
+            "neg_question": "Is it not a front-side tracking shot where the camera leads the moving subject from a front-side angle?",
+            "pos_prompt": "A front-side tracking shot where the camera leads the moving subject from a front-side angle.",
+            "neg_prompt": "The camera does not lead the moving subject from a front-side angle.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.front_side_tracking_shot",
                 "type": "pos",
@@ -1049,12 +1306,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_rear_side_tracking",
-            "pos_question": "Is it a tracking shot with the camera following behind the subject at a rear-side angle?",
-            "neg_question": "Is the camera not following behind the subject at a rear-side angle?",
-            "pos_prompt": "A tracking shot where the camera follows behind the subject at a rear-side angle.",
-            "neg_prompt": "The camera is not following behind the subject at a rear-side angle.",
+            "pos_question": "Is it a rear-side tracking shot where the camera follows the moving subject at a rear-side angle?",
+            "neg_question": "Is it not a rear-side tracking shot where the camera follows the moving subject at a rear-side angle?",
+            "pos_prompt": "A rear-side tracking shot where the camera follows the moving subject at a rear-side angle.",
+            "neg_prompt": "The camera does not follow the moving subject at a rear-side angle.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.rear_side_tracking_shot",
                 "type": "pos",
@@ -1065,12 +1322,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_lead_tracking",
-            "pos_question": "Is it a tracking shot with the camera moving ahead of the subject as they move?",
-            "neg_question": "Is the camera not moving ahead of the subject in a tracking shot?",
-            "pos_prompt": "A tracking shot where the camera moves ahead of the subjects as they move.",
-            "neg_prompt": "The camera is not moving ahead of the subject in a tracking shot.",
+            "pos_question": "Is it a lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera?",
+            "neg_question": "Is it not a lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera?",
+            "pos_prompt": "A lead tracking shot where the camera moves ahead of the subject, traveling in the same direction as they approach the camera.",
+            "neg_prompt": "The camera does not move ahead of the subject, traveling in the same direction as they approach the camera.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.lead_tracking_shot",
                 "type": "pos",
@@ -1081,12 +1338,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_tail_tracking",
-            "pos_question": "Is it a tracking shot with the camera following behind the subject as they move?",
-            "neg_question": "Is the camera not following behind the subject in a tracking shot?",
-            "pos_prompt": "A tracking shot where the camera moves behind the subjects as they move.",
-            "neg_prompt": "The camera is not following behind the subject in a tracking shot.",
+            "pos_question": "Is it a follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera?",
+            "neg_question": "Is it not a follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera?",
+            "pos_prompt": "A follow tracking shot where the camera moves behind the subject, traveling in the same direction as they move away from the camera.",
+            "neg_prompt": "The camera does not move behind the subject, traveling in the same direction as they move away from the camera.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.tail_tracking_shot",
                 "type": "pos",
@@ -1097,12 +1354,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_tilt_tracking",
-            "pos_question": "Does the camera tilt to track the subjects as they move?",
-            "neg_question": "Is the camera not tilting to track the subjects?",
-            "pos_prompt": "A tracking shot where the camera tilts to follow the subjects.",
-            "neg_prompt": "The camera is not tilting to track the subjects.",
+            "pos_question": "Does the camera tilt to track the moving subjects?",
+            "neg_question": "Is the camera not tilting to track the moving subjects?",
+            "pos_prompt": "The camera tilts to track the moving subjects.",
+            "neg_prompt": "The camera does not tilt to track the moving subjects.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.tilt_tracking_shot",
                 "type": "pos",
@@ -1113,12 +1370,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_pan_tracking",
-            "pos_question": "Does the camera pan to track the subjects as they move?",
-            "neg_question": "Is the camera not panning to track the subjects?",
-            "pos_prompt": "A tracking shot where the camera pans to follow the subjects as they move.",
-            "neg_prompt": "The camera is not panning to track the subjects.",
+            "pos_question": "Does the camera pan to track the moving subjects?",
+            "neg_question": "Does the camera not pan to track the moving subjects?",
+            "pos_prompt": "The camera pans to track the moving subjects.",
+            "neg_prompt": "The camera does not pan to track the moving subjects.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.pan_tracking_shot",
                 "type": "pos",
@@ -1129,12 +1386,12 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "has_side_tracking",
-            "pos_question": "Is it a tracking shot with the camera moving from the side to follow the subject as they move?",
-            "neg_question": "Is the camera not moving from the side to track the subject?",
-            "pos_prompt": "A tracking shot where the camera moves from the side to follow the subject.",
-            "neg_prompt": "The camera is not moving from the side to track the subject.",
+            "pos_question": "Is it a side tracking shot with the camera moving from the side to follow the moving subject?",
+            "neg_question": "Does the camera not move from the side to track the moving subject?",
+            "pos_prompt": "A side tracking shot with the camera moving from the side to follow the moving subject.",
+            "neg_prompt": "The camera does not move from the side to track the moving subject.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.side_tracking_shot",
                 "type": "pos",
@@ -1146,10 +1403,10 @@ def get_special_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
         },
     ]
 
-def get_general_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_general_tracking_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "is_tracking",
             "pos_question": "Does the camera track the subject as they move?",
             "neg_question": "Is the video not a tracking shot?",
@@ -1165,12 +1422,12 @@ def get_general_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "tracking_subject_larger",
             "pos_question": "Does the subject appear larger during the tracking shot?",
-            "neg_question": "Does the subject being tracked not appear larger in size?",
-            "pos_prompt": "The subject looks larger during the tracking shot.",
-            "neg_prompt": "The subject being tracked does not appear larger in size.",
+            "neg_question": "Does the subject being tracked not appear larger in size, or is no subject being tracked?",
+            "pos_prompt": "The subject appears larger during the tracking shot.",
+            "neg_prompt": "The subject being tracked does not appear larger in size, or the camera is not tracking any subject.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.tracking_subject_larger_size",
                 "type": "pos",
@@ -1181,12 +1438,12 @@ def get_general_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
             },
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "tracking_subject_smaller",
             "pos_question": "Does the subject appear smaller during the tracking shot?",
-            "neg_question": "Does the subject being tracked not appear smaller in size?",
-            "pos_prompt": "The subject looks smaller during the tracking shot.",
-            "neg_prompt": "The subject being tracked does not appear smaller in size.",
+            "neg_question": "Does the subject being tracked not appear smaller in size, or is no subject being tracked?",
+            "pos_prompt": "The subject appears smaller during the tracking shot.",
+            "neg_prompt": "The subject being tracked does not appear smaller in size, or the camera is not tracking any subject.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.tracking_subject_smaller_size",
                 "type": "pos",
@@ -1198,10 +1455,10 @@ def get_general_tracking_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER
         },
     ]
 
-def get_only_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_only_intrinsic_change_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_zoom_in_vs_has_zoom_in_and_not_only",
             "pos_question": "Does the camera only zoom in with no other movement?",
             "neg_question": "Does the camera not just zoom in?",
@@ -1214,7 +1471,7 @@ def get_only_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.zoom_in.has_zoom_in",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.zoom_in.only_zoom_in",
@@ -1223,7 +1480,7 @@ def get_only_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_zoom_out_vs_has_zoom_out_and_not_only",
             "pos_question": "Does the camera only zoom out with no other movement?",
             "neg_question": "Does the camera not just zoom out?",
@@ -1236,7 +1493,7 @@ def get_only_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.zoom_out.has_zoom_out",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.zoom_out.only_zoom_out",
@@ -1247,15 +1504,15 @@ def get_only_intrinsic_change_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_F
     ]
 
 def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
-                               ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+                               ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
             "folder": ground_and_setup_folder,
             "name": "only_forward_vs_has_forward_and_not_only",
-            "pos_question": "Does the camera only move forward (not zooming in) with respect to the ground?",
-            "neg_question": "Does the camera not just move forward with respect to the ground?",
-            "pos_prompt": "The camera only moves forward (not zooming in) relative to the ground.",
-            "neg_prompt": "The camera not just moves forward relative to the ground.",
+            "pos_question": "Does the camera only move physically forward (not zooming in) relative to the ground?",
+            "neg_question": "Does the camera not just move physically forward relative to the ground?",
+            "pos_prompt": "The camera only moves physically forward (not zooming in) relative to the ground.",
+            "neg_prompt": "The camera not just moves physically forward relative to the ground.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground",
                 "type": "pos",
@@ -1263,7 +1520,7 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             "neg": [
                 {
                     "label": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.ground_centric_movement.forward.only_forward_wrt_ground",
@@ -1274,10 +1531,10 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
         {
             "folder": ground_and_setup_folder,
             "name": "only_backward_vs_has_backward_and_not_only",
-            "pos_question": "Does the camera only move backward (not zooming out) with respect to the ground?",
-            "neg_question": "Does the camera not just move backward with respect to the ground?",
-            "pos_prompt": "The camera only moves backward (not zooming out) relative to the ground.",
-            "neg_prompt": "The camera not just moves backward relative to the ground.",
+            "pos_question": "Does the camera only move physically backward (not zooming out) relative to the ground?",
+            "neg_question": "Does the camera not just move physically backward relative to the ground?",
+            "pos_prompt": "The camera only moves physically backward (not zooming out) relative to the ground.",
+            "neg_prompt": "The camera not just moves physically backward relative to the ground.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground",
                 "type": "pos",
@@ -1285,7 +1542,7 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             "neg": [
                 {
                     "label": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.ground_centric_movement.backward.only_backward_wrt_ground",
@@ -1294,11 +1551,11 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_truck_left_vs_has_truck_left_and_not_only",
-            "pos_question": "Does the camera only move leftward without any other camera movements?",
+            "pos_question": "Does the camera only move laterally leftward without any other camera movements?",
             "neg_question": "Does the camera not just move laterally to the left?",
-            "pos_prompt": "The camera only moves leftward without any other camera movements.",
+            "pos_prompt": "The camera only moves laterally leftward without any other camera movements.",
             "neg_prompt": "The camera not just moves laterally to the left.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.leftward.only_leftward",
@@ -1307,7 +1564,7 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.leftward.has_leftward",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.leftward.only_leftward",
@@ -1316,11 +1573,11 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_truck_right_vs_has_truck_right_and_not_only",
-            "pos_question": "Does the camera only move rightward without any other camera movements?",
+            "pos_question": "Does the camera only move laterally rightward without any other camera movements?",
             "neg_question": "Does the camera not just move laterally to the right?",
-            "pos_prompt": "The camera only moves rightward without any other camera movements.",
+            "pos_prompt": "The camera only moves laterally rightward without any other camera movements.",
             "neg_prompt": "The camera not just moves laterally to the right.",
             "pos": {
                 "label": "cam_motion.camera_centric_movement.rightward.only_rightward",
@@ -1329,7 +1586,7 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.rightward.has_rightward",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.rightward.only_rightward",
@@ -1340,9 +1597,9 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
         {
             "folder": ground_and_setup_folder,
             "name": "only_pedestal_up_vs_has_pedestal_up_and_not_only",
-            "pos_question": "Does the camera only move upward (not tilting up) with respect to the ground?",
+            "pos_question": "Does the camera only move physically upward (not tilting up) relative to the ground?",
             "neg_question": "Does the camera not just move physically upward?",
-            "pos_prompt": "The camera only moves upward (not tilting up) relative to the ground.",
+            "pos_prompt": "The camera only moves physically upward (not tilting up) relative to the ground.",
             "neg_prompt": "The camera not just moves physically upward.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
@@ -1351,7 +1608,7 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             "neg": [
                 {
                     "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
@@ -1362,9 +1619,9 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
         {
             "folder": ground_and_setup_folder,
             "name": "only_pedestal_down_vs_has_pedestal_down_and_not_only",
-            "pos_question": "Does the camera only move downward (not tilting down) with respect to the ground?",
+            "pos_question": "Does the camera only move physically downward (not tilting down) relative to the ground?",
             "neg_question": "Does the camera not just move physically downward?",
-            "pos_prompt": "The camera only moves downward (not tilting down) relative to the ground.",
+            "pos_prompt": "The camera only moves physically downward (not tilting down) relative to the ground.",
             "neg_prompt": "The camera not just moves physically downward.",
             "pos": {
                 "label": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
@@ -1373,7 +1630,7 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
             "neg": [
                 {
                     "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
@@ -1383,10 +1640,10 @@ def get_only_translation_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SE
         },
     ]
 
-def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
+def get_only_rotation_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
     return [
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_pan_left_vs_has_pan_left_and_not_only",
             "pos_question": "Does the camera only pan leftward without any other camera movements?",
             "neg_question": "Does the camera not just pan left?",
@@ -1399,7 +1656,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.pan_left.has_pan_left",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.pan_left.only_pan_left",
@@ -1408,7 +1665,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_pan_right_vs_has_pan_right_and_not_only",
             "pos_question": "Does the camera only pan rightward without any other camera movements?",
             "neg_question": "Does the camera not just pan right?",
@@ -1421,7 +1678,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.pan_right.has_pan_right",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.pan_right.only_pan_right",
@@ -1430,7 +1687,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_tilt_up_vs_has_tilt_up_and_not_only",
             "pos_question": "Does the camera only tilt upward without any other camera movements?",
             "neg_question": "Does the camera not just tilt up?",
@@ -1443,7 +1700,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.tilt_up.has_tilt_up",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.tilt_up.only_tilt_up",
@@ -1452,7 +1709,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_tilt_down_vs_has_tilt_down_and_not_only",
             "pos_question": "Does the camera only tilt downward without any other camera movements?",
             "neg_question": "Does the camera not just tilt down?",
@@ -1465,7 +1722,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.tilt_down.has_tilt_down",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.tilt_down.only_tilt_down",
@@ -1474,7 +1731,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_roll_cc_vs_has_roll_cc_and_not_only",
             "pos_question": "Does the camera only roll clockwise without any other camera movements?",
             "neg_question": "Does the camera not just roll clockwise?",
@@ -1487,7 +1744,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.roll_clockwise.has_roll_clockwise",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.roll_clockwise.only_roll_clockwise",
@@ -1496,7 +1753,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             ],
         },
         {
-            "folder": ground_only_folder,
+            "folder": ground_folder,
             "name": "only_roll_ccw_vs_has_roll_ccw_and_not_only",
             "pos_question": "Does the camera only roll counterclockwise without any other camera movements?",
             "neg_question": "Does the camera not just roll counterclockwise?",
@@ -1509,7 +1766,7 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "neg": [
                 {
                     "label": "cam_motion.camera_centric_movement.roll_counterclockwise.has_roll_counterclockwise",
-                    "type": "neg",
+                    "type": "pos",
                 },
                 {
                     "label": "cam_motion.camera_centric_movement.roll_counterclockwise.only_roll_counterclockwise",
@@ -1519,11 +1776,11 @@ def get_only_rotation_tasks(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
         },
     ]
 
-def get_reference_frame_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
+def get_reference_frame_tasks(ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
     return [
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_and_setup_folder,
+            "folder": ground_and_camera_and_setup_folder,
             "name": "forward_camera_only_vs_forward_ground_and_camera",
             "pos_question": "Does the camera move forward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move forward relative to both the ground and its initial viewing direction?",
@@ -1552,7 +1809,7 @@ def get_reference_frame_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         },
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_and_setup_folder,
+            "folder": ground_and_camera_and_setup_folder,
             "name": "backward_camera_only_vs_backward_ground_and_camera",
             "pos_question": "Does the camera move backward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move backward relative to both the ground and its initial viewing direction?",
@@ -1581,7 +1838,7 @@ def get_reference_frame_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         },
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_and_setup_folder,
+            "folder": ground_and_camera_and_setup_folder,
             "name": "upward_camera_only_vs_upward_camera_and_ground",
             "pos_question": "Does the camera move upward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move upward relative to both the ground and its initial viewing direction?",
@@ -1610,7 +1867,7 @@ def get_reference_frame_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         },
         {
             # "folder": ground_and_camera_folder,
-            "folder": ground_and_setup_folder,
+            "folder": ground_and_camera_and_setup_folder,
             "name": "downward_camera_only_vs_downward_camera_and_ground",
             "pos_question": "Does the camera move downward only relative to its initial viewing direction but not relative to the ground?",
             "neg_question": "Does the camera move downward relative to both the ground and its initial viewing direction?",
@@ -1639,15 +1896,85 @@ def get_reference_frame_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SET
         },
     ]
 
+
+def get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
+    return [
+        {
+            "folder": ground_and_camera_and_setup_folder,
+            "name": "forward_bird_worm_included_vs_not_forward_bird_worm_included",
+            "pos_question": "Does the camera move forward relative to the scene (forward normally, north from a bird’s-eye view, or south from a worm’s-eye view)?",
+            "neg_question": "Does the camera not move forward relative to the scene (forward normally, north from a bird’s-eye view, or south from a worm’s-eye view)?",
+            "pos_prompt": "The camera moves forward relative to the scene (forward normally, north from a bird's-eye view, or south from a worm's eye view).",
+            "neg_prompt": "The camera does not move forward relative to the scene (forward normally, north from a bird's-eye view, or south from a worm's eye view).",
+            "pos": {
+                "label": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground_birds_worms_included",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.ground_centric_movement.forward.has_forward_wrt_ground_birds_worms_included",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": ground_and_camera_and_setup_folder,
+            "name": "backward_bird_worm_included_vs_not_backward_bird_worm_included",
+            "pos_question": "Does the camera move backward relative to the scene (backward normally, south from a bird’s-eye view, or north from a worm’s-eye view)?",
+            "neg_question": "Does the camera not move backward relative to the scene (backward normally, south from a bird’s-eye view, or north from a worm’s-eye view)?",
+            "pos_prompt": "The camera moves backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view).",
+            "neg_prompt": "The camera does not move backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view).",
+            "pos": {
+                "label": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground_birds_worms_included",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.ground_centric_movement.backward.has_backward_wrt_ground_birds_worms_included",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": ground_and_camera_and_setup_folder,
+            "name": "upward_bird_worm_included_vs_not_upward_bird_worm_included",
+            "pos_question": "Does the camera move physically upward (or pedestals up) relative to the ground (even if it's a bird's or worm's eye view)?",
+            "neg_question": "Does the camera not move physically upward relative to the ground (even if it's a bird's or worm's eye view)?",
+            "pos_prompt": "The camera moves physically upward (or pedestals up) relative to the ground (even if it's a bird's or worm's eye view).",
+            "neg_prompt": "The camera does not move physically upward relative to the ground (even if it's a bird's or worm's eye view).",
+            "pos": {
+                "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground_birds_worms_included",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.ground_centric_movement.upward.has_upward_wrt_ground_birds_worms_included",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": ground_and_camera_and_setup_folder,
+            "name": "downward_bird_worm_included_vs_not_downward_bird_worm_included",
+            "pos_question": "Does the camera move physically downward (or pedestals down) relative to the ground (even if it's a bird's or worm's eye view)?",
+            "neg_question": "Does the camera not move physically downward relative to the ground (even if it's a bird's or worm's eye view)?",
+            "pos_prompt": "The camera moves physically downward (or pedestals down) relative to the ground (even if it's a bird's or worm's eye view).",
+            "neg_prompt": "The camera does not move physically downward relative to the ground (even if it's a bird's or worm's eye view).",
+            "pos": {
+                "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground_birds_worms_included",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_motion.ground_centric_movement.downward.has_downward_wrt_ground_birds_worms_included",
+                "type": "neg",
+            }
+        }
+    ]
+
+
 def get_shot_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
         {
             "folder": setup_folder,
             "name": "has_shot_transition_cam_setup",
-            "pos_question": "Does the video include shot transitions?",
-            "neg_question": "Is the video free from any shot transitions?",
-            "pos_prompt": "A video that includes shot transitions.",
-            "neg_prompt": "A video without any shot transitions.",
+            "pos_question": "Does the video include a shot transition?",
+            "neg_question": "Does the video not include a shot transition?",
+            "pos_prompt": "The video includes a shot transition.",
+            "neg_prompt": "The video does not include a shot transition.",
             "pos": {
                 "label": "cam_setup.has_shot_transition_cam_setup",
                 "type": "pos",
@@ -1684,10 +2011,10 @@ def get_lens_distortion_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "with_lens_distortion",
-            "pos_question": "Does this shot contain noticeable barrel or fisheye distortion?",
-            "neg_question": "Is this shot free from any noticeable barrel or fisheye distortion?",
-            "pos_prompt": "A video with noticeable barrel or fisheye distortion.",
-            "neg_prompt": "A video without any noticeable barrel or fisheye distortion.",
+            "pos_question": "Does the video show noticeable barrel or fisheye distortion?",
+            "neg_question": "Does the video not show noticeable barrel or fisheye distortion?",
+            "pos_prompt": "The video shows noticeable barrel or fisheye distortion.",
+            "neg_prompt": "The video does not show noticeable barrel or fisheye distortion.",
             "pos": {
                 "label": "cam_setup.lens_distortion.with_lens_distortion",
                 "type": "pos",
@@ -1700,10 +2027,10 @@ def get_lens_distortion_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "fisheye_distortion",
-            "pos_question": "Does this shot have a noticeable fisheye lens distortion?",
-            "neg_question": "Is this shot free from noticable fisheye lens distortion?",
-            "pos_prompt": "A shot with noticable fisheye lens distortion.",
-            "neg_prompt": "A shot without noticable fisheye lens distortion.",
+            "pos_question": "Does the video show extreme fisheye lens distortion, where most lines curve strongly outward?",
+            "neg_question": "Does the video not show extreme fisheye lens distortion, where most lines curve strongly outward?",
+            "pos_prompt": "The video shows extreme fisheye lens distortion, where most lines curve strongly outward.",
+            "neg_prompt": "The video does not show extreme fisheye lens distortion, where most lines curve strongly outward.",
             "pos": {
                 "label": "cam_setup.lens_distortion.fisheye_distortion",
                 "type": "pos",
@@ -1720,10 +2047,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "fast_motion",
-            "pos_question": "Is it a fast-motion video with forward playback faster than real-time?",
-            "neg_question": "Is it not a fast-motion video with forward playback faster than real-time?",
-            "pos_prompt": "A fast-motion video where playback is forward and faster than real-time.",
-            "neg_prompt": "A video that is not played at forward and faster than real-time speed.",
+            "pos_question": "Is it a fast-motion video with forward playback slightly faster than real-time (about 1.5×–3×)?"
+            "neg_question": "Is it not a fast-motion video with forward playback slightly faster than real-time (about 1.5×–3×)?",
+            "pos_prompt": "A fast-motion video where playback is forward and slightly faster than real-time (about 1.5×–3×).",
+            "neg_prompt": "A video that is not played at forward and slightly faster than real-time speed (about 1.5×–3×).",
             "pos": {
                 "label": "cam_setup.video_speed.fast_motion",
                 "type": "pos",
@@ -1736,10 +2063,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "fast_motion_without_time_lapse",
-            "pos_question": "Is it a fast-motion video with forward playback speed slightly faster than real-time (1x–3x)?",
-            "neg_question": "Is it not a fast-motion video with forward playback speed slightly faster than real-time (1x–3x)?",
-            "pos_prompt": "A fast-motion video with forward playback speed slightly faster than real-time (1x–3x).",
-            "neg_prompt": "A video that is not played at forward and slightly faster than real-time speed (1x–3x).",
+            "pos_question": "Is it a fast-motion video with forward playback speed slightly faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration?",
+            "neg_question": "Is the video not a fast-motion video (1.5×–3× faster than real time), but instead normal speed, reverse, or time-lapse?",
+            "pos_prompt": "A fast-motion video with forward playback speed slightly faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration.",
+            "neg_prompt": "The video is not a fast-motion video (1.5×–3× faster than real time), but instead normal speed, reverse, or time-lapse.",
             "pos": {
                 "label": "cam_setup.video_speed.fast_motion_without_time_lapse",
                 "type": "pos",
@@ -1769,9 +2096,9 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "slow_motion",
             "pos_question": "Is it a slow-motion video with forward playback slower than real-time?",
-            "neg_question": "Is it not a slow-motion video with forward playback slower than real-time?",
+            "neg_question": "Is the video not slow-motion, played forward at a speed slower than real time?",
             "pos_prompt": "A slow-motion video with forward playback speed slower than real-time.",
-            "neg_prompt": "A video that is not played at forward and slower than real-time speed.",
+            "neg_prompt": "The video is not slow motion, played forward at a speed slower than real time.",
             "pos": {
                 "label": "cam_setup.video_speed.slow_motion",
                 "type": "pos",
@@ -1784,10 +2111,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "stop_motion",
-            "pos_question": "Is this a stop-motion video using frame-by-frame changes to simulate motion?",
-            "neg_question": "Is this not a stop-motion video using frame-by-frame changes to simulate motion?",
+            "pos_question": "Is it a stop-motion video using frame-by-frame changes to simulate motion?",
+            "neg_question": "Is it not a stop-motion video using frame-by-frame changes to simulate motion?",
             "pos_prompt":  "A stop-motion video using frame-by-frame changes to simulate motion.",
-            "neg_prompt": "A video that does not use stop-motion animation techniques.",
+            "neg_prompt": "The video is not a stop-motion video using frame-by-frame changes to simulate motion.",
             "pos": {
                 "label": "cam_setup.video_speed.stop_motion",
                 "type": "pos",
@@ -1800,10 +2127,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "time_lapse",
-            "pos_question": "Is this a time-lapse video showing time passing rapidly over a long period?",
-            "neg_question": "Is this not a time-lapse video showing time passing rapidly over a long period?",
-            "pos_prompt":  "A time-lapse video showing time passing rapidly over a long period.",
-            "neg_prompt": "A video that does not show time passing rapidly over a long period.",
+            "pos_question": "Is this a time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period?",
+            "neg_question": "Is this not a time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period?",
+            "pos_prompt":  "A time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period.",
+            "neg_prompt": "A video that does not show time passing rapidly over a long period, played forward at greatly accelerated speed (more than 3× real time).",
             "pos": {
                 "label": "cam_setup.video_speed.time_lapse",
                 "type": "pos",
@@ -1816,10 +2143,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "speed_ramp",
-            "pos_question": "Is there a speed ramp effect where playback speed shifts between fast and slow?",
-            "neg_question": "Is there no speed ramp effect where playback speed shifts between fast and slow?",
-            "pos_prompt": "A speed ramp effect where playback speed shifts between fast and slow.",
-            "neg_prompt": "A video with a constant playback speed without a speed ramp effect.",
+            "pos_question": "Does the video show a speed ramp effect, where playback speed changes between faster and slower rates?",
+            "neg_question": "Is there no speed ramp effect, where playback speed changes between faster and slower rates?",
+            "pos_prompt": "The video shows a speed ramp effect, where playback speed changes between faster and slower rates.",
+            "neg_prompt": "A video with a constant playback speed without a speed ramp effect, where playback speed changes between faster and slower rates.",
             "pos": {
                 "label": "cam_setup.video_speed.speed_ramp",
                 "type": "pos",
@@ -1832,9 +2159,9 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "time_reversed",
-            "pos_question": "Is this video played in reverse, with events unfolding backward in time?",
+            "pos_question": "Is this video played in reverse, with events playing backward in time?",
             "neg_question": "Does this video play forward in time?",
-            "pos_prompt": "A time-reversed video where events unfold backward in time.",
+            "pos_prompt": "A time-reversed video where events play backward in time.",
             "neg_prompt": "A video that plays forward in time.",
             "pos": {
                 "label": "cam_setup.video_speed.time_reversed",
@@ -1852,10 +2179,10 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "broadcast_pov",
-            "pos_question": "Is this a television broadcast-style viewpoint?",
-            "neg_question": "Is this not a television broadcast-style viewpoint?",
-            "pos_prompt": "A television broadcast-style viewpoint.",
-            "neg_prompt": "A video that does not have a television broadcast-style viewpoint.",
+            "pos_question": "Does the video show a broadcast-style viewpoint used in television production?",
+            "neg_question": "Does the video not show a broadcast-style viewpoint used in television production?",
+            "pos_prompt": "The video shows a broadcast-style viewpoint used in television production.",
+            "neg_prompt": "The video does not show a broadcast-style viewpoint used in television production.",
             "pos": {
                 "label": "cam_setup.point_of_view.broadcast_pov",
                 "type": "pos",
@@ -1900,10 +2227,10 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "first_person_pov",
-            "pos_question": "Is the scene shown from the first-person perspective, as if through the character's eyes?",
-            "neg_question": "Is the scene not shown from a first-person perspective?",
-            "pos_prompt": "A first-person POV shot, as if through the character's eyes.",
-            "neg_prompt": "A video not filmed from a first-person perspective.",
+            "pos_question": "Is it a first-person POV shot, filmed as if seen directly through the character’s eyes?",
+            "neg_question": "Is it not a first-person POV shot filmed as if seen directly through the character’s eyes?",
+            "pos_prompt": "A first-person POV shot, filmed as if seen directly through the character’s eyes.",
+            "neg_prompt": "The video is not a first-person POV shot filmed as if seen directly through the character’s eyes.",
             "pos": {
                 "label": "cam_setup.point_of_view.first_person_pov",
                 "type": "pos",
@@ -1918,7 +2245,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "locked_on_pov",
             "pos_question": "Is the camera physically mounted on an object, keeping its perspective locked to that object?",
             "neg_question": "Is the camera not physically mounted to and keeping its perspective locked to an object?",
-            "pos_prompt": "A locked-on POV shot where the camera is mounted to an object, keeping its perspective fixed to that object.",
+            "pos_prompt": "A locked-on POV shot where the camera is mounted to an object, keeping its perspective fixed with that object.",
             "neg_prompt": "A video where the camera is not mounted to and keeping its perspective locked to an object.",
             "pos": {
                 "label": "cam_setup.point_of_view.locked_on_pov",
@@ -1964,10 +2291,10 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "selfie_pov",
-            "pos_question": "Is the camera facing the person holding it, as in a selfie?",
-            "neg_question": "Is the camera not facing the person holding it, as in a selfie?",
-            "pos_prompt": "A selfie POV shot where the camera is facing the person holding it.",
-            "neg_prompt": "A video not filmed in selfie style with the camera facing its holder.",
+            "pos_question": "Is it a selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them?",
+            "neg_question": "Is it not a selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them?",
+            "pos_prompt": "A selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them.",
+            "neg_prompt": "The video is not a selfie POV shot where the camera is held by the person being filmed (e.g., by hand, selfie stick, or invisible selfie rod) and faces them.",
             "pos": {
                 "label": "cam_setup.point_of_view.selfie_pov",
                 "type": "pos",
@@ -1996,10 +2323,10 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "third_person_isometric_game_pov",
-            "pos_question": "Is this a third-person isometric (2.5D) gaming video with a tilted overhead angle showing the environment in a three-quarters perspective?",
-            "neg_question": "Is this not a third-person isometric (2.5D) gaming video with a tilted overhead angle showing the environment in a three-quarters perspective?",
-            "pos_prompt": "A third-person isometric (2.5D) gaming video with a tilted overhead angle showing the environment in a three-quarters perspective.",
-            "neg_prompt": "A video that is not a third-person isometric (2.5D) gaming perspective with a tilted overhead angle showing the environment in a three-quarters perspective.",
+            "pos_question": "Is this a third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion?",
+            "neg_question": "Is this not a third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion?",
+            "pos_prompt": "A third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
+            "neg_prompt": "A video that is not a third-person isometric (2.5D) gaming perspective with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_isometric_game_pov",
                 "type": "pos",
@@ -2060,10 +2387,10 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "third_person_top_down_game_pov",
-            "pos_question": "Is this a gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them?",
-            "neg_question": "Is this not a gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them?",
-            "pos_prompt": "A gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them.",
-            "neg_prompt": "A video that is not a gaming perspective with a top-down or oblique top-down view, where the camera is placed directly above the character and looks down on them.",
+            "pos_question": "Is this a gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and environment, looking downward to show mostly the tops of objects with limited sides?",
+            "neg_question": "Is this not a gaming video with a top-down or oblique top-down view, where the camera is placed directly above the character and environment, looking downward to show mostly the tops of objects with limited sides?",
+            "pos_prompt": "A gaming video with a top-down or oblique top-down view, where the camera is placed above the character and environment, looking downward to show mostly the tops of objects with limited sides.",
+            "neg_prompt": "A video that is not a gaming perspective with a top-down or oblique top-down view, where the camera is placed directly above the character and environment, looking downward to show mostly the tops of objects with limited sides.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_top_down_game_pov",
                 "type": "pos",
@@ -2096,9 +2423,9 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_framing_subject",
-            "pos_question": "Does the video include one or more salient subjects in the frame at any point (e.g., not just scenery or abstract visuals)?",
+            "pos_question": "Does the video include one or more salient subjects in the frame at any point?",
             "neg_question": "Does the video not include one or more salient subjects in the frame at any point?",
-            "pos_prompt": "The video features one or more salient subjects in the frame at any point (e.g., not just scenery or abstract visuals).",
+            "pos_prompt": "The video features one or more salient subjects in the frame at any point.",
             "neg_prompt": "A video that does not include one or more salient subjects in the frame at any point.",
             "pos": {
                 "label": "cam_setup.subject_framing.is_framing_subject",
@@ -2128,10 +2455,10 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "has_single_dominant_subject",
-            "pos_question": "Does the video maintain a single dominant subject or group of subjects throughout?",
-            "neg_question": "Does the video not maintain a single dominant subject or group of subjects throughout?",
-            "pos_prompt": "A video that maintains a single dominant subject or group of subjects throughout.",
-            "neg_prompt": "A video that does not maintain a single dominant subject or group of subjects throughout.",
+            "pos_question": "Does the video maintain a single or two dominant subjects throughout?",
+            "neg_question": "Does the video not maintain a single or two dominant subjects throughout?",
+            "pos_prompt": "A video that maintains a single or two dominant subjects throughout.",
+            "neg_prompt": "A video that does not maintain a single or two dominant subjects throughout.",
             "pos": {
                 "label": "cam_setup.subject_framing.has_single_dominant_subject",
                 "type": "pos",
@@ -2144,10 +2471,10 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "has_many_subjects",
-            "pos_question": "Are there multiple distinct groups of subjects or more than two salient subjects shown in the video?",
-            "neg_question": "Does the video contain no more than one group or two salient subjects?",
-            "pos_prompt": "A video containing multiple distinct groups of subjects or more than two salient subjects.",
-            "neg_prompt": "A video that contains no more than one group or two salient subjects.",
+            "pos_question": "Does the video either show three or more main subjects in clear focus, or shift focus from one subject to another?",
+            "neg_question": "Does the video not show three or more main subjects in clear focus, or shift focus from one subject to another?",
+            "pos_prompt": "The video shows three or more main subjects in clear focus, or shifts focus from one subject to another.",
+            "neg_prompt": "The video does not show three or more main subjects in clear focus, or shifts focus from one subject to another.",
             "pos": {
                 "label": "cam_setup.subject_framing.has_many_subjects",
                 "type": "pos",
@@ -2160,10 +2487,10 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "subject_revealing",
-            "pos_question": "Does the video include a revealing shot where a subject appears?",
-            "neg_question": "Does the video not include a revealing shot where a subject appears?",
-            "pos_prompt": "A video that includes a revealing shot where a subject appears.",
-            "neg_prompt": "A video that does not include a revealing shot where a subject appears.",
+            "pos_question": "Is it a revealing shot where the subject comes into view on screen?",
+            "neg_question": "Is it not a revealing shot where the subject comes into view on screen?",
+            "pos_prompt": "A revealing shot where the subject comes into view on screen.",
+            "neg_prompt": "The video is not a revealing shot where the subject comes into view on screen.",
             "pos": {
                 "label": "cam_setup.shot_size.subject_revealing",
                 "type": "pos",
@@ -2192,10 +2519,10 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "subject_switching",
-            "pos_question": "Does the main subject change to a different subject?",
-            "neg_question": "Does the main subject not change to a different subject?",
-            "pos_prompt": "The main subject changes to a different subject.",
-            "neg_prompt": "The main subject does not change to a different subject.",
+            "pos_question": "Does the main subject change to another subject?",
+            "neg_question": "Does the main subject not change to another subject?",
+            "pos_prompt": "The main subject changes to another subject.",
+            "neg_prompt": "The main subject does not change to another subject.",
             "pos": {
                 "label": "cam_setup.shot_size.subject_switching",
                 "type": "pos",
@@ -2206,7 +2533,6 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             },
         },
     ]
-
 
 def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
@@ -2277,10 +2603,10 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_just_change_of_subject_shot",
-            "pos_question": "Does the video include a subject change, such as a revealing shot where a subject appears, disappears, or transitions to another?",
-            "neg_question": "Does the video not include a subject change, such as a revealing shot where a subject appears, disappears, or transitions to another?",
-            "pos_prompt": "A video that includes a subject change, such as a revealing shot where a subject appears, disappears, or transitions to another.",
-            "neg_prompt": "A video that does not include a subject change, such as a revealing shot where a subject appears, disappears, or transitions to another.",
+            "pos_question": "Does the video include a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another?",
+            "neg_question": "Does the video not include a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another?",
+            "pos_prompt": "The video includes a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another.",
+            "neg_prompt": "The video does not include a subject change, such as a revealing shot where a subject appears, or when a subject disappears or shifts to another.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_change_of_subject_shot",
                 "type": "pos",
@@ -2293,10 +2619,10 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_just_scenery_shot",
-            "pos_question": "Does the video focus on scenery or environment without emphasis on any subjects?",
-            "neg_question": "Does the video focus on some salient subjects rather than just scenery?",
-            "pos_prompt": "A video that focuses on scenery or environment without emphasis on any subjects.",
-            "neg_prompt": "A video that focuses on some salient subjects rather than just scenery.",
+            "pos_question": "Does the video show scenery or environment without focusing on any subjects?",
+            "neg_question": "Does the video not show scenery or environment without focusing on any subjects?",
+            "pos_prompt": "The video shows scenery or environment without focusing on any subjects.",
+            "neg_prompt": "The video does not show scenery or environment without focusing on any subjects.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_scenery_shot",
                 "type": "pos",
@@ -2309,10 +2635,10 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_just_clear_subject_dynamic_size_shot",
-            "pos_question": "Is there a clear subject, but changes in framing make it hard to classify the shot size?",
-            "neg_question": "Does the video not have a clear subject, or does it not have changes in framing that make it hard to classify the shot size?",
-            "pos_prompt": "A video with a clear subject that changes in framing, making it hard to classify the shot size.",
-            "neg_prompt": "A video that does not have a clear subject, or does not have changes in framing that make it hard to classify the shot size.",
+            "pos_question": "Is there a clear subject, but the framing is unstable, making the exact shot size difficult to classify?",
+            "neg_question": "Does the video either lack a clear subject, or have a subject with stable framing that makes the exact shot size easy to classify?",
+            "pos_prompt": "There is a clear subject, but the framing is unstable, making the exact shot size difficult to classify.",
+            "neg_prompt": "The video either lacks a clear subject, or has a subject with stable framing that makes the exact shot size easy to classify.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_clear_subject_dynamic_size_shot",
                 "type": "pos",
@@ -2325,10 +2651,10 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_just_different_subject_in_focus_shot",
-            "pos_question": "Does the video feature different subjects, varying in type or framing, making it hard to classify the shot size?",
-            "neg_question": "Does the video not feature different subjects (e.g., varying in type or framing) in focus that make it hard to classify the shot size?",
-            "pos_prompt": "A video that features different subjects in focus, varying in type or framing, making it hard to classify the shot size.",
-            "neg_prompt": "A video that does not feature different subjects (e.g., varying in type or framing) in focus that make it hard to classify the shot size.",
+            "pos_question": "Does the video feature multiple salient subjects differing in type or framing, making it hard to classify the exact shot size?",
+            "neg_question": "Does the video not feature multiple salient subjects differing in type or framing, making it hard to classify the exact shot size?",
+            "pos_prompt": "The video features multiple salient subjects differing in type or framing, making it hard to classify the exact shot size.",
+            "neg_prompt": "The video does not feature multiple salient subjects differing in type or framing, making it hard to classify the exact shot size.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_different_subject_in_focus_shot",
                 "type": "pos",
@@ -2341,10 +2667,10 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_just_clear_subject_atypical_shot",
-            "pos_question": "Does the video feature a clear subject whose anatomy looks unnatural or exaggerated?",
-            "neg_question": "Does the video lack a clear subject, or does the subject appear anatomically normal?",
-            "pos_prompt": "A video that features a clear subject whose anatomy looks unnatural or exaggerated.",
-            "neg_prompt": "A video that lacks a clear subject, or whose subject appears anatomically normal.",
+            "pos_question": "Does the video feature a clear subject whose anatomy looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify?",
+            "neg_question": "Does the video lack a clear subject, or has a subject that appears anatomically normal so that the exact shot size is easy to classify?",
+            "pos_prompt": "The video features a clear subject whose anatomy looks unnatural or exaggerated compared to real-world counterparts, making the exact shot size difficult to classify.",
+            "neg_prompt": "The video lacks a clear subject, or has a subject that appears anatomically normal so that the exact shot size is easy to classify.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_clear_subject_atypical_shot",
                 "type": "pos",
@@ -2359,8 +2685,8 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "is_just_many_subject_one_focus_shot",
             "pos_question": "Does the video feature multiple subjects, but one clearly stands out as the main focus?",
             "neg_question": "Does the video not feature multiple subjects, or does it not have one clearly standing out as the main focus?",
-            "pos_prompt": "A video that features multiple subjects, but one clearly stands out as the main focus.",
-            "neg_prompt": "A video that does not feature multiple subjects, or does not have one clearly standing out as the main focus.",
+            "pos_prompt": "The video features multiple subjects, but one clearly stands out as the main focus.",
+            "neg_prompt": "The video does not feature multiple subjects, or does not have one clearly standing out as the main focus.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_many_subject_one_focus_shot",
                 "type": "pos",
@@ -2373,10 +2699,10 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_just_many_subject_no_focus_shot",
-            "pos_question": "Does the video feature multiple subjects with no clear focus on any one subject?",
-            "neg_question": "Does the video not feature multiple subjects, or does it have a clear focus on one subject?",
-            "pos_prompt": "A video that features multiple subjects with no clear focus on any one subject.",
-            "neg_prompt": "A video that does not feature multiple subjects, or has a clear focus on one subject.",
+            "pos_question": "Does the video feature multiple subjects in focus, with no single subject standing out as dominant?",
+            "neg_question": "Does the video not feature multiple subjects in focus, or does it have a clear focus on one subject?",
+            "pos_prompt": "The video features multiple subjects in focus, with no single subject standing out as dominant.",
+            "neg_prompt": "The video does not feature multiple subjects in focus, or has a clear focus on one subject.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_many_subject_no_focus_shot",
                 "type": "pos",
@@ -2391,8 +2717,8 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "is_just_subject_scene_mismatch_shot",
             "pos_question": "Is there a mismatch between the subject and scene framing that makes it hard to classify the shot size?",
             "neg_question": "Does the video not have a mismatch between the subject and scene framing that makes it hard to classify the shot size?",
-            "pos_prompt": "A video that features a subject and scene that do not match in framing, making it hard to classify the shot size.",
-            "neg_prompt": "A video that does not feature a subject and scene that do not match in framing, making it hard to classify the shot size.",
+            "pos_prompt": "The video features a subject and scene that do not match in framing, making it hard to classify the shot size.",
+            "neg_prompt": "The video does not feature a subject and scene that do not match in framing, making it hard to classify the shot size.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_subject_scene_mismatch_shot",
                 "type": "pos",
@@ -2406,9 +2732,9 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "is_just_back_and_forth_change_shot",
             "pos_question": "Does the video have a clear subject with back-and-forth changes in shot size?",
-            "neg_question": "Does the video not have a clear subject with back-and-forth changes in shot size?",
-            "pos_prompt": "A video that has a clear subject with back-and-forth changes in shot size.",
-            "neg_prompt": "A video that does not have a clear subject with back-and-forth changes in shot size.",
+            "neg_question": "Does the video not have a clear subject, or has back-and-forth changes in shot size?",
+            "pos_prompt": "The video has a clear subject with back-and-forth changes in shot size.",
+            "neg_prompt": "The video does not have a clear subject, or has back-and-forth changes in shot size.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_back_and_forth_change_shot",
                 "type": "pos",
@@ -2418,22 +2744,22 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
                 "type": "neg",
             },
         },
-        {
-            "folder": setup_folder,
-            "name": "is_shot_size_applicable",
-            "pos_question": "Can the shot size be meaningfully determined?",
-            "neg_question": "Can the shot size not be meaningfully determined?",
-            "pos_prompt": "A video where the shot size can be meaningfully determined.",
-            "neg_prompt": "A video where the shot size cannot be meaningfully determined.",
-            "pos": {
-                "label": "cam_setup.shot_size.is_shot_size_applicable",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "cam_setup.shot_size.is_shot_size_applicable",
-                "type": "neg",
-            },
-        },
+        # {
+        #     "folder": setup_folder,
+        #     "name": "is_shot_size_applicable",
+        #     "pos_question": "Can the shot size be meaningfully determined?",
+        #     "neg_question": "Can the shot size not be meaningfully determined?",
+        #     "pos_prompt": "A video where the shot size can be meaningfully determined.",
+        #     "neg_prompt": "A video where the shot size cannot be meaningfully determined.",
+        #     "pos": {
+        #         "label": "cam_setup.shot_size.is_shot_size_applicable",
+        #         "type": "pos",
+        #     },
+        #     "neg": {
+        #         "label": "cam_setup.shot_size.is_shot_size_applicable",
+        #         "type": "neg",
+        #     },
+        # },
     ]
 
 def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
@@ -2883,7 +3209,6 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             },
         },
     ]
-
 
 def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
@@ -4486,29 +4811,54 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         }
     ]
 
-def get_motion_pairwise_labels(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
-                               ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
-                               ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER):
+def get_motion_pairwise_labels_camerabench(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
+                                           ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
+                                           ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+                                           ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL):
+    # This is the version we used for camerabench
     return {
-        "movement_and_steadiness": get_movement_and_steadiness_tasks(ground_only_folder=ground_only_folder),
-        "scene_dynamics": get_scene_dynamics_tasks(ground_and_camera_folder=ground_and_camera_folder, ground_only_folder=ground_only_folder),
-        "camera_movement_speed": get_camera_movement_speed_tasks(ground_only_folder=ground_only_folder),
-        "translation_direction": get_translation_direction_tasks(ground_only_folder=ground_only_folder, ground_and_setup_folder=ground_and_setup_folder),
-        "rotation_direction": get_rotation_direction_tasks(ground_only_folder=ground_only_folder),
-        "object_centric_direction": get_object_centric_direction_tasks(ground_only_folder=ground_only_folder),
-        "intrinsic_direction": get_intrinsic_direction_tasks(ground_only_folder=ground_only_folder),
+        "movement_and_steadiness": get_movement_and_steadiness_tasks(ground_folder=ground_folder),
+        "scene_dynamics": get_scene_dynamics_tasks(ground_and_camera_folder=ground_and_camera_folder, ground_folder=ground_folder),
+        "camera_movement_speed": get_camera_movement_speed_tasks(ground_folder=ground_folder),
+        "translation_direction": get_translation_direction_tasks(ground_folder=ground_folder, ground_and_setup_folder=ground_and_setup_folder),
+        "rotation_direction": get_rotation_direction_tasks(ground_folder=ground_folder),
+        "object_centric_direction": get_object_centric_direction_tasks(ground_folder=ground_folder),
+        "intrinsic_direction": get_intrinsic_direction_tasks(ground_folder=ground_folder),
         "instrinsic_vs_extrinsic": get_instrinsic_vs_extrinsic_tasks(ground_and_camera_folder=ground_and_camera_folder),
-        "rotation_vs_translation": get_rotation_vs_translation_tasks(ground_only_folder=ground_only_folder, ground_and_setup_folder=ground_and_setup_folder, ground_and_camera_folder=ground_and_camera_folder),
-        "has_intrinsic_change": get_has_intrinsic_change_tasks(ground_only_folder=ground_only_folder),
-        "has_translation": get_has_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_only_folder=ground_only_folder),
-        "has_rotation": get_has_rotation_tasks(ground_only_folder=ground_only_folder),
-        "has_arc_crane": get_has_arc_crane_tasks(ground_only_folder=ground_only_folder),
-        "special_tracking": get_special_tracking_tasks(ground_only_folder=ground_only_folder),
-        "general_tracking": get_general_tracking_tasks(ground_only_folder=ground_only_folder),
-        "only_intrinsic_change": get_only_intrinsic_change_tasks(ground_only_folder=ground_only_folder),
-        "only_translation": get_only_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_only_folder=ground_only_folder),
-        "only_rotation": get_only_rotation_tasks(ground_only_folder=ground_only_folder),
-        "reference_frame": get_reference_frame_tasks(ground_and_setup_folder=ground_and_setup_folder),
+        "rotation_vs_translation": get_rotation_vs_translation_tasks(ground_folder=ground_folder, ground_and_camera_and_setup_folder=ground_and_camera_and_setup_folder, ground_and_camera_folder=ground_and_camera_folder),
+        "has_intrinsic_change": get_has_intrinsic_change_tasks(ground_folder=ground_folder),
+        "has_translation": get_has_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_folder=ground_folder),
+        "has_rotation": get_has_rotation_tasks(ground_folder=ground_folder),
+        "has_arc_crane": get_has_arc_crane_tasks(ground_folder=ground_folder),
+        "special_tracking": get_special_tracking_tasks(ground_folder=ground_folder),
+        "general_tracking": get_general_tracking_tasks(ground_folder=ground_folder),
+        "only_intrinsic_change": get_only_intrinsic_change_tasks(ground_folder=ground_folder),
+        "only_translation": get_only_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_folder=ground_folder),
+        "only_rotation": get_only_rotation_tasks(ground_folder=ground_folder),
+        "reference_frame": get_reference_frame_tasks(ground_and_camera_and_setup_folder=ground_and_camera_and_setup_folder),
+    }
+
+def get_motion_pairwise_labels_camerabench_pro(ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+                                               ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP):
+    # This is the version we used for camerabench-pro
+    return {
+        "movement_and_steadiness": get_movement_and_steadiness_tasks(ground_folder=ground_folder),
+        "camera_movement_speed": get_camera_movement_speed_and_effect_tasks(ground_folder=ground_folder),
+        "translation_direction": get_translation_direction_tasks(ground_folder=ground_folder, ground_and_setup_folder=ground_and_setup_folder),
+        "rotation_direction": get_rotation_direction_tasks(ground_folder=ground_folder),
+        "object_centric_direction": get_object_centric_direction_tasks(ground_folder=ground_folder),
+        "intrinsic_direction": get_intrinsic_direction_tasks(ground_folder=ground_folder),
+        "rotation_vs_translation": get_rotation_vs_translation_without_camera_centric_motion_tasks(ground_folder=ground_folder, ground_and_setup_folder=ground_and_setup_folder),
+        "has_intrinsic_change": get_has_intrinsic_change_tasks(ground_folder=ground_folder),
+        "has_translation": get_has_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_folder=ground_folder),
+        "has_rotation": get_has_rotation_tasks(ground_folder=ground_folder),
+        "has_arc_crane": get_has_arc_crane_tasks(ground_folder=ground_folder),
+        "special_tracking": get_special_tracking_tasks(ground_folder=ground_folder),
+        "general_tracking": get_general_tracking_tasks(ground_folder=ground_folder),
+        "only_intrinsic_change": get_only_intrinsic_change_tasks(ground_folder=ground_folder),
+        "only_translation": get_only_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_folder=ground_folder),
+        "only_rotation": get_only_rotation_tasks(ground_folder=ground_folder),
+        "reference_frame": get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=ground_and_camera_and_setup_folder),
     }
 
 def get_setup_pairwise_labels(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
@@ -4546,13 +4896,23 @@ def get_setup_pairwise_labels(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         "focus_from_to": get_focus_from_to_tasks(setup_folder=setup_folder)
     }
 
-def get_motion_and_setup_pairwise_labels(ground_only_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
-                                         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
-                                         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-                                         setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
-    motion_dataset = get_motion_pairwise_labels(ground_only_folder=ground_only_folder,
-                                                ground_and_setup_folder=ground_and_setup_folder,
-                                                ground_and_camera_folder=ground_and_camera_folder)
+def get_motion_and_setup_pairwise_labels_camerabench(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
+                                                     ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+                                                     ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
+                                                     ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+                                                     setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+    motion_dataset = get_motion_pairwise_labels_camerabench(ground_folder=ground_folder,
+                                                            ground_and_setup_folder=ground_and_setup_folder,
+                                                            ground_and_camera_folder=ground_and_camera_folder,
+                                                            ground_and_camera_and_setup_folder=ground_and_camera_and_setup_folder)
+    setup_dataset = get_setup_pairwise_labels(setup_folder=setup_folder)
+    return {**motion_dataset, **setup_dataset}
+
+def get_motion_and_setup_pairwise_labels_camerabench_pro(ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+                                                         ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
+                                                         setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
+    motion_dataset = get_motion_pairwise_labels_camerabench_pro(ground_folder=ground_folder,
+                                                                ground_and_setup_folder=ground_and_setup_folder)
     setup_dataset = get_setup_pairwise_labels(setup_folder=setup_folder)
     return {**motion_dataset, **setup_dataset}
 

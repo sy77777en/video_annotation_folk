@@ -2,7 +2,7 @@
   "video_id": "9P2zAwProxo.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:21:13.723551",
+  "generation_timestamp": "2025-09-30T04:14:53.945738",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the shot as a first-person perspective. The description of the snow-covered ground's depth is inaccurate, as is the stated position of the trees.",
-  "revised_caption_by_generated_critique": "This dynamic shot captures a close-up of a snowboard with a sweeping view of the surrounding landscape. The rounded tip of the snowboard is prominently featured in the foreground, occupying the bottom half of the frame. The snow-covered ground stretches from the foreground into the distance, creating a sense of speed as it appears to rush toward the camera. In the background, a group of bare trees is visible on the top right, moving from the center toward the right edge of the frame as the snowboard glides past them. The camera is positioned above the snowboard, looking down at its tip and forward along the path.",
+  "generated_critique": "The caption misidentifies the shot as a first-person perspective. The description of the snow-covered ground's depth is inaccurate. The description of the trees' position and depth is also inaccurate.",
+  "revised_caption_by_generated_critique": "This dynamic shot captures a close-up of a snowboard with a sweeping view of the surrounding landscape. The rounded tip of the snowboard is prominently featured in the foreground, occupying the bottom half of the frame. The snow-covered ground stretches from the foreground into the distance, creating a sense of speed as the snowboard moves forward. In the background, a cluster of bare trees is visible on the left side of the frame, gradually shifting out of view as the snowboard glides past. The camera is positioned above the snowboard, offering a clear view of its tip and the path ahead.",
   "status": "success"
 }

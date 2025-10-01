@@ -2,7 +2,7 @@
   "video_id": "LZkl0_9xFOU.17.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:53:44.407712",
+  "generation_timestamp": "2025-09-29T22:02:19.389871",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The mannequin-like figure is incorrectly described as being in the middle ground. The front of the car is incorrectly described as being in the foreground. The description of the yellow line's diagonal path is inaccurate.",
-  "revised_caption_by_generated_critique": "In a medium shot, a mannequin-like figure is positioned in the center of the frame and in the foreground. To the right, the front of a car occupies the middle ground. In the foreground to the left, green trash bins are visible, with a yellow bollard positioned in front of them at the bottom left. A yellow line on the ground extends diagonally from the bottom left toward the right side of the frame. The camera is positioned at the subject's level.",
+  "generated_critique": "The mannequin-like figure is not in the middle ground. The car is not in the foreground. The yellow line on the ground does not extend toward the center.",
+  "revised_caption_by_generated_critique": "A mannequin-like figure is positioned in the center of the frame and in the foreground. To the right, the front of a car is visible in the middle ground. In the middle ground to the left, green trash bins are visible, with a yellow bollard positioned in front of them at the bottom left. A yellow line on the ground extends diagonally from the bottom left toward the right. The camera is positioned at the subject's level.",
   "status": "success"
 }

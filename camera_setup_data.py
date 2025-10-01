@@ -233,7 +233,7 @@ class CameraSetupData:
         if self.shot_transition is True or self.is_labeled is False:
             return
 
-        self.is_framing_subject = None # "Does the video include subjects in the frame at any point, instead of just a scenery shot with no clear subject?"
+        self.is_framing_subject = None # "Does the video include one or more salient subjects in the frame at any point?"
         if self.shot_type in ["human", "non_human", "change_of_subject"]:
             self.is_framing_subject = True
         elif self.shot_type in ["scenery"]:
@@ -265,13 +265,18 @@ class CameraSetupData:
         self.has_many_subjects = None # "Does the video contain multiple subjects or multiple groups of subjects?"
         if self.shot_type in ["human", "non_human", "scenery"]:
             self.has_many_subjects = False
+        elif self.shot_type in ["change_of_subject"]:
+            if self.shot_size_start != "unknown" and self.shot_size_end != "unknown":
+                self.has_many_subjects = True
+            else:
+                self.has_many_subjects = False
         elif self.shot_type in ["complex"]:
             if self.complex_shot_type in ["many_subject_one_focus", "many_subject_no_focus", "different_subject_in_focus"]:
                 self.has_many_subjects = True
             elif self.complex_shot_type in ["clear_subject_dynamic_size", "clear_subject_atypical"]:
                 self.has_many_subjects = False
-            elif self.shot_type == "change_of_subject" and self.shot_size_info['start'] != "unknown" and self.shot_size_info['end'] != "unknown":
-                self.has_many_subjects = True
+            # elif self.shot_type == "change_of_subject" and self.shot_size_info['start'] != "unknown" and self.shot_size_info['end'] != "unknown":
+            #     self.has_many_subjects = True
             # elif self.complex_shot_type == "description" and self.shot_size_description_type in ['subject_scene_mismatch', 'back_and_forth_change']:
             #     self.has_many_subjects = False
 
@@ -540,12 +545,12 @@ class CameraSetupData:
         # self.focus_change = self.focus_change_from_near_to_far or self.focus_change_from_far_to_near
         self.is_rack_focus = self.is_rack_pull_focus and self.focus_change_reason == "rack_focus"
         self.is_pull_focus = self.is_rack_pull_focus and self.focus_change_reason == "pull_focus"
-        if self.focus_info['start'] == 'out_of_focus' and self.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.is_rack_pull_focus is True:
+        if self.focus_info['start'] == 'out_of_focus' and self.focus_info['end'] in ['foreground', 'middle_ground', 'background']:
             self.focus_change_from_out_to_in_focus = True  # "self.cam_setup.focus_info['start'] == 'out_of_focus' and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.is_rack_pull_focus",
         else:
             self.focus_change_from_out_to_in_focus = False  # "not (self.cam_setup.focus_info['start'] in ['out_of_focus', 'unknown'] and self.cam_setup.focus_info['end'] in ['foreground', 'middle_ground', 'background', 'unknown'])",
 
-        if self.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.focus_info['end'] == 'out_of_focus' and self.is_rack_pull_focus is True:
+        if self.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.focus_info['end'] == 'out_of_focus':
             self.focus_change_from_in_to_out_of_focus = True  # "self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background'] and self.cam_setup.focus_info['end'] == 'out_of_focus' and self.cam_setup.is_rack_pull_focus is True",
         else:
             self.focus_change_from_in_to_out_of_focus = False  # "not (self.cam_setup.focus_info['start'] in ['foreground', 'middle_ground', 'background', 'unknown'] and self.cam_setup.focus_info['end'] in ['out_of_focus', 'unknown'])",

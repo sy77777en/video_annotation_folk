@@ -2,7 +2,7 @@
   "video_id": "_6DLjNKtENQ.0.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:59:33.350833",
+  "generation_timestamp": "2025-09-29T21:01:42.018693",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description incorrectly identifies the shot as an over-the-shoulder shot and inaccurately states that a shoulder is visible in the foreground. The description also inaccurately states the man in the middle ground is framed from the chest up and is looking toward the left of the frame.",
-  "revised_caption_by_generated_critique": "In this close-up shot, the back of a man's head occupies the left foreground. In the center middle ground, another man is visible, framed from the waist up, looking toward the right of the frame. The background is dark and out of focus. The camera remains static and positioned at the subjects' eye level throughout the clip.",
+  "generated_critique": "The caption incorrectly labels the shot type as 'over-the-shoulder'. The description of the man in the foreground is inaccurate, as it mentions his shoulder, which is not visible. The framing of the second man is misidentified as 'from the chest up', and the direction he is looking is also described incorrectly.",
+  "revised_caption_by_generated_critique": "In this close-up shot, the back of a man's head occupies the left foreground. In the center middle ground, another man is framed from the waist up, looking toward the right of the frame. The background is dark and out of focus. The camera remains static and positioned at the subjects' eye level throughout the clip.",
   "status": "success"
 }

@@ -729,9 +729,9 @@ class CameraPolicy(PromptGenerator):
         if lens_distortion == "regular":
             return "No lens distortion (no need to mention)."
         elif lens_distortion == "barrel":
-            return "The video features mild barrel distortion causing straight lines near the edges to bow outward."
+            return "The video features mild barrel distortion where lines near the frame edges bow slightly outward."
         elif lens_distortion == "fisheye":
-            return "The video features noticable fisheye distortion causing straight lines to curve outward."
+            return "The video shows extreme fisheye distortion where most lines curve strongly outward."
         raise ValueError("Invalid lens distortion type.")
 
     def format_camera_height_start(self, height: str) -> str:

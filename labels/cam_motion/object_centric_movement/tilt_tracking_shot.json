@@ -2,7 +2,7 @@
     "label": "Tilt Tracking Shot",
     "label_name": "tilt_tracking_shot",
     "def_question": [
-      "Does the camera tilt to track the subjects as they move?",
+      "Does the camera tilt to track the moving subjects?",
       "Does the camera tilt to track the subjects?",
       "Is this a tilt-tracking shot?",
       "Does the camera tilt to follow the subjects?",
@@ -21,6 +21,7 @@
       "Is the camera fixed in position while tilting to follow the action?"
     ],
     "def_prompt": [
+      "The camera tilts to follow the moving subject.",
       "A tracking shot where the camera tilts to follow the subjects.",
       "A tilt-tracking shot.",
       "A shot where the camera tilts up or down to track the subject’s motion.",

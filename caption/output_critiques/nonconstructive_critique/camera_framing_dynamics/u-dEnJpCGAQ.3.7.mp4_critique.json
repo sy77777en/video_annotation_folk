@@ -2,7 +2,7 @@
   "video_id": "u-dEnJpCGAQ.3.7.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:41:04.696266",
+  "generation_timestamp": "2025-09-30T00:10:26.962773",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the \"slightly tilted angle\" is ambiguous. The caption incorrectly identifies the leopard's position as the foreground. The caption mischaracterizes camera unsteadiness as intentional pan and tilt movements.",
-  "revised_caption_by_generated_critique": "This is a ground-level shot with a slight tilt. The camera uses a shallow depth of field, keeping the leopard in focus. The camera movement is unsteady as it pans left and tilts up to follow the leopard's movements.",
+  "generated_critique": "The description of the camera angle is incomplete because it fails to specify the direction of the tilt. The caption incorrectly identifies the leopard's position as being in the foreground, and the description of the focus is incomplete. The caption also mischaracterizes camera unsteadiness as intentional panning and tilting.",
+  "revised_caption_by_generated_critique": "The camera captures a ground-level shot with a slight tilt to the right. The leopard is positioned in the midground, and the camera employs a shallow depth of field to keep the leopard in sharp focus. The camera movement is slightly unsteady as it pans left and tilts upward to follow the leopard's movement.",
   "status": "success"
 }

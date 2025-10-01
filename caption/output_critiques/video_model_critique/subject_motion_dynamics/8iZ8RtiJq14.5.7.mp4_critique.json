@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.5.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T21:21:27.952381",
+  "generation_timestamp": "2025-09-30T00:22:55.965788",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\n**Accuracy:** The caption is inaccurate because it describes motion that does not occur. The mannequin's head does not turn to the right, center, left, or forward; it remains completely still throughout the entire video. The only accurate part of the description is that the mannequin is standing stationary with its hands on its hips.\n\n**Completeness:** The caption is incomplete because it fails to correctly report the subject's state. The most important piece of information about the subject's motion is that there is none, which the caption misrepresents.\n\n**Adherence to Instructions:** The caption fails to follow the core instruction to describe only what is visible in the video. It invents movement. Furthermore, it ignores the specific guideline for static subjects: \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" A correct caption would have simply stated that the mannequin remains stationary.",
-  "revised_caption_by_generated_critique": "A mannequin-like figure with a metallic, featureless face stands with its hands on its hips in a grey business suit. It remains completely still in front of a wooden-paneled wall.",
+  "generated_critique": "The caption is factually incorrect as it describes head movements that do not occur in the video. The mannequin-like figure remains completely stationary with its hands on its hips, facing forward throughout the entire clip. The caption should be revised to accurately reflect the complete lack of motion, as per the instructions for static subjects. A more accurate description would be: \"The mannequin-like figure stands motionless with its hands on its hips, facing forward against a wooden background.\"",
+  "revised_caption_by_generated_critique": "The mannequin-like figure stands motionless with its hands on its hips, facing forward against a wooden background.",
   "status": "success"
 }

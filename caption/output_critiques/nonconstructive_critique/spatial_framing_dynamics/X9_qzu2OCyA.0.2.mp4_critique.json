@@ -2,7 +2,7 @@
   "video_id": "X9_qzu2OCyA.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:32:39.192980",
+  "generation_timestamp": "2025-09-30T04:27:10.221283",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The snow beneath the skier's feet is incorrectly described as being in the foreground. The description of the snowy terrain reappearing at the top of the frame is inaccurate, and the subsequent description of its movement is also incorrect.",
-  "revised_caption_by_generated_critique": "The video, captured from a head-mounted camera, starts with a full shot of the skier centered in the frame, with their skis and the snow directly beneath them. As the skier launches from a large white ramp, the camera's viewpoint rapidly inverts. The skier remains centered but is now upside down, with the vast blue sky filling the background. As the camera completes its 360-degree rotation with the skier, the snowy terrain park, including other ramps and distant ski lifts, comes back into view, moving from the bottom to the top of the frame as the skier prepares for landing.",
+  "generated_critique": "The description of the snow beneath the skier's feet as being in the foreground is incorrect. The description of the snowy terrain park reappearing at the top of the frame is also incorrect, as is the description of its subsequent movement.",
+  "revised_caption_by_generated_critique": "From a head-mounted camera perspective, the video begins with a full shot of the skier positioned in the center of the frame, with their skis and the snow directly below them. As the skier launches from a large white ramp, the camera's viewpoint rapidly inverts. The skier remains centered but is now upside down, with the vast blue sky filling the background. The camera continues its 360-degree rotation with the skier, capturing the snowy terrain park below, which includes other ramps and distant ski lifts, as the skier rights themselves for the landing.",
   "status": "success"
 }

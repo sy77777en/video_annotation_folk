@@ -2,7 +2,7 @@
   "video_id": "6IUJgiKJ_mE.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T18:21:53.918583",
+  "generation_timestamp": "2025-09-29T21:21:34.513137",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The caption is inaccurate in describing the cyclists' relative positions. It states they are \"riding side by side,\" but the video clearly shows the cyclist in the white jersey is riding ahead of the cyclist in the yellow jersey. They are in a staggered formation, not abreast of each other.\n\n**Completeness:**\n*   The caption captures the basic action of cycling but misses the key detail of the staggered formation, which is an important aspect of their motion relative to each other.\n\n**Adherence to Instructions:**\n*   **Speculative Language:** The caption violates the instruction to \"Avoid speculative statements\" by using the phrase \"possibly spectators or event staff.\" You should only describe what is visibly happening.\n*   **Focus on Motion:** While the caption mentions \"pedaling steadily,\" it dedicates a significant portion to static descriptions of the cyclists' jerseys, the parked car, and the scenery. The primary focus should be on the movement. The description of their relative motion is also incorrect, as noted above.\n*   **Conciseness:** The description of the background and scenery could be more concise to keep the focus on the subjects' motion.\n\nIn summary, the caption fails because it inaccurately describes the cyclists' formation and includes speculative language, both of which are direct violations of the provided instructions. A better caption would accurately describe one cyclist following the other and omit any guesswork about the people in the background.",
-  "revised_caption_by_generated_critique": "A cyclist in a yellow and black jersey follows a cyclist in a white and black jersey as they pedal down the middle of a long, straight road. The cyclist in yellow maintains a consistent distance behind the lead cyclist. On the left, a silver car drives past in the opposite direction, and further up the road, a few people stand by a parked vehicle. Other cyclists are visible in the distance.",
+  "generated_critique": "The caption contains speculative language and unnecessary details about the background and scenery, which detracts from the primary focus on the subjects' motion as required by the instructions. The phrase \"possibly spectators or event staff\" is speculative and should be removed. The final two sentences describing the parked vehicles, people, road, sky, and fields are not about the cyclists' movement and should be deleted to make the description more concise and focused. The caption could also be improved by noting that other cyclists are visible in the distance, which provides more context for the motion as part of a larger group activity.",
+  "revised_caption_by_generated_critique": "A cyclist in a white and black jersey is followed by another cyclist in a yellow and black jersey as they pedal down a paved road. The cyclist in the yellow jersey rides slightly behind and to the left of the lead cyclist. Farther down the road, a group of other cyclists can be seen in the distance.",
   "status": "success"
 }

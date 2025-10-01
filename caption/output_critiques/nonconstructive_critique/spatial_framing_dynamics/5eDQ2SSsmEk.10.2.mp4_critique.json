@@ -2,7 +2,7 @@
   "video_id": "5eDQ2SSsmEk.10.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:18:10.197590",
+  "generation_timestamp": "2025-09-30T03:01:27.415717",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the vehicle's position extending \"toward the center\" is inaccurate. The caption also fails to mention the open trunk lid in the foreground center and its movement as it closes.",
-  "revised_caption_by_generated_critique": "This is a static, over-the-shoulder shot where a person, visible from the chest up, occupies the blurred foreground on the left side of the frame. A portion of a vehicle with a pinkish-red fin is also in the foreground, extending from the bottom right. In the center foreground, an open trunk lid is visible, and it moves as it closes. In the middle ground, a digital billboard is positioned slightly left of center, with a large, spotlighted structure to its right. The background is filled by a vast, in-focus cityscape that stretches across the entire frame. The camera is positioned at the subject's level, maintaining a fixed perspective on the scene.",
+  "generated_critique": "The caption incorrectly describes the position of the vehicle part. It also fails to mention the movement of an element in the foreground.",
+  "revised_caption_by_generated_critique": "This is a static, over-the-shoulder shot where a person, visible from the chest up, occupies the blurred foreground on the left side of the frame. A portion of a vehicle with a pinkish-red fin is also in the foreground, extending from the bottom left toward the center. In the middle ground, a digital billboard is positioned slightly left of center, with a large, spotlighted structure to its right. The background is filled by a vast, in-focus cityscape that stretches across the entire frame. A subtle movement is noticeable in the foreground, adding a dynamic element to the otherwise fixed perspective of the scene.",
   "status": "success"
 }

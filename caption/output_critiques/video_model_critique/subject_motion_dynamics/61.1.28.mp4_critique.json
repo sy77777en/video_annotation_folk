@@ -2,7 +2,7 @@
   "video_id": "61.1.28.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:19:29.123148",
+  "generation_timestamp": "2025-09-29T20:28:02.059490",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The description of the man's motion as swaying from side to side is accurate.\n\n**Completeness:** The caption completely describes the simple, continuous motion shown in the video.\n\n**Adherence to Instructions:** The caption does not fully adhere to the provided instructions.\n- **Focus on Motion:** The caption dedicates a significant portion to describing the subject's appearance (\"wearing a large hat and white sunglasses\") and the background setting (\"vibrant indoor environment with neon signs,\" \"neon sign that reads 'Patis 2000'\"). This violates the instruction to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions.\"\n- **Subjective Language:** The caption uses subjective adjectives like \"vibrant\" and makes an interpretive statement (\"suggesting a lively and festive atmosphere\"), which goes against the rule to \"Avoid emotional or subjective adjectives.\"\n\nIn summary, while the description of the action itself is correct, the caption is not concise and includes too much information about the subject's appearance and the scene, as well as subjective language, which deviates from the core requirements of the instructions.",
-  "revised_caption_by_generated_critique": "A man rhythmically sways his upper body from side to side while facing forward.",
+  "generated_critique": "The caption is overly descriptive of the background and includes subjective interpretations, which should be removed to adhere to the instructions. The phrases \"in a vibrant indoor environment with neon signs and festive decorations in the background\" and \"The background includes various colorful lights and decorations, suggesting a lively and festive atmosphere\" should be deleted. The description of the motion is accurate but can be made more concise. The two sentences describing the swaying motion can be combined into a single, more direct statement.",
+  "revised_caption_by_generated_critique": "The man, wearing a large hat and white sunglasses, sways from side to side.",
   "status": "success"
 }

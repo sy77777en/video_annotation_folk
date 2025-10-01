@@ -2,7 +2,7 @@
   "video_id": "YSnzFyUeFS4.2.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:07:50.957950",
+  "generation_timestamp": "2025-09-29T20:06:58.295224",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the fire hydrant's position as being in the foreground. The description of how the arms and camera appear is inaccurate. The description of the movement of the hands and camera is incomplete, as it omits a downward motion.",
-  "revised_caption_by_generated_critique": "From a first-person, eye-level perspective, the scene initially captures a wide view of a city street. A silver and black fire hydrant is positioned in the bottom-left of the frame. In the middle ground, a black motorcycle is parked on the left, next to a large tree in the center-left. To the right of the tree, a restaurant with patrons seated at outdoor tables occupies the right side of the frame. A woman walks toward the camera from the center middle ground. Subsequently, two arms, one with a prominent tattoo on the left and the other on the right, rise from the bottom of the frame, lifting a black camera into the center. The hands and camera then move downward, reframing the shot with the camera and hands now occupying the central foreground, partially obscuring the original view and creating a frame-within-a-frame effect.",
+  "generated_critique": "The caption incorrectly places the fire hydrant in the foreground. The description of the hands and camera movement is inaccurate, as it omits their initial visibility and their downward motion before being lifted.",
+  "revised_caption_by_generated_critique": "From a first-person, eye-level perspective, the scene initially captures a wide view of a city street. A silver and black fire hydrant is positioned in the bottom-left middle ground. In the middle ground, a black motorcycle is parked on the left, next to a large tree in the center-left. To the right of the tree, a restaurant with patrons seated at outdoor tables occupies the right side of the frame. A woman walks toward the camera from the center middle ground. Initially visible at the top of the frame, two arms, one with a prominent tattoo on the left and the other on the right, move downward before lifting a black camera into the center. This action reframes the shot, with the camera and hands now occupying the central foreground, partially obscuring the original view and creating a frame-within-a-frame effect.",
   "status": "success"
 }

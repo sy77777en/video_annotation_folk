@@ -2,7 +2,7 @@
   "video_id": "E8eNXv97YFY.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:09:28.581549",
+  "generation_timestamp": "2025-09-29T23:36:03.211007",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The stated camera angle is incorrect. The camera does not pan as described. The caption inaccurately describes the stone monument's spatial transition. The tree branches are not entering from the top of the shot.",
-  "revised_caption_by_generated_critique": "This video showcases a wide scenery shot of a park, captured from a slightly elevated camera angle. Initially, a brick path begins in the bottom-center foreground, leading toward a circular lawn with a large clock in the middle ground. This central lawn is flanked by lush trees and foliage on the left and right. In the background, a white stupa stands on an elevated, central hill. The camera moves forward, causing the brick path to expand and fill more of the foreground. As this happens, a stone monument becomes more prominent in the right foreground, and the people near the clock in the middle ground become more clearly visible. The stupa in the background remains centrally located, framed by tree branches that are visible throughout the shot.",
+  "generated_critique": "The caption incorrectly describes the camera angle as low and inaccurately states that the camera pans. The description of the stone monument is incomplete, as it omits its shift in depth from the middle ground to the foreground. The statement that tree branches enter from the top of the shot is also incorrect.",
+  "revised_caption_by_generated_critique": "This video showcases a wide scenery shot of a park, captured from a standard camera angle. Initially, a brick path begins in the bottom-center foreground, leading toward a circular lawn with a large clock in the middle ground. This central lawn is flanked by lush trees and foliage on the left and right. In the background, a white stupa stands on an elevated, central hill. The camera then moves forward and slightly to the right, causing the brick path to expand and fill more of the foreground. As this happens, a stone monument shifts from the middle ground to become prominent in the right foreground, and the people near the clock in the middle ground become more clearly visible. The stupa in the background remains centrally located, framed by the surrounding trees.",
   "status": "success"
 }

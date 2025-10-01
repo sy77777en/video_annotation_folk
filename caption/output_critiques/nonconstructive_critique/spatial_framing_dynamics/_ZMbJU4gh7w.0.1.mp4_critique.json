@@ -2,7 +2,7 @@
   "video_id": "_ZMbJU4gh7w.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:33:15.257760",
+  "generation_timestamp": "2025-09-30T04:27:49.161952",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the figures' initial position as the middle ground and mischaracterizes their movement as away from the camera. It fails to mention that the camera tracks rightward and moves backward. The final position of the car is also misidentified as the middle ground. Additionally, the descriptions of the woman's final position on the right side of the frame and the man's final position on the left are both incorrect.",
-  "revised_caption_by_generated_critique": "The video opens with a medium shot, framing a woman on the left and a man on the center-right, both positioned in the foreground. A vintage car is partially visible on the far right, with a stone wall on the left and a large door forming the background. The camera tracks rightward and moves backward as the two figures walk to the right, transitioning into a full shot that reveals the entire car in the foreground. The woman moves from the left to the center of the frame, getting into the car's passenger seat. Simultaneously, the man walks from the center to the right side of the frame, positioning himself by the driver's door. The camera remains at the subjects' level throughout the shot.",
+  "generated_critique": "The initial depth of the figures is described incorrectly, and their direction of movement relative to the camera is also wrong. The caption fails to mention the camera's movement. The final depth of the car is misidentified. The descriptions of both the woman's and the man's final positions within the frame are incorrect.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot, showing a woman on the left and a man on the right, both in the foreground. A vintage car is partially visible on the far right, with a stone wall on the left and a large door in the background. The two figures walk toward the camera, transitioning the framing into a full shot that reveals the entire car in the foreground. The woman moves from the left to the center of the frame, getting into the car's passenger seat. Meanwhile, the man walks from the right to the center, positioning himself by the driver's door. The camera subtly tracks the subjects, maintaining their level throughout the shot.",
   "status": "success"
 }

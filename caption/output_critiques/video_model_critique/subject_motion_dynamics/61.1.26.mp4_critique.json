@@ -2,7 +2,7 @@
   "video_id": "61.1.26.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:16:38.799472",
+  "generation_timestamp": "2025-09-29T20:23:40.238146",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is mostly accurate and follows several instructions well, but it violates a key negative constraint.\n\n**Accuracy and Completeness:**\n- The description of the woman's actions is accurate and presented in the correct chronological order: she \"lifts her glasses with her right hand and turns her head to the right, smiling.\"\n- The description of the setting (\"dimly lit room with red and yellow lighting\") is also accurate.\n\n**Adherence to Instructions:**\n- **Strengths:** The caption correctly identifies the subject's motion, presents it chronologically, and uses simple, clear language. It also correctly describes the interaction with an object (the glasses).\n- **Weakness:** The caption violates the instruction to \"Avoid emotional or subjective adjectives\" and \"Avoid abstract descriptions.\" The phrase \"adding to the cozy and intimate ambiance of the setting\" is an interpretation of the mood and atmosphere, not a factual description of what is visible. This is a subjective statement that the instructions explicitly forbid.\n\nIn summary, the caption successfully describes the subject's motion but fails by including subjective, interpretive language about the setting's ambiance.",
-  "revised_caption_by_generated_critique": "A woman, seated in a dimly lit room with red and yellow lighting, lifts her glasses with her right hand and turns her head to the right, smiling. The background includes a blurred sign and some indistinct objects.",
+  "generated_critique": "The caption contains a factual error, stating the woman uses her \"left hand\" when she uses her right hand. It also includes a second sentence describing the background and subjective ambiance (\"cozy and intimate ambiance\"), which violates the instructions to focus only on motion and avoid emotional or subjective adjectives. The description of the motion is also incomplete, as it omits that the woman turns her head. A more accurate caption would be: \"A woman turns her head to the right as she lifts her glasses with her right hand and smiles.\"",
+  "revised_caption_by_generated_critique": "A woman turns her head to the right as she lifts her glasses with her right hand and smiles.",
   "status": "success"
 }

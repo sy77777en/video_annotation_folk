@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.5.10.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:24:29.105381",
+  "generation_timestamp": "2025-09-29T20:25:46.049003",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the hand as the left hand. The description of the object as a \"vial or canister\" is inaccurate. The description of the action as \"inserting an object into a slot on a dark, industrial-looking control panel\" is also incorrect.",
-  "revised_caption_by_generated_critique": "A person's right hand, covered in a smooth, white glove, holds a small, black cylindrical device with a distinct yellow band near one end and a metallic, gold-colored tip. The hand is placing this device into a compartment on a sleek, modern control panel. The panel features yellow text that reads \"PULL LEVER DOWN\" above three yellow, downward-pointing arrows. To the right of this, there is a switch with \"ON\" and \"OFF\" labels, and a red rectangular light is visible at the top of the panel.",
+  "generated_critique": "The caption incorrectly identifies the hand as the left hand and misidentifies the object as a vial or canister. The action is also incorrectly described as inserting an object into a slot.",
+  "revised_caption_by_generated_critique": "A person's right hand, covered in a smooth, white glove, holds a small, black cylindrical device with a distinct yellow band near one end and a metallic, gold-colored tip. The hand is placing this device onto a connector on a dark, industrial-looking control panel. The panel features yellow text that reads \"PULL LEVER DOWN\" above three yellow, downward-pointing arrows. To the right of this, there is a switch with \"ON\" and \"OFF\" labels, and a red rectangular light is visible at the top of the panel.",
   "status": "success"
 }

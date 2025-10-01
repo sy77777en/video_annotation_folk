@@ -2,7 +2,7 @@
   "video_id": "-2uIa-XMJC0.2.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:50:36.920351",
+  "generation_timestamp": "2025-09-30T04:48:05.105165",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the perspective is static and the camera is stationary. The smart lock is not in the middle ground. The hand does not enter from the bottom left, nor does it exit from the bottom left.",
-  "revised_caption_by_generated_critique": "The shot is from a first-person perspective, with the camera slightly moving to follow the action. The smart lock is prominently featured in the foreground, mounted on a door. A hand enters the frame from the right, moves toward the center to press a button at the bottom of the lock, and then retracts, exiting from the right. Following this action, a semi-transparent holographic projection of a man's head and upper body materializes, superimposed over the door and occupying the middle ground. The hologram is shown in profile, positioned to the left of the smart lock's display, and faces toward the right of the frame.",
+  "generated_critique": "The caption incorrectly states that the perspective is static and the camera is stationary, and it fails to describe the camera's movement. The smart lock's depth is misidentified as middle ground. The hand's entry point is incorrectly described as the bottom left, and its exit point is also incorrectly described as the bottom left.",
+  "revised_caption_by_generated_critique": "The shot begins with a dynamic, first-person perspective, focusing on a vertical smart lock mounted on a door in the foreground. A hand enters the frame from the bottom right, moves toward the center to press a button at the bottom of the lock, and then retracts, exiting from the bottom right. Following this action, a semi-transparent holographic projection of a man's head and upper body materializes, superimposed over the door in the center of the frame and occupying the background. The hologram is shown in profile, positioned to the left of the smart lock's display, and faces toward the right of the frame. The camera moves slightly to maintain focus on the subject throughout the shot.",
   "status": "success"
 }

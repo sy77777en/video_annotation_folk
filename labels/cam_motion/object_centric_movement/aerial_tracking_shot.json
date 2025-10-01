@@ -2,7 +2,8 @@
     "label": "Aerial Tracking Shot",
     "label_name": "aerial_tracking_shot",
     "def_question": [
-        "Does the camera track the subject from an aerial perspective?",
+        "Is it an aerial tracking shot where the camera follows the moving subject from an aerial view?",
+        "Does the camera track the subject from an aerial view?",
         "Does the camera track the subject from above?",
         "Is this an aerial tracking shot?",
         "Does the camera follow the subject from overhead?",
@@ -19,7 +20,8 @@
         "Does the shot provide a top-down tracking perspective?"
     ],
     "def_prompt": [
-        "The camera tracks the subject from an aerial perspective.",
+        "An aerial tracking shot where the camera follows the moving subject from an aerial view.",
+        "The camera tracks the subject from an aerial view.",
         "A tracking shot where the camera follows the subject from an aerial perspective.",
         "A tracking shot where the camera follows the subject from above.",
         "A shot where the camera moves overhead while tracking the subject.",

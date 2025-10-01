@@ -2,7 +2,7 @@
   "video_id": "E8eNXv97YFY.1.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:14:05.812548",
+  "generation_timestamp": "2025-09-30T04:06:33.149546",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the camera angle as high and misstates the proportion of the frame filled by the sky. The location of the lightning is inaccurate. The description of the shot as static is incorrect, as the camera does not remain fixed.",
-  "revised_caption_by_generated_critique": "This video features an extreme wide shot of a city skyline at night. The dark silhouettes of rooftops stretch across the bottom of the frame. Above them, a line of illuminated buildings is visible. The night sky, filled with storm clouds, occupies a significant portion of the frame. Bright flashes of lightning intermittently illuminate the clouds, primarily in the upper-right and upper-center areas of the scene. A tall, lit skyscraper stands in the distant background on the right side. The camera subtly pans throughout the shot, capturing the dynamic scene.",
+  "generated_critique": "The caption misidentifies the camera angle and inaccurately describes the proportion of the frame occupied by the night sky. The location of the lightning flashes is also incorrect. Furthermore, the caption incorrectly states that the camera is fixed and fails to describe its actual movement.",
+  "revised_caption_by_generated_critique": "This video features a dynamic wide shot of a city skyline at night. The dark silhouettes of rooftops are visible in the foreground, occupying the lower quarter of the frame. In the middle ground, a line of illuminated buildings rises just above the rooftops. The background is dominated by a vast night sky filled with storm clouds, which occupy the upper half of the frame. Bright flashes of lightning intermittently illuminate the clouds, primarily in the upper-right and upper-center areas of the scene. A tall, lit skyscraper stands prominently in the distant background on the right side. The camera slowly pans from left to right, capturing the evolving scene.",
   "status": "success"
 }

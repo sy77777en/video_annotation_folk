@@ -2,7 +2,7 @@
   "video_id": "vEvBpjCOBu0.7.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:52:28.123116",
+  "generation_timestamp": "2025-09-29T20:53:34.584803",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial description inaccurately states that the blurry, light-gray object occupies only the left side of the frame. The description of this object's movement is incorrect. Additionally, the caption misidentifies the 3D position of the person in the white coat as being in the middle ground. The text overlay is also incorrectly assigned a 3D position in the foreground.",
-  "revised_caption_by_generated_critique": "The shot begins with a large, blurry, light-gray object occupying the entire foreground of the frame. This object moves out of the frame, revealing a full shot of a testing apparatus positioned in the center against a black background. A tall stack of black weights is suspended in the center, extending from the middle to the top of the frame. Below the weights, a transparent sheet on a black base sits in the center-bottom of the frame. A person in a white coat is partially visible on the right side of the frame in the background. A text overlay \"(27)\" is present in the bottom-left corner of the frame. The camera is positioned at the subject's level.",
+  "generated_critique": "The initial description inaccurately states that the blurry, light-gray object occupies only the left side of the frame. The caption is also incorrect in stating that this object moves. Additionally, the placement of the person in the white coat in the middle ground is wrong. The text overlay should not be described as being in the foreground.",
+  "revised_caption_by_generated_critique": "The shot begins with a large, blurry, light-gray object occupying the entire foreground of the frame. This object remains stationary, revealing a full shot of a testing apparatus positioned in the center of the frame against a black background. A tall stack of black weights is suspended in the center, extending from the middle to the top of the frame. Below the weights, a transparent sheet on a black base sits in the center-bottom of the frame in the middle ground. A person in a white coat is partially visible on the right side of the frame, positioned in the background. A text overlay \"(27)\" is present in the bottom-left corner of the frame. The camera is positioned at the subject's level.",
   "status": "success"
 }

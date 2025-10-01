@@ -2,7 +2,7 @@
   "video_id": "mIiPt1YVkP8.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:44:28.727011",
+  "generation_timestamp": "2025-09-29T21:52:34.603990",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the shot is static. The text overlay is incorrectly described as being in the foreground. The terminal building is incorrectly placed in the middle ground.",
-  "revised_caption_by_generated_critique": "This dynamic, extreme wide shot presents a high-angle aerial view of a sprawling airport complex at night. The airport's infrastructure, outlined by glowing lights, fills the entire frame from the background to the middle ground. A brightly lit, circular terminal building is positioned in the lower right of the frame in the background. A text overlay reading \"July 7, 2017\" is located in the center of the screen.",
+  "generated_critique": "The shot is incorrectly described as static. The text overlay is incorrectly positioned in the foreground. The terminal building is incorrectly placed in the middle ground.",
+  "revised_caption_by_generated_critique": "This dynamic, extreme wide shot presents a high-angle aerial view of a sprawling airport complex at night. The airport's infrastructure, outlined by glowing lights, fills the entire frame from the background to the middle ground. A brightly lit, circular terminal building is positioned in the lower right of the frame in the foreground. In the center of the screen, a text overlay reading \"July 7, 2017\" is displayed.",
   "status": "success"
 }

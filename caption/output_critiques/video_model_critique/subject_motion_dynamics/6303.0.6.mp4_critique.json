@@ -2,7 +2,7 @@
   "video_id": "6303.0.6.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:52:04.745192",
+  "generation_timestamp": "2025-09-29T20:59:27.620481",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is inaccurate and does not adhere to the instructions.\n\n**Accuracy:** The caption is factually incorrect. The video does not show a \"Space Vibes\" interface, nor does it show a \"Hair Grooves\" interface. The video begins and ends with the \"Love Songs\" interface. The described actions of the screen changing from one theme to another and the person swiping do not occur.\n\n**Completeness:** The caption fails to describe the actual motion in the video. The person's finger taps the \"Add to Playlist\" button on the smartphone screen. This central action is completely omitted.\n\n**Adherence to Instructions:** The caption violates the core instruction to describe only what is visible in the video. It invents entire scenes and actions (\"space-themed interface,\" \"swipes to reveal another interface labeled 'Hair Grooves'\") that are not present, failing to provide an accurate, chronological description of the subject's motion.",
-  "revised_caption_by_generated_critique": "A close-up shot shows a person with dark skin holding a smartphone against a green checkerboard background. The phone screen displays a \"LOVE SONGS\" playlist with a pink and white checkerboard pattern, cartoon flowers, and hearts. The person, who has long pink nails and is wearing chunky rings, uses their index finger to tap the \"Add to Playlist\" button at the bottom of the screen.",
+  "generated_critique": "The caption is factually incorrect and describes actions and screen content not present in the video. The video does not begin with a \"Space Vibes\" interface, nor does the person swipe left. The screen already displays the \"Love Songs\" interface at the start. The person's only action is tapping the \"Add to Playlist\" button with their finger. The screen does not change to a \"Hair Grooves\" interface; the video ends after the tap. The description should be corrected to state that a person holds a smartphone displaying a \"Love Songs\" playlist and then taps the \"Add to Playlist\" button on the screen.",
+  "revised_caption_by_generated_critique": "A person holds a smartphone displaying a \"Love Songs\" playlist with a pink checkered and floral theme. They tap the \"Add to Playlist\" button on the screen with their finger.",
   "status": "success"
 }

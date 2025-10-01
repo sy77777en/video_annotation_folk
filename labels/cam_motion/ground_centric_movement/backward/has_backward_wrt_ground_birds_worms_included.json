@@ -2,6 +2,7 @@
     "label": "Has Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
     "label_name": "has_backward_wrt_ground_birds_worms_included",
     "def_question": [
+        "Does the camera move backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view)?",
         "Does the camera move backward (not zooming out) in the scene, or move south if it's a bird's eye view, or move north if it's a worm's eye view?",
         "Does the camera move backward (not zooming out) in the scene, or move downward if it's a bird's eye view, or move upward if it's a worm's eye view?",
         "Is the camera moving backward in the scene (south in a bird's eye view or north in a worm's eye view)?"
@@ -22,6 +23,8 @@
         "Is the camera retreating, creating a strong sense of depth?"
     ],
     "def_prompt": [
+        "The camera moves backward relative to the scene (backward normally, south from a bird's-eye view, or north from a worm's eye view).",
+        "The camera moves backward (not zooming out) in the scene, or moves south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera moves backward (not zooming out) in the scene or moves south in a bird's eye view or north in a worm's eye view.",
         "A video where the camera moves backward (not zooming out) in the scene or moves south in a bird's eye view or north in a worm's eye view, creating a noticeable parallax effect.",
         "A shot where the camera moves backward (not zooming out) relative to the ground plane."

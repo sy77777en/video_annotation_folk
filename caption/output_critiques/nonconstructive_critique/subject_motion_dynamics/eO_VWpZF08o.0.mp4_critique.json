@@ -2,7 +2,7 @@
   "video_id": "eO_VWpZF08o.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:58:23.686323",
+  "generation_timestamp": "2025-09-30T00:28:28.406471",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the man dribbles the ball, and it omits the action of the man on the left catching and passing it. The dunk is performed with the left hand, not the right. The man does not hang on the rim. The description of the third man's position is inaccurate, and he runs from right to left, not left to right.",
-  "revised_caption_by_generated_critique": "A shirtless man in the foreground catches a basketball, jumps toward the hoop, and dunks the ball with his left hand. He immediately drops back to the court. To his left, another man catches the ball and passes it to him. In the background, a third man runs from the right side of the court to the left.",
+  "generated_critique": "The caption's sequence of events is incomplete, as it omits the pass from the man on the left. The description incorrectly states that the man dribbles the ball. The position of the third man is described inaccurately. The caption is also incorrect about which hand the man uses to dunk and incorrectly states that he hangs on the rim. Lastly, the direction the third man runs is wrong.",
+  "revised_caption_by_generated_critique": "A shirtless man in the foreground receives a pass from the man on his left, takes a step, and jumps toward the hoop, dunking the ball with his left hand. He immediately drops back to the court. To his left, another man who passed the ball stands still and watches. In the background, a third man runs from the right side of the court to the left.",
   "status": "success"
 }

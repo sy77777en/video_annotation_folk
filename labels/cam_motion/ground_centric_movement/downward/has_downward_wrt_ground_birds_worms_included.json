@@ -2,9 +2,7 @@
     "label": "Has Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
     "label_name": "has_downward_wrt_ground_birds_worms_included",
     "def_question": [
-        "Does the camera move downward (not tilting down) in the scene, or move west if it's a bird's eye view, or move east if it's a worm's eye view?",
-        "Does the camera move downward (not tilting down) in the scene, or move left if it's a bird's eye view, or move right if it's a worm's eye view?",
-        "Is the camera moving downward in the scene (west in a bird's eye view or east in a worm's eye view)?"
+        "Does the camera move physically downward relative to the ground (even if it's a bird's or worm's eye view)?"
     ],
     "alt_question": [
         "Is the camera moving downward in the scene?",
@@ -22,9 +20,7 @@
         "Is the camera lowering, creating a strong sense of vertical movement?"
     ],
     "def_prompt": [
-        "A video where the camera moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view.",
-        "A video where the camera moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view, creating a noticeable vertical parallax effect.",
-        "A shot where the camera moves downward (not tilting down) relative to the ground plane."
+        "The camera moves physically downward (or pedestals down) relative to the ground (even if it's a bird's or worm's eye view)."
     ],
     "alt_prompt": [
         "A shot where the camera moves downward, not tilting down.",

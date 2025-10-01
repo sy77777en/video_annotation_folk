@@ -2,7 +2,7 @@
   "video_id": "oagszCmJLpU.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:56:05.827916",
+  "generation_timestamp": "2025-09-30T04:53:33.421243",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the camera movement as a zoom in. It also fails to mention the movement of the white shelf cloud. The final sentence contains speculative language and an inaccurate description of the storm's movement.",
-  "revised_caption_by_generated_critique": "This extreme wide shot of a landscape is captured from a low angle, looking up towards the sky. A massive storm system dominates the top and central two-thirds of the frame, positioned in the middle ground and background. A prominent, lower-hanging white shelf cloud stretches horizontally across the center of the scene and moves steadily across the frame. Occupying the bottom third of the frame, a flat, yellow-green field extends from the foreground to the distant horizon. A small cluster of trees and buildings is visible in the background, situated on the bottom left. The shot features a slow and subtle dolly movement, causing the immense storm system to gradually appear larger and more imposing within the frame.",
+  "generated_critique": "The description of the field's position as occupying the 'bottom third' is inaccurate. The caption fails to mention the movement of the white shelf cloud. The description of the camera movement as a 'zoom in' is incorrect, and the caption includes an unnecessary interpretation of this movement's effect.",
+  "revised_caption_by_generated_critique": "This extreme wide shot of a landscape is captured from a low angle, looking up towards the sky. A massive storm system dominates the top and central portions of the frame, positioned in the middle ground and background. A prominent, lower-hanging white shelf cloud stretches horizontally across the center of the scene and moves slowly across the sky. A flat, yellow-green field extends from the foreground to the distant horizon, occupying more than the bottom third of the frame. A small cluster of trees and buildings is visible in the background, situated on the bottom left. The shot features a subtle dolly movement, causing the immense storm system to gradually appear larger within the frame.",
   "status": "success"
 }

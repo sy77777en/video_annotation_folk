@@ -2,7 +2,7 @@
   "video_id": "JpEfHcVrtXI.3.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:53:28.353576",
+  "generation_timestamp": "2025-09-30T03:42:46.980196",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the initial camera angle as low-angle and misplaces the creature in the middle ground and the pillars in the foreground. The description of the camera movement is inaccurate; it does not pull back and lower. The caption omits the actual camera movement, which involves tilting and tracking the creature's jump, and incorrectly describes a transition to a different scene with a motorcycle that does not occur.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot where a large, three-headed creature dominates the center of the frame, flanked by two tall, glowing pillars. The camera tilts and tracks the creature as it jumps, maintaining focus on its movement. There is no transition to a different scene; instead, the camera continues to follow the creature's actions. Circular obstacles appear along the path, and a score display is visible in the top left corner of the frame.",
+  "generated_critique": "The caption incorrectly identifies the initial camera angle. The creature's initial position is misidentified in both its 2D position and its 3D depth. The initial depth of the pillars is also described incorrectly. The subsequent description of the camera movement is inaccurate, and the caption introduces elements that are not present while failing to describe the actual camera movements, the creature's actions, and the changing position of the pillars.",
+  "revised_caption_by_generated_critique": "The video begins with a high-angle full shot, where a large, three-headed creature is positioned in the bottom center of the frame in the foreground, flanked by two tall, glowing pillars in the background on the left and right. The camera then zooms out and rises, transitioning into a wide panning shot. In this new view, a character on a motorcycle enters from the bottom left, moving along a path. The three-headed creature is now in the background, moving towards the rider. As the scene unfolds, circular obstacles emerge along the path, and a score display appears in the top right corner of the frame. The camera tracks the rider from a side angle, maintaining a dynamic view of the action.",
   "status": "success"
 }

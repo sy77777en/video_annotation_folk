@@ -2,7 +2,7 @@
   "video_id": "Kapdye-diSM.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:08:25.862319",
+  "generation_timestamp": "2025-09-29T21:12:26.203012",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The red car's initial depth is incorrectly identified as foreground. The caption misplaces the trees as being behind the white van. The camera's movement is described incorrectly. The final position and depth of the car are wrong, and the final position of the building is also misstated.",
-  "revised_caption_by_generated_critique": "The video begins with a wide shot, featuring a red car positioned in the middle ground in the bottom-left of the frame. A large building occupies the left side of the frame in the middle ground, with a silver car parked behind the red one. In the right middle ground, a white van is parked on the opposite side of the street, with trees visible to the right of it. The camera, positioned at the car's level, moves forward and slightly to the left, transitioning into a full shot of the red car. In the final framing, the car fills the bottom half of the frame from the left edge to the center, now clearly in the foreground, while the building on the left occupies the top-left quadrant. A watermark remains fixed in the bottom-right corner throughout the shot.",
+  "generated_critique": "The red car is not initially in the foreground. The description of the silver car's position is inaccurate, and the trees are not located behind the white van. The camera's movement is described incorrectly. In the final framing, the car is not in the foreground, and its 2D position is wrong. The building's final position is also described incorrectly.",
+  "revised_caption_by_generated_critique": "The video starts with a wide shot, showing a red car positioned in the bottom-left of the frame. A large building is on the left side of the frame, with a silver car parked beside the red one. On the right side, a white van is parked across the street, with trees visible in the background. The camera, positioned at the car's level, moves forward and slightly to the left, transitioning into a closer shot of the red car. In the final framing, the car occupies the center of the frame, while the building is in the top-left corner. A watermark remains fixed in the bottom-right corner throughout the shot.",
   "status": "success"
 }

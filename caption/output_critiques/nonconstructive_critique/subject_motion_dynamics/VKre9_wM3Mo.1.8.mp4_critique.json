@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.1.8.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:48:06.560840",
+  "generation_timestamp": "2025-09-30T03:35:52.834853",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the initial view as a close-up and inaccurately claims the focus is only on the tank and the water. The description of the water flow is also inaccurate, as the claims that water flows from the tank into the bowl and that the tank is emptying are not supported by the video.",
-  "revised_caption_by_generated_critique": "The video starts with a medium shot of a flush toilet, showing both the tank and the bowl. The lid of the tank begins to lift, revealing the blue water inside. As the lid rises, the water level in the tank remains constant, indicating that the flushing process has not yet started. The lid reaches its highest point, and the video focuses on the tank, but there is no visible water flow from the tank into the bowl. The lid stays lifted, and the video ends without showing any change in the water level or flow, highlighting the static state of the toilet.",
+  "generated_critique": "The caption incorrectly describes the camera view as a close-up and inaccurately states the focus is only on the tank and the water. The description of the water flow is also incorrect, as the caption inaccurately claims that the water flows steadily from the tank into the bowl and that the tank is gradually emptying. It is not clear from the video that the water has entered the bowl.",
+  "revised_caption_by_generated_critique": "The video starts with a view of a toilet, highlighting the tank and its contents. The tank lid begins to lift, revealing the blue water inside. As the lid rises, the water level appears to change, suggesting a flushing action. The lid reaches its peak position, and the process of water moving from the tank is shown, although it is not clearly visible if the water enters the bowl. The lid stays lifted, illustrating the ongoing flushing mechanism.",
   "status": "success"
 }

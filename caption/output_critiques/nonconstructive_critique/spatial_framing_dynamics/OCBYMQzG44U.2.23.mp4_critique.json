@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.2.23.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:20:41.163605",
+  "generation_timestamp": "2025-09-30T03:04:59.465946",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes the shot as static and the wall as curved. It fails to mention the camera's leftward pan and omits the final state of the scene, which includes a tiled wall with a submerged passageway. The description of the flight of stairs is misleading, as this element is not visible after the pan.",
-  "revised_caption_by_generated_critique": "This is a wide shot captured from a low-angle perspective at water level. The murky water occupies the bottom half of the frame in the foreground and middle ground. A tiled wall fills the left side of the frame, extending from the foreground into the background. The ceiling, featuring a row of square lights, is visible at the top of the frame, receding toward the back. The camera pans leftward, revealing a tiled wall with a submerged passageway. The previously mentioned flight of stairs is not visible after the pan.",
+  "generated_critique": "The caption inaccurately describes the shot as static and fails to mention the camera's pan to the left. The description of the wall as curved is incorrect. The caption does not describe the scene after the pan, omitting the new elements that become visible and incorrectly implying that the flight of stairs is visible for the entire duration.",
+  "revised_caption_by_generated_critique": "This is a wide shot captured from a low-angle perspective at water level. The murky water occupies the bottom half of the frame in the foreground and middle ground. A straight, tiled wall fills the left side of the frame, extending from the foreground into the background. The ceiling, featuring a row of square lights, is visible at the top of the frame, receding toward the back. Initially, a short flight of stairs is visible in the center-right, leading up to an open doorway. As the camera pans to the left, the stairs move out of view, revealing additional elements such as a series of columns and a larger open space.",
   "status": "success"
 }

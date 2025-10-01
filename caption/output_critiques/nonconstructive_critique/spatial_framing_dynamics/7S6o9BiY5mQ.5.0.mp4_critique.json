@@ -2,7 +2,7 @@
   "video_id": "7S6o9BiY5mQ.5.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:10:10.884006",
+  "generation_timestamp": "2025-09-29T23:36:53.091985",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the camera is static when it actually moves to track the figure. The description of the figure's movement is inaccurate; its starting position is not the top center, and the sequence of actions, including multiple jumps and a slide, is described incorrectly. The final action is also wrong, as the figure does not come to rest on the gears but instead freezes mid-air in the upper left. Additionally, the position of the black pipes is misidentified.",
-  "revised_caption_by_generated_critique": "In a wide shot, an orange figure is initially positioned slightly off-center at the top, crouching on a large pulley system that occupies the middle ground. The complex machinery extends across the bottom of the frame, with black pipes visible in the top right foreground against a splattered background. The camera dynamically follows the figure as it leaps from its initial position toward the top left, executing multiple jumps and a slide. The sequence concludes with the figure freezing mid-air in the upper left, rather than coming to rest among the gears.",
+  "generated_critique": "The statement that the camera remains static is incorrect. The description of the figure's initial position as \"top center\" is wrong, as is the description of its movement path, the object it lands on, and its final resting place in the bottom center. The caption omits several key movements, including a slide and a second jump. The description of the black pipes' position is inaccurate. The caption also incorrectly concludes the figure's action, failing to describe its final movements and its concluding mid-air position.",
+  "revised_caption_by_generated_critique": "In a wide shot, an orange figure is initially positioned slightly off-center at the top, crouching on a large pulley system that occupies the middle ground. The complex machinery extends across the bottom of the frame, with black pipes visible in the top right foreground against a splattered background. The figure leaps from its initial position toward the top left, landing on a small ledge. It then slides forward and executes a second jump, tumbling down to rest among a set of large gears located in the bottom right of the frame. The camera subtly pans to follow the figure's movements throughout the sequence. The figure concludes its action with a final leap, coming to a mid-air position before the scene ends.",
   "status": "success"
 }

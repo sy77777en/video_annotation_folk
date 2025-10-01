@@ -2,7 +2,7 @@
   "video_id": "toXyCmbHl3w.0.1.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:16:58.331350",
+  "generation_timestamp": "2025-09-29T20:16:43.908379",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to specify the orientation of the video camera. It also omits the black component that extends from the back of the camera and connects to the car's hood.",
-  "revised_caption_by_generated_critique": "A 2D animation depicts a dark red, two-door sports car with a sleek, low-profile body. The car features a black roof and black lower body panels. Its wheels are dark gray with numerous thin, yellow spokes. Positioned on the front hood of the car is a black video camera, oriented forward, attached to a white mount. Extending from the back of the camera is a black component that connects to the car's hood. The car is shown in profile, facing to the right, on a gray road with white dashed lines.",
+  "generated_critique": "The caption does not specify the orientation of the video camera. The description of the camera is also incomplete, as it fails to mention a component that connects to it.",
+  "revised_caption_by_generated_critique": "A 2D animation depicts a dark red, two-door sports car with a sleek, low-profile body. The car features a black roof and black lower body panels. Its wheels are dark gray with numerous thin, yellow spokes. Positioned on the front hood of the car is a black video camera, oriented forward, attached to a white mount with a connecting cable. The car is shown in profile, facing to the right, on a gray road with white dashed lines.",
   "status": "success"
 }

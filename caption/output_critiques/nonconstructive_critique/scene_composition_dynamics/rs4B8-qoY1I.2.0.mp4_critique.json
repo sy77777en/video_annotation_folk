@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.2.0.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:40:38.132646",
+  "generation_timestamp": "2025-09-29T20:40:47.909508",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the numbers as 'increasing slightly'.",
-  "revised_caption_by_generated_critique": "A screen recording of a software or system interface displays a \"Privacy Dashboard\" with a dark mode theme. The dashboard is organized into several panels containing data visualizations and information. The top row features cards for \"Your last report,\" \"Your subscription,\" and a \"Tip for you.\" Below, three large numerical displays show metrics for \"TOTAL DATA BROKERS,\" \"LISTINGS REVIEWED,\" and \"DATA BROKERS WITH YOUR INFO,\" with the numbers remaining constant. The lower portion of the dashboard includes a bar chart titled \"Listings Reviewed\" and a multi-colored donut chart labeled \"Your exposed data.\" A cursor moves across the screen and clicks on a \"View Report\" button. A vertical navigation menu is visible on the left side of the screen.",
+  "generated_critique": "The numbers on the dashboard do not increase slightly.",
+  "revised_caption_by_generated_critique": "A screen recording of a software or system interface displays a \"Privacy Dashboard\" with a dark mode theme. The dashboard is organized into several panels containing data visualizations and information. The top row features cards for \"Your last report,\" \"Your subscription,\" and a \"Tip for you.\" Below, three large numerical displays show metrics for \"TOTAL DATA BROKERS,\" \"LISTINGS REVIEWED,\" and \"DATA BROKERS WITH YOUR INFO.\" The lower portion of the dashboard includes a bar chart titled \"Listings Reviewed\" and a multi-colored donut chart labeled \"Your exposed data.\" A cursor moves across the screen and clicks on a \"View Report\" button. A vertical navigation menu is visible on the left side of the screen.",
   "status": "success"
 }

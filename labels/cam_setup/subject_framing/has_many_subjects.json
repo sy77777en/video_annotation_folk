@@ -2,7 +2,7 @@
     "label": "Has Many Subjects",
     "label_name": "has_many_subjects",
     "def_question": [
-        "Are there multiple distinct groups of subjects or more than two salient subjects shown in the video?"
+        "Does the video either show three or more main subjects in clear focus, or shift focus from one subject to another?"
     ],
     "alt_question": [
         "Are there several distinct subjects present in the video?",
@@ -15,7 +15,7 @@
         "Are there multiple distinct elements or subjects to focus on?"
     ],
     "def_prompt": [
-        "A video containing multiple distinct groups of subjects or more than two salient subjects."
+        "The video shows three or more main subjects in clear focus, or shifts focus from one subject to another."
     ],
     "alt_prompt": [
         "A video featuring several distinct subjects.",

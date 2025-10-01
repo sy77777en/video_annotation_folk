@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.0.14.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:12:53.750755",
+  "generation_timestamp": "2025-09-29T22:08:51.953942",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption accurately describes the visual elements present in the video, such as the bright sun, the hazy sky, the expanse of trees, and the distant horizon.\n\n**Completeness:** The caption is incomplete because it fails to mention the most critical aspect regarding motion: the video is a static shot with no movement. The instructions specify that if there is no movement, this should be briefly mentioned.\n\n**Adherence to Instructions:** The caption does not adhere to several key instructions:\n*   **Focus on Motion:** The primary instruction is to describe motion. For static shots, the instruction is to \"briefly mention that without going into too much detail\" or note that it's a scenery shot in \"one to three sentences.\" The provided caption is a detailed scenic description rather than a brief statement about the lack of movement.\n*   **Avoid Emotional or Subjective Adjectives:** The caption uses the subjective adjective \"serene,\" which should be avoided.\n*   **Avoid Speculative Statements:** The phrase \"suggesting a calm and possibly early morning or late afternoon setting\" is speculative and violates the instruction to avoid such statements.",
-  "revised_caption_by_generated_critique": "This is a static, wide shot of a hazy landscape. The sun shines brightly in the sky over a vast forest, with a layer of mist visible over the trees and a distant horizon.",
+  "generated_critique": "The caption is overly descriptive for a static scenery shot and violates several key instructions. The instructions state that for a video with no movement, the description should be a brief note of one to three sentences. The current four-sentence caption is too long. It also includes subjective adjectives like \"serene,\" \"warm,\" \"soft,\" and \"radiant,\" which are explicitly forbidden. Furthermore, the phrase \"suggesting a calm and possibly early morning or late afternoon setting\" is a speculative statement, which is also prohibited. The caption should be revised to be a brief, factual statement that simply notes the lack of motion, such as: \"This is a static shot of a sunlit, hazy landscape with no movement.\"",
+  "revised_caption_by_generated_critique": "This is a static shot of a sunlit, hazy landscape with no movement.",
   "status": "success"
 }

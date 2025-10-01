@@ -2,7 +2,7 @@
   "video_id": "h1PjJ9_Yd2c.0.4.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:39:45.152303",
+  "generation_timestamp": "2025-09-30T01:13:56.839457",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The overall description is inaccurate. The caption misidentifies the smiling player as \"another man\" when it is the player wearing the number \"5\". It omits the action of an athlete holding a football who faces the camera and then exits the frame. The description of the initial two athletes lacks specificity regarding their location and direction. The caption also fails to mention that the player with number \"5\" enters from the left and does not correctly describe the interaction between players \"5\" and \"10\", omitting that player \"10\" is the one holding the football and failing to specify their collective movement.",
-  "revised_caption_by_generated_critique": "Two men in sports uniforms walk across the grassy field from right to left. The focus then shifts to the player wearing the jersey with the number \"5\", who jogs past, smiling. An athlete holding a football faces the camera briefly before exiting the frame. The camera follows player \"5\" as he enters from the left and begins to run across the field alongside his teammate, player \"10\", who is holding the football. Other players walk and jog in the background.",
+  "generated_critique": "The overall description is inaccurate. The caption misidentifies the player who is smiling. The description of the initial two athletes' movement is incorrect. The caption omits the actions of an athlete holding a football. The description of the movements of the players wearing numbers \"5\" and \"10\" is also inaccurate and incomplete.",
+  "revised_caption_by_generated_critique": "Two men in sports uniforms stand on a grassy field. The focus then shifts to a man holding a football who jogs past, smiling. The camera follows a player wearing a jersey with the number \"5\" as he walks across the field, accompanied by a teammate wearing the number \"10\" who jogs beside him. Other players are seen walking and jogging in the background.",
   "status": "success"
 }

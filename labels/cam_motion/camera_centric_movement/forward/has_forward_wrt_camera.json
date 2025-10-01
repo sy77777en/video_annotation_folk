@@ -2,7 +2,7 @@
     "label": "Has Forward Movement (Relative to Camera)",
     "label_name": "has_forward_wrt_camera",
     "def_question": [
-        "Does the camera move forward (not zooming in) with respect to the initial frame?",
+        "Does the camera physically move forward (not zooming in) with respect to the initial frame?",
         "Does the camera move forward in space based on its starting position?",
         "Is the camera moving forward (not zooming in) with respect to itself, creating a noticeable parallax effect?",
         "Is the forward motion of the camera clear in this shot by comparing the start and end of the shot?",
@@ -25,7 +25,7 @@
         "Is the camera advancing, creating a strong sense of depth?"
     ],
     "def_prompt": [
-        "A video where the camera moves forward (not zooming in) with respect to the initial frame.",
+        "The camera physically moves forward (not zooming in) with respect to the initial frame.",
         "A shot where the camera moves forward in space based on its starting position.",
         "A video where the camera moves forward (not zooming in) with respect to itself, creating a noticeable parallax effect.",
         "A scene where the forward motion of the camera is clear by comparing the start and end of the shot.",

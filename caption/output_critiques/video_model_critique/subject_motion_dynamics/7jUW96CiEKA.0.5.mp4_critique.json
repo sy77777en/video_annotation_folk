@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.0.5.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:22:27.883092",
+  "generation_timestamp": "2025-09-29T22:17:01.827309",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good for this video.\n\nHere's a detailed breakdown of the feedback:\n\n**Accuracy:** The description of the events is accurate. One crocodile is indeed on the bank and slowly enters the water, while a second crocodile is already in the water and remains relatively still.\n\n**Completeness:** The caption covers the primary and secondary actions in the video.\n\n**Adherence to Instructions:** The caption fails to adhere to several key instructions:\n*   **Focus on Motion:** The instruction states, \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions\" and to avoid describing static scenery. The final sentence, \"The background consists of a dry, sandy riverbank with some scattered vegetation,\" is a description of the static background and should be omitted.\n*   **Conciseness:** By including the unnecessary description of the background and being slightly wordy, the caption is not as concise as it could be. The description of the second crocodile could also be more succinct. For example, \"The second crocodile remains floating...\" is less direct than \"A second crocodile floats...\".\n*   **Clarity and Flow:** The caption separates the actions into multiple sentences, which can make it feel slightly disjointed. A more cohesive paragraph that flows chronologically would be better. For instance, the first two sentences describe the same crocodile's continuous action and could be combined.\n\nIn summary, the caption is factually correct but violates the core instruction to focus strictly on the subject's motion and maintain conciseness by including a description of the static background.",
-  "revised_caption_by_generated_critique": "A crocodile on a sandy riverbank slowly pushes itself into the water, creating small ripples as its front legs and head submerge. Nearby, a second crocodile floats with its head above the surface.",
+  "generated_critique": "The caption contains a factual error and includes unnecessary details. The video shows one crocodile resting on the bank at the water's edge and another floating in the water; neither makes any significant movement. The caption incorrectly states that the crocodile on the bank \"is gradually moving its front legs into the water.\" Additionally, the final sentence describing the background is irrelevant, as the instructions require focusing only on the subject's motion. The caption should be corrected to state that one crocodile rests on the riverbank while the other floats in the water, with both remaining mostly stationary.",
+  "revised_caption_by_generated_critique": "One crocodile rests on a sandy riverbank at the water's edge, while the head of a second crocodile is visible floating in the water in front of it. Both animals are mostly stationary.",
   "status": "success"
 }

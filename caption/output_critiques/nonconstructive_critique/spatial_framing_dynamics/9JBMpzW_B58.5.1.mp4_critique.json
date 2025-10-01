@@ -2,7 +2,7 @@
   "video_id": "9JBMpzW_B58.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:24:46.608099",
+  "generation_timestamp": "2025-09-30T04:18:34.731082",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the camera's perspective as high-angle.",
-  "revised_caption_by_generated_critique": "This video presents a maritime scenery shot from a fixed, eye-level perspective. The extreme wide shot is symmetrically framed, with the bottom half occupied by rows of shipping containers in the foreground and middle ground, which lead the eye toward the center. The ocean fills the middle ground, extending to the horizon line that bisects the frame horizontally. The sky occupies the entire top half of the frame in the background. While the video is a time-lapse showing the movement of clouds and changing light, the spatial composition and the camera's viewpoint remain static throughout. A watermark is visible in the bottom right of center.",
+  "generated_critique": "The camera's height is misidentified as a 'high-angle perspective'.",
+  "revised_caption_by_generated_critique": "This video presents a maritime scenery shot from a fixed, elevated perspective. The extreme wide shot is symmetrically framed, with the bottom half occupied by rows of shipping containers in the foreground and middle ground, which lead the eye toward the center. The ocean fills the middle ground, extending to the horizon line that bisects the frame horizontally. The sky occupies the entire top half of the frame in the background. While the video is a time-lapse showing the movement of clouds and changing light, the spatial composition and the camera's viewpoint remain static throughout. A watermark is visible in the bottom right of center.",
   "status": "success"
 }

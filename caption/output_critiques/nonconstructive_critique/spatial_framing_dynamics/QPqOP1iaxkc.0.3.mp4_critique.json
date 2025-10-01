@@ -2,7 +2,7 @@
   "video_id": "QPqOP1iaxkc.0.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:43:49.009906",
+  "generation_timestamp": "2025-09-30T01:18:19.343025",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately describes the shot as static and incorrectly identifies the camera angle as high.",
-  "revised_caption_by_generated_critique": "This is a dynamic wide shot of an urban landscape with no main subject. The entire scene is viewed through a chain-link fence that occupies the foreground, filling the frame. In the middle ground, a multi-lane highway with moving cars is visible in the bottom half of the frame, positioned below the camera. Directly above the highway, another overpass spans the upper-middle portion of the frame. In the background, buildings are visible in the top right, situated behind the overpass. The camera is positioned at an eye-level angle, looking onto the highway.",
+  "generated_critique": "The caption incorrectly states that the shot is static. The description of the camera angle is also inaccurate.",
+  "revised_caption_by_generated_critique": "This is a dynamic wide shot of an urban landscape with no main subject. The entire scene is viewed through a chain-link fence that occupies the foreground, filling the frame. In the middle ground, a multi-lane highway with moving cars is visible in the bottom half of the frame. Directly above the highway, another overpass spans the upper-middle portion of the frame. In the background, buildings are visible in the top right, situated behind the overpass. The camera is positioned at a slightly elevated angle, capturing the highway from a side perspective.",
   "status": "success"
 }

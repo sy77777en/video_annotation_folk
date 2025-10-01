@@ -2,7 +2,7 @@
   "video_id": "IWv0EhEGmNI.17.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:28:24.273811",
+  "generation_timestamp": "2025-09-30T03:12:48.603616",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the shot is static and that the subjects' positions remain unchanged, failing to mention the hand that enters from the left. The caption also misidentifies the woman's position relative to the man in the middle ground.",
-  "revised_caption_by_generated_critique": "In a medium shot filmed from an over-the-shoulder perspective, the camera is positioned at the subjects' level. The back of a person occupies the left foreground. In the middle ground, a man stands slightly right of center, and a woman stands to his left, closer to the center of the frame. A small portion of another person's shoulder is also visible in the right foreground. During the clip, a hand enters from the left, briefly altering the composition.",
+  "generated_critique": "The description of the woman's position relative to the man in the middle ground is incorrect. The caption also inaccurately claims that the positions of all subjects remain unchanged and omits a movement that occurs in the foreground.",
+  "revised_caption_by_generated_critique": "In a static medium shot filmed from an over-the-shoulder perspective, the camera is positioned at the subjects' level. The back of a person occupies the left foreground. In the middle ground, a man stands slightly right of center, and a woman stands to his left, closer to the center of the frame. A small portion of another person's shoulder is also visible in the right foreground, where a subtle movement occurs. The framing remains unchanged throughout the clip, but there is a slight shift in the positions of the subjects in the foreground.",
   "status": "success"
 }

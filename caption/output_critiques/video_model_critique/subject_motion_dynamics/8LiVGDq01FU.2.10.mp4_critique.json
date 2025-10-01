@@ -2,7 +2,7 @@
   "video_id": "8LiVGDq01FU.2.10.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T20:38:17.700168",
+  "generation_timestamp": "2025-09-29T23:30:47.533662",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is not good because it fails to adhere to the core instructions.\n\n- **Focus on Motion:** The main instruction is to describe the subject's motion. The subject in this video is static. The instructions specify, \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\" Instead of doing this, the caption provides a lengthy description of the subject's appearance and the environment, which the instructions explicitly advise against.\n\n- **Speculative Language:** The caption uses speculative phrases like \"suggesting a design\" and \"possibly indicating movement,\" which are forbidden by the instructions (\"Avoid speculative statements like 'there might be,' 'it appears'\").\n\n- **Abstract/Subjective Descriptions:** The caption includes the phrase \"enhancing the sleek and modern aesthetic,\" which is an abstract and subjective interpretation, directly contradicting the instruction to \"Avoid abstract descriptions.\"\n\nIn summary, the caption focuses on static visual details, speculation, and subjective interpretation, while the instructions demand a concise, objective description focused purely on motion (or the lack thereof).",
-  "revised_caption_by_generated_critique": "The person in the spacesuit is standing still.",
+  "generated_critique": "The caption is overly descriptive of the subject's appearance and the environment, violating the instruction to focus on motion. It also includes speculative phrases like \"suggesting\" and \"possibly indicating,\" as well as subjective descriptions like \"high-tech, industrial atmosphere\" and \"sleek and modern aesthetic,\" all of which are explicitly forbidden. The description of the motion itself is accurate but is buried within unnecessary details. The caption should be rewritten to concisely describe only the subject's movement, which is a slow, smooth backward drift.",
+  "revised_caption_by_generated_critique": "A person drifts backward slowly and smoothly.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "FqDKHWjpVVQ.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:06:39.316608",
+  "generation_timestamp": "2025-09-30T00:37:12.605819",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial description incorrectly states that the wall is in the middle ground on the right. Additionally, the building's position and depth are described incorrectly, and the depth of the trees is also wrong. The description of the wall's movement as it pans is inaccurate.",
-  "revised_caption_by_generated_critique": "From a first-person perspective at eye level, a firearm occupies the foreground at the bottom center and right of the frame. Initially, a dark wall is positioned in the foreground on the right, with a multi-story building in the background on the left and trees in the middle ground between them. A heads-up display is overlaid, with a mini-map in the bottom left, status indicators in the bottom right, and orange diamond-shaped markers near the center. The view pans to the left, causing the dark wall to move off-screen to the right. Simultaneously, a person lying on the ground comes into view, settling in the bottom left quadrant in the middle ground, while the orange markers shift across the screen in correspondence with the camera's movement.",
+  "generated_critique": "The caption incorrectly states the wall's initial position. The position and depth of the building and the trees are also misidentified. The description of the wall's movement as the camera pans is incomplete.",
+  "revised_caption_by_generated_critique": "From a first-person perspective at eye level, a firearm occupies the foreground at the bottom center and right of the frame. Initially, a dark wall is positioned in the middle ground on the left, with a multi-story building in the background on the right and trees in the far background between them. A heads-up display is overlaid, with a mini-map in the bottom left, status indicators in the bottom right, and orange diamond-shaped markers near the center. The view pans to the left, causing the dark wall to move off-screen to the right. As the camera continues to pan, a person lying on the ground comes into view, settling in the bottom left quadrant in the middle ground, while the orange markers shift across the screen in correspondence with the camera's movement. The building and trees become more prominent in the frame as the wall disappears.",
   "status": "success"
 }

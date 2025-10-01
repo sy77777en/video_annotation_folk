@@ -2,6 +2,7 @@
     "label": "Has Downward Movement (Relative to Camera)",
     "label_name": "has_downward_wrt_camera",
     "def_question": [
+        "Does the camera move physically downward (or pedestals down) with respect to the initial frame?",
         "Does the camera move downward (not tilting down) with respect to the initial frame?",
         "Is the camera moving downward in space based on its starting position?",
         "Is the camera moving downward (not tilting down) with respect to itself, creating a noticeable vertical parallax effect?",
@@ -25,6 +26,7 @@
         "Is the camera lowering, creating a strong sense of vertical movement?"
     ],
     "def_prompt": [
+        "The camera moves physically downward (or pedestals down) with respect to the initial frame.",
         "A video where the camera moves downward (not tilting down) with respect to the initial frame.",
         "A shot where the camera moves downward in space based on its starting position.",
         "A video where the camera moves downward (not tilting down) with respect to itself, creating a noticeable vertical parallax effect.",

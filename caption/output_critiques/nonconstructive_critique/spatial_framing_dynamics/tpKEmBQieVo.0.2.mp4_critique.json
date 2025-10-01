@@ -2,7 +2,7 @@
   "video_id": "tpKEmBQieVo.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:39:58.759225",
+  "generation_timestamp": "2025-09-30T04:36:04.374813",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The man's head is incorrectly described as being in the foreground. The description of the small dark object is incomplete as it fails to mention its movement. The term used for the camera angle is not specific enough.",
-  "revised_caption_by_generated_critique": "In a low-angle, worm's-eye view close-up shot filmed from the subject's chest, a man's head is centered in the frame, with his shoulders and torso occupying the bottom foreground. His hands are positioned in the top left and top right corners, framing his head. A clear blue sky fills the entire background. A small, dark object is visible in the background, to the right of the center, moving slowly across the sky. The man's hands move slightly as he adjusts the goggles on his helmet.",
+  "generated_critique": "The description of the man's head being in the foreground is incorrect. The caption also fails to describe the movement of the small object. The term 'low-angle' is an inaccurate description of the camera's height.",
+  "revised_caption_by_generated_critique": "In a close-up shot filmed from the subject's chest level, a man's head is centered in the frame, with his shoulders and torso occupying the bottom of the image. His hands are positioned in the top left and top right corners, framing his head. A clear blue sky fills the entire background. A small, dark object is visible in the background, to the right of the center, moving slightly. The man's hands move as he adjusts the goggles on his helmet.",
   "status": "success"
 }

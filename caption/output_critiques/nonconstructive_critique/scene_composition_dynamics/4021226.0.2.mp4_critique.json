@@ -2,7 +2,7 @@
   "video_id": "4021226.0.2.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:51:19.341659",
+  "generation_timestamp": "2025-09-30T00:21:43.489780",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The individual's position is misidentified as the foreground. The number of stand mixers is incorrect.",
-  "revised_caption_by_generated_critique": "The scene is set within a brightly lit commercial kitchen during the daytime. In the center, a person wearing a blue shirt and a beige apron stands before a large, rectangular, grey insulated delivery bag with black interior straps. The background features stainless steel work surfaces, various kitchen equipment including multiple large stand mixers, and another individual working near a window. The person in the center moves their hands and then turns toward a counter as the camera pans slightly to the right.",
+  "generated_critique": "The caption incorrectly identifies the position of the individual wearing a blue shirt and a beige apron. The number of large stand mixers mentioned is also incorrect.",
+  "revised_caption_by_generated_critique": "The scene is set within a brightly lit commercial kitchen during the daytime. In the foreground, a person wearing a blue shirt and a beige apron stands beside a large, rectangular, grey insulated delivery bag with black interior straps. The background features stainless steel work surfaces, various kitchen equipment including two large stand mixers, and another individual working near a window. The person in the foreground moves their hands and then turns toward a counter as the camera pans slightly to the right.",
   "status": "success"
 }

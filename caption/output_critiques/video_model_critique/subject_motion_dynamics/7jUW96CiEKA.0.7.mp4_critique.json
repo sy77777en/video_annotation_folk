@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:25:54.882808",
+  "generation_timestamp": "2025-09-29T22:20:08.019076",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is not good because it fails to adhere to several key instructions.\n\nHere is a detailed breakdown of the issues:\n\n*   **Unnecessary Appearance and Background Details:** The caption describes the bird's appearance (\"with a yellow beak and gray body\") and the background (\"muddy, shallow water area with some scattered debris and a small rock or root\"). The instructions explicitly state to focus on the subject's motion and not to mention appearance unless needed to differentiate between subjects. Since there is only one bird, these details are superfluous.\n*   **Speculative Language:** The caption uses the phrase \"appearing to be in a playful or bathing behavior.\" This is a speculative interpretation of the bird's intent, which violates the instruction to \"Avoid emotional or subjective adjectives\" and \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\"\n*   **Lack of Conciseness:** By including details about appearance, background, and behavior, the caption becomes less concise and deviates from the primary goal of describing motion.\n\nA better caption, following the instructions, would focus only on the bird's actions in chronological order, like this:\n\n\"A bird standing in shallow water vigorously flaps its wings, dips its head and body, and shakes, splashing water around itself.\"",
-  "revised_caption_by_generated_critique": "A bird in shallow water vigorously flaps its wings, dips its head and body, and shakes, splashing water around itself.",
+  "generated_critique": "The caption includes unnecessary details about the subject's appearance (\"with a yellow beak and gray body\") and the background scenery, which the instructions state to avoid. It also contains the speculative phrase \"appearing to be in a playful or bathing behavior,\" which violates the rule against speculation and subjective descriptions. The description of the motion is also slightly redundant (\"flapping its wings vigorously... continues to flap its wings\"). The caption should be revised to focus solely on the bird's actions in chronological order, removing the descriptive, speculative, and redundant elements.",
+  "revised_caption_by_generated_critique": "A bird in shallow water vigorously flaps its wings, splashing water around itself. It dips its head and body into the water, continuing to flap and create splashes.",
   "status": "success"
 }

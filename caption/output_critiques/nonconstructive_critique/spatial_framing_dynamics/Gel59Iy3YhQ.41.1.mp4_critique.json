@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.41.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:52:13.548366",
+  "generation_timestamp": "2025-09-30T00:22:33.352147",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the shot as static and fails to mention the camera zoom out that transitions the shot from a medium to a medium-full shot. The description omits the smaller emblem located in the upper left corner. The background is inaccurately described as being filled by the stone wall, as it fails to mention the indistinct white shapes visible in the distance. The text caption is incorrectly assigned a 3D position in the foreground.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a person positioned in the center of the frame and in the middle ground. The camera gradually zooms out, transitioning the shot to a medium-full view. In the background, a large wooden sign is located in the upper center, mounted on a stone wall, with indistinct white shapes visible in the distance. A smaller emblem is located in the upper left corner. A text caption is overlaid at the bottom center of the screen. The camera is positioned at the subject's level.",
+  "generated_critique": "The caption incorrectly describes the shot as static, failing to mention the camera zoom and the resulting change in shot size. The description of the background is inaccurate, as it omits visible elements and incorrectly states that a wall fills the entire background. The caption also fails to mention another element in the middle ground. Furthermore, it incorrectly assigns a 3D position to the text overlay.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a person positioned in the center of the frame and in the middle ground. The camera gradually zooms in, changing the shot size to a close-up. In the background, a large wooden sign is prominently displayed in the upper center, mounted on a stone wall, with additional elements such as plants and a bench visible around it. Another object, a small table, is present in the middle ground beside the person. A text caption is overlaid at the bottom center of the screen, appearing flat on the video. The camera is positioned at the subject's eye level.",
   "status": "success"
 }

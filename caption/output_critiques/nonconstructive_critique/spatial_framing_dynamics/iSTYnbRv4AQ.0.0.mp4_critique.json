@@ -2,7 +2,7 @@
   "video_id": "iSTYnbRv4AQ.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:30:29.646269",
+  "generation_timestamp": "2025-09-30T04:24:24.097722",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the red car's motion is inaccurate. The caption omits a figure moving from the foreground to the middle ground. The initial positions of the green scooter and the red car are incorrect, and the caption fails to describe their movement as they exit the frame.",
-  "revised_caption_by_generated_critique": "The camera rapidly moves forward down the center of a street, creating a strong radial motion blur that emanates from the background. In the bottom left foreground, a red car is initially parked but begins to move, becoming blurred by the fast motion as it exits the frame. A green scooter is initially positioned in the right middle ground, parked on the pavement, but also moves out of the frame. A figure is visible moving from the foreground to the middle ground. The scene is framed by tall buildings on the left and right sides, which recede from the middle ground to the background. A central pedestrian walkway acts as a vanishing point, where small figures of people are visible walking in the distant background. The camera is positioned at a low height relative to the street but is above the distant subjects it moves towards.",
+  "generated_critique": "The description of the red car's motion is inaccurate. The caption fails to mention a subject in the foreground and their movement. The initial positions of the red car and the green scooter are described incorrectly, and the description of their movement and changing spatial positions is also inaccurate.",
+  "revised_caption_by_generated_critique": "The camera rapidly moves forward down the center of a bustling street, creating a dynamic radial motion blur that radiates from the background. In the foreground, a red car is prominently featured, its motion captured as it speeds along the street. A person on a green scooter is also in the foreground, moving swiftly on the pavement. Tall buildings frame the scene on both sides, receding into the background. A central pedestrian walkway serves as a vanishing point, where small figures of people can be seen walking in the distance. The camera is positioned at a low angle relative to the street, capturing the vibrant movement of the subjects as it advances towards them.",
   "status": "success"
 }

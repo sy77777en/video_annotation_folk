@@ -2,7 +2,7 @@
   "video_id": "8iZ8RtiJq14.4.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T21:08:58.229945",
+  "generation_timestamp": "2025-09-30T00:09:44.006539",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and adheres to all the provided instructions.\n\n**Accuracy:** The description is highly accurate. It correctly identifies a humanoid figure typing, another standing and watching, and a third walking into the scene to also watch. The mention of the stationary figures on the left is also correct.\n\n**Completeness:** The caption completely covers all the salient motion in the video. It describes the actions of the primary subjects in chronological order: the continuous typing, the arrival and stopping of the third figure, and the static observation by the other figures.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions are presented in a clear, logical sequence.\n*   **Focus on Motion:** The description focuses on concrete actions like \"sits hunched,\" \"fingers moving as it types,\" \"walks into the frame,\" and \"stops.\"\n*   **Objectivity:** The language is neutral and avoids subjective or emotional terms.\n*   **Clarity and Conciseness:** The paragraph is well-written, easy to understand, and provides the essential details without unnecessary information.\n*   **Subject Interaction:** It clearly describes how the figures interact with their environment (typing on a keyboard) and with each other (looking down at the one typing).\n*   **Handling of Subjects:** It effectively differentiates between the subjects based on their actions and positions.\n\nThe caption is a perfect example of how to follow the given guidelines. It is accurate, comprehensive, and well-structured.",
-  "revised_caption_by_generated_critique": "A humanoid figure sits hunched over a desk, its silver fingers moving as it types on a keyboard. A second, similar figure stands motionless behind it, looking down. A third humanoid figure walks into the frame from the left, stops next to the standing figure, and also looks down at the one typing. Two additional figures are partially visible on the far left, remaining stationary throughout the clip.",
+  "generated_critique": "The caption inaccurately describes the primary action in the video. The seated figure's fingers are not \"resting on a keyboard\" but are actively moving and typing. The description should be corrected to state that the humanoid figure is typing on the keyboard to accurately reflect its motion and interaction with the object.",
+  "revised_caption_by_generated_critique": "A humanoid figure sits hunched over a desk, its silver fingers moving as it types on a keyboard. A second, similar figure stands motionless behind it, looking down. A third figure walks in from the left to watch, followed by a fourth, who also joins the line of observers.",
   "status": "success"
 }

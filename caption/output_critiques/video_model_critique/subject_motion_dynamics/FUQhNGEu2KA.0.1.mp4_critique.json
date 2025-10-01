@@ -2,7 +2,7 @@
   "video_id": "FUQhNGEu2KA.0.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-29T01:23:57.347296",
+  "generation_timestamp": "2025-09-30T03:12:41.730634",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent.\n\n**Accuracy:** The caption is perfectly accurate. It correctly describes the sequence of events: the person gets into bed, lies down, and then covers themselves with a blanket.\n\n**Completeness:** The description is complete, capturing all the key movements of the subject within the video clip.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions are presented in the correct chronological sequence.\n*   **Focus on Motion:** The description focuses entirely on the subject's motion and their interaction with the bed and blanket.\n*   **Clarity and Conciseness:** The language is simple, clear, and to the point.\n*   **Objectivity:** The caption is objective and avoids any speculative or emotional language.\n*   **Formatting:** It follows the required format of a single, unformatted paragraph.\n\nThe caption effectively and accurately describes the video's content while adhering to all provided guidelines.",
-  "revised_caption_by_generated_critique": "A person climbs into a bed from the right side of the frame, then lies down and pulls a blanket over their body until they are completely covered.",
+  "generated_critique": "The caption incorrectly states that the person is \"nearly completely covered, with only some of their black hair visible outside of the blanket.\" In the video, the person pulls the blanket entirely over their head, becoming fully covered and disappearing from view. The description should be corrected to reflect that the person is completely covered by the blanket at the end.",
+  "revised_caption_by_generated_critique": "In a dark room lit by a single bedside lamp, a person gets into bed, lies down, and pulls a blanket completely over their head, disappearing from view.",
   "status": "success"
 }

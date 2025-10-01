@@ -2,7 +2,7 @@
   "video_id": "OCBYMQzG44U.30.12.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:34:37.144818",
+  "generation_timestamp": "2025-09-29T20:33:54.958002",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yue Lv"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera angle is incorrectly described as low. The caption misstates the number of arched doorways visible at the start. The camera movement is described as one pan instead of two. The depth of the curved wall is incorrectly described as extending from the middle ground.",
-  "revised_caption_by_generated_critique": "This is a wide scenery shot of an empty room. The video begins with the camera positioned at a mid-level angle in the right foreground, partially behind a white-tiled wall. The view looks across a large, tiled floor that occupies the bottom half of the frame, with a black and white geometric pattern in the middle ground. In the background, dark walls line the space, and two arched doorways are visible slightly left of center. The camera then performs two quick pans to the right, revealing more of the room. These movements shift the arched doorways to the center-left background and bring a curved wall on the right side of the room into view, which extends from the foreground to the right edge of the frame.",
+  "generated_critique": "The description of the camera angle is incorrect. The caption misstates the number of arched doorways visible at the start and incorrectly describes the camera movement as a single pan. It also fails to mention the number of doorways visible after the movement. The description of the curved wall's position and extension is also incorrect.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot of an empty room, captured from a low angle in the right foreground, partially obscured by a white-tiled wall. The scene features a large, tiled floor with a black and white geometric pattern. Initially, two arched doorways are visible in the background, slightly left of center. The camera performs a series of quick pans to the right, gradually revealing more of the room. After the movement, three arched doorways are visible, and a curved wall on the right side of the room comes into view, extending from the middle ground to the far right edge of the frame.",
   "status": "success"
 }

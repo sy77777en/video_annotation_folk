@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.5.10.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:24:57.932320",
+  "generation_timestamp": "2025-09-29T20:26:23.343878",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the depth of the hand as \"foreground\" and the control panel as \"middle ground\". The description also omits the blurred right forearm in the lower left corner and fails to mention the left side of the background.",
-  "revised_caption_by_generated_critique": "In this close-up shot, a gloved hand holding a cylindrical toggle switch is positioned in the middle ground. The hand interacts with a dark control panel that occupies the foreground in the center and right of the frame. On the panel, the text \"PULL LEVER DOWN\" and three yellow arrows are located in the center. To the right of the text is an ON/OFF switch, with a red light at the top right and a partially visible warning sign at the bottom right. A blurred right forearm is visible in the lower left corner. The left side of the background is out of focus. The hand moves the toggle switch downwards, following the direction indicated by the arrows. The camera remains static and is positioned at the subject's level throughout the shot.",
+  "generated_critique": "The caption misidentifies the depth of the gloved hand as foreground and the control panel as middle ground. Furthermore, the caption omits a description of the element in the lower left corner and fails to describe the background on the left side of the frame.",
+  "revised_caption_by_generated_critique": "In this close-up shot, a gloved hand holding a cylindrical toggle switch is positioned in the middle ground on the left side of the frame. The hand interacts with a dark control panel that occupies the foreground in the center and right of the frame. On the panel, the text \"PULL LEVER DOWN\" and three yellow arrows are located in the center. To the right of the text is an ON/OFF switch, with a red light at the top right and a partially visible warning sign at the bottom right. In the lower left corner, a small gauge is visible. The background on the left side of the frame is a blurred metallic surface. The hand moves the toggle switch downwards, following the direction indicated by the arrows. The camera remains static and is positioned at the subject's level throughout the shot.",
   "status": "success"
 }

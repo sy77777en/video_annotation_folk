@@ -2,7 +2,7 @@
   "video_id": "eWpsukBVJAI.0.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:18:53.385980",
+  "generation_timestamp": "2025-09-30T03:02:39.506890",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies a camera movement as \"pulls back.\" The scene is a freeze-frame, but the caption describes movement. The description of the man in the hoodie's movement is inaccurate. The phrase \"The shot continues to pull back\" is an incorrect description of the camera movement. The final positions of the man in the leather jacket and the man in the suit are described incorrectly, with the man in the suit being misidentified as in the center-background.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot at the subjects' level, showing a man in a leather jacket on the right, a man in a suit in the center, and a man with long hair on the left, all positioned in the middle ground. The camera then pans left as another man in a hoodie moves through the left foreground. The scene transitions to an overhead freeze-frame, revealing two women sitting in a booth in the middle ground—one with glasses on the left and one with a beanie on the right. The shot remains static from this high angle, with the man in the leather jacket now on the left and the man in the suit in the background, while the two women are in the right foreground.",
+  "generated_critique": "The caption incorrectly describes movement in what is a static scene, citing non-existent camera actions like 'pans left' and 'pulls back' and subject movement. The described path of the man in the hoodie is inaccurate. The final positions and depths of the man in the leather jacket and the man in the suit are described incorrectly; the man in the suit is not in the center-background, and the depth of the man in the leather jacket is misidentified.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot at the subjects' level, showing a man in a leather jacket on the right, a man in a suit in the center, and a man with long hair on the left, all positioned in the middle ground. The scene remains static, with no camera movement. A man in a hoodie is seen in the left foreground, but he does not move through the scene. The camera angle shifts to an overhead position, revealing two women sitting in a booth in the middle ground—one with glasses on the left and one with a beanie on the right. The man in the leather jacket remains on the left, and the man in the suit is not in the center-background but remains in the middle ground. The two women are now in the right foreground.",
   "status": "success"
 }

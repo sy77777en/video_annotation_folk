@@ -2,7 +2,7 @@
   "video_id": "VaSlqE0Nx2Q.12.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:07:37.531072",
+  "generation_timestamp": "2025-09-29T22:18:18.663280",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the small patches of short grass in the middle ground. The description of a snow-covered path is inaccurate.",
-  "revised_caption_by_generated_critique": "This video presents a static wide shot of a coastal landscape. In the foreground, dark, leafless bushes are positioned on the bottom left and bottom right, framing the view. A sandy path begins at the bottom center and leads through the middle ground, where small patches of short grass are visible, towards a wide, flat beach that occupies the horizontal center of the frame. In the background, the ocean stretches across the upper-middle portion of the frame, with an overcast sky filling the top. The camera is positioned at a high angle, looking down from a dune towards the sea.",
+  "generated_critique": "The caption's description of the middle ground is incomplete. Additionally, the path is not snow-covered.",
+  "revised_caption_by_generated_critique": "This video presents a static wide shot of a coastal landscape. In the foreground, dark, leafless bushes are positioned on the bottom left and bottom right, framing the view. A sandy path begins at the bottom center and leads through the middle ground, which features sparse vegetation and gentle dunes, towards a wide, flat beach that occupies the horizontal center of the frame. In the background, the ocean stretches across the upper-middle portion of the frame, with an overcast sky filling the top. The camera is positioned at a high angle, looking down from a dune towards the sea.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "9JBMpzW_B58.2.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:29:48.094857",
+  "generation_timestamp": "2025-09-30T04:23:43.148902",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera angle as 'high-angle' is incorrect. The caption incorrectly states that the ocean only fills the middle ground and that the sky is only in the background. The description of the watermark as a 'foreground overlay' is also incorrect.",
-  "revised_caption_by_generated_critique": "This video captures a scenery shot from an extreme wide shot perspective, looking forward from the bow of a container ship. The ship's deck, stacked with containers, occupies the bottom of the frame, extending from the immediate foreground into the middle ground. The ocean stretches from the ship's bow to the horizon line, filling both the middle ground and background. The sky spans the upper portion of the frame, dominating both the middle ground and background. The camera remains stationary relative to the ship, which moves forward, creating a dynamic where the clouds streak rapidly across the sky in a time-lapse effect. A watermark is visible in the bottom right corner.",
+  "generated_critique": "The description of the camera perspective as high-angle is incorrect. The description of the ocean as being only in the middle ground is inaccurate. The sky is incorrectly described as being only in the background. The statement describing the watermark's depth is incorrect.",
+  "revised_caption_by_generated_critique": "This video features a scenery shot from an extreme wide shot perspective, looking forward from the bow of a container ship. The ship's deck, stacked with containers, occupies the bottom of the frame, extending from the immediate foreground into the middle ground. The ocean spans from the ship's bow to the horizon line, filling both the middle ground and background. The sky stretches across the top portion of the frame, encompassing both the middle ground and background. The camera remains stationary relative to the ship, which moves forward, creating a dynamic where the clouds streak rapidly across the sky in a time-lapse effect. A watermark is visible in the bottom right corner.",
   "status": "success"
 }

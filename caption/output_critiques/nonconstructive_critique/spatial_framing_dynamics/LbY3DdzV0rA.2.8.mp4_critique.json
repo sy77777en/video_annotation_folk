@@ -2,7 +2,7 @@
   "video_id": "LbY3DdzV0rA.2.8.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T23:14:11.656264",
+  "generation_timestamp": "2025-09-30T05:13:58.771068",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption inaccurately states the ground occupies \"the bottom third of the frame\" and that the sky occupies \"the top two-thirds of the frame\". The description of the plain's depth is imprecise. The caption also fails to specify the 3D position of the sky.",
-  "revised_caption_by_generated_critique": "This video showcases an extreme wide shot of a desert landscape, emphasizing the scenery rather than a specific subject. The foreground, a flat, arid plain with scattered shrubs, occupies approximately the lower half of the frame and extends into the middle ground. In the background, a dark mountain range stretches across the horizon. The upper half of the frame is dominated by the sky, where a massive, dark storm cloud swirls and advances in a time-lapse motion, with rain visibly falling from its base in the left middle ground. The top right of the frame features a lighter portion of the sky with pale blue and white clouds. The camera is positioned at a low height, looking across the desert floor toward the horizon, capturing the sky's vastness and depth.",
+  "generated_critique": "The stated proportion of the frame occupied by the ground scenery, \"the bottom third,\" is incorrect, and the description of the plain's depth is inaccurate. The stated proportion of the frame occupied by the sky, \"the top two-thirds,\" is also incorrect. The caption is missing the 3D position of the sky.",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a desert landscape, emphasizing the scenery rather than a specific subject. The foreground, a flat, arid plain with scattered shrubs, occupies a significant portion of the frame and extends into the middle ground. In the background, a dark mountain range rests on the horizon, stretching across the width of the scene. The sky dominates the upper portion of the frame, with a massive, dark storm cloud swirling and advancing in a time-lapse motion, visible in the top left and center. Rain can be seen falling from the cloud's base in the left middle ground. The top right of the frame features a lighter portion of the sky with pale blue and white clouds. The camera is positioned at a low height, looking across the desert floor toward the horizon, capturing the sky's vastness and depth.",
   "status": "success"
 }

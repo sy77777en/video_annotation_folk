@@ -2,7 +2,7 @@
   "video_id": "61.1.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:25:17.943455",
+  "generation_timestamp": "2025-09-29T20:34:06.950894",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption has several inaccuracies and does not fully adhere to the provided instructions.\n\n**Accuracy:**\n- The caption incorrectly states the man \"initially looks straight ahead.\" In the video, he is initially looking down and to his right with a squinted, pained expression.\n- The description of him \"smil[ing] slightly and tilt[ing] his head to the side\" is also inaccurate. He does not smile; his expression changes as he purses his lips. He lifts and turns his head slightly, but does not tilt it to the side.\n\n**Completeness:**\n- The caption is incomplete. It omits the man's initial squinted expression.\n- It fails to describe the most specific and salient motion: the man brings his index finger up to touch his lips. The caption only vaguely says he is \"continuing to gesture with his index finger.\"\n\n**Adherence to Instructions:**\n- **Specificity of Motion:** The caption violates the instruction to describe actions with clarity. \"Gesture with his index finger\" is a generic description, whereas the video clearly shows him bringing the finger to his mouth and touching his lips.\n- **Subjective Language:** The caption uses subjective and interpretive words like \"smiles slightly,\" \"thoughtful,\" and \"engaged,\" which the instructions explicitly forbid. The goal is to describe the physical motion, not to interpret the subject's emotional state.\n- **Chronological Order:** While the caption attempts a chronological order, it starts from an incorrect initial action, making the entire sequence inaccurate.",
-  "revised_caption_by_generated_critique": "A man with a short beard and a light-colored collared shirt is seated in a dimly lit room. Initially, he looks down and to his right with his eyes squinted and brow furrowed. He then raises his right hand, bringing his index finger up to his mouth. As his finger nears his face, he lifts and turns his head to look forward, purses his lips, and touches them with the tip of his index finger. He holds this position, looking forward.",
+  "generated_critique": "The caption contains factual inaccuracies and uses subjective language, which violates the instructions. The man does not change his expression to *include* squinted eyes and furrowed brows; he has this expression from the beginning of the clip. He also does not smile or tilt his head. The phrases \"serious expression,\" \"smiling slightly,\" and \"appearing thoughtful and engaged\" are subjective interpretations of his emotional state and should be replaced with objective descriptions of his physical actions. The description should be corrected to state that the man, with his brows already furrowed and eyes squinted, raises his index finger to his lips.",
+  "revised_caption_by_generated_critique": "In a dimly lit setting, a man with a goatee sits in a booth. With his brows furrowed and eyes squinted, he raises his right index finger to his lips and looks forward.",
   "status": "success"
 }

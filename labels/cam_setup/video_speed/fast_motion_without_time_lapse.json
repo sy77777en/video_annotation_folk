@@ -2,7 +2,7 @@
     "label": "Fast-Motion",
     "label_name": "fast_motion_without_time_lapse",
     "def_question": [
-        "Is it a fast-motion video with forward playback speed slightly faster than real-time (1x–3x)?"
+        "Is it a fast-motion video with forward playback speed slightly faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration?"
     ],
     "alt_question": [
         "Does the scene appear quicker than normal but not as extreme as time-lapse?",
@@ -10,7 +10,7 @@
         "Does the video show a slight acceleration of real-time movement?"
     ],
     "def_prompt": [
-        "A fast-motion video with forward playback speed slightly faster than real-time (1x–3x)."
+        "A fast-motion video with forward playback speed moderately faster than real time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration."
     ],
     "alt_prompt": [
         "A shot where actions appear slightly accelerated but not time-lapsed.",

@@ -2,7 +2,7 @@
   "video_id": "ky5uvjPVhk8.3.8.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:05:41.512667",
+  "generation_timestamp": "2025-09-29T21:09:12.514777",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yue Lv"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The initial description of the scene is incorrect, specifically regarding the man's position on the left side of the frame in the foreground. The statement that the man moves towards the center of the frame is inaccurate, and the caption incorrectly attributes the change in framing to the subject's movement. Additionally, the description of the surrounding greenery and stone elements as only a backdrop is incorrect.",
-  "revised_caption_by_generated_critique": "The video opens with a wide shot featuring two people on a path in a Japanese garden. The man in the white jacket is initially positioned on the right side of the frame, kneeling in the foreground, while the woman in the yellow vest stands further down the path in the middle ground, slightly to the left. As the video progresses, the camera shifts to bring the man into alignment with the woman, who remains in the middle ground, creating a balanced composition. The path curves gently, guiding the viewer's eye through the scene, with vibrant foliage in the background. The camera maintains a consistent height at the subjects' level, emphasizing their interaction within the serene garden setting. The surrounding greenery and stone elements are integral to the scene, adding texture and depth, and enhancing the spatial richness of the garden environment.",
+  "generated_critique": "The initial description of the subjects' 2D and 3D positions is incorrect. The statement that the man moves towards the center of the frame is also inaccurate. The caption fails to mention the camera's movement and incorrectly describes the subjects' final positions. Furthermore, the description of the surrounding greenery and stone elements is wrong, as their placement is not limited to the background.",
+  "revised_caption_by_generated_critique": "The video opens with a wide shot of two people on a path in a Japanese garden. The man in the white jacket is initially kneeling on the left side of the frame, while the woman in the yellow vest stands further down the path, slightly to the right. As the video progresses, the man stands up but remains on the left side, and the woman stays in her position. The path gently curves, guiding the viewer's eye through the scene, with vibrant foliage and stone elements surrounding the subjects, adding depth and texture to the entire setting. The camera subtly pans to follow the subjects, maintaining a consistent height to emphasize their interaction within the serene garden environment.",
   "status": "success"
 }

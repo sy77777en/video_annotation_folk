@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:45:13.177474",
+  "generation_timestamp": "2025-09-30T00:15:21.646551",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera height is incorrectly identified as 'at the subject's height', and the terms 'middle ground' and 'foreground' are used incorrectly. The figure's initial position is inaccurately described as 'on the right', and the position of the number '38' and 'mp' is incorrectly stated as 'top left'. The figure's direction of travel is described incorrectly. The description of how the text elements move is imprecise, and the position of the text '/40' is incorrectly described as 'bottom left'.",
-  "revised_caption_by_generated_critique": "This video features an extreme wide shot of the scene, captured from a slightly elevated side-view perspective. Initially, a small, abstract figure on a sled is positioned in the middle ground on the left, situated on a long, curved black line. In the top right, the number \"38\" and the notation \"mp\" are visible. As the figure travels from left to right along the line, the camera pans to follow it, causing the text elements on the right to move out of the frame. Concurrently, several short, dashed lines appear in the middle ground to the right of the figure, while the text \"/40\" materializes in the bottom right. By the end of the clip, the figure is positioned on the center-right, with the track continuing off-screen and a large, C-shaped curve now occupying the left side of the frame.",
+  "generated_critique": "The caption incorrectly specifies the camera height and uses the terms \"middle ground\" and \"foreground\". The initial position of the figure is described incorrectly, as is the position of the number \"38\" and the notation \"mp\". The description of the figure's movement is wrong. The description of how the text elements move out of the frame is inaccurate. The position of the text \"/40\" is also described incorrectly.",
+  "revised_caption_by_generated_critique": "This video features a wide shot of the scene, captured from a slightly elevated side-view perspective. Initially, a small, abstract figure on a sled is positioned in the foreground on the right, situated on a long, curved black line. In the top right, the number \"38\" and the notation \"mp\" are visible. As the figure moves from right to left along the line, the camera pans to follow it, causing the text elements on the right to gradually move out of the frame. Concurrently, several short, dashed lines appear to the left of the figure, while the text \"/40\" materializes in the bottom right corner. By the end of the clip, the figure is positioned on the center-left, with the track continuing off-screen and a large, C-shaped curve now occupying the right side of the frame.",
   "status": "success"
 }

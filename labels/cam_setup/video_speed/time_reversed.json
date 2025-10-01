@@ -2,7 +2,7 @@
     "label": "Time-Reversed",
     "label_name": "time_reversed",
     "def_question": [
-        "Is this video played in reverse, with events unfolding backward in time?"
+        "Is this video played in reverse, with events playing backward in time?"
     ],
     "alt_question": [
         "Does the motion appear unnatural, as if time is moving backward?",
@@ -10,7 +10,7 @@
         "Does the video playback events from end to start instead of start to end?"
     ],
     "def_prompt": [
-        "A time-reversed video where events unfold backward in time."
+        "A time-reversed video where events play backward in time."
     ],
     "alt_prompt": [
         "A shot where movement is reversed, playing from end to beginning.",

@@ -2,7 +2,7 @@
   "video_id": "hHG1wva1B0w.7.5.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:03:58.421129",
+  "generation_timestamp": "2025-09-29T21:07:12.170910",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yue Lv"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The floor is incorrectly described as black and white. The caption omits the smaller bookshelf on the left. The figure is incorrectly described as translucent. The location \"Co\" is an incorrect abbreviation. The caption fails to describe the animation of the text overlays and omits the \"[2,19]\" text overlay in the bottom left corner.",
-  "revised_caption_by_generated_critique": "The scene is set indoors in a room resembling a library or study, with dark wood bookshelves filled with books lining the back wall and a smaller bookshelf on the left. A large window is on the left, and the floor is tiled in a checkered pattern. In the center of the room, a red, semi-transparent figure sits in a gray chair at a light-colored wooden table. On the table are a stack of books, a small white cup, and several scattered papers. Text overlays are present at the bottom of the screen, with \"June 7th, 1977\" on the left, \"[2,19]\" in the bottom left corner, and \"Pitkin County Courthouse, Aspen, Colorado\" on the right. The text overlays animate onto the screen.",
+  "generated_critique": "The description of the floor's color is incorrect. The caption omits a bookshelf. The description of the figure as \"translucent\" is inaccurate. The text overlay for the location is transcribed incorrectly. The caption fails to describe the motion and timing of the text overlays and omits an additional text overlay.",
+  "revised_caption_by_generated_critique": "The scene is set indoors in a room resembling a library or study, with dark wood bookshelves filled with books lining the back wall and an additional bookshelf on the right. A large window is on the left, and the floor is tiled in a black and white pattern. In the center of the room, a red, semi-transparent figure sits in a gray chair at a light-colored wooden table. On the table are a stack of books, a small white cup, and several scattered papers. Text overlays appear at the bottom of the screen, with \"June 7th, 1977\" on the left and \"Pitkin County Courthouse, Aspen, Colorado\" on the right. An additional text overlay appears briefly in the center, providing context for the scene. The text overlays fade in and out smoothly, synchronized with the scene's progression.",
   "status": "success"
 }

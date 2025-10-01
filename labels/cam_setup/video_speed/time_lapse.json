@@ -2,7 +2,7 @@
     "label": "Time-Lapse",
     "label_name": "time_lapse",
     "def_question": [
-        "Is this a time-lapse video showing time passing rapidly over a long period?"
+        "Is this a time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period?"
     ],
     "alt_question": [
         "Is this a time-lapse video?",
@@ -11,7 +11,7 @@
         "Does the scene depict fast changes that would normally take much longer?"
     ],
     "def_prompt": [
-        "A time-lapse video showing time passing rapidly over a long period."
+        "A time-lapse video played forward at a greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period."
     ],
     "alt_prompt": [
         "A shot showcasing accelerated time progression.",

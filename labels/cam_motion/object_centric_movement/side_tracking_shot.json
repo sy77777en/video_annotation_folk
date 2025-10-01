@@ -2,6 +2,7 @@
     "label": "Side Tracking Shot",
     "label_name": "side_tracking_shot",
     "def_question": [
+        "Is it a side tracking shot with the camera moving from the side to follow the moving subject?",
         "Is it a tracking shot with the camera moving from the side to follow the subject as they move?",
         "Is it a tracking shot with the camera moving from the side to follow the subject?",
         "Is this a side-tracking shot?",
@@ -19,6 +20,7 @@
         "Is the camera movement strictly horizontal along the subject’s motion?"
     ],
     "def_prompt": [
+        "A side tracking shot with the camera moving from the side to follow the moving subject.",
         "A tracking shot where the camera moves from the side to follow the subject.",
         "A side-tracking shot.",
         "A side-tracking shot where the camera moves parallel to the subject.",

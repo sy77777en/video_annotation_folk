@@ -2,7 +2,7 @@
   "video_id": "4uGfFYzxWEg.10.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:33:04.022893",
+  "generation_timestamp": "2025-09-30T00:01:37.614747",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yili Han"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the camera pulls back, and the description of the camera tilt is inaccurate as it omits the initial downward movement.",
-  "revised_caption_by_generated_critique": "The video opens with a medium-full shot, framing two figures in the foreground, one on the left and one on the right. The camera initially tilts downward before tilting upward, transitioning into a wide shot that reveals a larger room. The two initial figures remain in the foreground, while numerous other figures and red desks populate the middle ground and background. The camera maintains a position at the subjects' level throughout the shot. A static \"[3]\" icon is present in the bottom left corner of the frame.",
+  "generated_critique": "The description of the camera movement is inaccurate; the camera does not pull back, and the caption fails to mention the initial downward tilt. The description of the people in the scene is also incomplete.",
+  "revised_caption_by_generated_critique": "The video opens with a medium-full shot, framing two figures in the foreground, one on the left and one on the right. The camera initially tilts downward before transitioning into a wide shot, revealing a larger room. The two initial figures remain in the foreground, while numerous other figures, including a group of people engaged in conversation, and red desks populate the middle ground and background. The camera maintains a position at the subjects' level throughout the shot. A static \"[3]\" icon is present in the bottom left corner of the frame.",
   "status": "success"
 }

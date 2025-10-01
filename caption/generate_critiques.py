@@ -12,6 +12,7 @@ Features:
 - Detailed dry run analysis with accurate counting
 - App.py-compatible folder structure
 - Complete change detection
+- Proper skip status handling and correction
 """
 
 import os
@@ -249,7 +250,7 @@ def parse_args():
     parser.add_argument("--verbose", action="store_true", default=False,
                        help="Show detailed processing information")
     parser.add_argument("--force-regenerate", action="store_true", default=False,
-                       help="Force regeneration of all critiques")
+                       help="Force regeneration of all successful critiques (respects skip rules)")
     parser.add_argument("--new-only", action="store_true", default=False,
                        help="Only process videos without existing critique files")
     parser.add_argument("--max-retries", type=int, default=3,
@@ -448,21 +449,66 @@ class CritiqueGenerator:
         
         return None
     
-    def needs_regeneration(self, video_id: str, caption_type: str, critique_type: str, 
-                          new_caption_data: Dict[str, Any], force_regenerate: bool = False) -> Tuple[bool, str]:
-        """Determine if critique needs to be regenerated"""
+    def should_skip_critique(self, critique_type: str, caption_data: Dict[str, Any]) -> Tuple[bool, str]:
+        """Determine if critique generation should be skipped due to perfect score"""
+        task_config = CRITIQUE_TASKS[critique_type]
         
-        # Force regeneration if requested
-        if force_regenerate:
-            return True, "Force regeneration requested"
+        # Skip if configured to skip perfect scores
+        if task_config["skip_perfect"]:
+            initial_rating = caption_data.get("initial_caption_rating_score")
+            if initial_rating == 5:
+                return True, f"Perfect score (5/5) - {critique_type} skips perfect scores"
         
-        existing_critique = self.load_existing_critique(video_id, caption_type, critique_type)
+        return False, "Not skipped"
+    
+    def save_skipped_critique(self, video_id: str, caption_type: str, critique_type: str,
+                             caption_data: Dict[str, Any], export_folder: str) -> bool:
+        """Save a skipped critique marker file"""
+        
+        file_path = self.get_critique_file_path(video_id, caption_type, critique_type)
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        task_config = CRITIQUE_TASKS[critique_type]
+        
+        skip_data = {
+            "video_id": video_id,
+            "caption_type": caption_type,
+            "critique_type": critique_type,
+            "status": "skipped",
+            "skip_reason": "Perfect score (5/5) - this critique type skips perfect scores",
+            "generation_timestamp": datetime.now().isoformat(),
+            "prompt_name": task_config["prompt_name"],
+            "model": task_config["model"],
+            "mode": task_config["mode"],
+            "source_caption_data": caption_data,
+            "source_export_folder": export_folder
+        }
+        
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(skip_data, f, indent=2, ensure_ascii=False)
+            return True
+        except Exception as e:
+            print(f"Error saving skipped critique to {file_path}: {e}")
+            return False
+    
+    def needs_regeneration(self, existing_critique: Dict[str, Any], 
+                          new_caption_data: Dict[str, Any], 
+                          critique_type: str,
+                          force_regenerate: bool = False) -> Tuple[bool, str]:
+        """Determine if critique needs to be regenerated (for non-skipped critiques only)"""
+        
+        # If no existing critique, need to generate
         if not existing_critique:
             return True, "No existing critique found"
         
         # If existing critique failed, always regenerate
         if existing_critique.get("status") == "failed":
             return True, "Previous generation failed"
+        
+        # If previously skipped but now shouldn't be, regenerate
+        if existing_critique.get("status") == "skipped":
+            return True, "Previously skipped, but no longer meets skip criteria"
         
         # Always compare entire caption_data - this is the primary check
         if existing_critique.get("source_caption_data") != new_caption_data:
@@ -475,19 +521,11 @@ class CritiqueGenerator:
             if existing_critique.get(field) != current_config[field]:
                 return True, f"Generation parameter changed: {field}"
         
+        # Apply force_regenerate only for successful critiques
+        if force_regenerate and existing_critique.get("status") == "success":
+            return True, "Force regeneration requested"
+        
         return False, "No changes detected"
-    
-    def should_skip_critique(self, critique_type: str, caption_data: Dict[str, Any]) -> Tuple[bool, str]:
-        """Determine if critique generation should be skipped due to perfect score"""
-        task_config = CRITIQUE_TASKS[critique_type]
-        
-        # Skip if configured to skip perfect scores
-        if task_config["skip_perfect"]:
-            initial_rating = caption_data.get("initial_caption_rating_score")
-            if initial_rating == 5:
-                return True, f"Perfect score (5/5) - {critique_type} skips perfect scores"
-        
-        return False, "Not skipped"
     
     def get_caption_instruction_for_task(self, task: str) -> str:
         """Get the caption instruction for the task using PromptGenerator"""
@@ -660,93 +698,132 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                               caption_data: Dict[str, Any], export_folder: str, video_url: str,
                               max_retries: int, dry_run: bool = False, verbose: bool = False,
                               force_regenerate: bool = False, new_only: bool = False) -> Tuple[str, str]:
-        """Process a single critique with detailed logic"""
+        """Process a single critique with proper skip status handling"""
         
-        # Check if should skip due to perfect score
-        should_skip, skip_reason = self.should_skip_critique(critique_type, caption_data)
-        if should_skip:
-            return "skipped", skip_reason
+        # Step 1: Determine if this should be skipped based on current caption data
+        should_skip_now, skip_reason = self.should_skip_critique(critique_type, caption_data)
         
-        # Check if needs regeneration
-        needs_regen, regen_reason = self.needs_regeneration(
-            video_id, caption_type, critique_type, caption_data, force_regenerate
-        )
+        # Step 2: Load existing critique if it exists
+        existing_critique = self.load_existing_critique(video_id, caption_type, critique_type)
         
-        # Handle new_only mode
-        if new_only and not needs_regen:
-            return "skipped", "new_only mode: existing file found"
-        
-        if not needs_regen:
-            return "skipped", f"No changes: {regen_reason}"
-        
-        if dry_run:
-            if "No existing critique found" in regen_reason:
-                return "generate", regen_reason
-            elif "Previous generation failed" in regen_reason:
-                return "regenerate_failed", regen_reason
-            else:
-                return "regenerate", regen_reason
-        
-        # Get task name for instruction lookup using config mapping
-        task_name = self.caption_type_to_task[caption_type]
-        caption_instruction = self.get_caption_instruction_for_task(task_name)
-        
-        # Extract required data
-        pre_caption = caption_data.get("pre_caption", "")
-        final_caption = caption_data.get("final_caption", "")
-        final_feedback = caption_data.get("final_feedback", "")
-        
-        task_config = CRITIQUE_TASKS[critique_type]
-        
-        # Retry logic
-        for attempt in range(max_retries + 1):
-            try:
-                if verbose:
-                    print(f"    Attempt {attempt + 1}: Generating {critique_type}...")
-                
-                # Generate critique
-                critique_response = self.generate_critique_response(
-                    prompt_template=task_config["prompt"],
-                    final_feedback=final_feedback,
-                    pre_caption=pre_caption,
-                    caption_instruction=caption_instruction,
-                    model_name=task_config["model"],
-                    supports_video=task_config["supports_video"],
-                    uses_feedback=task_config["uses_feedback"],
-                    video_url=video_url,
-                    final_caption=final_caption  # Pass final_caption for worst_caption_generation
-                )
-                
-                # For worst_caption_generation, the critique_response IS the bad caption (no revision step)
-                if critique_type == "worst_caption_generation":
-                    revised_caption = critique_response
+        # Step 3: Determine what needs to happen
+        if should_skip_now:
+            # This critique SHOULD be skipped
+            
+            if not existing_critique:
+                # Case A1: No existing file - create skipped file
+                if dry_run:
+                    return "would_create_skip", skip_reason
                 else:
-                    # Generate revised caption for other critique types
-                    revised_caption = self.auto_generate_improved_caption(
-                        original_caption=pre_caption,
-                        generated_feedback=critique_response,
-                        critique_type=critique_type,
-                        video_url=video_url
+                    success = self.save_skipped_critique(
+                        video_id, caption_type, critique_type, caption_data, export_folder
                     )
+                    return "skipped_new" if success else "failed", skip_reason
+            
+            else:
+                existing_status = existing_critique.get("status")
+                caption_data_changed = (existing_critique.get("source_caption_data") != caption_data)
                 
-                # Save critique
-                success = self.save_critique(
-                    video_id, caption_type, critique_type, caption_data, 
-                    export_folder, critique_response, revised_caption
-                )
+                if existing_status == "skipped" and not caption_data_changed:
+                    # Case A2: Already skipped, no changes
+                    return "skipped", "Already skipped, no changes"
                 
-                if success:
-                    return "success", regen_reason
                 else:
-                    raise Exception("Failed to save critique file")
-                
-            except Exception as e:
-                if verbose:
-                    print(f"    Attempt {attempt + 1} failed: {e}")
-                if attempt == max_retries:
-                    return "failed", f"All {max_retries + 1} attempts failed: {str(e)}"
-                # Wait before retry
-                time.sleep(2)
+                    # Case A3 & A4: Need to update to skipped (either caption changed or wrong status)
+                    if dry_run:
+                        reason = "Caption changed but still skipped" if caption_data_changed else "Wrong status, needs update to skipped"
+                        return "would_update_to_skip", reason
+                    else:
+                        success = self.save_skipped_critique(
+                            video_id, caption_type, critique_type, caption_data, export_folder
+                        )
+                        return "updated_to_skip" if success else "failed", "Updated to skipped status"
+        
+        else:
+            # This critique should NOT be skipped - needs actual generation
+            
+            # Check if needs regeneration
+            needs_regen, regen_reason = self.needs_regeneration(
+                existing_critique, caption_data, critique_type, force_regenerate
+            )
+            
+            # Handle new_only mode
+            if new_only and not needs_regen:
+                return "skipped", "new_only mode: existing file found"
+            
+            if not needs_regen:
+                return "skipped", f"No changes: {regen_reason}"
+            
+            # Dry run reporting
+            if dry_run:
+                if "No existing critique found" in regen_reason:
+                    return "generate", regen_reason
+                elif "Previous generation failed" in regen_reason:
+                    return "regenerate_failed", regen_reason
+                else:
+                    return "regenerate", regen_reason
+            
+            # Actually generate critique
+            # Get task name for instruction lookup using config mapping
+            task_name = self.caption_type_to_task[caption_type]
+            caption_instruction = self.get_caption_instruction_for_task(task_name)
+            
+            # Extract required data
+            pre_caption = caption_data.get("pre_caption", "")
+            final_caption = caption_data.get("final_caption", "")
+            final_feedback = caption_data.get("final_feedback", "")
+            
+            task_config = CRITIQUE_TASKS[critique_type]
+            
+            # Retry logic
+            for attempt in range(max_retries + 1):
+                try:
+                    if verbose:
+                        print(f"    Attempt {attempt + 1}: Generating {critique_type}...")
+                    
+                    # Generate critique
+                    critique_response = self.generate_critique_response(
+                        prompt_template=task_config["prompt"],
+                        final_feedback=final_feedback,
+                        pre_caption=pre_caption,
+                        caption_instruction=caption_instruction,
+                        model_name=task_config["model"],
+                        supports_video=task_config["supports_video"],
+                        uses_feedback=task_config["uses_feedback"],
+                        video_url=video_url,
+                        final_caption=final_caption
+                    )
+                    
+                    # For worst_caption_generation, the critique_response IS the bad caption (no revision step)
+                    if critique_type == "worst_caption_generation":
+                        revised_caption = critique_response
+                    else:
+                        # Generate revised caption for other critique types
+                        revised_caption = self.auto_generate_improved_caption(
+                            original_caption=pre_caption,
+                            generated_feedback=critique_response,
+                            critique_type=critique_type,
+                            video_url=video_url
+                        )
+                    
+                    # Save critique
+                    success = self.save_critique(
+                        video_id, caption_type, critique_type, caption_data, 
+                        export_folder, critique_response, revised_caption
+                    )
+                    
+                    if success:
+                        return "success", regen_reason
+                    else:
+                        raise Exception("Failed to save critique file")
+                    
+                except Exception as e:
+                    if verbose:
+                        print(f"    Attempt {attempt + 1} failed: {e}")
+                    if attempt == max_retries:
+                        return "failed", f"All {max_retries + 1} attempts failed: {str(e)}"
+                    # Wait before retry
+                    time.sleep(2)
     
     def collect_all_critiques_for_export(self) -> Dict[str, Any]:
         """Collect all generated critiques into export format"""
@@ -781,6 +858,11 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                             critique_data = json.load(f)
                         
                         video_id = critique_data["video_id"]
+                        status = critique_data.get("status")
+                        
+                        # Skip failed critiques from export
+                        if status == "failed":
+                            continue
                         
                         # Initialize nested structure
                         if video_id not in export_data:
@@ -792,10 +874,16 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                         if caption_type not in export_data[video_id]["captions"]:
                             export_data[video_id]["captions"][caption_type] = {}
                         
-                        # Add critique data - handle different structure for worst_caption_generation
-                        if critique_type == "worst_caption_generation":
+                        # Add critique data - handle different structures
+                        if status == "skipped":
                             export_data[video_id]["captions"][caption_type][critique_type] = {
-                                "status": critique_data["status"],
+                                "status": "skipped",
+                                "skip_reason": critique_data.get("skip_reason", ""),
+                                "timestamp": critique_data["generation_timestamp"]
+                            }
+                        elif critique_type == "worst_caption_generation":
+                            export_data[video_id]["captions"][caption_type][critique_type] = {
+                                "status": status,
                                 "model": critique_data["model"],
                                 "prompt_name": critique_data["prompt_name"],
                                 "mode": critique_data["mode"],
@@ -804,7 +892,7 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                             }
                         else:
                             export_data[video_id]["captions"][caption_type][critique_type] = {
-                                "status": critique_data["status"],
+                                "status": status,
                                 "model": critique_data["model"],
                                 "prompt_name": critique_data["prompt_name"],
                                 "mode": critique_data["mode"],
@@ -1152,7 +1240,11 @@ Respond with the improved caption only, without quotation marks or JSON formatti
             "generate": 0, 
             "regenerate": 0, 
             "regenerate_failed": 0,
-            "skipped": 0, 
+            "would_create_skip": 0,
+            "would_update_to_skip": 0,
+            "skipped": 0,
+            "skipped_new": 0,
+            "updated_to_skip": 0,
             "success": 0, 
             "failed": 0
         }
@@ -1188,18 +1280,19 @@ Respond with the improved caption only, without quotation marks or JSON formatti
         if not dry_run:
             print(f"- Successful generations: {operation_counts['success']}")
             print(f"- Failed generations: {operation_counts['failed']}")
+            print(f"- New skipped files created: {operation_counts['skipped_new']}")
+            print(f"- Files updated to skipped: {operation_counts['updated_to_skip']}")
         else:
             print(f"- Would generate new: {operation_counts['generate']}")
             print(f"- Would regenerate (changed): {operation_counts['regenerate']}")
             print(f"- Would regenerate (failed): {operation_counts['regenerate_failed']}")
+            print(f"- Would create as skipped: {operation_counts['would_create_skip']}")
+            print(f"- Would update to skipped: {operation_counts['would_update_to_skip']}")
         
-        print(f"- Skipped operations: {operation_counts['skipped']}")
-        
-        if operation_counts['skipped'] > 0:
-            print(f"  (Skipped due to: perfect scores, existing files, or no changes)")
+        print(f"- Already correct (no changes): {operation_counts['skipped']}")
         
         # Export and upload logic (only if not dry run and export_json is True)
-        if not dry_run and export_json and operation_counts["success"] > 0:
+        if not dry_run and export_json and (operation_counts["success"] > 0 or operation_counts["skipped_new"] > 0 or operation_counts["updated_to_skip"] > 0):
             print(f"\nExport and Upload:")
             
             # Check if all critiques completed successfully
@@ -1228,8 +1321,9 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                 else:
                     print("No export folder found for consolidated export")
             else:
-                print("Some critiques failed. Fix failed critiques before exporting.")
-                print("Use --force-regenerate to retry all failed critiques.")
+                print("Some critiques failed or are incomplete.")
+                print("Rerun the script to automatically retry failed critiques.")
+                print("(Failed critiques are automatically regenerated on subsequent runs)")
 
 
 def main():

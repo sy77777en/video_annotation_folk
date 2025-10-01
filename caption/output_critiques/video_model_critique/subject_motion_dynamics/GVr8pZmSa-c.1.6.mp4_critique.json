@@ -2,7 +2,7 @@
   "video_id": "GVr8pZmSa-c.1.6.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-29T02:18:15.617064",
+  "generation_timestamp": "2025-09-30T04:05:06.667584",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere is a detailed breakdown of the feedback:\n\n**Accuracy:**\n*   The caption is mostly accurate in describing the camera's motion as a slow pan from left to right.\n*   However, it incorrectly describes the object in the foreground as a \"rectangular rod\" when it is clearly cylindrical.\n\n**Completeness:**\n*   The caption correctly identifies the primary motion in the video, which is the movement of the camera.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption fails to adhere to the instruction to \"Focus on the subject's motion rather than repeating details.\" It dedicates a significant portion of its length to describing the static appearance of the metallic structure (intricate rows of letters, horizontal bands, weathered texture, reflective quality), which is not motion.\n*   **Speculative Language:** The caption violates the rule \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\" It uses the phrases \"The background appears to be\" and \"possibly a wall or another large object.\"\n*   **Conciseness:** The caption is not concise. It is overly descriptive and repetitive. For example, it states that details are \"becoming more visible\" and then later that they \"become more apparent,\" which is redundant.\n*   **Objectivity:** The caption includes an interpretive statement, \"ensuring that the intricate details of the structure are captured clearly,\" which describes the *effect* or *purpose* of the camera's movement rather than the movement itself. This is not a direct, objective description of the motion.\n\nIn summary, the caption is too long, overly focused on the static object's appearance, and contains speculative and interpretive language, all of which go against the provided instructions. A better caption would focus solely on the camera's movement relative to the static objects.",
-  "revised_caption_by_generated_critique": "From a low angle, the camera pans slowly from left to right across a large, metallic, circular object, while a cylindrical rod remains stationary in the foreground.",
+  "generated_critique": "The caption incorrectly describes the motion in the video. The large metallic structure and the foreground rod are stationary; it is the camera that moves, panning slowly to the right. The caption mistakenly identifies the stationary foreground rod as a rotating \"clock's hand.\" The description also includes excessive details about the subject's appearance and speculative comments about the background (\"possibly a wall\"), which violates the instructions to focus only on motion and avoid uncertainty. The entire paragraph should be rewritten to accurately reflect that the camera pans across the stationary subjects.",
+  "revised_caption_by_generated_critique": "The camera moves in a slow, steady arc from left to right, tracking along the surface of a large, stationary, curved structure. This movement gradually reveals more of the structure's surface. A smaller, stationary rod is consistently visible in the foreground.",
   "status": "success"
 }

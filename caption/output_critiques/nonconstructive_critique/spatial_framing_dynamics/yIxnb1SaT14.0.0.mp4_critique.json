@@ -2,7 +2,7 @@
   "video_id": "yIxnb1SaT14.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:54:06.612411",
+  "generation_timestamp": "2025-09-30T04:51:27.651070",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The video is not a static shot. Additionally, the Eiffel Tower is not positioned in the background.",
-  "revised_caption_by_generated_critique": "This video features an extreme wide shot of a cityscape at night, with the illuminated Eiffel Tower prominently positioned in the center of the frame. In the middle ground, a large, lit building is situated in the bottom center of the frame, aligned with the tower. The rest of the city, a vast field of lights, extends across the entire frame, creating depth from the foreground to the background. The scene is captured from a high-angle aerial perspective, looking down on the urban landscape, with dynamic camera movement adding to the visual experience.",
+  "generated_critique": "The caption incorrectly describes the shot as static and fails to mention the camera's movement. The description of the Eiffel Tower's position as being in the background is also incorrect.",
+  "revised_caption_by_generated_critique": "This video features an extreme wide shot of a cityscape at night, with the illuminated Eiffel Tower prominently positioned in the center of the frame. The camera slowly pans across the scene, capturing the dynamic urban landscape. In the middle ground, a large, lit building is aligned with the tower, adding to the visual interest. The city, a vast field of lights, extends across the entire frame, creating depth from the foreground to the background. The scene is captured from a high-angle aerial perspective, offering a sweeping view of the vibrant city below.",
   "status": "success"
 }

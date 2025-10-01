@@ -2,7 +2,7 @@
   "video_id": "yGsVo0uIJVs.4.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:42:42.903124",
+  "generation_timestamp": "2025-09-30T03:29:07.969219",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the blueprint is in the middle ground. The description of the camera pan direction is inaccurate.",
-  "revised_caption_by_generated_critique": "The video displays a full shot where a large, sepia-toned blueprint fills the foreground. A thin, red, cylindrical object is consistently visible in the upper right of the frame, positioned behind the blueprint, while a plain, light-colored, out-of-focus surface forms the background. The camera, initially positioned above the blueprint, pans slowly from left to right across its surface; consequently, the details of the drawing appear to move from the right towards the left side of the frame. Concurrently with this pan, the camera's height transitions from its initial position above the blueprint to become level with it.",
+  "generated_critique": "The caption incorrectly describes the blueprint's depth. The description of the camera's pan direction is inaccurate, and the caption fails to mention the camera's movement toward the blueprint.",
+  "revised_caption_by_generated_critique": "The video features a full shot where a large, sepia-toned blueprint dominates the foreground. A thin, red, cylindrical object is consistently visible in the upper right of the frame, positioned behind the blueprint, while a plain, light-colored, out-of-focus surface forms the background. The camera, initially positioned above the blueprint, pans slowly from left to right across its surface; consequently, the details of the drawing appear to move from the right towards the left side of the frame. Concurrently with this pan, the camera moves closer to the blueprint, transitioning from its initial height above to become level with it.",
   "status": "success"
 }

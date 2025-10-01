@@ -2,7 +2,7 @@
   "video_id": "027bd84e297a500c52d35ab4a67f37e62007e76483baad5687496911e441d65d.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:25:08.056143",
+  "generation_timestamp": "2025-09-30T03:09:48.884574",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the hand's entry, movement, and position is incorrect. The caption misidentifies which doll is flicked and its location. The description of where the flicking gesture occurs in relation to the doll is also inaccurate.",
-  "revised_caption_by_generated_critique": "In a close-up shot, a vertical line of five Russian nesting dolls is positioned in the center of the frame, arranged by increasing size from the foreground at the bottom towards the middle ground. The dolls in the foreground are in focus, while those further back are less sharp. A hand enters from the left side and moves towards the foreground, positioning itself in front of the dolls. The in-focus hand makes a flicking gesture above the smallest doll in the foreground. The camera remains stationary and is positioned at the level of the dolls.",
+  "generated_critique": "The description of the hand's movement is incorrect; it does not enter from the top right, move into the background, or position itself behind the dolls. The caption is also wrong about which doll is flicked and incorrectly describes the location of the flicking gesture as being 'above' the doll.",
+  "revised_caption_by_generated_critique": "In a close-up shot, a vertical line of five Russian nesting dolls is positioned in the center of the frame, arranged by increasing size from the foreground at the bottom towards the middle ground. The dolls in the foreground are in focus, while those further back are less sharp. A hand enters from the left side and moves in front of the dolls, making a flicking gesture at the smallest doll in the foreground. The camera remains stationary and is positioned at the level of the dolls.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.8.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:47:02.577163",
+  "generation_timestamp": "2025-09-29T22:41:33.222461",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback:\nThe provided caption is inaccurate and does not adhere to the instructions because it describes actions that do not occur in the video.\n\n- **Accuracy:** The caption incorrectly states that the egret takes flight, ascends, and flies away. In the video, the egret, which is initially pecking at the ground, performs a short, quick lunge or hop forward while briefly spreading its wings, but it immediately lands back on the grassy bank. It does not take flight or leave the ground for more than a moment.\n- **Completeness:** The caption omits the actual sequence of events. After the failed lunge, the bird stands still for a moment and then walks along the bank until it is out of the frame. The caption fabricates a flight sequence instead of describing this walking motion.\n- **Adherence to Instructions:** The caption violates the core instruction to \"only describe the content of the video\" and to \"Avoid describing anything not visible or uncertain.\" The description of the egret taking flight and flying out of the frame is a complete invention and does not reflect the visual evidence.",
-  "revised_caption_by_generated_critique": "A white egret is positioned on a grassy bank next to a body of water, its head bent down as it searches for food in the grass. It performs a quick lunge forward, briefly spreading its wings, before landing back on the bank. The egret then stands still for a moment before turning and walking along the water's edge, eventually exiting the frame.",
+  "generated_critique": "The caption correctly describes the sequence of events but could be improved by using more active and specific language to describe the motion. The phrase \"is seen standing\" is passive, and \"as if searching for food\" is speculative. The description of the bird's movement could be more precise; for instance, it doesn't just flap its wings but first jerks its head up abruptly. Additionally, \"moves upward to exit the frame\" is vague; specifying that it \"walks up the bank\" would be more descriptive.",
+  "revised_caption_by_generated_critique": "A white egret hunts in the tall grass at the water's edge, its head lowered. Suddenly, it jerks its head up, spreads its wings, and leaps into the air. After landing back on the bank, the egret walks up the grassy incline and out of the frame.",
   "status": "success"
 }

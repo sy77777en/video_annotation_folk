@@ -2,7 +2,7 @@
   "video_id": "5qKYrajRNwo.2.14.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:01:48.545962",
+  "generation_timestamp": "2025-09-29T20:09:33.320518",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The feedback on the caption is as follows:\n\n**Accuracy:** The caption is mostly accurate in describing the sequence of events. The subject does pick up a watch, smile, and raise it.\n\n**Completeness:** The caption covers all the significant movements made by the subject in the video.\n\n**Adherence to Instructions:**\n*   **Strengths:** The caption correctly presents the actions in chronological order. It clearly describes the subject's interaction with an object (the pocket watch). The language used is simple and natural.\n*   **Areas for Improvement:**\n    *   The caption violates the instruction to \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options.\" The phrase \"appears to be speaking softly\" is an assumption about the character's action, not a direct observation of movement.\n    *   The initial sentence describing the room, lantern, and the girl's dress is unnecessary scene-setting. The instructions state to \"Focus on the subject's motion rather than repeating details already included in the human-written subject descriptions\" and to avoid describing appearance unless needed to differentiate subjects.\n\nIn summary, the caption is good at describing the chronological flow of actions but fails to adhere to the key instructions regarding speculation and focusing strictly on motion over static scene description.",
-  "revised_caption_by_generated_critique": "A girl picks up a golden pocket watch from a chest and holds it in her hands, smiling as she looks down at it. She then lifts the watch up by its chain.",
+  "generated_critique": "The caption includes descriptive details about the subject's appearance (\"dressed in a dark blue dress\") and the setting (\"in a dimly lit room with a wooden chest and a lantern on the table\"), which are not related to motion and should be removed. The phrase \"gentle smile\" uses a subjective adjective, which the instructions prohibit. The description of the final action, \"raises the watch higher,\" is not specific enough; the video shows her lifting the watch by its chain and holding it near her ear. The caption should be revised to focus only on the chronological sequence of her actions with the object.",
+  "revised_caption_by_generated_critique": "A girl picks up a golden pocket watch from a chest and holds it in her hands, looking down at it. She smiles, then lifts the watch by its chain and holds it to her ear.",
   "status": "success"
 }

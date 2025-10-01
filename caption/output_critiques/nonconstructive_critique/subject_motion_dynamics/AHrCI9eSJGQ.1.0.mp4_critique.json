@@ -2,7 +2,7 @@
   "video_id": "AHrCI9eSJGQ.1.0.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:34:16.776659",
+  "generation_timestamp": "2025-09-30T01:07:25.426979",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention that the clouds move rapidly, indicating a time-lapse. It omits the slight tilting of the cranes relative to the ship. The description does not include the movement of smaller boats in the left part of the frame, nor does it note the dark lines that continuously appear and disappear on the right side. The description of the shot as \"wide-angle\" is incorrect.",
-  "revised_caption_by_generated_critique": "This is a static shot from the deck of a container ship at a busy port. The camera captures a massive yellow gantry crane positioned directly over stacks of colorful shipping containers, slightly tilting relative to the ship. In the background, the sea, other vessels, and the port's infrastructure are visible under a partly cloudy sky, with clouds moving rapidly, indicating a time-lapse. Smaller boats move in the left part of the frame, while dark lines continuously appear and disappear on the right side.",
+  "generated_critique": "The description of the shot as \"wide-angle\" is incorrect. The caption fails to mention that the video is a time-lapse, which is indicated by the rapid movement of the clouds. The caption also omits several movements, including the apparent tilting of the cranes, the motion of smaller boats, and the appearance and disappearance of dark lines.",
+  "revised_caption_by_generated_critique": "This is a static shot from the deck of a container ship at a busy port. The camera captures a massive yellow gantry crane positioned directly over stacks of colorful shipping containers. The video is a time-lapse, evident from the rapid movement of the clouds. In the background, the sea, other vessels, and the port's infrastructure are visible under a partly cloudy sky. The video also shows the apparent tilting of the cranes, the motion of smaller boats, and the appearance and disappearance of dark lines.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "oRt5NPY7yYA.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T21:27:10.406099",
+  "generation_timestamp": "2025-09-30T03:11:32.134160",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly describes the camera's height relative to the subjects and fails to specify the direction of the background's movement.",
-  "revised_caption_by_generated_critique": "In a wide shot, a convoy of vehicles is positioned horizontally across the center of the frame, situated in the middle ground. The main subject, a white semi-truck, is located at the center of this formation, escorted by armored vehicles and police SUVs. The camera tracks parallel to the convoy, moving from right to left, keeping the vehicles relatively static in the center of the frame. This camera movement causes the sandy terrain and sparse bushes in the foreground to blur past, while the rolling hills and a faint city skyline in the background move from left to right. The camera is positioned slightly above the subjects' level.",
+  "generated_critique": "The description of the camera's height relative to the subjects is incorrect. The caption also fails to specify the direction in which the background elements move.",
+  "revised_caption_by_generated_critique": "In a wide shot, a convoy of vehicles is positioned horizontally across the center of the frame, situated in the middle ground. The main subject, a white semi-truck, is located at the center of this formation, escorted by armored vehicles and police SUVs. The camera tracks parallel to the convoy, moving from right to left, which keeps the vehicles relatively static in the center of the frame. This camera movement causes the sandy terrain and sparse bushes in the foreground to blur past, while the rolling hills and a faint city skyline in the background move from left to right. The camera is positioned slightly above the subjects' level.",
   "status": "success"
 }

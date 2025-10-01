@@ -2,7 +2,7 @@
   "video_id": "awPo_VZabRc.3.1.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:00:57.582205",
+  "generation_timestamp": "2025-09-30T00:31:15.808020",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the woman gestures with her left hand. The description of her picking up a piece of paper from the counter is inaccurate, and the caption fails to mention that she exits the frame. The description of what the man is looking at is also incorrect. The shot transition is misidentified as a cut.",
-  "revised_caption_by_generated_critique": "A woman, seen from behind, gestures with her right hand toward a man sitting at a bar. She then picks up a piece of paper from the counter and exits the frame. The man, who is initially looking at a drink on the counter, lifts his head slightly to look at her. The scene transitions to a view of just the man, who is now looking back at his drink.",
+  "generated_critique": "The caption misidentifies which hand the woman gestures with. The description of the woman's interaction with an object is incorrect, including the object's type and its location. The caption omits the woman's final action. The caption is inaccurate about what the man is looking at. The description of the shot transition is incorrect.",
+  "revised_caption_by_generated_critique": "A woman, seen from behind, gestures with her right hand toward a man sitting at a bar. She then picks up a coaster from the bar top. The man, who is initially looking at his phone, lifts his head slightly to look at her. The scene then transitions to a close-up of the woman, who places the coaster back down and walks away.",
   "status": "success"
 }

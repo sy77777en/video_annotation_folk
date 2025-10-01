@@ -2,7 +2,7 @@
   "video_id": "rs4B8-qoY1I.11.3.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:41:38.816397",
+  "generation_timestamp": "2025-09-29T23:05:47.896165",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states there is one character. The description of the overlay layers is inaccurate, specifically regarding the character information in the top left corner and the chat text in the bottom left. The description of the large, pulsating red orb-like object is also incorrect, as it fails to mention there are two.",
-  "revised_caption_by_generated_critique": "In a third-person 3D game video where multiple characters are visible on screen, the setting is a dark, cavernous tower level. The environment is illuminated by a fiery red and orange glow from large, thick pillars and intricate, luminous patterns etched into the dark stone floor. Two large, pulsating red orb-like objects are positioned in the foreground. Characters in armor stand on a circular platform before a red, spider-like demon appears and engages in combat. The scene includes several game interface overlays: a minimap and an objectives list in the top right corner indicate the location is \"Besieged Tower Level 1\" and the task is to \"Kill Cimeries.\" The top left corner displays character information, while the bottom of the screen shows a health orb, a resource orb, and an action bar. A chat box is present in the bottom left. During combat, a health bar labeled \"TERROR DEMON\" appears above the enemy.",
+  "generated_critique": "The description of the character is incorrect regarding their number and action. Additionally, the description of the game interface overlays is inaccurate. The number and placement of the large, pulsating red orb-like objects are also described incorrectly.",
+  "revised_caption_by_generated_critique": "In a third-person 3D game video where multiple characters are visible on screen, the setting is a dark, cavernous tower level. The environment is illuminated by a fiery red and orange glow from large, thick pillars and intricate, luminous patterns etched into the dark stone floor. Several large, pulsating red orb-like objects are scattered throughout the scene. Multiple characters in armor stand on a circular platform before a red, spider-like demon appears and engages in combat. The scene includes several game interface overlays: a minimap and an objectives list in the top left corner indicate the location is \"Besieged Tower Level 1\" and the task is to \"Defeat Cimeries.\" The bottom of the screen displays a health orb, a resource orb, and an action bar, while a chat box is present in the bottom right. During combat, a health bar labeled \"TERROR DEMON\" appears above the enemy.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "61.1.30.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:22:11.235075",
+  "generation_timestamp": "2025-09-29T20:31:32.043252",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "Feedback on the caption:\n\nThe caption is inaccurate and does not adhere to the provided instructions.\n\n- **Accuracy:** The caption inaccurately describes the man's action as \"flexing his bicep.\" While he moves his arm, a clear bicep flex is not visible.\n- **Completeness:** The description is not focused on motion. It spends too much time describing the subject's static appearance (\"dressed in a white uniform and cap\") and the background (\"dim lighting,\" \"hanging lamp,\" \"window with curtains,\" \"red lights\"), which the instructions explicitly state to avoid.\n- **Adherence to Instructions:**\n    - The caption fails to focus on the subject's motion, instead detailing the setting and the subject's attire.\n    - It uses speculative language like \"appearing to dance\" and \"possibly from electronic devices,\" which is forbidden by the instructions.\n    - It describes an action (\"flex his bicep\") that is not clearly visible, violating the rule to avoid describing uncertain events.\n\nA more appropriate caption would be: \"A man in a white cap turns his head and upper body to his right, swaying rhythmically in a dimly lit room.\"",
-  "revised_caption_by_generated_critique": "A man in a white cap turns his head and upper body to his right, swaying rhythmically in a dimly lit room.",
+  "generated_critique": "The caption includes excessive descriptions of the subject's appearance and the static background, such as the uniform, cap, dim lighting, lamp, and curtains, which should be removed to focus on motion. The phrase \"appearing to dance\" is speculative and should be rephrased to describe the observable action. The description of the man \"flexing his bicep\" is an inaccurate interpretation of his movement; he is moving his arms and shoulders rhythmically. The caption should be revised to concisely describe the man's rhythmic movement and his action of turning his body to the side.",
+  "revised_caption_by_generated_critique": "A man moves his arms and shoulders rhythmically before turning his body to the side.",
   "status": "success"
 }

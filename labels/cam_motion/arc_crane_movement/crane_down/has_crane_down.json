@@ -2,6 +2,7 @@
     "label": "Has Crane Down Movement",
     "label_name": "has_crane_down",
     "def_question": [
+        "Is the camera craning downward in an arc relative to its own frame?",
         "Is the camera craning downward in an arc?",
         "Does the camera move downward in an arcing motion?",
         "Is there a vertical orbiting motion where the camera moves downward?",
@@ -21,6 +22,7 @@
         "Does the camera descend while subtly rotating around the subject?"
     ],
     "def_prompt": [
+        "The camera cranes downward in an arc relative to its own frame.",
         "The camera cranes downward in an arc.",
         "A shot where the camera lowers in a vertical arcing motion.",
         "The camera moves downward while maintaining an orbit around something.",

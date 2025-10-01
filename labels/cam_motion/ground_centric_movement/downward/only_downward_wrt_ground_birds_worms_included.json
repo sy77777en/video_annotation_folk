@@ -2,10 +2,7 @@
     "label": "Only Downward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
     "label_name": "only_downward_wrt_ground_birds_worms_included",
     "def_question": [
-        "Does the camera move only downward (not tilting down) in the scene, or only westward in a bird's eye view, or only eastward in a worm's eye view?",
-        "Does the camera move only downward (not tilting down) in the scene, or only leftward in a bird's eye view, or only rightward in a worm's eye view?",
-        "Does the camera move only downward (not tilting down) in the scene, or only move west if it's a bird's eye view, or only move east if it's a worm's eye view?",
-        "Is the camera only moving downward in the scene (west in a bird's eye view or east in a worm's eye view)?"
+        "Does the camera move only physically downward (not tilting down) relative to the ground (even if it's a bird's or worm's eye view)?"
     ],
     "alt_question": [
         "Is the camera only moving downward in the scene?",
@@ -22,10 +19,7 @@
         "Is the camera free from horizontal or rotational movement while going downward?"
     ],
     "def_prompt": [
-        "A video where the camera moves only downward (not tilting down) in the scene, or only west in a bird's eye view or east in a worm's eye view.",
-        "A video where the camera only moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view.",
-        "A video where the camera only moves downward (not tilting down) in the scene or moves west in a bird's eye view or east in a worm's eye view, creating a noticeable vertical parallax effect.",
-        "A shot where the camera only moves downward (not tilting down) relative to the ground plane."
+        "The camera moves only physically downward (not tilting down) relative to the ground (even if it's a bird's or worm's eye view)."
     ],
     "alt_prompt": [
         "A shot where the camera lowers downward without shifting horizontally.",

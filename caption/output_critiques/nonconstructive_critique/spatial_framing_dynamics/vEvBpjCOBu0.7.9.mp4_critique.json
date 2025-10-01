@@ -2,7 +2,7 @@
   "video_id": "vEvBpjCOBu0.7.9.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:19:19.212298",
+  "generation_timestamp": "2025-09-29T21:24:35.460578",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the camera zoom out and the resulting shot size transition from medium close-up to medium shot. The man and the pint glass are incorrectly described as being in the middle ground. The description of the man's orientation as \"facing left\" is inaccurate. The overlay text is incorrectly described as being in the foreground.",
-  "revised_caption_by_generated_critique": "The video begins with a medium close-up shot of a man with metallic skin positioned on the right side of the frame. The camera then zooms out, transitioning to a medium shot. The man is shown in profile, facing slightly towards the camera. He holds a clear pint glass in his right hand, which is positioned near the center of the frame. A small text overlay appears at the bottom left corner of the screen. The entire scene is set against a solid black background, with the camera positioned at the subject's level.",
+  "generated_critique": "The caption fails to mention the change in shot size from a medium close-up to a medium shot. The man and the pint glass are incorrectly described as being in the middle ground. The description of the man's orientation is imprecise. The overlay text is incorrectly described as being in the foreground.",
+  "revised_caption_by_generated_critique": "The video begins with a medium close-up shot of a man with metallic skin, positioned on the right side of the frame, facing left. As the shot transitions to a medium shot, the man and the clear pint glass he holds in his right hand shift to the foreground, with the glass slightly left of the frame's center. The man is shown in profile, clearly oriented to the left. A small text overlay appears at the bottom left corner of the frame. The scene is set against a solid black background, with the camera positioned at the subject's level.",
   "status": "success"
 }

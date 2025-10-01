@@ -2,7 +2,7 @@
   "video_id": "FUQhNGEu2KA.0.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-29T01:26:48.739714",
+  "generation_timestamp": "2025-09-30T03:16:32.874918",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent and adheres to all instructions.\n\n**Accuracy:** The caption is perfectly accurate. The video shows a person lying under a blanket, and there is no discernible movement from the subject for the entire duration.\n\n**Completeness:** The description is complete. It captures the single, static state of the subject, which is the only event in the video.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption correctly focuses on the subject's motion, or in this case, the complete lack thereof.\n*   **No Movement Clause:** It perfectly follows the instruction: \"If the subject in the video has no movement, please briefly mention that without going into too much detail.\"\n*   **Objectivity:** The description is objective and avoids any emotional or speculative language (e.g., \"the person seems sad\" or \"the person might be sleeping\").\n*   **Conciseness:** The sentence is concise and to the point, conveying the necessary information efficiently.\n*   **Clarity:** The language is simple and clear, leaving no room for ambiguity.",
-  "revised_caption_by_generated_critique": "The person remains completely still under the blanket throughout the video.",
+  "generated_critique": "The caption contains factual inaccuracies regarding the subject's motion. The person does not \"open their eyes\" or \"raise their front arm\" during the video. Instead, the video begins with the person's eyes already open and their arm already in a raised position. The only discernible movement is a slight shift of the head as the person looks upward. The description should be revised to accurately reflect this subtle motion.",
+  "revised_caption_by_generated_critique": "A person lies under a blanket with their eyes open, then subtly shifts their head to look upward.",
   "status": "success"
 }

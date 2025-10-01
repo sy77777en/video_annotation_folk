@@ -2,7 +2,7 @@
   "video_id": "pL5yY6t-H24.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T17:12:30.697518",
+  "generation_timestamp": "2025-09-29T23:40:00.326713",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption's description of the airplane's movement is flawed; it fails to mention the zoom-in and incorrectly claims the airplane stays in the center of the frame.",
-  "revised_caption_by_generated_critique": "A full shot captures a Flybe airplane in the middle ground, initially positioned in the center of the frame and angled away from the camera. In the bottom left foreground, a taxiway sign is visible, with houses and trees situated in the background. The airplane taxis from the right side of the frame toward the left. The camera pans left and zooms in slightly to follow the aircraft, which moves across the middle ground and shifts slightly off-center. Consequently, the taxiway sign in the foreground shifts from the bottom left toward the bottom center. The camera is positioned at the subject's level.",
+  "generated_critique": "The caption incorrectly states that the airplane remains centered during the camera pan. The description also fails to mention the change in shot size.",
+  "revised_caption_by_generated_critique": "A full shot captures a Flybe airplane in the middle ground, initially positioned in the center of the frame and angled away from the camera. In the bottom left foreground, a taxiway sign is visible, with houses and trees situated in the background. The airplane taxis from the right side of the frame toward the left. As the camera pans left to follow the aircraft, the airplane moves slightly off-center, and the shot size changes from a full shot to a medium shot. Consequently, the taxiway sign in the foreground shifts from the bottom left toward the bottom center. The camera is positioned at the subject's level.",
   "status": "success"
 }

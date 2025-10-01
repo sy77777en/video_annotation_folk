@@ -2,6 +2,8 @@
     "label": "Has Forward Movement (Relative to Ground, Bird’s/Worm’s Eye Views Included)",
     "label_name": "has_forward_wrt_ground_birds_worms_included",
     "def_question": [
+        "Does the camera move forward relative to the scene (forward normally, north from a bird’s-eye view, or south from a worm’s-eye view)?",
+        "Does the camera move physically forward in the scene, or move north if it's a bird's eye view, or move south if it's a worm's eye view?",
         "Does the camera move forward (not zooming in) in the scene, or move north if it's a bird's eye view, or move south if it's a worm's eye view?",
         "Does the camera move forward (not zooming in) in the scene, or move upward if it's a bird's eye view, or move downward if it's a worm's eye view?",
         "Is the camera moving forward in the scene (north in a bird's eye view or south in a worm's eye view)?"
@@ -22,6 +24,8 @@
         "Is the camera advancing, creating a strong sense of depth?"
     ],
     "def_prompt": [
+        "The camera moves forward relative to the scene (forward normally, north from a bird's-eye view, or south from a worm's eye view).",
+        "The camera moves physically forward in the scene, or moves north in a bird's eye view or south in a worm's eye view.",
         "A video where the camera moves forward (not zooming in) in the scene or moves north in a bird's eye view or south in a worm's eye view.",
         "A video where the camera moves forward (not zooming in) in the scene or moves north in a bird's eye view or south in a worm's eye view, creating a noticeable parallax effect.",
         "A shot where the camera moves forward (not zooming in) relative to the ground plane."

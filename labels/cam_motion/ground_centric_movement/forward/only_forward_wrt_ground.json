@@ -2,7 +2,7 @@
     "label": "Only Forward Movement (Relative to Ground, Bird’s/Worm’s Eye Views Not Included)",
     "label_name": "only_forward_wrt_ground",
     "def_question": [
-        "Does the camera only move forward (not zooming in) with respect to the ground?",
+        "Does the camera only move physically forward (not zooming in) relative to the ground?",
         "Is the camera only moving forward with respect to the ground?",
         "Is the camera only moving forward without zooming in relative to the ground?",
         "Is the camera only pushing in with respect to the ground?",
@@ -20,7 +20,7 @@
         "Is the camera moving ahead without any vertical or lateral adjustments?"
     ],
     "def_prompt": [
-        "The camera only moves forward (not zooming in) relative to the ground.",
+        "The camera only moves physically forward (not zooming in) relative to the ground.",
         "A video where the camera only moves forward (not zooming in) relative to the ground.",
         "A shot where the camera moves straight ahead with respect to the ground without any other motion.",
         "A video where the camera exclusively moves forward relative to the ground plane, creating a noticeable parallax effect.",

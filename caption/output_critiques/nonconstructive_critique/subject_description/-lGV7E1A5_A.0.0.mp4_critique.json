@@ -2,7 +2,7 @@
   "video_id": "-lGV7E1A5_A.0.0.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T23:02:46.517649",
+  "generation_timestamp": "2025-09-30T05:00:46.434433",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Jiaxi Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the brim of the helmet as the front of the motorcycle. The caption also incorrectly states that the orange details are on the rider's hands and incorrectly implies the rider's hands are always visible.",
-  "revised_caption_by_generated_critique": "This video is shot from the first-person perspective of a motorcyclist. At the bottom of the frame, the rider's hands, covered in black gloves with white and orange details, occasionally appear gripping the black handlebars. The brim of the rider's orange and black helmet briefly comes into view. The front of the motorcycle, which is red and white and features the \"Red Bull\" logo in large red letters, is also visible. On both sides of the blue track, a large crowd of spectators in casual attire stands behind white and orange barriers, watching the event.",
+  "generated_critique": "The caption misidentifies the object described as the front of the motorcycle, and the description of this object is incorrect. The location of the orange details is wrong. The description of the rider's hands is missing information about their visibility.",
+  "revised_caption_by_generated_critique": "This video is shot from the first-person perspective of a motorcyclist. At the bottom of the frame, the rider's hands, partially visible and covered in white and black gloves with orange details on the fingers, are gripping the black handlebars. The dashboard of the motorcycle, which is red and white and features the \"Red Bull\" logo in large red letters, is also in view. As the rider moves, the top of an orange and black helmet briefly appears. On both sides of the blue track, a large crowd of spectators in casual attire stands behind white and orange barriers, watching the event.",
   "status": "success"
 }

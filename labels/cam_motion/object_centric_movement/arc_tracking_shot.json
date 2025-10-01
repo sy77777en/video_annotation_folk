@@ -2,7 +2,7 @@
     "label": "Arc Tracking Shot",
     "label_name": "arc_tracking_shot",
     "def_question": [
-        "Does the camera follow the subject while moving in an arc?",
+        "Is it an arc tracking shot where the camera follows the moving subject while arcing around them?",
         "Is this an arc tracking shot?",
         "Is the camera tracking the subject while arcing clockwise or counterclockwise around them?",
         "Does the camera follow the subject while moving in an orbit?",
@@ -19,7 +19,7 @@
         "Is the camera moving along a circular trajectory while tracking the subject?"
     ],
     "def_prompt": [
-        "A tracking shot where the camera follows the subject while moving in an arc.",
+        "An arc tracking shot where the camera follows the moving subject while arcing around them.",
         "An arc-tracking shot.",
         "A shot where the camera moves in an arc around the subject while tracking.",
         "A video where the camera tracks the subject while arcing clockwise or counterclockwise around them.",

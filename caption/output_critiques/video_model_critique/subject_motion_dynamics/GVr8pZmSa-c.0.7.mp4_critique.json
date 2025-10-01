@@ -2,7 +2,7 @@
   "video_id": "GVr8pZmSa-c.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-29T02:14:55.238831",
+  "generation_timestamp": "2025-09-30T04:02:58.455602",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruize Ma"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is mostly accurate and well-written, but it contains one factual error.\n\n**Accuracy:** The description of the shipwreck, the upward camera movement, and the appearance of the stationary, tethered diver is accurate. However, the text displayed in the lower-left corner is the number '1', not the year '1901'.\n\n**Completeness:** The caption successfully covers all the main visual elements and their sequence. It correctly describes the transition from the shipwreck to the diver.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The caption correctly presents the events in the order they occur: shipwreck view, camera ascending, diver revealed.\n*   **Focus on Motion:** It accurately describes the camera's upward motion and the diver's stationary state.\n*   **Clarity and Conciseness:** The language is clear, simple, and objective, avoiding speculation or emotional terms as instructed.\n*   **Formatting:** The caption is a single, coherent paragraph without any introductory text.\n\n**Conclusion:** The caption is excellent and adheres to all instructions, with the exception of the single factual error regarding the number displayed on screen. Correcting '1901' to '1' would make the caption perfect.",
-  "revised_caption_by_generated_critique": "The video begins with a view of a sunken shipwreck on the seabed, partially buried in the sediment, with the number '1' displayed in the lower left corner. The camera then moves upward, gradually obscuring the shipwreck and revealing the surrounding blue water. As the camera continues to ascend, a diver comes into view, suspended in the water and tethered by a thin line. The diver remains stationary, floating in the blue water, with the line extending upwards.",
+  "generated_critique": "The caption incorrectly states that the year '1901' is displayed in the corner; the video shows the number '1', which is a non-diegetic scene marker and should be omitted from the description. Additionally, the description of the camera movement (\"The camera then tilts upward... As the camera continues to tilt\") is overly detailed. This should be simplified to describe the scene change more concisely, for instance, by stating that the view shifts from the shipwreck to reveal the diver.",
+  "revised_caption_by_generated_critique": "The video begins with a view of a sunken shipwreck on the seabed, partially buried in the sediment. The scene then shifts to reveal a diver suspended in the blue water, tethered by a thin line that extends upwards.",
   "status": "success"
 }

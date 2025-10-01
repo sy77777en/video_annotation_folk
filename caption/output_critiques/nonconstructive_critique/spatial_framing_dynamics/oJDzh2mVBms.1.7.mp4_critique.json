@@ -2,7 +2,7 @@
   "video_id": "oJDzh2mVBms.1.7.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:36:38.008774",
+  "generation_timestamp": "2025-09-30T04:32:01.700563",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of \"a lit building\" and \"a plume of steam\" is inaccurate. The description of the aurora stretching \"from the top left\" is inaccurate. The position of the two small red lights is incorrectly described as \"center-right\". The description of the snow-covered plain \"extending from the foreground to the middle ground\" is inaccurate.",
-  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a nighttime landscape, captured from a static, low-angle position. A snow-covered plain occupies the bottom of the frame, extending across the foreground. In the bottom left, a structure emits a soft glow, with a misty vapor rising from it. A line of trees forms the horizon in the background, stretching across the scene. The upper portion of the frame is dominated by the green aurora borealis, which appears as broad bands of light stretching across the sky and receding into the background. In a time-lapse effect, these bands of light shift and flow dynamically. Stars are visible in the darker sky on the right, and two small red lights are positioned near the center, just above the background treeline.",
+  "generated_critique": "The caption incorrectly states the number of buildings and plumes of steam. The description of the snow-covered plain's depth is inaccurate. The description of the aurora's starting position is incorrect. The position of the two small red lights is misidentified.",
+  "revised_caption_by_generated_critique": "This video presents an extreme wide shot of a nighttime landscape, captured from a static, low-angle position. A snow-covered plain occupies the bottom of the frame, extending from the foreground to the background. In the bottom left, multiple lit buildings are situated in the middle ground, each with a plume of steam rising from them. A line of trees forms the horizon in the background, stretching across the scene. The upper portion of the frame is dominated by the green aurora borealis, which appears as broad bands of light stretching from the top right across the sky and receding into the background. In a time-lapse effect, these bands of light shift and flow across the sky. Stars are visible in the darker sky on the right, and two small red lights are positioned in the center-left, just above the background treeline.",
   "status": "success"
 }

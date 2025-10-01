@@ -2,7 +2,7 @@
   "video_id": "6YZW2eeV-6U.1.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T18:44:22.418532",
+  "generation_timestamp": "2025-09-29T21:40:15.680610",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere is a detailed breakdown of why:\n\n**Accuracy:** The caption is factually accurate. It correctly identifies the three individuals, their clothing, their backpacks, and their general action of walking down a staircase.\n\n**Completeness:** The caption describes the main elements of the scene.\n\n**Adherence to Instructions:** The caption fails to follow several key instructions:\n\n1.  **Focus on Motion:** The primary instruction is to \"Focus on the subject's motion.\" This caption dedicates the majority of its text to static descriptions: what each person is wearing, what color their backpack is, and their position relative to others (\"leading the way,\" \"in the center,\" \"at the end of the group\"). The actual motion is only briefly mentioned as \"walking down a stone staircase.\" It describes a static scene more than it describes an action.\n\n2.  **Avoid Redundant Details:** The instruction states to focus on motion \"rather than repeating details already included in the human-written subject descriptions.\" Describing the color of each person's shirt and backpack is precisely the kind of static detail that should be minimized in favor of describing the movement.\n\n3.  **Describe the Background:** The last sentence, \"The background consists of stone walls and a low ceiling, indicating an ancient or historical setting,\" describes the scenery, which is not the subject's motion. The inference \"indicating an ancient or historical setting\" also borders on interpretation, though it's a reasonable one.\n\nIn summary, the caption reads like a list of who is in the video and what they are wearing, rather than a dynamic description of their movement. A better caption would have focused on the action itself, for example: \"Three men descend a narrow stone staircase, walking in a single file line down into a dark passageway.\" This revised version prioritizes the action (\"descend,\" \"walking\") and the manner of movement (\"in a single file line\") as instructed.",
-  "revised_caption_by_generated_critique": "Three men descend a stone staircase in single file, entering a narrow, rock-hewn corridor.",
+  "generated_critique": "The caption is overly descriptive of the subjects' appearances and the background, which detracts from the primary focus on motion as required by the instructions. The final sentence, \"The background consists of stone walls and a low ceiling, indicating an ancient or historical setting,\" should be removed because it describes the static environment and includes a speculative interpretation (\"ancient or historical setting\"), which is explicitly forbidden. The descriptions of clothing are too detailed and should be simplified to only what is necessary to differentiate the subjects. The caption should be revised to focus more concisely on the collective and relative motion of the three individuals as they descend the stairs.",
+  "revised_caption_by_generated_critique": "Three people walk down a stone staircase in a single file. The person in the lead, wearing an orange shirt, is followed by a person in a striped shirt. A third person in a blue jacket brings up the rear of the group as they descend.",
   "status": "success"
 }

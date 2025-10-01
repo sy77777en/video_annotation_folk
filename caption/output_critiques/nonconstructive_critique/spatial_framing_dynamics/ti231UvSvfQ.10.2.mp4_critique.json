@@ -2,7 +2,7 @@
   "video_id": "ti231UvSvfQ.10.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:57:39.425801",
+  "generation_timestamp": "2025-09-29T23:23:07.221117",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the grey wall's position and depth is incorrect. The description of the door's initial position and its subsequent movement is inaccurate. The statement describing the man's movement, the camera's pan, and his final framing within the shot is inaccurate.",
-  "revised_caption_by_generated_critique": "In a medium close-up shot, a man is initially positioned in the right middle ground of the frame. To his left, a grey wall with two small metallic plates is in the background. A door with a rectangular air vent is visible in the left background. As the man moves slightly from the right toward the center, the camera pans right, keeping him framed in the left half of the shot. The camera remains at the subject's level throughout the clip.",
+  "generated_critique": "The description of the grey wall's position relative to the man and its depth is incorrect. The description of the door's position is also inaccurate, and the caption fails to mention that the door disappears from the frame. Furthermore, the description of the man's movement and his final position within the frame is inaccurate.",
+  "revised_caption_by_generated_critique": "In a medium close-up shot, a man is initially positioned in the right middle ground of the frame. To his left, a grey wall with two small metallic plates is in the background. A door with a rectangular air vent is initially visible in the left background but disappears from the frame as the man moves slightly toward the center. The camera pans left, keeping him framed in the right half of the shot, and he ends up near the center. The camera remains at the subject's level throughout the clip.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "852363.4.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T20:00:42.674553",
+  "generation_timestamp": "2025-09-29T22:54:14.505365",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The provided caption is not good because it fails to adhere to several key instructions.\n\n**Accuracy:** The caption is inaccurate when it states the \"man's expression remains consistent throughout the video.\" While his facial expression doesn't change much, his head does move, turning slightly to his right and then back.\n\n**Completeness:** The caption is incomplete as it entirely omits the description of the man's head movement, which is the primary motion in the video.\n\n**Adherence to Instructions:**\n*   **Focus on Motion:** The caption violates the core instruction to focus on motion. Instead, it describes the subject's static appearance (\"light skin tone and short, dark hair\"), expression, and the background.\n*   **Avoid Speculation:** The caption includes the speculative phrase \"indicating he might be speaking or reacting to something,\" which is explicitly forbidden by the instructions.\n*   **Avoid Unnecessary Appearance Details:** The instructions state not to describe a subject's appearance unless needed to differentiate between multiple subjects. As there is only one person, these details are superfluous.",
-  "revised_caption_by_generated_critique": "In a close-up shot in a dark setting, a man with his mouth wide open turns his head slightly to his right and then back to face forward. There are a few out-of-focus lights in the background.",
+  "generated_critique": "The caption fails to describe the subject's motion, instead focusing on static appearance (\"light skin tone and short, dark hair\"), background details, and a static expression. This violates the core instruction to describe motion. The caption also includes the speculative phrase \"indicating he might be speaking or reacting to something,\" which is explicitly forbidden. The caption misses the key movement in the video: the man's head jerks slightly upward and to his right. The entire description should be replaced with a concise sentence describing this head movement.",
+  "revised_caption_by_generated_critique": "In a dark setting, a man with a wide-eyed, open-mouthed expression jerks his head upward and to his right.",
   "status": "success"
 }

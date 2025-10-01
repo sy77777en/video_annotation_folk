@@ -2,7 +2,7 @@
   "video_id": "wIYD42DV3Ro.0.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:37:22.166208",
+  "generation_timestamp": "2025-09-29T21:44:38.884807",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the horses' and jockeys' initial position and their subsequent clustering is inaccurate. The description of the camera movement is incomplete, as it fails to mention the initial pan to the left. The description of the track's position is also incomplete because it does not account for its change in framing after the turn. Furthermore, the description of the white fence's depth is incorrect, and the graphic and timer are misidentified as being in the foreground.",
-  "revised_caption_by_generated_critique": "A wide, high-angle shot captures a pack of horses and jockeys initially positioned in the center of the frame as they race along a brown dirt track. The camera first pans to the left, following the horses as they cluster together and navigate a turn, then pans to the right, shifting their position across the frame toward the center-right. The track curves from the bottom left to the top right, and its framing changes as the horses round the bend. A white fence in the middle ground separates the track from a green grass infield that occupies the bottom right. In the top left background, an outer fence and a building are visible. An informational graphic is stationary in the bottom left, with a timer and logo fixed in the top right.",
+  "generated_critique": "The description of the horses' position and formation is inaccurate, as it fails to account for their initial spread and how their grouping changes. The camera movement is described incorrectly, omitting the initial pan. The description of the track is incomplete because it does not mention how its position within the frame changes. The depth of the white fence is misidentified. The graphic and timer are incorrectly positioned in the foreground.",
+  "revised_caption_by_generated_critique": "A wide, high-angle shot captures a pack of horses and jockeys initially spread out across the track, positioned in the center-left of the frame. As they race along the brown dirt track, which curves from the bottom left to the top right, the horses gradually group together. The camera initially pans to the left before following the collective movement of the horses to the right, as they navigate the turn and shift their position across the frame toward the center-right. A white fence in the middle ground separates the track from a green grass infield that occupies the bottom right foreground, with the fence extending deeper into the frame. In the top left background, an outer fence and a building are visible. An informational graphic is stationary in the bottom right foreground, with a timer and logo fixed in the top left foreground.",
   "status": "success"
 }

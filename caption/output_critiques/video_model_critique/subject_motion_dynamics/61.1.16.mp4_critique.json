@@ -2,7 +2,7 @@
   "video_id": "61.1.16.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:07:17.993990",
+  "generation_timestamp": "2025-09-29T20:13:34.212393",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it contains several inaccuracies and omits key actions, failing to adhere to the instructions.\n\n**Accuracy:** The caption incorrectly describes the actions of the woman in the middle booth (referred to as \"the woman on the left\"). She does not \"wave\"; she initially holds up a phone to take a selfie and makes a gesture with her hands. Later, she does not \"point towards the camera\"; she picks up a different, smaller camera from the table.\n\n**Completeness:** The caption omits a significant motion: a hand enters the frame from the bottom left and gestures towards the women in the booth. It also fails to mention that the woman in the middle is first using a phone before picking up the second camera.\n\n**Adherence to Instructions:** The caption violates the instruction to \"Describe **individual subject actions** with clarity\" by providing inaccurate descriptions like \"waves\" and \"points.\" It also fails to fully \"specify the type of interaction\" with objects, missing the initial interaction with the phone and mischaracterizing the interaction with the second camera as \"pointing.\"",
-  "revised_caption_by_generated_critique": "From a high-angle perspective in a diner, a woman in a green beret sits in a booth, holding up a phone to take a selfie and making a hand gesture. To her right, a woman in a red beret smiles at the camera. A hand enters the frame from the bottom left and gestures towards the women. The woman in the green beret then picks up a small camera from the table and holds it up, smiling excitedly.",
+  "generated_critique": "The caption contains several inaccuracies and misinterpretations of the subjects' motions. The person from the first-person perspective raises only one hand, not both, and does not make a thumbs-up gesture; instead, they make a wiggling finger or greeting gesture. Additionally, the woman in the middle booth does not signal for the camera to move closer; she picks up her own camera from the table and points it forward. The description should be corrected to state that from a first-person view, a woman in a green beret waves, and a hand enters from the bottom of the frame making a greeting gesture. As the camera moves forward, the woman in the green beret picks up a camera from the table.",
+  "revised_caption_by_generated_critique": "From a first-person point of view, the camera moves through a diner toward a red booth where two women are seated. The woman in a green beret waves, while a hand enters from the bottom of the frame and makes a beckoning gesture. As the camera advances, the woman in the green beret picks up her own camera from the table and aims it forward with a smile.",
   "status": "success"
 }

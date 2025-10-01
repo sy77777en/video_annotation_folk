@@ -2,7 +2,7 @@
   "video_id": "RIz3klPET3o.0.7.mp4",
   "caption_type": "motion",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:04:31.705996",
+  "generation_timestamp": "2025-09-29T22:14:28.624774",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the three small, colored squares—blue, green, and red—that follow the cartoon figure as it moves along the lines.",
-  "revised_caption_by_generated_critique": "A cartoon figure on a sled-like vehicle slides down a short, diagonal black line, followed by three small, colored squares—blue, green, and red. It then moves across a series of disconnected horizontal and diagonal lines, appearing to hop from one to the next as it travels downwards and to the right, with the colored squares trailing behind. Finally, the figure lands on a long, continuous horizontal line and continues to slide along it to the right, still accompanied by the colored squares.",
+  "generated_critique": "The caption omits the motion of the other subjects that follow the main figure.",
+  "revised_caption_by_generated_critique": "A cartoon figure on a sled-like vehicle slides down a short, diagonal black line. It then moves across a series of disconnected horizontal and diagonal lines, appearing to hop from one to the next as it travels downwards and to the right. Following the main figure, several smaller figures mimic its path, sliding and hopping along the lines. Finally, the main figure lands on a long, continuous horizontal line and continues to slide along it to the right, with the other figures trailing behind.",
   "status": "success"
 }

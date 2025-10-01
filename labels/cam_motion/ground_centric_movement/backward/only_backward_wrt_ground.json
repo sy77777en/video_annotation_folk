@@ -2,7 +2,7 @@
     "label": "Only Backward Movement (Relative to Ground, Bird's/Worm's Eye Views Not Included)",
     "label_name": "only_backward_wrt_ground",
     "def_question": [
-        "Does the camera only move backward (not zooming out) with respect to the ground?",
+        "Does the camera only move physically backward (not zooming out) with respect to the ground?",
         "Is the camera only moving backward with respect to the ground?",
         "Is the camera only moving backward without zooming out relative to the ground?",
         "Is the camera only pulling back with respect to the ground?",
@@ -20,7 +20,7 @@
         "Is the camera moving back without any vertical or lateral adjustments?"
     ],
     "def_prompt": [
-        "The camera only moves backward (not zooming out) relative to the ground.",
+        "The camera only moves physically backward (not zooming out) relative to the ground.",
         "A video where the camera only moves backward (not zooming out) relative to the ground.",
         "A shot where the camera moves straight back with respect to the ground without any other motion.",
         "A video where the camera exclusively moves backward relative to the ground plane, creating a noticeable parallax effect.",

@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.0.9.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:31:54.520062",
+  "generation_timestamp": "2025-09-29T22:25:52.300916",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it violates several key instructions.\n\n**Feedback:**\n\n*   **Accuracy:** The description of the egret's physical movement (standing and then walking slowly to the left) is accurate.\n*   **Completeness:** The caption captures the primary motion in the video.\n*   **Adherence to Instructions:** The caption fails to adhere to the following instructions:\n    *   **Avoid speculative statements:** The caption violates this rule with the sentence, \"The egret's movement is consistent and deliberate, suggesting it is either searching for food or patrolling its territory.\" This speculates on the bird's motivation and presents an ambiguous \"A or B\" scenario, both of which are explicitly forbidden.\n    *   **Focus on motion:** The caption includes unnecessary descriptions of the setting, such as, \"The background consists of a grassy bank with some vegetation, and the water reflects the surrounding environment.\" The instructions state to focus on the subject's motion and avoid describing static background elements.",
-  "revised_caption_by_generated_critique": "A white egret walks slowly to the left in the shallow water at the edge of a bank.",
+  "generated_critique": "The caption includes the speculative phrase \"suggesting it is either searching for food or patrolling its territory,\" which violates the instruction to avoid speculative statements. Additionally, the description of the background is not directly related to the subject's motion and makes the caption unnecessarily long. The description should be revised to be more concise and focus only on the observable movement.",
+  "revised_caption_by_generated_critique": "A white egret, standing in the shallow water by a bank, begins to walk slowly and steadily to the left.",
   "status": "success"
 }

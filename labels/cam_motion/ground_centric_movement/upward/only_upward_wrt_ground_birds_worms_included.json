@@ -2,10 +2,7 @@
     "label": "Only Upward Movement (Relative to Ground, Bird's/Worm's Eye Views Included)",
     "label_name": "only_upward_wrt_ground_birds_worms_included",
     "def_question": [
-        "Does the camera move only upward (not tilting up) in the scene, or only eastward in a bird's eye view, or only westward in a worm's eye view?",
-        "Does the camera move only upward (not tilting up) in the scene, or only rightward in a bird's eye view, or only leftward in a worm's eye view?",
-        "Does the camera move only upward (not tilting up) in the scene, or only move east if it's a bird's eye view, or only move west if it's a worm's eye view?",
-        "Is the camera only moving upward in the scene (east in a bird's eye view or west in a worm's eye view)?"
+        "Does the camera move only physically upward (not tilting up) relative to the ground (even if it's a bird's or worm's eye view)?"
     ],
     "alt_question": [
         "Is the camera only moving upward in the scene?",
@@ -22,10 +19,7 @@
         "Is the camera free from horizontal or rotational movement while going upward?"
     ],
     "def_prompt": [
-        "A video where the camera moves only upward (not tilting up) in the scene, or only east in a bird's eye view or west in a worm's eye view.",
-        "A video where the camera only moves upward (not tilting up) in the scene or moves east in a bird's eye view or west in a worm's eye view.",
-        "A video where the camera only moves upward (not tilting up) in the scene or moves east in a bird's eye view or west in a worm's eye view, creating a noticeable vertical parallax effect.",
-        "A shot where the camera only moves upward (not tilting up) relative to the ground plane."
+        "The camera moves only physically upward (not tilting up) relative to the ground (even if it's a bird's or worm's eye view)."
     ],
     "alt_prompt": [
         "A shot where the camera rises upward without shifting horizontally.",

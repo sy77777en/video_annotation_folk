@@ -2,7 +2,7 @@
   "video_id": "Y_df8_eRbnY.1.0.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:54:00.189508",
+  "generation_timestamp": "2025-09-29T20:55:04.371262",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The rightward camera movement is not a truck. The description of the camera's stability is inaccurate, as the unsteadiness is not limited to the upward tilt and is more severe than described.",
-  "revised_caption_by_generated_critique": "This is an eye-level shot with a deep focus and large depth of field. The camera starts at a high angle, panning slightly to the right to center the climber. As the climber ascends, the camera tilts upward to track their movement, causing the angle to become more level. The camera movement throughout is noticeably unsteady, with significant shaking.",
+  "generated_critique": "The caption incorrectly describes the rightward camera movement as a truck. The description of the camera's stability is also inaccurate, as it incorrectly states the camera is only slightly unsteady and that this unsteadiness is limited to the upward tilt.",
+  "revised_caption_by_generated_critique": "This is an eye-level shot with a deep focus and large depth of field. The camera begins at a high angle, panning right to center the climber. As the climber ascends, the camera tilts upward to track their movement, causing the angle to become more level. The camera movement is noticeably unsteady throughout, not just during the upward tilt.",
   "status": "success"
 }

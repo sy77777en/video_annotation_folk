@@ -2,7 +2,7 @@
   "video_id": "FUQhNGEu2KA.0.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-29T01:20:31.021294",
+  "generation_timestamp": "2025-09-30T03:09:23.256886",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is excellent.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the woman's attire, her barefoot state, and her movement down the hallway. It accurately describes her action of raising her arm toward the light switch and then turning to look into the dark doorway. The description of the second figure as a \"tall, slender, silhouetted figure\" that \"stands motionless\" is also precise.\n\n**Completeness:** The caption is complete, covering all the significant actions in the video in chronological order. It captures the initial movement, the intended interaction with the light switch, the turn, and the reveal of the second figure.\n\n**Adherence to Instructions:**\n*   **Chronological Order:** The actions are presented in the correct sequence.\n*   **Focus on Motion:** The description focuses on the woman's movements (walking, raising her arm, turning) and the second figure's lack of motion.\n*   **Clarity and Conciseness:** The language is simple, clear, and gets straight to the point without unnecessary words.\n*   **Objectivity:** The caption avoids emotional or subjective language. Descriptors like \"tall\" and \"slender\" are objective observations of the silhouette's shape.\n*   **No Speculation:** It describes only what is visible, avoiding phrases like \"it seems\" or \"she might be scared.\"\n*   **Interactions:** It correctly describes the woman's interaction with her environment (walking down the hall, reaching for the switch) and her visual interaction with the second subject (turning to look).\n\nThe caption perfectly fulfills all the requirements of the prompt.",
-  "revised_caption_by_generated_critique": "A woman in pajamas walks barefoot down a hallway. As she approaches the end of the hall, she raises her left arm toward a light switch on the wall. She then turns her head and torso to her right to look into a dark doorway, where a tall, slender, silhouetted figure stands motionless.",
+  "generated_critique": "The caption is mostly accurate but contains a redundant phrase and a minor inaccuracy. The phrase \"which corresponds to the right side of the frame\" is unnecessary, as the visual action is clear without this directional clarification; removing it would make the sentence more concise. Additionally, the video shows the woman stopping in the middle of the hallway to look into a side room, not as she \"approaches the end of the hall.\" This should be rephrased to more accurately describe her location when she turns.",
+  "revised_caption_by_generated_critique": "A woman in pajamas walks barefoot down a hallway. She stops in the middle of the hall and turns to her right to look into a dark doorway, where a tall, slender, silhouetted figure stands motionless.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "8SphTOiOe6k.5.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:13:01.110582",
+  "generation_timestamp": "2025-09-29T21:17:52.358787",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the color of one woman's kimono as a 'darker shade' when it is orange. It also fails to describe the movement of the two elderly individuals from the middle ground to the foreground, incorrectly placing them only in the foreground.",
-  "revised_caption_by_generated_critique": "The video presents a wide shot of a bustling Japanese commercial street scene. In the middle ground, two women in traditional kimonos are positioned slightly to the right, with one in red and the other in orange, standing near the shop entrance. They are centrally framed, with the shop's exterior in the background. To the left, a group of schoolchildren in uniforms gathers closely, occupying the middle ground and partially overlapping with the shop's entrance. The children are engaged in conversation, adding dynamic movement to the scene. Two elderly individuals wearing masks move from the middle ground to the foreground, walking past the camera from left to right and briefly entering the frame. The shop's architecture, with its sloped roof and glass storefront, forms the background, while colorful signage and promotional boards are visible throughout. The camera is positioned at the subjects' height, capturing the lively interaction and movement within the scene.",
+  "generated_critique": "The caption incorrectly describes the color of one of the kimonos. It also misrepresents the spatial movement of the two elderly individuals by stating they are only in the foreground, failing to mention their transition from the middle ground.",
+  "revised_caption_by_generated_critique": "The video presents a wide shot of a bustling Japanese commercial street scene. In the middle ground, two women in traditional kimonos are positioned slightly to the right, with one in red and the other in a lighter shade, standing near the shop entrance. They are centrally framed, with the shop's exterior in the background. To the left, a group of schoolchildren in uniforms gathers closely, occupying the middle ground and partially overlapping with the shop's entrance. The children are engaged in conversation, adding dynamic movement to the scene. In the foreground, two elderly individuals wearing masks walk past the camera from left to right, transitioning from the middle ground to the foreground as they briefly enter the frame. The shop's architecture, with its sloped roof and glass storefront, forms the background, while colorful signage and promotional boards are visible throughout. The camera is positioned at the subjects' height, capturing the lively interaction and movement within the scene.",
   "status": "success"
 }

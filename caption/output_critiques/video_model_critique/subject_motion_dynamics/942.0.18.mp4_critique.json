@@ -2,7 +2,7 @@
   "video_id": "942.0.18.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T21:50:20.142381",
+  "generation_timestamp": "2025-09-30T00:55:24.290382",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "This is an excellent caption.\n\n**Accuracy:** The caption is highly accurate. It correctly identifies the camera's downward tilt, the posture and actions of the man in red (lying down, holding his knee, shifting his head), the position of the man in blue, and the action of the third person's hands holding the foot.\n\n**Completeness:** The description is complete, capturing all the significant movements (or lack thereof) in the video. It chronologically orders the camera movement first, followed by the description of the revealed scene and the subjects' subtle motions.\n\n**Adherence to Instructions:**\n- **Chronological Order:** The caption follows a logical chronological order, starting with the camera movement and then describing the actions within the static frame.\n- **Focus on Motion:** It perfectly balances describing the minimal motion (\"tilts downward,\" \"slightly shifting his head\") with the relative stillness of the other subjects, which is also a key aspect of the scene's motion profile.\n- **Clarity and Conciseness:** The language is simple, clear, and direct. It avoids jargon, speculation, and emotional terms.\n- **Specificity:** The descriptions are specific (e.g., \"tilts downward,\" \"holding his knee,\" \"holds the lying man's bare foot\") without being overly detailed.\n- **Formatting:** It is a single, well-structured paragraph as requested.\n\nThe caption successfully translates the visual information into a concise and accurate textual description, fully adhering to all provided guidelines.",
-  "revised_caption_by_generated_critique": "The camera tilts downward to reveal a man in a red uniform lying on his back, holding his knee and slightly shifting his head. Beside him, a man in a blue jacket sits and looks at him, while a third person's gloved hand holds the lying man's bare foot. The two seated individuals remain relatively still throughout the shot.",
+  "generated_critique": "The final sentence contains a factual error, stating there are \"two seated individuals,\" when one person is lying down and the other is sitting. This sentence should be removed. Additionally, the description of the third person's action is slightly inaccurate; the gloved hand points a tool *at* the lying man's foot rather than \"touches\" it. The description should be corrected to \"A third person's gloved hand points a tool at the lying man's bare foot.\"",
+  "revised_caption_by_generated_critique": "The camera tilts downward to reveal a man in a red uniform lying on his back, holding his knee and slightly shifting his head. Beside him, a man in a blue jacket sits and looks at him, while a third person's gloved hand points a tool at the lying man's bare foot.",
   "status": "success"
 }

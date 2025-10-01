@@ -2,7 +2,7 @@
   "video_id": "fSWFUFdV5TU.1.5.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:53:00.368195",
+  "generation_timestamp": "2025-09-29T20:54:11.903777",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the box's angle is incorrect. The hand's entry point is misidentified as the foreground. The statement that the camera is static is inaccurate, as it omits the subtle zoom-in effect.",
-  "revised_caption_by_generated_critique": "From an over-the-shoulder perspective, the camera captures a close-up shot from a high angle, looking down at the scene. The subject's arm and shoulder occupy the right foreground of the frame. Positioned in the center middle ground is a rectangular wooden box, angled from the bottom left towards the top right. In the bottom left foreground, a sketchbook is partially visible, while a container of crayons sits in the top left background. The subject's hand enters from the right middle ground, moves towards the center to open the box lid, and then reaches into the box to touch the telescope resting inside. The camera remains mostly static throughout the shot, with a subtle zoom-in effect.",
+  "generated_critique": "The caption incorrectly describes the angle of the box and the position of the sketchbook. The position from which the hand enters the frame is also wrong. Additionally, the statement that the camera is static is incorrect, and the caption is missing a description of the camera's movement.",
+  "revised_caption_by_generated_critique": "The camera captures a close-up shot from a high angle, looking down at the scene from an over-the-shoulder perspective. The subject's arm and shoulder occupy the right foreground of the frame. Positioned in the center middle ground is a rectangular wooden box, angled from the bottom left towards the top right. In the bottom right foreground, a sketchbook is partially visible, while a container of crayons sits in the top left background. The subject's hand enters from the left foreground, moves towards the center to open the box lid, and then reaches into the box to touch the telescope resting inside. The camera slowly pans to follow the hand's movement throughout the shot.",
   "status": "success"
 }

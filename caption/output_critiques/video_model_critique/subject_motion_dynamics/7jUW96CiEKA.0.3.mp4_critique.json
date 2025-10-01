@@ -2,7 +2,7 @@
   "video_id": "7jUW96CiEKA.0.3.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T19:18:58.227971",
+  "generation_timestamp": "2025-09-29T22:14:40.202211",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere's a detailed breakdown of the feedback:\n\n**Accuracy:** The caption accurately describes the visual elements of the scene—the grassland, trees, hills, water body, and the presence of animals.\n\n**Completeness:** The caption correctly notes the static nature of the scene and the lack of significant movement from the animals, which is a key aspect of the video.\n\n**Adherence to Instructions:** The caption fails to adhere to a critical instruction.\n*   **Violation:** The instruction explicitly states, \"Avoid speculative statements like 'there might be,' 'it appears,' or ambiguous options like 'A or B.'\" The caption violates this rule by using the phrases \"The animals **appear to be** gathered\" and \"**possibly** drinking or resting.\" You should describe only what is definitively happening. The animals are standing in and near the water; whether they are drinking or resting is an interpretation, not a directly observable action.\n\nIn summary, while the caption correctly identifies the scene and the lack of motion, its use of speculative language makes it non-compliant with the provided guidelines. A better caption would state the facts directly, such as \"A group of animals stands in and near a small water body,\" and then describe the lack of movement.",
-  "revised_caption_by_generated_critique": "A static, wide shot shows a vast grassland with a river flowing through it. A herd of animals stands in and around the water. In the background, there are dense green trees and rolling hills under a clear sky.",
+  "generated_critique": "The caption includes speculative language (\"possibly drinking or resting\") and weak phrasing (\"appear to be\"), which are explicitly forbidden by the instructions. The description of the landscape in the first sentence is overly detailed, and the final sentence is redundant. The focus should be more direct and concise, centered on the subjects' lack of motion. The caption should be revised to state directly that the animals are standing still in and around the water, with some drinking, and omit the detailed landscape description and the speculative and redundant phrases.",
+  "revised_caption_by_generated_critique": "A herd of deer stands still in and around a stream in a grassy field. Some of the animals are drinking from the water, while others stand on the bank. Forested hills are visible in the background.",
   "status": "success"
 }

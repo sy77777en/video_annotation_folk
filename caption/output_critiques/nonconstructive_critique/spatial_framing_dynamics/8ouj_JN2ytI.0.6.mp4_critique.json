@@ -2,7 +2,7 @@
   "video_id": "8ouj_JN2ytI.0.6.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:25:39.603508",
+  "generation_timestamp": "2025-09-29T20:27:16.457294",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The camera does not pan to the right.",
-  "revised_caption_by_generated_critique": "In a medium close-up shot filmed at the subjects' level, a line of football players and a coach are positioned in the foreground. Initially, a player in a number 7 jersey is on the far left, a coach is left of center, and a player in a number 91 jersey is in the center of the frame. A large crowd of spectators fills the background. As the scene progresses, the player with number 7 moves out of the frame on the left. Consequently, the coach shifts to the far left, the player with number 91 moves to the left of center, and another player wearing number 99 becomes fully visible, occupying the right side of the frame.",
+  "generated_critique": "The caption incorrectly describes the camera movement as a pan.",
+  "revised_caption_by_generated_critique": "In a medium close-up shot filmed at the subjects' level, a line of football players and a coach are positioned in the foreground. Initially, a player in a number 7 jersey is on the far left, a coach is left of center, and a player in a number 91 jersey is in the center of the frame. A large crowd of spectators fills the background. The camera slowly tracks to the right, causing the player with number 7 to move out of the frame on the left. Consequently, the coach shifts to the far left, the player with number 91 moves to the left of center, and another player wearing number 99 becomes fully visible, occupying the right side of the frame.",
   "status": "success"
 }

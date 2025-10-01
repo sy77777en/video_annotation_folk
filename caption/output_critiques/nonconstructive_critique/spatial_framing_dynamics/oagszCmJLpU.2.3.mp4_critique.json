@@ -2,7 +2,7 @@
   "video_id": "oagszCmJLpU.2.3.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:37:43.181906",
+  "generation_timestamp": "2025-09-30T04:33:23.230065",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description of the camera position as \"on the ground\" and \"low-angle\" is incorrect. The storm cloud's position is not limited to the top-left and center of the frame. The description of the cloud's movement as \"appears to recede\" is speculative. The sky is not only visible in the top and right portions of the frame. The description of the sky's color transition from deep blue to black is inaccurate.",
-  "revised_caption_by_generated_critique": "This video showcases an extreme wide shot of a landscape, captured from a static camera position. A massive storm cloud formation dominates the frame, extending across the top and center. Below this, a thin, dark strip of land occupies the bottom of the frame. Throughout the time-lapse, the main cloud mass moves from left to right, with flashes of lightning illuminating its interior. The sky transitions from a lighter shade to a darker hue, with stars becoming visible as the scene progresses. A few small, stationary lights are scattered along the distant horizon at the bottom of the scene.",
+  "generated_critique": "The description of the camera position as \"on the ground\" and \"low-angle\" is incorrect. The description of the storm cloud's position as being in the \"top-left and center\" is inaccurate, as is the description of where the sky is visible. Furthermore, the description of the cloud's movement is speculative, and the description of the sky's color transition is incorrect.",
+  "revised_caption_by_generated_critique": "This video showcases an extreme wide shot of a landscape, captured from a static camera position. A massive storm cloud formation dominates the upper portion of the frame, extending across the center and into the background. Below this, a thin, dark strip of land occupies the bottom of the frame. Throughout the time-lapse, the main cloud mass moves across the frame, with flashes of lightning illuminating its interior. The sky transitions from a deep blue to a darker shade, with stars becoming visible in the background. A few small, stationary lights are scattered along the distant horizon at the bottom of the scene.",
   "status": "success"
 }

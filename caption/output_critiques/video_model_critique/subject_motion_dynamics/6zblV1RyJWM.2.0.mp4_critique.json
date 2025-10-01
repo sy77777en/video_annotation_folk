@@ -2,7 +2,7 @@
   "video_id": "6zblV1RyJWM.2.0.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T18:55:58.315899",
+  "generation_timestamp": "2025-09-29T21:49:06.137129",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good.\n\nHere's a breakdown of the feedback:\n\n**Accuracy:** The caption is inaccurate because it fails to mention the subject's movement. It describes the scene as if it were a still image, but the elephant does move in the video. The phrase \"calm and composed demeanor\" is a subjective interpretation of the animal's emotional state, not an objective description of its actions.\n\n**Completeness:** The caption is incomplete as it entirely omits the primary required element: a description of the subject's motion. The elephant turns its head slightly to its left during the clip, and this action is not mentioned.\n\n**Adherence to Instructions:** The caption fails to adhere to several key instructions:\n1.  **Focus on Motion:** The main instruction is to \"provide a concise yet informative description of the subject’s motion.\" The caption describes only the static appearance of the elephant and the background, completely ignoring its movement.\n2.  **Avoid Emotional/Subjective Adjectives:** The instruction explicitly states to \"Avoid emotional or subjective adjectives.\" The caption violates this by describing the elephant's \"calm and composed demeanor.\"\n3.  **Describe Actions:** The caption describes what the elephant looks like, not what it is doing. It should describe the action of the head turning.",
-  "revised_caption_by_generated_critique": "In a close-up shot, an elephant with large tusks stands in a dry, hilly landscape. It slowly turns its head from facing forward to looking toward the left of the frame.",
+  "generated_critique": "The caption fails to describe the subject's motion as required by the instructions. Instead, it focuses entirely on the elephant's appearance and the background scenery. The caption also includes the subjective phrase \"calm and composed demeanor,\" which is explicitly forbidden. The description should be rewritten to focus only on the elephant's movement. The video shows the elephant, in a close-up shot, slowly turning its head to its right.",
+  "revised_caption_by_generated_critique": "In a close-up shot, an elephant slowly turns its head to its right, shifting its gaze away from the camera.",
   "status": "success"
 }

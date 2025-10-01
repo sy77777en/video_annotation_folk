@@ -2,7 +2,7 @@
   "video_id": "upC8hjr2b4g.2.1.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:14:15.488205",
+  "generation_timestamp": "2025-09-29T21:19:16.354988",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption fails to mention the two other figures in the foreground row. The camera movement is misidentified as a pan, as it also moves forward.",
-  "revised_caption_by_generated_critique": "This wide shot, captured from a high angle, shows rows of stylized figures in computer cubicles. In the foreground, three figures are positioned on the bottom left. In the middle ground, several figures are seated in a row that extends from the left to the center. More rows of figures are visible in the background. The camera moves from left to right while also advancing forward, shifting the composition. As it moves, the figures initially in the middle ground become more central, and a red cubicle partition enters the frame from the right, occupying the middle ground. The movement reveals additional rows of figures and cubicles on the right side of the room.",
+  "generated_critique": "The caption incorrectly describes the camera movement. It also fails to account for all the figures present in the foreground at the start of the video.",
+  "revised_caption_by_generated_critique": "This wide shot, captured from a high angle, shows rows of stylized figures in computer cubicles. Initially, two figures are positioned in the foreground on the bottom left. In the middle ground, several figures are seated in a row that extends from the left to the center. More rows of figures are visible in the background. The camera slowly tilts from left to right, shifting the composition. As it moves, the figures initially in the middle ground become more central, and a red cubicle partition enters the frame from the right, occupying the middle ground. The tilt reveals additional rows of figures and cubicles on the right side of the room.",
   "status": "success"
 }

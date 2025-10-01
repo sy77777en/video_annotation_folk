@@ -2,7 +2,7 @@
   "video_id": "1560.0.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:59:25.887982",
+  "generation_timestamp": "2025-09-29T22:08:43.479111",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Feiyu Qian"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption misidentifies the initial shot size as a wide shot and the final shot size as a medium shot.",
-  "revised_caption_by_generated_critique": "The video begins with an establishing shot, featuring a large, domed neoclassical building prominently in the center of the frame and the middle ground. Other buildings are visible on the left and right sides, while a sky with clouds forms the background at the top. The camera, positioned at a low angle, rapidly dollies forward and tilts upward. This movement transitions the shot into a close-up, with the central building moving from the middle ground to fill the foreground. The upward tilt shifts the focus from the entire structure to its upper half, centering on the triangular pediment and the base of the dome, while the golden statue at the very top remains in the upper center of the frame.",
+  "generated_critique": "The initial shot size is not a wide shot, and the final shot size is not a medium shot.",
+  "revised_caption_by_generated_critique": "The video begins with an establishing shot, featuring a large, domed neoclassical building prominently in the center of the frame and the middle ground. Other buildings are visible on the left and right sides, while a sky with clouds forms the background at the top. The camera, positioned at a low angle, rapidly dollies forward and tilts upward. This movement causes the shot to transition into a closer view, with the central building moving from the middle ground to dominate the foreground. The upward tilt shifts the focus from the entire structure to its upper half, centering on the triangular pediment and the base of the dome, while the golden statue at the very top remains in the upper center of the frame.",
   "status": "success"
 }

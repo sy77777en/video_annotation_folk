@@ -2,7 +2,7 @@
   "video_id": "1497.1.20.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:35:48.706729",
+  "generation_timestamp": "2025-09-29T21:42:53.305849",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the scene is indoors and dimly lit; the point of view is from outside the well-lit building at ground level. The description of \"massive, rectangular, ceiling-high aquariums\" shattering is inaccurate, as a window shatters, not aquariums. Consequently, the caption incorrectly identifies the source of the water. The cause and effect are reversed; the caption claims the shattering causes the water to flow, which is wrong. The placement of the railing is imprecisely described as \"in the foreground,\" and the caption omits the man stumbling in the middle ground.",
-  "revised_caption_by_generated_critique": "Outside a well-lit building at ground level, a large window shatters violently, releasing a powerful torrent of cyan-colored water that floods the area and surges forward with great force. In the middle ground, a man stumbles amidst the chaos. A dark, ornate metal railing is partially visible in the scene. A white \"MOVIECLIPS.COM\" watermark is overlaid in the bottom left corner.",
+  "generated_critique": "The caption is missing the point of view and a subject. The description of the lighting as \"dimly lit\" is incorrect. The caption incorrectly states that aquariums shatter and misidentifies the source of the water. The sequence of events is described incorrectly, suggesting the shattering causes the water flow rather than the water flow causing the shattering. The placement of the railing is described inaccurately.",
+  "revised_caption_by_generated_critique": "From a high vantage point, the camera captures a brightly lit indoor space where massive, rectangular tanks, supported by a dark, columned framework, are under immense pressure. A powerful torrent of cyan-colored water bursts forth, causing the glass to shatter and flood the area with great force. In the foreground, a dark, ornate metal railing is prominently visible. A white \"MOVIECLIPS.COM\" watermark is overlaid in the bottom left corner of the scene.",
   "status": "success"
 }

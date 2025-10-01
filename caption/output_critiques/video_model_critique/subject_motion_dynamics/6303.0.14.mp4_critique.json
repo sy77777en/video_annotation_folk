@@ -2,7 +2,7 @@
   "video_id": "6303.0.14.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T17:28:59.104067",
+  "generation_timestamp": "2025-09-29T20:36:45.037493",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -33,7 +33,7 @@
     "original_annotator": "Hewei Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is mostly accurate but lacks specificity regarding the subject's primary action, and it includes a speculative phrase.\n\n**Accuracy:** The description of the setting (barbershop, checkered floor, neon lights), the subject's appearance (man in a red sweater), and the objects (comb, pink scissors) is accurate. However, describing the man's action as \"appears to be talking\" is inaccurate. His mouth is open and moving in an animated way that is consistent with singing or rapping along with the audio, not simply talking.\n\n**Completeness:** The caption correctly identifies the main elements and the camera's gradual zoom. However, it fails to fully describe the man's motion. A more complete description would specify that he is singing or rapping.\n\n**Adherence to Instructions:**\n- The caption violates the instruction to \"Describe **individual subject actions** with clarity\" by using the generic and inaccurate term \"talking\" instead of the more specific \"singing\" or \"rapping.\"\n- It also uses the phrase \"appears to be,\" which is a form of speculative language the instructions advise against (\"Avoid speculative statements like 'there might be,' 'it appears'\"). The man's mouth is clearly moving; the action is not just an appearance.\n- The phrase \"indicating a haircut is about to take place\" is an interpretation of intent rather than a direct description of motion, which borders on speculation.\n\nIn summary, the caption correctly describes the static elements of the scene but fails to accurately and specifically describe the main subject's motion, which is a key requirement of the instructions.",
-  "revised_caption_by_generated_critique": "From a first-person perspective, a man in a red sweater with an afro sings in a barbershop with a checkered floor and neon lights. In the foreground, two hands hold a comb and a pair of pink scissors near the man's head as the camera slowly zooms in on his face.",
+  "generated_critique": "The caption contains speculative language (\"indicating a haircut is about to take place\" and \"appears to be talking\"), which the instructions advise against. It also focuses more on describing the static scene rather than the subjects' movements. The caption omits the motion of the scissors, which are opening and closing. A more accurate and compliant description would focus on the simultaneous movements: from a first-person perspective, as a man sings and steps backward, the hands holding a comb and scissors move forward toward him, with the scissors opening and closing.",
+  "revised_caption_by_generated_critique": "From a first-person perspective, a man with an afro in a red sweater sings and backs away as two hands move toward him. The left hand holds a comb, and the right hand holds a pair of pink scissors, which it opens and closes. The scene is set in a barbershop with a black-and-white checkered floor and neon lights.",
   "status": "success"
 }

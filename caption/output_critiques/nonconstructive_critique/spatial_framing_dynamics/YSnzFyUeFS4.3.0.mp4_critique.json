@@ -2,7 +2,7 @@
   "video_id": "YSnzFyUeFS4.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:16:49.266440",
+  "generation_timestamp": "2025-09-30T00:48:51.816815",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Yun Yang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states that the foreground pedestrians only exit the frame to the left. It also misstates the direction the cyclist travels across the intersection.",
-  "revised_caption_by_generated_critique": "This wide, first-person POV shot begins from behind a group of pedestrians in the foreground as they start to cross a city street from the bottom of the frame. Initially, a man in a patterned shirt is in the center-left foreground. As the camera moves forward across the crosswalk, the foreground pedestrians walk toward both the left and right, exiting the frame. This movement reveals more of the middle ground, where other pedestrians and a cyclist travel from left to right across the intersection. The camera continues forward, opening up the view to show a police car in the left middle ground, while tall buildings and green trees form the background across the entire frame. The camera is positioned at approximately eye-level, creating an immersive perspective of walking through the scene.",
+  "generated_critique": "The caption inaccurately describes the direction in which the foreground pedestrians exit the frame and misstates the cyclist's direction of travel. The description also omits the camera's panning movement and incorrectly identifies the depth of the police car.",
+  "revised_caption_by_generated_critique": "This wide, first-person POV shot begins from behind a group of pedestrians in the foreground as they start to cross a city street from the bottom of the frame. Initially, a man in a patterned shirt is in the center-left foreground. As the camera moves forward across the crosswalk, the foreground pedestrians walk toward the right and exit the frame. This movement reveals more of the middle ground, where other pedestrians and a cyclist travel from left to right across the intersection. The camera continues forward and pans slightly, opening up the view to show a police car in the right middle ground, while tall buildings and green trees form the background across the entire frame. The camera is positioned at approximately eye-level, creating an immersive perspective of walking through the scene.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "VKre9_wM3Mo.2.1.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T15:30:27.640241",
+  "generation_timestamp": "2025-09-29T21:36:48.549091",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tingting Yu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the number of wires and provides an incomplete list of their colors. The description of the wires' connection points is inaccurate. A scene object is misidentified as an overlay, and its buttons are described incorrectly. The caption also omits the overlay text present in the lower left corner.",
-  "revised_caption_by_generated_critique": "Against a solid black background, a dark, smooth, rounded object with a subtle blue glow at its base is positioned in the lower center. A gray rectangular plate is positioned above, featuring three circular buttons of varying sizes. Four thin, colored lines—red, blue, yellow, and green—extend from the plate down to connect with the top of the central object. The scene is minimalist and rendered in a 3D animation style. Overlay text in the lower left corner provides additional context.",
+  "generated_critique": "The number of colored lines is incorrect. The description of the lines' connection points is inaccurate. The list of colors for the lines is incomplete. The description of the descending element is inaccurate; it is not an overlay revealing a plate. The caption is missing an overlay element.",
+  "revised_caption_by_generated_critique": "Against a solid black background, a dark, smooth, rounded object with a subtle blue glow at its base is positioned in the lower center. An animated element descends from the top, revealing a gray rectangular plate with two circular buttons of different sizes. Four thin, colored lines—red, blue, yellow, and green—extend from the plate and connect to the sides of the central object. The scene is minimalist and rendered in a 3D animation style, with an additional transparent overlay element enhancing the visual depth.",
   "status": "success"
 }

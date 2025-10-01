@@ -2,7 +2,7 @@
   "video_id": "pGtjz4v0EE8.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:24:07.943004",
+  "generation_timestamp": "2025-09-30T04:17:41.934209",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Ruojin Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption omits the pedestrians and tourists in the foreground and middle ground. The description of the buildings is incomplete, as it fails to mention the ones on the left and right sides. The statement that the shot zooms in and transitions to a medium shot is incorrect. The caption also misidentifies the depth of the large domed buildings.",
-  "revised_caption_by_generated_critique": "The video opens with a wide, low-angle view capturing historic buildings, bustling with pedestrians and tourists in the foreground and middle ground. A detailed white marble facade dominates the center, stretching across the lower and central parts of the scene. On the left and right sides, additional historic structures frame the view, adding depth and context. In the background, several large domes rise prominently, with one encased in scaffolding on the top right. The shot remains steady, focusing on the intricate pinnacles and statues atop the central facade, without zooming in or transitioning to a medium shot.",
+  "generated_critique": "The caption fails to mention the people visible in the scene and omits the buildings on the left and right sides of the frame. The description of the central building's position is incorrect. The caption incorrectly states that the shot transitions from a wide shot to a medium shot. The caption also incorrectly places the large domes in the background.",
+  "revised_caption_by_generated_critique": "The video opens with a wide, low-angle view capturing historic buildings across the frame. On the left and right, additional structures frame the scene, adding depth. In the center, a detailed white marble facade dominates the view, stretching across the middle and upper parts of the scene. Several large domes rise prominently in the foreground, with one dome encased in scaffolding on the right. People are visible throughout the scene, adding life and scale. The shot gradually zooms in, focusing on the ornate pinnacles and statues atop the central section of the facade.",
   "status": "success"
 }

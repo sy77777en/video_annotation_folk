@@ -2,7 +2,7 @@
   "video_id": "JGiXuXc3cao.4.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:21:54.938453",
+  "generation_timestamp": "2025-09-29T22:34:21.983956",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Tina Xu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly places the smaller, rectangular device in the middle ground. The description of the larger vehicle's upward movement is also incorrect.",
-  "revised_caption_by_generated_critique": "The video begins with a full shot from a low angle, featuring a large, pod-shaped vehicle in the top left and a smaller, rectangular device in the foreground to its right, connected by a thin tether against a dark, textured background. The smaller device descends toward the bottom of the frame as the larger vehicle remains stationary. The camera follows the descending device while pulling back, transitioning into an extreme wide shot. In the final view, the smaller device is suspended in the top center, with the camera now at its height, emitting two wide beams of light that illuminate the textured surface filling the bottom of the frame, where a small, dark object rests in the bottom left.",
+  "generated_critique": "The smaller, rectangular device is not in the middle ground. The larger vehicle does not move upward.",
+  "revised_caption_by_generated_critique": "The video begins with a full shot from a low angle, featuring a large, pod-shaped vehicle in the top left and a smaller, rectangular device positioned closer to the foreground to its right, connected by a thin tether against a dark, textured background. The smaller device descends toward the bottom of the frame while the larger vehicle remains stationary. The camera follows the descending device while pulling back, transitioning into an extreme wide shot. In the final view, the smaller device is suspended in the top center, with the camera now at its height, emitting two wide beams of light that illuminate the textured surface filling the bottom of the frame, where a small, dark object rests in the bottom left.",
   "status": "success"
 }

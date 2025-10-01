@@ -2,6 +2,7 @@
     "label": "Only Downward Movement (Relative to Camera)",
     "label_name": "only_downward_wrt_camera",
     "def_question": [
+        "Does the camera only move physically downward (or pedestals down) without any other camera movements?",
         "Does the camera only move downward (not tilting down) with respect to the initial frame?",
         "Is downward motion the only camera movement from the initial frame?",
         "Is there no other camera motion except downward movement relative to the initial frame?",
@@ -26,6 +27,7 @@
         "Does the shot feature only a single directional downward movement?"
     ],
     "def_prompt": [
+        "The camera only moves physically downward (or pedestals down) without any other camera movements.",
         "A video where the camera only moves downward (not tilting down) relative to the initial frame.",
         "A shot where the camera lowers straight down with respect to the initial frame without any other motion.",
         "A video where the camera exclusively moves downward relative to the initial frame, creating a noticeable vertical parallax effect.",

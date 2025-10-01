@@ -2,7 +2,7 @@
   "video_id": "y0aS2n1WmMg.0.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T14:16:50.873830",
+  "generation_timestamp": "2025-09-29T20:16:34.877892",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Isaac Li"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The door is incorrectly identified as being in the middle ground. The initial shot of the man is misidentified as a close-up shot. The description inaccurately states that the man becomes a silhouette immediately after the door closes. The caption fails to note the shot size transition as the man moves forward. The man is incorrectly described as moving out of the frame. The brown curtain's position is misclassified as being in the left foreground.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot of a white door positioned in the foreground, flanked by a brown curtain in the left background and a dark shelf in the right middle ground. The door opens inward, revealing a man in a medium shot, framed centrally in the doorway at the camera's level. He steps into the foreground and closes the door, gradually becoming a dark silhouette against the faint light of the door's arched window. He pauses briefly in the center of the frame before turning and walking from the foreground toward the camera, transitioning from a medium shot to a close-up as his silhouette grows larger until he fills the frame.",
+  "generated_critique": "The door's initial position is not in the middle ground. The initial shot of the man is not a close-up shot. The description of when the man becomes a silhouette is inaccurate. The caption fails to mention the change in shot size as the silhouette enlarges. The man does not move out of the frame. The brown curtain is not in the left foreground.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot of a white door positioned in the background, flanked by a brown curtain in the left background and a dark shelf in the right middle ground. The door opens inward, revealing a man in a medium shot, framed centrally in the doorway at the camera's level. He steps into the middle ground and closes the door, causing his figure to become a dark silhouette against the faint light of the door's arched window. He pauses briefly in the center of the frame before turning and walking from the middle ground toward the foreground, his silhouette growing larger as the shot size changes to a close-up. The man stops in the foreground, remaining within the frame.",
   "status": "success"
 }

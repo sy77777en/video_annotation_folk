@@ -2,7 +2,7 @@
   "video_id": "bPZc7avrCT4.6.2.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T16:33:44.907736",
+  "generation_timestamp": "2025-09-29T22:56:02.282706",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Mingyu Wang"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly identifies the subjects' depth as middle ground. The description of the object is incomplete, as it fails to mention that it flattens on impact and later regains its shape after bouncing. The caption also omits the initial movement of the older man's arms and does not state that the video transitions from slow motion to normal speed.",
-  "revised_caption_by_generated_critique": "In a medium shot, an older man is positioned on the left and a younger man is on the right, both in the foreground. A green, pliable object is initially seen in slow motion, pressed against the right side of the younger man's face. Upon impact, the object flattens, then regains its shape as it bounces off his face and falls toward the bottom of the frame. The older man initially raises his arm to throw the object and then lowers it. The younger man looks down to the right. The subjects remain in their respective positions on the left and right throughout the shot. The scene is set on a grassy lawn in the foreground and middle ground, with a line of trees in the background, and the camera is positioned at the subjects' level. The video transitions from slow motion to normal speed as the action unfolds.",
+  "generated_critique": "The caption incorrectly identifies the position of the figures as middle ground. It is missing details about the object's change in shape upon impact and its subsequent return to its original shape. The description of the older man's arm movement is incomplete, and the caption fails to mention the change in the video's speed from slow motion to normal.",
+  "revised_caption_by_generated_critique": "In a medium shot, an older man is positioned on the left and a younger man is on the right, both in the foreground. A green, pliable object is initially seen in slow motion, pressed against the right side of the younger man's face. Upon impact, the object deforms and then returns to its original shape as it bounces off his face and falls toward the bottom of the frame. The older man lowers his arm completely, and the younger man looks down to the right. The subjects remain in their respective positions on the left and right throughout the shot. The scene is set on a grassy lawn in the foreground and middle ground, with a line of trees in the background, and the camera is positioned at the subjects' level. The video transitions from slow motion to normal speed as the action unfolds.",
   "status": "success"
 }

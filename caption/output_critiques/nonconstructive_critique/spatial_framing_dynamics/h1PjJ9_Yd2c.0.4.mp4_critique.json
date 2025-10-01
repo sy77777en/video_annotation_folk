@@ -2,7 +2,7 @@
   "video_id": "h1PjJ9_Yd2c.0.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T18:40:08.713182",
+  "generation_timestamp": "2025-09-30T01:14:22.795199",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Shihang Zhu"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption incorrectly states the two men walk from the \"center-left.\" The description of the man with the number \"5\" is flawed; it fails to mention that he is the same person who jogged from the left, and the description of his movement as running \"from the center of the frame into the background\" is inaccurate. The caption also omits the number on the accompanying player's back.",
-  "revised_caption_by_generated_critique": "The video begins with a medium shot framed over the shoulder of a blurred figure in the foreground on the right. In the middle ground, two men in sports uniforms walk from the center towards the left. As the shot continues, it transitions into a wide shot. A man jogs from the left into the center, briefly coming into focus before joining other players who run from the middle ground toward the background. The primary focus shifts to this same man, wearing the number \"5\" on his back, who moves from the center of the frame towards the background, accompanied by another player with the number \"8\" on his back. The blurred foreground element on the right remains static throughout the clip. The camera is positioned at the subjects' level.",
+  "generated_critique": "The description of the two men's starting position as \"center-left\" is inaccurate. The caption incorrectly implies that the man who jogs from the left and the man with the number \"5\" are two different people. The description of this man's movement from the center into the background is also inaccurate. Additionally, the description of the player accompanying him is incomplete.",
+  "revised_caption_by_generated_critique": "The video begins with a medium shot framed over the shoulder of a blurred figure in the foreground on the right. In the middle ground, two men in sports uniforms walk from the center towards the left. As the shot continues, it transitions into a wide shot. A man jogs from the left into the center, briefly coming into focus before joining other players who run from the middle ground toward the background. The primary focus shifts to this man, wearing the number \"5\" on his back, who runs from the center of the frame into the background, accompanied by another player who stays close by his side. The blurred foreground element on the right remains static throughout the clip. The camera is positioned at the subjects' level.",
   "status": "success"
 }

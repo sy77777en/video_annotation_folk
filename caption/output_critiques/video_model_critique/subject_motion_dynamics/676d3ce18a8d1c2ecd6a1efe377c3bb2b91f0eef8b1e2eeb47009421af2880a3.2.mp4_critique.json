@@ -2,7 +2,7 @@
   "video_id": "676d3ce18a8d1c2ecd6a1efe377c3bb2b91f0eef8b1e2eeb47009421af2880a3.2.mp4",
   "caption_type": "motion",
   "critique_type": "video_model_critique",
-  "generation_timestamp": "2025-09-28T18:04:19.947192",
+  "generation_timestamp": "2025-09-29T21:07:48.223269",
   "model": "gemini-2.5-pro",
   "prompt_name": "VIDEO_MODEL_CRITIQUE_PROMPT",
   "mode": "Video",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The caption is not good because it fails to accurately describe the motion in the video and violates the core instructions.\n\n**Accuracy:** The caption is inaccurate. It claims, \"The camera gradually moves,\" but the video is a completely static aerial shot. There is no camera movement or any other motion within the frame.\n\n**Completeness:** The caption fails to address the lack of motion, which is a key aspect of the video. While it describes the static elements of the scene, it misses the primary point about the subject's (or camera's) state of motion.\n\n**Adherence to Instructions:** The caption does not adhere to the instructions. The instructions explicitly state to describe the subject's motion and, \"If the subject in the video has no movement, please briefly mention that.\" By inventing camera movement, the caption directly contradicts this fundamental rule and provides false information about the video's content.",
-  "revised_caption_by_generated_critique": "This is a static, high-angle aerial shot of a church with a tall spire, located in a rural area. The church is surrounded by a graveyard with numerous tombstones and a path leading to the building. The adjacent landscape consists of green trees and a large, harvested field. The camera remains completely still throughout the video, presenting a fixed view of the scene.",
+  "generated_critique": "The caption contains a factual error, stating that \"The camera gradually moves,\" when the video is a completely static shot with no camera or subject movement. Additionally, the instructions specify that for videos with no movement, the caption should \"briefly mention that without going into too much detail.\" The current caption provides a detailed description of the scene's appearance, which is contrary to this instruction. The entire caption should be replaced with a concise statement that accurately reflects the static nature of the video, such as: \"This is a static aerial shot of a church, with no movement occurring in the video.\"",
+  "revised_caption_by_generated_critique": "This is a static aerial shot of a church with a tall spire, surrounded by a graveyard and trees in a rural landscape.",
   "status": "success"
 }

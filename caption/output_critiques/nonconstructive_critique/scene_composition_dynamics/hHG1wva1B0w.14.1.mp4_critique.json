@@ -2,7 +2,7 @@
   "video_id": "hHG1wva1B0w.14.1.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:06:30.030850",
+  "generation_timestamp": "2025-09-30T03:56:56.313185",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,7 +32,7 @@
     "reviewer_double_check": true
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The description inaccurately states that the chair is 'on a platform.' The caption also omits the small white watermark in the lower left corner.",
-  "revised_caption_by_generated_critique": "A dark wooden electric chair stands in a stark, institutional room with light-colored walls. The chair has a high back with horizontal slats, and visible restraints are attached to its arms and legs, with wires running from it. To the right of the chair, a small electrical box is mounted on the wall. The scene is viewed from a fixed position, with the bottom of the view partially obscured by out-of-focus elements in the foreground. The video quality is grainy, the colors are muted, and a small white watermark is visible in the lower left corner.",
+  "generated_critique": "The description inaccurately states that the chair is \"on a platform.\" The caption also fails to mention the overlay element.",
+  "revised_caption_by_generated_critique": "A dark wooden electric chair stands in a stark, institutional room with light-colored walls. The chair has a high back with horizontal slats, and visible restraints are attached to its arms and legs, with wires running from it. To the right of the chair, a small electrical box is mounted on the wall. The scene is viewed from a fixed position, with the bottom of the view partially obscured by out-of-focus elements in the foreground. An overlay element is present, adding a layer of visual distortion. The video quality is grainy, and the colors are muted.",
   "status": "success"
 }

@@ -2,7 +2,7 @@
   "video_id": "ocLJWCnMhTo.0.0.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-09-28T22:34:35.091624",
+  "generation_timestamp": "2025-09-30T04:29:40.021485",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -33,7 +33,7 @@
     "original_annotator": "Zhenye Luo"
   },
   "source_export_folder": "caption_export/export_20250927_2346",
-  "generated_critique": "The man's position is incorrectly described as 'in the center'. The caption incorrectly identifies the act as 'fire-breathing' and misstates the origin of the fire. The description of when the second person's arm and hand appear is inaccurate, and the term 'the view tilts' is an inaccurate description of the camera movement.",
-  "revised_caption_by_generated_critique": "A man with dark skin is positioned slightly to the right of the center, wearing a white short-sleeved t-shirt with a small, colorful graphic on the chest and light-colored, loose-fitting pants. He is performing an act of fire-eating, with a stream of fire emerging from a torch he holds near his mouth. As the video progresses, the camera pans, causing the man's head to move out of the frame, leaving his torso and legs visible. Simultaneously, the arm and hand of a second person, who appears to be seated, come into view in the bottom left corner earlier than previously described.",
+  "generated_critique": "The man's position is not in the center of the view. The description of the man's action is incorrect; the fire does not originate from his mouth. The description of when the second person's arm and hand appear is incorrect. The description of the camera movement as \"the view tilts\" is inaccurate.",
+  "revised_caption_by_generated_critique": "A man with dark skin is positioned slightly to the right of the center, wearing a white short-sleeved t-shirt with a small, colorful graphic on the chest and light-colored, loose-fitting pants. He is performing an act of fire-breathing, with a stream of fire originating from a torch he holds near his mouth, arcing downwards. As the video progresses, the camera pans, causing the man's head to move out of the frame, leaving his torso and legs visible. The arm and hand of a second person, who appears to be seated, come into view in the bottom left corner earlier in the video.",
   "status": "success"
 }
