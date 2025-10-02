@@ -4508,10 +4508,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_rack_pull_focus",
-            "pos_question": "Does the camera use rack focus or pull focus to shift the focus plane?",
-            "neg_question": "Does the camera not use rack focus or pull focus to shift the focus plane?",
-            "pos_prompt": "The camera uses rack focus or pull focus to shift the focus plane.",
-            "neg_prompt": "The camera does not use rack focus or pull focus to shift the focus plane.",
+            "pos_question": "Does the camera use rack focus or pull focus to shift the focal plane?",
+            "neg_question": "Does the camera not use rack focus or pull focus to shift the focal plane?",
+            "pos_prompt": "The camera uses rack focus or pull focus to shift the focal plane.",
+            "neg_prompt": "The camera does not use rack focus or pull focus to shift the focal plane.",
             "pos": {
                 "label": "cam_setup.depth_of_field.is_rack_pull_focus",
                 "type": "pos",
@@ -4540,10 +4540,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_change",
-            "pos_question": "Does the focal plane shift noticeably between foreground, middleground, or background regions?",
-            "neg_question": "Does the focal plane not shift noticeably between foreground, middleground, or background regions?",
-            "pos_prompt": "The focal plane shifts noticeably between foreground, middleground, or background regions.",
-            "neg_prompt": "The focal plane does not shift noticeably between foreground, middleground, or background regions.",
+            "pos_question": "Does the focal plane shift noticeably between foreground, middle ground, or background regions?",
+            "neg_question": "Does the focal plane not shift noticeably between foreground, middle ground, or background regions?",
+            "pos_prompt": "The focal plane shifts noticeably between foreground, middle ground, or background regions.",
+            "neg_prompt": "The focal plane does not shift noticeably between foreground, middle ground, or background regions.",
             "pos": {
                 "label": "cam_setup.depth_of_field.focus_change",
                 "type": "pos",
@@ -4556,10 +4556,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_change_from_far_to_near",
-            "pos_question": "Does the focal plane shift from distant to close, moving between foreground, middleground, or background?",
-            "neg_question": "Does the focal plane not shift from distant to close, moving between foreground, middleground, or background?",
-            "pos_prompt": "The focal plane shifts from distant to close, moving between foreground, middleground, or background.",
-            "neg_prompt": "The focal plane does not shift from distant to close, moving between foreground, middleground, or background.",
+            "pos_question": "Does the focal plane shift from distant to close, moving between foreground, middle ground, or background?",
+            "neg_question": "Does the focal plane not shift from distant to close, moving between foreground, middle ground, or background?",
+            "pos_prompt": "The focal plane shifts from distant to close, moving between foreground, middle ground, or background.",
+            "neg_prompt": "The focal plane does not shift from distant to close, moving between foreground, middle ground, or background.",
             "pos": {
                 "label": "cam_setup.depth_of_field.focus_change_from_far_to_near",
                 "type": "pos",
@@ -4572,10 +4572,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_change_from_near_to_far",
-            "pos_question": "Does the focal plane shift from close to distant, moving between foreground, middleground, or background?",
-            "neg_question": "Does the focal plane not shift from close to distant, moving between foreground, middleground, or background?",
-            "pos_prompt": "The focal plane shifts from close to distant, moving between foreground, middleground, or background.",
-            "neg_prompt": "The focal plane does not shift from close to distant, moving between foreground, middleground, or background.",
+            "pos_question": "Does the focal plane shift from close to distant, moving between foreground, middle ground, or background?",
+            "neg_question": "Does the focal plane not shift from close to distant, moving between foreground, middle ground, or background?",
+            "pos_prompt": "The focal plane shifts from close to distant, moving between foreground, middle ground, or background.",
+            "neg_prompt": "The focal plane does not shift from close to distant, moving between foreground, middle ground, or background.",
             "pos": {
                 "label": "cam_setup.depth_of_field.focus_change_from_near_to_far",
                 "type": "pos",
@@ -4656,10 +4656,10 @@ def get_focus_is_always_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_is_always_middle_ground",
-            "pos_question": "Is the camera consistently focused on the middleground, keeping the foreground and background blurred?",
-            "neg_question": "Is the camera not consistently focused on the middleground, keeping the foreground and background blurred?",
-            "pos_prompt": "The camera remains focused on the middleground, keeping the foreground and background blurred.",
-            "neg_prompt": "The camera does not remain focused on the middleground, keeping the foreground and background blurred.",
+            "pos_question": "Is the camera consistently focused on the middle ground, keeping the foreground and background blurred?",
+            "neg_question": "Is the camera not consistently focused on the middle ground, keeping the foreground and background blurred?",
+            "pos_prompt": "The camera remains focused on the middle ground, keeping the foreground and background blurred.",
+            "neg_prompt": "The camera does not remain focused on the middle ground, keeping the foreground and background blurred.",
             "pos": {
                 "label": "cam_setup.focus.is_always.focus_is_middle_ground",
                 "type": "pos"
@@ -4725,10 +4725,10 @@ def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         {
             "folder": setup_folder,
             "name": "focus_start_with_middle_ground",
-            "pos_question": "Does the video start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
-            "neg_question": "Does the video not start with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background?",
-            "pos_prompt": "The video starts with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
-            "neg_prompt": "The video does not start with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background.",
+            "pos_question": "Does the video start with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background?",
+            "neg_question": "Does the video not start with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background?",
+            "pos_prompt": "The video starts with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background.",
+            "neg_prompt": "The video does not start with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background.",
             "pos": {
                 "label": "cam_setup.focus.start_with.focus_start_with_middle_ground",
                 "type": "pos"
@@ -4793,10 +4793,10 @@ def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_end_with_middle_ground",
-            "pos_question": "Does the video end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
-            "neg_question": "Does the video not end with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background?",
-            "pos_prompt": "The video ends with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
-            "neg_prompt": "The video does not end with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background.",
+            "pos_question": "Does the video end with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background?",
+            "neg_question": "Does the video not end with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background?",
+            "pos_prompt": "The video ends with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background.",
+            "neg_prompt": "The video does not end with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background.",
             "pos": {
                 "label": "cam_setup.focus.end_with.focus_end_with_middle_ground",
                 "type": "pos"
@@ -4845,10 +4845,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_background_to_middle_ground",
-            "pos_question": "Does the video start with the camera focused on the background and then shift the focus to the middleground?",
-            "neg_question": "Does the video not start with the focus on the background, or it does not shift the focus to the middleground?",
-            "pos_prompt": "The video starts with the camera focused on the background and then shifts the focus to the middleground.",
-            "neg_prompt": "The video does not start with the focus on the background, or it does not shift the focus to the middleground.",
+            "pos_question": "Does the video start with the camera focused on the background and then shift the focus to the middle ground?",
+            "neg_question": "Does the video not start with the focus on the background, or it does not shift the focus to the middle ground?",
+            "pos_prompt": "The video starts with the camera focused on the background and then shifts the focus to the middle ground.",
+            "neg_prompt": "The video does not start with the focus on the background, or it does not shift the focus to the middle ground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_background_to_middle_ground",
                 "type": "pos"
@@ -4877,10 +4877,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_foreground_to_middle_ground",
-            "pos_question": "Does the video start with the camera focused on the foreground and then shift the focus to the middleground?",
-            "neg_question": "Does the video not start with the focus on the foreground, or it does not shift the focus to the middleground?",
-            "pos_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the middleground.",
-            "neg_prompt": "The video does not start with the focus on the foreground, or it does not shift the focus to the middleground.",
+            "pos_question": "Does the video start with the camera focused on the foreground and then shift the focus to the middle ground?",
+            "neg_question": "Does the video not start with the focus on the foreground, or it does not shift the focus to the middle ground?",
+            "pos_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the middle ground.",
+            "neg_prompt": "The video does not start with the focus on the foreground, or it does not shift the focus to the middle ground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_foreground_to_middle_ground",
                 "type": "pos"
@@ -4893,10 +4893,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_middle_ground_to_background",
-            "pos_question": "Does the video start with the camera focused on the middleground and then shift the focus to the background?",
-            "neg_question": "Does the video not start with the focus on the middleground, or it does not shift the focus to the background?",
-            "pos_prompt": "The video starts with the camera focused on the middleground and then shifts the focus to the background.",
-            "neg_prompt": "The video does not start with the focus on the middleground, or it does not shift the focus to the background.",
+            "pos_question": "Does the video start with the camera focused on the middle ground and then shift the focus to the background?",
+            "neg_question": "Does the video not start with the focus on the middle ground, or it does not shift the focus to the background?",
+            "pos_prompt": "The video starts with the camera focused on the middle ground and then shifts the focus to the background.",
+            "neg_prompt": "The video does not start with the focus on the middle ground, or it does not shift the focus to the background.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_middle_ground_to_background",
                 "type": "pos"
@@ -4909,10 +4909,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_middle_ground_to_foreground",
-            "pos_question": "Does the video start with the camera focused on the middleground and then shift the focus to the foreground?",
-            "neg_question": "Does the video not start with the focus on the middleground, or it does not shift the focus to the foreground?",
-            "pos_prompt": "The video starts with the camera focused on the middleground and then shifts the focus to the foreground.",
-            "neg_prompt": "The video does not start with the focus on the middleground, or it does not shift the focus to the foreground.",
+            "pos_question": "Does the video start with the camera focused on the middle ground and then shift the focus to the foreground?",
+            "neg_question": "Does the video not start with the focus on the middle ground, or it does not shift the focus to the foreground?",
+            "pos_prompt": "The video starts with the camera focused on the middle ground and then shifts the focus to the foreground.",
+            "neg_prompt": "The video does not start with the focus on the middle ground, or it does not shift the focus to the foreground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_middle_ground_to_foreground",
                 "type": "pos"
