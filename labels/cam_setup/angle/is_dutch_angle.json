@@ -2,7 +2,7 @@
     "label": "Is Dutch Angle",
     "label_name": "is_dutch_angle",
     "def_question": [
-        "Is a Dutch (canted) angle of more than 15 degrees present at any point in the video?"
+        "Is there an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video?"
     ],
     "alt_question": [
         "Does the shot use a tilted camera angle?",
@@ -15,7 +15,7 @@
         "Is the camera rotated off its horizontal axis?"
     ],
     "def_prompt": [
-        "There is a Dutch (canted) angle of more than 15 degrees present at any point in the video."
+        "There is an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video."
     ],
     "alt_prompt": [
         "A video using tilted camera perspective.",

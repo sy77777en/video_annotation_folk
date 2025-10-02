@@ -2,7 +2,7 @@
     "label": "Camera Angle End With Level Angle",
     "label_name": "camera_angle_end_with_level_angle",
     "def_question": [
-        "Does the video end with the camera at a level angle, parallel to the ground regardless of Dutch angle?"
+        "Does the video end with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)?"
     ],
     "alt_question": [
         "Does the shot end with the camera aligned parallel to the ground?",
@@ -15,7 +15,7 @@
         "Is the ending frame recorded with the camera at a neutral level position?"
     ],
     "def_prompt": [
-        "The video ends with the camera at a level angle, parallel to the ground regardless of Dutch angle."
+        "The video ends with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)."
     ],
     "alt_prompt": [
         "A shot ending at a neutral level angle, parallel to the ground.",

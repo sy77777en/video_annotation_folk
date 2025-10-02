@@ -2,7 +2,7 @@
     "label": "Camera Angle Start With Level Angle",
     "label_name": "camera_angle_start_with_level_angle",
     "def_question": [
-        "Does the video start with the camera at a level angle, parallel to the ground regardless of Dutch angle?"
+        "Does the video start with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)?"
     ],
     "alt_question": [
         "Does the shot start with the camera aligned parallel to the ground?",
@@ -15,7 +15,7 @@
         "Is the starting frame recorded with the camera at a neutral level position?"
     ],
     "def_prompt": [
-        "The video starts with the camera at a level angle, parallel to the ground regardless of Dutch angle."
+        "The video starts with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)."
     ],
     "alt_prompt": [
         "A shot starting at a neutral level angle, parallel to the ground.",

@@ -2,7 +2,7 @@
     "label": "Is Rack Pull Focus",
     "label_name": "is_rack_pull_focus",
     "def_question": [
-        "Is rack focus or pull focus used in the video?"
+        "Does the camera use rack focus or pull focus to shift the focus plane?"
     ],
     "alt_question": [
         "Does the shot use deliberate focus transitions?",
@@ -15,7 +15,7 @@
         "Is there deliberate refocusing in the shot?"
     ],
     "def_prompt": [
-        "A shot using rack focus or pull focus techniques to shift the focus plane."
+        "The camera uses rack focus or pull focus to shift the focus plane."
     ],
     "alt_prompt": [
         "A video with deliberate focus changes.",

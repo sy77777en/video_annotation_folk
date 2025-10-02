@@ -13,6 +13,7 @@ Features:
 - App.py-compatible folder structure
 - Complete change detection
 - Proper skip status handling and correction
+- Failed critique persistence and tracking
 """
 
 import os
@@ -437,7 +438,7 @@ class CritiqueGenerator:
         return self.output_dir / critique_type / output_folder_name / f"{video_id}_critique.json"
     
     def load_existing_critique(self, video_id: str, caption_type: str, critique_type: str) -> Optional[Dict[str, Any]]:
-        """Load existing critique file if it exists"""
+        """Load existing critique file if it exists. Treats corrupted files as non-existent."""
         file_path = self.get_critique_file_path(video_id, caption_type, critique_type)
         
         if file_path.exists():
@@ -445,7 +446,8 @@ class CritiqueGenerator:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     return json.load(f)
             except Exception as e:
-                print(f"Warning: Could not load {file_path}: {e}")
+                print(f"Warning: Could not load {file_path}: {e}. Treating as non-existent.")
+                return None
         
         return None
     
@@ -490,6 +492,39 @@ class CritiqueGenerator:
             return True
         except Exception as e:
             print(f"Error saving skipped critique to {file_path}: {e}")
+            return False
+    
+    def save_failed_critique(self, video_id: str, caption_type: str, critique_type: str,
+                           caption_data: Dict[str, Any], export_folder: str,
+                           error_message: str, attempts_made: int) -> bool:
+        """Save a failed critique marker file"""
+        
+        file_path = self.get_critique_file_path(video_id, caption_type, critique_type)
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        task_config = CRITIQUE_TASKS[critique_type]
+        
+        failed_data = {
+            "video_id": video_id,
+            "caption_type": caption_type,
+            "critique_type": critique_type,
+            "status": "failed",
+            "error_message": error_message,
+            "attempts_made": attempts_made,
+            "generation_timestamp": datetime.now().isoformat(),
+            "prompt_name": task_config["prompt_name"],
+            "model": task_config["model"],
+            "mode": task_config["mode"],
+            "source_caption_data": caption_data,
+            "source_export_folder": export_folder
+        }
+        
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(failed_data, f, indent=2, ensure_ascii=False)
+            return True
+        except Exception as e:
+            print(f"Error saving failed critique to {file_path}: {e}")
             return False
     
     def needs_regeneration(self, existing_critique: Dict[str, Any], 
@@ -821,7 +856,13 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                     if verbose:
                         print(f"    Attempt {attempt + 1} failed: {e}")
                     if attempt == max_retries:
-                        return "failed", f"All {max_retries + 1} attempts failed: {str(e)}"
+                        # All retries exhausted - save failed critique file
+                        error_msg = f"All {max_retries + 1} attempts failed: {str(e)}"
+                        self.save_failed_critique(
+                            video_id, caption_type, critique_type, caption_data,
+                            export_folder, error_msg, max_retries + 1
+                        )
+                        return "failed", error_msg
                     # Wait before retry
                     time.sleep(2)
     
@@ -978,20 +1019,197 @@ Respond with the improved caption only, without quotation marks or JSON formatti
             print("Processing completed locally, but HuggingFace upload failed.")
             return False
     
-    def check_all_critiques_completed(self) -> bool:
-        """Check if all critiques are successfully completed for all videos and all critique types"""
+    def check_all_critiques_completed(self, videos_to_check: List[Tuple[str, str, Dict[str, Any], str, str]], 
+                                    critique_types_to_check: Optional[List[str]] = None, verbose: bool = False) -> Tuple[bool, Dict[str, Any]]:
+        """Check if all critiques are successfully completed. Returns (all_complete, details_dict)
         
-        # First, discover all videos that should have critiques
-        videos_to_process = self.discover_videos_to_process()
-        if not videos_to_process:
-            return True  # No videos to process
+        Args:
+            videos_to_check: List of video tuples to check (same format as discover_videos_to_process)
+            critique_types_to_check: Optional list of critique types to check. If None, checks all types.
+            verbose: If True, print detailed checking information
+        """
         
-        # Get all expected critique types
-        all_critique_types = list(CRITIQUE_TASKS.keys())
+        if not videos_to_check:
+            return True, {"failed_count": 0, "missing_count": 0, "by_critique_type": {}}
+        
+        # Get critique types to check
+        if critique_types_to_check is None:
+            all_critique_types = list(CRITIQUE_TASKS.keys())
+        else:
+            all_critique_types = critique_types_to_check
+        
+        # Build a set of expected (video_id, caption_type) tuples for faster lookup
+        expected_combinations = set()
+        for video_id, caption_type, caption_data, export_folder, video_url in videos_to_check:
+            expected_combinations.add((video_id, caption_type))
+        
+        # Track what we actually have - ONLY for expected combinations
+        critique_coverage = {}  # {video_id: {caption_type: {critique_type: status}}}
+        
+        # Detailed tracking by critique type and caption type
+        failed_by_critique = {ct: {} for ct in all_critique_types}  # {critique_type: {caption_type: count}}
+        missing_by_critique = {ct: {} for ct in all_critique_types}
+        
+        if verbose:
+            print(f"  Checking {len(all_critique_types)} critique types across {len(videos_to_check)} operations")
+            print(f"  Expected video-caption combinations: {len(expected_combinations)}")
+        
+        # Scan all existing critique files - but only count ones we expect
+        files_found = 0
+        files_unexpected = 0
+        for critique_type_dir in self.output_dir.iterdir():
+            if not critique_type_dir.is_dir():
+                continue
+                
+            critique_type = critique_type_dir.name
+            if critique_type not in all_critique_types:
+                continue  # Skip critique types we're not checking
+                
+            for caption_type_dir in critique_type_dir.iterdir():
+                if not caption_type_dir.is_dir():
+                    continue
+                    
+                output_folder_name = caption_type_dir.name  # e.g., "subject_description"
+                
+                # Find the caption_type that corresponds to this output folder
+                caption_type = None
+                for ct, output_name in self.caption_type_to_output_name.items():
+                    if output_name == output_folder_name:
+                        caption_type = ct
+                        break
+                
+                if not caption_type:
+                    if verbose:
+                        print(f"  Warning: Could not map folder '{output_folder_name}' to caption type")
+                    continue  # Skip if we can't map back to caption type
+                    
+                for critique_file in caption_type_dir.glob("*_critique.json"):
+                    try:
+                        with open(critique_file, 'r', encoding='utf-8') as f:
+                            critique_data = json.load(f)
+                        
+                        video_id = critique_data["video_id"]
+                        status = critique_data.get("status", "unknown")
+                        
+                        # Check if this is an expected combination
+                        if (video_id, caption_type) not in expected_combinations:
+                            files_unexpected += 1
+                            if verbose and files_unexpected == 1:
+                                print(f"  Note: Found files for videos not in approved/rejected status (e.g., {video_id}/{caption_type})")
+                            continue  # Skip files for videos we're not checking
+                        
+                        # Initialize nested structure
+                        if video_id not in critique_coverage:
+                            critique_coverage[video_id] = {}
+                        if caption_type not in critique_coverage[video_id]:
+                            critique_coverage[video_id][caption_type] = {}
+                        
+                        critique_coverage[video_id][caption_type][critique_type] = status
+                        files_found += 1
+                            
+                    except Exception as e:
+                        if verbose:
+                            print(f"  Warning: Could not check critique file {critique_file}: {e}")
+        
+        if verbose:
+            print(f"  Found {files_found} relevant critique files (skipped {files_unexpected} for non-approved/rejected videos)")
+        
+        # Now check if ALL expected videos have ALL expected critique types
+        expected_operations = 0
+        for video_id, caption_type, caption_data, export_folder, video_url in videos_to_check:
+            if video_id not in critique_coverage:
+                critique_coverage[video_id] = {}
+                
+            if caption_type not in critique_coverage[video_id]:
+                critique_coverage[video_id][caption_type] = {}
+            
+            # Check each critique type for this video-caption combination
+            for critique_type in all_critique_types:
+                expected_operations += 1
+                
+                # Check if this critique type should be skipped
+                task_config = CRITIQUE_TASKS[critique_type]
+                should_skip = False
+                if task_config["skip_perfect"]:
+                    initial_rating = caption_data.get("initial_caption_rating_score")
+                    if initial_rating == 5:
+                        should_skip = True
+                
+                if should_skip:
+                    # This critique type should be skipped for perfect scores
+                    if critique_type in critique_coverage[video_id][caption_type]:
+                        status = critique_coverage[video_id][caption_type][critique_type]
+                        if status == "failed":
+                            # Shouldn't have failed file for skipped critique
+                            if caption_type not in failed_by_critique[critique_type]:
+                                failed_by_critique[critique_type][caption_type] = 0
+                            failed_by_critique[critique_type][critique_type] += 1
+                        elif status not in ["success", "skipped"]:
+                            # Unknown status
+                            if caption_type not in missing_by_critique[critique_type]:
+                                missing_by_critique[critique_type][caption_type] = 0
+                            missing_by_critique[critique_type][caption_type] += 1
+                    # If missing, that's fine for skipped critique types
+                    continue
+                
+                # For non-skipped critique types, we must have a successful critique
+                if critique_type not in critique_coverage[video_id][caption_type]:
+                    # Missing required critique
+                    if verbose and sum(missing_by_critique[critique_type].values()) == 0:
+                        print(f"  First missing: {video_id} / {caption_type} / {critique_type}")
+                    
+                    if caption_type not in missing_by_critique[critique_type]:
+                        missing_by_critique[critique_type][caption_type] = 0
+                    missing_by_critique[critique_type][caption_type] += 1
+                    continue
+                    
+                status = critique_coverage[video_id][caption_type][critique_type]
+                if status == "failed":
+                    if caption_type not in failed_by_critique[critique_type]:
+                        failed_by_critique[critique_type][caption_type] = 0
+                    failed_by_critique[critique_type][caption_type] += 1
+                elif status not in ["success", "skipped"]:
+                    if caption_type not in missing_by_critique[critique_type]:
+                        missing_by_critique[critique_type][caption_type] = 0
+                    missing_by_critique[critique_type][caption_type] += 1
+        
+        if verbose:
+            print(f"  Expected {expected_operations} total operations")
+        
+        # Calculate totals
+        total_failed = sum(sum(counts.values()) for counts in failed_by_critique.values())
+        total_missing = sum(sum(counts.values()) for counts in missing_by_critique.values())
+        
+        # Build detailed breakdown
+        by_critique_type = {}
+        for critique_type in all_critique_types:
+            failed_count = sum(failed_by_critique[critique_type].values())
+            missing_count = sum(missing_by_critique[critique_type].values())
+            
+            if failed_count > 0 or missing_count > 0:
+                by_critique_type[critique_type] = {
+                    "failed": failed_by_critique[critique_type],
+                    "missing": missing_by_critique[critique_type],
+                    "failed_total": failed_count,
+                    "missing_total": missing_count
+                }
+        
+        all_complete = (total_failed == 0 and total_missing == 0)
+        
+        details = {
+            "failed_count": total_failed,
+            "missing_count": total_missing,
+            "by_critique_type": by_critique_type
+        }
+        
+        return all_complete, details
         
         # Track what we actually have
-        videos_with_critiques = set()
         critique_coverage = {}  # {video_id: {caption_type: {critique_type: status}}}
+        
+        # Detailed tracking by critique type and caption type
+        failed_by_critique = {ct: {} for ct in all_critique_types}  # {critique_type: {caption_type: count}}
+        missing_by_critique = {ct: {} for ct in all_critique_types}
         
         # Scan all existing critique files
         for critique_type_dir in self.output_dir.iterdir():
@@ -1033,53 +1251,90 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                             critique_coverage[video_id][caption_type] = {}
                         
                         critique_coverage[video_id][caption_type][critique_type] = status
-                        videos_with_critiques.add(video_id)
-                        
-                        # If any critique failed, we're not complete
-                        if status == "failed":
-                            return False
                             
                     except Exception as e:
                         print(f"Warning: Could not check critique file {critique_file}: {e}")
-                        return False
         
         # Now check if ALL expected videos have ALL expected critique types
         for video_id, caption_type, caption_data, export_folder, video_url in videos_to_process:
             if video_id not in critique_coverage:
-                # This video has no critiques at all
-                return False
+                critique_coverage[video_id] = {}
                 
             if caption_type not in critique_coverage[video_id]:
-                # This caption type has no critiques
-                return False
+                critique_coverage[video_id][caption_type] = {}
             
             # Check each critique type for this video-caption combination
             for critique_type in all_critique_types:
                 # Check if this critique type should be skipped
                 task_config = CRITIQUE_TASKS[critique_type]
+                should_skip = False
                 if task_config["skip_perfect"]:
                     initial_rating = caption_data.get("initial_caption_rating_score")
                     if initial_rating == 5:
-                        # This critique type should be skipped for perfect scores
-                        # Either it should be missing (not generated) or marked as skipped
-                        if critique_type in critique_coverage[video_id][caption_type]:
-                            status = critique_coverage[video_id][caption_type][critique_type]
-                            if status not in ["success", "skipped"]:
-                                return False
-                        # If missing, that's fine for skipped critique types
-                        continue
+                        should_skip = True
+                
+                if should_skip:
+                    # This critique type should be skipped for perfect scores
+                    if critique_type in critique_coverage[video_id][caption_type]:
+                        status = critique_coverage[video_id][caption_type][critique_type]
+                        if status == "failed":
+                            # Shouldn't have failed file for skipped critique
+                            if caption_type not in failed_by_critique[critique_type]:
+                                failed_by_critique[critique_type][caption_type] = 0
+                            failed_by_critique[critique_type][caption_type] += 1
+                        elif status not in ["success", "skipped"]:
+                            # Unknown status
+                            if caption_type not in missing_by_critique[critique_type]:
+                                missing_by_critique[critique_type][caption_type] = 0
+                            missing_by_critique[critique_type][caption_type] += 1
+                    # If missing, that's fine for skipped critique types
+                    continue
                 
                 # For non-skipped critique types, we must have a successful critique
                 if critique_type not in critique_coverage[video_id][caption_type]:
                     # Missing required critique
-                    return False
+                    if caption_type not in missing_by_critique[critique_type]:
+                        missing_by_critique[critique_type][caption_type] = 0
+                    missing_by_critique[critique_type][caption_type] += 1
+                    continue
                     
                 status = critique_coverage[video_id][caption_type][critique_type]
-                if status not in ["success", "skipped"]:
-                    # Failed or unknown status
-                    return False
+                if status == "failed":
+                    if caption_type not in failed_by_critique[critique_type]:
+                        failed_by_critique[critique_type][caption_type] = 0
+                    failed_by_critique[critique_type][caption_type] += 1
+                elif status not in ["success", "skipped"]:
+                    if caption_type not in missing_by_critique[critique_type]:
+                        missing_by_critique[critique_type][caption_type] = 0
+                    missing_by_critique[critique_type][caption_type] += 1
         
-        return True
+        # Calculate totals
+        total_failed = sum(sum(counts.values()) for counts in failed_by_critique.values())
+        total_missing = sum(sum(counts.values()) for counts in missing_by_critique.values())
+        
+        # Build detailed breakdown
+        by_critique_type = {}
+        for critique_type in all_critique_types:
+            failed_count = sum(failed_by_critique[critique_type].values())
+            missing_count = sum(missing_by_critique[critique_type].values())
+            
+            if failed_count > 0 or missing_count > 0:
+                by_critique_type[critique_type] = {
+                    "failed": failed_by_critique[critique_type],
+                    "missing": missing_by_critique[critique_type],
+                    "failed_total": failed_count,
+                    "missing_total": missing_count
+                }
+        
+        all_complete = (total_failed == 0 and total_missing == 0)
+        
+        details = {
+            "failed_count": total_failed,
+            "missing_count": total_missing,
+            "by_critique_type": by_critique_type
+        }
+        
+        return all_complete, details
     
     def analyze_critique_coverage(self, videos_to_process: List[Tuple[str, str, Dict[str, Any], str, str]], 
                                 critique_types_to_process: List[str]) -> Dict[str, Any]:
@@ -1218,7 +1473,7 @@ Respond with the improved caption only, without quotation marks or JSON formatti
         self.print_detailed_analysis(analysis, verbose)
         
         if dry_run:
-            print(f"DRY RUN - Detailed Processing Preview:")
+            print(f"\nDRY RUN - Detailed Processing Preview:")
             print(f"====================================")
         
         # Group by export folder for analysis
@@ -1292,14 +1547,49 @@ Respond with the improved caption only, without quotation marks or JSON formatti
         print(f"- Already correct (no changes): {operation_counts['skipped']}")
         
         # Export and upload logic (only if not dry run and export_json is True)
-        if not dry_run and export_json and (operation_counts["success"] > 0 or operation_counts["skipped_new"] > 0 or operation_counts["updated_to_skip"] > 0):
-            print(f"\nExport and Upload:")
+        if not dry_run and export_json:
+            print(f"\n{'='*80}")
+            print(f"Export and Upload Status")
+            print(f"{'='*80}")
             
-            # Check if all critiques completed successfully
-            all_completed = self.check_all_critiques_completed()
+            # Check completion for the critique types that were processed (for status message)
+            if verbose:
+                print("\n  Checking processed critique types completion status...")
             
-            if all_completed:
-                print("All critiques completed successfully (no failures)")
+            processed_completed, processed_details = self.check_all_critiques_completed(
+                videos_to_check=videos_to_process,
+                critique_types_to_check=critique_types_to_process,
+                verbose=verbose
+            )
+            
+            # For actual export, check ALL critique types
+            if verbose:
+                print("\n  Checking all critique types for export eligibility...")
+            
+            all_types_completed, all_details = self.check_all_critiques_completed(
+                videos_to_check=videos_to_process,
+                critique_types_to_check=None,  # Check all types
+                verbose=verbose
+            )
+            
+            # Show status of the critique types we just processed
+            print(f"\n1. Processed Critique Types This Run: {', '.join(critique_types_to_process)}")
+            if processed_completed:
+                print(f"   ✓ Complete - All processed types finished successfully")
+            else:
+                print(f"   ✗ Incomplete - Failed: {processed_details['failed_count']}, Missing: {processed_details['missing_count']}")
+                if processed_details['by_critique_type']:
+                    for critique_type, type_details in sorted(processed_details['by_critique_type'].items()):
+                        failed_total = type_details['failed_total']
+                        missing_total = type_details['missing_total']
+                        if failed_total > 0 or missing_total > 0:
+                            print(f"     {critique_type}: Failed={failed_total}, Missing={missing_total}")
+            
+            # Check if we can actually export (requires ALL types complete)
+            print(f"\n2. All Critique Types Status (Required for Export):")
+            if all_types_completed:
+                print(f"   ✓ Complete - All {len(CRITIQUE_TASKS)} critique types finished")
+                print(f"\n   Proceeding with export...")
                 
                 # Find the most recent export folder to export to
                 export_folders = self.discover_export_folders(export_folder, export_pattern)
@@ -1313,17 +1603,45 @@ Respond with the improved caption only, without quotation marks or JSON formatti
                         # Upload to HuggingFace
                         success = self.upload_to_huggingface(exported_file, hf_dataset)
                         if success:
-                            print("Upload to HuggingFace completed successfully")
+                            print("   ✓ Consolidated JSON exported")
+                            print("   ✓ Uploaded to HuggingFace")
                         else:
-                            print("HuggingFace upload failed, but file saved locally")
+                            print("   ✓ Consolidated JSON exported")
+                            print("   ✗ HuggingFace upload failed")
                     elif exported_file:
-                        print("Consolidated JSON exported successfully")
+                        print("   ✓ Consolidated JSON exported")
                 else:
-                    print("No export folder found for consolidated export")
+                    print("   ✗ No export folder found")
             else:
-                print("Some critiques failed or are incomplete.")
-                print("Rerun the script to automatically retry failed critiques.")
-                print("(Failed critiques are automatically regenerated on subsequent runs)")
+                print(f"   ✗ Incomplete - Failed: {all_details['failed_count']}, Missing: {all_details['missing_count']}")
+                print(f"   Cannot export until all critique types are complete")
+                
+                # Print detailed breakdown by critique type (only show incomplete ones)
+                if all_details['by_critique_type']:
+                    print(f"\n   Incomplete Critique Types:")
+                    for critique_type, type_details in sorted(all_details['by_critique_type'].items()):
+                        failed_total = type_details['failed_total']
+                        missing_total = type_details['missing_total']
+                        
+                        if failed_total > 0 or missing_total > 0:
+                            print(f"\n   {critique_type}: Failed={failed_total}, Missing={missing_total}")
+                            
+                            if failed_total > 0:
+                                for caption_type, count in sorted(type_details['failed'].items()):
+                                    print(f"     - {caption_type}: {count} failed")
+                            
+                            if missing_total > 0:
+                                for caption_type, count in sorted(type_details['missing'].items()):
+                                    print(f"     - {caption_type}: {count} missing")
+                
+                # Print appropriate action message
+                print(f"\n   Action Required:")
+                if all_details['failed_count'] > 0:
+                    print("   - Rerun failed critique types to retry")
+                if all_details['missing_count'] > 0:
+                    print("   - Run generation for incomplete critique types")
+            
+            print(f"{'='*80}")
 
 
 def main():

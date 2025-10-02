@@ -2,7 +2,7 @@
     "label": "Shot Size End With Medium Full (Human Only)",
     "label_name": "shot_size_end_with_medium_full",
     "def_question": [
-        "Does the video end with a medium full shot that frames the human subject from the mid-thigh or knee upward?"
+        "Does the video end with a medium full shot that frames the human subject from the mid-thigh (or knee) upward?"
     ],
     "alt_question": [
         "Does the video close with a medium full shot where the subject is framed from the thighs up?",
@@ -17,7 +17,7 @@
         "Is the last shot a medium full shot with a slightly cropped lower half?"
     ],
     "def_prompt": [
-        "A video that ends with a medium full shot, framing the human subject from mid-thigh or knee upward."
+        "The video ends with a medium full shot, framing the human subject from mid-thigh (or knee) upward."
     ],
     "alt_prompt": [
         "The video ends with a medium full shot where the subject is visible from mid-thigh up.",

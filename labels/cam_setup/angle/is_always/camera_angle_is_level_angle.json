@@ -2,7 +2,7 @@
     "label": "Camera Angle Is Level Angle",
     "label_name": "camera_angle_is_level_angle",
     "def_question": [
-        "Does the camera maintain a level angle parallel to the ground regardless of Dutch angle throughout the video?"
+        "Does the camera maintain a level angle parallel to the ground (even if a Dutch angle is used) throughout the video?"
     ],
     "alt_question": [
         "Does the shot maintain the camera aligned parallel to the ground?",
@@ -15,7 +15,7 @@
         "Is the shot recorded with the camera at a neutral level position throughout?"
     ],
     "def_prompt": [
-        "The camera maintains a level angle parallel to the ground regardless of Dutch angle throughout the video."
+        "The camera maintains a level angle parallel to the ground (even if a Dutch angle is used) throughout the video."
     ],
     "alt_prompt": [
         "A shot maintaining a neutral level angle, parallel to the ground.",

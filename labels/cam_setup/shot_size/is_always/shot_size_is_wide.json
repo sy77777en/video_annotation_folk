@@ -2,7 +2,7 @@
     "label": "Shot Size Is Wide",
     "label_name": "shot_size_is_wide",
     "def_question": [
-        "Does the video maintain a wide shot throughout, consistently showing scenery or framing the entire subject while keeping ample background context?"
+        "Does the video maintain a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context?"
     ],
     "alt_question": [
         "Is the entire video filmed in wide shot, capturing subjects and their environment?",
@@ -15,7 +15,7 @@
         "Does the video maintain a wide focus that captures the complete setting?"
     ],
     "def_prompt": [
-        "A video that maintains a wide shot throughout, consistently showing scenery or framing the entire subject while keeping ample background context."
+        "The video maintains a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context."
     ],
     "alt_prompt": [
         "A video shot entirely in wide view showing subjects and environment.",

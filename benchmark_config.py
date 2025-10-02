@@ -1425,9 +1425,9 @@ def get_general_tracking_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "folder": ground_folder,
             "name": "tracking_subject_larger",
             "pos_question": "Does the subject appear larger during the tracking shot?",
-            "neg_question": "Does the subject being tracked not appear larger in size, or is no subject being tracked?",
+            "neg_question": "Does the video not track any subject, or it does not show a tracked subject appearing larger in size?",
             "pos_prompt": "The subject appears larger during the tracking shot.",
-            "neg_prompt": "The subject being tracked does not appear larger in size, or the camera is not tracking any subject.",
+            "neg_prompt": "The video does not track any subject, or it does not show a tracked subject appearing larger in size.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.tracking_subject_larger_size",
                 "type": "pos",
@@ -1441,9 +1441,9 @@ def get_general_tracking_tasks(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER):
             "folder": ground_folder,
             "name": "tracking_subject_smaller",
             "pos_question": "Does the subject appear smaller during the tracking shot?",
-            "neg_question": "Does the subject being tracked not appear smaller in size, or is no subject being tracked?",
+            "neg_question": "Does the video not track any subject, or it does not show a tracked subject appearing smaller in size?",
             "pos_prompt": "The subject appears smaller during the tracking shot.",
-            "neg_prompt": "The subject being tracked does not appear smaller in size, or the camera is not tracking any subject.",
+            "neg_prompt": "The video does not track any subject, or it does not show a tracked subject appearing smaller in size.",
             "pos": {
                 "label": "cam_motion.object_centric_movement.tracking_subject_smaller_size",
                 "type": "pos",
@@ -2047,10 +2047,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "fast_motion",
-            "pos_question": "Is it a fast-motion video with forward playback slightly faster than real-time (about 1.5×–3×)?"
-            "neg_question": "Is it not a fast-motion video with forward playback slightly faster than real-time (about 1.5×–3×)?",
-            "pos_prompt": "A fast-motion video where playback is forward and slightly faster than real-time (about 1.5×–3×).",
-            "neg_prompt": "A video that is not played at forward and slightly faster than real-time speed (about 1.5×–3×).",
+            "pos_question": "Is it a fast-motion video with forward playback moderately faster than real-time (about 1.5×–3×)?"
+            "neg_question": "Is it not a fast-motion video with forward playback moderately faster than real-time (about 1.5×–3×)?",
+            "pos_prompt": "A fast-motion video where playback is forward and moderately faster than real-time (about 1.5×–3×).",
+            "neg_prompt": "A video that is not played at forward and moderately faster than real-time speed (about 1.5×–3×).",
             "pos": {
                 "label": "cam_setup.video_speed.fast_motion",
                 "type": "pos",
@@ -2063,10 +2063,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "fast_motion_without_time_lapse",
-            "pos_question": "Is it a fast-motion video with forward playback speed slightly faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration?",
-            "neg_question": "Is the video not a fast-motion video (1.5×–3× faster than real time), but instead normal speed, reverse, or time-lapse?",
-            "pos_prompt": "A fast-motion video with forward playback speed slightly faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration.",
-            "neg_prompt": "The video is not a fast-motion video (1.5×–3× faster than real time), but instead normal speed, reverse, or time-lapse.",
+            "pos_question": "Is it a fast-motion video with forward playback speed moderately faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration?",
+            "neg_question": "Is the video not a fast-motion video (1.5×–3× faster than real-time), but instead normal speed, reverse, or time-lapse?",
+            "pos_prompt": "A fast-motion video with forward playback speed moderately faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration.",
+            "neg_prompt": "The video is not a fast-motion video (1.5×–3× faster than real-time), but instead normal speed, reverse, or time-lapse.",
             "pos": {
                 "label": "cam_setup.video_speed.fast_motion_without_time_lapse",
                 "type": "pos",
@@ -2096,9 +2096,9 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "slow_motion",
             "pos_question": "Is it a slow-motion video with forward playback slower than real-time?",
-            "neg_question": "Is the video not slow-motion, played forward at a speed slower than real time?",
+            "neg_question": "Is the video not slow-motion, played forward at a speed slower than real-time?",
             "pos_prompt": "A slow-motion video with forward playback speed slower than real-time.",
-            "neg_prompt": "The video is not slow motion, played forward at a speed slower than real time.",
+            "neg_prompt": "The video is not slow motion, played forward at a speed slower than real-time.",
             "pos": {
                 "label": "cam_setup.video_speed.slow_motion",
                 "type": "pos",
@@ -2127,10 +2127,10 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "time_lapse",
-            "pos_question": "Is this a time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period?",
-            "neg_question": "Is this not a time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period?",
-            "pos_prompt":  "A time-lapse video played forward at greatly accelerated speed (more than 3× real time), showing time passing rapidly over a long period.",
-            "neg_prompt": "A video that does not show time passing rapidly over a long period, played forward at greatly accelerated speed (more than 3× real time).",
+            "pos_question": "Is this a time-lapse video played forward at greatly accelerated speed (more than 3× real-time), showing time passing rapidly over a long period?",
+            "neg_question": "Is this not a time-lapse video played forward at greatly accelerated speed (more than 3× real-time), showing time passing rapidly over a long period?",
+            "pos_prompt":  "A time-lapse video played forward at greatly accelerated speed (more than 3× real-time), showing time passing rapidly over a long period.",
+            "neg_prompt": "A video that does not show time passing rapidly over a long period, played forward at greatly accelerated speed (more than 3× real-time).",
             "pos": {
                 "label": "cam_setup.video_speed.time_lapse",
                 "type": "pos",
@@ -2262,7 +2262,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is the camera positioned directly above the subject for a top-down perspective?",
             "neg_question": "Is the camera not positioned directly above the subject for a top-down perspective?",
             "pos_prompt": "An overhead POV shot where the camera is positioned directly above the subject for a top-down perspective.",
-            "neg_prompt": "A video not filmed from an overhead POV where the camera is positioned directly above the subject for a top-down perspective.",
+            "neg_prompt": "The video is not filmed from an overhead POV where the camera is positioned directly above the subject for a top-down perspective.",
             "pos": {
                 "label": "cam_setup.point_of_view.overhead_pov",
                 "type": "pos",
@@ -2310,7 +2310,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is this a 3D gaming video featuring a third-person perspective with the character's full body visible?",
             "neg_question": "Is this not a third-person gaming video showing the full character?",
             "pos_prompt": "A third-person 3D game video where the entire character is visible on screen.",
-            "neg_prompt": "A video that is not a third-person gaming perspective showing the full character.",
+            "neg_prompt": "The video is not a third-person gaming perspective showing the full character.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_full_body_game_pov",
                 "type": "pos",
@@ -2326,7 +2326,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is this a third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion?",
             "neg_question": "Is this not a third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion?",
             "pos_prompt": "A third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
-            "neg_prompt": "A video that is not a third-person isometric (2.5D) gaming perspective with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
+            "neg_prompt": "The video is not a third-person isometric (2.5D) gaming perspective with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_isometric_game_pov",
                 "type": "pos",
@@ -2342,7 +2342,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is this an over-the-hip third-person view, framing the character from the hip up?",
             "neg_question": "Is this not an over-the-hip third-person view, framing the character from the hip up?",
             "pos_prompt": "A third-person over-the-hip POV shot framing the character from the hip up.",
-            "neg_prompt": "A video that is not a third-person over-the-hip POV shot framing the character from the hip up.",
+            "neg_prompt": "The video is not a third-person over-the-hip POV shot framing the character from the hip up.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_over_hip_pov",
                 "type": "pos",
@@ -2358,7 +2358,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is this an over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead?",
             "neg_question": "Is this not an over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead?",
             "pos_prompt": "An over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead.",
-            "neg_prompt": "A video that is not an over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead.",
+            "neg_prompt": "The video is not an over-the-shoulder POV where the camera is positioned behind the character, showing their upper body and the scene ahead.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_over_shoulder_pov",
                 "type": "pos",
@@ -2374,7 +2374,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is this a side-view gaming video where the camera is placed to the side, capturing the scene or character in profile?",
             "neg_question": "Is this not a side-view gaming video where the camera is placed to the side, capturing the scene or character in profile?",
             "pos_prompt": "A side-view gaming video where the camera is placed to the side, capturing the scene or character in profile.",
-            "neg_prompt": "A video that is not a side-view gaming perspective where the camera is placed to the side, capturing the scene or character in profile.",
+            "neg_prompt": "The video is not a side-view gaming perspective where the camera is placed to the side, capturing the scene or character in profile.",
             "pos": {
                 "label": "cam_setup.point_of_view.third_person_side_view_game_pov",
                 "type": "pos",
@@ -2406,7 +2406,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Is this an objective, detached perspective where the camera does not represent any character's point of view?",
             "neg_question": "Is this video not shot from a objective, detached perspective?",
             "pos_prompt": "An objective POV shot where the camera captures the scene from a detached, observational perspective.",
-            "neg_prompt": "A video that is not filmed from a objective, detached perspective.",
+            "neg_prompt": "The video is not filmed from a objective, detached perspective.",
             "pos": {
                 "label": "cam_setup.point_of_view.objective_pov",
                 "type": "pos",
@@ -2425,8 +2425,8 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "is_framing_subject",
             "pos_question": "Does the video include one or more salient subjects in the frame at any point?",
             "neg_question": "Does the video not include one or more salient subjects in the frame at any point?",
-            "pos_prompt": "The video features one or more salient subjects in the frame at any point.",
-            "neg_prompt": "A video that does not include one or more salient subjects in the frame at any point.",
+            "pos_prompt": "The video includes one or more salient subjects in the frame at any point.",
+            "neg_prompt": "The video does not include one or more salient subjects in the frame at any point.",
             "pos": {
                 "label": "cam_setup.subject_framing.is_framing_subject",
                 "type": "pos",
@@ -2441,8 +2441,8 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "has_subject_change",
             "pos_question": "Does the subject change in the video, such as appearing, disappearing, or transitioning to another subject?",
             "neg_question": "Does the subject remain the same throughout the video, or is there no subject at all?",
-            "pos_prompt": "A shot where the subject changes, including appearances, disappearances, or transitions between subjects.",
-            "neg_prompt": "A video where the subject remains the same throughout or there is no subject at all.",
+            "pos_prompt": "The subject changes in the video, such as appearing, disappearing, or transitioning to another subject.",
+            "neg_prompt": "The subject remains the same throughout or there is no subject at all.",
             "pos": {
                 "label": "cam_setup.subject_framing.has_subject_change",
                 "type": "pos",
@@ -2472,9 +2472,9 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "has_many_subjects",
             "pos_question": "Does the video either show three or more main subjects in clear focus, or shift focus from one subject to another?",
-            "neg_question": "Does the video not show three or more main subjects in clear focus, or shift focus from one subject to another?",
+            "neg_question": "Does the video neither show three or more main subjects in clear focus, nor shift focus from one subject to another?",
             "pos_prompt": "The video shows three or more main subjects in clear focus, or shifts focus from one subject to another.",
-            "neg_prompt": "The video does not show three or more main subjects in clear focus, or shifts focus from one subject to another.",
+            "neg_prompt": "The video neither shows three or more main subjects in clear focus, nor shifts focus from one subject to another.",
             "pos": {
                 "label": "cam_setup.subject_framing.has_many_subjects",
                 "type": "pos",
@@ -2636,9 +2636,9 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "is_just_clear_subject_dynamic_size_shot",
             "pos_question": "Is there a clear subject, but the framing is unstable, making the exact shot size difficult to classify?",
-            "neg_question": "Does the video either lack a clear subject, or have a subject with stable framing that makes the exact shot size easy to classify?",
+            "neg_question": "Does the video lack a clear subject, or it has a subject with stable framing that makes the exact shot size easy to classify?",
             "pos_prompt": "There is a clear subject, but the framing is unstable, making the exact shot size difficult to classify.",
-            "neg_prompt": "The video either lacks a clear subject, or has a subject with stable framing that makes the exact shot size easy to classify.",
+            "neg_prompt": "The video lacks a clear subject, or it has a subject with stable framing that makes the exact shot size easy to classify.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_clear_subject_dynamic_size_shot",
                 "type": "pos",
@@ -2684,9 +2684,9 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "is_just_many_subject_one_focus_shot",
             "pos_question": "Does the video feature multiple subjects, but one clearly stands out as the main focus?",
-            "neg_question": "Does the video not feature multiple subjects, or does it not have one clearly standing out as the main focus?",
+            "neg_question": "Does the video not feature multiple subjects, or it does not have one clearly standing out as the main focus?",
             "pos_prompt": "The video features multiple subjects, but one clearly stands out as the main focus.",
-            "neg_prompt": "The video does not feature multiple subjects, or does not have one clearly standing out as the main focus.",
+            "neg_prompt": "The video does not feature multiple subjects, or it does not have one clearly standing out as the main focus.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_many_subject_one_focus_shot",
                 "type": "pos",
@@ -2700,9 +2700,9 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "is_just_many_subject_no_focus_shot",
             "pos_question": "Does the video feature multiple subjects in focus, with no single subject standing out as dominant?",
-            "neg_question": "Does the video not feature multiple subjects in focus, or does it have a clear focus on one subject?",
+            "neg_question": "Does the video not feature multiple subjects in focus, or it does not have a clear focus on one subject?",
             "pos_prompt": "The video features multiple subjects in focus, with no single subject standing out as dominant.",
-            "neg_prompt": "The video does not feature multiple subjects in focus, or has a clear focus on one subject.",
+            "neg_prompt": "The video does not feature multiple subjects in focus, or it does not have a clear focus on one subject.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_many_subject_no_focus_shot",
                 "type": "pos",
@@ -2732,9 +2732,9 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "is_just_back_and_forth_change_shot",
             "pos_question": "Does the video have a clear subject with back-and-forth changes in shot size?",
-            "neg_question": "Does the video not have a clear subject, or has back-and-forth changes in shot size?",
+            "neg_question": "Does the video not have a clear subject, or it does not have back-and-forth changes in shot size?",
             "pos_prompt": "The video has a clear subject with back-and-forth changes in shot size.",
-            "neg_prompt": "The video does not have a clear subject, or has back-and-forth changes in shot size.",
+            "neg_prompt": "The video does not have a clear subject, or it does not have back-and-forth changes in shot size.",
             "pos": {
                 "label": "cam_setup.shot_type.is_just_back_and_forth_change_shot",
                 "type": "pos",
@@ -2767,10 +2767,10 @@ def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         {
             "folder": setup_folder,
             "name": "shot_size_change",
-            "pos_question": "Does the shot size change noticeably throughout the video?",
-            "neg_question": "Does the shot size remain constant throughout the video?",
-            "pos_prompt": "The shot size changes noticeably throughout the video.",
-            "neg_prompt": "The shot size remains constant throughout the video.",
+            "pos_question": "Does the shot size change noticeably during the video?",
+            "neg_question": "Does the shot size remain constant during the video?",
+            "pos_prompt": "The shot size changes noticeably during the video.",
+            "neg_prompt": "The shot size remains constant during the video.",
             "pos": {
                 "label": "cam_setup.shot_size.shot_size_change",
                 "type": "pos",
@@ -2783,10 +2783,10 @@ def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         {
             "folder": setup_folder,
             "name": "shot_size_change_from_large_to_small",
-            "pos_question": "Does the shot size change from a wider to a tighter framing?",
-            "neg_question": "Does the shot size not change from a wider to a tighter framing?",
-            "pos_prompt": "The shot size changes from a wider to a tighter framing.",
-            "neg_prompt": "The shot size does not change from a wider to a tighter framing.",
+            "pos_question": "Does the shot size change noticeably from a wider to a tighter framing?",
+            "neg_question": "Does the shot size not change noticeably from a wider to a tighter framing?",
+            "pos_prompt": "The shot size changes noticeably from a wider to a tighter framing.",
+            "neg_prompt": "The shot size does not change noticeably from a wider to a tighter framing.",
             "pos": {
                 "label": "cam_setup.shot_size.shot_size_change_from_large_to_small",
                 "type": "pos",
@@ -2799,10 +2799,10 @@ def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         {
             "folder": setup_folder,
             "name": "shot_size_change_from_small_to_large",
-            "pos_question": "Does the shot size change from a tighter to a wider framing?",
-            "neg_question": "Does the shot size not change from a tighter to a wider framing?",
-            "pos_prompt": "The shot size changes from a tighter to a wider framing.",
-            "neg_prompt": "The shot size does not change from a tighter to a wider framing.",
+            "pos_question": "Does the shot size change noticeably from a tighter to a wider framing?",
+            "neg_question": "Does the shot size not change noticeably from a tighter to a wider framing?",
+            "pos_prompt": "The shot size changes noticeably from a tighter to a wider framing.",
+            "neg_prompt": "The shot size does not change noticeably from a tighter to a wider framing.",
             "pos": {
                 "label": "cam_setup.shot_size.shot_size_change_from_small_to_large",
                 "type": "pos",
@@ -2821,7 +2821,7 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_start_with_extreme_close_up",
             "pos_question": "Does the video start with an extreme close-up shot that isolates a very small detail of the subject or scene?",
             "neg_question": "Does the video not start with an extreme close-up shot that isolates a very small detail of the subject or scene?",
-            "pos_prompt": "A video that starts with an extreme close-up shot, isolating a very small detail of the subject or scene.",
+            "pos_prompt": "The video starts with an extreme close-up shot, isolating a very small detail of the subject or scene.",
             "neg_prompt": "The video does not start with an extreme close-up shot that isolates a very small detail of the subject or scene.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_extreme_close_up",
@@ -2837,8 +2837,8 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_start_with_close_up",
             "pos_question": "Does the video start with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context?",
             "neg_question": "Does the video not start with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context?",
-            "pos_prompt": "A video that starts with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
-            "neg_prompt": "A video that does not start with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
+            "pos_prompt": "The video starts with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
+            "neg_prompt": "The video does not start with a close-up shot that highlights a distinct part of the subject or scene while still preserving some surrounding context.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_close_up",
                 "type": "pos",
@@ -2853,7 +2853,7 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_start_with_medium_close_up",
             "pos_question": "Does the video start with a medium close-up shot that frames the human subject from the chest upward?",
             "neg_question": "Does the video not start with a medium close-up shot that frames the human subject from the chest upward?",
-            "pos_prompt": "A video that starts with a medium close-up shot, framing the human subject from the chest upward.",
+            "pos_prompt": "The video starts with a medium close-up shot, framing the human subject from the chest upward.",
             "neg_prompt": "The video does not start with a medium close-up shot that frames the human subject from the chest upward.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_medium_close_up",
@@ -2869,7 +2869,7 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_start_with_medium",
             "pos_question": "Does the video start with a medium shot that frames about half of the human subject?",
             "neg_question": "Does the video not start with a medium shot that frames about half of the human subject?",
-            "pos_prompt": "A video that starts with a medium shot, framing about half of the human subject.",
+            "pos_prompt": "The video starts with a medium shot, framing about half of the human subject.",
             "neg_prompt": "The video does not start with a medium shot that frames about half of the human subject.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_medium",
@@ -2899,10 +2899,10 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_start_with_full",
-            "pos_question": "Does the video start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
-            "neg_question": "Does the video not start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
-            "pos_prompt": "A video that starts with a full shot, framing the entire body of the subject without showing excessive surrounding scenery.",
-            "neg_prompt": "The video does not start with a full shot that frames the entire body of the subject without showing excessive surrounding scenery.",
+            "pos_question": "Does the video start with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery?",
+            "neg_question": "Does the video not start with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery?",
+            "pos_prompt": "The video starts with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
+            "neg_prompt": "The video does not start with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_full",
                 "type": "pos",
@@ -2915,10 +2915,10 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_start_with_wide",
-            "pos_question": "Does the video start with a wide shot of scenery, or frames the entire subject while keeping ample background context?",
-            "neg_question": "Does the video not start with a wide shot of scenery, or does not frame the entire subject while keeping ample background context?",
-            "pos_prompt": "A video that starts with a wide shot of scenery, or frames the entire subject while keeping ample background context.",
-            "neg_prompt": "The video does not start with a wide shot of scenery, or does not frame the entire subject while keeping ample background context.",
+            "pos_question": "Does the video start with a wide shot of scenery, or start by framing the entire body of the salient subject with ample background context?",
+            "neg_question": "Does the video start neither with a wide shot of scenery nor by framing the entire body of the salient subject with ample background context?",
+            "pos_prompt": "The video starts either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context.",
+            "neg_prompt": "The video starts neither with a wide shot of scenery, nor by framing the entire body of the salient subject with ample background context.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_wide",
                 "type": "pos",
@@ -2931,10 +2931,10 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_start_with_extreme_wide",
-            "pos_question": "Does the video start with an extreme wide shot that emphasizes the setting over any subjects?",
-            "neg_question": "Does the video not start with an extreme wide shot that emphasizes the setting over any subjects?",
-            "pos_prompt": "A video that starts with an extreme wide shot, emphasizing the setting over any subjects.",
-            "neg_prompt": "The video does not start with an extreme wide shot that emphasizes the setting over any subjects.",
+            "pos_question": "Does the video start with an extreme wide shot that emphasizes the vast environment over any subjects?",
+            "neg_question": "Does the video not start with an extreme wide shot that emphasizes the vast environment over any subjects?",
+            "pos_prompt": "The video starts with an extreme wide shot, emphasizing the vast environment over any subjects.",
+            "neg_prompt": "The video does not start with an extreme wide shot that emphasizes the vast environment over any subjects.",
             "pos": {
                 "label": "cam_setup.shot_size.start_with.shot_size_start_with_extreme_wide",
                 "type": "pos",
@@ -2953,7 +2953,7 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_end_with_extreme_close_up",
             "pos_question": "Does the video end with an extreme close-up shot that isolates a very small detail of the subject or scene?",
             "neg_question": "Does the video not end with an extreme close-up shot that isolates a very small detail of the subject or scene?",
-            "pos_prompt": "A video that ends with an extreme close-up shot, isolating a very small detail of the subject or scene.",
+            "pos_prompt": "The video ends with an extreme close-up shot, isolating a very small detail of the subject or scene.",
             "neg_prompt": "The video does not end with an extreme close-up shot that isolates a very small detail of the subject or scene.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_extreme_close_up",
@@ -2969,8 +2969,8 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_end_with_close_up",
             "pos_question": "Does the video end with a close-up shot that highlights a distinct part of the subject while still preserving some surrounding context?",
             "neg_question": "Does the video not end with a close-up shot that highlights a distinct part of the subject while still preserving some surrounding context?",
-            "pos_prompt": "A video that ends with a close-up shot, highlighting a distinct part of the subject while still preserving some surrounding context.",
-            "neg_prompt": "A video that does not end with a close-up shot that highlights a distinct part of the subject while still preserving some surrounding context.",
+            "pos_prompt": "The video ends with a close-up shot, highlighting a distinct part of the subject while still preserving some surrounding context.",
+            "neg_prompt": "The video does not end with a close-up shot that highlights a distinct part of the subject while still preserving some surrounding context.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_close_up",
                 "type": "pos",
@@ -2985,7 +2985,7 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_end_with_medium_close_up",
             "pos_question": "Does the video end with a medium close-up shot that frames the human subject from the chest upward?",
             "neg_question": "Does the video not end with a medium close-up shot that frames the human subject from the chest upward?",
-            "pos_prompt": "A video that ends with a medium close-up shot, framing the human subject from the chest upward.",
+            "pos_prompt": "The video ends with a medium close-up shot, framing the human subject from the chest upward.",
             "neg_prompt": "The video does not end with a medium close-up shot that frames the human subject from the chest upward.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_medium_close_up",
@@ -3001,7 +3001,7 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_end_with_medium",
             "pos_question": "Does the video end with a medium shot that frames about half of the subject?",
             "neg_question": "Does the video not end with a medium shot that frames about half of the subject?",
-            "pos_prompt": "A video that ends with a medium shot, framing about half of the subject.",
+            "pos_prompt": "The video ends with a medium shot, framing about half of the subject.",
             "neg_prompt": "The video does not end with a medium shot that frames about half of the subject.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_medium",
@@ -3017,7 +3017,7 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "name": "shot_size_end_with_medium_full",
             "pos_question": "Does the video end with a medium full shot that frames the human subject from mid-thigh (or knee) upward?",
             "neg_question": "Does the video not end with a medium full shot that frames the human subject from mid-thigh (or knee) upward?",
-            "pos_prompt": "A video that ends with a medium full shot, framing the human subject from mid-thigh (or knee) upward.",
+            "pos_prompt": "The video ends with a medium full shot, framing the human subject from mid-thigh (or knee) upward.",
             "neg_prompt": "The video does not end with a medium full shot that frames the human subject from mid-thigh (or knee) upward.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_medium_full",
@@ -3031,10 +3031,10 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_end_with_full",
-            "pos_question": "Does the video end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
-            "neg_question": "Does the video not end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery?",
-            "pos_prompt": "A video that ends with a full shot, framing the entire body of the subject without showing excessive surrounding scenery.",
-            "neg_prompt": "The video does not end with a full shot that frames the entire body of the subject without showing excessive surrounding scenery.",
+            "pos_question": "Does the video end with a full shot that frames the entire body of the salient subject without showing excessive surrounding scenery?",
+            "neg_question": "Does the video not end with a full shot that frames the entire body of the salient subject without showing excessive surrounding scenery?",
+            "pos_prompt": "The video ends with a full shot, framing the entire body of the salient subject without showing excessive surrounding scenery.",
+            "neg_prompt": "The video does not end with a full shot that frames the entire body of the salient subject without showing excessive surrounding scenery.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_full",
                 "type": "pos",
@@ -3047,10 +3047,10 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_end_with_wide",
-            "pos_question": "Does the video end with a wide shot of scenery, or frames the entire subject while keeping ample background context?",
-            "neg_question": "Does the video not end with a wide shot of scenery, or does not frame the entire subject while keeping ample background context?",
-            "pos_prompt": "A video that ends with a wide shot of scenery, or frames the entire subject while keeping ample background context.",
-            "neg_prompt": "The video does not end with a wide shot of scenery, or does not frame the entire subject while keeping ample background context.",
+            "pos_question": "Does the video end either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context?",
+            "neg_question": "Does the video end neither with a wide shot of scenery, nor by framing the entire body of the salient subject while keeping ample background context?",
+            "pos_prompt": "The video ends either with a wide shot of scenery, or by framing the entire body of the salient subject with ample background context.",
+            "neg_prompt": "The video does not end neither with a wide shot of scenery, nor by framing the entire body of the salient subject while keeping ample background context.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_wide",
                 "type": "pos",
@@ -3063,10 +3063,10 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_end_with_extreme_wide",
-            "pos_question": "Does the video end with an extreme wide shot that emphasizes the setting over any subjects?",
-            "neg_question": "Does the video not end with an extreme wide shot that emphasizes the setting over any subjects?",
-            "pos_prompt": "A video that ends with an extreme wide shot, emphasizing the setting over any subjects.",
-            "neg_prompt": "The video does not end with an extreme wide shot that emphasizes the setting over any subjects.",
+            "pos_question": "Does the video end with an extreme wide shot, emphasizing the vast environment over any subjects?",
+            "neg_question": "Does the video not end with an extreme wide shot that emphasizes the vast environment over any subjects?",
+            "pos_prompt": "The video ends with an extreme wide shot, emphasizing the vast environment over any subjects.",
+            "neg_prompt": "The video does not end with an extreme wide shot that emphasizes the vast environment over any subjects.",
             "pos": {
                 "label": "cam_setup.shot_size.end_with.shot_size_end_with_extreme_wide",
                 "type": "pos",
@@ -3084,9 +3084,9 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "shot_size_is_extreme_close_up",
             "pos_question": "Does the video maintain an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene?",
-            "neg_question": "Does the video not maintain an extreme close-up shot throughout, or does not consistently isolate a very small detail of the subject or scene?",
-            "pos_prompt": "A video that maintains an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene.",
-            "neg_prompt": "A video that does not maintain an extreme close-up shot throughout, or does not consistently isolate a very small detail of the subject or scene.",
+            "neg_question": "Does the video not maintain an extreme close-up shot throughout that consistently isolates a very small detail of the subject or scene?",
+            "pos_prompt": "The video maintains an extreme close-up shot throughout, consistently isolating a very small detail of the subject or scene.",
+            "neg_prompt": "The video does not maintain an extreme close-up shot throughout that consistently isolates a very small detail of the subject or scene.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_extreme_close_up",
                 "type": "pos",
@@ -3100,9 +3100,9 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "shot_size_is_close_up",
             "pos_question": "Does the video maintain a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context?",
-            "neg_question": "Does the video not maintain a close-up shot throughout, or does not consistently highlight a distinct part of the subject or scene while preserving some surrounding context?",
-            "pos_prompt": "A video that maintains a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context.",
-            "neg_prompt": "A video that does not maintain a close-up shot throughout, or does not consistently highlight a distinct part of the subject or scene while preserving some surrounding context.",
+            "neg_question": "Does the video not maintain a close-up shot throughout that consistently highlights a distinct part of the subject or scene while preserving some surrounding context?",
+            "pos_prompt": "The video maintains a close-up shot throughout, consistently highlighting a distinct part of the subject or scene while still preserving some surrounding context.",
+            "neg_prompt": "The video does not maintain a close-up shot throughout that consistently highlights a distinct part of the subject or scene while preserving some surrounding context.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_close_up",
                 "type": "pos",
@@ -3116,9 +3116,9 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "shot_size_is_medium_close_up",
             "pos_question": "Does the video maintain a medium close-up shot throughout, consistently framing the human subject from the chest upward?",
-            "neg_question": "Does the video not maintain a medium close-up shot throughout, or does not consistently frame the human subject from the chest upward?",
-            "pos_prompt": "A video that maintains a medium close-up shot throughout, consistently framing the human subject from the chest upward.",
-            "neg_prompt": "A video that does not maintain a medium close-up shot throughout, or does not consistently frame the human subject from the chest upward.",
+            "neg_question": "Does the video not maintain a medium close-up shot throughout that consistently frames the human subject from the chest upward?",
+            "pos_prompt": "The video maintains a medium close-up shot throughout, consistently framing the human subject from the chest upward.",
+            "neg_prompt": "The video does not maintain a medium close-up shot throughout that consistently frames the human subject from the chest upward.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_medium_close_up",
                 "type": "pos",
@@ -3132,9 +3132,9 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "shot_size_is_medium",
             "pos_question": "Does the video maintain a medium shot throughout, consistently framing about half of the human subject?",
-            "neg_question": "Does the video not maintain a medium shot throughout, or does not consistently frame about half of the human subject?",
-            "pos_prompt": "A video that maintains a medium shot throughout, consistently framing about half of the human subject.",
-            "neg_prompt": "A video that does not maintain a medium shot throughout, or does not consistently frame about half of the human subject.",
+            "neg_question": "Does the video not maintain a medium shot throughout that consistently frames about half of the human subject?",
+            "pos_prompt": "The video maintains a medium shot throughout, consistently framing about half of the human subject.",
+            "neg_prompt": "The video does not maintain a medium shot throughout that consistently frames about half of the human subject.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_medium",
                 "type": "pos",
@@ -3148,9 +3148,9 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "shot_size_is_medium_full",
             "pos_question": "Does the video maintain a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward?",
-            "neg_question": "Does the video not maintain a medium full shot throughout, or does not consistently frame the human subject from mid-thigh (or knee) upward?",
-            "pos_prompt": "A video that maintains a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward.",
-            "neg_prompt": "A video that does not maintain a medium full shot throughout, or does not consistently frame the human subject from mid-thigh (or knee) upward.",
+            "neg_question": "Does the video not maintain a medium full shot throughout that consistently frames the human subject from mid-thigh (or knee) upward?",
+            "pos_prompt": "The video maintains a medium full shot throughout, consistently framing the human subject from mid-thigh (or knee) upward.",
+            "neg_prompt": "The video does not maintain a medium full shot throughout that consistently frames the human subject from mid-thigh (or knee) upward.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_medium_full",
                 "type": "pos",
@@ -3164,9 +3164,9 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "shot_size_is_full",
             "pos_question": "Does the video maintain a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery?",
-            "neg_question": "Does the video not maintain a full shot throughout, or does not consistently frame the entire body of the subject without showing excessive surrounding scenery?",
-            "pos_prompt": "A video that maintains a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery.",
-            "neg_prompt": "A video that does not maintain a full shot throughout, or does not consistently frame the entire body of the subject without showing excessive surrounding scenery.",
+            "neg_question": "Does the video not maintain a full shot throughout that consistently frames the entire body of the subject without showing excessive surrounding scenery?",
+            "pos_prompt": "The video maintains a full shot throughout, consistently framing the entire body of the subject without showing excessive surrounding scenery.",
+            "neg_prompt": "The video does not maintain a full shot throughout that consistently frames the entire body of the subject without showing excessive surrounding scenery.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_full",
                 "type": "pos",
@@ -3179,10 +3179,10 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_is_wide",
-            "pos_question": "Does the video maintain a wide shot throughout, consistently showing scenery or framing the entire subject while keeping ample background context?",
-            "neg_question": "Does the video not maintain a wide shot throughout, or does not consistently show scenery or frame the entire subject while keeping ample background context?",
-            "pos_prompt": "A video that maintains a wide shot throughout, consistently showing scenery or framing the entire subject while keeping ample background context.",
-            "neg_prompt": "A video that does not maintain a wide shot throughout, or does not consistently show scenery or frame the entire subject while keeping ample background context.",
+            "pos_question": "Does the video maintain a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context?",
+            "neg_question": "Does the video not maintain a wide shot throughout that consistently shows wide scenery or frames the entire body of the salient subject while keeping ample background context?",
+            "pos_prompt": "The video maintains a wide shot throughout, consistently showing wide scenery or framing the entire body of the salient subject while keeping ample background context.",
+            "neg_prompt": "The video does not maintain a wide shot throughout that consistently shows wide scenery or frames the entire body of the salient subject while keeping ample background context.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_wide",
                 "type": "pos",
@@ -3195,10 +3195,10 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "shot_size_is_extreme_wide",
-            "pos_question": "Does the video maintain an extreme wide shot throughout, consistently emphasizing the setting over any subjects?",
-            "neg_question": "Does the video not maintain an extreme wide shot throughout, or does not consistently emphasize the setting over any subjects?",
-            "pos_prompt": "A video that maintains an extreme wide shot throughout, consistently emphasizing the setting over any subjects.",
-            "neg_prompt": "A video that does not maintain an extreme wide shot throughout, or does not consistently emphasize the setting over any subjects.",
+            "pos_question": "Does the video maintain an extreme wide shot throughout, consistently emphasizing the vast environment over any subjects?",
+            "neg_question": "Does the video not maintain an extreme wide shot throughout that consistently emphasizes the vast environment over any subjects?",
+            "pos_prompt": "The video maintains an extreme wide shot throughout, consistently emphasizing the vast environment over any subjects.",
+            "neg_prompt": "The video does not maintain an extreme wide shot throughout that consistently emphasizes the vast environment over any subjects.",
             "pos": {
                 "label": "cam_setup.shot_size.is_always.shot_size_is_extreme_wide",
                 "type": "pos",
@@ -3212,29 +3212,29 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
 
 def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        {
-            "folder": setup_folder,
-            "name": "is_subject_height_applicable",
-            "pos_question": "Is the camera height relative to the subject clear?",
-            "neg_question": "Is the camera height relative to the subject unclear?",
-            "pos_prompt": "The camera height relative to the subject is clear.",
-            "neg_prompt": "The camera height relative to the subject is unclear.",
-            "pos": {
-                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
-                "type": "neg",
-            },
-        },
+        # {
+        #     "folder": setup_folder,
+        #     "name": "is_subject_height_applicable",
+        #     "pos_question": "Is the camera height relative to the subject clear?",
+        #     "neg_question": "Is the camera height relative to the subject unclear?",
+        #     "pos_prompt": "The camera height relative to the subject is clear.",
+        #     "neg_prompt": "The camera height relative to the subject is unclear.",
+        #     "pos": {
+        #         "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+        #         "type": "pos",
+        #     },
+        #     "neg": {
+        #         "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+        #         "type": "neg",
+        #     },
+        # },
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change",
             "pos_question": "Does the camera's height relative to the subject change significantly, moving between positions above, at level with, or below the subject?",
-            "neg_question": "Does the camera's height relative to the subject not change significantly, moving between positions above, at level with, or below the subject?",
-            "pos_prompt": "A shot where the camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject.",
-            "neg_prompt": "A shot where the camera's height relative to the subject does not change significantly, moving between positions above, at level with, or below the subject.",
+            "neg_question": "Does the camera's height relative to the subject not change significantly (i.e., it does not move between positions above, at level with, or below the subject)?",
+            "pos_prompt": "The camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject.",
+            "neg_prompt": "The camera's height relative to the subject does not change significantly (i.e., it does not move between positions above, at level with, or below the subject).",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change",
                 "type": "pos",
@@ -3247,10 +3247,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change_from_high_to_low",
-            "pos_question": "Does the camera's height decrease noticeably, transitioning from above to level with the subject or from level to below?",
-            "neg_question": "Does the camera's height not decrease noticeably, or not transition from above to level with the subject or from level to below?",
-            "pos_prompt": "A shot where the camera's height decreases noticeably, transitioning from above to level with the subject or from level to below.",
-            "neg_prompt": "A shot where the camera's height does not decrease noticeably, or does not transition from above to level with the subject or from level to below.",
+            "pos_question": "Does the camera's height decrease noticeably, transitioning from above to level with the subject, or from level to below?",
+            "neg_question": "Does the camera's height not decrease noticeably (i.e., it does not transition from above to level with the subject, or from level to below)?",
+            "pos_prompt": "The camera's height decreases noticeably, transitioning from above to level with the subject, or from level to below.",
+            "neg_prompt": "The camera's height does not decrease noticeably (i.e., it does not transition from above to level with the subject, or from level to below).",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_high_to_low",
                 "type": "pos",
@@ -3263,10 +3263,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change_from_low_to_high",
-            "pos_question": "Does the camera's height increase noticeably, transitioning from below to level with the subject or from level to above?",
-            "neg_question": "Does the camera's height not increase noticeably, or not transition from below to level with the subject or from level to above?",
-            "pos_prompt": "A shot where the camera's height increases noticeably, transitioning from below to level with the subject or from level to above.",
-            "neg_prompt": "A shot where the camera's height does not increase noticeably, or does not transition from below to level with the subject or from level to above.",
+            "pos_question": "Does the camera's height increase noticeably, transitioning from below to level with the subject, or from level to above?",
+            "neg_question": "Does the camera's height not increase noticeably (i.e., it does not transition from below to level with the subject, or from level to above)?",
+            "pos_prompt": "The camera's height increases noticeably, transitioning from below to level with the subject, or from level to above.",
+            "neg_prompt": "The camera's height does not increase noticeably (i.e., it does not transition from below to level with the subject, or from level to above).",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_low_to_high",
                 "type": "pos",
@@ -3285,8 +3285,8 @@ def get_height_wrt_subject_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
             "name": "height_wrt_subject_start_with_above_subject",
             "pos_question": "Does the video start with the camera positioned above the subject?",
             "neg_question": "Does the video not start with the camera positioned above the subject?",
-            "pos_prompt": "A video that starts with the camera positioned above the subject.",
-            "neg_prompt": "A video that does not start with the camera positioned above the subject.",
+            "pos_prompt": "The video starts with the camera positioned above the subject.",
+            "neg_prompt": "The video does not start with the camera positioned above the subject.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_above_subject",
                 "type": "pos",
@@ -3299,10 +3299,10 @@ def get_height_wrt_subject_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_start_with_at_subject",
-            "pos_question": "Does the video start with the camera positioned at the same height as the subject?",
-            "neg_question": "Does the video not start with the camera positioned at the same height as the subject?",
-            "pos_prompt": "A video that starts with the camera positioned at the same height as the subject.",
-            "neg_prompt": "A video that does not start with the camera positioned at the same height as the subject.",
+            "pos_question": "Does the video start with the camera positioned at about the same height as the subject?",
+            "neg_question": "Does the video not start with the camera positioned at about the same height as the subject?",
+            "pos_prompt": "The video starts with the camera positioned at about the same height as the subject.",
+            "neg_prompt": "The video does not start with the camera positioned at about the same height as the subject.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_at_subject",
                 "type": "pos",
@@ -3317,8 +3317,8 @@ def get_height_wrt_subject_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
             "name": "height_wrt_subject_start_with_below_subject",
             "pos_question": "Does the video start with the camera positioned below the subject?",
             "neg_question": "Does the video not start with the camera positioned below the subject?",
-            "pos_prompt": "A video that starts with the camera positioned below the subject.",
-            "neg_prompt": "A video that does not start with the camera positioned below the subject.",
+            "pos_prompt": "The video starts with the camera positioned below the subject.",
+            "neg_prompt": "The video does not start with the camera positioned below the subject.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.start_with.height_wrt_subject_start_with_below_subject",
                 "type": "pos",
@@ -3337,8 +3337,8 @@ def get_height_wrt_subject_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_
             "name": "height_wrt_subject_end_with_above_subject",
             "pos_question": "Does the video end with the camera positioned above the subject?",
             "neg_question": "Does the video not end with the camera positioned above the subject?",
-            "pos_prompt": "A video that ends with the camera positioned above the subject.",
-            "neg_prompt": "A video that does not end with the camera positioned above the subject.",
+            "pos_prompt": "The video ends with the camera positioned above the subject.",
+            "neg_prompt": "The video does not end with the camera positioned above the subject.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_above_subject",
                 "type": "pos",
@@ -3351,10 +3351,10 @@ def get_height_wrt_subject_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_end_with_at_subject",
-            "pos_question": "Does the video end with the camera positioned at the same height as the subject?",
-            "neg_question": "Does the video not end with the camera positioned at the same height as the subject?",
-            "pos_prompt": "A video that ends with the camera positioned at the same height as the subject.",
-            "neg_prompt": "A video that does not end with the camera positioned at the same height as the subject.",
+            "pos_question": "Does the video end with the camera positioned at about the same height as the subject?",
+            "neg_question": "Does the video not end with the camera positioned at about the same height as the subject?",
+            "pos_prompt": "The video ends with the camera positioned at about the same height as the subject.",
+            "neg_prompt": "The video does not end with the camera positioned at about the same height as the subject.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_at_subject",
                 "type": "pos",
@@ -3369,8 +3369,8 @@ def get_height_wrt_subject_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_
             "name": "height_wrt_subject_end_with_below_subject",
             "pos_question": "Does the video end with the camera positioned below the subject?",
             "neg_question": "Does the video not end with the camera positioned below the subject?",
-            "pos_prompt": "A video that ends with the camera positioned below the subject.",
-            "neg_prompt": "A video that does not end with the camera positioned below the subject.",
+            "pos_prompt": "The video ends with the camera positioned below the subject.",
+            "neg_prompt": "The video does not end with the camera positioned below the subject.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.end_with.height_wrt_subject_end_with_below_subject",
                 "type": "pos",
@@ -3403,10 +3403,10 @@ def get_height_wrt_subject_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_A
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_is_at_subject",
-            "pos_question": "Is the camera positioned at the same height as the subject throughout the video?",
-            "neg_question": "Is the camera not positioned at the same height as the subject throughout the video?",
-            "pos_prompt": "The camera remains positioned at the same height as the subject throughout the video.",
-            "neg_prompt": "The camera does not remain positioned at the same height as the subject throughout the video.",
+            "pos_question": "Is the camera positioned at about the same height as the subject throughout the video?",
+            "neg_question": "Is the camera not positioned at about the same height as the subject throughout the video?",
+            "pos_prompt": "The camera remains positioned at about the same height as the subject throughout the video.",
+            "neg_prompt": "The camera does not remain positioned at about the same height as the subject throughout the video.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.is_always.height_wrt_subject_is_at_subject",
                 "type": "pos",
@@ -3440,9 +3440,9 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
             "folder": setup_folder,
             "name": "height_wrt_subject_from_above_subject_to_at_subject",
             "pos_question": "Does the camera start noticeably higher than the subject and then move down to their height?",
-            "neg_question": "Does the camera not start noticeably higher than the subject or not move down to their height?",
+            "neg_question": "Does the camera not start noticeably above the subject and move down to their height?",
             "pos_prompt": "The camera starts noticeably higher than the subject and then moves down to their height.",
-            "neg_prompt": "The camera does not start noticeably higher than the subject or does not move down to their height.",
+            "neg_prompt": "The camera does not start noticeably above the subject and move down to their height.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_at_subject",
                 "type": "pos",
@@ -3456,9 +3456,9 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
             "folder": setup_folder,
             "name": "height_wrt_subject_from_above_subject_to_below_subject",
             "pos_question": "Does the camera start noticeably higher than the subject and then move to a position below them?",
-            "neg_question": "Does the camera not start noticeably higher than the subject or not move to a position below them?",
+            "neg_question": "Does the camera not start noticeably above the subject and move to a position below them?",
             "pos_prompt": "The camera starts noticeably higher than the subject and then moves to a position below them.",
-            "neg_prompt": "The camera does not start noticeably higher than the subject or does not move to a position below them.",
+            "neg_prompt": "The camera does not start noticeably above the subject and move to a position below them.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject",
                 "type": "pos",
@@ -3472,9 +3472,9 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
             "folder": setup_folder,
             "name": "height_wrt_subject_from_at_subject_to_above_subject",
             "pos_question": "Does the camera start at the subject's height and then move up to a position above them?",
-            "neg_question": "Does the camera not start at the subject's height or not move up to a position above them?",
+            "neg_question": "Does the camera not start at the subject's height and move up to a position above them?",
             "pos_prompt": "The camera starts at the subject's height and then moves up to a position above them.",
-            "neg_prompt": "The camera does not start at the subject's height or does not move up to a position above them.",
+            "neg_prompt": "The camera does not start at the subject's height and move up to a position above them.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_above_subject",
                 "type": "pos",
@@ -3488,9 +3488,9 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
             "folder": setup_folder,
             "name": "height_wrt_subject_from_at_subject_to_below_subject",
             "pos_question": "Does the camera start at the subject's height and then move down to a lower position than them?",
-            "neg_question": "Does the camera not start at the subject's height or not move down to a lower position than them?",
+            "neg_question": "Does the camera not start at the subject's height and move down to a lower position than them?",
             "pos_prompt": "The camera starts at the subject's height and then moves down to a lower position than them.",
-            "neg_prompt": "The camera does not start at the subject's height or does not move down to a lower position than them.",
+            "neg_prompt": "The camera does not start at the subject's height and move down to a lower position than them.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject",
                 "type": "pos",
@@ -3504,9 +3504,9 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
             "folder": setup_folder,
             "name": "height_wrt_subject_from_below_subject_to_at_subject",
             "pos_question": "Does the camera start below the subject and then move up to their height?",
-            "neg_question": "Does the camera not start below the subject or not move up to their height?",
+            "neg_question": "Does the camera not start below the subject and move up to their height?",
             "pos_prompt": "The camera starts below the subject and then moves up to their height.",
-            "neg_prompt": "The camera does not start below the subject or does not move up to their height.",
+            "neg_prompt": "The camera does not start below the subject and move up to their height.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject",
                 "type": "pos",
@@ -3520,9 +3520,9 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
             "folder": setup_folder,
             "name": "height_wrt_subject_from_below_subject_to_above_subject",
             "pos_question": "Does the camera start below the subject and then move up to a position above them?",
-            "neg_question": "Does the camera not start below the subject or not move up to a position above them?",
+            "neg_question": "Does the camera not start below the subject and move up to a position above them?",
             "pos_prompt": "The camera starts below the subject and then moves up to a position above them.",
-            "neg_prompt": "The camera does not start below the subject or does not move up to a position above them.",
+            "neg_prompt": "The camera does not start below the subject and move up to a position above them.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject",
                 "type": "pos",
@@ -3536,29 +3536,29 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
 
 def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        {
-            "folder": setup_folder,
-            "name": "is_height_wrt_ground_applicable",
-            "pos_question": "Is the camera height relative to the ground or water level clear?",
-            "neg_question": "Is the camera height relative to the ground or water level unclear?",
-            "pos_prompt": "The camera height relative to the ground or water level is clear.",
-            "neg_prompt": "The camera height relative to the ground or water level is unclear.",
-            "pos": {
-                "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
-                "type": "neg",
-            },
-        },
+        # {
+        #     "folder": setup_folder,
+        #     "name": "is_height_wrt_ground_applicable",
+        #     "pos_question": "Is the camera height relative to the ground or water level clear?",
+        #     "neg_question": "Is the camera height relative to the ground or water level unclear?",
+        #     "pos_prompt": "The camera height relative to the ground or water level is clear.",
+        #     "neg_prompt": "The camera height relative to the ground or water level is unclear.",
+        #     "pos": {
+        #         "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+        #         "type": "pos",
+        #     },
+        #     "neg": {
+        #         "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+        #         "type": "neg",
+        #     },
+        # },
         {
             "folder": setup_folder,
             "name": "height_wrt_ground_change_from_high_to_low",
             "pos_question": "Does the camera height decrease noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?",
-            "neg_question": "Does the camera height not decrease noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?",
+            "neg_question": "Does the camera height not decrease noticeably in relation to the ground (i.e., it does not shift between levels like aerial, overhead, eye, hip, or ground)?",
             "pos_prompt": "The camera height decreases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
-            "neg_prompt": "The camera height does not decrease noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
+            "neg_prompt": "The camera height does not decrease noticeably in relation to the ground (i.e., it does not shift between levels like aerial, overhead, eye, hip, or ground).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.height_wrt_ground_change_from_high_to_low",
                 "type": "pos",
@@ -3572,9 +3572,9 @@ def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
             "folder": setup_folder,
             "name": "height_wrt_ground_change_from_low_to_high",
             "pos_question": "Does the camera height increase noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?",
-            "neg_question": "Does the camera height not increase noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground?",
+            "neg_question": "Does the camera height not increase noticeably in relation to the ground (i.e., it does not shift between levels like aerial, overhead, eye, hip, or ground)?",
             "pos_prompt": "The camera height increases noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
-            "neg_prompt": "The camera height does not increase noticeably in relation to the ground, shifting between levels like aerial, overhead, eye, hip, or ground.",
+            "neg_prompt": "The camera height does not increase noticeably in relation to the ground (i.e., it does not shift between levels like aerial, overhead, eye, hip, or ground).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.height_wrt_ground_change_from_low_to_high",
                 "type": "pos",
@@ -3873,9 +3873,9 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
             "folder": setup_folder,
             "name": "height_wrt_ground_is_overhead_level",
             "pos_question": "Is the camera positioned at an overhead level throughout the video, positioned above eye level but below aerial (around second-floor height)?",
-            "neg_question": "Is the camera not positioned at an overhead level throughout the video, positioned above eye level but below aerial (around second-floor height)?",
+            "neg_question": "Is the camera not positioned at an overhead level throughout the video (i.e., it is not positioned above eye level but below aerial which is around second-floor height)?",
             "pos_prompt": "The camera is positioned at an overhead level throughout the video, positioned above eye level but below aerial (around second-floor height).",
-            "neg_prompt": "The camera is not positioned at an overhead level throughout the video, positioned above eye level but below aerial (around second-floor height).",
+            "neg_prompt": "The camera is not positioned at an overhead level throughout the video (i.e., it is not positioned above eye level but below aerial which is around second-floor height).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_overhead_level",
                 "type": "pos",
@@ -3889,9 +3889,9 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
             "folder": setup_folder,
             "name": "height_wrt_ground_is_eye_level",
             "pos_question": "Is the camera positioned at eye level throughout the video (roughly at a person's eye height, above the waist)?",
-            "neg_question": "Is the camera not positioned at eye level throughout the video (roughly at a person's eye height, above the waist)?",
+            "neg_question": "Is the camera not positioned at eye level throughout the video (i.e., it is not roughly at a person's eye height)?",
             "pos_prompt": "The camera is positioned at eye level throughout the video (roughly at a person's eye height, above the waist).",
-            "neg_prompt": "The camera is not positioned at eye level throughout the video (roughly at a person's eye height, above the waist).",
+            "neg_prompt": "The camera is not positioned at eye level throughout the video (i.e., not roughly at a person's eye height).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_eye_level",
                 "type": "pos",
@@ -3905,9 +3905,9 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
             "folder": setup_folder,
             "name": "height_wrt_ground_is_hip_level",
             "pos_question": "Is the camera positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present?",
-            "neg_question": "Is the camera not positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present?",
+            "neg_question": "Is the camera not positioned at hip level throughout the video (i.e., it is not roughly between knee and waist height, whether or not a human subject is present)?",
             "pos_prompt": "The camera is positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present.",
-            "neg_prompt": "The camera is not positioned at hip level throughout the video, roughly between knee and waist height, whether or not a human subject is present.",
+            "neg_prompt": "The camera is not positioned at hip level throughout the video (i.e., it is not roughly between knee and waist height, whether or not a human subject is present).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_hip_level",
                 "type": "pos",
@@ -3921,9 +3921,9 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
             "folder": setup_folder,
             "name": "height_wrt_ground_is_ground_level",
             "pos_question": "Is the camera positioned at ground level throughout the video, positioned close to the ground?",
-            "neg_question": "Is the camera not positioned at ground level throughout the video, positioned close to the ground?",
+            "neg_question": "Is the camera not positioned at ground level throughout the video (i.e., it is not positioned close to the ground)?",
             "pos_prompt": "The camera is positioned at ground level throughout the video, positioned close to the ground.",
-            "neg_prompt": "The camera is not positioned at ground level throughout the video, positioned close to the ground.",
+            "neg_prompt": "The camera is not positioned at ground level throughout the video (i.e., it is not positioned close to the ground).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_ground_level",
                 "type": "pos",
@@ -3937,9 +3937,9 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
             "folder": setup_folder,
             "name": "height_wrt_ground_is_water_level",
             "pos_question": "Is the camera positioned at water level throughout the video, showing the waterline clearly and not from an aerial view?",
-            "neg_question": "Is the camera not positioned at water level throughout the video, showing the waterline clearly and not from an aerial view?",
+            "neg_question": "Is the camera not positioned at water level throughout the video (i.e., it is not close enough to the waterline)?",
             "pos_prompt": "The camera is positioned at water level throughout the video, showing the waterline clearly and not from an aerial view.",
-            "neg_prompt": "The camera is not positioned at water level throughout the video, showing the waterline clearly and not from an aerial view.",
+            "neg_prompt": "The camera is not positioned at water level throughout the video (i.e., it is not close enough to the waterline).",
             "pos": {
                 "label": "cam_setup.height_wrt_ground.is_always.height_wrt_ground_is_water_level",
                 "type": "pos",
@@ -3969,29 +3969,29 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
 
 def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        {
-            "folder": setup_folder,
-            "name": "is_camera_angle_applicable",
-            "pos_question": "Is the camera angle relative to the ground clear?",
-            "neg_question": "Is the camera angle relative to the ground unclear?",
-            "pos_prompt": "The camera angle relative to the ground is clear.",
-            "neg_prompt": "The camera angle relative to the ground is unclear.",
-            "pos": {
-                "label": "cam_setup.angle.is_camera_angle_applicable",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "cam_setup.angle.is_camera_angle_applicable",
-                "type": "neg",
-            },
-        },
+        # {
+        #     "folder": setup_folder,
+        #     "name": "is_camera_angle_applicable",
+        #     "pos_question": "Is the camera angle relative to the ground clear?",
+        #     "neg_question": "Is the camera angle relative to the ground unclear?",
+        #     "pos_prompt": "The camera angle relative to the ground is clear.",
+        #     "neg_prompt": "The camera angle relative to the ground is unclear.",
+        #     "pos": {
+        #         "label": "cam_setup.angle.is_camera_angle_applicable",
+        #         "type": "pos",
+        #     },
+        #     "neg": {
+        #         "label": "cam_setup.angle.is_camera_angle_applicable",
+        #         "type": "neg",
+        #     },
+        # },
         {
             "folder": setup_folder,
             "name": "camera_angle_change",
             "pos_question": "Does the camera angle change significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?",
-            "neg_question": "Does the camera angle not change significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?",
-            "pos_prompt": "A shot where the camera angle changes significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
-            "neg_prompt": "A shot where the camera angle does not change significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+            "neg_question": "Does the camera angle not change significantly relative to the ground (i.e., it does not move between bird's eye, high angle, level, low angle, or worm's eye view)?",
+            "pos_prompt": "The camera angle changes significantly relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+            "neg_prompt": "The camera angle does not change significantly relative to the ground (i.e., it does not move between bird's eye, high angle, level, low angle, or worm's eye view).",
             "pos": {
                 "label": "cam_setup.angle.camera_angle_change",
                 "type": "pos",
@@ -4005,9 +4005,9 @@ def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APR
             "folder": setup_folder,
             "name": "camera_angle_change_from_high_to_low",
             "pos_question": "Does the camera angle decrease noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?",
-            "neg_question": "Does the camera angle not decrease noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view?",
-            "pos_prompt": "A shot where the camera angle decreases noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
-            "neg_prompt": "A shot where the camera angle does not decrease noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+            "neg_question": "Does the camera angle not decrease noticeably relative to the ground (i.e., it does not move between bird's eye, high angle, level, low angle, or worm's eye view)?",
+            "pos_prompt": "The camera angle decreases noticeably relative to the ground, moving between bird's eye, high angle, level, low angle, or worm's eye view.",
+            "neg_prompt": "The camera angle does not decrease noticeably relative to the ground (i.e., it does not move between bird's eye, high angle, level, low angle, or worm's eye view).",
             "pos": {
                 "label": "cam_setup.angle.camera_angle_change_from_high_to_low",
                 "type": "pos",
@@ -4021,9 +4021,9 @@ def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APR
             "folder": setup_folder,
             "name": "camera_angle_change_from_low_to_high",
             "pos_question": "Does the camera angle increase noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view?",
-            "neg_question": "Does the camera angle not increase noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view?",
-            "pos_prompt": "A shot where the camera angle increases noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view.",
-            "neg_prompt": "A shot where the camera angle does not increase noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view.",
+            "neg_question": "Does the camera angle not increase noticeably relative to the ground (i.e., it does not move between worm's eye, low angle, level, high angle, or bird's eye view)?",
+            "pos_prompt": "The camera angle increases noticeably relative to the ground, moving between worm's eye, low angle, level, high angle, or bird's eye view.",
+            "neg_prompt": "The camera angle does not increase noticeably relative to the ground (i.e., it does not move between worm's eye, low angle, level, high angle, or bird's eye view).",
             "pos": {
                 "label": "cam_setup.angle.camera_angle_change_from_low_to_high",
                 "type": "pos",
@@ -4040,10 +4040,10 @@ def get_dutch_angle_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_dutch_angle",
-            "pos_question": "Is there a Dutch (canted) angle of more than 15 degrees present at any point in the video?",
-            "neg_question": "Is there no Dutch (canted) angle of more than 15 degrees present at any point in the video?",
-            "pos_prompt": "There is a Dutch (canted) angle of more than 15 degrees present at any point in the video.",
-            "neg_prompt": "There is no Dutch (canted) angle of more than 15 degrees present at any point in the video.",
+            "pos_question": "Is an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video?",
+            "neg_question": "Is no obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video?",
+            "pos_prompt": "There is an obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video.",
+            "neg_prompt": "There is no obvious Dutch (canted) angle (more than 15 degrees) that occurs in the video.",
             "pos": {
                 "label": "cam_setup.angle.is_dutch_angle",
                 "type": "pos",
@@ -4059,7 +4059,7 @@ def get_dutch_angle_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_question": "Does the degree of the Dutch (canted) angle stay the same throughout the video?",
             "neg_question": "Does the degree of the Dutch (canted) angle not stay the same throughout the video?",
             "pos_prompt": "The degree of the Dutch (canted) angle stays the same throughout the video.",
-            "neg_prompt": "There is no obvious Dutch (canted) angle of more than 15 degrees present, or the degree of the Dutch (canted) angle varies throughout the video.",
+            "neg_prompt": "There is either no obvious Dutch (canted) angle of more than 15 degrees present, or the degree of the Dutch (canted) angle varies throughout the video.",
             "pos": {
                 "label": "cam_setup.angle.is_dutch_angle_fixed",
                 "type": "pos",
@@ -4072,10 +4072,10 @@ def get_dutch_angle_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_dutch_angle_varying",
-            "pos_question": "Does the degree of the Dutch (canted) angle shift throughout the video?",
-            "neg_question": "Does the degree of the Dutch (canted) angle not shift throughout the video?",
-            "pos_prompt": "There is a Dutch (canted) angle in the video, and its degree varies.",
-            "neg_prompt": "There is no Dutch (canted) angle in the video, or the degree of the Dutch (canted) angle remains constant.",
+            "pos_question": "Does the degree of the Dutch (canted) angle shift during the video?",
+            "neg_question": "Does the degree of the Dutch (canted) angle not shift throughout the video, or is there no obvious Dutch (canted) angle of more than 15 degrees present?",
+            "pos_prompt": "There is a Dutch (canted) angle that changes its degree during the video, with the horizon line not level.",
+            "neg_prompt": "There is no obvious Dutch (canted) angle of more than 15 degrees present, or the degree of the Dutch (canted) angle remains constant.",
             "pos": {
                 "label": "cam_setup.angle.is_dutch_angle_varying",
                 "type": "pos",
@@ -4093,9 +4093,9 @@ def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRI
             "folder": setup_folder,
             "name": "camera_angle_start_with_bird_eye_angle",
             "pos_question": "Does the video start with the camera at a bird's eye angle, looking straight down from above?",
-            "neg_question": "Does the video not start with the camera at a bird's eye angle, looking straight down from above?",
-            "pos_prompt": "A video that starts with the camera at a bird's eye angle, looking straight down from above.",
-            "neg_prompt": "A video that does not start with the camera at a bird's eye angle, looking straight down from above.",
+            "neg_question": "Does the video not start with the camera at a bird's eye angle (i.e., it does not look straight down from above)?",
+            "pos_prompt": "The video starts with the camera at a bird's eye angle, looking straight down from above.",
+            "neg_prompt": "The video does not start with the camera at a bird's eye angle (i.e., it does not look straight down from above).",
             "pos": {
                 "label": "cam_setup.angle.start_with.camera_angle_start_with_bird_eye_angle",
                 "type": "pos",
@@ -4109,9 +4109,9 @@ def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRI
             "folder": setup_folder,
             "name": "camera_angle_start_with_high_angle",
             "pos_question": "Does the video start with the camera at a high angle, looking downward compared to a level angle but not directly top-down?",
-            "neg_question": "Does the video not start with the camera at a high angle, looking downward compared to a level angle but not directly top-down?",
-            "pos_prompt": "A video that starts with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
-            "neg_prompt": "A video that does not start with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+            "neg_question": "Does the video not start with the camera at a high angle (i.e., it does not look downward compared to a level angle or is directly top-down)?",
+            "pos_prompt": "The video starts with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+            "neg_prompt": "The video does not start with the camera at a high angle (i.e., it does not look downward compared to a level angle or is directly top-down).",
             "pos": {
                 "label": "cam_setup.angle.start_with.camera_angle_start_with_high_angle",
                 "type": "pos",
@@ -4124,10 +4124,10 @@ def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRI
         {
             "folder": setup_folder,
             "name": "camera_angle_start_with_level_angle",
-            "pos_question": "Does the video start with the camera at a level angle, parallel to the ground regardless of Dutch angle?",
-            "neg_question": "Does the video not start with the camera at a level angle, parallel to the ground regardless of Dutch angle?",
-            "pos_prompt": "A video that starts with the camera at a level angle, parallel to the ground regardless of Dutch angle.",
-            "neg_prompt": "A video that does not start with the camera at a level angle, parallel to the ground regardless of Dutch angle.",
+            "pos_question": "Does the video start with the camera at a level angle, parallel to the ground (even if a Dutch angle is used)?",
+            "neg_question": "Does the video not start with the camera at a level angle parallel to the ground (even if a Dutch angle is used)?",
+            "pos_prompt": "A video that starts with the camera at a level angle, parallel to the ground (even if a Dutch angle is used).",
+            "neg_prompt": "A video that does not start with the camera at a level angle parallel to the ground (even if a Dutch angle is used).",
             "pos": {
                 "label": "cam_setup.angle.start_with.camera_angle_start_with_level_angle",
                 "type": "pos",
@@ -4141,9 +4141,9 @@ def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRI
             "folder": setup_folder,
             "name": "camera_angle_start_with_low_angle",
             "pos_question": "Does the video start with the camera at a low angle, looking upward compared to a level angle but not directly from below?",
-            "neg_question": "Does the video not start with the camera at a low angle, looking upward compared to a level angle but not directly from below?",
+            "neg_question": "Does the video not start with the camera at a low angle (i.e., it does not look upward compared to a level angle or is directly from below)?",
             "pos_prompt": "A video that starts with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
-            "neg_prompt": "A video that does not start with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
+            "neg_prompt": "A video that does not start with the camera at a low angle (i.e., it does not look upward compared to a level angle or is directly from below).",
             "pos": {
                 "label": "cam_setup.angle.start_with.camera_angle_start_with_low_angle",
                 "type": "pos",
@@ -4157,9 +4157,9 @@ def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRI
             "folder": setup_folder,
             "name": "camera_angle_start_with_worm_eye_angle",
             "pos_question": "Does the video start with the camera at a worm's eye angle, looking straight up from below?",
-            "neg_question": "Does the video not start with the camera at a worm's eye angle, looking straight up from below?",
+            "neg_question": "Does the video not start with the camera at a worm's eye angle (i.e., it does not look straight up from below)?",
             "pos_prompt": "A video that starts with the camera at a worm's eye angle, looking straight up from below.",
-            "neg_prompt": "A video that does not start with the camera at a worm's eye angle, looking straight up from below.",
+            "neg_prompt": "A video that does not start with the camera at a worm's eye angle (i.e., it does not look straight up from below).",
             "pos": {
                 "label": "cam_setup.angle.start_with.camera_angle_start_with_worm_eye_angle",
                 "type": "pos",
@@ -4177,9 +4177,9 @@ def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "camera_angle_end_with_bird_eye_angle",
             "pos_question": "Does the video end with the camera at a bird's eye angle, looking straight down from above?",
-            "neg_question": "Does the video not end with the camera at a bird's eye angle, looking straight down from above?",
+            "neg_question": "Does the video not end with the camera at a bird's eye angle (i.e., it does not look straight down from above)?",
             "pos_prompt": "The video ends with the camera at a bird's eye angle, looking straight down from above.",
-            "neg_prompt": "The video does not end with the camera at a bird's eye angle, looking straight down from above.",
+            "neg_prompt": "The video does not end with the camera at a bird's eye angle (i.e., it does not look straight down from above).",
             "pos": {
                 "label": "cam_setup.angle.end_with.camera_angle_end_with_bird_eye_angle",
                 "type": "pos",
@@ -4193,9 +4193,9 @@ def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "camera_angle_end_with_high_angle",
             "pos_question": "Does the video end with the camera at a high angle, looking downward compared to a level angle but not directly top-down?",
-            "neg_question": "Does the video not end with the camera at a high angle, looking downward compared to a level angle but not directly top-down?",
+            "neg_question": "Does the video not end with the camera at a high angle (i.e., it does not look downward compared to a level angle or is directly top-down)?",
             "pos_prompt": "The video ends with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
-            "neg_prompt": "The video does not end with the camera at a high angle, looking downward compared to a level angle but not directly top-down.",
+            "neg_prompt": "The video does not end with the camera at a high angle (i.e., it does not look downward compared to a level angle or is directly top-down).",
             "pos": {
                 "label": "cam_setup.angle.end_with.camera_angle_end_with_high_angle",
                 "type": "pos",
@@ -4208,10 +4208,10 @@ def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         {
             "folder": setup_folder,
             "name": "camera_angle_end_with_level_angle",
-            "pos_question": "Does the video end with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle?",
-            "neg_question": "Does the video not end with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle?",
-            "pos_prompt": "The video ends with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle.",
-            "neg_prompt": "The video does not end with the camera positioned at a level angle, parallel to the ground regardless of Dutch angle.",
+            "pos_question": "Does the video end with the camera positioned at a level angle, parallel to the ground (even if a Dutch angle is used)?",
+            "neg_question": "Does the video not end with the camera positioned at a level angle parallel to the ground (even if a Dutch angle is used)?",
+            "pos_prompt": "The video ends with the camera positioned at a level angle, parallel to the ground (even if a Dutch angle is used).",
+            "neg_prompt": "The video does not end with the camera positioned at a level angle parallel to the ground (even if a Dutch angle is used).",
             "pos": {
                 "label": "cam_setup.angle.end_with.camera_angle_end_with_level_angle",
                 "type": "pos",
@@ -4225,9 +4225,9 @@ def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "camera_angle_end_with_low_angle",
             "pos_question": "Does the video end with the camera at a low angle, looking upward compared to a level angle but not directly from below?",
-            "neg_question": "Does the video not end with the camera at a low angle, looking upward compared to a level angle but not directly from below?",
+            "neg_question": "Does the video not end with the camera at a low angle (i.e., it does not look upward compared to a level angle or is directly from below)?",
             "pos_prompt": "The video ends with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
-            "neg_prompt": "The video does not end with the camera at a low angle, looking upward compared to a level angle but not directly from below.",
+            "neg_prompt": "The video does not end with the camera at a low angle (i.e., it does not look upward compared to a level angle or is directly from below).",
             "pos": {
                 "label": "cam_setup.angle.end_with.camera_angle_end_with_low_angle",
                 "type": "pos",
@@ -4241,9 +4241,9 @@ def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "camera_angle_end_with_worm_eye_angle",
             "pos_question": "Does the video end with the camera at a worm's eye angle, looking straight up from below?",
-            "neg_question": "Does the video not end with the camera at a worm's eye angle, looking straight up from below?",
+            "neg_question": "Does the video not end with the camera at a worm's eye angle (i.e., it does not look straight up from below)?",
             "pos_prompt": "The video ends with the camera at a worm's eye angle, looking straight up from below.",
-            "neg_prompt": "The video does not end with the camera at a worm's eye angle, looking straight up from below.",
+            "neg_prompt": "The video does not end with the camera at a worm's eye angle (i.e., it does not look straight up from below).",
             "pos": {
                 "label": "cam_setup.angle.end_with.camera_angle_end_with_worm_eye_angle",
                 "type": "pos",
@@ -4261,9 +4261,9 @@ def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "camera_angle_is_bird_eye_angle",
             "pos_question": "Does the camera maintain a bird's eye angle throughout, consistently looking straight down from above?",
-            "neg_question": "Does the camera not maintain a bird's eye angle or consistently look straight down from above throughout?",
+            "neg_question": "Does the camera not maintain a bird's eye angle that consistently looks straight down from above?",
             "pos_prompt": "The camera maintains a bird's eye angle throughout, consistently looking straight down from above.",
-            "neg_prompt": "The camera does not maintain a bird's eye angle or consistently look straight down from above throughout.",
+            "neg_prompt": "The camera does not maintain a bird's eye angle that consistently looks straight down from above.",
             "pos": {
                 "label": "cam_setup.angle.is_always.camera_angle_is_bird_eye_angle",
                 "type": "pos",
@@ -4277,9 +4277,9 @@ def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "camera_angle_is_high_angle",
             "pos_question": "Does the camera maintain a high angle throughout, consistently looking downward compared to a level angle but not directly top-down?",
-            "neg_question": "Does the camera not maintain a high angle or consistently look downward (not top-down) throughout?",
+            "neg_question": "Does the camera not maintain a high angle that consistently looks downward, or it is directly top-down?",
             "pos_prompt": "The camera maintains a high angle throughout, consistently looking downward compared to a level angle but not directly top-down.",
-            "neg_prompt": "The camera does not stay at a high angle or consistently look downward (not top-down) throughout.",
+            "neg_prompt": "The camera does not maintain a high angle that consistently looks downward, or it is directly top-down.",
             "pos": {
                 "label": "cam_setup.angle.is_always.camera_angle_is_high_angle",
                 "type": "pos",
@@ -4292,10 +4292,10 @@ def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "camera_angle_is_level_angle",
-            "pos_question": "Does the camera maintain a level angle parallel to the ground regardless of Dutch angle throughout the video?",
-            "neg_question": "Does the camera not maintain a level angle parallel to the ground (regardless of Dutch angle) throughout the video?",
-            "pos_prompt": "The camera maintains a level angle parallel to the ground regardless of Dutch angle throughout the video.",
-            "neg_prompt": "The camera does not maintain a level angle parallel to the ground (regardless of Dutch angle) throughout the video.",
+            "pos_question": "Does the camera maintain a level angle parallel to the ground (even if a Dutch angle is used) throughout the video?",
+            "neg_question": "Does the camera not maintain a level angle parallel to the ground (even if a Dutch angle is used) throughout the video?",
+            "pos_prompt": "The camera maintains a level angle parallel to the ground (even if a Dutch angle is used) throughout the video.",
+            "neg_prompt": "The camera does not maintain a level angle parallel to the ground (even if a Dutch angle is used) throughout the video.",
             "pos": {
                 "label": "cam_setup.angle.is_always.camera_angle_is_level_angle",
                 "type": "pos",
@@ -4309,9 +4309,9 @@ def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "camera_angle_is_low_angle",
             "pos_question": "Does the camera maintain a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up?",
-            "neg_question": "Does the camera not maintain a low angle or consistently look upward (not bottom-up) throughout?",
+            "neg_question": "Does the camera not maintain a low angle that consistently looks upward compared to a level angle, or it is directly bottom-up?",
             "pos_prompt": "The camera maintains a low angle throughout, consistently looking upward compared to a level angle but not directly bottom-up.",
-            "neg_prompt": "The camera does not maintain a low angle or consistently look upward (not bottom-up) throughout.",
+            "neg_prompt": "The camera does not maintain a low angle that consistently looks upward compared to a level angle, or it is directly bottom-up.",
             "pos": {
                 "label": "cam_setup.angle.is_always.camera_angle_is_low_angle",
                 "type": "pos",
@@ -4325,9 +4325,9 @@ def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "camera_angle_is_worm_eye_angle",
             "pos_question": "Does the camera maintain a worm's eye angle throughout, consistently looking straight up from below?",
-            "neg_question": "Does the camera not maintain a worm's eye angle or consistently look straight up from below throughout?",
+            "neg_question": "Does the camera not maintain a worm's eye angle that consistently looks straight up from below?",
             "pos_prompt": "The camera maintains a worm's eye angle throughout, consistently looking straight up from below.",
-            "neg_prompt": "The camera does not maintain a worm's eye angle or consistently look straight up from below throughout.",
+            "neg_prompt": "The camera does not maintain a worm's eye angle that consistently looks straight up from below.",
             "pos": {
                 "label": "cam_setup.angle.is_always.camera_angle_is_worm_eye_angle",
                 "type": "pos",
@@ -4441,22 +4441,22 @@ def get_camera_angle_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER
 
 def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        {
-            "folder": setup_folder,
-            "name": "is_focus_applicable",
-            "pos_question": "Can the camera's depth of field be perceived or inferred from the video?",
-            "neg_question": "Can the camera's depth of field not be easily perceived or inferred from the video?",
-            "pos_prompt": "The camera's depth of field can be perceived or inferred from the video.",
-            "neg_prompt": "The camera's depth of field cannot be easily perceived or inferred from the video.",
-            "pos": {
-                "label": "cam_setup.depth_of_field.is_focus_applicable",
-                "type": "pos",
-            },
-            "neg": {
-                "label": "cam_setup.depth_of_field.is_focus_applicable",
-                "type": "neg",
-            },
-        },
+        # {
+        #     "folder": setup_folder,
+        #     "name": "is_focus_applicable",
+        #     "pos_question": "Can the camera's depth of field be perceived or inferred from the video?",
+        #     "neg_question": "Can the camera's depth of field not be easily perceived or inferred from the video?",
+        #     "pos_prompt": "The camera's depth of field can be perceived or inferred from the video.",
+        #     "neg_prompt": "The camera's depth of field cannot be easily perceived or inferred from the video.",
+        #     "pos": {
+        #         "label": "cam_setup.depth_of_field.is_focus_applicable",
+        #         "type": "pos",
+        #     },
+        #     "neg": {
+        #         "label": "cam_setup.depth_of_field.is_focus_applicable",
+        #         "type": "neg",
+        #     },
+        # },
         {
             "folder": setup_folder,
             "name": "is_deep_focus",
@@ -4476,10 +4476,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_shallow_focus",
-            "pos_question": "Is the camera using shallow depth of field, with a limited but noticeable range of space in focus?",
-            "neg_question": "Is the camera not using shallow depth of field, with a limited but noticeable range of space in focus?",
+            "pos_question": "Does the camera use shallow depth of field, with a limited but noticeable range of space in focus?",
+            "neg_question": "Does the camera not use shallow depth of field with a limited but noticeable range of space in focus?",
             "pos_prompt": "The camera uses shallow depth of field, with a limited but noticeable range of space in focus.",
-            "neg_prompt": "The camera does not use shallow depth of field, with a limited but noticeable range of space in focus.",
+            "neg_prompt": "The camera does not use shallow depth of field with a limited but noticeable range of space in focus.",
             "pos": {
                 "label": "cam_setup.depth_of_field.is_shallow_focus",
                 "type": "pos",
@@ -4493,9 +4493,9 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "is_ultra_shallow_focus",
             "pos_question": "Is the camera using extremely shallow depth of field, with only a narrow plane in focus?",
-            "neg_question": "Is the camera not using extremely shallow depth of field, with only a narrow plane in focus?",
+            "neg_question": "Is the camera not using extremely shallow depth of field with only a narrow plane in focus?",
             "pos_prompt": "The camera uses extremely shallow depth of field, with only a narrow plane in focus.",
-            "neg_prompt": "The camera does not use extremely shallow depth of field, with only a narrow plane in focus.",
+            "neg_prompt": "The camera does not use extremely shallow depth of field with only a narrow plane in focus.",
             "pos": {
                 "label": "cam_setup.depth_of_field.is_ultra_shallow_focus",
                 "type": "pos",
@@ -4505,6 +4505,118 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
                 "type": "neg",
             },
         },
+        {
+            "folder": setup_folder,
+            "name": "is_rack_pull_focus",
+            "pos_question": "Does the camera use rack focus or pull focus to shift the focus plane?",
+            "neg_question": "Does the camera not use rack focus or pull focus to shift the focus plane?",
+            "pos_prompt": "The camera uses rack focus or pull focus to shift the focus plane.",
+            "neg_prompt": "The camera does not use rack focus or pull focus to shift the focus plane.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.is_rack_pull_focus",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.is_rack_pull_focus",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": setup_folder,
+            "name": "is_focus_tracking",
+            "pos_question": "Does the camera use focus tracking to follow a moving subject in the video?",
+            "neg_question": "Does the camera not use focus tracking to follow a moving subject in the video?",
+            "pos_prompt": "The camera uses focus tracking to follow a moving subject in the video.",
+            "neg_prompt": "The camera does not use focus tracking to follow a moving subject in the video.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.is_focus_tracking",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.is_focus_tracking",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": setup_folder,
+            "name": "focus_change",
+            "pos_question": "Does the focal plane shift noticeably between foreground, middleground, or background regions?",
+            "neg_question": "Does the focal plane not shift noticeably between foreground, middleground, or background regions?",
+            "pos_prompt": "The focal plane shifts noticeably between foreground, middleground, or background regions.",
+            "neg_prompt": "The focal plane does not shift noticeably between foreground, middleground, or background regions.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.focus_change",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.focus_change",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": setup_folder,
+            "name": "focus_change_from_far_to_near",
+            "pos_question": "Does the focal plane shift from distant to close, moving between foreground, middleground, or background?",
+            "neg_question": "Does the focal plane not shift from distant to close, moving between foreground, middleground, or background?",
+            "pos_prompt": "The focal plane shifts from distant to close, moving between foreground, middleground, or background.",
+            "neg_prompt": "The focal plane does not shift from distant to close, moving between foreground, middleground, or background.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.focus_change_from_far_to_near",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.focus_change_from_far_to_near",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": setup_folder,
+            "name": "focus_change_from_near_to_far",
+            "pos_question": "Does the focal plane shift from close to distant, moving between foreground, middleground, or background?",
+            "neg_question": "Does the focal plane not shift from close to distant, moving between foreground, middleground, or background?",
+            "pos_prompt": "The focal plane shifts from close to distant, moving between foreground, middleground, or background.",
+            "neg_prompt": "The focal plane does not shift from close to distant, moving between foreground, middleground, or background.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.focus_change_from_near_to_far",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.focus_change_from_near_to_far",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": setup_folder,
+            "name": "focus_change_from_in_to_out_of_focus",
+            "pos_question": "Does the camera start in sharp focus and then shift out of focus?",
+            "neg_question": "Does the camera not start in sharp focus and then shift out of focus?",
+            "pos_prompt": "The camera starts in sharp focus and then shifts out of focus.",
+            "neg_prompt": "The camera does not start in sharp focus and then shifts out of focus.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.focus_change_from_in_to_out_of_focus",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.focus_change_from_in_to_out_of_focus",
+                "type": "neg",
+            },
+        },
+        {
+            "folder": setup_folder,
+            "name": "focus_change_from_out_to_in_focus",
+            "pos_question": "Does the camera start out of focus and then become in focus?",
+            "neg_question": "Does the camera not start out of focus and then become in focus?",
+            "pos_prompt": "The camera starts out of focus and then becomes in focus.",
+            "neg_prompt": "The camera does not start out of focus and then becomes in focus.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.focus_change_from_out_to_in_focus",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.focus_change_from_out_to_in_focus",
+                "type": "neg",
+            },
+        }
     ]
 
 def get_focus_is_always_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
@@ -4572,7 +4684,8 @@ def get_focus_is_always_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
                 "label": "cam_setup.focus.is_always.focus_is_out_of_focus",
                 "type": "neg"
             }
-        }
+        },
+        
     ]
 
 def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
@@ -4581,9 +4694,9 @@ def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "focus_start_with_background",
             "pos_question": "Does the video start with the camera focusing on the background, using a shallow depth of field?",
-            "neg_question": "Does the video not start with the camera focusing on the background, using a shallow depth of field?",
+            "neg_question": "Does the video not start with the camera focusing on the background using a shallow depth of field?",
             "pos_prompt": "The video starts with the camera focusing on the background, using a shallow depth of field.",
-            "neg_prompt": "The video does not start with the camera focusing on the background, using a shallow depth of field.",
+            "neg_prompt": "The video does not start with the camera focusing on the background using a shallow depth of field.",
             "pos": {
                 "label": "cam_setup.focus.start_with.focus_start_with_background",
                 "type": "pos"
@@ -4597,9 +4710,9 @@ def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "focus_start_with_foreground",
             "pos_question": "Does the video start with the camera focusing on the foreground, using a shallow depth of field?",
-            "neg_question": "Does the video not start with the camera focusing on the foreground, using a shallow depth of field?",
+            "neg_question": "Does the video not start with the camera focusing on the foreground using a shallow depth of field?",
             "pos_prompt": "The video starts with the camera focusing on the foreground, using a shallow depth of field.",
-            "neg_prompt": "The video does not start with the camera focusing on the foreground, using a shallow depth of field.",
+            "neg_prompt": "The video does not start with the camera focusing on the foreground using a shallow depth of field.",
             "pos": {
                 "label": "cam_setup.focus.start_with.focus_start_with_foreground",
                 "type": "pos"
@@ -4613,9 +4726,9 @@ def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
             "folder": setup_folder,
             "name": "focus_start_with_middle_ground",
             "pos_question": "Does the video start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
-            "neg_question": "Does the video not start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
+            "neg_question": "Does the video not start with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background?",
             "pos_prompt": "The video starts with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
-            "neg_prompt": "The video does not start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
+            "neg_prompt": "The video does not start with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background.",
             "pos": {
                 "label": "cam_setup.focus.start_with.focus_start_with_middle_ground",
                 "type": "pos"
@@ -4649,9 +4762,9 @@ def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_end_with_background",
             "pos_question": "Does the video end with the camera focusing on the background, using a shallow depth of field?",
-            "neg_question": "Does the video not end with the camera focusing on the background, using a shallow depth of field?",
+            "neg_question": "Does the video not end with the camera focusing on the background using a shallow depth of field?",
             "pos_prompt": "The video ends with the camera focusing on the background, using a shallow depth of field.",
-            "neg_prompt": "The video does not end with the camera focusing on the background, using a shallow depth of field.",
+            "neg_prompt": "The video does not end with the camera focusing on the background using a shallow depth of field.",
             "pos": {
                 "label": "cam_setup.focus.end_with.focus_end_with_background",
                 "type": "pos"
@@ -4665,9 +4778,9 @@ def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_end_with_foreground",
             "pos_question": "Does the video end with the camera focusing on the foreground, using a shallow depth of field?",
-            "neg_question": "Does the video not end with the camera focusing on the foreground, using a shallow depth of field?",
+            "neg_question": "Does the video not end with the camera focusing on the foreground using a shallow depth of field?",
             "pos_prompt": "The video ends with the camera focusing on the foreground, using a shallow depth of field.",
-            "neg_prompt": "The video does not end with the camera focusing on the foreground, using a shallow depth of field.",
+            "neg_prompt": "The video does not end with the camera focusing on the foreground using a shallow depth of field.",
             "pos": {
                 "label": "cam_setup.focus.end_with.focus_end_with_foreground",
                 "type": "pos"
@@ -4681,9 +4794,9 @@ def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_end_with_middle_ground",
             "pos_question": "Does the video end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
-            "neg_question": "Does the video not end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
+            "neg_question": "Does the video not end with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background?",
             "pos_prompt": "The video ends with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
-            "neg_prompt": "The video does not end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
+            "neg_prompt": "The video does not end with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background.",
             "pos": {
                 "label": "cam_setup.focus.end_with.focus_end_with_middle_ground",
                 "type": "pos"
@@ -4717,9 +4830,9 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_from_background_to_foreground",
             "pos_question": "Does the video start with the camera focused on the background and then shift the focus to the foreground?",
-            "neg_question": "Does the video either not start with the focus on the background, or not shift the focus to the foreground?",
+            "neg_question": "Does the video not start with the focus on the background, or it does not shift the focus to the foreground?",
             "pos_prompt": "The video starts with the camera focused on the background and then shifts the focus to the foreground.",
-            "neg_prompt": "The video either does not start with the focus on the background, or does not shift the focus to the foreground.",
+            "neg_prompt": "The video does not start with the focus on the background, or it does not shift the focus to the foreground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_background_to_foreground",
                 "type": "pos"
@@ -4733,9 +4846,9 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_from_background_to_middle_ground",
             "pos_question": "Does the video start with the camera focused on the background and then shift the focus to the middleground?",
-            "neg_question": "Does the video either not start with the focus on the background, or not shift the focus to the middleground?",
+            "neg_question": "Does the video not start with the focus on the background, or it does not shift the focus to the middleground?",
             "pos_prompt": "The video starts with the camera focused on the background and then shifts the focus to the middleground.",
-            "neg_prompt": "The video either does not start with the focus on the background, or does not shift the focus to the middleground.",
+            "neg_prompt": "The video does not start with the focus on the background, or it does not shift the focus to the middleground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_background_to_middle_ground",
                 "type": "pos"
@@ -4749,9 +4862,9 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_from_foreground_to_background",
             "pos_question": "Does the video start with the camera focused on the foreground and then shift the focus to the background?",
-            "neg_question": "Does the video either not start with the focus on the foreground, or not shift the focus to the background?",
+            "neg_question": "Does the video not start with the focus on the foreground, or it does not shift the focus to the background?",
             "pos_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the background.",
-            "neg_prompt": "The video either does not start with the focus on the foreground, or does not shift the focus to the background.",
+            "neg_prompt": "The video does not start with the focus on the foreground, or it does not shift the focus to the background.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_foreground_to_background",
                 "type": "pos"
@@ -4765,9 +4878,9 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_from_foreground_to_middle_ground",
             "pos_question": "Does the video start with the camera focused on the foreground and then shift the focus to the middleground?",
-            "neg_question": "Does the video either not start with the focus on the foreground, or not shift the focus to the middleground?",
+            "neg_question": "Does the video not start with the focus on the foreground, or it does not shift the focus to the middleground?",
             "pos_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the middleground.",
-            "neg_prompt": "The video either does not start with the focus on the foreground, or does not shift the focus to the middleground.",
+            "neg_prompt": "The video does not start with the focus on the foreground, or it does not shift the focus to the middleground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_foreground_to_middle_ground",
                 "type": "pos"
@@ -4781,9 +4894,9 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_from_middle_ground_to_background",
             "pos_question": "Does the video start with the camera focused on the middleground and then shift the focus to the background?",
-            "neg_question": "Does the video either not start with the focus on the middleground, or not shift the focus to the background?",
+            "neg_question": "Does the video not start with the focus on the middleground, or it does not shift the focus to the background?",
             "pos_prompt": "The video starts with the camera focused on the middleground and then shifts the focus to the background.",
-            "neg_prompt": "The video either does not start with the focus on the middleground, or does not shift the focus to the background.",
+            "neg_prompt": "The video does not start with the focus on the middleground, or it does not shift the focus to the background.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_middle_ground_to_background",
                 "type": "pos"
@@ -4797,9 +4910,9 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "folder": setup_folder,
             "name": "focus_from_middle_ground_to_foreground",
             "pos_question": "Does the video start with the camera focused on the middleground and then shift the focus to the foreground?",
-            "neg_question": "Does the video either not start with the focus on the middleground, or not shift the focus to the foreground?",
+            "neg_question": "Does the video not start with the focus on the middleground, or it does not shift the focus to the foreground?",
             "pos_prompt": "The video starts with the camera focused on the middleground and then shifts the focus to the foreground.",
-            "neg_prompt": "The video either does not start with the focus on the middleground, or does not shift the focus to the foreground.",
+            "neg_prompt": "The video does not start with the focus on the middleground, or it does not shift the focus to the foreground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_middle_ground_to_foreground",
                 "type": "pos"
