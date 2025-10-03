@@ -2,7 +2,7 @@
     "label": "Height Wrt Subject Change From Low To High",
     "label_name": "height_wrt_subject_change_from_low_to_high",
     "def_question": [
-        "Does the camera's height increase noticeably, transitioning from below to level with the subject, or from level to above?"
+        "Does the subject start below and end at or above the camera’s height, or start level and end above?"
     ],
     "alt_question": [
         "Does the camera move from a lower to a higher position relative to the subject's height?",
@@ -15,7 +15,7 @@
         "Is there an increase in camera height from below to being level with or above the subject?"
     ],
     "def_prompt": [
-        "The camera's height increases noticeably, transitioning from below to level with the subject, or from level to above."
+        "The subject starts below and ends at or above the camera’s height, or starts level and ends above."
     ],
     "alt_prompt": [
         "A video showing camera movement from below to level with the subject.",

@@ -2,7 +2,7 @@
     "label": "Height Wrt Subject From Above Subject To Below Subject",
     "label_name": "height_wrt_subject_from_above_subject_to_below_subject",
     "def_question": [
-        "Does the camera start noticeably higher than the subject and then move down to a position below them?"
+        "Does the camera’s height relative to the subject start above and end below?"
     ],
     "alt_question": [
         "Does the shot transition from looking down at the subject to looking up at them?",
@@ -12,7 +12,7 @@
         "Does the camera shift from an overhead position to a low angle beneath the subject?"
     ],
     "def_prompt": [
-        "The camera starts noticeably higher than the subject and then moves down to a position below them."
+        "The camera’s height relative to the subject starts above and ends below."
     ],
     "alt_prompt": [
         "A shot transitioning from looking down at the subject to looking up at them.",

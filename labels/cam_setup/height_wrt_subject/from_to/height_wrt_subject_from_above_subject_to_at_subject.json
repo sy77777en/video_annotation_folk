@@ -2,7 +2,7 @@
     "label": "Height Wrt Subject From Above Subject To At Subject",
     "label_name": "height_wrt_subject_from_above_subject_to_at_subject",
     "def_question": [
-        "Does the camera start noticeably higher than the subject and then move down to their height?"
+        "Does the camera’s height relative to the subject start above and end at the subject’s height?"
     ],
     "alt_question": [
         "Does the shot transition from a high-angle to an eye-level perspective?",
@@ -12,7 +12,7 @@
         "Does the camera position shift from above the subject to their height?"
     ],
     "def_prompt": [
-        "The camera starts noticeably higher than the subject and then moves down to their height."
+        "The camera’s height relative to the subject starts above and ends at the subject’s height."
     ],
     "alt_prompt": [
         "A shot transitioning from a high-angle to an eye-level perspective.",

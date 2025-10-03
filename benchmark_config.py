@@ -3231,10 +3231,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change",
-            "pos_question": "Does the camera's height relative to the subject change significantly, moving between positions above, at level with, or below the subject?",
-            "neg_question": "Does the camera's height relative to the subject not change significantly (i.e., it does not move between positions above, at level with, or below the subject)?",
-            "pos_prompt": "The camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject.",
-            "neg_prompt": "The camera's height relative to the subject does not change significantly (i.e., it does not move between positions above, at level with, or below the subject).",
+            "pos_question": "Is the camera’s height relative to the subject different at the end compared to the beginning (above, at level, or below)?",
+            "neg_question": "Is the camera’s height relative to the subject the same at the end as it was at the beginning (above, at level, or below)?",
+            "pos_prompt": "The camera’s height relative to the subject (above, at level, or below) is different at the end compared to the beginning.",
+            "neg_prompt": "The camera’s height relative to the subject (above, at level, or below) is the same at the end as at the beginning.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change",
                 "type": "pos",
@@ -3247,10 +3247,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change_from_high_to_low",
-            "pos_question": "Does the camera's height decrease noticeably, transitioning from above to level with the subject, or from level to below?",
-            "neg_question": "Does the camera's height not decrease noticeably (i.e., it does not transition from above to level with the subject, or from level to below)?",
-            "pos_prompt": "The camera's height decreases noticeably, transitioning from above to level with the subject, or from level to below.",
-            "neg_prompt": "The camera's height does not decrease noticeably (i.e., it does not transition from above to level with the subject, or from level to below).",
+            "pos_question": "Does the subject start above and end at or below the camera’s height, or start level and end below?",
+            "neg_question": "Does the subject not start above and end at or below, and not start level and end below?",
+            "pos_prompt": "The subject starts above and ends at or below the camera’s height, or starts level and ends below.",
+            "neg_prompt": "The subject does not start above and end at or below, and does not start level and end below.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_high_to_low",
                 "type": "pos",
@@ -3263,10 +3263,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change_from_low_to_high",
-            "pos_question": "Does the camera's height increase noticeably, transitioning from below to level with the subject, or from level to above?",
-            "neg_question": "Does the camera's height not increase noticeably (i.e., it does not transition from below to level with the subject, or from level to above)?",
-            "pos_prompt": "The camera's height increases noticeably, transitioning from below to level with the subject, or from level to above.",
-            "neg_prompt": "The camera's height does not increase noticeably (i.e., it does not transition from below to level with the subject, or from level to above).",
+            "pos_question": "Does the subject start below and end at or above the camera’s height, or start level and end above?",
+            "neg_question": "Does the subject not start below and end at or above, and not start level and end above?",
+            "pos_prompt": "The subject starts below and ends at or above the camera’s height, or starts level and ends above.",
+            "neg_prompt": "The subject does not start below and end at or above, and does not start level and end above.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_low_to_high",
                 "type": "pos",
@@ -3439,10 +3439,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_above_subject_to_at_subject",
-            "pos_question": "Does the camera start noticeably higher than the subject and then move down to their height?",
-            "neg_question": "Does the camera not start noticeably above the subject and move down to their height?",
-            "pos_prompt": "The camera starts noticeably higher than the subject and then moves down to their height.",
-            "neg_prompt": "The camera does not start noticeably above the subject and move down to their height.",
+            "pos_question": "Does the camera’s height relative to the subject start above and end at the subject’s height?",
+            "neg_question": "Does the camera’s height relative to the subject not start above and end at the subject’s height?",
+            "pos_prompt": "The camera’s height relative to the subject starts above and ends at the subject’s height.",
+            "neg_prompt": "The camera’s height relative to the subject does not start above and end at the subject’s height.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_at_subject",
                 "type": "pos",
@@ -3455,10 +3455,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_above_subject_to_below_subject",
-            "pos_question": "Does the camera start noticeably higher than the subject and then move to a position below them?",
-            "neg_question": "Does the camera not start noticeably above the subject and move to a position below them?",
-            "pos_prompt": "The camera starts noticeably higher than the subject and then moves to a position below them.",
-            "neg_prompt": "The camera does not start noticeably above the subject and move to a position below them.",
+            "pos_question": "Does the camera’s height relative to the subject start above and end below?",
+            "neg_question": "Does the camera’s height relative to the subject not start above and end below?",
+            "pos_prompt": "The camera’s height relative to the subject starts above and ends below.",
+            "neg_prompt": "The camera’s height relative to the subject does not start above and end below.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject",
                 "type": "pos",
@@ -3471,10 +3471,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_at_subject_to_above_subject",
-            "pos_question": "Does the camera start at the subject's height and then move up to a position above them?",
-            "neg_question": "Does the camera not start at the subject's height and move up to a position above them?",
-            "pos_prompt": "The camera starts at the subject's height and then moves up to a position above them.",
-            "neg_prompt": "The camera does not start at the subject's height and move up to a position above them.",
+            "pos_question": "Does the camera’s height relative to the subject start at the subject’s height and end above?",
+            "neg_question": "Does the camera’s height relative to the subject not start at the subject’s height and end above?",
+            "pos_prompt": "The camera’s height relative to the subject starts at the subject’s height and ends above.",
+            "neg_prompt": "The camera’s height relative to the subject does not start at the subject’s height and end above.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_above_subject",
                 "type": "pos",
@@ -3487,10 +3487,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_at_subject_to_below_subject",
-            "pos_question": "Does the camera start at the subject's height and then move down to a lower position than them?",
-            "neg_question": "Does the camera not start at the subject's height and move down to a lower position than them?",
-            "pos_prompt": "The camera starts at the subject's height and then moves down to a lower position than them.",
-            "neg_prompt": "The camera does not start at the subject's height and move down to a lower position than them.",
+            "pos_question": "Does the camera’s height relative to the subject start at the subject’s height and end below?",
+            "neg_question": "Does the camera’s height relative to the subject not start at the subject’s height and end below?",
+            "pos_prompt": "The camera’s height relative to the subject starts at the subject’s height and ends below.",
+            "neg_prompt": "The camera’s height relative to the subject does not start at the subject’s height and end below.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject",
                 "type": "pos",
@@ -3503,10 +3503,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_below_subject_to_at_subject",
-            "pos_question": "Does the camera start below the subject and then move up to their height?",
-            "neg_question": "Does the camera not start below the subject and move up to their height?",
-            "pos_prompt": "The camera starts below the subject and then moves up to their height.",
-            "neg_prompt": "The camera does not start below the subject and move up to their height.",
+            "pos_question": "Does the camera’s height relative to the subject start below and end at the subject’s height?",
+            "neg_question": "Does the camera’s height relative to the subject not start below and end at the subject’s height?",
+            "pos_prompt": "The camera’s height relative to the subject starts below and ends at the subject’s height.",
+            "neg_prompt": "The camera’s height relative to the subject does not start below and end at the subject’s height.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject",
                 "type": "pos",
@@ -3519,10 +3519,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_below_subject_to_above_subject",
-            "pos_question": "Does the camera start below the subject and then move up to a position above them?",
-            "neg_question": "Does the camera not start below the subject and move up to a position above them?",
-            "pos_prompt": "The camera starts below the subject and then moves up to a position above them.",
-            "neg_prompt": "The camera does not start below the subject and move up to a position above them.",
+            "pos_question": "Does the camera’s height relative to the subject start below and end above?",
+            "neg_question": "Does the camera’s height relative to the subject not start below and end above?",
+            "pos_prompt": "The camera’s height relative to the subject starts below and ends above.",
+            "neg_prompt": "The camera’s height relative to the subject does not start below and end above.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject",
                 "type": "pos",
