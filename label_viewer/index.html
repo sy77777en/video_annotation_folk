@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Video Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-hover: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --positive: #10b981;
+            --negative: #ef4444;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            cursor: pointer;
+            min-width: 250px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .label-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .label-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .label-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s;
+        }
+
+        .label-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .label-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: 200px 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .label-header:hover {
+            background: var(--bg-hover);
+        }
+
+        .label-preview {
+            width: 200px;
+            height: 112px;
+            background: #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .label-preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .label-preview-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .label-info {
+            flex: 1;
+        }
+
+        .label-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .label-definition {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .label-stats {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .stat-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .stat-badge.positive {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--positive);
+        }
+
+        .stat-badge.negative {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--negative);
+        }
+
+        .toggle-icon {
+            color: var(--text-secondary);
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .label-content {
+            display: none;
+            padding: 1.5rem;
+        }
+
+        .label-content.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }
+
+        .section-title.positive {
+            color: var(--positive);
+        }
+
+        .section-title.negative {
+            color: var(--negative);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .video-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .video-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            background: #000;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .video-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        .video-progress:hover {
+            height: 10px;
+        }
+
+        .video-progress-bar {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.1s linear;
+            pointer-events: none;
+        }
+
+        .video-name {
+            padding: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-family: 'Courier New', monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state svg {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .label-header {
+                grid-template-columns: 150px 1fr auto;
+            }
+
+            .label-preview {
+                width: 150px;
+                height: 84px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            select {
+                min-width: 100%;
+            }
+
+            .label-header {
+                grid-template-columns: 1fr;
+            }
+
+            .label-preview {
+                width: 100%;
+                height: auto;
+                padding-bottom: 56.25%;
+            }
+
+            .label-preview video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .sort-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .sort-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>📹 Label Video Viewer</h1>
+            <div class="controls">
+                <div class="sort-controls">
+                    <span class="sort-label">Sort by:</span>
+                    <select id="sortOrder">
+                        <option value="asc">Least Positives First</option>
+                        <option value="desc">Most Positives First</option>
+                    </select>
+                </div>
+                <select id="folderSelect" disabled>
+                    <option>Loading folders...</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="content">
+            <div class="loading">Loading video labels folders...</div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/api';
+        let currentData = null;
+        let currentSort = 'asc'; // Default to least positives first
+        const VIDEOS_PER_SECTION = 6; // Reduced to 6
+        const activeShuffles = new Map(); // Track shuffled indices per label section
+
+        // Load available folders on page load
+        async function loadFolders() {
+            try {
+                const response = await fetch(`${API_BASE}/folders`);
+                const folders = await response.json();
+
+                const select = document.getElementById('folderSelect');
+                select.innerHTML = '<option value="">Select a folder...</option>';
+
+                let defaultFound = false;
+                const defaultFolder = 'cam_setup-20250930_setup_folder';
+
+                folders.forEach(folder => {
+                    const option = document.createElement('option');
+                    option.value = folder;
+                    option.textContent = folder;
+                    if (folder === defaultFolder) {
+                        option.selected = true;
+                        defaultFound = true;
+                    }
+                    select.appendChild(option);
+                });
+
+                select.disabled = false;
+
+                // Auto-load default folder if found
+                if (defaultFound) {
+                    loadLabelData(defaultFolder);
+                } else {
+                    document.getElementById('content').innerHTML = `
+                        <div class="empty-state">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <h3>Select a folder to view labels</h3>
+                            <p>Choose from ${folders.length} available folders</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading folders:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error loading folders</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load label data for selected folder
+        async function loadLabelData(folder) {
+            try {
+                document.getElementById('content').innerHTML = '<div class="loading">Loading label data...</div>';
+
+                const response = await fetch(`${API_BASE}/labels/${encodeURIComponent(folder)}`);
+                currentData = await response.json();
+
+                renderLabels();
+            } catch (error) {
+                console.error('Error loading label data:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error loading label data</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Render labels without pagination
+        function renderLabels() {
+            if (!currentData) return;
+
+            // Sort labels
+            const sortedLabels = Object.entries(currentData).sort((a, b) => {
+                const countA = a[1].pos.length;
+                const countB = b[1].pos.length;
+                return currentSort === 'desc' ? countB - countA : countA - countB;
+            });
+
+            const content = document.getElementById('content');
+            content.innerHTML = '<div class="label-list"></div>';
+            const labelList = content.querySelector('.label-list');
+
+            sortedLabels.forEach(([labelName, labelData]) => {
+                const card = createLabelCard(labelName, labelData);
+                labelList.appendChild(card);
+            });
+        }
+
+        // Create label card with preview video
+        function createLabelCard(labelName, labelData) {
+            const card = document.createElement('div');
+            card.className = 'label-card';
+
+            const definition = labelData.definition || '';
+            const posCount = labelData.pos.length;
+            const negCount = labelData.neg.length;
+
+            // Get first positive video for preview
+            const previewVideo = labelData.pos.length > 0 ? labelData.pos[0] : null;
+
+            card.innerHTML = `
+                <div class="label-header">
+                    <div class="label-preview">
+                        ${previewVideo ? `
+                            <video muted loop playsinline></video>
+                        ` : `
+                            <div class="label-preview-loading">No preview</div>
+                        `}
+                    </div>
+                    <div class="label-info">
+                        <div class="label-name">${labelName}</div>
+                        <div class="label-definition">${definition}</div>
+                    </div>
+                    <div class="label-stats">
+                        <div class="stat-badge positive">✓ ${posCount}</div>
+                        <div class="stat-badge negative">✗ ${negCount}</div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                </div>
+                <div class="label-content">
+                    <div class="positive-section">
+                        <div class="section-header">
+                            <h3 class="section-title positive">Positive Examples</h3>
+                            <button class="btn" data-section="positive">🔀 Shuffle</button>
+                        </div>
+                        <div class="video-grid positive-grid"></div>
+                    </div>
+                    <div class="negative-section">
+                        <div class="section-header">
+                            <h3 class="section-title negative">Negative Examples</h3>
+                            <button class="btn" data-section="negative">🔀 Shuffle</button>
+                        </div>
+                        <div class="video-grid negative-grid"></div>
+                    </div>
+                </div>
+            `;
+
+            // Hover to play preview
+            if (previewVideo) {
+                const header = card.querySelector('.label-header');
+                const previewVid = card.querySelector('.label-preview video');
+                let loaded = false;
+
+                header.addEventListener('mouseenter', () => {
+                    if (!loaded) {
+                        previewVid.src = `/videos/${previewVideo}`;
+                        loaded = true;
+                    }
+                    previewVid.play().catch(() => { });
+                });
+
+                header.addEventListener('mouseleave', () => {
+                    previewVid.pause();
+                    previewVid.currentTime = 0;
+                });
+            }
+
+            // Toggle card content
+            const header = card.querySelector('.label-header');
+            const content = card.querySelector('.label-content');
+            const toggleIcon = card.querySelector('.toggle-icon');
+
+            header.addEventListener('click', () => {
+                const wasActive = content.classList.contains('active');
+
+                // Close all other open labels first
+                document.querySelectorAll('.label-content.active').forEach(c => {
+                    if (c !== content) {
+                        c.classList.remove('active');
+                        c.parentElement.querySelector('.toggle-icon').classList.remove('open');
+                        // Pause all videos in closed labels
+                        c.querySelectorAll('video').forEach(v => v.pause());
+                    }
+                });
+
+                content.classList.toggle('active');
+                toggleIcon.classList.toggle('open');
+
+                // Load videos only when first opened
+                if (!wasActive && content.classList.contains('active')) {
+                    loadVideos(card, labelName, labelData);
+                }
+            });
+
+            // Shuffle buttons
+            const shuffleButtons = card.querySelectorAll('[data-section]');
+            shuffleButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const section = btn.dataset.section;
+                    shuffleSection(card, labelName, labelData, section);
+                });
+            });
+
+            return card;
+        }
+
+        // Load videos into grids - 6 videos per section
+        function loadVideos(card, labelName, labelData) {
+            const posGrid = card.querySelector('.positive-grid');
+            const negGrid = card.querySelector('.negative-grid');
+
+            // Initialize with first 6 videos
+            const posVideos = labelData.pos.slice(0, VIDEOS_PER_SECTION);
+            const negVideos = labelData.neg.slice(0, VIDEOS_PER_SECTION);
+
+            renderVideoGrid(posGrid, posVideos);
+            renderVideoGrid(negGrid, negVideos);
+
+            // Store current indices
+            activeShuffles.set(`${labelName}-positive`, 0);
+            activeShuffles.set(`${labelName}-negative`, 0);
+        }
+
+        // Shuffle and reload a section
+        function shuffleSection(card, labelName, labelData, section) {
+            const grid = card.querySelector(`.${section}-grid`);
+            const videos = labelData[section === 'positive' ? 'pos' : 'neg'];
+
+            // Get random 30 videos
+            const shuffled = [...videos].sort(() => Math.random() - 0.5);
+            const selected = shuffled.slice(0, VIDEOS_PER_SECTION);
+
+            renderVideoGrid(grid, selected);
+        }
+
+        // Render video grid - SIMPLE VERSION, just set src directly
+        function renderVideoGrid(grid, videos) {
+            grid.innerHTML = '';
+
+            videos.forEach((videoName) => {
+                const item = document.createElement('div');
+                item.className = 'video-item';
+
+                const videoPath = `/videos/${videoName}`;
+
+                item.innerHTML = `
+                    <div class="video-wrapper">
+                        <video src="${videoPath}" muted loop playsinline></video>
+                        <div class="video-progress">
+                            <div class="video-progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="video-name" title="${videoName}">${videoName}</div>
+                `;
+
+                const video = item.querySelector('video');
+                const progressBar = item.querySelector('.video-progress-bar');
+                const progressContainer = item.querySelector('.video-progress');
+
+                // Update progress bar
+                video.addEventListener('timeupdate', () => {
+                    if (video.duration > 0) {
+                        const progress = (video.currentTime / video.duration) * 100;
+                        progressBar.style.width = `${progress}%`;
+                    }
+                });
+
+                // Make progress bar draggable/clickable
+                let isDragging = false;
+
+                const seek = (e) => {
+                    const rect = progressContainer.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    const seekTime = pos * video.duration;
+                    if (!isNaN(seekTime)) {
+                        video.currentTime = seekTime;
+                    }
+                };
+
+                progressContainer.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    seek(e);
+                });
+
+                progressContainer.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        seek(e);
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                progressContainer.addEventListener('click', seek);
+
+                // Auto-play when loaded
+                video.addEventListener('loadeddata', () => {
+                    video.play().catch(() => { });
+                });
+
+                grid.appendChild(item);
+            });
+        }
+
+        // Event listeners
+        document.getElementById('folderSelect').addEventListener('change', (e) => {
+            const folder = e.target.value;
+            if (folder) {
+                loadLabelData(folder);
+            }
+        });
+
+        document.getElementById('sortOrder').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderLabels();
+        });
+
+        // Initialize
+        loadFolders();
+    </script>
+</body>
+
+</html>

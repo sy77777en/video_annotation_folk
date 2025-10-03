@@ -1,5 +1,7 @@
 # python download.py --json_path video_data/20250218_1042/videos.json --label_collections cam_motion cam_setup
 # python download.py --json_path video_data/20250219_0338/videos.json --label_collections cam_motion
+# python download.py --json_path video_data/20250930_setup_folder/videos.json --label_collections cam_setup
+# python download.py --json_path video_data/20250930_setup_folder/videos.json --label_collections cam_setup --skip_download
 # from download import get_labels
 # motion_labels = get_labels("video_labels/cam_motion-20250219_0338/label_names_subset.json")
 # shotcomp_labels = get_labels("video_labels/cam_motion-cam_setup-20250218_1042/label_names_subset.json")
@@ -23,16 +25,54 @@ def load_from_json(path):
     with open(path, "r") as f:
         return json.load(f)
 
-def download_videos(video_data_dict, video_dir="videos"):
+def download_videos(video_data_dict, video_dir="videos", skip_existing=True, skip_download=False):
+    """
+    Download videos from URLs.
+    
+    Args:
+        video_data_dict: Dictionary of video data
+        video_dir: Directory to save videos
+        skip_existing: If True (default), skip videos that already exist and have size > 0
+        skip_download: If True, don't download any videos, only filter existing ones
+    
+    Returns:
+        video_data_dict with only successfully downloaded/existing videos
+    """
     if not os.path.exists(video_dir):
         os.makedirs(video_dir)
 
+    if skip_download:
+        print(f"Skip download mode: Only checking for existing videos in {video_dir}")
+        existing_videos = {}
+        missing_videos = []
+        
+        for video_name, video_data in video_data_dict.items():
+            path = os.path.join(video_dir, video_name)
+            if os.path.exists(path) and os.path.getsize(path) > 0:
+                existing_videos[video_name] = video_data
+            else:
+                missing_videos.append(video_name)
+        
+        print(f"Found {len(existing_videos)} existing videos")
+        print(f"Missing {len(missing_videos)} videos")
+        if len(missing_videos) > 0 and len(missing_videos) <= 10:
+            print(f"Missing videos: {missing_videos}")
+        
+        return existing_videos
+    
+    # Normal download mode
     print(f"Downloading {len(video_data_dict)} videos to {video_dir}")
+    if skip_existing:
+        print("Skipping already downloaded videos")
+    
     failed_videos = []
+    skipped_count = 0
 
     for video_name, video_data in tqdm(video_data_dict.items()):
         path = os.path.join(video_dir, video_name)
-        if os.path.exists(path) and os.path.getsize(path) > 0:
+        
+        if skip_existing and os.path.exists(path) and os.path.getsize(path) > 0:
+            skipped_count += 1
             continue
 
         url = video_data.get_video_url()
@@ -51,9 +91,16 @@ def download_videos(video_data_dict, video_dir="videos"):
     # Remove failed videos from the dictionary
     for video in failed_videos:
         del video_data_dict[video]
-    print(f"Successfully downloaded {len(video_data_dict)} videos")
-    print(f"Failed to download {len(failed_videos)} videos, saving them to {os.path.join(video_dir, 'failed_videos.json')}")
-    save_to_json(failed_videos, os.path.join(video_dir, "failed_videos.json"))
+    
+    downloaded_count = len(video_data_dict) - skipped_count
+    print(f"Successfully downloaded {downloaded_count} new videos")
+    print(f"Skipped {skipped_count} existing videos")
+    print(f"Total available: {len(video_data_dict)} videos")
+    
+    if len(failed_videos) > 0:
+        print(f"Failed to download {len(failed_videos)} videos, saving them to {os.path.join(video_dir, 'failed_videos.json')}")
+        save_to_json(failed_videos, os.path.join(video_dir, "failed_videos.json"))
+    
     return video_data_dict
 
 def get_valid_labels_dict(video_data_dict, label_collections=["cam_motion", "cam_setup"]):
@@ -132,10 +179,10 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
     save_to_json(sorted_labels_list, label_name_path)
     return sorted_labels
 
-def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", video_dir="videos"):
+def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", video_dir="videos", skip_existing=True, skip_download=False):
     video_data_dict = json_to_video_data(json_path, label_collections=label_collections)
     valid_labels_dict = get_valid_labels_dict(video_data_dict, label_collections=label_collections)
-    video_data_dict = download_videos(video_data_dict, video_dir=video_dir)
+    video_data_dict = download_videos(video_data_dict, video_dir=video_dir, skip_existing=skip_existing, skip_download=skip_download)
     label_to_videos = label_video_mapping(
         video_data_dict,
         valid_labels_dict,
@@ -201,13 +248,24 @@ def main():
     parser.add_argument("--rare_threshold", type=int,
                         default=30,
                         help="Threshold for rare labels.")
+    parser.add_argument("--skip_existing", action="store_true", default=True,
+                        help="Skip downloading videos that already exist (default: True)")
+    parser.add_argument("--force_redownload", action="store_true", default=False,
+                        help="Force re-download all videos, even if they exist")
+    parser.add_argument("--skip_download", action="store_true", default=False,
+                        help="Don't download any videos, only process existing ones")
     args = parser.parse_args()
+    
+    # Handle the force_redownload flag
+    skip_existing = not args.force_redownload if args.force_redownload else args.skip_existing
     
     label_to_videos = get_label_video_mapping(
         args.json_path,
         label_collections=args.label_collections,
         video_labels_dir=args.video_labels_dir,
-        video_dir=args.video_dir
+        video_dir=args.video_dir,
+        skip_existing=skip_existing,
+        skip_download=args.skip_download
     )
 
 

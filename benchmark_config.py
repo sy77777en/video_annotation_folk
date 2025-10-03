@@ -3231,10 +3231,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change",
-            "pos_question": "Does the camera's height relative to the subject change significantly, moving between positions above, at level with, or below the subject?",
-            "neg_question": "Does the camera's height relative to the subject not change significantly (i.e., it does not move between positions above, at level with, or below the subject)?",
-            "pos_prompt": "The camera's height relative to the subject changes significantly, moving between positions above, at level with, or below the subject.",
-            "neg_prompt": "The camera's height relative to the subject does not change significantly (i.e., it does not move between positions above, at level with, or below the subject).",
+            "pos_question": "Is the camera’s height relative to the subject different at the end compared to the beginning (above, at level, or below)?",
+            "neg_question": "Is the camera’s height relative to the subject the same at the end as it was at the beginning (above, at level, or below)?",
+            "pos_prompt": "The camera’s height relative to the subject (above, at level, or below) is different at the end compared to the beginning.",
+            "neg_prompt": "The camera’s height relative to the subject (above, at level, or below) is the same at the end as at the beginning.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change",
                 "type": "pos",
@@ -3247,10 +3247,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change_from_high_to_low",
-            "pos_question": "Does the camera's height decrease noticeably, transitioning from above to level with the subject, or from level to below?",
-            "neg_question": "Does the camera's height not decrease noticeably (i.e., it does not transition from above to level with the subject, or from level to below)?",
-            "pos_prompt": "The camera's height decreases noticeably, transitioning from above to level with the subject, or from level to below.",
-            "neg_prompt": "The camera's height does not decrease noticeably (i.e., it does not transition from above to level with the subject, or from level to below).",
+            "pos_question": "Does the subject start above and end at or below the camera’s height, or start level and end below?",
+            "neg_question": "Does the subject not start above and end at or below, and not start level and end below?",
+            "pos_prompt": "The subject starts above and ends at or below the camera’s height, or starts level and ends below.",
+            "neg_prompt": "The subject does not start above and end at or below, and does not start level and end below.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_high_to_low",
                 "type": "pos",
@@ -3263,10 +3263,10 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change_from_low_to_high",
-            "pos_question": "Does the camera's height increase noticeably, transitioning from below to level with the subject, or from level to above?",
-            "neg_question": "Does the camera's height not increase noticeably (i.e., it does not transition from below to level with the subject, or from level to above)?",
-            "pos_prompt": "The camera's height increases noticeably, transitioning from below to level with the subject, or from level to above.",
-            "neg_prompt": "The camera's height does not increase noticeably (i.e., it does not transition from below to level with the subject, or from level to above).",
+            "pos_question": "Does the subject start below and end at or above the camera’s height, or start level and end above?",
+            "neg_question": "Does the subject not start below and end at or above, and not start level and end above?",
+            "pos_prompt": "The subject starts below and ends at or above the camera’s height, or starts level and ends above.",
+            "neg_prompt": "The subject does not start below and end at or above, and does not start level and end above.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.height_wrt_subject_change_from_low_to_high",
                 "type": "pos",
@@ -3439,10 +3439,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_above_subject_to_at_subject",
-            "pos_question": "Does the camera start noticeably higher than the subject and then move down to their height?",
-            "neg_question": "Does the camera not start noticeably above the subject and move down to their height?",
-            "pos_prompt": "The camera starts noticeably higher than the subject and then moves down to their height.",
-            "neg_prompt": "The camera does not start noticeably above the subject and move down to their height.",
+            "pos_question": "Does the camera’s height relative to the subject start above and end at the subject’s height?",
+            "neg_question": "Does the camera’s height relative to the subject not start above and end at the subject’s height?",
+            "pos_prompt": "The camera’s height relative to the subject starts above and ends at the subject’s height.",
+            "neg_prompt": "The camera’s height relative to the subject does not start above and end at the subject’s height.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_at_subject",
                 "type": "pos",
@@ -3455,10 +3455,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_above_subject_to_below_subject",
-            "pos_question": "Does the camera start noticeably higher than the subject and then move to a position below them?",
-            "neg_question": "Does the camera not start noticeably above the subject and move to a position below them?",
-            "pos_prompt": "The camera starts noticeably higher than the subject and then moves to a position below them.",
-            "neg_prompt": "The camera does not start noticeably above the subject and move to a position below them.",
+            "pos_question": "Does the camera’s height relative to the subject start above and end below?",
+            "neg_question": "Does the camera’s height relative to the subject not start above and end below?",
+            "pos_prompt": "The camera’s height relative to the subject starts above and ends below.",
+            "neg_prompt": "The camera’s height relative to the subject does not start above and end below.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject",
                 "type": "pos",
@@ -3471,10 +3471,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_at_subject_to_above_subject",
-            "pos_question": "Does the camera start at the subject's height and then move up to a position above them?",
-            "neg_question": "Does the camera not start at the subject's height and move up to a position above them?",
-            "pos_prompt": "The camera starts at the subject's height and then moves up to a position above them.",
-            "neg_prompt": "The camera does not start at the subject's height and move up to a position above them.",
+            "pos_question": "Does the camera’s height relative to the subject start at the subject’s height and end above?",
+            "neg_question": "Does the camera’s height relative to the subject not start at the subject’s height and end above?",
+            "pos_prompt": "The camera’s height relative to the subject starts at the subject’s height and ends above.",
+            "neg_prompt": "The camera’s height relative to the subject does not start at the subject’s height and end above.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_above_subject",
                 "type": "pos",
@@ -3487,10 +3487,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_at_subject_to_below_subject",
-            "pos_question": "Does the camera start at the subject's height and then move down to a lower position than them?",
-            "neg_question": "Does the camera not start at the subject's height and move down to a lower position than them?",
-            "pos_prompt": "The camera starts at the subject's height and then moves down to a lower position than them.",
-            "neg_prompt": "The camera does not start at the subject's height and move down to a lower position than them.",
+            "pos_question": "Does the camera’s height relative to the subject start at the subject’s height and end below?",
+            "neg_question": "Does the camera’s height relative to the subject not start at the subject’s height and end below?",
+            "pos_prompt": "The camera’s height relative to the subject starts at the subject’s height and ends below.",
+            "neg_prompt": "The camera’s height relative to the subject does not start at the subject’s height and end below.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject",
                 "type": "pos",
@@ -3503,10 +3503,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_below_subject_to_at_subject",
-            "pos_question": "Does the camera start below the subject and then move up to their height?",
-            "neg_question": "Does the camera not start below the subject and move up to their height?",
-            "pos_prompt": "The camera starts below the subject and then moves up to their height.",
-            "neg_prompt": "The camera does not start below the subject and move up to their height.",
+            "pos_question": "Does the camera’s height relative to the subject start below and end at the subject’s height?",
+            "neg_question": "Does the camera’s height relative to the subject not start below and end at the subject’s height?",
+            "pos_prompt": "The camera’s height relative to the subject starts below and ends at the subject’s height.",
+            "neg_prompt": "The camera’s height relative to the subject does not start below and end at the subject’s height.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject",
                 "type": "pos",
@@ -3519,10 +3519,10 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_from_below_subject_to_above_subject",
-            "pos_question": "Does the camera start below the subject and then move up to a position above them?",
-            "neg_question": "Does the camera not start below the subject and move up to a position above them?",
-            "pos_prompt": "The camera starts below the subject and then moves up to a position above them.",
-            "neg_prompt": "The camera does not start below the subject and move up to a position above them.",
+            "pos_question": "Does the camera’s height relative to the subject start below and end above?",
+            "neg_question": "Does the camera’s height relative to the subject not start below and end above?",
+            "pos_prompt": "The camera’s height relative to the subject starts below and ends above.",
+            "neg_prompt": "The camera’s height relative to the subject does not start below and end above.",
             "pos": {
                 "label": "cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject",
                 "type": "pos",
@@ -4508,10 +4508,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_rack_pull_focus",
-            "pos_question": "Does the camera use rack focus or pull focus to shift the focus plane?",
-            "neg_question": "Does the camera not use rack focus or pull focus to shift the focus plane?",
-            "pos_prompt": "The camera uses rack focus or pull focus to shift the focus plane.",
-            "neg_prompt": "The camera does not use rack focus or pull focus to shift the focus plane.",
+            "pos_question": "Does the camera use rack focus or pull focus to shift the focal plane?",
+            "neg_question": "Does the camera not use rack focus or pull focus to shift the focal plane?",
+            "pos_prompt": "The camera uses rack focus or pull focus to shift the focal plane.",
+            "neg_prompt": "The camera does not use rack focus or pull focus to shift the focal plane.",
             "pos": {
                 "label": "cam_setup.depth_of_field.is_rack_pull_focus",
                 "type": "pos",
@@ -4540,10 +4540,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_change",
-            "pos_question": "Does the focal plane shift noticeably between foreground, middleground, or background regions?",
-            "neg_question": "Does the focal plane not shift noticeably between foreground, middleground, or background regions?",
-            "pos_prompt": "The focal plane shifts noticeably between foreground, middleground, or background regions.",
-            "neg_prompt": "The focal plane does not shift noticeably between foreground, middleground, or background regions.",
+            "pos_question": "Does the focal plane shift noticeably between foreground, middle ground, or background regions?",
+            "neg_question": "Does the focal plane not shift noticeably between foreground, middle ground, or background regions?",
+            "pos_prompt": "The focal plane shifts noticeably between foreground, middle ground, or background regions.",
+            "neg_prompt": "The focal plane does not shift noticeably between foreground, middle ground, or background regions.",
             "pos": {
                 "label": "cam_setup.depth_of_field.focus_change",
                 "type": "pos",
@@ -4556,10 +4556,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_change_from_far_to_near",
-            "pos_question": "Does the focal plane shift from distant to close, moving between foreground, middleground, or background?",
-            "neg_question": "Does the focal plane not shift from distant to close, moving between foreground, middleground, or background?",
-            "pos_prompt": "The focal plane shifts from distant to close, moving between foreground, middleground, or background.",
-            "neg_prompt": "The focal plane does not shift from distant to close, moving between foreground, middleground, or background.",
+            "pos_question": "Does the focal plane shift from distant to close, moving between foreground, middle ground, or background?",
+            "neg_question": "Does the focal plane not shift from distant to close, moving between foreground, middle ground, or background?",
+            "pos_prompt": "The focal plane shifts from distant to close, moving between foreground, middle ground, or background.",
+            "neg_prompt": "The focal plane does not shift from distant to close, moving between foreground, middle ground, or background.",
             "pos": {
                 "label": "cam_setup.depth_of_field.focus_change_from_far_to_near",
                 "type": "pos",
@@ -4572,10 +4572,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_change_from_near_to_far",
-            "pos_question": "Does the focal plane shift from close to distant, moving between foreground, middleground, or background?",
-            "neg_question": "Does the focal plane not shift from close to distant, moving between foreground, middleground, or background?",
-            "pos_prompt": "The focal plane shifts from close to distant, moving between foreground, middleground, or background.",
-            "neg_prompt": "The focal plane does not shift from close to distant, moving between foreground, middleground, or background.",
+            "pos_question": "Does the focal plane shift from close to distant, moving between foreground, middle ground, or background?",
+            "neg_question": "Does the focal plane not shift from close to distant, moving between foreground, middle ground, or background?",
+            "pos_prompt": "The focal plane shifts from close to distant, moving between foreground, middle ground, or background.",
+            "neg_prompt": "The focal plane does not shift from close to distant, moving between foreground, middle ground, or background.",
             "pos": {
                 "label": "cam_setup.depth_of_field.focus_change_from_near_to_far",
                 "type": "pos",
@@ -4656,10 +4656,10 @@ def get_focus_is_always_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_is_always_middle_ground",
-            "pos_question": "Is the camera consistently focused on the middleground, keeping the foreground and background blurred?",
-            "neg_question": "Is the camera not consistently focused on the middleground, keeping the foreground and background blurred?",
-            "pos_prompt": "The camera remains focused on the middleground, keeping the foreground and background blurred.",
-            "neg_prompt": "The camera does not remain focused on the middleground, keeping the foreground and background blurred.",
+            "pos_question": "Is the camera consistently focused on the middle ground, keeping the foreground and background blurred?",
+            "neg_question": "Is the camera not consistently focused on the middle ground, keeping the foreground and background blurred?",
+            "pos_prompt": "The camera remains focused on the middle ground, keeping the foreground and background blurred.",
+            "neg_prompt": "The camera does not remain focused on the middle ground, keeping the foreground and background blurred.",
             "pos": {
                 "label": "cam_setup.focus.is_always.focus_is_middle_ground",
                 "type": "pos"
@@ -4725,10 +4725,10 @@ def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         {
             "folder": setup_folder,
             "name": "focus_start_with_middle_ground",
-            "pos_question": "Does the video start with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
-            "neg_question": "Does the video not start with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background?",
-            "pos_prompt": "The video starts with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
-            "neg_prompt": "The video does not start with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background.",
+            "pos_question": "Does the video start with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background?",
+            "neg_question": "Does the video not start with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background?",
+            "pos_prompt": "The video starts with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background.",
+            "neg_prompt": "The video does not start with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background.",
             "pos": {
                 "label": "cam_setup.focus.start_with.focus_start_with_middle_ground",
                 "type": "pos"
@@ -4793,10 +4793,10 @@ def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_end_with_middle_ground",
-            "pos_question": "Does the video end with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background?",
-            "neg_question": "Does the video not end with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background?",
-            "pos_prompt": "The video ends with the camera focusing on the middleground, using a shallow depth of field to blur both the foreground and background.",
-            "neg_prompt": "The video does not end with the camera focusing on the middleground using a shallow depth of field to blur both the foreground and background.",
+            "pos_question": "Does the video end with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background?",
+            "neg_question": "Does the video not end with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background?",
+            "pos_prompt": "The video ends with the camera focusing on the middle ground, using a shallow depth of field to blur both the foreground and background.",
+            "neg_prompt": "The video does not end with the camera focusing on the middle ground using a shallow depth of field to blur both the foreground and background.",
             "pos": {
                 "label": "cam_setup.focus.end_with.focus_end_with_middle_ground",
                 "type": "pos"
@@ -4845,10 +4845,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_background_to_middle_ground",
-            "pos_question": "Does the video start with the camera focused on the background and then shift the focus to the middleground?",
-            "neg_question": "Does the video not start with the focus on the background, or it does not shift the focus to the middleground?",
-            "pos_prompt": "The video starts with the camera focused on the background and then shifts the focus to the middleground.",
-            "neg_prompt": "The video does not start with the focus on the background, or it does not shift the focus to the middleground.",
+            "pos_question": "Does the video start with the camera focused on the background and then shift the focus to the middle ground?",
+            "neg_question": "Does the video not start with the focus on the background, or it does not shift the focus to the middle ground?",
+            "pos_prompt": "The video starts with the camera focused on the background and then shifts the focus to the middle ground.",
+            "neg_prompt": "The video does not start with the focus on the background, or it does not shift the focus to the middle ground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_background_to_middle_ground",
                 "type": "pos"
@@ -4877,10 +4877,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_foreground_to_middle_ground",
-            "pos_question": "Does the video start with the camera focused on the foreground and then shift the focus to the middleground?",
-            "neg_question": "Does the video not start with the focus on the foreground, or it does not shift the focus to the middleground?",
-            "pos_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the middleground.",
-            "neg_prompt": "The video does not start with the focus on the foreground, or it does not shift the focus to the middleground.",
+            "pos_question": "Does the video start with the camera focused on the foreground and then shift the focus to the middle ground?",
+            "neg_question": "Does the video not start with the focus on the foreground, or it does not shift the focus to the middle ground?",
+            "pos_prompt": "The video starts with the camera focused on the foreground and then shifts the focus to the middle ground.",
+            "neg_prompt": "The video does not start with the focus on the foreground, or it does not shift the focus to the middle ground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_foreground_to_middle_ground",
                 "type": "pos"
@@ -4893,10 +4893,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_middle_ground_to_background",
-            "pos_question": "Does the video start with the camera focused on the middleground and then shift the focus to the background?",
-            "neg_question": "Does the video not start with the focus on the middleground, or it does not shift the focus to the background?",
-            "pos_prompt": "The video starts with the camera focused on the middleground and then shifts the focus to the background.",
-            "neg_prompt": "The video does not start with the focus on the middleground, or it does not shift the focus to the background.",
+            "pos_question": "Does the video start with the camera focused on the middle ground and then shift the focus to the background?",
+            "neg_question": "Does the video not start with the focus on the middle ground, or it does not shift the focus to the background?",
+            "pos_prompt": "The video starts with the camera focused on the middle ground and then shifts the focus to the background.",
+            "neg_prompt": "The video does not start with the focus on the middle ground, or it does not shift the focus to the background.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_middle_ground_to_background",
                 "type": "pos"
@@ -4909,10 +4909,10 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "focus_from_middle_ground_to_foreground",
-            "pos_question": "Does the video start with the camera focused on the middleground and then shift the focus to the foreground?",
-            "neg_question": "Does the video not start with the focus on the middleground, or it does not shift the focus to the foreground?",
-            "pos_prompt": "The video starts with the camera focused on the middleground and then shifts the focus to the foreground.",
-            "neg_prompt": "The video does not start with the focus on the middleground, or it does not shift the focus to the foreground.",
+            "pos_question": "Does the video start with the camera focused on the middle ground and then shift the focus to the foreground?",
+            "neg_question": "Does the video not start with the focus on the middle ground, or it does not shift the focus to the foreground?",
+            "pos_prompt": "The video starts with the camera focused on the middle ground and then shifts the focus to the foreground.",
+            "neg_prompt": "The video does not start with the focus on the middle ground, or it does not shift the focus to the foreground.",
             "pos": {
                 "label": "cam_setup.focus.from_to.focus_from_middle_ground_to_foreground",
                 "type": "pos"
