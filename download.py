@@ -1,7 +1,9 @@
+# download.py
 # python download.py --json_path video_data/20250218_1042/videos.json --label_collections cam_motion cam_setup
 # python download.py --json_path video_data/20250219_0338/videos.json --label_collections cam_motion
 # python download.py --json_path video_data/20250930_setup_folder/videos.json --label_collections cam_setup
 # python download.py --json_path video_data/20250930_setup_folder/videos.json --label_collections cam_setup --skip_download
+# python download.py --json_path video_data/20250930_setup_folder/videos.json --label_collections cam_setup --force_regenerate_labels
 # from download import get_labels
 # motion_labels = get_labels("video_labels/cam_motion-20250219_0338/label_names_subset.json")
 # shotcomp_labels = get_labels("video_labels/cam_motion-cam_setup-20250218_1042/label_names_subset.json")
@@ -131,7 +133,7 @@ def get_video_labels_dir(json_path, label_collections=["cam_motion", "cam_setup"
     collection_name = "-".join(label_collections)
     return os.path.join(video_labels_dir, f"{collection_name}-{timestamp}")
 
-def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels"):
+def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", force_regenerate=False):
     video_labels_dir = get_video_labels_dir(json_path, label_collections, video_labels_dir)
     labels_dir = os.path.join(video_labels_dir, "labels")
 
@@ -140,14 +142,21 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
 
     all_label_path = os.path.join(video_labels_dir, "all_labels.json")
     label_name_path = os.path.join(video_labels_dir, "label_names.json")
-    # Only load label JSON files if they already exist
-    if os.path.exists(all_label_path):
+    
+    # Only load label JSON files if they already exist AND not forcing regeneration
+    if os.path.exists(all_label_path) and not force_regenerate:
+        print(f"Loading existing labels from {video_labels_dir}")
         sorted_labels = load_from_json(all_label_path)
         sorted_labels_list = load_from_json(label_name_path)
         # Only return labels in label_names.json
         return {name: sorted_labels[name] for name in sorted_labels_list}
 
-    # Otherwise, create label JSON files
+    # Otherwise, create label JSON files (either they don't exist or force_regenerate=True)
+    if force_regenerate:
+        print(f"Force regenerating labels in {video_labels_dir}")
+    else:
+        print(f"Generating new labels in {video_labels_dir}")
+    
     video_data_list = list(video_data_dict.values())
     label_to_videos_dict = {}
     for label_name, label in valid_labels_dict.items():
@@ -179,7 +188,7 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
     save_to_json(sorted_labels_list, label_name_path)
     return sorted_labels
 
-def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", video_dir="videos", skip_existing=True, skip_download=False):
+def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", video_dir="videos", skip_existing=True, skip_download=False, force_regenerate_labels=False):
     video_data_dict = json_to_video_data(json_path, label_collections=label_collections)
     valid_labels_dict = get_valid_labels_dict(video_data_dict, label_collections=label_collections)
     video_data_dict = download_videos(video_data_dict, video_dir=video_dir, skip_existing=skip_existing, skip_download=skip_download)
@@ -188,7 +197,8 @@ def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_set
         valid_labels_dict,
         json_path=json_path,
         label_collections=label_collections,
-        video_labels_dir=video_labels_dir
+        video_labels_dir=video_labels_dir,
+        force_regenerate=force_regenerate_labels
     )
     print_rare_labels(video_data_dict, valid_labels_dict, save_dir=get_video_labels_dir(json_path, label_collections, video_labels_dir))
     return label_to_videos
@@ -254,6 +264,8 @@ def main():
                         help="Force re-download all videos, even if they exist")
     parser.add_argument("--skip_download", action="store_true", default=False,
                         help="Don't download any videos, only process existing ones")
+    parser.add_argument("--force_regenerate_labels", action="store_true", default=False,
+                        help="Force regeneration of label files even if they already exist")
     args = parser.parse_args()
     
     # Handle the force_redownload flag
@@ -265,7 +277,8 @@ def main():
         video_labels_dir=args.video_labels_dir,
         video_dir=args.video_dir,
         skip_existing=skip_existing,
-        skip_download=args.skip_download
+        skip_download=args.skip_download,
+        force_regenerate_labels=args.force_regenerate_labels
     )
 
 

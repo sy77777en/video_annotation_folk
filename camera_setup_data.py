@@ -353,9 +353,9 @@ class CameraSetupData:
                     else:
                         self.shot_size_change = True
                         if SHOT_SIZES.index(self.shot_size_info['end']) < SHOT_SIZES.index(self.shot_size_info['start']):
-                            self.shot_size_change_from_large_to_small = True
-                        else:
                             self.shot_size_change_from_small_to_large = True
+                        else:
+                            self.shot_size_change_from_large_to_small = True
         else:
             self.subject_revealing = self.subject_disappearing = self.subject_switching = None
             self.shot_size_change = self.shot_size_change_from_large_to_small = self.shot_size_change_from_small_to_large = None
@@ -387,11 +387,11 @@ class CameraSetupData:
                 else:
                     assert self.height_wrt_subject_info['start'] != self.height_wrt_subject_info['end']
                     if HEIGHT_RELATIVE_TO_SUBJECT.index(self.height_wrt_subject_info['end']) < HEIGHT_RELATIVE_TO_SUBJECT.index(self.height_wrt_subject_info['start']):
-                        self.height_wrt_subject_change_from_high_to_low = True
-                        self.height_wrt_subject_change_from_low_to_high = False
-                    else:
-                        self.height_wrt_subject_change_from_low_to_high = True
                         self.height_wrt_subject_change_from_high_to_low = False
+                        self.height_wrt_subject_change_from_low_to_high = True
+                    else:
+                        self.height_wrt_subject_change_from_low_to_high = False
+                        self.height_wrt_subject_change_from_high_to_low = True
                     self.height_wrt_subject_change = True
         
 
@@ -427,11 +427,11 @@ class CameraSetupData:
                         self.above_water_to_underwater = False
                 elif all(height in HEIGHT_RELATIVE_TO_GROUND for height in self.height_wrt_ground_info.values()):
                     if HEIGHT_RELATIVE_TO_GROUND.index(self.height_wrt_ground_info['end']) < HEIGHT_RELATIVE_TO_GROUND.index(self.height_wrt_ground_info['start']):
-                        self.height_wrt_ground_change_from_high_to_low = True
-                        self.height_wrt_ground_change_from_low_to_high = False
-                    else:
-                        self.height_wrt_ground_change_from_low_to_high = True
                         self.height_wrt_ground_change_from_high_to_low = False
+                        self.height_wrt_ground_change_from_low_to_high = True
+                    else:
+                        self.height_wrt_ground_change_from_low_to_high = False
+                        self.height_wrt_ground_change_from_high_to_low = True
                 self.height_wrt_ground_change = True
         # self.height_wrt_ground_change = self.height_wrt_ground_change_from_high_to_low or self.height_wrt_ground_change_from_low_to_high or self.above_water_to_underwater or self.underwater_to_above_water
 
@@ -506,7 +506,7 @@ class CameraSetupData:
                 self.focus_change = False
             else:
                 self.is_deep_focus = False
-                self.is_shallow_focus = True
+                self.is_shallow_focus = self.camera_focus == "shallow_focus"
                 self.is_ultra_shallow_focus = self.camera_focus == "ultra_shallow_focus"
 
                 assert self.focus_info['start'] != "unknown"

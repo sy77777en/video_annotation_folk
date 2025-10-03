@@ -1,3 +1,4 @@
+# prepare_caption_json.py
 from benchmark import ROOT, VIDEO_ROOT, VIDEO_LABELS_DIR, VIDEO_LABEL_FILE, labels_as_dict
 from pathlib import Path
 import random
