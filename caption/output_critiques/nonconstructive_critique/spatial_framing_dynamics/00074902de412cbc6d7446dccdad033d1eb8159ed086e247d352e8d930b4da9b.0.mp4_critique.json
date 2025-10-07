@@ -2,7 +2,7 @@
   "video_id": "00074902de412cbc6d7446dccdad033d1eb8159ed086e247d352e8d930b4da9b.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-10-04T06:48:29.815379",
+  "generation_timestamp": "2025-10-07T17:13:42.439292",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20251004_0625",
-  "generated_critique": "The description of the camera's height as being 'at eye-level with the object... throughout the entire sequence' is inaccurate.",
-  "revised_caption_by_generated_critique": "The video starts with a close-up shot of a clear liquid filling the frame. A small, orange, round object enters from the top center and moves downward, plunging into the liquid at the bottom of the frame. As it submerges, it creates a splash that fills the upper half of the frame. The object then bobs up from the bottom to the center of the frame, where it remains, fully visible. The orange object is positioned in the middle ground, surrounded by bubbles in both the foreground and middle ground. The background is dark and indistinct. The camera remains static, maintaining a consistent angle with the object inside the glass throughout the entire sequence.",
+  "source_export_folder": "caption_export/export_20251007_1648",
+  "generated_critique": "The description of the camera's height as being \"at eye-level with the object throughout the entire sequence\" is incorrect because there is no object present at the start of the video.",
+  "revised_caption_by_generated_critique": "The video starts with a close-up shot of a clear liquid filling the frame. A small, orange, round object enters from the top center and moves downward, plunging into the liquid at the bottom of the frame. As it submerges, it creates a splash that fills the upper half of the frame. The object then bobs up from the bottom to the center of the frame, where it remains, fully visible. The orange object is positioned in the middle ground, surrounded by bubbles in both the foreground and middle ground. The background is dark and indistinct. The camera remains static and maintains a consistent height with the object once it appears in the glass.",
   "status": "success"
 }

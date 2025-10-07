@@ -2,7 +2,7 @@
   "video_id": "AHrCI9eSJGQ.3.0.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "generation_timestamp": "2025-10-04T06:48:02.731319",
+  "generation_timestamp": "2025-10-07T17:13:23.313993",
   "model": "gemini-2.5-pro",
   "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -32,8 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20251004_0625",
-  "generated_critique": "The term \"static\" is used incorrectly to describe the camera. The description of the camera's perspective as \"high-angle\" is inaccurate. The position of the ship is incorrectly described as being in the center. The description of the depth of the shipping containers and the sea is inaccurate, incorrectly assigning them to single depth planes.",
-  "revised_caption_by_generated_critique": "This video features an extreme wide shot capturing a dynamic scenery from an elevated perspective. The foreground is dominated by shipping containers that form a V-shape, leading the eye toward the center of the frame. The sea extends across the middle ground, reaching the horizon. In the background, a vast sky with fast-moving, time-lapsed clouds fills the top half of the screen, while a small, distant ship is visible slightly off-center on the horizon line. A text overlay is positioned at the bottom center of the frame, and a watermark is located in the bottom right corner.",
+  "source_export_folder": "caption_export/export_20251007_1648",
+  "generated_critique": "The term \"static\" is used incorrectly, and the description of the camera perspective as \"high-angle\" is also incorrect. The position of the ship is inaccurately described as being in the center. Additionally, the description of the depth of the shipping containers and the sea is inaccurate, as the caption incorrectly states the containers are only in the foreground and the sea is only in the middle ground.",
+  "revised_caption_by_generated_critique": "This video features an extreme wide shot capturing a dynamic scenery. The foreground is dominated by shipping containers that form a V-shape, extending from the bottom of the frame toward the center. The sea spans the middle and background, reaching the horizon. In the background, a vast sky with fast-moving, time-lapsed clouds fills the top half of the screen. A small, distant ship is visible off-center on the horizon line. A text overlay is positioned at the bottom center of the frame, and a watermark is located in the bottom right corner.",
   "status": "success"
 }
