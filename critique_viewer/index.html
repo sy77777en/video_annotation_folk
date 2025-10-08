@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critique Viewer - Failed Critiques</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-hover: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --negative: #ef4444;
+            --warning: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --sidebar-width: 280px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            cursor: pointer;
+            min-width: 250px;
+        }
+
+        .main-layout {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .sidebar-content {
+            padding: 1rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            border-radius: 0.375rem;
+            transition: background 0.15s;
+            gap: 0.5rem;
+            user-select: none;
+        }
+
+        .filter-item:hover {
+            background: var(--bg-hover);
+        }
+
+        .filter-item input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        .filter-item label {
+            flex: 1;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .filter-count {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: var(--bg-primary);
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .content-area {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .stats-bar {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-value.error {
+            color: var(--negative);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .critique-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .critique-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--negative);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s;
+        }
+
+        .critique-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .critique-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .critique-header:hover {
+            background: var(--bg-hover);
+        }
+
+        .critique-info {
+            flex: 1;
+        }
+
+        .critique-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .critique-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .meta-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            background: var(--bg-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .meta-badge.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--negative);
+        }
+
+        .toggle-icon {
+            color: var(--text-secondary);
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .critique-content {
+            display: none;
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-primary);
+        }
+
+        .critique-content.active {
+            display: block;
+        }
+
+        .content-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .content-text {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .error-text {
+            color: var(--negative);
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+        }
+
+        .video-preview {
+            width: 200px;
+            height: 112px;
+            background: #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Critique Viewer - Failed Critiques</h1>
+            <div class="controls">
+                <select id="exportFolderSelect" disabled>
+                    <option>Loading export folders...</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-title">Filters</div>
+
+                <div class="filter-group">
+                    <div class="filter-label">Critique Type</div>
+                    <div id="critiqueTypeFilters"></div>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-label">Caption Type</div>
+                    <div id="captionTypeFilters"></div>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-label">Status</div>
+                    <div id="statusFilters"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="container">
+                <div id="content">
+                    <div class="loading">Loading failed critiques...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/api';
+        let currentData = [];
+        let allCritiques = [];
+        let activeFilters = {
+            critiqueTypes: new Set(),
+            captionTypes: new Set(),
+            statuses: new Set(['failed']) // Default to failed only
+        };
+
+        async function loadExportFolders() {
+            try {
+                const response = await fetch(`${API_BASE}/critique-folders`);
+                const folders = await response.json();
+
+                const select = document.getElementById('exportFolderSelect');
+                select.innerHTML = '<option value="">Select an export folder...</option>';
+
+                folders.forEach(folder => {
+                    const option = document.createElement('option');
+                    option.value = folder;
+                    option.textContent = folder;
+                    select.appendChild(option);
+                });
+
+                select.disabled = false;
+
+                if (folders.length > 0) {
+                    select.value = folders[0];
+                    loadCritiqueData(folders[0]);
+                }
+            } catch (error) {
+                console.error('Error loading export folders:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error loading export folders</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function loadCritiqueData(exportFolder) {
+            try {
+                document.getElementById('content').innerHTML = '<div class="loading">Loading critique data...</div>';
+
+                const response = await fetch(`${API_BASE}/critiques/${encodeURIComponent(exportFolder)}`);
+                allCritiques = await response.json();
+
+                console.log('Loaded', allCritiques.length, 'critiques');
+
+                buildFilters();
+                applyFilters();
+            } catch (error) {
+                console.error('Error loading critique data:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error loading critique data</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function buildFilters() {
+            const critiqueTypes = new Set();
+            const captionTypes = new Set();
+            const statuses = new Set();
+
+            allCritiques.forEach(critique => {
+                critiqueTypes.add(critique.critique_type);
+                captionTypes.add(critique.caption_type);
+                statuses.add(critique.status);
+            });
+
+            // Initialize filters if empty
+            if (activeFilters.critiqueTypes.size === 0) {
+                activeFilters.critiqueTypes = new Set(critiqueTypes);
+            }
+            if (activeFilters.captionTypes.size === 0) {
+                activeFilters.captionTypes = new Set(captionTypes);
+            }
+
+            renderFilterSection('critiqueTypeFilters', critiqueTypes, 'critiqueTypes');
+            renderFilterSection('captionTypeFilters', captionTypes, 'captionTypes');
+            renderFilterSection('statusFilters', statuses, 'statuses');
+        }
+
+        function renderFilterSection(elementId, items, filterKey) {
+            const container = document.getElementById(elementId);
+            container.innerHTML = '';
+
+            const sortedItems = Array.from(items).sort();
+
+            sortedItems.forEach(item => {
+                const count = allCritiques.filter(c => {
+                    if (filterKey === 'critiqueTypes') return c.critique_type === item;
+                    if (filterKey === 'captionTypes') return c.caption_type === item;
+                    if (filterKey === 'statuses') return c.status === item;
+                }).length;
+
+                const div = document.createElement('div');
+                div.className = 'filter-item';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `${filterKey}-${item}`;
+                checkbox.checked = activeFilters[filterKey].has(item);
+                checkbox.addEventListener('change', () => {
+                    if (checkbox.checked) {
+                        activeFilters[filterKey].add(item);
+                    } else {
+                        activeFilters[filterKey].delete(item);
+                    }
+                    applyFilters();
+                });
+
+                const label = document.createElement('label');
+                label.htmlFor = checkbox.id;
+                label.textContent = item;
+
+                const countSpan = document.createElement('span');
+                countSpan.className = 'filter-count';
+                countSpan.textContent = count;
+
+                div.appendChild(checkbox);
+                div.appendChild(label);
+                div.appendChild(countSpan);
+                container.appendChild(div);
+            });
+        }
+
+        function applyFilters() {
+            currentData = allCritiques.filter(critique => {
+                return activeFilters.critiqueTypes.has(critique.critique_type) &&
+                    activeFilters.captionTypes.has(critique.caption_type) &&
+                    activeFilters.statuses.has(critique.status);
+            });
+
+            renderCritiques();
+        }
+
+        function renderCritiques() {
+            const content = document.getElementById('content');
+
+            if (currentData.length === 0) {
+                content.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No critiques match the current filters</h3>
+                        <p>Try adjusting your filter selections</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const failedCount = currentData.filter(c => c.status === 'failed').length;
+            const totalCount = currentData.length;
+
+            content.innerHTML = `
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-value error">${failedCount}</div>
+                        <div class="stat-label">Failed Critiques</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">${totalCount}</div>
+                        <div class="stat-label">Total Matching</div>
+                    </div>
+                </div>
+                <div class="critique-list"></div>
+            `;
+
+            const list = content.querySelector('.critique-list');
+
+            currentData.forEach(critique => {
+                const card = createCritiqueCard(critique);
+                list.appendChild(card);
+            });
+        }
+
+        function createCritiqueCard(critique) {
+            const card = document.createElement('div');
+            card.className = 'critique-card';
+
+            const errorMessage = critique.error_message || 'No error message available';
+            const attempts = critique.attempts_made || 0;
+
+            card.innerHTML = `
+                <div class="critique-header">
+                    <div class="critique-info">
+                        <div class="critique-title">${critique.video_id}</div>
+                        <div class="critique-meta">
+                            <span><strong>Critique:</strong> ${critique.critique_type}</span>
+                            <span><strong>Caption:</strong> ${critique.caption_type}</span>
+                            <span class="meta-badge error">${critique.status.toUpperCase()}</span>
+                            ${attempts > 0 ? `<span class="meta-badge">${attempts} attempts</span>` : ''}
+                        </div>
+                    </div>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="critique-content">
+                    <div class="content-section">
+                        <div class="section-label">Error Message</div>
+                        <div class="content-text error-text">${errorMessage}</div>
+                    </div>
+                    <div class="content-section">
+                        <div class="section-label">Model</div>
+                        <div class="content-text">${critique.model || 'N/A'}</div>
+                    </div>
+                    <div class="content-section">
+                        <div class="section-label">Prompt Name</div>
+                        <div class="content-text">${critique.prompt_name || 'N/A'}</div>
+                    </div>
+                    <div class="content-section">
+                        <div class="section-label">Generation Timestamp</div>
+                        <div class="content-text">${critique.generation_timestamp || 'N/A'}</div>
+                    </div>
+                </div>
+            `;
+
+            const header = card.querySelector('.critique-header');
+            const content = card.querySelector('.critique-content');
+            const toggleIcon = card.querySelector('.toggle-icon');
+
+            header.addEventListener('click', () => {
+                content.classList.toggle('active');
+                toggleIcon.classList.toggle('open');
+            });
+
+            return card;
+        }
+
+        document.getElementById('exportFolderSelect').addEventListener('change', (e) => {
+            const folder = e.target.value;
+            if (folder) {
+                loadCritiqueData(folder);
+            }
+        });
+
+        loadExportFolders();
+    </script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=False):
-    """Custom video player with responsive design"""
+    """Custom video player with responsive design and click-to-play"""
     ratio_parts = aspect_ratio.split(":")
     aspect_ratio_decimal = float(ratio_parts[0]) / float(ratio_parts[1])
     padding_bottom = (1 / aspect_ratio_decimal) * 100
@@ -29,6 +29,7 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
             .video-wrapper {{
                 position: relative; width: 100%; flex: 1; background: #000;
                 border-radius: 8px 8px 0 0; overflow: hidden; min-height: 200px;
+                cursor: pointer;
             }}
             
             .video-wrapper::before {{
@@ -37,7 +38,7 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
             
             video {{
                 position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-                object-fit: contain;
+                object-fit: contain; cursor: pointer;
             }}
             
             video::-webkit-media-controls, video::-moz-media-controls {{
@@ -48,6 +49,25 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
                 width: 100%; background: #f8f9fa; border: 1px solid #e9ecef;
                 border-top: none; border-radius: 0 0 8px 8px; padding: 8px 12px;
                 flex-shrink: 0; overflow: hidden; min-height: 65px; max-height: 80px;
+            }}
+            
+            .fullscreen-controls {{
+                position: absolute; bottom: 0; left: 0; right: 0;
+                background: rgba(0, 0, 0, 0.8); padding: 12px 16px;
+                opacity: 0; transition: opacity 0.3s ease;
+                z-index: 1000;
+            }}
+            
+            .video-wrapper:fullscreen .fullscreen-controls,
+            .video-wrapper:-webkit-full-screen .fullscreen-controls,
+            .video-wrapper:-moz-full-screen .fullscreen-controls {{
+                opacity: 0;
+            }}
+            
+            .video-wrapper:fullscreen:hover .fullscreen-controls,
+            .video-wrapper:-webkit-full-screen:hover .fullscreen-controls,
+            .video-wrapper:-moz-full-screen:hover .fullscreen-controls {{
+                opacity: 1;
             }}
             
             .progress-container {{
@@ -86,11 +106,16 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
             
             .control-btn:hover {{ background: #e9ecef; }}
             
+            .fullscreen-controls .control-btn {{ color: white; }}
+            .fullscreen-controls .control-btn:hover {{ background: rgba(255, 255, 255, 0.2); }}
+            
             .time-display {{
                 font-size: 11px; color: #666; margin-left: auto; white-space: nowrap;
                 font-family: 'Courier New', monospace; flex-shrink: 0;
                 overflow: hidden; text-overflow: ellipsis; max-width: 120px;
             }}
+            
+            .fullscreen-controls .time-display {{ color: white; }}
             
             .volume-control {{ display: flex; align-items: center; gap: 4px; flex-shrink: 0; }}
             
@@ -121,11 +146,28 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
     </head>
     <body>
         <div class="video-container">
-            <div class="video-wrapper">
+            <div class="video-wrapper" id="videoWrapper">
                 <video id="customVideo" {video_attributes}>
                     <source src="{video_url}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                <div class="fullscreen-controls">
+                    <div class="progress-container" id="fsProgressContainer">
+                        <div class="progress-bar" id="fsProgressBar"></div>
+                        <div class="progress-handle" id="fsProgressHandle"></div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button class="control-btn" id="fsPlayPauseBtn" title="Play/Pause">{"⏸️" if autoplay else "▶️"}</button>
+                        <button class="control-btn" id="fsMuteBtn" title="Mute/Unmute">🔊</button>
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" id="fsVolumeSlider" min="0" max="100" value="100" title="Volume">
+                        </div>
+                        <div class="time-display" id="fsTimeDisplay">0:00 / 0:00</div>
+                        <button class="control-btn" id="fsFullscreenBtn" title="Exit Fullscreen">⛶</button>
+                    </div>
+                </div>
             </div>
             
             <div class="controls-container">
@@ -149,6 +191,7 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
 
         <script>
             const video = document.getElementById('customVideo');
+            const videoWrapper = document.getElementById('videoWrapper');
             const playPauseBtn = document.getElementById('playPauseBtn');
             const muteBtn = document.getElementById('muteBtn');
             const volumeSlider = document.getElementById('volumeSlider');
@@ -158,6 +201,15 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
             const timeDisplay = document.getElementById('timeDisplay');
             const downloadBtn = document.getElementById('downloadBtn');
             const fullscreenBtn = document.getElementById('fullscreenBtn');
+            
+            const fsPlayPauseBtn = document.getElementById('fsPlayPauseBtn');
+            const fsMuteBtn = document.getElementById('fsMuteBtn');
+            const fsVolumeSlider = document.getElementById('fsVolumeSlider');
+            const fsProgressContainer = document.getElementById('fsProgressContainer');
+            const fsProgressBar = document.getElementById('fsProgressBar');
+            const fsProgressHandle = document.getElementById('fsProgressHandle');
+            const fsTimeDisplay = document.getElementById('fsTimeDisplay');
+            const fsFullscreenBtn = document.getElementById('fsFullscreenBtn');
 
             let isDragging = false;
             let wasPlaying = false;
@@ -168,80 +220,130 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
                     if (video.paused) {{
                         video.play().catch(e => console.log('Autoplay prevented:', e));
                     }}
-                    playPauseBtn.textContent = video.paused ? '▶️' : '⏸️';
+                    updatePlayButtons();
                 }});
             }}
 
-            playPauseBtn.addEventListener('click', () => {{
+            function updatePlayButtons() {{
+                const icon = video.paused ? '▶️' : '⏸️';
+                playPauseBtn.textContent = icon;
+                fsPlayPauseBtn.textContent = icon;
+            }}
+
+            function togglePlayPause() {{
                 if (video.paused) {{
                     video.play();
-                    playPauseBtn.textContent = '⏸️';
                 }} else {{
                     video.pause();
-                    playPauseBtn.textContent = '▶️';
                 }}
-            }});
+                updatePlayButtons();
+            }}
 
-            muteBtn.addEventListener('click', () => {{
+            video.addEventListener('click', togglePlayPause);
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            fsPlayPauseBtn.addEventListener('click', togglePlayPause);
+
+            function updateMuteButtons() {{
+                const icon = video.muted ? '🔇' : '🔊';
+                muteBtn.textContent = icon;
+                fsMuteBtn.textContent = icon;
+            }}
+
+            function toggleMute() {{
                 video.muted = !video.muted;
-                muteBtn.textContent = video.muted ? '🔇' : '🔊';
-            }});
+                updateMuteButtons();
+            }}
 
-            volumeSlider.addEventListener('input', () => {{
-                video.volume = volumeSlider.value / 100;
-            }});
+            muteBtn.addEventListener('click', toggleMute);
+            fsMuteBtn.addEventListener('click', toggleMute);
+
+            function updateVolume(value) {{
+                video.volume = value / 100;
+                volumeSlider.value = value;
+                fsVolumeSlider.value = value;
+            }}
+
+            volumeSlider.addEventListener('input', () => updateVolume(volumeSlider.value));
+            fsVolumeSlider.addEventListener('input', () => updateVolume(fsVolumeSlider.value));
 
             function updateProgress() {{
                 if (!isDragging && video.duration) {{
                     const progress = (video.currentTime / video.duration) * 100;
                     progressBar.style.width = progress + '%';
                     progressHandle.style.left = progress + '%';
+                    fsProgressBar.style.width = progress + '%';
+                    fsProgressHandle.style.left = progress + '%';
                     
                     const currentTime = formatTime(video.currentTime);
                     const duration = formatTime(video.duration);
-                    timeDisplay.textContent = `${{currentTime}} / ${{duration}}`;
+                    const timeText = `${{currentTime}} / ${{duration}}`;
+                    timeDisplay.textContent = timeText;
+                    fsTimeDisplay.textContent = timeText;
                 }}
                 requestAnimationFrame(updateProgress);
             }}
             
             updateProgress();
 
-            function getProgressFromMouse(e) {{
-                const rect = progressContainer.getBoundingClientRect();
+            function getProgressFromMouse(e, container) {{
+                const rect = container.getBoundingClientRect();
                 return Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
             }}
 
-            progressContainer.addEventListener('mousedown', (e) => {{
-                isDragging = true;
-                wasPlaying = !video.paused;
-                if (wasPlaying) video.pause();
-                
-                const percent = getProgressFromMouse(e);
-                const newTime = percent * video.duration;
-                
-                progressBar.style.width = (percent * 100) + '%';
-                progressHandle.style.left = (percent * 100) + '%';
-                video.currentTime = newTime;
-                
-                const currentTime = formatTime(newTime);
-                const duration = formatTime(video.duration);
-                timeDisplay.textContent = `${{currentTime}} / ${{duration}}`;
-                
-                e.preventDefault();
-            }});
-
-            document.addEventListener('mousemove', (e) => {{
-                if (isDragging) {{
-                    const percent = getProgressFromMouse(e);
+            function setupProgressBar(container, bar, handle) {{
+                container.addEventListener('mousedown', (e) => {{
+                    isDragging = true;
+                    wasPlaying = !video.paused;
+                    if (wasPlaying) video.pause();
+                    
+                    const percent = getProgressFromMouse(e, container);
                     const newTime = percent * video.duration;
                     
                     progressBar.style.width = (percent * 100) + '%';
                     progressHandle.style.left = (percent * 100) + '%';
+                    fsProgressBar.style.width = (percent * 100) + '%';
+                    fsProgressHandle.style.left = (percent * 100) + '%';
                     video.currentTime = newTime;
                     
                     const currentTime = formatTime(newTime);
                     const duration = formatTime(video.duration);
-                    timeDisplay.textContent = `${{currentTime}} / ${{duration}}`;
+                    const timeText = `${{currentTime}} / ${{duration}}`;
+                    timeDisplay.textContent = timeText;
+                    fsTimeDisplay.textContent = timeText;
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                }});
+
+                container.addEventListener('click', (e) => {{
+                    if (!isDragging) {{
+                        const percent = getProgressFromMouse(e, container);
+                        video.currentTime = percent * video.duration;
+                    }}
+                    e.stopPropagation();
+                }});
+            }}
+
+            setupProgressBar(progressContainer, progressBar, progressHandle);
+            setupProgressBar(fsProgressContainer, fsProgressBar, fsProgressHandle);
+
+            document.addEventListener('mousemove', (e) => {{
+                if (isDragging) {{
+                    const container = e.target.closest('.progress-container') || progressContainer;
+                    const percent = getProgressFromMouse(e, container);
+                    const newTime = percent * video.duration;
+                    
+                    progressBar.style.width = (percent * 100) + '%';
+                    progressHandle.style.left = (percent * 100) + '%';
+                    fsProgressBar.style.width = (percent * 100) + '%';
+                    fsProgressHandle.style.left = (percent * 100) + '%';
+                    video.currentTime = newTime;
+                    
+                    const currentTime = formatTime(newTime);
+                    const duration = formatTime(video.duration);
+                    const timeText = `${{currentTime}} / ${{duration}}`;
+                    timeDisplay.textContent = timeText;
+                    fsTimeDisplay.textContent = timeText;
                 }}
             }});
 
@@ -252,20 +354,16 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
                 }}
             }});
 
-            progressContainer.addEventListener('click', (e) => {{
-                if (!isDragging) {{
-                    const percent = getProgressFromMouse(e);
-                    video.currentTime = percent * video.duration;
-                }}
-            }});
-
-            fullscreenBtn.addEventListener('click', () => {{
+            function toggleFullscreen() {{
                 if (document.fullscreenElement) {{
                     document.exitFullscreen();
                 }} else {{
-                    document.querySelector('.video-wrapper').requestFullscreen();
+                    videoWrapper.requestFullscreen();
                 }}
-            }});
+            }}
+
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+            fsFullscreenBtn.addEventListener('click', toggleFullscreen);
 
             downloadBtn.addEventListener('click', async () => {{
                 try {{
@@ -282,7 +380,6 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
                     window.URL.revokeObjectURL(url);
                 }} catch (error) {{
                     console.error('Download failed:', error);
-                    // Fallback to direct link
                     const a = document.createElement('a');
                     a.href = '{video_url}';
                     a.download = '{video_url}'.split('/').pop();
@@ -298,13 +395,15 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
                 return `${{minutes}}:${{seconds.toString().padStart(2, '0')}}`;
             }}
 
-            video.addEventListener('ended', () => {{ playPauseBtn.textContent = '▶️'; }});
-            video.addEventListener('play', () => {{ playPauseBtn.textContent = '⏸️'; }});
-            video.addEventListener('pause', () => {{ playPauseBtn.textContent = '▶️'; }});
+            video.addEventListener('ended', updatePlayButtons);
+            video.addEventListener('play', updatePlayButtons);
+            video.addEventListener('pause', updatePlayButtons);
 
             video.addEventListener('loadedmetadata', () => {{
                 const duration = formatTime(video.duration);
-                timeDisplay.textContent = `0:00 / ${{duration}}`;
+                const timeText = `0:00 / ${{duration}}`;
+                timeDisplay.textContent = timeText;
+                fsTimeDisplay.textContent = timeText;
             }});
         </script>
     </body>
@@ -324,30 +423,13 @@ def custom_video_player(video_url, aspect_ratio="16:9", autoplay=False, loop=Fal
 def main():
     st.title("Responsive Custom Video Player")
     
-    # You can use a local file path or URL
     video_url = st.text_input("Enter video URL:", "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4")
     
-    # Aspect ratio selection
     aspect_ratio = st.selectbox("Aspect Ratio:", ["16:9", "4:3", "21:9", "1:1"], index=0)
     
     if video_url:
-        st.subheader("Responsive Custom Video Player")
+        st.subheader("Click anywhere on video to play/pause")
         custom_video_player(video_url, aspect_ratio=aspect_ratio)
-        
-        st.subheader("Standard Streamlit Video (for comparison)")
-        st.video(video_url)
-        
-        # Demo with columns to show responsiveness
-        st.subheader("Responsive Demo in Columns")
-        col1, col2 = st.columns([2, 1])
-        
-        with col1:
-            st.write("Wide column:")
-            custom_video_player(video_url, aspect_ratio=aspect_ratio)
-        
-        with col2:
-            st.write("Narrow column:")
-            custom_video_player(video_url, aspect_ratio=aspect_ratio)
 
 if __name__ == "__main__":
     main()

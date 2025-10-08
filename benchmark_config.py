@@ -1,3 +1,4 @@
+# benchmark_config.py
 CAMERABENCH_GROUND_ONLY_FOLDER = "cam_motion-20250227_0324ground_only"
 CAMERABENCH_GROUND_AND_SETUP_FOLDER = "cam_motion-cam_setup-20250227_0507ground_and_setup"
 CAMERABENCH_GROUND_AND_CAMERA_FOLDER = "cam_motion-20250227_0326ground_and_camera"
@@ -4524,10 +4525,10 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         {
             "folder": setup_folder,
             "name": "is_focus_tracking",
-            "pos_question": "Does the camera use focus tracking to follow a moving subject in the video?",
-            "neg_question": "Does the camera not use focus tracking to follow a moving subject in the video?",
-            "pos_prompt": "The camera uses focus tracking to follow a moving subject in the video.",
-            "neg_prompt": "The camera does not use focus tracking to follow a moving subject in the video.",
+            "pos_question": "Does the camera use focus tracking to keep a subject in focus in the video?",
+            "neg_question": "Does the camera not use focus tracking to keep a subject in focus in the video?",
+            "pos_prompt": "The camera uses focus tracking to keep a subject in focus in the video.",
+            "neg_prompt": "The camera does not use focus tracking to keep a subject in focus in the video.",
             "pos": {
                 "label": "cam_setup.depth_of_field.is_focus_tracking",
                 "type": "pos",

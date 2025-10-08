@@ -12,8 +12,8 @@ Labels with less than 30 positive examples
 | Does the camera start out of focus and then become in focus? | 23 | 4120 | cam_setup.focus.focus_change_from_out_to_in_focus |
 | Does the video start with the camera at a high angle and transition to a low angle? | 18 | 3654 | cam_setup.angle.from_to.camera_angle_from_high_to_low |
 | Is this a third-person isometric (2.5D) gaming video with a tilted overhead angle showing both the top and side planes of the environment in a three-quarters perspective, with minimal perspective distortion? | 18 | 4125 | cam_setup.point_of_view.third_person_isometric_game_pov |
-| Does the camera start at the same height as the subject and then move down to a lower position than them? | 18 | 2714 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject |
-| Does the camera start below the subject and move up to their height? | 18 | 2714 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject |
+| Does the camera’s height relative to the subject start at the subject’s height and end below? | 18 | 2714 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_at_subject_to_below_subject |
+| Does the camera’s height relative to the subject start below and end at the subject’s height? | 18 | 2714 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_at_subject |
 | Is it a fast-motion video with forward playback speed slightly faster than real-time (about 1.5×–3×), but not a time-lapse where the speed is greatly accelerated over a long duration? | 17 | 4038 | cam_setup.video_speed.fast_motion_without_time_lapse |
 | Does the camera start in sharp focus and then shift out of focus? | 16 | 4127 | cam_setup.focus.focus_change_from_in_to_out_of_focus |
 | Does the video start with the camera focused on the middle ground and then shift the focus to the foreground? | 16 | 1191 | cam_setup.focus.from_to.focus_from_middle_ground_to_foreground |
@@ -29,8 +29,8 @@ Labels with less than 30 positive examples
 | Does the video start with the camera focused on the middle ground and then shift the focus to the background? | 6 | 1237 | cam_setup.focus.from_to.focus_from_middle_ground_to_background |
 | Does the video start with the camera focused on the background and then shift the focus to the middleground? | 5 | 1238 | cam_setup.focus.from_to.focus_from_background_to_middle_ground |
 | Is this video played in reverse, with events playing backward in time? | 5 | 3817 | cam_setup.video_speed.time_reversed |
-| Does the camera start noticeably higher than the subject and then move down to a position below them? | 5 | 2727 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject |
-| Does the camera start below the subject and move up to a position above them? | 4 | 2728 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject |
+| Does the camera’s height relative to the subject start above and end below? | 5 | 2727 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_above_subject_to_below_subject |
+| Does the camera’s height relative to the subject start below and end above? | 4 | 2728 | cam_setup.height_wrt_subject.from_to.height_wrt_subject_from_below_subject_to_above_subject |
 | Is this an over-the-hip third-person view, framing the character from the hip up? | 3 | 4140 | cam_setup.point_of_view.third_person_over_hip_pov |
 | Does the camera transition from above water to underwater? | 2 | 2995 | cam_setup.height_wrt_ground.above_water_to_underwater |
 | Is the camera consistently out of focus throughout? | 0 | 1242 | cam_setup.focus.is_always.focus_is_out_of_focus |

@@ -376,9 +376,25 @@ The critique generation system processes caption data through several key steps:
 2. **Smart Skipping**: Some critique types (replacement_error, deletion_error, nonconstructive) automatically skip captions with perfect scores (5/5) since there's insufficient content to modify
 3. **Incremental Processing**: Detects changes in caption data and configuration parameters, only regenerating critiques when necessary to avoid redundant work
 4. **Multi-Model Generation**: Uses different LLMs depending on critique type - GPT-4.1 for text-only error critiques, Gemini for video-enabled critiques
-5. **Complete Dataset Upload**: Only exports and uploads when ALL seven critique types are successfully completed (no failures across any critique type)
+5. **Data Preservation and Merging**: Loads the original caption export data and merges critique fields into the existing structure, preserving all original data
+6. **Complete Dataset Upload**: Only exports and uploads when ALL seven critique types are successfully completed (no failures across any critique type)
 
 **Key Insight**: The script is designed for large-scale processing (thousands of videos) with robust error handling, progress tracking, and parallel execution support. Upload only happens when you have a complete dataset with all critique types.
+
+### **Data Preservation and Merging**
+
+The critique generation system preserves all original caption export data:
+
+1. **Loads Original Export**: Reads `all_videos_with_captions_*.json` from the specified export folder
+2. **Merges Critique Data**: Adds critique fields to existing caption type entries without modifying original structure
+3. **Preserves Everything**: All original fields remain intact:
+   - `video_url`
+   - `caption_data` with complete workflow information
+   - `negative_example` for rejected captions
+   - Review metadata and timestamps
+4. **Only Adds Critique Fields**: Each critique type becomes an additional field within the caption type structure
+
+**Result**: The final export contains both the complete original caption data AND all seven critique types in a single unified structure.
 
 ### **Overview**
 
@@ -398,28 +414,34 @@ Generate all seven critique types for the same export folder:
 
 ```bash
 # Generate insertion error critiques
-python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251007_1648
 
 # Generate replacement error critiques  
-python -m caption.generate_critiques --critique-type replacement_error_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type replacement_error_critique --export-folder caption_export/export_20251007_1648
 
 # Generate deletion error critiques
-python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20251007_1648
 
 # Generate non-constructive critiques
-python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20251007_1648
 
 # Generate video model critiques
-python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251007_1648
 
 # Generate blind model critiques
-python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20251007_1648
 
 # Generate worst caption
-python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20251007_1648
 ```
 
-**Note**: By default, each script automatically exports consolidated JSON and uploads to HuggingFace (`zhiqiulin/caption_export`) when all critiques are successful.
+**Note**: The `--export-folder` parameter is required so the script can:
+1. Load the original caption export data to merge with critique data
+2. Process only the videos from that specific export
+3. Save the consolidated output back to the same export folder location
+4. Maintain the connection between captions and their critiques
+
+By default, each script automatically exports consolidated JSON and uploads to HuggingFace (`zhiqiulin/caption_export`) when all critiques are successful.
 
 ### **Critique Type Details**
 
@@ -442,22 +464,22 @@ These critiques generate new content directly:
 
 ```bash
 # Dry run to check what would be processed
-python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20250927_2346 --dry-run
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20251007_1648 --dry-run
 
 # Force regeneration of all critiques
-python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20250927_2346 --force-regenerate
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251007_1648 --force-regenerate
 
 # Use lighting project configuration
-python -m caption.generate_critiques --config-type lighting --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --config-type lighting --export-folder caption_export/export_20251007_1648
 
 # Custom retry settings
-python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20250927_2346 --max-retries 5
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251007_1648 --max-retries 5
 
 # Only process videos without existing critique files
-python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20250927_2346 --new-only
+python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20251007_1648 --new-only
 
 # Verbose output with progress tracking
-python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20250927_2346 --verbose
+python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20251007_1648 --verbose
 ```
 
 ### **Parallel Processing**
@@ -466,21 +488,23 @@ Run different critique types simultaneously in separate terminals:
 
 ```bash
 # Terminal 1: Generate insertion error critiques
-python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251007_1648
 
 # Terminal 2: Generate video model critiques  
-python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251007_1648
 
 # Terminal 3: Generate worst caption
-python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20250927_2346
+python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20251007_1648
 ```
 
 ### **Export and Upload**
 
 **Automatic Export**: By default, each critique generation script automatically:
-1. Exports consolidated JSON when **ALL SEVEN critique types** complete successfully across the entire dataset
-2. Uploads to HuggingFace dataset `zhiqiulin/caption_export` (requires `HF_TOKEN` environment variable)
-3. Falls back to local save if HuggingFace upload fails
+1. Loads the original caption export data from the export folder
+2. Merges all critique data into the original structure
+3. Exports consolidated JSON when **ALL SEVEN critique types** complete successfully across the entire dataset
+4. Uploads to HuggingFace dataset `zhiqiulin/caption_export` (requires `HF_TOKEN` environment variable)
+5. Falls back to local save if HuggingFace upload fails
 
 **Upload Conditions ("Wait for All" Logic):**
 - Only uploads when ALL critique types across ALL videos are either "success" or "skipped" (no "failed" status anywhere)
@@ -492,11 +516,11 @@ python -m caption.generate_critiques --critique-type worst_caption_generation --
 1. Run all 7 critique type scripts in parallel
 2. Each script generates its own critique files
 3. When the last critique type completes successfully, that script triggers the upload
-4. The consolidated file contains all 7 critique types for all videos
+4. The consolidated file contains all 7 critique types merged with original caption data for all videos
 
 **Example Output:**
-- Export folder: `caption_export/export_20250927_2346`
-- Generated file: `all_videos_with_captions_and_critiques_20250927_2346.json`
+- Export folder: `caption_export/export_20251007_1648`
+- Generated file: `all_videos_with_captions_and_critiques_20251007_1648.json`
 
 ### **Output Structure**
 
@@ -513,23 +537,32 @@ output_critiques/
 ├── video_model_critique/
 │   ├── subject_description/
 │   └── ...
-├── complete_replacement_critique/
+├── worst_caption_generation/
 │   ├── subject_description/
 │   └── ...
 └── ...
 ```
 
-The final consolidated JSON file enhances the original export data by adding critique fields to each caption type:
+The final consolidated JSON file merges critique data with the original export structure, preserving all original fields:
 
 ```json
 {
   "video_id": "...",
-  "video_url": "...",
+  "video_url": "...",  // Preserved from original export
   "captions": {
     "subject": {
-      "status": "approved",
-      "caption_data": { /* original data preserved */ },
-      "insertion_error_critique": {
+      "status": "approved",  // Preserved from original export
+      "caption_data": { 
+        // All original workflow data preserved:
+        "user": "alice_smith",
+        "timestamp": "2025-06-29T11:45:00",
+        "reviewer": "jane_doe",
+        "workflow_type": "improved_precaption",
+        "pre_caption": "...",
+        "final_caption": "...",
+        // ... all other original fields intact
+      },
+      "insertion_error_critique": {  // Added by generate_critiques.py
         "status": "success",
         "model": "gpt-4.1-2025-04-14", 
         "prompt_name": "INSERTION_ERROR_CRITIQUE_PROMPT",
@@ -539,9 +572,9 @@ The final consolidated JSON file enhances the original export data by adding cri
         "timestamp": "2025-09-27T10:30:00Z"
       },
       "replacement_error_critique": {
-        "status": "skipped", /* skipped for perfect scores */
-        "model": null,
-        /* ... */
+        "status": "skipped",
+        "skip_reason": "Perfect score (5/5) - this critique type skips perfect scores",
+        "timestamp": "2025-09-27T10:32:00Z"
       },
       "video_model_critique": {
         "status": "success",
@@ -555,10 +588,10 @@ The final consolidated JSON file enhances the original export data by adding cri
         "status": "success",
         "model": "gpt-4.1-2025-04-14",
         "mode": "Text Only",
-        "bad_caption": "A person wearing a red jacket walks through a snowy forest...", /* completely incorrect caption - different structure! */
+        "bad_caption": "A person wearing a red jacket walks through a snowy forest...",
         "timestamp": "2025-09-27T10:40:00Z"
       }
-      /* ... other critique types */
+      // ... other critique types
     }
   }
 }
