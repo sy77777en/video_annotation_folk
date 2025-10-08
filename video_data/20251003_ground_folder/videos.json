@@ -1667,7 +1667,7 @@
     },
     "cam_motion": {
       "shot_transition": false,
-      "steadiness": "smooth",
+      "steadiness": "very_unsteady",
       "camera_movement": "major_simple",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
@@ -1679,7 +1679,7 @@
         "lead"
       ],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
+      "camera_forward_backward": "backward",
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
@@ -1883,7 +1883,7 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
+      "camera_up_down": "down",
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
@@ -2901,7 +2901,7 @@
       "shot_transition": false,
       "steadiness": "very_smooth",
       "camera_movement": "major_simple",
-      "camera_motion_speed": "slow",
+      "camera_motion_speed": "regular",
       "frame_freezing": false,
       "dolly_zoom": false,
       "motion_blur": false,
@@ -2909,8 +2909,8 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "forward",
-      "camera_zoom": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "in",
       "camera_left_right": "no",
       "camera_pan": "no",
       "camera_up_down": "no",
@@ -3623,7 +3623,7 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
+      "camera_up_down": "down",
       "camera_tilt": "no",
       "camera_arc": "counter_clockwise",
       "camera_roll": "no",
@@ -3993,7 +3993,7 @@
     },
     "cam_motion": {
       "shot_transition": false,
-      "steadiness": "very_smooth",
+      "steadiness": "smooth",
       "camera_movement": "major_complex",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
@@ -4011,7 +4011,7 @@
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": "The camera first moves forward, then trucks left while panning right. It concludes by moving forward again and tilting down to focus on a pattern on the building."
+      "complex_motion_description": "The camera first moves forward and rightward, then trucks left while panning right and tilting up. It concludes with a slight zoom-in to focus on a pattern on the building."
     }
   },
   {
@@ -10502,7 +10502,7 @@
     "cam_motion": {
       "shot_transition": false,
       "steadiness": "very_smooth",
-      "camera_movement": "major_simple",
+      "camera_movement": "major_complex",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
       "dolly_zoom": false,
@@ -10519,7 +10519,7 @@
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": ""
+      "complex_motion_description": "The camera smoothly zooms out to the top, revealing the entire stomach."
     }
   },
   {
@@ -11864,7 +11864,7 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
+      "camera_forward_backward": "backward",
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
@@ -26508,15 +26508,15 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "backward",
-      "camera_zoom": "in",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "out",
       "camera_left_right": "no",
       "camera_pan": "no",
       "camera_up_down": "no",
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": "The camera continuously moves backward, with a zoom-in in the first half to achieve the dolly zoom effect."
+      "complex_motion_description": "The camera executes a dolly zoom out as the woman enters the room, then moves backward at the end."
     }
   },
   {
@@ -30629,8 +30629,8 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
-      "camera_tilt": "down",
+      "camera_up_down": "down",
+      "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
       "complex_motion_description": ""
@@ -44274,7 +44274,7 @@
     "cam_motion": {
       "shot_transition": false,
       "steadiness": "smooth",
-      "camera_movement": "major_simple",
+      "camera_movement": "major_complex",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
       "dolly_zoom": false,
@@ -44291,7 +44291,7 @@
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": ""
+      "complex_motion_description": "The camera zooms out unsteadily, drifting slightly to the right."
     }
   },
   {
@@ -44515,7 +44515,7 @@
       "subject_size_change": "no",
       "camera_forward_backward": "forward",
       "camera_zoom": "no",
-      "camera_left_right": "no",
+      "camera_left_right": "right_to_left",
       "camera_pan": "no",
       "camera_up_down": "no",
       "camera_tilt": "no",
@@ -45465,8 +45465,8 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "down",
-      "camera_tilt": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "down",
       "camera_arc": "no",
       "camera_roll": "no",
       "complex_motion_description": ""
@@ -50600,11 +50600,11 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
-      "camera_zoom": "in",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
+      "camera_up_down": "down",
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
@@ -51176,11 +51176,11 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
-      "camera_zoom": "out",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
+      "camera_up_down": "up",
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
@@ -51240,7 +51240,7 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
+      "camera_forward_backward": "forward",
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
@@ -51532,7 +51532,7 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
+      "camera_up_down": "down",
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
@@ -52140,8 +52140,8 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "down",
-      "camera_tilt": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "down",
       "camera_arc": "no",
       "camera_roll": "no",
       "complex_motion_description": ""
@@ -53345,7 +53345,7 @@
     "cam_motion": {
       "shot_transition": false,
       "steadiness": "very_smooth",
-      "camera_movement": "major_simple",
+      "camera_movement": "minor",
       "camera_motion_speed": "slow",
       "frame_freezing": false,
       "dolly_zoom": false,
@@ -55837,7 +55837,7 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
+      "camera_forward_backward": "forward",
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
@@ -68732,7 +68732,7 @@
       "camera_forward_backward": "forward",
       "camera_zoom": "no",
       "camera_left_right": "no",
-      "camera_pan": "no",
+      "camera_pan": "left_to_right",
       "camera_up_down": "no",
       "camera_tilt": "no",
       "camera_arc": "no",
@@ -69117,8 +69117,8 @@
       "is_tracking": false,
       "tracking_shot_types": [],
       "subject_size_change": "no",
-      "camera_forward_backward": "no",
-      "camera_zoom": "out",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
       "camera_up_down": "no",
@@ -69460,7 +69460,7 @@
     "cam_motion": {
       "shot_transition": false,
       "steadiness": "smooth",
-      "camera_movement": "major_simple",
+      "camera_movement": "major_complex",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
       "dolly_zoom": false,
@@ -69477,7 +69477,7 @@
       "camera_tilt": "up",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": ""
+      "complex_motion_description": "The camera tilts up smoothly and rapidly, finishing with a slight forward push."
     }
   },
   {
@@ -70686,8 +70686,7 @@
       "cinemagraph": false,
       "is_tracking": true,
       "tracking_shot_types": [
-        "side",
-        "tail"
+        "arc"
       ],
       "subject_size_change": "no",
       "camera_forward_backward": "no",
@@ -88154,7 +88153,7 @@
     "cam_motion": {
       "shot_transition": false,
       "steadiness": "very_smooth",
-      "camera_movement": "major_simple",
+      "camera_movement": "major_complex",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
       "dolly_zoom": false,
@@ -88170,8 +88169,8 @@
       "camera_up_down": "no",
       "camera_tilt": "no",
       "camera_arc": "no",
-      "camera_roll": "clockwise",
-      "complex_motion_description": ""
+      "camera_roll": "counter_clockwise",
+      "complex_motion_description": "The camera tracks the character from a worm\u2019s-eye view, looking straight up, as they walk toward camera right while the shot rolls counter-clockwise."
     }
   },
   {
@@ -88821,7 +88820,7 @@
       "camera_pan": "no",
       "camera_up_down": "no",
       "camera_tilt": "no",
-      "camera_crane": "crane_down",
+      "camera_crane": "crane_up",
       "camera_roll": "no",
       "complex_motion_description": ""
     }
@@ -89737,8 +89736,7 @@
       "cinemagraph": false,
       "is_tracking": true,
       "tracking_shot_types": [
-        "side",
-        "tail"
+        "pan"
       ],
       "subject_size_change": "no",
       "camera_forward_backward": "no",
@@ -89749,7 +89747,7 @@
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": "The camera focuses on a football player sprinting from right to left, tracking him by moving and panning leftward."
+      "complex_motion_description": "The camera focuses on a rugby player sprinting from right to left, tracking him by moving and panning leftward."
     }
   },
   {
@@ -91690,7 +91688,7 @@
       "camera_pan": "no",
       "camera_up_down": "no",
       "camera_tilt": "no",
-      "camera_crane": "crane_down",
+      "camera_crane": "crane_up",
       "camera_roll": "no",
       "complex_motion_description": ""
     }
@@ -101702,7 +101700,7 @@
       "camera_zoom": "no",
       "camera_left_right": "no",
       "camera_pan": "no",
-      "camera_up_down": "no",
+      "camera_up_down": "down",
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "counter_clockwise",
@@ -109926,7 +109924,7 @@
     "cam_motion": {
       "shot_transition": false,
       "steadiness": "very_smooth",
-      "camera_movement": "major_simple",
+      "camera_movement": "major_complex",
       "camera_motion_speed": "regular",
       "frame_freezing": false,
       "dolly_zoom": false,
@@ -109943,7 +109941,7 @@
       "camera_tilt": "no",
       "camera_arc": "no",
       "camera_roll": "no",
-      "complex_motion_description": ""
+      "complex_motion_description": "The camera zooms in smoothly toward the top-right of the frame."
     }
   },
   {
@@ -118899,6 +118897,1919 @@
       "camera_pan": "no",
       "camera_up_down": "no",
       "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0OFBj7EjZ-g.0.2.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0OFBj7EjZ-g.0.2.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0OFBj7EjZ-g.0.2.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "down",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0OFBj7EjZ-g.4.6.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0OFBj7EjZ-g.4.6.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0OFBj7EjZ-g.4.6.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": true,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0OFBj7EjZ-g.5.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0OFBj7EjZ-g.5.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0OFBj7EjZ-g.5.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "minor",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0Pzq0URbL2M.11.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0Pzq0URbL2M.11.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0Pzq0URbL2M.11.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "minor",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0Pzq0URbL2M.4.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0Pzq0URbL2M.4.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0Pzq0URbL2M.4.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "up",
+      "camera_tilt": "down",
+      "camera_arc": "counter_clockwise",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0u4NY-YtVII.0.7.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0u4NY-YtVII.0.7.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0u4NY-YtVII.0.7.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "lead"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "-2uIa-XMJC0.7.3.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "-2uIa-XMJC0.7.3.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/-2uIa-XMJC0.7.3.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": true,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "3HYfPz8lvDI.1.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "3HYfPz8lvDI.1.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/3HYfPz8lvDI.1.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera initially tilts up, then moves forward to capture a man lying on a bench."
+    }
+  },
+  {
+    "video_name": "4uGfFYzxWEg.4.7.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "4uGfFYzxWEg.4.7.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/4uGfFYzxWEg.4.7.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "down",
+      "camera_tilt": "no",
+      "camera_arc": "clockwise",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "4uGfFYzxWEg.8.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "4uGfFYzxWEg.8.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/4uGfFYzxWEg.8.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "There isn\u2019t enough background information to analyse the camera movement, but it appears to move forward toward the poster."
+    }
+  },
+  {
+    "video_name": "5454.1.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "5454.1.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/5454.1.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": true,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "_6DLjNKtENQ.0.2.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "_6DLjNKtENQ.0.2.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/_6DLjNKtENQ.0.2.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": true,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "pan"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "Due to strong motion blur and the dim environment, the camera motion cannot be accurately determined, but it appears to pan left with a slight rightward movement."
+    }
+  },
+  {
+    "video_name": "6S7wclUORUI.0.5.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "6S7wclUORUI.0.5.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/6S7wclUORUI.0.5.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "right_to_left",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "7pqGzmdE5zE.2.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "7pqGzmdE5zE.2.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/7pqGzmdE5zE.2.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "Ejcl5Jk_4QU.2.2.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "Ejcl5Jk_4QU.2.2.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/Ejcl5Jk_4QU.2.2.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "minor",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "in",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "G2EAFkURl0U.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "G2EAFkURl0U.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/G2EAFkURl0U.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "GVr8pZmSa-c.0.6.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "GVr8pZmSa-c.0.6.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/GVr8pZmSa-c.0.6.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "right_to_left",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "down",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "GVr8pZmSa-c.3.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "GVr8pZmSa-c.3.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/GVr8pZmSa-c.3.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera initially moves backward with a slight pan to the right, then trucks right."
+    }
+  },
+  {
+    "video_name": "H4AZhS5WqKk.0.15.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "H4AZhS5WqKk.0.15.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/H4AZhS5WqKk.0.15.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "hHG1wva1B0w.0.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "hHG1wva1B0w.0.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/hHG1wva1B0w.0.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "LZkl0_9xFOU.15.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "LZkl0_9xFOU.15.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/LZkl0_9xFOU.15.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "mIiPt1YVkP8.12.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mIiPt1YVkP8.12.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mIiPt1YVkP8.12.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "out",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "mIiPt1YVkP8.9.3.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mIiPt1YVkP8.9.3.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mIiPt1YVkP8.9.3.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "down",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "sguYb2y3u6w.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "sguYb2y3u6w.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/sguYb2y3u6w.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "side"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "out",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "u-dEnJpCGAQ.8.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "u-dEnJpCGAQ.8.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/u-dEnJpCGAQ.8.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "pan"
+      ],
+      "subject_size_change": "smaller",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera initially follows a young lion while panning left and tilting up; after a brief pause, it continues moving along the original path, and finally comes to rest on three lions.\n"
+    }
+  },
+  {
+    "video_name": "upC8hjr2b4g.4.5.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "upC8hjr2b4g.4.5.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/upC8hjr2b4g.4.5.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": true,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "upC8hjr2b4g.9.5.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "upC8hjr2b4g.9.5.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/upC8hjr2b4g.9.5.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "minor",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "uWCGK4nneeU.2.2.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "uWCGK4nneeU.2.2.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/uWCGK4nneeU.2.2.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "vEvBpjCOBu0.0.5.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "vEvBpjCOBu0.0.5.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/vEvBpjCOBu0.0.5.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "up",
+      "camera_tilt": "no",
+      "camera_arc": "counter_clockwise",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera initially arcs counterclockwise while moving upward, then moves slightly forward."
+    }
+  },
+  {
+    "video_name": "yGsVo0uIJVs.1.9.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "yGsVo0uIJVs.1.9.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/yGsVo0uIJVs.1.9.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "down",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0OFBj7EjZ-g.0.6.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0OFBj7EjZ-g.0.6.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0OFBj7EjZ-g.0.6.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "0Pzq0URbL2M.0.3.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "0Pzq0URbL2M.0.3.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/0Pzq0URbL2M.0.3.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "right_to_left",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "1470.0.48.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "1470.0.48.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/1470.0.48.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "2530.0.16.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "2530.0.16.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/2530.0.16.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": true,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "4859.1.17.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "4859.1.17.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/4859.1.17.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "pan"
+      ],
+      "subject_size_change": "smaller",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera pans left to track the skateboarder, with a slight tilt up as they jump and a slight tilt down as they land."
+    }
+  },
+  {
+    "video_name": "5eDQ2SSsmEk.1.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "5eDQ2SSsmEk.1.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/5eDQ2SSsmEk.1.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "5eDQ2SSsmEk.3.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "5eDQ2SSsmEk.3.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/5eDQ2SSsmEk.3.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "down",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "88vmzn_LufA.0.2.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "88vmzn_LufA.0.2.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/88vmzn_LufA.0.2.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "pan",
+        "tilt"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "down",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera stays static initially, then starts panning right while tilting down."
+    }
+  },
+  {
+    "video_name": "bPZc7avrCT4.0.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "bPZc7avrCT4.0.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/bPZc7avrCT4.0.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "side",
+        "tail",
+        "pan"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera first pans right, then trucks right while continuing to pan, and finally moves forward."
+    }
+  },
+  {
+    "video_name": "F7iLfuci75Y.9.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "F7iLfuci75Y.9.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/F7iLfuci75Y.9.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "i82xURPkLWo.3.11.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "i82xURPkLWo.3.11.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/i82xURPkLWo.3.11.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "Kapdye-diSM.11.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "Kapdye-diSM.11.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/Kapdye-diSM.11.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera moves forward and rightward, then pans left at the end of the video."
+    }
+  },
+  {
+    "video_name": "KF5p8VIbt0Y.4.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "KF5p8VIbt0Y.4.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/KF5p8VIbt0Y.4.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera was held unsteadily, focusing on a man choking his neck. The camera pans back and forth, accompanied by slight tilting movements."
+    }
+  },
+  {
+    "video_name": "Lp7E973zozc.3.4.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "Lp7E973zozc.3.4.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/Lp7E973zozc.3.4.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "pan"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "M0jmSsQ5ptw.3.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "M0jmSsQ5ptw.3.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/M0jmSsQ5ptw.3.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_unsteady",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "up",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The locked-on camera moves forward initially, then continues moving forward and upward along the slider while tilting up."
+    }
+  },
+  {
+    "video_name": "mIiPt1YVkP8.13.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mIiPt1YVkP8.13.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mIiPt1YVkP8.13.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "arc"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "counter_clockwise",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "mIiPt1YVkP8.14.0.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mIiPt1YVkP8.14.0.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mIiPt1YVkP8.14.0.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "aerial"
+      ],
+      "subject_size_change": "larger",
+      "camera_forward_backward": "no",
+      "camera_zoom": "in",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "This is a 2D video, with the camera simulating a zoom-in and rightward movement."
+    }
+  },
+  {
+    "video_name": "mIiPt1YVkP8.2.3.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mIiPt1YVkP8.2.3.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mIiPt1YVkP8.2.3.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera moves forward toward a plane and tilts up, then pauses briefly before slightly moving upward and tilting down."
+    }
+  },
+  {
+    "video_name": "mlasEBKtDAM.2.5.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mlasEBKtDAM.2.5.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mlasEBKtDAM.2.5.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": true,
+      "tracking_shot_types": [
+        "side"
+      ],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera is directed toward the sky to track the plane; the lack of reference information makes it difficult to determine the camera movement."
+    }
+  },
+  {
+    "video_name": "mlShD2AvbV8.5.2.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "mlShD2AvbV8.5.2.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/mlShD2AvbV8.5.2.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "pfGEdmZyVyY.1.3.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "pfGEdmZyVyY.1.3.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/pfGEdmZyVyY.1.3.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "pfGEdmZyVyY.1.5.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "pfGEdmZyVyY.1.5.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/pfGEdmZyVyY.1.5.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "backward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "QYAWxJ8a7RA.7.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "QYAWxJ8a7RA.7.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/QYAWxJ8a7RA.7.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "minor",
+      "camera_motion_speed": "slow",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "ti231UvSvfQ.12.4.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "ti231UvSvfQ.12.4.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/ti231UvSvfQ.12.4.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "static",
+      "camera_movement": "no",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "u-dEnJpCGAQ.165.6.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "u-dEnJpCGAQ.165.6.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/u-dEnJpCGAQ.165.6.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "down",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera is initially static, then pans right while tilting down, and finally remains static."
+    }
+  },
+  {
+    "video_name": "urgDBUXShos.0.8.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "urgDBUXShos.0.8.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/urgDBUXShos.0.8.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "unsteady",
+      "camera_movement": "minor",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "left_to_right",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": ""
+    }
+  },
+  {
+    "video_name": "VaSlqE0Nx2Q.0.1.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "VaSlqE0Nx2Q.0.1.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/VaSlqE0Nx2Q.0.1.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "no",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "no",
+      "camera_tilt": "no",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera is static initially, then pans right and tilts down, followed by a slight pan left."
+    }
+  },
+  {
+    "video_name": "vEvBpjCOBu0.2.4.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "vEvBpjCOBu0.2.4.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/vEvBpjCOBu0.2.4.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_complex",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "left_to_right",
+      "camera_pan": "right_to_left",
+      "camera_up_down": "down",
+      "camera_tilt": "up",
+      "camera_arc": "no",
+      "camera_roll": "no",
+      "complex_motion_description": "The camera moves right and forward while moving downward, panning left, and tilting up, then gradually slows down at the end."
+    }
+  },
+  {
+    "video_name": "yGsVo0uIJVs.1.4.mp4",
+    "workflows": {
+      "cam_motion": {
+        "approver": "Yuhan Huang",
+        "video_name": "yGsVo0uIJVs.1.4.mp4",
+        "video_url": "https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/yGsVo0uIJVs.1.4.mp4"
+      }
+    },
+    "cam_motion": {
+      "shot_transition": false,
+      "steadiness": "very_smooth",
+      "camera_movement": "major_simple",
+      "camera_motion_speed": "regular",
+      "frame_freezing": false,
+      "dolly_zoom": false,
+      "motion_blur": false,
+      "cinemagraph": false,
+      "is_tracking": false,
+      "tracking_shot_types": [],
+      "subject_size_change": "no",
+      "camera_forward_backward": "forward",
+      "camera_zoom": "no",
+      "camera_left_right": "no",
+      "camera_pan": "no",
+      "camera_up_down": "down",
+      "camera_tilt": "up",
       "camera_arc": "no",
       "camera_roll": "no",
       "complex_motion_description": ""
