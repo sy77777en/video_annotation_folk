@@ -899,7 +899,8 @@ def generate_balanced_pairwise_tasks(
     train_ratio=TRAIN_RATIO, 
     max_test_sample=MAX_SAMPLES, 
     labels_filename="label_names.json",
-    folder_name="motion_dataset"  # NEW: added parameter
+    folder_name="motion_dataset",  # NEW: added parameter
+    min_samples_threshold=None     # NEW
 ):
     """
     Generate balanced pairwise tasks, ensuring exclusive train/test splits while prioritizing tasks with fewer available samples.
@@ -919,6 +920,8 @@ def generate_balanced_pairwise_tasks(
         train_ratio: Guideline ratio of videos assigned to the training set (only applied when `min_count < max_test_sample / (1 - train_ratio)`).
         max_test_sample: Maximum number of test samples per task (default: 50).
         labels_filename: Filename for labels (default: "label_names.json").
+        folder_name: Name of the folder (default: "motion_dataset").
+        min_samples_threshold: Minimum number of samples per task (default: None).
 
     Returns:
         Dictionary with:
@@ -988,8 +991,8 @@ def generate_balanced_pairwise_tasks(
 
     # Step 2: Sort tasks by the minimum available positive/negative samples (smallest first) and Move tasks["task"] == "has_crane_down" to the first
     task_metadata.sort(key=lambda x: x["min_count"])
-    task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "has_crane_down")
-    task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "is_the_camera_fixed_or_moving")
+    # task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "has_crane_down")
+    # task_metadata = sorted(task_metadata, key=lambda x: x["task"] != "is_the_camera_fixed_or_moving")
     
     # Step 3: Assign videos to train or test, prioritizing constrained tasks
     train_videos = set()
@@ -1182,26 +1185,22 @@ def generate_balanced_pairwise_tasks(
         
         if train_insufficient:
             print(f"🔴 TRAIN SET - {len(train_insufficient)} tasks below threshold:")
-            print(f"{'Skill/Task':<60} {'Pos':<8} {'Neg':<8} {'Min':<8}")
-            print("-" * 84)
+            print(f"{'Skill/Task':<100} {'Pos':<8} {'Neg':<8} {'Min':<8}")
+            print("-" * 124)
             for item in sorted(train_insufficient, key=lambda x: x['min']):
                 display_name = f"{item['skill']}/{item['task']}"
-                if len(display_name) > 58:
-                    display_name = display_name[:55] + "..."
-                print(f"{display_name:<60} {item['pos']:<8} {item['neg']:<8} {item['min']:<8}")
+                print(f"{display_name:<100} {item['pos']:<8} {item['neg']:<8} {item['min']:<8}")
             print()
-        
+
         if test_insufficient:
             print(f"🔴 TEST SET - {len(test_insufficient)} tasks below threshold:")
-            print(f"{'Skill/Task':<60} {'Pos':<8} {'Neg':<8} {'Min':<8}")
-            print("-" * 84)
+            print(f"{'Skill/Task':<100} {'Pos':<8} {'Neg':<8} {'Min':<8}")
+            print("-" * 124)
             for item in sorted(test_insufficient, key=lambda x: x['min']):
                 display_name = f"{item['skill']}/{item['task']}"
-                if len(display_name) > 58:
-                    display_name = display_name[:55] + "..."
-                print(f"{display_name:<60} {item['pos']:<8} {item['neg']:<8} {item['min']:<8}")
+                print(f"{display_name:<100} {item['pos']:<8} {item['neg']:<8} {item['min']:<8}")
             print()
-        
+
         print("💡 Recommendations:")
         print("   1. Reduce --max_samples to require fewer test samples")
         print("   2. Adjust --train_ratio to allocate more videos to the deficient split")
@@ -1664,9 +1663,9 @@ def generate_pairwise_datasets(
     if balance_train:
         train_config_str = "train_balanced"
     elif max_imbalance_ratio is not None:
-        train_config_str = f"train_ratio_{max_imbalance_ratio:.1f}"
+        train_config_str = f"train_posneg_max_ratio_{max_imbalance_ratio:.1f}"
     else:
-        train_config_str = "train_imbalanced"
+        train_config_str = "train_fully_imbal"
     
     # Include train configuration in folder name
     sampled_dir = video_labels_dir / folder_name / \

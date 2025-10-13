@@ -12,9 +12,12 @@ from sklearn.metrics import average_precision_score, roc_auc_score, precision_re
 import numpy as np
 import matplotlib.pyplot as plt
 
-ROOT = Path("/data3/zhiqiul/video_annotation")
-VIDEO_ROOT = Path("/data3/zhiqiul/video_annotation/videos")
-VIDEO_LABELS_DIR = Path("/data3/zhiqiul/video_annotation/video_labels")
+# ROOT = Path("/data3/zhiqiul/video_annotation")
+# VIDEO_ROOT = Path("/data3/zhiqiul/video_annotation/videos")
+# VIDEO_LABELS_DIR = Path("/data3/zhiqiul/video_annotation/video_labels")
+ROOT = Path("./")
+VIDEO_ROOT = Path("./videos")
+VIDEO_LABELS_DIR = Path("./video_labels")
 VIDEO_LABEL_FILE = "video_labels/cam_motion-20250223_2308/label_names_selected.json"
 
 def labels_as_dict(root=ROOT, video_root=VIDEO_ROOT, video_label_file=VIDEO_LABEL_FILE):
