@@ -9,21 +9,107 @@ CAMERABENCH_GROUND_AND_CAMERA_FOLDER = "cam_motion-20250227_0326ground_and_camer
 # CAMERABENCH_GROUND_ONLY_FOLDER_APRIL = "cam_motion-20250406ground_only"
 # CAMERABENCH_SETUP_ONLY_FOLDER_APRIL = "cam_setup-20250406setup_only"
 # CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL = "lighting_setup-20250406lighting_only"
-CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "TODO"
-CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "TODO"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "TODO" # Need to have ground + setup
-CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "TODO" # Need to have ground + camera
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "TODO" # Need to have ground + setup + camera
+# CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "TODO"
+# CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "TODO"
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "TODO" # Need to have ground + setup
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "TODO" # Need to have ground + camera
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "TODO" # Need to have ground + setup + camera
 
-FOLDER_NAMES = [
-    "motion_dataset", # ICCV Version
-    # "motion_dataset_april_update", # April Update for ICCV Version with same videos (Final version to be used?)
-    # "motion_dataset_april_6", # April Version of ICCV Benchmark (Final version to be used?)
-    # "setup_dataset_april_6",
-    "camerabench_pro",
-    "camerabench_pro_with_camera_centric_motion",
-    "lighting_dataset_april_6"
-]
+# CameraBench Pro folder paths (based on your downloads)
+CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "cam_motion-20251003_ground_folder"
+CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "cam_setup-20251003_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "cam_motion-cam_setup-20251003_ground_and_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "cam_motion-20251003_ground_and_camera_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "cam_motion-cam_setup-20251003_ground_and_camera_and_setup_folder"
+
+# FOLDER_NAMES = [
+#     "motion_dataset", # ICCV Version
+#     # "motion_dataset_april_update", # April Update for ICCV Version with same videos (Final version to be used?)
+#     # "motion_dataset_april_6", # April Version of ICCV Benchmark (Final version to be used?)
+#     # "setup_dataset_april_6",
+#     "camerabench_pro",
+#     "camerabench_pro_with_camera_centric_motion",
+#     "lighting_dataset_april_6"
+# ]
+
+# Centralized folder configuration (DRY principle)
+FOLDERS = {
+    "motion_dataset": {
+        "description": "ICCV Version - Basic camera motion dataset",
+        "test_skip_tasks": []  # No tasks to skip in test set
+    },
+    "camerabench_pro": {
+        "description": "CameraBench Pro without camera-centric motion analysis",
+        "test_skip_tasks": [
+            "is_shot_size_applicable",
+            "is_subject_height_applicable",
+            "is_height_wrt_ground_applicable",
+            "is_camera_angle_applicable",
+            "is_focus_applicable"
+        ]
+    },
+    "camerabench_pro_with_camera_centric_motion": {
+        "description": "CameraBench Pro with camera-centric motion analysis",
+        "test_skip_tasks": [
+            "is_shot_size_applicable",
+            "is_subject_height_applicable",
+            "is_height_wrt_ground_applicable",
+            "is_camera_angle_applicable",
+            "is_focus_applicable"
+        ]
+    },
+    "lighting_dataset_april_6": {
+        "description": "Lighting conditions dataset",
+        "test_skip_tasks": []  # No tasks to skip in test set
+    }
+}
+
+# Extract folder names from FOLDERS dict (DRY - single source of truth)
+FOLDER_NAMES = list(FOLDERS.keys())
+
+def get_test_skip_tasks(folder_name):
+    """
+    Get list of task names to skip in test set for a given folder.
+    These tasks will only appear in training set.
+    
+    Args:
+        folder_name: Dataset folder name
+        
+    Returns:
+        List of task names to skip in test set
+        
+    Raises:
+        ValueError: If folder_name is not recognized
+    """
+    if folder_name not in FOLDERS:
+        raise ValueError(
+            f"Unknown folder name: '{folder_name}'. "
+            f"Available folders: {list(FOLDERS.keys())}"
+        )
+    
+    return FOLDERS[folder_name]["test_skip_tasks"]
+
+
+def get_folder_description(folder_name):
+    """
+    Get description for a folder.
+    
+    Args:
+        folder_name: Dataset folder name
+        
+    Returns:
+        Description string
+        
+    Raises:
+        ValueError: If folder_name is not recognized
+    """
+    if folder_name not in FOLDERS:
+        raise ValueError(
+            f"Unknown folder name: '{folder_name}'. "
+            f"Available folders: {list(FOLDERS.keys())}"
+        )
+    
+    return FOLDERS[folder_name]["description"]
 
 def get_pairwise_labels(folder_name):
     assert folder_name in FOLDER_NAMES
@@ -2745,22 +2831,22 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
                 "type": "neg",
             },
         },
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_shot_size_applicable",
-        #     "pos_question": "Can the shot size be meaningfully determined?",
-        #     "neg_question": "Can the shot size not be meaningfully determined?",
-        #     "pos_prompt": "A video where the shot size can be meaningfully determined.",
-        #     "neg_prompt": "A video where the shot size cannot be meaningfully determined.",
-        #     "pos": {
-        #         "label": "cam_setup.shot_size.is_shot_size_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.shot_size.is_shot_size_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_shot_size_applicable",
+            "pos_question": "Can the shot size be meaningfully classified or described?",
+            "neg_question": "Can the shot size not be meaningfully classified or described?",
+            "pos_prompt": "The shot size can be meaningfully classified or described.",
+            "neg_prompt": "The shot size cannot be meaningfully classified or described.",
+            "pos": {
+                "label": "cam_setup.shot_size.is_shot_size_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.shot_size.is_shot_size_applicable",
+                "type": "neg",
+            },
+        },
     ]
 
 def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
@@ -3213,22 +3299,22 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
 
 def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_subject_height_applicable",
-        #     "pos_question": "Is the camera height relative to the subject clear?",
-        #     "neg_question": "Is the camera height relative to the subject unclear?",
-        #     "pos_prompt": "The camera height relative to the subject is clear.",
-        #     "neg_prompt": "The camera height relative to the subject is unclear.",
-        #     "pos": {
-        #         "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_subject_height_applicable",
+            "pos_question": "Is the camera height relative to the subject clear enough to be classified or described?",
+            "neg_question": "Is the camera height relative to the subject not clear enough to be classified or described?",
+            "pos_prompt": "The camera height relative to the subject is clear enough to be classified or described.",
+            "neg_prompt": "The camera height relative to the subject is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change",
@@ -3537,22 +3623,22 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
 
 def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_height_wrt_ground_applicable",
-        #     "pos_question": "Is the camera height relative to the ground or water level clear?",
-        #     "neg_question": "Is the camera height relative to the ground or water level unclear?",
-        #     "pos_prompt": "The camera height relative to the ground or water level is clear.",
-        #     "neg_prompt": "The camera height relative to the ground or water level is unclear.",
-        #     "pos": {
-        #         "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_height_wrt_ground_applicable",
+            "pos_question": "Is the camera height relative to the ground or water level clear enough to be classified or described?",
+            "neg_question": "Is the camera height relative to the ground or water level not clear enough to be classified or described?",
+            "pos_prompt": "The camera height relative to the ground or water level is clear enough to be classified or described.",
+            "neg_prompt": "The camera height relative to the ground or water level is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "height_wrt_ground_change_from_high_to_low",
@@ -3970,22 +4056,22 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
 
 def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_camera_angle_applicable",
-        #     "pos_question": "Is the camera angle relative to the ground clear?",
-        #     "neg_question": "Is the camera angle relative to the ground unclear?",
-        #     "pos_prompt": "The camera angle relative to the ground is clear.",
-        #     "neg_prompt": "The camera angle relative to the ground is unclear.",
-        #     "pos": {
-        #         "label": "cam_setup.angle.is_camera_angle_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.angle.is_camera_angle_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_camera_angle_applicable",
+            "pos_question": "Is the camera angle relative to the ground clear enough to be classified or described?",
+            "neg_question": "Is the camera angle relative to the ground not clear enough to be classified or described?",
+            "pos_prompt": "The camera angle relative to the ground is clear enough to be classified or described.",
+            "neg_prompt": "The camera angle relative to the ground is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.angle.is_camera_angle_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.angle.is_camera_angle_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "camera_angle_change",
@@ -4442,22 +4528,22 @@ def get_camera_angle_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER
 
 def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_focus_applicable",
-        #     "pos_question": "Can the camera's depth of field be perceived or inferred from the video?",
-        #     "neg_question": "Can the camera's depth of field not be easily perceived or inferred from the video?",
-        #     "pos_prompt": "The camera's depth of field can be perceived or inferred from the video.",
-        #     "neg_prompt": "The camera's depth of field cannot be easily perceived or inferred from the video.",
-        #     "pos": {
-        #         "label": "cam_setup.depth_of_field.is_focus_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.depth_of_field.is_focus_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_focus_applicable",
+            "pos_question": "Is the camera's depth of field clear enough to be classified or described?",
+            "neg_question": "Is the camera's depth of field not clear enough to be classified or described?",
+            "pos_prompt": "The camera's depth of field is clear enough to be classified or described.",
+            "neg_prompt": "The camera's depth of field is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.depth_of_field.is_focus_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.depth_of_field.is_focus_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "is_deep_focus",

@@ -21,6 +21,13 @@ PORT = 8080
 HOST = "0.0.0.0"  # 0.0.0.0 allows external access, use "localhost" for local only
 
 
+class ReusableTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    """Multi-threaded TCPServer that allows immediate port reuse."""
+    allow_reuse_address = True  # This fixes the "Address already in use" error
+    daemon_threads = True  # Threads will close when main thread exits
+    request_queue_size = 50  # Handle up to 50 pending connections
+
+
 class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
     """Custom handler for the label viewer."""
 
@@ -28,6 +35,20 @@ class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
         self.video_labels_dir = video_labels_dir
         self.videos_dir = videos_dir
         super().__init__(*args, **kwargs)
+
+    def send_header(self, keyword, value):
+        """Override to add cache control headers for HTML/CSS/JS files."""
+        super().send_header(keyword, value)
+        
+    def end_headers(self):
+        """Override to add cache control headers for development files."""
+        # Disable caching for HTML, CSS, and JS files to see updates immediately
+        if (self.path.endswith('.html') or self.path.endswith('.css') or 
+            self.path.endswith('.js') or self.path == '/' or self.path == '/index.html'):
+            self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0')
+            self.send_header('Pragma', 'no-cache')
+            self.send_header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT')
+        super().end_headers()
 
     def do_GET(self):
         """Handle GET requests."""
@@ -109,7 +130,7 @@ class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', content_type)
             self.send_header('Content-Length', str(file_size))
-            self.send_header('Cache-Control', 'public, max-age=3600')  # Cache for 1 hour
+            self.send_header('Cache-Control', 'public, max-age=3600')  # Cache videos for 1 hour
             self.end_headers()
             
             # Stream the file in chunks for better performance
@@ -129,6 +150,7 @@ class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
         """Send a JSON response."""
         self.send_response(200)
         self.send_header('Content-Type', 'application/json')
+        self.send_header('Cache-Control', 'no-cache')  # Don't cache API responses
         self.end_headers()
         self.wfile.write(json.dumps(data).encode())
 
@@ -177,10 +199,10 @@ def main():
     # Create handler with custom directories
     handler = create_handler(video_labels_dir, videos_dir)
     
-    # Create server
-    with socketserver.TCPServer((args.host, args.port), handler) as httpd:
+    # Use ReusableTCPServer instead of socketserver.TCPServer
+    with ReusableTCPServer((args.host, args.port), handler) as httpd:
         print("=" * 60)
-        print(f"🚀 Label Video Viewer Server")
+        print(f"🚀 Label Video Viewer Server (Multi-threaded)")
         print("=" * 60)
         print(f"📁 Video labels: {video_labels_dir.resolve()}")
         print(f"📹 Videos:       {videos_dir.resolve()}")
@@ -192,12 +214,15 @@ def main():
             print(f"🔗 Local URL:    http://{local_ip}:{args.port}")
             print(f"🔗 Localhost:    http://localhost:{args.port}")
         print("=" * 60)
-        print("\n✨ Server is running. Press Ctrl+C to stop.\n")
+        print("\n✨ Server is running with multi-threading support")
+        print("💡 Can handle multiple users simultaneously")
+        print("💡 Hard refresh browser (Ctrl+Shift+R / Cmd+Shift+R) to see changes\n")
         
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:
             print("\n\n👋 Shutting down server...")
+            print("✅ Port released successfully")
 
 
 if __name__ == "__main__":
