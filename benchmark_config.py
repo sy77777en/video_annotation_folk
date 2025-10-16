@@ -3687,22 +3687,22 @@ def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP
                 "type": "neg",
             },
         },
-        # { # TODO: Add it back!
-        #     "folder": setup_folder,
-        #     "name": "underwater_to_above_water",
-        #     "pos_question": "Does the camera transition from underwater to above water?",
-        #     "neg_question": "Does the camera not transition from underwater to above water?",
-        #     "pos_prompt": "The camera transitions from underwater to above water.",
-        #     "neg_prompt": "The camera does not transition from underwater to above water.",
-        #     "pos": {
-        #         "label": "cam_setup.height_wrt_ground.underwater_to_above_water",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.height_wrt_ground.underwater_to_above_water",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Add it back!
+            "folder": setup_folder,
+            "name": "underwater_to_above_water",
+            "pos_question": "Does the camera transition from underwater to above water?",
+            "neg_question": "Does the camera not transition from underwater to above water?",
+            "pos_prompt": "The camera transitions from underwater to above water.",
+            "neg_prompt": "The camera does not transition from underwater to above water.",
+            "pos": {
+                "label": "cam_setup.height_wrt_ground.underwater_to_above_water",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.height_wrt_ground.underwater_to_above_water",
+                "type": "neg",
+            },
+        },
     ]
 
 
