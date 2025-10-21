@@ -624,7 +624,7 @@
 
     <script>
         const API_BASE = '/api';
-        const VIDEO_BASE = 'https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/';
+        // const VIDEO_BASE = 'https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/';
         let currentData = null;
         let currentSort = 'asc';
         const VIDEOS_PER_SECTION = 6;
@@ -837,7 +837,7 @@
                 select.innerHTML = '<option value="">Select a folder...</option>';
 
                 let defaultFound = false;
-                const defaultFolder = 'cam_motion-cam_setup-20251003_ground_and_setup_folder';
+                const defaultFolder = 'cam_motion-cam_setup-20251021_ground_and_setup_folder';
 
                 folders.forEach(folder => {
                     const option = document.createElement('option');
@@ -932,7 +932,10 @@
             const definition = labelData.definition || '';
             const posCount = labelData.pos.length;
             const negCount = labelData.neg.length;
-            const previewVideo = labelData.pos.length > 0 ? labelData.pos[0] : null;
+            // Use URL if available (new format), otherwise use filename (backward compatibility)
+            const previewVideo = labelData.pos_urls && labelData.pos_urls.length > 0
+                ? labelData.pos_urls[0]
+                : (labelData.pos.length > 0 ? labelData.pos[0] : null);
 
             card.innerHTML = `
                 <div class="label-header">
@@ -978,7 +981,10 @@
 
                 header.addEventListener('mouseenter', () => {
                     if (!previewLoaded) {
-                        previewVid.src = VIDEO_BASE + previewVideo;
+                        // Support both full URLs and filenames
+                        previewVid.src = previewVideo.startsWith('http')
+                            ? previewVideo
+                            : VIDEO_BASE + previewVideo;
                         previewLoaded = true;
                     }
                     previewVid.play().catch(() => {});
@@ -1042,8 +1048,9 @@
             const posGrid = card.querySelector('.positive-grid');
             const negGrid = card.querySelector('.negative-grid');
 
-            const posVideos = labelData.pos.slice(0, VIDEOS_PER_SECTION);
-            const negVideos = labelData.neg.slice(0, VIDEOS_PER_SECTION);
+            // Use URLs if available (new format), otherwise use filenames (backward compatibility)
+            const posVideos = (labelData.pos_urls || labelData.pos).slice(0, VIDEOS_PER_SECTION);
+            const negVideos = (labelData.neg_urls || labelData.neg).slice(0, VIDEOS_PER_SECTION);
 
             renderVideoGrid(posGrid, posVideos);
             renderVideoGrid(negGrid, negVideos);
@@ -1054,7 +1061,10 @@
 
         function shuffleSection(card, labelName, labelData, section) {
             const grid = card.querySelector(`.${section}-grid`);
-            const videos = labelData[section === 'positive' ? 'pos' : 'neg'];
+            // Use URLs if available (new format), otherwise use filenames (backward compatibility)
+            const urlKey = section === 'positive' ? 'pos_urls' : 'neg_urls';
+            const filenameKey = section === 'positive' ? 'pos' : 'neg';
+            const videos = labelData[urlKey] || labelData[filenameKey];
 
             const shuffled = [...videos].sort(() => Math.random() - 0.5);
             const selected = shuffled.slice(0, VIDEOS_PER_SECTION);
@@ -1064,11 +1074,15 @@
 
         function renderVideoGrid(grid, videos) {
             grid.innerHTML = '';
-
-            videos.forEach((videoName) => {
+            
+            videos.forEach((videoNameOrUrl) => {
                 const item = document.createElement('div');
                 item.className = 'video-item';
-                const videoPath = VIDEO_BASE + videoName;
+                // Support both full URLs (new format) and filenames (backward compatibility)
+                const videoPath = videoNameOrUrl.startsWith('http')
+                    ? videoNameOrUrl
+                    : VIDEO_BASE + videoNameOrUrl;
+                const videoName = videoNameOrUrl.split('/').pop(); // Extract filename for display
 
                 item.innerHTML = `
                     <div class="video-wrapper">

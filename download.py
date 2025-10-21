@@ -167,7 +167,10 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
             "label_name": label.label,
             "definition": label.def_question[0],
             "pos": [data.workflows[project_name].video_name for data in label.pos(video_data_list)],
-            "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)]
+            "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)],
+            # Add full URLs for backward compatibility with label_viewer
+            "pos_urls": [data.workflows[project_name].video_url for data in label.pos(video_data_list)],
+            "neg_urls": [data.workflows[project_name].video_url for data in label.neg(video_data_list)]
         }
         save_to_json(label_to_videos, label_path)
         if len(label_to_videos["pos"]) == 0:

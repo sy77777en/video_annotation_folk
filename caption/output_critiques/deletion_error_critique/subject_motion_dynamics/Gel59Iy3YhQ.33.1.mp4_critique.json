@@ -2,7 +2,7 @@
   "video_id": "Gel59Iy3YhQ.33.1.mp4",
   "caption_type": "motion",
   "critique_type": "deletion_error_critique",
-  "generation_timestamp": "2025-09-27T22:04:15.289587",
+  "generation_timestamp": "2025-10-21T01:48:23.629124",
   "model": "gpt-4.1-2025-04-14",
   "prompt_name": "DELETION_ERROR_CRITIQUE_PROMPT",
   "mode": "Text Only",
@@ -27,11 +27,11 @@
     "gpt_caption_llm": "gpt-4o-2024-08-06",
     "caption_rating_score": 5,
     "final_caption": "In a pixel art video game, a purple-robed character spawns on a center-left platform and performs a series of jumps, moving left and right, reaching higher up on the left side of the structure, and is ultimately shot dead by an arrow. Concurrently, a crowned character spawns on a center-right platform and also performs three successive jumps to ascend the platforms on the right side.",
-    "reviewer": "Shihang Zhu",
-    "review_timestamp": "2025-09-05T02:33:49.303502",
+    "reviewer": "Irene Pi",
+    "review_timestamp": "2025-10-11T05:22:15.138818",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20250917_0354",
+  "source_export_folder": "caption_export/export_20251021_0123",
   "generated_critique": "Please remove the sentence: \"Upon reaching the highest platforms on their respective sides, both characters turn to face the center of the screen.\"\n\nAdditionally, revise the following:\n\n- Change \"a purple-robed character spawns on a lower-left platform\" to \"a purple-robed character spawns on a center-left platform.\"\n\n- Change \"a crowned character spawns on a lower-right platform\" to \"a crowned character spawns on a center-right platform.\"",
   "revised_caption_by_generated_critique": "In a pixel art video game, a purple-robed character spawns on a center-left platform and performs a series of three jumps, moving progressively higher up the left side of the structure. Concurrently, a crowned character spawns on a center-right platform and also performs three successive jumps to ascend the platforms on the right side.",
   "status": "success"
