@@ -2,7 +2,7 @@
     "label": "Is Camera Angle Applicable",
     "label_name": "is_camera_angle_applicable",
     "def_question": [
-        "Is the camera angle relative to the ground clear?"
+        "Is the camera angle relative to the ground clear enough to be classified or described?"
     ],
     "alt_question": [
         "Can the camera's angle relative to the ground be clearly determined?",
@@ -15,7 +15,7 @@
         "Can you identify how the camera is angled in relation to the ground?"
     ],
     "def_prompt": [
-        "The camera angle relative to the ground is clear."
+        "The camera angle relative to the ground is clear enough to be classified or described."
     ],
     "alt_prompt": [
         "A shot where the camera's angle relative to the ground can be clearly determined.",

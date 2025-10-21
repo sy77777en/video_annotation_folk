@@ -2,7 +2,7 @@
     "label": "Is Height With Respect To Subject Applicable",
     "label_name": "is_subject_height_applicable",
     "def_question": [
-        "Is the camera height relative to the subject clear?"
+        "Is the camera height relative to the subject clear enough to be classified or described?"
     ],
     "alt_question": [
         "Is it possible to determine the camera's position relative to the subject?",
@@ -14,7 +14,7 @@
         "Is the camera-subject height relationship clear enough to classify?"
     ],
     "def_prompt": [
-        "The camera height relative to the subject is clear."
+        "The camera height relative to the subject is clear enough to be classified or described."
     ],
     "alt_prompt": [
         "A video with classifiable camera-subject height relationship.",

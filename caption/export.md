@@ -414,25 +414,25 @@ Generate all seven critique types for the same export folder:
 
 ```bash
 # Generate insertion error critiques
-python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251008_0211
 
 # Generate replacement error critiques  
-python -m caption.generate_critiques --critique-type replacement_error_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type replacement_error_critique --export-folder caption_export/export_20251008_0211
 
 # Generate deletion error critiques
-python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20251008_0211
 
 # Generate non-constructive critiques
-python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20251008_0211
 
 # Generate video model critiques
-python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251008_0211
 
 # Generate blind model critiques
-python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20251008_0211
 
 # Generate worst caption
-python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20251008_0211
 ```
 
 **Note**: The `--export-folder` parameter is required so the script can:
@@ -464,22 +464,22 @@ These critiques generate new content directly:
 
 ```bash
 # Dry run to check what would be processed
-python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20251007_1648 --dry-run
+python -m caption.generate_critiques --critique-type deletion_error_critique --export-folder caption_export/export_20251008_0211 --dry-run
 
 # Force regeneration of all critiques
-python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251007_1648 --force-regenerate
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251008_0211 --force-regenerate
 
 # Use lighting project configuration
-python -m caption.generate_critiques --config-type lighting --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --config-type lighting --export-folder caption_export/export_20251008_0211
 
 # Custom retry settings
-python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251007_1648 --max-retries 5
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251008_0211 --max-retries 5
 
 # Only process videos without existing critique files
-python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20251007_1648 --new-only
+python -m caption.generate_critiques --critique-type blind_model_critique --export-folder caption_export/export_20251008_0211 --new-only
 
 # Verbose output with progress tracking
-python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20251007_1648 --verbose
+python -m caption.generate_critiques --critique-type nonconstructive_critique --export-folder caption_export/export_20251008_0211 --verbose
 ```
 
 ### **Parallel Processing**
@@ -488,13 +488,13 @@ Run different critique types simultaneously in separate terminals:
 
 ```bash
 # Terminal 1: Generate insertion error critiques
-python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type insertion_error_critique --export-folder caption_export/export_20251008_0211
 
 # Terminal 2: Generate video model critiques  
-python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type video_model_critique --export-folder caption_export/export_20251008_0211
 
 # Terminal 3: Generate worst caption
-python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20251007_1648
+python -m caption.generate_critiques --critique-type worst_caption_generation --export-folder caption_export/export_20251008_0211
 ```
 
 ### **Export and Upload**
@@ -519,8 +519,8 @@ python -m caption.generate_critiques --critique-type worst_caption_generation --
 4. The consolidated file contains all 7 critique types merged with original caption data for all videos
 
 **Example Output:**
-- Export folder: `caption_export/export_20251007_1648`
-- Generated file: `all_videos_with_captions_and_critiques_20251007_1648.json`
+- Export folder: `caption_export/export_20251008_0211`
+- Generated file: `all_videos_with_captions_and_critiques_20251008_0211.json`
 
 ### **Output Structure**
 

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Label Video Viewer</title>
+    <title>Label Video Viewer - VPN Compatible</title>
     <style>
         * {
             margin: 0;
@@ -312,6 +311,13 @@
             object-fit: contain;
         }
 
+        .label-preview-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
         .label-preview-loading {
             display: flex;
             align-items: center;
@@ -486,6 +492,7 @@
             height: 6px;
             background: rgba(255, 255, 255, 0.2);
             cursor: pointer;
+            z-index: 2;
         }
 
         .video-progress:hover {
@@ -560,34 +567,6 @@
         }
 
         @media (max-width: 768px) {
-            .sidebar {
-                position: fixed;
-                left: -280px;
-                top: 0;
-                height: 100%;
-                z-index: 200;
-                transition: left 0.3s;
-            }
-
-            .sidebar.mobile-open {
-                left: 0;
-            }
-
-            .sidebar-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 199;
-            }
-
-            .sidebar-overlay.active {
-                display: block;
-            }
-
             .video-grid {
                 grid-template-columns: 1fr;
             }
@@ -601,29 +580,9 @@
                 height: auto;
                 padding-bottom: 56.25%;
             }
-
-            .label-preview video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            select {
-                min-width: 100%;
-            }
         }
     </style>
 </head>
-
 <body>
     <div class="header">
         <div class="header-content">
@@ -661,67 +620,18 @@
         </div>
     </div>
 
-    <div class="sidebar-overlay"></div>
     <div class="tree-tooltip"></div>
 
     <script>
         const API_BASE = '/api';
+        const VIDEO_BASE = 'https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/';
         let currentData = null;
         let currentSort = 'asc';
         const VIDEOS_PER_SECTION = 6;
         const activeShuffles = new Map();
-        let videoObserver = null;
+        
+        let activeCardElement = null;
 
-        // Initialize Intersection Observer for lazy video loading
-        function initVideoObserver() {
-            if (videoObserver) {
-                videoObserver.disconnect();
-            }
-
-            videoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const video = entry.target;
-
-                    if (entry.isIntersecting) {
-                        // Video is visible - load it if not already loaded
-                        if (video.dataset.loaded === 'false' && video.dataset.src) {
-                            video.src = video.dataset.src;
-                            video.dataset.loaded = 'true';
-                            // Autoplay will trigger from 'loadeddata' event
-                        } else if (video.dataset.loaded === 'true' && video.src) {
-                            // Already loaded, just play
-                            video.play().catch(() => { });
-                        }
-                    } else {
-                        // Video is off-screen - pause it
-                        video.pause();
-
-                        // If video is far from viewport, unload it to free memory
-                        if (entry.intersectionRatio === 0 && video.src) {
-                            const rect = video.getBoundingClientRect();
-                            const viewportHeight = window.innerHeight;
-                            const distanceFromViewport = Math.min(
-                                Math.abs(rect.top - viewportHeight),
-                                Math.abs(rect.bottom)
-                            );
-
-                            // Unload if more than 2 viewport heights away
-                            if (distanceFromViewport > viewportHeight * 2) {
-                                video.removeAttribute('src');
-                                video.load(); // Reset video element
-                                video.dataset.loaded = 'false';
-                            }
-                        }
-                    }
-                });
-            }, {
-                root: null,
-                rootMargin: '200px', // Start loading 200px before entering viewport
-                threshold: 0
-            });
-        }
-
-        // Sidebar resize functionality
         function initSidebarResize() {
             const sidebar = document.querySelector('.sidebar');
             const resizer = document.querySelector('.sidebar-resizer');
@@ -740,11 +650,9 @@
 
             document.addEventListener('mousemove', (e) => {
                 if (!isResizing) return;
-
                 const width = startWidth + (e.clientX - startX);
                 const minWidth = 200;
                 const maxWidth = 600;
-
                 if (width >= minWidth && width <= maxWidth) {
                     sidebar.style.width = `${width}px`;
                 }
@@ -760,7 +668,6 @@
             });
         }
 
-        // Tooltip functionality
         function initTooltip() {
             const tooltip = document.querySelector('.tree-tooltip');
             let tooltipTimeout;
@@ -773,7 +680,6 @@
                     return;
                 }
 
-                // Check if text is truncated
                 if (treeLabel.scrollWidth > treeLabel.clientWidth) {
                     const text = treeLabel.textContent;
                     const fullPath = treeLabel.title;
@@ -804,14 +710,11 @@
             });
         }
 
-        // Build hierarchical tree structure from labels
         function buildHierarchy(labels) {
             const tree = {};
-
             Object.entries(labels).forEach(([labelName, labelData]) => {
                 const parts = labelName.split('.');
                 let current = tree;
-
                 parts.forEach((part, index) => {
                     if (!current[part]) {
                         current[part] = {
@@ -824,22 +727,16 @@
                     current = current[part].children;
                 });
             });
-
             return tree;
         }
 
-        // Render sidebar tree
         function renderSidebarTree(tree, container, level = 0) {
             const sortedEntries = Object.entries(tree).sort((a, b) => {
                 const aHasChildren = Object.keys(a[1].children).length > 0;
                 const bHasChildren = Object.keys(b[1].children).length > 0;
-
-                // Leaf nodes (no children) come before folders (has children)
                 if (aHasChildren !== bHasChildren) {
                     return aHasChildren ? 1 : -1;
                 }
-
-                // Within same type, sort alphabetically
                 return a[0].localeCompare(b[0]);
             });
 
@@ -852,18 +749,15 @@
                 nodeDiv.className = 'tree-node';
                 nodeDiv.dataset.path = node.fullPath;
 
-                // Toggle arrow (only show if has children)
                 const toggle = document.createElement('span');
                 toggle.className = `tree-toggle ${!hasChildren ? 'hidden' : ''}`;
                 toggle.textContent = '▶';
 
-                // Label text
                 const label = document.createElement('span');
                 label.className = 'tree-label';
                 label.textContent = name;
                 label.title = node.fullPath;
 
-                // Count badge (only for leaf nodes)
                 if (node.isLeaf && node.data) {
                     const count = document.createElement('span');
                     count.className = 'tree-count';
@@ -878,29 +772,23 @@
 
                 item.appendChild(nodeDiv);
 
-                // Children container
                 if (hasChildren) {
                     const childrenDiv = document.createElement('div');
                     childrenDiv.className = 'tree-children';
                     renderSidebarTree(node.children, childrenDiv, level + 1);
                     item.appendChild(childrenDiv);
 
-                    // Toggle functionality
                     nodeDiv.addEventListener('click', (e) => {
                         e.stopPropagation();
                         const childrenContainer = item.querySelector('.tree-children');
                         const toggleIcon = nodeDiv.querySelector('.tree-toggle');
-
                         childrenContainer.classList.toggle('expanded');
                         toggleIcon.classList.toggle('expanded');
-
-                        // If this is a leaf node, scroll to it
                         if (node.isLeaf) {
                             scrollToLabel(node.fullPath);
                         }
                     });
                 } else if (node.isLeaf) {
-                    // Leaf node - scroll to label on click
                     nodeDiv.addEventListener('click', (e) => {
                         e.stopPropagation();
                         scrollToLabel(node.fullPath);
@@ -911,25 +799,20 @@
             });
         }
 
-        // Scroll to label card and highlight
         function scrollToLabel(labelName) {
             const card = document.querySelector(`[data-label="${labelName}"]`);
             if (card) {
-                // Remove active state from all tree nodes
                 document.querySelectorAll('.tree-node.active').forEach(n => {
                     n.classList.remove('active');
                 });
 
-                // Add active state to clicked node
                 const treeNode = document.querySelector(`.tree-node[data-path="${labelName}"]`);
                 if (treeNode) {
                     treeNode.classList.add('active');
                 }
 
-                // Scroll to card
                 card.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-                // Optionally open the card
                 const content = card.querySelector('.label-content');
                 const toggleIcon = card.querySelector('.toggle-icon');
                 if (!content.classList.contains('active')) {
@@ -938,7 +821,6 @@
                     loadVideos(card, labelName, currentData[labelName]);
                 }
 
-                // Flash highlight
                 card.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.4)';
                 setTimeout(() => {
                     card.style.boxShadow = '';
@@ -946,7 +828,6 @@
             }
         }
 
-        // Load available folders on page load
         async function loadFolders() {
             try {
                 const response = await fetch(`${API_BASE}/folders`);
@@ -956,7 +837,7 @@
                 select.innerHTML = '<option value="">Select a folder...</option>';
 
                 let defaultFound = false;
-                const defaultFolder = 'cam_setup-20250930_setup_folder';
+                const defaultFolder = 'cam_motion-cam_setup-20251003_ground_and_setup_folder';
 
                 folders.forEach(folder => {
                     const option = document.createElement('option');
@@ -995,7 +876,6 @@
             }
         }
 
-        // Load label data for selected folder
         async function loadLabelData(folder) {
             try {
                 document.getElementById('content').innerHTML = '<div class="loading">Loading label data...</div>';
@@ -1007,23 +887,12 @@
                 console.log('Loaded data with', Object.keys(data).length, 'labels');
                 currentData = data;
 
-                // Use requestAnimationFrame to avoid blocking
                 requestAnimationFrame(() => {
-                    // Build and render sidebar tree
-                    console.time('Build hierarchy');
                     const hierarchy = buildHierarchy(currentData);
-                    console.timeEnd('Build hierarchy');
-
                     const sidebarTree = document.getElementById('sidebarTree');
                     sidebarTree.innerHTML = '';
-
-                    console.time('Render sidebar');
                     renderSidebarTree(hierarchy, sidebarTree);
-                    console.timeEnd('Render sidebar');
-
-                    console.time('Render labels');
                     renderLabels();
-                    console.timeEnd('Render labels');
                 });
             } catch (error) {
                 console.error('Error loading label data:', error);
@@ -1036,7 +905,6 @@
             }
         }
 
-        // Render labels
         function renderLabels() {
             if (!currentData) return;
 
@@ -1056,7 +924,6 @@
             });
         }
 
-        // Create label card with preview video
         function createLabelCard(labelName, labelData) {
             const card = document.createElement('div');
             card.className = 'label-card';
@@ -1065,14 +932,13 @@
             const definition = labelData.definition || '';
             const posCount = labelData.pos.length;
             const negCount = labelData.neg.length;
-
             const previewVideo = labelData.pos.length > 0 ? labelData.pos[0] : null;
 
             card.innerHTML = `
                 <div class="label-header">
                     <div class="label-preview">
                         ${previewVideo ? `
-                            <video muted loop playsinline></video>
+                            <video muted loop playsinline preload="metadata" crossorigin="anonymous"></video>
                         ` : `
                             <div class="label-preview-loading">No preview</div>
                         `}
@@ -1108,14 +974,14 @@
             if (previewVideo) {
                 const header = card.querySelector('.label-header');
                 const previewVid = card.querySelector('.label-preview video');
-                let loaded = false;
+                let previewLoaded = false;
 
                 header.addEventListener('mouseenter', () => {
-                    if (!loaded) {
-                        previewVid.src = `/videos/${previewVideo}`;
-                        loaded = true;
+                    if (!previewLoaded) {
+                        previewVid.src = VIDEO_BASE + previewVideo;
+                        previewLoaded = true;
                     }
-                    previewVid.play().catch(() => { });
+                    previewVid.play().catch(() => {});
                 });
 
                 header.addEventListener('mouseleave', () => {
@@ -1135,7 +1001,7 @@
                     if (c !== content) {
                         c.classList.remove('active');
                         c.parentElement.querySelector('.toggle-icon').classList.remove('open');
-                        c.querySelectorAll('video').forEach(v => v.pause());
+                        unloadCardVideos(c.parentElement);
                     }
                 });
 
@@ -1143,7 +1009,11 @@
                 toggleIcon.classList.toggle('open');
 
                 if (!wasActive && content.classList.contains('active')) {
+                    activeCardElement = card;
                     loadVideos(card, labelName, labelData);
+                } else if (wasActive) {
+                    unloadCardVideos(card);
+                    activeCardElement = null;
                 }
             });
 
@@ -1159,7 +1029,15 @@
             return card;
         }
 
-        // Load videos into grids
+        function unloadCardVideos(card) {
+            const videos = card.querySelectorAll('video');
+            videos.forEach(video => {
+                video.pause();
+                video.removeAttribute('src');
+                video.load();
+            });
+        }
+
         function loadVideos(card, labelName, labelData) {
             const posGrid = card.querySelector('.positive-grid');
             const negGrid = card.querySelector('.negative-grid');
@@ -1174,7 +1052,6 @@
             activeShuffles.set(`${labelName}-negative`, 0);
         }
 
-        // Shuffle and reload a section
         function shuffleSection(card, labelName, labelData, section) {
             const grid = card.querySelector(`.${section}-grid`);
             const videos = labelData[section === 'positive' ? 'pos' : 'neg'];
@@ -1185,15 +1062,13 @@
             renderVideoGrid(grid, selected);
         }
 
-        // Render video grid with loading spinner and lazy loading
         function renderVideoGrid(grid, videos) {
             grid.innerHTML = '';
 
             videos.forEach((videoName) => {
                 const item = document.createElement('div');
                 item.className = 'video-item';
-
-                const videoPath = `/videos/${videoName}`;
+                const videoPath = VIDEO_BASE + videoName;
 
                 item.innerHTML = `
                     <div class="video-wrapper">
@@ -1201,7 +1076,7 @@
                             <div class="spinner"></div>
                             <span>Loading...</span>
                         </div>
-                        <video muted loop playsinline data-src="${videoPath}" data-loaded="false"></video>
+                        <video muted loop playsinline preload="metadata" autoplay crossorigin="anonymous"></video>
                         <div class="video-progress">
                             <div class="video-progress-bar"></div>
                         </div>
@@ -1214,10 +1089,12 @@
                 const progressContainer = item.querySelector('.video-progress');
                 const loadingIndicator = item.querySelector('.video-loading');
 
-                video.addEventListener('loadeddata', () => {
+                // Set crossOrigin BEFORE setting src
+                video.crossOrigin = 'anonymous';
+                video.src = videoPath;
+
+                video.addEventListener('loadedmetadata', () => {
                     loadingIndicator.classList.add('hidden');
-                    // Auto-play when loaded and in viewport
-                    video.play().catch(() => { });
                 });
 
                 video.addEventListener('waiting', () => {
@@ -1228,7 +1105,8 @@
                     loadingIndicator.classList.add('hidden');
                 });
 
-                video.addEventListener('error', () => {
+                video.addEventListener('error', (e) => {
+                    console.error('Video load error:', videoName, e);
                     loadingIndicator.innerHTML = `
                         <div style="text-align: center; padding: 1rem;">
                             ⚠️<br>Failed to load<br>
@@ -1273,15 +1151,9 @@
                 progressContainer.addEventListener('click', seek);
 
                 grid.appendChild(item);
-
-                // Observe this video for lazy loading
-                if (videoObserver) {
-                    videoObserver.observe(video);
-                }
             });
         }
 
-        // Event listeners
         document.getElementById('folderSelect').addEventListener('change', (e) => {
             const folder = e.target.value;
             if (folder) {
@@ -1294,12 +1166,9 @@
             renderLabels();
         });
 
-        // Initialize
-        initVideoObserver();
         initSidebarResize();
         initTooltip();
         loadFolders();
     </script>
 </body>
-
 </html>
