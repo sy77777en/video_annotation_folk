@@ -3,27 +3,113 @@ CAMERABENCH_GROUND_ONLY_FOLDER = "cam_motion-20250227_0324ground_only"
 CAMERABENCH_GROUND_AND_SETUP_FOLDER = "cam_motion-cam_setup-20250227_0507ground_and_setup"
 CAMERABENCH_GROUND_AND_CAMERA_FOLDER = "cam_motion-20250227_0326ground_and_camera"
 # New folder after ICCV
-# CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE = "cam_motion-cam_setup-20250227_0507ground_and_setup_updated_on_0406"
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_UPDATE = "cam_motion-cam_setup-20250227_0507ground_and_setup_updated_on_0406"
 
 # CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL = "cam_motion-cam_setup-20250406_setup_and_motion"
 # CAMERABENCH_GROUND_ONLY_FOLDER_APRIL = "cam_motion-20250406ground_only"
 # CAMERABENCH_SETUP_ONLY_FOLDER_APRIL = "cam_setup-20250406setup_only"
-# CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL = "lighting_setup-20250406lighting_only"
-CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "TODO"
-CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "TODO"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "TODO" # Need to have ground + setup
-CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "TODO" # Need to have ground + camera
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "TODO" # Need to have ground + setup + camera
+CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL = "lighting_setup-20250406lighting_only"
+# CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "TODO"
+# CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "TODO"
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "TODO" # Need to have ground + setup
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "TODO" # Need to have ground + camera
+# CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "TODO" # Need to have ground + setup + camera
 
-FOLDER_NAMES = [
-    "motion_dataset", # ICCV Version
-    # "motion_dataset_april_update", # April Update for ICCV Version with same videos (Final version to be used?)
-    # "motion_dataset_april_6", # April Version of ICCV Benchmark (Final version to be used?)
-    # "setup_dataset_april_6",
-    "camerabench_pro",
-    "camerabench_pro_with_camera_centric_motion",
-    "lighting_dataset_april_6"
-]
+# CameraBench Pro folder paths (based on your downloads)
+CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "cam_motion-20251003_ground_folder"
+CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "cam_setup-20251003_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "cam_motion-cam_setup-20251003_ground_and_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "cam_motion-20251003_ground_and_camera_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "cam_motion-cam_setup-20251003_ground_and_camera_and_setup_folder"
+
+# FOLDER_NAMES = [
+#     "motion_dataset", # ICCV Version
+#     # "motion_dataset_april_update", # April Update for ICCV Version with same videos (Final version to be used?)
+#     # "motion_dataset_april_6", # April Version of ICCV Benchmark (Final version to be used?)
+#     # "setup_dataset_april_6",
+#     "camerabench_pro",
+#     "camerabench_pro_with_camera_centric_motion",
+#     "lighting_dataset_april_6"
+# ]
+
+# Centralized folder configuration (DRY principle)
+FOLDERS = {
+    "motion_dataset": {
+        "description": "ICCV Version - Basic camera motion dataset",
+        "test_skip_tasks": []  # No tasks to skip in test set
+    },
+    "camerabench_pro": {
+        "description": "CameraBench Pro without camera-centric motion analysis",
+        "test_skip_tasks": [
+            "is_shot_size_applicable",
+            "is_subject_height_applicable",
+            "is_height_wrt_ground_applicable",
+            "is_camera_angle_applicable",
+            "is_focus_applicable"
+        ]
+    },
+    "camerabench_pro_with_camera_centric_motion": {
+        "description": "CameraBench Pro with camera-centric motion analysis",
+        "test_skip_tasks": [
+            "is_shot_size_applicable",
+            "is_subject_height_applicable",
+            "is_height_wrt_ground_applicable",
+            "is_camera_angle_applicable",
+            "is_focus_applicable"
+        ]
+    },
+    "lighting_dataset_april_6": {
+        "description": "Lighting conditions dataset",
+        "test_skip_tasks": []  # No tasks to skip in test set
+    }
+}
+
+# Extract folder names from FOLDERS dict (DRY - single source of truth)
+FOLDER_NAMES = list(FOLDERS.keys())
+
+def get_test_skip_tasks(folder_name):
+    """
+    Get list of task names to skip in test set for a given folder.
+    These tasks will only appear in training set.
+    
+    Args:
+        folder_name: Dataset folder name
+        
+    Returns:
+        List of task names to skip in test set
+        
+    Raises:
+        ValueError: If folder_name is not recognized
+    """
+    if folder_name not in FOLDERS:
+        raise ValueError(
+            f"Unknown folder name: '{folder_name}'. "
+            f"Available folders: {list(FOLDERS.keys())}"
+        )
+    
+    return FOLDERS[folder_name]["test_skip_tasks"]
+
+
+def get_folder_description(folder_name):
+    """
+    Get description for a folder.
+    
+    Args:
+        folder_name: Dataset folder name
+        
+    Returns:
+        Description string
+        
+    Raises:
+        ValueError: If folder_name is not recognized
+    """
+    if folder_name not in FOLDERS:
+        raise ValueError(
+            f"Unknown folder name: '{folder_name}'. "
+            f"Available folders: {list(FOLDERS.keys())}"
+        )
+    
+    return FOLDERS[folder_name]["description"]
 
 def get_pairwise_labels(folder_name):
     assert folder_name in FOLDER_NAMES
@@ -51,25 +137,25 @@ def get_pairwise_labels(folder_name):
     # elif folder_name == "motion_dataset_april_update":
     #     return get_motion_pairwise_labels(
     #         ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
-    #         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL_UPDATE,
+    #         ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_UPDATE,
     #         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
     #     )
     # elif folder_name == "motion_dataset_april_6":
     #     return get_motion_pairwise_labels(
-    #         ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
-    #         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+    #         ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+    #         ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
     #         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
     #     )
     # elif folder_name == "setup_dataset_april_6":
     #     return get_setup_pairwise_labels(
-    #         setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
+    #         setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY,
     #     )
     # elif folder_name == "motion_and_setup_dataset_april_6":
     #     return get_motion_and_setup_pairwise_labels(
-    #         ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
-    #         ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+    #         ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+    #         ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
     #         ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-    #         setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL,
+    #         setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY,
     #     )
     elif folder_name == "lighting_dataset_april_6":
         return get_lighting_pairwise_labels(
@@ -929,7 +1015,7 @@ def get_rotation_vs_translation_without_camera_centric_motion_tasks(ground_folde
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_motion.camera_centric_movement.upward.only_upward_wrt_camera",
+                "label": "cam_motion.ground_centric_movement.upward.only_upward_wrt_ground",
                 "type": "pos",
             },
         },
@@ -945,7 +1031,7 @@ def get_rotation_vs_translation_without_camera_centric_motion_tasks(ground_folde
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_motion.camera_centric_movement.downward.only_downward_wrt_camera",
+                "label": "cam_motion.ground_centric_movement.downward.only_downward_wrt_ground",
                 "type": "pos",
             },
         },
@@ -1898,10 +1984,10 @@ def get_reference_frame_tasks(ground_and_camera_and_setup_folder=CAMERABENCH_GRO
     ]
 
 
-def get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
+def get_reference_frame_ground_only_tasks(ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER):
     return [
         {
-            "folder": ground_and_camera_and_setup_folder,
+            "folder": ground_and_setup_folder,
             "name": "forward_bird_worm_included_vs_not_forward_bird_worm_included",
             "pos_question": "Does the camera move forward relative to the scene (forward normally, north from a bird’s-eye view, or south from a worm’s-eye view)?",
             "neg_question": "Does the camera not move forward relative to the scene (forward normally, north from a bird’s-eye view, or south from a worm’s-eye view)?",
@@ -1917,7 +2003,7 @@ def get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=CAM
             },
         },
         {
-            "folder": ground_and_camera_and_setup_folder,
+            "folder": ground_and_setup_folder,
             "name": "backward_bird_worm_included_vs_not_backward_bird_worm_included",
             "pos_question": "Does the camera move backward relative to the scene (backward normally, south from a bird’s-eye view, or north from a worm’s-eye view)?",
             "neg_question": "Does the camera not move backward relative to the scene (backward normally, south from a bird’s-eye view, or north from a worm’s-eye view)?",
@@ -1933,7 +2019,7 @@ def get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=CAM
             },
         },
         {
-            "folder": ground_and_camera_and_setup_folder,
+            "folder": ground_and_setup_folder,
             "name": "upward_bird_worm_included_vs_not_upward_bird_worm_included",
             "pos_question": "Does the camera move physically upward (or pedestals up) relative to the ground (even if it's a bird's or worm's eye view)?",
             "neg_question": "Does the camera not move physically upward relative to the ground (even if it's a bird's or worm's eye view)?",
@@ -1949,7 +2035,7 @@ def get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=CAM
             },
         },
         {
-            "folder": ground_and_camera_and_setup_folder,
+            "folder": ground_and_setup_folder,
             "name": "downward_bird_worm_included_vs_not_downward_bird_worm_included",
             "pos_question": "Does the camera move physically downward (or pedestals down) relative to the ground (even if it's a bird's or worm's eye view)?",
             "neg_question": "Does the camera not move physically downward relative to the ground (even if it's a bird's or worm's eye view)?",
@@ -1967,7 +2053,7 @@ def get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=CAM
     ]
 
 
-def get_shot_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_shot_transition_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -1987,7 +2073,7 @@ def get_shot_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_overlays_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_overlays_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2007,7 +2093,7 @@ def get_overlays_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_lens_distortion_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_lens_distortion_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2043,12 +2129,12 @@ def get_lens_distortion_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_playback_speed_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
             "name": "fast_motion",
-            "pos_question": "Is it a fast-motion video with forward playback moderately faster than real-time (about 1.5×–3×)?"
+            "pos_question": "Is it a fast-motion video with forward playback moderately faster than real-time (about 1.5×–3×)?",
             "neg_question": "Is it not a fast-motion video with forward playback moderately faster than real-time (about 1.5×–3×)?",
             "pos_prompt": "A fast-motion video where playback is forward and moderately faster than real-time (about 1.5×–3×).",
             "neg_prompt": "A video that is not played at forward and moderately faster than real-time speed (about 1.5×–3×).",
@@ -2175,7 +2261,7 @@ def get_playback_speed_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_point_of_view_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2419,7 +2505,7 @@ def get_point_of_view_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_subject_framing_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2535,7 +2621,7 @@ def get_subject_framing_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_shot_type_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2745,25 +2831,25 @@ def get_shot_type_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
                 "type": "neg",
             },
         },
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_shot_size_applicable",
-        #     "pos_question": "Can the shot size be meaningfully determined?",
-        #     "neg_question": "Can the shot size not be meaningfully determined?",
-        #     "pos_prompt": "A video where the shot size can be meaningfully determined.",
-        #     "neg_prompt": "A video where the shot size cannot be meaningfully determined.",
-        #     "pos": {
-        #         "label": "cam_setup.shot_size.is_shot_size_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.shot_size.is_shot_size_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_shot_size_applicable",
+            "pos_question": "Can the shot size be meaningfully classified or described?",
+            "neg_question": "Can the shot size not be meaningfully classified or described?",
+            "pos_prompt": "The shot size can be meaningfully classified or described.",
+            "neg_prompt": "The shot size cannot be meaningfully classified or described.",
+            "pos": {
+                "label": "cam_setup.shot_size.is_shot_size_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.shot_size.is_shot_size_applicable",
+                "type": "neg",
+            },
+        },
     ]
 
-def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_shot_size_change_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2815,7 +2901,7 @@ def get_shot_size_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         },
     ]
 
-def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_shot_size_start_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -2947,7 +3033,7 @@ def get_shot_size_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_shot_size_end_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3079,7 +3165,7 @@ def get_shot_size_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_shot_size_is_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3211,24 +3297,24 @@ def get_shot_size_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_subject_height_applicable",
-        #     "pos_question": "Is the camera height relative to the subject clear?",
-        #     "neg_question": "Is the camera height relative to the subject unclear?",
-        #     "pos_prompt": "The camera height relative to the subject is clear.",
-        #     "neg_prompt": "The camera height relative to the subject is unclear.",
-        #     "pos": {
-        #         "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_subject_height_applicable",
+            "pos_question": "Is the camera height relative to the subject clear enough to be classified or described?",
+            "neg_question": "Is the camera height relative to the subject not clear enough to be classified or described?",
+            "pos_prompt": "The camera height relative to the subject is clear enough to be classified or described.",
+            "neg_prompt": "The camera height relative to the subject is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.height_wrt_subject.is_subject_height_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "height_wrt_subject_change",
@@ -3279,7 +3365,7 @@ def get_height_wrt_subject_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLD
         },
     ]
 
-def get_height_wrt_subject_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_subject_start_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3331,7 +3417,7 @@ def get_height_wrt_subject_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
         },
     ]
 
-def get_height_wrt_subject_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_subject_end_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3383,7 +3469,7 @@ def get_height_wrt_subject_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_
         },
     ]
 
-def get_height_wrt_subject_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_subject_is_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3435,7 +3521,7 @@ def get_height_wrt_subject_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_A
         },
     ]
 
-def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3535,24 +3621,24 @@ def get_height_wrt_subject_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_
         },
     ]
 
-def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_height_wrt_ground_applicable",
-        #     "pos_question": "Is the camera height relative to the ground or water level clear?",
-        #     "neg_question": "Is the camera height relative to the ground or water level unclear?",
-        #     "pos_prompt": "The camera height relative to the ground or water level is clear.",
-        #     "neg_prompt": "The camera height relative to the ground or water level is unclear.",
-        #     "pos": {
-        #         "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_height_wrt_ground_applicable",
+            "pos_question": "Is the camera height relative to the ground or water level clear enough to be classified or described?",
+            "neg_question": "Is the camera height relative to the ground or water level not clear enough to be classified or described?",
+            "pos_prompt": "The camera height relative to the ground or water level is clear enough to be classified or described.",
+            "neg_prompt": "The camera height relative to the ground or water level is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.height_wrt_ground.is_height_wrt_ground_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "height_wrt_ground_change_from_high_to_low",
@@ -3601,7 +3687,7 @@ def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
                 "type": "neg",
             },
         },
-        {
+        { # TODO: Add it back!
             "folder": setup_folder,
             "name": "underwater_to_above_water",
             "pos_question": "Does the camera transition from underwater to above water?",
@@ -3620,7 +3706,7 @@ def get_height_wrt_ground_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDE
     ]
 
 
-def get_height_wrt_ground_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_ground_start_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3736,7 +3822,7 @@ def get_height_wrt_ground_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER
         },
     ]
 
-def get_height_wrt_ground_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_ground_end_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3852,7 +3938,7 @@ def get_height_wrt_ground_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_A
         },
     ]
 
-def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -3968,24 +4054,24 @@ def get_height_wrt_ground_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_AP
         },
     ]
 
-def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_camera_angle_applicable",
-        #     "pos_question": "Is the camera angle relative to the ground clear?",
-        #     "neg_question": "Is the camera angle relative to the ground unclear?",
-        #     "pos_prompt": "The camera angle relative to the ground is clear.",
-        #     "neg_prompt": "The camera angle relative to the ground is unclear.",
-        #     "pos": {
-        #         "label": "cam_setup.angle.is_camera_angle_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.angle.is_camera_angle_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_camera_angle_applicable",
+            "pos_question": "Is the camera angle relative to the ground clear enough to be classified or described?",
+            "neg_question": "Is the camera angle relative to the ground not clear enough to be classified or described?",
+            "pos_prompt": "The camera angle relative to the ground is clear enough to be classified or described.",
+            "neg_prompt": "The camera angle relative to the ground is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.angle.is_camera_angle_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.angle.is_camera_angle_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "camera_angle_change",
@@ -4036,7 +4122,7 @@ def get_camera_angle_change_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APR
         },
     ]
 
-def get_dutch_angle_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_dutch_angle_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4088,7 +4174,7 @@ def get_dutch_angle_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4172,7 +4258,7 @@ def get_camera_angle_start_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRI
         },
     ]
 
-def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4256,7 +4342,7 @@ def get_camera_angle_end_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         },
     ]
 
-def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4340,7 +4426,7 @@ def get_camera_angle_is_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         },
     ]
 
-def get_camera_angle_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_camera_angle_transition_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4440,24 +4526,24 @@ def get_camera_angle_transition_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER
         },
     ]
 
-def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_depth_of_field_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
-        # {
-        #     "folder": setup_folder,
-        #     "name": "is_focus_applicable",
-        #     "pos_question": "Can the camera's depth of field be perceived or inferred from the video?",
-        #     "neg_question": "Can the camera's depth of field not be easily perceived or inferred from the video?",
-        #     "pos_prompt": "The camera's depth of field can be perceived or inferred from the video.",
-        #     "neg_prompt": "The camera's depth of field cannot be easily perceived or inferred from the video.",
-        #     "pos": {
-        #         "label": "cam_setup.depth_of_field.is_focus_applicable",
-        #         "type": "pos",
-        #     },
-        #     "neg": {
-        #         "label": "cam_setup.depth_of_field.is_focus_applicable",
-        #         "type": "neg",
-        #     },
-        # },
+        { # TODO: Skip for test set
+            "folder": setup_folder,
+            "name": "is_focus_applicable",
+            "pos_question": "Is the camera's depth of field clear enough to be classified or described?",
+            "neg_question": "Is the camera's depth of field not clear enough to be classified or described?",
+            "pos_prompt": "The camera's depth of field is clear enough to be classified or described.",
+            "neg_prompt": "The camera's depth of field is not clear enough to be classified or described.",
+            "pos": {
+                "label": "cam_setup.focus.is_focus_applicable",
+                "type": "pos",
+            },
+            "neg": {
+                "label": "cam_setup.focus.is_focus_applicable",
+                "type": "neg",
+            },
+        },
         {
             "folder": setup_folder,
             "name": "is_deep_focus",
@@ -4466,11 +4552,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera uses a deep depth of field with distant details remaining sharp.",
             "neg_prompt": "The camera does not use a deep depth of field with distant details remaining sharp.",
             "pos": {
-                "label": "cam_setup.depth_of_field.is_deep_focus",
+                "label": "cam_setup.focus.is_deep_focus",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.is_deep_focus",
+                "label": "cam_setup.focus.is_deep_focus",
                 "type": "neg",
             },
         },
@@ -4482,11 +4568,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera uses shallow depth of field, with a limited but noticeable range of space in focus.",
             "neg_prompt": "The camera does not use shallow depth of field with a limited but noticeable range of space in focus.",
             "pos": {
-                "label": "cam_setup.depth_of_field.is_shallow_focus",
+                "label": "cam_setup.focus.is_shallow_focus",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.is_shallow_focus",
+                "label": "cam_setup.focus.is_shallow_focus",
                 "type": "neg",
             },
         },
@@ -4498,11 +4584,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera uses extremely shallow depth of field, with only a narrow plane in focus.",
             "neg_prompt": "The camera does not use extremely shallow depth of field with only a narrow plane in focus.",
             "pos": {
-                "label": "cam_setup.depth_of_field.is_ultra_shallow_focus",
+                "label": "cam_setup.focus.is_ultra_shallow_focus",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.is_ultra_shallow_focus",
+                "label": "cam_setup.focus.is_ultra_shallow_focus",
                 "type": "neg",
             },
         },
@@ -4514,11 +4600,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera uses rack focus or pull focus to shift the focal plane.",
             "neg_prompt": "The camera does not use rack focus or pull focus to shift the focal plane.",
             "pos": {
-                "label": "cam_setup.depth_of_field.is_rack_pull_focus",
+                "label": "cam_setup.focus.is_rack_pull_focus",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.is_rack_pull_focus",
+                "label": "cam_setup.focus.is_rack_pull_focus",
                 "type": "neg",
             },
         },
@@ -4530,11 +4616,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera uses focus tracking to keep a subject in focus in the video.",
             "neg_prompt": "The camera does not use focus tracking to keep a subject in focus in the video.",
             "pos": {
-                "label": "cam_setup.depth_of_field.is_focus_tracking",
+                "label": "cam_setup.focus.is_focus_tracking",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.is_focus_tracking",
+                "label": "cam_setup.focus.is_focus_tracking",
                 "type": "neg",
             },
         },
@@ -4546,11 +4632,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The focal plane shifts noticeably between foreground, middle ground, or background regions.",
             "neg_prompt": "The focal plane does not shift noticeably between foreground, middle ground, or background regions.",
             "pos": {
-                "label": "cam_setup.depth_of_field.focus_change",
+                "label": "cam_setup.focus.focus_change",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.focus_change",
+                "label": "cam_setup.focus.focus_change",
                 "type": "neg",
             },
         },
@@ -4562,11 +4648,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The focal plane shifts from distant to close, moving between foreground, middle ground, or background.",
             "neg_prompt": "The focal plane does not shift from distant to close, moving between foreground, middle ground, or background.",
             "pos": {
-                "label": "cam_setup.depth_of_field.focus_change_from_far_to_near",
+                "label": "cam_setup.focus.focus_change_from_far_to_near",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.focus_change_from_far_to_near",
+                "label": "cam_setup.focus.focus_change_from_far_to_near",
                 "type": "neg",
             },
         },
@@ -4578,11 +4664,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The focal plane shifts from close to distant, moving between foreground, middle ground, or background.",
             "neg_prompt": "The focal plane does not shift from close to distant, moving between foreground, middle ground, or background.",
             "pos": {
-                "label": "cam_setup.depth_of_field.focus_change_from_near_to_far",
+                "label": "cam_setup.focus.focus_change_from_near_to_far",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.focus_change_from_near_to_far",
+                "label": "cam_setup.focus.focus_change_from_near_to_far",
                 "type": "neg",
             },
         },
@@ -4594,11 +4680,11 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera starts in sharp focus and then shifts out of focus.",
             "neg_prompt": "The camera does not start in sharp focus and then shifts out of focus.",
             "pos": {
-                "label": "cam_setup.depth_of_field.focus_change_from_in_to_out_of_focus",
+                "label": "cam_setup.focus.focus_change_from_in_to_out_of_focus",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.focus_change_from_in_to_out_of_focus",
+                "label": "cam_setup.focus.focus_change_from_in_to_out_of_focus",
                 "type": "neg",
             },
         },
@@ -4610,17 +4696,17 @@ def get_depth_of_field_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
             "pos_prompt": "The camera starts out of focus and then becomes in focus.",
             "neg_prompt": "The camera does not start out of focus and then becomes in focus.",
             "pos": {
-                "label": "cam_setup.depth_of_field.focus_change_from_out_to_in_focus",
+                "label": "cam_setup.focus.focus_change_from_out_to_in_focus",
                 "type": "pos",
             },
             "neg": {
-                "label": "cam_setup.depth_of_field.focus_change_from_out_to_in_focus",
+                "label": "cam_setup.focus.focus_change_from_out_to_in_focus",
                 "type": "neg",
             },
         }
     ]
 
-def get_focus_is_always_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_focus_is_always_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4670,26 +4756,25 @@ def get_focus_is_always_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
                 "type": "neg"
             }
         },
-        {
-            "folder": setup_folder,
-            "name": "focus_is_always_out_of_focus",
-            "pos_question": "Is the camera consistently out of focus throughout?",
-            "neg_question": "Is the camera not consistently out of focus throughout?",
-            "pos_prompt": "The camera remains out of focus throughout.",
-            "neg_prompt": "The camera does not remain out of focus throughout.",
-            "pos": {
-                "label": "cam_setup.focus.is_always.focus_is_out_of_focus",
-                "type": "pos"
-            },
-            "neg": {
-                "label": "cam_setup.focus.is_always.focus_is_out_of_focus",
-                "type": "neg"
-            }
-        },
-        
+        # { # TODO: Add it back!
+        #     "folder": setup_folder,
+        #     "name": "focus_is_always_out_of_focus",
+        #     "pos_question": "Is the camera consistently out of focus throughout?",
+        #     "neg_question": "Is the camera not consistently out of focus throughout?",
+        #     "pos_prompt": "The camera remains out of focus throughout.",
+        #     "neg_prompt": "The camera does not remain out of focus throughout.",
+        #     "pos": {
+        #         "label": "cam_setup.focus.is_always.focus_is_out_of_focus",
+        #         "type": "pos"
+        #     },
+        #     "neg": {
+        #         "label": "cam_setup.focus.is_always.focus_is_out_of_focus",
+        #         "type": "neg"
+        #     }
+        # },
     ]
 
-def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_focus_start_with_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4757,7 +4842,7 @@ def get_focus_start_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL)
         }
     ]
 
-def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_focus_end_with_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4825,7 +4910,7 @@ def get_focus_end_with_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         }
     ]
 
-def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_focus_from_to_tasks(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return [
         {
             "folder": setup_folder,
@@ -4928,7 +5013,7 @@ def get_focus_from_to_tasks(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
 def get_motion_pairwise_labels_camerabench(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER,
                                            ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER,
                                            ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-                                           ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL):
+                                           ground_and_camera_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP):
     # This is the version we used for camerabench
     return {
         "movement_and_steadiness": get_movement_and_steadiness_tasks(ground_folder=ground_folder),
@@ -4972,10 +5057,10 @@ def get_motion_pairwise_labels_camerabench_pro(ground_folder=CAMERABENCH_PRO_FOL
         "only_intrinsic_change": get_only_intrinsic_change_tasks(ground_folder=ground_folder),
         "only_translation": get_only_translation_tasks(ground_and_setup_folder=ground_and_setup_folder, ground_folder=ground_folder),
         "only_rotation": get_only_rotation_tasks(ground_folder=ground_folder),
-        "reference_frame": get_reference_frame_ground_only_tasks(ground_and_camera_and_setup_folder=ground_and_camera_and_setup_folder),
+        "reference_frame": get_reference_frame_ground_only_tasks(ground_and_setup_folder=ground_and_setup_folder),
     }
 
-def get_setup_pairwise_labels(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+def get_setup_pairwise_labels(setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     return {
         "shot_transition": get_shot_transition_tasks(setup_folder=setup_folder),
         "overlays": get_overlays_tasks(setup_folder=setup_folder),
@@ -5010,11 +5095,11 @@ def get_setup_pairwise_labels(setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
         "focus_from_to": get_focus_from_to_tasks(setup_folder=setup_folder)
     }
 
-def get_motion_and_setup_pairwise_labels_camerabench(ground_folder=CAMERABENCH_GROUND_ONLY_FOLDER_APRIL,
-                                                     ground_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
+def get_motion_and_setup_pairwise_labels_camerabench(ground_folder=CAMERABENCH_PRO_FOLDER_MOTION_ONLY,
+                                                     ground_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
                                                      ground_and_camera_folder=CAMERABENCH_GROUND_AND_CAMERA_FOLDER,
-                                                     ground_and_camera_and_setup_folder=CAMERABENCH_GROUND_AND_SETUP_FOLDER_APRIL,
-                                                     setup_folder=CAMERABENCH_SETUP_ONLY_FOLDER_APRIL):
+                                                     ground_and_camera_and_setup_folder=CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP,
+                                                     setup_folder=CAMERABENCH_PRO_FOLDER_SETUP_ONLY):
     motion_dataset = get_motion_pairwise_labels_camerabench(ground_folder=ground_folder,
                                                             ground_and_setup_folder=ground_and_setup_folder,
                                                             ground_and_camera_folder=ground_and_camera_folder,
