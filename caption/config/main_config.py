@@ -318,7 +318,8 @@ def get_main_config() -> AppConfig:
         configs_file="all_configs.json",
         video_urls_files=DEFAULT_VIDEO_URLS_FILES,
         # video_data_file="video_data/20250406_setup_and_motion/videos.json",
-        video_data_file="video_data/20250912_setup_and_motion/videos.json",
+        # video_data_file="video_data/20250912_setup_and_motion/videos.json",
+        video_data_file="video_data/20251021_ground_and_setup_folder/videos.json",
         label_collections=["cam_motion", "cam_setup"],
         caption_programs=caption_programs,
     )
