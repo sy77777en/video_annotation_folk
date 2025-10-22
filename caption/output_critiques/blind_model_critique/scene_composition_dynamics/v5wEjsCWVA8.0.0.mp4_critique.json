@@ -2,12 +2,9 @@
   "video_id": "v5wEjsCWVA8.0.0.mp4",
   "caption_type": "scene",
   "critique_type": "blind_model_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:27:27.735836",
-  "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:22:33.686942",
   "model": "gemini-2.5-pro",
+  "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Ruojin Li",
@@ -34,5 +31,8 @@
     "review_timestamp": "2025-10-15T05:16:53.965688",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The caption accurately establishes the core action and setting, but it could be more visually specific and concise. The description of the point of view, \"A selfie POV shot, where the camera is held by the person being filmed and faces them,\" is redundant; \"From a first-person selfie view\" would be more direct. The caption misses key visual details that would likely be prominent, such as the color of the snowboarder's jacket and helmet—for instance, a bright red jacket would stand out against the white and blue scenery. While it mentions a \"winding trail,\" it doesn't describe the carving motion that creates it, nor how the background of trees and perhaps distant, rocky peaks shifts as the snowboarder turns. The description of the snow as \"deep powder\" is good, but it could also note how the sunlight makes the kicked-up spray of snow sparkle. Finally, action camera footage often includes a small, semi-transparent brand watermark overlaid in one of the corners, which is an important element to include if present.",
+  "revised_caption_by_generated_critique": "From a first-person selfie view, the snowboarder glides down a steep, snow-covered mountain on a bright, sunny day under a clear, deep blue sky. Wearing a bright red jacket and helmet, they carve through deep powder, sending a sparkling spray of snow into the air. The winding trail they create shifts the background of scattered evergreen trees and distant, rocky peaks. A small, semi-transparent brand watermark is visible in the corner of the footage.",
+  "status": "success"
 }

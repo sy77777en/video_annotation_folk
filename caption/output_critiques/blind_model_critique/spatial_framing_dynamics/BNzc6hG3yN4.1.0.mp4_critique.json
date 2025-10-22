@@ -2,12 +2,9 @@
   "video_id": "BNzc6hG3yN4.1.0.mp4",
   "caption_type": "spatial",
   "critique_type": "blind_model_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:43:21.635795",
-  "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:22:56.725739",
   "model": "gemini-2.5-pro",
+  "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Shihang Zhu",
@@ -35,5 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Zhenye Luo"
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The caption effectively outlines the initial composition and the camera's primary movement, but it lacks detail regarding the environment and the nuances of the transition. The description of the middle ground feels cluttered, grouping a man on an ATV, two other men, a barrier, and a dirt bike together without clarifying their relative depths; for instance, the man on the blue ATV might be in the shallow middle ground while the others are further back. The caption also omits any description of the background, which would likely be a significant part of a full shot, such as a dirt track, trees, or spectators that would help define the space. The transition from a level full shot to a high-angle view where other subjects are \"not visible\" implies not just a crane movement but also a simultaneous push-in or reframing that tightens the shot on the main subject. This change in shot size, likely from a full shot to a medium shot, is a critical detail that is missing. Finally, the description of the main subject's final position is slightly awkward; clarifying that he and his ATV now occupy the lower-left quadrant as a single unit in the new, tighter frame would be more precise.",
+  "revised_caption_by_generated_critique": "Initially, in a full shot, the main subject stands on an ATV in the center-left foreground. To his left, a man on a blue ATV is positioned in the shallow middle ground, while two other men and an orange barrier are further back. A dirt bike is parked in the right middle ground. The background features a dirt track and trees, adding context to the scene. The camera, positioned at the subjects' level, then moves upward and tilts down, transitioning to a high-angle perspective. This movement includes a push-in, reframing the shot from a full to a medium shot, focusing more closely on the main subject. In this final framing, the main subject and his ATV occupy the lower-left quadrant, while the other subjects and vehicles are now in the upper portion of the frame, with some elements no longer visible.",
+  "status": "success"
 }

@@ -2,12 +2,9 @@
   "video_id": "LbY3DdzV0rA.3.4.mp4",
   "caption_type": "spatial",
   "critique_type": "blind_model_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:14:51.506728",
-  "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:22:12.628872",
   "model": "gemini-2.5-pro",
+  "prompt_name": "BLIND_MODEL_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Shihang Zhu",
@@ -35,5 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Ruojin Li"
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The caption accurately identifies the extreme wide shot and the general movement of the clouds, but it misses several key spatial dynamics and specific visual details. The description of the clouds \"converging\" is misleading; the video shows the dark storm cloud moving from right to left in the middle ground, clearly passing *underneath* the higher-altitude white clouds that are streaming left to right in the background, creating a strong sense of layered depth that is not mentioned. The caption also fails to describe a critical structural change: as the storm cloud churns, a well-defined, arcus-shaped shelf cloud forms along its leading edge, which is the most prominent feature of its advance. Furthermore, the description omits the most salient event within the storm: frequent, brief flashes of in-cloud lightning that illuminate the dark cloud mass from within. Finally, it misses a key interaction with the background, as the advancing storm system and its accompanying rain band progressively obscure the faint mountain range on the far left horizon, which is initially visible but gone by the end of the time-lapse.",
+  "revised_caption_by_generated_critique": "This is an extreme wide scenery shot captured from an elevated viewpoint, showcasing a vast landscape. The bottom third of the frame features an arid plain in the foreground and middle ground, with a road on the bottom right extending into the distance. The upper two-thirds of the frame are dominated by a dynamic storm system. In the middle ground, a dark storm cloud moves from right to left, passing underneath higher-altitude white clouds that stream left to right in the background, creating a layered depth. As the storm cloud churns, a well-defined, arcus-shaped shelf cloud forms along its leading edge, becoming the most prominent feature of its advance. Frequent, brief flashes of in-cloud lightning illuminate the dark cloud mass from within, adding drama to the scene. Meanwhile, a concentrated shaft of rain in the center background sweeps across the distant plain in unison with the storm's movement. As the time-lapse progresses, the advancing storm system and its rain band gradually obscure the faint mountain range on the far left horizon, which is initially visible but disappears by the end of the video.",
+  "status": "success"
 }

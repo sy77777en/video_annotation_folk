@@ -133,6 +133,77 @@ def get_video_labels_dir(json_path, label_collections=["cam_motion", "cam_setup"
     collection_name = "-".join(label_collections)
     return os.path.join(video_labels_dir, f"{collection_name}-{timestamp}")
 
+def create_video_url_mapping(video_data_dict, video_labels_dir):
+    """
+    Create a separate JSON file mapping video filenames to full URLs.
+    This keeps all_labels.json lightweight while providing URL lookup.
+    """
+    video_url_mapping = {}
+    
+    for video_name, video_data in video_data_dict.items():
+        video_url_mapping[video_name] = video_data.get_video_url()
+    
+    url_mapping_path = os.path.join(video_labels_dir, "video_urls.json")
+    save_to_json(video_url_mapping, url_mapping_path)
+    print(f"Saved video URL mapping to {url_mapping_path}")
+    
+    return video_url_mapping
+
+# def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", force_regenerate=False):
+#     video_labels_dir = get_video_labels_dir(json_path, label_collections, video_labels_dir)
+#     labels_dir = os.path.join(video_labels_dir, "labels")
+
+#     if not os.path.exists(labels_dir):
+#         os.makedirs(labels_dir)
+
+#     all_label_path = os.path.join(video_labels_dir, "all_labels.json")
+#     label_name_path = os.path.join(video_labels_dir, "label_names.json")
+    
+#     # Only load label JSON files if they already exist AND not forcing regeneration
+#     if os.path.exists(all_label_path) and not force_regenerate:
+#         print(f"Loading existing labels from {video_labels_dir}")
+#         sorted_labels = load_from_json(all_label_path)
+#         sorted_labels_list = load_from_json(label_name_path)
+#         # Only return labels in label_names.json
+#         return {name: sorted_labels[name] for name in sorted_labels_list}
+
+#     # Otherwise, create label JSON files (either they don't exist or force_regenerate=True)
+#     if force_regenerate:
+#         print(f"Force regenerating labels in {video_labels_dir}")
+#     else:
+#         print(f"Generating new labels in {video_labels_dir}")
+    
+#     video_data_list = list(video_data_dict.values())
+#     label_to_videos_dict = {}
+#     for label_name, label in valid_labels_dict.items():
+#         label_path = os.path.join(labels_dir, f"{label_name}.json")
+#         project_name = label_name.split(".")[0]
+#         label_to_videos = {
+#             "label": label_name,
+#             "label_name": label.label,
+#             "definition": label.def_question[0],
+#             "pos": [data.workflows[project_name].video_name for data in label.pos(video_data_list)],
+#             "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)],
+#         }
+#         save_to_json(label_to_videos, label_path)
+#         if len(label_to_videos["pos"]) == 0:
+#             print(f"Skipping {label_name}: no positive examples")
+#         elif len(label_to_videos["neg"]) == 0:
+#             print(f"Skipping {label_name}: no negative examples")
+#         else:
+#             label_to_videos_dict[label_name] = label_to_videos
+
+#     # Sort labels by number of positive examples
+#     sorted_labels = sorted(label_to_videos_dict.items(), key=lambda x: len(x[1]["pos"]), reverse=True)
+#     sorted_labels = {label_name: label_to_videos for label_name, label_to_videos in sorted_labels}
+#     # print all label names and number of positive examples and negative examples
+#     for label_name, label_to_videos in sorted_labels.items():
+#         print(f"{label_name}: {len(label_to_videos['pos'])} positive examples, {len(label_to_videos['neg'])} negative examples")
+#     save_to_json(sorted_labels, all_label_path)
+#     sorted_labels_list = [name for name in sorted_labels.keys()]
+#     save_to_json(sorted_labels_list, label_name_path)
+#     return sorted_labels
+
 def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", force_regenerate=False):
     video_labels_dir = get_video_labels_dir(json_path, label_collections, video_labels_dir)
     labels_dir = os.path.join(video_labels_dir, "labels")
@@ -167,10 +238,8 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
             "label_name": label.label,
             "definition": label.def_question[0],
             "pos": [data.workflows[project_name].video_name for data in label.pos(video_data_list)],
-            "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)],
-            # Add full URLs for backward compatibility with label_viewer
-            "pos_urls": [data.workflows[project_name].video_url for data in label.pos(video_data_list)],
-            "neg_urls": [data.workflows[project_name].video_url for data in label.neg(video_data_list)]
+            "neg": [data.workflows[project_name].video_name for data in label.neg(video_data_list)]
+            # Removed pos_urls and neg_urls - now in separate file
         }
         save_to_json(label_to_videos, label_path)
         if len(label_to_videos["pos"]) == 0:
@@ -189,6 +258,10 @@ def label_video_mapping(video_data_dict, valid_labels_dict, json_path, label_col
     save_to_json(sorted_labels, all_label_path)
     sorted_labels_list = [name for name in sorted_labels.keys()]
     save_to_json(sorted_labels_list, label_name_path)
+    
+    # Create separate video URL mapping file
+    create_video_url_mapping(video_data_dict, video_labels_dir)
+    
     return sorted_labels
 
 def get_label_video_mapping(json_path, label_collections=["cam_motion", "cam_setup"], video_labels_dir="video_labels", video_dir="videos", skip_existing=True, skip_download=False, force_regenerate_labels=False):

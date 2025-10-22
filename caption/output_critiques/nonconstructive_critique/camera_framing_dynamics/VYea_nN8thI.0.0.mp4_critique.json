@@ -2,12 +2,9 @@
   "video_id": "VYea_nN8thI.0.0.mp4",
   "caption_type": "camera",
   "critique_type": "nonconstructive_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:08:09.803823",
-  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:23:48.974913",
   "model": "gemini-2.5-pro",
+  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Zhenye Luo",
@@ -34,5 +31,8 @@
     "review_timestamp": "2025-10-14T07:44:20.874237",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The caption's description of the camera's final position is inaccurate.",
+  "revised_caption_by_generated_critique": "In a digitally manipulated scene where the ocean curves upward around a highway, the camera's height and angle are ambiguous, though it consistently focuses on the red car. The camera quickly and smoothly tracks the red car from above and behind, starting from an almost bird’s-eye view and moving downward and forward to end up slightly behind and above the vehicle. A deep focus is used, keeping the entire scene sharp.",
+  "status": "success"
 }

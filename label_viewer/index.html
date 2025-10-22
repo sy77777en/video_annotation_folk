@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -583,6 +584,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="header-content">
@@ -624,13 +626,24 @@
 
     <script>
         const API_BASE = '/api';
-        // const VIDEO_BASE = 'https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/';
+        const VIDEO_BASE = 'https://huggingface.co/datasets/zhiqiulin/video_captioning/resolve/main/'; // Fallback for backward compatibility
         let currentData = null;
+        let videoUrlMapping = null; // NEW: Store the URL mapping
         let currentSort = 'asc';
         const VIDEOS_PER_SECTION = 6;
         const activeShuffles = new Map();
-        
+
         let activeCardElement = null;
+
+        // NEW: Helper function to resolve video URLs
+        function getVideoUrl(videoFilename) {
+            // If we have a URL mapping, use it
+            if (videoUrlMapping && videoUrlMapping[videoFilename]) {
+                return videoUrlMapping[videoFilename];
+            }
+            // Fallback to VIDEO_BASE for backward compatibility
+            return VIDEO_BASE + videoFilename;
+        }
 
         function initSidebarResize() {
             const sidebar = document.querySelector('.sidebar');
@@ -881,8 +894,22 @@
                 document.getElementById('content').innerHTML = '<div class="loading">Loading label data...</div>';
                 document.getElementById('sidebarTree').innerHTML = '<div class="loading" style="padding: 1rem; font-size: 0.875rem;">Building hierarchy...</div>';
 
-                const response = await fetch(`${API_BASE}/labels/${encodeURIComponent(folder)}`);
-                const data = await response.json();
+                // Load both label data and video URLs in parallel
+                const [labelsResponse, urlsResponse] = await Promise.all([
+                    fetch(`${API_BASE}/labels/${encodeURIComponent(folder)}`),
+                    fetch(`${API_BASE}/video_urls/${encodeURIComponent(folder)}`)
+                ]);
+
+                const data = await labelsResponse.json();
+
+                // Video URLs might not exist for older folders (backward compatibility)
+                try {
+                    videoUrlMapping = await urlsResponse.json();
+                    console.log('Loaded video URL mapping with', Object.keys(videoUrlMapping).length, 'entries');
+                } catch (e) {
+                    console.log('No video URL mapping found, using fallback VIDEO_BASE');
+                    videoUrlMapping = null;
+                }
 
                 console.log('Loaded data with', Object.keys(data).length, 'labels');
                 currentData = data;
@@ -932,10 +959,7 @@
             const definition = labelData.definition || '';
             const posCount = labelData.pos.length;
             const negCount = labelData.neg.length;
-            // Use URL if available (new format), otherwise use filename (backward compatibility)
-            const previewVideo = labelData.pos_urls && labelData.pos_urls.length > 0
-                ? labelData.pos_urls[0]
-                : (labelData.pos.length > 0 ? labelData.pos[0] : null);
+            const previewVideo = labelData.pos.length > 0 ? labelData.pos[0] : null;
 
             card.innerHTML = `
                 <div class="label-header">
@@ -981,13 +1005,10 @@
 
                 header.addEventListener('mouseenter', () => {
                     if (!previewLoaded) {
-                        // Support both full URLs and filenames
-                        previewVid.src = previewVideo.startsWith('http')
-                            ? previewVideo
-                            : VIDEO_BASE + previewVideo;
+                        previewVid.src = getVideoUrl(previewVideo);
                         previewLoaded = true;
                     }
-                    previewVid.play().catch(() => {});
+                    previewVid.play().catch(() => { });
                 });
 
                 header.addEventListener('mouseleave', () => {
@@ -1048,9 +1069,8 @@
             const posGrid = card.querySelector('.positive-grid');
             const negGrid = card.querySelector('.negative-grid');
 
-            // Use URLs if available (new format), otherwise use filenames (backward compatibility)
-            const posVideos = (labelData.pos_urls || labelData.pos).slice(0, VIDEOS_PER_SECTION);
-            const negVideos = (labelData.neg_urls || labelData.neg).slice(0, VIDEOS_PER_SECTION);
+            const posVideos = labelData.pos.slice(0, VIDEOS_PER_SECTION);
+            const negVideos = labelData.neg.slice(0, VIDEOS_PER_SECTION);
 
             renderVideoGrid(posGrid, posVideos);
             renderVideoGrid(negGrid, negVideos);
@@ -1061,10 +1081,7 @@
 
         function shuffleSection(card, labelName, labelData, section) {
             const grid = card.querySelector(`.${section}-grid`);
-            // Use URLs if available (new format), otherwise use filenames (backward compatibility)
-            const urlKey = section === 'positive' ? 'pos_urls' : 'neg_urls';
-            const filenameKey = section === 'positive' ? 'pos' : 'neg';
-            const videos = labelData[urlKey] || labelData[filenameKey];
+            const videos = labelData[section === 'positive' ? 'pos' : 'neg'];
 
             const shuffled = [...videos].sort(() => Math.random() - 0.5);
             const selected = shuffled.slice(0, VIDEOS_PER_SECTION);
@@ -1074,15 +1091,12 @@
 
         function renderVideoGrid(grid, videos) {
             grid.innerHTML = '';
-            
-            videos.forEach((videoNameOrUrl) => {
+
+            videos.forEach((videoFilename) => {
                 const item = document.createElement('div');
                 item.className = 'video-item';
-                // Support both full URLs (new format) and filenames (backward compatibility)
-                const videoPath = videoNameOrUrl.startsWith('http')
-                    ? videoNameOrUrl
-                    : VIDEO_BASE + videoNameOrUrl;
-                const videoName = videoNameOrUrl.split('/').pop(); // Extract filename for display
+                const videoPath = getVideoUrl(videoFilename);
+                const videoName = videoFilename;
 
                 item.innerHTML = `
                     <div class="video-wrapper">
@@ -1103,7 +1117,6 @@
                 const progressContainer = item.querySelector('.video-progress');
                 const loadingIndicator = item.querySelector('.video-loading');
 
-                // Set crossOrigin BEFORE setting src
                 video.crossOrigin = 'anonymous';
                 video.src = videoPath;
 
@@ -1185,4 +1198,5 @@
         loadFolders();
     </script>
 </body>
+
 </html>

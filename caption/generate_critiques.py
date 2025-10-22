@@ -1052,7 +1052,6 @@ class CritiqueGenerator:
                 
             except Exception as e:
                 error_str = str(e)
-                
                 # Check if it's a Gemini error (INVALID_ARGUMENT or INTERNAL)
                 if '400' in error_str or '500' in error_str or 'INVALID_ARGUMENT' in error_str or 'INTERNAL' in error_str:
                     print(f"    ⚠️ Gemini failed with: {error_str[:150]}")
@@ -1127,7 +1126,6 @@ class CritiqueGenerator:
         # Handle empty responses
         if not response or not response.strip():
             raise Exception("LLM returned an empty response")
-        
         return response.strip(), False
     
 #     def auto_generate_improved_caption(self, original_caption: str, generated_feedback: str, 
@@ -1549,7 +1547,6 @@ class CritiqueGenerator:
             final_feedback = caption_data.get("final_feedback", "")
             
             task_config = CRITIQUE_TASKS[critique_type]
-            
             # Retry logic
             for attempt in range(max_retries + 1):
                 try:

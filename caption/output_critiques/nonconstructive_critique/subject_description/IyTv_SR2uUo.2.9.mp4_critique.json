@@ -2,12 +2,9 @@
   "video_id": "IyTv_SR2uUo.2.9.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 'NoneType' object has no attribute 'strip'",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:12:06.546198",
-  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T13:12:00.819206",
   "model": "gemini-2.5-pro",
+  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Jiaxi Li",
@@ -34,5 +31,8 @@
     "review_timestamp": "2025-10-12T03:53:46.785565",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The video is not captured from a first-person perspective. Additionally, the number on the pink band is not \"4.\" The video does not show her falling.",
+  "revised_caption_by_generated_critique": "A light-skinned woman with long, dark hair tied in a ponytail is seen as she holds a pole vaulting pole. She is wearing a red sports top and black shorts. The video captures her leaning backward with her hands gripping the pole. The pole has white tape wrapped around the grip area and a pink band. As she leans back, her face and athletic torso come into full view.",
+  "status": "success"
 }

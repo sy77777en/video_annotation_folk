@@ -2,12 +2,9 @@
   "video_id": "4080.2.4.mp4",
   "caption_type": "spatial",
   "critique_type": "nonconstructive_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:00:37.626250",
-  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:23:37.958894",
   "model": "gemini-2.5-pro",
+  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Zhenye Luo",
@@ -34,5 +31,8 @@
     "review_timestamp": "2025-10-14T04:12:38.305047",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The shot size is incorrectly identified as a medium shot. The caption fails to describe the movement of the six figures and instead incorrectly describes their static positions. The depth of the trees is misidentified as being only in the background, and they are incorrectly described as silhouetted. The location of the reddish light leak is incompletely described. The position of the sky is described incorrectly.",
+  "revised_caption_by_generated_critique": "In a low-angle wide shot, six figures are dynamically moving around the camera's low viewpoint, creating a sense of motion. Several figures are on the left and right sides of the frame, with others slightly behind them, adding depth to the scene. Tall trees extend from the foreground through to the background, providing a layered depth to the composition. The bright sun in the bottom center-right creates a prominent lens flare that washes out the center of the image, while a reddish light leak is visible along the top right and partially down the right edge. The blue sky stretches across the top of the frame, contrasting with the vibrant scene below.",
+  "status": "success"
 }

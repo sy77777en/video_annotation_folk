@@ -2,12 +2,9 @@
   "video_id": "2WL4mIV48FA.0.0.mp4",
   "caption_type": "subject",
   "critique_type": "nonconstructive_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:17:31.314055",
-  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:24:25.498634",
   "model": "gemini-2.5-pro",
+  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Zhenye Luo",
@@ -34,5 +31,8 @@
     "review_timestamp": "2025-10-19T10:43:06.415309",
     "reviewer_double_check": true
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The term \"point-of-view shot\" is inaccurate. The description of the racing suit's \"red and black details\" is also incorrect.",
+  "revised_caption_by_generated_critique": "This video offers a first-person perspective from a race car, highlighting the vehicle and its driver. The car is an open-wheel, formula-style racer with a light blue and silver body. The front wheels and suspension are exposed. On the blue section of the car's body, in front of the cockpit, the words \"GoPro\" and \"Be a HERO.\" are written in white. The driver is seated in the open cockpit, wearing a white racing suit with blue and black details, black gloves, and a black helmet that covers their entire head. Their hands are visible on the steering wheel.",
+  "status": "success"
 }

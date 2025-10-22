@@ -2,12 +2,9 @@
   "video_id": "pGtjz4v0EE8.0.10.mp4",
   "caption_type": "scene",
   "critique_type": "nonconstructive_critique",
-  "status": "failed",
-  "error_message": "All 4 attempts failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}",
-  "attempts_made": 4,
-  "generation_timestamp": "2025-10-21T03:14:50.113616",
-  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
+  "generation_timestamp": "2025-10-22T12:24:16.093371",
   "model": "gemini-2.5-pro",
+  "prompt_name": "NONCONSTRUCTIVE_CRITIQUE_PROMPT",
   "mode": "Text Only",
   "source_caption_data": {
     "user": "Shihang Zhu",
@@ -35,5 +32,8 @@
     "reviewer_double_check": false,
     "original_annotator": "Jiaxi Li"
   },
-  "source_export_folder": "caption_export/export_20251021_0123"
+  "source_export_folder": "caption_export/export_20251021_0123",
+  "generated_critique": "The description of the text on the side of the boat is incomplete.",
+  "revised_caption_by_generated_critique": "In a daytime scene set on a large expanse of turquoise water, a long water taxi with a yellow hull and a white cabin cruises across the surface, leaving a small wake. The side of the boat displays the text \"Molino Stucky Hilton Venice\" and \"Skyline Water Service.\" To the left, a white, circular buoy floats on the rippling water. A stack of orange life preservers is visible on the back of the vessel as it moves from left to right.",
+  "status": "success"
 }
