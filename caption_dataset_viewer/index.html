@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caption Dataset Viewer - Video Caption Annotation</title>
+    <title>Caption Dataset Viewer</title>
     <style>
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: #2a2a2a;
+            --accent: #6366f1;
+            --positive: #10b981;
+            --negative: #ef4444;
+            --warning: #f59e0b;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #fafafa;
-            --bg-secondary: #ffffff;
-            --bg-hover: #f5f5f5;
-            --text-primary: #1a1a1a;
-            --text-secondary: #6b7280;
-            --border-color: #e5e7eb;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
-            --positive: #10b981;
-            --negative: #ef4444;
-            --warning: #f59e0b;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         body {
@@ -33,34 +30,27 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
             overflow: hidden;
         }
 
+        /* Header */
         .header {
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-sm);
+            padding: 1rem 2rem;
         }
 
         .header-content {
-            max-width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+            max-width: 2000px;
+            margin: 0 auto;
         }
 
         .header h1 {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-weight: 700;
         }
 
         .header-subtitle {
@@ -71,45 +61,29 @@
 
         .controls {
             display: flex;
-            gap: 1rem;
-            align-items: center;
+            gap: 0.75rem;
         }
 
         .btn {
-            padding: 0.5rem 1rem;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            background: var(--bg-secondary);
             color: var(--text-primary);
-            font-size: 0.875rem;
-            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
             cursor: pointer;
+            font-size: 0.875rem;
             transition: all 0.2s;
         }
 
         .btn:hover {
-            background: var(--bg-hover);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
+            background: var(--border-color);
             border-color: var(--accent);
         }
 
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
+        /* Main Layout */
         .main-container {
             display: flex;
-            flex: 1;
+            height: calc(100vh - 81px);
             overflow: hidden;
         }
 
@@ -118,9 +92,9 @@
             width: 320px;
             background: var(--bg-secondary);
             border-right: 1px solid var(--border-color);
-            overflow-y: auto;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .sidebar-section {
@@ -131,71 +105,79 @@
         .sidebar-section h2 {
             font-size: 0.875rem;
             font-weight: 600;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--text-secondary);
             margin-bottom: 1rem;
         }
 
-        .dataset-list {
+        .dataset-list, .sample-list {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
         }
 
         .dataset-item {
             padding: 0.75rem;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
+            border-radius: 0.375rem;
             cursor: pointer;
             transition: all 0.2s;
-            background: var(--bg-primary);
         }
 
         .dataset-item:hover {
-            background: var(--bg-hover);
-            box-shadow: var(--shadow-sm);
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.05);
         }
 
         .dataset-item.active {
             background: var(--accent);
-            color: white;
             border-color: var(--accent);
+            color: white;
         }
 
         .dataset-name {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.875rem;
-            margin-bottom: 0.25rem;
+        }
+
+        .dataset-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .dataset-item.active .dataset-meta {
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .dataset-stats {
             font-size: 0.75rem;
-            opacity: 0.7;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
         }
 
-        .sample-list {
-            max-height: 400px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+        .dataset-item.active .dataset-stats {
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .sample-item {
             padding: 0.75rem;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
+            border-radius: 0.375rem;
             cursor: pointer;
             transition: all 0.2s;
-            background: var(--bg-primary);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .sample-item:hover {
-            background: var(--bg-hover);
+            border-color: var(--accent);
             box-shadow: var(--shadow-sm);
         }
 
@@ -341,7 +323,7 @@
 
         /* Text Highlighting */
         .highlight {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(239, 68, 68, 0.25);
             border-bottom: 2px solid var(--negative);
             padding: 2px 0;
             cursor: pointer;
@@ -350,7 +332,7 @@
         }
 
         .highlight:hover {
-            background: rgba(239, 68, 68, 0.3);
+            background: rgba(239, 68, 68, 0.35);
         }
 
         .highlight-label {
@@ -401,10 +383,10 @@
             color: var(--accent);
         }
 
-        /* Structured Captions */
+        /* Structured Captions - NOW ONE COLUMN */
         .structured-caption-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
         }
 
@@ -418,8 +400,8 @@
         .structured-key {
             font-size: 0.875rem;
             font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
         }
 
         /* Annotation Section */
@@ -427,8 +409,21 @@
             background: var(--bg-secondary);
             border-radius: 0.75rem;
             padding: 1.5rem;
-            margin-bottom: 2rem;
             box-shadow: var(--shadow-sm);
+        }
+
+        .selection-instructions {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .selection-instructions strong {
+            color: var(--accent);
         }
 
         .highlighted-segments {
@@ -443,43 +438,49 @@
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
             padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
+            position: relative;
         }
 
         .segment-text {
-            flex: 1;
             font-size: 0.875rem;
             color: var(--text-primary);
-            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .segment-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
         }
 
         .segment-remove {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
             background: var(--negative);
             color: white;
             border: none;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.375rem;
-            font-size: 0.75rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 0.25rem;
             cursor: pointer;
+            font-size: 0.75rem;
             transition: all 0.2s;
         }
 
         .segment-remove:hover {
-            opacity: 0.8;
+            background: #dc2626;
         }
 
         .critique-input {
             width: 100%;
             min-height: 120px;
-            padding: 1rem;
+            background: var(--bg-primary);
             border: 1px solid var(--border-color);
             border-radius: 0.5rem;
-            font-family: inherit;
+            padding: 1rem;
             font-size: 0.875rem;
-            line-height: 1.6;
+            font-family: inherit;
+            color: var(--text-primary);
             resize: vertical;
             margin-bottom: 1.5rem;
         }
@@ -491,94 +492,65 @@
         }
 
         .likert-scale {
+            display: flex;
+            gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .likert-options {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
+        .likert-button {
+            flex: 1;
+            padding: 0.75rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-align: center;
+            color: var(--text-primary);
         }
 
-        .likert-option {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .likert-button:hover {
+            border-color: var(--accent);
+        }
+
+        .likert-button.selected {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .save-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--accent);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
         }
 
-        .likert-radio {
-            width: 48px;
-            height: 48px;
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: all 0.2s;
+        .save-button:hover {
+            background: #5558e3;
         }
 
-        .likert-option:hover .likert-radio {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-sm);
+        .save-button:disabled {
+            background: var(--border-color);
+            cursor: not-allowed;
         }
 
-        .likert-option input[type="radio"] {
-            display: none;
-        }
-
-        .likert-option input[type="radio"]:checked + .likert-radio {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .likert-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-
-        .save-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-secondary);
-        }
-
-        .empty-state h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .loading {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-secondary);
-        }
-
+        /* Statistics */
         .stats-summary {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
             padding: 1rem;
-            margin-top: 1rem;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
 
@@ -588,7 +560,7 @@
 
         .stat-value {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--accent);
         }
 
@@ -598,19 +570,23 @@
             margin-top: 0.25rem;
         }
 
-        /* Selection Instructions */
-        .selection-instructions {
-            background: rgba(99, 102, 241, 0.05);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-            color: var(--text-primary);
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
         }
 
-        .selection-instructions strong {
-            color: var(--accent);
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
         }
 
         /* Toast Notification */
@@ -845,16 +821,9 @@
                     showToast('Annotation saved successfully!', 'success');
                     
                     // Update sample status
-                    if (samples[currentSampleIndex]) {
-                        samples[currentSampleIndex].annotation_status = 'completed';
-                    }
+                    samples[currentSampleIndex].annotation_status = 'completed';
                     renderSamples();
                     loadStats();
-                    
-                    // Auto-advance to next sample
-                    if (currentSampleIndex < samples.length - 1) {
-                        setTimeout(() => loadSample(currentSampleIndex + 1), 500);
-                    }
                 } else {
                     showToast('Failed to save annotation', 'error');
                 }
@@ -880,29 +849,30 @@
             }
         }
 
-        // Render Functions
+        // Rendering Functions
         function renderDatasets() {
-            const container = document.getElementById('datasetList');
+            const datasetList = document.getElementById('datasetList');
             if (datasets.length === 0) {
-                container.innerHTML = '<div class="loading">No datasets found</div>';
+                datasetList.innerHTML = '<div class="loading">No datasets found</div>';
                 return;
             }
-            
-            container.innerHTML = datasets.map(dataset => `
+
+            datasetList.innerHTML = datasets.map(dataset => `
                 <div class="dataset-item ${currentDataset === dataset.name ? 'active' : ''}" 
                      onclick="loadDataset('${dataset.name}')">
                     <div class="dataset-name">${dataset.name}</div>
-                    <div class="dataset-stats">${dataset.json_files.length} file(s)</div>
+                    <div class="dataset-meta">${dataset.json_files.length} file(s)</div>
                 </div>
             `).join('');
         }
 
         function renderSamples() {
-            const container = document.getElementById('sampleList');
-            document.getElementById('samplesSection').style.display = 'block';
+            const sampleList = document.getElementById('sampleList');
+            const samplesSection = document.getElementById('samplesSection');
             
-            container.innerHTML = samples.map((sample, index) => `
-                <div class="sample-item ${currentSampleIndex === index ? 'active' : ''} ${sample.annotation_status === 'completed' ? 'completed' : ''}"
+            samplesSection.style.display = 'block';
+            sampleList.innerHTML = samples.map((sample, index) => `
+                <div class="sample-item ${index === currentSampleIndex ? 'active' : ''} ${sample.annotation_status === 'completed' ? 'completed' : ''}"
                      onclick="loadSample(${index})">
                     <span class="sample-number">Sample ${index + 1}</span>
                     <span class="status-badge ${sample.annotation_status}">${sample.annotation_status || 'pending'}</span>
@@ -922,14 +892,43 @@
             const captionType = Object.keys(currentSample.captions)[0];
             const captionData = currentSample.captions[captionType];
             
+            // Always use video_url directly - all HuggingFace URLs work and bypass server proxy
+            const videoSource = currentSample.video_url;
+            
+            if (!videoSource) {
+                console.error('❌ No video_url found for sample:', currentSample);
+                return;
+            }
+            
+            // Detect video type from URL or filename
+            const videoType = getVideoType(videoSource);
+            
             contentArea.innerHTML = `
                 <!-- Video Section -->
                 <div class="video-section">
                     <div class="video-container">
-                        <video controls id="videoPlayer">
-                            <source src="/videos/${currentSample.video}" type="video/mp4">
+                        <video controls id="videoPlayer" preload="metadata">
+                            <source src="${videoSource}" type="${videoType}">
                             Your browser does not support video playback.
                         </video>
+                        <div id="videoError" style="display: none; padding: 1rem; background: rgba(239, 68, 68, 0.1); border: 1px solid var(--negative); border-radius: 0.5rem; margin-top: 1rem; color: var(--negative);"></div>
+                        <a href="${videoSource}" download style="
+                            display: block;
+                            text-align: center;
+                            margin-top: 1rem;
+                            padding: 0.75rem 1.5rem;
+                            background: var(--bg-primary);
+                            border: 1px solid var(--border-color);
+                            border-radius: 0.5rem;
+                            color: var(--text-primary);
+                            text-decoration: none;
+                            font-size: 0.875rem;
+                            font-weight: 600;
+                            transition: all 0.2s;
+                        " onmouseover="this.style.borderColor='var(--accent)'; this.style.background='rgba(99, 102, 241, 0.05)'" 
+                           onmouseout="this.style.borderColor='var(--border-color)'; this.style.background='var(--bg-primary)'">
+                            ⬇️ Download Video
+                        </a>
                     </div>
                     <div class="video-info">
                         <div class="info-item">
@@ -972,7 +971,7 @@
                     <h3 style="font-size: 1rem; margin-bottom: 1rem;">Highlighted Issues</h3>
                     <div class="highlighted-segments" id="highlightedSegments">
                         ${highlightedSegments.length === 0 ? 
-                            '<p style="color: var(--text-secondary); font-size: 0.875rem;">No issues highlighted yet. Select text above to add.</p>' : 
+                            '<p style="color: var(--text-secondary); font-size: 0.875rem;">No issues highlighted yet. Select text in the caption above.</p>' : 
                             ''}
                     </div>
 
@@ -980,39 +979,79 @@
                     <textarea 
                         class="critique-input" 
                         id="critiqueInput" 
-                        placeholder="Explain why this caption is problematic and what issues you found..."
-                    >${annotation.critique}</textarea>
+                        placeholder="Write your critique of the caption quality..."
+                    >${annotation.critique || ''}</textarea>
 
-                    <div class="likert-scale">
-                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Caption Quality (1-5 Likert Scale)</h3>
-                        <div class="likert-options">
-                            ${[1, 2, 3, 4, 5].map(score => `
-                                <label class="likert-option">
-                                    <input type="radio" name="likert" value="${score}" ${annotation.likert_score === score ? 'checked' : ''}>
-                                    <div class="likert-radio">${score}</div>
-                                    <div class="likert-label">${getLikertLabel(score)}</div>
-                                </label>
-                            `).join('')}
-                        </div>
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Overall Quality (1-5)</h3>
+                    <div class="likert-scale" id="likertScale">
+                        ${[1, 2, 3, 4, 5].map(score => `
+                            <button class="likert-button ${annotation.likert_score === score ? 'selected' : ''}" 
+                                    onclick="selectLikertScore(${score})">${score}</button>
+                        `).join('')}
                     </div>
 
-                    <div class="save-actions">
-                        <button class="btn" onclick="clearAnnotation()">Clear</button>
-                        <button class="btn btn-primary" onclick="saveAnnotation()">💾 Save & Next</button>
-                    </div>
+                    <button class="save-button" onclick="saveAnnotation()">💾 Save Annotation</button>
                 </div>
             `;
-            
+
+            // Render highlighted segments
             renderHighlightedSegments();
+            
+            // Setup text selection handlers
             setupTextSelection();
+            
+            // Simple video setup
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoError = document.getElementById('videoError');
+            
+            if (videoPlayer) {
+                videoPlayer.load();
+                
+                // Handle codec incompatibility errors
+                videoPlayer.addEventListener('error', () => {
+                    if (videoError && videoPlayer.error) {
+                        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+                        videoError.style.display = 'block';
+                        videoError.innerHTML = `
+                            <strong>⚠️ Video Cannot Play</strong><br>
+                            ${isChrome ? 
+                                'Chrome doesn\'t support H.265/HEVC codec. <strong>Use Safari or Firefox.</strong>' :
+                                'This video format is not supported in your browser.'}
+                            <br><small style="opacity: 0.8; margin-top: 0.5rem; display: block;">
+                                You can still annotate using the caption text, or 
+                                <a href="${videoSource}" download style="color: var(--accent);">download the video</a>.
+                            </small>
+                        `;
+                    }
+                });
+            }
+        }
+
+        // Helper function to detect video type
+        function getVideoType(videoSource) {
+            const lowerSource = videoSource.toLowerCase();
+            if (lowerSource.endsWith('.mkv')) {
+                return 'video/x-matroska';
+            } else if (lowerSource.endsWith('.webm')) {
+                return 'video/webm';
+            } else if (lowerSource.endsWith('.mp4')) {
+                return 'video/mp4';
+            } else if (lowerSource.endsWith('.avi')) {
+                return 'video/x-msvideo';
+            } else if (lowerSource.endsWith('.mov')) {
+                return 'video/quicktime';
+            } else {
+                // Default to mp4
+                return 'video/mp4';
+            }
         }
 
         function renderCaptionByType(type, data) {
             switch(type) {
                 case 'single':
                     return `
-                        <div class="caption-content selectable" id="captionContent">
-                            <div class="caption-text">${escapeHtml(data)}</div>
+                        <div class="caption-content selectable">
+                            <div class="caption-text" id="captionText">${escapeHtml(data)}</div>
                         </div>
                     `;
                 
@@ -1036,10 +1075,10 @@
                             ${data.map((item, index) => `
                                 <div class="temporal-caption-item">
                                     <div class="temporal-header">
-                                        <span class="time-range">${item.start_time}s - ${item.end_time}s</span>
+                                        <span class="time-range">${item.start || item.start_time || 0}s - ${item.end || item.end_time || 0}s</span>
                                     </div>
                                     <div class="caption-content selectable" data-segment="${index}">
-                                        <div class="caption-text">${escapeHtml(item.content)}</div>
+                                        <div class="caption-text">${escapeHtml(item.caption || item.content || '')}</div>
                                     </div>
                                 </div>
                             `).join('')}
@@ -1047,15 +1086,18 @@
                     `;
                 
                 case 'multiple_annotators':
+                    // FIX #3: Handle nested array structure - each annotator's captions on separate lines
                     return `
                         <div class="temporal-caption-list">
-                            ${data.map((caption, index) => `
+                            ${data.map((annotatorCaptions, annotatorIndex) => `
                                 <div class="temporal-caption-item">
                                     <div class="temporal-header">
-                                        <span class="time-range">Annotator ${index + 1}</span>
+                                        <span class="time-range">Annotator ${annotatorIndex + 1}</span>
                                     </div>
-                                    <div class="caption-content selectable" data-annotator="${index}">
-                                        <div class="caption-text">${escapeHtml(caption)}</div>
+                                    <div class="caption-content selectable" data-annotator="${annotatorIndex}">
+                                        <div class="caption-text">${Array.isArray(annotatorCaptions) 
+                                            ? annotatorCaptions.map(caption => escapeHtml(caption)).join('\n') 
+                                            : escapeHtml(annotatorCaptions)}</div>
                                     </div>
                                 </div>
                             `).join('')}
@@ -1067,36 +1109,148 @@
             }
         }
 
+        // FIX for highlighting bug: Store original text and only highlight first occurrence
+        function highlightCaptionText() {
+            const captionElements = document.querySelectorAll('.caption-text');
+            
+            captionElements.forEach(captionEl => {
+                // Store the original text if not already stored
+                if (!captionEl.dataset.originalText) {
+                    captionEl.dataset.originalText = captionEl.textContent;
+                }
+                
+                const originalText = captionEl.dataset.originalText;
+                
+                if (highlightedSegments.length === 0) {
+                    // No highlights, just restore original text
+                    captionEl.textContent = originalText;
+                    return;
+                }
+                
+                // Build a list of ranges to highlight (only find first occurrence of each segment)
+                const ranges = [];
+                highlightedSegments.forEach((segment, index) => {
+                    const pos = originalText.indexOf(segment.text);
+                    if (pos !== -1) {
+                        ranges.push({
+                            start: pos,
+                            end: pos + segment.text.length,
+                            index: index
+                        });
+                    }
+                });
+                
+                if (ranges.length === 0) {
+                    captionEl.textContent = originalText;
+                    return;
+                }
+                
+                // Sort ranges by start position and merge overlapping ranges
+                ranges.sort((a, b) => a.start - b.start);
+                
+                // Build the highlighted HTML without changing spacing
+                let html = '';
+                let lastPos = 0;
+                
+                ranges.forEach(range => {
+                    // Skip if this range starts before our last position (overlap)
+                    if (range.start < lastPos) {
+                        return;
+                    }
+                    
+                    // Add text before this highlight (escaped)
+                    if (range.start > lastPos) {
+                        const textBefore = originalText.substring(lastPos, range.start);
+                        html += escapeHtml(textBefore);
+                    }
+                    
+                    // Add highlighted text (escaped, then wrapped in span)
+                    const highlightedText = originalText.substring(range.start, range.end);
+                    html += `<span class="highlight" data-segment-index="${range.index}"><span class="highlight-label">Issue ${range.index + 1}</span>${escapeHtml(highlightedText)}</span>`;
+                    
+                    lastPos = range.end;
+                });
+                
+                // Add remaining text after last highlight
+                if (lastPos < originalText.length) {
+                    html += escapeHtml(originalText.substring(lastPos));
+                }
+                
+                // Set the HTML
+                captionEl.innerHTML = html;
+            });
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function renderHighlightedSegments() {
             const container = document.getElementById('highlightedSegments');
+            
             if (highlightedSegments.length === 0) {
-                container.innerHTML = '<p style="color: var(--text-secondary); font-size: 0.875rem;">No issues highlighted yet. Select text above to add.</p>';
+                container.innerHTML = '<p style="color: var(--text-secondary); font-size: 0.875rem;">No issues highlighted yet. Select text in the caption above.</p>';
+                // Still need to remove highlights from caption text
+                highlightCaptionText();
                 return;
             }
-            
+
             container.innerHTML = highlightedSegments.map((segment, index) => `
                 <div class="segment-item">
-                    <div class="segment-text">"${escapeHtml(segment.text)}"</div>
-                    <button class="segment-remove" onclick="removeSegment(${index})">✕</button>
+                    <button class="segment-remove" onclick="removeSegment(${index})">×</button>
+                    <div class="segment-text">"${segment.text}"</div>
+                    <div class="segment-meta">${segment.context || 'Selected text'}</div>
                 </div>
             `).join('');
+            
+            // Apply highlighting to the caption text
+            highlightCaptionText();
         }
 
         function setupTextSelection() {
             const selectableElements = document.querySelectorAll('.caption-content.selectable');
             
             selectableElements.forEach(element => {
-                element.addEventListener('mouseup', function() {
+                element.addEventListener('mouseup', function(event) {
                     const selection = window.getSelection();
                     const selectedText = selection.toString().trim();
                     
-                    if (selectedText.length > 0) {
+                    if (selectedText && selectedText.length > 0) {
+                        // Check if the selection is entirely within this element
+                        const range = selection.getRangeAt(0);
+                        const startContainer = range.startContainer;
+                        const endContainer = range.endContainer;
+                        
+                        // Get the parent caption-content element for both start and end
+                        const startParent = startContainer.nodeType === Node.TEXT_NODE 
+                            ? startContainer.parentElement 
+                            : startContainer;
+                        const endParent = endContainer.nodeType === Node.TEXT_NODE 
+                            ? endContainer.parentElement 
+                            : endContainer;
+                        
+                        // Find the caption-content ancestor
+                        const startCaptionContent = startParent.closest('.caption-content');
+                        const endCaptionContent = endParent.closest('.caption-content');
+                        
+                        // Only allow selection within the same caption-content block
+                        if (startCaptionContent !== endCaptionContent || startCaptionContent !== element) {
+                            showToast('Please select text within a single field/segment only', 'error');
+                            selection.removeAllRanges();
+                            return;
+                        }
+                        
                         // Get context information
-                        const context = {
-                            field: element.getAttribute('data-field'),
-                            segment: element.getAttribute('data-segment'),
-                            annotator: element.getAttribute('data-annotator')
-                        };
+                        let context = 'Single caption';
+                        if (element.dataset.field) {
+                            context = `Field: ${element.dataset.field}`;
+                        } else if (element.dataset.segment) {
+                            context = `Temporal segment ${parseInt(element.dataset.segment) + 1}`;
+                        } else if (element.dataset.annotator) {
+                            context = `Annotator ${parseInt(element.dataset.annotator) + 1}`;
+                        }
                         
                         // Add to highlighted segments
                         highlightedSegments.push({
@@ -1104,10 +1258,11 @@
                             context: context
                         });
                         
+                        // Re-render segments
                         renderHighlightedSegments();
-                        selection.removeAllRanges();
                         
-                        showToast('Text segment added!', 'success');
+                        // Clear selection
+                        selection.removeAllRanges();
                     }
                 });
             });
@@ -1118,38 +1273,34 @@
             renderHighlightedSegments();
         }
 
-        function clearAnnotation() {
-            if (confirm('Are you sure you want to clear all annotations for this sample?')) {
-                highlightedSegments = [];
-                annotation = {
-                    segments: [],
-                    critique: '',
-                    likert_score: null
-                };
-                document.getElementById('critiqueInput').value = '';
-                document.querySelectorAll('input[name="likert"]').forEach(radio => radio.checked = false);
-                renderHighlightedSegments();
-            }
+        function selectLikertScore(score) {
+            annotation.likert_score = score;
+            
+            // Update UI
+            const buttons = document.querySelectorAll('.likert-button');
+            buttons.forEach((btn, index) => {
+                if (index + 1 === score) {
+                    btn.classList.add('selected');
+                } else {
+                    btn.classList.remove('selected');
+                }
+            });
         }
 
         function getCurrentLikertScore() {
-            const selected = document.querySelector('input[name="likert"]:checked');
-            return selected ? parseInt(selected.value) : null;
-        }
-
-        function getLikertLabel(score) {
-            const labels = {
-                1: 'Very Poor',
-                2: 'Poor',
-                3: 'Fair',
-                4: 'Good',
-                5: 'Excellent'
-            };
-            return labels[score] || '';
+            const selectedButton = document.querySelector('.likert-button.selected');
+            return selectedButton ? parseInt(selectedButton.textContent) : null;
         }
 
         function updateSampleSelection() {
-            renderSamples();
+            const sampleItems = document.querySelectorAll('.sample-item');
+            sampleItems.forEach((item, index) => {
+                if (index === currentSampleIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
         }
 
         function refreshData() {
@@ -1158,16 +1309,18 @@
             } else {
                 loadDatasets();
             }
+            showToast('Data refreshed', 'success');
         }
 
         function exportAnnotations() {
             if (!currentDataset) {
-                showToast('Please select a dataset first', 'error');
+                showToast('No dataset selected', 'error');
                 return;
             }
-            
-            // This would download all annotations for the current dataset
-            showToast('Export feature coming soon!', 'success');
+
+            // Trigger download of annotations
+            window.location.href = `/api/export/${encodeURIComponent(currentDataset)}`;
+            showToast('Exporting annotations...', 'success');
         }
 
         function showToast(message, type = 'success') {
@@ -1175,17 +1328,12 @@
             const toastMessage = document.getElementById('toastMessage');
             
             toastMessage.textContent = message;
-            toast.className = `toast show ${type}`;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
             
             setTimeout(() => {
                 toast.classList.remove('show');
             }, 3000);
-        }
-
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
         }
     </script>
 </body>
