@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caption Dataset Viewer - Video Caption Annotation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-hover: #f5f5f5;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --positive: #10b981;
+            --negative: #ef4444;
+            --warning: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-content {
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .header-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--bg-hover);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-section {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-section h2 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .dataset-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dataset-item {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--bg-primary);
+        }
+
+        .dataset-item:hover {
+            background: var(--bg-hover);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dataset-item.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .dataset-name {
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .dataset-stats {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .sample-list {
+            max-height: 400px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sample-item {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--bg-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sample-item:hover {
+            background: var(--bg-hover);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sample-item.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .sample-item.completed {
+            border-color: var(--positive);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .sample-number {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .status-badge {
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-badge.completed {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--positive);
+        }
+
+        .status-badge.pending {
+            background: rgba(107, 114, 128, 0.1);
+            color: var(--text-secondary);
+        }
+
+        /* Main Content */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .content-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .video-section {
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-info {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .info-item {
+            font-size: 0.875rem;
+        }
+
+        .info-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            margin-top: 0.25rem;
+        }
+
+        /* Caption Section */
+        .caption-section {
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .caption-type-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            margin-left: 0.5rem;
+        }
+
+        .caption-content {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            user-select: text;
+            cursor: text;
+            position: relative;
+        }
+
+        .caption-content.selectable {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.02);
+        }
+
+        .caption-text {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Text Highlighting */
+        .highlight {
+            background: rgba(239, 68, 68, 0.2);
+            border-bottom: 2px solid var(--negative);
+            padding: 2px 0;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .highlight:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        .highlight-label {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background: var(--negative);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            margin-bottom: 0.25rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            z-index: 10;
+        }
+
+        .highlight:hover .highlight-label {
+            opacity: 1;
+        }
+
+        /* Temporal Captions */
+        .temporal-caption-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .temporal-caption-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .temporal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .time-range {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Structured Captions */
+        .structured-caption-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .structured-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .structured-key {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Annotation Section */
+        .annotation-section {
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .highlighted-segments {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .segment-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .segment-text {
+            flex: 1;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        .segment-remove {
+            background: var(--negative);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .segment-remove:hover {
+            opacity: 0.8;
+        }
+
+        .critique-input {
+            width: 100%;
+            min-height: 120px;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-family: inherit;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            resize: vertical;
+            margin-bottom: 1.5rem;
+        }
+
+        .critique-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .likert-scale {
+            margin-bottom: 1.5rem;
+        }
+
+        .likert-options {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .likert-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .likert-radio {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.2s;
+        }
+
+        .likert-option:hover .likert-radio {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .likert-option input[type="radio"] {
+            display: none;
+        }
+
+        .likert-option input[type="radio"]:checked + .likert-radio {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .likert-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .save-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .stats-summary {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Selection Instructions */
+        .selection-instructions {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+        }
+
+        .selection-instructions strong {
+            color: var(--accent);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .toast.show {
+            display: flex;
+        }
+
+        .toast.success {
+            border-color: var(--positive);
+        }
+
+        .toast.error {
+            border-color: var(--negative);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <h1>🎬 Caption Dataset Viewer</h1>
+                <div class="header-subtitle">Video Caption Annotation Interface</div>
+            </div>
+            <div class="controls">
+                <button class="btn" onclick="refreshData()">🔄 Refresh</button>
+                <button class="btn" onclick="exportAnnotations()">📥 Export</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Datasets -->
+            <div class="sidebar-section">
+                <h2>Datasets</h2>
+                <div class="dataset-list" id="datasetList">
+                    <div class="loading">Loading datasets...</div>
+                </div>
+            </div>
+
+            <!-- Samples -->
+            <div class="sidebar-section" id="samplesSection" style="display: none;">
+                <h2>Samples</h2>
+                <div class="sample-list" id="sampleList"></div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="sidebar-section" id="statsSection" style="display: none;">
+                <h2>Statistics</h2>
+                <div class="stats-summary">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="statTotal">0</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="statCompleted">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="statAvg">-</div>
+                            <div class="stat-label">Avg Score</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="statStd">-</div>
+                            <div class="stat-label">Std Dev</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <div class="content-scroll" id="contentArea">
+                <div class="empty-state">
+                    <h2>👈 Select a dataset to begin</h2>
+                    <p>Choose a dataset from the sidebar to view and annotate video captions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script>
+        // Global state
+        let currentDataset = null;
+        let currentSample = null;
+        let currentSampleIndex = null;
+        let datasets = [];
+        let samples = [];
+        let highlightedSegments = [];
+        let annotation = {
+            segments: [],
+            critique: '',
+            likert_score: null
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDatasets();
+        });
+
+        // API Functions
+        async function loadDatasets() {
+            try {
+                const response = await fetch('/api/datasets');
+                datasets = await response.json();
+                renderDatasets();
+            } catch (error) {
+                console.error('Error loading datasets:', error);
+                showToast('Failed to load datasets', 'error');
+            }
+        }
+
+        async function loadDataset(datasetName) {
+            try {
+                const response = await fetch(`/api/dataset/${encodeURIComponent(datasetName)}`);
+                const data = await response.json();
+                currentDataset = datasetName;
+                samples = data.samples || [];
+                renderSamples();
+                loadStats();
+                
+                // Auto-select first sample
+                if (samples.length > 0) {
+                    loadSample(0);
+                }
+            } catch (error) {
+                console.error('Error loading dataset:', error);
+                showToast('Failed to load dataset', 'error');
+            }
+        }
+
+        async function loadSample(index) {
+            try {
+                const response = await fetch(`/api/sample/${encodeURIComponent(currentDataset)}/${index}`);
+                const data = await response.json();
+                currentSample = data.sample;
+                currentSampleIndex = index;
+                
+                // Load existing annotation if available
+                if (data.annotation) {
+                    annotation = data.annotation;
+                } else {
+                    annotation = {
+                        segments: [],
+                        critique: '',
+                        likert_score: null
+                    };
+                }
+                
+                highlightedSegments = annotation.segments || [];
+                renderSample();
+                updateSampleSelection();
+            } catch (error) {
+                console.error('Error loading sample:', error);
+                showToast('Failed to load sample', 'error');
+            }
+        }
+
+        async function saveAnnotation() {
+            try {
+                annotation.segments = highlightedSegments;
+                annotation.critique = document.getElementById('critiqueInput').value;
+                annotation.likert_score = getCurrentLikertScore();
+                annotation.timestamp = new Date().toISOString();
+                
+                const response = await fetch(
+                    `/api/annotation/${encodeURIComponent(currentDataset)}/${currentSampleIndex}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(annotation)
+                    }
+                );
+                
+                if (response.ok) {
+                    showToast('Annotation saved successfully!', 'success');
+                    
+                    // Update sample status
+                    if (samples[currentSampleIndex]) {
+                        samples[currentSampleIndex].annotation_status = 'completed';
+                    }
+                    renderSamples();
+                    loadStats();
+                    
+                    // Auto-advance to next sample
+                    if (currentSampleIndex < samples.length - 1) {
+                        setTimeout(() => loadSample(currentSampleIndex + 1), 500);
+                    }
+                } else {
+                    showToast('Failed to save annotation', 'error');
+                }
+            } catch (error) {
+                console.error('Error saving annotation:', error);
+                showToast('Failed to save annotation', 'error');
+            }
+        }
+
+        async function loadStats() {
+            try {
+                const response = await fetch(`/api/stats/${encodeURIComponent(currentDataset)}`);
+                const stats = await response.json();
+                
+                document.getElementById('statTotal').textContent = stats.total || 0;
+                document.getElementById('statCompleted').textContent = stats.completed || 0;
+                document.getElementById('statAvg').textContent = stats.avg_score !== null ? stats.avg_score : '-';
+                document.getElementById('statStd').textContent = stats.std_score !== null ? stats.std_score : '-';
+                
+                document.getElementById('statsSection').style.display = 'block';
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        // Render Functions
+        function renderDatasets() {
+            const container = document.getElementById('datasetList');
+            if (datasets.length === 0) {
+                container.innerHTML = '<div class="loading">No datasets found</div>';
+                return;
+            }
+            
+            container.innerHTML = datasets.map(dataset => `
+                <div class="dataset-item ${currentDataset === dataset.name ? 'active' : ''}" 
+                     onclick="loadDataset('${dataset.name}')">
+                    <div class="dataset-name">${dataset.name}</div>
+                    <div class="dataset-stats">${dataset.json_files.length} file(s)</div>
+                </div>
+            `).join('');
+        }
+
+        function renderSamples() {
+            const container = document.getElementById('sampleList');
+            document.getElementById('samplesSection').style.display = 'block';
+            
+            container.innerHTML = samples.map((sample, index) => `
+                <div class="sample-item ${currentSampleIndex === index ? 'active' : ''} ${sample.annotation_status === 'completed' ? 'completed' : ''}"
+                     onclick="loadSample(${index})">
+                    <span class="sample-number">Sample ${index + 1}</span>
+                    <span class="status-badge ${sample.annotation_status}">${sample.annotation_status || 'pending'}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderSample() {
+            const contentArea = document.getElementById('contentArea');
+            
+            if (!currentSample) {
+                contentArea.innerHTML = '<div class="empty-state"><h2>No sample selected</h2></div>';
+                return;
+            }
+            
+            // Determine caption type
+            const captionType = Object.keys(currentSample.captions)[0];
+            const captionData = currentSample.captions[captionType];
+            
+            contentArea.innerHTML = `
+                <!-- Video Section -->
+                <div class="video-section">
+                    <div class="video-container">
+                        <video controls id="videoPlayer">
+                            <source src="/videos/${currentSample.video}" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <div class="info-item">
+                            <div class="info-label">Video ID</div>
+                            <div class="info-value">${currentSample.video_id || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Duration</div>
+                            <div class="info-value">${currentSample.metadata?.duration || 'N/A'}s</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Resolution</div>
+                            <div class="info-value">${currentSample.metadata?.resolution || 'N/A'}</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">FPS</div>
+                            <div class="info-value">${currentSample.metadata?.fps || 'N/A'}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caption Section -->
+                <div class="caption-section">
+                    <h2 class="section-title">
+                        Caption
+                        <span class="caption-type-badge">${captionType}</span>
+                    </h2>
+                    ${renderCaptionByType(captionType, captionData)}
+                </div>
+
+                <!-- Annotation Section -->
+                <div class="annotation-section">
+                    <h2 class="section-title">Annotation</h2>
+                    
+                    <div class="selection-instructions">
+                        <strong>How to annotate:</strong> Select text in the caption above to highlight issues. 
+                        The selected segments will appear below. Then write a critique and rate the caption quality.
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 1rem;">Highlighted Issues</h3>
+                    <div class="highlighted-segments" id="highlightedSegments">
+                        ${highlightedSegments.length === 0 ? 
+                            '<p style="color: var(--text-secondary); font-size: 0.875rem;">No issues highlighted yet. Select text above to add.</p>' : 
+                            ''}
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Critique</h3>
+                    <textarea 
+                        class="critique-input" 
+                        id="critiqueInput" 
+                        placeholder="Explain why this caption is problematic and what issues you found..."
+                    >${annotation.critique}</textarea>
+
+                    <div class="likert-scale">
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Caption Quality (1-5 Likert Scale)</h3>
+                        <div class="likert-options">
+                            ${[1, 2, 3, 4, 5].map(score => `
+                                <label class="likert-option">
+                                    <input type="radio" name="likert" value="${score}" ${annotation.likert_score === score ? 'checked' : ''}>
+                                    <div class="likert-radio">${score}</div>
+                                    <div class="likert-label">${getLikertLabel(score)}</div>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="save-actions">
+                        <button class="btn" onclick="clearAnnotation()">Clear</button>
+                        <button class="btn btn-primary" onclick="saveAnnotation()">💾 Save & Next</button>
+                    </div>
+                </div>
+            `;
+            
+            renderHighlightedSegments();
+            setupTextSelection();
+        }
+
+        function renderCaptionByType(type, data) {
+            switch(type) {
+                case 'single':
+                    return `
+                        <div class="caption-content selectable" id="captionContent">
+                            <div class="caption-text">${escapeHtml(data)}</div>
+                        </div>
+                    `;
+                
+                case 'structured':
+                    return `
+                        <div class="structured-caption-grid">
+                            ${Object.entries(data).map(([key, value]) => `
+                                <div class="structured-item">
+                                    <div class="structured-key">${escapeHtml(key)}</div>
+                                    <div class="caption-content selectable" data-field="${escapeHtml(key)}">
+                                        <div class="caption-text">${escapeHtml(value)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                
+                case 'temporal':
+                    return `
+                        <div class="temporal-caption-list">
+                            ${data.map((item, index) => `
+                                <div class="temporal-caption-item">
+                                    <div class="temporal-header">
+                                        <span class="time-range">${item.start_time}s - ${item.end_time}s</span>
+                                    </div>
+                                    <div class="caption-content selectable" data-segment="${index}">
+                                        <div class="caption-text">${escapeHtml(item.content)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                
+                case 'multiple_annotators':
+                    return `
+                        <div class="temporal-caption-list">
+                            ${data.map((caption, index) => `
+                                <div class="temporal-caption-item">
+                                    <div class="temporal-header">
+                                        <span class="time-range">Annotator ${index + 1}</span>
+                                    </div>
+                                    <div class="caption-content selectable" data-annotator="${index}">
+                                        <div class="caption-text">${escapeHtml(caption)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                
+                default:
+                    return `<p>Unknown caption type: ${type}</p>`;
+            }
+        }
+
+        function renderHighlightedSegments() {
+            const container = document.getElementById('highlightedSegments');
+            if (highlightedSegments.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-secondary); font-size: 0.875rem;">No issues highlighted yet. Select text above to add.</p>';
+                return;
+            }
+            
+            container.innerHTML = highlightedSegments.map((segment, index) => `
+                <div class="segment-item">
+                    <div class="segment-text">"${escapeHtml(segment.text)}"</div>
+                    <button class="segment-remove" onclick="removeSegment(${index})">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function setupTextSelection() {
+            const selectableElements = document.querySelectorAll('.caption-content.selectable');
+            
+            selectableElements.forEach(element => {
+                element.addEventListener('mouseup', function() {
+                    const selection = window.getSelection();
+                    const selectedText = selection.toString().trim();
+                    
+                    if (selectedText.length > 0) {
+                        // Get context information
+                        const context = {
+                            field: element.getAttribute('data-field'),
+                            segment: element.getAttribute('data-segment'),
+                            annotator: element.getAttribute('data-annotator')
+                        };
+                        
+                        // Add to highlighted segments
+                        highlightedSegments.push({
+                            text: selectedText,
+                            context: context
+                        });
+                        
+                        renderHighlightedSegments();
+                        selection.removeAllRanges();
+                        
+                        showToast('Text segment added!', 'success');
+                    }
+                });
+            });
+        }
+
+        function removeSegment(index) {
+            highlightedSegments.splice(index, 1);
+            renderHighlightedSegments();
+        }
+
+        function clearAnnotation() {
+            if (confirm('Are you sure you want to clear all annotations for this sample?')) {
+                highlightedSegments = [];
+                annotation = {
+                    segments: [],
+                    critique: '',
+                    likert_score: null
+                };
+                document.getElementById('critiqueInput').value = '';
+                document.querySelectorAll('input[name="likert"]').forEach(radio => radio.checked = false);
+                renderHighlightedSegments();
+            }
+        }
+
+        function getCurrentLikertScore() {
+            const selected = document.querySelector('input[name="likert"]:checked');
+            return selected ? parseInt(selected.value) : null;
+        }
+
+        function getLikertLabel(score) {
+            const labels = {
+                1: 'Very Poor',
+                2: 'Poor',
+                3: 'Fair',
+                4: 'Good',
+                5: 'Excellent'
+            };
+            return labels[score] || '';
+        }
+
+        function updateSampleSelection() {
+            renderSamples();
+        }
+
+        function refreshData() {
+            if (currentDataset) {
+                loadDataset(currentDataset);
+            } else {
+                loadDatasets();
+            }
+        }
+
+        function exportAnnotations() {
+            if (!currentDataset) {
+                showToast('Please select a dataset first', 'error');
+                return;
+            }
+            
+            // This would download all annotations for the current dataset
+            showToast('Export feature coming soon!', 'success');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.className = `toast show ${type}`;
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
