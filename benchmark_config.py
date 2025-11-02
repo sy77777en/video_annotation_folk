@@ -16,11 +16,11 @@ CAMERABENCH_LIGHTING_ONLY_FOLDER_APRIL = "lighting_setup-20250406lighting_only"
 # CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "TODO" # Need to have ground + setup + camera
 
 # CameraBench Pro folder paths (based on your downloads)
-CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "cam_motion-20251003_ground_folder"
-CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "cam_setup-20251003_setup_folder"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "cam_motion-cam_setup-20251003_ground_and_setup_folder"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "cam_motion-20251003_ground_and_camera_folder"
-CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "cam_motion-cam_setup-20251003_ground_and_camera_and_setup_folder"
+CAMERABENCH_PRO_FOLDER_MOTION_ONLY = "cam_motion-20251021_ground_folder"
+CAMERABENCH_PRO_FOLDER_SETUP_ONLY = "cam_setup-20251021_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP = "cam_motion-cam_setup-20251021_ground_and_setup_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_CAMERA = "cam_motion-20251021_ground_and_camera_folder"
+CAMERABENCH_PRO_FOLDER_GROUND_AND_SETUP_AND_CAMERA = "cam_motion-cam_setup-20251021_ground_and_camera_and_setup_folder"
 
 # FOLDER_NAMES = [
 #     "motion_dataset", # ICCV Version

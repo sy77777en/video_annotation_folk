@@ -36,6 +36,19 @@ class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
         self.videos_dir = videos_dir
         super().__init__(*args, **kwargs)
 
+    def get_video_urls(self, folder_name):
+        """Get video URL mapping from video_urls.json for a specific folder."""
+        try:
+            json_path = self.video_labels_dir / folder_name / "video_urls.json"
+            if not json_path.exists():
+                return None
+            
+            with open(json_path, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading video URLs for {folder_name}: {e}")
+            return None
+
     def send_header(self, keyword, value):
         """Override to add cache control headers for HTML/CSS/JS files."""
         super().send_header(keyword, value)
@@ -49,6 +62,33 @@ class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header('Pragma', 'no-cache')
             self.send_header('Expires', 'Thu, 01 Jan 1970 00:00:00 GMT')
         super().end_headers()
+
+    # def do_GET(self):
+    #     """Handle GET requests."""
+        
+    #     # API endpoint: Get available folders
+    #     if self.path == "/api/folders":
+    #         self.send_json_response(self.get_folders())
+    #         return
+        
+    #     # API endpoint: Get label data for a folder
+    #     if self.path.startswith("/api/labels/"):
+    #         folder_name = unquote(self.path.split("/api/labels/")[1])
+    #         data = self.get_label_data(folder_name)
+    #         if data:
+    #             self.send_json_response(data)
+    #         else:
+    #             self.send_error(404, "Folder not found")
+    #         return
+        
+    #     # Serve videos
+    #     if self.path.startswith("/videos/"):
+    #         video_name = unquote(self.path.split("/videos/")[1])
+    #         self.serve_video(video_name)
+    #         return
+        
+    #     # Serve static files (HTML, CSS, JS)
+    #     super().do_GET()
 
     def do_GET(self):
         """Handle GET requests."""
@@ -66,6 +106,16 @@ class LabelViewerHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_json_response(data)
             else:
                 self.send_error(404, "Folder not found")
+            return
+        
+        # API endpoint: Get video URLs for a folder
+        if self.path.startswith("/api/video_urls/"):
+            folder_name = unquote(self.path.split("/api/video_urls/")[1])
+            data = self.get_video_urls(folder_name)
+            if data:
+                self.send_json_response(data)
+            else:
+                self.send_error(404, "Video URLs not found")
             return
         
         # Serve videos
