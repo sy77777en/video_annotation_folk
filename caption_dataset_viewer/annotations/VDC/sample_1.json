@@ -1,19 +1,79 @@
 {
   "segments": [
     {
-      "text": "medium shots",
-      "context": "Field: camera_caption"
+      "text": "colorful",
+      "context": "Single caption",
+      "startIndex": 264,
+      "endIndex": 273
     },
     {
-      "text": "panning to capture the reactions of each individual",
-      "context": "Field: camera_caption"
+      "text": "other in a yellow top",
+      "context": "Single caption",
+      "startIndex": 616,
+      "endIndex": 637
     },
     {
-      "text": "initially appears engrossed in their smartphones,",
-      "context": "Field: detailed_caption"
+      "text": "initially appears engrossed in their smartphones",
+      "context": "Single caption",
+      "startIndex": 639,
+      "endIndex": 687
+    },
+    {
+      "text": "their faces illuminated by the screens",
+      "context": "Single caption",
+      "startIndex": 688,
+      "endIndex": 727
+    },
+    {
+      "text": "while the smartphones that once occupied the attention of the pair in the middle are now set aside,",
+      "context": "Single caption",
+      "startIndex": 1214,
+      "endIndex": 1315
+    },
+    {
+      "text": "evening lighting",
+      "context": "Single caption",
+      "startIndex": 1979,
+      "endIndex": 1995
+    },
+    {
+      "text": "a series of medium shots",
+      "context": "Single caption",
+      "startIndex": 2110,
+      "endIndex": 2134
+    },
+    {
+      "text": "Smooth transitions between shots",
+      "context": "Single caption",
+      "startIndex": 2383,
+      "endIndex": 2415
+    },
+    {
+      "text": "occasionally panning to capture the reactions",
+      "context": "Single caption",
+      "startIndex": 2444,
+      "endIndex": 2489
+    },
+    {
+      "text": "Close-ups",
+      "context": "Single caption",
+      "startIndex": 2562,
+      "endIndex": 2571
+    },
+    {
+      "text": "while wider shots",
+      "context": "Single caption",
+      "startIndex": 2649,
+      "endIndex": 2666
     }
   ],
-  "critique": "1. full shot\u800c\u4e0d\u662fmedium shot\n2. \u5e76\u975epanning\uff0c\u53ef\u4ee5\u5c06camera\u89c6\u4e3ano motion\u4f46\u662fvery unsteady\n3. \u5e76\u6ca1\u6709initially appears engrossed in their smartphones\n4. \u4e00\u5f00\u59cb\u662f\u53f3\u4fa7\u7ea2\u8863\u670dboy\u4e3b\u8981\u53d1\u8a00\uff0c\u968f\u540e\u662f\u5de6\u4fa7\u7ea2\u5e3d\u5b50\u767d\u886c\u886bboy\u53d1\u8a00",
+  "critique": "They have white beverages, not colorful ones.\nOne of them is wearing a blue top with a yellow pattern, not a yellow top.\nThey are not looking at their phones.\nTheir faces are not illuminated by the screens.\nIt\u2019s hard to tell if it\u2019s night since the scene is indoors.\nIt\u2019s a single shot, not a series of shots.\nThere are no smooth transitions.\nThere is no panning.\nThere are no transitions between close-ups and wider shots \u2014 it remains a full shot throughout.",
   "likert_score": 3,
-  "timestamp": "2025-11-02T08:27:01.046Z"
+  "timestamp": "2025-11-04T16:01:42.947Z",
+  "overall": 3,
+  "camera": 1,
+  "subject": 3,
+  "motion": 4,
+  "scene": 5,
+  "spatial": 1
 }
