@@ -181,15 +181,36 @@
             box-shadow: var(--shadow-sm);
         }
 
+        .sample-item.completed {
+            border-color: var(--positive);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .sample-item.incomplete {
+            border-color: var(--negative);
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        /* Active state with different colors for complete/incomplete */
         .sample-item.active {
             background: var(--accent);
             color: white;
             border-color: var(--accent);
         }
-
-        .sample-item.completed {
+        
+        .sample-item.active.completed {
+            background: var(--positive);
             border-color: var(--positive);
-            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .sample-item.active.incomplete {
+            background: var(--warning);
+            border-color: var(--warning);
+        }
+        
+        .sample-item.active .status-badge {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .sample-number {
@@ -207,6 +228,11 @@
         .status-badge.completed {
             background: rgba(16, 185, 129, 0.1);
             color: var(--positive);
+        }
+        
+        .status-badge.incomplete {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--negative);
         }
 
         .status-badge.pending {
@@ -335,7 +361,8 @@
             background: rgba(239, 68, 68, 0.35);
         }
 
-        .highlight-label {
+        .highlight::before {
+            content: "Issue " attr(data-issue-number);
             position: absolute;
             bottom: 100%;
             left: 0;
@@ -352,7 +379,7 @@
             z-index: 10;
         }
 
-        .highlight:hover .highlight-label {
+        .highlight:hover::before {
             opacity: 1;
         }
 
@@ -658,8 +685,17 @@
                 <div class="header-subtitle">Video Caption Annotation Interface</div>
             </div>
             <div class="controls">
-                <button class="btn" onclick="refreshData()">🔄 Refresh</button>
-                <button class="btn" onclick="exportAnnotations()">📥 Export</button>
+                <div style="display: flex; gap: 1.5rem; align-items: center; margin-right: 1rem; font-size: 0.875rem;">
+                    <div>
+                        <span style="color: var(--text-secondary);">Total:</span>
+                        <span style="color: var(--text-primary); font-weight: 600; margin-left: 0.25rem;" id="headerTotal">0</span>
+                    </div>
+                    <div>
+                        <span style="color: var(--text-secondary);">Completed:</span>
+                        <span style="color: var(--positive); font-weight: 600; margin-left: 0.25rem;" id="headerCompleted">0</span>
+                    </div>
+                </div>
+                <button class="btn" onclick="showStats()">📊 Stats</button>
             </div>
         </div>
     </div>
@@ -735,13 +771,60 @@
         let annotation = {
             segments: [],
             critique: '',
-            likert_score: null
+            overall: null,
+            camera: null,
+            subject: null,
+            motion: null,
+            scene: null,
+            spatial: null
         };
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             loadDatasets();
         });
+        
+        // Helper function to check if annotation is complete
+        function isAnnotationComplete(annotation) {
+            if (!annotation) return false;
+            
+            // Check if ALL rating fields are filled (not null/undefined)
+            const requiredFields = ['overall', 'camera', 'subject', 'motion', 'scene', 'spatial'];
+            const allRatingsComplete = requiredFields.every(field => 
+                annotation[field] !== null && annotation[field] !== undefined
+            );
+            
+            // Check if segments exist and ALL have character indices
+            let segmentsValid = true;
+            if (annotation.segments && annotation.segments.length > 0) {
+                segmentsValid = annotation.segments.every(seg => 
+                    seg.startIndex !== undefined && seg.endIndex !== undefined
+                );
+            }
+            // If no segments, that's also valid (segments are optional)
+            
+            const isComplete = allRatingsComplete && segmentsValid;
+            
+            // Debug logging
+            console.log('Checking annotation completeness:', {
+                allRatingsComplete,
+                segmentsValid,
+                isComplete,
+                scores: {
+                    overall: annotation.overall,
+                    camera: annotation.camera,
+                    subject: annotation.subject,
+                    motion: annotation.motion,
+                    scene: annotation.scene,
+                    spatial: annotation.spatial
+                },
+                segmentsCount: annotation.segments?.length || 0,
+                segmentsHaveIndices: annotation.segments?.every(s => s.startIndex !== undefined && s.endIndex !== undefined)
+            });
+            
+            // Must have ALL ratings AND all segments must have indices (if any segments exist)
+            return isComplete;
+        }
 
         // API Functions
         async function loadDatasets() {
@@ -761,8 +844,15 @@
                 const data = await response.json();
                 currentDataset = datasetName;
                 samples = data.samples || [];
+                
+                // Set all samples to pending initially - status will be verified when sample is loaded
+                samples.forEach(sample => {
+                    sample.annotation_status = sample.annotation_status || 'pending';
+                });
+                
                 renderSamples();
-                loadStats();
+                renderDatasets(); // Update selected dataset highlighting
+                updateHeaderStats(); // Just show pending count
                 
                 // Auto-select first sample
                 if (samples.length > 0) {
@@ -784,17 +874,62 @@
                 // Load existing annotation if available
                 if (data.annotation) {
                     annotation = data.annotation;
+                    
+                    // Determine status based on saved annotation (only if not already determined)
+                    if (!samples[index].statusChecked) {
+                        if (isAnnotationComplete(annotation)) {
+                            samples[index].annotation_status = 'completed';
+                        } else {
+                            samples[index].annotation_status = 'incomplete';
+                        }
+                        samples[index].statusChecked = true; // Mark that we've verified this
+                    }
+                    
+                    // Preserve existing scores (may be incomplete)
+                    annotation.overall = annotation.overall ?? null;
+                    annotation.camera = annotation.camera ?? null;
+                    annotation.subject = annotation.subject ?? null;
+                    annotation.motion = annotation.motion ?? null;
+                    annotation.scene = annotation.scene ?? null;
+                    annotation.spatial = annotation.spatial ?? null;
+                    
+                    // If annotation is incomplete (missing indices), clear segments
+                    // User must re-select text to make it complete
+                    if (annotation.segments && annotation.segments.length > 0) {
+                        const hasValidIndices = annotation.segments.every(seg => 
+                            seg.startIndex !== undefined && seg.endIndex !== undefined
+                        );
+                        if (!hasValidIndices) {
+                            // Clear segments - user must re-annotate
+                            annotation.segments = [];
+                        }
+                    }
                 } else {
                     annotation = {
                         segments: [],
                         critique: '',
-                        likert_score: null
+                        overall: null,
+                        camera: null,
+                        subject: null,
+                        motion: null,
+                        scene: null,
+                        spatial: null
                     };
+                    // Don't overwrite status if it was already set
+                    if (!samples[index].annotation_status || samples[index].annotation_status === 'pending') {
+                        samples[index].annotation_status = 'pending';
+                    }
                 }
                 
                 highlightedSegments = annotation.segments || [];
+                
+                // Update sidebar immediately to show correct status
+                renderSamples();
+                
                 renderSample();
+                
                 updateSampleSelection();
+                updateHeaderStats();
             } catch (error) {
                 console.error('Error loading sample:', error);
                 showToast('Failed to load sample', 'error');
@@ -805,8 +940,8 @@
             try {
                 annotation.segments = highlightedSegments;
                 annotation.critique = document.getElementById('critiqueInput').value;
-                annotation.likert_score = getCurrentLikertScore();
                 annotation.timestamp = new Date().toISOString();
+                // Note: individual scores (overall, camera, subject, motion, scene, spatial) are already in annotation object
                 
                 const response = await fetch(
                     `/api/annotation/${encodeURIComponent(currentDataset)}/${currentSampleIndex}`,
@@ -820,10 +955,15 @@
                 if (response.ok) {
                     showToast('Annotation saved successfully!', 'success');
                     
-                    // Update sample status
-                    samples[currentSampleIndex].annotation_status = 'completed';
+                    // Update sample status based on completeness
+                    if (isAnnotationComplete(annotation)) {
+                        samples[currentSampleIndex].annotation_status = 'completed';
+                    } else {
+                        samples[currentSampleIndex].annotation_status = 'incomplete';
+                    }
+                    
                     renderSamples();
-                    loadStats();
+                    updateHeaderStats();
                 } else {
                     showToast('Failed to save annotation', 'error');
                 }
@@ -871,13 +1011,18 @@
             const samplesSection = document.getElementById('samplesSection');
             
             samplesSection.style.display = 'block';
-            sampleList.innerHTML = samples.map((sample, index) => `
-                <div class="sample-item ${index === currentSampleIndex ? 'active' : ''} ${sample.annotation_status === 'completed' ? 'completed' : ''}"
-                     onclick="loadSample(${index})">
-                    <span class="sample-number">Sample ${index + 1}</span>
-                    <span class="status-badge ${sample.annotation_status}">${sample.annotation_status || 'pending'}</span>
-                </div>
-            `).join('');
+            sampleList.innerHTML = samples.map((sample, index) => {
+                const status = sample.annotation_status || 'pending';
+                const statusClass = status === 'completed' ? 'completed' : status === 'incomplete' ? 'incomplete' : '';
+                
+                return `
+                    <div class="sample-item ${index === currentSampleIndex ? 'active' : ''} ${statusClass}"
+                         onclick="loadSample(${index})">
+                        <span class="sample-number">Sample ${index + 1}</span>
+                        <span class="status-badge ${status}">${status}</span>
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderSample() {
@@ -983,10 +1128,50 @@
                     >${annotation.critique || ''}</textarea>
 
                     <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Overall Quality (1-5)</h3>
-                    <div class="likert-scale" id="likertScale">
+                    <div class="likert-scale" id="likertOverall">
                         ${[1, 2, 3, 4, 5].map(score => `
-                            <button class="likert-button ${annotation.likert_score === score ? 'selected' : ''}" 
-                                    onclick="selectLikertScore(${score})">${score}</button>
+                            <button class="likert-button ${annotation.overall === score ? 'selected' : ''}" 
+                                    onclick="selectScore('overall', ${score})">${score}</button>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1rem;">Camera (1-5)</h3>
+                    <div class="likert-scale" id="likertCamera">
+                        ${[1, 2, 3, 4, 5].map(score => `
+                            <button class="likert-button ${annotation.camera === score ? 'selected' : ''}" 
+                                    onclick="selectScore('camera', ${score})">${score}</button>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1rem;">Subject (1-5)</h3>
+                    <div class="likert-scale" id="likertSubject">
+                        ${[1, 2, 3, 4, 5].map(score => `
+                            <button class="likert-button ${annotation.subject === score ? 'selected' : ''}" 
+                                    onclick="selectScore('subject', ${score})">${score}</button>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1rem;">Motion (1-5)</h3>
+                    <div class="likert-scale" id="likertMotion">
+                        ${[1, 2, 3, 4, 5].map(score => `
+                            <button class="likert-button ${annotation.motion === score ? 'selected' : ''}" 
+                                    onclick="selectScore('motion', ${score})">${score}</button>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1rem;">Scene (1-5)</h3>
+                    <div class="likert-scale" id="likertScene">
+                        ${[1, 2, 3, 4, 5].map(score => `
+                            <button class="likert-button ${annotation.scene === score ? 'selected' : ''}" 
+                                    onclick="selectScore('scene', ${score})">${score}</button>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1rem;">Spatial (1-5)</h3>
+                    <div class="likert-scale" id="likertSpatial">
+                        ${[1, 2, 3, 4, 5].map(score => `
+                            <button class="likert-button ${annotation.spatial === score ? 'selected' : ''}" 
+                                    onclick="selectScore('spatial', ${score})">${score}</button>
                         `).join('')}
                     </div>
 
@@ -996,6 +1181,9 @@
 
             // Render highlighted segments
             renderHighlightedSegments();
+            
+            // Auto-fix segments that need indices (incomplete annotations)
+            autoFixSegmentIndices();
             
             // Setup text selection handlers
             setupTextSelection();
@@ -1043,6 +1231,54 @@
             } else {
                 // Default to mp4
                 return 'video/mp4';
+            }
+        }
+
+        function autoFixSegmentIndices() {
+            // Fix segments that lack character indices
+            let needsUpdate = false;
+            
+            highlightedSegments = highlightedSegments.map(segment => {
+                if (segment.needsIndexFix || (segment.startIndex === undefined || segment.endIndex === undefined)) {
+                    // Find the caption element for this context
+                    const captionElements = document.querySelectorAll('.caption-content.selectable');
+                    
+                    for (const element of captionElements) {
+                        let elementContext = 'Single caption';
+                        if (element.dataset.field) {
+                            elementContext = `Field: ${element.dataset.field}`;
+                        } else if (element.dataset.segment) {
+                            elementContext = `Temporal segment ${parseInt(element.dataset.segment) + 1}`;
+                        } else if (element.dataset.annotator) {
+                            elementContext = `Annotator ${parseInt(element.dataset.annotator) + 1}`;
+                        }
+                        
+                        // Match context
+                        if (elementContext === segment.context) {
+                            const captionText = element.querySelector('.caption-text');
+                            if (captionText) {
+                                const originalText = captionText.textContent;
+                                const pos = originalText.indexOf(segment.text);
+                                
+                                if (pos !== -1) {
+                                    needsUpdate = true;
+                                    return {
+                                        text: segment.text,
+                                        context: segment.context,
+                                        startIndex: pos,
+                                        endIndex: pos + segment.text.length
+                                    };
+                                }
+                            }
+                        }
+                    }
+                }
+                return segment;
+            });
+            
+            if (needsUpdate) {
+                // Re-render to show fixed segments with indices
+                renderHighlightedSegments();
             }
         }
 
@@ -1109,7 +1345,7 @@
             }
         }
 
-        // FIX for highlighting bug: Store original text and only highlight first occurrence
+        // FIX for highlighting bug: Store original text and only highlight segments for matching context
         function highlightCaptionText() {
             const captionElements = document.querySelectorAll('.caption-text');
             
@@ -1121,22 +1357,51 @@
                 
                 const originalText = captionEl.dataset.originalText;
                 
-                if (highlightedSegments.length === 0) {
-                    // No highlights, just restore original text
+                // Get the context for this specific caption element
+                const parentContent = captionEl.closest('.caption-content');
+                let elementContext = 'Single caption';
+                if (parentContent) {
+                    if (parentContent.dataset.field) {
+                        elementContext = `Field: ${parentContent.dataset.field}`;
+                    } else if (parentContent.dataset.segment) {
+                        elementContext = `Temporal segment ${parseInt(parentContent.dataset.segment) + 1}`;
+                    } else if (parentContent.dataset.annotator) {
+                        elementContext = `Annotator ${parseInt(parentContent.dataset.annotator) + 1}`;
+                    }
+                }
+                
+                // Filter segments to only those matching this element's context
+                const matchingSegments = highlightedSegments.filter(seg => seg.context === elementContext);
+                
+                if (matchingSegments.length === 0) {
+                    // No highlights for this element, just restore original text
                     captionEl.textContent = originalText;
                     return;
                 }
                 
-                // Build a list of ranges to highlight (only find first occurrence of each segment)
+                // Build a list of ranges to highlight using stored indices
                 const ranges = [];
-                highlightedSegments.forEach((segment, index) => {
-                    const pos = originalText.indexOf(segment.text);
-                    if (pos !== -1) {
+                highlightedSegments.forEach((segment, globalIndex) => {
+                    // Only process segments that match this context
+                    if (segment.context !== elementContext) return;
+                    
+                    // Use stored indices if available, otherwise fall back to indexOf
+                    if (segment.startIndex !== undefined && segment.endIndex !== undefined) {
                         ranges.push({
-                            start: pos,
-                            end: pos + segment.text.length,
-                            index: index
+                            start: segment.startIndex,
+                            end: segment.endIndex,
+                            index: globalIndex  // Use global index for "Issue X" label
                         });
+                    } else {
+                        // Fallback for old annotations without indices
+                        const pos = originalText.indexOf(segment.text);
+                        if (pos !== -1) {
+                            ranges.push({
+                                start: pos,
+                                end: pos + segment.text.length,
+                                index: globalIndex
+                            });
+                        }
                     }
                 });
                 
@@ -1165,8 +1430,9 @@
                     }
                     
                     // Add highlighted text (escaped, then wrapped in span)
+                    // Use data attribute for issue number, style with CSS ::before
                     const highlightedText = originalText.substring(range.start, range.end);
-                    html += `<span class="highlight" data-segment-index="${range.index}"><span class="highlight-label">Issue ${range.index + 1}</span>${escapeHtml(highlightedText)}</span>`;
+                    html += `<span class="highlight" data-issue-number="${range.index + 1}">${escapeHtml(highlightedText)}</span>`;
                     
                     lastPos = range.end;
                 });
@@ -1201,7 +1467,10 @@
                 <div class="segment-item">
                     <button class="segment-remove" onclick="removeSegment(${index})">×</button>
                     <div class="segment-text">"${segment.text}"</div>
-                    <div class="segment-meta">${segment.context || 'Selected text'}</div>
+                    <div class="segment-meta">
+                        ${segment.context || 'Selected text'} 
+                        ${segment.startIndex !== undefined ? `[${segment.startIndex}:${segment.endIndex}]` : '[no indices]'}
+                    </div>
                 </div>
             `).join('');
             
@@ -1252,10 +1521,51 @@
                             context = `Annotator ${parseInt(element.dataset.annotator) + 1}`;
                         }
                         
-                        // Add to highlighted segments
+                        // Calculate start and end indices in the ORIGINAL text (ignoring highlight spans)
+                        const captionText = element.querySelector('.caption-text');
+                        
+                        // Store original text if not already stored
+                        if (!captionText.dataset.originalText) {
+                            captionText.dataset.originalText = captionText.textContent;
+                        }
+                        const originalText = captionText.dataset.originalText;
+                        
+                        // Calculate position by walking only TEXT nodes (ignoring highlight span nodes)
+                        function getTextNodeOffset(container, node, offset) {
+                            let currentOffset = 0;
+                            const walker = document.createTreeWalker(
+                                container,
+                                NodeFilter.SHOW_TEXT,
+                                null,
+                                false
+                            );
+                            
+                            let currentNode;
+                            while (currentNode = walker.nextNode()) {
+                                if (currentNode === node) {
+                                    return currentOffset + offset;
+                                }
+                                currentOffset += currentNode.textContent.length;
+                            }
+                            return currentOffset;
+                        }
+                        
+                        const startIndex = getTextNodeOffset(captionText, range.startContainer, range.startOffset);
+                        const endIndex = getTextNodeOffset(captionText, range.endContainer, range.endOffset);
+                        
+                        // Validate indices
+                        if (startIndex === undefined || endIndex === undefined || startIndex < 0 || endIndex > originalText.length) {
+                            showToast('Could not determine text position. Please try selecting again.', 'error');
+                            selection.removeAllRanges();
+                            return;
+                        }
+                        
+                        // Add to highlighted segments with indices
                         highlightedSegments.push({
                             text: selectedText,
-                            context: context
+                            context: context,
+                            startIndex: startIndex,
+                            endIndex: endIndex
                         });
                         
                         // Re-render segments
@@ -1273,23 +1583,21 @@
             renderHighlightedSegments();
         }
 
-        function selectLikertScore(score) {
-            annotation.likert_score = score;
+        function selectScore(category, score) {
+            annotation[category] = score;
             
-            // Update UI
-            const buttons = document.querySelectorAll('.likert-button');
-            buttons.forEach((btn, index) => {
-                if (index + 1 === score) {
-                    btn.classList.add('selected');
-                } else {
-                    btn.classList.remove('selected');
-                }
-            });
-        }
-
-        function getCurrentLikertScore() {
-            const selectedButton = document.querySelector('.likert-button.selected');
-            return selectedButton ? parseInt(selectedButton.textContent) : null;
+            // Update UI for this category
+            const container = document.getElementById(`likert${category.charAt(0).toUpperCase() + category.slice(1)}`);
+            if (container) {
+                const buttons = container.querySelectorAll('.likert-button');
+                buttons.forEach((btn, index) => {
+                    if (index + 1 === score) {
+                        btn.classList.add('selected');
+                    } else {
+                        btn.classList.remove('selected');
+                    }
+                });
+            }
         }
 
         function updateSampleSelection() {
@@ -1303,24 +1611,257 @@
             });
         }
 
-        function refreshData() {
-            if (currentDataset) {
-                loadDataset(currentDataset);
-            } else {
-                loadDatasets();
+        function updateHeaderStats() {
+            if (currentDataset && samples.length > 0) {
+                const completed = samples.filter(s => s.annotation_status === 'completed').length;
+                document.getElementById('headerTotal').textContent = samples.length;
+                document.getElementById('headerCompleted').textContent = completed;
             }
-            showToast('Data refreshed', 'success');
         }
 
-        function exportAnnotations() {
+        // async function showStats() {
+        //     if (!currentDataset) {
+        //         showToast('No dataset selected', 'error');
+        //         return;
+        //     }
+
+        //     // Show loading modal immediately
+        //     const loadingModal = document.createElement('div');
+        //     loadingModal.id = 'statsLoadingModal';
+        //     loadingModal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+        //     loadingModal.innerHTML = `
+        //         <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2rem; max-width: 400px; width: 90%; text-align: center;">
+        //             <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">📊 Calculating Statistics...</h2>
+        //             <div style="background: var(--bg-primary); border-radius: 0.5rem; height: 24px; overflow: hidden; margin-bottom: 1rem;">
+        //                 <div id="statsProgress" style="height: 100%; background: var(--accent); width: 0%; transition: width 0.3s;"></div>
+        //             </div>
+        //             <div id="statsProgressText" style="color: var(--text-secondary); font-size: 0.875rem;">Loading annotations...</div>
+        //         </div>
+        //     `;
+        //     document.body.appendChild(loadingModal);
+
+        //     try {
+        //         const response = await fetch(`/api/stats/${encodeURIComponent(currentDataset)}`);
+        //         const stats = await response.json();
+                
+        //         // Calculate average highlighted issues and scores
+        //         let totalIssues = 0;
+        //         let issueCount = 0;
+        //         let scores = { overall: [], camera: [], subject: [], motion: [], scene: [], spatial: [] };
+                
+        //         const progressBar = document.getElementById('statsProgress');
+        //         const progressText = document.getElementById('statsProgressText');
+                
+        //         // Check ALL samples to find which ones have annotations
+        //         const totalToCheck = samples.length;
+        //         let processedCount = 0;
+        //         let annotatedCount = 0;
+                
+        //         for (let i = 0; i < samples.length; i++) {
+        //             const annResponse = await fetch(`/api/annotation/${encodeURIComponent(currentDataset)}/${i}`);
+        //             if (annResponse.ok) {
+        //                 const data = await annResponse.json();
+        //                 if (data.annotation) {
+        //                     annotatedCount++;
+        //                     const ann = data.annotation;
+                            
+        //                     // Update sample status
+        //                     if (isAnnotationComplete(ann)) {
+        //                         samples[i].annotation_status = 'completed';
+        //                     } else {
+        //                         samples[i].annotation_status = 'incomplete';
+        //                     }
+                            
+        //                     // Collect stats
+        //                     if (ann.segments && ann.segments.length > 0) {
+        //                         totalIssues += ann.segments.length;
+        //                         issueCount++;
+        //                     }
+        //                     if (ann.overall) scores.overall.push(ann.overall);
+        //                     if (ann.camera) scores.camera.push(ann.camera);
+        //                     if (ann.subject) scores.subject.push(ann.subject);
+        //                     if (ann.motion) scores.motion.push(ann.motion);
+        //                     if (ann.scene) scores.scene.push(ann.scene);
+        //                     if (ann.spatial) scores.spatial.push(ann.spatial);
+        //                 } else {
+        //                     samples[i].annotation_status = 'pending';
+        //                 }
+        //             }
+                    
+        //             // Update progress
+        //             processedCount++;
+        //             const progress = Math.floor((processedCount / totalToCheck) * 100);
+        //             if (progressBar) {
+        //                 progressBar.style.width = progress + '%';
+        //                 progressBar.textContent = progress + '%';
+        //             }
+        //             if (progressText) {
+        //                 progressText.textContent = `Checking ${processedCount}/${totalToCheck} samples... (${annotatedCount} annotated)`;
+        //             }
+                    
+        //             // Force DOM update
+        //             await new Promise(resolve => setTimeout(resolve, 0));
+        //         }
+                
+        //         // Update sidebar to show completed/incomplete status
+        //         renderSamples();
+                
+        //         const avgIssues = issueCount > 0 ? (totalIssues / issueCount).toFixed(2) : 'N/A';
+        //         const avgScores = {
+        //             overall: scores.overall.length > 0 ? (scores.overall.reduce((a,b) => a+b, 0) / scores.overall.length).toFixed(2) : 'N/A',
+        //             camera: scores.camera.length > 0 ? (scores.camera.reduce((a,b) => a+b, 0) / scores.camera.length).toFixed(2) : 'N/A',
+        //             subject: scores.subject.length > 0 ? (scores.subject.reduce((a,b) => a+b, 0) / scores.subject.length).toFixed(2) : 'N/A',
+        //             motion: scores.motion.length > 0 ? (scores.motion.reduce((a,b) => a+b, 0) / scores.motion.length).toFixed(2) : 'N/A',
+        //             scene: scores.scene.length > 0 ? (scores.scene.reduce((a,b) => a+b, 0) / scores.scene.length).toFixed(2) : 'N/A',
+        //             spatial: scores.spatial.length > 0 ? (scores.spatial.reduce((a,b) => a+b, 0) / scores.spatial.length).toFixed(2) : 'N/A'
+        //         };
+                
+        //         // Show modal
+        //         const modal = document.createElement('div');
+        //         modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+        //         modal.innerHTML = `
+        //             <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2rem; max-width: 500px; width: 90%;">
+        //                 <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">📊 Dataset Statistics</h2>
+                        
+        //                 <div style="margin-bottom: 1.5rem;">
+        //                     <h3 style="font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem;">Summary</h3>
+        //                     <div style="color: var(--text-primary);">Total Samples: ${stats.total}</div>
+        //                     <div style="color: var(--positive);">Completed: ${stats.completed}</div>
+        //                     <div style="color: var(--text-secondary); margin-top: 0.5rem;">Avg Highlighted Issues: ${avgIssues}</div>
+        //                 </div>
+                        
+        //                 <div style="margin-bottom: 1.5rem;">
+        //                     <h3 style="font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem;">Average Scores</h3>
+        //                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; color: var(--text-primary);">
+        //                         <div>Overall: <strong>${avgScores.overall}</strong></div>
+        //                         <div>Camera: <strong>${avgScores.camera}</strong></div>
+        //                         <div>Subject: <strong>${avgScores.subject}</strong></div>
+        //                         <div>Motion: <strong>${avgScores.motion}</strong></div>
+        //                         <div>Scene: <strong>${avgScores.scene}</strong></div>
+        //                         <div>Spatial: <strong>${avgScores.spatial}</strong></div>
+        //                     </div>
+        //                 </div>
+                        
+        //                 <button onclick="this.closest('div').parentElement.remove()" style="
+        //                     width: 100%;
+        //                     padding: 0.75rem;
+        //                     background: var(--accent);
+        //                     border: none;
+        //                     border-radius: 0.5rem;
+        //                     color: white;
+        //                     font-weight: 600;
+        //                     cursor: pointer;
+        //                 ">Close</button>
+        //             </div>
+        //         `;
+                
+        //         // Remove loading modal and show results
+        //         loadingModal.remove();
+                
+        //         // Update sidebar with correct statuses
+        //         renderSamples();
+        //         updateHeaderStats();
+                
+        //         document.body.appendChild(modal);
+        //         modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+                
+        //     } catch (error) {
+        //         console.error('Error loading stats:', error);
+        //         if (loadingModal && loadingModal.parentElement) {
+        //             loadingModal.remove();
+        //         }
+        //         showToast('Failed to load statistics', 'error');
+        //     }
+        // }
+
+        async function showStats() {
             if (!currentDataset) {
                 showToast('No dataset selected', 'error');
                 return;
             }
 
-            // Trigger download of annotations
-            window.location.href = `/api/export/${encodeURIComponent(currentDataset)}`;
-            showToast('Exporting annotations...', 'success');
+            // Show loading modal immediately
+            const loadingModal = document.createElement('div');
+            loadingModal.id = 'statsLoadingModal';
+            loadingModal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+            loadingModal.innerHTML = `
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2rem; max-width: 400px; width: 90%; text-align: center;">
+                    <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">📊 Calculating Statistics...</h2>
+                    <div style="color: var(--text-secondary); font-size: 0.875rem;">Loading annotation data...</div>
+                </div>
+            `;
+            document.body.appendChild(loadingModal);
+
+            try {
+                // Fetch stats from server - server does all the work!
+                const response = await fetch(`/api/stats/${encodeURIComponent(currentDataset)}`);
+                
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}`);
+                }
+                
+                const stats = await response.json();
+                
+                // Calculate pending count (samples without annotations)
+                const pendingCount = Math.max(0, samples.length - (stats.completed + stats.incomplete));
+                
+                // Show modal with results
+                const modal = document.createElement('div');
+                modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+                modal.innerHTML = `
+                    <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 2rem; max-width: 500px; width: 90%;">
+                        <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">📊 Dataset Statistics</h2>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem;">Summary</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; color: var(--text-primary);">
+                                <div>Total Samples: <strong>${samples.length}</strong></div>
+                                <div style="color: var(--positive);">Completed: <strong>${stats.completed}</strong></div>
+                                <div style="color: var(--negative);">Incomplete: <strong>${stats.incomplete}</strong></div>
+                                <div style="color: var(--text-secondary);">Pending: <strong>${pendingCount}</strong></div>
+                            </div>
+                            <div style="color: var(--text-secondary); margin-top: 1rem;">
+                                Avg Highlighted Issues: <strong>${stats.avg_segments || 'N/A'}</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem;">Average Scores</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; color: var(--text-primary);">
+                                <div>Overall: <strong>${stats.avg_scores.overall || 'N/A'}</strong></div>
+                                <div>Camera: <strong>${stats.avg_scores.camera || 'N/A'}</strong></div>
+                                <div>Subject: <strong>${stats.avg_scores.subject || 'N/A'}</strong></div>
+                                <div>Motion: <strong>${stats.avg_scores.motion || 'N/A'}</strong></div>
+                                <div>Scene: <strong>${stats.avg_scores.scene || 'N/A'}</strong></div>
+                                <div>Spatial: <strong>${stats.avg_scores.spatial || 'N/A'}</strong></div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="this.closest('div').parentElement.remove()" style="
+                            width: 100%;
+                            padding: 0.75rem;
+                            background: var(--accent);
+                            border: none;
+                            border-radius: 0.5rem;
+                            color: white;
+                            font-weight: 600;
+                            cursor: pointer;
+                        ">Close</button>
+                    </div>
+                `;
+                
+                // Remove loading modal and show results
+                loadingModal.remove();
+                document.body.appendChild(modal);
+                modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+                
+            } catch (error) {
+                console.error('Error loading stats:', error);
+                if (loadingModal && loadingModal.parentElement) {
+                    loadingModal.remove();
+                }
+                showToast('Failed to load statistics: ' + error.message, 'error');
+            }
         }
 
         function showToast(message, type = 'success') {

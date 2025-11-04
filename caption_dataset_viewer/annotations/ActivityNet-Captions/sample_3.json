@@ -1,0 +1,24 @@
+{
+  "segments": [
+    {
+      "text": "the are",
+      "context": "Temporal segment 2",
+      "startIndex": 34,
+      "endIndex": 43
+    },
+    {
+      "text": "speak",
+      "context": "Temporal segment 1",
+      "startIndex": 83,
+      "endIndex": 88
+    }
+  ],
+  "critique": "\u201cspeak\u201d \u2192 \u201cspeaking\u201d\n\u201cthe are\u201d \u2192 \u201cthe area\u201d\nAt least two events were missed:\n(1) They sit inside the boat, seemingly about to write something on the paper.\n(2) Many people are on the shore, and two people are hugging.",
+  "overall": 2,
+  "camera": 1,
+  "subject": 1,
+  "motion": 3,
+  "scene": 2,
+  "spatial": 1,
+  "timestamp": "2025-11-03T06:56:03.282Z"
+}
