@@ -23,6 +23,30 @@ HF_REPO = "zhiqiulin/video_caption_datasets"
 ANNOTATIONS_DIR = Path("annotations")  # Local directory for saving annotations
 
 
+def is_annotation_complete(annotation):
+    """Check if an annotation is complete."""
+    if not annotation:
+        return False
+    
+    # Check if ALL rating fields are filled (not null/undefined)
+    required_fields = ['overall', 'camera', 'subject', 'motion', 'scene', 'spatial']
+    all_ratings_complete = all(
+        annotation.get(field) is not None 
+        for field in required_fields
+    )
+    
+    # Check if segments exist and ALL have character indices
+    segments_valid = True
+    if annotation.get('segments') and len(annotation['segments']) > 0:
+        segments_valid = all(
+            seg.get('startIndex') is not None and seg.get('endIndex') is not None
+            for seg in annotation['segments']
+        )
+    
+    # Must have ALL ratings AND all segments must have indices (if any segments exist)
+    return all_ratings_complete and segments_valid
+
+
 class ReusableTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     """Multi-threaded TCPServer that allows immediate port reuse."""
     allow_reuse_address = True
@@ -179,7 +203,14 @@ class CaptionViewerHandler(http.server.SimpleHTTPRequestHandler):
             if 'samples' in data:
                 for i, sample in enumerate(data['samples']):
                     annotation = self.get_annotation(dataset_name, i)
-                    sample['annotation_status'] = 'completed' if annotation else 'pending'
+                    if annotation:
+                        # Check if annotation is complete or incomplete
+                        if is_annotation_complete(annotation):
+                            sample['annotation_status'] = 'completed'
+                        else:
+                            sample['annotation_status'] = 'incomplete'
+                    else:
+                        sample['annotation_status'] = 'pending'
             
             return data
         except Exception as e:
@@ -239,35 +270,93 @@ class CaptionViewerHandler(http.server.SimpleHTTPRequestHandler):
         try:
             dataset_dir = self.annotations_dir / dataset_name
             if not dataset_dir.exists():
-                return {"total": 0, "completed": 0, "avg_score": None, "std_score": None}
+                return {
+                    "total": 0, 
+                    "completed": 0, 
+                    "incomplete": 0,
+                    "pending": 0,
+                    "avg_segments": None,
+                    "avg_scores": {
+                        "overall": None,
+                        "camera": None,
+                        "subject": None,
+                        "motion": None,
+                        "scene": None,
+                        "spatial": None
+                    }
+                }
             
             annotation_files = list(dataset_dir.glob("sample_*.json"))
-            scores = []
+            
+            # Track stats
+            total_segments = 0
+            segment_count = 0
+            scores = {
+                "overall": [],
+                "camera": [],
+                "subject": [],
+                "motion": [],
+                "scene": [],
+                "spatial": []
+            }
+            completed_count = 0
+            incomplete_count = 0
             
             for annotation_file in annotation_files:
                 with open(annotation_file, 'r') as f:
                     annotation = json.load(f)
-                    if 'likert_score' in annotation and annotation['likert_score'] is not None:
-                        scores.append(annotation['likert_score'])
+                    
+                    # Count segments
+                    if annotation.get('segments'):
+                        total_segments += len(annotation['segments'])
+                        segment_count += 1
+                    
+                    # Collect scores
+                    for field in scores.keys():
+                        if annotation.get(field) is not None:
+                            scores[field].append(annotation[field])
+                    
+                    # Count complete vs incomplete
+                    if is_annotation_complete(annotation):
+                        completed_count += 1
+                    else:
+                        incomplete_count += 1
             
-            # Calculate statistics
-            avg_score = sum(scores) / len(scores) if scores else None
-            std_score = None
-            if len(scores) > 1:
-                mean = avg_score
-                variance = sum((x - mean) ** 2 for x in scores) / len(scores)
-                std_score = variance ** 0.5
+            # Calculate averages
+            avg_segments = total_segments / segment_count if segment_count > 0 else None
+            avg_scores = {}
+            for field, values in scores.items():
+                if values:
+                    avg_scores[field] = round(sum(values) / len(values), 2)
+                else:
+                    avg_scores[field] = None
             
             return {
                 "total": len(annotation_files),
-                "completed": len([s for s in scores if s is not None]),
-                "avg_score": round(avg_score, 2) if avg_score else None,
-                "std_score": round(std_score, 2) if std_score else None,
-                "scores": scores
+                "completed": completed_count,
+                "incomplete": incomplete_count,
+                "pending": 0,  # Server doesn't track pending
+                "avg_segments": round(avg_segments, 2) if avg_segments else None,
+                "avg_scores": avg_scores
             }
         except Exception as e:
             print(f"Error calculating stats: {e}")
-            return {"total": 0, "completed": 0, "avg_score": None, "std_score": None}
+            traceback.print_exc()
+            return {
+                "total": 0,
+                "completed": 0,
+                "incomplete": 0,
+                "pending": 0,
+                "avg_segments": None,
+                "avg_scores": {
+                    "overall": None,
+                    "camera": None,
+                    "subject": None,
+                    "motion": None,
+                    "scene": None,
+                    "spatial": None
+                }
+            }
 
     def proxy_hf_video(self, video_path):
         """Proxy video requests to HuggingFace."""
